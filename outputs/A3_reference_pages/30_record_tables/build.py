@@ -1,0 +1,400 @@
+#!/usr/bin/env python3
+"""Write the record of the China chip-policy project as table files (idea 30).
+
+Run: python3 -I build.py          (from any folder; it reads and writes by absolute path)
+
+Reads   ../../../figure/figure_data.txt      the dated records: our line, the source, the source's own words, our English
+        ../../../figure/figure_events.tsv    the same records with the figure's mark number, the date as shown and the address
+        ../../../argument/argument_base.txt  the argument (for the order in which its sources are first cited)
+        ../../../argument/argument_refs.tsv  the argument's sources: saved id, kind, label, address
+        ../../../tables/*.tsv                the project's plain tables (round 4), copied into tables/ here
+        ../../../loose_ends/hkexnews_saved_ids.tsv, ../../../tables/replaced_copies.tsv
+                                             the 20 saved ids no longer cited and their replacements
+Writes  records.csv, records.tsv   one line per dated record, 16 columns
+        references.csv             one line per source of the argument, 8 columns
+        quotes.tsv                 saved id <TAB> the source's own words, for scripts/cn_has.py
+        tables/*.tsv               byte-for-byte copies of the project's plain tables (sha256 checked after writing)
+        README.txt                 what each file and column holds, with counts taken from the data
+
+Nothing is written unless every check passes:
+  - the two figure files hold the same records, one to one (date, saved id and row), and the same line of ours;
+  - every quotation stands in its saved copy (scripts/cn_has.py on quotes.tsv, exit 0), and that checker's own control
+    (a planted false quotation) is rejected; quotes.tsv is written first because it is what the checker reads;
+  - the reference numbers equal those printed in ARGUMENT_referenced.md;
+  - each file, read back, has the rows and columns it should; no TSV field holds a tab or a line break;
+  - every copied table's sha256 equals the project's table's; rows citing a saved id that outputs/ROUND4.md section 2
+    retires are counted and named in README.txt with their replacement, not changed.
+All files are UTF-8 without a byte-order mark; CSV fields are quoted where they hold a comma or a quote mark.
+"""
+import csv, hashlib, io, re, subprocess, sys
+from collections import Counter
+from pathlib import Path
+
+HERE = Path(__file__).resolve().parent
+PROJ = HERE.parents[2]
+SCRIPTS = Path('scripts')
+sys.path.insert(0, str(SCRIPTS))
+import cn_argument_build as B
+
+LANE = {'BH': ('Beijing holds Nvidia back', 'Beijing', 'away from Nvidia'),
+        'BL': ('Beijing lets Nvidia in', 'Beijing', 'toward Nvidia'),
+        'CN': ('The companies reach for Nvidia', 'the companies', 'toward Nvidia'),
+        'CH': ('The companies turn to home-made chips', 'the companies', 'away from Nvidia')}
+KIND = {'doc': 'a government document or an official on the record',
+        'rec': 'a company, or a named person outside government, on the record (a filing, results, a named executive or analyst)',
+        'press': 'a press report citing unnamed people'}
+# One plain line on each of the project's tables (ours, written from the table's own notes). The build stops if the
+# project's folder holds a table that has no line here.
+ABOUT = {
+    'chip_evaluations.tsv': "The products in the security-and-reliability evaluation announcements saved from the China Information Technology Security Evaluation Center's site, one row per product per announcement",
+    'house_licence_table.tsv': "The Commerce Department's table of licence applications for Nvidia's H200 and AMD's MI325X, with their status on May 11, 2026, as the House Foreign Affairs Committee made it public on Nov 19, 2026; one row per application",
+    'labs_said.tsv': "What China's AI companies said about chip supply on results calls and in filings, January 2025 to November 2026",
+    'labs_said_more.tsv': "The same for two more companies, iFlytek and SenseTime",
+    'local_vouchers.tsv': "Local rules that pay part of the bill for computing: who issued each, when, and the rate for home-made and for other computing",
+    'local_vouchers_more.tsv': "More such local rules, found in a second search",
+    'market_numbers.tsv': "Published market numbers (shares, shipments, market sizes), one row per number. The column family names the measure; rows of different families are different measures",
+    'nvidia_china_revenue.tsv': "Nvidia's revenue from customers in China, Hong Kong included, period by period, from its own filings",
+    'nvidia_wording_by_filing.tsv': "Nvidia's own sentences on China, filing by filing and call by call",
+    'press_originals.tsv': "For each press report the argument cited at an earlier build: whether the copy held is the publisher's own page or another outlet's",
+    'procurement_records.tsv': "Purchase records: the telecom carriers' central purchases, awards that name Nvidia cards, and tenders that require home-made chips",
+    'provinces_31.tsv': "The 31 provincial-level governments: whether a published plan sets a share for home-made computing hardware, in the document's own words",
+    'replaced_copies.tsv': "The 20 saved pages that are no longer cited, and the copy that replaces each",
+    'state_media_items.tsv': "State and Party media items on Nvidia chips, July 2025 to November 2026, each with its stance",
+    'talks_and_acts.tsv': "US-China trade meetings, May 2025 to November 2026, with each side's readout, beside Beijing's dated acts on Nvidia chips",
+    'trade_annual_summary.tsv': "Yearly sums of monthly customs figures, series by series. No customs line counts Nvidia chips",
+    'trade_derived_figures.tsv': "The sums and ratios worked out from the trade tables",
+    'us_officials_statements.tsv': "Named American officials' words on China buying, blocking or bargaining over Nvidia chips. Words from caption tracks are machine-made and not checked by ear",
+    'xi_searches.tsv': "The searches made of Xi Jinping's published speeches and activities, with the number of results each returned and the controls",
+}
+REC_COLS = ['n', 'date', 'date_shown', 'date_exact', 'who', 'direction', 'figure_row', 'kind', 'kind_meaning', 'on_the_record',
+            'our_line', 'source', 'source_words', 'our_english', 'address', 'saved_id']
+REF_COLS = ['number', 'kind', 'kind_meaning', 'on_the_record', 'label', 'page_title', 'address', 'saved_id']
+
+
+def stop(msg):
+    print('NOT WRITTEN: ' + msg); sys.exit(1)
+
+
+def plain(s):
+    """Quote marks and apostrophes in one style, so the two figure files can be compared."""
+    for a, b in (('’', "'"), ('‘', "'"), ('“', '"'), ('”', '"')): s = s.replace(a, b)
+    return re.sub(r'\s+', ' ', s).strip()
+
+
+def read_blocks():
+    out, cur = [], None
+    for ln in (PROJ / 'figure' / 'figure_data.txt').read_text(encoding='utf-8').splitlines():
+        if ln.startswith('@ '):
+            p = ln.split()
+            if len(p) != 6 or p[1] not in LANE or p[2] not in KIND: stop(f'figure_data.txt: bad record line: {ln}')
+            cur = {'lane': p[1], 'kind': p[2], 'date': p[3], 'label': p[4], 'sid': p[5], 'T': '', 'S': '', 'Q': '', 'E': '', 'U': ''}
+            out.append(cur)
+        elif cur is not None and re.match(r'[TSQEUC] ', ln):
+            if ln[0] != 'C':
+                if cur[ln[0]]: stop(f'figure_data.txt: two {ln[0]} lines in the record of {cur["date"]} {cur["sid"]}')
+                cur[ln[0]] = ln[2:].strip()
+        elif ln.startswith(('#', '!')) or not ln.strip():
+            if ln.startswith('#') and cur is not None and 'Quotations behind the numbers' in ln: cur = None
+        else:
+            stop(f'figure_data.txt: a line this script does not know: {ln[:60]}')
+    return out
+
+
+def data_lines(text):
+    """(comment lines, header cells, rows as lists) of one of the project's tables."""
+    com, body = [], []
+    for ln in text.split('\n'):
+        if ln.startswith('#'): com.append(ln)
+        elif ln.strip(): body.append(ln.split('\t'))
+    return com, body[0], body[1:]
+
+
+# Saved ids that outputs/ROUND4.md section 2 says must no longer be cited, beyond the 20 of
+# loose_ends/hkexnews_saved_ids.tsv (whose replacements are read from tables/replaced_copies.tsv): old id -> new id.
+RETIRED_MORE = {
+    'cn-le08-moore-final-prospectus': 'cn-le08-moore-final-prospectus-cninfo',
+    'cn-le29-sensetime-2025-annual-en': 'cn-le29-sensetime-2025-annual-en-tcurl',
+    'ms-bj-20260114-customs-h200-standard': 'cn-acts-reuters-customs-20260114',
+    'cn-policy-ai-chip-evaluation': 'cn-le14-itsec-2026-2',
+    'cn-media-yuyuan-thepaper': 'cn-le13-yuyuan-qq-20250810b',
+    'cn-factions-tencent-reuters-20261120-relay1': 'cn-o36-tencent-call-20261118-sa',
+    'cn-labs-zhipu-results-20260331': 'cn-le29-zhipu-results-20260331-en',
+}
+FIGURE_RESOURCED = {'ms-bj-20260114-customs-h200-standard', 'cn-policy-ai-chip-evaluation', 'cn-media-yuyuan-thepaper',
+                    'cn-factions-tencent-reuters-20261120-relay1', 'cn-labs-zhipu-results-20260331'}
+
+
+def copy_tables(num):
+    """Copy the project's plain tables into tables/ here, byte for byte (round 4: the copies must equal the project's
+    tables, checked by sha256 after writing). Nothing in a copy is changed. What a reader needs to know about a table's
+    rows is reported in README.txt instead, computed here:
+      - rows (not the makers' "#" note lines) that cite a saved id outputs/ROUND4.md section 2 retires, with the id
+        that replaces it (replaced_copies.tsv itself is the list of old and new ids and is not counted);
+      - press_originals.tsv, column "ref", and us_officials_statements.tsv, column "argument_cites": both describe an
+        earlier build of the argument; how many rows differ from the present reference numbers is counted.
+    Returns a list of dicts for the README."""
+    src, dst = PROJ / 'tables', HERE / 'tables'
+    retired = {}
+    for ln in (src / 'replaced_copies.tsv').read_text(encoding='utf-8').splitlines():
+        c = ln.split('\t')
+        if ln.startswith('#') or len(c) < 2 or c[0] == 'old_id': continue
+        retired[c[0]] = c[1] if c[1] and not c[1].startswith('(') else ''
+    hk_old = [ln.split('\t')[0] for ln in (PROJ / 'loose_ends' / 'hkexnews_saved_ids.tsv').read_text(encoding='utf-8').splitlines()
+              if ln.strip() and not ln.startswith('#')]
+    for o in hk_old:
+        if o not in retired: stop(f'{o} is in the list of ids no longer cited but not in replaced_copies.tsv')
+    for o, n in RETIRED_MORE.items(): retired.setdefault(o, n)
+    if len(retired) != len(hk_old) + len(RETIRED_MORE) - len(set(hk_old) & set(RETIRED_MORE)): stop('replaced_copies.tsv holds ids not in hkexnews_saved_ids.tsv')
+    for n in set(retired.values()) - {''}:
+        if not (B.L.P / n).is_dir(): stop(f'replacement copy {n} has no saved folder')
+    dst.mkdir(exist_ok=True)
+    out, raws = [], {}
+    for f in sorted(src.glob('*.tsv')):
+        raw = f.read_bytes(); text = raw.decode('utf-8'); notes = []
+        com, head, rows = data_lines(text)
+        if f.name != 'replaced_copies.tsv':
+            hits = Counter()
+            for r in rows:
+                line = '\t'.join(r)
+                for o in retired:
+                    if re.search(re.escape(o) + r'(?![\w-])', line): hits[o] += 1
+            for o, k in sorted(hits.items()):
+                if o in hk_old: why = 'a withdrawn copy, no longer cited by the project'
+                elif o in FIGURE_RESOURCED: why = 'a source the figure no longer cites'
+                else: why = 'a copy the project no longer cites'
+                notes.append(f'{k} row(s) cite {o}, {why}; ' + (f'outputs/ROUND4.md names {retired[o]} in its place' if retired[o] else 'it has no replacement') +
+                             (f'; the argument itself still cites {o} as reference {num[o]}' if o in num else ''))
+        if f.name == 'press_originals.tsv':
+            i_ref, i_id = head.index('ref'), head.index('saved_id_cited')
+            diff = sum(1 for r in rows if r[i_ref] != str(num.get(r[i_id], '')))
+            gone = sum(1 for r in rows if r[i_id] not in num)
+            if diff == gone:   # the owner renumbered the column on Nov 23, 2026 (loose_ends/C6_screen/tables_refresh.py)
+                notes.append(f'its column "ref" gives the present reference numbers of the argument; {gone} of the {len(rows)} rows keep a report the '
+                             f'argument no longer cites (marked "not cited now"); press references added to the argument later are named in the table\'s own comment line')
+            else:
+                notes.append(f'its column "ref" gives reference numbers of an earlier build of the argument: {diff} of the {len(rows)} differ from '
+                             f'the present numbers, and {gone} of the ids are no longer cited by the argument (references.csv has the present numbers)')
+        if f.name == 'us_officials_statements.tsv':
+            i_c, i_id = head.index('argument_cites'), head.index('saved_ids')
+            now = sum(1 for r in rows if any(x in num for x in re.findall(r'[a-z]+-[A-Za-z0-9-]+', r[i_id])))
+            if all(('[' in r[i_c]) == any(x in num for x in re.findall(r'[a-z]+-[A-Za-z0-9-]+', r[i_id])) for r in rows):   # recomputed by the owner, Nov 23, 2026
+                notes.append(f'its column "argument_cites" was recomputed against the present argument (the table\'s own comment line says how): {now} of the '
+                             f'{len(rows)} rows name a source it cites, with the reference number')
+            else:
+                notes.append(f'its column "argument_cites" describes an earlier build of the argument; by the present argument {now} of the '
+                             f'{len(rows)} rows name a source it cites (references.csv has the present numbers)')
+        if any(len(r) != len(head) for r in rows): stop(f'{f.name}: a row does not have {len(head)} fields')
+        if f.name not in ABOUT: stop(f'{f.name}: no plain line for this table in ABOUT')
+        raws[f.name] = raw
+        out.append({'name': f.name, 'rows': len(rows), 'cols': head, 'notes': notes, 'about': ABOUT[f.name],
+                    'sha': hashlib.sha256(raw).hexdigest()})
+    stale = sorted(x.name for x in dst.glob('*') if x.name not in raws)
+    if stale: stop(f'tables/ here holds files the project\'s tables folder does not: {stale} (move them aside by hand)')
+    for name, raw in raws.items(): (dst / name).write_bytes(raw)
+    for t in out:
+        if hashlib.sha256((dst / t['name']).read_bytes()).hexdigest() != t['sha'] or \
+           hashlib.sha256((src / t['name']).read_bytes()).hexdigest() != t['sha']:
+            stop(f'tables/{t["name"]}: the copy\'s sha256 is not the project\'s table\'s')
+    return out
+
+
+def main():
+    blocks = read_blocks()
+    with open(PROJ / 'figure' / 'figure_events.tsv', encoding='utf-8', newline='') as fh:
+        events = list(csv.DictReader(fh, delimiter='\t'))
+    if len(blocks) != len(events): stop(f'{len(blocks)} records in figure_data.txt but {len(events)} in figure_events.tsv')
+    by = {}
+    for e in events:
+        k = (e['date'], e['saved_id'], e['lane'])
+        if k in by: stop(f'figure_events.tsv: two lines for {k}')
+        by[k] = e
+    rows = []
+    for b in blocks:
+        k = (b['date'], b['sid'], LANE[b['lane']][0])
+        e = by.pop(k, None)
+        if e is None: stop(f'no line in figure_events.tsv for {k}')
+        if plain(e['text']) != plain(b['T']): stop(f'the two files give different lines of ours for {k}')
+        if plain(e['source']) != plain(b['S']): stop(f'the two files give different sources for {k}')
+        if e['kind'] != b['kind']: stop(f'the two files give different kinds for {k}')
+        if not b['Q'] or not b['T'] or not b['S']: stop(f'a record without its line, source or words: {k}')
+        if not e['address'].startswith('http'): stop(f'no address for {k}')
+        if b['U'] and b['U'] != e['address']: stop(f'the address given in figure_data.txt is not the one in figure_events.tsv for {k}')
+        rows.append({'n': int(e['n']), 'date': b['date'], 'date_shown': e['shown_as'], 'date_exact': 'yes' if b['label'] == '-' else 'no',
+                     'who': LANE[b['lane']][1], 'direction': LANE[b['lane']][2], 'figure_row': LANE[b['lane']][0],
+                     'kind': b['kind'], 'kind_meaning': KIND[b['kind']], 'on_the_record': 'no' if b['kind'] == 'press' else 'yes',
+                     'our_line': b['T'], 'source': b['S'], 'source_words': b['Q'], 'our_english': b['E'],
+                     'address': e['address'], 'saved_id': b['sid']})
+    if by: stop(f'lines of figure_events.tsv without a record: {sorted(by)}')
+    rows.sort(key=lambda r: r['n'])
+    if [r['n'] for r in rows] != list(range(1, len(rows) + 1)): stop('the mark numbers are not 1 to N without gaps')
+    for r in rows:
+        if not re.fullmatch(r'\d{4}-\d\d-\d\d', r['date']): stop(f'bad date {r["date"]}')
+        if re.search(r'[一-鿿]', r['source_words']) and not r['our_english']: stop(f'Chinese words without our English: record {r["n"]}')
+
+    # every quotation against its saved copy, with the project's checker
+    qtext = '# saved id <TAB> the source\'s own words. One line per dated record (the figure\'s mark number order). Checked by scripts/cn_has.py.\n' + \
+            ''.join(f'{r["saved_id"]}\t{r["source_words"]}\n' for r in rows)
+    (HERE / 'quotes.tsv').write_text(qtext, encoding='utf-8')            # the checker's input; written first, then checked
+    run = subprocess.run([sys.executable, '-I', str(SCRIPTS / 'cn_has.py'), str(HERE / 'quotes.tsv')], capture_output=True, text=True)
+    has_line = (run.stdout.strip().splitlines() or ['(no output)'])[-1]
+    if run.returncode != 0: print(run.stdout + run.stderr); stop('cn_has.py did not pass on the quotations')
+
+    # the argument's sources, numbered as the argument numbers them
+    B.load_clip()
+    refs = B.load_refs()
+    bad, order, nq, nh = B.check((PROJ / 'argument' / 'argument_base.txt').read_text(encoding='utf-8').splitlines(), refs)
+    if bad: stop('the argument does not pass its own check: ' + '; '.join(bad[:3]))
+    printed = dict(re.findall(r'^\[(\d+)\] .*?(?:Saved copy: (\S+))?$', (PROJ / 'ARGUMENT_referenced.md').read_text(encoding='utf-8'), flags=re.M))
+    ref_rows = []
+    for n, sid in enumerate(order, 1):
+        r = refs[sid]
+        if not sid.startswith('clip-') and printed.get(str(n)) != sid: stop(f'reference {n} is {sid} here but {printed.get(str(n))} in ARGUMENT_referenced.md')
+        ref_rows.append({'number': n, 'kind': r['kind'], 'kind_meaning': B.KIND[r['kind']], 'on_the_record': 'yes' if r['kind'] in B.SOLID else 'no',
+                         'label': r['label'], 'page_title': '' if sid.startswith('clip-') else B.title_of(sid),
+                         'address': B.address(sid, r) or '', 'saved_id': sid})
+    if len(printed) != len(ref_rows): stop(f'{len(printed)} references printed in ARGUMENT_referenced.md, {len(ref_rows)} here')
+
+    def table(cols, data, dialect):
+        buf = io.StringIO()
+        w = csv.DictWriter(buf, cols, delimiter='\t' if dialect == 'tsv' else ',', lineterminator='\n',
+                           quoting=csv.QUOTE_NONE if dialect == 'tsv' else csv.QUOTE_MINIMAL, quotechar=None if dialect == 'tsv' else '"')
+        w.writeheader(); w.writerows(data)
+        return buf.getvalue()
+
+    for r in rows + ref_rows:
+        for k, v in r.items():
+            if isinstance(v, str) and re.search(r'[\t\r\n]', v): stop(f'a tab or line break inside the field {k}: {v[:40]}')
+    out = {'records.csv': table(REC_COLS, rows, 'csv'), 'records.tsv': table(REC_COLS, rows, 'tsv'),
+           'references.csv': table(REF_COLS, ref_rows, 'csv')}
+
+    # read each table back before anything is written
+    back_csv = list(csv.DictReader(io.StringIO(out['records.csv'])))
+    back_tsv = [dict(zip(REC_COLS, ln.split('\t'))) for ln in out['records.tsv'].splitlines()[1:]]
+    back_ref = list(csv.DictReader(io.StringIO(out['references.csv'])))
+    want = [{k: str(v) for k, v in r.items()} for r in rows]
+    if back_csv != want or back_tsv != want: stop('records.csv or records.tsv does not read back as written')
+    if back_ref != [{k: str(v) for k, v in r.items()} for r in ref_rows]: stop('references.csv does not read back as written')
+
+    tabs = copy_tables({sid: n for n, sid in enumerate(order, 1)})
+    kinds_used = [k for k in B.KIND if any(r['kind'] == k for r in ref_rows)]
+    kind_lines = '\n'.join(f'                 {k}: {B.KIND[k]}' for k in kinds_used)
+    solid_used = [k for k in kinds_used if k in B.SOLID]; open_used = [k for k in kinds_used if k not in B.SOLID]
+    clip_ids = [r['saved_id'] for r in ref_rows if r['saved_id'].startswith('clip-')]
+    tab_lines = []
+    for t in tabs:
+        tab_lines.append(f'  tables/{t["name"]}   {t["rows"]} rows, {len(t["cols"])} columns')
+        tab_lines.append(f'      What it is: {t["about"]}.')
+        tab_lines.append(f'      Columns: {", ".join(t["cols"])}')
+        tab_lines.append(f'      Copy: byte for byte the project\'s table (sha256 {t["sha"]}).')
+        for nt in t['notes']: tab_lines.append(f'      Read with care: {nt}.')
+    tab_block = '\n'.join(tab_lines)
+    n_tab_noted = sum(1 for t in tabs if t['notes'])
+    c_who = Counter((r['who'], r['direction']) for r in rows); c_kind = Counter(r['kind'] for r in rows)
+    c_ref = Counter(r['kind'] for r in ref_rows)
+    n_cn = sum(1 for r in rows if r['our_english']); n_approx = sum(1 for r in rows if r['date_exact'] == 'no')
+    n_noaddr = sum(1 for r in ref_rows if not r['address'])
+    n_extra = sum(1 for ln in (PROJ / 'figure' / 'figure_data.txt').read_text(encoding='utf-8').splitlines() if ln.startswith('! '))
+    n_cn_solid = sum(1 for r in rows if r['our_english'] and r['kind'] != 'press')
+    cn_note = 'all of them documents or people on the record' if n_cn_solid == n_cn else f'{n_cn_solid} of them documents or people on the record'
+    readme = f"""The record as table files
+China chip policy: did Beijing's chip policy pull against China's own AI companies?
+Draft by Claude, Anthropic's model. Local; not published.
+
+Made by build.py in this folder from the project's own files (figure/figure_data.txt, figure/figure_events.tsv,
+argument/argument_base.txt, argument/argument_refs.tsv, tables/). Run "python3 -I build.py" to make them again.
+All files are UTF-8 without a byte-order mark. In a spreadsheet program, open them through its import step and
+choose UTF-8, or the Chinese will not show correctly.
+
+FILES
+  records.csv      {len(rows)} dated records, {len(REC_COLS)} columns, comma-separated
+  records.tsv      the same {len(rows)} records, tab-separated (no field holds a tab or a line break)
+  references.csv   the {len(ref_rows)} sources of the argument (ARGUMENT_referenced.md), {len(REF_COLS)} columns
+  quotes.tsv       saved id and the source's own words for each record: the input of the quotation check
+  tables/          {len(tabs)} plain tables copied from the project's tables folder (listed at the end)
+  build.py         the script
+
+COLUMNS OF records.csv AND records.tsv
+  n              the record's mark number in the figure (figure/beijing_vs_labs.html), 1 to {len(rows)}
+  date           the date as year-month-day. The date of the act where the page gives it, otherwise of the report
+  date_shown     the date as the figure prints it
+  date_exact     yes, or no where the source gives only a season or a month and the day in "date" is a placing
+                 for the figure, not a fact ({n_approx} records: see date_shown)
+  who            whose conduct the record is about: Beijing, or the companies. It is not who speaks: see source
+  direction      toward Nvidia, or away from Nvidia (toward home-made chips)
+  figure_row     the figure's own name for the row the record stands in
+  kind           doc, rec or press
+  kind_meaning   doc: {KIND['doc']}
+                 rec: {KIND['rec']}
+                 press: {KIND['press']}
+  on_the_record  yes for doc and rec; no for press
+  our_line       our one-line summary, as shown in the figure. Our words, not the source's
+  source         the source as the figure names it
+  source_words   the source's own words, exact. Chinese where the page is Chinese
+  our_english    our English for Chinese source words. Ours, not an official translation. Empty where the
+                 source words are English ({n_cn} records have it)
+  address        where the page is, or was, on the web
+  saved_id       the name of the saved copy (research/primary/<saved_id>)
+
+COLUMNS OF references.csv
+  number         the reference number in ARGUMENT_referenced.md, 1 to {len(ref_rows)}
+  kind           one of: {", ".join(kinds_used)}
+  kind_meaning   as the argument's builder words each kind:
+{kind_lines}
+  on_the_record  yes for {", ".join(solid_used)}; no for {", ".join(open_used)}
+  label          what the source is, as the argument's reference list words it
+  page_title     the saved page's own title, where the record holds one
+  address        the address; empty where none is given, for the reason in the label ({n_noaddr} source)
+  saved_id       the name of the saved copy. An id that begins "clip-" is not a folder ({", ".join(clip_ids) or "none here"}): it
+                 stands for a machine transcript in transcripts_two_clips.md, which nobody has checked by ear
+
+COUNTS (taken from the files by build.py, not typed)
+  Records: {len(rows)}. About Beijing, away from Nvidia: {c_who[('Beijing', 'away from Nvidia')]}. About Beijing, toward Nvidia: {c_who[('Beijing', 'toward Nvidia')]}.
+  About the companies, toward Nvidia: {c_who[('the companies', 'toward Nvidia')]}. About the companies, away from Nvidia: {c_who[('the companies', 'away from Nvidia')]}.
+  By kind: doc {c_kind['doc']}, rec {c_kind['rec']}, press {c_kind['press']}. So {c_kind['doc'] + c_kind['rec']} records are on the record and {c_kind['press']} are press reports citing unnamed people.
+  References: {len(ref_rows)}. {", ".join(f"{k} {c_ref[k]}" for k in kinds_used)}.
+  On the record: {sum(c_ref[k] for k in solid_used)}. Press reports citing unnamed people, counts, captions or machine transcripts: {sum(c_ref[k] for k in open_used)}.
+
+CHECKS THE SCRIPT MADE BEFORE WRITING
+  The two figure files hold the same {len(rows)} records, one to one, with the same line of ours.
+  scripts/cn_has.py on quotes.tsv: {has_line}
+  The reference numbers equal those printed in ARGUMENT_referenced.md.
+  Each table was read back and equals what was written.
+
+READ WITH CARE
+  A quotation that is found shows what the source says, not that it is true.
+  The two tiers are not the same kind of evidence. A press record (kind press) rests on unnamed people. Beijing's
+  instructions to companies, the customs checks and most of the numbers are of that kind: reported, not published policy.
+  A record in a Beijing row can be the words of someone else about Beijing (a company's filing, a US official).
+  {n_cn} records quote Chinese texts ({cn_note}); the English beside them is ours.
+  Not in these files: the {n_extra} further checked lines of the figure's data file, most of them the quotations
+  behind the numbers in the figure's panels (they are in
+  figure/figure_data.txt, on the lines that begin with "!"), and the reference lists of the two tier files.
+
+PLAIN TABLES (tables/)
+  These {len(tabs)} tables were made on Nov 23, 2026 by the project's research agents, each from saved pages, and are
+  the project's own (the folder tables/ beside the argument). They are copied here so that the record can be read in
+  a spreadsheet. All {len(tabs)} are byte for byte the project's tables (build.py compares each copy's sha256 with the
+  project's after writing; each is given below). Nothing in them is changed here. Their quotations were checked by the
+  agents who made them, not again here.
+  The tables were made before the argument's last rebuild: a table can cite a saved copy the argument has since
+  replaced with a better one (the argument's reference list is the later word). Under {n_tab_noted} of the tables a
+  "Read with care" line says which rows cite a saved copy the project no longer cites, and which column describes an
+  earlier build of the argument; all such lines are computed by build.py. Rows of different tables count
+  different things. Do not join them into one series. Each table begins with its makers' own notes, on lines that
+  start with "#"; a program reading a table should skip those lines.
+
+{tab_block}
+"""
+    out['README.txt'] = readme
+    for name, text in out.items():
+        (HERE / name).write_text(text, encoding='utf-8')
+    print(f'records: {len(rows)} rows x {len(REC_COLS)} columns (csv and tsv); references: {len(ref_rows)} rows x {len(REF_COLS)} columns')
+    print(f'cn_has.py: {has_line}')
+    print(f'kinds: doc {c_kind["doc"]}, rec {c_kind["rec"]}, press {c_kind["press"]}; with our English: {n_cn}; dates that are placings: {n_approx}')
+    print(f'tables: {len(tabs)} copied, all byte for byte (sha256 of each copy equals the project\'s); rows in all: {sum(t["rows"] for t in tabs)}')
+    for t in tabs:
+        for nt in t['notes']: print(f'  read with care: {t["name"]}: {nt}')
+
+
+if __name__ == '__main__':
+    main()

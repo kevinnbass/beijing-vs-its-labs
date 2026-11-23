@@ -1,0 +1,22 @@
+key	value
+video_pieces	631
+video_length	2:06:02
+video_length_seconds	7562.3
+excerpt_starts_at	1:17:00
+excerpt_first_piece	386
+speech_program	Systran/faster-whisper-large-v3
+excerpt_seconds	84.0
+speech_answer_begins	1:17:20
+speech_key_sentence_begins	1:17:30
+speech_answer_ends	1:17:45
+speech_key_sentence_heard	Chinese central government has not let them as of yet buy the chips because they're trying to keep their investment focused on their own domestic industry.
+speech_whole_answer_heard	Their cloud companies, my understanding is their cloud companies want to buy these chips. Of course they do. And central government has not let them. Chinese central government has not let them as of yet buy the chips because they're trying to keep their investment focused on their own domestic industry. So that's my understanding of what's happening. So we have not sold them chips as of yet.
+captions_answer_begins	1:17:28
+captions_key_sentence_begins	1:17:39
+captions_answer_ends	1:17:52
+captions_words	SEC. LUTNICK: MY UNDERSTANDING IS THERE CLOUD COMPANIES WANT TO BUY THESE CHIPS -- SEN. COONS: OF COURSE THEY DO. SEC. LUTNICK: AUNT CHINESE -- AUNT CHINESE CENTRAL GOVERNMENT HAS NOT LET THEM OF YET BUY THE CHIPS BECAUSE THEY ARE TRYING TO KEEP THEM FOCUSED ON THEIR OWN DOMESTIC INDUSTRY. THAT'S MY UNDERSTANDING OF WHAT'S HAPPENING. SO WE HAVE NOT SOLD THEM CHIPS OF YET.
+captions_lag_seconds_at_key_sentence	9
+commercial_transcript_mark	55:35
+offset_video_minus_commercial	21 min 45 s
+commercial_transcript_last_mark	01:43:22
+link_start	1:17:14

@@ -1,0 +1,206 @@
+{
+ "page": "explainer.html",
+ "fps": 25,
+ "frames": 6489,
+ "mp4": "explainer.mp4",
+ "master": null,
+ "crf": 16,
+ "gif": null,
+ "webp": null,
+ "stills": [
+  [
+   "00_first",
+   0
+  ],
+  [
+   "01_the_declared_line",
+   385
+  ],
+  [
+   "02_what_the_companies_used_and_ordered",
+   804
+  ],
+  [
+   "03_what_beijing_did_on_the_record",
+   1142
+  ],
+  [
+   "04_what_beijing_did_as_reported",
+   1561
+  ],
+  [
+   "05_the_numbers",
+   2271
+  ],
+  [
+   "06_limit_1_of_5",
+   2634
+  ],
+  [
+   "07_limit_2_of_5",
+   3322
+  ],
+  [
+   "08_limit_3_of_5",
+   3779
+  ],
+  [
+   "09_limit_4_of_5",
+   4504
+  ],
+  [
+   "10_limit_5_of_5",
+   5104
+  ],
+  [
+   "11_the_sentence_that_survives_1_of_2",
+   5774
+  ],
+  [
+   "12_the_sentence_that_survives_2_of_2",
+   6488
+  ]
+ ],
+ "expect": [
+  {
+   "frame": 385,
+   "k": 1,
+   "title": "The declared line.",
+   "text": "Beijing's declared line is to use home-made chips. Xi Jinping told the Politburo to concentrate forces on high-end chips [1]. The state planner (NDRC) said it was guiding home-made large models to step up their adaptation to home-made chips [2].",
+   "items": [
+    "On the record: Xinhua's account of the Politburo session of Apr 25, 2025 [1]; the state planner's press conference of May 22, 2026 [2]"
+   ]
+  },
+  {
+   "frame": 804,
+   "k": 2,
+   "title": "What the companies used and ordered.",
+   "text": "The companies went on using and ordering Nvidia chips. A Shanghai government body wrote that in the city internet companies' own clusters run mainly on Nvidia cards [3]. Reported: orders \"for more than 2 million H200 chips for 2026\" [4].",
+   "items": [
+    "On the record: Shanghai Commission of Economy and Informatization, written reply dated Apr 30, 2025 (published Nov 10, 2025) [3]",
+    "Reported, from unnamed people: Reuters, Dec 31, 2025 [4]"
+   ]
+  },
+  {
+   "frame": 1142,
+   "k": 3,
+   "title": "What Beijing did, on the record.",
+   "text": "Regulators acted against Nvidia by name: an antitrust case [5] and a summons [6]. Nvidia's own filing says licensed H200 sales \"were restricted by the PRC government\" [7].",
+   "items": [
+    "On the record: the market regulator, Dec 9, 2024 [5]; the cyberspace regulator, Jul 31, 2025 [6]; Nvidia, Form 10-Q for the quarter to Jul 26, 2026 [7]"
+   ]
+  },
+  {
+   "frame": 1561,
+   "k": 4,
+   "title": "What Beijing did, as reported.",
+   "text": "Reported, from unnamed people, and not published policy. The Wall Street Journal: \"Authorities privately told companies to halt their Nvidia purchases\" [8]. A vice premier's warning, in its words: \"Anyone who resisted employing domestic chips was a traitor.\" [8]",
+   "items": [
+    "Reported, from unnamed people: Wall Street Journal, Jul 23, 2026, looking back to the summer before; it gives no date for the warning; the vice premier is Ding Xuexiang [8]"
+   ]
+  },
+  {
+   "frame": 2271,
+   "k": 5,
+   "title": "The numbers.",
+   "text": "Nvidia's H200 chip in numbers: four separate counts at four dates, not one tally. Washington's is from a government table; the other three are press reports citing unnamed people.",
+   "items": [
+    "Ordered by Chinese companies for 2026: \"more than 2 million H200 chips\". Reuters, Dec 31, 2025 [4]",
+    "Licensed by Washington for Nvidia: 579,868 chips, each application \"Approved, not shipped\". Commerce Department table, status at May 11, 2026; our sum [9]",
+    "Approved by Beijing, with conditions: \"more than 400,000 H200 chips in total\". Reuters, Jan 28, 2026 [10]",
+    "Waiting in Hong Kong: \"About 600,000\". Reuters, Nov 5, 2026 [11]"
+   ]
+  },
+  {
+   "frame": 2634,
+   "k": 6,
+   "title": "Limit 1 of 5.",
+   "text": "Beijing was not one actor. The commerce minister told Nvidia's chief executive he hoped multinationals, Nvidia among them, would give Chinese customers high-quality, reliable products and services [12]. Reported: the commerce ministry \"favoured imports\" [13].",
+   "items": [
+    "On the record: Ministry of Commerce, account of the meeting of Jul 17, 2025 [12]",
+    "Reported, from unnamed people: Financial Times, Nov 13, 2026 [13]"
+   ]
+  },
+  {
+   "frame": 3322,
+   "k": 7,
+   "title": "Limit 2 of 5.",
+   "text": "Public warnings and unpublished guidance, not a published ban. No published order against buying Nvidia chips was found in the 103 policy pages read. The seven state-media items found that only warn about Nvidia's chips all date from Aug 1 to Sept 24, 2025.",
+   "items": [
+    "Our own reading. A published one could have been found: the 2023 conclusion of the cyberspace regulator's review office on Micron's products is among the pages [14]",
+    "Our own count, of 42 state and Party media items: the first of the seven in People's Daily [15], the last in Science and Technology Daily [16]",
+    "Reported, from unnamed people: Bloomberg, Sept 27, 2024: \"guidance rather than an outright ban\" [17]"
+   ]
+  },
+  {
+   "frame": 3779,
+   "k": 8,
+   "title": "Limit 3 of 5.",
+   "text": "Some purchases were approved and some chips came in. Reported: ByteDance and Tencent \"have each received about 10,000 H200 processors in recent weeks\" [18]. A US official told Congress: \"There have been minimal exports of any H200s to China so far\" [19].",
+   "items": [
+    "Reported, from unnamed people: Financial Times, through Reuters, Aug 18, 2026 [18]",
+    "On the record: Jeffrey Kessler, under secretary of commerce, to a House committee on Jul 14, 2026, as Reuters reported [19]"
+   ]
+  },
+  {
+   "frame": 4504,
+   "k": 9,
+   "title": "Limit 4 of 5.",
+   "text": "The companies had reasons of their own, and American curbs and conditions pushed too. Alibaba says its chip unit \"has brought proprietary GPUs into scaled production\" [20]. Nvidia: \"we are already effectively foreclosed from the China market by U.S. export controls\" [21]. Washington returned without action 55% of the chips in the applications its summary of May 11, 2026 records; its table gives no reason [9].",
+   "items": [
+    "On the record: Alibaba, results release, Mar 19, 2026 [20]; Nvidia, Form 10-Q signed Nov 19, 2025 [21]",
+    "On the record: the Commerce Department's table, made public by the House Foreign Affairs Committee on Nov 19, 2026; our sum; the committee says the summary does not show every application in full [22]"
+   ]
+  },
+  {
+   "frame": 5104,
+   "k": 10,
+   "title": "Limit 5 of 5.",
+   "text": "What Beijing meant by it is not settled. A US commission saw in the antitrust move against Nvidia \"China's willingness to both exert leverage and ease pressure as a negotiating tactic\" [23]. Asked whether China would let its companies buy the H200, the US Trade Representative called it \"a sovereign decision for China\" [24]. The direction stands under either reading.",
+   "items": [
+    "On the record: US-China Economic and Security Review Commission, 2025 annual report [23]",
+    "Captions, not checked by ear: the Trade Representative on Bloomberg Television, May 15, 2026, at 5:59 [24]"
+   ]
+  },
+  {
+   "frame": 5774,
+   "k": 11,
+   "title": "The sentence that survives (1 of 2).",
+   "text": "From 2024 the security and planning side of the Chinese state pressed China's AI companies, through unpublished guidance that the press reported, to buy home-made chips rather than Nvidia's, and from the summer of 2025 to stop ordering them, while the security ministry warned in public of backdoors in chips made abroad and state media warned about Nvidia's chips, most of all in August and September 2025;",
+   "items": [
+    "From the project's referenced argument, section 6: its one sentence, shown here in two parts. The guidance is reported, from unnamed people; the warnings were public."
+   ]
+  },
+  {
+   "frame": 6488,
+   "k": 12,
+   "title": "The sentence that survives (2 of 2).",
+   "text": "other parts of the state welcomed Nvidia and approved some purchases; the companies went on ordering Nvidia chips in the millions and, by the reports, had received a small part of them by late 2026; they were also turning to home-made chips, for reasons of their own and under American curbs; and whether Beijing meant its acts as lasting policy or as leverage in trade talks is read both ways.",
+   "items": [
+    "From the project's referenced argument, section 6. The welcomes are on the record; the approvals, the orders and the deliveries are reported, from unnamed people."
+   ]
+  }
+ ],
+ "label_control": {
+  "id": "c36",
+  "x": 249.3,
+  "y": 144
+ },
+ "made_from": {
+  "../../../figure/figure_data.txt": "f108aeb2bdb553ad689410eefabf9254abbacc3dbe915c086f71d824e28b2995",
+  "../../../figure/figure_events.tsv": "ee1def9e73f091f8c7f1cbafa741dcdeb99642a81dd3251c54b170ef7249718e",
+  "../../../figure/beijing_vs_labs.html": "2166fb15bac19c0630ec86443d51a47d35b728810589b3797a79c4e893cc147f",
+  "../../../figure/template.html": "9bdfccd5f89093ef5b91ac9cd2e99ad4e455579da6d2e6584da1ea7f42577ce2",
+  "../../../ARGUMENT_referenced.md": "6a2a85ec2c6fb3f19f3ad6c899248e65c766710ff6830481e8e8f158f527422e",
+  "../../../tables/house_licence_table.tsv": "f4041b78a957a6788998843d6ee425b523dffb41b5b3cefc413e754aabe0a674",
+  "../../../tables/state_media_items.tsv": "16cf8fbd436f4c34622e72fefc5d03803ae1d5db146f12c35730543451ca4ca9",
+  "../a7lib.py": "309ff6b577cafbdcd7ed7f88f9be8f4c62964fd6da18e809e3f25f360ddcd85b",
+  "build.py": "130b8970cbb6203b00186ec8466f2600ce5e36ca2a3619f3cb257b4c5c310966",
+  "captions_base.txt": "9adf51b9f458b9c47d8f173f9f70ad10649b4418ee1160e70c45bd74cd050cac",
+  "extra_refs.tsv": "8a42a63f52e471948087fb5585c151e1ce10e662155ccceb77efd8fe58bb4321",
+  "captions.md": "0686e9e55a76a4daa9f1bf5b69eb2b3dff969118462d050eccc13fc7578f466f",
+  "chapters.tsv": "367044e998fad766e8ebe00db3738c713bb267742e9c624ea61d2aabac1d30f9",
+  "quotes.tsv": "e8b09f29f7aaef780712573c46d226e1ca2b8df763168431c027a8199652b86c",
+  "explainer.html": "2c05435ec0e5d2ab3ef420468b136d1f7038a08197bbdd337b8b499dccb40d79"
+ }
+}

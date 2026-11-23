@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Paper Against Practice</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap">
+<style>
+
+:root {
+  --page: #f9f9f7; --surface: #fcfcfb; --ink: #0b0b0b; --ink2: #52514e; --muted: #7a7872;
+  --grid: #e1e0d9; --axis: #c3c2b7; --border: rgba(11,11,11,0.12); --wash: rgba(11,11,11,0.045);
+  --toward: #256abf; --away: #c44e18; --us: #898781; --rest: #cfcdc4; --pin-on: #ffffff; --link: #1c5cab;
+  --toward-tint: rgba(37,106,191,0.085); --away-tint: rgba(196,78,24,0.085); --slot: rgba(11,11,11,0.028);
+  --font-text: "Inter", system-ui, -apple-system, "Segoe UI", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+  --font-head: "Space Grotesk", "Inter", system-ui, sans-serif;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --page: #0d0d0d; --surface: #1a1a19; --ink: #f0efec; --ink2: #c3c2b7; --muted: #8f8d86;
+  --grid: #2c2c2a; --axis: #45453f; --border: rgba(255,255,255,0.14); --wash: rgba(255,255,255,0.06);
+  --toward: #3987e5; --away: #d95926; --us: #898781; --rest: #45453f; --pin-on: #0d0d0d; --link: #86b6ef;
+  --toward-tint: rgba(57,135,229,0.14); --away-tint: rgba(217,89,38,0.14); --slot: rgba(255,255,255,0.035); color-scheme: dark } }
+:root[data-theme="dark"] {
+  --page: #0d0d0d; --surface: #1a1a19; --ink: #f0efec; --ink2: #c3c2b7; --muted: #8f8d86;
+  --grid: #2c2c2a; --axis: #45453f; --border: rgba(255,255,255,0.14); --wash: rgba(255,255,255,0.06);
+  --toward: #3987e5; --away: #d95926; --us: #898781; --rest: #45453f; --pin-on: #0d0d0d; --link: #86b6ef;
+  --toward-tint: rgba(57,135,229,0.14); --away-tint: rgba(217,89,38,0.14); --slot: rgba(255,255,255,0.035); color-scheme: dark }
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--page); color: var(--ink); font-family: var(--font-text); font-size: 16px; line-height: 1.5; }
+[hidden] { display: none !important; }
+a { color: var(--link); }
+.wrap { max-width: 1312px; margin: 0 auto; padding: 28px 16px 48px; background: var(--page); }
+#figure { background: var(--page); }
+header { margin-bottom: 18px; }
+.topline { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 4px 24px; margin: 0 0 12px; }
+.eyebrow { font: 700 12px/1.35 var(--font-text); letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin: 0; }
+.draft { font: 500 12px/1.35 var(--font-text); color: var(--muted); margin: 0; }
+h1 { font-family: var(--font-head); font-size: clamp(27px, 3.3vw, 44px); line-height: 1.08; letter-spacing: -0.015em; margin: 0 0 12px; max-width: 27ch; text-wrap: balance; }
+.deck { margin: 0; color: var(--ink2); font-size: 18px; line-height: 1.45; max-width: 82ch; }
+.key { display: flex; flex-wrap: wrap; gap: 9px 26px; margin: 16px 0 0; padding: 0; list-style: none; font-size: 14.5px; color: var(--ink2); }
+.key li { display: flex; align-items: center; gap: 8px; }
+.key b { color: var(--ink); font-weight: 600; }
+i.sw { display: inline-block; flex: none; width: 13px; height: 13px; border-radius: 50%; }
+i.sw.toward { background: var(--toward); } i.sw.away { background: var(--away); }
+.card { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 20px 22px; min-width: 0; }
+.card h2 { font-family: var(--font-head); font-size: 22px; line-height: 1.2; margin: 0 0 4px; text-wrap: balance; }
+.card .sub { margin: 0 0 12px; color: var(--ink2); font-size: 14.5px; max-width: 78ch; }
+.card + .card, .gap { margin-top: 16px; }
+
+/* numbered marks */
+i.p { display: inline-grid; place-items: center; flex: none; width: 22px; height: 22px; border-radius: 50%; font: 700 11px/1 var(--font-text);
+  font-style: normal; font-variant-numeric: tabular-nums; border: 2.5px solid; }
+i.p.toward { border-color: var(--toward); } i.p.away { border-color: var(--away); }
+i.p.neutral { border-color: var(--ink2); } i.p.solid.neutral { background: var(--ink2); color: var(--pin-on); }
+i.p.hollow { background: var(--surface); color: var(--ink); }
+i.p.solid.toward { background: var(--toward); color: var(--pin-on); } i.p.solid.away { background: var(--away); color: var(--pin-on); }
+a.mk { display: flex; align-items: flex-start; gap: 8px; padding: 3px 5px; margin: 0 -5px; border-radius: 8px; text-decoration: none; color: inherit; font-size: 13px; line-height: 1.3; }
+a.mk .mt { padding-top: 2.5px; min-width: 0; }
+a.mk b { font-weight: 700; white-space: nowrap; font-variant-numeric: tabular-nums; }
+a.mk .mt > span { color: var(--ink2); }
+a.mk:hover, a.mk.hl, a.mk:focus-visible { background: var(--wash); outline: none; }
+a.mk:hover i.p, a.mk.hl i.p, a.mk:focus-visible i.p { outline: 2.5px solid var(--ink); outline-offset: 1px; }
+
+/* the records */
+#records { margin-top: 16px; }
+#records summary { display: flex; align-items: baseline; gap: 12px; cursor: pointer; list-style: none; }
+#records summary::-webkit-details-marker { display: none; }
+#records summary h2 { margin: 0 0 4px; }
+#records summary .fold { font-size: 12.5px; color: var(--muted); text-decoration: underline; }
+#records:not([open]) summary h2 { margin-bottom: 0; }
+.cols { display: grid; grid-template-columns: 1fr; gap: 4px 34px; }
+@media (min-width: 900px) { .cols { grid-template-columns: 1fr 1fr; } }
+.lcol h3 { font: 700 13px/1.2 var(--font-text); letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin: 14px 0 8px; }
+.lcol ol { list-style: none; margin: 0; padding: 0; }
+li.ev { display: grid; grid-template-columns: 24px 1fr; gap: 10px; padding: 8px 6px; border-top: 1px solid var(--grid); border-radius: 6px; scroll-margin-top: 14px; overflow-wrap: anywhere; }
+li.ev.hl, li.ev:target { background: var(--wash); }
+.when { font-weight: 700; font-size: 13px; white-space: nowrap; }
+.what { font-size: 14.5px; }
+.said { display: block; font-size: 13.5px; color: var(--ink2); margin-top: 2px; }
+.src { display: block; font-size: 12.5px; color: var(--muted); margin-top: 2px; }
+.notes ul { margin: 6px 0 0; padding-left: 20px; color: var(--ink2); font-size: 14px; max-width: 112ch; }
+.notes li { margin: 4px 0; }
+.care { margin-top: 16px; padding: 14px 18px; border: 1px solid var(--border); border-left: 4px solid var(--ink); border-radius: 10px; background: var(--surface); }
+.care h2 { font: 700 13px/1.2 var(--font-text); letter-spacing: 0.08em; text-transform: uppercase; margin: 0 0 6px; }
+.care p, .care li { font-size: 14.5px; color: var(--ink2); margin: 0; max-width: 118ch; }
+.care ul { margin: 0; padding-left: 18px; } .care li { margin: 3px 0; }
+.care b { color: var(--ink); font-weight: 600; }
+.srcline { font-size: 12.5px; color: var(--muted); margin: 10px 0 0; max-width: 130ch; }
+
+#tip { position: fixed; z-index: 10; max-width: 370px; background: var(--ink); color: var(--page); padding: 10px 12px; border-radius: 10px; font-size: 13px; line-height: 1.4;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.25); pointer-events: none; }
+#tip .tw { font-weight: 700; font-size: 12px; opacity: 0.8; } #tip .tt { font-weight: 600; margin: 2px 0 6px; }
+#tip .tq { font-style: italic; opacity: 0.92; } #tip .te { opacity: 0.92; margin-top: 3px; } #tip .ts { margin-top: 6px; font-size: 12px; opacity: 0.75; }
+
+/* Layout: headline and key; two panels (on paper | in practice) with a "not the same measure" divider; what each one measures; the records. */
+.duo { display: grid; grid-template-columns: 1fr; gap: 12px; }
+@media (min-width: 980px) { .duo { grid-template-columns: minmax(0, 6fr) 76px minmax(0, 7fr); gap: 0; align-items: start; } .duo > .neq { align-self: stretch; } }   /* each card keeps its own height; the divider runs the full height */
+.tagline { font: 700 12px/1.2 var(--font-text); letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin: 0 0 6px; }
+.neq { display: flex; flex-direction: row; align-items: center; justify-content: center; gap: 12px; text-align: center; padding: 2px 0; }
+.neq .rule { flex: 1; height: 0; border-top: 2px dashed var(--axis); }
+.neq .badge { flex: none; width: 46px; height: 46px; border-radius: 50%; border: 2.5px solid var(--ink); display: grid; place-items: center; font: 700 27px/1 var(--font-head); background: var(--page); padding-bottom: 3px; }
+.neq .say { flex: none; font: 700 11.5px/1.3 var(--font-text); letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink); max-width: 20ch; }
+@media (min-width: 980px) { .neq { flex-direction: column; gap: 10px; padding: 0; } .neq .rule { width: 0; height: auto; border-top: 0; border-left: 2px dashed var(--axis); } .neq .say { max-width: 64px; } }
+
+/* targets */
+.tg { padding: 10px 0 9px; border-top: 1px solid var(--grid); }
+.tg-top { display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 12px; }
+.tg-top .place { font: 700 15px/1.2 var(--font-text); min-width: 78px; }
+.tg-top .big { font: 700 25px/1.05 var(--font-head); letter-spacing: -0.01em; white-space: nowrap; }
+.tg-top .by { font-size: 14px; color: var(--ink2); flex: 1; }
+.tg-top a.pinlink { align-self: center; text-decoration: none; }
+.track { position: relative; height: 14px; margin: 7px 0 0; background: var(--slot); border-radius: 4px; }
+.track .zone { position: absolute; top: 0; bottom: 0; right: 0; border-radius: 0 4px 4px 0; box-shadow: inset 0 0 0 1.5px var(--away);
+  background: repeating-linear-gradient(135deg, var(--away) 0 2px, transparent 2px 7px); opacity: 0.85; }
+.track .tick { position: absolute; top: -4px; bottom: -4px; width: 3px; margin-left: -1.5px; background: var(--away); border-radius: 2px; }
+.track .tick.mid { width: 2px; margin-left: -1px; }
+.exp { display: inline-block; margin-right: 5px; padding: 1px 7px; border: 1.5px solid var(--ink2); border-radius: 999px; font: 700 10.5px/1.4 var(--font-text); letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink); white-space: nowrap; vertical-align: 1px; }
+.track.none { background: transparent; box-shadow: inset 0 0 0 1.5px var(--axis); }
+.track.none::after { content: ""; position: absolute; inset: 0; border-radius: 4px; background: repeating-linear-gradient(90deg, var(--axis) 0 1px, transparent 1px 12px); opacity: 0.35; }
+.tk { position: relative; height: 15px; margin-top: 3px; font-size: 11.5px; color: var(--muted); }
+.tk span { position: absolute; top: 0; transform: translateX(-50%); white-space: nowrap; }
+.tk span.l { transform: none; } .tk span.r { transform: translateX(-100%); }
+.tk span.e { transform: translateX(-100%); padding-right: 3px; }      /* a label that ends at its tick, so two labels on one track keep apart */
+.tg-note { font-size: 13px; line-height: 1.38; color: var(--ink2); margin: 3px 0 0; }
+.tg-src { font-size: 12px; line-height: 1.35; color: var(--muted); }
+.axisnote { font-size: 12px; color: var(--muted); margin: 8px 0 0; }
+
+/* practice */
+.pr { padding: 13px 0 12px; border-top: 1px solid var(--grid); }
+.pr h3 { font: 700 15px/1.3 var(--font-text); margin: 0 0 2px; display: flex; flex-wrap: wrap; align-items: center; gap: 4px 8px; }
+.pr h3 a.pinlink { text-decoration: none; }
+.pr .lede { font-size: 13px; color: var(--ink2); margin: 0 0 9px; max-width: 86ch; }
+.pr.both .lede { margin-bottom: 0; }
+.use { display: grid; grid-template-columns: 1fr; gap: 8px; }
+@media (min-width: 620px) { .use { grid-template-columns: 1fr 1fr; } }
+.use > div { border-radius: 9px; padding: 9px 12px 10px; }
+.use > div.toward { background: var(--toward-tint); } .use > div.away { background: var(--away-tint); }
+.use .who { display: flex; align-items: center; gap: 7px; font: 700 12px/1.25 var(--font-text); letter-spacing: 0.05em; text-transform: uppercase; color: var(--ink2); }
+.use .who i.sw { width: 10px; height: 10px; }
+.use .what { font: 700 21px/1.15 var(--font-head); letter-spacing: -0.01em; margin: 5px 0 4px; }
+.use .zh { font-size: 13px; line-height: 1.4; color: var(--ink2); }
+.sh { padding: 4px 0 2px; }
+.sh + .sh { margin-top: 10px; }
+.sh-lab { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 8px; font-weight: 700; font-size: 14px; margin-bottom: 5px; }
+.sh-lab span { font-weight: 400; font-size: 12.5px; color: var(--muted); }
+.sh-lab a.pinlink { text-decoration: none; }
+.sh-bar { display: flex; gap: 2px; height: 26px; }
+.sh-bar i { display: block; min-width: 0; }
+.sh-bar i:first-child { border-radius: 4px 0 0 4px; } .sh-bar i:last-child { border-radius: 0 4px 4px 0; }
+.sh-bar i.toward { background: var(--toward); } .sh-bar i.away { background: var(--away); } .sh-bar i.other { background: var(--us); }
+.sh-bar i.rest { background: repeating-linear-gradient(45deg, var(--rest) 0 4px, transparent 4px 8px); box-shadow: inset 0 0 0 1px var(--axis); }
+.sh-keys { display: flex; gap: 2px; font-size: 13px; font-weight: 700; margin-top: 4px; line-height: 1.25; }
+.sh-keys span { min-width: 0; }
+.sh-keys small { display: block; font-size: 12px; font-weight: 400; color: var(--ink2); }
+.sh-cap { font-size: 13px; color: var(--ink2); margin-top: 5px; }
+@media (max-width: 600px) {
+  .sh-keys { flex-wrap: wrap; gap: 3px 14px; }
+  .sh-keys span { flex: none !important; display: flex; align-items: baseline; gap: 5px; }
+  .sh-keys span:empty, .sh-keys span.k-other { display: none; }
+  .sh-keys span::before { content: ""; flex: none; width: 10px; height: 10px; border-radius: 2px; align-self: center; }
+  .sh-keys span.k-toward::before { background: var(--toward); } .sh-keys span.k-away::before { background: var(--away); }
+  .sh-keys span.k-rest::before { background: repeating-linear-gradient(45deg, var(--rest) 0 3px, transparent 3px 6px); box-shadow: inset 0 0 0 1px var(--axis); }
+  .sh-keys small { display: inline; }
+  .tg-top .by { flex-basis: 100%; order: 3; }
+  .tg-top a.pinlink { margin-left: auto; }
+}
+.legend { display: flex; flex-wrap: wrap; gap: 5px 16px; font-size: 12.5px; color: var(--ink2); margin: 0 0 8px; padding: 0; list-style: none; }
+.legend li { display: flex; align-items: center; gap: 6px; }
+.legend i { display: inline-block; width: 12px; height: 12px; border-radius: 3px; }
+.legend i.toward { background: var(--toward); } .legend i.away { background: var(--away); } .legend i.other { background: var(--us); }
+.legend i.rest { background: repeating-linear-gradient(45deg, var(--rest) 0 3px, transparent 3px 6px); box-shadow: inset 0 0 0 1px var(--axis); }
+
+/* what each measures */
+.msr { width: 100%; border-collapse: collapse; margin-top: 8px; font-size: 14px; }
+.msr th { text-align: left; font: 700 11.5px/1.3 var(--font-text); letter-spacing: 0.07em; text-transform: uppercase; color: var(--muted); padding: 4px 14px 5px 0; border-bottom: 1px solid var(--axis); }
+.msr td { vertical-align: top; padding: 6px 14px 6px 0; border-bottom: 1px solid var(--grid); color: var(--ink2); }
+.msr td:first-child { color: var(--ink); font-weight: 600; white-space: nowrap; }
+.msr tr:last-child td { border-bottom: 0; }
+@media (max-width: 700px) {
+  .msr, .msr tbody, .msr tr, .msr td { display: block; } .msr thead { display: none; }
+  .msr tr { padding: 7px 0; border-bottom: 1px solid var(--grid); } .msr tr:last-child { border-bottom: 0; }
+  .msr td { border: 0; padding: 1px 0; } .msr td[data-h]::before { content: attr(data-h) ": "; font-weight: 600; color: var(--ink); }
+}
+
+</style>
+</head>
+<body>
+<div class="wrap">
+ <div id="figure">
+  <header>
+   <div class="topline"><p class="eyebrow">China · home-made chip targets and what was in use · 2023 to 2026</p><p class="draft">Draft by Claude, Anthropic’s model. Local; not published.</p></div>
+   <h1>On paper, half or more home‑made. In practice, Nvidia was still the biggest single supplier.</h1>
+   <p class="deck">Targets that eight of China’s 31 provincial-level governments set for computing (seven for home-made chips, equipment or computing, one for what it calls independently controllable), beside what a Shanghai government body wrote and what a research firm counted. The two sides do not measure the same thing, so each has its own panel and its own scale. By the counts, Nvidia stayed the largest maker while its share fell.</p>
+   <ul class="key">
+    <li><i class="sw away"></i><span><b>Orange:</b> the targets on paper, and Chinese makers</span></li>
+    <li><i class="sw toward"></i><span><b>Blue:</b> Nvidia</span></li>
+    <li><i class="p solid away" aria-hidden="true">1</i><span><b>Filled number:</b> a government document, or a newspaper’s account of one. 10 records</span></li>
+    <li><i class="p hollow toward" aria-hidden="true">1</i><span><b>Open number:</b> a research firm’s count, through the press. 2 records</span></li>
+   </ul>
+  </header>
+
+  <div class="duo">
+   <section class="card paper">
+    <p class="tagline">On paper</p>
+    <h2>Targets that provincial-level governments set</h2>
+    <p class="sub">Goals of eight of China’s 31 provincial-level governments, the ones found to set a share. They do not all count the same thing: each track says what its plan counts. The hatched zone is the share asked for: the line and above.</p>
+<div class="tg"><div class="tg-top"><b class="place">Shandong</b><span class="big">90%</span><span class="by">by 2025</span><a class="pinlink" href="#r1" data-n="1" data-tip="1" aria-label="record 1: Shandong province, action plan for a unified computing network, 2022 to 2025, as reported by Dazhong Daily on the provincial government’s site"><i class="p away solid">1</i></a></div><div class="track" role="img" aria-label="target: 90%"><i class="zone" style="left:90%"></i><i class="tick" style="left:90%"></i></div><div class="tk"><span class="l" style="left:0">0</span><span class="e" style="left:90%">90%</span><span class="r" style="left:100%">100%</span></div><p class="tg-note">Home-made computing in the province. Known from the provincial daily’s account of the plan; the plan’s own text is not held. <span class="tg-src">Source: Shandong province, action plan for a unified computing network, 2022 to 2025, as reported by Dazhong Daily on the provincial government’s site.</span></p></div>
+<div class="tg"><div class="tg-top"><b class="place">Jiangsu</b><span class="big">70% or more</span><span class="by">by 2030 (50% by 2025)</span><a class="pinlink" href="#r2" data-n="2" data-tip="1" aria-label="record 2: Jiangsu province, plan for computing infrastructure issued by four provincial bodies (the saved PDF carries no date of issue)"><i class="p away solid">2</i></a></div><div class="track" role="img" aria-label="50% by 2025, 70% or more by 2030"><i class="zone" style="left:70%"></i><i class="tick mid" style="left:50%"></i><i class="tick" style="left:70%"></i></div><div class="tk"><span class="l" style="left:0">0</span><span class="e" style="left:50%">2025: 50%</span><span style="left:70%">2030: 70%</span><span class="r" style="left:100%">100%</span></div><p class="tg-note"><span class="exp">Expected, not binding</span>Home-made chips in use in newly built computing centres. The plan’s own table gives 50 for 2025 and 70 for 2030, and marks the line “预期性” (expected), not “约束性” (binding). <span class="tg-src">Source: Jiangsu province, plan for computing infrastructure issued by four provincial bodies (the saved PDF carries no date of issue).</span></p></div>
+<div class="tg"><div class="tg-top"><b class="place">Guangdong</b><span class="big">70%</span><span class="by">by the end of 2025</span><a class="pinlink" href="#r3" data-n="3" data-tip="1" aria-label="record 3: Guangdong province, plan for computing infrastructure, 2024 to 2025, issued by the Guangdong Communications Administration and eight other bodies"><i class="p away solid">3</i></a></div><div class="track" role="img" aria-label="target: 70%"><i class="zone" style="left:70%"></i><i class="tick" style="left:70%"></i></div><div class="tk"><span class="l" style="left:0">0</span><span style="left:70%">70%</span><span class="r" style="left:100%">100%</span></div><p class="tg-note">Home-made computing in what is newly added, not chips alone. The wording is “力争” (strive for). <span class="tg-src">Source: Guangdong province, plan for computing infrastructure, 2024 to 2025, issued by the Guangdong Communications Administration and eight other bodies.</span></p></div>
+<div class="tg"><div class="tg-top"><b class="place">Tianjin</b><span class="big">over 60%</span><span class="by">by 2026</span><a class="pinlink" href="#r4" data-n="4" data-tip="1" aria-label="record 4: Tianjin, plan for the computing industry, 2024 to 2026, issued by the city government’s general office"><i class="p away solid">4</i></a></div><div class="track" role="img" aria-label="target: over 60%"><i class="zone" style="left:60%"></i><i class="tick" style="left:60%"></i></div><div class="tk"><span class="l" style="left:0">0</span><span style="left:60%">60%</span><span class="r" style="left:100%">100%</span></div><p class="tg-note">Home-made chips in use in all the city’s computing centres, not only new ones. <span class="tg-src">Source: Tianjin, plan for the computing industry, 2024 to 2026, issued by the city government’s general office.</span></p></div>
+<div class="tg"><div class="tg-top"><b class="place">Hebei</b><span class="big">60% or more</span><span class="by">by 2025</span><a class="pinlink" href="#r5" data-n="5" data-tip="1" aria-label="record 5: Hebei province, opinions of the provincial government’s general office, May 8, 2024 (copy on the Xiong’an New Area’s site)"><i class="p away solid">5</i></a></div><div class="track" role="img" aria-label="target: 60% or more"><i class="zone" style="left:60%"></i><i class="tick" style="left:60%"></i></div><div class="tk"><span class="l" style="left:0">0</span><span style="left:60%">60%</span><span class="r" style="left:100%">100%</span></div><p class="tg-note">Newly added computing software and hardware that is “自主可控” (independently controllable): not chips alone, and not the word home-made. <span class="tg-src">Source: Hebei province, opinions of the provincial government’s general office, May 8, 2024 (copy on the Xiong’an New Area’s site).</span></p></div>
+<div class="tg"><div class="tg-top"><b class="place">Inner Mongolia</b><span class="big">50% or more</span><span class="by">by 2025</span><a class="pinlink" href="#r6" data-n="6" data-tip="1" aria-label="record 6: Inner Mongolia autonomous region, work plan for the digital economy, 2023 to 2025, issued by the regional government’s general office (Internet Archive capture of the official PDF)"><i class="p away solid">6</i></a></div><div class="track" role="img" aria-label="target: 50% or more"><i class="zone" style="left:50%"></i><i class="tick" style="left:50%"></i></div><div class="tk"><span class="l" style="left:0">0</span><span style="left:50%">50%</span><span class="r" style="left:100%">100%</span></div><p class="tg-note">Home-made computing, among the goals for the region’s national computing hub. <span class="tg-src">Source: Inner Mongolia autonomous region, work plan for the digital economy, 2023 to 2025, issued by the regional government’s general office (Internet Archive capture of the official PDF).</span></p></div>
+<div class="tg"><div class="tg-top"><b class="place">Shanghai</b><span class="big">over 50%</span><span class="by">by 2025</span><a class="pinlink" href="#r7" data-n="7" data-tip="1" aria-label="record 7: Shanghai’s plan, as carried by the business daily Yicai"><i class="p away solid">7</i></a></div><div class="track" role="img" aria-label="target: over 50%"><i class="zone" style="left:50%"></i><i class="tick" style="left:50%"></i></div><div class="tk"><span class="l" style="left:0">0</span><span style="left:50%">50%</span><span class="r" style="left:100%">100%</span></div><p class="tg-note">Home-made chips in use in the city’s newly built intelligent computing centres. <span class="tg-src">Source: Shanghai’s plan, as carried by the business daily Yicai.</span></p></div>
+<div class="tg"><div class="tg-top"><b class="place">Sichuan</b><span class="big">over 50%</span><span class="by">plan for 2024 to 2027</span><a class="pinlink" href="#r8" data-n="8" data-tip="1" aria-label="record 8: Sichuan province, action plan for computing infrastructure, 2024 to 2027"><i class="p away solid">8</i></a></div><div class="track" role="img" aria-label="target: over 50%"><i class="zone" style="left:50%"></i><i class="tick" style="left:50%"></i></div><div class="tk"><span class="l" style="left:0">0</span><span style="left:50%">50%</span><span class="r" style="left:100%">100%</span></div><p class="tg-note">Home-made computing equipment, not chips alone. The wording is “力争” (strive for). <span class="tg-src">Source: Sichuan province, action plan for computing infrastructure, 2024 to 2027.</span></p></div>
+<div class="tg"><div class="tg-top"><b class="place">National</b><span class="big">no percentage</span><span class="by">national opinions, Dec 25, 2023</span><a class="pinlink" href="#r9" data-n="9" data-tip="1" aria-label="record 9: National Development and Reform Commission and four other bodies, opinions of Dec 25, 2023"><i class="p away solid">9</i></a></div><div class="track none" role="img" aria-label="no percentage set"></div><div class="tk"><span class="l" style="left:0">0</span><span class="r" style="left:100%">100%</span></div><p class="tg-note">No national share for home-made chips was found in the 103 policy pages read. Bloomberg reported in June 2026, from unnamed people, a draft national plan with “at least 80 per cent of the core technology, AI chips included” from local suppliers; no such plan was found published. <span class="tg-src">Source: National Development and Reform Commission and four other bodies, opinions of Dec 25, 2023.</span></p></div>
+    <p class="axisnote">Scale of the nine tracks: a share in that place, as its plan defines it. A goal, not a count. Of the other 23 provincial-level governments, 21 have a plan that was read and sets no share, one is known only from a press account, and for one no computing plan was found (tables/provinces_31.tsv).</p>
+   </section>
+   <div class="neq" aria-label="Not the same measure"><span class="rule"></span><span class="badge">≠</span><span class="say">Not the same measure</span><span class="rule"></span></div>
+   <section class="card practice">
+    <p class="tagline">In practice</p>
+    <h2>What was in use, and what was shipped</h2>
+    <p class="sub">A city government’s own description, and a research firm’s counts for the whole country.</p>
+    <div class="pr">
+     <h3>In use in Shanghai, in a government body’s words <a class="pinlink" href="#r10" data-n="10" data-tip="1" aria-label="record 10: Shanghai Municipal Commission of Economy and Informatization, written reply dated Apr 30, 2025 (published Nov 10, 2025)"><i class="p toward solid">10</i></a></h3>
+     <p class="lede">Shanghai’s Commission of Economy and Informatization, written reply dated Apr 30, 2025 (published Nov 10, 2025). It gives no percentage.</p>
+     <div class="use">
+      <div class="toward"><div class="who"><i class="sw toward"></i>Internet companies’ own clusters</div><div class="what">mainly Nvidia</div>
+       <div class="zh">“主要以英伟达高性能卡为主” (mainly Nvidia high-performance cards)</div></div>
+      <div class="away"><div class="who"><i class="sw away"></i>The three state telecom operators</div><div class="what">mainly Huawei and other home-made</div>
+       <div class="zh">“三大运营商主要购置华为等国产化智算集群” (the three operators mainly buy Huawei and other home-made clusters)</div></div>
+     </div>
+    </div>
+    <div class="pr">
+     <h3>Shipped in all of China, by a research firm’s count</h3>
+     <p class="lede">AI accelerator cards shipped in China, by maker. Counts by the research firm IDC, as reported by Reuters.</p>
+     <ul class="legend"><li><i class="toward"></i>Nvidia</li><li><i class="away"></i>Chinese makers</li><li><i class="other"></i>AMD</li><li><i class="rest"></i>not broken down in the report</li></ul>
+     <div class="sh"><div class="sh-lab">2025 <a class="pinlink" href="#r11" data-n="11" data-tip="1" aria-label="record 11: Reuters, as carried by MarketScreener, reporting counts by the research firm IDC"><i class="p toward hollow">11</i></a><span>about 4 million cards</span></div>
+<div class="sh-bar" role="img" aria-label="Nvidia 55%, AMD 4%, Chinese makers 41%"><i class="toward" style="flex:55"></i><i class="other" style="flex:4"></i><i class="away" style="flex:41"></i></div><div class="sh-keys"><span class="k-toward" style="flex:55">Nvidia 55%<small></small></span><span class="k-other" style="flex:4"><small></small></span><span class="k-away" style="flex:41">Chinese makers 41%<small></small></span></div>
+      <div class="sh-cap">Nvidia 55%, AMD 4%, Chinese makers together 41%. <span class="tg-src">Source: IDC, reported by Reuters, Apr 1, 2026.</span></div></div>
+     <div class="sh"><div class="sh-lab">January to June 2026 <a class="pinlink" href="#r12" data-n="12" data-tip="1" aria-label="record 12: Reuters, as carried by Mint (India), reporting counts by the research firm IDC"><i class="p toward hollow">12</i></a><span>2.008 million cards</span></div>
+<div class="sh-bar" role="img" aria-label="Nvidia 34%, Huawei 28%, four more Chinese makers 19%, the rest 19%"><i class="toward" style="flex:34"></i><i class="away" style="flex:28"></i><i class="away" style="flex:7"></i><i class="away" style="flex:5"></i><i class="away" style="flex:4"></i><i class="away" style="flex:3"></i><i class="rest" style="flex:19"></i></div><div class="sh-keys"><span class="k-toward" style="flex:34">Nvidia 34%<small></small></span><span class="k-away" style="flex:28">Huawei 28%<small></small></span><span class="k-away" style="flex:19">Four more 19%<small>Chinese makers</small></span><span class="k-rest" style="flex:19">Rest 19%<small>not broken down</small></span></div>
+      <div class="sh-cap">Nvidia 34%, Huawei 28%; then T-Head 7%, Cambricon 5%, Kunlunxin 4%, Hygon 3%. The six named makers leave 19% (our subtraction).
+      The five Chinese makers named add up to 47% (our sum); the report gives no total for Chinese makers and does not mention AMD. <span class="tg-src">Source: IDC, reported by Reuters, Oct 13, 2026.</span></div></div>
+    </div>
+    <div class="pr both">
+     <h3>Shanghai is on both sides of this figure <a class="pinlink" href="#r7" data-n="7" data-tip="1" aria-label="record 7: Shanghai’s plan, as carried by the business daily Yicai"><i class="p away solid">7</i></a> <a class="pinlink" href="#r10" data-n="10" data-tip="1" aria-label="record 10: Shanghai Municipal Commission of Economy and Informatization, written reply dated Apr 30, 2025 (published Nov 10, 2025)"><i class="p toward solid">10</i></a></h3>
+     <p class="lede">Its plan set the goal of over 50% home-made chips in new centres by 2025. Its commission’s reply of Apr 30, 2025 describes the clusters that internet companies run. A goal for new centres and a description of clusters in use are still two different things.</p>
+    </div>
+   </section>
+  </div>
+  <section class="care">
+   <h2>Read with care: what each one measures</h2>
+   <table class="msr">
+    <thead><tr><th></th><th>Who says it</th><th>What it measures</th><th>Where and when</th></tr></thead>
+    <tbody>
+     <tr><td>The targets</td><td data-h="Who says it">a provincial-level government, in a plan</td><td data-h="What it measures">a goal: a share of the chips, equipment or computing in that place. Three count home-made chips (Jiangsu and Shanghai in new centres, Tianjin in all); Guangdong, Inner Mongolia and Shandong home-made computing (Guangdong in what is newly added); Sichuan home-made equipment; Hebei software and hardware called independently controllable. Jiangsu’s plan marks its own target as expected, not binding; Shandong’s is known from a newspaper’s account</td><td data-h="Where and when">one government each; goals for 2025, 2026 and 2030, and a plan that runs to 2027</td></tr>
+     <tr><td>The Shanghai reply</td><td data-h="Who says it">a city government body</td><td data-h="What it measures">no number: which cards the clusters of each kind of owner mainly run on</td><td data-h="Where and when">Shanghai; dated Apr 30, 2025 (published Nov 10, 2025)</td></tr>
+     <tr><td>The research firm’s counts</td><td data-h="Who says it">IDC, as reported by Reuters</td><td data-h="What it measures">cards shipped in a period, by maker. Reuters words the first as AI accelerator cards and the second as the market for data-centre AI chips, so the two bars are not shown as one series</td><td data-h="Where and when">all of China; 2025, and January to June 2026</td></tr>
+    </tbody>
+   </table>
+   <p style="margin-top:8px">So the two sides cannot be set on one scale: a provincial or city target is not tested by national shipments, and neither number proves or disproves the other. The research firm’s count is of what was shipped, not of what any one buyer uses.
+   English renderings of Chinese are ours, not official translations.</p>
+  </section>
+ </div>
+
+ <details class="card" id="records" open>
+  <summary><h2>The records</h2><span class="fold">show or hide</span></summary>
+  <p class="sub">One line for each numbered source: its date, our summary, the page’s own words, and the source. Point at a number in the figure to read the words there.</p>
+  <div class="cols">
+   <section class="lcol"><ol><li id="r1" class="ev" data-n="1"><i class="p away solid">1</i><div><span class="when">Jul 31, 2022</span> <span class="what">Shandong’s action plan for a unified computing network, 2022 to 2025, as the provincial daily reported it: by 2025, home-made computing is to reach 90% in the province. The plan was released on Jul 31, 2022; the report is of Aug 1, 2022, on the provincial government’s site. The plan’s own text is not held.</span> <span class="said">“国产化算力将达90%” (home-made computing will reach 90%)</span> <span class="src"><a href="http://www.shandong.gov.cn/art/2022/8/1/art_97564_548416.html">Shandong province, action plan for a unified computing network, 2022 to 2025, as reported by Dazhong Daily on the provincial government’s site</a> · saved copy cn-o39-shandong-network-2022</span></div></li><li id="r2" class="ev" data-n="2"><i class="p away solid">2</i><div><span class="when">Undated plan; targets for 2025 and 2030</span> <span class="what">Jiangsu’s plan for computing infrastructure: home-made chips are to be 70% or more of the chips in use in newly built computing centres by 2030, and 50% by 2025. The plan’s own table of indicators gives the line the values 50 for 2025 and 70 for 2030 and marks it “预期性” (expected, that is, indicative), not binding. The only line of that table marked “约束性” (binding) is the one on energy efficiency. The saved PDF carries no date of issue.</span> <span class="said">“新建算力中心国产算力芯片使用占比达 70%以上” (home-made computing chips reach 70% or more of use in newly built computing centres)</span> <span class="src"><a href="https://jsca.miit.gov.cn/cms_files/filemanager/1190535345/attach/20243/814819077f4f4b898e5f57dd8f4972e9.pdf">Jiangsu province, plan for computing infrastructure issued by four provincial bodies (the saved PDF carries no date of issue)</a> · saved copy cn-factions-jiangsu-plan</span></div></li><li id="r3" class="ev" data-n="3"><i class="p away solid">3</i><div><span class="when">Mar 7, 2024</span> <span class="what">Guangdong’s plan for computing infrastructure, 2024 to 2025: strive for home-made computing to reach 70% of newly added computing by the end of 2025. It counts computing, not chips alone. Issued by the Guangdong Communications Administration and eight other bodies on Mar 7, 2024.</span> <span class="said">“力争到2025年底，新增国产化算力占比达到70%” (strive for home-made computing to reach 70% of newly added computing by the end of 2025)</span> <span class="src"><a href="https://gdca.miit.gov.cn/zwgk/zcwj/wjfb/art/2024/art_8d6908d847994bc4a2f0c9eb3517e780.html">Guangdong province, plan for computing infrastructure, 2024 to 2025, issued by the Guangdong Communications Administration and eight other bodies</a> · saved copy cn-o39b-guangdong-yuesuan-2024</span></div></li><li id="r4" class="ev" data-n="4"><i class="p away solid">4</i><div><span class="when">Jul 18, 2024</span> <span class="what">Tianjin’s plan for the computing industry, 2024 to 2026: by 2026, home-made chips are to be over 60% of the chips in use in the city’s computing centres. It covers all the city’s centres, not only new ones. The plan was written Jul 1, 2024 and issued Jul 18, 2024.</span> <span class="said">“全市算力中心国产算力芯片使用占比超过 60%” (home-made computing chips are over 60% of use in the city’s computing centres)</span> <span class="src"><a href="https://www.tj.gov.cn/zwgk/szfwj/tjsrmzfbgt/202407/t20240718_6678784.html">Tianjin, plan for the computing industry, 2024 to 2026, issued by the city government’s general office</a> · saved copy cn-o39-tianjin-plan-2024</span></div></li><li id="r5" class="ev" data-n="5"><i class="p away solid">5</i><div><span class="when">May 8, 2024</span> <span class="what">Hebei’s opinions on computing and the AI industry: by 2025, 60% or more of newly added basic software and hardware for computing is to be independently controllable. It counts software and hardware together, and its word is independently controllable, not home-made. The opinions are dated May 8, 2024; the saved copy is on the Xiong’an New Area’s official site, which credits the provincial government’s site.</span> <span class="said">“新增算力基础软硬件设施自主可控比例60%以上” (newly added basic software and hardware for computing: 60% or more independently controllable)</span> <span class="src"><a href="http://www.xiongan.gov.cn/2024-05/30/c_1212367004.htm">Hebei province, opinions of the provincial government’s general office, May 8, 2024 (copy on the Xiong’an New Area’s site)</a> · saved copy cn-o39-hebei-opinion-2024-xiongan</span></div></li><li id="r6" class="ev" data-n="6"><i class="p away solid">6</i><div><span class="when">Oct 10, 2023</span> <span class="what">Inner Mongolia’s work plan for the digital economy, 2023 to 2025: by 2025, home-made computing is to reach 50% or more, among the goals for the region’s part of the national computing network (its national hub). Issued by the regional government’s general office, dated Oct 10, 2023. The saved copy is an Internet Archive capture of the official PDF.</span> <span class="said">“国产化算力占比达 50%以上” (home-made computing reaches 50% or more)</span> <span class="src"><a href="https://web.archive.org/web/20250418071944/https://www.nmg.gov.cn/ztzl/yhyshj/zcwj/zzqzcx/202310/P020231017399555556548.pdf">Inner Mongolia autonomous region, work plan for the digital economy, 2023 to 2025, issued by the regional government’s general office (Internet Archive capture of the official PDF)</a> · saved copy cn-o39-nmg-plan-pdf-wayback</span></div></li></ol></section>
+   <section class="lcol"><ol><li id="r7" class="ev" data-n="7"><i class="p away solid">7</i><div><span class="when">Mar 22, 2024</span> <span class="what">Shanghai’s plan for 2024 and 2025: by 2025, home-made chips are to be over 50% of the chips in use in the city’s newly built intelligent computing centres.</span> <span class="said">“到2025年,本市新建智算中心国产算力芯片使用占比超过50%” (by 2025, home-made computing chips are over 50% of use in the city’s newly built intelligent computing centres)</span> <span class="src"><a href="https://www.yicai.com/news/102038362.html">Shanghai’s plan, as carried by the business daily Yicai</a> · saved copy cn-policy-shanghai-domestic-target</span></div></li><li id="r8" class="ev" data-n="8"><i class="p away solid">8</i><div><span class="when">Nov 15, 2024</span> <span class="what">Sichuan’s action plan for 2024 to 2027: strive for home-made computing equipment to exceed 50%. The wording is about equipment, not chips alone. The notice is dated Nov 15, 2024 and was published on Nov 22, 2024.</span> <span class="said">“力争国产化算力设备占比超过50%” (strive for home-made computing equipment to exceed 50%)</span> <span class="src"><a href="https://new.tzxm.gov.cn/zckd/fzgh/202411/t20241122_1394663.shtml">Sichuan province, action plan for computing infrastructure, 2024 to 2027</a> · saved copy cn-factions-sichuan50</span></div></li><li id="r9" class="ev" data-n="9"><i class="p away solid">9</i><div><span class="when">Dec 25, 2023</span> <span class="what">The national opinions on a computing network set no share for home-made chips. Their aim is worded without a number.</span> <span class="said">“算力网关键核心技术基本实现安全可靠” (the key core technologies of the computing network are in the main secure and reliable)</span> <span class="src"><a href="https://zfxxgk.ndrc.gov.cn/web/iteminfo.jsp?id=20303">National Development and Reform Commission and four other bodies, opinions of Dec 25, 2023</a> · saved copy cn-policy-computing-network-1779</span></div></li><li id="r10" class="ev" data-n="10"><i class="p toward solid">10</i><div><span class="when">Apr 30, 2025</span> <span class="what">Shanghai’s Commission of Economy and Informatization, in a written reply: internet companies’ own computing clusters run mainly on Nvidia cards, and the three state telecom operators mainly buy Huawei and other home-made clusters. The reply gives no percentage.</span> <span class="said">“互联网企业自建算力集群,满足市场化企业需求,主要以英伟达高性能卡为主” (internet companies build their own computing clusters to meet market demand, mainly with Nvidia high-performance cards); “三大运营商主要购置华为等国产化智算集群” (the three telecom operators mainly buy Huawei and other home-made clusters)</span> <span class="src"><a href="https://www.sheitc.sh.gov.cn/rddbta/20251110/e6cfe3270ca5483e93cbc55701492e6d.html">Shanghai Municipal Commission of Economy and Informatization, written reply dated Apr 30, 2025 (published Nov 10, 2025)</a> · saved copy cn-counter-b11-5</span></div></li><li id="r11" class="ev" data-n="11"><i class="p toward hollow">11</i><div><span class="when">Apr 1, 2026</span> <span class="what">The research firm IDC’s count for 2025, as reported by Reuters: of about 4 million AI accelerator cards shipped in China, Nvidia had 55%, Chinese makers together 41% and AMD 4%.</span> <span class="said">“Nvidia remained the market leader, shipping around 2.2 million cards and holding a 55% share.”; “Chinese vendors collectively shipped 1.65 million cards, accounting for 41% of the total market”; “shipping roughly 160,000 cards for a 4% share”</span> <span class="src"><a href="https://in.marketscreener.com/news/chinese-chipmakers-claim-nearly-half-of-of-local-market-as-nvidia-s-lead-shrinks-idc-says-ce7e51dfdd88f123">Reuters, as carried by MarketScreener, reporting counts by the research firm IDC</a> · saved copy man-cn-usside-012</span></div></li><li id="r12" class="ev" data-n="12"><i class="p toward hollow">12</i><div><span class="when">Oct 13, 2026</span> <span class="what">The same firm’s count for January to June 2026, as reported by Reuters, which words it as China’s market for data-centre AI chips: of 2.008 million AI accelerators shipped, Nvidia had 34% and Huawei 28%. Four more Chinese makers are named with 7%, 5%, 4% and 3%. The remaining 19% (our subtraction) is not broken down. The report gives no total for Chinese makers and does not mention AMD.</span> <span class="said">“Nvidia’s share of China’s market for data-centre AI chips fell to 34% in the first half of 2026”; “giving it a 28% share of the overall market”; “Alibaba’s chip-design unit T-Head held 7%, followed by Cambricon with 5%, Baidu’s Kunlunxin with 4% and Hygon with 3%.”</span> <span class="src"><a href="https://www.livemint.com/technology/nividas-china-ai-chip-share-falls-as-huawei-closes-gap-report-finds/amp-11791858728043.html">Reuters, as carried by Mint (India), reporting counts by the research firm IDC</a> · saved copy cn-usside-044-relay1</span></div></li></ol></section>
+  </div>
+ </details>
+</div>
+<div id="tip" hidden></div>
+<script>
+
+const EV = {"1": {"w": "Jul 31, 2022", "l": "On paper", "t": "Shandong’s action plan for a unified computing network, 2022 to 2025, as the provincial daily reported it: by 2025, home-made computing is to reach 90% in the province. The plan was released on Jul 31, 2022; the report is of Aug 1, 2022, on the provincial government’s site. The plan’s own text is not held.", "q": "国产化算力将达90%", "e": "home-made computing will reach 90%", "s": "Shandong province, action plan for a unified computing network, 2022 to 2025, as reported by Dazhong Daily on the provincial government’s site", "k": "On the record: a named newspaper’s account of a state document"}, "2": {"w": "Undated plan; targets for 2025 and 2030", "l": "On paper", "t": "Jiangsu’s plan for computing infrastructure: home-made chips are to be 70% or more of the chips in use in newly built computing centres by 2030, and 50% by 2025. The plan’s own table of indicators gives the line the values 50 for 2025 and 70 for 2030 and marks it “预期性” (expected, that is, indicative), not binding. The only line of that table marked “约束性” (binding) is the one on energy efficiency. The saved PDF carries no date of issue.", "q": "新建算力中心国产算力芯片使用占比达 70%以上", "e": "home-made computing chips reach 70% or more of use in newly built computing centres", "s": "Jiangsu province, plan for computing infrastructure issued by four provincial bodies (the saved PDF carries no date of issue)", "k": "On the record: a government document or an official"}, "3": {"w": "Mar 7, 2024", "l": "On paper", "t": "Guangdong’s plan for computing infrastructure, 2024 to 2025: strive for home-made computing to reach 70% of newly added computing by the end of 2025. It counts computing, not chips alone. Issued by the Guangdong Communications Administration and eight other bodies on Mar 7, 2024.", "q": "力争到2025年底，新增国产化算力占比达到70%", "e": "strive for home-made computing to reach 70% of newly added computing by the end of 2025", "s": "Guangdong province, plan for computing infrastructure, 2024 to 2025, issued by the Guangdong Communications Administration and eight other bodies", "k": "On the record: a government document or an official"}, "4": {"w": "Jul 18, 2024", "l": "On paper", "t": "Tianjin’s plan for the computing industry, 2024 to 2026: by 2026, home-made chips are to be over 60% of the chips in use in the city’s computing centres. It covers all the city’s centres, not only new ones. The plan was written Jul 1, 2024 and issued Jul 18, 2024.", "q": "全市算力中心国产算力芯片使用占比超过 60%", "e": "home-made computing chips are over 60% of use in the city's computing centres", "s": "Tianjin, plan for the computing industry, 2024 to 2026, issued by the city government’s general office", "k": "On the record: a government document or an official"}, "5": {"w": "May 8, 2024", "l": "On paper", "t": "Hebei’s opinions on computing and the AI industry: by 2025, 60% or more of newly added basic software and hardware for computing is to be independently controllable. It counts software and hardware together, and its word is independently controllable, not home-made. The opinions are dated May 8, 2024; the saved copy is on the Xiong’an New Area’s official site, which credits the provincial government’s site.", "q": "新增算力基础软硬件设施自主可控比例60%以上", "e": "newly added basic software and hardware for computing: 60% or more independently controllable", "s": "Hebei province, opinions of the provincial government’s general office, May 8, 2024 (copy on the Xiong’an New Area’s site)", "k": "On the record: a government document or an official"}, "6": {"w": "Oct 10, 2023", "l": "On paper", "t": "Inner Mongolia’s work plan for the digital economy, 2023 to 2025: by 2025, home-made computing is to reach 50% or more, among the goals for the region’s part of the national computing network (its national hub). Issued by the regional government’s general office, dated Oct 10, 2023. The saved copy is an Internet Archive capture of the official PDF.", "q": "国产化算力占比达 50%以上", "e": "home-made computing reaches 50% or more", "s": "Inner Mongolia autonomous region, work plan for the digital economy, 2023 to 2025, issued by the regional government’s general office (Internet Archive capture of the official PDF)", "k": "On the record: a government document or an official"}, "7": {"w": "Mar 22, 2024", "l": "On paper", "t": "Shanghai’s plan for 2024 and 2025: by 2025, home-made chips are to be over 50% of the chips in use in the city’s newly built intelligent computing centres.", "q": "到2025年,本市新建智算中心国产算力芯片使用占比超过50%", "e": "by 2025, home-made computing chips are over 50% of use in the city's newly built intelligent computing centres", "s": "Shanghai’s plan, as carried by the business daily Yicai", "k": "On the record: a government document or an official"}, "8": {"w": "Nov 15, 2024", "l": "On paper", "t": "Sichuan’s action plan for 2024 to 2027: strive for home-made computing equipment to exceed 50%. The wording is about equipment, not chips alone. The notice is dated Nov 15, 2024 and was published on Nov 22, 2024.", "q": "力争国产化算力设备占比超过50%", "e": "strive for home-made computing equipment to exceed 50%", "s": "Sichuan province, action plan for computing infrastructure, 2024 to 2027", "k": "On the record: a government document or an official"}, "9": {"w": "Dec 25, 2023", "l": "On paper", "t": "The national opinions on a computing network set no share for home-made chips. Their aim is worded without a number.", "q": "算力网关键核心技术基本实现安全可靠", "e": "the key core technologies of the computing network are in the main secure and reliable", "s": "National Development and Reform Commission and four other bodies, opinions of Dec 25, 2023", "k": "On the record: a government document or an official"}, "10": {"w": "Apr 30, 2025", "l": "In practice", "t": "Shanghai’s Commission of Economy and Informatization, in a written reply: internet companies’ own computing clusters run mainly on Nvidia cards, and the three state telecom operators mainly buy Huawei and other home-made clusters. The reply gives no percentage.", "q": "互联网企业自建算力集群,满足市场化企业需求,主要以英伟达高性能卡为主", "e": "internet companies build their own computing clusters to meet market demand, mainly with Nvidia high-performance cards", "s": "Shanghai Municipal Commission of Economy and Informatization, written reply dated Apr 30, 2025 (published Nov 10, 2025)", "k": "On the record: a government document or an official"}, "11": {"w": "Apr 1, 2026", "l": "In practice", "t": "The research firm IDC’s count for 2025, as reported by Reuters: of about 4 million AI accelerator cards shipped in China, Nvidia had 55%, Chinese makers together 41% and AMD 4%.", "q": "Nvidia remained the market leader, shipping around 2.2 million cards and holding a 55% share.", "e": "", "s": "Reuters, as carried by MarketScreener, reporting counts by the research firm IDC", "k": "A research firm's count, through the press"}, "12": {"w": "Oct 13, 2026", "l": "In practice", "t": "The same firm’s count for January to June 2026, as reported by Reuters, which words it as China’s market for data-centre AI chips: of 2.008 million AI accelerators shipped, Nvidia had 34% and Huawei 28%. Four more Chinese makers are named with 7%, 5%, 4% and 3%. The remaining 19% (our subtraction) is not broken down. The report gives no total for Chinese makers and does not mention AMD.", "q": "Nvidia’s share of China’s market for data-centre AI chips fell to 34% in the first half of 2026", "e": "", "s": "Reuters, as carried by Mint (India), reporting counts by the research firm IDC", "k": "A research firm's count, through the press"}};
+const tip = document.getElementById('tip');
+function line(cls, text) { const d = document.createElement('div'); d.className = cls; d.textContent = text; return d; }
+function show(a) {
+  const e = EV[a.dataset.n]; if (!e) return;
+  const kids = [line('tw', [e.w, e.l].filter(Boolean).join(' \u00b7 ')), line('tt', e.t)];
+  if (e.q) kids.push(line('tq', '\u201c' + e.q + '\u201d'));
+  if (e.e) kids.push(line('te', 'Our English: ' + e.e));
+  const foot = [e.s, e.k].filter(Boolean).join(' \u00b7 ');
+  if (foot) kids.push(line('ts', foot));
+  tip.replaceChildren(...kids);
+  tip.hidden = false;
+  const r = a.getBoundingClientRect(), w = tip.offsetWidth, h = tip.offsetHeight;
+  let x = Math.min(Math.max(8, r.left + r.width / 2 - w / 2), window.innerWidth - w - 8), y = r.top - h - 10;
+  if (y < 8) y = r.bottom + 10;
+  tip.style.left = x + 'px'; tip.style.top = y + 'px';
+}
+function hl(n, on) { document.querySelectorAll('[data-n="' + n + '"]').forEach(el => el.classList.toggle('hl', on)); }
+document.querySelectorAll('[data-n]').forEach(el => {
+  const n = el.dataset.n, t = el.hasAttribute('data-tip');
+  el.addEventListener('mouseenter', () => { hl(n, true); if (t) show(el); });
+  el.addEventListener('mouseleave', () => { hl(n, false); tip.hidden = true; });
+  el.addEventListener('focus', () => { hl(n, true); if (t) show(el); });
+  el.addEventListener('blur', () => { hl(n, false); tip.hidden = true; });
+});
+window.addEventListener('scroll', () => { tip.hidden = true; }, { passive: true });
+const recs = document.getElementById('records');
+if (recs && recs.tagName === 'DETAILS') {
+  const toRecord = () => { if (/^#r[0-9]+$/.test(location.hash)) { recs.open = true; const el = document.getElementById(location.hash.slice(1)); if (el) el.scrollIntoView(); } };
+  if (window.matchMedia('(max-width: 820px)').matches && !/^#r[0-9]+$/.test(location.hash)) recs.open = false;
+  document.querySelectorAll('a.mk, a.pinlink, a.u').forEach(a => a.addEventListener('click', () => { recs.open = true; }));
+  window.addEventListener('hashchange', toRecord); toRecord();
+}
+
+</script>
+</body>
+</html>

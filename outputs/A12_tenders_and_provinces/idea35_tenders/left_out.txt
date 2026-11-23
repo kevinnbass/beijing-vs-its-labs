@@ -1,0 +1,19 @@
+# Saved pages of idea 35 that are not in the tables. Fields: saved id @@ category @@ reason. build.py checks that
+# the tables plus this list are exactly the pages saved for this idea.
+cn-o35-jilin-songyuan-project @@ used-elsewhere @@ a provincial project sheet, not a purchase notice; used in the note's section on things seen outside the sample
+cn-o35-c114-cmcc-inference-2025 @@ used-elsewhere @@ a trade-press report of a China Mobile tender; used in the same section
+cn-o35-ustl-2263 @@ before-2024 @@ dated Nov 30, 2023 (it names a Huawei Atlas 800 server)
+cn-o35-suda-gpu-cluster @@ before-2024 @@ a tender notice of 2022
+cn-o35-hust-9365 @@ before-2024 @@ a notice of 2021
+cn-o35-hust-47413 @@ no-accelerator @@ a 2026 contract for one TaiShan processor server; no accelerator is named
+cn-o35-ucas-2123 @@ no-accelerator @@ a cluster of processor servers; no accelerator is named
+cn-o35-ccgp-ruc-202609 @@ no-accelerator @@ storage equipment only
+cn-o35-ggzy-cmcc-hebei-202605 @@ no-content @@ the page holds only the titles of a China Mobile tender
+cn-o35-ccgp-xjtu-tender-202508 @@ no-content @@ the tender notice for the Xi'an Jiaotong purchase whose award notice is in table 3; it points to the university's own site for the requirement
+cn-o35-ustc-nsrl-202608 @@ no-content @@ a call for price offers for a computing server; the page names no hardware
+cn-o35-ccgp-bit-202504 @@ not-ai @@ high-performance computing equipment; the brand and model boxes are empty
+cn-o35-ccgp-casia-rent-202507 @@ not-ai @@ rented computing; the notice points to the tender file
+cn-o35-ccgp-fudan-202512 @@ not-ai @@ a rented computing system; no hardware is written
+cn-o35-ccgp-casia-202512 @@ not-ai @@ rented server nodes; the notice points to the tender file
+cn-o35-ccgp-unit-202601 @@ not-ai @@ a supercomputer bought for 46.1 million yuan by a buyer the notice does not name; named only as Inspur, custom-made
+cn-o35-ccgp-ict-202605 @@ not-ai @@ two high-end computing servers; the brand and model boxes hold only a stroke

@@ -1,0 +1,11 @@
+records: 61 rows x 16 columns (csv and tsv); references: 209 rows x 8 columns
+cn_has.py: 61 quotations checked, 61 found, 0 not found; controls behave
+kinds: doc 22, rec 14, press 25; with our English: 23; dates that are placings: 2
+tables: 19 copied, all byte for byte (sha256 of each copy equals the project's); rows in all: 1544
+  read with care: press_originals.tsv: 1 row(s) cite ms-bj-20260114-customs-h200-standard, a source the figure no longer cites; outputs/ROUND4.md names cn-acts-reuters-customs-20260114 in its place; the argument itself still cites ms-bj-20260114-customs-h200-standard as reference 132
+  read with care: press_originals.tsv: its column "ref" gives reference numbers of an earlier build of the argument: 34 of the 34 differ from the present numbers, and 3 of the ids are no longer cited by the argument (references.csv has the present numbers)
+  read with care: state_media_items.tsv: 1 row(s) cite cn-media-yuyuan-thepaper, a source the figure no longer cites; outputs/ROUND4.md names cn-le13-yuyuan-qq-20250810b in its place
+  read with care: talks_and_acts.tsv: 1 row(s) cite cn-media-yuyuan-thepaper, a source the figure no longer cites; outputs/ROUND4.md names cn-le13-yuyuan-qq-20250810b in its place
+  read with care: talks_and_acts.tsv: 1 row(s) cite cn-policy-ai-chip-evaluation, a source the figure no longer cites; outputs/ROUND4.md names cn-le14-itsec-2026-2 in its place
+  read with care: talks_and_acts.tsv: 1 row(s) cite ms-bj-20260114-customs-h200-standard, a source the figure no longer cites; outputs/ROUND4.md names cn-acts-reuters-customs-20260114 in its place; the argument itself still cites ms-bj-20260114-customs-h200-standard as reference 132
+  read with care: us_officials_statements.tsv: its column "argument_cites" describes an earlier build of the argument; by the present argument 12 of the 18 rows name a source it cites (references.csv has the present numbers)

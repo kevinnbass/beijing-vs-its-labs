@@ -1,0 +1,155 @@
+"""Write the two inputs of the Chinese figure, figure_data.txt and template.html, from the core's files and the Chinese parts.
+
+Run: python3 -I make_inputs.py            writes both; stops if the core's English changed since the Chinese was made
+     python3 -I make_inputs.py --accept   first records the core's present English T and S lines in zh_lines.txt (ET, ES
+                                          lines). Run this only after the Chinese of every changed record was read again.
+Reads: english_originals/figure_data.txt, english_originals/template.html.copy (copies of the core's
+       ../../../figure/figure_data.txt and template.html; the script stops if a copy is not the core's present file),
+       zh_lines.txt (the Chinese of every record) and template_body_zh.txt (the Chinese page body).
+Writes: figure_data.txt   the core's blocks in the core's order, each with its date, saved id, Q, E, U lines and label
+                          place unchanged, the T, S and label words in Chinese, and a Z line where Q is English; every
+                          "!" check line of the core unchanged; then the extra check lines of zh_lines.txt.
+        template.html     the core template's head and styles with a few changes for Chinese type, then the Chinese body.
+So a re-sync to a changed core is: copy the three core files into english_originals/, change the Chinese where this
+script says the English changed, run it with --accept, then cn_figure_build.py.
+"""
+import re, sys
+from pathlib import Path
+
+F = Path(__file__).resolve().parent
+EN = F / 'english_originals'
+CORE = F.parents[2] / 'figure'
+CJK = re.compile(r'[぀-ヿ一-鿿]')
+FIELDS = ('D', 'T', 'S', 'Z', 'C', 'CP', 'ET', 'ES')
+
+HEAD_CHANGES = [  # in the core template's head: (the core's text, the Chinese page's text); each must occur exactly once
+    ('<html lang="en">', '<html lang="zh-Hans">'),
+    ('<title>Beijing vs. Its Labs</title>', '<title>北京与AI企业</title>'),
+    ('  --font-text: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;',
+     '  --font-text: "Inter", "Noto Sans CJK SC", "Noto Sans SC", "Source Han Sans SC", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", system-ui, -apple-system, "Segoe UI", sans-serif;'),
+    ('  --font-head: "Space Grotesk", "Inter", system-ui, sans-serif;',
+     '  --font-head: "Space Grotesk", "Inter", "Noto Sans CJK SC", "Noto Sans SC", "Source Han Sans SC", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", system-ui, sans-serif;'),
+    ('font-family: var(--font-text); font-size: 16px; line-height: 1.5; }', 'font-family: var(--font-text); font-size: 16px; line-height: 1.65; }'),
+    ('h1 { font-family: var(--font-head); font-size: clamp(28px, 3.5vw, 46px); line-height: 1.08; letter-spacing: -0.015em; margin: 0 0 12px; max-width: 24ch; text-wrap: balance; }',
+     'h1 { font-family: var(--font-head); font-size: clamp(27px, 3.4vw, 44px); line-height: 1.2; margin: 0 0 12px; max-width: 21em; }\nh1 span { display: inline-block; }'),
+    ('.deck { margin: 0; color: var(--ink2); font-size: 18px; max-width: 78ch; }',
+     '.deck { margin: 0; color: var(--ink2); font-size: 18px; max-width: 42em; }\n.draft { margin: 14px 0 0; font-size: 12.5px; color: var(--muted); max-width: 60em; }'),
+    ('.card .sub { margin: 0 0 12px; color: var(--ink2); font-size: 14.5px; max-width: 72ch; }',
+     '.card .sub { margin: 0 0 12px; color: var(--ink2); font-size: 14.5px; max-width: 48em; text-wrap: pretty; }'),
+    ('.bar-note { grid-column: 2; font-size: 12.5px; color: var(--muted); line-height: 1.35; }', '.bar-note { grid-column: 2; font-size: 12.5px; color: var(--muted); line-height: 1.5; }'),
+    ('.revcard .big { margin: 0; font-size: 15.5px; font-weight: 600; max-width: 60ch; }', '.revcard .big { margin: 0; font-size: 15.5px; font-weight: 600; max-width: 36em; }'),
+    ('.pp span { font-size: 14.5px; color: var(--ink2); line-height: 1.4; }', '.pp span { font-size: 14.5px; color: var(--ink2); line-height: 1.55; }'),
+    ('table.pv { width: 100%; border-collapse: collapse; font-size: 13.5px; line-height: 1.35; color: var(--ink2); }', 'table.pv { width: 100%; border-collapse: collapse; font-size: 13.5px; line-height: 1.5; color: var(--ink2); }'),
+    ('.vlab { font-size: 13.5px; line-height: 1.3; }', '.vlab { font-size: 13.5px; line-height: 1.45; }'),
+    ('.notes ul { margin: 6px 0 0; padding-left: 20px; color: var(--ink2); font-size: 14px; max-width: 110ch; }', '.notes ul { margin: 6px 0 0; padding-left: 20px; color: var(--ink2); font-size: 14px; max-width: 60em; }'),
+    ('#tip .tq { font-style: italic; opacity: 0.92; }', '#tip .tq { opacity: 0.95; } #tip .to { margin-top: 4px; font-size: 12px; opacity: 0.8; }'),
+]
+
+
+def read_zh():
+    blocks, extra, cur = {}, [], None
+    for n, ln in enumerate((F / 'zh_lines.txt').read_text(encoding='utf-8').splitlines(), 1):
+        if not ln.strip() or ln.startswith('#'): continue
+        if ln.startswith('@ '):
+            _, lane, sid = ln.split()
+            assert (lane, sid) not in blocks, f'zh_lines.txt line {n}: block given twice: {ln}'
+            cur = blocks[(lane, sid)] = {}
+        elif ln.startswith('! '): extra.append(ln)
+        else:
+            k, _, v = ln.partition(' ')
+            assert k in FIELDS and cur is not None and k not in cur and v.strip(), f'zh_lines.txt line {n} not understood: {ln[:50]}'
+            cur[k] = v.strip()
+    return blocks, extra
+
+
+def read_core():
+    """The core data as a list of items: ('raw', line) or ('block', dict of its lines)."""
+    items, cur = [], None
+    for ln in (EN / 'figure_data.txt').read_text(encoding='utf-8').splitlines():
+        if ln.startswith('@ '):
+            _, lane, kind, d, dl, sid = ln.split()
+            cur = dict(lane=lane, kind=kind, date=d, dl=dl, sid=sid); items.append(('block', cur))
+        elif cur is not None and ln[:2] in ('T ', 'S ', 'Q ', 'E ', 'U ', 'C '): cur[ln[0]] = ln[2:].strip()
+        else:
+            if ln.strip(): cur = None if (ln.startswith('#') or ln.startswith('!')) else cur
+            items.append(('raw', ln))
+    return items
+
+
+def accept(core):
+    """Rewrite zh_lines.txt with the core's present English T and S lines (ET, ES) under each block."""
+    en = {(b['lane'], b['sid']): b for k, b in core if k == 'block'}
+    out, key = [], None
+
+    def flush():
+        nonlocal key
+        if key: out.extend([f'ET {en[key]["T"]}', f'ES {en[key]["S"]}'])
+        key = None
+    for ln in (F / 'zh_lines.txt').read_text(encoding='utf-8').splitlines():
+        if ln.startswith('@ '):
+            flush(); _, lane, sid = ln.split(); key = (lane, sid); assert key in en, f'no such record in the core: {ln}'
+            out.append(ln)
+        elif ln[:3] in ('ET ', 'ES '): continue
+        elif not ln.strip() or ln.startswith('#') or ln.startswith('!'):
+            flush(); out.append(ln)
+        else: out.append(ln)
+    flush()
+    (F / 'zh_lines.txt').write_text('\n'.join(out) + '\n', encoding='utf-8')
+
+
+def main():
+    for mine, theirs in ((EN / 'figure_data.txt', CORE / 'figure_data.txt'), (EN / 'template.html.copy', CORE / 'template.html')):
+        if mine.read_bytes() != theirs.read_bytes(): sys.exit(f'{mine.name} in english_originals is not the core\'s present file: copy {theirs} there first')
+    core = read_core()
+    if '--accept' in sys.argv: accept(core)
+    zh, extra = read_zh()
+    out, used, bad = [], set(), []
+    for kind, b in core:
+        if kind == 'raw': out.append(b); continue
+        key = (b['lane'], b['sid']); z = zh.get(key)
+        if z is None: bad.append(f'no Chinese for {key}'); continue
+        used.add(key)
+        if z.get('ET') != b['T']: bad.append(f'the core\'s English line changed, or was never accepted: {key}\n   core: {b["T"]}\n   was:  {z.get("ET")}')
+        if z.get('ES') != b['S']: bad.append(f'the core\'s source line changed, or was never accepted: {key}\n   core: {b["S"]}\n   was:  {z.get("ES")}')
+        english_q = not CJK.search(b['Q'])
+        if english_q != ('Z' in z): bad.append(f'{key}: a Z line is needed exactly where Q is English')
+        if ('C' in b) != ('C' in z): bad.append(f'{key}: a C line is needed exactly where the core has one')
+        if (b['dl'] != '-') != ('D' in z): bad.append(f'{key}: a D line is needed exactly where the core gives a date label')
+        if any(('"' in z.get(k, '') or '“' in z.get(k, '')) for k in ('S', 'Z', 'D')): bad.append(f'{key}: quote marks in an S, Z or D line')
+        if ' ' in z.get('D', ''): bad.append(f'{key}: a space in a D line')
+        out.append(f'@ {b["lane"]} {b["kind"]} {b["date"]} {z.get("D", "-")} {b["sid"]}')
+        out.append(f'T {z.get("T", "")}'); out.append(f'S {z.get("S", "")}'); out.append(f'Q {b["Q"]}')
+        if 'Z' in z: out.append(f'Z {z["Z"]}')
+        if 'E' in b: out.append(f'E {b["E"]}')
+        if 'U' in b: out.append(f'U {b["U"]}')
+        if 'C' in b and 'C' in z:
+            place = z.get('CP') or ' '.join(b['C'].split(' ', 3)[:3])
+            assert re.fullmatch(r'(start|end|middle) -?[\d.]+ -?[\d.]+', place), (key, place)
+            out.append(f'C {place} {z["C"]}')
+    bad += [f'a block of zh_lines.txt is not a record of the core any more: {k}' for k in zh if k not in used]
+    if bad:
+        print('\n'.join(bad)); sys.exit(f'{len(bad)} problems; nothing written')
+    head = ['# Data for the Chinese-language version of the figure "Beijing vs. its labs" (cn_figure_build.py in this folder reads this file).',
+            '# WRITTEN BY make_inputs.py from english_originals/figure_data.txt (the core\'s data) and zh_lines.txt: do not edit it here.',
+            '# Each block: the core\'s "@" line, Q, E, U lines and label place, unchanged; T, S and the label words in Simplified Chinese;',
+            '# Z = my Chinese for an English Q (shown as a translation, never inside quote marks). The core\'s own header follows.', '']
+    tail = ['', '# Added for the Chinese version: exact words the Chinese page puts between quote marks (from zh_lines.txt)'] + extra
+    (F / 'figure_data.txt').write_text('\n'.join(head + out + tail) + '\n', encoding='utf-8')
+    n = sum(1 for k, _ in core if k == 'block')
+    print(f'figure_data.txt written: {n} records ({sum(1 for k in zh if "Z" in zh[k])} with a Z line), {sum(1 for k, b in core if k == "raw" and b.startswith("! "))} check lines of the core, {len(extra)} added')
+
+    t = (EN / 'template.html.copy').read_text(encoding='utf-8')
+    cut = t.index('<body>')
+    h = t[:cut]
+    for a, b in HEAD_CHANGES:
+        assert h.count(a) == 1, f'the core template\'s head no longer has exactly one: {a[:70]}'
+        h = h.replace(a, b)
+    body = (F / 'template_body_zh.txt').read_text(encoding='utf-8')
+    marks = lambda s: sorted(set(re.findall(r'%%[A-Z_0-9]+(?::[a-z0-9-]+)?%%', s)))
+    if marks(t[cut:]) != marks(body):
+        sys.exit(f'the placeholders of the Chinese body are not the core template\'s: only core {sorted(set(marks(t[cut:])) - set(marks(body)))}, only Chinese {sorted(set(marks(body)) - set(marks(t[cut:])))}')
+    (F / 'template.html').write_text(h + body, encoding='utf-8')
+    print(f'template.html written: the core\'s head with {len(HEAD_CHANGES)} changes, the Chinese body with {len(marks(body))} kinds of placeholder (the same as the core\'s)')
+
+
+main()

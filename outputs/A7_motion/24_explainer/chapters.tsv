@@ -1,0 +1,66 @@
+# Which marks of the dated strip each caption brings on screen (build.py reads this file).
+# Columns: chapter <TAB> role <TAB> row <TAB> saved id
+#   role "new":   the mark appears for the first time in this chapter. Every one of the records must be "new" exactly once.
+#   role "again": the mark was shown in an earlier chapter and is lit again here.
+#   row: BH Beijing holds Nvidia back | BL Beijing lets Nvidia in | CN companies reach for Nvidia | CH companies turn to home-made chips
+#   saved id: an id of figure/figure_data.txt, or, with "new", "*" = every mark of that row not named as new anywhere else,
+#             "*solid" = the same, filled marks only, "*press" = the same, open marks only; with "again", "*" = the whole row.
+# The last chapter (the second part of the sentence that survives) lights every mark again; it needs no lines here.
+# Round 4: twelve chapters, renamed for the core's 61 records. The record of Sept 16, 2025 on the RTX6000D now stands in the
+# row "the companies reach for Nvidia", so chapter 2 brings it on (fix V6).
+
+# 1. The declared line: the purchase rule for state bodies, the leader, the security ministry's warning, the state planner, the evaluation list
+1	new	BH	cn-policy-desktop-2023
+1	new	BH	cn-xi-round-j-6
+1	new	BH	cn-acts-mss-xinhua-20250721
+1	new	BH	cn-policy-ndrc-chip-adaptation-2026
+1	new	BH	cn-le14-itsec-2026-2
+
+# 2. What the companies used and ordered: the whole row "the companies reach for Nvidia"
+2	new	CN	*
+
+# 3. What Beijing did, on the record: the other filled marks of "Beijing holds Nvidia back" (the regulators' acts, three filings, a US official)
+3	new	BH	*solid
+
+# 4. What Beijing did, as reported: the open marks of "Beijing holds Nvidia back"
+4	new	BH	*press
+
+# 5. The numbers: ordered; licensed by Washington (the report that about ten firms were cleared and nothing delivered); approved by Beijing; waiting
+5	again	CN	cn-labs-h200-two-million-202512-relay1-wayback
+5	again	BH	cn-acts-reuters-us-approvals-20260514-wayback
+5	new	BL	ms-bj-20260128-h200-nod-standard
+5	again	BH	cn-clips-evidence-1
+
+# 6. Limit 1, not one actor: the welcoming side of Beijing
+6	new	BL	cn-policy-he-welcomes
+6	new	BL	cn-policy-wang-nvidia
+6	new	BL	cn-policy-h20-mofcom
+6	new	BL	cn-acts-reuters-deepseek-20260130
+6	new	BL	cn-xi-round-f-6
+6	new	BL	cn-tolerate-mof
+6	new	BL	cn-acts-mofcom-20261117
+
+# 7. Limit 2, warnings and guidance, not a published ban: the 2023 review conclusion on Micron (a published one), the state
+#    broadcaster's account (a public warning), the security ministry's warning, and the 2024 report of "guidance"
+7	new	BH	cn-policy-micron-decision
+7	new	BH	cn-le13-yuyuan-qq-20250810b
+7	again	BH	cn-acts-mss-xinhua-20250721
+7	again	BH	cn-factions-bloomberg-flexibility-202409-relay1
+
+# 8. Limit 3, approvals and arrivals: the rest of the row "Beijing lets Nvidia in"
+8	again	BL	ms-bj-20260128-h200-nod-standard
+8	new	BL	*
+
+# 9. Limit 4, reasons of their own and American curbs: the whole row "the companies turn to home-made chips", and Nvidia's
+#    report of Nov 19, 2025, which holds the sentence on US export controls
+9	new	CH	*
+9	again	BH	man-ms-sec-10q-2025-10
+
+# 10. Limit 5, what Beijing meant: the antitrust case, the summons, and the customs report that names "a bargaining tactic"
+10	again	BH	cn-policy-samr-open-original
+10	again	BH	cn-policy-cac-h20-original
+10	again	BH	cn-policy-samr-further-original
+10	again	BH	cn-acts-reuters-customs-20260114
+
+# 11. The sentence, part 1 (the pressure and the warnings): the whole row "Beijing holds Nvidia back"
+11	again	BH	*

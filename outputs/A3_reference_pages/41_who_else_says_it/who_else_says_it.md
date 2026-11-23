@@ -1,0 +1,247 @@
+# Who else says it, and who narrows it
+
+*Officials, companies, congressional bodies and analysts on whether Beijing held back chips that China's own AI companies wanted, and on what Beijing meant by it. Each row gives their own words, the date and the source. A statement that the conflict exists is not proof of it.*
+
+Draft by Claude, Anthropic's model. Local; not published. Written Nov 23, 2026 (UTC).
+
+Commentary by analysts is marked as opinion. It is not evidence of fact. English in round brackets after Chinese is ours, not an official translation.
+
+Words taken from captions or a machine transcript are marked so, with the time in the recording. Nobody has checked them by ear.
+
+## What this page is for
+
+Palmer Luckey said in a clip that China does not want Nvidia to sell chips to Chinese companies, while Chinese companies want to buy them. This page lists who else has said the same, who has said it only in part, who has said something that narrows or cuts against it, and how American bodies read what Beijing meant by it.
+
+Four things to keep in mind. The American officials each give it as their own understanding, sense or analysis. The Chinese side has published no instruction and its spokespeople would not confirm one. American bodies read Beijing's conduct two ways, as leverage in trade talks and as a sovereign choice, and the argument leaves that open (its fifth limit). And the analysts give opinions: they are sorted here by what they say, not by whether they are right.
+
+## 1. On the record: they state the conflict
+
+| Who and when | Their own words | What kind of statement it is |
+|---|---|---|
+| **US Commerce Secretary Howard Lutnick**, to a Senate subcommittee, Apr 22, 2026 [1] | "my understanding is their cloud companies want to buy these chips"; the "Chinese central government has not let them as of yet buy the chips because they're trying to keep their investment focused on their own domestic industry"; "So that's my understanding of what's happening." | An official on the record, from a commercial transcript. He states both halves: the companies want the chips, the central government has not let them buy. He gives it as his understanding and says "as of yet". |
+| **US Trade Representative Jamieson Greer**, at the Council on Foreign Relations, May 26, 2026 [2] | "my own sense is that what passes for the private sector in China is interested in the highest technology chips they can get. And the government in China and the party are interested in promoting their domestic production of chips and indigenous innovation."; "And you can guess who wins in that situation." | An official on the record, from the Council's transcript. He states both halves and says which side prevails. He gives it as his own sense. |
+| **Jamieson Greer**, on Bloomberg Television, video posted Nov 20, 2026 [3] | The Chinese side is "not as monolithic as people would have you believe"; the private sector is "quite eager to get the most advanced chips they can"; by his "own analysis" some "we'd like to have access", others "we don't want American chips anyway" and "We want to see the ascend chips expand their market" | **Captions, not checked by ear**, 1:06 to 1:35. He states both halves and a split. A second caption track differs on one word and on where a sentence breaks [4], so whether he puts the split inside the government needs a listen. |
+| **Jamieson Greer**, on Bloomberg Television, video posted Dec 19, 2025 [5] | "We know there are a lot of Chinese companies that want them. We know the Chinese government's pretty interested in having their own uh domestic champions build them." | **Captions, not checked by ear**, from 8:49. He states both halves. |
+| **Nvidia**, quarterly report for the quarter to Jul 26, 2026 [6] | The United States "granted licenses that would allow us to ship small amounts of H200 products to specific China-based customers, but such sales were restricted by the PRC government" | A company's filing with the US securities regulator. It states Beijing's half: the state restricted sales that were licensed. |
+| **Nvidia**, quarterly report for the quarter to Oct 26, 2025 [7] | "The Chinese government has encouraged customers to purchase from our China-based competitors and restricted customers from purchasing, importing, or using our data center products"; two sentences later: "we are already effectively foreclosed from the China market by U.S. export controls" | A company's filing. The same half, a year earlier, beside Nvidia's own words on American controls. Its annual report of Feb 2026 says "discouraged" in place of "restricted" [8]. |
+| **Nvidia**, results call of May 20, 2026 [9] | "we have yet to generate any revenue, and we are uncertain whether any imports will be allowed into the country" | The company's own results call. It says less than the filing three months later: licences from Washington, no revenue, and doubt whether imports will be let in. It does not say who would not allow them. |
+| **Alibaba**, annual report for the year to Mar 31, 2026 [10] | "In September 2025, the Cyberspace Administration of China requested Chinese technology companies to halt purchases of certain chips." | A Chinese company's filing with the US securities regulator. It states Beijing's half. The sentence does not name Nvidia. |
+| **Tencent's chief strategy officer**, results call of May 13, 2026 [11] | On why chips were short in China: "a combination of policy restrictions on certain, you know, foreign design GPUs being brought into China" | A company executive on a results call, from a stock-data site's transcript whose speaker labels nobody has checked. He names policy restrictions as one cause, with limited factory capacity for Chinese designs as the other. He does not say whose policy. |
+| **Senator Chris Coons**, letter to the Commerce Secretary, May 5, 2026 [12] | "you responded in the negative, noting that while your department has licensed the export of these semiconductors to China, the PRC government has not allowed the sale" | A senator's record of the Secretary's answer. The same letter sets a remark by Nvidia's chief executive against it (section 3). |
+| **Li Chao**, of the state planner's policy research office, at its press conference of May 22, 2026 [13] | "指导国产大模型加大力度适配国产算力芯片" (guiding home-made large models to do more to adapt to home-made computing chips) | A Chinese official on the record. The page does not call him spokesperson. The state planner says in public that it steers home-made models toward home-made chips. It says nothing about a ban. |
+| **Matt Pottinger**, written testimony to the House Foreign Affairs Committee, Jan 14, 2026 [14] | "Beijing has utterly dismissed the premise that it would allow Chinese companies to remain dependent on Nvidia." | Written testimony by a witness. His judgement, not a document of Beijing's. It states Beijing's half. |
+| **Hanna Dohmen**, a research analyst at Georgetown University's Center for Security and Emerging Technology, prepared statement for a US-China commission hearing, Feb 6, 2025 [15] | Before the American controls "the Chinese government fought against the strong pull of commercial incentives", and "Chinese consumers preferred to use the highest-performance chips designed by Nvidia and other foreign firms" | A named analyst's written statement to a congressional commission. She states both halves, for the years before the controls. |
+
+## 2. On the record: they say it without setting the companies against the government
+
+| Who and when | Their own words | What kind of statement it is |
+|---|---|---|
+| **The President**, to reporters aboard Air Force One, May 15, 2026 [16] | Of the H200: "China needs it". Asked whether China had bought any: "No, because they chose not to. They want to try and develop their own. But it did come up, and I think something could happen on that." | An official on the record, in the official transcript. He says China chose not to buy. He does not separate the companies from the government. |
+| **The President**, Oct 29 and 30, 2025 [17] [18] | Told that China had discouraged purchases: "Well, China actually terminated the relationship with the Nvidia, yes." The next day: "We did discuss chips", and "they're going to be talking to Nvidia and others about taking chips" | An official on the record, in the official transcripts. The second day's words qualify the first. |
+| **The President**, post of Dec 8, 2025 [19] | "I have informed President Xi, of China, that the United States will allow NVIDIA to ship its H200 products to approved customers in China"; "President Xi responded positively!" | An official on the record. It is his account of Xi's answer, not Xi's words. It cuts against a flat refusal by Beijing. |
+| **Treasury Secretary Scott Bessent**, on CNBC, Nov 20, 2026 [20] | "I think what we have seen is a paucity of orders from the Chinese on the H200s as they try to build out their own chip stack" | An official on the record, from CNBC's transcript, which it calls unofficial. He gives it as what he thinks. He speaks of "the Chinese", not of companies against a government. |
+| **House Select Committee on the Chinese Communist Party**, report of Nov 13, 2026 [21] | "the PRC government refused the H200 chips, instead pushing its own homegrown industry" | A congressional committee's report. Its note cites an article on the President's words of May 15. It names the government alone. In April 2026 the same committee wrote the other way (section 3). |
+| **Palmer Luckey**, in a clip posted Nov 19, 2026 [22] [23] | "China doesn't want NVIDIA to sell GPUs to Chinese companies." (0:11 to 0:16 in a machine transcript). And next, in the text of the post that carries the clip: "there are Chinese companies that want to buy Nvidia GPUs" | A machine transcript of a clip and the text of the post that carries it; not checked by ear. He states both halves flatly. The record is narrower: some purchases were approved and some chips came in. |
+| **Matt Pottinger**, in a clip posted Nov 18, 2026 [24] | Of selling chips so that China depends on America: "an utterly fraudulent philosophy". And: "what those chips allowed was for China to build extremely powerful AI models". Both are in the passage that starts at 0:22. | A machine transcript of a clip; not checked by ear. In the clip he does not set China's companies against its government. |
+
+## 3. On the record: they narrow it or cut against it
+
+| Who and when | Their own words | What kind of statement it is |
+|---|---|---|
+| **House Select Committee on the Chinese Communist Party**, report of April 2026 [25] | "Beijing subsequently approved H200 purchases by Alibaba, Tencent, and ByteDance" | A congressional committee's report, citing Reuters. It cuts against a flat refusal. Seven months later the same committee wrote that the government refused the chips (section 2). |
+| **House Foreign Affairs Committee**, disclosure of Nov 19, 2026, by the full committee [26] [27] | "requested sales of 3.4 million AI chips to China, and the approval of more than 879,000 by BIS"; made public by the committee's "unanimous consent" | Documents on the record. The Commerce Department's table it released shows Washington's side of the H200's path: by May 11, 2026 it had returned without action 1,888,950 of the 3,444,160 chips in the applications its summary records, 55% of the table, and gives no reason [28]. The committee says the summary does not show every application in full: "For example, NVIDIA applied on December 19, 2025, to export 445,000 H200s to Tencent" [29], an application the table shows at 75,000. It narrows the claim that only Beijing stood in the way. |
+| **Jeffrey Kessler**, under secretary of commerce for industry and security, to the House Foreign Affairs Committee, Jul 14, 2026 [30] | "There have been minimal exports of any H200s to China so far"; shipments had begun but the number was "very few" | An official's testimony, as Reuters reported it. It narrows the claim that none came in: by July 2026 a few had. |
+| **Jensen Huang**, then Nvidia's chief executive, Aug 22, 2025 [31] | On Beijing's scrutiny of the H20: "We're surprised by that"; "They requested and urged us to secure licenses for the H20s for some time." | A named executive, as the Wall Street Journal reported him (carried by Mint). It narrows the claim in time: by his account Beijing had asked for these chips before it turned against them. |
+| **Jensen Huang**, Mar 17, 2026 [32] [12] | Reuters: he said Nvidia had been licensed for "many customers in China" for the H200. Senator Coons's letter: he "told a group of reporters that Nvidia had received necessary approvals from both the United States and PRC governments", and to the Secretary: "Your statements before the committee appear to contradict Huang's comments." | A named executive, as reported. It cuts against a flat refusal. The same Reuters article quotes a Chinese company source who "did not know if the Chinese government had given final approval". Five weeks later the Commerce Secretary said no chips had been sold (section 1). |
+| **Tencent's chief strategy officer**, results call of Mar 18, 2026 [33] | Tencent was buying "higher-end imported GPUs which are now becoming available again" | A company executive on a results call, from the same stock-data site's transcript; speaker labels unchecked. It narrows the claim in time: by his account imported chips were becoming available again in March 2026. He named Chinese-designed chips beside them. |
+| **Nvidia**, results call for the quarter ended Oct 25, 2026 [34] [35] | "Q3 sales of licensed Hopper Data Center products to China was $2.4 billion"; "we are no longer shipping licensed Hopper Data Center products to China" | The company's own results call. It shows licensed chips were sold in that quarter, and then that shipments stopped. Nvidia gave no reason. Reuters wrote that its interim chief executive "did not explain why Nvidia had stopped shipping the processors or whether the halt would be permanent". |
+| **Vice Premier He Lifeng**, to Nvidia's chief executive, Apr 17, 2025 [36] | "欢迎包括英伟达公司在内的更多美资企业深耕中国市场" (more American firms, Nvidia among them, are welcome to put down deeper roots in the Chinese market) | A Chinese official on the record, in Xinhua's account. A welcome by name. The cyberspace regulator summoned Nvidia on Jul 31 of the same year. |
+| **Commerce Minister Wang Wentao**, to Nvidia's chief executive, Jul 17, 2025 [37] | "希望包括英伟达在内的跨国公司为中国客户提供优质可靠的产品和服务" (we hope multinationals, Nvidia among them, will give Chinese customers high-quality, reliable products and services) | A Chinese official on the record, in his ministry's account. It shows Beijing was not one voice. |
+| **Wei Shaojun**, vice chairman of the China Semiconductor Industry Association, January 2026, as quoted in Matt Pottinger's testimony [14] | "Even if we introduce Nvidia chips, our determination to pursue independent innovation will remain unwavering" | Second-hand: an industry figure's words to Chinese state media, as an American witness quotes them. The Chinese original is not held. It narrows the conflict: those who would import and those who would not want the same end. |
+| **Alibaba's chief executive**, results call, as reported on Nov 19, 2026 [38] | "结合当前形势" (in light of the present situation), from 2027 on, "公司绝大部分新增AI芯片供给将以自研平头哥国产芯片为主" (most of the company's added AI chip supply will be its own T-Head chips) | A named executive, as a Chinese newspaper reported him. It narrows the companies' half: this company is also turning to its own chips. It is his judgement for 2027 and after. |
+| **US-China Economic and Security Review Commission**, report of November 2026 [39] | "U.S. and allied controls did not drive China's indigenization efforts, but they have added urgency in recent years." | A congressional commission's report. It narrows the claim from the other side: American controls pushed too. |
+
+## 4. What Beijing meant: leverage, or a sovereign choice
+
+The argument's fifth limit: what Beijing meant by its acts is not settled. These American bodies and officials read it, and they read it two ways. None of them quotes a Chinese text that states a motive, and none was found.
+
+| Who and when | Their own words | How they read it |
+|---|---|---|
+| **US-China Economic and Security Review Commission**, report of November 2025 [40] | The market regulator's finding against Nvidia came "in the midst of negotiations", as the regulator dropped an inquiry into Google, "signaling China's willingness to both exert leverage and ease pressure as a negotiating tactic" | Leverage. A congressional commission's report; this passage rests on Reuters and the Financial Times. |
+| **The White House**, fact sheet on the trade deal, Nov 1, 2025 [41] | "China will terminate its various investigations targeting U.S. companies in the semiconductor supply chain, including its antitrust, anti-monopoly, and anti-dumping investigations"; among China's commitments: "End Chinese retaliation against U.S. semiconductor manufacturers and other major U.S. companies." | Leverage, or retaliation. No saved page says the Nvidia case ended. |
+| **The Trade Representative's office**, report of 2026 [42] | By the end of 2025 China "had terminated or suspended these investigations", which "were being pursued for retaliatory purposes" | Retaliation. The passage names no company. |
+| **Congressional Research Service**, report R48642, Sept 19, 2025 [43] | China "may use its purported security concerns about the H20 to press for technology disclosures and access to more advanced chips, such as Nvidia's B30 chip"; the market regulator's finding was "another effort to pressure Nvidia to provide its advanced chips to China" | Pressure for MORE advanced Nvidia chips, not fewer. A research service's reading for Congress. |
+| **Jamieson Greer**, on Bloomberg Television, video posted Dec 19, 2025 [5] | Of Washington's H200 decision: "That was not a negotiated outcome." | **Captions, not checked by ear**, 5:35. Not bargained, on the American side. |
+| **Jamieson Greer**, on Bloomberg Television, video posted May 15, 2026 [44] | Whether Chinese companies may buy the H200: "gonna be a sovereign decision for China"; "They're very committed to domestic production." | **Captions, not checked by ear**, 5:59 and 6:27. The track is the video's uploaded caption track; its maker is not stated. A sovereign choice. |
+| **Jamieson Greer**, on Bloomberg Television, video posted Nov 20, 2026 [3] | Asked whether Xi raised chips on the President's trip: "But the Chinese side did not raise this issue with us." | **Captions, not checked by ear**, 0:31. Chips were not on Beijing's list at that meeting. |
+| **Treasury Secretary Scott Bessent**, in a clip Bloomberg Television aired on Jul 15, 2025 [45] | Of why the April block on the H20 was lifted: "You might say that that was a negotiating chip that we used in Geneva and in London" | **Captions, not checked by ear**, 8:55. Bargaining, on the American side: Washington put chips on the table itself. |
+
+## 5. The foreign ministry: neither yes nor no
+
+Five times a reporter asked a foreign ministry spokesperson about these chips. Each time the answer sent the question elsewhere or restated a general position. None confirms an instruction and none denies one.
+
+| When, and what was asked | The spokesperson's words | Our English |
+|---|---|---|
+| Aug 22, 2025. Asked about reports that China stopped its companies from using the H20 [46] | "这个问题建议向中方主管部门了解。作为原则,我们一贯认为各国应当共同维护全球产供链稳定畅通。" | (On this question, I suggest you ask the competent Chinese departments. As a principle, we have always held that all countries should together keep global production and supply chains stable and unobstructed.) |
+| Dec 10, 2025. Asked about a report that China was weighing limits on buying the H200 [47] | "具体情况建议向中方主管部门询问" | (For the specifics, I suggest you ask the competent Chinese departments.) |
+| Jan 29, 2026. Asked to confirm a report that China had approved H200 imports for the first time [48] | "具体问题建议向中方主管部门进行询问" | (For specific questions, I suggest you ask the competent Chinese departments.) |
+| Nov 9, 2026. Asked about the report of about 600,000 chips stored in Hong Kong [49] | "中方在美国输华芯片问题上的立场是一贯的。具体情况建议向中方主管部门询问。" | (China's position on US chip exports to China is consistent. For the specifics, I suggest you ask the competent Chinese departments.) |
+| Nov 18, 2026. Asked about Nvidia's statement that it would ship no more [50] | "中方此前已经多次阐明在美国输华芯片问题上的原则立场" | (China has stated its position of principle on US chip exports to China many times.) |
+
+Asked about the reported approval of Mar 17, 2026, a spokesperson for the Chinese embassy in Washington said they were "not aware of the specifics" [32].
+
+## 6. Commentary: opinion, not evidence of fact
+
+These are analysts' readings. Each is one person's or one firm's view. They are listed because they state the conflict, or narrow it, in plain terms. None of them adds a document.
+
+| Who and when | Their own words | What they hold |
+|---|---|---|
+| **Trivium China**, a policy research firm (general knowledge), in a note of Apr 30, 2026 [51] | "Ding's remarks help explain the lack of H200 imports."; refusing the chips "amounts to protecting the chip industry at the direct expense of AI model companies"; "China can't build a domestic AI chip industry by starving its only customers." | Opinion. States the conflict in its strongest form: the state protects chip makers at the cost of the AI companies. |
+| **Julian Gewirtz**, in the New York Review of Books, February 2026 [52] | "Beijing soon issued guidance that tech firms should avoid purchasing Nvidia chips and instead double down on domestic alternatives."; Xi told the Politburo to "concentrate resources to overcome challenges in core technologies such as high-end chips" "even though the CEO of DeepSeek, Liang Wenfeng, had complained" | Opinion, in an essay. States the conflict: the leader's line against a company chief's complaint. |
+| **Ryan Fedasiuk**, post on X, May 15, 2026 [53] | "different segments of the CCP are optimizing for different security and development objectives"; some offices "would rather see Chinese AI labs eat the bitter medicine (吃苦) of temporary chip scarcity, so long as it helps to create a captive market for Chinese chipmakers in the medium-term" | Opinion. States the conflict as one inside the Party. He puts the state planner with the commerce ministry; the Financial Times reports that the 2025 push to restrict "was led by the National Development and Reform Commission" [54]. |
+| **Kyle Chan**, a fellow at the Brookings Institution, in the Washington Post, published Nov 18, 2026, as carried by Jewish World Review [55] | "there's another part of Beijing - and I would argue the more influential parts of Beijing - that are arguing for a focus on building up China's semiconductor self-reliance and ultimately weaning the country away from Nvidia chips altogether" | Opinion. States a split inside Beijing and says which part has more weight. |
+| **Nori Chiou**, "investment director at White Oak Capital Partners", quoted by Reuters, Dec 13, 2025 [56] | Cloud companies and other customers were "lobbying the government to relax restrictions on a conditional basis" | One market participant's observation. States the companies' half: they pressed the state to loosen. |
+| **Jimmy Goodrich**, a senior adviser to RAND Corporation, August 2025, through Tom's Hardware [57] | "If the U.S. government were to approve a powerful Blackwell for China, even at a 30-to-50% performance reduction"; "My guess is we'd miraculously see China forget about security concerns." | Opinion. Narrows it: on this reading Beijing's security objection would fall away if better chips were on offer. |
+
+## 7. What Luckey said elsewhere in the same interview
+
+The clip is 56 seconds of a longer interview. A published transcript of the interview has two more sentences that bear on how to read him [58].
+
+- His own view of the policy: "I don't think that we should be exporting chips to China." [58]
+- His reason for the 600,000 chips: "because China will not give them an import permit because they want to build an internal domestic processor industry" [58]. The clip's machine transcript has the same words at 0:25 to 0:35 [22]; it has not been checked by ear. His words say more than the record shows. No permit rule for these chips was found in the pages read, and the words of the report he follows are that Beijing "withholds approval for large-scale imports" [59].
+
+## Read with care
+
+- **Saying it is not showing it.** The officials in section 1 give their understanding, sense or analysis. What shows the conflict is in the argument: the documents, the filings and the reports.
+- **The Chinese side has not confirmed it.** No published instruction against buying Nvidia chips was found in the 103 policy pages read, and the foreign ministry's spokespeople gave no answer either way.
+- **Washington stood in the way too.** The House committee's table shows that 55% of the chips in the applications the summary records were returned without action, with no reason given; the American rule and a 25% tariff also bore on the H200 (section 3, and the argument's point 20).
+- **What Beijing meant is read two ways.** Section 4 sets the readings side by side. They are readings, not findings.
+- **Captions and clips.** Words from captions and machine transcripts are marked, with the time; nobody has checked them by ear. Both clips also make claims about Nvidia's chief executive that are outside this page. Those are the speakers' allegations, and no saved source here establishes them.
+- **Commentary is opinion.** An analyst who states the conflict adds no evidence that it exists.
+- **Not here.** Press reports from unnamed people that state the conflict, such as Reuters's headline "Chinese firms still want Nvidia chips despite government pressure not to buy, sources say" [60], are in the argument and in TIER2_REPORTING.md.
+
+## References
+
+Each entry: its kind; what it is; the saved page's own title where the record holds one; the address; the saved copy (research/primary/<id>).
+
+[1] Official document, or an official on the record. Commerce Secretary Howard Lutnick, hearing of the Senate appropriations subcommittee on commerce, justice and science, Apr 22, 2026. Rev's commercial transcript, not the committee's own print. Page title: Howard Lutnick Commerce Department Budget | Rev. https://www.rev.com/transcripts/commerce-department-budget-hearing Saved copy: cn-us-lutnick-0422-rev-transcript-b
+
+[2] Official document, or an official on the record. US Trade Representative Jamieson Greer at the Council on Foreign Relations, May 26, 2026. The Council's transcript. Page title: A Conversation With Ambassador Jamieson Greer | Council on Foreign Relations. https://www.cfr.org/event/a-conversation-with-jamieson-greer Saved copy: cn-counter-b22-2
+
+[3] Caption track or machine transcript, not checked by ear. US Trade Representative Jamieson Greer, interview on Bloomberg Surveillance, video posted on Bloomberg Television's channel on Nov 20, 2026 (the upload date the page gives): YouTube's automatic caption track. Machine captions, not checked by ear. https://www.youtube.com/watch?v=wR6CzdqN4M0 Saved copy: cn-le01-greer-bbg-20261120-autocaps-ttml
+
+[4] Caption track or machine transcript, not checked by ear. The same interview: the video's second caption track (named English; its maker is not stated). Captions, not checked by ear. https://www.youtube.com/watch?v=wR6CzdqN4M0 Saved copy: cn-le01-greer-bbg-20261120-subs-ttml
+
+[5] Caption track or machine transcript, not checked by ear. Bloomberg Television, interview of the US Trade Representative, Jamieson Greer, posted on YouTube on Dec 19, 2025: the automatic captions (not checked by ear). https://www.youtube.com/watch?v=677XCaaJXU0 Saved copy: cn-le01-greer-bbg-20251219-autocaps-ttml
+
+[6] Company filing or statement. Nvidia, quarterly report on Form 10-Q for the quarter to Jul 26, 2026, filed with the US Securities and Exchange Commission on Aug 26, 2026. https://www.sec.gov/Archives/edgar/data/1045810/000104581026000075/nvda-20260726.htm Saved copy: man-ms-sec-10q-2026-07
+
+[7] Company filing or statement. Nvidia, quarterly report on Form 10-Q for the quarter ended Oct 26, 2025, filed with the US Securities and Exchange Commission; signed Nov 19, 2025. https://www.sec.gov/Archives/edgar/data/1045810/000104581025000230/nvda-20251026.htm Saved copy: man-ms-sec-10q-2025-10
+
+[8] Company filing or statement. Nvidia, annual report on Form 10-K for the fiscal year ended Jan 25, 2026, filed with the US Securities and Exchange Commission. https://www.sec.gov/Archives/edgar/data/1045810/000104581026000021/nvda-20260125.htm Saved copy: man-ms-sec-10k-fy2026
+
+[9] Company filing or statement. Nvidia, results call of May 20, 2026 (first quarter of its fiscal year 2027): the transcript on Nvidia's investor site. https://s201.q4cdn.com/141608511/files/doc_financials/2027/q1/NVDA-Q1-2027-Earnings-Call-20-May-2026-5_00-PM-ET.pdf Saved copy: cn-o38-nvda-q1fy27-call-transcript-pdf
+
+[10] Company filing or statement. Alibaba Group, annual report on Form 20-F for the year to Mar 31, 2026, filed with the US Securities and Exchange Commission. Copy on Alibaba's investor site. https://data.alibabagroup.com/ir_filings/SEC/BABA/000119312526231755/baba-20260331.htm Saved copy: cn-clips-alibaba-20f
+
+[11] Press report of words spoken on the record. Tencent, results call of May 13, 2026: transcript on the stock-data site Stock Analysis. The speaker labels are the site's; nobody has checked them against the recording. Page title: Tencent Holdings (HKG:0700) Q1 2026 Earnings Call Transcript & Audio. https://stockanalysis.com/quote/hkg/0700/transcripts/609405-q1-2026/ Saved copy: cn-o36-tencent-call-20260513-sa
+
+[12] Official document, or an official on the record. Senator Chris Coons, release of May 5, 2026, with his letter to the Commerce Secretary. Page title: Senator Coons investigates Commerce Secretary Lutnick’s statements on Nvidia H200 chip exports in new letter - Senator Christopher Coons. https://www.coons.senate.gov/news/press-releases/senator-coons-investigates-commerce-secretary-lutnicks-statements-on-nvidia-h200-chip-exports-in-new-letter/ Saved copy: cn-against2-coons-contradiction-20260505
+
+[13] Official document, or an official on the record. Li Chao, of the policy research office (政研室) of the National Development and Reform Commission (the state planner), at the commission's press conference of May 22, 2026. The commission's own record; the page does not call him spokesperson. Page title: 【李超】-国家发展和改革委员会. https://www.ndrc.gov.cn/xwdt/wszb/202605xwfbh/wzsl/202605/t20260522_1405394_ext.html Saved copy: cn-policy-ndrc-chip-adaptation-2026
+
+[14] Press report of words spoken on the record. Matt Pottinger, written testimony to the House Foreign Affairs Committee, Jan 14, 2026. The committee's own copy of his statement, not a press report. https://docs.house.gov/meetings/FA/FA00/20260114/118814/HHRG-119-FA00-Wstate-PottingerM-20260114-U1.pdf Saved copy: cn-clips-pottinger-house-20260114
+
+[15] Named person on the record. Hanna Dohmen, research analyst at Georgetown University's Center for Security and Emerging Technology (CSET), prepared statement for the US-China Economic and Security Review Commission's hearing of Feb 6, 2025, in the commission's hearing record. A named analyst's testimony, not an official's and not the commission's own. https://www.uscc.gov/sites/default/files/2025-02/February_6_2025_Hearing_Transcript.pdf Saved copy: cn-usdocs-uscc-hearing-20250206
+
+[16] Official document, or an official on the record. The President, exchange with reporters aboard Air Force One, May 15, 2026. Daily Compilation of Presidential Documents. Page title: DCPD202600343. https://www.govinfo.gov/content/pkg/DCPD-202600343/html/DCPD-202600343.htm Saved copy: cn-usdocs-trump-20260515
+
+[17] Official document, or an official on the record. The President, exchange with reporters aboard Air Force One, Oct 29, 2025. Daily Compilation of Presidential Documents. Page title: DCPD202501069. https://www.govinfo.gov/content/pkg/DCPD-202501069/html/DCPD-202501069.htm Saved copy: cn-usdocs-trump-20251029
+
+[18] Official document, or an official on the record. The President, remarks and exchange with reporters aboard Air Force One, Oct 30, 2025. Daily Compilation of Presidential Documents. Page title: DCPD202501078. https://www.govinfo.gov/content/pkg/DCPD-202501078/html/DCPD-202501078.htm Saved copy: cn-usdocs-trump-20251030
+
+[19] Official document, or an official on the record. The President, post of Dec 8, 2025, as kept by the American Presidency Project. Page title: Truth Social Posts of December 8, 2025 | The American Presidency Project. https://www.presidency.ucsb.edu/documents/truth-social-posts-december-8-2025 Saved copy: cn-clips-followup-3-relay1
+
+[20] Press report of words spoken on the record. Treasury Secretary Scott Bessent on CNBC, Nov 20, 2026. CNBC's transcript, which it calls unofficial, on its owner's press site. Page title: CNBC | VERSANT Press Room. https://pressroom.versantmedia.com/cnbc/press-releases/cnbc-exclusive-transcript-us-treasury-secretary-scott-bessent-speaks-cnbcs-1 Saved copy: cn-against2-bessent-orders-20261120
+
+[21] Official document, or an official on the record. House Select Committee on the Chinese Communist Party, report "Rigging the Game", released Nov 13, 2026 (the committee's release page is listed next). The sentence cited (page 27) rests on its notes 133 and 134, a news article of May 15, 2026 on the President's remarks. https://chinaselectcommittee.house.gov/sites/evo-subsites/selectcommitteeontheccp.house.gov/files/evo-media-document/dmi-report-rigging-the-game.pdf Saved copy: cn-usdocs-select-rigging-game-report
+
+[22] Caption track or machine transcript, not checked by ear. Palmer Luckey, in a clip of 56 seconds posted on X by @overton_news, Nov 19, 2026. Words from a machine transcript of the clip (the file transcripts_two_clips.md, beside this note); nobody has checked them by ear. https://x.com/overton_news/status/2123392702821580811
+
+[23] Press report of words spoken on the record. Post on X by @overton_news, Nov 19, 2026, which carries the clip of Palmer Luckey and gives his words as text. The post does not name the programme. https://x.com/overton_news/status/2123392702821580811 Saved copy: cnpol-x-overton-2123392702821580811
+
+[24] Caption track or machine transcript, not checked by ear. Matt Pottinger with Christiane Amanpour, in a clip of 2 minutes 22 seconds posted on X by @amanpour, Nov 18, 2026. Words from a speech program's transcript of the clip (research/cn_chip_policy_20261120/transcripts_two_clips.md); nobody has checked them by ear. https://x.com/amanpour/status/2123118808290189692
+
+[25] Official document, or an official on the record. House Select Committee on the Chinese Communist Party, report of April 2026 on China's efforts to acquire frontier AI capabilities (released Apr 16, 2026 by the committee's page). Government Publishing Office copy. The sentence cited rests on a Reuters report of Jan 28, 2026. https://www.govinfo.gov/content/pkg/GOVPUB-Y4_2_C44-PURL-gpo255259/pdf/GOVPUB-Y4_2_C44-PURL-gpo255259.pdf Saved copy: cn-le03-govinfo-buywhat-pdf
+
+[26] Official document, or an official on the record. House Foreign Affairs Committee, chairman's press release of Nov 19, 2026 on making public the licence information for Nvidia's and AMD's chips to China. Page title: Chairman Brian Mast Exercises Legislative Authority to Publicly Release AI Chip License Information for China. https://foreignaffairs.house.gov/news/press-releases/chairman-brian-mast-exercises-legislative-authority-to-publicly-release-ai-chip-license-information-for-china Saved copy: cn-labs-us-chip-licences-20261119
+
+[27] Official document, or an official on the record. House Foreign Affairs Committee, the ranking member's remarks at the business meeting of Nov 19, 2026, on the committee Democrats' site. Page title: Meeks Delivers Remarks During HFAC Disclosure of BIS Licenses of NVIDIA & AMD Chips to China | House Foreign Affairs Committee. https://democrats-foreignaffairs.house.gov/2026/11/meeks-delivers-remarks-during-hfac-disclosure-of-bis-licenses-of-nvidia-amd-chips-to-china/ Saved copy: cn-le04-meeks-remarks-20261119
+
+[28] Official document, or an official on the record. House Foreign Affairs Committee, disclosure of Nov 19, 2026: the Commerce Department's table of licence applications for Nvidia's H200 and AMD's MI325X, with their status as of May 11, 2026 (its text layer is out of order; the rows were read from the page images). https://democrats-foreignaffairs.house.gov/wp-content/uploads/2026/11/11.19.26-ECRA-Information-Disclosure-of-BIS-License-Decisions.pdf Saved copy: cn-usdocs-hfac-decisions-20261119
+
+[29] Official document, or an official on the record. House Foreign Affairs Committee, disclosure of Nov 19, 2026, made by the full committee (its chairman's release; approved by unanimous consent at a business meeting; the files are on the committee Democrats' site): the committee's summary, which cites a Commerce Department summary dated May 11, 2026. https://democrats-foreignaffairs.house.gov/wp-content/uploads/2026/11/11.19.26-ECRA-Information-Disclosure-HFAC-Summary.pdf Saved copy: cn-usdocs-hfac-summary-20261119
+
+[30] Press report of words spoken on the record. Reuters, Jul 14, 2026, as carried by Investing.com, reporting the testimony of Jeffrey Kessler, under secretary of commerce for industry and security, to the House Foreign Affairs Committee. Hand-saved. https://www.investing.com/news/stock-market-news/us-official-says-shipments-of-h200-chips-to-china-have-begun-4791235 Saved copy: man-a7d2f1a9f963
+
+[31] Press report of words spoken on the record. Wall Street Journal, as carried by Mint (India), Aug 23, 2025, reporting words of Nvidia's chief executive. Page title: Nvidia’s roller coaster for China AI chips takes a new turn | Mint. https://www.livemint.com/global/nvidias-roller-coaster-for-china-ai-chips-takes-a-new-turn-11755949345439.html Saved copy: cn-counter-b5-1
+
+[32] Press report citing unnamed people. Reuters, Mar 17, 2026, as carried by Investing.com. Hand-saved. https://www.investing.com/news/stock-market-news/chinese-authorities-approve-nvidias-h200-ai-chip-sales-source-says-4567348 Saved copy: man-70f4668d5f56
+
+[33] Press report of words spoken on the record. Tencent, results call of Mar 18, 2026: transcript on the stock-data site Stock Analysis. The speaker labels are the site's; nobody has checked them against the recording. Page title: Tencent Holdings (HKG:0700) Q4 2025 Earnings Call Transcript & Audio. https://stockanalysis.com/quote/hkg/0700/transcripts/419871-q4-2025/ Saved copy: cn-o36-tencent-call-20260318-sa
+
+[34] Company filing or statement. Nvidia, results call for the third quarter of its fiscal year 2027 (the quarter ended Oct 25, 2026): the transcript on Nvidia's investor site. https://s201.q4cdn.com/141608511/files/content_files/NVDA-3Q27-Earnings-Transcript.pdf Saved copy: cn-o38-nvda-q3fy27-call-transcript-pdf
+
+[35] Press report of words spoken on the record. Reuters, Nov 18, 2026, as carried by AOL, reporting Nvidia's interim chief executive on its results call. Page title: Nvidia stops shipping US-approved AI chips to China - AOL. https://www.aol.com/articles/nvidia-stops-shipping-us-approved-091611000.html Saved copy: cn-acts-reuters-halt-20261118-relay2
+
+[36] Official document, or an official on the record. Xinhua's account of Vice Premier He Lifeng's meeting with Nvidia's chief executive on Apr 17, 2025, in People's Daily of Apr 18, 2025. Page title: 何立峰会见美国英伟达公司总裁兼首席执行官黄仁勋时指出 中国始终是外资企业投资和贸易的沃土 欢迎美资企业深化互利合作 --国际--人民网. https://world.people.com.cn/n1/2025/0418/c1002-40462541.html Saved copy: cn-policy-he-welcomes
+
+[37] Official document, or an official on the record. Ministry of Commerce, account of Minister Wang Wentao's meeting with Nvidia's chief executive on Jul 17, 2025. Page title: 王文涛部长会见美国英伟达公司总裁兼首席执行官黄仁勋. https://www.mofcom.gov.cn/syxwfb/art/2025/art_a2f759e1140f459e9694f85164c4197c.html Saved copy: cn-policy-wang-nvidia
+
+[38] Press report of words spoken on the record. National Business Daily, as carried by Ifeng, Nov 19, 2026, reporting Alibaba's chief executive on its results call. Page title: 阿里巴巴CEO吴泳铭：公司绝大部分新增AI芯片供给将以自研平头哥国产芯片为主. https://news.ifeng.com/c/8yBgQaQFOrV Saved copy: cn-labs-alibaba-nov-supply
+
+[39] Official document, or an official on the record. US-China Economic and Security Review Commission, 2026 annual report, chapter 8 (Silicon to Sovereignty), November 2026. https://www.uscc.gov/sites/default/files/2026-11/Chapter_8--Silicon_to_Sovereignty_Chinas_Bid_to_Control_the_AI_Tech_Stack.pdf Saved copy: cn-usdocs-uscc-2026-ch8
+
+[40] Official document, or an official on the record. US-China Economic and Security Review Commission, 2025 annual report to Congress, chapter 1 (US-China economic and trade relations: year in review), on the commission's site. https://www.uscc.gov/sites/default/files/2025-11/Chapter_1--U.S.-China_Economics_and_Trade_Relations_Year_in_Review.pdf Saved copy: cn-usdocs-uscc-2025-ch1
+
+[41] Official document, or an official on the record. The White House, fact sheet on the trade deal with China, Nov 1, 2025. Page title: Fact Sheet: President Donald J. Trump Strikes Deal on Economic and Trade Relations with China. https://www.whitehouse.gov/fact-sheets/2025/11/fact-sheet-president-donald-j-trump-strikes-deal-on-economic-and-trade-relations-with-china/ Saved copy: cn-usside-017
+
+[42] Official document, or an official on the record. Office of the US Trade Representative, 2026 National Trade Estimate Report on Foreign Trade Barriers (the passage cited is in the China chapter, page 107). https://ustr.gov/sites/default/files/files/Press/Releases/2026/National%20Trade%20Estimate%20Report%202026.pdf Saved copy: cn-le03-ustr-nte-2026
+
+[43] Official document, or an official on the record. Congressional Research Service, report R48642, Sept 19, 2025, as reproduced by EveryCRSReport. Page title: U.S. Export Controls and China: Advanced Semiconductors. https://www.everycrsreport.com/reports/R48642.html Saved copy: cn-usdocs-crs-r48642-20250919
+
+[44] Caption track or machine transcript, not checked by ear. US Trade Representative Jamieson Greer, interview on Bloomberg Television posted May 15, 2026 ("Greer: US, China Willing to Continue Trade Truce"): the video's English caption track (its maker is not stated; it is not YouTube's automatic track), not checked by ear; the words quoted are at 5:59. https://www.youtube.com/watch?v=ckzJQyMyCoE Saved copy: cn-le01-greer-bbg-20260515-subs-ttml
+
+[45] Caption track or machine transcript, not checked by ear. Bloomberg Television, Balance of Power, Jul 15, 2025, with the Treasury Secretary, Scott Bessent: the uploaded English caption track (maker not stated; not checked by ear). https://www.youtube.com/watch?v=XFTA2cjQX8E Saved copy: cn-le01-bessent-bbg-20250715-subs-ttml
+
+[46] Official document, or an official on the record. Ministry of Foreign Affairs, spokeswoman Mao Ning's regular press conference of Aug 22, 2025. The ministry's own record. Page title: 2025年8月22日外交部发言人毛宁主持例行记者会_中华人民共和国外交部. https://www.mfa.gov.cn/wjdt_674879/fyrbt_674889/202508/t20250822_11694496.shtml Saved copy: cn-counter-b3-2
+
+[47] Official document, or an official on the record. Ministry of Foreign Affairs, spokesman Guo Jiakun's regular press conference of Dec 10, 2025. The ministry's own record. Page title: 2025年12月10日外交部发言人郭嘉昆主持例行记者会_中华人民共和国外交部. https://www.fmprc.gov.cn/fyrbt_673021/202512/t20251210_11770291.shtml Saved copy: cn-acts-mfa-20251210
+
+[48] Official document, or an official on the record. Ministry of Foreign Affairs, regular press conference of Jan 29, 2026 (spokesperson Guo Jiakun). Page title: 2026年1月29日外交部发言人郭嘉昆主持例行记者会_中华人民共和国外交部. https://www.fmprc.gov.cn/web/gjhdq_676201/gjhdqzz_681964/zgzyjz_148218/fyrth_688966/202601/t20260129_11847318.shtml Saved copy: cn-acts-mfa-20260129
+
+[49] Official document, or an official on the record. Ministry of Foreign Affairs, spokesman Guo Jiakun's regular press conference of Nov 9, 2026. The ministry's own record. Page title: 2026年11月9日外交部发言人郭嘉昆主持例行记者会_中华人民共和国外交部. https://www.mfa.gov.cn/fyrbt_673021/202611/t20261109_12056081.shtml Saved copy: cn-clips-mfa-new-1
+
+[50] Official document, or an official on the record. Ministry of Foreign Affairs, spokesman Guo Jiakun's regular press conference of Nov 18, 2026. The ministry's own record. Page title: 2026年11月18日外交部发言人郭嘉昆主持例行记者会_中华人民共和国外交部. https://www.fmprc.gov.cn/fyrbt_673021/202611/t20261118_12061934.shtml Saved copy: cn-acts-mfa-20261118
+
+[51] Press report of words spoken on the record. Commentary (opinion). Trivium China, note of Apr 30, 2026, on its own site. The firm's own published words, not a press report. Page title: Beijing to pursue AI self-reliance at all costs – Trivium China. https://triviumchina.com/2026/04/30/beijing-to-pursue-ai-self-reliance-at-all-costs/ Saved copy: cn-factions-analysis-trivium-april
+
+[52] Press report of words spoken on the record. Commentary (opinion). Julian Gewirtz, essay in the New York Review of Books, published online Feb 5, 2026. His own published words, not a press report. Page title: When the Chips Are Down | Julian Gewirtz. https://www.nybooks.com/articles/2026/02/26/when-the-chips-are-down-china-us-ai/ Saved copy: cn-factions-gewirtz-xi
+
+[53] Press report of words spoken on the record. Commentary (opinion). Ryan Fedasiuk, post on X, May 15, 2026. His own published words, not a press report. https://x.com/RyanFedasiuk/status/2055097086312624481 Saved copy: cnpol-x-fedasiuk-2055097086312624481
+
+[54] Press report citing unnamed people. Financial Times, "Jensen Huang’s years-long effort to get close to China", Nov 13, 2026. Hand-saved from the publisher's site; the address printed on the copy is cut short and is not given. (No address given.) Saved copy: man-e2596eab15f4
+
+[55] Press report of words spoken on the record. Commentary (opinion). Washington Post, published Nov 18, 2026, as carried by Jewish World Review, quoting Kyle Chan of the Brookings Institution. Page title: Miriam Waldvogel, Nancy Cook & Rachel Lerman. https://jewishworldreview.com/1126/trump-nvidia-china-feud.php Saved copy: cn-factions-kyle-wapo-relay1
+
+[56] Press report of words spoken on the record. Reuters, as carried by The Business Times (Singapore), Dec 13, 2025. The words quoted are a named fund manager's. Page title: Nvidia considers increasing H200 chip output due to robust China demand: sources. https://www.businesstimes.com.sg/companies-markets/telcos-media-tech/nvidia-considers-increasing-h200-chip-output-due-robust-china-demand-sources/ Saved copy: cn-labs-h200-lobby
+
+[57] Press report of words spoken on the record. Commentary (opinion). Tom's Hardware, Aug 23, 2025, quoting Jimmy Goodrich of RAND Corporation. Page title: Nvidia reportedly shows China-specific B30 chips with 80% of the performance of the standard Blackwell GPU to the U.S. government — Nvidia CEO says approval is still up in the air. https://www.tomshardware.com/pc-components/gpus/nvidia-reportedly-shows-china-specific-b30-chips-with-80-percent-of-the-performance-of-the-standard-blackwell-gpu-to-the-u-s-government-nvidia-ceo-says-approval-is-still-up-in-the-air Saved copy: cn-counter-b3-4
+
+[58] Press report of words spoken on the record. The Singju Post, transcript of Palmer Luckey's interview on stage at the New York Times DealBook Summit 2026. The page does not say how the transcript was made or the day of the session. Page title: Transcript: Palmer Luckey Interview on War 2.0 – DealBook Summit 2026 – The Singju Post. https://singjupost.com/transcript-palmer-luckey-interview-on-war-2-0-dealbook-summit-2026/ Saved copy: cn-clips-singju-luckey
+
+[59] Press report citing unnamed people. Reuters, datelined Nov 5, 2026, as carried by CNA (Singapore) on Nov 6, 2026. The CNA page shows only its own date; the Nov 5 dateline stands on the copy carried by Yahoo, which is also saved. Page title: Nvidia chips pile up in Hong Kong as China withholds import approval. https://www.channelnewsasia.com/east-asia/nvidia-chips-pile-up-hong-kong-china-withhold-import-approval-6527371 Saved copy: cn-clips-evidence-1
+
+[60] Press report citing unnamed people. Reuters, Sept 4, 2025, as carried by TradingView. Page title: Chinese firms still want Nvidia chips despite government pressure not to buy, sources say. https://www.tradingview.com/news/reuters.com,2025:newsml_L1N3UK0DM:0-chinese-firms-still-want-nvidia-chips-despite-government-pressure-not-to-buy-sources-say/ Saved copy: cn-policy-firms-want-nvidia
+
+Build check: 99 quotations and 63 further statements were looked for in the saved copies of 60 sources and all were found; a planted false quotation was rejected. 49 sources are documents, filings or named people on the record; 11 are press reports citing unnamed people, counts or machine transcripts. A quotation that is found shows what the source says, not that it is true.

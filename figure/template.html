@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Beijing vs. Its Labs</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap">
+<style>
+/* Layout: a headline and key; the dated strip (four rows of numbered marks); two rows of cards; the numbered records; notes. */
+:root {
+  --page: #f9f9f7; --surface: #fcfcfb; --ink: #0b0b0b; --ink2: #52514e; --muted: #7a7872;
+  --grid: #e1e0d9; --axis: #c3c2b7; --border: rgba(11,11,11,0.12); --wash: rgba(11,11,11,0.045);
+  --toward: #256abf; --away: #c44e18; --us: #898781; --rest: #cfcdc4; --pin-on: #ffffff; --link: #1c5cab;
+  --font-text: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-head: "Space Grotesk", "Inter", system-ui, sans-serif;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --page: #0d0d0d; --surface: #1a1a19; --ink: #f0efec; --ink2: #c3c2b7; --muted: #8f8d86;
+  --grid: #2c2c2a; --axis: #45453f; --border: rgba(255,255,255,0.14); --wash: rgba(255,255,255,0.06);
+  --toward: #3987e5; --away: #d95926; --us: #898781; --rest: #45453f; --pin-on: #0d0d0d; --link: #86b6ef; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --page: #0d0d0d; --surface: #1a1a19; --ink: #f0efec; --ink2: #c3c2b7; --muted: #8f8d86;
+  --grid: #2c2c2a; --axis: #45453f; --border: rgba(255,255,255,0.14); --wash: rgba(255,255,255,0.06);
+  --toward: #3987e5; --away: #d95926; --us: #898781; --rest: #45453f; --pin-on: #0d0d0d; --link: #86b6ef; color-scheme: dark }
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--page); color: var(--ink); font-family: var(--font-text); font-size: 16px; line-height: 1.5; }
+[hidden] { display: none !important; }
+a { color: var(--link); }
+.wrap { max-width: 1480px; margin: 0 auto; padding: 30px 16px 48px; background: var(--page); }
+#top { background: var(--page); }
+header { margin-bottom: 20px; }
+.eyebrow { font: 700 12px/1 var(--font-text); letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin: 0 0 12px; }
+h1 { font-family: var(--font-head); font-size: clamp(28px, 3.5vw, 46px); line-height: 1.08; letter-spacing: -0.015em; margin: 0 0 12px; max-width: 24ch; text-wrap: balance; }
+.deck { margin: 0; color: var(--ink2); font-size: 18px; max-width: 78ch; }
+.key { display: flex; flex-wrap: wrap; gap: 10px 26px; margin: 18px 0 0; padding: 0; list-style: none; font-size: 14.5px; color: var(--ink2); }
+.key li { display: flex; align-items: center; gap: 8px; }
+.key b { color: var(--ink); font-weight: 600; }
+i.sw { display: inline-block; flex: none; width: 13px; height: 13px; border-radius: 50%; }
+i.sw.toward { background: var(--toward); } i.sw.away { background: var(--away); }
+.card { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 20px 22px; min-width: 0; }
+.card h2 { font-family: var(--font-head); font-size: 22px; line-height: 1.2; margin: 0 0 4px; text-wrap: balance; }
+.card .sub { margin: 0 0 12px; color: var(--ink2); font-size: 14.5px; max-width: 72ch; }
+.row { display: grid; gap: 16px; margin-top: 16px; grid-template-columns: 1fr; }
+@media (min-width: 1000px) { .row.a { grid-template-columns: 7fr 5fr; } .row.b { grid-template-columns: 5fr 7fr; } }
+
+/* numbered marks, as HTML */
+a.p { display: inline-grid; place-items: center; flex: none; width: 22px; height: 22px; border-radius: 50%; font: 700 11px/1 var(--font-text);
+  font-variant-numeric: tabular-nums; text-decoration: none; border: 2.5px solid; vertical-align: middle; }
+a.p.toward { border-color: var(--toward); } a.p.away { border-color: var(--away); }
+a.p.hollow { background: var(--surface); color: var(--ink); }
+a.p.solid.toward { background: var(--toward); color: var(--pin-on); } a.p.solid.away { background: var(--away); color: var(--pin-on); }
+a.p:hover, a.p.hl, a.p:focus-visible { outline: 2.5px solid var(--ink); outline-offset: 1px; }
+
+/* the strip */
+.hint { display: none; margin: 0 0 6px; font-size: 13px; font-weight: 600; color: var(--ink2); }
+@media (max-width: 1100px) { .hint { display: block; } }
+.scroll { overflow-x: auto; margin: 0 -6px; padding: 0 6px; }
+.scroll svg { display: block; width: 100%; min-width: 1040px; height: auto; }
+svg text { font-family: var(--font-text); }
+.era { fill: var(--wash); }
+.grid { stroke: var(--grid); stroke-width: 1; } .grid.yr { stroke: var(--axis); }
+.tick { font-size: 12px; font-weight: 500; fill: var(--muted); } .tick.yr { fill: var(--ink2); font-weight: 600; }
+.eranote { font-size: 11px; fill: var(--muted); }
+.flag { stroke: var(--ink2); stroke-width: 1; stroke-dasharray: 3 3; } .flagt { font-size: 12px; font-weight: 600; fill: var(--ink2); }
+.lane { stroke: var(--grid); stroke-width: 1; } .band { stroke: var(--axis); stroke-width: 1.5; }
+.call { font-size: 12px; font-weight: 600; fill: var(--ink); paint-order: stroke; stroke: var(--surface); stroke-width: 4px; stroke-linejoin: round; }
+.who { font-size: 13px; font-weight: 700; fill: var(--ink); } .what { font-size: 13px; font-weight: 500; fill: var(--ink2); }
+circle.sw.toward { fill: var(--toward); } circle.sw.away { fill: var(--away); }
+a.pin { cursor: pointer; outline: none; }
+a.pin circle { stroke-width: 2.5; }
+a.pin.toward circle { stroke: var(--toward); } a.pin.away circle { stroke: var(--away); }
+a.pin.hollow circle { fill: var(--surface); }
+a.pin.solid.toward circle { fill: var(--toward); } a.pin.solid.away circle { fill: var(--away); }
+a.pin text { font-size: 11px; font-weight: 700; text-anchor: middle; fill: var(--ink); pointer-events: none; font-variant-numeric: tabular-nums; }
+a.pin.solid text { fill: var(--pin-on); }
+a.pin:hover circle, a.pin.hl circle, a.pin:focus-visible circle { stroke: var(--ink); stroke-width: 3; }
+
+/* H200 bars */
+.bar-row { display: grid; grid-template-columns: minmax(200px, 36%) 1fr; gap: 2px 16px; align-items: center; padding: 10px 0; border-top: 1px solid var(--grid); }
+.bar-lab { font-weight: 600; font-size: 15px; line-height: 1.3; }
+.bar-track { display: flex; align-items: center; gap: 10px; min-height: 26px; min-width: 0; }
+.bar-track i { display: block; flex: none; height: 18px; min-width: 4px; border-radius: 0 4px 4px 0; width: calc((100% - 205px) * var(--f)); }
+.bar-track i.toward { background: var(--toward); } .bar-track i.away { background: var(--away); } .bar-track i.us { background: var(--us); }
+.bar-track b { font: 700 17px/1.1 var(--font-head); white-space: nowrap; }
+.bar-note { grid-column: 2; font-size: 12.5px; color: var(--muted); line-height: 1.35; }
+@media (max-width: 620px) { .bar-row { grid-template-columns: 1fr; } .bar-note { grid-column: 1; } }
+
+/* share */
+.sh-row { padding: 11px 0; border-top: 1px solid var(--grid); }
+.sh-lab { font-weight: 600; font-size: 15px; margin-bottom: 6px; }
+.sh-bar { display: flex; gap: 2px; height: 20px; }
+.sh-bar i { display: block; border-radius: 3px; min-width: 0; }
+.sh-bar i.toward { background: var(--toward); } .sh-bar i.away { background: var(--away); } .sh-bar i.other { background: var(--us); }
+.sh-bar i.rest { background: repeating-linear-gradient(45deg, var(--rest) 0 4px, transparent 4px 8px); box-shadow: inset 0 0 0 1px var(--axis); }
+.sh-keys { display: flex; gap: 2px; font-size: 12.5px; font-weight: 600; margin-top: 4px; }
+.sh-keys span { min-width: 0; white-space: nowrap; }
+.sh-cap { font-size: 13px; color: var(--ink2); margin-top: 3px; }
+.srcn { color: var(--muted); font-size: 12px; }
+
+/* Nvidia's own revenue line */
+.revcard { margin-top: 16px; display: grid; grid-template-columns: 1fr; gap: 10px 30px; align-items: end; }
+@media (min-width: 1000px) { .revcard { grid-template-columns: 5fr 7fr; } }
+.revcard .sub { margin-bottom: 8px; }
+.revcard .big { margin: 0; font-size: 15.5px; font-weight: 600; max-width: 60ch; }
+.revwrap { min-width: 0; }
+.rev { display: flex; align-items: flex-end; gap: 2px; }
+.rv { flex: 1; min-width: 0; display: flex; flex-direction: column; align-items: center; }
+.rv b { font: 700 15px/1.2 var(--font-head); margin-bottom: 4px; white-space: nowrap; }
+.rv i { display: block; width: 58%; max-width: 54px; min-height: 2px; height: calc(var(--h) * 112px); background: var(--toward); border-radius: 4px 4px 0 0; }
+.rv span { display: block; width: 100%; border-top: 1px solid var(--axis); padding-top: 5px; text-align: center; font-size: 12px; line-height: 1.25; color: var(--muted); }
+.rv span em { display: block; font-style: normal; }
+.revwrap .fine { margin-top: 8px; }
+
+/* on paper */
+.pp { display: grid; grid-template-columns: 132px 1fr; gap: 12px; align-items: baseline; padding: 9px 0; border-top: 1px solid var(--grid); }
+.pp b { font: 700 21px/1.15 var(--font-head); letter-spacing: -0.01em; white-space: nowrap; }
+.pp span { font-size: 14.5px; color: var(--ink2); line-height: 1.4; }
+.pp.none b { font-size: 16px; white-space: normal; }
+
+/* bodies */
+.bodies { display: grid; grid-template-columns: 1fr; gap: 6px 22px; }
+@media (min-width: 720px) { .bodies { grid-template-columns: 1fr 1fr; } }
+.bcol h4 { font: 700 14px/1.2 var(--font-text); margin: 6px 0 6px; display: flex; align-items: center; gap: 8px; }
+.bcol ul { list-style: none; margin: 0; padding: 0; }
+.bcol li { display: flex; justify-content: space-between; align-items: center; gap: 10px; padding: 7px 0; border-top: 1px solid var(--grid); font-size: 14.5px; line-height: 1.3; }
+.pins { display: flex; gap: 3px; flex: none; }
+.fine { font-size: 13px; color: var(--ink2); margin: 12px 0 0; }
+.nw { white-space: nowrap; }
+.bodies.one { margin-top: 2px; }
+@media (min-width: 720px) { .bodies.one { grid-template-columns: 1fr; } }
+
+/* the 31 provincial-level governments (fourth edit) */
+.prov { margin: 2px 0 10px; }
+.pv-bar { display: flex; gap: 2px; height: 16px; margin-top: 4px; }
+.pv-bar i { display: block; border-radius: 3px; min-width: 4px; }
+.pv-bar i.away, .pv-keys i.k.away { background: var(--away); }
+.pv-bar i.rest, .pv-keys i.k.rest { background: var(--rest); }
+.pv-bar i.other, .pv-keys i.k.other { background: var(--us); }
+.pv-bar i.none, .pv-keys i.k.none { background: transparent; box-shadow: inset 0 0 0 1px var(--axis); }
+.pv-keys { display: flex; flex-wrap: wrap; gap: 2px 14px; font-size: 12.5px; color: var(--ink2); margin: 5px 0 6px; }
+.pv-keys span { display: flex; align-items: center; gap: 5px; }
+.pv-keys i.k { display: inline-block; flex: none; width: 10px; height: 10px; border-radius: 2px; }
+table.pv { width: 100%; border-collapse: collapse; font-size: 13.5px; line-height: 1.35; color: var(--ink2); }
+table.pv th, table.pv td { text-align: left; vertical-align: baseline; padding: 4px 8px 4px 0; border-top: 1px solid var(--grid); }
+table.pv th { font-weight: 600; color: var(--ink); white-space: nowrap; }
+table.pv td.sh { font: 700 15px/1.2 var(--font-head); color: var(--ink); white-space: nowrap; }
+@media (max-width: 620px) {
+  table.pv, table.pv tbody { display: block; }
+  table.pv tr { display: grid; grid-template-columns: auto 1fr; gap: 0 10px; border-top: 1px solid var(--grid); padding: 5px 0; }
+  table.pv th, table.pv td { border-top: 0; padding: 0; }
+  table.pv td:last-child { grid-column: 1 / -1; padding-top: 2px; }
+  .pp { grid-template-columns: 1fr; gap: 2px; }
+}
+
+/* local vouchers (fourth edit) */
+#vouchers { margin-top: 16px; }
+.vgrid { display: grid; grid-template-columns: 1fr; grid-template-areas: "a" "b" "f"; gap: 6px 40px; align-items: start; }
+@media (min-width: 1000px) { .vgrid { grid-template-columns: 1fr 1fr; grid-template-rows: auto 1fr; grid-template-areas: "a b" "f b"; } }
+.vlab a.srcn { white-space: nowrap; }
+.vgrid .va { grid-area: a; } .vgrid .vb { grid-area: b; } .vgrid .vf { grid-area: f; margin-top: 14px; }
+.vgrp h3 { font: 700 14px/1.3 var(--font-text); margin: 8px 0 4px; }
+.vkey { display: flex; flex-wrap: wrap; gap: 4px 18px; font-size: 12.5px; color: var(--ink2); margin-bottom: 2px; }
+.vkey span { display: flex; align-items: center; gap: 6px; }
+i.sw.both { background: linear-gradient(90deg, var(--away) 50%, var(--toward) 50%); }
+.vr { display: grid; grid-template-columns: minmax(150px, 42%) 1fr; gap: 12px; align-items: center; padding: 5px 0; border-top: 1px solid var(--grid); }
+.vlab { font-size: 13.5px; line-height: 1.3; }
+.vnote { display: block; font-size: 12px; color: var(--muted); }
+.vt { position: relative; height: 30px; margin: 0 22px 0 8px; }
+.vt .vl { position: absolute; top: 19px; height: 2px; left: calc(var(--a) * 100%); width: calc((var(--b) - var(--a)) * 100%); background: var(--axis); }
+.vt .vd { position: absolute; top: 14px; width: 12px; height: 12px; margin-left: -6px; border-radius: 50%; left: calc(var(--x) * 100%); }
+.vt .vd.away { background: var(--away); } .vt .vd.toward { background: var(--toward); }
+.vt .vd.both { background: linear-gradient(90deg, var(--away) 50%, var(--toward) 50%); }
+.vt .vn { position: absolute; top: 0; transform: translateX(-50%); left: calc(var(--x) * 100%); font: 700 12px/1 var(--font-head); white-space: nowrap; }
+.vt .vn.side { top: 14px; transform: none; left: auto; }
+.vr.axis { padding-top: 0; border-top: 0; }
+.vr.axis .vt { height: 16px; border-top: 1px solid var(--axis); }
+.vr.axis .vt span { position: absolute; top: 3px; transform: translateX(-50%); left: calc(var(--x) * 100%); font-size: 11px; color: var(--muted); }
+@media (max-width: 620px) { .vr { grid-template-columns: 1fr; gap: 2px; } .vr.axis > div:first-child { display: none; } }
+
+/* the records */
+#records { margin-top: 16px; }
+.cols { display: grid; grid-template-columns: 1fr; gap: 8px 34px; }
+@media (min-width: 900px) { .cols { grid-template-columns: 1fr 1fr; } }
+.lcol h3 { font: 700 13px/1 var(--font-text); letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin: 10px 0 8px; }
+.lcol ol { list-style: none; margin: 0; padding: 0; }
+li.ev { display: grid; grid-template-columns: 24px 1fr; gap: 10px; padding: 8px 6px; border-top: 1px solid var(--grid); border-radius: 6px; scroll-margin-top: 14px; }
+li.ev.hl, li.ev:target { background: var(--wash); }
+.when { font-weight: 700; font-size: 13px; white-space: nowrap; }
+.what { font-size: 14.5px; font-weight: 400; }
+.src { font-size: 12.5px; color: var(--muted); white-space: normal; }
+.notes { margin-top: 16px; }
+.notes ul { margin: 6px 0 0; padding-left: 20px; color: var(--ink2); font-size: 14px; max-width: 110ch; }
+.notes li { margin: 4px 0; }
+
+#tip { position: fixed; z-index: 10; max-width: 370px; background: var(--ink); color: var(--page); padding: 10px 12px; border-radius: 10px; font-size: 13px; line-height: 1.4;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.25); pointer-events: none; }
+#tip .tw { font-weight: 700; font-size: 12px; opacity: 0.8; } #tip .tt { font-weight: 600; margin: 2px 0 6px; }
+#tip .tq { font-style: italic; opacity: 0.92; } #tip .ts { margin-top: 6px; font-size: 12px; opacity: 0.75; }
+</style>
+</head>
+<body>
+<div class="wrap" id="figure">
+ <div id="top">
+  <header>
+   <p class="eyebrow">China · Nvidia chips · 2023 to November 2026</p>
+   <h1>Beijing mostly pulled one way on Nvidia chips. Its AI companies pulled the other.</h1>
+   <p class="deck">%%N_EVENTS%% dated records of what Chinese authorities did about Nvidia’s chips and what China’s big AI companies did. Orange points away from Nvidia; blue points toward it. The exceptions on each side are drawn too: Beijing sometimes let chips in, and the companies also turned to home-made ones.</p>
+   <ul class="key">
+    <li><i class="sw away"></i><span><b>Away from Nvidia:</b> holding it back, or choosing home-made chips</span></li>
+    <li><i class="sw toward"></i><span><b>Toward Nvidia:</b> buying it, using it, letting it in</span></li>
+    <li><a class="p solid toward" aria-hidden="true" tabindex="-1">1</a><span><b>Filled:</b> on the record (a government document, published state media, a filing, a named person). %%N_SOLID%% records</span></li>
+    <li><a class="p hollow toward" aria-hidden="true" tabindex="-1">1</a><span><b>Open:</b> a press report citing unnamed people. %%N_HOLLOW%% records</span></li>
+   </ul>
+  </header>
+  <section class="card" id="hero">
+   <h2>The dated record</h2>
+   <p class="sub">Each number is one record, listed under “The records” below. Point at a mark to read the source’s own words.</p>
+   <p class="hint">Swipe the chart sideways to see 2025 and 2026.</p>
+   <div class="scroll" tabindex="0" role="group" aria-label="Dated strip; scroll sideways on a narrow screen">
+%%STRIP%%
+   </div>
+  </section>
+  <div class="row a">
+   <section class="card">
+    <h2>The H200, in reported numbers</h2>
+    <p class="sub">Press reports citing unnamed people, and two sums from one United States government table of licence applications. They are separate counts, not one tally. An application names a consignee; it is not an order. Bars are drawn to one scale.</p>
+%%BARS%%
+   </section>
+   <section class="card">
+    <h2>Nvidia’s share of AI chips in China</h2>
+    <p class="sub">Three reported readings. The first uses a different yardstick from the two IDC counts.</p>
+%%SHARE%%
+   </section>
+  </div>
+  <section class="card revcard">
+   <div>
+    <h2>Nvidia’s own figures: revenue from customers based in China</h2>
+    <p class="sub">Billions of dollars by quarter, from Nvidia’s reports to the SEC; Hong Kong included. Counted by where the direct customer has its head office, for every product. It is not a count of chips entering China. Nvidia’s note: “The end customer and shipping location may be different from our direct customers’ headquarters location.”</p>
+    <p class="big">The line fell by about two thirds between the quarters ended April and October 2025. In the latest quarter it was the highest of the nine.</p>
+   </div>
+%%REVENUE%%
+  </section>
+ </div>
+ <div class="row b">
+  <section class="card">
+   <h2>The line on paper</h2>
+   <p class="sub">From government documents. Shares for home-made computing are set by provinces and cities; no published national share was found. First, the 31 provincial-level governments by what their plans set.</p>
+%%PAPER%%
+  </section>
+  <section class="card">
+   <h2>Inside Beijing: not one actor</h2>
+   <p class="sub">Which bodies appear on which side, by record number. A report that names several bodies is listed under each. The antitrust case is listed apart: it is aimed at Nvidia the company.</p>
+%%BODIES%%
+  </section>
+ </div>
+ <section class="card" id="vouchers">
+  <h2>Local vouchers for rented computing</h2>
+  <p class="sub">The most a local rule pays of a firm’s bill for rented computing, for home-made computing and for other computing, as each rule’s own text states it. One measure throughout.</p>
+%%VOUCHERS%%
+ </section>
+ <section class="card" id="records">
+  <h2>The records</h2>
+  <p class="sub">Dates are of the act where it is known, otherwise of the report. Each line is my summary; the link goes to the page it rests on. A line beside an open mark is what unnamed people told the paper named; none is confirmed.</p>
+  <div class="cols">
+%%LEDGER%%
+  </div>
+ </section>
+ <section class="card notes">
+  <h2>Read with care</h2>
+  <ul>
+   <!-- Fourth edit (agent F1). Counts in note 2 come from tables/state_media_items.tsv, made by the builder (state_media()); the sums in note 5 from tables/house_licence_table.tsv (hfac()); record numbers from the REC markers, filled by the builder. Every quotation here is a "!" line of figure_data.txt. -->
+   <li>Open marks rest on unnamed people. In the answers found, no Chinese authority confirmed any of them: asked about such reports, the foreign ministry said it was not aware of the matter (Aug 13, 2025), that the question should go to the competent departments (Jan 29, 2026), and that its position on US chips was consistent (Nov 9, 2026).</li>
+   <li>No published Chinese order against buying Nvidia chips was found in the policy pages and national document lists read. The published acts against Nvidia that were found are a summons and an antitrust case. The public warnings found came in one burst: of %%SM_N%% state and Party media items on Nvidia chips found from %%SM_FROM%% to %%SM_TO%%, the %%SM_W%% that only warn about Nvidia’s chips all date from %%SM_W0%% to %%SM_W1%% (%%SM_MIX%% others mix a warning with a welcome), and none of them is an order. Earlier, on Dec 3, 2024, an industry body, the Internet Society of China, had called on companies to be careful in choosing to buy American chips, citing US export controls, and in the same sentence to use chips made in China by domestic and foreign-funded firms alike.</li>
+   <li>Records %%REC:cn-policy-samr-open-original%% and %%REC:cn-policy-samr-further-original%% are an antitrust case against Nvidia the company. By Nvidia’s own reports the preliminary finding concerns the degraded products that US export controls required it to offer the Chinese market. They are drawn orange as pressure on Nvidia, not as a wish for fewer Nvidia chips. The White House said on Nov 1, 2025 that China would end its investigations of US firms in the chip supply chain, naming none; neither the regulator’s own news list (read to Nov 23, 2026) nor Nvidia’s reports say the Nvidia case has ended, and the regulator’s review of its 2025 work, posted Apr 10, 2026, lists the further investigation.</li>
+   <li>What Beijing meant is not settled. American bodies read its antitrust moves as leverage or pressure: the US-China commission (2025), “exert leverage and ease pressure as a negotiating tactic”; the Congressional Research Service (Sept 2025), “to pressure Nvidia to provide its advanced chips to China”. Yet asked whether China would let its companies buy the H200, the Trade Representative said “that’s gonna be a sovereign decision for China” (May 15, 2026, Bloomberg Television; captions, not checked by ear, at 05:59). Either reading leaves the direction of the acts drawn here as it is.</li>
+   <li>The H200 also had to pass American conditions: testing in the United States, a cap at half of the shipments to American customers, and a 25% tariff (Commerce Department rule of Jan 15, 2026; Nvidia’s report for the quarter ended Jul 26, 2026). By May 11, 2026 Washington had returned without action %%HF_RWA%% of the %%HF_ALL%% chips in the applications listed, more than half of that list (the bars above). The committee that released the table says the summary does not show every application in full; its example is an Nvidia application of Dec 19, 2025 for 445,000 chips for Tencent, which the table shows at 75,000.</li>
+   <li>The chip at issue changed over time: the H20 (2024 to 2025), the RTX Pro 6000D (2025), the H200 (from December 2025).</li>
+   <li>The records are a selection made to show both sides, not a census. The count of marks in a row is not a measure.</li>
+   <li>Records %%REC:cn-policy-micron-decision%% and %%REC:cn-policy-desktop-2023%% are not about Nvidia. Record %%REC:cn-policy-micron-decision%% is the 2023 review conclusion that failed Micron’s products, a published instruction to operators of critical information infrastructure to stop buying one foreign chip maker’s products; record %%REC:cn-policy-desktop-2023%% is a purchase rule for Party and state bodies’ desktop computers. They are drawn in orange as steps away from foreign chips. Record %%REC:cn-le17-whuf-134391%% is two universities’ own buying, in notices that hold suppliers to the government procurement law’s conditions; it is not an act of the central government. Records %%REC:cn-tolerate-mof%% and %%REC:cn-acts-mofcom-20261117%% do not name Nvidia; they are drawn blue because they back Chinese firms’ computing abroad, where by record %%REC:cn-tolerate-ft-offshore%% Nvidia chips are used. Records %%REC:cn-counter-b11-5%% and %%REC:cn-policy-qiushi-cuda-gap%% are a city body’s and a Party journal’s documents about what the companies use; they are drawn in the companies’ row.</li>
+   <li>English renderings of Chinese are mine, not official translations.</li>
+  </ul>
+ </section>
+</div>
+<div id="tip" hidden></div>
+<script>
+const EV = %%EVJSON%%;
+const tip = document.getElementById('tip');
+function line(cls, text) { const d = document.createElement('div'); d.className = cls; d.textContent = text; return d; }
+function show(a) {
+  const e = EV[a.dataset.n]; if (!e) return;
+  tip.replaceChildren(line('tw', e.w + ' · ' + e.l), line('tt', e.t), line('tq', e.tr ? 'In our English: ' + e.q : '“' + e.q + '”'), line('ts', e.s + ' · ' + e.k));
+  tip.hidden = false;
+  const r = a.getBoundingClientRect(), w = tip.offsetWidth, h = tip.offsetHeight;
+  let x = Math.min(Math.max(8, r.left + r.width / 2 - w / 2), window.innerWidth - w - 8), y = r.top - h - 10;
+  if (y < 8) y = r.bottom + 10;
+  tip.style.left = x + 'px'; tip.style.top = y + 'px';
+}
+function mark(n, on) { document.querySelectorAll('[data-n="' + n + '"]').forEach(el => el.classList.toggle('hl', on)); }
+document.querySelectorAll('[data-n]').forEach(el => {
+  const n = el.dataset.n, t = el.hasAttribute('data-tip');
+  el.addEventListener('mouseenter', () => { mark(n, true); if (t) show(el); });
+  el.addEventListener('mouseleave', () => { mark(n, false); tip.hidden = true; });
+  el.addEventListener('focus', () => { mark(n, true); if (t) show(el); });
+  el.addEventListener('blur', () => { mark(n, false); tip.hidden = true; });
+});
+window.addEventListener('scroll', () => { tip.hidden = true; }, { passive: true });
+</script>
+</body>
+</html>

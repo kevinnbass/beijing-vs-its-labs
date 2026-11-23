@@ -1,0 +1,158 @@
+# Does any public record bear out the 600,000 chips in Hong Kong?
+
+@deck None was found. Hong Kong's trade figures by heading (to July 2026), its monthly totals for office machines and computers (to September 2026) and Taiwan's exports to Hong Kong (to October 2026) show no inflow of that size, and no government has confirmed the count. It still rests on two unnamed people.
+
+@note Draft by Claude, Anthropic's model. Local; not published. Written Nov 23, 2026 (UTC). Idea 42 of the output list.
+@note A finding: this note says what public records can and cannot show about the report. It neither confirms the count nor refutes it.
+@note Anthropic has argued in public for controls on chip exports to China (that is from my general knowledge; no saved page is cited for it), so judge this note by its sources.
+@note A filled number is a government document, an official figure, a filing or a named person on the record. An open number is a press report citing unnamed people, or a machine transcript that nobody has checked by ear. Words between quotation marks were found in the saved copy by a script. English in round brackets after Chinese is my rendering, not an official translation.
+
+## The claim
+
+Reuters, Nov 5, 2026: about 600,000 of Nvidia's H200 chips "are stored in Hong Kong awaiting shipment to mainland China, two people familiar with the matter said, as Beijing withholds approval for large-scale imports" [cn-clips-reuters-hongkong-yahoo]. Reuters calls this "The size of the stockpile of H200 chips, which has not previously been reported" [cn-clips-reuters-hongkong-yahoo]. The report does not say whose chips they are, where in Hong Kong they are, or how they got there. The Nov 5 dateline stands on the copy Yahoo carries; CNA's page of the same report shows only its own date, Nov 6, 2026.
+!! cn-clips-reuters-hongkong-yahoo | Nov 5 (Reuters) - About 600,000
+!! cn-clips-evidence-1 | 2026-11-06T11:47:43
+
+Palmer Luckey gave the same number in a clip posted on Nov 19, 2026: "There's 600,000 H200 GPUs sitting in a port right now", because "China will not give them an import permit" [clip-luckey]. Those words are from a machine transcript of the clip (0:18 to 0:30); nobody has checked them by ear. Both phrases say more than the report his number matches. Reuters's words are "stored in Hong Kong", not in a port, and that Beijing "withholds approval for large-scale imports" [cn-clips-reuters-hongkong-yahoo]. The project's argument records that no permit rule for these chips was found (its point 18).
+
+## The answer in short
+
+- No official figure or statement was found that confirms the count. Reuters asked Hong Kong's government and got no reply. China's foreign ministry, asked about the report, referred the question elsewhere.
+- No second news outlet with sources of its own for the count was found. The pages that carry it relay Reuters.
+- Hong Kong's own trade figures by tariff heading were available to July 2026. At the press price of about 27,000 dollars a chip the pile would be worth about 16 billion dollars. Since the H200 was allowed, the figures show no inflow of that size from the United States or under the partner line usually read as Taiwan, and no pile building up under the headings an American proclamation names for such chips. One gap: goods passing through on one set of transport papers are not declared, so they are in no Hong Kong figure.
+- For August and September 2026 Hong Kong's figures could be reached only as broad divisions. Imports of office machines and computers jumped in August 2026 and exports jumped in September. Over the two months together, exports ran ahead of imports by about as much as in two average months of the year. That shows no lasting build-up to the end of September, in a division that holds every maker's machines. It cannot say what came and went, and October was not yet there.
+- Taiwan's own figures run to October 2026. They show 4.69 billion US dollars of computers and computer parts sent to Hong Kong in ten months, every maker's goods together: no flow of the size claimed. Its figure for integrated circuits is far too large to tell anything.
+- What fits the report is on the record but indirect: Nvidia says much of its product is warehoused in Hong Kong, and it booked a charge for excess H200 stock in the half year to Jul 26, 2026. Nvidia's own figure for licensed sales to China in the quarter to Oct 25, 2026 is 2.4 billion dollars; at the press price the pile would be worth nearly seven times that.
+- No customs line, in Hong Kong or anywhere else, can count Nvidia chips: each holds every maker's goods, and no saved page says under which line these chips are declared.
+
+## 1. How large the claim is
+
+1. **About 16 billion US dollars.** Reuters gave a price in January 2026: H200 chips "priced at around $27,000 each" [cn-acts-reuters-customs-20260114]. That is a press figure from unnamed people. At that price 600,000 chips are 16.2 billion US dollars (our multiplication), or about 126 billion Hong Kong dollars at 7.8 to the US dollar (the rate is from my general knowledge of Hong Kong's peg, not from a saved page). Every dollar comparison in this note rests on that price.
+
+2. **Far more than Nvidia says it sold to China under licence.** Nvidia's own figures are on the record. For the quarter to Jul 26, 2026: "Shipments of Data Center Hopper products to China during the second quarter of fiscal year 2027 were less than 1% of Data Center revenue", and "Data Center revenue was $89.0 billion" [man-ms-sec-10q-2026-07]. For the quarter to Oct 25, 2026: "Q3 sales of licensed Hopper Data Center products to China was $2.4 billion" [cn-o38-nvda-q3fy27-call-transcript-pdf]. Before those two quarters it had no revenue under the H200 licences: on May 20, 2026 Nvidia said of them "we have yet to generate any revenue" [cn-o38-nvda-q1fy27-call-transcript-pdf]. The two quarters together are under 3.3 billion dollars (our arithmetic). At the press price of 27,000 dollars a chip, 2.4 billion is about 89,000 chips, and 3.3 billion is about a fifth of what 600,000 chips would be worth (our divisions; Hopper products may be more than H200s alone). So if the price is right, most of such a pile had not been sold to China under licence by Oct 25, 2026. The sources do not say whether the chips in Hong Kong had been sold at all, or whether Nvidia counts a delivery to Hong Kong as a shipment to China.
+!! cn-acts-reuters-halt-20261118-relay2 | in the quarter ended October 25
+!! man-ms-sec-10q-2026-07 | Jul 26, 2026
+!! cn-o38-nvda-q1fy27-call-transcript-pdf | All our statements are made as of today, May 20, 2026
+!! cn-o38-nvda-q1fy27-call-transcript-pdf | While the US government has approved licenses for H200 to be shipped to China-based customers, we have yet to generate any revenue
+
+## 2. Would Hong Kong's trade figures show such a pile?
+
+3. **In principle, yes, with one gap.** Hong Kong's statistics office says of its figures: "Import/export declaration is also required of Hong Kong's trade with Chinese Mainland, and statistics relating to this are included in Hong Kong's external merchandise trade statistics." [cn-le18-hk-csd-410-50031] So goods that leave Hong Kong for the mainland are counted as exports. Hong Kong's answers to a United Nations questionnaire on how it compiles trade figures say: "Hong Kong is a free port." [cn-o42-un-hk-trade-practice] They also say there are no bonded warehouses, that the general trade system is used, and that goods merely passing through are left out. The page is old: its date of release is Apr 7, 2003. If that still holds, chips brought into Hong Kong and stored there were counted as imports when they arrived, and they will be counted as exports when they leave. The gap is goods in passage. Hong Kong's statistics office lists "transhipment cargo consigned on a through bill of lading" or a through air waybill among the goods that need no declaration [cn-o42-hk-csd-declarations-guide]. Its slides for a United Nations workshop in December 2006 define the term as "any article that is brought into Hong Kong under a through bill of lading or a through air waybill from a place outside Hong Kong to another place outside Hong Kong", and say such goods are "exempted from declaration" [cn-o42-hk-csd-un-bangkok-slides]. Both documents are old. Chips held in Hong Kong on through papers to the mainland would be in no Hong Kong trade figure. No source found here says on what papers these chips are held.
+!! cn-o42-un-hk-trade-practice | Are there customs warehouses/customs bonded warehouses in your country? NO
+!! cn-o42-un-hk-trade-practice | Do you use the general trade system? YES
+!! cn-o42-un-hk-trade-practice | Is transit trade (i.e. goods simply being transported through the territory) excluded from the import and export statistics? YES
+!! cn-o42-un-hk-trade-practice | Date of release: April 7 2003
+!! cn-o42-hk-csd-un-bangkok-slides | 15 December 2006
+!! cn-o42-hk-csd-declarations-guide | The categories of exempted articles as mentioned in the
+!! cn-o42-hk-csd-declarations-guide | or a through air waybill from a place outside Hong Kong
+
+4. **Which headings.** A US proclamation of Jan 14, 2026 names three tariff headings for the advanced chips it covers: 8471.50, 8471.80 and 8473.30, which are units and parts of computers [cn-o34-us232-proclamation-fr-pi]. The White House's fact sheet names the H200 among those chips: "such as the NVIDIA H200 and AMD MI325X" [cn-o34-us232-factsheet-wh]. The companion note on customs figures (idea 34) sets this out. Imports are also recorded by where the goods were made: Hong Kong answers "Country of origin." [cn-o42-un-hk-trade-practice] Reuters says of the H200: "The chip is manufactured by Taiwan Semiconductor Manufacturing Company (TSMC)" [cn-labs-h200-lobby]. A chip made in Taiwan and only inspected in the United States may be recorded as of Taiwan origin, so two partner lines are shown below: the United States, and the line usually read as Taiwan.
+!! cn-o34-us232-proclamation-fr-pi | enumerated in this subdivision: 8471.50 8471.80 8473.30
+!! cn-o42-un-hk-trade-practice | Do you classify imports by country of origin or production? Comment: Country of origin. YES
+
+## 3. What the figures show
+
+5. **By heading, to July 2026.** These are the figures Hong Kong reports to the United Nations (UN Comtrade), saved month by month from January 2025 to July 2026. August, September and October 2026 were not yet there. The answers carry code numbers only: UN Comtrade's own list gives 344 as "China, Hong Kong SAR" and 842 as the United States [cn-o34-comtrade-ref-partners]. Taiwan is not in that list by name. The partner line usually read as Taiwan is code 490, "Other Asia, nes" [cn-o34-comtrade-ref-partners]; that reading is from my general knowledge of the United Nations' practice, not from a saved page. It is a label, not Taiwan's own figure: under heading 8473.30, Hong Kong's imports recorded under code 490 were 3.07 times Taiwan's own recorded exports of computer parts to Hong Kong in 2025, and 1.09 times in January to July 2026 (our divisions; one side's imports by origin, the other side's exports by destination) [cn-le18-tw-mof-exp-cnhk-groups]. So the rows below keep the label. Sums are our script's. The values are in millions of US dollars.
+
+| Hong Kong, three named headings together | 2025 | January to July 2026 |
+| Imports of United States origin | 1,168.8 million dollars | 1,108.5 million dollars |
+| Imports under Other Asia, nes (code 490) | 11,388.0 million dollars | 2,414.2 million dollars |
+| Imports, all origins | 59,281.1 million dollars | 49,077.4 million dollars |
+| Total exports, all destinations | 71,604.8 million dollars | 65,880.7 million dollars |
+!! cn-o34-comtrade-ref-partners | "id": 490, "text": "Other Asia, nes"
+!! cn-o34-comtrade-ref-partners | "id": 842, "text": "USA"
+!! cn-le18-tw-mof-exp-cnhk-groups | 電腦之零附件
+!! cn-o34-comtrade-m-202607 | "primaryValue": 106190264.45
+!! cn-o34-comtrade-m-202603 | "primaryValue": 206063154.746
+
+6. **No inflow of that size since the H200 was allowed.** Reuters says "The United States barred exports of the H200 to China before" the permission of late 2025 [cn-clips-evidence-1]. The Commerce Department dates the President's announcement to "December 8, 2025" [cn-o34-bis-press-rule]. Nvidia dates the first licences with the words "Beginning in February 2026", and its report writes of these controls as covering "China (including Hong Kong and Macau)" [man-ms-sec-10q-2026-07]. If Hong Kong was treated as China for the H200 too, as that wording suggests, the chips could not lawfully be sent there before the licences of 2026. From February to July 2026 Hong Kong's imports under these headings of United States origin and under Other Asia, nes together were 3.1 billion dollars (our sum), against the 16.2 billion dollars that 600,000 chips would be at the press price. The highest month of United States origin was March 2026, at 226.1 million dollars [cn-o34-comtrade-m-202603]. The large 2025 figure under Other Asia, nes in the table includes 4.1 billion dollars in March 2025 alone; that was before the H200 was allowed, and the figures do not say what the goods were. The United States' own figures agree: its exports to Hong Kong under the three headings came to 1,088.5 million dollars over the eight months January to August 2026 (our sum of eight monthly answers, the last of them [cn-o34-comtrade-m-202608]).
+
+7. **Imports under these headings did rise, mostly from mainland China and South Korea.** The average month was 4.9 billion dollars in 2025 and 7.0 billion in January to July 2026. By origin, the average month went from 2.4 to 3.9 billion for mainland China, from 0.35 to 1.1 billion for South Korea and from 0.10 to 0.16 billion for the United States, and fell from 0.95 to 0.35 billion under Other Asia, nes (our averages, from the same monthly answers) [cn-o34-comtrade-m-202607].
+
+8. **No pile visible.** A pile building up would show as imports running ahead of exports. Under these headings it is the other way round in each of the 19 months: exports were larger, by 0.5 to 3.6 billion dollars a month [cn-o34-comtrade-m-202607]. The comparison is rough. The figures do not explain the gap, and it moves by a billion dollars or more from month to month. It does not rule out a pile. Most of what left went to the mainland: of Hong Kong's total exports under the three headings, 65.9 billion dollars in January to July 2026, 48.1 billion went to the mainland (our sums). By heading, its exports to the mainland under 8473.30 were 16.46 billion dollars in January to July 2025 and 36.90 billion in January to July 2026; under 8471.80 they were 12.75 and 7.02 billion, and under 8471.50, 3.90 and 4.19 billion. These lines can show that computer parts and units of every maker went on from Hong Kong to the mainland in tens of billions of dollars. They cannot show whether any Nvidia chip was among them.
+
+9. **Bare chips tell nothing either way.** Under the heading for processor chips, 8542.31, Hong Kong's imports ran ahead of its exports by 11.7 billion dollars in 2025 and by 6.0 billion in January to July 2026 [cn-o34-comtrade-m-202607]. That was so in every month, also in 2025, before any H200 licence: Nvidia dates the first licences with the words "Beginning in February 2026" [man-ms-sec-10q-2026-07]. The heading holds every maker's processors. It is not a sign of an H200 pile.
+
+10. **August and September 2026: broad divisions only.** The Hong Kong Government's release of Oct 28, 2026 gives ten commodity divisions. Imports of "office machines and automatic data processing machines" rose "(by $60.6 billion or +142.0%)" in September 2026 on a year earlier [cn-o42-hk-trade-release-202609]. The attached tables put that division's imports at 103,358 million Hong Kong dollars in September and its total exports at 135,447 million, up 183.7% [cn-o42-hk-trade-release-202609-tables]. A Government spokesman put the export surge down to "sustained stellar performance in exports of AI-related electronic products" [cn-o42-hk-trade-release-202609]. The release names no product and no company. The statistics office's monthly tables of the same divisions give each month: imports of this division were 70,381 million Hong Kong dollars in June 2026, 76,920 million in July, 101,100 million in August and 103,358 million in September; its total exports were 95,154 million, 105,222 million, 106,211 million and 135,447 million [cn-le18-hk-csd-410-50031] [cn-le18-hk-csd-410-50032].
+!! cn-o42-hk-trade-release-202609-tables | Office machines and automatic data processing machines 103,358 +142.0 660,400 +53.8
+!! cn-o42-hk-trade-release-202609-tables | Office machines and automatic data processing machines 135,447 +183.7 833,184 +63.9
+!! cn-o42-hk-trade-release-202609 | released today (October 28) the external merchandise trade statistics for September 2026
+!! cn-le18-hk-csd-410-50031 | "COMMD": 75, "COMMDDesc": "Office machines and automatic data processing machines", "freq": "M", "period": "202608", "sv": "VAL_IM", "svDesc": "HK$ million", "figure": 101100, "sd_value": ""
+!! cn-le18-hk-csd-410-50032 | "COMMD": 75, "COMMDDesc": "Office machines and automatic data processing machines", "freq": "M", "period": "202608", "sv": "VAL_TX", "svDesc": "HK$ million", "figure": 106211, "sd_value": ""
+!! cn-le18-hk-csd-410-50031 | External merchandise trade statistics by ten principal commodity divisions - imports
+!! cn-le18-hk-csd-410-50032 | External merchandise trade statistics by ten principal commodity divisions - total exports
+
+11. **What that can and cannot tell.** At the press price, and at 7.8 Hong Kong dollars to the US dollar, 600,000 chips would be about 126 billion Hong Kong dollars: more than this division's imports in any month from January 2025 to September 2026. A pile building up inside the division would show as imports gaining on exports. In August 2026 they did: exports exceeded imports by 5,111 million Hong Kong dollars, against 28,302 million in July. In September the excess was 32,089 million. The two months together come to 37,200 million, about two average months of January to September 2026, at 19,270 million each (our arithmetic, from the monthly tables). So the narrowing of August was made up in September, and the division shows no lasting build-up to the end of September 2026. Over the whole of 2025 the average excess was 8,340 million a month: in 2026 exports ran further ahead of imports, not less. The division cannot say what the goods were. It holds every office machine and computer of every maker, the exports of a month are not the imports of that month, and goods held in passage are outside it (point 3). October 2026 was not in the tables. The office also warns: "The sums of the monthly figures may differ from the cumulative totals" [cn-le18-hk-csd-410-50031]. Hong Kong's statistics office offers a tool to build tables by single heading (read on its statistics page, not saved; that it reaches single headings is from my general knowledge). Our reader could not open the tool (HTTP 499) and we did not script it.
+
+12. **What other places record as sent to Hong Kong.** Taiwan's finance ministry gives exports by destination for product groups, to October 2026 [cn-le18-tw-mof-exp-cnhk-groups]. Its exports to Hong Kong in January to October 2026 were 1.67 billion US dollars of computers (all of heading 8471, by the test of the agent who tabled the page) and 3.02 billion of computer parts, 4.69 billion together; in July to October 2026, 2.13 billion together; in October alone, 604 million (our sums of that agent's table, whose cells our script checked again in the saved page). That is every maker's goods, and far below the 16.2 billion dollars of point 1. Taiwan's group for integrated circuits is too large to tell anything: 60.4 billion dollars to Hong Kong in the ten months. Singapore's tables, which are a reading and not a saved source (the customs note says why), show re-exports to Hong Kong under one line for computer units, line 84718010, of about 23 million Singapore dollars in January to June 2026 and about 231 million in July to October; under the same line about 3.0 billion went to mainland China in those four months, not to Hong Kong. The United States' own exports to Hong Kong are in point 6. None of these shows an inflow of the size claimed. None can rule one out: licensed chips have to leave from the United States, whose figures here end in August 2026, and Hong Kong's own figures leave out goods in passage.
+!! cn-le18-tw-mof-exp-cnhk-groups | 自動資料處理機及其附屬單元
+
+## 4. Statements by governments
+
+13. **Hong Kong.** No statement by Hong Kong's government or its customs on these chips was found in two searches, in English and in Chinese. Reuters: "The Hong Kong government did not respond to a request for comment." [cn-clips-reuters-hongkong-yahoo]
+
+14. **Beijing.** On Nov 9, 2026 a reporter put the Reuters report to the foreign ministry's spokesperson, "约60万枚英伟达先进人工智能芯片存放在香港" (about 600,000 advanced Nvidia AI chips are stored in Hong Kong). The answer: "具体情况建议向中方主管部门询问" (for the details, ask the competent Chinese departments) [cn-labs-mfa-hongkong-chips-20261109]. That neither confirms nor denies.
+
+15. **Nvidia.** Reuters says Nvidia did not respond to its request for comment [cn-clips-evidence-1]. Statements by US officials on the pile were not searched for separately.
+!! cn-clips-evidence-1 | Neither did Nvidia or Chinese tech companies Alibaba, ByteDance, DeepSeek and Tencent.
+
+## 5. What else bears on it
+
+**On the record**
+
+16. **Hong Kong is Nvidia's warehouse.** Nvidia told the US securities regulator that export controls may disrupt its supply chain "for a substantial portion of our products, which are warehoused in and distributed from Hong Kong" [man-ms-sec-10q-2026-07]. A large Nvidia stock in Hong Kong would be ordinary in itself.
+
+17. **Nvidia booked a charge for excess H200 stock.** The same report, for the quarter to Jul 26, 2026: "we incurred a $0.4 billion charge associated with H200 for excess inventory and purchase obligations" [man-ms-sec-10q-2026-07]. It also says: "The licenses require that the H200s go through an inspection process in the United States prior to any shipment to the customer." [man-ms-sec-10q-2026-07] Neither sentence says where the stock was kept.
+
+18. **Nvidia says it has stopped shipping, and gives no reason.** On its results call of Nov 17, 2026: "we are no longer shipping licensed Hopper Data Center products to China" [cn-o38-nvda-q3fy27-call-transcript-pdf]. Reuters wrote that Nvidia's interim chief executive "did not explain why Nvidia had stopped shipping the processors or whether the halt would be permanent" [cn-acts-reuters-halt-20261118-relay2]. She told CNBC the same day that the licensed H200s "went to China within this last quarter", and: "we are no longer shipping H200 at all, let alone not shipping it to China" [cn-against2-kress-global-h200-halt-20261117]. That is from CNBC's own transcript, which it calls unofficial. Of the quarter after, Nvidia's commentary says: "We are not assuming any Data Center compute revenue from China in our outlook." [cn-counter-b17-1] The words Hong Kong appear in neither the call's transcript nor the commentary (a word search; both do name China), so neither says where unshipped chips are held.
+!! cn-o38-nvda-q3fy27-call-transcript-pdf | All our statements are made as of today, November 17, 2026
+!! cn-counter-b17-1 | Outlook for the fourth quarter of fiscal 2027
+!! cn-against2-kress-global-h200-halt-20261117 | unofficial transcript
+
+**Reported, from unnamed people**
+
+19. **The Financial Times, through Reuters, Aug 18, 2026.** Reuters relayed the paper's report, which cited two people: "Beijing wants them to keep the hardware outside mainland China to support the growth of domestic chipmakers", and "Chinese regulators have told companies they can ship the processors to Hong Kong, which operates outside mainland China's customs border, and use them there" [cn-tolerate-reutersaug26-relay1-wayback]. Reuters added that it "could not immediately verify the report". The paper's own text, as Yahoo Finance carries it, has more: Hong Kong "lacks enough data centres to house them"; "The US licences permit shipments of Nvidia's H200 chips to mainland China and Hong Kong."; and "Nvidia has about half a million H200 chips in stock mainly for Chinese clients." [cn-tolerate-ftaug26] That last sentence does not say the stock was in Hong Kong.
+!! cn-tolerate-reutersaug26-relay1-wayback | citing two people with knowledge of the matter
+!! cn-tolerate-reutersaug26-relay1-wayback | Aug 18 (Reuters) - Small batches of Nvidia
+
+20. **A relay that went further than its source.** A market-news site summarising that article wrote: "Total H200 stock held in this way is estimated at around 500,000 units" [cn-o42-investinglive-ft-eases], meaning held in Hong Kong. The Financial Times text saved here does not say that. It should not be counted as a second source.
+
+21. **Three stock numbers of similar size.** Reuters, Jan 14, 2026: orders were "far exceeding Nvidia's inventory of 700,000 chips" [cn-acts-reuters-customs-20260114]. The Financial Times, August 2026: about half a million in stock [cn-tolerate-ftaug26]. Reuters, November 2026: about 600,000 stored in Hong Kong [cn-clips-reuters-hongkong-yahoo]. All three come from unnamed people. The numbers are of similar size. No source says they describe the same stock.
+
+## What was not found
+
+- No statement by Hong Kong's government or customs on these chips.
+- No news outlet with its own sources for the 600,000. The pages surfaced in four searches relay Reuters, for example The Next Web: "The news agency cited two people familiar with the matter." [ms-bj-202611-h200-hongkong-tnw] Others were read in search results only and not saved.
+- No warehouse, cargo or port record that names these chips.
+- Hong Kong's figures by heading for August to October 2026 (its monthly divisions reach September), and the United States' for September and October 2026.
+- A customs line that could count these chips. Each line holds every maker's goods, and no saved page says under which line they are declared.
+
+## What a reader may conclude
+
+- The 600,000 is one report on the word of two unnamed people. Nothing official found here confirms it.
+- From February to July 2026, Hong Kong's figures by heading show no inflow of that size under the headings named for these chips, with a chip valued at the press price of about 27,000 dollars. Its monthly divisions show no lasting build-up of computers to the end of September 2026, and Taiwan's figures show no flow of that size to Hong Kong to October 2026. If the chips went through US inspection, as the licences require, and were declared under those headings, nearly all of them left the United States after August 2026. Or they are held as goods in passage, which Hong Kong's figures leave out.
+- By Nvidia's own account, its Hopper shipments and licensed sales to China in the two quarters to Oct 25, 2026 came to under 3.3 billion dollars [man-ms-sec-10q-2026-07] [cn-o38-nvda-q3fy27-call-transcript-pdf], and before them it had no revenue under the H200 licences [cn-o38-nvda-q1fy27-call-transcript-pdf]. At the press price that is about a fifth of what 600,000 chips would be worth.
+- A large Nvidia stock in Hong Kong is plausible in itself, because Nvidia says it warehouses much of its product there.
+- A reason for chips to be in Hong Kong has been reported: by the Financial Times, as Reuters relayed it on Aug 18, 2026, regulators told companies they could ship the chips to Hong Kong and use them there [cn-tolerate-reutersaug26-relay1-wayback]. That is a press report citing two unnamed people.
+
+## What a reader may not conclude
+
+- That the figure is confirmed, or that it is false. The months that could show it were not reached by heading here.
+- Whose chips they are, whether they had been sold, or how they reached Hong Kong. No source found here says.
+- That they sit in a port, or that an import permit was refused. Those are Palmer Luckey's words, from a machine transcript nobody has checked by ear [clip-luckey]. Reuters's words are "stored in Hong Kong" and "withholds approval for large-scale imports" [cn-clips-reuters-hongkong-yahoo].
+- That any trade figure here counts Nvidia chips, or that figures of different kinds can be added together.
+
+## What would settle more
+
+- Hong Kong's figures by heading for August to October 2026, and the United States' export figures for September and October 2026. Sixteen billion dollars of chips should leave a mark in either.
+- Nvidia's quarterly report for the quarter to Oct 25, 2026: what it says about stock, write-offs and where goods are held. On Nov 17, 2026 Nvidia said: "we plan to file our 10-Q in the coming weeks" [cn-o38-nvda-q3fy27-call-transcript-pdf]. The Securities and Exchange Commission's record of Nvidia's filings, fetched on Nov 23, 2026, lists no report for that quarter; the newest quarterly report in it is the one for the quarter to Jul 26, 2026 [cn-le05-sec-submissions-20261123].
+!! cn-le05-sec-submissions-20261123 | 0001045810-26-000075
+
+## Files
+
+- hk_trade_monthly.tsv and hk_trade_summary.tsv: Hong Kong's imports and exports by month and heading, January 2025 to July 2026.
+- hk_release_divisions_202609.tsv: the two divisions from the Government's September 2026 tables.
+- hk_divisions_monthly.tsv: the same two divisions month by month, January 2025 to September 2026, from Hong Kong's own monthly tables.
+- derived_figures.tsv: every piece of arithmetic in this note, made by the script, with the comparisons against Nvidia's own figures.
+- numbers_check.tsv: each figure as the exact piece of the saved copy it was read from; the checker found every line.
+- All are built by build_tables.py in the folder above; the searches are logged in search_log.tsv there.

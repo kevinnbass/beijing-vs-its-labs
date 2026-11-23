@@ -1,0 +1,93 @@
+# L22 searches. Columns: site and route, search words, period, mode, number of results the site reported, role (negative test | control | topic list | US account), time of the call (UTC), log file. Counts copied by tools/build_searches.py from the logged lines.
+site	words	period	mode	results	role	utc	log
+jhsjk.people.cn (Xi speech database, own search)	英伟达	all years	exact	0	negative test	2026-11-23T09:05:09Z	search/battery_A.txt
+jhsjk.people.cn (Xi speech database, own search)	Nvidia	all years	exact	0	negative test	2026-11-23T09:05:17Z	search/battery_A.txt
+jhsjk.people.cn (Xi speech database, own search)	黄仁勋	all years	exact	0	negative test	2026-11-23T09:05:36Z	search/battery_A.txt
+jhsjk.people.cn (Xi speech database, own search)	辉达	all years	exact	0	negative test	2026-11-23T09:05:46Z	search/battery_A.txt
+jhsjk.people.cn (Xi speech database, own search)	H20	all years	exact	0	negative test	2026-11-23T09:05:54Z	search/battery_A.txt
+jhsjk.people.cn (Xi speech database, own search)	H200	all years	exact	0	negative test	2026-11-23T09:06:05Z	search/battery_A.txt
+jhsjk.people.cn (Xi speech database, own search)	特斯拉	all years	exact	3	control	2026-11-23T09:06:31Z	search/battery_A.txt
+jhsjk.people.cn (Xi speech database, own search)	波音	all years	exact	12	control	2026-11-23T09:06:41Z	search/battery_A.txt
+jhsjk.people.cn (Xi speech database, own search)	超级智能	all years	exact	2	control	2026-11-23T09:52:43Z	search/battery_A0.txt
+jhsjk.people.cn (Xi speech database, own search)	高通	all years	exact	8	control	2026-11-23T09:07:24Z	search/battery_A2.txt
+jhsjk.people.cn (Xi speech database, own search)	微软	all years	exact	38	control	2026-11-23T09:07:45Z	search/battery_A2.txt
+jhsjk.people.cn (Xi speech database, own search)	苹果公司	all years	exact	2	control	2026-11-23T09:08:04Z	search/battery_A2.txt
+jhsjk.people.cn (Xi speech database, own search)	英特尔	all years	exact	4	control	2026-11-23T09:08:34Z	search/battery_B_full.txt
+jhsjk.people.cn (Xi speech database, own search)	进口芯片	all years	exact	0	negative test	2026-11-23T09:08:48Z	search/battery_B_full.txt
+jhsjk.people.cn (Xi speech database, own search)	外国芯片	all years	exact	0	negative test	2026-11-23T09:09:18Z	search/battery_B_full.txt
+jhsjk.people.cn (Xi speech database, own search)	境外芯片	all years	exact	0	negative test	2026-11-23T09:09:46Z	search/battery_B_full.txt
+jhsjk.people.cn (Xi speech database, own search)	停止采购	all years	exact	0	negative test	2026-11-23T09:10:28Z	search/battery_B_full.txt
+jhsjk.people.cn (Xi speech database, own search)	禁止采购	all years	exact	0	negative test	2026-11-23T09:10:42Z	search/battery_B_full.txt
+jhsjk.people.cn (Xi speech database, own search)	不得采购	all years	exact	0	negative test	2026-11-23T09:10:56Z	search/battery_B_full.txt
+jhsjk.people.cn (Xi speech database, own search)	停止购买	all years	exact	0	negative test	2026-11-23T09:11:10Z	search/battery_B_full.txt
+jhsjk.people.cn (Xi speech database, own search)	叛徒	all years	exact	2	topic list (read hits)	2026-11-23T09:11:25Z	search/battery_B_full.txt
+jhsjk.people.cn (Xi speech database, own search)	国产化替代	all years	exact	11	control	2026-11-23T09:11:53Z	search/battery_B_full.txt
+jhsjk.people.cn (Xi speech database, own search)	进口替代	all years	exact	2	control	2026-11-23T09:12:08Z	search/battery_B_full.txt
+jhsjk.people.cn (Xi speech database, own search)	国外芯片	all years	exact	0	negative test	2026-11-23T09:13:07Z	search/battery_B2.txt
+jhsjk.people.cn (Xi speech database, own search)	美国芯片	all years	exact	0	negative test	2026-11-23T09:13:25Z	search/battery_B2.txt
+jhsjk.people.cn (Xi speech database, own search)	国产芯片	all years	exact	2	topic list (read hits)	2026-11-23T09:13:45Z	search/battery_B2.txt
+jhsjk.people.cn (Xi speech database, own search)	不要购买	all years	exact	0	negative test	2026-11-23T09:14:04Z	search/battery_B2.txt
+jhsjk.people.cn (Xi speech database, own search)	芯片自主研发	all years	exact	1	control	2026-11-23T09:14:55Z	search/battery_B2.txt
+jhsjk.people.cn (Xi speech database, own search)	NVIDIA	all years	exact	0	negative test	2026-11-23T09:15:14Z	search/battery_B2.txt
+jhsjk.people.cn (Xi speech database, own search)	nvidia	all years	exact	0	negative test	2026-11-23T09:15:34Z	search/battery_B2.txt
+jhsjk.people.cn (Xi speech database, own search)	芯片	2025	exact	1	topic list (read hits)	2026-11-23T09:16:07Z	search/battery_C.txt
+jhsjk.people.cn (Xi speech database, own search)	半导体	2025	exact	2	topic list (read hits)	2026-11-23T09:17:05Z	search/battery_C.txt
+jhsjk.people.cn (Xi speech database, own search)	出口管制	2025	exact	0	topic list (read hits)	2026-11-23T09:17:28Z	search/battery_C.txt
+jhsjk.people.cn (Xi speech database, own search)	集成电路	2025	exact	4	topic list (read hits)	2026-11-23T09:18:18Z	search/battery_C.txt
+jhsjk.people.cn (Xi speech database, own search)	算力	2025	exact	2	topic list (read hits)	2026-11-23T09:18:41Z	search/battery_C.txt
+jhsjk.people.cn (Xi speech database, own search)	美资企业	2025	exact	0	topic list (read hits)	2026-11-23T09:19:05Z	search/battery_C.txt
+jhsjk.people.cn (Xi speech database, own search)	美国企业	2025	exact	0	topic list (read hits)	2026-11-23T09:19:20Z	search/battery_C.txt
+jhsjk.people.cn (Xi speech database, own search)	高端芯片	2025	exact	1	topic list (read hits)	2026-11-23T09:19:35Z	search/battery_C.txt
+jhsjk.people.cn (Xi speech database, own search)	通电话	2025	exact	13	topic list (read hits)	2026-11-23T09:20:32Z	search/battery_C.txt
+jhsjk.people.cn (Xi speech database, own search)	信创	2025	exact	0	topic list (read hits)	2026-11-23T09:21:38Z	search/battery_C.txt
+jhsjk.people.cn (Xi speech database, own search)	自主可控	2025	exact	5	topic list (read hits)	2026-11-23T09:21:55Z	search/battery_C.txt
+jhsjk.people.cn (Xi speech database, own search)	外资企业	2025	exact	3	topic list (read hits)	2026-11-23T09:22:18Z	search/battery_C.txt
+jhsjk.people.cn (Xi speech database, own search)	芯片	2026	exact	13	topic list (read hits)	2026-11-23T09:23:52Z	search/battery_C.txt
+jhsjk.people.cn (Xi speech database, own search)	半导体	2026	exact	6	topic list (read hits)	2026-11-23T09:26:00Z	search/battery_C.txt
+jhsjk.people.cn (Xi speech database, own search)	出口管制	2026	exact	2	topic list (read hits)	2026-11-23T09:26:23Z	search/battery_C.txt
+jhsjk.people.cn (Xi speech database, own search)	集成电路	2026	exact	8	topic list (read hits)	2026-11-23T09:26:46Z	search/battery_C.txt
+jhsjk.people.cn (Xi speech database, own search)	算力	2026	exact	14	topic list (read hits)	2026-11-23T09:27:43Z	search/battery_C.txt
+jhsjk.people.cn (Xi speech database, own search)	美资企业	2026	exact	0	topic list (read hits)	2026-11-23T09:30:27Z	search/battery_C.txt
+jhsjk.people.cn (Xi speech database, own search)	美国企业	2026	exact	3	topic list (read hits)	2026-11-23T09:30:44Z	search/battery_C.txt
+jhsjk.people.cn (Xi speech database, own search)	高端芯片	2026	exact	1	topic list (read hits)	2026-11-23T09:32:10Z	search/battery_C.txt
+jhsjk.people.cn (Xi speech database, own search)	通电话	2026	exact	10	topic list (read hits)	2026-11-23T09:48:36Z	search/battery_E.txt
+jhsjk.people.cn (Xi speech database, own search)	信创	2026	exact	9	topic list (read hits)	2026-11-23T09:32:59Z	search/battery_C.txt
+jhsjk.people.cn (Xi speech database, own search)	自主可控	2026	exact	10	topic list (read hits)	2026-11-23T09:35:03Z	search/battery_C.txt
+jhsjk.people.cn (Xi speech database, own search)	外资企业	2026	exact	1	topic list (read hits)	2026-11-23T09:37:08Z	search/battery_C.txt
+jhsjk.people.cn (Xi speech database, own search)	特朗普	2025	exact	6	topic list (read hits)	2026-11-23T09:38:18Z	search/battery_D.txt
+jhsjk.people.cn (Xi speech database, own search)	特朗普	2026	exact	18	topic list (read hits)	2026-11-23T09:39:19Z	search/battery_D.txt
+jhsjk.people.cn (Xi speech database, own search)	美国工商界	2026	exact	1	topic list (read hits)	2026-11-23T09:40:57Z	search/battery_D.txt
+jhsjk.people.cn (Xi speech database, own search)	中南海	2026	exact	6	topic list (read hits)	2026-11-23T09:41:14Z	search/battery_D.txt
+jhsjk.people.cn (Xi speech database, own search)	美国企业家	2026	exact	0	coverage control (phrase from a known Xi item of the window)	2026-11-23T09:41:42Z	search/battery_E.txt
+jhsjk.people.cn (Xi speech database, own search)	更广阔前景	2026	exact	3	coverage control (phrase from a known Xi item of the window)	2026-11-23T09:42:32Z	search/battery_E.txt
+jhsjk.people.cn (Xi speech database, own search)	釜山	2025	exact	5	coverage control (phrase from a known Xi item of the window)	2026-11-23T09:43:59Z	search/battery_E.txt
+jhsjk.people.cn (Xi speech database, own search)	信创园	2026	exact	8	coverage control (phrase from a known Xi item of the window)	2026-11-23T09:44:17Z	search/battery_E.txt
+jhsjk.people.cn (Xi speech database, own search)	关键在科技自立自强	2026	exact	2	coverage control (phrase from a known Xi item of the window)	2026-11-23T09:44:35Z	search/battery_E.txt
+jhsjk.people.cn (Xi speech database, own search)	鼓励开源开放	2026	exact	5	coverage control (phrase from a known Xi item of the window)	2026-11-23T09:44:54Z	search/battery_E.txt
+jhsjk.people.cn (Xi speech database, own search)	各展所长	2026	exact	2	coverage control (phrase from a known Xi item of the window)	2026-11-23T09:45:11Z	search/battery_E.txt
+jhsjk.people.cn (Xi speech database, own search)	防范人工智能安全风险	2026	exact	1	coverage control (phrase from a known Xi item of the window)	2026-11-23T09:46:37Z	search/battery_E.txt
+jhsjk.people.cn (Xi speech database, own search)	超常规措施	2026	exact	1	coverage control (phrase from a known Xi item of the window)	2026-11-23T09:47:28Z	search/battery_E.txt
+jhsjk.people.cn (Xi speech database, own search)	推广应用和迭代升级	2026	exact	2	coverage control (phrase from a known Xi item of the window)	2026-11-23T09:47:46Z	search/battery_E.txt
+jhsjk.people.cn (Xi speech database, own search)	深化数字经济、人工智能合作	2026	exact	2	coverage control (phrase from a known Xi item of the window)	2026-11-23T09:49:05Z	search/battery_F.txt
+jhsjk.people.cn (Xi speech database, own search)	最重要是加快高水平科技自立自强	2025	exact	2	coverage control (phrase from a known Xi item of the window)	2026-11-23T09:49:27Z	search/battery_F.txt
+jhsjk.people.cn (Xi speech database, own search)	随同美国总统特朗普访华	2026	exact	0	coverage control (phrase from a known Xi item of the window)	2026-11-23T09:49:48Z	search/battery_F.txt
+trumpstruth.org (Truth Social archive, own search), post text, 2025-10-01 to 2026-11-23	Xi	2025-10-01..2026-11-23	archive search	39	US account; control = Dec 8, 2025 post found	2026-11-23T09:22:17Z	search/tt_Xi.txt
+trumpstruth.org (Truth Social archive, own search), post text, 2025-10-01 to 2026-11-23	Nvidia	2025-10-01..2026-11-23	archive search	13	US account; control = Dec 8, 2025 post found	2026-11-23T09:22:27Z	search/tt_other.txt
+trumpstruth.org (Truth Social archive, own search), post text, 2025-10-01 to 2026-11-23	NVIDIA	2025-10-01..2026-11-23	archive search	13	US account; control = Dec 8, 2025 post found	2026-11-23T09:22:35Z	search/tt_other.txt
+trumpstruth.org (Truth Social archive, own search), post text, 2025-10-01 to 2026-11-23	H200	2025-10-01..2026-11-23	archive search	46	US account	2026-11-23T09:22:42Z	search/tt_other.txt
+trumpstruth.org (Truth Social archive, own search), post text, 2025-10-01 to 2026-11-23	chips	2025-10-01..2026-11-23	archive search	67	US account	2026-11-23T09:22:50Z	search/tt_other.txt
+trumpstruth.org (Truth Social archive, own search), post text, 2025-10-01 to 2026-11-23	Super Intelligence	2025-10-01..2026-11-23	archive search	12	US account	2026-11-23T09:22:58Z	search/tt_other.txt
+research/primary saved pages, one pass (tools/cooccur.py)	cac_nobuy	window 300 characters; 7969 files read	regex co-occurrence	7 windows in 6 saved ids	control for xi_nobuy		corpus/cac_nobuy.summary
+research/primary saved pages, one pass (tools/cooccur.py)	he_nvidia	window 300 characters; 7969 files read	regex co-occurrence	10 windows in 7 saved ids	control		corpus/he_nvidia.summary
+research/primary saved pages, one pass (tools/cooccur.py)	li_nvidia	window 300 characters; 7969 files read	regex co-occurrence	15 windows in 11 saved ids	control		corpus/li_nvidia.summary
+research/primary saved pages, one pass (tools/cooccur.py)	xi_nobuy	window 300 characters; 7969 files read	regex co-occurrence	2 windows in 2 saved ids	negative test		corpus/xi_nobuy.summary
+research/primary saved pages, one pass (tools/cooccur.py)	xi_nvidia	window 300 characters; 7968 files read	regex co-occurrence	295 windows in 214 saved ids	negative test (hits read and classed)		corpus/xi_nvidia.summary
+WebSearch (team allowance)	any		web search	refused at the first call of this round: session budget used up (tool message)	refused / not used		
+so.news.cn (Xinhua search)	page itself		site search	HTTP 405, application firewall: access blocked	refused / not used		search/xh_so_home.html
+sousuo.www.gov.cn (State Council search)	robots.txt		site search	robots.txt: User-agent * Disallow /	refused / not used		
+whitehouse.gov search	robots.txt		site search	robots.txt disallows ?s= ; used the post sitemaps instead (2,342 addresses)	refused / not used		search/wh_post_sitemap*.xml
+govinfo.gov search	robots.txt		site search	robots.txt disallows /app/search ; used the DCPD sitemap and saved documents instead	refused / not used		search/dcpd_2026.xml
+mfa.gov.cn search	page script		site search	needs per-session request tokens; not scripted; used the leaders-activities listing (1,000 titles, Nov 9, 2025 to Nov 23, 2026)	refused / not used		search/mfa/gjldrhd_all.tsv
+search.people.cn	page script		site search	script app; request fields not found; not used	refused / not used		
+presidency.ucsb.edu	robots.txt		archive	HTTP 403 to this machine	refused / not used		
+jhsjk.people.cn content/result	all		site search	about one call in three answered HTTP 404; retried after 30 s (all logged searches completed with status success)	rate limit		search/battery_*.txt

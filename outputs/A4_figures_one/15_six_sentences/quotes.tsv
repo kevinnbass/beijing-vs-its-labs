@@ -1,0 +1,70 @@
+# Idea 15, six sentences: every quotation and date the wall shows, with the saved id that holds it.
+# Checked by: python3 -I scripts/cn_has.py quotes.tsv   (build.py runs it and stops if it fails)
+# A line "#@ key" names the line under it for build.py. <key>.date lines hold the page's own date words.
+
+# --- Beijing pulls away from Nvidia ---
+#@ b1
+man-cn-factions-wsj-ding	Authorities privately told companies to halt their Nvidia purchases, while officials publicly raised cybersecurity concerns about the U.S. company's products.
+#@ b1.date
+man-cn-factions-wsj-ding	July 23, 2026
+#@ b1.unnamed
+man-cn-factions-wsj-ding	people familiar with the matter said
+
+#@ b2
+cn-clips-alibaba-20f	In September 2025, the Cyberspace Administration of China requested Chinese technology companies to halt purchases of certain chips.
+#@ b2.date
+cn-clips-alibaba-20f	For the fiscal year ended March 31, 2026
+#@ b2.form
+cn-clips-alibaba-20f	FORM 20-F
+
+#@ b3
+cn-policy-ndrc-chip-adaptation-2026	指导国产大模型加大力度适配国产算力芯片
+#@ b3.date
+cn-policy-ndrc-chip-adaptation-2026	2026/05/22
+#@ b3.speaker
+cn-policy-ndrc-chip-adaptation-2026	【李超】-国家发展和改革委员会
+# the page gives his office (政研室, the policy research office); it does not call him spokesperson
+#@ b3.office
+cn-policy-ndrc-chip-adaptation-2026	李超 2026/05/22 政研室
+#@ b3.event
+cn-policy-ndrc-chip-adaptation-2026	国家发展改革委5月份新闻发布会
+
+# --- the companies pull toward Nvidia ---
+#@ c1
+cn-policy-firms-want-nvidia	Chinese firms still want Nvidia chips despite government pressure not to buy, sources say
+#@ c1.date
+cn-policy-firms-want-nvidia	PUBLISHED: 2025-09-04
+#@ c1.unnamed
+cn-policy-firms-want-nvidia	four people with knowledge of procurement discussions said
+
+#@ c2
+cn-counter-b11-5	互联网企业自建算力集群，满足市场化企业需求，主要以英伟达高性能卡为主
+# the reply's own date, at its foot; the commission published it later
+#@ c2.date
+cn-counter-b11-5	上海市经济和信息化委员会2025年4月30日
+#@ c2.pub.date
+cn-counter-b11-5	发布日期：2025-11-10
+#@ c2.title
+cn-counter-b11-5	对市政协十四届三次会议 第0093号提案的答复
+
+#@ c3
+cn-labs-h200-two-million-202512-relay1-wayback	Chinese technology companies have placed orders for more than 2 million H200 chips for 2026
+#@ c3.date
+cn-labs-h200-two-million-202512-relay1-wayback	Published 12/31/2025
+#@ c3.unnamed
+cn-labs-h200-two-million-202512-relay1-wayback	two of the people said
+
+# --- the limit ---
+#@ limit
+cn-factions-bloomberg-flexibility-202409-relay1	The policy has taken the form of guidance rather than an outright ban
+# Bloomberg's report is of Sept 27, 2024 (the page's own time stamp, in UTC); The Business Times carried it on Sept 28, Singapore time
+#@ limit.date
+cn-factions-bloomberg-flexibility-202409-relay1	2024-09-27T22:23:29.000Z
+#@ limit.carried.date
+cn-factions-bloomberg-flexibility-202409-relay1	Published Sat, Sep 28, 2024
+#@ limit.unnamed
+cn-factions-bloomberg-flexibility-202409-relay1	said the people, who asked not to be identified because the matter is private
+#@ limit.approved
+ms-bj-20260128-h200-nod-standard	have been approved to purchase more than 400,000 H200 chips in total
+#@ limit.camein
+cn-clips-evidence-1	China has allowed some of the chips to enter the country in recent months

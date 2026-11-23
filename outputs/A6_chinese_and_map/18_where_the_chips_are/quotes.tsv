@@ -1,0 +1,80 @@
+# saved id <TAB> the source's exact words. Written by build.py from places.txt. A line that spans an invisible character
+# in the saved copy is written here in pieces; build.py has checked each whole line with those characters removed.
+# record 1: Hong Kong
+cn-clips-evidence-1	About 600,000 of Nvidia's advanced artificial intelligence chips are stored in Hong Kong awaiting shipment to China, two people familiar with the matter said
+cn-clips-evidence-1	as Beijing withholds approval for large-scale imports despite demand from technology firms
+cn-clips-evidence-1	The size of the stockpile of H200 chips
+cn-clips-reuters-hongkong-yahoo	Nov 5 (Reuters) - About 600,000 of Nvidia's
+# record 2: Southeast Asia
+cn-tolerate-ft-offshore	Alibaba and ByteDance are among the tech groups training their latest large language models (LLMs) in data centres across Southeast Asia, according to two people with direct knowledge of the matter
+cn-tolerate-ft-offshore	Data centre clusters have boomed in Singapore and Malaysia, fuelled by Chinese demand
+cn-tolerate-ft-offshore	Many of these data centres are equipped with high-end Nvidia products
+cn-tolerate-ft-offshore	Chinese companies typically sign a lease agreement to use overseas data centres owned and operated by non-Chinese entities
+cn-tolerate-ft-offshore	This is compliant with US export controls
+# record 3: Japan, outside Osaka
+man-cn-ft-202512-japan	In a data centre outside of Osaka, Japan, Nvidia’s cutting-edge semiconductors are at the disposal of one customer: China’s Tencent.
+man-cn-ft-202512-japan	The advanced B200 chips are owned by Datasection
+man-cn-ft-202512-japan	is Tencent, according to people familiar with the matter
+man-cn-ft-202512-japan	Ishihara declined to confirm the Tencent deal
+man-cn-ft-202512-japan	cloud computing services is both transparent and legal
+man-cn-ft-202512-japan	a legal but geopolitically fraught strategy
+# record 4: Japan: Inzai, Chiba
+cn-tolerate-datasectionfiling	大阪府から千葉県印西市に変更いたしました
+cn-tolerate-datasectionfiling	千葉県印西市に開設予定の AI データセンター
+cn-tolerate-datasectionfiling	NVIDIA 製 B300（5,080 個）を搭載した GPU サーバー（635 台）
+cn-tolerate-datasectionfiling	2026 年５月から７月にかけて段階的な稼働を予定しております
+cn-tolerate-datasectionfiling	世界最大規模のクラウドサービスプロバイダーである顧客
+cn-tolerate-datasectionfiling	搭載 GPU を NVIDIA 製 B200 から NVIDIA 製 B300 に変更いたしました
+cn-le20-ds-20250710-order	本件顧客の企業情報は非開示とさせていただきます
+# record 5: Malaysia, Indonesia and Thailand
+cn-usdocs-hfac-decisions-20261119	Bytedance System SDN 508,000 RWA Malaysia
+cn-usdocs-hfac-decisions-20261119	PT Byteplus Technologies 203,000 RWA Indonesia
+cn-usdocs-hfac-decisions-20261119	Alibaba Cloud 50,500 RWA Malaysia 203,000 RWA Malaysia
+cn-usdocs-hfac-decisions-20261119	TikTok (System) Thailand 154,000 RWA Thailand
+cn-usdocs-hfac-decisions-20261119	H200 License and Equivalent Application Status as of May 11, 2026
+cn-le04-bis-ear-748	Returned without action (RWA)
+cn-usdocs-hfac-summary-20261119	House Foreign Affairs Committee ECRA Disclosure | 11.19.2026
+# record 6: Jiangsu
+cn-tolerate-projects-relay1	In eastern Jiangsu province, the Wuxi municipal government said in March 2025 that a computing cluster using Nvidia H800 processors had entered operation.
+cn-tolerate-projects-relay1	Other Chinese facilities are already using restricted Nvidia hardware.
+# record 7: Xinjiang and Qinghai
+cn-acts-bloomberg-projects-th-20250711	China plans 39 AI data centers with 115,000 restricted Nvidia Hopper GPUs
+cn-acts-bloomberg-projects-th-20250711	mostly in Xinjiang and Qinghai
+cn-acts-bloomberg-projects-th-20250711	with over 115,000 high-performance Nvidia Hopper GPUs
+cn-acts-bloomberg-projects-th-20250711	These plans are based on official investment documents, tenders, and filings reviewed by Bloomberg
+cn-acts-bloomberg-projects-th-20250711	To date, there is no direct proof that China has accumulated, or will soon receive, the more than 115,000 restricted GPUs outlined in these construction plans
+# record 8: Fujian, Xianyou county
+cn-tolerate-projects-relay1	proposed 6.2 billion yuan ($873 million) AI computing centre in coastal Fujian province, in Xianyou county, seeks commercial partners and specifies Nvidia H100 chips
+cn-tolerate-projects-relay1	A Reuters review has identified more than $3 billion in Chinese computing projects built around Nvidia's restricted processors
+# record 9: Shaanxi
+cn-tolerate-projects-relay1	In northwestern Shaanxi province, state-owned engineering group Sinomach said a subsidiary won a contract as part of a project for a 3 billion yuan computing centre specifying Nvidia H100 and H200 processors.
+# record 10: Jilin
+cn-tolerate-projects-relay1	In northeastern Jilin province, an April government prospectus describes another 2.26 billion yuan project combining Nvidia H100 processors with Chinese-developed chips.
+# record 11: Inner Mongolia
+cn-tolerate-projects-relay1	Inner Mongolia, a 1.5 billion-yuan development proposes installing 625 Nvidia H200 servers. Chinese industry reporting in June said construction had begun on two buildings in its first phase.
+# record 12: Gansu
+cn-tolerate-projects-relay1	In northwestern Gansu province, a local company awarded a 1.16 billion yuan construction contract in July for a computing centre that plans to install approximately 3,072 Nvidia processors, according to tender documents specifying H100 and H200 hardware.
+cn-tolerate-projects-relay1	The documents do not establish whether the processors have been delivered.
+# words behind the notes under the map
+cn-clips-corroboration-1	to address remote access to advanced super intelligence (SI) chips and servers
+cn-clips-corroboration-1	remote computing arrangements involving data centers in third countries
+cn-clips-corroboration-1	FOR IMMEDIATE RELEASE | November 16, 2026
+cn-clips-evidence-1	Several major Chinese internet companies have each obtained about 10,000 H200 chips in the past few months, one of the people said
+cn-clips-evidence-1	China has allowed some of the chips to enter the country in recent months, three people familiar with the matter said
+cn-tolerate-projects-relay1	Other Chinese facilities are already using restricted Nvidia hardware.
+cn-tolerate-projects-relay1	In Fujian, Shanghai-listed Damingcheng disclosed in June that a computing venture had built an H800 cluster.
+cn-tolerate-projects-relay1	It had signed a computing-services agreement originally worth 759 million yuan, although the contract ended early.
+cn-tolerate-projects-relay1	Shenzhen University awarded a contract for three H100 processors in September, while US-blacklisted Northwestern Polytechnical University bought two H200 chips the following month
+cn-usdocs-hfac-summary-20261119	NVIDIA’s H200 and AMD’s MI325X
+cn-tolerate-reutersaug26-relay1-wayback	Hong Kong, which operates outside mainland China's customs border
+# where each date shown was read
+cn-clips-reuters-hongkong-yahoo	Nov 5 (Reuters) - About 600,000 of Nvidia's
+cn-clips-evidence-1	PUBLISHED: 2026-11-06T11:47:43+08:00
+cn-tolerate-ft-offshore	PUBLISHED: 2025-11-27
+man-cn-ft-202512-japan	Published DEC 20 2025
+cn-tolerate-datasectionfiling	2026年５月７日
+cn-usdocs-hfac-decisions-20261119	H200 License and Equivalent Application Status as of May 11, 2026
+cn-usdocs-hfac-summary-20261119	House Foreign Affairs Committee ECRA Disclosure | 11.19.2026
+cn-acts-bloomberg-projects-th-20250711	PUBLISHED: 2025-07-11
+cn-tolerate-projects-relay1	BEIJING, Nov 13 (Reuters)
+cn-tolerate-projects-relay1	PUBLISHED: 2026-11-13

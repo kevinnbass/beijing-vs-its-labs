@@ -1,0 +1,607 @@
+# Data for the tracker page (build.py in the folder above reads this file; add_record.py appends to it).
+# A copy of the data file of the figure "Beijing vs. its labs", taken again on Nov 23, 2026 after the figure's
+# corrections of 12:05 UTC. The copies as taken are kept in data/archive/ (figure_data.as_copied_20261123*.txt; no
+# script reads them). Every change is a line of tracker_log.tsv.
+# One block per dated event:
+#   @ LANE KIND DATE DATELABEL SAVED-ID
+#   T  the line shown in the figure (my words)
+#   S  the source as shown
+#   Q  the page's own words (checked by the builder against the saved copy; spacing and quote style ignored)
+#   E  my English rendering, where Q is Chinese
+#   U  the address to link (only where the saved copy's own address is cut short or is a relay to avoid)
+#   C  a short label drawn beside the mark on the strip: start|end dx dy words
+# LANE: BH Beijing holds Nvidia back | BL Beijing lets Nvidia in | CN companies reach for Nvidia | CH companies turn to home-made chips
+# KIND: doc  a government document or an official on the record
+#       rec  a company, or a named person outside government, on the record (filing, results, a named executive or analyst)
+#       press a press report citing unnamed people
+# DATELABEL: "-" prints the date; otherwise the words given (use _ for a space).
+# Lines starting "!" are extra quotations the builder must find (they back numbers in the panels): ! SAVED-ID | words
+
+@ BH doc 2023-05-21 - cn-policy-micron-decision
+T The Cybersecurity Review Office's published review conclusion fails Micron's products; operators of critical information infrastructure are to stop buying them. Not about Nvidia
+S Cybersecurity Review Office, on the Cyberspace Administration's site
+Q 我国内关键信息基础设施的运营者应停止采购美光公司产品
+E operators of critical information infrastructure in China should stop buying Micron's products
+
+@ BH doc 2023-12-16 - cn-policy-desktop-2023
+T Finance and industry ministries: Party and government bodies from township level up, and the public institutions attached to them, must require that the processor and operating system of the desktop computers they buy meet the security-and-reliability evaluation; other units need not
+S Ministry of Finance and Ministry of Industry and Information Technology
+Q 应当将CPU、操作系统符合安全可靠测评要求纳入采购需求
+E shall include in the purchase requirement that the CPU and operating system meet the security-and-reliability evaluation
+
+@ BH press 2024-09-27 - cn-factions-bloomberg-flexibility-202409-relay1
+T Regulators discourage buying Nvidia's H20: "guidance rather than an outright ban"
+S Bloomberg, on The Business Times (whose page is dated Sept 28, Singapore time)
+Q The policy has taken the form of guidance rather than an outright ban
+
+@ BH doc 2024-12-09 - cn-policy-samr-open-original
+T Market regulator announces that it has opened an antitrust case against Nvidia, under the antitrust law and its 2020 conditions on Nvidia's purchase of Mellanox
+S State Administration for Market Regulation
+Q 市场监管总局依法对英伟达公司开展立案调查
+E the regulator has opened an investigation of Nvidia under the law
+
+@ BH doc 2025-04-25 - cn-xi-round-j-6
+T Xi Jinping to the Politburo: concentrate forces to conquer high-end chips
+S Xinhua readout, on the Party members' site
+Q 集中力量攻克高端芯片、基础软件等核心技术
+E concentrate forces to conquer core technologies such as high-end chips and basic software
+
+@ BH doc 2025-07-21 - cn-acts-mss-xinhua-20250721
+T Security ministry warns that some chips made abroad may have had backdoors planted on purpose when they were designed and made
+S Ministry of State Security (its WeChat account), carried by Xinhua
+Q 一些境外生产的芯片、智能设备或者软件可能在设计制造阶段就被故意预埋了“后门”
+E some chips, smart devices or software made abroad may have had backdoors planted on purpose at the design and manufacturing stage
+
+@ BH doc 2025-07-31 - cn-policy-cac-h20-original
+T Cyberspace regulator summons Nvidia over the security risks of vulnerabilities and backdoors in its H20 chips
+S Cyberspace Administration of China
+Q 约谈了英伟达公司,要求英伟达公司就对华销售的H20算力芯片漏洞后门安全风险问题进行说明并提交相关证明材料
+E summoned Nvidia and required it to explain the backdoor security risks of the H20 chips sold to China and to submit supporting material
+
+@ BH press 2025-08-10 After_summer_2025 man-cn-factions-wsj-ding
+T After a Huawei briefing in summer 2025, Vice Premier Ding Xuexiang warns the biggest AI users, by people familiar with the message: anyone resisting home-made chips is "a traitor". The report, of Jul 23, 2026, gives no date for the warning
+S Wall Street Journal
+Q Anyone who resisted employing domestic chips was a traitor
+C end -42 -42 "traitor" warning
+
+@ BH press 2025-08-20 - man-cn-ft-20250821-regulators
+T Three regulators move to dissuade companies from buying the H20, starting about a week after Jul 15 (the report is of Aug 20)
+S Financial Times
+Q A group of Chinese regulators have mobilised in an effort to dissuade domestic tech companies from acquiring the H20
+
+@ BH rec 2025-09-10 Sept_2025 cn-clips-alibaba-20f
+T Alibaba's annual report: the cyberspace regulator "requested Chinese technology companies to halt purchases of certain chips"
+S Alibaba, Form 20-F filed with the SEC
+Q In September 2025, the Cyberspace Administration of China requested Chinese technology companies to halt purchases of certain chips.
+
+@ BH doc 2025-09-15 - cn-policy-samr-further-original
+T Market regulator announces, after a preliminary investigation, a further investigation of Nvidia under the antitrust law and its 2020 conditions; the one-sentence notice gives no facts
+S State Administration for Market Regulation
+Q 市场监管总局依法决定对其实施进一步调查
+E the regulator has decided to investigate it further under the law
+
+@ BH press 2025-09-17 - man-cn-ft-20250917-6000d
+T Cyberspace regulator tells ByteDance and Alibaba to end testing and orders of the RTX Pro 6000D
+S Financial Times
+Q told companies, including ByteDance and Alibaba, this week to end their testing and orders of the RTX Pro 6000D
+
+@ BH press 2025-10-09 - man-cn-ft-20251009-customs
+T Customs teams sent to major ports to check chip shipments
+S Financial Times
+Q Teams of customs officers have been mobilised at major ports across the country in the past few weeks to carry out stringent checks on semiconductor shipments
+
+@ BH press 2025-11-05 - ms-bj-20251105-statefunded-standard
+T Reported: government guidance requires new data-centre projects that took any state funds to use only home-made AI chips; whether nationwide or only in some provinces is unclear
+S Reuters, on The Standard (Hong Kong)
+Q requiring new data centre projects that have received any state funds to only use domestically-made artificial intelligence chips
+
+@ BH press 2026-01-14 - cn-acts-reuters-customs-20260114
+T Customs agents told the H200 is "not permitted"; companies told not to buy it "unless necessary". Reuters: it is unclear whether Beijing wants a ban, is still weighing restrictions, or could use the measures as "a bargaining tactic in talks with Washington"
+S Reuters, on Yahoo Finance
+Q are not permitted to enter China, according to three people briefed on the matter
+C start 13 -19 H200 "not permitted"
+
+@ BH doc 2026-04-22 - cn-us-lutnick-0422-rev-transcript-b
+T US Commerce Secretary to the Senate, as his "understanding": the Chinese central government "has not let them as of yet buy the chips"
+S Howard Lutnick, Senate hearing (Rev transcript)
+Q Chinese central government has not let them as of yet buy the chips because they're trying to keep their investment focused on their own domestic industry
+
+@ BH press 2026-05-14 - cn-acts-reuters-us-approvals-20260514-wayback
+T About ten firms cleared by Washington, "not a single delivery"; by one person, firms "pulled back after guidance from Beijing", a shift "partly triggered by changes on the U.S. side"
+S Reuters, on MarketScreener
+Q not a single delivery has been made so far
+
+@ BH doc 2026-05-22 - cn-policy-ndrc-chip-adaptation-2026
+T State planner, at its press conference: it is guiding home-made large models to step up adaptation to home-made computing chips
+S National Development and Reform Commission, press conference
+Q 指导国产大模型加大力度适配国产算力芯片
+E guiding domestic large models to step up adaptation to domestic computing chips
+
+@ BH doc 2026-05-26 - cn-le14-itsec-2026-2
+T The state evaluation centre lists the AI chips that passed its security-and-reliability evaluation: nine, all from makers registered in China. By the centre's guide of June 2026 only entities registered in China may apply, and applying is voluntary
+S China Information Technology Security Evaluation Center, announcement 2026 No. 2
+Q 人工智能训练推理芯片
+E AI training and inference chips [the table's heading]
+
+@ BH rec 2026-08-26 - man-ms-sec-10q-2026-07
+T Nvidia's quarterly filing: licensed H200 sales "were restricted by the PRC government"
+S Nvidia, Form 10-Q filed with the SEC
+Q such sales were restricted by the PRC government
+
+@ BH press 2026-11-05 - cn-clips-evidence-1
+T About 600,000 Nvidia chips wait in Hong Kong "as Beijing withholds approval"
+S Reuters (its dateline is Nov 5), on CNA, whose page is dated Nov 6
+Q as Beijing withholds approval for large-scale imports despite demand from technology firms
+C end -3 -42 600,000 wait in Hong Kong
+
+@ BL doc 2025-04-17 - cn-policy-he-welcomes
+T Vice Premier He Lifeng to Jensen Huang: more American firms, Nvidia included, are welcome to put down deep roots in the Chinese market
+S Xinhua, in People's Daily
+Q 欢迎包括英伟达公司在内的更多美资企业深耕中国市场
+E more American companies, Nvidia included, are welcome to work the Chinese market in depth
+
+@ BL doc 2025-07-17 - cn-policy-wang-nvidia
+T Commerce minister to Huang: he hopes multinationals, Nvidia included, will give Chinese customers high-quality, reliable products and services
+S Ministry of Commerce
+Q 希望包括英伟达在内的跨国公司为中国客户提供优质可靠的产品和服务
+E we hope multinationals including Nvidia will provide Chinese customers with quality, reliable products and services
+
+@ BL doc 2025-07-18 - cn-policy-h20-mofcom
+T Commerce ministry answers the US go-ahead for the H20 by asking Washington to lift more restrictions
+S Ministry of Commerce
+Q 继续取消一系列不合理的对华经贸限制措施
+E go on removing a series of unreasonable economic and trade restrictions on China
+
+@ BL press 2026-01-28 - ms-bj-20260128-h200-nod-standard
+T Conditional approval for ByteDance, Alibaba and Tencent to buy more than 400,000 H200s
+S Reuters, on The Standard (Hong Kong)
+Q have been approved to purchase more than 400,000 H200 chips in total
+
+@ BL press 2026-01-30 - cn-acts-reuters-deepseek-20260130
+T Industry and commerce ministries have approved DeepSeek, ByteDance, Alibaba and Tencent; the conditions "are being decided" by the state planner
+S Reuters, on Tiger Brokers
+Q China's industry and commerce ministries have granted approvals for all four companies
+C start 14 4 conditional approval
+
+@ BL press 2026-03-17 - man-70f4668d5f56
+T "Nvidia has won Beijing's approval" to sell the H200; a Chinese buyer is unsure the approval is final
+S Reuters, on Investing.com
+Q approval to sell its second-most powerful artificial intelligence chips to China
+U https://www.investing.com/news/stock-market-news/chinese-authorities-approve-nvidias-h200-ai-chip-sales-source-says-4567348
+
+@ BL press 2026-07-08 - cn-acts-reuters-ti-cap-20260708-relay1
+T Officials tell Alibaba, ByteDance and DeepSeek they may soon buy some H200s: fewer than 200,000 in all
+S The Information, through Reuters on AOL
+Q they may soon receive permission to buy some H200 chips
+
+@ BL doc 2026-07-14 - man-a7d2f1a9f963
+T US export chief to Congress: H200 shipments to China have begun, "very few"
+S Jeffrey Kessler, House hearing, as reported by Reuters
+Q There have been minimal exports of any H200s to China so far
+U https://www.investing.com/news/stock-market-news/us-official-says-shipments-of-h200-chips-to-china-have-begun-4791235
+
+@ BL press 2026-08-18 - cn-tolerate-reutersaug26-relay1-wayback
+T ByteDance and Tencent each receive about 10,000 H200s; Beijing wants them to keep the hardware outside mainland China, and regulators told companies they may ship it to Hong Kong and use it there
+S Financial Times, through Reuters on Investing.com
+Q ByteDance and Tencent have each received about 10,000 H200 processors in recent weeks
+C end 118 -19 10,000 each arrive
+
+@ BL doc 2026-10-16 - cn-tolerate-mof
+T In a draft list put out for comment, the commerce and science ministries propose automatic licences for technology exports to computing centres that Chinese companies build and run abroad
+S Ministry of Commerce spokesperson, on the draft of the commerce and science ministries
+Q 中国企业在境外自建自营算力中心
+E computing centres that Chinese companies build and run abroad
+
+@ CN press 2025-04-03 - cn-labs-h20-orders-20250402-relay1
+T Chinese companies, ByteDance, Alibaba and Tencent among them, order at least $16 billion of H20 chips in three months
+S The Information, through Reuters on The Indian Express
+Q have placed at least $16 billion in orders for
+
+@ CN doc 2025-04-30 - cn-counter-b11-5
+T Shanghai's economy commission, on computing in the city: internet companies' own clusters, serving market-oriented firms, run mainly on Nvidia high-performance cards; the three big telecom operators mainly buy Huawei and other home-made clusters
+S Shanghai Commission of Economy and Informatization, written reply dated Apr 30, 2025 (published Nov 10, 2025)
+Q 主要以英伟达高性能卡为主
+E mainly on Nvidia high-performance cards
+
+@ CN press 2025-08-20 - man-cn-ft-20250821-regulators
+T Alibaba, ByteDance and others had argued that their AI development would be impaired without Nvidia's chips; by people close to them, they have since become more accepting of a switch
+S Financial Times
+Q tech giants from Alibaba to ByteDance argued that their AI development would be impaired without Nvidia's chips
+
+@ CN press 2025-11-27 - cn-tolerate-ft-offshore
+T Alibaba and ByteDance train their newest models in data centres in Southeast Asia
+S Financial Times, on The Irish Times
+Q are among the tech groups training their latest large language models (LLMs) in data centres across Southeast Asia
+
+@ CN press 2025-12-10 - cn-labs-h200-demand-20251210-relay1
+T ByteDance and Alibaba keen on large H200 orders "should Beijing give them the green light"
+S Reuters, on WHTC
+Q should Beijing give them the green light
+
+@ CN rec 2025-12-13 - cn-labs-h200-lobby
+T An investment director sees cloud providers and enterprise customers "aggressively placing large orders and lobbying the government to relax restrictions on a conditional basis"
+S Nori Chiou, White Oak Capital Partners, quoted by Reuters, on The Business Times
+Q aggressively placing large orders and lobbying the government to relax restrictions on a conditional basis
+
+@ CN press 2025-12-31 - cn-labs-h200-two-million-202512-relay1-wayback
+T Chinese companies have ordered more than 2 million H200s for 2026
+S Reuters, on Investing.com
+Q have placed orders for more than 2 million H200 chips for 2026
+C start 13 -19 2 million H200s ordered
+
+
+@ CN doc 2026-05-03 - cn-policy-qiushi-cuda-gap
+T Party journal's investigation: moving off Nvidia's software is costly and slow
+S Qiushi and CCID, carried by the National Data Administration
+Q 迁移成本高昂、适配周期漫长
+E migration is costly and adaptation slow
+
+
+@ CN doc 2026-07-30 - cn-acts-mofcom-inquiry-20260819
+T A company asks the commerce ministry, on its public message board, how to import H200s lawfully; the reply speaks only of exports
+S Ministry of Commerce message board (reply of Aug 19, 2026)
+Q 我司计划合规进口H200数据中心GPU
+E our company plans to import H200 data-centre GPUs in compliance
+
+@ CN press 2026-10-20 - cn-factions-rtx-orders-oct-wayback
+T ByteDance, Alibaba and Tencent order over 3 million of the weaker RTX PRO 5500, worth over $35 billion
+S Reuters, on Investing.com
+Q have ordered more than 3 million of
+
+@ CH press 2023-11-07 - cn-labs-baidu-ascend-2023-relay1
+T Baidu ordered 1,600 Huawei chips in August 2023, ahead of new US curbs, "to prepare for a future" without Nvidia
+S Reuters, on The Business Times
+Q They were ordering 910B chips to prepare for a future where they may no longer be able to purchase from Nvidia
+
+@ CH rec 2023-11-15 - cn-policy-tencent-us-curbs-relay1
+T Tencent's president: US curbs will make it seek home-made AI chips
+S Martin Lau on a results call, reported by Reuters on WTAQ
+Q seek domestically produced AI chips
+C start 14 4 after US curbs
+
+@ CH rec 2025-04-25 - man-cn-labs-baidu-30k-reuters-alt1
+T Baidu switches on a cluster of 30,000 of its own Kunlun chips
+S Robin Li at Baidu's developer conference, reported by Reuters on StreetInsider
+Q comprising 30,000 of its self-developed, third generation P800 Kunlun chips
+
+@ CN press 2025-09-16 - cn-labs-rtx6000d-demand-20250916-relay1
+T Some major firms pass over Nvidia's RTX6000D as "expensive for what it does" and look to other Nvidia chips; Reuters adds that Beijing has become increasingly keen for firms to switch to home-made chips "even if Nvidia's products are preferred by many companies"
+S Reuters, on TradingView
+Q is seen as expensive for what it does
+
+@ CH rec 2026-03-19 - cn-policy-alibaba-own-gpu
+T Alibaba: its chip unit "has brought proprietary GPUs into scaled production"
+S Alibaba results release
+Q chip design subsidiary T-Head has brought proprietary GPUs into scaled production
+
+@ CH press 2026-03-27 - man-f45c9fd5177c
+T ByteDance and Alibaba plan to order Huawei's new 950PR chip after tests go well
+S Reuters, on Investing.com
+Q big tech giants including ByteDance and Alibaba plan to place orders
+U https://www.investing.com/news/stock-market-news/exclusivehuaweis-new-ai-chip-find-favour-with-bytedance-alibaba-which-plan-to-place-orders-sources-say-4584136
+
+@ CH rec 2026-03-31 - cn-le29-zhipu-results-20260331-en
+T Zhipu, facing a "computing power shortage", says it will invest more in adapting home-made chips
+S Zhipu results announcement, on the company's investor site
+Q adaptation of domestic chips
+
+@ CH rec 2026-04-24 - cn-labs-v4-training-reuters-relay1-wayback
+T DeepSeek previews a model adapted for Huawei chips; Huawei says its chips did part of the training
+S Huawei's statement, reported by Reuters on Investing.com
+Q Huawei said its chips were used in some of the V4
+
+@ CH rec 2026-11-19 - cn-labs-alibaba-nov-supply
+T Alibaba's chief executive expects that from 2027 most of its added AI chip supply will be its own T-Head chips, with other home-made chips bought too
+S Eddie Wu on a results call, reported by National Business Daily
+Q 公司绝大部分新增AI芯片供给将以自研平头哥国产芯片为主
+E most of the company's added AI chip supply will be its own T-Head home-made chips
+
+@ CH rec 2026-11-18 - cn-o36-tencent-call-20261118-sa
+T Tencent's chief strategy officer: its cloud business runs mainly inference, which "can be run very effectively on a surprisingly limited number of domestic chips"
+S James Mitchell on Tencent's results call (transcript on a stock-data site)
+Q our cloud business today is primarily running inference
+
+# Quotations behind the numbers in the panels
+! cn-acts-reuters-us-approvals-20260514-wayback | Nvidia commanded about 95% of China's advanced chip market
+! cn-acts-reuters-ti-cap-20260708-relay1 | it could amount to fewer than 200,000 in total
+! cn-clips-evidence-1 | About 600,000 of Nvidia's advanced artificial intelligence chips are stored in Hong Kong awaiting shipment to China
+! cn-clips-evidence-1 | Several major Chinese internet companies have each obtained about 10,000 H200 chips in the past few months
+! man-cn-usside-012 | holding a 55% share
+! man-cn-usside-012 | accounting for 41% of the total market
+! man-cn-usside-012 | for a 4% share
+! cn-usside-044-relay1 | its 34% market share
+! cn-usside-044-relay1 | giving it a 28% share of the overall market
+! cn-factions-jiangsu-plan | 新建算力中心国产算力芯片使用占比达 70%以上
+! cn-policy-shanghai-domestic-target | 国产算力芯片使用占比超过50%
+! cn-factions-sichuan50 | 力争国产化算力设备占比超过50%
+! cn-policy-domestic-product-standard-2025 | 对本国产品的报价给予20%的价格扣除
+! cn-factions-etwon-vouchers | 30%(非国产人工智能算力)或40%(国产人工智能算力)
+! cn-policy-15fyp-recommendations | 采取超常规措施
+! man-e2596eab15f4 | viewed dependence on Nvidia as a strategic vulnerability
+! man-e2596eab15f4 | favoured imports
+! man-e2596eab15f4 | was led by the National Development and Reform Commission
+! cn-policy-mellanox-conditions | 向中国市场继续供应英伟达GPU加速器
+! cn-acts-reuters-us-approvals-20260514-wayback | Chinese firms pulled back after guidance from Beijing
+! man-70f4668d5f56 | did not know if the Chinese government had given final approval
+! cn-tolerate-reutersaug26-relay1-wayback | Beijing wants them to keep the hardware outside mainland China
+! cn-clips-trump-may15-wayback | No, because they chose not to. They want to try and develop their own.
+! cn-clips-followup-3-relay1 | the United States will allow NVIDIA to ship its H200 products to approved customers in China
+! cn-acts-reuters-halt-20261118-relay2 | we are no longer shipping licenced Hopper data centre products to China
+! cn-policy-h20-mofcom | 美方近日又主动表示将批准对华销售英伟达H20芯片
+! cn-counter-b11-5 | 上海市经济和信息化委员会2025年4月30日
+! cn-policy-micron-decision | 网络安全审查办公室依法作出不予通过网络安全审查的结论
+! cn-factions-jiangsu-plan | 新建算力中心国产算力芯片使用占比(%) 50 70 预期性
+! cn-factions-jiangsu-plan | 2025 年 2030 年 属性
+! cn-factions-bloomberg-flexibility-202409-relay1 | including the powerful Ministry of Industry and Information Technology
+! man-cn-ft-20250821-regulators | the Cyberspace Administration of China (CAC), the National Development and Reform Commission (NDRC) and the Ministry of Industry and Information Technology (MIIT) moved in response
+! cn-clips-evidence-1 | Several major Chinese internet companies have each obtained about 10,000 H200 chips in the past few months
+! cn-policy-review-measures | 网络安全审查办公室设在国家互联网信息办公室
+! cn-usside-044-relay1 | T-Head held 7%, followed by Cambricon with 5%, Baidu's Kunlunxin with 4% and Hygon with 3%
+! cn-counter-b11-5 | 发布日期:2025-11-10
+! cn-acts-mofcom-inquiry-20260819 | 留言时间:2026-07-30
+! cn-acts-mofcom-inquiry-20260819 | 答复时间:2026-08-19
+! cn-acts-mofcom-inquiry-20260819 | 出口经营者应当向国务院商务主管部门申请许可
+
+
+@ BH doc 2025-08-10 - cn-le13-yuyuan-qq-20250810b
+T State broadcaster's account: the H20 is neither green, advanced nor safe, and as consumers we can of course choose not to buy it
+S Yuyuan Tantian (China Media Group), on its own Tencent News channel
+Q 作为消费者,我们当然可以选择,不买
+E as consumers we can of course choose not to buy
+
+@ BH rec 2025-11-19 - man-ms-sec-10q-2025-10
+T Nvidia's quarterly report: the Chinese government "restricted customers from purchasing, importing, or using our data center products"; the same report: "we are already effectively foreclosed from the China market by U.S. export controls"
+S Nvidia, Form 10-Q filed with the SEC
+Q The Chinese government has encouraged customers to purchase from our China-based competitors and restricted customers from purchasing, importing, or using our data center products
+
+
+@ CN press 2025-08-13 - man-cn-ft-202508-deepseek
+T DeepSeek, encouraged by authorities to use Huawei chips, fails to train its next model on them and uses "Nvidia chips for training and Huawei's for inference"
+S Financial Times
+Q prompting it to use Nvidia chips for training and Huawei's for inference
+
+@ CH rec 2025-07-23 - cn-cnpress-yicai-zhou-360-20250723
+T 360's founder: its recent chip purchases are all Huawei's, and for inference home-made chips are better value than the H20; they trail Nvidia's, he says, but must be used, through gritted teeth
+S Zhou Hongyi, reported by Yicai
+Q 最近采购的(芯片)都是华为的产品
+E the chips bought recently are all Huawei products
+
+# Checks for the panels and notes added Nov 23, 2026 (third edit).
+! cn-acts-peoplesdaily-bjd-20250801 | 绝不能让“带病”的芯片上岗
+! cn-acts-peoplesdaily-bjd-20250801 | 2025-08-01
+! cn-usdocs-hfac-summary-20261119 | 879,868 covered integrated circuits to PRC companies across 21 license applications
+! cn-usdocs-hfac-decisions-20261119 | Approved, not shipped
+! cn-o39b-guangdong-yuesuan-2024 | 力争到2025年底,新增国产化算力占比达到70%
+! man-ms-admin-bis-jan2026-rule-8ec187 | the item undergoes independent, third-party testing in the United States
+! man-ms-admin-bis-jan2026-rule-8ec187 | no more than 50% of the total product shipped to customers for end use in the United States
+! man-ms-sec-10q-2026-07 | are subject to a 25% tariff upon importation into the United States
+! cn-cnpress-yicai-zhou-360-20250723 | 相比之下国产芯片性价比更高
+! man-cn-ft-202508-deepseek | DeepSeek was encouraged by authorities to adopt Huawei's Ascend processor
+
+# Nvidia's revenue from direct customers headquartered in China and Hong Kong (the panel of nine quarters). Each line is a
+# row of a filing's own table as printed: United States, Taiwan, China (including Hong Kong), Other, Total.
+! man-ms-sec-10q-2025-10 | 19,620 6,188 8,142 1,132 35,082
+! man-ms-sec-10q-2025-10 | $39,177 13,751 2,973 1,105 57,006
+! man-ms-sec-10q-2025-10 | 53,873 17,364 17,230 2,699 91,166
+! man-ms-sec-10q-2025-10 | 97,759 30,301 16,617
+! man-ms-sec-10k-fy2026 | 77,482 23,600 25,048 4,367
+! man-ms-sec-10k-fy2026 | 149,617 42,345 19,677 4,299 215,938
+! man-ms-sec-10q-2026-04 | 25,685 7,648 9,659 1,070 44,062
+! man-ms-sec-10q-2026-04 | 63,769 12,006 4,550 1,290 81,615
+! man-ms-sec-10q-2026-07 | $32,897 8,902 3,985 959
+! man-ms-sec-10q-2026-07 | $60,074 26,985 7,880 1,282
+! ms-p3-nvda-8k-20261117-pdf | China (including Hong Kong) 11,050 2,973 23,480 16,617
+! ms-p3-nvda-8k-20261117-pdf | The end customer and shipping location may be different from our direct customers' headquarters location.
+! man-cn-ft-20250821-regulators | they have become more accepting of a switch
+! man-cn-ft-20250821-regulators | A week after his comments
+
+# Records added in the fourth edit (Nov 23, 2026, draft D4)
+@ BH press 2025-08-12 - cn-le11-ft-h20justify-aggregoctt
+T Regulators such as the industry ministry ask Alibaba, ByteDance and others to explain why they need the H20 instead of home-made chips; a data-centre operator: "It's not banned but has kind of become a politically incorrect thing to do"
+S Financial Times (full text in a syndicated copy)
+Q explain why they need to order Nvidia’s H20 chips instead of using domestic alternatives
+U https://www.ft.com/content/a29bab5e-7c2f-4487-b0a5-d594d577c73a
+
+@ BL doc 2026-05-14 - cn-xi-round-f-6
+T Premier Li Qiang to US business leaders, Nvidia's among them: a stable, open policy environment is the Chinese government's long-standing, unchanging commitment
+S Xinhua
+Q 一个稳定开放的政策环境是中国政府长期不变的承诺
+E a stable and open policy environment is the Chinese government's long-standing, unchanging commitment
+
+@ BL doc 2026-07-07 - cn-le17-whuf-134391
+T Wuhan University and Beihang publish notices to buy Nvidia's RTX PRO 6000D (2 and 4 cards), with suppliers held to the government procurement law's rules; Wuhan asks for the compliant China-market model
+S Wuhan University purchase filing (also Beihang's notice of Jul 11 and a Wuhan award of one card, published Aug 13, 2026)
+Q 国行合规RTX PRO 6000D型号，非消费级游戏卡、非改装卡、非海外版受限型号
+E the compliant China-market RTX PRO 6000D model, not a consumer gaming card, not a modified card, not a restricted overseas version
+
+@ BL doc 2026-11-17 - cn-acts-mofcom-20261117
+T Commerce ministry spokesperson: the new US curbs on remote access to advanced chips interfere in Chinese firms' normal trade with other countries' firms; China will take countermeasures if Washington persists
+S Ministry of Commerce
+Q 对中国企业与其他国家企业正常贸易合作横加干涉
+E interferes in the normal trade cooperation between Chinese firms and other countries' firms
+
+@ CN rec 2026-08-21 - cn-le26-iflytek-ir-20260821
+T iFlytek's filed investor record: rival model makers commonly use Nvidia chips two generations ahead; it expects tighter US export controls to push the whole industry to home-made computing
+S iFlytek, record of its results meeting, filed on the Shenzhen exchange's site (cninfo)
+Q 其他模型厂商普遍使用性能领先两代的英伟达芯片
+E other model makers commonly use Nvidia chips that are two generations ahead in performance
+
+@ CN rec 2026-11-18 - cn-o36-tencent-call-20261118-sa
+T Tencent's president on the new US curbs: "It sets everyone back in China", with less advanced computing for everyone "no matter when you actually started leasing or building capacities outside of China"
+S Martin Lau on Tencent's results call (transcript on a stock-data site)
+Q no matter when you actually started leasing or building capacities outside of China
+
+# Fourth edit (Nov 23, 2026, draft D4): checks for the records and panels it changes.
+! cn-policy-desktop-2023 | 财政部、工业和信息化部制定了《台式计算机政府采购需求标准（2023年版）》
+! cn-policy-desktop-2023 | 乡镇以上党政机关，以及乡镇以上党委和政府直属事业单位
+! cn-policy-desktop-2023 | 其他单位可不在采购需求中提出此项要求
+! cn-policy-samr-open-original | 市场监管总局公告〔2020〕第16号
+! cn-acts-mss-xinhua-20250721 | 来源：国家安全部微信公众号
+! cn-policy-cac-h20-original | H20算力芯片漏洞后门安全风险
+! cn-le11-ft-h20justify-aggregoctt | It’s not banned but has kind of become a politically incorrect thing to do
+! cn-le11-ft-h20justify-aggregoctt | were planning to downsize their orders as a result of the questions from regulators
+! cn-policy-samr-further-original | 近日，经初步调查
+! man-ms-sec-10q-2025-10 | Although we are already effectively foreclosed from the China market by U.S. export controls
+! cn-acts-reuters-customs-20260114 | purchase the chips unless necessary, two of the people and a third source said
+! cn-acts-reuters-customs-20260114 | or whether these measures could be used as a bargaining tactic in talks with Washington
+! cn-acts-reuters-customs-20260114 | Analysts say Beijing's move could be aimed at exerting leverage on Washington
+! cn-le14-itsec-scope-20230727 | 测评结果由企业和用户自主选择使用
+! cn-xi-round-f-6 | 苹果公司、英伟达公司、Meta公司
+! cn-le17-buaa-61901-6000d | 品牌 NVIDIA 规格型号 RTX PRO 6000D
+! cn-le17-whu-131281 | Nvidia 6000D 84GB显存
+! cn-acts-reuters-deepseek-20260130 | These conditions are being decided by China's state planner
+! cn-tolerate-reutersaug26-relay1-wayback | Chinese regulators have told companies they can ship the processors to Hong Kong
+! cn-tolerate-mof | 公开征求意见
+! cn-tolerate-mof | 适用自动许可等便利措施
+! cn-acts-mofcom-20261117 | 若美方一意孤行，中方将采取反制措施
+! cn-counter-b11-5 | 三大运营商主要购置华为等国产化智算集群
+! cn-labs-h200-lobby | said Nori Chiou, investment director at White Oak Capital Partners
+! cn-labs-rtx6000d-demand-20250916-relay1 | even if Nvidia's products are preferred by many companies
+! cn-le26-iflytek-ir-20260821 | 随着美国对顶尖芯片出口管制越来越严格
+! cn-le26-iflytek-ir-20260821 | 全行业都会被倒逼转向国产算力
+! cn-o36-tencent-call-20261118-sa | It sets everyone back in China.
+! cn-o36-tencent-call-20261118-sa | that inference can be run very effectively on a surprisingly limited number of domestic chips
+! cn-cnpress-yicai-zhou-360-20250723 | 只有咬牙坚持用
+! cn-labs-alibaba-nov-supply | 他判断2027年及之后
+! cn-labs-alibaba-nov-supply | 同时也会采购其他国产芯片
+# Panels: the House committee's table (sums made by the builder from figure/hfac_rows.tsv; these are the summary's own totals)
+! cn-usdocs-hfac-summary-20261119 | 3,444,160
+# Panels: the line on paper (the eight provincial shares; the 20% standard in force; the evaluation lists; the 46 firms)
+! cn-o39b-guangdong-yuesuan-2024 | 力争到2025年底，新增国产化算力占比达到70%
+! cn-o39-tianjin-plan-2024 | 到 2026 年，全市算力中心国产算力芯片使用占比超过 60％
+! cn-o39-hebei-opinion-2024-wayback | 新增算力基础软硬件设施自主可控比例60%以上
+! cn-o39-hebei-opinion-2024-wayback | 冀政办字〔2024〕34号
+! cn-policy-shanghai-domestic-target | 到2025年，本市新建智算中心国产算力芯片使用占比超过50%
+! cn-factions-sichuan50 | 提高自主研发算力设备的部署比例，力争国产化算力设备占比超过50%
+! cn-o39-nmg-plan-pdf-wayback | 国产化算力占比达 50%以上
+! cn-o39-nmg-plan-pdf-wayback | 到 2025 年，集群建成的数据中心服务器装机能力突破 500 万台
+! cn-o39-shandong-network-2022 | 国产化算力将达90%
+! cn-policy-domestic-product-standard-2025 | 国务院办公厅关于在政府采购中实施本国产品标准及相关政策的通知
+! cn-le14-mof-domestic-standard-impl-20251215 | 确保于2026年1月1日起在政府采购中落实政策要求
+! cn-le14-mof-domestic-standard-impl-20251215 | 保障符合本国产品标准的外资企业产品平等参与政府采购活动
+! cn-le14-itsec-2026-3 | 附表二、人工智能训练推理芯片
+! cn-le14-itsec-2026-3 | 昆仑芯M100 昆仑芯（北京）科技股份有限公司 I级
+! cn-le14-itsec-scope-20230727 | 送测单位应为中国境内注册的实体
+! cn-le14-mof-us-firms-measures-20260622 | 采购人在政府采购活动中，不得采购46家美国企业（不包括在华美资企业）生产的产品。
+! cn-le14-mof-us-firms-measures-20260622 | 财库〔2026〕10号
+! cn-le14-mof-us-firms-list-20260622 | Lockheed Martin
+# Panels: local vouchers (the most paid of the bill for rented computing; home-made against other)
+! cn-counter-b4-2 | 使用国产算力设施开展模型训练、推理和应用的企业补贴比例不超过算力合同费用的30%，使用其他算力设施的企业补贴比例不超过算力合同费用的20%
+! cn-counter-b4-2 | 杭州市人民政府办公厅 2024年7月18日
+! cn-le25-zhejiang-ai-measures-2025-smartcity | 使用自主算力服务的，可 按照不高于合同实际执行金额的30%给予补助
+! cn-le25-zhejiang-ai-measures-2025-smartcity | 采用非自主算力服务的，可按照不高于合同实际执行金额的10%，给予最高800万元补助
+! cn-le25-zhejiang-ai-measures-2025-smartcity | 本措施自2025年5月31日起实施，有效期至2027年12月31日
+! cn-le15-sheitc-8cea38 | 对租用智能算力的主体，市级给予最高30%租金补贴，并推荐申报国家智能券补贴
+! cn-le15-sheitc-8cea38 | 对自主智能算力设施部署项目，给予最高10%建设支持，加速培育人工智能自主生态
+! cn-le15-sheitc-8cea38 | 上海市经济和信息化委员会 2025年7月28日
+! cn-le15-zj-oss-web1825-e66330 | 对采购自主智能算力服务的企业、高校、科研机构等主体，各区一般按照不高于合同实际执行金额的30%给予补贴；采购非自主智能算力服务的，一般按照不高于合同实际执行金额的10%给予补贴
+! cn-le15-zj-oss-web1825-e66330 | 温州市人民政府办公室 2025年8月29日
+! cn-le15-binjiang-2026-6-keceyun | 按不超过实际租用算力结算费用的30%（非自主人工智能算力）或60%（自主人工智能算力），给予单家企业最高2000万元支持
+! cn-le15-binjiang-2026-6-keceyun | 杭州高新技术产业开发区管理委员会杭州市滨江区人民政府2026年8月10日
+! cn-factions-beijing-plan-20240424 | 对采购自主可控GPU芯片开展智能算力服务的企业，按照投资额的一定比例给予支持
+! cn-le28-etown-29hao-20241126 | 按照实际使用算力结算费用的30%，经评审认定，给予最高2000万元支持
+! cn-le28-etown-29hao-20241126 | 原政策（京技管发〔2024〕10号）同时废止。
+! cn-le28-etown-29hao-20241126 | 给予购买合同中的实际采购国产智算芯片服务器部分金额最高10%的支持
+! cn-le28-sz-gxj-2024-13hao | 按不超过服务合同金额的50%，给予最高1000万元资助，对初创企业提高资助比例至60%
+! cn-le28-sz-gxj-2024-13hao | 支持建设国产人工智能生态源头创新中心
+! cn-le28-wuhan-2025-3hao | 对企业使用算力服务费用给予50％最高20万元补助
+! cn-le28-qingdao-2025-15hao | 按照实际支付算力费用不超过20%的比例，给予企业最高100万元补贴
+! cn-le14-tnw-295b-plan-20260609 | to provide at least 80 per cent of the core technology, AI chips included
+! cn-le14-tnw-295b-plan-20260609 | The plan is still early, the people cautioned, and details could change.
+! cn-le27-ndrc-presser-20260618-json | 近期有外媒报道中国政府正在研究大规模投资建设算力网
+! cn-le27-ndrc-presser-20260618-json | 在具体建设过程中，市场力量将起决定性作用
+! cn-le27-ndrc-presser-20260618-json | 加强统筹协调和政策引导
+! man-e2596eab15f4 | the national security-focused officials within
+! cn-labs-h20-orders-20250402-relay1 | Chinese companies including ByteDance, Alibaba Group and Tencent Holdings have placed at least
+! ms-bj-20251105-statefunded-standard | It is unclear whether the guidance applies nationwide or only to certain provinces, sources said
+! cn-factions-bloomberg-flexibility-202409-relay1 | on Friday (Sep 27)
+! cn-usdocs-hfac-summary-20261119 | not fully reflected in the May 11, 2026, summary document
+! ms-bj-20251105-statefunded-standard | has issued guidance requiring
+! man-cn-factions-wsj-ding | Last summer
+! man-cn-factions-wsj-ding | according to people familiar with the message
+! cn-acts-reuters-us-approvals-20260514-wayback | pulled back after guidance from Beijing, one source said
+! cn-le25-zhejiang-ai-measures-2025-smartcity | 2025年4月17日
+! cn-against2-isc-supply-risk-20241203 | 并积极使用内外资企业在华生产制造的芯片
+! cn-le14-itsec-scope-20230727 | 送测单位应为中国境内注册的实体
+! cn-acts-reuters-deepseek-20260130 | China has given its top AI startup DeepSeek approval to buy
+# Panels: share, revenue, inside Beijing, notes
+! cn-le08-enflame-final-prospectus | 2025年中国AI加速卡整体出货规模约400万张,其中英伟达以约220万张出货量占据约55%的市场份额
+! cn-le08-enflame-final-prospectus | 根据IDC数据和发行人销售量情况
+! cn-o38-nvda-q3fy27-call-transcript-pdf | Q3 sales of licensed Hopper Data Center products to China was $2.4 billion.
+! cn-o38-nvda-q3fy27-call-transcript-pdf | we are no longer shipping licensed Hopper Data Center products to China
+! cn-media-party-samr-september | 坚决落实党中央重大决策部署
+! cn-media-party-samr-september | 敢于斗争、善于斗争，依法对英伟达、高通公司、杜邦中国集团立案调查
+! cn-media-party-samr-september | 2026年09月24日09:22
+! cn-le25-samr-2025-merger-review-20260410 | 对英伟达公司实施进一步调查、对高通公司立案调查，维护法律权威
+! man-ms-sec-10q-2026-07 | which required us to offer degraded products to the Chinese market
+! cn-policy-mellanox-conditions | 限制性条件 自生效日起 6 年 后，交易双方和集中后实体可以向市场监管总局提出解除条件的申请
+! cn-le01-greer-bbg-20261120-autocaps-ttml | So it it's not as monolithic as people would have you believe.
+! cn-le01-greer-bbg-20261120-autocaps-ttml | my own analysis is that there are certain who think, well, we'd like to have access
+! cn-le01-greer-bbg-20261120-autocaps-ttml | others who think, well, we don't want American chips anyway
+! cn-le01-greer-bbg-20261120-subs-ttml | others who think, well, we don't want American chips anyway
+! cn-le01-greer-bbg-20260515-subs-ttml | that's gonna be a sovereign decision for China
+! cn-usdocs-uscc-2025-ch1 | signaling China's willingness to both exert leverage and ease pressure as a negotiating tactic
+! cn-against2-mfa-h20-20250813 | 我不了解你提到的情况
+! cn-acts-mfa-20261109 | 具体情况建议向中方主管部门询问
+! cn-against2-isc-supply-risk-20241203 | 审慎选择采购美国芯片
+
+# Fourth edit, agent F1 (Nov 23, 2026): lines kept from the third edit, and checks for F1's wording of records, panels and notes.
+! cn-labs-rtx6000d-demand-20250916-relay1 | better card can be found on grey market
+! cn-labs-rtx6000d-demand-20250916-relay1 | the firms are hoping that Nvidia's B30A
+! cn-le14-itsec-scope-20230727 | 由企业自愿向中国信息安全测评中心
+! cn-le17-whuf-134391 | 参照《中华人民共和国政府采购法》第二十二条规定的资格条件
+! cn-le17-whuf-134391 | RTX PRO 6000D 84GB Blackwell 专业算力加速卡 2张
+! cn-le17-whuf-134391 | 发布日期：2026-07-07
+! cn-le17-buaa-61901-6000d | 符合《政府采购法》第二十二条规定的供应商基本条件
+! cn-le17-buaa-61901-6000d | 发布时间：2026-07-11
+! cn-le17-whu-131281 | 发布日期：2026-08-13
+! cn-le17-whu-131281 | 成交金额 54000
+! cn-o36-tencent-call-20261118-sa | how do increased U.S. restrictions impact
+! cn-le26-iflytek-ir-20260821 | 时间 2026.08.21
+! cn-le08-enflame-final-prospectus | 招股说明书签署日期 2026 年 9 月 8 日
+! cn-acts-reuters-halt-20261118-relay2 | The Hopper family includes the H200
+! cn-acts-reuters-halt-20261118-relay2 | She did not explain why Nvidia had stopped shipping the processors
+! cn-against2-isc-supply-risk-20241203 | 滥用出口管制手段对中国进行无端封锁和打压
+! cn-against2-isc-supply-risk-20241203 | 2024年12月03日
+! cn-le04-bis-ear-748 | Returned without action (RWA)
+! cn-acts-mfa-20260129 | 具体问题建议向中方主管部门进行询问
+! cn-acts-mfa-20261109 | 中方在美国输华芯片问题上的立场是一贯的
+! cn-usside-017 | China will terminate its various investigations targeting U.S. companies in the semiconductor supply chain
+! cn-le01-greer-bbg-20260515-subs-ttml | Will China allow their companies to buy them?
+! cn-media-party-samr-september | 依法对英伟达、高通公司、杜邦中国集团立案调查
+! cn-le14-mof-us-firms-measures-20260622 | （不包括在华美资企业）
+! cn-le03-crs-r48642-v6-pdf | In another effort to pressure Nvidia to provide its advanced chips to China
+! cn-usside-017 | November 1, 2025
+! cn-le25-samr-2025-merger-review-20260410 | 对英伟达公司实施进一步调查
+# Panels: local vouchers, the rows F1 added from L15's and L28's tables (rate words, and the date on the page)
+! cn-o39b-shanxi-measures-2024-jincheng | 按照算力服务合同金额的20%，给予总额不超过100万元的“算力券”奖励
+! cn-o39b-shanxi-measures-2024-jincheng | 按照算力服务合同金额的30%，给予总额不超过200万元的“算力券”奖励
+! cn-o39b-shanxi-measures-2024-jincheng | 成文日期： 2024年12月09日
+! cn-o39b-shanxi-measures-2024-jincheng | 本措施自2024年7月1日起施行
+! cn-le28-sz-longhua-2024-20hao | 补贴额度不超过企业采购金额的30%，上限不超过300万元
+! cn-le28-sz-longhua-2024-20hao | 成文日期： 2024-11-27
+! cn-le28-sz-gxj-2024-13hao | 成文日期： 2024-12-18
+! cn-le28-etown-29hao-20241126 | [成文日期] 2024-11-24
+! cn-le28-wuhan-2025-3hao | 2025年2月18日，经武政规〔2025〕3号公布
+! cn-le28-wuhan-2026-4hao-opc | 当年支持周期内使用算力服务费用的50％给予最高20万元补助
+! cn-le28-wuhan-2026-4hao-opc | 2026年2月14日，经武政规〔2026〕4号公布
+! cn-le28-wuhan-qiaokou-2025-1hao | 在市级支持基础上，按算力服务费的50%最高给予20万元资金支持
+! cn-le28-wuhan-qiaokou-2025-1hao | 发布日期： 2025年08月05日
+! cn-le28-wuhan-hongshan-2025-2hao | 对购买算力服务的中小企业，按照购买算力服务费用给予最高不超过20%的补贴
+! cn-le28-wuhan-hongshan-2025-2hao | 发布日期： 2025年09月12日
+! cn-le28-qingdao-2025-15hao | 发布时间： 2025-03-21
+! cn-le28-qingdao-2026-9hao-smartcity | 按照实际支付算力费用不超过20%的比例， 给予企业最高100万元补贴
+! cn-le28-qingdao-2026-9hao-smartcity | 成文日期 2026-03-05
+! cn-le28-shandong-ai-measures-2025-smartcity | 按规定给予不超过算力交易金额的5%奖补支持，每个企业奖补总额最高500万元
+! cn-le28-shandong-ai-measures-2025-smartcity | 2025年5月12日，山东省政府新闻办举行省政府政策例行吹风会
+! cn-le28-hunan-aiplus-smartcity | 对购买算力服务的企业，按不超过年度算力总支出的30%给予补贴，最高不超过1000万元
+! cn-le28-hunan-aiplus-smartcity | 2025年10月30日，湖南发布《湖南省贯彻落实国务院“人工智能+”行动的实施方案》
+! cn-le15-chengdu-sina-6a5ce645 | 自主可控智能算力不超过服务费用的50%、非自主可控智能算力不超过服务费用的30%
+! cn-le15-zj-oss-web1825-e66330 | 温州市人民政府办公室 2025年8月29日
+
+# Check added for the tracker (a number in one of our lines that is too short for the checker by itself)
+! cn-labs-baidu-ascend-2023-relay1 | Baidu ordered 1,600 of Huawei
+! man-cn-factions-wsj-ding | July 23, 2026
+! man-cn-ft-20250821-regulators | July 15
+! man-cn-ft-20250821-regulators | Aug 20 2025
+! cn-cnpress-yicai-zhou-360-20250723 | 360集团创始人周鸿祎

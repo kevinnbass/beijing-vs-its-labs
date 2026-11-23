@@ -1,0 +1,20 @@
+# Sources this page cites that are not in the argument's references file. Columns: saved id <TAB> kind <TAB> label <TAB> address (optional).
+# The references file has no kind for a news agency's reading of public records. Those are entered as PRESS and their label says what was read.
+# Round 4: rows the argument's references files now hold were taken out, so the argument's own labels are used.
+cn-clips-reuters-hongkong-yahoo	PRESS	Reuters, Nov 5, 2026, as carried by Yahoo. A second copy of the report on chips stored in Hong Kong; this copy carries Reuters's date line
+cn-labs-bytedance-huawei-denial-202409-relay1	PRESS	Reuters, Sept 30, 2024, as carried by the radio station WSAU. An early version of the article
+cn-labs-bytedance-ascend-budget-2026	PRESS	TechNode, Dec 29, 2025, on ByteDance's reported plan to buy Huawei chips
+cn-labs-deepseek-160k-relay1-wayback	PRESS	Huawei Central (a fan site), Sept 4, 2026, retelling a Bloomberg report. Internet Archive capture of Sept 23, 2026. Bloomberg's own article is not held
+cn-usside-023-relay2	REC	Reuters, Jun 12, 2025, as carried by Yahoo, reporting the testimony of Jeffrey Kessler, under secretary of commerce for industry and security, to a congressional hearing
+cn-factions-shanghai-cloud-20250324	DOC	Shanghai Municipal Commission of Economy and Informatization, implementation opinions on the intelligent-computing cloud industry, 2025 to 2027, issued Mar 25, 2025
+cn-policy-guizhou-localization-2026	DOC	People's Daily report of a Guizhou provincial press conference, as carried on the Digital China Summit site, Mar 24, 2026. A province's own figure
+cn-policy-mic2025	DOC	State Council, Made in China 2025, May 8, 2015. A copy on the state planner's site that says it is abridged
+cn-factions-information-20240513-sopa	PRESS	The Information, May 13, 2024. The article's text as held in a public awards file
+cn-policy-telecom-2027-wayback	PRESS	Wall Street Journal, as retold by Telecoms.com (a trade site). Internet Archive capture of Apr 21, 2024. The Journal's own article is not held
+cn-policy-yunyong-document79-filing	FIL	Yunyong Technology, exchange filing dated Jun 3, 2025 by its board. It describes a 2022 notice it does not reproduce
+cn-labs-state-tenders-2024-wayback	PRESS	Reuters, published Jan 14, 2024, as carried by Investing.com: a review of public tender documents. Internet Archive capture of Jan 16, 2024
+cn-counter-b8-2-wayback	PRESS	Reuters, Apr 23, 2024, as carried by MarketScreener: a review of public tender documents. Internet Archive capture
+cn-counter-b8-5	PRESS	Reuters, Nov 11, 2026, as carried by PiQ Markets: a university's procurement record, as Reuters read it
+cn-tolerate-projects-relay1	PRESS	Reuters, Nov 13, 2026, as carried by the radio station WSAU: a review of tender documents for computing centres
+cn-acts-bloomberg-projects-th-20250711	PRESS	Bloomberg, as retold by Tom's Hardware, Jul 11, 2025. Bloomberg's own article is not held
+cn-usside-028	REC	Reuters, May 21, 2025 (UTC), reporting Nvidia's chief executive at Computex in Taipei, as carried by a radio station's site (KELO)	https://kelofm.com/2025/05/20/nvidia-says-us-export-controls-on-ai-to-china-were-a-failure/

@@ -1,0 +1,137 @@
+# Idea 11, the H200 funnel alone: every quotation, number-bearing phrase and date it shows, with the saved id that holds it.
+# Round 4 (Nov 23, 2026): the bars follow the core figure's; two are sums of Washington's table of licence applications.
+# Checked by: python3 -I scripts/cn_has.py quotes.tsv   (build.py runs it and stops if it fails)
+# A line "#@ key" names the line under it for build.py. <key>.date lines hold the page's own date words.
+
+# --- the reported numbers (press rows of ../h200_funnel.tsv) ---
+#@ ordered
+cn-labs-h200-two-million-202512-relay1-wayback	Chinese technology companies have placed orders for more than 2 million H200 chips for 2026
+#@ ordered.date
+cn-labs-h200-two-million-202512-relay1-wayback	Published 12/31/2025
+#@ ordered.unnamed
+cn-labs-h200-two-million-202512-relay1-wayback	two of the people said
+
+# Reuters's report of May 14, 2026: the cap it reported, and its account of the stalled sales (not a bar any more: the
+# old multiplied ceiling for Washington's step was dropped in round 4, as in the core)
+#@ cap
+cn-acts-reuters-us-approvals-20260514-wayback	each approved customer can purchase up to 75,000 chips
+#@ cap.date
+cn-acts-reuters-us-approvals-20260514-wayback	Published on 05/14/2026
+#@ cap.nodelivery
+cn-acts-reuters-us-approvals-20260514-wayback	not a single delivery has been made so far
+#@ cap.tangle
+cn-acts-reuters-us-approvals-20260514-wayback	path to a completed sale has been obstructed by a tangle of requirements on both sides
+
+#@ approved
+ms-bj-20260128-h200-nod-standard	ByteDance, Alibaba, and Tencent have been approved to purchase more than 400,000 H200 chips in total
+#@ approved.conditions
+ms-bj-20260128-h200-nod-standard	The Chinese government is only granting approvals with conditions
+#@ approved.notconverting
+ms-bj-20260128-h200-nod-standard	customers were not yet converting the approvals to purchase orders
+#@ approved.date
+ms-bj-20260128-h200-nod-standard	PUBLISHED: 2026-01-28
+#@ approved.unnamed
+ms-bj-20260128-h200-nod-standard	four people familiar with the matter told Reuters
+
+#@ discussed
+cn-acts-reuters-ti-cap-20260708-relay1	it could amount to fewer than 200,000 in total
+#@ discussed.what
+cn-acts-reuters-ti-cap-20260708-relay1	Beijing is still determining the exact number of Nvidia chips to approve
+#@ discussed.half
+cn-acts-reuters-ti-cap-20260708-relay1	less than half of what the companies requested earlier this year
+#@ discussed.date
+cn-acts-reuters-ti-cap-20260708-relay1	PUBLISHED: 2026-07-08
+#@ discussed.unnamed
+cn-acts-reuters-ti-cap-20260708-relay1	citing two people with direct knowledge of the matter
+
+#@ delivered
+cn-tolerate-reutersaug26-relay1-wayback	ByteDance and Tencent have each received about 10,000 H200 processors in recent weeks
+#@ delivered.outside
+cn-tolerate-reutersaug26-relay1-wayback	Beijing wants them to keep the hardware outside mainland China
+#@ delivered.date
+cn-tolerate-reutersaug26-relay1-wayback	Published Aug 18, 2026
+#@ delivered.unnamed
+cn-tolerate-reutersaug26-relay1-wayback	citing two people with knowledge of the matter
+
+#@ waiting
+cn-clips-evidence-1	About 600,000 of Nvidia's advanced artificial intelligence chips are stored in Hong Kong awaiting shipment to China
+#@ waiting.h200
+cn-clips-evidence-1	The size of the stockpile of H200 chips
+#@ waiting.withholds
+cn-clips-evidence-1	as Beijing withholds approval for large-scale imports despite demand from technology firms
+#@ waiting.unnamed
+cn-clips-evidence-1	two people familiar with the matter said
+# the date of the Reuters report is read in another saved copy of it (Yahoo), which keeps the Reuters dateline; CNA's own stamp is a day later, Singapore time
+#@ waiting.date
+cn-clips-reuters-hongkong-yahoo	Nov 5 (Reuters) - About 600,000 of Nvidia's
+#@ waiting.year
+cn-clips-reuters-hongkong-yahoo	PUBLISHED: 2026-11-06
+
+# --- the one figure on the record ---
+#@ onrecord
+man-ms-sec-10q-2026-07	Those shipments account for less than 1% of Data Center revenue in our most recent quarter
+#@ onrecord.fraction
+man-ms-sec-10q-2026-07	we have made a fraction of the allowed shipments under the USG's H200 licensing program
+#@ onrecord.period
+man-ms-sec-10q-2026-07	For the quarterly period ended July 26, 2026
+#@ onrecord.date
+man-ms-sec-10q-2026-07	Date: August 26, 2026
+
+# --- a later report that qualifies the bar of deliveries (shown under "Read with care") ---
+#@ later.several
+cn-clips-evidence-1	Several major Chinese internet companies have each obtained about 10,000 H200 chips in the past few months
+#@ waiting.howmany
+cn-clips-evidence-1	small quantities of chips had been shipped via intermediaries and indirect routes without specifying how many
+#@ h200.allowed
+cn-clips-evidence-1	gave Nvidia permission last year to sell the chips to approved Chinese customers
+
+# --- Nvidia's own account on its results calls, on the record (transcripts on its investor site; money, not chips) ---
+#@ nvq1
+cn-o38-nvda-q1fy27-call-transcript-pdf	While the US government has approved licenses for H200 to be shipped to China-based customers, we have yet to generate any revenue, and we are uncertain whether any imports will be allowed into the country
+#@ nvq1.date
+cn-o38-nvda-q1fy27-call-transcript-pdf	20-May-2026
+#@ nvq3
+cn-o38-nvda-q3fy27-call-transcript-pdf	Q3 sales of licensed Hopper Data Center products to China was $2.4 billion
+#@ nvq3.stopped
+cn-o38-nvda-q3fy27-call-transcript-pdf	we are no longer shipping licensed Hopper Data Center products to China
+#@ nvq3.date
+cn-o38-nvda-q3fy27-call-transcript-pdf	FINAL TRANSCRIPT 2026-11-17
+#@ nvq3.call
+cn-o38-nvda-q3fy27-call-transcript-pdf	NVIDIA's Third Quarter Financial Results Conference Call
+# the quarter's end date, what "Hopper" covers, and that no reason was given, are read in Reuters's report of the call
+#@ nvq3.end.date
+cn-acts-reuters-halt-20261118-relay2	in the quarter ended October 25
+#@ nvq3.end.year
+cn-acts-reuters-halt-20261118-relay2	PUBLISHED: 2026-11-18
+#@ nvq3.hopper
+cn-acts-reuters-halt-20261118-relay2	The Hopper family includes the H200
+#@ nvq3.noreason
+cn-acts-reuters-halt-20261118-relay2	did not explain why Nvidia had stopped shipping the processors or whether the halt would be permanent
+
+# --- Washington's table of licence applications: the Commerce Department's, status as of May 11, 2026, made public by the
+# --- House Foreign Affairs Committee on Nov 19, 2026. The sums shown are made by a4lib.house() from the project's
+# --- tables/house_licence_table.tsv; the two figures the committee's summary prints must equal them (the build checks).
+#@ wapproved
+cn-usdocs-hfac-summary-20261119	BIS approved the export, re-export, or transfer (in-country) of 879,868 covered integrated circuits to PRC companies across 21 license applications, as of May 11, 2026
+#@ wapproved.date
+cn-usdocs-hfac-decisions-20261119	H200 License and Equivalent Application Status as of May 11, 2026
+#@ wreturned
+cn-usdocs-hfac-decisions-20261119	Bytedance System SDN 508,000 RWA Malaysia
+#@ wreturned.date
+cn-usdocs-hfac-decisions-20261119	H200 License and Equivalent Application Status as of May 11, 2026
+#@ table.marked
+cn-usdocs-hfac-decisions-20261119	Approved, not shipped
+#@ table.all
+cn-usdocs-hfac-summary-20261119	BIS received applications to sell 3,444,160 covered
+#@ table.products
+cn-usdocs-hfac-summary-20261119	Covered integrated circuits are the following products: NVIDIA's H200 and AMD's MI325X.
+#@ table.committee
+cn-usdocs-hfac-summary-20261119	the House Foreign Affairs Committee determines that the withholding of the following information is contrary to the national interest
+#@ table.release.date
+cn-usdocs-hfac-summary-20261119	House Foreign Affairs Committee ECRA Disclosure | 11.19.2026
+#@ table.notfull
+cn-usdocs-hfac-summary-20261119	not fully reflected in the May 11, 2026, summary document
+#@ table.tencent
+cn-usdocs-hfac-summary-20261119	For example, NVIDIA applied on December 19, 2025, to export 445,000 H200s to Tencent
+#@ table.rwa
+cn-le04-bis-ear-748	Returned without action (RWA)

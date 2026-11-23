@@ -1,0 +1,13 @@
+# The six sentences of idea 15 (read by build.py). Tab-separated. The words themselves are in quotes.tsv under the same key.
+#   side   away = Beijing pulls away from Nvidia (orange) | toward = the companies pull toward it (blue)
+#   tier   solid = on the record (a document, a filing, a named official) | open = a press report citing unnamed people
+#   who    the speaker or body, as shown;  when = the rest of the source line, with {date} filled from quotes.tsv (<key>.date) and {pub} from <key>.pub.date
+#   kind   the tier in words;  note = a caution shown under the sentence;  ours = our English for Chinese words (not an official translation;
+#          since round 4 in the wording of the argument's points 4 and 5, after the second reader's review of the Chinese)
+key	side	tier	who	when	kind	note	ours
+b1	away	open	The Wall Street Journal	{date}, on the summer of 2025	A press report citing unnamed people		
+b2	away	solid	Alibaba	annual report to the US securities regulator (Form 20-F), for the year to {date}	On the record: a company filing	The sentence does not name Nvidia.	
+b3	away	solid	Li Chao, of the state planner’s policy research office (NDRC)	press conference of {date}	On the record: a named official	The sentence does not name Nvidia.	guiding home-made large models to do more to adapt to home-made computing chips
+c1	toward	open	Reuters	headline of {date}	A press report citing unnamed people		
+c2	toward	solid	Shanghai’s Commission of Economy and Informatization	written reply dated {date} (published {pub})	On the record: a government document	It speaks of computing in Shanghai.	internet companies’ own computing clusters, which serve market demand, run mainly on Nvidia high-performance cards
+c3	toward	open	Reuters	{date}	A press report citing unnamed people		

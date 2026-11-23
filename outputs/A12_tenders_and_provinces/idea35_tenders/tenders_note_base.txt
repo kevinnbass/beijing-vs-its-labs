@@ -1,0 +1,260 @@
+# What purchase notices name: Nvidia cards and home-made machines, 2024 to 2026
+
+@deck It is a sample found by search and proves nothing about proportions. 47 notices from Chinese universities, research institutes and one earthquake agency: 24 name Nvidia hardware, and 14 of those 24 are one university's (Wuhan University); 7 name home-made accelerator hardware; 16 name no accelerator. Later records add China Mobile's purchases, which by the trade press's accounts put the larger part of a 2025 purchase and all of a March 2026 tender on equipment of Huawei's CANN software, and two universities' notices of July 2026 to buy Nvidia's RTX PRO 6000D. A notice to buy is neither a purchase made nor a delivery.
+
+@note Draft by Claude, Anthropic's model. Local; not published.
+@note Written Nov 23, 2026 (UTC) for idea 35 of the chip-policy project, and brought into line the same day with the project's fourth edit of its core. Words between straight double quotes are a page's own words and were found in its saved copy by a script. English in round brackets and in the right-hand column is ours, not an official translation. The press pages cited report published tender documents, not unnamed people. Buyers are named as their notices name them: no saved page calls them public or state bodies, and this note does not.
+
+## The question
+
+Idea 35 asked for a census of tenders: how many name Nvidia hardware and how many name home-made chips, from 2024 to 2026. A true census is not possible here. China's purchase notices sit on thousands of sites, many notices never name the chip, and the time was a few hours. What follows is a bounded sample with a stated method, and, apart from it, later records that another agent of the project found.
+
+## What the sample shows
+
+1. **Universities' and institutes' own notices named Nvidia hardware in each of the three years.** The 24 notices in table 1 name the A100, A800, H100, H200, L40, L40S, L20, RTX A6000, RTX 4090, RTX 4090 D and RTX 5090. Most are small purchases, from a single card to a few servers. In the sample, the latest dated notice that names a chip of the A or H series is of Jun 30, 2025 (H200 cards, to rent); the three dated after it name the RTX 5090. Outside the sample, Wuhan University filed a purchase of A100 cards in July 2026 (see the later records), and Reuters reports a university's purchase record of October 2026 for two H200 chips (see what the project already held).
+2. **The largest purchases in the sample are of Huawei machines, and their titles say home-made.** Sun Yat-sen University awarded 23.99 million yuan for one Huawei cluster [cn-o35-ccgp-sysu-202412]. Wuhan University of Science and Technology awarded 20.02 million yuan for ten sets and other items, in a project whose name says ultra-long-term special treasury bonds [cn-o35-wust-64762]. Both are in table 2.
+!! cn-o35-ccgp-sysu-202412 | 高性能智能计算集群 华为 Atlas 900 A3 SuperPoD 1套 23,989,000.00
+!! cn-o35-wust-64762 | 武汉科技大学2024年超长期特别国债-国产算力平台采购项目
+!! cn-o35-wust-64762 | 中标（成交）金额：2002.280000万元
+3. **Most award notices do not name the chip.** Of the 14 award or result notices in the sample that come from the central government purchasing site, 12 name no accelerator by maker or model (most give a server brand and model), 2 name a Huawei Atlas machine, and the number that name an Nvidia model is 0. A count of notices by chip therefore misses much of what is bought.
+4. **The sample leans on one university.** 14 of the 24 notices in table 1 are Wuhan University's, whose purchasing site publishes small purchases with their full specification. That is a fact about one site, not about China.
+
+## What a purchase record can and cannot show
+
+- **Can show.** That a named buyer asked for, or chose, a named product, in a stated number, at a stated budget or price, on a stated date and under stated conditions, in its own words. A tender, purchase notice or purchase filing shows what was asked for. A result or award notice, or a list of bid candidates, shows a contract decision.
+- **Cannot show.** That the goods were delivered, paid for or put to use. How imported chips reached China, or whether a sale met United States export rules: no notice says. What share of all purchases went to Nvidia or to home-made hardware: many notices name no chip, and the notices here were found by search. Whose chips are in machines that a tender describes only by a software ecosystem (CUDA-like, CANN), unless the page says. And a trade site's account of a tender is not the tender itself.
+
+## Method
+
+- **Start.** The project held five Reuters reports that rest on tender documents and purchase records, and one university's own notice. They are set out in the section on what the project already held.
+- **Searches.** 22 web searches on Nov 23, 2026, listed word for word in search_log.txt. Most were limited to the central government purchasing site (ccgp.gov.cn) or to universities' own sites (edu.cn). They asked for award notices (中标公告), result notices (成交公告) and purchase notices (采购公告) with Nvidia model names (H100, H200, H20, A100, A800, L40S, RTX 4090, RTX 5090) or with home-made names (昇腾 Ascend, Atlas, 寒武纪 Cambricon, 海光 Hygon, 昆仑芯 Kunlun, 鲲鹏 Kunpeng).
+- **Saving.** Results that looked like a purchase of GPU or AI hardware were saved with the project's fetcher: 69 addresses tried, 64 saved, 5 not saved (4 answered not found, 1 could not be reached). Not every result was opened: the choice was made from titles and summaries. No search form on any purchasing site was used.
+- **Sorting.** A notice goes in table 1 if it names Nvidia or an Nvidia model. It goes in table 2 if it names a home-made accelerator or a Huawei Atlas machine, or asks for AI hardware under the word 国产 (home-made). It goes in table 3 if the notice itself says GPU, AI, training or accelerated computing and names no accelerator by maker or model; most of these give a server brand and model. 17 saved pages are in no table: 6 whose notice does not itself say GPU, AI, training or accelerated computing, 3 dated before 2024, 3 that buy no accelerator, 3 that hold no usable content, and 2 that are not notices and are used further down. They are listed with reasons in left_out.txt.
+- **Counting.** The counts come from a script (build.py) over the table file (notices.txt). The year is the year of the date on the page. The later records are not added to the counts: they were found another way.
+- **Buyers.** Each buyer is described only by what its name says (a university, a vocational college, a research institute, an agency). No saved page says whether a buyer is a public or state body, so the note does not say it.
+- **From my general knowledge, not from the notices.** Where a notice writes a model without its maker (L40, A6000, RTX 4090, RTX 5090, H100), that these are Nvidia models is my knowledge; each such row says the maker is not written. That Huawei's Atlas machines run on Huawei's Ascend chips is also my knowledge; one notice writes the two names together [cn-o35-buaa-50096].
+
+## What the project already held
+
+- Reuters, Jan 14, 2024, on its own review of tender documents: "The review includes more than 100 tenders where state entities have procured A100 chips"; "Tsinghua University procured two H100 chips"; and "Buying or selling high-end U.S. chips is not illegal in China" [cn-labs-state-tenders-2024-wayback]. The words "state entities" are Reuters's.
+!! cn-labs-state-tenders-2024-wayback | Published Jan 14, 2024
+- Reuters, dated Apr 22, 2024 on the page: "10 Chinese entities acquired advanced Nvidia chips embedded in server products" [cn-counter-b8-2-wayback].
+!! cn-counter-b8-2-wayback | April 22, 2024
+- Reuters, Mar 27, 2026: Beihang University "said in a March 16 notice this year it had procured a machine-learning workstation built on a Super Micro system, configured with four Nvidia A100 chips" [cn-counter-b8-3-wayback].
+!! cn-counter-b8-3-wayback | Published 03/27/2026
+- Reuters, Nov 11, 2026: a defence-linked university "bought two H200 chips last month for 874,700 yuan", "according to an October 21 procurement record on its website" [cn-counter-b8-5]. The project's record says that page answered not found when it was fetched on Nov 20, 2026.
+!! cn-counter-b8-5 | 2026-11-11
+- Reuters, Nov 13, 2026, a list of computing-centre projects, among them one in Jilin: "an April government prospectus describes another 2.26 billion yuan" project "combining Nvidia H100 processors with Chinese-developed chips" [cn-tolerate-projects-relay1].
+!! cn-tolerate-projects-relay1 | 2026-11-13
+- A university's own notice, Nov 20, 2026. Beijing Institute of Technology's computing centre is fitted with "配置H100、H20、L40S、RTX 4090显卡及国产DCU加速卡" (H100, H20, L40S and RTX 4090 cards and home-made DCU accelerator cards) [cn-tolerate-bit]. It is the only saved page cited in this note that names the H20: a script looked for the name in all 64 pages saved for the sample and found it in none, and found it in this one.
+!! cn-tolerate-bit | 上传时间：2026-11-20
+
+## Table 1. Notices that name Nvidia hardware (24)
+
+| Date on the page; buyer; kind of notice | Hardware, in the notice's own words | What it is; amount; source |
+| Mar 5, 2024. Wuhan University (university). Result notice | "NVidia RTX 4090 涡轮计算卡24G显存"; "提供GPU卡片≥8片" | A server with at least 8 RTX 4090 cards. 232,000 yuan. [cn-o35-whu-6798] |
+!! cn-o35-whu-6798 | 发布日期：2024-03-05
+!! cn-o35-whu-6798 | 成交金额 232000
+| Mar 7, 2024. Wuhan University (university). Result notice | "尽管L40显卡的报价高于竞争对手A6000显卡，我们最终决定选择L40显卡" | The buyer chose L40 cards over A6000 cards though they cost more; the maker is not written. 146,900 yuan. [cn-o35-whu-6809] |
+!! cn-o35-whu-6809 | 发布日期：2024-03-07
+!! cn-o35-whu-6809 | 成交金额 146900
+| Mar 15, 2024. Wuhan University (university). Result notice | "之前已经安装的显卡型号是Nvidia A100"; "A100显卡比A800显卡性能更强大" | One A100 card, chosen over an A800 offered at about the same price. 141,000 yuan. [cn-o35-whu-6885] |
+!! cn-o35-whu-6885 | 发布日期：2024-03-15
+!! cn-o35-whu-6885 | 成交金额 141000
+| Mar 18, 2024. Nantong University (university). Result notice | "微星魔龙RTX 4090 D 24G GAMING X XSLIM" | One RTX 4090 D card (the notice also lists an RTX 4080 card). 22,250 yuan for the two cards. [cn-o35-ntu-6472] |
+!! cn-o35-ntu-6472 | 发布日期：2024-03-18
+!! cn-o35-ntu-6472 | 成交金额 ￥22,250.00
+| May 6, 2024. Shandong University, a school's own purchase (university). Result notice | "GPU卡：8*NVIDIA RTX 4090 涡轮版" | A server with 8 RTX 4090 cards. 185,500 yuan. [cn-o35-sdu-compare] |
+!! cn-o35-sdu-compare | 发布时间：2024-05-06
+!! cn-o35-sdu-compare | 中标金额： 185500
+| May 20, 2024. Wuhan University (university). Result notice | "本次配置8块RTX 4090 24GB涡轮版" | A server with 8 RTX 4090 cards, bought with a secure terminal; the maker is not written. 249,800 yuan. [cn-o35-whu-7375] |
+!! cn-o35-whu-7375 | 发布日期：2024-05-20
+!! cn-o35-whu-7375 | 成交金额 249800
+| Jun 22, 2024. Wuhan University (university). Result notice | "A100四卡服务器平台" | A server platform with four A100 cards. 395,000 yuan. First of two notices for the same item. [cn-o35-whu-7827] |
+!! cn-o35-whu-7827 | 发布日期：2024-06-22
+!! cn-o35-whu-7827 | 成交金额 395000
+| Jul 5, 2024. Wuhan University (university). Result notice | "A100四卡服务器平台" | The same item, supplier and price as the row above, under a new project number: it looks like one purchase run twice. 395,000 yuan. Second of two notices for the same item. [cn-o35-whu-7986] |
+!! cn-o35-whu-7986 | 发布日期：2024-07-05
+!! cn-o35-whu-7986 | 成交金额 395000
+| Aug 12, 2024. Wuhan University (university). Result notice | "NVidia 具有563亿个晶体管、14592 个CUDA核心和80GB DDR6 HBM3e显存" | A server with at least one Nvidia card described by its figures; the model is not written. 358,190 yuan. [cn-o35-whu-8404] |
+!! cn-o35-whu-8404 | 发布日期：2024-08-12
+!! cn-o35-whu-8404 | 成交金额 358190
+| Sept 27, 2024. University of Chinese Academy of Sciences (university of the Academy of Sciences). Purchase notice, to rent servers | "单台服务器搭载8张Nvidia A800 /A100 80GB GPU"; "本项目不接受进口" | Three servers to rent for 8 months, each with 8 A800 or A100 cards; the same notice says imported products and services are not accepted. Budget 960,000 yuan for the three. [cn-o35-ccgp-ucas-a100-202409] |
+!! cn-o35-ccgp-ucas-a100-202409 | 2024年09月27日
+!! cn-o35-ccgp-ucas-a100-202409 | 96万元/三台
+| Nov 6, 2024. Wuhan University (university). Result notice | "配置≥6块NVDIA RTX A6000 48GB"; "品牌要求：国产服务器品牌" | A server of a home-made brand fitted with at least 6 RTX A6000 cards (NVDIA is the notice's spelling). 341,500 yuan. [cn-o35-whu-75481] |
+!! cn-o35-whu-75481 | 发布日期：2024-11-06
+!! cn-o35-whu-75481 | 成交金额 341500
+| Nov 18, 2024. Wuhan University (university). Result notice | "显卡 NVIDIA Tesla L20 48G 2" | A server with two L20 cards. 85,500 yuan. [cn-o35-whu-77141] |
+!! cn-o35-whu-77141 | 发布日期：2024-11-18
+!! cn-o35-whu-77141 | 成交金额 85500
+| Nov 30, 2024. Wuhan University (university). Result notice | "NVidia 具有 763亿个晶体管、10240 个 CUDA 核心和 48GB HBM3e 显存" | A server with at least two Nvidia cards described by their figures; the model is not written. 85,500 yuan. [cn-o35-whu-79641] |
+!! cn-o35-whu-79641 | 发布日期：2024-11-30
+!! cn-o35-whu-79641 | 成交金额 85500
+| Jan 6, 2025. Wuhan University (university). Result notice | "NVidia 具有563亿个晶体管、18176 个CUDA核心和48GB DDR6 HBM3e显存" | A server with at least two Nvidia cards described by their figures; the model is not written. 147,800 yuan. [cn-o35-whu-84341] |
+!! cn-o35-whu-84341 | 发布日期：2025-01-06
+!! cn-o35-whu-84341 | 成交金额 147800
+| Mar 3, 2025. Wuhan University (university). Result notice | "NVIDIA L40S显卡" | One L40S card. 57,000 yuan. [cn-o35-whu-86451] |
+!! cn-o35-whu-86451 | 发布日期：2025-03-03
+!! cn-o35-whu-86451 | 成交金额 57000
+| Mar 18, 2025. Beijing University of Posts and Telecommunications, School of Computer Science (university). Result notice | "英伟达/H100 80G PCIE 1张" | One H100 card. 203,000 yuan. [cn-o35-bupt-h100] |
+!! cn-o35-bupt-h100 | 公告时间: 2025-03-18
+!! cn-o35-bupt-h100 | 中 标 价 203000 元
+| Mar 31, 2025. Shenzhen University, College of Computer Science and Software Engineering (university). Result notice (a unit's own purchase) | "设备名称：Nvidia 4090"; "2.数量：6" | Six 4090 cards. 165,000 yuan (the proposed price). [cn-o35-szu-37060] |
+!! cn-o35-szu-37060 | 2025年03月31日
+!! cn-o35-szu-37060 | 拟成交价格：165,000.00元
+| Apr 1, 2025. Wuhan University (university). Purchase notice | "H100GPU 1 件 235000" | One H100 card; the maker is not written. Budget 235,000 yuan. [cn-o35-whu-88171] |
+!! cn-o35-whu-88171 | 发布日期：2025-04-01
+!! cn-o35-whu-88171 | 预算金额（元） 235000.00
+| Jun 12, 2025. Wuhan University (university). Purchase notice | "NVidia 具有763亿个晶体管、6912 个CUDA核心和80GB HBM2e显存" | A server with at least one Nvidia card described by its figures; the model is not written. Budget 310,000 yuan. [cn-o35-whu-95711] |
+!! cn-o35-whu-95711 | 发布日期：2025-06-12
+!! cn-o35-whu-95711 | 预算金额（元） 310000.00
+| Jun 30, 2025. Institute of Artificial Intelligence, Hefei Comprehensive National Science Center (research institute). Purchase notice (a call for price offers), to rent a server | "1台 8 卡 Nvidia H200 GPU 的服务器（裸金属服务），租用期 6 个月" | One server with 8 H200 cards, to rent for 6 months. Budget 450,000 yuan. [cn-o35-ustc-iai-h200-7521] |
+!! cn-o35-ustc-iai-h200-7521 | 发布时间：2025-06-30
+!! cn-o35-ustc-iai-h200-7521 | 项目预算： 45 万元
+| No date on the page; the project number is of 2025. Southern University of Science and Technology (university). Result notice | "显卡：8 块 VID Nvidia L40 2SLOT 48GB 显存"; "是否接受进口 拒绝进口" | A server with 8 L40 cards; the same notice says imports are refused. 469,000 yuan. [cn-o35-sustech-00064] |
+!! cn-o35-sustech-00064 | 成交金额(元) 469000.00
+| Nov 26, 2025. Huazhong Agricultural University, College of Informatics (university). Result notice (a unit's own purchase) | "GPU卡：RTX 5090 1台" | One RTX 5090 card; the maker is not written. 29,900 yuan. [cn-o35-hzau-38997] |
+!! cn-o35-hzau-38997 | 发布时间：2025-11-26
+!! cn-o35-hzau-38997 | 人民币：29900.00元
+| Dec 9, 2025. East China University of Science and Technology, a research team (university). Result notice | "Nvidia RTX 5090 32G 显存" | Two servers, each described with an RTX 5090 card. 160,000 yuan for the two. [cn-o35-ecust-202512] |
+!! cn-o35-ecust-202512 | 网页发布时间: 2025-12-09
+!! cn-o35-ecust-202512 | 共计 160000 元
+| May 6, 2026. Fudan University (university). Result notice | "5090显卡 (张) 15"; "英伟达/RTX32G" | Fifteen 5090 cards. 447,000 yuan. [cn-o35-fudan-5090-202604] |
+!! cn-o35-fudan-5090-202604 | 发布时间：2026-05-06
+!! cn-o35-fudan-5090-202604 | 成交金额 ￥447,000.00
+
+## Table 2. Notices that name home-made accelerator hardware (7)
+
+| Date on the page; buyer; kind of notice | Hardware, in the notice's own words | What it is; amount; source |
+| Jan 17, 2024. Beihang University, Institute of Artificial Intelligence (university). Result notice | "国产AI加速卡 Atlas 300V Pro 昇腾/Atlas 300V Pro 2台" | Two Atlas 300V Pro cards, which the notice calls a home-made AI accelerator card and marks Ascend. 38,900 yuan. [cn-o35-buaa-50096] |
+!! cn-o35-buaa-50096 | 发布时间：2024-01-17
+!! cn-o35-buaa-50096 | 成 交 价 38900 元
+| Undated in the saved copy; it gives Sept 3, 2024 as the date of the purchase notice. Tsinghua University (university). Award notice | "清华大学国产高性能 AI 服务器购置项目"; "华为 型号：Atlas 800T A2" | One Huawei Atlas server; the project is named for a home-made high-performance AI server. 2.19 million yuan. [cn-o35-tsinghua-atlas-202409] |
+!! cn-o35-tsinghua-atlas-202409 | 采购公告日期：2024 年 9 月 3 日
+!! cn-o35-tsinghua-atlas-202409 | 中标金额：人民币 2190000.00 元
+| Dec 3, 2024. Wuhan University of Science and Technology (university). Award notice | "武汉科技大学2024年超长期特别国债-国产算力平台采购项目"; "品牌：华为（核心产品）等 规格型号：Atlas 800T A2（核心产品）等 数量：10套" | Ten sets, the core product a Huawei Atlas server; the project name says special treasury bonds and a home-made computing platform. 20.02 million yuan. [cn-o35-wust-64762] |
+!! cn-o35-wust-64762 | 发布时间：2024-12-03
+!! cn-o35-wust-64762 | 中标（成交）金额：2002.280000万元
+| Dec 27, 2024. Sun Yat-sen University (university). Award notice | "中山大学国产智能计算系统采购项目"; "高性能智能计算集群 华为 Atlas 900 A3 SuperPoD 1套 23,989,000.00" | One Huawei Atlas 900 cluster; the project is named for a home-made intelligent computing system. 35.01 million yuan in all, of which 23.99 million for the cluster. [cn-o35-ccgp-sysu-202412] |
+!! cn-o35-ccgp-sysu-202412 | 2024年12月27日
+!! cn-o35-ccgp-sysu-202412 | 总中标金额 ￥3501.463600 万元
+| Nov 10, 2025. University of Science and Technology Liaoning (university). Tender notice | "平台支持对不同架构的国际AI算力芯片与国内AI算力芯片（包括但不限于华为昇腾、寒武纪、海光、天数智芯和燧原等）"; "配置不少于8颗GPU/NPU"; "需通过中国信息安全测评中心安全可靠测评" | Two inference servers with at least 8 accelerators each, maker not written; the management platform must handle foreign AI chips (none named) and home-made ones (five makers named); the processors must have passed the security-and-reliability evaluation of China's information-security evaluation centre. Budget 3.07 million yuan. [cn-o35-ccgp-lnust-202511] |
+!! cn-o35-ccgp-lnust-202511 | 2025年11月10日
+!! cn-o35-ccgp-lnust-202511 | 预算金额 ￥307.143031万元
+| Nov 26, 2025. Fujian Polytechnic of Information Technology (vocational college). Result notice | "算力服务器 华为 Atlas 800I A2 1 台 917,765.0000" | One Huawei Atlas server among Huawei servers, storage and switches. 3.67 million yuan in all, of which 917,765 for the Atlas server. [cn-o35-ccgp-fjxx-202511] |
+!! cn-o35-ccgp-fjxx-202511 | 2025年11月26日
+!! cn-o35-ccgp-fjxx-202511 | 总中标金额 ￥367.133700 万元
+| Jul 8, 2026. Institute of Automation, Chinese Academy of Sciences (research institute). Tender notice, to rent cloud computing | "国产AI云服务器1"; "配置≥8 张 AI算力卡" | Three kinds of server labelled home-made AI cloud server and four kinds of AI cloud server without that word, each with at least 8 cards; no maker is written. Budget 9.5 million yuan. [cn-o35-ccgp-aicloud-202607] |
+!! cn-o35-ccgp-aicloud-202607 | 2026年07月08日
+!! cn-o35-ccgp-aicloud-202607 | 预算金额：950.000000 万元
+
+## Table 3. Notices for GPU or AI purchases that name no accelerator (16)
+
+| Date on the page; buyer; kind of notice | Hardware, in the notice's own words | What it is; amount; source |
+| Jan 12, 2024. Nanjing University of Science and Technology (university). Award notice | "GPU计算服务器（含集群管理软件）"; "超益集伦 ServMAX® G448-X4" | GPU servers named by server model. [cn-o35-ccgp-njust-202401] |
+!! cn-o35-ccgp-njust-202401 | 2024年01月12日
+| Jan 25, 2024. Tsinghua University (university). Award notice | "GPU服务器集群—GPU算力服务器（8U）"; "景宏安信； H3C； Mellanox JHAX-821GE； R5500G5； MQM8700-HS2F" | A GPU server cluster named by server and switch models. 8.42 million yuan. [cn-o35-ccgp-tsinghua-202401] |
+!! cn-o35-ccgp-tsinghua-202401 | 2024年01月25日
+!! cn-o35-ccgp-tsinghua-202401 | 总中标金额 ￥842.000000 万元
+| Aug 3, 2024. ShanghaiTech University (university). Result notice | "GPU计算服务器"; "浪潮NF5468M6等" | A GPU server named by server model. [cn-o35-ccgp-shanghaitech-202408] |
+!! cn-o35-ccgp-shanghaitech-202408 | 2024年08月03日
+| Nov 27, 2024. Qinghai Earthquake Agency (agency). Award notice | "AI服务器Ⅰ型 中科可控 Suma X7340 H0"; "实配2块GPU卡" | AI servers of two Chinese brands, each with 2 cards whose maker is not written; home-made processor lines are named only in the software requirements. 9.58 million yuan for the whole purchase. [cn-o35-ccgp-qinghai-202411] |
+!! cn-o35-ccgp-qinghai-202411 | 2024年11月27日
+!! cn-o35-ccgp-qinghai-202411 | 总中标金额 ￥958.000000 万元
+| Dec 9, 2024. Southwest University of Science and Technology (university). Result notice | "人工智能计算集群采购项目"; "异构计算节点2 联泰集群 G422X-TNRG2" | Computing nodes named by server model. [cn-o35-ccgp-swust-202412] |
+!! cn-o35-ccgp-swust-202412 | 2024年12月09日
+| Dec 11, 2024. Central China Normal University (university). Tender notice | "华中师范大学人工智能算力平台设备采购项目"; "服务器NPU卡 16 块" | 16 cards the notice calls NPU cards for servers; no maker is written. Budget 12.1 million yuan. [cn-o35-ccgp-ccnu-202412] |
+!! cn-o35-ccgp-ccnu-202412 | 2024年12月11日
+!! cn-o35-ccgp-ccnu-202412 | 预算金额：1210.000000 万元
+| Mar 6, 2025. China University of Mining and Technology (university). Purchase notice (a call for price offers) | "GPU 加速卡 单卡显存≥48GB，支持CUDA核心数≥10000" | Two cards described by their figures, among them a count of CUDA cores; no maker or model is written. [cn-o35-cumt-11137] |
+!! cn-o35-cumt-11137 | 发布日期：2025-03-06
+| May 9, 2025. Guangzhou Medical University (university). Result notice | "AI节点 华鲲振宇 HuaKun AT3500 G3" | AI nodes named by a Chinese server brand and model. [cn-o35-ccgp-gzhmu-202505] |
+!! cn-o35-ccgp-gzhmu-202505 | 2025年05月09日
+| May 12, 2025. Northwestern Polytechnical University (university). Award notice | "异构加速计算节点服务器" | An accelerated-computing node listed among Lenovo servers. [cn-o35-ccgp-nwpu-202505] |
+!! cn-o35-ccgp-nwpu-202505 | 2025年05月12日
+| Jul 7, 2025. Shanghai Jiao Tong University (university). Award notice | "人工智能模型训练和推理的硬件平台 中科可控 X7850H0 4台" | An AI training and inference platform named by server model. [cn-o35-ccgp-sjtu-202507] |
+!! cn-o35-ccgp-sjtu-202507 | 2025年07月07日
+| Jul 31, 2025. Xinjiang Institute of Ecology and Geography, Chinese Academy of Sciences (research institute). Award notice | "GPU深度学习人工智能服务器 思腾合力(天津)科技有限公司 IW4235-8GR" | A GPU server named by server model. [cn-o35-ccgp-cas-xinjiang-202507] |
+!! cn-o35-ccgp-cas-xinjiang-202507 | 2025年07月31日
+| Sept 12, 2025. Xi'an Jiaotong University (university). Award notice | "GPU服务器/智算融合平台 AMAX GMAX-H200/AMAXPlatforMax" | A server model whose name holds H200; the notice does not say which chip is inside. 2.639 million yuan. [cn-o35-ccgp-xjtu-202509] |
+!! cn-o35-ccgp-xjtu-202509 | 2025年09月12日
+!! cn-o35-ccgp-xjtu-202509 | 总中标金额 ￥263.900000 万元
+| No date in the saved copy; the project number is of 2025. Beijing Institute of Technology, Zhuhai campus (university). Result notice | "社科学域服务器及 AIGC 团队设备"; "服务器 AMAX GMAX H200 1台 2450000" | A server model whose name holds H200; the notice does not say which chip is inside. 2.55 million yuan in all, of which 2.45 million for the server. [cn-o35-bitzh-179] |
+!! cn-o35-bitzh-179 | 2,553,260.00
+| Jan 5, 2026. University of Chinese Academy of Sciences (university of the Academy of Sciences). Award notice | "GPU服务器 浪潮 NF5688-M7-A0-R0-00 2 1475000" | Two GPU servers named by server model. [cn-o35-ucas-2806] |
+!! cn-o35-ucas-2806 | 发布日期：2026-01-05
+| Aug 19, 2026. China National Institute of Standardization (research institute). Award notice | "训练型服务器 华鲲振宇 HuaKun AT800 (Model 9000) A2 2 1378500" | Two training servers named by a Chinese server brand and model. [cn-o35-ccgp-cnis-202608] |
+!! cn-o35-ccgp-cnis-202608 | 2026年08月19日
+| Oct 19, 2026. Tianjin University (university). Result notice, rented computing | "合计提供16张GPU计算加速卡" | Two rented cloud servers with 16 cards in all; no maker is written. [cn-o35-ccgp-tju-202610] |
+!! cn-o35-ccgp-tju-202610 | 2026年10月19日
+
+## The count
+
+| Year | Names Nvidia hardware | Names home-made accelerator hardware | Names no accelerator | All |
+| 2024 | Nvidia: 13 | Home-made: 4 | No accelerator: 6 | All: 23 |
+| 2025 | Nvidia: 10 | Home-made: 2 | No accelerator: 7 | All: 19 |
+| 2026 | Nvidia: 1 | Home-made: 1 | No accelerator: 3 | All: 5 |
+| All three years | Nvidia: 24 | Home-made: 7 | No accelerator: 16 | All: 47 |
+
+This is a sample found by search. It proves nothing about proportions. The searches were not a random draw (9 of the 22 asked for Nvidia names and 13 for home-made names), one university supplies 14 of the 24 rows in the first column, and a notice that names no chip cannot be found by a chip's name at all. Of the 47 notices, 39 are award or result notices and 8 are tender or purchase notices, which show what a buyer asked for, not what it got. By buyer: 42 notices are from universities or colleges, 4 from research institutes and 1 from an agency (Qinghai's earthquake agency).
+
+## Later records, found by another agent of the project
+
+These are not in the sample or its count. The first was found by this note in its first round; the others were found and saved by a later agent of the project (its table is the core's tables/procurement_records.tsv). Each is quoted here from the saved page.
+
+- **China Mobile, 2025: an inference purchase in six lots.** C114, a telecoms trade site, reported on Aug 19, 2025 that China Mobile's tender for AI inference servers had six lots: "标包1、标包2、标包3和标包4均为类CUDA生态设备，总含税价超17亿元；标包5和标包6为CANN生态设备，总含税价约34亿元" (lots 1 to 4 are equipment of the CUDA-like kind, over 1.7 billion yuan with tax; lots 5 and 6 are equipment of the CANN kind, about 3.4 billion yuan) [cn-o35-c114-cmcc-inference-2025]. The page does not say whose chips the CUDA-like lots hold. China Mobile's own notice is not held.
+!! cn-o35-c114-cmcc-inference-2025 | 2025-8-19
+!! cn-o35-c114-cmcc-inference-2025 | 据来自中国移动的官方信息显示
+- **China Mobile, March 2026: a tender for CANN equipment only.** C114, Mar 17, 2026: "采购产品为人工智能超节点设备（CANN生态），采购规模约为6208卡（776套计算节点）。" (the product bought is AI supernode equipment, of the CANN ecosystem, about 6,208 cards in 776 computing nodes) [cn-le17-c114-w3542-1307004]. On Apr 10, 2026 the same site reported five winning firms, with bids from 2.059 to 2.07 billion yuan, and wrote that the purchase was explicitly tied to Huawei's CANN, "并明确锁定华为CANN" [cn-le17-c114-w118-1308371].
+!! cn-le17-c114-w118-1308371 | 此次集采共有5家企业中标
+!! cn-le17-c114-w118-1308371 | 最低(华启智慧)为20.59亿元
+!! cn-le17-c114-w118-1308371 | 最高(宝德计算机)为20.7亿元
+!! cn-le17-c114-w3542-1307004 | 3月17日消息
+- **A later carrier tender that names no chip.** C114, Nov 21, 2026: "中国移动此次采购人工智能超节点合计52160卡，计划选取6-7家中标人。" (China Mobile is buying 52,160 cards of AI supernode equipment in all and plans to choose six or seven winners) [cn-le17-c114-w118-1321457]. The core's table of procurement records gives the chip of this tender as not stated.
+!! cn-le17-c114-w118-1321457 | 11月21日消息
+- **Two universities' notices for the RTX PRO 6000D, July 2026.** Beihang University's School of Computer Science posted a purchase notice (采购公告) on Jul 11, 2026 for four cards, "品牌 NVIDIA 规格型号 RTX PRO 6000D" (brand Nvidia, model RTX PRO 6000D), with a budget of 226,000 yuan, and asks that suppliers meet "符合《政府采购法》第二十二条规定的供应商基本条件" (the basic conditions for suppliers in Article 22 of the Government Procurement Law) [cn-le17-buaa-61901-6000d]. Wuhan University filed on Jul 7, 2026 a decentralised purchase by competitive bidding (竞价), with a budget of 110,000 yuan, for the "国行合规RTX PRO 6000D型号，非消费级游戏卡、非改装卡、非海外版受限型号" (the compliant China-market RTX PRO 6000D model; not a gaming card, not a modified card, not a restricted overseas model), and holds suppliers to "参照《中华人民共和国政府采购法》第二十二条规定的资格条件" (the qualifications in Article 22 of the Government Procurement Law) [cn-le17-whuf-134391]. A notice to buy is neither a purchase made nor a delivery. The project's argument cites both notices in its point 19.
+!! cn-le17-buaa-61901-6000d | 发布时间:2026-07-11
+!! cn-le17-buaa-61901-6000d | 高性能图形计算卡 4台
+!! cn-le17-buaa-61901-6000d | 预算¥226,000
+!! cn-le17-whuf-134391 | 发布日期:2026-07-07
+!! cn-le17-whuf-134391 | 预算金额(元) 110000.00 采购方式 竞价
+- **Wuhan University: other Nvidia records of 2026.** A filing of Jul 6, 2026 for "6张合规拆机A100 40GB PCIe加速卡" (six compliant A100 40GB PCIe cards taken out of machines), with a budget of 150,000 yuan [cn-le17-whuf-134121]. A result notice of Aug 13, 2026 for one "Nvidia 6000D 84GB显存" card, at 54,000 yuan [cn-le17-whu-131281]. A result notice records a contract decision, not a delivery.
+!! cn-le17-whuf-134121 | 发布日期:2026-07-06
+!! cn-le17-whuf-134121 | 预算金额(元) 150000.00
+!! cn-le17-whu-131281 | 发布日期:2026-08-13
+!! cn-le17-whu-131281 | 成交金额 54000
+- **A count from Wuhan University's own lists.** The same agent saved and read 72 result notices of Wuhan University dated Sept 1, 2025 to Nov 23, 2026, chosen from the university's own lists of result notices. 23 of them name Nvidia somewhere in the notice. build.py recounts both numbers from that agent's tables and checks that each of the 23 saved pages holds the name. They are the notices that agent chose to read, not a census of the university's purchases.
+
+## Three details in the notices
+
+- **Nvidia cards under a no-imports line.** Two notices that name Nvidia cards also refuse imports. The University of Chinese Academy of Sciences asked for servers with "8张Nvidia A800 /A100 80GB GPU" and wrote "本项目不接受进口" (this project does not accept imports) [cn-o35-ccgp-ucas-a100-202409]. Southern University of Science and Technology bought a server with "8 块 VID Nvidia L40" under the line "是否接受进口 拒绝进口" (imports accepted or not: refused) [cn-o35-sustech-00064]. A third asks for a "国产服务器品牌" (home-made server brand) fitted with "NVDIA RTX A6000" cards [cn-o35-whu-75481]. The notices do not say how the two fit together.
+- **An evaluated processor, an open accelerator.** A Liaoning university's tender requires processors that passed the security-and-reliability evaluation of China's information-security evaluation centre, "需通过中国信息安全测评中心安全可靠测评", and leaves the maker of the accelerators open: "配置不少于8颗GPU/NPU" (fit no fewer than 8 GPU or NPU chips) [cn-o35-ccgp-lnust-202511]. The 2023 purchase rule for servers names the same two things and no accelerator: "应当将CPU、操作系统符合安全可靠测评要求纳入采购需求" (the purchase requirement shall include that the CPU and the operating system meet the security-and-reliability evaluation) [cn-policy-server-procurement-2023].
+- **A buyer's reasons, in its own words.** Wuhan University chose an A100 card over an A800 offered at nearly the same price because "A100显卡比A800显卡性能更强大" (the A100 card performs better than the A800) [cn-o35-whu-6885].
+
+## One thing seen outside the sample
+
+- **The Jilin project in Reuters's list has a primary page.** A project sheet on the Jilin provincial government's investment pages, dated Apr 27, 2026, describes a computing centre in Songyuan: "含 3600P 英伟达 H100 稀疏算力与 2400P 国产算力" (it includes 3,600P of Nvidia H100 computing and 2,400P of home-made computing). It calls the home-made part the backstop, "国产算力兜底", and gives "项目总投资 225893.09 万元" (a total investment of 2,258.93 million yuan) [cn-o35-jilin-songyuan-project]. It also says "申请银行贷款，占总投资比重约 80%" (bank loans applied for, about 80% of the total investment); Reuters's list says the developer "expects bank loans to finance about 80% of the investment" [cn-tolerate-projects-relay1]. Month, amount, hardware and the loan share match Reuters's lines. Reuters does not name the project, so the match is ours. It is a plan put to investors, not a purchase.
+!! cn-o35-jilin-songyuan-project | 时间：2026-04-27
+!! cn-o35-jilin-songyuan-project | 松原市国信智能智算数据中心项目
+- A Shanghai government body, in a reply dated Apr 30, 2025 (published Nov 10, 2025), wrote that the three big telecom operators mainly buy home-made computing clusters: "三大运营商主要购置华为等国产化智算集群" [cn-counter-b11-5]. China Mobile's records above are the trade press's accounts of one operator's notices.
+!! cn-counter-b11-5 | 2025年4月30日
+!! cn-counter-b11-5 | 发布日期：2025-11-10
+
+## What was not found
+
+- **No purchase notice that names the H20.** Four searches had the name among their words (7, 9, 13, 19); search 13 asked for it alone, on both groups of sites. It returned the Hefei notice for H200 cards in table 1, so it could see a notice that names a chip.
+- **No notice in which a Cambricon, Hygon or Kunlun accelerator is the thing bought.** Four searches asked (6, 8, 14, 15). Searches of the same kind found the Huawei notices in table 2.
+- **No notice from a police body, a court, a procuratorate, a hospital or a weather bureau that names an accelerator.** Searches 16 and 20 asked by those words.
+- **No carrier's own notice.** China Mobile's purchasing site came up in one search and was not opened; a page saved from the national trading platform holds only titles. The China Mobile records in this note are a trade site's accounts.
+- **In the sample, no notice of 2026 that names an Nvidia chip of the A or H series.** Three searches asked for 2026 notices (17, 19, 22). Between them they returned the 2025 notices for the H100 and the H200, so they could see a hit. The later records hold one: Wuhan University's filing of July 2026 for A100 cards [cn-le17-whuf-134121].
+- **Three notices seen in search summaries were gone.** Two pages at Beihang University and one at Northwestern Polytechnical University answered not found on Nov 23, 2026. By the search summaries, read and not saved, they concerned A100, A800 and RTX 5090 cards. Why the pages are gone is not known.
+
+## What a reader may and may not conclude
+
+- **May.** That Chinese universities and research institutes published notices naming Nvidia hardware in 2024, 2025 and 2026, and that two universities posted notices in July 2026 to buy the RTX PRO 6000D: these are their own documents. That some of the largest purchases of AI hardware in the sample were made under project names that say home-made. That many award notices name no chip. That, by a trade site's accounts of its notices, China Mobile put about 3.4 of over 5 billion yuan of a 2025 purchase, and all of a March 2026 tender, on CANN-ecosystem equipment.
+- **May not.** Any share, ratio or trend between Nvidia and home-made hardware: this is a sample found by search. That a notice to buy was a purchase made, or that a card named in a notice was delivered. How the cards reached China, or whether any sale met United States export rules: no notice says. Whose chips are in China Mobile's CUDA-like lots. Anything about China's AI companies: none of their purchases is in the sample. Anything about bodies whose purchases are not published.
+
+## The files
+
+- notices.txt: the table as typed, one line per notice. notices.tsv: the same with the address and the saved id of every notice. counts.tsv: the count. quotes.tsv: every string taken from a page. left_out.txt: saved pages not used, with reasons. search_log.txt: the searches. refs_manual.tsv: references that are not sample notices. build.py rebuilds all of it and stops if a string is not found in its saved copy. Its check line on this build: 150 quotations checked, 150 found, 0 not found; controls behave.

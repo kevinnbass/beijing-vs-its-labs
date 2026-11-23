@@ -1,0 +1,56 @@
+# House Foreign Affairs Committee, disclosure of Nov 19, 2026 (made public by Chairman Mast at a committee business meeting; the PDFs sit on the committee Democrats' site): table "H200 License and Equivalent Application Status as of May 11, 2026" (saved id cn-usdocs-hfac-decisions-20261119, body.pdf pages 1-4). One line per table row, in page order. Transcribed twice from the page images (pass1.tsv, pass2.tsv) and checked against the text layer placed by word position (textlayer_rows.tsv): 0 differences. value = the Value column, blacked out in every row. chip_count = the printed Chip Count. group = my grouping for totals (rule in scripts/compare_and_sum.py), not the table's.
+row	page	date_submitted	exporter	consignee	value	chip_count	status	location	group
+1	1	12/16/2025	Nvidia	Alibaba Group	redacted	75,000	Approved, not shipped	China	Alibaba and subsidiaries (as named in the table)
+2	1	12/9/2025	Nvidia	Beijing Bytedance Technology Co. Ltd.	redacted	75,000	Approved, not shipped	China	ByteDance, BytePlus, TikTok (as named)
+3	1	12/22/2025	AMD	Beijing Zitiao Network Technology Co., Ltd., a wholly owned subsidiary of ByteDance	redacted	75,000	Approved, not shipped	China	ByteDance, BytePlus, TikTok (as named)
+4	1	12/23/2025	Nvidia	Ubiquant Investment (Beijing) Co., Ltd.	redacted	8,660	Approved, not shipped	China	Ubiquant Investment (Beijing) Co., Ltd.
+5	1	12/19/2025	Nvidia	Tencent Technology (Shenzhen) Co. Ltd.	redacted	75,000	Approved, not shipped	China	Tencent and subsidiaries (as named in the table)
+6	1	12/19/2025	Nvidia	Jingdong(JD)	redacted	41,300	Approved, not shipped	China	JD (two names)
+7	1	12/21/2025	Nvidia	Beijing Didi Infinity Technology and Development Co. Ltd.	redacted	24,780	Approved, not shipped	China	Didi (two names)
+8	1	12/22/2025	AMD	Oriental Power Holdings Limited, a wholly owned subsidiary of Tencent Holdings Limited	redacted	75,000	Approved, not shipped	China	Tencent and subsidiaries (as named in the table)
+9	1	12/24/2025	Nvidia	Shanghai Mihoyo Tianming Technology Co., Ltd.	redacted	57,810	Approved, not shipped	China	Shanghai Mihoyo Tianming Technology Co., Ltd.
+10	1	12/27/2025	Nvidia	Shanghai Yovole Cloud Computing Co., Ltd.	redacted	4,250	Approved, not shipped	China	Shanghai Yovole Cloud Computing Co., Ltd.
+11	2	12/28/2025	Nvidia	VNET Group Limited	redacted	75,000	Approved, not shipped	China	VNET Group Limited
+12	2	12/30/2025	Nvidia	Li Auto Inc.	redacted	8,260	Approved, not shipped	China	Li Auto Inc.
+13	2	12/27/2025	Nvidia	Linkwise Digital Tech	redacted	75,000	Approved, not shipped	China	Linkwise Digital Tech
+14	2	4/16/2026	Nvidia	Nvidia	redacted	8	Approved, not shipped	China	Nvidia
+15	2	3/16/2026	Nvidia	Tesla (Shanghai)	redacted	4,000	Approved, not shipped	China	Tesla (Shanghai)
+16	2	3/16/2026	Nvidia	BYD	redacted	4,000	Approved, not shipped	China	BYD
+17	2	3/16/2026	Nvidia	Shanghai Jiatang	redacted	4,000	Approved, not shipped	China	Shanghai Jiatang
+18	2	3/16/2026	Nvidia	Great Wall Motor	redacted	4,800	Approved, not shipped	China	Great Wall Motor
+19	2	3/10/2026	Nvidia	Baidu	redacted	43,000	Approved, not shipped	China	Baidu
+20	2	3/9/2026	AMD	Kuaishou	redacted	75,000	Approved, not shipped	China	Kuaishou
+21	2	3/9/2026	AMD	Beijing DiDi	redacted	75,000	Approved, not shipped	China	Didi (two names)
+22	2	12/23/2025	Nvidia	Alibaba	redacted	10,450	RWA	China	Alibaba and subsidiaries (as named in the table)
+23	2	3/9/2026	AMD	JD.Com	redacted	75,000	RWA	China	JD (two names)
+24	2	3/9/2026	AMD	Huaxia	redacted	75,000	RWA	China	Huaxia
+25	2	2/6/2026	Nvidia	Alibaba Group	redacted	610,000	RWA	China	Alibaba and subsidiaries (as named in the table)
+26	2	12/11/2025	Nvidia	Bytedance System SDN BHD	redacted	508,000	RWA	Malaysia	ByteDance, BytePlus, TikTok (as named)
+27	3	12/13/2025	Nvidia	PT Byteplus Technologies Indonesia	redacted	203,000	RWA	Indonesia	ByteDance, BytePlus, TikTok (as named)
+28	3	12/15/2025	Nvidia	Alibaba Cloud	redacted	50,500	RWA	Malaysia	Alibaba and subsidiaries (as named in the table)
+29	3	12/15/2025	Nvidia	Alibaba Cloud	redacted	203,000	RWA	Malaysia	Alibaba and subsidiaries (as named in the table)
+30	3	12/19/2025	Nvidia	TikTok (System) Thailand Ltd.	redacted	154,000	RWA	Thailand	ByteDance, BytePlus, TikTok (as named)
+31	3	3/9/2026	AMD	UCloud	redacted	75,000	Rejected	China	UCloud
+32	3	3/9/2026	AMD	Kingsoft	redacted	75,000	Submitted	China	Kingsoft
+33	3	3/16/2026	Nvidia	High-Flyer Asset Management (Zhejiang) Co., Ltd.	redacted	75,000	Submitted	China	High-Flyer Asset Management (Zhejiang) Co., Ltd.
+34	3	3/16/2026	Nvidia	Redbook Technology Limited	redacted	40,800	Submitted	China	Redbook Technology Limited
+35	3	3/16/2026	Nvidia	Nio	redacted	4,800	Submitted	China	Nio
+36	3	3/17/2026	Nvidia	Geely	redacted	2,280	Submitted	China	Geely
+37	3	3/17/2026	Nvidia	Mingshi	redacted	1,160	Submitted	China	Mingshi
+38	3	3/17/2026	Nvidia	Syscloud	redacted	2,280	Submitted	China	Syscloud
+39	3	3/17/2026	Nvidia	Funde Holding	redacted	75,000	Submitted	China	Funde Holding
+40	3	3/18/2026	Nvidia	Kuaishou	redacted	40,800	Submitted	China	Kuaishou
+41	3	3/18/2026	Nvidia	Meituan	redacted	75,000	Submitted	China	Meituan
+42	3	4/6/2026	Nvidia	New Century Lettall Data Service Co., Ltd.	redacted	40,800	Submitted	China	New Century Lettall Data Service Co., Ltd.
+43	3	4/14/2026	Nvidia	Chongqing Afari Intelligent Drive Co., Ltd.	redacted	8,160	Submitted	China	Chongqing Afari Intelligent Drive Co., Ltd.
+44	3	4/14/2026	Nvidia	Shanghai Yanfu Investments, LLC	redacted	8,360	Submitted	China	Shanghai Yanfu Investments, LLC
+45	4	4/14/2026	Nvidia	Intelliture Technology (Beijing) Co., Ltd.	redacted	4,176	Submitted	China	Intelliture Technology (Beijing) Co., Ltd.
+46	4	4/15/2026	Nvidia	Beijing Huapin Borui Network Technology Co., Ltd	redacted	10,200	Submitted	China	Beijing Huapin Borui Network Technology Co., Ltd
+47	4	4/6/2026	Nvidia	The Hong Kong University of Science and Technology, Clear Water Bay, Kowloon	redacted	12,240	Submitted	China	The Hong Kong University of Science and Technology, Clear Water Bay, Kowloon
+48	4	4/6/2026	Nvidia	Guangzhou FCloud Technology Co. Ltd.	redacted	41,776	Submitted	China	Guangzhou FCloud Technology Co. Ltd.
+49	4	4/6/2026	Nvidia	Chiyi (Beijing) Technology Co., Ltd.	redacted	8,360	Submitted	China	Chiyi (Beijing) Technology Co., Ltd.
+50	4	12/23/2025	Nvidia	Yi Tunnel Sandstar	redacted	41,300	Submitted	China	Yi Tunnel Sandstar
+51	4	1/5/2026	Semsotai USA	Sharetronic Data Technology Co, Ltd.	redacted	150	Submitted	China	Sharetronic
+52	4	1/23/2026	Semsotai USA	Sharetronic Data Technology Co, Ltd.	redacted	32,000	Submitted	China	Sharetronic
+53	4	2/27/2026	Semsotai USA	Sharetronic Data Technology Co, Ltd.	redacted	200	Submitted	China	Sharetronic
+54	4	3/23/2026	Semsotai USA	Sharetronic Data Technology Co, Ltd.	redacted	500	Submitted	China	Sharetronic

@@ -1,0 +1,305 @@
+# Home-made chip targets by province: eight of 31 set a share
+
+@deck Of China's 31 province-level governments, eight were found to set a share for home-made computing hardware (Tianjin, Hebei, Inner Mongolia, Shanghai, Jiangsu, Shandong, Guangdong, Sichuan). 21 have a plan that was read and sets none. Tibet's plan is known only from a trade newspaper's account, and for Xinjiang no computing plan was found. The eight shares run from 50% to 90%, count different things, and only Jiangsu's plan says whether its share binds: it marks it indicative, not binding. Of the eight, 4 rest on a saved official page (Tianjin, Shanghai, Jiangsu, Guangdong; Shanghai for its later figure, its 50% being held as carried by a business daily), 2 on a saved Internet Archive capture of an official page (Hebei, Inner Mongolia), 1 on a saved copy on another site (Sichuan) and 1 on a provincial daily's account (Shandong). Local computing vouchers: of 15 rules found, 4 pay more for home-made computing and 11 pay one rate whatever the chip.
+
+@note Draft by Claude, Anthropic's model. Local; not published.
+@note Written Nov 23, 2026 (UTC) for idea 39 of the chip-policy project, and brought into line the same day with the project's fourth edit of its core. Words between straight double quotes are a page's own words and were found in its saved copy by a script. English in round brackets is ours, not an official translation. Three PDFs saved by hand have damaged text layers; they are read here only from their page images.
+
+## The question
+
+The project's argument says, in its point 3, that eight of China's 31 province-level governments set a share for home-made computing hardware. Idea 39 asked what each of the 31 has set. This note gives a row for every government: the eight with a share, the 21 whose plan was read and sets none, and Tibet and Xinjiang. A province-level government here means one of the 22 provinces, 5 autonomous regions and 4 municipalities of the mainland. The note also lists the local computing vouchers found, which pay part of the bill for rented computing.
+
+No national target is given in this note; this work did not look for one. In the national computing-network opinions of December 2023, the words 国产 (home-made) and 自主可控 (independently controllable) do not stand at all, while 安全可靠 (secure and reliable) stands 4 times, so the search could see a hit [cn-policy-computing-network-1779].
+
+## The answer in short
+
+1. **Eight governments set a share.** Jiangsu: 50% by 2025 and 70% or more by 2030, of chips in newly built computing centres [cn-factions-jiangsu-plan]. Shanghai: over 50% of chips in newly built intelligent-computing centres by 2025 [cn-policy-shanghai-domestic-target], and by 2027 over 70% of its intelligent computing to be independently controllable [cn-factions-shanghai-cloud-20250324]. Tianjin: over 60% of chips in all the city's computing centres by 2026 [cn-o39-tianjin-plan-2024]. Guangdong: 70% of newly added computing by the end of 2025 [cn-o39b-guangdong-yuesuan-2024]. Hebei: 60% or more of newly added computing software and hardware, by 2025 [cn-o39-hebei-opinion-2024-wayback]. Sichuan: over 50% of computing equipment [cn-factions-sichuan50]. Inner Mongolia: 50% or more of computing by 2025, among the goals for the region's hub of the national computing network [cn-o39-nmg-plan-pdf-wayback]. Shandong: 90% of computing by 2025, in a 2022 plan known only from the provincial daily's account [cn-o39-shandong-network-2022]. Table 1 gives each in its document's own words.
+!! cn-factions-jiangsu-plan | 新建算力中心国产算力芯片使用占比（%） 50 70 预期性
+!! cn-policy-shanghai-domestic-target | 到2025年，本市新建智算中心国产算力芯片使用占比超过50%
+!! cn-factions-shanghai-cloud-20250324 | 到2027年，本市智算云产业规模力争突破2000亿元
+!! cn-o39-tianjin-plan-2024 | 到 2026 年，全市算力中心国产算力芯片使用占比超过 60％
+!! cn-o39b-guangdong-yuesuan-2024 | 力争到2025年底，新增国产化算力占比达到70%
+!! cn-o39-hebei-opinion-2024-wayback | 一、工作目标到2025年
+!! cn-o39-nmg-plan-pdf-wayback | 枢纽节点建设。到2025年，集群建成的数据中心服务器装机能力突破500万台
+!! cn-o39-shandong-network-2022 | 到2025年，全省数据中心总算力超过12EFlops
+2. **The eight do not count the same thing.** Jiangsu and Shanghai's 2024 plan count chips in newly built centres. Tianjin counts chips in all the city's centres. Guangdong counts newly added computing, Sichuan computing equipment, Inner Mongolia and Shandong computing. Hebei counts newly added software and hardware together. Shanghai's 2025 document counts independently controllable computing. So the numbers cannot be added or averaged.
+3. **Only Jiangsu's plan says whether its share binds.** Its table of indicators marks the row 预期性 (indicative), not 约束性 (binding) [cn-factions-jiangsu-plan]. In Shanghai's two documents, Sichuan's and Guangdong's, the share stands under the word 力争 (strive to). Tianjin, Hebei and Inner Mongolia state it flat, with neither word. Shandong's plan is known only from a newspaper's account, so its label cannot be told. In no page read is a home-made share marked binding. The second column of table 1 gives this row by row.
+!! cn-factions-jiangsu-plan | 2025 年 2030 年 属性
+4. **21 governments have a plan that was read and sets no share** (Beijing, Shanxi, Liaoning, Jilin, Heilongjiang, Zhejiang, Anhui, Fujian, Jiangxi, Henan, Hubei, Hunan, Guangxi, Hainan, Chongqing, Guizhou, Yunnan, Shaanxi, Gansu, Qinghai, Ningxia). For 9 of them the document read is a computing plan or computing measures (Beijing, Liaoning, Fujian, Jiangxi, Henan, Hubei, Hunan, Chongqing, Qinghai). For the other 12 the core's table classes the document read as a plan or measures on artificial intelligence or the digital economy, or as a reward (Shanxi, Jilin, Heilongjiang, Zhejiang, Anhui, Guangxi, Hainan, Guizhou, Yunnan, Shaanxi, Gansu, Ningxia); for those, no share in the page read is not no share in the province. They are in table 2.
+5. **What some of them say instead.** Beijing aims, by 2027, at the ability to build computing centres that are 100% independently controllable, "具备100%自主可控智算中心建设能力": an ability to build, not a share of use [cn-factions-beijing-plan-20240424]. Guizhou aims at a national rank, "国产智算能力位居全国前列" [cn-o39-guizhou-ai-plan-2025-wayback]. Henan encourages two home-made chip lines by name, "鼓励智算、超算中心采用昇腾、海光等自主可控技术路线", with no number [cn-o39-henan-plan-2024-wayback]. Chongqing's 2026 plan sets a share only for green power, "确保新建数据中心绿电占比超过80%" [cn-o39-chongqing-hub-plan-2026-wayback]. Shaanxi's computing item sets no share; on building it says "按需建设算力基础设施" (build computing infrastructure as needed) [cn-le16-shaanxi-ai-plus-2025-sohu]. Zhejiang's AI measures urge government departments, computing centres and businesses to buy or use home-made software and hardware, "倡导政府部门、算力中心、经营主体采购或应用国产软硬件", and set voucher rates (below) [cn-le25-zhejiang-ai-measures-2025-smartcity].
+6. **Tibet and Xinjiang.** Tibet's plan for 2024 to 2026 is known only from a trade newspaper's account; the account gives a share for intelligent computing, "智算算力占比达到60%", and none for home-made hardware [cn-o39b-tibet-compute-plan-2024-wxb]. For Xinjiang no regional computing or AI plan was found; the region's 2024 plan for the economy, read in its place, supports computing centres and sets no home-made share [cn-le16-xinjiang-plan-2024-indicators]. Table 3.
+7. **Rewards, not targets.** Two provinces reward data centres whose basic software and hardware are 90% or more home-made: a one-off reward of up to 5 million yuan for new or rebuilt centres in Shanxi, "对基础软硬件实现国产化90%以上的新建、改建数据中心，给予最高不超过500万元的一次性奖励" [cn-o39b-shanxi-measures-2024-jincheng], and a reward of up to 10 million yuan in Ningxia, by its industry department's account of a regional policy, "对基础软硬件实现国产化率90%以上的数据中心，给予企业最高不超过1000万元奖励" [cn-o39-ningxia-reply-2023]. Table 4.
+8. **Local vouchers: 4 of 15 pay more for home-made computing.** Counting one rule in force for each local government whose text is saved in a form the checker reads and which states a share of the bill for rented computing, 4 of 15 pay more for home-made computing (Hangzhou city, Zhejiang province, Wenzhou city, Binjiang district of Hangzhou) and 11 pay one rate whatever the chip. Every rule counted also pays for other computing. These are the rules found, not a census. Beijing's E-Town, a development zone and not the city, dropped its tier: its rule of Nov 26, 2024 repeals its rule of March 2024 and pays 30% for all [cn-le28-etown-29hao-20241126]. Binjiang district of Hangzhou began paying for other computing only in May 2025, by its bureau's account [cn-cnpress-binjiang-rental-reply-20260720]. Tables 6 and 7.
+!! cn-le28-etown-29hao-20241126 | 原政策（京技管发〔2024〕10号）同时废止
+!! cn-cnpress-binjiang-rental-reply-20260720 | 新增补助租用非国产算力，上调国产算力补助比例10个百分点
+
+## Method
+
+- **The 31 rows.** This folder read most of the documents in rounds 1 to 3 (Nov 23, 2026, 05:30 to 07:22 UTC). Later agents of the project read more, and the core's table tables/provinces_31.tsv sorts the 31 governments. In round 4 this note took their saved ids and exact words and checked each quotation again by script. build.py stops if any government's group here differs from that table, or if the counts of eight, 21, one and one change.
+- **Searches and saving.** Round 1's searches are listed in search_log.txt; the later agents' are in their own folders. Pages were saved with the project's fetcher. Internet Archive captures were asked through the machine's one queue and filed in the saved store by the project's session; a capture shows the page as the Archive held it on the capture's date. Three PDFs were saved by hand in the owner's browser after the sites refused this machine or could not be reached from it. No web request was made in round 4.
+- **Damaged text layers.** The hand-saved PDFs of Qinghai's 2024 and 2026 plans and of Hunan's 2025 plan have text layers that drop characters. Nothing is quoted from them. Qinghai's and Hunan's rows quote the Archive captures of the governments' own web pages, and the one check made in a damaged PDF, of Qinghai's table of indicators, which is an image in the capture, is made against a reading of the page images: 3 strings checked in damaged PDFs, each found in the reading of the page images (transcription.txt); a planted false string was not.
+- **How a document was judged to set no share.** For each of the 30 documents in tables 2, 3 and 5, a script listed every place where a home-made word (国产, 自主可控, 安全可控, 安全可靠, 自主化) stands within 60 characters of a percent sign: 11 places in all, in near_percent.txt, each read. None sets a share of home-made hardware. They are Beijing's ability to build, Shanxi's reward, two rates of rack use (Henan, Fujian), a rate for public data (Guangxi), and a rate already reached for chip-making equipment (Hunan). Where a row says a word is not in the page, a script found it 0 times and found a control word in the same page (absent.txt).
+- **What each row rests on.** Every row begins with one of five marks. **Saved official page**: a copy in the project's store of a page on the issuing body's own site or its government's own site. **Saved by hand from an official page**: a PDF of such a page that the owner saved in his browser. **Saved Archive capture**: a copy in the project's store of an Internet Archive capture of an official page. **Saved copy on another site**: the document's text on any other site, such as another government's, a state platform, a news site or a policy site. **A newspaper's account**: a saved page in which a newspaper describes the document; the document's own text is not held. Of the 42 documents in the tables, 15 are saved official pages, 1 saved by hand, 9 saved Archive captures, 13 saved copies on other sites, and 4 newspapers' accounts.
+- **Binding or indicative.** Chinese plans often mark each target 约束性 (binding) or 预期性 (expected, that is, indicative); that this is common practice is my general knowledge, not a saved source. A script counted both words in the 9 pages of table 1. Both stand only in Jiangsu's plan: 预期性 15 times, 约束性 once, on the energy-efficiency row. Neither stands in the other 8 pages, so for those the column says no label and gives the page's own wording where it bears on the point. No label does not mean binding and does not mean not binding: the page does not say. Hunan's and Qinghai's plans, which set no home-made share, each mark one target binding, energy efficiency [cn-o39-hunan-green-compute-plan-2025-wayback] [man-cn-o39-qinghai-compute-15fyp-2026].
+- **Kinds of document.** Whether the document read for a government without a share is a computing plan is taken from the core's table (its column kind_of_document), counted by build.py.
+- **Dates.** Each date is the one the page gives, and the page's own date string was checked by the script. Jiangsu's saved PDF carries no date of issue, so the plan is not dated here.
+- **Vouchers.** The rule for counting is the one the project's figure uses: a local rule in force (not a draft, a plan or an application guide), its official text or a full copy saved, its words found by the checker, stating a share of the bill for rented computing; one row per government, its latest such rule. build.py counts the rows of vouchers.txt and checks that each rate stands in the rule's quoted words.
+
+## Table 1. The eight governments that set a share
+
+| Government | Binding or indicative? | Document, issuing bodies and date; the page's own words | What the row rests on; our English; limits; source |
+| Jiangsu | Marked indicative, not binding: the plan's table of indicators labels the row 预期性 | Plan for computing infrastructure. Four bodies on its first page: the provincial communications administration, the development and reform commission, the industry and information technology department and the data bureau. The saved PDF carries no date of issue. The page says: "新建算力中心国产算力芯片使用占比达 70%以上"; "新建算力中心国产算力芯片使用占比（%） 50 70 预期性" | **Saved official page** (a PDF on the provincial communications administration's site, one of the four issuing bodies). (the plan's text, for 2030: home-made computing chips to make up 70% or more of use in newly built computing centres; the row of the plan's table of indicators, under the columns 2025 and 2030: share of use of home-made computing chips in newly built computing centres, in per cent, 50, 70, indicative). So the target is 50% by 2025 and 70% or more by 2030, and the plan marks it indicative (预期性), not binding. In the whole saved copy the word 约束性 (binding) stands once, on the energy-efficiency row of the same table. [cn-factions-jiangsu-plan] |
+!! cn-factions-jiangsu-plan | 江苏省通信管理局
+!! cn-factions-jiangsu-plan | 到 2030 年
+!! cn-factions-jiangsu-plan | 2025 年 2030 年 属性
+!! cn-factions-jiangsu-plan | 江苏省算力基础设施发展主要指标
+!! cn-factions-jiangsu-plan | 集群内数据中心平均 PUE ≤1.25 ＜1.25 约束性
+| Shanghai | No label. The goals open with the word 力争 (strive to) | Computing Pujiang action plan for intelligent computing, 2024 to 2025, drawn up by the city's communications administration with other departments, as carried by the business daily Yicai on Mar 22, 2024. The page says: "到2025年，本市新建智算中心国产算力芯片使用占比超过50%" | **Saved copy on another site** (the text as carried on a business daily's site, Yicai, under the communications administration's name). (by 2025, home-made computing chips to make up over 50% of use in the city's newly built intelligent-computing centres). [cn-policy-shanghai-domestic-target] |
+!! cn-policy-shanghai-domestic-target | 2024-03-22
+!! cn-policy-shanghai-domestic-target | 上海市通信管理局
+!! cn-policy-shanghai-domestic-target | 力争到2025年，打造智算设施高效协同
+| Shanghai | No label. The sentence says 力争 (strive to) | Opinions on the intelligent-computing cloud industry, 2025 to 2027. Shanghai Commission of Economy and Informatization, Mar 24, 2025. The page says: "智算规模力争达到200EFLOPS，其中自主可控算力占比超70%" | **Saved official page** (the city government's site). (by 2027, strive to reach 200 EFLOPS of intelligent computing, of which independently controllable computing over 70%). [cn-factions-shanghai-cloud-20250324] |
+!! cn-factions-shanghai-cloud-20250324 | 2025年3月24日
+| Sichuan | No label. The sentence says 力争 (strive to); it stands in a task, not in the plan's table of main targets | Action plan for computing infrastructure, 2024 to 2027. The provincial development and reform commission, the economy and informatization department, the communications administration and the energy bureau, Nov 15, 2024; the saved copy gives Nov 22, 2024 as its publication date. The page says: "力争国产化算力设备占比超过50%" | **Saved copy on another site** (a national state platform for investment approvals). (strive to bring the share of home-made computing equipment above 50%). [cn-factions-sichuan50] |
+!! cn-factions-sichuan50 | 四川省发展和改革委员会 四川省经济和信息化厅 四川省通信管理局 四川省能源局 2024年11月15日
+!! cn-factions-sichuan50 | 发布时间：2024-11-22
+!! cn-factions-sichuan50 | 川发改数据〔2024〕569号
+!! cn-factions-sichuan50 | 19.加强算力设施设备自主可控
+!! cn-factions-sichuan50 | 四川省算力基础设施发展主要目标
+| Guangdong | No label. The sentence says 力争 (strive to); it closes the plan's main goals | Yue Suan action plan for computing infrastructure. Guangdong Communications Administration and eight other bodies in the province, Mar 7, 2024; the page gives Mar 22, 2024 as its publication date. The page says: "力争到2025年底，新增国产化算力占比达到70%" | **Saved official page** (the Guangdong Communications Administration's own site). (strive, by the end of 2025, for home-made computing to reach 70% of newly added computing). A plan of nine departments, not of the provincial government: its signers include the provincial Party committee's cyberspace office and the central bank's Guangdong branch. Found by a later search of this project, not by this folder's. Two provincial AI documents this folder read earlier set no share (table 5). [cn-o39b-guangdong-yuesuan-2024] |
+!! cn-o39b-guangdong-yuesuan-2024 | 粤通联〔2024〕3号
+!! cn-o39b-guangdong-yuesuan-2024 | 广东省通信管理局等九部门
+!! cn-o39b-guangdong-yuesuan-2024 | 广东省通信管理局 中共广东省委网络安全和信息化委员会办公室
+!! cn-o39b-guangdong-yuesuan-2024 | 广东省人民政府国有资产监督管理委员会 2024年3月7日
+!! cn-o39b-guangdong-yuesuan-2024 | 发布时间：2024-03-22
+!! cn-o39b-guangdong-yuesuan-2024 | 中国人民银行广东省分行
+| Tianjin | No label. Stated flat among the plan's opening goals | Implementation plan for the computing industry, 2024 to 2026. General Office of the Tianjin Municipal People's Government, written Jul 1, 2024 and issued Jul 18, 2024. The page says: "到 2026 年，全市算力中心国产算力芯片使用占比超过 60％" | **Saved official page** (the city government's site). (by 2026, home-made computing chips to make up over 60% of use in the city's computing centres). It covers the city's computing centres, not only new ones. [cn-o39-tianjin-plan-2024] |
+!! cn-o39-tianjin-plan-2024 | 津政办发〔2024〕18号
+!! cn-o39-tianjin-plan-2024 | 成 文 日 期 ： 2024年07月01日
+!! cn-o39-tianjin-plan-2024 | 发 文 日 期 ： 2024年07月18日
+!! cn-o39-tianjin-plan-2024 | ——自主创新突破。发挥天津科教人才和创新平台优势
+| Hebei | No label. Stated flat among the work goals for 2025 | Opinions on the layout of computing and the AI industry. General Office of the Hebei Provincial People's Government, May 8, 2024; posted on the provincial industry department's site on May 23, 2024. The page says: "新增算力基础软硬件设施自主可控比例60%以上" | **Saved Archive capture** (an Internet Archive capture, taken Jan 18, 2026, of the provincial industry department's page). (by 2025, 60% or more of newly added basic software and hardware for computing to be independently controllable). It counts software and hardware called independently controllable, not chips alone. A copy on the Xiong'an New Area's site has the same sentence [cn-o39-hebei-opinion-2024-xiongan]. [cn-o39-hebei-opinion-2024-wayback] |
+!! cn-o39-hebei-opinion-2024-wayback | 河北省人民政府办公厅2024年5月8日
+!! cn-o39-hebei-opinion-2024-wayback | 冀政办字〔2024〕34号
+!! cn-o39-hebei-opinion-2024-wayback | 发布时间：2024-05-23 来源：河北省人民政府公众号
+!! cn-o39-hebei-opinion-2024-wayback | 一、工作目标到2025年
+!! cn-o39-hebei-opinion-2024-xiongan | 新增算力基础软硬件设施自主可控比例60%以上
+| Inner Mongolia | No label. Stated flat, twice, among the goals for the region's national computing hub | Work plan for the digital economy, 2023 to 2025. General Office of the Inner Mongolia Autonomous Region People's Government, Oct 10, 2023. The page says: "到2025年，智能算力突破8000PFlop/s，国产化算力占比达50%以上" | **Saved Archive capture** (an Internet Archive capture, taken Apr 18, 2025, of a PDF on the region government's own site). (by 2025, intelligent computing above 8,000 PFlop/s and home-made computing 50% or more). A digital-economy plan, not a computing plan. The share stands among the goals for the region's hub of the national computing network. The region's own site answered 403 to this machine. [cn-o39-nmg-plan-pdf-wayback] |
+!! cn-o39-nmg-plan-pdf-wayback | 内政办发〔2023〕1号
+!! cn-o39-nmg-plan-pdf-wayback | 2023年10月10日
+!! cn-o39-nmg-plan-pdf-wayback | （五）加快数字基础设施建设
+!! cn-o39-nmg-plan-pdf-wayback | 加快推动布局合理、规模适度、绿色集约的全国一体化算力网络内蒙古枢纽节点建设
+| Shandong | Cannot tell. The plan's own text is not held; the newspaper's account gives no label | Action plan for a unified computing network, 2022 to 2025, as reported by the provincial daily on the provincial government's site on Aug 1, 2022. The page does not name the issuing body. The page says: "高性能算力占比将达40%，国产化算力将达90%" | **A newspaper's account** (the provincial daily, carried on the provincial government's site). (by 2025, high-performance computing to reach 40% and home-made computing 90%). An older plan, in a provincial daily's words and not the plan's own text. Two later Shandong pages give no share (table 5). [cn-o39-shandong-network-2022] |
+!! cn-o39-shandong-network-2022 | 时间：2022-08-01
+!! cn-o39-shandong-network-2022 | 来源：大众日报
+!! cn-o39-shandong-network-2022 | 《山东一体化算力网络建设行动方案（2022－2025年）》
+
+## Table 2. Plans read that set no share (21 governments)
+
+| Government | Document, issuing bodies and date; the page's own words | What the row rests on; our English; limits; source |
+| Beijing | Implementation plan for computing infrastructure, 2024 to 2027. Beijing Bureau of Economy and Information Technology and Beijing Communications Administration, Apr 24, 2024. The page says: "坚定算力自主可控路线"; "具备100%自主可控智算中心建设能力" | **Saved copy on another site** (a .gov.cn site that credits the bureau's own site). (hold firmly to the route of independently controllable computing; by 2027, have the ability to build intelligent-computing centres that are 100% independently controllable). A computing plan. It sets a route and an ability to build, not a share of use: the 100% says what the city is to be able to build by 2027, not how much of what is used must be home-made. [cn-factions-beijing-plan-20240424] |
+!! cn-factions-beijing-plan-20240424 | 京经信发〔2024〕25号
+!! cn-factions-beijing-plan-20240424 | 2024年4月24日
+| Guizhou | Plan to promote high-quality AI development, 2025 to 2027. General Office of the Guizhou Provincial People's Government, Dec 28, 2024. The page says: "到2027年，全省算力规模达到210Eflops，国产智算能力位居全国前列" | **Saved Archive capture** (an Internet Archive capture, taken Jan 22, 2026, of the provincial government's page). (by 2027, the province's computing to reach 210 Eflops and its home-made intelligent computing to rank among the first in the country). An AI plan. It aims at a rank, not a share. A rate the province reported is in table 4. [cn-o39-guizhou-ai-plan-2025-wayback] |
+!! cn-o39-guizhou-ai-plan-2025-wayback | 黔府办函〔2024〕69号
+!! cn-o39-guizhou-ai-plan-2025-wayback | 贵州省人民政府办公厅2024年12月28日
+| Henan | Plan for computing infrastructure, 2024 to 2026. General Office of the Henan Provincial People's Government, on the provincial planner's site, Nov 14, 2024. The page says: "鼓励智算、超算中心采用昇腾、海光等自主可控技术路线" | **Saved Archive capture** (an Internet Archive capture, taken Sept 15, 2025, of the provincial planner's page). (intelligent computing and supercomputing centres are encouraged to take independently controllable technical routes such as Ascend and Hygon). A computing plan. The site answered 403 to this machine. It names two home-made chip lines and sets no share. [cn-o39-henan-plan-2024-wayback] |
+!! cn-o39-henan-plan-2024-wayback | 河南省人民政府办公厅关于印发河南省算力基础设施发展规划（2024—2026年）的通知
+!! cn-o39-henan-plan-2024-wayback | 时间：2024-11-14
+| Hubei | Measures for computing, networks, storage and their use. General Office of the Hubei Provincial People's Government, Sept 15, 2025. The page says: "推进国产算力能力提升和应用场景普及" | **Saved copy on another site** (the provincial economy and informatization department's site; the issuing body is the provincial government's general office). (raise the ability of home-made computing and spread its uses). A computing document. [cn-o39-hubei-measures-2025] |
+!! cn-o39-hubei-measures-2025 | 鄂政办发〔2025〕30号
+!! cn-o39-hubei-measures-2025 | 2025年9月15日
+| Fujian | Measures for the orderly development of computing infrastructure. The provincial data bureau, industry department and communications administration, Nov 21, 2025. The page says: "推动智算中心提升国产化率" | **Saved copy on another site** (the provincial economic information centre's site, which credits the provincial planner's site). (push intelligent computing centres to raise their rate of home-made equipment). A computing document. The rate is to rise; no number is set. [cn-o39-fujian-measures-2025] |
+!! cn-o39-fujian-measures-2025 | 闽数据规〔2025〕1号
+!! cn-o39-fujian-measures-2025 | 2025年11月21日
+| Liaoning | Action plan for computing, 2024 to 2026, by the provincial communications administration and nine other departments, as reported by the provincial daily on the provincial government's site on Dec 7, 2024. The page says: "绿色低碳和自主可控水平显著提升的先进算力基础设施布局基本形成" | **A newspaper's account** (the provincial daily, carried on the provincial government's site). (a layout of advanced computing infrastructure, with markedly higher levels of green, low-carbon and independently controllable capacity, is formed in the main). A computing plan, in a newspaper's words and not the plan's own text. [cn-o39-liaoning-compute-plan-2024-news] |
+!! cn-o39-liaoning-compute-plan-2024-news | 发布时间：2024年12月07日
+!! cn-o39-liaoning-compute-plan-2024-news | 信息来源：辽宁日报
+!! cn-o39-liaoning-compute-plan-2024-news | 省通信管理局等10个部门联合印发
+| Liaoning | Plan to promote artificial intelligence. General Office of the Liaoning Provincial People's Government, Jun 5, 2025. The page says: "支持打造自主算力集群，鼓励国芯国用，支持建设全栈国产化软硬件平台" | **Saved official page** (the provincial government's site). (support building our own computing clusters, encourage Chinese chips for Chinese use, support fully home-made software and hardware platforms). An AI document, not a computing plan. [cn-o39-liaoning-ai-plan-2025] |
+!! cn-o39-liaoning-ai-plan-2025 | 辽政办发〔2025〕9号
+!! cn-o39-liaoning-ai-plan-2025 | 2025年6月5日
+| Jilin | Opinions on artificial intelligence. Jilin Provincial People's Government, Sept 12, 2025. The page says: "推动智算中心加强国产芯片部署" | **Saved official page** (the provincial government's information-disclosure site). (push intelligent computing centres to deploy more home-made chips). An AI document. [cn-o39-jilin-ai-opinion-2025] |
+!! cn-o39-jilin-ai-opinion-2025 | 吉政发〔2025〕9号
+!! cn-o39-jilin-ai-opinion-2025 | 2025年9月12日
+| Heilongjiang | AI Plus implementation plan. Heilongjiang Provincial People's Government, written Feb 14, 2026. The page says: "无人机生产制造企业使用国产人工智能芯片" | **Saved official page** (the provincial government's site). (drone makers to use home-made AI chips). An AI document. Its only words on home-made chips are about drones, and they encourage. [cn-o39-heilongjiang-ai-plus-2026] |
+!! cn-o39-heilongjiang-ai-plus-2026 | 黑政规〔2026〕1号
+!! cn-o39-heilongjiang-ai-plus-2026 | 成文日期： 2026-02-14
+| Hunan | Plan for the green intelligent-computing industry, 2025 to 2030. Hunan Department of Industry and Information Technology, with the provincial government's agreement, Feb 23, 2025. The page says: "采用国产芯片、持续自主调优，培育适应音视频内容制作需求的视听多模态大模型" | **Saved Archive capture** (an Internet Archive capture, taken Mar 17, 2026, of the provincial industry department's page). (use home-made chips and keep tuning them ourselves, to grow audio-visual multimodal models suited to making audio and video content). A computing-industry plan. Its table of nine main goals marks one binding, energy efficiency, and has none for home-made hardware. The sentence quoted is about models for audio and video. [cn-o39-hunan-green-compute-plan-2025-wayback] |
+!! cn-o39-hunan-green-compute-plan-2025-wayback | 湘工信信软〔2025〕53号
+!! cn-o39-hunan-green-compute-plan-2025-wayback | 2025年2月23日
+!! cn-o39-hunan-green-compute-plan-2025-wayback | 智算中心平均PUE / 1.4 1.35 1.3 约束性
+!! cn-o39-hunan-green-compute-plan-2025-wayback | 智能算力规模 EFlops 3 5.25 12 预期性
+!! cn-o39-hunan-green-compute-plan-2025-wayback | 表1 绿色智能计算产业发展主要目标
+| Hunan | Measures for the green intelligent-computing industry. General Office of the Hunan Provincial People's Government, Feb 18, 2025. No words on home-made hardware are quoted | **Saved copy on another site** (the provincial industry department's site; the issuing body is the provincial government's general office). A computing-industry document. The word 国产 (home-made) is not in the page. [cn-o39-hunan-green-compute-measures-2025] |
+!! cn-o39-hunan-green-compute-measures-2025 | 湘政办发〔2025〕4号
+!! cn-o39-hunan-green-compute-measures-2025 | 2025年2月18日
+| Gansu | AI Plus action plan. Gansu Provincial People's Government, Jan 6, 2026. The page says: "支持国产化算力集群和全栈国产框架平台建设" | **Saved by hand from an official page** (a PDF on a provincial department's site, saved by hand in the owner's browser after the site refused this machine). (support the building of home-made computing clusters and of platforms on fully home-made frameworks). An AI plan. Support, with no number. [man-cn-o39-gansu-ai-plus-2026] |
+!! man-cn-o39-gansu-ai-plus-2026 | 甘政发〔2026〕1号
+!! man-cn-o39-gansu-ai-plus-2026 | 2026年1月6日
+!! man-cn-o39-gansu-ai-plus-2026 | 甘肃省人民政府关于印发深入实施“人工智能＋”行动方案的通知
+| Gansu | Measures for the national computing hub in Gansu. General Office of the Gansu Provincial People's Government, Aug 28, 2022. No words on home-made hardware are quoted | **Saved copy on another site** (a local page of the province's government-service site, which credits the provincial government's site). An older computing document. The words 国产 and 自主可控 are not in the page. [cn-o39-gansu-hub-measures-2022] |
+!! cn-o39-gansu-hub-measures-2022 | 甘政办发〔2022〕103号
+!! cn-o39-gansu-hub-measures-2022 | 2022年8月28日
+| Ningxia | Measures to promote artificial intelligence. General Office of the Ningxia Hui Autonomous Region People's Government, Aug 13, 2023. The page says: "鼓励超算、智算中心采用国产自主可控的软硬件" | **Saved official page** (the regional government's site). (supercomputing and intelligent computing centres are encouraged to use home-made, independently controllable software and hardware). An AI document. The page carries a line saying it was later repealed. [cn-o39-ningxia-ai-measures-2023] |
+!! cn-o39-ningxia-ai-measures-2023 | 宁政办规发〔2023〕8号
+!! cn-o39-ningxia-ai-measures-2023 | 2023年8月13日
+!! cn-o39-ningxia-ai-measures-2023 | 此文件已废止
+| Yunnan | Plan for a digital information corridor and the digital industry. General Office of the Yunnan Provincial People's Government, May 15, 2026. The page says: "促进国产操作系统生态发展" | **Saved copy on another site** (the provincial supply and marketing cooperative's site). (promote the ecosystem of home-made operating systems). A digital-industry plan that covers computing. Its only words on home-made products are about operating systems. [cn-o39-yunnan-digital-channel-2026] |
+!! cn-o39-yunnan-digital-channel-2026 | 云南省人民政府办公厅 2026年5月15日
+| Shanxi | Measures on advanced computing and AI. General Office of the Shanxi Provincial People's Government, Jun 25, 2024; in force from Jul 1, 2024. The page says: "对基础软硬件实现国产化90%以上的新建、改建数据中心，给予最高不超过500万元的一次性奖励" | **Saved copy on another site** (the Jincheng city government's site). (a new or rebuilt data centre whose basic software and hardware are 90% or more home-made gets a one-off reward of up to 5 million yuan). A reward, not a target. It also sets computing vouchers (the vouchers section below). No Shanxi computing plan was read. [cn-o39b-shanxi-measures-2024-jincheng] |
+!! cn-o39b-shanxi-measures-2024-jincheng | 晋政办发〔2024〕35号
+!! cn-o39b-shanxi-measures-2024-jincheng | 山西省人民政府办公厅 2024年6月25日
+!! cn-o39b-shanxi-measures-2024-jincheng | 本措施自2024年7月1日起施行，有效期至2026年12月31日
+| Anhui | Three-year action plan for digital infrastructure, 2023 to 2025. Anhui Data Resources Bureau and five other bodies, Dec 11, 2023. The page says: "支持运用安全可控的软硬件装备，构建大规模安全可控的算力服务" | **Saved copy on another site** (the Shandong provincial big data bureau's site, which carries the Anhui text). (support the use of secure and controllable software and hardware equipment, to build large-scale secure and controllable computing services). A digital-infrastructure plan that covers computing. No number. [cn-o39b-anhui-digital-infra-2023-sd-copy] |
+!! cn-o39b-anhui-digital-infra-2023-sd-copy | 安徽省数字基础设施建设发展三年行动方案
+!! cn-o39b-anhui-digital-infra-2023-sd-copy | 安徽省通信管理局 2023年12月11日
+| Guangxi | Three-year action plan to promote the digital economy, 2024 to 2026. Guangxi Big Data Development Bureau, with the regional government's agreement, Jul 9, 2024. The page says: "算力规模达到5EFLOPS，存力规模达到20EB，智能算力占比达35%" | **Saved Archive capture** (an Internet Archive capture, taken May 18, 2026, of the bureau's page). (computing to reach 5 EFLOPS, storage 20 EB, and intelligent computing 35% of computing). A digital-economy plan. Its 35% is the share of intelligent computing, not of home-made hardware; its home-made words are about office software. [cn-o39-guangxi-digital-plan-2024-wayback] |
+!! cn-o39-guangxi-digital-plan-2024-wayback | 桂数发〔2024〕17号
+!! cn-o39-guangxi-digital-plan-2024-wayback | 2024年7月9日
+!! cn-o39-guangxi-digital-plan-2024-wayback | 适配调试国产办公软件、国产办公管理系统、国产安全管理软件
+| Jiangxi | Three-year action plan for computing services and data in industry, 2026 to 2028. Jiangxi Department of Industry and Information Technology, Apr 30, 2026. No words on home-made hardware are quoted | **Saved Archive capture** (an Internet Archive capture, taken Jun 12, 2026, of the department's page). A computing plan for industry. The words 国产 and 自主可控 are not in the page. [cn-o39-jiangxi-industry-compute-2026-wayback] |
+!! cn-o39-jiangxi-industry-compute-2026-wayback | 江西省工业领域算力服务和数据筑基三年行动方案
+!! cn-o39-jiangxi-industry-compute-2026-wayback | 江西省工业和信息化厅 2026年4月30日
+| Qinghai | Plan for the green computing industry in the 15th five-year period. Qinghai Provincial People's Government, Aug 25, 2026. The page says: "推动算力中心部署自主可控、安全可靠的算力设备，探索建设国产算力生态中试场" | **Saved Archive capture** (an Internet Archive capture, taken Oct 24, 2026, of the provincial government's page). (push computing centres to deploy independently controllable, secure and reliable computing equipment, and explore building a pilot ground for the home-made computing ecosystem). A computing plan. Its table of seven main indicators is an image in the capture. In the PDF the owner saved by hand, read from the page images because its text layer is damaged, the table marks energy efficiency binding and has no indicator for home-made hardware [man-cn-o39-qinghai-compute-15fyp-2026]. [cn-o39-qinghai-compute-15fyp-2026-wayback] |
+!! cn-o39-qinghai-compute-15fyp-2026-wayback | 青政〔2026〕57号
+!! cn-o39-qinghai-compute-15fyp-2026-wayback | 2026年8月25日
+!! man-cn-o39-qinghai-compute-15fyp-2026 | 表1 “十五五”时期绿色算力产业发展主要指标
+!! man-cn-o39-qinghai-compute-15fyp-2026 | 1 算电协同 数据中心平均电能利用效率（PUE） / 1.20 ≤1.18 约束性
+!! man-cn-o39-qinghai-compute-15fyp-2026 | 7 数据要素 特色应用场景数量 个 / 50 预期性
+| Shaanxi | AI Plus action plan, 2025 to 2027. Shaanxi Development and Reform Commission, Nov 14, 2025. The page says: "深度融入全国一体化算力网，充分利用国家超算西安中心、西安雁塔人工智能创新发展中心等既有算力资源，按需建设算力基础设施" | **Saved copy on another site** (a post by an account on the news site Sohu). (join the national computing network fully, make full use of existing computing such as the national supercomputing centre in Xi'an and the Xi'an Yanta AI centre, and build computing infrastructure as needed). An AI plan; no provincial computing plan was found. The copy lacks items 6 and 7 of the plan; the computing item, 16, is whole. The words 国产 and 自主可控 are not in the copy. [cn-le16-shaanxi-ai-plus-2025-sohu] |
+!! cn-le16-shaanxi-ai-plus-2025-sohu | 陕发改高技〔2025〕1665号
+!! cn-le16-shaanxi-ai-plus-2025-sohu | 陕西省发展和改革委员会 2025年11月14日
+| Hainan | AI Plus action plan, 2026 to 2028. General Office of the Hainan Provincial People's Government. Issued in February 2026, by the account of the site that carries it; the saved copy gives no day. The page says: "以基础要素突破为支撑点， 构建自主可控算力底座，建设高质量行业数据集" | **Saved copy on another site** (the policy site smartcity.team). (with breakthroughs in basic factors as the support, build an independently controllable computing base and high-quality industry data sets). An AI plan; no provincial computing plan was found. No number. [cn-le16-hainan-ai-plus-2026-smartcity] |
+!! cn-le16-hainan-ai-plus-2026-smartcity | 琼府办〔2026〕6号
+!! cn-le16-hainan-ai-plus-2026-smartcity | 2026年2月，海南省人民政府办公厅正式印发了
+!! cn-le16-hainan-ai-plus-2026-smartcity | 海南省推动“人工智能+”行动方案（2026—2028年）
+| Chongqing | Implementation plan for a new-type energy and computing hub. General Office of the Chongqing Municipal People's Government, Jun 15, 2026. The page says: "探索建设集自主可控芯片、通信网络、训练框架于一体的万卡级算力集群"; "确保新建数据中心绿电占比超过80%" | **Saved Archive capture** (an Internet Archive capture, taken Jun 24, 2026, of the city government's page). (explore building a 10,000-card computing cluster that joins independently controllable chips, communications networks and training frameworks; make sure green power is over 80% of the power of newly built data centres). A computing plan. Its only share is for green power. The word 国产 is not in the page. [cn-o39-chongqing-hub-plan-2026-wayback] |
+!! cn-o39-chongqing-hub-plan-2026-wayback | 重庆市建设新型能源算力枢纽实施方案
+!! cn-o39-chongqing-hub-plan-2026-wayback | 渝府办发〔2026〕26号
+!! cn-o39-chongqing-hub-plan-2026-wayback | 2026年6月15日
+| Zhejiang | Measures to support AI innovation. Zhejiang Provincial People's Government, Apr 17, 2025; in force from May 31, 2025 to Dec 31, 2027. The page says: "倡导政府部门、算力中心、经营主体采购或应用国产软硬件" | **Saved copy on another site** (the policy site smartcity.team; the province's own page timed out). (government departments, computing centres and businesses are urged to buy or use home-made software and hardware). AI measures, not a computing plan. An appeal, with no share. The same measures set voucher rates (the vouchers section below). [cn-le25-zhejiang-ai-measures-2025-smartcity] |
+!! cn-le25-zhejiang-ai-measures-2025-smartcity | 浙江省人民政府 2025年4月17日
+!! cn-le25-zhejiang-ai-measures-2025-smartcity | 本措施自2025年5月31日起实施，有效期至2027年12月31日
+!! cn-le25-zhejiang-ai-measures-2025-smartcity | 现将《关于支持人工智能创新发展的若干措施》印发给你们
+
+## Table 3. Tibet and Xinjiang
+
+| Government | Document, issuing bodies and date; the page's own words | What the row rests on; our English; limits; source |
+| Tibet | Computing Everest action plan, 2024 to 2026, by the Tibet Communications Administration with six departments, as reported by a trade newspaper, People's Posts and Telecommunications News; the page is dated Jun 27, 2024. The page says: "到2026年,算力规模达到100PFlops,智算算力占比达到60%" | **A newspaper's account** (a trade newspaper, carried on the site of the regional Party committee's cyberspace office). (by 2026, computing to reach 100 PFlops, with intelligent computing 60% of it). The plan's own text is not held. The account gives a share for intelligent computing and none for home-made hardware. [cn-o39b-tibet-compute-plan-2024-wxb] |
+!! cn-o39b-tibet-compute-plan-2024-wxb | 发布时间： 2024年06月27日
+!! cn-o39b-tibet-compute-plan-2024-wxb | 文章来源： 人民邮电报
+!! cn-o39b-tibet-compute-plan-2024-wxb | 西藏通信管理局会同自治区发展和改革委员会、经济和信息化厅等六部门联合印发了
+| Xinjiang | No regional computing plan or AI plan was found. Read in its place: the region's plan for economic and social development for 2024. The page says: "统筹推进电力与算力协同发展，支持面向人工智能模型训练的智算中心和面向视频渲染的融合算力中心建设，培育发展绿色算力产业" | **Saved official page** (the regional government's site). (advance power and computing together, support intelligent-computing centres for training AI models and combined computing centres for video rendering, and grow a green computing industry). Not a computing plan. Another agent of this project read three more regional pages on computing; by its table none sets a share (tables/provinces_31.tsv). [cn-le16-xinjiang-plan-2024-indicators] |
+!! cn-le16-xinjiang-plan-2024-indicators | 2024年国民经济和社会发展计划
+
+## Table 4. Numbers that are not targets
+
+| Government | Document, issuing bodies and date; the page's own words | What the row rests on; our English; limits; source |
+| Guizhou | A reported rate, not a target: an account of a provincial press conference, dated Mar 24, 2026 on the page. The page says: "贵州算力总规模中，智算占比、国产化率、区域集中度均超过90%" | **A newspaper's account** (People's Daily, carried on the Digital China Summit's site). (of Guizhou's total computing capacity, the share of intelligent computing, the rate of home-made equipment and the regional concentration are each above 90%). A rate the province reported, not a target. How the rate is counted is not given. [cn-policy-guizhou-localization-2026] |
+!! cn-policy-guizhou-localization-2026 | 发布时间：2026-03-24
+!! cn-policy-guizhou-localization-2026 | 文章来源：人民日报
+| Ningxia | A reward, not a target. The region's industry department, in a reply to a suggestion from the regional people's congress, cites a regional policy for the Ningxia computing hub. The page gives May 12, 2025 as its publication date. The page says: "对基础软硬件实现国产化率90%以上的数据中心，给予企业最高不超过1000万元奖励" | **Saved official page** (the department's own site). (a data centre whose basic software and hardware are 90% or more home-made earns its company a reward of up to 10 million yuan). [cn-o39-ningxia-reply-2023] |
+!! cn-o39-ningxia-reply-2023 | 《关于促进全国一体化算力网络国家枢纽节点宁夏枢纽建设若干政策的意见》
+!! cn-o39-ningxia-reply-2023 | 自治区工业和信息化厅关于自治区十三届人大一次会议第220号建议答复的函
+!! cn-o39-ningxia-reply-2023 | 发布日期：2025-05-12
+| Jilin | One project's mix, not a target. A project sheet for a computing centre in Songyuan, on the provincial government's investment-promotion pages, Apr 27, 2026. The page says: "含 3600P 英伟达 H100 稀疏算力与 2400P 国产算力" | **Saved official page** (the provincial government's site). (it includes 3,600P of Nvidia H100 computing and 2,400P of home-made computing). By our division, 2,400 of 6,000 is 40%. [cn-o35-jilin-songyuan-project] |
+!! cn-o35-jilin-songyuan-project | 时间：2026-04-27
+!! cn-o35-jilin-songyuan-project | 松原市国信智能智算数据中心项目
+!! cn-o35-jilin-songyuan-project | 依托 6000P 规划算力
+
+## Table 5. Other documents read for governments of table 1 (4 documents)
+
+| Government | Document, issuing bodies and date; the page's own words | What the row rests on; our English; limits; source |
+| Shandong | Action plan for digital infrastructure, 2024 to 2025, on the provincial big data bureau's site, Nov 14, 2023. No words on home-made hardware are quoted | **Saved official page** (the provincial big data bureau's site, among its own documents). A plan that covers computing. The words 国产 (home-made) and 自主可控 (independently controllable) are not in the page. [cn-o39-shandong-digital-infra-2023] |
+!! cn-o39-shandong-digital-infra-2023 | 数字强省办发〔2023〕10号
+!! cn-o39-shandong-digital-infra-2023 | 2023-11-14
+| Shandong | Drafting note for an implementation plan for computing infrastructure, a PDF on the provincial industry department's site. No date in the saved copy; the plan's own text was not found. The page says: "安全可靠的算力基础设施和自主可控的算力产业生态" | **Saved official page** (the provincial industry department's site). (secure and reliable computing infrastructure and an independently controllable computing-industry ecosystem). A note about a computing plan, not the plan. [cn-o39-shandong-compute-draft-note] |
+!! cn-o39-shandong-compute-draft-note | 《山东省算力基础设施高质量发展实施 方案》起草说明
+| Guangdong | Opinions on general artificial intelligence. Guangdong Provincial People's Government, Nov 3, 2023. The page says: "构建完善的自主可控人工智能软硬件生态" | **Saved official page** (the provincial government's site). (build a complete, independently controllable ecosystem of AI software and hardware). An AI document. [cn-o39-guangdong-agi-opinion-2023] |
+!! cn-o39-guangdong-agi-opinion-2023 | 粤府〔2023〕90号
+!! cn-o39-guangdong-agi-opinion-2023 | 2023年11月3日
+| Guangdong | Measures on AI across industries. General Office of the Guangdong Provincial People's Government, May 26, 2024. The page says: "围绕国产主流人工智能开发框架，研发专业算法产品和工具" | **Saved official page** (the provincial government's site). (develop algorithm products and tools around the main home-made AI frameworks). An AI document. [cn-o39-guangdong-ai-measures-2024] |
+!! cn-o39-guangdong-ai-measures-2024 | 粤办函〔2024〕88号
+!! cn-o39-guangdong-ai-measures-2024 | 2024年5月26日
+
+## Local vouchers for rented computing
+
+Cities, districts and provinces pay part of the bill when a firm rents computing. The rule words name the two kinds: 国产 or 自主 (home-made, or independent) against 非国产, 非自主 or 其他 (not home-made, not independent, other). Each rate below is the share of the bill the rule states; most rules state it as a ceiling (不超过, not more than, or 最高, at most). One row per government: its latest rule found that is in force and states a share of the bill.
+
+## Table 6. Pay more for home-made computing (4)
+
+| Local government and the rule's date | Home-made computing | Other computing | The rule's words; what the row rests on; source |
+| Hangzhou city, Jul 18, 2024 | 30% of the bill | 20% of the bill | "使用国产算力设施开展模型训练、推理和应用的企业补贴比例不超过算力合同费用的30%，使用其他算力设施的企业补贴比例不超过算力合同费用的20%". **Saved official page** (the city gazette's PDF). [cn-counter-b4-2] |
+!! cn-counter-b4-2 | 杭政办函〔2024〕40号
+!! cn-counter-b4-2 | 杭州市人民政府办公厅2024年7月18日
+| Zhejiang province, Apr 17, 2025; in force from May 31, 2025 | 30% of the bill | 10% of the bill | "使用自主算力服务的，可 按照不高于合同实际执行金额的30%给予补助"; "采用非自主算力服务的，可按照不高于合同实际执行金额的10%，给予最高800万元补助". **Saved copy on another site** (a policy site's copy; the province's own page timed out). Guidance to places that issue vouchers: the measures support places with the means to issue them. [cn-le25-zhejiang-ai-measures-2025-smartcity] |
+!! cn-le25-zhejiang-ai-measures-2025-smartcity | 支持有条件的地方发放算力券
+!! cn-le25-zhejiang-ai-measures-2025-smartcity | 浙江省人民政府 2025年4月17日
+!! cn-le25-zhejiang-ai-measures-2025-smartcity | 本措施自2025年5月31日起实施
+| Wenzhou city, Aug 29, 2025 | 30% of the bill | 10% of the bill | "对采购自主智能算力服务的企业、高校、科研机构等主体，各区一般按照不高于合同实际执行金额的30%给予补贴"; "采购非自主智能算力服务的，一般按照不高于合同实际执行金额的10%给予补贴". **Saved official page** (a PDF in the Zhejiang government's file store). [cn-le15-zj-oss-web1825-e66330] |
+!! cn-le15-zj-oss-web1825-e66330 | 温州市人民政府办公室2025年8月29日
+| Binjiang district of Hangzhou, Aug 10, 2026 | 60% of the bill | 30% of the bill | "按不超过实际租用算力结算费用的30%（非自主人工智能算力）或60%（自主人工智能算力）". **Saved copy on another site** (a commercial policy site's copy; the district's own page was not reached). By the district bureau's reply of Jul 20, 2026, the district began paying for other computing only with its rule of May 2025: it added support for renting non-home-made computing and raised the home-made rate by 10 points [cn-cnpress-binjiang-rental-reply-20260720]. [cn-le15-binjiang-2026-6-keceyun] |
+!! cn-le15-binjiang-2026-6-keceyun | 杭高新〔2026〕6号
+!! cn-le15-binjiang-2026-6-keceyun | 2026年8月10日
+
+## Table 7. One rate whatever the chip (11)
+
+| Local government and the rule's date | Home-made computing | Other computing | The rule's words; what the row rests on; source |
+| Beijing E-Town (a development zone, not the city), Nov 26, 2024 | 30% of the bill | 30% of the bill | "按照实际使用算力结算费用的30%". **Saved official page** (the zone's own site). This rule repeals the zone's rule of Mar 28, 2024 (京技管发〔2024〕10号), which paid up to 40% for home-made and 30% for other computing [cn-factions-etwon-vouchers]. Apart from the voucher, it pays up to 10% of what a firm spends on servers with home-made AI chips. [cn-le28-etown-29hao-20241126] |
+!! cn-le28-etown-29hao-20241126 | 京技管发〔2024〕29号
+!! cn-le28-etown-29hao-20241126 | 原政策（京技管发〔2024〕10号）同时废止
+!! cn-le28-etown-29hao-20241126 | 实施日期]2024-11-26
+!! cn-le28-etown-29hao-20241126 | 给予购买合同中的实际采购国产智算芯片服务器部分金额最高10%的支持
+!! cn-factions-etwon-vouchers | 每次抵扣费用最高为结算费用的30%（非国产人工智能算力）或40%（国产人工智能算力）
+!! cn-factions-etwon-vouchers | 京技管发〔2024〕10号
+| Longhua district of Shenzhen, Nov 27, 2024 | 30% of the bill | 30% of the bill | "通过发放算力券为企业提供补贴，补贴额度不超过企业采购金额的30%". **Saved official page** (the district's own site). [cn-le28-sz-longhua-2024-20hao] |
+!! cn-le28-sz-longhua-2024-20hao | 深圳市龙华区人民政府办公室2024年11月27日
+| Shanxi province, Jun 25, 2024; in force from Jul 1, 2024 | 20% of the bill | 20% of the bill | "按照算力服务合同金额的20%，给予总额不超过100万元的“算力券”奖励". **Saved copy on another site** (the Jincheng city government's site). 30% for those leading national projects or building large models. [cn-o39b-shanxi-measures-2024-jincheng] |
+!! cn-o39b-shanxi-measures-2024-jincheng | 按照算力服务合同金额的30%，给予总额不超过200万元的“算力券”奖励
+!! cn-o39b-shanxi-measures-2024-jincheng | 山西省人民政府办公厅2024年6月25日
+!! cn-o39b-shanxi-measures-2024-jincheng | 本措施自2024年7月1日起施行
+| Shenzhen city, Dec 18, 2024 | 50% of the bill | 50% of the bill | "对租用智能算力开展大模型训练的企业、高等院校和科研机构，按不超过服务合同金额的50%". **Saved official page** (the city industry bureau's site). 60% for start-ups. [cn-le28-sz-gxj-2024-13hao] |
+!! cn-le28-sz-gxj-2024-13hao | 深工信规〔2024〕13号
+!! cn-le28-sz-gxj-2024-13hao | 本措施自2024年12月18日起施行
+!! cn-le28-sz-gxj-2024-13hao | 对初创企业提高资助比例至60%
+| Wuhan city, Feb 19, 2025 | 50% of the bill | 50% of the bill | "对企业使用算力服务费用给予50％最高20万元补助". **Saved official page** (the city government's site). Up to 200,000 yuan. [cn-le28-wuhan-2025-3hao] |
+!! cn-le28-wuhan-2025-3hao | 武政规〔2025〕3号
+!! cn-le28-wuhan-2025-3hao | 发布日期:2025年02月19日
+| Qingdao city, Mar 5, 2026 | 20% of the bill | 20% of the bill | "按照实际支付算力费用不超过20%的比例，给予企业最高100万元补贴". **Saved copy on another site** (a policy site's copy). [cn-le28-qingdao-2026-9hao-smartcity] |
+!! cn-le28-qingdao-2026-9hao-smartcity | 青工信字〔2026〕9号
+!! cn-le28-qingdao-2026-9hao-smartcity | 青岛市工业和信息化局2026年3月5日
+| Shanghai city, Jul 28, 2025 | 30% of the bill | 30% of the bill | "对租用智能算力的主体，市级给予最高30%租金补贴". **Saved official page** (the city commission's site). Separately, building support of up to 10% only for projects that deploy home-made computing facilities. [cn-le15-sheitc-8cea38] |
+!! cn-le15-sheitc-8cea38 | 上海市经济和信息化委员会2025年7月28日
+!! cn-le15-sheitc-8cea38 | 对自主智能算力设施部署项目，给予最高10%建设支持
+| Qiaokou district of Wuhan, Aug 5, 2025 | 50% of the bill | 50% of the bill | "在市级支持基础上，按算力服务费的50%最高给予20万元资金支持". **Saved official page** (the city government's site). On top of the city's. [cn-le28-wuhan-qiaokou-2025-1hao] |
+!! cn-le28-wuhan-qiaokou-2025-1hao | 硚政规〔2025〕1号
+!! cn-le28-wuhan-qiaokou-2025-1hao | 发布日期:2025年08月05日
+| Hongshan district of Wuhan, Sept 12, 2025 | 20% of the bill | 20% of the bill | "对购买算力服务的中小企业，按照购买算力服务费用给予最高不超过20%的补贴". **Saved official page** (the city government's site). For small and medium firms. [cn-le28-wuhan-hongshan-2025-2hao] |
+!! cn-le28-wuhan-hongshan-2025-2hao | 洪政规〔2025〕2号
+!! cn-le28-wuhan-hongshan-2025-2hao | 发布日期:2025年09月12日
+| Shandong province, May 2025, by the copy's account | 5% of the bill | 5% of the bill | "按规定给予不超过算力交易金额的5%奖补支持，每个企业奖补总额最高500万元". **Saved copy on another site** (a policy site's copy). The month is that of the provincial briefing that presented the measures, by the copy's account. [cn-le28-shandong-ai-measures-2025-smartcity] |
+!! cn-le28-shandong-ai-measures-2025-smartcity | 2025年5月12日，山东省政府新闻办举行省政府政策例行吹风会
+| Hunan province, Oct 2025, by the copy's account | 30% of the bill | 30% of the bill | "对购买算力服务的企业，按不超过年度算力总支出的30%给予补贴，最高不超过1000万元". **Saved copy on another site** (a policy site's copy). [cn-le28-hunan-aiplus-smartcity] |
+!! cn-le28-hunan-aiplus-smartcity | 湘政发〔2025〕7号
+!! cn-le28-hunan-aiplus-smartcity | 2025年10月30日，湖南发布
+
+**Left out of the count, and why.** Rules known only from the press (Chengdu, 50% against 30%); rules held only as Word files the checker cannot read (Beijing city's notes, which pay 20% whatever the chip; Longgang district of Shenzhen); a rule not among the saved pages (Xiamen); drafts; application guides; and rules that give no share of the bill. These are in the core's tables tables/local_vouchers.tsv and tables/local_vouchers_more.tsv.
+
+## What was not found
+
+- **Whether any target was met.** Jiangsu's first step, Shanghai's 50%, and the shares of Guangdong, Hebei, Inner Mongolia and Shandong were set for 2025. No page read says whether they were reached.
+- **The plan's own text, in some cases.** Shandong's 2022 plan and Liaoning's 2024 computing plan are known here from the provincial dailies' accounts on government sites, Tibet's from a trade newspaper's. Shandong's later implementation plan for computing is known only from a drafting note.
+- **A computing plan, for many governments.** For 12 of the 21 in table 2 the document read is not a computing plan, and for Xinjiang no plan was found.
+- **Clauses on enforcement.** The share sentences are goals in plans. This work did not read the plans through for what follows if a goal is missed, and says nothing about it.
+- **A census of vouchers.** The 15 rules counted are those found and saved; cities and districts not searched may have others.
+
+## What a reader may and may not conclude
+
+- **May.** That eight province-level governments have published a share for home-made computing hardware, 4 of them on a saved official page. That the shares run from 50% to 90%, with dates from 2025 to 2030, and count different things. That Jiangsu's plan marks its share indicative, not binding, and that no page read marks a home-made share binding. That 21 governments have a plan read that sets no share, some of them saying instead what they will build or encourage. That two provinces tie money to a home-made rate instead (Shanxi, Ningxia). That of 15 local voucher rules counted, 4 pay more for home-made computing and 11 pay one rate, and that every rule counted pays for other computing too.
+- **May not.** That the other governments have no target: for 12 of them the page read was not a computing plan. That any target was met. That a share without a label is binding, or that it is not. That a target binds a private company's purchases: the pages read set goals for a province's computing centres or capacity. That the shares can be compared, added or averaged. That there is a national target. That local governments in general pay less for other computing: most rules counted pay one rate.
+
+## The files
+
+- provinces.txt: the table as typed, one line per document (made in round 4 by round4/make_rows.py from the round-3 file). provinces.tsv: the same with the address and saved id of every document. vouchers.txt and vouchers.tsv: the voucher rules counted. counts.tsv: governments by group and by kind of document. quotes.tsv: every string taken from a saved page. near_percent.txt and absent.txt: the two checks behind the words no share and not in the page. build.py rebuilds all of it and stops if a string is not found.
+- Check line of this build: 210 quotations checked, 210 found, 0 not found; controls behave. The script also checks that each Archive capture first kept in this output's folder has the same sha256 as its saved copy.

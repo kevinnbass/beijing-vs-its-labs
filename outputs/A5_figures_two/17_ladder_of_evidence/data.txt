@@ -1,0 +1,134 @@
+# Data for the figure "The ladder of evidence" (build.py in this folder reads it; ../common.py explains the format).
+# The counts on the figure do NOT come from this file: build.py counts them from ../../argument/argument_refs.tsv (the
+# argument's sources and their kinds) and ../../argument/argument_base.txt (which point cites which source).
+# This file holds only the examples shown on each rung, with the page's own words. Each must be one of the argument's sources.
+# Extra fields on a record line: rung=1..5  dir=neutral
+
+# ---- rung 1: Chinese state documents and state media ----
+@ ex-xi doc 2016-04-19 - cn-xi-20160419 rung=1 dir=neutral
+T Xi Jinping, speech
+L Xi Jinping, speech at the forum on cybersecurity and informatization.
+S Xi Jinping, speech of Apr 19, 2016, on the Party members' site
+Q 核心技术受制于人是我们最大的隐患
+E dependence on others for core technology is our greatest hidden danger
+D 在网络安全和信息化工作座谈会上的讲话 (2016年4月19日)
+
+@ ex-samr doc 2024-12-09 - cn-policy-samr-open-original rung=1 dir=neutral
+T the market regulator
+L The market regulator opens an antitrust investigation of Nvidia.
+S State Administration for Market Regulation
+Q 市场监管总局依法对英伟达公司开展立案调查
+E the regulator has opened an investigation of Nvidia under the law
+D 发布时间:2024-12-09
+
+@ ex-shanghai doc 2025-04-30 - cn-counter-b11-5 rung=1 dir=neutral
+T a Shanghai government body, on internet companies' clusters
+L Shanghai's Commission of Economy and Informatization, on what internet companies' own computing clusters run on.
+S Shanghai Municipal Commission of Economy and Informatization, written reply
+Q 主要以英伟达高性能卡为主
+E mainly Nvidia high-performance cards
+D 上海市经济和信息化委员会2025年4月30日
+D 发布日期:2025-11-10
+
+@ ex-pd pub 2025-08-01 - cn-acts-peoplesdaily-bjd-20250801 rung=1 dir=neutral
+T People's Daily's commentary account, after the summons
+L A signed piece on People's Daily's commentary account, after the cyberspace regulator summoned Nvidia. It warns; it orders nothing.
+S People's Daily's commentary account, as carried by Beijing Daily's site
+Q 绝不能让“带病”的芯片上岗
+E sick chips must never be allowed on duty
+D 2025-08-01
+N 公司最近被国家网信办约谈
+
+# ---- rung 2: company filings and statements; institutions' own notices ----
+@ ex-alibaba rec 2025-09-10 Sept_2025 cn-clips-alibaba-20f rung=2 dir=neutral
+T Alibaba's annual report
+L Alibaba's annual report to the US securities regulator. The sentence does not name Nvidia.
+S Alibaba, annual report on Form 20-F for the year to Mar 31, 2026
+Q In September 2025, the Cyberspace Administration of China requested Chinese technology companies to halt purchases of certain chips.
+D In September 2025, the Cyberspace Administration of China requested
+
+@ ex-10q rec 2026-08-26 - man-ms-sec-10q-2026-07 rung=2 dir=neutral
+T Nvidia's quarterly report, on its licensed H200 sales
+L Nvidia's quarterly report to the US securities regulator, on the H200 sales the United States had licensed.
+S Nvidia, quarterly report on Form 10-Q for the quarter to Jul 26, 2026
+Q but such sales were restricted by the PRC government
+D Date: August 26, 2026
+
+@ ex-q3call rec 2026-11-17 - cn-o38-nvda-q3fy27-call-transcript-pdf rung=2 dir=neutral
+T Nvidia, on its results call
+L Nvidia on its results call for the quarter ended Oct 25, 2026, in the transcript on its investor site. It gave no reason.
+S Nvidia, results call of Nov 17, 2026 (the transcript on its investor site)
+Q we are no longer shipping licensed Hopper Data Center products to China
+D All our statements are made as of today, November 17, 2026
+
+# ---- rung 3: officials and official records ----
+@ ex-lutnick doc 2026-04-22 - cn-us-lutnick-0422-rev-transcript-b rung=3 dir=neutral
+T the US Commerce Secretary, to a Senate subcommittee
+L The US Commerce Secretary to a Senate subcommittee. He calls it his understanding. The words are from a commercial transcript; the committee's own page for the hearing offers the video and his prepared remarks, and no transcript.
+S Commerce Secretary Howard Lutnick, Senate hearing (Rev's transcript)
+Q Chinese central government has not let them as of yet buy the chips
+Q So that's my understanding of what's happening.
+D cn-o37-senate-hearing-page-b | Date: Wednesday, April 22, 2026
+D cn-us-lutnick-0422-coons-letter | on April 22, 2026
+
+@ ex-ndrc doc 2026-05-22 - cn-policy-ndrc-chip-adaptation-2026 rung=3 dir=neutral
+T the state planner's spokesperson
+L The spokesperson of the state planner (NDRC), at its press conference.
+S National Development and Reform Commission, press conference record
+Q 指导国产大模型加大力度适配国产算力芯片
+E guiding domestic large models to step up adaptation to domestic computing chips
+D 李超 2026/05/22
+
+# ---- rung 4: reports of named people's words or of a state document (a newspaper, a post, a transcript site) ----
+@ ex-bessent rec 2026-11-20 - cn-against2-bessent-orders-20261120 rung=4 dir=neutral
+T the US Treasury Secretary, on CNBC
+L The US Treasury Secretary on CNBC, in CNBC's transcript, which it calls unofficial. He gives it as what "we have seen".
+S Treasury Secretary Scott Bessent on CNBC (CNBC's transcript)
+Q I think what we have seen is a paucity of orders from the Chinese on the H200s as they try to build out their own chip stack
+D Friday, November 20, 2026
+
+@ ex-tencent rec 2026-05-13 - cn-o36-tencent-call-20260513-sa rung=4 dir=neutral
+T Tencent's chief strategy officer, on a results call; he does not say whose policy
+L Tencent's chief strategy officer on a results call, in a stock-data site's transcript whose speaker labels nobody has checked. He does not say whose policy.
+S Tencent, results call of May 13, 2026 (transcript on the stock-data site Stock Analysis)
+Q a combination of policy restrictions on certain, you know, foreign design GPUs being brought into China
+D Earnings Call: Q1 2026 May 13, 2026
+
+# ---- rung 5: press reports citing unnamed people; a research firm's counts; caption tracks or machine transcripts ----
+@ ex-traitor press 2026-07-23 reported_Jul_23,_2026 man-cn-factions-wsj-ding rung=5 dir=neutral
+T the Wall Street Journal, on a vice premier's warning to AI users
+L The Wall Street Journal, from "people familiar with the message", on Vice Premier Ding Xuexiang's warning to China's largest AI users.
+S Wall Street Journal
+Q Anyone who resisted employing domestic chips was a traitor.
+Q according to people familiar with the message
+D July 23, 2026
+
+@ ex-600k press 2026-11-05 reported_Nov_5,_2026 cn-clips-evidence-1 rung=5 dir=neutral
+T Reuters, from two unnamed people
+L Reuters, from two unnamed people, on chips waiting in Hong Kong.
+S Reuters, as carried by CNA (Singapore)
+Q About 600,000 of Nvidia's advanced artificial intelligence chips are stored in Hong Kong awaiting shipment to China
+D cn-clips-reuters-hongkong-yahoo | Nov 5 () - About 600,000 of Nvidia's advanced
+D cn-clips-reuters-hongkong-yahoo | two people familiar with the matter said
+
+@ ex-idc count 2026-04-01 reported_Apr_1,_2026 man-cn-usside-012 rung=5 dir=neutral
+T a research firm's count of Nvidia's 2025 share, through Reuters
+L The research firm IDC's count of Nvidia's share of AI accelerator cards shipped in China in 2025, as reported by Reuters.
+S Reuters, as carried by MarketScreener
+Q holding a 55% share
+D BEIJING, April 1 (Rtrs)
+D PUBLISHED: 2026-04-01
+
+# ---- checked phrases outside the examples ----
+# a title that stands inside one source's label in the list of sources
+! man-e2596eab15f4 | Jensen Huang's years-long effort to get close to China
+# rung 2: Nvidia gave no reason for the stop (its own call says none; Reuters says so in terms)
+! cn-acts-reuters-halt-20261118-relay2 | She did not explain why Nvidia had stopped shipping the processors
+# rung 2: what Nvidia said on its own results calls
+! cn-o38-nvda-q1fy27-call-transcript-pdf | we have yet to generate any revenue, and we are uncertain whether any imports will be allowed into the country
+! cn-o38-nvda-q1fy27-call-transcript-pdf | All our statements are made as of today, May 20, 2026
+! cn-o38-nvda-q3fy27-call-transcript-pdf | Q3 sales of licensed Hopper Data Center products to China was $2.4 billion
+# rung 4: a US official's testimony, as Reuters reports it
+! man-a7d2f1a9f963 | There have been minimal exports of any H200s to China so far
+# rung 2: Alibaba's own chips
+! cn-policy-alibaba-own-gpu | chip design subsidiary T-Head has brought proprietary GPUs into scaled production

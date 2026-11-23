@@ -1,0 +1,530 @@
+# Sums by calendar year of the monthly figures in the named table, by build_l18.py. months_held = how many months of that year the sum covers (2026 is a part year; check it before comparing). Different series measure different things: never add or compare across rows without reading REPORT.md section 3.
+series	measure	unit	year	months_held	sum	table
+Comtrade China M partner World	HS 847150	US dollars	2023	12	4840806262.0	comtrade_monthly.tsv
+Comtrade China M partner World	HS 847150	US dollars	2024	12	11795244007.0	comtrade_monthly.tsv
+Comtrade China M partner World	HS 847180	US dollars	2023	12	11418964092.0	comtrade_monthly.tsv
+Comtrade China M partner World	HS 847180	US dollars	2024	12	22517739237.0	comtrade_monthly.tsv
+Comtrade China M partner World	HS 847330	US dollars	2023	12	15006776053.0	comtrade_monthly.tsv
+Comtrade China M partner World	HS 847330	US dollars	2024	12	22878750943.0	comtrade_monthly.tsv
+Comtrade China M partner World	HS 854231	US dollars	2023	12	176641452270.0	comtrade_monthly.tsv
+Comtrade China M partner World	HS 854231	US dollars	2024	12	192552730799.0	comtrade_monthly.tsv
+Comtrade China M partner Other Asia, nes	HS 847150	US dollars	2023	12	804018677.0	comtrade_monthly.tsv
+Comtrade China M partner Other Asia, nes	HS 847150	US dollars	2024	12	4746851818.0	comtrade_monthly.tsv
+Comtrade China M partner Other Asia, nes	HS 847180	US dollars	2023	12	6817324746.0	comtrade_monthly.tsv
+Comtrade China M partner Other Asia, nes	HS 847180	US dollars	2024	12	15598413450.0	comtrade_monthly.tsv
+Comtrade China M partner Other Asia, nes	HS 847330	US dollars	2023	12	2250546610.0	comtrade_monthly.tsv
+Comtrade China M partner Other Asia, nes	HS 847330	US dollars	2024	12	3103714012.0	comtrade_monthly.tsv
+Comtrade China M partner Other Asia, nes	HS 854231	US dollars	2023	12	76944027640.0	comtrade_monthly.tsv
+Comtrade China M partner Other Asia, nes	HS 854231	US dollars	2024	12	79690893975.0	comtrade_monthly.tsv
+Comtrade China M partner Malaysia	HS 847150	US dollars	2023	12	468886881.0	comtrade_monthly.tsv
+Comtrade China M partner Malaysia	HS 847150	US dollars	2024	12	1934793212.0	comtrade_monthly.tsv
+Comtrade China M partner Malaysia	HS 847180	US dollars	2023	12	456018349.0	comtrade_monthly.tsv
+Comtrade China M partner Malaysia	HS 847180	US dollars	2024	12	249735009.0	comtrade_monthly.tsv
+Comtrade China M partner Malaysia	HS 847330	US dollars	2023	12	820988438.0	comtrade_monthly.tsv
+Comtrade China M partner Malaysia	HS 847330	US dollars	2024	12	580966371.0	comtrade_monthly.tsv
+Comtrade China M partner Malaysia	HS 854231	US dollars	2023	12	15851611146.0	comtrade_monthly.tsv
+Comtrade China M partner Malaysia	HS 854231	US dollars	2024	12	16029378182.0	comtrade_monthly.tsv
+Comtrade China M partner Singapore	HS 847150	US dollars	2023	12	30685672.0	comtrade_monthly.tsv
+Comtrade China M partner Singapore	HS 847150	US dollars	2024	12	450772663.0	comtrade_monthly.tsv
+Comtrade China M partner Singapore	HS 847180	US dollars	2023	12	5561638.0	comtrade_monthly.tsv
+Comtrade China M partner Singapore	HS 847180	US dollars	2024	12	5480567.0	comtrade_monthly.tsv
+Comtrade China M partner Singapore	HS 847330	US dollars	2023	12	62392346.0	comtrade_monthly.tsv
+Comtrade China M partner Singapore	HS 847330	US dollars	2024	12	68692243.0	comtrade_monthly.tsv
+Comtrade China M partner Singapore	HS 854231	US dollars	2023	12	2441495158.0	comtrade_monthly.tsv
+Comtrade China M partner Singapore	HS 854231	US dollars	2024	12	2726880048.0	comtrade_monthly.tsv
+Comtrade China M partner Hong Kong	HS 847150	US dollars	2023	10	827050.0	comtrade_monthly.tsv
+Comtrade China M partner Hong Kong	HS 847150	US dollars	2024	10	285216.0	comtrade_monthly.tsv
+Comtrade China M partner Hong Kong	HS 847180	US dollars	2023	10	1922073.0	comtrade_monthly.tsv
+Comtrade China M partner Hong Kong	HS 847180	US dollars	2024	12	1301312.0	comtrade_monthly.tsv
+Comtrade China M partner Hong Kong	HS 847330	US dollars	2023	12	1414591.0	comtrade_monthly.tsv
+Comtrade China M partner Hong Kong	HS 847330	US dollars	2024	12	1050354.0	comtrade_monthly.tsv
+Comtrade China M partner Hong Kong	HS 854231	US dollars	2023	12	4800838.0	comtrade_monthly.tsv
+Comtrade China M partner Hong Kong	HS 854231	US dollars	2024	12	8437430.0	comtrade_monthly.tsv
+Comtrade China M partner USA	HS 847150	US dollars	2023	12	218779188.0	comtrade_monthly.tsv
+Comtrade China M partner USA	HS 847150	US dollars	2024	12	832865093.0	comtrade_monthly.tsv
+Comtrade China M partner USA	HS 847180	US dollars	2023	12	28929410.0	comtrade_monthly.tsv
+Comtrade China M partner USA	HS 847180	US dollars	2024	12	33755219.0	comtrade_monthly.tsv
+Comtrade China M partner USA	HS 847330	US dollars	2023	12	43734206.0	comtrade_monthly.tsv
+Comtrade China M partner USA	HS 847330	US dollars	2024	12	50482188.0	comtrade_monthly.tsv
+Comtrade China M partner USA	HS 854231	US dollars	2023	12	5392052511.0	comtrade_monthly.tsv
+Comtrade China M partner USA	HS 854231	US dollars	2024	12	8685672380.0	comtrade_monthly.tsv
+Comtrade China M partner Rep. of Korea	HS 847150	US dollars	2023	12	111665752.0	comtrade_monthly.tsv
+Comtrade China M partner Rep. of Korea	HS 847150	US dollars	2024	12	70113572.0	comtrade_monthly.tsv
+Comtrade China M partner Rep. of Korea	HS 847180	US dollars	2023	12	27755563.0	comtrade_monthly.tsv
+Comtrade China M partner Rep. of Korea	HS 847180	US dollars	2024	12	20140155.0	comtrade_monthly.tsv
+Comtrade China M partner Rep. of Korea	HS 847330	US dollars	2023	12	2937904573.0	comtrade_monthly.tsv
+Comtrade China M partner Rep. of Korea	HS 847330	US dollars	2024	12	4806839055.0	comtrade_monthly.tsv
+Comtrade China M partner Rep. of Korea	HS 854231	US dollars	2023	12	18757236936.0	comtrade_monthly.tsv
+Comtrade China M partner Rep. of Korea	HS 854231	US dollars	2024	12	25620973457.0	comtrade_monthly.tsv
+Comtrade Hong Kong M partner World	HS 847150	US dollars	2023	12	3060214196.2	comtrade_monthly.tsv
+Comtrade Hong Kong M partner World	HS 847150	US dollars	2024	12	5867495191.8	comtrade_monthly.tsv
+Comtrade Hong Kong M partner World	HS 847150	US dollars	2025	12	6910370193.6	comtrade_monthly.tsv
+Comtrade Hong Kong M partner World	HS 847150	US dollars	2026	7	3840668018.1	comtrade_monthly.tsv
+Comtrade Hong Kong M partner World	HS 847180	US dollars	2023	12	6021100679.8	comtrade_monthly.tsv
+Comtrade Hong Kong M partner World	HS 847180	US dollars	2024	12	13790416577.7	comtrade_monthly.tsv
+Comtrade Hong Kong M partner World	HS 847180	US dollars	2025	12	16151105028.6	comtrade_monthly.tsv
+Comtrade Hong Kong M partner World	HS 847180	US dollars	2026	7	3328327700.0	comtrade_monthly.tsv
+Comtrade Hong Kong M partner World	HS 847330	US dollars	2023	12	17314946354.0	comtrade_monthly.tsv
+Comtrade Hong Kong M partner World	HS 847330	US dollars	2024	12	21266658160.0	comtrade_monthly.tsv
+Comtrade Hong Kong M partner World	HS 847330	US dollars	2025	12	36219581826.8	comtrade_monthly.tsv
+Comtrade Hong Kong M partner World	HS 847330	US dollars	2026	7	41908376985.1	comtrade_monthly.tsv
+Comtrade Hong Kong M partner World	HS 854231	US dollars	2023	12	88531209435.1	comtrade_monthly.tsv
+Comtrade Hong Kong M partner World	HS 854231	US dollars	2024	12	93917445383.8	comtrade_monthly.tsv
+Comtrade Hong Kong M partner World	HS 854231	US dollars	2025	12	120827659883.7	comtrade_monthly.tsv
+Comtrade Hong Kong M partner World	HS 854231	US dollars	2026	7	71477357492.4	comtrade_monthly.tsv
+Comtrade Hong Kong M partner Other Asia, nes	HS 847150	US dollars	2023	12	419708017.0	comtrade_monthly.tsv
+Comtrade Hong Kong M partner Other Asia, nes	HS 847150	US dollars	2024	12	1612585594.5	comtrade_monthly.tsv
+Comtrade Hong Kong M partner Other Asia, nes	HS 847150	US dollars	2025	12	767607960.6	comtrade_monthly.tsv
+Comtrade Hong Kong M partner Other Asia, nes	HS 847150	US dollars	2026	7	253982718.1	comtrade_monthly.tsv
+Comtrade Hong Kong M partner Other Asia, nes	HS 847180	US dollars	2023	12	1765547183.2	comtrade_monthly.tsv
+Comtrade Hong Kong M partner Other Asia, nes	HS 847180	US dollars	2024	12	8561195251.4	comtrade_monthly.tsv
+Comtrade Hong Kong M partner Other Asia, nes	HS 847180	US dollars	2025	12	7292053626.2	comtrade_monthly.tsv
+Comtrade Hong Kong M partner Other Asia, nes	HS 847180	US dollars	2026	7	268801201.2	comtrade_monthly.tsv
+Comtrade Hong Kong M partner Other Asia, nes	HS 847330	US dollars	2023	12	1317130313.7	comtrade_monthly.tsv
+Comtrade Hong Kong M partner Other Asia, nes	HS 847330	US dollars	2024	12	1652488936.9	comtrade_monthly.tsv
+Comtrade Hong Kong M partner Other Asia, nes	HS 847330	US dollars	2025	12	3328302812.6	comtrade_monthly.tsv
+Comtrade Hong Kong M partner Other Asia, nes	HS 847330	US dollars	2026	7	1891364879.6	comtrade_monthly.tsv
+Comtrade Hong Kong M partner Other Asia, nes	HS 854231	US dollars	2023	12	32290308929.2	comtrade_monthly.tsv
+Comtrade Hong Kong M partner Other Asia, nes	HS 854231	US dollars	2024	12	27130178768.9	comtrade_monthly.tsv
+Comtrade Hong Kong M partner Other Asia, nes	HS 854231	US dollars	2025	12	35348588780.7	comtrade_monthly.tsv
+Comtrade Hong Kong M partner Other Asia, nes	HS 854231	US dollars	2026	7	20873729095.9	comtrade_monthly.tsv
+Comtrade Hong Kong M partner Malaysia	HS 847150	US dollars	2023	12	80798400.9	comtrade_monthly.tsv
+Comtrade Hong Kong M partner Malaysia	HS 847150	US dollars	2024	12	382507996.1	comtrade_monthly.tsv
+Comtrade Hong Kong M partner Malaysia	HS 847150	US dollars	2025	12	833334083.6	comtrade_monthly.tsv
+Comtrade Hong Kong M partner Malaysia	HS 847150	US dollars	2026	7	251831993.4	comtrade_monthly.tsv
+Comtrade Hong Kong M partner Malaysia	HS 847180	US dollars	2023	12	506817535.0	comtrade_monthly.tsv
+Comtrade Hong Kong M partner Malaysia	HS 847180	US dollars	2024	12	518347877.3	comtrade_monthly.tsv
+Comtrade Hong Kong M partner Malaysia	HS 847180	US dollars	2025	12	328724394.3	comtrade_monthly.tsv
+Comtrade Hong Kong M partner Malaysia	HS 847180	US dollars	2026	7	261736110.4	comtrade_monthly.tsv
+Comtrade Hong Kong M partner Malaysia	HS 847330	US dollars	2023	12	1120376643.1	comtrade_monthly.tsv
+Comtrade Hong Kong M partner Malaysia	HS 847330	US dollars	2024	12	775605564.9	comtrade_monthly.tsv
+Comtrade Hong Kong M partner Malaysia	HS 847330	US dollars	2025	12	1193250488.6	comtrade_monthly.tsv
+Comtrade Hong Kong M partner Malaysia	HS 847330	US dollars	2026	7	1683096702.2	comtrade_monthly.tsv
+Comtrade Hong Kong M partner Malaysia	HS 854231	US dollars	2023	12	6846523458.8	comtrade_monthly.tsv
+Comtrade Hong Kong M partner Malaysia	HS 854231	US dollars	2024	12	7650806759.9	comtrade_monthly.tsv
+Comtrade Hong Kong M partner Malaysia	HS 854231	US dollars	2025	12	10555582638.4	comtrade_monthly.tsv
+Comtrade Hong Kong M partner Malaysia	HS 854231	US dollars	2026	7	8271241369.2	comtrade_monthly.tsv
+Comtrade Hong Kong M partner Singapore	HS 847150	US dollars	2023	12	228895494.1	comtrade_monthly.tsv
+Comtrade Hong Kong M partner Singapore	HS 847150	US dollars	2024	12	784896436.4	comtrade_monthly.tsv
+Comtrade Hong Kong M partner Singapore	HS 847150	US dollars	2025	12	347595312.6	comtrade_monthly.tsv
+Comtrade Hong Kong M partner Singapore	HS 847150	US dollars	2026	7	341088993.6	comtrade_monthly.tsv
+Comtrade Hong Kong M partner Singapore	HS 847180	US dollars	2023	12	57611595.6	comtrade_monthly.tsv
+Comtrade Hong Kong M partner Singapore	HS 847180	US dollars	2024	12	179595651.3	comtrade_monthly.tsv
+Comtrade Hong Kong M partner Singapore	HS 847180	US dollars	2025	12	155884971.7	comtrade_monthly.tsv
+Comtrade Hong Kong M partner Singapore	HS 847180	US dollars	2026	7	157330619.1	comtrade_monthly.tsv
+Comtrade Hong Kong M partner Singapore	HS 847330	US dollars	2023	12	922468583.3	comtrade_monthly.tsv
+Comtrade Hong Kong M partner Singapore	HS 847330	US dollars	2024	12	872535705.4	comtrade_monthly.tsv
+Comtrade Hong Kong M partner Singapore	HS 847330	US dollars	2025	12	758902797.5	comtrade_monthly.tsv
+Comtrade Hong Kong M partner Singapore	HS 847330	US dollars	2026	7	589666157.9	comtrade_monthly.tsv
+Comtrade Hong Kong M partner Singapore	HS 854231	US dollars	2023	12	12577714281.9	comtrade_monthly.tsv
+Comtrade Hong Kong M partner Singapore	HS 854231	US dollars	2024	12	15224007873.7	comtrade_monthly.tsv
+Comtrade Hong Kong M partner Singapore	HS 854231	US dollars	2025	12	21288345888.9	comtrade_monthly.tsv
+Comtrade Hong Kong M partner Singapore	HS 854231	US dollars	2026	7	12491193620.9	comtrade_monthly.tsv
+Comtrade Hong Kong M partner USA	HS 847150	US dollars	2023	12	131561554.6	comtrade_monthly.tsv
+Comtrade Hong Kong M partner USA	HS 847150	US dollars	2024	12	95728156.7	comtrade_monthly.tsv
+Comtrade Hong Kong M partner USA	HS 847150	US dollars	2025	12	186744796.6	comtrade_monthly.tsv
+Comtrade Hong Kong M partner USA	HS 847150	US dollars	2026	7	143104910.4	comtrade_monthly.tsv
+Comtrade Hong Kong M partner USA	HS 847180	US dollars	2023	12	203960311.0	comtrade_monthly.tsv
+Comtrade Hong Kong M partner USA	HS 847180	US dollars	2024	12	237686518.0	comtrade_monthly.tsv
+Comtrade Hong Kong M partner USA	HS 847180	US dollars	2025	12	127332037.9	comtrade_monthly.tsv
+Comtrade Hong Kong M partner USA	HS 847180	US dollars	2026	7	59270113.5	comtrade_monthly.tsv
+Comtrade Hong Kong M partner USA	HS 847330	US dollars	2023	12	527661266.6	comtrade_monthly.tsv
+Comtrade Hong Kong M partner USA	HS 847330	US dollars	2024	12	814925123.8	comtrade_monthly.tsv
+Comtrade Hong Kong M partner USA	HS 847330	US dollars	2025	12	854759342.8	comtrade_monthly.tsv
+Comtrade Hong Kong M partner USA	HS 847330	US dollars	2026	7	905969954.1	comtrade_monthly.tsv
+Comtrade Hong Kong M partner USA	HS 854231	US dollars	2023	12	794028951.5	comtrade_monthly.tsv
+Comtrade Hong Kong M partner USA	HS 854231	US dollars	2024	12	862526407.1	comtrade_monthly.tsv
+Comtrade Hong Kong M partner USA	HS 854231	US dollars	2025	12	586797266.5	comtrade_monthly.tsv
+Comtrade Hong Kong M partner USA	HS 854231	US dollars	2026	7	297499225.2	comtrade_monthly.tsv
+Comtrade Hong Kong M partner China (mainland)	HS 847150	US dollars	2023	12	1978431282.6	comtrade_monthly.tsv
+Comtrade Hong Kong M partner China (mainland)	HS 847150	US dollars	2024	12	2763424240.9	comtrade_monthly.tsv
+Comtrade Hong Kong M partner China (mainland)	HS 847150	US dollars	2025	12	3245254712.7	comtrade_monthly.tsv
+Comtrade Hong Kong M partner China (mainland)	HS 847150	US dollars	2026	7	2094002300.8	comtrade_monthly.tsv
+Comtrade Hong Kong M partner China (mainland)	HS 847180	US dollars	2023	12	3317793520.1	comtrade_monthly.tsv
+Comtrade Hong Kong M partner China (mainland)	HS 847180	US dollars	2024	12	3643233349.6	comtrade_monthly.tsv
+Comtrade Hong Kong M partner China (mainland)	HS 847180	US dollars	2025	12	5959570078.2	comtrade_monthly.tsv
+Comtrade Hong Kong M partner China (mainland)	HS 847180	US dollars	2026	7	1892123133.9	comtrade_monthly.tsv
+Comtrade Hong Kong M partner China (mainland)	HS 847330	US dollars	2023	12	9318455921.4	comtrade_monthly.tsv
+Comtrade Hong Kong M partner China (mainland)	HS 847330	US dollars	2024	12	10984023539.4	comtrade_monthly.tsv
+Comtrade Hong Kong M partner China (mainland)	HS 847330	US dollars	2025	12	19555745408.9	comtrade_monthly.tsv
+Comtrade Hong Kong M partner China (mainland)	HS 847330	US dollars	2026	7	22970048844.2	comtrade_monthly.tsv
+Comtrade Hong Kong M partner China (mainland)	HS 854231	US dollars	2023	12	20556051506.4	comtrade_monthly.tsv
+Comtrade Hong Kong M partner China (mainland)	HS 854231	US dollars	2024	12	26827525799.1	comtrade_monthly.tsv
+Comtrade Hong Kong M partner China (mainland)	HS 854231	US dollars	2025	12	33501936043.0	comtrade_monthly.tsv
+Comtrade Hong Kong M partner China (mainland)	HS 854231	US dollars	2026	7	20944579359.5	comtrade_monthly.tsv
+Comtrade Hong Kong X partner World	HS 847150	US dollars	2023	12	3253346283.4	comtrade_monthly.tsv
+Comtrade Hong Kong X partner World	HS 847150	US dollars	2024	12	6274169974.5	comtrade_monthly.tsv
+Comtrade Hong Kong X partner World	HS 847150	US dollars	2025	12	8095444835.4	comtrade_monthly.tsv
+Comtrade Hong Kong X partner World	HS 847150	US dollars	2026	7	5745006729.5	comtrade_monthly.tsv
+Comtrade Hong Kong X partner World	HS 847180	US dollars	2023	12	12542723426.5	comtrade_monthly.tsv
+Comtrade Hong Kong X partner World	HS 847180	US dollars	2024	12	19280768095.1	comtrade_monthly.tsv
+Comtrade Hong Kong X partner World	HS 847180	US dollars	2025	12	19505030756.8	comtrade_monthly.tsv
+Comtrade Hong Kong X partner World	HS 847180	US dollars	2026	7	8364726572.8	comtrade_monthly.tsv
+Comtrade Hong Kong X partner World	HS 847330	US dollars	2023	12	21392939805.4	comtrade_monthly.tsv
+Comtrade Hong Kong X partner World	HS 847330	US dollars	2024	12	27796482275.4	comtrade_monthly.tsv
+Comtrade Hong Kong X partner World	HS 847330	US dollars	2025	12	44004374612.3	comtrade_monthly.tsv
+Comtrade Hong Kong X partner World	HS 847330	US dollars	2026	7	51771071460.7	comtrade_monthly.tsv
+Comtrade Hong Kong X partner World	HS 854231	US dollars	2023	12	76915127118.7	comtrade_monthly.tsv
+Comtrade Hong Kong X partner World	HS 854231	US dollars	2024	12	89397513824.1	comtrade_monthly.tsv
+Comtrade Hong Kong X partner World	HS 854231	US dollars	2025	12	109156246869.0	comtrade_monthly.tsv
+Comtrade Hong Kong X partner World	HS 854231	US dollars	2026	7	65524011412.1	comtrade_monthly.tsv
+Comtrade Hong Kong X partner China (mainland)	HS 847150	US dollars	2023	12	713159641.9	comtrade_monthly.tsv
+Comtrade Hong Kong X partner China (mainland)	HS 847150	US dollars	2024	12	4205132245.0	comtrade_monthly.tsv
+Comtrade Hong Kong X partner China (mainland)	HS 847150	US dollars	2025	12	5673914219.0	comtrade_monthly.tsv
+Comtrade Hong Kong X partner China (mainland)	HS 847150	US dollars	2026	7	4192020675.7	comtrade_monthly.tsv
+Comtrade Hong Kong X partner China (mainland)	HS 847180	US dollars	2023	12	7149588652.5	comtrade_monthly.tsv
+Comtrade Hong Kong X partner China (mainland)	HS 847180	US dollars	2024	12	11482965854.0	comtrade_monthly.tsv
+Comtrade Hong Kong X partner China (mainland)	HS 847180	US dollars	2025	12	15091580462.7	comtrade_monthly.tsv
+Comtrade Hong Kong X partner China (mainland)	HS 847180	US dollars	2026	7	7022586784.6	comtrade_monthly.tsv
+Comtrade Hong Kong X partner China (mainland)	HS 847330	US dollars	2023	12	13490705224.5	comtrade_monthly.tsv
+Comtrade Hong Kong X partner China (mainland)	HS 847330	US dollars	2024	12	20096689814.1	comtrade_monthly.tsv
+Comtrade Hong Kong X partner China (mainland)	HS 847330	US dollars	2025	12	29396486183.3	comtrade_monthly.tsv
+Comtrade Hong Kong X partner China (mainland)	HS 847330	US dollars	2026	7	36895759036.4	comtrade_monthly.tsv
+Comtrade Hong Kong X partner China (mainland)	HS 854231	US dollars	2023	12	62786534767.7	comtrade_monthly.tsv
+Comtrade Hong Kong X partner China (mainland)	HS 854231	US dollars	2024	12	74102150185.1	comtrade_monthly.tsv
+Comtrade Hong Kong X partner China (mainland)	HS 854231	US dollars	2025	12	88889814068.8	comtrade_monthly.tsv
+Comtrade Hong Kong X partner China (mainland)	HS 854231	US dollars	2026	7	52369566641.0	comtrade_monthly.tsv
+Comtrade Malaysia X partner World	HS 847150	US dollars	2023	12	3014066710.0	comtrade_monthly.tsv
+Comtrade Malaysia X partner World	HS 847150	US dollars	2024	12	5633609298.3	comtrade_monthly.tsv
+Comtrade Malaysia X partner World	HS 847150	US dollars	2025	12	11094865411.2	comtrade_monthly.tsv
+Comtrade Malaysia X partner World	HS 847150	US dollars	2026	9	7737383638.9	comtrade_monthly.tsv
+Comtrade Malaysia X partner World	HS 847180	US dollars	2023	12	2152955807.7	comtrade_monthly.tsv
+Comtrade Malaysia X partner World	HS 847180	US dollars	2024	12	3318331661.9	comtrade_monthly.tsv
+Comtrade Malaysia X partner World	HS 847180	US dollars	2025	12	2776625316.1	comtrade_monthly.tsv
+Comtrade Malaysia X partner World	HS 847180	US dollars	2026	9	2242842845.9	comtrade_monthly.tsv
+Comtrade Malaysia X partner World	HS 847330	US dollars	2023	12	2004302689.2	comtrade_monthly.tsv
+Comtrade Malaysia X partner World	HS 847330	US dollars	2024	12	2316157138.5	comtrade_monthly.tsv
+Comtrade Malaysia X partner World	HS 847330	US dollars	2025	12	4719840983.9	comtrade_monthly.tsv
+Comtrade Malaysia X partner World	HS 847330	US dollars	2026	9	5376773372.4	comtrade_monthly.tsv
+Comtrade Malaysia X partner World	HS 854231	US dollars	2023	12	36848899647.1	comtrade_monthly.tsv
+Comtrade Malaysia X partner World	HS 854231	US dollars	2024	12	39841367336.0	comtrade_monthly.tsv
+Comtrade Malaysia X partner World	HS 854231	US dollars	2025	12	58488293368.0	comtrade_monthly.tsv
+Comtrade Malaysia X partner World	HS 854231	US dollars	2026	9	74386594119.2	comtrade_monthly.tsv
+Comtrade Malaysia X partner China (mainland)	HS 847150	US dollars	2023	12	38464241.4	comtrade_monthly.tsv
+Comtrade Malaysia X partner China (mainland)	HS 847150	US dollars	2024	12	187860370.8	comtrade_monthly.tsv
+Comtrade Malaysia X partner China (mainland)	HS 847150	US dollars	2025	12	514570840.9	comtrade_monthly.tsv
+Comtrade Malaysia X partner China (mainland)	HS 847150	US dollars	2026	9	164039111.5	comtrade_monthly.tsv
+Comtrade Malaysia X partner China (mainland)	HS 847180	US dollars	2023	12	312219815.8	comtrade_monthly.tsv
+Comtrade Malaysia X partner China (mainland)	HS 847180	US dollars	2024	12	193277645.9	comtrade_monthly.tsv
+Comtrade Malaysia X partner China (mainland)	HS 847180	US dollars	2025	12	256570495.2	comtrade_monthly.tsv
+Comtrade Malaysia X partner China (mainland)	HS 847180	US dollars	2026	9	315966988.8	comtrade_monthly.tsv
+Comtrade Malaysia X partner China (mainland)	HS 847330	US dollars	2023	12	189321085.6	comtrade_monthly.tsv
+Comtrade Malaysia X partner China (mainland)	HS 847330	US dollars	2024	12	259734993.8	comtrade_monthly.tsv
+Comtrade Malaysia X partner China (mainland)	HS 847330	US dollars	2025	12	476596998.3	comtrade_monthly.tsv
+Comtrade Malaysia X partner China (mainland)	HS 847330	US dollars	2026	9	253608688.4	comtrade_monthly.tsv
+Comtrade Malaysia X partner China (mainland)	HS 854231	US dollars	2023	12	7578263550.6	comtrade_monthly.tsv
+Comtrade Malaysia X partner China (mainland)	HS 854231	US dollars	2024	12	7548835470.1	comtrade_monthly.tsv
+Comtrade Malaysia X partner China (mainland)	HS 854231	US dollars	2025	12	9319080094.8	comtrade_monthly.tsv
+Comtrade Malaysia X partner China (mainland)	HS 854231	US dollars	2026	9	10192272314.0	comtrade_monthly.tsv
+Comtrade Malaysia X partner Hong Kong	HS 847150	US dollars	2023	12	200099207.6	comtrade_monthly.tsv
+Comtrade Malaysia X partner Hong Kong	HS 847150	US dollars	2024	12	178366437.4	comtrade_monthly.tsv
+Comtrade Malaysia X partner Hong Kong	HS 847150	US dollars	2025	12	126827541.5	comtrade_monthly.tsv
+Comtrade Malaysia X partner Hong Kong	HS 847150	US dollars	2026	9	250588279.7	comtrade_monthly.tsv
+Comtrade Malaysia X partner Hong Kong	HS 847180	US dollars	2023	12	625460345.6	comtrade_monthly.tsv
+Comtrade Malaysia X partner Hong Kong	HS 847180	US dollars	2024	12	620902477.8	comtrade_monthly.tsv
+Comtrade Malaysia X partner Hong Kong	HS 847180	US dollars	2025	12	296841517.4	comtrade_monthly.tsv
+Comtrade Malaysia X partner Hong Kong	HS 847180	US dollars	2026	9	274971074.5	comtrade_monthly.tsv
+Comtrade Malaysia X partner Hong Kong	HS 847330	US dollars	2023	12	181127215.6	comtrade_monthly.tsv
+Comtrade Malaysia X partner Hong Kong	HS 847330	US dollars	2024	12	140159471.7	comtrade_monthly.tsv
+Comtrade Malaysia X partner Hong Kong	HS 847330	US dollars	2025	12	130343858.0	comtrade_monthly.tsv
+Comtrade Malaysia X partner Hong Kong	HS 847330	US dollars	2026	9	160023606.5	comtrade_monthly.tsv
+Comtrade Malaysia X partner Hong Kong	HS 854231	US dollars	2023	12	5708812261.4	comtrade_monthly.tsv
+Comtrade Malaysia X partner Hong Kong	HS 854231	US dollars	2024	12	5742826979.5	comtrade_monthly.tsv
+Comtrade Malaysia X partner Hong Kong	HS 854231	US dollars	2025	12	9332041957.4	comtrade_monthly.tsv
+Comtrade Malaysia X partner Hong Kong	HS 854231	US dollars	2026	9	12680328151.9	comtrade_monthly.tsv
+Comtrade Singapore X partner World	HS 847150	US dollars	2023	12	2570085654.0	comtrade_monthly.tsv
+Comtrade Singapore X partner World	HS 847150	US dollars	2024	12	6798059900.8	comtrade_monthly.tsv
+Comtrade Singapore X partner World	HS 847150	US dollars	2025	12	23504127610.2	comtrade_monthly.tsv
+Comtrade Singapore X partner World	HS 847150	US dollars	2026	3	15346022011.4	comtrade_monthly.tsv
+Comtrade Singapore X partner World	HS 847180	US dollars	2023	12	1569403722.2	comtrade_monthly.tsv
+Comtrade Singapore X partner World	HS 847180	US dollars	2024	12	3513969763.3	comtrade_monthly.tsv
+Comtrade Singapore X partner World	HS 847180	US dollars	2025	12	8095264079.9	comtrade_monthly.tsv
+Comtrade Singapore X partner World	HS 847180	US dollars	2026	3	3683620831.8	comtrade_monthly.tsv
+Comtrade Singapore X partner World	HS 847330	US dollars	2023	12	2812729080.3	comtrade_monthly.tsv
+Comtrade Singapore X partner World	HS 847330	US dollars	2024	12	4241083124.1	comtrade_monthly.tsv
+Comtrade Singapore X partner World	HS 847330	US dollars	2025	12	11904192710.6	comtrade_monthly.tsv
+Comtrade Singapore X partner World	HS 847330	US dollars	2026	3	4186722857.9	comtrade_monthly.tsv
+Comtrade Singapore X partner World	HS 854231	US dollars	2023	12	45006998046.1	comtrade_monthly.tsv
+Comtrade Singapore X partner World	HS 854231	US dollars	2024	12	58008592835.5	comtrade_monthly.tsv
+Comtrade Singapore X partner World	HS 854231	US dollars	2025	12	76980184182.3	comtrade_monthly.tsv
+Comtrade Singapore X partner World	HS 854231	US dollars	2026	3	26199504764.6	comtrade_monthly.tsv
+Comtrade Singapore X partner China (mainland)	HS 847150	US dollars	2023	12	101121185.0	comtrade_monthly.tsv
+Comtrade Singapore X partner China (mainland)	HS 847150	US dollars	2024	12	835829628.3	comtrade_monthly.tsv
+Comtrade Singapore X partner China (mainland)	HS 847150	US dollars	2025	12	264878768.0	comtrade_monthly.tsv
+Comtrade Singapore X partner China (mainland)	HS 847150	US dollars	2026	3	59688775.6	comtrade_monthly.tsv
+Comtrade Singapore X partner China (mainland)	HS 847180	US dollars	2023	12	46756068.9	comtrade_monthly.tsv
+Comtrade Singapore X partner China (mainland)	HS 847180	US dollars	2024	12	60829698.4	comtrade_monthly.tsv
+Comtrade Singapore X partner China (mainland)	HS 847180	US dollars	2025	12	51105888.5	comtrade_monthly.tsv
+Comtrade Singapore X partner China (mainland)	HS 847180	US dollars	2026	3	13117991.6	comtrade_monthly.tsv
+Comtrade Singapore X partner China (mainland)	HS 847330	US dollars	2023	12	274198465.6	comtrade_monthly.tsv
+Comtrade Singapore X partner China (mainland)	HS 847330	US dollars	2024	12	320626108.8	comtrade_monthly.tsv
+Comtrade Singapore X partner China (mainland)	HS 847330	US dollars	2025	12	221010396.3	comtrade_monthly.tsv
+Comtrade Singapore X partner China (mainland)	HS 847330	US dollars	2026	3	65220217.2	comtrade_monthly.tsv
+Comtrade Singapore X partner China (mainland)	HS 854231	US dollars	2023	12	9308864557.3	comtrade_monthly.tsv
+Comtrade Singapore X partner China (mainland)	HS 854231	US dollars	2024	12	12510317966.6	comtrade_monthly.tsv
+Comtrade Singapore X partner China (mainland)	HS 854231	US dollars	2025	12	10426042247.9	comtrade_monthly.tsv
+Comtrade Singapore X partner China (mainland)	HS 854231	US dollars	2026	3	2543484710.4	comtrade_monthly.tsv
+Comtrade Singapore X partner Hong Kong	HS 847150	US dollars	2023	12	154545616.8	comtrade_monthly.tsv
+Comtrade Singapore X partner Hong Kong	HS 847150	US dollars	2024	12	395779521.3	comtrade_monthly.tsv
+Comtrade Singapore X partner Hong Kong	HS 847150	US dollars	2025	12	261356177.7	comtrade_monthly.tsv
+Comtrade Singapore X partner Hong Kong	HS 847150	US dollars	2026	3	108309971.6	comtrade_monthly.tsv
+Comtrade Singapore X partner Hong Kong	HS 847180	US dollars	2023	12	167090842.1	comtrade_monthly.tsv
+Comtrade Singapore X partner Hong Kong	HS 847180	US dollars	2024	12	180107426.6	comtrade_monthly.tsv
+Comtrade Singapore X partner Hong Kong	HS 847180	US dollars	2025	12	153065922.3	comtrade_monthly.tsv
+Comtrade Singapore X partner Hong Kong	HS 847180	US dollars	2026	3	24963661.2	comtrade_monthly.tsv
+Comtrade Singapore X partner Hong Kong	HS 847330	US dollars	2023	12	356836904.7	comtrade_monthly.tsv
+Comtrade Singapore X partner Hong Kong	HS 847330	US dollars	2024	12	517708848.6	comtrade_monthly.tsv
+Comtrade Singapore X partner Hong Kong	HS 847330	US dollars	2025	12	691309288.1	comtrade_monthly.tsv
+Comtrade Singapore X partner Hong Kong	HS 847330	US dollars	2026	3	235669319.0	comtrade_monthly.tsv
+Comtrade Singapore X partner Hong Kong	HS 854231	US dollars	2023	12	15292180732.2	comtrade_monthly.tsv
+Comtrade Singapore X partner Hong Kong	HS 854231	US dollars	2024	12	17578123901.1	comtrade_monthly.tsv
+Comtrade Singapore X partner Hong Kong	HS 854231	US dollars	2025	12	25921135035.2	comtrade_monthly.tsv
+Comtrade Singapore X partner Hong Kong	HS 854231	US dollars	2026	3	7557734292.5	comtrade_monthly.tsv
+Singapore EXPORTS to WORLD	HS 847150	thousand S$	2023	12	3851033.0	singapore_monthly.tsv
+Singapore EXPORTS to WORLD	HS 847150	thousand S$	2024	12	9087493.0	singapore_monthly.tsv
+Singapore EXPORTS to WORLD	HS 847150	thousand S$	2025	12	30501819.0	singapore_monthly.tsv
+Singapore EXPORTS to WORLD	HS 847150	thousand S$	2026	10	49007049.0	singapore_monthly.tsv
+Singapore EXPORTS to WORLD	HS 847180	thousand S$	2023	12	2146893.0	singapore_monthly.tsv
+Singapore EXPORTS to WORLD	HS 847180	thousand S$	2024	12	4646071.0	singapore_monthly.tsv
+Singapore EXPORTS to WORLD	HS 847180	thousand S$	2025	12	10585663.0	singapore_monthly.tsv
+Singapore EXPORTS to WORLD	HS 847180	thousand S$	2026	10	25563038.0	singapore_monthly.tsv
+Singapore EXPORTS to WORLD	HS 847330	thousand S$	2023	12	3844074.0	singapore_monthly.tsv
+Singapore EXPORTS to WORLD	HS 847330	thousand S$	2024	12	5671410.0	singapore_monthly.tsv
+Singapore EXPORTS to WORLD	HS 847330	thousand S$	2025	12	15691534.0	singapore_monthly.tsv
+Singapore EXPORTS to WORLD	HS 847330	thousand S$	2026	10	25692338.0	singapore_monthly.tsv
+Singapore EXPORTS to WORLD	HS 854231	thousand S$	2023	12	65209247.0	singapore_monthly.tsv
+Singapore EXPORTS to WORLD	HS 854231	thousand S$	2024	12	77475760.0	singapore_monthly.tsv
+Singapore EXPORTS to WORLD	HS 854231	thousand S$	2025	12	100445061.0	singapore_monthly.tsv
+Singapore EXPORTS to WORLD	HS 854231	thousand S$	2026	10	121675810.0	singapore_monthly.tsv
+Singapore EXPORTS to MAINLAND CHINA	HS 847150	thousand S$	2023	12	135604.0	singapore_monthly.tsv
+Singapore EXPORTS to MAINLAND CHINA	HS 847150	thousand S$	2024	12	1118411.0	singapore_monthly.tsv
+Singapore EXPORTS to MAINLAND CHINA	HS 847150	thousand S$	2025	12	350828.0	singapore_monthly.tsv
+Singapore EXPORTS to MAINLAND CHINA	HS 847150	thousand S$	2026	10	429003.0	singapore_monthly.tsv
+Singapore EXPORTS to MAINLAND CHINA	HS 847180	thousand S$	2023	12	62708.0	singapore_monthly.tsv
+Singapore EXPORTS to MAINLAND CHINA	HS 847180	thousand S$	2024	12	81642.0	singapore_monthly.tsv
+Singapore EXPORTS to MAINLAND CHINA	HS 847180	thousand S$	2025	12	67193.0	singapore_monthly.tsv
+Singapore EXPORTS to MAINLAND CHINA	HS 847180	thousand S$	2026	10	3090682.0	singapore_monthly.tsv
+Singapore EXPORTS to MAINLAND CHINA	HS 847330	thousand S$	2023	12	367901.0	singapore_monthly.tsv
+Singapore EXPORTS to MAINLAND CHINA	HS 847330	thousand S$	2024	12	429426.0	singapore_monthly.tsv
+Singapore EXPORTS to MAINLAND CHINA	HS 847330	thousand S$	2025	12	289626.0	singapore_monthly.tsv
+Singapore EXPORTS to MAINLAND CHINA	HS 847330	thousand S$	2026	10	684110.0	singapore_monthly.tsv
+Singapore EXPORTS to MAINLAND CHINA	HS 854231	thousand S$	2023	12	12510231.0	singapore_monthly.tsv
+Singapore EXPORTS to MAINLAND CHINA	HS 854231	thousand S$	2024	12	16675486.0	singapore_monthly.tsv
+Singapore EXPORTS to MAINLAND CHINA	HS 854231	thousand S$	2025	12	13596642.0	singapore_monthly.tsv
+Singapore EXPORTS to MAINLAND CHINA	HS 854231	thousand S$	2026	10	12221591.0	singapore_monthly.tsv
+Singapore EXPORTS to HONG KONG	HS 847150	thousand S$	2023	12	207310.0	singapore_monthly.tsv
+Singapore EXPORTS to HONG KONG	HS 847150	thousand S$	2024	12	528633.0	singapore_monthly.tsv
+Singapore EXPORTS to HONG KONG	HS 847150	thousand S$	2025	12	340861.0	singapore_monthly.tsv
+Singapore EXPORTS to HONG KONG	HS 847150	thousand S$	2026	10	626093.0	singapore_monthly.tsv
+Singapore EXPORTS to HONG KONG	HS 847180	thousand S$	2023	12	223880.0	singapore_monthly.tsv
+Singapore EXPORTS to HONG KONG	HS 847180	thousand S$	2024	12	240876.0	singapore_monthly.tsv
+Singapore EXPORTS to HONG KONG	HS 847180	thousand S$	2025	12	200041.0	singapore_monthly.tsv
+Singapore EXPORTS to HONG KONG	HS 847180	thousand S$	2026	10	443862.0	singapore_monthly.tsv
+Singapore EXPORTS to HONG KONG	HS 847330	thousand S$	2023	12	478898.0	singapore_monthly.tsv
+Singapore EXPORTS to HONG KONG	HS 847330	thousand S$	2024	12	691528.0	singapore_monthly.tsv
+Singapore EXPORTS to HONG KONG	HS 847330	thousand S$	2025	12	899904.0	singapore_monthly.tsv
+Singapore EXPORTS to HONG KONG	HS 847330	thousand S$	2026	10	1496665.0	singapore_monthly.tsv
+Singapore EXPORTS to HONG KONG	HS 854231	thousand S$	2023	12	20549284.0	singapore_monthly.tsv
+Singapore EXPORTS to HONG KONG	HS 854231	thousand S$	2024	12	23484588.0	singapore_monthly.tsv
+Singapore EXPORTS to HONG KONG	HS 854231	thousand S$	2025	12	33816472.0	singapore_monthly.tsv
+Singapore EXPORTS to HONG KONG	HS 854231	thousand S$	2026	10	32400528.0	singapore_monthly.tsv
+Singapore RE-EXPORTS to WORLD	HS 847150	thousand S$	2023	12	1190254.0	singapore_monthly.tsv
+Singapore RE-EXPORTS to WORLD	HS 847150	thousand S$	2024	12	5521810.0	singapore_monthly.tsv
+Singapore RE-EXPORTS to WORLD	HS 847150	thousand S$	2025	12	24154134.0	singapore_monthly.tsv
+Singapore RE-EXPORTS to WORLD	HS 847150	thousand S$	2026	10	38098659.0	singapore_monthly.tsv
+Singapore RE-EXPORTS to WORLD	HS 847180	thousand S$	2023	12	2107064.0	singapore_monthly.tsv
+Singapore RE-EXPORTS to WORLD	HS 847180	thousand S$	2024	12	4525081.0	singapore_monthly.tsv
+Singapore RE-EXPORTS to WORLD	HS 847180	thousand S$	2025	12	10521296.0	singapore_monthly.tsv
+Singapore RE-EXPORTS to WORLD	HS 847180	thousand S$	2026	10	25504953.0	singapore_monthly.tsv
+Singapore RE-EXPORTS to WORLD	HS 847330	thousand S$	2023	12	3468152.0	singapore_monthly.tsv
+Singapore RE-EXPORTS to WORLD	HS 847330	thousand S$	2024	12	5281073.0	singapore_monthly.tsv
+Singapore RE-EXPORTS to WORLD	HS 847330	thousand S$	2025	12	15425097.0	singapore_monthly.tsv
+Singapore RE-EXPORTS to WORLD	HS 847330	thousand S$	2026	10	25413213.0	singapore_monthly.tsv
+Singapore RE-EXPORTS to WORLD	HS 854231	thousand S$	2023	12	60861252.0	singapore_monthly.tsv
+Singapore RE-EXPORTS to WORLD	HS 854231	thousand S$	2024	12	72315854.0	singapore_monthly.tsv
+Singapore RE-EXPORTS to WORLD	HS 854231	thousand S$	2025	12	95334031.0	singapore_monthly.tsv
+Singapore RE-EXPORTS to WORLD	HS 854231	thousand S$	2026	10	117179937.0	singapore_monthly.tsv
+Singapore RE-EXPORTS to MAINLAND CHINA	HS 847150	thousand S$	2023	12	112273.0	singapore_monthly.tsv
+Singapore RE-EXPORTS to MAINLAND CHINA	HS 847150	thousand S$	2024	12	854444.0	singapore_monthly.tsv
+Singapore RE-EXPORTS to MAINLAND CHINA	HS 847150	thousand S$	2025	12	233120.0	singapore_monthly.tsv
+Singapore RE-EXPORTS to MAINLAND CHINA	HS 847150	thousand S$	2026	10	68083.0	singapore_monthly.tsv
+Singapore RE-EXPORTS to MAINLAND CHINA	HS 847180	thousand S$	2023	12	59393.0	singapore_monthly.tsv
+Singapore RE-EXPORTS to MAINLAND CHINA	HS 847180	thousand S$	2024	12	70950.0	singapore_monthly.tsv
+Singapore RE-EXPORTS to MAINLAND CHINA	HS 847180	thousand S$	2025	12	59109.0	singapore_monthly.tsv
+Singapore RE-EXPORTS to MAINLAND CHINA	HS 847180	thousand S$	2026	10	3085693.0	singapore_monthly.tsv
+Singapore RE-EXPORTS to MAINLAND CHINA	HS 847330	thousand S$	2023	12	336295.0	singapore_monthly.tsv
+Singapore RE-EXPORTS to MAINLAND CHINA	HS 847330	thousand S$	2024	12	405466.0	singapore_monthly.tsv
+Singapore RE-EXPORTS to MAINLAND CHINA	HS 847330	thousand S$	2025	12	275868.0	singapore_monthly.tsv
+Singapore RE-EXPORTS to MAINLAND CHINA	HS 847330	thousand S$	2026	10	672192.0	singapore_monthly.tsv
+Singapore RE-EXPORTS to MAINLAND CHINA	HS 854231	thousand S$	2023	12	11920471.0	singapore_monthly.tsv
+Singapore RE-EXPORTS to MAINLAND CHINA	HS 854231	thousand S$	2024	12	15924210.0	singapore_monthly.tsv
+Singapore RE-EXPORTS to MAINLAND CHINA	HS 854231	thousand S$	2025	12	13083306.0	singapore_monthly.tsv
+Singapore RE-EXPORTS to MAINLAND CHINA	HS 854231	thousand S$	2026	10	11593185.0	singapore_monthly.tsv
+Singapore RE-EXPORTS to HONG KONG	HS 847150	thousand S$	2023	12	118211.0	singapore_monthly.tsv
+Singapore RE-EXPORTS to HONG KONG	HS 847150	thousand S$	2024	12	363661.0	singapore_monthly.tsv
+Singapore RE-EXPORTS to HONG KONG	HS 847150	thousand S$	2025	12	150244.0	singapore_monthly.tsv
+Singapore RE-EXPORTS to HONG KONG	HS 847150	thousand S$	2026	10	299934.0	singapore_monthly.tsv
+Singapore RE-EXPORTS to HONG KONG	HS 847180	thousand S$	2023	12	221428.0	singapore_monthly.tsv
+Singapore RE-EXPORTS to HONG KONG	HS 847180	thousand S$	2024	12	220479.0	singapore_monthly.tsv
+Singapore RE-EXPORTS to HONG KONG	HS 847180	thousand S$	2025	12	179570.0	singapore_monthly.tsv
+Singapore RE-EXPORTS to HONG KONG	HS 847180	thousand S$	2026	10	433514.0	singapore_monthly.tsv
+Singapore RE-EXPORTS to HONG KONG	HS 847330	thousand S$	2023	12	432994.0	singapore_monthly.tsv
+Singapore RE-EXPORTS to HONG KONG	HS 847330	thousand S$	2024	12	622181.0	singapore_monthly.tsv
+Singapore RE-EXPORTS to HONG KONG	HS 847330	thousand S$	2025	12	848019.0	singapore_monthly.tsv
+Singapore RE-EXPORTS to HONG KONG	HS 847330	thousand S$	2026	10	1424393.0	singapore_monthly.tsv
+Singapore RE-EXPORTS to HONG KONG	HS 854231	thousand S$	2023	12	19795481.0	singapore_monthly.tsv
+Singapore RE-EXPORTS to HONG KONG	HS 854231	thousand S$	2024	12	21721754.0	singapore_monthly.tsv
+Singapore RE-EXPORTS to HONG KONG	HS 854231	thousand S$	2025	12	32174482.0	singapore_monthly.tsv
+Singapore RE-EXPORTS to HONG KONG	HS 854231	thousand S$	2026	10	31208728.0	singapore_monthly.tsv
+Singapore DOMESTIC EXPORTS to WORLD	HS 847150	thousand S$	2023	12	2660780.0	singapore_monthly.tsv
+Singapore DOMESTIC EXPORTS to WORLD	HS 847150	thousand S$	2024	12	3565683.0	singapore_monthly.tsv
+Singapore DOMESTIC EXPORTS to WORLD	HS 847150	thousand S$	2025	12	6347682.0	singapore_monthly.tsv
+Singapore DOMESTIC EXPORTS to WORLD	HS 847150	thousand S$	2026	10	10908393.0	singapore_monthly.tsv
+Singapore DOMESTIC EXPORTS to WORLD	HS 847180	thousand S$	2023	12	39830.0	singapore_monthly.tsv
+Singapore DOMESTIC EXPORTS to WORLD	HS 847180	thousand S$	2024	12	120990.0	singapore_monthly.tsv
+Singapore DOMESTIC EXPORTS to WORLD	HS 847180	thousand S$	2025	12	64370.0	singapore_monthly.tsv
+Singapore DOMESTIC EXPORTS to WORLD	HS 847180	thousand S$	2026	10	58086.0	singapore_monthly.tsv
+Singapore DOMESTIC EXPORTS to WORLD	HS 847330	thousand S$	2023	12	375923.0	singapore_monthly.tsv
+Singapore DOMESTIC EXPORTS to WORLD	HS 847330	thousand S$	2024	12	390337.0	singapore_monthly.tsv
+Singapore DOMESTIC EXPORTS to WORLD	HS 847330	thousand S$	2025	12	266441.0	singapore_monthly.tsv
+Singapore DOMESTIC EXPORTS to WORLD	HS 847330	thousand S$	2026	10	279125.0	singapore_monthly.tsv
+Singapore DOMESTIC EXPORTS to WORLD	HS 854231	thousand S$	2023	12	4347994.0	singapore_monthly.tsv
+Singapore DOMESTIC EXPORTS to WORLD	HS 854231	thousand S$	2024	12	5159908.0	singapore_monthly.tsv
+Singapore DOMESTIC EXPORTS to WORLD	HS 854231	thousand S$	2025	12	5111030.0	singapore_monthly.tsv
+Singapore DOMESTIC EXPORTS to WORLD	HS 854231	thousand S$	2026	10	4495875.0	singapore_monthly.tsv
+Singapore DOMESTIC EXPORTS to MAINLAND CHINA	HS 847150	thousand S$	2023	12	23331.0	singapore_monthly.tsv
+Singapore DOMESTIC EXPORTS to MAINLAND CHINA	HS 847150	thousand S$	2024	12	263968.0	singapore_monthly.tsv
+Singapore DOMESTIC EXPORTS to MAINLAND CHINA	HS 847150	thousand S$	2025	12	117707.0	singapore_monthly.tsv
+Singapore DOMESTIC EXPORTS to MAINLAND CHINA	HS 847150	thousand S$	2026	10	360922.0	singapore_monthly.tsv
+Singapore DOMESTIC EXPORTS to MAINLAND CHINA	HS 847180	thousand S$	2023	12	3315.0	singapore_monthly.tsv
+Singapore DOMESTIC EXPORTS to MAINLAND CHINA	HS 847180	thousand S$	2024	12	10694.0	singapore_monthly.tsv
+Singapore DOMESTIC EXPORTS to MAINLAND CHINA	HS 847180	thousand S$	2025	12	8082.0	singapore_monthly.tsv
+Singapore DOMESTIC EXPORTS to MAINLAND CHINA	HS 847180	thousand S$	2026	10	4992.0	singapore_monthly.tsv
+Singapore DOMESTIC EXPORTS to MAINLAND CHINA	HS 847330	thousand S$	2023	12	31607.0	singapore_monthly.tsv
+Singapore DOMESTIC EXPORTS to MAINLAND CHINA	HS 847330	thousand S$	2024	12	23959.0	singapore_monthly.tsv
+Singapore DOMESTIC EXPORTS to MAINLAND CHINA	HS 847330	thousand S$	2025	12	13760.0	singapore_monthly.tsv
+Singapore DOMESTIC EXPORTS to MAINLAND CHINA	HS 847330	thousand S$	2026	10	11917.0	singapore_monthly.tsv
+Singapore DOMESTIC EXPORTS to MAINLAND CHINA	HS 854231	thousand S$	2023	12	589760.0	singapore_monthly.tsv
+Singapore DOMESTIC EXPORTS to MAINLAND CHINA	HS 854231	thousand S$	2024	12	751278.0	singapore_monthly.tsv
+Singapore DOMESTIC EXPORTS to MAINLAND CHINA	HS 854231	thousand S$	2025	12	513337.0	singapore_monthly.tsv
+Singapore DOMESTIC EXPORTS to MAINLAND CHINA	HS 854231	thousand S$	2026	10	628409.0	singapore_monthly.tsv
+Singapore DOMESTIC EXPORTS to HONG KONG	HS 847150	thousand S$	2023	12	89098.0	singapore_monthly.tsv
+Singapore DOMESTIC EXPORTS to HONG KONG	HS 847150	thousand S$	2024	12	164970.0	singapore_monthly.tsv
+Singapore DOMESTIC EXPORTS to HONG KONG	HS 847150	thousand S$	2025	12	190618.0	singapore_monthly.tsv
+Singapore DOMESTIC EXPORTS to HONG KONG	HS 847150	thousand S$	2026	10	326159.0	singapore_monthly.tsv
+Singapore DOMESTIC EXPORTS to HONG KONG	HS 847180	thousand S$	2023	12	2451.0	singapore_monthly.tsv
+Singapore DOMESTIC EXPORTS to HONG KONG	HS 847180	thousand S$	2024	12	20399.0	singapore_monthly.tsv
+Singapore DOMESTIC EXPORTS to HONG KONG	HS 847180	thousand S$	2025	12	20468.0	singapore_monthly.tsv
+Singapore DOMESTIC EXPORTS to HONG KONG	HS 847180	thousand S$	2026	10	10347.0	singapore_monthly.tsv
+Singapore DOMESTIC EXPORTS to HONG KONG	HS 847330	thousand S$	2023	12	45902.0	singapore_monthly.tsv
+Singapore DOMESTIC EXPORTS to HONG KONG	HS 847330	thousand S$	2024	12	69348.0	singapore_monthly.tsv
+Singapore DOMESTIC EXPORTS to HONG KONG	HS 847330	thousand S$	2025	12	51886.0	singapore_monthly.tsv
+Singapore DOMESTIC EXPORTS to HONG KONG	HS 847330	thousand S$	2026	10	72273.0	singapore_monthly.tsv
+Singapore DOMESTIC EXPORTS to HONG KONG	HS 854231	thousand S$	2023	12	753803.0	singapore_monthly.tsv
+Singapore DOMESTIC EXPORTS to HONG KONG	HS 854231	thousand S$	2024	12	1762833.0	singapore_monthly.tsv
+Singapore DOMESTIC EXPORTS to HONG KONG	HS 854231	thousand S$	2025	12	1641990.0	singapore_monthly.tsv
+Singapore DOMESTIC EXPORTS to HONG KONG	HS 854231	thousand S$	2026	10	1191799.0	singapore_monthly.tsv
+Taiwan exports to 全球	MOF group 自動資料處理機及其附屬單元	thousand US dollars	2023	12	38682302.0	taiwan_groups_monthly.tsv
+Taiwan exports to 全球	MOF group 自動資料處理機及其附屬單元	thousand US dollars	2024	12	84585671.0	taiwan_groups_monthly.tsv
+Taiwan exports to 全球	MOF group 自動資料處理機及其附屬單元	thousand US dollars	2025	12	183481108.0	taiwan_groups_monthly.tsv
+Taiwan exports to 全球	MOF group 自動資料處理機及其附屬單元	thousand US dollars	2026	10	260270954.0	taiwan_groups_monthly.tsv
+Taiwan exports to 全球	MOF group 手提電腦	thousand US dollars	2023	12	2340490.0	taiwan_groups_monthly.tsv
+Taiwan exports to 全球	MOF group 手提電腦	thousand US dollars	2024	12	2302938.0	taiwan_groups_monthly.tsv
+Taiwan exports to 全球	MOF group 手提電腦	thousand US dollars	2025	12	2216589.0	taiwan_groups_monthly.tsv
+Taiwan exports to 全球	MOF group 手提電腦	thousand US dollars	2026	10	2126386.0	taiwan_groups_monthly.tsv
+Taiwan exports to 全球	MOF group 電腦之零附件	thousand US dollars	2023	12	14117731.0	taiwan_groups_monthly.tsv
+Taiwan exports to 全球	MOF group 電腦之零附件	thousand US dollars	2024	12	14383118.0	taiwan_groups_monthly.tsv
+Taiwan exports to 全球	MOF group 電腦之零附件	thousand US dollars	2025	12	29181593.0	taiwan_groups_monthly.tsv
+Taiwan exports to 全球	MOF group 電腦之零附件	thousand US dollars	2026	10	25133903.0	taiwan_groups_monthly.tsv
+Taiwan exports to 全球	MOF group 積體電路	thousand US dollars	2023	12	166621215.0	taiwan_groups_monthly.tsv
+Taiwan exports to 全球	MOF group 積體電路	thousand US dollars	2024	12	165042151.0	taiwan_groups_monthly.tsv
+Taiwan exports to 全球	MOF group 積體電路	thousand US dollars	2025	12	209163551.0	taiwan_groups_monthly.tsv
+Taiwan exports to 全球	MOF group 積體電路	thousand US dollars	2026	10	251108212.0	taiwan_groups_monthly.tsv
+Taiwan exports to 中國大陸	MOF group 自動資料處理機及其附屬單元	thousand US dollars	2023	12	358792.0	taiwan_groups_monthly.tsv
+Taiwan exports to 中國大陸	MOF group 自動資料處理機及其附屬單元	thousand US dollars	2024	12	410688.0	taiwan_groups_monthly.tsv
+Taiwan exports to 中國大陸	MOF group 自動資料處理機及其附屬單元	thousand US dollars	2025	12	394975.0	taiwan_groups_monthly.tsv
+Taiwan exports to 中國大陸	MOF group 自動資料處理機及其附屬單元	thousand US dollars	2026	10	346942.0	taiwan_groups_monthly.tsv
+Taiwan exports to 中國大陸	MOF group 手提電腦	thousand US dollars	2023	12	46495.0	taiwan_groups_monthly.tsv
+Taiwan exports to 中國大陸	MOF group 手提電腦	thousand US dollars	2024	12	31013.0	taiwan_groups_monthly.tsv
+Taiwan exports to 中國大陸	MOF group 手提電腦	thousand US dollars	2025	12	26639.0	taiwan_groups_monthly.tsv
+Taiwan exports to 中國大陸	MOF group 手提電腦	thousand US dollars	2026	10	21894.0	taiwan_groups_monthly.tsv
+Taiwan exports to 中國大陸	MOF group 電腦之零附件	thousand US dollars	2023	12	1742354.0	taiwan_groups_monthly.tsv
+Taiwan exports to 中國大陸	MOF group 電腦之零附件	thousand US dollars	2024	12	1884143.0	taiwan_groups_monthly.tsv
+Taiwan exports to 中國大陸	MOF group 電腦之零附件	thousand US dollars	2025	12	1857549.0	taiwan_groups_monthly.tsv
+Taiwan exports to 中國大陸	MOF group 電腦之零附件	thousand US dollars	2026	10	2369292.0	taiwan_groups_monthly.tsv
+Taiwan exports to 中國大陸	MOF group 積體電路	thousand US dollars	2023	12	47272674.0	taiwan_groups_monthly.tsv
+Taiwan exports to 中國大陸	MOF group 積體電路	thousand US dollars	2024	12	48472099.0	taiwan_groups_monthly.tsv
+Taiwan exports to 中國大陸	MOF group 積體電路	thousand US dollars	2025	12	53049779.0	taiwan_groups_monthly.tsv
+Taiwan exports to 中國大陸	MOF group 積體電路	thousand US dollars	2026	10	59929767.0	taiwan_groups_monthly.tsv
+Taiwan exports to 香港	MOF group 自動資料處理機及其附屬單元	thousand US dollars	2023	12	1523874.0	taiwan_groups_monthly.tsv
+Taiwan exports to 香港	MOF group 自動資料處理機及其附屬單元	thousand US dollars	2024	12	5752454.0	taiwan_groups_monthly.tsv
+Taiwan exports to 香港	MOF group 自動資料處理機及其附屬單元	thousand US dollars	2025	12	4411464.0	taiwan_groups_monthly.tsv
+Taiwan exports to 香港	MOF group 自動資料處理機及其附屬單元	thousand US dollars	2026	10	1668618.0	taiwan_groups_monthly.tsv
+Taiwan exports to 香港	MOF group 手提電腦	thousand US dollars	2023	12	22330.0	taiwan_groups_monthly.tsv
+Taiwan exports to 香港	MOF group 手提電腦	thousand US dollars	2024	12	17597.0	taiwan_groups_monthly.tsv
+Taiwan exports to 香港	MOF group 手提電腦	thousand US dollars	2025	12	12647.0	taiwan_groups_monthly.tsv
+Taiwan exports to 香港	MOF group 手提電腦	thousand US dollars	2026	10	14398.0	taiwan_groups_monthly.tsv
+Taiwan exports to 香港	MOF group 電腦之零附件	thousand US dollars	2023	12	1139222.0	taiwan_groups_monthly.tsv
+Taiwan exports to 香港	MOF group 電腦之零附件	thousand US dollars	2024	12	733510.0	taiwan_groups_monthly.tsv
+Taiwan exports to 香港	MOF group 電腦之零附件	thousand US dollars	2025	12	1082525.0	taiwan_groups_monthly.tsv
+Taiwan exports to 香港	MOF group 電腦之零附件	thousand US dollars	2026	10	3022251.0	taiwan_groups_monthly.tsv
+Taiwan exports to 香港	MOF group 積體電路	thousand US dollars	2023	12	43111524.0	taiwan_groups_monthly.tsv
+Taiwan exports to 香港	MOF group 積體電路	thousand US dollars	2024	12	36791560.0	taiwan_groups_monthly.tsv
+Taiwan exports to 香港	MOF group 積體電路	thousand US dollars	2025	12	53958185.0	taiwan_groups_monthly.tsv
+Taiwan exports to 香港	MOF group 積體電路	thousand US dollars	2026	10	60377131.0	taiwan_groups_monthly.tsv
+Taiwan exports to all destinations	HS 847150	thousand US dollars	2023	12	10048681.0	taiwan_hs6_monthly.tsv
+Taiwan exports to all destinations	HS 847150	thousand US dollars	2024	12	21474643.0	taiwan_hs6_monthly.tsv
+Taiwan exports to all destinations	HS 847150	thousand US dollars	2025	12	59552041.0	taiwan_hs6_monthly.tsv
+Taiwan exports to all destinations	HS 847150	thousand US dollars	2026	10	99239703.0	taiwan_hs6_monthly.tsv
+Taiwan exports to all destinations	HS 847180	thousand US dollars	2023	12	22292367.0	taiwan_hs6_monthly.tsv
+Taiwan exports to all destinations	HS 847180	thousand US dollars	2024	12	52407346.0	taiwan_hs6_monthly.tsv
+Taiwan exports to all destinations	HS 847180	thousand US dollars	2025	12	118579514.0	taiwan_hs6_monthly.tsv
+Taiwan exports to all destinations	HS 847180	thousand US dollars	2026	10	156044292.0	taiwan_hs6_monthly.tsv
+Taiwan exports to all destinations	HS 847330	thousand US dollars	2023	12	14117731.0	taiwan_hs6_monthly.tsv
+Taiwan exports to all destinations	HS 847330	thousand US dollars	2024	12	14383118.0	taiwan_hs6_monthly.tsv
+Taiwan exports to all destinations	HS 847330	thousand US dollars	2025	12	29181593.0	taiwan_hs6_monthly.tsv
+Taiwan exports to all destinations	HS 847330	thousand US dollars	2026	10	25133903.0	taiwan_hs6_monthly.tsv
+Taiwan exports to all destinations	HS 854231	thousand US dollars	2023	12	14117592.0	taiwan_hs6_monthly.tsv
+Taiwan exports to all destinations	HS 854231	thousand US dollars	2024	12	17157502.0	taiwan_hs6_monthly.tsv
+Taiwan exports to all destinations	HS 854231	thousand US dollars	2025	12	28426899.0	taiwan_hs6_monthly.tsv
+Taiwan exports to all destinations	HS 854231	thousand US dollars	2026	10	32695572.0	taiwan_hs6_monthly.tsv
+China customs table 14 imports	Automatic data processing machines	thousand US dollars (month values summed)	2023	12	2380451.0	china_t14_monthly.tsv
+China customs table 14 imports	Automatic data processing machines	thousand US dollars (month values summed)	2024	10	1533268.0	china_t14_monthly.tsv
+China customs table 14 imports	Automatic data processing machines	thousand US dollars (month values summed)	2025	12	1279841.0	china_t14_monthly.tsv
+China customs table 14 imports	Automatic data processing machines	thousand US dollars (month values summed)	2026	9	1419814.0	china_t14_monthly.tsv
+China customs table 14 imports	Automatic data processing machines and parts thereof	thousand US dollars (month values summed)	2023	12	51342071.0	china_t14_monthly.tsv
+China customs table 14 imports	Automatic data processing machines and parts thereof	thousand US dollars (month values summed)	2024	10	62494026.0	china_t14_monthly.tsv
+China customs table 14 imports	Automatic data processing machines and parts thereof	thousand US dollars (month values summed)	2025	12	94094768.0	china_t14_monthly.tsv
+China customs table 14 imports	Automatic data processing machines and parts thereof	thousand US dollars (month values summed)	2026	9	157468687.0	china_t14_monthly.tsv
+China customs table 14 imports	Central processing units	thousand US dollars (month values summed)	2023	12	4857189.0	china_t14_monthly.tsv
+China customs table 14 imports	Central processing units	thousand US dollars (month values summed)	2024	10	9749853.0	china_t14_monthly.tsv
+China customs table 14 imports	Central processing units	thousand US dollars (month values summed)	2025	12	21735140.0	china_t14_monthly.tsv
+China customs table 14 imports	Central processing units	thousand US dollars (month values summed)	2026	9	15222495.0	china_t14_monthly.tsv
+China customs table 14 imports	Electronic integrated circuits	thousand US dollars (month values summed)	2023	12	351001371.0	china_t14_monthly.tsv
+China customs table 14 imports	Electronic integrated circuits	thousand US dollars (month values summed)	2024	10	315791566.0	china_t14_monthly.tsv
+China customs table 14 imports	Electronic integrated circuits	thousand US dollars (month values summed)	2025	12	424570827.0	china_t14_monthly.tsv
+China customs table 14 imports	Electronic integrated circuits	thousand US dollars (month values summed)	2026	9	499417875.0	china_t14_monthly.tsv
+China customs table 14 imports	Parts and accessories of automatic data processing machines	thousand US dollars (month values summed)	2023	12	15185785.0	china_t14_monthly.tsv
+China customs table 14 imports	Parts and accessories of automatic data processing machines	thousand US dollars (month values summed)	2024	10	18556417.0	china_t14_monthly.tsv
+China customs table 14 imports	Parts and accessories of automatic data processing machines	thousand US dollars (month values summed)	2025	12	28777105.0	china_t14_monthly.tsv
+China customs table 14 imports	Parts and accessories of automatic data processing machines	thousand US dollars (month values summed)	2026	9	82335816.0	china_t14_monthly.tsv
+China customs table 14 imports	Storage units	thousand US dollars (month values summed)	2023	12	16116227.0	china_t14_monthly.tsv
+China customs table 14 imports	Storage units	thousand US dollars (month values summed)	2024	10	15713894.0	china_t14_monthly.tsv
+China customs table 14 imports	Storage units	thousand US dollars (month values summed)	2025	12	20957431.0	china_t14_monthly.tsv
+China customs table 14 imports	Storage units	thousand US dollars (month values summed)	2026	9	38234222.0	china_t14_monthly.tsv
+Hong Kong C&SD imports	SITC 75 Office machines and automatic data processing machines	HK$ million	2023	12	323631.0	hk_divisions_monthly.tsv
+Hong Kong C&SD imports	SITC 75 Office machines and automatic data processing machines	HK$ million	2024	12	446268.0	hk_divisions_monthly.tsv
+Hong Kong C&SD imports	SITC 75 Office machines and automatic data processing machines	HK$ million	2025	12	577182.0	hk_divisions_monthly.tsv
+Hong Kong C&SD imports	SITC 75 Office machines and automatic data processing machines	HK$ million	2026	9	660669.0	hk_divisions_monthly.tsv
+Hong Kong C&SD imports	SITC 77 Electrical machinery, apparatus and appliances, and electrical parts thereof	HK$ million	2023	12	2025010.0	hk_divisions_monthly.tsv
+Hong Kong C&SD imports	SITC 77 Electrical machinery, apparatus and appliances, and electrical parts thereof	HK$ million	2024	12	2200533.0	hk_divisions_monthly.tsv
+Hong Kong C&SD imports	SITC 77 Electrical machinery, apparatus and appliances, and electrical parts thereof	HK$ million	2025	12	2592573.0	hk_divisions_monthly.tsv
+Hong Kong C&SD imports	SITC 77 Electrical machinery, apparatus and appliances, and electrical parts thereof	HK$ million	2026	9	2816239.0	hk_divisions_monthly.tsv
+Hong Kong C&SD total exports	SITC 75 Office machines and automatic data processing machines	HK$ million	2023	12	408463.0	hk_divisions_monthly.tsv
+Hong Kong C&SD total exports	SITC 75 Office machines and automatic data processing machines	HK$ million	2024	12	541962.0	hk_divisions_monthly.tsv
+Hong Kong C&SD total exports	SITC 75 Office machines and automatic data processing machines	HK$ million	2025	12	677265.0	hk_divisions_monthly.tsv
+Hong Kong C&SD total exports	SITC 75 Office machines and automatic data processing machines	HK$ million	2026	9	834095.0	hk_divisions_monthly.tsv
+Hong Kong C&SD total exports	SITC 77 Electrical machinery, apparatus and appliances, and electrical parts thereof	HK$ million	2023	12	1988188.0	hk_divisions_monthly.tsv
+Hong Kong C&SD total exports	SITC 77 Electrical machinery, apparatus and appliances, and electrical parts thereof	HK$ million	2024	12	2185132.0	hk_divisions_monthly.tsv
+Hong Kong C&SD total exports	SITC 77 Electrical machinery, apparatus and appliances, and electrical parts thereof	HK$ million	2025	12	2563422.0	hk_divisions_monthly.tsv
+Hong Kong C&SD total exports	SITC 77 Electrical machinery, apparatus and appliances, and electrical parts thereof	HK$ million	2026	9	2830550.0	hk_divisions_monthly.tsv

@@ -1,0 +1,78 @@
+# Every sum and ratio REPORT.md states, computed by build_l18.py from the tables in this folder.
+figure	unit	value
+Singapore re-exports to MAINLAND CHINA, line 84718010, Jan-Jun 2026	thousand S$	17970.0
+Singapore re-exports to MAINLAND CHINA, line 84718010, Jul-Oct 2026	thousand S$	3036175.0
+Singapore re-exports to MAINLAND CHINA, line 84718010, Jul-Oct 2026, units	number	23981.0
+Singapore re-exports to HONG KONG, line 84718010, Jan-Jun 2026	thousand S$	23389.0
+Singapore re-exports to HONG KONG, line 84718010, Jul-Oct 2026	thousand S$	230839.0
+Singapore re-exports to HONG KONG, line 84718010, Jul-Oct 2026, units	number	44007.0
+Singapore re-exports to mainland China, line 84718010, Jul-Oct 2026: value per unit	thousand S$ per unit	126.6
+Singapore re-exports to mainland China, line 84718010, Jan-Jun 2026: value per unit	thousand S$ per unit	0.46
+Singapore re-exports to MAINLAND CHINA, line 84718010, Jul-Oct 2026, in US dollars at Singapore monthly average rates	thousand US$	2369486.0
+Singapore re-exports to HONG KONG, line 84718010, Jul-Oct 2026, in US dollars at Singapore monthly average rates	thousand US$	179455.0
+  month 202607: re-exports to mainland China, line 84718010	thousand S$ ; S$ per US$ ; thousand US$	707809 ; 1.2914 ; 548094
+  month 202608: re-exports to mainland China, line 84718010	thousand S$ ; S$ per US$ ; thousand US$	607508 ; 1.2765 ; 475917
+  month 202609: re-exports to mainland China, line 84718010	thousand S$ ; S$ per US$ ; thousand US$	149578 ; 1.2727 ; 117528
+  month 202610: re-exports to mainland China, line 84718010	thousand S$ ; S$ per US$ ; thousand US$	1571280 ; 1.2796 ; 1227946
+Singapore imports from the world, line 84718010, Jan-Jun 2026	thousand S$	381541.0
+Singapore imports from the world, line 84718010, Jul-Oct 2026	thousand S$	3756473.0
+Singapore imports from MEXICO, line 84718010, Jul-Oct 2026	thousand S$; units	1735918; 7660
+Singapore imports from TAIWAN, line 84718010, Jul-Oct 2026	thousand S$; units	1836699; 17641
+Singapore imports from UNITED STATES OF AMERICA, line 84718010, Jul-Oct 2026	thousand S$; units	21067; 9533
+Singapore imports from MALAYSIA, line 84718010, Jul-Oct 2026	thousand S$; units	119690; 155738
+China customs table 14, Parts and accessories of automatic data processing machines, Jan-Dec 2025 (sum of month values)	thousand US$	28777105.0
+China customs table 14, Parts and accessories of automatic data processing machines, Jan-Sep 2025 (sum of month values)	thousand US$	18911409.0
+China customs table 14, Parts and accessories of automatic data processing machines, Jan-Sep 2026 (sum of month values)	thousand US$	82335816.0
+China customs table 14, Parts and accessories of automatic data processing machines, Jan-Sep 2026 as printed (period value, Sep 2026 issue)	thousand US$	82203919.0
+China customs table 14, Central processing units, Jan-Dec 2025 (sum of month values)	thousand US$	21735140.0
+China customs table 14, Central processing units, Jan-Sep 2025 (sum of month values)	thousand US$	17706849.0
+China customs table 14, Central processing units, Jan-Sep 2026 (sum of month values)	thousand US$	15222495.0
+China customs table 14, Central processing units, Jan-Sep 2026 as printed (period value, Sep 2026 issue)	thousand US$	15221685.0
+China customs table 14, Automatic data processing machines and parts thereof, Jan-Dec 2025 (sum of month values)	thousand US$	94094768.0
+China customs table 14, Automatic data processing machines and parts thereof, Jan-Sep 2025 (sum of month values)	thousand US$	70111003.0
+China customs table 14, Automatic data processing machines and parts thereof, Jan-Sep 2026 (sum of month values)	thousand US$	157468687.0
+China customs table 14, Automatic data processing machines and parts thereof, Jan-Sep 2026 as printed (period value, Sep 2026 issue)	thousand US$	157417438.0
+China customs table 14, Electronic integrated circuits, Jan-Dec 2025 (sum of month values)	thousand US$	424570827.0
+China customs table 14, Electronic integrated circuits, Jan-Sep 2025 (sum of month values)	thousand US$	305624088.0
+China customs table 14, Electronic integrated circuits, Jan-Sep 2026 (sum of month values)	thousand US$	499417875.0
+China customs table 14, Electronic integrated circuits, Jan-Sep 2026 as printed (period value, Sep 2026 issue)	thousand US$	499249660.0
+China customs table 14, Storage units, Jan-Dec 2025 (sum of month values)	thousand US$	20957431.0
+China customs table 14, Storage units, Jan-Sep 2025 (sum of month values)	thousand US$	14846431.0
+China customs table 14, Storage units, Jan-Sep 2026 (sum of month values)	thousand US$	38234222.0
+China customs table 14, Storage units, Jan-Sep 2026 as printed (period value, Sep 2026 issue)	thousand US$	38214240.0
+China customs table 14, Parts and accessories of automatic data processing machines: Jan-Sep 2025 and Jan-Sep 2026 as printed (Sep issues): value; quantity (T)	thousand US$ ; quantity	18890284 -> 82203919 (x4.35) ; 36515.0 -> 33439.0
+China customs table 14, Parts and accessories of automatic data processing machines: value per quantity unit, Jan-Sep 2025 -> Jan-Sep 2026	thousand US$ per T	517.3 -> 2458.3
+China customs table 14, Central processing units: Jan-Sep 2025 and Jan-Sep 2026 as printed (Sep issues): value; quantity (10000N)	thousand US$ ; quantity	17665786 -> 15221685 (x0.86) ; 2354.0 -> 1949.0
+China customs table 14, Central processing units: value per quantity unit, Jan-Sep 2025 -> Jan-Sep 2026	thousand US$ per 10000N	7504.6 -> 7810.0
+China customs table 14, Electronic integrated circuits: Jan-Sep 2025 and Jan-Sep 2026 as printed (Sep issues): value; quantity (100MN)	thousand US$ ; quantity	305517509 -> 499249660 (x1.63) ; 4436.0 -> 4755.0
+China customs table 14, Electronic integrated circuits: value per quantity unit, Jan-Sep 2025 -> Jan-Sep 2026	thousand US$ per 100MN	68872.3 -> 104994.7
+China customs table 14, Storage units: Jan-Sep 2025 and Jan-Sep 2026 as printed (Sep issues): value; quantity (10000N)	thousand US$ ; quantity	14855491 -> 38214240 (x2.57) ; 15165.0 -> 14780.0
+China customs table 14, Storage units: value per quantity unit, Jan-Sep 2025 -> Jan-Sep 2026	thousand US$ per 10000N	979.6 -> 2585.5
+China customs table 14, Automatic data processing machines and parts thereof: Jan-Sep 2025 and Jan-Sep 2026 as printed (Sep issues): value; quantity (-)	thousand US$ ; quantity	70059353 -> 157417438 (x2.25) ; None -> None
+Comtrade Hong Kong exports to mainland China, HS 847150, Jan-Jul 2025	US$	3898428159.667
+Comtrade Hong Kong exports to mainland China, HS 847150, Jan-Jul 2026	US$	4192020675.668
+Comtrade Hong Kong exports to mainland China, HS 847180, Jan-Jul 2025	US$	12753859159.537
+Comtrade Hong Kong exports to mainland China, HS 847180, Jan-Jul 2026	US$	7022586784.64
+Comtrade Hong Kong exports to mainland China, HS 847330, Jan-Jul 2025	US$	16462318845.851
+Comtrade Hong Kong exports to mainland China, HS 847330, Jan-Jul 2026	US$	36895759036.356
+Comtrade Hong Kong exports to mainland China, HS 854231, Jan-Jul 2025	US$	48556491755.96
+Comtrade Hong Kong exports to mainland China, HS 854231, Jan-Jul 2026	US$	52369566641.045
+Taiwan exports to 全球, MOF group 自動資料處理機及其附屬單元, Jan-Oct 2025	thousand US$	139470479.0
+Taiwan exports to 全球, MOF group 自動資料處理機及其附屬單元, Jan-Oct 2026	thousand US$	260270954.0
+Taiwan exports to 中國大陸, MOF group 自動資料處理機及其附屬單元, Jan-Oct 2025	thousand US$	334223.0
+Taiwan exports to 中國大陸, MOF group 自動資料處理機及其附屬單元, Jan-Oct 2026	thousand US$	346942.0
+Taiwan exports to 香港, MOF group 自動資料處理機及其附屬單元, Jan-Oct 2025	thousand US$	3569396.0
+Taiwan exports to 香港, MOF group 自動資料處理機及其附屬單元, Jan-Oct 2026	thousand US$	1668618.0
+Taiwan exports to 全球, MOF group 電腦之零附件, Jan-Oct 2025	thousand US$	25710459.0
+Taiwan exports to 全球, MOF group 電腦之零附件, Jan-Oct 2026	thousand US$	25133903.0
+Taiwan exports to 中國大陸, MOF group 電腦之零附件, Jan-Oct 2025	thousand US$	1446906.0
+Taiwan exports to 中國大陸, MOF group 電腦之零附件, Jan-Oct 2026	thousand US$	2369292.0
+Taiwan exports to 香港, MOF group 電腦之零附件, Jan-Oct 2025	thousand US$	819357.0
+Taiwan exports to 香港, MOF group 電腦之零附件, Jan-Oct 2026	thousand US$	3022251.0
+Taiwan exports to 全球, MOF group 積體電路, Jan-Oct 2025	thousand US$	168490816.0
+Taiwan exports to 全球, MOF group 積體電路, Jan-Oct 2026	thousand US$	251108212.0
+Taiwan exports to 中國大陸, MOF group 積體電路, Jan-Oct 2025	thousand US$	43046606.0
+Taiwan exports to 中國大陸, MOF group 積體電路, Jan-Oct 2026	thousand US$	59929767.0
+Taiwan exports to 香港, MOF group 積體電路, Jan-Oct 2025	thousand US$	43851650.0
+Taiwan exports to 香港, MOF group 積體電路, Jan-Oct 2026	thousand US$	60377131.0
+Taiwan exports of ADP machines (all 8471) to mainland China plus Hong Kong as a share of exports to the world, Jan-Oct 2026	per cent	0.77

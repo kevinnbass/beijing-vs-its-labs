@@ -1,0 +1,8 @@
+# Sources this page cites that are not in the argument's references file. Columns: saved id <TAB> kind <TAB> label <TAB> address (optional).
+# Round 4: rows the argument's references files now hold were taken out, so the argument's own labels are used; three ids that ROUND4.md section 2 retires were replaced (Coons's letter by the copy the argument cites, Tencent's Reuters relay by the call itself, Zhipu's hkexnews copy by the company's own).
+cn-acts-mfa-20251210	OFF	Ministry of Foreign Affairs, spokesman Guo Jiakun's regular press conference of Dec 10, 2025. The ministry's own record
+cn-clips-mfa-new-1	OFF	Ministry of Foreign Affairs, spokesman Guo Jiakun's regular press conference of Nov 9, 2026. The ministry's own record
+cn-clips-pbs-20261118	REC	PBS, page of the programme Amanpour and Company for Nov 18, 2026
+cn-policy-review-measures	DOC	Cyberspace Administration of China and twelve other bodies, Cybersecurity Review Measures (Order No. 8), signed Dec 28, 2021
+cn-acts-reuters-customs-20260114	PRESS	Reuters, Jan 14, 2026, as carried by Yahoo Finance: China's customs agents told Nvidia's H200 chips are not permitted, by three people briefed on the matter. The copy the figure cites (record of Jan 14, 2026)	https://finance.yahoo.com/news/chinas-customs-agents-told-nvidias-065002091.html
+cn-le29-zhipu-results-20260331-en	FIL	Zhipu, annual results announcement of Mar 31, 2026, served from the company's investor site (Euroland). Byte-identical to the copy once taken from the Hong Kong exchange's site, which is no longer cited	https://ea-cdn.eurolandir.com/press-releases-attachments/4010952/HKEX-EPS_20260331_12082643_0.PDF

@@ -1,0 +1,441 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chip Policy Explainer</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap">
+<style>
+:root { --page:#f9f9f7; --surface:#fcfcfb; --ink:#0b0b0b; --ink2:#52514e; --muted:#7a7872; --border:rgba(11,11,11,0.12); --link:#1c5cab;
+  --font-text:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif; --font-head:"Space Grotesk","Inter",system-ui,sans-serif; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --page:#0d0d0d; --surface:#1a1a19; --ink:#f0efec; --ink2:#c3c2b7; --muted:#8f8d86; --border:rgba(255,255,255,0.14); --link:#86b6ef; color-scheme:dark } }
+:root[data-theme="dark"] { --page:#0d0d0d; --surface:#1a1a19; --ink:#f0efec; --ink2:#c3c2b7; --muted:#8f8d86; --border:rgba(255,255,255,0.14); --link:#86b6ef; color-scheme:dark }
+* { box-sizing:border-box; }
+html { -webkit-text-size-adjust:100%; }
+body { margin:0; background:var(--page); color:var(--ink); font-family:var(--font-text); font-size:16px; line-height:1.5; }
+.outer { max-width:1312px; margin:0 auto; padding:16px 16px 40px; }
+.fit { position:relative; overflow:hidden; width:1280px; height:720px; border-radius:8px; box-shadow:0 0 0 1px var(--border); }
+.below { max-width:760px; margin:14px 0 0; }
+.below p { margin:0 0 10px; color:var(--ink2); font-size:15px; }
+.below p.small { color:var(--muted); font-size:13px; }
+.below code { font-size:13px; overflow-wrap:anywhere; }
+.below video { display:block; width:100%; height:auto; margin:0 0 12px; border-radius:8px; background:#f9f9f7; box-shadow:0 0 0 1px var(--border); }
+.ctl { display:flex; flex-wrap:wrap; align-items:center; gap:10px 14px; margin:0 0 14px; }
+.ctl button { font:600 15px/1 var(--font-text); padding:10px 16px; border-radius:8px; border:1px solid var(--border); background:var(--surface); color:var(--ink); cursor:pointer; }
+.ctl input { flex:1 1 180px; min-width:0; accent-color:#256abf; }
+.ctl span { font-size:13px; color:var(--muted); font-variant-numeric:tabular-nums; white-space:nowrap; }
+.capture body { background:#f9f9f7; } .capture .outer { max-width:none; margin:0; padding:0; } .capture .below { display:none; }
+.capture .fit { border-radius:0; box-shadow:none; }
+
+/* the stage is one video frame, 1280 x 720, always in the light colours of figure/template.html */
+.stage { position:absolute; left:0; top:0; width:1280px; height:720px; overflow:hidden; transform-origin:0 0; color-scheme:light;
+  --page:#f9f9f7; --surface:#fcfcfb; --ink:#0b0b0b; --ink2:#52514e; --muted:#7a7872; --grid:#e1e0d9; --axis:#c3c2b7; --border:rgba(11,11,11,0.12);
+  --wash:rgba(11,11,11,0.045); --toward:#256abf; --away:#c44e18; --pin-on:#ffffff;
+  background:var(--page); color:var(--ink); font-family:var(--font-text); line-height:1.4; -webkit-font-smoothing:antialiased; }
+.stage p, .stage h1, .stage ul { margin:0; }
+.stage .eyebrow { position:absolute; font:700 12px/1 var(--font-text); letter-spacing:0.1em; text-transform:uppercase; color:var(--muted); white-space:nowrap; }
+.stage h1 { position:absolute; font-family:var(--font-head); font-weight:700; letter-spacing:-0.015em; color:var(--ink); white-space:nowrap; }
+.stage ul.key { position:absolute; list-style:none; padding:0 0 0 10px; margin:0; color:var(--ink2); font-size:12.5px; line-height:1.36; border-left:1px solid var(--grid); }
+.stage ul.key li { display:block; margin:0 0 11px; }
+.stage ul.key li:last-child { margin-bottom:0; }
+.stage ul.key b { display:flex; align-items:center; gap:6px; color:var(--ink); font-weight:600; font-size:12.5px; white-space:nowrap; }
+.stage ul.key span { display:block; margin-top:2px; }
+.stage i.sw { display:inline-block; flex:none; width:13px; height:13px; border-radius:50%; }
+.stage i.sw.toward { background:var(--toward); } .stage i.sw.away { background:var(--away); }
+.stage i.pr { display:inline-flex; flex:none; gap:3px; }
+.stage i.mk { display:inline-block; width:14px; height:14px; border-radius:50%; border:2.5px solid; }
+.stage i.mk.away { border-color:var(--away); } .stage i.mk.toward { border-color:var(--toward); }
+.stage i.mk.hollow { background:var(--surface); } .stage i.mk.solid.away { background:var(--away); } .stage i.mk.solid.toward { background:var(--toward); }
+.stage .clock { position:absolute; text-align:right; white-space:nowrap; }
+.stage #date { font-family:var(--font-head); font-weight:700; letter-spacing:-0.01em; color:var(--ink); font-variant-numeric:tabular-nums; }
+.stage #count, .stage #tally { color:var(--ink2); font-weight:500; font-variant-numeric:tabular-nums; }
+.stage .card { position:absolute; background:var(--surface); border:1px solid var(--border); border-radius:12px; }
+.stage .card svg { position:absolute; display:block; }
+.stage svg text { font-family:var(--font-text); }
+.era { fill:var(--wash); }
+.grid { stroke:var(--grid); stroke-width:1; } .grid.yr { stroke:var(--axis); }
+.tick { font-size:12px; font-weight:500; fill:var(--muted); } .tick.yr { fill:var(--ink2); font-weight:600; }
+.eranote { font-size:11px; fill:var(--muted); }
+.flag { stroke:var(--ink2); stroke-width:1; stroke-dasharray:3 3; } .flagt { font-size:12px; font-weight:600; fill:var(--ink2); }
+.lane { stroke:var(--grid); stroke-width:1; } .band { stroke:var(--axis); stroke-width:1.5; }
+.call { font-size:12px; font-weight:600; fill:var(--ink); paint-order:stroke; stroke:var(--surface); stroke-width:4px; stroke-linejoin:round; }
+.rowtag rect { fill:var(--surface); stroke:var(--axis); stroke-width:1; }
+.rowtag text { font-size:13.5px; } .rowtag .who { font-weight:700; fill:var(--ink); } .rowtag .what { font-weight:500; fill:var(--ink2); }
+circle.sw.toward { fill:var(--toward); } circle.sw.away { fill:var(--away); }
+.rowhl { fill:rgba(11,11,11,0.04); }
+.ph { stroke:var(--ink); stroke-width:1.3; }
+.pin circle.dot { stroke-width:2.5; }
+.pin.toward circle.dot { stroke:var(--toward); } .pin.away circle.dot { stroke:var(--away); }
+.pin.hollow circle.dot { fill:var(--surface); }
+.pin.solid.toward circle.dot { fill:var(--toward); } .pin.solid.away circle.dot { fill:var(--away); }
+.pin text { font-size:11px; font-weight:700; text-anchor:middle; fill:var(--ink); font-variant-numeric:tabular-nums; }
+.pin.solid text { fill:var(--pin-on); }
+.pin circle.halo { fill:none; stroke-width:2.5; } .pin.toward circle.halo { stroke:var(--toward); } .pin.away circle.halo { stroke:var(--away); }
+.stage .foot { position:absolute; color:var(--ink2); } .stage .foot b { color:var(--ink); font-weight:600; }
+.stage .draft { position:absolute; color:var(--muted); white-space:nowrap; }
+.stage .nb { white-space:nowrap; }
+
+#h1 { left:24px; top:12px; font-size:24px; line-height:1.2; }
+#clockbox { right:24px; top:6px; }
+#date { font-size:31px; line-height:1.15; }
+#card { left:16px; top:48px; width:1248px; height:417px; }
+#card svg { left:8px; top:4px; width:1082px; height:406.2px; }
+.stage ul.key { left:1098px; top:12px; width:146px; }
+#count { position:absolute; left:1109px; bottom:12px; font-size:13px; line-height:1.35; white-space:nowrap; }
+#capbox { left:16px; top:471px; width:1248px; height:226px; }
+.cap { position:absolute; left:18px; right:18px; top:9px; bottom:7px; opacity:0; visibility:hidden; }
+.cap .lab { display:flex; align-items:baseline; gap:10px; }
+.cap .num { font:700 11.5px/1 var(--font-text); letter-spacing:0.09em; text-transform:uppercase; color:var(--muted); white-space:nowrap; }
+.cap .ttl { font:700 18.5px/1.2 var(--font-head); letter-spacing:-0.005em; color:var(--ink); }
+.cap .txt { font-size:22px; line-height:1.36; color:var(--ink); margin-top:5px; text-wrap:pretty; }
+.cap.mid .txt { font-size:21px; }
+.cap.long .txt { font-size:20px; }
+.cap ul { list-style:none; padding:0; }
+.cap .src { margin-top:7px; font-size:13.5px; line-height:1.4; color:var(--ink2); }
+.cap .src li { display:flex; align-items:baseline; gap:7px; }
+.cap .src i.tier { display:inline-block; flex:none; width:10px; height:10px; border-radius:50%; border:2px solid var(--ink2); transform:translateY(1px); }
+.cap .src i.tier.solid { background:var(--ink2); } .cap .src i.tier.open { background:var(--surface); } .cap .src i.tier.plain { border-color:transparent; }
+.cap .nums { display:grid; grid-template-columns:repeat(4, 1fr); column-gap:22px; margin-top:9px; }
+.cap .nums li { border-top:2px solid var(--axis); padding-top:6px; min-width:0; }
+.cap .nums .ln { display:block; }
+.cap .nums .lab2 { font-size:13px; line-height:1.3; color:var(--ink2); font-weight:500; }
+.cap .nums .val { font:700 17.5px/1.22 var(--font-head); color:var(--ink); margin:2px 0 3px; }
+.cap .nums .from { font-size:12.5px; line-height:1.3; color:var(--muted); }
+.stage .c { display:inline-block; padding:1.5px 5px; margin:0 1px; border-radius:10px; font:700 10.5px/1 var(--font-text); font-variant-numeric:tabular-nums;
+  border:1.6px solid var(--ink2); vertical-align:2px; white-space:nowrap; }
+.stage .c.solid { background:var(--ink2); color:var(--page); } .stage .c.open { background:transparent; color:var(--ink); }
+#draft { left:24px; bottom:6px; font-size:11px; }
+#bar { position:absolute; left:0; bottom:0; height:3px; width:0; background:var(--ink2); opacity:0.4; }
+</style>
+</head>
+<body>
+<div class="outer">
+ <div class="fit" id="fit"><div class="stage" id="stage">
+<h1 id="h1">Beijing mostly pulled one way on Nvidia chips. Its AI companies pulled the other.</h1>
+<div class="clock" id="clockbox"><div id="date"></div></div>
+<div class="card" id="card">
+<svg id="strip" viewBox="204 8 1196 449" role="img" aria-label="Dated strip, 2023 to November 2026: four rows of numbered marks, one mark for each dated record">
+<rect class="rowhl" id="row-BH" x="204" y="50" width="1196" height="108" opacity="0"/>
+<rect class="rowhl" id="row-BL" x="204" y="158" width="1196" height="85" opacity="0"/>
+<rect class="rowhl" id="row-CN" x="204" y="259" width="1196" height="85" opacity="0"/>
+<rect class="rowhl" id="row-CH" x="204" y="344" width="1196" height="85" opacity="0"/>
+<rect class="era" x="216" y="50" width="173.7" height="379"/>
+<line class="grid yr" x1="216.0" y1="50" x2="216.0" y2="435"/><text class="tick yr" x="220.0" y="451">2023</text>
+<line class="grid yr" x1="302.7" y1="50" x2="302.7" y2="435"/><text class="tick yr" x="306.7" y="451">2024</text>
+<line class="grid yr" x1="389.7" y1="50" x2="389.7" y2="435"/><text class="tick yr" x="393.7" y="451">Jan 2025</text>
+<line class="grid" x1="516.4" y1="50" x2="516.4" y2="435"/><text class="tick" x="520.4" y="451">Apr</text>
+<line class="grid" x1="644.6" y1="50" x2="644.6" y2="435"/><text class="tick" x="648.6" y="451">Jul</text>
+<line class="grid" x1="774.1" y1="50" x2="774.1" y2="435"/><text class="tick" x="778.1" y="451">Oct</text>
+<line class="grid yr" x1="903.7" y1="50" x2="903.7" y2="435"/><text class="tick yr" x="907.7" y="451">Jan 2026</text>
+<line class="grid" x1="1030.4" y1="50" x2="1030.4" y2="435"/><text class="tick" x="1034.4" y="451">Apr</text>
+<line class="grid" x1="1158.6" y1="50" x2="1158.6" y2="435"/><text class="tick" x="1162.6" y="451">Jul</text>
+<line class="grid" x1="1288.1" y1="50" x2="1288.1" y2="435"/><text class="tick" x="1292.1" y="451">Oct</text>
+<text class="eranote" x="221" y="43">2023 and 2024 are drawn narrower</text>
+<g id="flag0"><line class="flag" x1="664.3" y1="14" x2="664.3" y2="429"/><text class="flagt" x="657.3" y="26" text-anchor="end">Jul 2025 · US clears H20 sales again</text></g>
+<g id="flag1"><line class="flag" x1="869.9" y1="14" x2="869.9" y2="429"/><text class="flagt" x="876.9" y="26" text-anchor="start">Dec 8, 2025 · US allows the H200</text></g>
+<g id="flag2"><line class="flag" x1="1354.3" y1="14" x2="1354.3" y2="429"/><text class="flagt" x="1347.3" y="26" text-anchor="end">Nov 17, 2026 · H200 shipments stop</text></g>
+<line class="lane" x1="0" y1="158" x2="1400" y2="158"/>
+<g class="rowtag"><rect x="221" y="54" width="200" height="21" rx="10.5"/><circle class="sw away" cx="233" cy="64.5" r="5"/><text x="244" y="69.3"><tspan class="who">Beijing</tspan> <tspan class="what">holds Nvidia back</tspan></text></g>
+<line class="lane" x1="0" y1="243" x2="1400" y2="243"/>
+<g class="rowtag"><rect x="221" y="162" width="200" height="21" rx="10.5"/><circle class="sw toward" cx="233" cy="172.5" r="5"/><text x="244" y="177.3"><tspan class="who">Beijing</tspan> <tspan class="what">lets Nvidia in</tspan></text></g>
+<line class="lane" x1="0" y1="344" x2="1400" y2="344"/>
+<g class="rowtag"><rect x="221" y="263" width="200" height="21" rx="10.5"/><circle class="sw toward" cx="233" cy="273.5" r="5"/><text x="244" y="278.3"><tspan class="who">The companies</tspan> <tspan class="what">reach for Nvidia</tspan></text></g>
+<line class="lane" x1="0" y1="429" x2="1400" y2="429"/>
+<g class="rowtag"><rect x="221" y="348" width="200" height="21" rx="10.5"/><circle class="sw away" cx="233" cy="358.5" r="5"/><text x="244" y="363.3"><tspan class="who">The companies</tspan> <tspan class="what">turn to home-made chips</tspan></text></g>
+<line class="band" x1="0" y1="251" x2="1400" y2="251"/>
+<line class="ph" id="ph" x1="216" y1="42" x2="216" y2="429" opacity="0"/>
+<g class="pin away solid" id="m1" style="display:none"><circle class="halo" cx="249.3" cy="140.0" r="0" opacity="0"/><g class="body"><circle class="dot" cx="249.3" cy="140.0" r="10"/><text x="249.3" y="144.0">1</text></g></g>
+<g class="pin away solid" id="m2" style="display:none"><circle class="halo" cx="298.9" cy="140.0" r="0" opacity="0"/><g class="body"><circle class="dot" cx="298.9" cy="140.0" r="10"/><text x="298.9" y="144.0">2</text></g></g>
+<g class="pin away hollow" id="m3" style="display:none"><circle class="halo" cx="366.9" cy="140.0" r="0" opacity="0"/><g class="body"><circle class="dot" cx="366.9" cy="140.0" r="10"/><text x="366.9" y="144.0">3</text></g></g>
+<g class="pin away solid" id="m4" style="display:none"><circle class="halo" cx="384.2" cy="117.0" r="0" opacity="0"/><g class="body"><circle class="dot" cx="384.2" cy="117.0" r="10"/><text x="384.2" y="121.0">4</text></g></g>
+<g class="pin toward solid" id="m5" style="display:none"><circle class="halo" cx="539.0" cy="225.0" r="0" opacity="0"/><g class="body"><circle class="dot" cx="539.0" cy="225.0" r="10"/><text x="539.0" y="229.0">5</text></g></g>
+<g class="pin away solid" id="m6" style="display:none"><circle class="halo" cx="550.2" cy="140.0" r="0" opacity="0"/><g class="body"><circle class="dot" cx="550.2" cy="140.0" r="10"/><text x="550.2" y="144.0">6</text></g></g>
+<g class="pin toward solid" id="m7" style="display:none"><circle class="halo" cx="667.1" cy="225.0" r="0" opacity="0"/><g class="body"><circle class="dot" cx="667.1" cy="225.0" r="10"/><text x="667.1" y="229.0">7</text></g></g>
+<g class="pin toward solid" id="m8" style="display:none"><circle class="halo" cx="668.5" cy="202.0" r="0" opacity="0"/><g class="body"><circle class="dot" cx="668.5" cy="202.0" r="10"/><text x="668.5" y="206.0">8</text></g></g>
+<g class="pin away solid" id="m9" style="display:none"><circle class="halo" cx="672.7" cy="140.0" r="0" opacity="0"/><g class="body"><circle class="dot" cx="672.7" cy="140.0" r="10"/><text x="672.7" y="144.0">9</text></g></g>
+<g class="pin away solid" id="m10" style="display:none"><circle class="halo" cx="686.8" cy="117.0" r="0" opacity="0"/><g class="body"><circle class="dot" cx="686.8" cy="117.0" r="10"/><text x="686.8" y="121.0">10</text></g></g>
+<g class="pin away hollow" id="m11" style="display:none"><circle class="halo" cx="700.9" cy="140.0" r="0" opacity="0"/><g class="body"><circle class="dot" cx="700.9" cy="140.0" r="10"/><text x="700.9" y="144.0">11</text></g></g>
+<text class="call" id="c11" x="658.9" y="98.0" text-anchor="end" style="display:none">11 · “traitor” warning</text>
+<g class="pin away solid" id="m12" style="display:none"><circle class="halo" cx="700.9" cy="94.0" r="0" opacity="0"/><g class="body"><circle class="dot" cx="700.9" cy="94.0" r="10"/><text x="700.9" y="98.0">12</text></g></g>
+<g class="pin away hollow" id="m13" style="display:none"><circle class="halo" cx="703.7" cy="71.0" r="0" opacity="0"/><g class="body"><circle class="dot" cx="703.7" cy="71.0" r="10"/><text x="703.7" y="75.0">13</text></g></g>
+<g class="pin away hollow" id="m14" style="display:none"><circle class="halo" cx="715.0" cy="117.0" r="0" opacity="0"/><g class="body"><circle class="dot" cx="715.0" cy="117.0" r="10"/><text x="715.0" y="121.0">14</text></g></g>
+<g class="pin away solid" id="m15" style="display:none"><circle class="halo" cx="744.6" cy="140.0" r="0" opacity="0"/><g class="body"><circle class="dot" cx="744.6" cy="140.0" r="10"/><text x="744.6" y="144.0">15</text></g></g>
+<g class="pin away solid" id="m16" style="display:none"><circle class="halo" cx="751.6" cy="117.0" r="0" opacity="0"/><g class="body"><circle class="dot" cx="751.6" cy="117.0" r="10"/><text x="751.6" y="121.0">16</text></g></g>
+<g class="pin away hollow" id="m17" style="display:none"><circle class="halo" cx="754.4" cy="94.0" r="0" opacity="0"/><g class="body"><circle class="dot" cx="754.4" cy="94.0" r="10"/><text x="754.4" y="98.0">17</text></g></g>
+<g class="pin away hollow" id="m18" style="display:none"><circle class="halo" cx="785.4" cy="140.0" r="0" opacity="0"/><g class="body"><circle class="dot" cx="785.4" cy="140.0" r="10"/><text x="785.4" y="144.0">18</text></g></g>
+<g class="pin away hollow" id="m19" style="display:none"><circle class="halo" cx="823.4" cy="140.0" r="0" opacity="0"/><g class="body"><circle class="dot" cx="823.4" cy="140.0" r="10"/><text x="823.4" y="144.0">19</text></g></g>
+<g class="pin away solid" id="m20" style="display:none"><circle class="halo" cx="843.1" cy="117.0" r="0" opacity="0"/><g class="body"><circle class="dot" cx="843.1" cy="117.0" r="10"/><text x="843.1" y="121.0">20</text></g></g>
+<g class="pin away hollow" id="m21" style="display:none"><circle class="halo" cx="922.0" cy="140.0" r="0" opacity="0"/><g class="body"><circle class="dot" cx="922.0" cy="140.0" r="10"/><text x="922.0" y="144.0">21</text></g></g>
+<text class="call" id="c21" x="935.0" y="121.0" text-anchor="start" style="display:none">21 · H200 “not permitted”</text>
+<g class="pin toward hollow" id="m22" style="display:none"><circle class="halo" cx="941.7" cy="225.0" r="0" opacity="0"/><g class="body"><circle class="dot" cx="941.7" cy="225.0" r="10"/><text x="941.7" y="229.0">22</text></g></g>
+<g class="pin toward hollow" id="m23" style="display:none"><circle class="halo" cx="944.5" cy="202.0" r="0" opacity="0"/><g class="body"><circle class="dot" cx="944.5" cy="202.0" r="10"/><text x="944.5" y="206.0">23</text></g></g>
+<text class="call" id="c23" x="958.5" y="206.0" text-anchor="start" style="display:none">23 · conditional approval</text>
+<g class="pin toward hollow" id="m24" style="display:none"><circle class="halo" cx="1009.3" cy="225.0" r="0" opacity="0"/><g class="body"><circle class="dot" cx="1009.3" cy="225.0" r="10"/><text x="1009.3" y="229.0">24</text></g></g>
+<g class="pin away solid" id="m25" style="display:none"><circle class="halo" cx="1060.0" cy="140.0" r="0" opacity="0"/><g class="body"><circle class="dot" cx="1060.0" cy="140.0" r="10"/><text x="1060.0" y="144.0">25</text></g></g>
+<g class="pin away hollow" id="m26" style="display:none"><circle class="halo" cx="1091.0" cy="140.0" r="0" opacity="0"/><g class="body"><circle class="dot" cx="1091.0" cy="140.0" r="10"/><text x="1091.0" y="144.0">26</text></g></g>
+<g class="pin toward solid" id="m27" style="display:none"><circle class="halo" cx="1091.0" cy="225.0" r="0" opacity="0"/><g class="body"><circle class="dot" cx="1091.0" cy="225.0" r="10"/><text x="1091.0" y="229.0">27</text></g></g>
+<g class="pin away solid" id="m28" style="display:none"><circle class="halo" cx="1102.2" cy="117.0" r="0" opacity="0"/><g class="body"><circle class="dot" cx="1102.2" cy="117.0" r="10"/><text x="1102.2" y="121.0">28</text></g></g>
+<g class="pin away solid" id="m29" style="display:none"><circle class="halo" cx="1107.9" cy="94.0" r="0" opacity="0"/><g class="body"><circle class="dot" cx="1107.9" cy="94.0" r="10"/><text x="1107.9" y="98.0">29</text></g></g>
+<g class="pin toward solid" id="m30" style="display:none"><circle class="halo" cx="1167.0" cy="225.0" r="0" opacity="0"/><g class="body"><circle class="dot" cx="1167.0" cy="225.0" r="10"/><text x="1167.0" y="229.0">30</text></g></g>
+<g class="pin toward hollow" id="m31" style="display:none"><circle class="halo" cx="1168.4" cy="202.0" r="0" opacity="0"/><g class="body"><circle class="dot" cx="1168.4" cy="202.0" r="10"/><text x="1168.4" y="206.0">31</text></g></g>
+<g class="pin toward solid" id="m32" style="display:none"><circle class="halo" cx="1176.9" cy="179.0" r="0" opacity="0"/><g class="body"><circle class="dot" cx="1176.9" cy="179.0" r="10"/><text x="1176.9" y="183.0">32</text></g></g>
+<g class="pin toward hollow" id="m33" style="display:none"><circle class="halo" cx="1226.1" cy="225.0" r="0" opacity="0"/><g class="body"><circle class="dot" cx="1226.1" cy="225.0" r="10"/><text x="1226.1" y="229.0">33</text></g></g>
+<text class="call" id="c33" x="1344.1" y="206.0" text-anchor="end" style="display:none">33 · 10,000 each arrive</text>
+<g class="pin away solid" id="m34" style="display:none"><circle class="halo" cx="1237.4" cy="140.0" r="0" opacity="0"/><g class="body"><circle class="dot" cx="1237.4" cy="140.0" r="10"/><text x="1237.4" y="144.0">34</text></g></g>
+<g class="pin toward solid" id="m35" style="display:none"><circle class="halo" cx="1309.2" cy="225.0" r="0" opacity="0"/><g class="body"><circle class="dot" cx="1309.2" cy="225.0" r="10"/><text x="1309.2" y="229.0">35</text></g></g>
+<g class="pin away hollow" id="m36" style="display:none"><circle class="halo" cx="1337.4" cy="140.0" r="0" opacity="0"/><g class="body"><circle class="dot" cx="1337.4" cy="140.0" r="10"/><text x="1337.4" y="144.0">36</text></g></g>
+<text class="call" id="c36" x="1334.4" y="98.0" text-anchor="end" style="display:none">36 · 600,000 wait in Hong Kong</text>
+<g class="pin toward solid" id="m37" style="display:none"><circle class="halo" cx="1354.3" cy="225.0" r="0" opacity="0"/><g class="body"><circle class="dot" cx="1354.3" cy="225.0" r="10"/><text x="1354.3" y="229.0">37</text></g></g>
+<g class="pin away hollow" id="m38" style="display:none"><circle class="halo" cx="289.7" cy="411.0" r="0" opacity="0"/><g class="body"><circle class="dot" cx="289.7" cy="411.0" r="10"/><text x="289.7" y="415.0">38</text></g></g>
+<g class="pin away solid" id="m39" style="display:none"><circle class="halo" cx="291.6" cy="388.0" r="0" opacity="0"/><g class="body"><circle class="dot" cx="291.6" cy="388.0" r="10"/><text x="291.6" y="392.0">39</text></g></g>
+<text class="call" id="c39" x="305.6" y="392.0" text-anchor="start" style="display:none">39 · after US curbs</text>
+<g class="pin toward hollow" id="m40" style="display:none"><circle class="halo" cx="519.3" cy="326.0" r="0" opacity="0"/><g class="body"><circle class="dot" cx="519.3" cy="326.0" r="10"/><text x="519.3" y="330.0">40</text></g></g>
+<g class="pin away solid" id="m41" style="display:none"><circle class="halo" cx="550.2" cy="411.0" r="0" opacity="0"/><g class="body"><circle class="dot" cx="550.2" cy="411.0" r="10"/><text x="550.2" y="415.0">41</text></g></g>
+<g class="pin toward solid" id="m42" style="display:none"><circle class="halo" cx="557.3" cy="326.0" r="0" opacity="0"/><g class="body"><circle class="dot" cx="557.3" cy="326.0" r="10"/><text x="557.3" y="330.0">42</text></g></g>
+<g class="pin away solid" id="m43" style="display:none"><circle class="halo" cx="675.6" cy="411.0" r="0" opacity="0"/><g class="body"><circle class="dot" cx="675.6" cy="411.0" r="10"/><text x="675.6" y="415.0">43</text></g></g>
+<g class="pin toward hollow" id="m44" style="display:none"><circle class="halo" cx="705.1" cy="326.0" r="0" opacity="0"/><g class="body"><circle class="dot" cx="705.1" cy="326.0" r="10"/><text x="705.1" y="330.0">44</text></g></g>
+<g class="pin toward hollow" id="m45" style="display:none"><circle class="halo" cx="715.0" cy="303.0" r="0" opacity="0"/><g class="body"><circle class="dot" cx="715.0" cy="303.0" r="10"/><text x="715.0" y="307.0">45</text></g></g>
+<g class="pin toward hollow" id="m46" style="display:none"><circle class="halo" cx="753.0" cy="326.0" r="0" opacity="0"/><g class="body"><circle class="dot" cx="753.0" cy="326.0" r="10"/><text x="753.0" y="330.0">46</text></g></g>
+<g class="pin toward hollow" id="m47" style="display:none"><circle class="halo" cx="854.4" cy="326.0" r="0" opacity="0"/><g class="body"><circle class="dot" cx="854.4" cy="326.0" r="10"/><text x="854.4" y="330.0">47</text></g></g>
+<g class="pin toward hollow" id="m48" style="display:none"><circle class="halo" cx="872.7" cy="303.0" r="0" opacity="0"/><g class="body"><circle class="dot" cx="872.7" cy="303.0" r="10"/><text x="872.7" y="307.0">48</text></g></g>
+<g class="pin toward solid" id="m49" style="display:none"><circle class="halo" cx="876.9" cy="280.0" r="0" opacity="0"/><g class="body"><circle class="dot" cx="876.9" cy="280.0" r="10"/><text x="876.9" y="284.0">49</text></g></g>
+<g class="pin toward hollow" id="m50" style="display:none"><circle class="halo" cx="902.3" cy="326.0" r="0" opacity="0"/><g class="body"><circle class="dot" cx="902.3" cy="326.0" r="10"/><text x="902.3" y="330.0">50</text></g></g>
+<text class="call" id="c50" x="915.3" y="307.0" text-anchor="start" style="display:none">50 · 2 million H200s ordered</text>
+<g class="pin away solid" id="m51" style="display:none"><circle class="halo" cx="1012.1" cy="411.0" r="0" opacity="0"/><g class="body"><circle class="dot" cx="1012.1" cy="411.0" r="10"/><text x="1012.1" y="415.0">51</text></g></g>
+<g class="pin away hollow" id="m52" style="display:none"><circle class="halo" cx="1023.4" cy="388.0" r="0" opacity="0"/><g class="body"><circle class="dot" cx="1023.4" cy="388.0" r="10"/><text x="1023.4" y="392.0">52</text></g></g>
+<g class="pin away solid" id="m53" style="display:none"><circle class="halo" cx="1029.0" cy="365.0" r="0" opacity="0"/><g class="body"><circle class="dot" cx="1029.0" cy="365.0" r="10"/><text x="1029.0" y="369.0">53</text></g></g>
+<g class="pin away solid" id="m54" style="display:none"><circle class="halo" cx="1062.8" cy="411.0" r="0" opacity="0"/><g class="body"><circle class="dot" cx="1062.8" cy="411.0" r="10"/><text x="1062.8" y="415.0">54</text></g></g>
+<g class="pin toward solid" id="m55" style="display:none"><circle class="halo" cx="1075.5" cy="326.0" r="0" opacity="0"/><g class="body"><circle class="dot" cx="1075.5" cy="326.0" r="10"/><text x="1075.5" y="330.0">55</text></g></g>
+<g class="pin toward solid" id="m56" style="display:none"><circle class="halo" cx="1199.4" cy="326.0" r="0" opacity="0"/><g class="body"><circle class="dot" cx="1199.4" cy="326.0" r="10"/><text x="1199.4" y="330.0">56</text></g></g>
+<g class="pin toward solid" id="m57" style="display:none"><circle class="halo" cx="1230.4" cy="326.0" r="0" opacity="0"/><g class="body"><circle class="dot" cx="1230.4" cy="326.0" r="10"/><text x="1230.4" y="330.0">57</text></g></g>
+<g class="pin toward hollow" id="m58" style="display:none"><circle class="halo" cx="1314.9" cy="326.0" r="0" opacity="0"/><g class="body"><circle class="dot" cx="1314.9" cy="326.0" r="10"/><text x="1314.9" y="330.0">58</text></g></g>
+<g class="pin away solid" id="m59" style="display:none"><circle class="halo" cx="1355.7" cy="411.0" r="0" opacity="0"/><g class="body"><circle class="dot" cx="1355.7" cy="411.0" r="10"/><text x="1355.7" y="415.0">59</text></g></g>
+<g class="pin toward solid" id="m60" style="display:none"><circle class="halo" cx="1355.7" cy="326.0" r="0" opacity="0"/><g class="body"><circle class="dot" cx="1355.7" cy="326.0" r="10"/><text x="1355.7" y="330.0">60</text></g></g>
+<g class="pin away solid" id="m61" style="display:none"><circle class="halo" cx="1357.1" cy="388.0" r="0" opacity="0"/><g class="body"><circle class="dot" cx="1357.1" cy="388.0" r="10"/><text x="1357.1" y="392.0">61</text></g></g>
+</svg>
+<ul class="key" id="key"><li><b><i class="sw away"></i>Away from Nvidia</b><span>holding it back, or choosing home-made chips</span></li><li><b><i class="sw toward"></i>Toward Nvidia</b><span>buying it, using it, letting it in</span></li><li><b><i class="pr"><i class="mk solid away"></i><i class="mk solid toward"></i></i>Filled</b><span>on the record (a government document, published state media, a filing, a named person)</span></li><li><b><i class="pr"><i class="mk hollow away"></i><i class="mk hollow toward"></i></i>Open</b><span>a press report citing unnamed people</span></li></ul>
+<div id="count"></div>
+</div>
+<div class="card" id="capbox">
+<div class="cap" id="cap1"><div class="lab"><span class="num">1 of 12</span><span class="ttl">The declared line.</span></div>
+<p class="txt">Beijing’s declared line is to use home-made chips. Xi Jinping told the Politburo to concentrate forces on high-end <span class="nb">chips <span class="c solid" title="Chinese state document">1</span></span>. The state planner (NDRC) said it was guiding home-made large models to step up their adaptation to home-made <span class="nb">chips <span class="c solid" title="Official document, or an official on the record">2</span></span>.</p>
+<ul class="src"><li><i class="tier solid"></i><span>On the record: Xinhua’s account of the Politburo session of Apr 25, <span class="nb">2025 <span class="c solid" title="Chinese state document">1</span></span>; the state planner’s press conference of May 22, <span class="nb">2026 <span class="c solid" title="Official document, or an official on the record">2</span></span></span></li></ul>
+</div>
+<div class="cap" id="cap2"><div class="lab"><span class="num">2 of 12</span><span class="ttl">What the companies used and ordered.</span></div>
+<p class="txt">The companies went on using and ordering Nvidia chips. A Shanghai government body wrote that in the city internet companies’ own clusters run mainly on Nvidia <span class="nb">cards <span class="c solid" title="Chinese state document">3</span></span>. Reported: orders “for more than 2 million H200 chips for <span class="nb">2026” <span class="c open" title="Press report citing unnamed people">4</span></span>.</p>
+<ul class="src"><li><i class="tier solid"></i><span>On the record: Shanghai Commission of Economy and Informatization, written reply dated Apr 30, 2025 (published Nov 10, <span class="nb">2025) <span class="c solid" title="Chinese state document">3</span></span></span></li><li><i class="tier open"></i><span>Reported, from unnamed people: Reuters, Dec 31, <span class="nb">2025 <span class="c open" title="Press report citing unnamed people">4</span></span></span></li></ul>
+</div>
+<div class="cap" id="cap3"><div class="lab"><span class="num">3 of 12</span><span class="ttl">What Beijing did, on the record.</span></div>
+<p class="txt">Regulators acted against Nvidia by name: an antitrust <span class="nb">case <span class="c solid" title="Chinese state document">5</span></span> and a <span class="nb">summons <span class="c solid" title="Chinese state document">6</span></span>. Nvidia’s own filing says licensed H200 sales “were restricted by the PRC <span class="nb">government” <span class="c solid" title="Company filing or statement">7</span></span>.</p>
+<ul class="src"><li><i class="tier solid"></i><span>On the record: the market regulator, Dec 9, <span class="nb">2024 <span class="c solid" title="Chinese state document">5</span></span>; the cyberspace regulator, Jul 31, <span class="nb">2025 <span class="c solid" title="Chinese state document">6</span></span>; Nvidia, Form 10-Q for the quarter to Jul 26, <span class="nb">2026 <span class="c solid" title="Company filing or statement">7</span></span></span></li></ul>
+</div>
+<div class="cap" id="cap4"><div class="lab"><span class="num">4 of 12</span><span class="ttl">What Beijing did, as reported.</span></div>
+<p class="txt">Reported, from unnamed people, and not published policy. The Wall Street Journal: “Authorities privately told companies to halt their Nvidia <span class="nb">purchases” <span class="c open" title="Press report citing unnamed people">8</span></span>. A vice premier’s warning, in its words: “Anyone who resisted employing domestic chips was a <span class="nb">traitor.” <span class="c open" title="Press report citing unnamed people">8</span></span></p>
+<ul class="src"><li><i class="tier open"></i><span>Reported, from unnamed people: Wall Street Journal, Jul 23, 2026, looking back to the summer before; it gives no date for the warning; the vice premier is Ding <span class="nb">Xuexiang <span class="c open" title="Press report citing unnamed people">8</span></span></span></li></ul>
+</div>
+<div class="cap long" id="cap5"><div class="lab"><span class="num">5 of 12</span><span class="ttl">The numbers.</span></div>
+<p class="txt">Nvidia’s H200 chip in numbers: four separate counts at four dates, not one tally. Washington’s is from a government table; the other three are press reports citing unnamed people.</p>
+<ul class="nums"><li><span class="ln lab2">Ordered by Chinese companies for 2026:</span><span class="ln val">“more than 2 million H200 chips”.</span><span class="ln from">Reuters, Dec 31, <span class="nb">2025 <span class="c open" title="Press report citing unnamed people">4</span></span></span></li><li><span class="ln lab2">Licensed by Washington for Nvidia:</span><span class="ln val">579,868 chips, each application “Approved, not shipped”.</span><span class="ln from">Commerce Department table, status at May 11, 2026; our <span class="nb">sum <span class="c solid" title="Official document, or an official on the record">9</span></span></span></li><li><span class="ln lab2">Approved by Beijing, with conditions:</span><span class="ln val">“more than 400,000 H200 chips in total”.</span><span class="ln from">Reuters, Jan 28, <span class="nb">2026 <span class="c open" title="Press report citing unnamed people">10</span></span></span></li><li><span class="ln lab2">Waiting in Hong Kong:</span><span class="ln val">“About 600,000”.</span><span class="ln from">Reuters, Nov 5, <span class="nb">2026 <span class="c open" title="Press report citing unnamed people">11</span></span></span></li></ul>
+</div>
+<div class="cap" id="cap6"><div class="lab"><span class="num">6 of 12</span><span class="ttl">Limit 1 of 5.</span></div>
+<p class="txt">Beijing was not one actor. The commerce minister told Nvidia’s chief executive he hoped multinationals, Nvidia among them, would give Chinese customers high-quality, reliable products and <span class="nb">services <span class="c solid" title="Official document, or an official on the record">12</span></span>. Reported: the commerce ministry “favoured <span class="nb">imports” <span class="c open" title="Press report citing unnamed people">13</span></span>.</p>
+<ul class="src"><li><i class="tier solid"></i><span>On the record: Ministry of Commerce, account of the meeting of Jul 17, <span class="nb">2025 <span class="c solid" title="Official document, or an official on the record">12</span></span></span></li><li><i class="tier open"></i><span>Reported, from unnamed people: Financial Times, Nov 13, <span class="nb">2026 <span class="c open" title="Press report citing unnamed people">13</span></span></span></li></ul>
+</div>
+<div class="cap mid" id="cap7"><div class="lab"><span class="num">7 of 12</span><span class="ttl">Limit 2 of 5.</span></div>
+<p class="txt">Public warnings and unpublished guidance, not a published ban. No published order against buying Nvidia chips was found in the 103 policy pages read. The seven state-media items found that only warn about Nvidia’s chips all date from Aug 1 to Sept 24, 2025.</p>
+<ul class="src"><li><i class="tier plain"></i><span>Our own reading. A published one could have been found: the 2023 conclusion of the cyberspace regulator’s review office on Micron’s products is among the <span class="nb">pages <span class="c solid" title="Chinese state document">14</span></span></span></li><li><i class="tier plain"></i><span>Our own count, of 42 state and Party media items: the first of the seven in People’s <span class="nb">Daily <span class="c solid" title="Published commentary or statement (state media, industry body)">15</span></span>, the last in Science and Technology <span class="nb">Daily <span class="c solid" title="Published commentary or statement (state media, industry body)">16</span></span></span></li><li><i class="tier open"></i><span>Reported, from unnamed people: Bloomberg, Sept 27, 2024: “guidance rather than an outright <span class="nb">ban” <span class="c open" title="Press report citing unnamed people">17</span></span></span></li></ul>
+</div>
+<div class="cap mid" id="cap8"><div class="lab"><span class="num">8 of 12</span><span class="ttl">Limit 3 of 5.</span></div>
+<p class="txt">Some purchases were approved and some chips came in. Reported: ByteDance and Tencent “have each received about 10,000 H200 processors in recent <span class="nb">weeks” <span class="c open" title="Press report citing unnamed people">18</span></span>. A US official told Congress: “There have been minimal exports of any H200s to China so <span class="nb">far” <span class="c solid" title="Press report of words spoken on the record">19</span></span>.</p>
+<ul class="src"><li><i class="tier open"></i><span>Reported, from unnamed people: Financial Times, through Reuters, Aug 18, <span class="nb">2026 <span class="c open" title="Press report citing unnamed people">18</span></span></span></li><li><i class="tier solid"></i><span>On the record: Jeffrey Kessler, under secretary of commerce, to a House committee on Jul 14, 2026, as Reuters <span class="nb">reported <span class="c solid" title="Press report of words spoken on the record">19</span></span></span></li></ul>
+</div>
+<div class="cap long" id="cap9"><div class="lab"><span class="num">9 of 12</span><span class="ttl">Limit 4 of 5.</span></div>
+<p class="txt">The companies had reasons of their own, and American curbs and conditions pushed too. Alibaba says its chip unit “has brought proprietary GPUs into scaled <span class="nb">production” <span class="c solid" title="Company filing or statement">20</span></span>. Nvidia: “we are already effectively foreclosed from the China market by U.S. export <span class="nb">controls” <span class="c solid" title="Company filing or statement">21</span></span>. Washington returned without action 55% of the chips in the applications its summary of May 11, 2026 records; its table gives no <span class="nb">reason <span class="c solid" title="Official document, or an official on the record">9</span></span>.</p>
+<ul class="src"><li><i class="tier solid"></i><span>On the record: Alibaba, results release, Mar 19, <span class="nb">2026 <span class="c solid" title="Company filing or statement">20</span></span>; Nvidia, Form 10-Q signed Nov 19, <span class="nb">2025 <span class="c solid" title="Company filing or statement">21</span></span></span></li><li><i class="tier solid"></i><span>On the record: the Commerce Department’s table, made public by the House Foreign Affairs Committee on Nov 19, 2026; our sum; the committee says the summary does not show every application in <span class="nb">full <span class="c solid" title="Official document, or an official on the record">22</span></span></span></li></ul>
+</div>
+<div class="cap long" id="cap10"><div class="lab"><span class="num">10 of 12</span><span class="ttl">Limit 5 of 5.</span></div>
+<p class="txt">What Beijing meant by it is not settled. A US commission saw in the antitrust move against Nvidia “China’s willingness to both exert leverage and ease pressure as a negotiating <span class="nb">tactic” <span class="c solid" title="Official document, or an official on the record">23</span></span>. Asked whether China would let its companies buy the H200, the US Trade Representative called it “a sovereign decision for <span class="nb">China” <span class="c open" title="Caption track or machine transcript, not checked by ear">24</span></span>. The direction stands under either reading.</p>
+<ul class="src"><li><i class="tier solid"></i><span>On the record: US-China Economic and Security Review Commission, 2025 annual <span class="nb">report <span class="c solid" title="Official document, or an official on the record">23</span></span></span></li><li><i class="tier open"></i><span>Captions, not checked by ear: the Trade Representative on Bloomberg Television, May 15, 2026, at <span class="nb">5:59 <span class="c open" title="Caption track or machine transcript, not checked by ear">24</span></span></span></li></ul>
+</div>
+<div class="cap long" id="cap11"><div class="lab"><span class="num">11 of 12</span><span class="ttl">The sentence that survives (1 of 2).</span></div>
+<p class="txt">From 2024 the security and planning side of the Chinese state pressed China’s AI companies, through unpublished guidance that the press reported, to buy home-made chips rather than Nvidia’s, and from the summer of 2025 to stop ordering them, while the security ministry warned in public of backdoors in chips made abroad and state media warned about Nvidia’s chips, most of all in August and September 2025;</p>
+<ul class="src"><li><i class="tier plain"></i><span>From the project’s referenced argument, section 6: its one sentence, shown here in two parts. The guidance is reported, from unnamed people; the warnings were public.</span></li></ul>
+</div>
+<div class="cap long" id="cap12"><div class="lab"><span class="num">12 of 12</span><span class="ttl">The sentence that survives (2 of 2).</span></div>
+<p class="txt">other parts of the state welcomed Nvidia and approved some purchases; the companies went on ordering Nvidia chips in the millions and, by the reports, had received a small part of them by late 2026; they were also turning to home-made chips, for reasons of their own and under American curbs; and whether Beijing meant its acts as lasting policy or as leverage in trade talks is read both ways.</p>
+<ul class="src"><li><i class="tier plain"></i><span>From the project’s referenced argument, section 6. The welcomes are on the record; the approvals, the orders and the deliveries are reported, from unnamed people.</span></li></ul>
+</div>
+</div>
+<p class="draft" id="draft">Small numbers: the references of the captions document. English renderings of Chinese are ours, not official translations. Draft by Claude, Anthropic’s model. Local; not published.</p>
+<div id="bar"></div>
+ </div></div>
+ <div class="below">
+  <div class="ctl"><button id="play" type="button">Play</button><input id="seek" type="range" min="0" max="6488" step="1" value="6488" aria-label="Position in the animation"><span id="clock"></span></div>
+  <p>A silent explainer of 4 minutes 20 seconds: the dated strip in 12 chapters. Each caption stays on screen while the marks it speaks of appear in date order. This page draws any moment of it; the video beside it was captured from this page frame by frame.</p>
+  <p>The video file, <code>explainer.mp4</code> (1280 by 720, no sound, no voice):</p>
+  <video data-src="explainer.mp4" controls muted playsinline preload="metadata" width="1280" height="720"></video>
+  <p>The captions as a checked text, with the list of sources: <a href="captions.html">captions.html</a>.</p>
+  <p class="small">Draft by Claude, Anthropic’s model. Local; not published.</p>
+ </div>
+</div>
+<script type="application/json" id="scene">{"fps":25,"frames":6489,"total":61,"dim":0.28,"geom":{"x0":216,"xb":389.7,"x1":1374,"A":1672531200000,"BK":1735689600000,"C":1796083200000,"R":10},"marks":[{"n":1,"x":249.27,"cy":140,"on":107.2716,"pulse":[107.2716,205.838,232.6349],"focus":[[107.2716,133.48],[205.838,231.56],[232.6349,1000000000.0]]},{"n":2,"x":298.93,"cy":140,"on":1.6827,"pulse":[1.6827,206.1037,232.896],"focus":[[1.6827,16.0],[206.1037,231.56],[232.896,1000000000.0]]},{"n":3,"x":366.89,"cy":140,"on":47.4175,"pulse":[47.4175,108.727,206.4673,233.2534],"focus":[[47.4175,63.04],[108.727,133.48],[206.4673,231.56],[233.2534,1000000000.0]]},{"n":4,"x":384.23,"cy":117,"on":33.9022,"pulse":[33.9022,182.0754,206.5601,233.3446],"focus":[[33.9022,46.28],[182.0754,204.76],[206.5601,231.56],[233.3446,1000000000.0]]},{"n":5,"x":538.96,"cy":225,"on":92.6116,"pulse":[92.6116,234.1582],"focus":[[92.6116,105.96],[234.1582,1000000000.0]]},{"n":6,"x":550.23,"cy":140,"on":3.4588,"pulse":[3.4588,207.4483,234.2174],"focus":[[3.4588,16.0],[207.4483,231.56],[234.2174,1000000000.0]]},{"n":7,"x":667.11,"cy":225,"on":93.4818,"pulse":[93.4818,234.832],"focus":[[93.4818,105.96],[234.832,1000000000.0]]},{"n":8,"x":668.51,"cy":202,"on":93.4913,"pulse":[93.4913,234.8394],"focus":[[93.4913,105.96],[234.8394,1000000000.0]]},{"n":9,"x":672.74,"cy":140,"on":4.3247,"pulse":[4.3247,112.5115,208.1038,234.8616],"focus":[[4.3247,16.0],[112.5115,133.48],[208.1038,231.56],[234.8616,1000000000.0]]},{"n":10,"x":686.82,"cy":117,"on":35.7343,"pulse":[35.7343,185.2178,208.1791,234.9356],"focus":[[35.7343,46.28],[185.2178,204.76],[208.1791,231.56],[234.9356,1000000000.0]]},{"n":11,"x":700.9,"cy":140,"on":49.4008,"pulse":[49.4008,208.2545,235.0097],"focus":[[49.4008,63.04],[208.2545,231.56],[235.0097,1000000000.0]]},{"n":12,"x":700.9,"cy":94,"on":112.86,"pulse":[112.86,208.2545,235.0097],"focus":[[112.86,133.48],[208.2545,231.56],[235.0097,1000000000.0]]},{"n":13,"x":703.72,"cy":71,"on":49.4175,"pulse":[49.4175,208.2695,235.0245],"focus":[[49.4175,63.04],[208.2695,231.56],[235.0245,1000000000.0]]},{"n":14,"x":714.98,"cy":117,"on":49.4844,"pulse":[49.4844,208.3298,235.0837],"focus":[[49.4844,63.04],[208.3298,231.56],[235.0837,1000000000.0]]},{"n":15,"x":744.55,"cy":140,"on":36.0839,"pulse":[36.0839,208.488,235.2392],"focus":[[36.0839,46.28],[208.488,231.56],[235.2392,1000000000.0]]},{"n":16,"x":751.6,"cy":117,"on":36.1265,"pulse":[36.1265,185.8905,208.5257,235.2762],"focus":[[36.1265,46.28],[185.8905,204.76],[208.5257,231.56],[235.2762,1000000000.0]]},{"n":17,"x":754.41,"cy":94,"on":49.7185,"pulse":[49.7185,208.5408,235.291],"focus":[[49.7185,63.04],[208.5408,231.56],[235.291,1000000000.0]]},{"n":18,"x":785.39,"cy":140,"on":49.9024,"pulse":[49.9024,208.7065,235.4539],"focus":[[49.9024,63.04],[208.7065,231.56],[235.4539,1000000000.0]]},{"n":19,"x":823.41,"cy":140,"on":50.1282,"pulse":[50.1282,208.91,235.6538],"focus":[[50.1282,63.04],[208.91,231.56],[235.6538,1000000000.0]]},{"n":20,"x":843.13,"cy":117,"on":36.6807,"pulse":[36.6807,155.8753,209.0154,235.7575],"focus":[[36.6807,46.28],[155.8753,180.76],[209.0154,231.56],[235.7575,1000000000.0]]},{"n":21,"x":921.98,"cy":140,"on":50.7135,"pulse":[50.7135,187.66,209.4374,236.1721],"focus":[[50.7135,63.04],[187.66,204.76],[209.4374,231.56],[236.1721,1000000000.0]]},{"n":22,"x":941.7,"cy":225,"on":64.9431,"pulse":[64.9431,135.1197,236.2758],"focus":[[64.9431,91.44],[135.1197,151.76],[236.2758,1000000000.0]]},{"n":23,"x":944.51,"cy":202,"on":95.3655,"pulse":[95.3655,236.2906],"focus":[[95.3655,105.96],[236.2906,1000000000.0]]},{"n":24,"x":1009.29,"cy":225,"on":136.3697,"pulse":[136.3697,236.6312],"focus":[[136.3697,151.76],[236.6312,1000000000.0]]},{"n":25,"x":1059.98,"cy":140,"on":37.9937,"pulse":[37.9937,210.1757,236.8977],"focus":[[37.9937,46.28],[210.1757,231.56],[236.8977,1000000000.0]]},{"n":26,"x":1090.96,"cy":140,"on":51.7168,"pulse":[51.7168,66.828,210.3415,237.0606],"focus":[[51.7168,63.04],[66.828,91.44],[210.3415,231.56],[237.0606,1000000000.0]]},{"n":27,"x":1090.96,"cy":225,"on":96.3599,"pulse":[96.3599,237.0606],"focus":[[96.3599,105.96],[237.0606,1000000000.0]]},{"n":28,"x":1102.23,"cy":117,"on":7.3602,"pulse":[7.3602,210.4018,237.1198],"focus":[[7.3602,16.0],[210.4018,231.56],[237.1198,1000000000.0]]},{"n":29,"x":1107.86,"cy":94,"on":7.4,"pulse":[7.4,210.4319,237.1495],"focus":[[7.4,16.0],[210.4319,231.56],[237.1495,1000000000.0]]},{"n":30,"x":1167.0,"cy":225,"on":139.2863,"pulse":[139.2863,237.4604],"focus":[[139.2863,151.76],[237.4604,1000000000.0]]},{"n":31,"x":1168.41,"cy":202,"on":139.3123,"pulse":[139.3123,237.4678],"focus":[[139.3123,151.76],[237.4678,1000000000.0]]},{"n":32,"x":1176.86,"cy":179,"on":139.4686,"pulse":[139.4686,237.5123],"focus":[[139.4686,151.76],[237.5123,1000000000.0]]},{"n":33,"x":1226.14,"cy":225,"on":140.38,"pulse":[140.38,237.7714],"focus":[[140.38,151.76],[237.7714,1000000000.0]]},{"n":34,"x":1237.41,"cy":140,"on":39.068,"pulse":[39.068,211.1251,237.8306],"focus":[[39.068,46.28],[211.1251,231.56],[237.8306,1000000000.0]]},{"n":35,"x":1309.22,"cy":225,"on":97.842,"pulse":[97.842,238.2083],"focus":[[97.842,105.96],[238.2083,1000000000.0]]},{"n":36,"x":1337.39,"cy":140,"on":53.18,"pulse":[53.18,69.94,211.66,238.3563],"focus":[[53.18,63.04],[69.94,91.44],[211.66,231.56],[238.3563,1000000000.0]]},{"n":37,"x":1354.29,"cy":225,"on":98.148,"pulse":[98.148,238.4452],"focus":[[98.148,105.96],[238.4452,1000000000.0]]},{"n":38,"x":289.66,"cy":411,"on":152.8767,"pulse":[152.8767,232.8473],"focus":[[152.8767,180.76],[232.8473,1000000000.0]]},{"n":39,"x":291.56,"cy":388,"on":152.887,"pulse":[152.887,232.8573],"focus":[[152.887,180.76],[232.8573,1000000000.0]]},{"n":40,"x":519.25,"cy":326,"on":17.1738,"pulse":[17.1738,234.0545],"focus":[[17.1738,32.76],[234.0545,1000000000.0]]},{"n":41,"x":550.23,"cy":411,"on":154.2884,"pulse":[154.2884,234.2174],"focus":[[154.2884,180.76],[234.2174,1000000000.0]]},{"n":42,"x":557.27,"cy":326,"on":17.4341,"pulse":[17.4341,234.2544],"focus":[[17.4341,32.76],[234.2544,1000000000.0]]},{"n":43,"x":675.56,"cy":411,"on":154.9674,"pulse":[154.9674,234.8764],"focus":[[154.9674,180.76],[234.8764,1000000000.0]]},{"n":44,"x":705.13,"cy":326,"on":18.4463,"pulse":[18.4463,235.0319],"focus":[[18.4463,32.76],[235.0319,1000000000.0]]},{"n":45,"x":714.98,"cy":303,"on":18.5138,"pulse":[18.5138,235.0837],"focus":[[18.5138,32.76],[235.0837,1000000000.0]]},{"n":46,"x":753.0,"cy":326,"on":18.7741,"pulse":[18.7741,235.2836],"focus":[[18.7741,32.76],[235.2836,1000000000.0]]},{"n":47,"x":854.39,"cy":326,"on":19.4682,"pulse":[19.4682,235.8167],"focus":[[19.4682,32.76],[235.8167,1000000000.0]]},{"n":48,"x":872.7,"cy":303,"on":19.5935,"pulse":[19.5935,235.913],"focus":[[19.5935,32.76],[235.913,1000000000.0]]},{"n":49,"x":876.92,"cy":280,"on":19.6224,"pulse":[19.6224,235.9352],"focus":[[19.6224,32.76],[235.9352,1000000000.0]]},{"n":50,"x":902.27,"cy":326,"on":19.7959,"pulse":[19.7959,64.4451,236.0684],"focus":[[19.7959,32.76],[64.4451,91.44],[236.0684,1000000000.0]]},{"n":51,"x":1012.1,"cy":411,"on":156.7908,"pulse":[156.7908,236.646],"focus":[[156.7908,180.76],[236.646,1000000000.0]]},{"n":52,"x":1023.37,"cy":388,"on":156.8519,"pulse":[156.8519,236.7052],"focus":[[156.8519,180.76],[236.7052,1000000000.0]]},{"n":53,"x":1029.0,"cy":365,"on":156.8824,"pulse":[156.8824,236.7348],"focus":[[156.8824,180.76],[236.7348,1000000000.0]]},{"n":54,"x":1062.8,"cy":411,"on":157.0655,"pulse":[157.0655,236.9125],"focus":[[157.0655,180.76],[236.9125,1000000000.0]]},{"n":55,"x":1075.47,"cy":326,"on":20.9816,"pulse":[20.9816,236.9792],"focus":[[20.9816,32.76],[236.9792,1000000000.0]]},{"n":56,"x":1199.39,"cy":326,"on":21.83,"pulse":[21.83,237.6307],"focus":[[21.83,32.76],[237.6307,1000000000.0]]},{"n":57,"x":1230.37,"cy":326,"on":22.042,"pulse":[22.042,237.7936],"focus":[[22.042,32.76],[237.7936,1000000000.0]]},{"n":58,"x":1314.86,"cy":326,"on":22.6204,"pulse":[22.6204,238.2379],"focus":[[22.6204,32.76],[238.2379,1000000000.0]]},{"n":59,"x":1355.69,"cy":411,"on":158.6524,"pulse":[158.6524,238.4526],"focus":[[158.6524,180.76],[238.4526,1000000000.0]]},{"n":60,"x":1355.69,"cy":326,"on":22.9,"pulse":[22.9,238.4526],"focus":[[22.9,32.76],[238.4526,1000000000.0]]},{"n":61,"x":1357.1,"cy":388,"on":158.66,"pulse":[158.66,238.46],"focus":[[158.66,180.76],[238.46,1000000000.0]]}],"flags":[{"i":0,"on":-1},{"i":1,"on":-1},{"i":2,"on":-1}],"segs":[{"t0":1.4,"t1":7.4,"x0":258.93,"x1":1107.86},{"t0":16.9,"t1":22.9,"x0":479.25,"x1":1355.69},{"t0":33.66,"t1":39.068,"x0":344.23,"x1":1237.41},{"t0":47.18,"t1":53.18,"x0":326.89,"x1":1337.39},{"t0":63.94,"t1":69.94,"x0":862.27,"x1":1337.39},{"t0":92.34,"t1":98.148,"x0":498.96,"x1":1354.29},{"t0":106.86,"t1":112.86,"x0":216,"x1":700.9},{"t0":134.38,"t1":140.38,"x0":901.7,"x1":1226.14},{"t0":152.66,"t1":158.66,"x0":249.66,"x1":1357.1},{"t0":181.66,"t1":187.66,"x0":344.23,"x1":921.98},{"t0":205.66,"t1":211.66,"x0":216,"x1":1337.39},{"t0":232.46,"t1":238.46,"x0":216,"x1":1357.1}],"chapters":[{"k":1,"t0":0.0,"t1":16.0},{"k":2,"t0":16.0,"t1":32.76},{"k":3,"t0":32.76,"t1":46.28},{"k":4,"t0":46.28,"t1":63.04},{"k":5,"t0":63.04,"t1":91.44},{"k":6,"t0":91.44,"t1":105.96},{"k":7,"t0":105.96,"t1":133.48},{"k":8,"t0":133.48,"t1":151.76},{"k":9,"t0":151.76,"t1":180.76},{"k":10,"t0":180.76,"t1":204.76},{"k":11,"t0":204.76,"t1":231.56},{"k":12,"t0":231.56,"t1":259.56}],"rows":{"BH":[[0.3,16.0],[33.059999999999995,46.28],[46.58,63.04],[106.25999999999999,133.48],[152.06,180.76],[181.06,204.76],[205.06,231.56]],"BL":[[91.74,105.96],[133.78,151.76]],"CN":[[16.3,32.76]],"CH":[[152.06,180.76]]},"tally_on":1000000000.0}</script>
+<script>
+(function () {
+'use strict';
+const S = JSON.parse(document.getElementById('scene').textContent);
+const CAP = new URLSearchParams(location.search).has('capture');
+if (CAP) document.documentElement.classList.add('capture');
+const MON = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'];
+const $ = id => document.getElementById(id);
+const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
+const easeOut = u => 1 - Math.pow(1 - clamp(u, 0, 1), 3);
+// how far "on" a thing is at time t, for a list of [from, to] spans; it rises and falls over `fade` seconds
+function level(spans, t, fade) {
+  let v = 0;
+  for (const r of spans) v = Math.max(v, Math.min(clamp((t - r[0]) / fade, 0, 1), 1 - clamp((t - r[1]) / fade, 0, 1)));
+  return v;
+}
+function pop(u) { return u >= 1 ? 1 : (u < 0.6 ? 0.35 + 0.83 * easeOut(u / 0.6) : 1.18 - 0.18 * ((u - 0.6) / 0.4)); }
+function dateAt(x) {
+  const g = S.geom;
+  const ms = x < g.xb ? g.A + (x - g.x0) / (g.xb - g.x0) * (g.BK - g.A) : g.BK + (x - g.xb) / (g.x1 - g.xb) * (g.C - g.BK);
+  const d = new Date(Math.min(ms, g.C - 1));
+  return MON[d.getUTCMonth()] + ' ' + d.getUTCFullYear();
+}
+const marks = S.marks.map(m => { const g = $('m' + m.n); return Object.assign({ g: g, body: g.querySelector('.body'), halo: g.querySelector('.halo'), call: $('c' + m.n) }, m); });
+const flags = (S.flags || []).map(f => Object.assign({ el: $('flag' + f.i) }, f));
+const caps = (S.chapters || []).map(c => Object.assign({ el: $('cap' + c.k) }, c));
+const rows = Object.keys(S.rows || {}).map(k => ({ el: $('row-' + k), spans: S.rows[k] }));
+const ph = $('ph'), elDate = $('date'), elCount = $('count'), elTally = $('tally'), elBar = $('bar');
+
+function init() {            // the row tags are sized to their words, once the fonts are in
+  document.querySelectorAll('#strip g.rowtag').forEach(g => {
+    const t = g.querySelector('text'), r = g.querySelector('rect');
+    r.setAttribute('width', (t.getComputedTextLength() + 33).toFixed(1));
+  });
+}
+
+window.setT = function (t) {
+  let shown = 0;
+  for (const m of marks) {
+    const age = t - m.on;
+    if (age < 0) { m.g.style.display = 'none'; if (m.call) m.call.style.display = 'none'; continue; }
+    shown++;
+    const f = S.dim + (1 - S.dim) * level(m.focus, t, 0.35), s = pop(age / 0.36);
+    m.g.style.display = '';
+    m.body.setAttribute('transform', 'translate(' + m.x + ' ' + m.cy + ') scale(' + s.toFixed(4) + ') translate(' + (-m.x) + ' ' + (-m.cy) + ')');
+    m.body.setAttribute('opacity', (clamp(age / 0.12, 0, 1) * f).toFixed(3));
+    let ho = 0, hr = 0;
+    for (const p of m.pulse) { const u = (t - p) / 0.7; if (u >= 0 && u < 1) { ho = 0.6 * (1 - u); hr = S.geom.R + 3 + 13 * easeOut(u); } }
+    m.halo.setAttribute('r', hr.toFixed(2)); m.halo.setAttribute('opacity', ho.toFixed(3));
+    if (m.call) { m.call.style.display = ''; m.call.setAttribute('opacity', (clamp((age - 0.1) / 0.3, 0, 1) * f).toFixed(3)); }
+  }
+  for (const f of flags) f.el.setAttribute('opacity', clamp((t - f.on) / 0.3, 0, 1).toFixed(3));
+  for (const r of rows) r.el.setAttribute('opacity', level(r.spans, t, 0.35).toFixed(3));
+  // the moving line and the running date
+  let x = S.segs.length ? S.segs[0].x0 : S.geom.x1, on = 0;
+  for (const g of S.segs) {
+    if (t < g.t0) break;
+    x = g.x0 + (g.x1 - g.x0) * clamp((t - g.t0) / (g.t1 - g.t0), 0, 1);
+    on = Math.min(clamp((t - g.t0) / 0.2, 0, 1), 1 - clamp((t - g.t1) / 0.3, 0, 1));
+  }
+  ph.setAttribute('x1', x.toFixed(2)); ph.setAttribute('x2', x.toFixed(2)); ph.setAttribute('opacity', (0.5 * on).toFixed(3));
+  if (elDate) elDate.textContent = dateAt(x);
+  if (elCount) elCount.textContent = shown + ' of ' + S.total + ' records';
+  if (elTally) elTally.style.opacity = clamp((t - S.tally_on) / 0.4, 0, 1).toFixed(3);
+  for (let i = 0; i < caps.length; i++) {
+    const c = caps[i], last = i === caps.length - 1;
+    const o = Math.min(i === 0 ? 1 : clamp((t - c.t0) / 0.35, 0, 1), last ? 1 : 1 - clamp((t - (c.t1 - 0.25)) / 0.25, 0, 1));   // the first caption is there from the first frame
+    c.el.style.opacity = o.toFixed(3); c.el.style.visibility = o > 0 ? 'visible' : 'hidden';
+  }
+  if (elBar) elBar.style.width = (100 * clamp(t / ((S.frames - 1) / S.fps), 0, 1)).toFixed(2) + '%';
+};
+// what the frame at time t says in its caption box (frames.py compares this with the checked captions)
+window.captionText = function () {
+  const c = caps.filter(c => +c.el.style.opacity > 0.99);
+  if (c.length !== 1) return '(' + c.length + ' captions visible)';
+  const part = sel => [...c[0].el.querySelectorAll(sel)].map(el => {
+    const k = el.cloneNode(true);
+    k.querySelectorAll('.c').forEach(ch => ch.replaceWith(document.createTextNode(' [' + ch.textContent + ']')));
+    k.querySelectorAll('.ln').forEach(ln => ln.append(' '));
+    return k.textContent.replace(/\s+/g, ' ').trim();
+  });
+  return { k: c[0].k, title: part('.ttl')[0], text: part('.txt')[0], items: part('.src li, .nums li') };
+};
+// does anything in the caption box or the frame run past its edge, or a label run into a mark?
+window.overflowReport = function () {
+  const out = [], st = $('stage').getBoundingClientRect();
+  for (const c of caps) {
+    if (+c.el.style.opacity < 0.99) continue;
+    const box = c.el.parentElement.getBoundingClientRect();
+    for (const el of c.el.querySelectorAll('*')) { const r = el.getBoundingClientRect(); if (r.width && (r.bottom > box.bottom + 0.5 || r.right > box.right + 0.5)) { out.push('caption ' + c.k + ': ' + el.className + ' ends at ' + Math.round(r.right) + ',' + Math.round(r.bottom) + ' in a box ending at ' + Math.round(box.right) + ',' + Math.round(box.bottom)); break; } }
+  }
+  // a label beside a mark must stand clear of every mark on screen (the figure's first label for mark 31 ran 2.2 units into mark 25;
+  // by design the nearest a label comes to a mark is 2.7 units, to its own)
+  for (const m of marks) {
+    if (!m.call || m.call.style.display === 'none') continue;
+    const b = m.call.getBBox();
+    for (const o of marks) {
+      if (o.g.style.display === 'none') continue;
+      const dx = Math.max(b.x - o.x, 0, o.x - (b.x + b.width)), dy = Math.max(b.y - o.cy, 0, o.cy - (b.y + b.height));
+      const gap = Math.hypot(dx, dy) - (S.geom.R + 1.25);
+      if (gap < 1.5) out.push('label of mark ' + m.n + ' stands ' + gap.toFixed(1) + ' from mark ' + o.n + ' (under 1.5 strip units)');
+    }
+  }
+  const card = $('card').getBoundingClientRect();
+  for (const el of $('stage').querySelectorAll('ul.key li, #count')) { const r = el.getBoundingClientRect(); if (el.closest('#card') && r.width && (r.bottom > card.bottom - 2 || r.right > card.right - 2)) out.push((el.id || 'a key line') + ' runs past the card'); }
+  const hd = $('h1').getBoundingClientRect(), ck = document.querySelector('.clock').getBoundingClientRect();
+  if (hd.right > ck.left - 12 && hd.bottom > ck.top && hd.top < ck.bottom) out.push('the headline runs into the date');
+  for (const el of $('stage').querySelectorAll('h1, .eyebrow, ul.key li, .clock, .foot, .draft')) { const r = el.getBoundingClientRect(); if (r.width && (r.right > st.right + 0.5 || r.bottom > st.bottom + 0.5)) out.push((el.className || el.tagName) + ' runs past the frame'); }
+  return out;
+};
+
+// for each label on screen: how near it comes to its own mark and to the nearest other mark, in strip units and frame pixels
+window.labelGaps = function () {
+  const k = $('strip').getBoundingClientRect().width / $('strip').viewBox.baseVal.width, out = [];
+  for (const m of marks) {
+    if (!m.call || m.call.style.display === 'none') continue;
+    const b = m.call.getBBox(); let own = null, best = null;
+    for (const o of marks) {
+      if (o.g.style.display === 'none') continue;
+      const dx = Math.max(b.x - o.x, 0, o.x - (b.x + b.width)), dy = Math.max(b.y - o.cy, 0, o.cy - (b.y + b.height));
+      const gap = Math.hypot(dx, dy) - (S.geom.R + 1.25);
+      if (o.n === m.n) own = gap; else if (best === null || gap < best[1]) best = [o.n, gap];
+    }
+    out.push({ n: m.n, text: m.call.textContent, own: +own.toFixed(1), other: best[0], gap: +best[1].toFixed(1), px: +(best[1] * k).toFixed(1) });
+  }
+  return out;
+};
+
+const fitEl = $('fit'), stage = $('stage'), play = $('play'), seek = $('seek'), clock = $('clock');
+let frame = S.frames - 1, playing = false;
+function fit() {
+  if (CAP) return;
+  const k = Math.min(1, (document.documentElement.clientWidth - 32) / 1280);
+  fitEl.style.width = (1280 * k).toFixed(1) + 'px'; fitEl.style.height = (720 * k).toFixed(1) + 'px'; stage.style.transform = 'scale(' + k + ')';
+}
+function show(f) {
+  frame = clamp(Math.round(f), 0, S.frames - 1); window.setT(frame / S.fps);
+  seek.value = frame; clock.textContent = (frame / S.fps).toFixed(1) + ' s of ' + ((S.frames - 1) / S.fps).toFixed(1) + ' s';
+}
+play.addEventListener('click', () => {
+  if (playing) { playing = false; play.textContent = 'Play'; return; }
+  playing = true; play.textContent = 'Pause';
+  const from = frame >= S.frames - 1 ? 0 : frame, start = performance.now() - from / S.fps * 1000;
+  (function tick() {
+    if (!playing) return;
+    const f = Math.floor((performance.now() - start) / 1000 * S.fps);
+    if (f >= S.frames - 1) { show(S.frames - 1); playing = false; play.textContent = 'Play again'; return; }
+    show(f); requestAnimationFrame(tick);
+  })();
+});
+seek.addEventListener('input', () => { playing = false; play.textContent = 'Play'; show(+seek.value); });
+window.addEventListener('resize', fit);
+if (!CAP) document.querySelectorAll('video[data-src]').forEach(v => { v.src = v.dataset.src; });   // the capture does not load the video it is about to make
+const ready = () => { init(); fit(); const m = /t=([\d.]+)/.exec(location.hash); show(m ? parseFloat(m[1]) * S.fps : S.frames - 1); window.READY = true; };
+const faces = ['700 33px "Space Grotesk"', '400 16px "Inter"', '500 16px "Inter"', '600 16px "Inter"', '700 16px "Inter"'];
+Promise.all(faces.map(f => document.fonts.load(f).catch(() => null))).then(() => document.fonts.ready).then(ready, ready);
+})();
+</script>
+</body>
+</html>

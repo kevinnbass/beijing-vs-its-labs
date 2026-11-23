@@ -1,0 +1,198 @@
+# Can customs figures count the H200 chips that entered China?
+
+@deck No. Each customs line holds every maker's goods, and no saved page says under which line these chips are declared. Two official lines rose steeply in 2026: China's imports of computer parts, and Singapore's re-exports of one kind of computer unit to the mainland. Neither can be read as a count of Nvidia chips.
+
+@note Draft by Claude, Anthropic's model. Local; not published. Written Nov 23, 2026 (UTC). Idea 34 of the output list.
+@note A finding: this note says what public trade figures can and cannot show. It counts no chips.
+@note Anthropic has argued in public for controls on chip exports to China (that is from my general knowledge; no saved page is cited for it), so judge this note by its sources.
+@note A filled number is a government document, an official figure, a filing or a named person on the record. An open number is a press report citing unnamed people, or a count that is not official. Words between quotation marks were found in the saved copy by a script. English in round brackets after Chinese is my rendering, not an official translation.
+
+## The question
+
+Reuters reported on Nov 5, 2026: "About 600,000 of Nvidia's advanced artificial intelligence chips are stored in Hong Kong awaiting shipment to China", on the word of "two people familiar with the matter" [cn-clips-evidence-1]. The same report says: "Several major Chinese internet companies have each obtained about 10,000 H200 chips in the past few months" [cn-clips-evidence-1]. Both numbers rest on unnamed people. This note asks whether any public, official trade figure bears on how many such chips entered mainland China in 2025 and 2026. (Nov 5 is Reuters's dateline, which stands on the copy Yahoo carries; the copy quoted here is CNA's page, which shows only its own date, Nov 6, 2026.)
+!! cn-clips-reuters-hongkong-yahoo | Nov 5 (Reuters) - About 600,000
+!! cn-clips-evidence-1 | 2026-11-06T11:47:43
+
+## The answer in short
+
+- China's customs publishes monthly import values for integrated circuits, for computer processing units and for computer parts. No public table found here goes below those broad lines.
+- No customs line can count Nvidia chips. Each line holds every maker's goods, imports are recorded by country of origin, and no saved page says under which line these chips are declared, in China or anywhere else.
+- China's imports of computer parts (line 8473.30) were 82.2 billion US dollars in January to September 2026, against 18.9 billion in the same months of 2025, while their weight fell. The line can show that China paid far more for computer parts, and far more for each tonne of them. It cannot show what the parts were or who made them.
+- Singapore's re-exports to mainland China under one line for computer units (line 84718010, control and adaptor units) were about 18 million Singapore dollars in January to June 2026 and about 3.0 billion in July to October 2026. These figures are a reading from Singapore's statistics service, kept on file with their hashes; they are not a saved source. The line can show that goods so declared left Singapore for the mainland. It cannot show what they were, who made them or who bought them.
+- One mirror is tied to these chips by rule: licensed H200s must be inspected in the United States before they are shipped. US exports to mainland China, Hong Kong and Macau under the three headings an American proclamation names for such chips never passed 293 million dollars in a month to August 2026.
+- Over January to August 2026 those exports came to 1,688.6 million dollars. That is room for a few tens of thousands of chips at most (about 62,500), but only if a chip is valued at about 27,000 dollars, a price Reuters reported from unnamed people, and only for goods the United States recorded as leaving for those three places under those three headings; the same figures would hold 600,000 chips only at about 2,800 dollars a chip. September and October 2026, the months that matter most, were not yet available on the one route open to us.
+- Nvidia's own figures, on the record, are of the same order for the months that overlap: under 1% of 89.0 billion dollars in the quarter to Jul 26, 2026 [man-ms-sec-10q-2026-07]. Its 2.4 billion dollars of licensed sales to China falls in the quarter to Oct 25, 2026 [cn-o38-nvda-q3fy27-call-transcript-pdf], mostly after the months the trade figures cover. The ceiling and the 2.4 billion cannot be set against each other.
+- These are different measures: different countries' records, tariff lines, currencies and months. This note sets them side by side and adds none of them together.
+
+## 1. Which tariff heading these chips fall under
+
+1. **A US document names three headings.** The President's proclamation of Jan 14, 2026, which put a 25% duty on certain advanced chips, defines the goods as products "classifiable in the provisions of the HTSUS enumerated in this subdivision" and lists three headings of the US tariff: 8471.50, 8471.80 and 8473.30 [cn-o34-us232-proclamation-fr-pi]. The goods must be a "logic integrated circuit, or an article that contains a logic integrated circuit" within set performance limits [cn-o34-us232-proclamation-fr-pi]. The White House's fact sheet says the duty falls on "certain advanced computing chips, such as the NVIDIA H200 and AMD MI325X" [cn-o34-us232-factsheet-wh]. Nvidia's quarterly report says a duty of the same rate reaches its licensed chips: "any H200s shipped under the new licensing program are subject to a 25% tariff upon importation into the United States" [man-ms-sec-10q-2026-07]. If that is the proclamation's duty, as the rate and the fact sheet indicate, the H200 enters the United States under one of those three headings. Which of the three is not stated.
+!! cn-o34-us232-proclamation-fr-pi | enumerated in this subdivision: 8471.50 8471.80 8473.30
+!! cn-o34-us232-proclamation-fr-pi | fourteenth day of January
+!! cn-o34-us232-proclamation-fr-pi | impose an immediate 25 percent ad valorem duty
+
+2. **By that document, they are classed as computer units and parts, not as bare chips.** 8471.50 is processing units of computers, 8471.80 is other units of computers (that description is from my general knowledge of the tariff), and 8473.30 is parts and accessories of computers. The heading for bare processor chips, 8542.31, is not in the proclamation's list. Two US rulings show the same pattern. Customs ruled on Mar 31, 2026: "The applicable subheading for the GB300 NVL72 AI server rack will be 8471.50.0150" [cn-o34-cbp-n359764]. A trade-court opinion of Jan 27, 2026 concerns "the NVIDIA CMP 170HX, a printed circuit board" assembly, entered under "subheading 8473.30.1180", the line for "Parts and accessories" of computers [cn-o34-cit-26-04]. Neither ruling is about the H200.
+!! cn-o34-cit-26-04 | Dated: January 27, 2026
+!! cn-o34-cbp-n359764 | March 31, 2026
+!! cn-o34-cbp-n359764 | Processing units other than those of
+
+3. **No Chinese ruling was found.** China's customs announced its classification decisions for 2025 on Dec 30, 2025, "2025 年商品归类决定" (commodity classification decisions for 2025) [cn-o42-hk-tid-circular-2026-51]. The saved copy is the one Hong Kong's trade department reproduced; it holds nine decisions, numbered 1 to 9. Our script read all nine tariff numbers. None is in heading 8471, 8473 or 8542. China's tariff lines have eight digits, "the first six digits of which correspond to the HS", the code system shared by customs services worldwide [cn-o34-gacc-explanatory-2024]. So the three US headings are the best pointer to where these chips sit in China's figures, but that is not established from a Chinese source. Nvidia's own page says it publishes the codes it applies, "Harmonized Schedule (HS) codes" [cn-o34-nvidia-export-page]. The saved copy holds the page's introduction only: no product and no tariff code appears in it, so the H200's code could not be read there.
+!! cn-o42-hk-tid-circular-2026-51 | 海关总署公告 2025 年第 259 号
+!! cn-o42-hk-tid-circular-2026-51 | 2025 年 12 月 30 日
+
+## 2. What China's customs publishes
+
+4. **A monthly bulletin of 18 tables.** The customs administration's English site lists them for each month of 2026, among them "（14）Major Import Commodities in Quantity and Value" and "（16）Imports by Selected Countries (Regions) and by HS Divisions" [cn-o34-gacc-english-monthly]. September 2026 was the newest month when saved.
+
+5. **Table 14 has three lines that matter.** They are "Electronic integrated circuits", "Central processing units" and "Parts and accessories of automatic data processing machines" [cn-o34-gacc-t14-imports-202609]. The customs' own coverage spreadsheet ties them to tariff codes 8542.3 (all integrated circuits), 8471.50 and 8473.30 [cn-o34-gacc-coverage-imports-2024-xls]. That spreadsheet is the 2024 edition and a binary file: our script read the codes from it, and the quotation checker cannot check it. Heading 8471.80 has no line of its own.
+
+6. **By country, the bulletin stops at two-digit chapters.** Table 16 gives imports from each main origin by chapter, for example chapter 84 (machinery, computers among it) and chapter 85 (electrical goods, chips among them) [cn-o34-gacc-t16-imports-bycountry-202609]. What each chapter holds is from my general knowledge of the tariff; the table prints the numbers only. A chapter is far too broad to show one product.
+!! cn-o34-gacc-t16-imports-bycountry-202609 | （16）Imports by Selected Countries (Regions) and by HS Divisions,9.2026
+
+7. **Finer figures exist, but not in a form we could save.** The explanatory notes say the classification has "8966 8-digit commodity subdivisions" [cn-o34-gacc-explanatory-2024]. The English site links a query service, "Interactive Tables" [cn-o34-gacc-english-monthly], at stats.customs.gov.cn. Our fetch of that address was refused (HTTP 412; the attempt is saved as cn-o34-gacc-stats-query), and we did not script its query form. From my general knowledge, not from a saved page, it serves monthly values by eight-digit line and by partner. A university laboratory in Beijing publishes a monthly monitor drawn from customs data at six digits: it gives imports of processors and controllers (heading 8542.31) as 17.01 billion US dollars in March 2026 and 46.68 billion in January to March, with "数据来源：中国海关总署" (source of data: General Administration of Customs) [cn-o34-uibe-chip-monitor-202605]. That is every processor and controller chip of every maker.
+!! cn-o34-uibe-chip-monitor-202605 | 处理器及控制器 170.1 34.1 2.6 466.8 36.4 3.7
+!! cn-o34-uibe-chip-monitor-202605 | 处理器及控制器（854231）
+
+8. **The United Nations mirror is out of date for China.** UN Comtrade, the United Nations' store of each country's reported trade, listed China's monthly figures only to December 2024 when asked on Nov 23, 2026 [cn-o34-comtrade-da-china-monthly]. We asked it for China's 2025 and 2026 months under four headings and got no rows.
+!! cn-o34-comtrade-da-china-monthly | "period": 202412, "reporterCode": 156
+
+## 3. What the customs table shows
+
+Import values in billions of US dollars, rounded by our script from the table's thousands. The three issues of the table are cited in the first row.
+
+| Line of table 14 (tariff code) | January to September 2025 | January to September 2026 | All of 2025 |
+| Integrated circuits (8542.3) [cn-le18-gacc-t14-202509] [cn-o34-gacc-t14-imports-202609] [cn-o34-gacc-t14-imports-202512] | 305.5 billion | 499.2 billion | 424.3 billion |
+| Processing units of computers (8471.50) | 17.7 billion | 15.2 billion | 21.9 billion |
+| Parts and accessories of computers (8473.30) | 18.9 billion | 82.2 billion | 28.5 billion |
+!! cn-o34-gacc-t14-imports-202609 | Electronic integrated circuits 100MN 565 71,716,226 4,755 499,249,660 1.7 75.2
+!! cn-o34-gacc-t14-imports-202512 | Electronic integrated circuits 100MN 510 42,612,005 5,917 424,333,398 6.7 16.8
+!! cn-o34-gacc-t14-imports-202609 | Central processing units 10000N 190 1,901,753 1,949 15,221,685 -16.4 28.4
+!! cn-o34-gacc-t14-imports-202512 | Central processing units 10000N 177 1,331,109 2,887 21,906,102 70.5 6.4
+!! cn-o34-gacc-t14-imports-202609 | Parts and accessories of automatic data processing machines T 4,460 16,652,479 33,439 82,203,919 5.2 536.9
+!! cn-o34-gacc-t14-imports-202512 | Parts and accessories of automatic data processing machines T 4,942 4,830,257 49,144 28,546,799 21.4 116.3
+!! cn-o34-gacc-t14-imports-202609 | Unit:US$1,000
+!! cn-le18-gacc-t14-202509 | （14）Major Import Commodities in Quantity and Value,9.2025 2025/10/08
+!! cn-le18-gacc-t14-202509 | Electronic integrated circuits 100MN 555 41,051,541 4,436 305,517,509 11.9 14.2
+!! cn-le18-gacc-t14-202509 | Central processing units 10000N 228 1,481,583 2,354 17,665,786 110.6 39.3
+!! cn-le18-gacc-t14-202509 | Parts and accessories of automatic data processing machines T 4,247 2,621,216 36,515 18,890,284 9.8 3.9
+!! cn-le18-gacc-t14-202509 | Storage units 10000N 2,110 2,161,164 15,165 14,855,491 16.0 3.7
+!! cn-o34-gacc-t14-imports-202609 | Storage units 10000N 1,667 5,864,322 14,780 38,214,240 -20.9 171.9
+!! cn-le18-gacc-t14-202509 | Unit:US$1,000
+
+9. **The parts line was more than four times a year earlier, while its weight fell.** In January to September 2026 the line was 82.2 billion dollars, against 18.9 billion in January to September 2025: 4.35 times as much (our division) [cn-le18-gacc-t14-202509] [cn-o34-gacc-t14-imports-202609]. Its weight went the other way, from 36,515 tonnes to 33,439 tonnes, so a tonne was worth about 517 thousand dollars in the first period and about 2,458 thousand in the second (our divisions). Over the same months the value of integrated circuits was 1.63 times that of a year earlier, of storage units 2.57 times, and of processing units 0.86 times (our divisions). By our subtraction of the table's running totals, the parts line was 17.3 billion dollars in the first quarter of 2026, 27.5 billion in the second and 37.4 billion in the third [cn-o34-gacc-t14-imports-202603] [cn-o34-gacc-t14-imports-202606]. The rise began before the first US licence: December 2025 alone was 4.8 billion dollars, twice the 2025 monthly average of 2.38 billion [cn-o34-gacc-t14-imports-202512].
+
+**What this line can and cannot show.** It can show that China's imports of parts and accessories of computers, from every origin and of every maker together, were far larger in value in 2026 and far dearer by weight. It cannot show what the parts were, who made them, where they came from or who bought them: table 14 has no column for origin and names no product. Nothing in it says that any of this is Nvidia's, and it is not a count of chips. Hong Kong's own figures show the same rise from the other side: its total exports of computer parts (8473.30) to the mainland were 16.46 billion dollars in January to July 2025 and 36.90 billion in January to July 2026 (our sums of its monthly figures at UN Comtrade; the last of those months is [cn-o34-comtrade-m-202607]).
+
+10. **The table's percentage column is for the month, not the nine months.** The table has a column headed "Percentage Change" and does not say which period it compares [cn-o34-gacc-t14-imports-202609]. The September 2025 issue settles it. For the parts line the September 2026 issue prints 536.9 for value and 5.2 for weight. By our division of the two issues' own figures, September 2026 against September 2025 is +535.3% in value and +5.0% in weight, while the nine months against the nine months are +335.2% in value [cn-le18-gacc-t14-202509]. The fit with the month is close, not exact. A university monitor agrees: for integrated circuits the March 2026 issue shows 54.1 [cn-o34-gacc-t14-imports-202603], and the monitor gives 54.0% for March and 45.0% for January to March [cn-o34-uibe-chip-monitor-202605]. This note uses the table's dollar values and makes its own comparisons.
+!! cn-o34-gacc-t14-imports-202603 | Electronic integrated circuits 100MN 547 49,776,738 1,457 128,007,745 14.4 54.1
+!! cn-o34-uibe-chip-monitor-202605 | 进口 498.5 亿美元，同比变化 54.0%
+!! cn-o34-uibe-chip-monitor-202605 | 累计进口 1282.2 亿美元，同比变化 45.0%
+!! cn-o34-gacc-t14-imports-202603 | Parts and accessories of automatic data processing machines T 3,703 7,938,277 10,882 17,298,255 -14.8 273.1
+!! cn-o34-gacc-t14-imports-202606 | Parts and accessories of automatic data processing machines T 3,713 9,771,799 21,948 44,804,153 -17.6 318.2
+
+## 4. Why these figures cannot show H200 imports
+
+11. **The chips are a small part of a broad line.** Reuters gave the price in January 2026: H200 chips "priced at around $27,000 each" [cn-acts-reuters-customs-20260114]. That is a press figure from unnamed people. At that price 10,000 chips are 270 million dollars (our multiplication). That is 0.7% of the parts line in the third quarter of 2026, and 0.38% of one month's imports of integrated circuits. A delivery of that size cannot be seen.
+
+12. **Imports are counted by origin, not by route.** The notes say: "The country of origin is recorded for imports." [cn-o34-gacc-explanatory-2024] Reuters says of the H200: "The chip is manufactured by Taiwan Semiconductor Manufacturing Company (TSMC)" [cn-labs-h200-lobby]. A chip made in Taiwan that arrives by way of Hong Kong or the United States would be counted as an import from Taiwan. No line shows goods arriving from Hong Kong as such. Table 16 bears this out: imports recorded as of Hong Kong origin were 12.5 million dollars under chapter 84 and 21.1 million under chapter 85 in September 2026 [cn-o34-gacc-t16-imports-bycountry-202609]. Hong Kong's own figures put its exports of computer parts (8473.30) to the mainland at 6.4 billion dollars in July 2026 alone [cn-o34-comtrade-m-202607].
+!! cn-o34-gacc-t16-imports-bycountry-202609 | 12,545 114,827
+!! cn-o34-gacc-t16-imports-bycountry-202609 | 21,088 164,608
+!! cn-o34-comtrade-m-202607 | "primaryValue": 6449754920.706
+
+13. **Chips held in Hong Kong are in no mainland figure.** Hong Kong's statistics office says: "The Hong Kong Special Administrative Region is a separate customs territory" [cn-le18-hk-csd-410-50031]. The mainland's statistics count goods when they enter its customs territory, and that includes "goods from abroad entering customs warehouses, bonded areas or special economic zones" [cn-o34-gacc-explanatory-2024]. So a chip counts as imported once it enters a bonded zone on the mainland, even before it reaches a buyer, and "Imports are recorded on the date when the goods are released from customs" [cn-o34-gacc-explanatory-2024].
+
+14. **Some chips are reported to have come by other routes.** Reuters: "small quantities of chips had been shipped via intermediaries and indirect routes" [cn-clips-evidence-1]. A customs table cannot be expected to show such goods under their own name.
+
+## 5. The mirror that does bear on it: US exports
+
+15. **Licensed H200s must leave from the United States.** Nvidia told the US securities regulator: "The licenses require that the H200s go through an inspection process in the United States prior to any shipment to the customer." [man-ms-sec-10q-2026-07] The Commerce Department's rule of Jan 15, 2026 sets its new policy for "exports from the United States destined to China or Macau", says "the testing must be conducted in the customs territory of the United States", and for shipments from other countries says "the licensing policy remains a presumption of denial" [cn-o34-bis-rule-20260115]. The laboratory may test "a representative sampling of a batch" [cn-o34-bis-rule-20260115], but Nvidia's words above are that any H200 shipped under the programme is imported into the United States first. So every licensed H200 should appear in the United States' export figures, under the place the United States recorded it as leaving for.
+
+16. **The route to the figures.** The US Census Bureau is the statistics office that publishes US trade figures. Its data service answered our request with: "A valid key must be included with each data API request." [cn-o34-census-exports-hs6-cn-hk-mo] A key needs a sign-up, so we did not use it. UN Comtrade's public preview gives the figures the United States reports, one month per request. We saved the 20 months from January 2025 to August 2026 for four headings. The answers carry code numbers only. UN Comtrade's own lists give 842 as the United States, 344 as "China, Hong Kong SAR" and 446 as "China, Macao SAR" [cn-o34-comtrade-ref-partners], and the flow code RX as "Re-export" [cn-o34-comtrade-ref-flows]. September and October 2026 returned no rows (October on a second try, after a first refusal for too many requests).
+!! cn-o34-comtrade-ref-partners | "id": 842, "text": "USA"
+!! cn-o34-comtrade-ref-partners | "id": 156, "text": "China"
+!! cn-o34-comtrade-ref-flows | "id": "X", "text": "Export"
+
+17. **What they show.** US exports to mainland China, Hong Kong and Macau under the three named headings together (the sums are our script's):
+
+| Period | US exports under the three headings to the three places |
+| Average month of 2025 | 151 million dollars |
+| Average month of January to August 2026 | 211 million dollars |
+| Highest month of the 20: March 2026 [cn-o34-comtrade-m-202603] | 292.9 million dollars |
+| August 2026 [cn-o34-comtrade-m-202608] | 187.4 million dollars |
+| All of January to August 2026 | 1,688.6 million dollars |
+
+The 20 monthly answers are saved as cn-o34-comtrade-m-202501 to cn-o34-comtrade-m-202608; two are in the reference list as examples. Every cell is in us_exports_monthly.tsv.
+!! cn-o34-comtrade-m-202603 | "primaryValue": 109356180.0
+!! cn-o34-comtrade-m-202608 | "primaryValue": 98575127.0
+
+18. **The ceiling, and what it rests on.** The price used here is a press figure from unnamed people: "priced at around $27,000 each" [cn-acts-reuters-customs-20260114]. Suppose every dollar under those headings in January to August 2026 were an H200 at that price: 1,688.6 million dollars divided by 27,000 dollars is about 62,500 chips (our script's division; every step is in derived_figures.tsv). The ceiling moves with the price. The eight months would hold 600,000 chips only if a chip were declared at about 2,800 dollars, a tenth of the press price. It is also a loose ceiling: the same headings carried 151 million dollars a month in 2025, before any licence; Nvidia dates the first licences with the words "Beginning in February 2026" [man-ms-sec-10q-2026-07]. And it covers only goods the United States recorded as leaving for mainland China, Hong Kong or Macau. Goods recorded as leaving for another place first are outside it. Singapore is the one such place looked at here (point 24): with the United States' exports to Singapore under the same three headings added, 2,558.6 million dollars in the eight months, the same division gives about 157,300 chips (our arithmetic), again with every kind of goods counted as if it were an H200. At the press price 600,000 chips would be 16.2 billion dollars, 9.6 times everything the United States sent to the three places under these headings in those eight months.
+
+19. **Nvidia's own figures for those months are of the same order.** A Commerce under secretary told a House committee on Jul 14, 2026: "There have been minimal exports of any H200s to China so far" [man-a7d2f1a9f963]. Nvidia said on its results call of May 20, 2026: "While the US government has approved licenses for H200 to be shipped to China-based customers, we have yet to generate any revenue, and we are uncertain whether any imports will be allowed into the country." [cn-o38-nvda-q1fy27-call-transcript-pdf] Its report for the quarter to Jul 26, 2026 says: "Shipments of Data Center Hopper products to China during the second quarter of fiscal year 2027 were less than 1% of Data Center revenue", and "Data Center revenue was $89.0 billion" [man-ms-sec-10q-2026-07]. That is under 0.89 billion dollars (our multiplication), or under about 33,000 chips at the same press price of 27,000 dollars (our division). Hopper is the chip generation the H200 belongs to [cn-labs-h200-lobby], so that sentence may take in other Hopper chips. The two do not cover the same days: the customs figures run from January to August 2026, Nvidia's quarter from late April to Jul 26, 2026. Both come to a few tens of thousands of chips, and both stand or fall with the press price.
+!! cn-labs-h200-lobby | is the fastest AI chip in Nvidia's previous Hopper generation
+!! cn-o38-nvda-q1fy27-call-transcript-pdf | All our statements are made as of today, May 20, 2026
+!! man-ms-sec-10q-2026-07 | Those shipments account for less than 1% of Data Center revenue in our most recent quarter.
+!! man-ms-sec-10q-2026-07 | Apr 26, 2026
+
+20. **Nvidia's 2.4 billion dollars covers other months.** Nvidia said on its results call of Nov 17, 2026: "Q3 sales of licensed Hopper Data Center products to China was $2.4 billion" [cn-o38-nvda-q3fy27-call-transcript-pdf]. Its written commentary on the quarter calls them shipments: "Shipments of Data Center Hopper products to China during the quarter were $2.4 billion." [cn-counter-b17-1] That quarter ended on Oct 25, 2026 and the one before it on Jul 26, 2026 [man-ms-sec-10q-2026-07], so it ran from Jul 27 to Oct 25. The US export figures saved here end with August. The two share 36 of the quarter's 91 days (our count), and one is a sales figure while the other is a customs value. So the ceiling above and the 2.4 billion cannot be set against each other: the ceiling says nothing about the 2.4 billion, and the 2.4 billion does not contradict the ceiling. What can be said is narrow. July and August 2026 together carried 392.6 million dollars to the three places under the three headings, all goods counted, which is 16% of 2.4 billion (our arithmetic). If those products left the United States under these headings, most of them left in September and October 2026, months this route did not yet hold. At the press price 2.4 billion dollars would be about 89,000 chips (our division).
+!! man-ms-sec-10q-2026-07 | Jul 26, 2026
+!! cn-o38-nvda-q3fy27-call-transcript-pdf | All our statements are made as of today, November 17, 2026
+!! cn-counter-b17-1 | October 25, 2026
+!! cn-acts-reuters-halt-20261118-relay2 | in the quarter ended October 25
+
+21. **If the chips were declared as bare chips instead.** US exports of processor chips (8542.31) to the three places were 6.38 billion dollars in January to August 2026, of which 1.24 billion were re-exports, goods made abroad and sent on from the United States [cn-o34-comtrade-m-202608]. In 2025 the same two figures were 7.70 billion and 1.36 billion for twelve months. That heading holds every processor chip sent from the United States, of every maker, so it sets no useful ceiling, and it shows no step of billions either. As an outer bound: if every dollar under all four headings in those eight months were an H200, that would be about 299,000 chips (our division), half of 600,000.
+
+## 6. Other places' own figures
+
+22. **Singapore: one line jumped.** Singapore publishes its trade by eight-digit tariff line and by market, month by month; the tables read here run to October 2026. Its tariff splits heading 8471.80 into lines, among them "84718010 - CONTROL & ADAPTOR UNITS OF AUTOMATIC DATA PROCESSING MACHINES (NMB)" and "84718070 - SOUND CARDS & VIDEO CARDS OF AUTOMATIC DATA PROCESSING MACHINES (KGM)" [cn-le18-sg-T010001-metadata]. Re-exports to mainland China under the first were about 18 million Singapore dollars in January to June 2026 (17,970 thousand) and about 3.0 billion in July to October 2026 (3,036,175 thousand): 707,809 thousand in July, 607,508 in August, 149,578 in September and 1,571,280 in October. In all of 2025 they were 21,537 thousand. Under the second line they were 4,175 thousand in January to June 2026 and 936 thousand in July to October.
+
+These figures are a reading, not a saved source. Another agent of this project (its folder is loose_ends/L18_trade_data) drew them from the table service of Singapore's statistics office, table T010001, "Merchandise Trade Value by Commodity and Market, Monthly", and kept the service's raw answers in that folder, each with its sha256 [cn-le18-sg-T010001-metadata]. They are not among the project's saved sources, so the quotation checker cannot test them. Our script read seven of those files again, tested each against its recorded sha256, and got the same sums as the project's own table, tables/trade_derived_figures.tsv. The one saved source is the table's description, which holds the names of the lines and no figures.
+!! cn-le18-sg-T010001-metadata | "dataSource": "ENTERPRISE SINGAPORE"
+!! cn-le18-sg-T010001-metadata | "dataLastUpdated": "17/11/2026"
+
+23. **What that line can and cannot show.** It can show that goods declared in Singapore as control and adaptor units of computers left for mainland China: 23,981 units in the four months, at about 126.6 thousand Singapore dollars a unit, against 0.46 thousand a unit in the first half (our divisions). It can show the origins Singapore recorded for its imports under the same line in those four months: 3,756,473 thousand Singapore dollars in all, of which 1,836,699 thousand of Taiwan origin, 1,735,918 thousand of Mexico origin and 21,067 thousand of United States origin. Singapore records imports by origin and exports by last known destination, by its answers to a United Nations questionnaire whose page gives Apr 7, 2003 as its date of release [cn-le18-un-trade-practice-sg]. The line cannot show what the goods were, who made them, who sent them or who received them: the tables name no product, no maker and no company. One unit of the line is not one chip, and the tables do not say what a unit is. The value is a customs value in Singapore dollars, not a sale. So the line is not a count of Nvidia chips, and it is not evidence that the goods were Nvidia's.
+!! cn-le18-un-trade-practice-sg | 58. Do you classify imports by country of origin or production? YES 59. Do you classify imports by country of consignment? NO
+!! cn-le18-un-trade-practice-sg | 62. Do you classify exports by country of last known destination? YES
+!! cn-le18-un-trade-practice-sg | Date of release: April 7 2003
+
+24. **The Singapore line beside Nvidia's figure, and beside the US mirror.** At Singapore's own monthly average exchange rates the July to October re-exports come to about 2.37 billion US dollars (our conversion; the rates are from the same statistics service and are a reading too). A reader will see that this is close to Nvidia's "Q3 sales of licensed Hopper Data Center products to China was $2.4 billion" [cn-o38-nvda-q3fy27-call-transcript-pdf]. The two are not a match and must not be joined. One is a customs value of every maker's goods under one line in four calendar months; the other is one company's sales in its quarter from Jul 27 to Oct 25, 2026; and no saved page read here says that Nvidia's licensed chips went by way of Singapore. One check is possible. If the goods were licensed H200s, they had to leave from the United States first (point 15), so a step of that size should show in the United States' export figures too, whichever place it recorded them as leaving for. In July and August 2026 Singapore recorded re-exports to the mainland under this line of 1,315,317 thousand Singapore dollars, about 1.02 billion US dollars; in an average month of January to June 2026 it recorded about 3.0 million Singapore dollars. In those two months the United States recorded exports to Singapore under the three named headings of 336.0 and 338.8 million dollars, every kind of goods counted, against 314.0 million in an average month of January to June 2026; of that, 12.2 and 10.7 million dollars were under heading 8471.80, the heading this line belongs to [cn-o34-comtrade-m-202607] [cn-o34-comtrade-m-202608]. Its exports to mainland China, Hong Kong and Macau under the three headings were 205.2 and 187.4 million dollars, against 216.0 million in an average month of January to June. These are two countries' records and cannot be subtracted from one another. They do show that the step Singapore recorded from July has no counterpart in the United States' figures for July and August under these headings. The figures do not say why: the goods may never have passed through the United States, may have left it under another heading or for yet another first destination, or may be something other than H200s. Something else is possible even among Nvidia's own goods. Reuters reported on Oct 20, 2026 that ByteDance, Alibaba and Tencent "have ordered more than 3 million of" another Nvidia card, "in a rush for a less powerful but export-compliant chip" [cn-factions-rtx-orders-oct-wayback]. Nothing here says the Singapore goods were those cards either.
+!! cn-o34-comtrade-m-202607 | "primaryValue": 12158915.0
+!! cn-o34-comtrade-m-202608 | "primaryValue": 10682187.0
+
+25. **Taiwan.** Taiwan's finance ministry gives exports by destination for product groups, not by heading, to October 2026 [cn-le18-tw-mof-exp-cnhk-groups]. By the account of the agent who tabled that page (L18), its group for computers, 自動資料處理機及其附屬單元 (automatic data processing machines and their units), equals all of heading 8471 to the dollar, and Taiwan's customs portal, which goes finer, did not answer this machine. In January to October 2026 Taiwan's exports of that group to mainland China and Hong Kong together were 0.77% of its exports of the group to the world (our division of that agent's table, whose cells our script checked again in the saved page). So Taiwan's computers went almost wholly elsewhere. That fits the rule that licensed chips go to the United States first (point 15). It cannot show where they went next. Taiwan records exports by known final destination: "出口貨品按已知最終目的地國家(地區)，進口貨品按原生產國家(地區)" (exports by the known country or area of final destination, imports by the country or area where the goods were produced) [cn-le18-tw-mof-notes].
+!! cn-le18-tw-mof-exp-cnhk-groups | 自動資料處理機及其附屬單元
+
+## What a reader may conclude
+
+- No public customs table found here can confirm or refute that about 10,000 H200s reached each of several buyers, or any other count of these chips. Each line holds every maker's goods, and no saved page says under which line the chips are declared.
+- To the end of August 2026 the United States' own export figures leave room for a few tens of thousands of licensed H200s at most (about 62,500), but only if a chip is valued at the press price of about 27,000 dollars, was declared under the three named headings, and was recorded as leaving for mainland China, Hong Kong or Macau. Nvidia's own report gives a bound of the same order for its quarter to Jul 26, 2026, at the same price, and an official called exports "minimal" on Jul 14, 2026 [man-a7d2f1a9f963].
+- Nvidia's 2.4 billion dollars of licensed sales to China belongs to the quarter to Oct 25, 2026, mostly after the months the trade figures cover. The two cannot be set against each other.
+- In January to September 2026 China imported 4.35 times as much computer parts by value as in the same months of 2025, and less by weight. That is a fact about a broad class of goods of every maker.
+- Singapore recorded about 3.0 billion Singapore dollars of re-exports to mainland China under one line for computer units in July to October 2026, against about 18 million in the first half (a reading, not a saved source). That is a fact about goods under one line, of makers the tables do not name.
+
+## What a reader may not conclude
+
+- That the rise in computer parts is Nvidia chips, or H200s. The table does not say what it is.
+- That Singapore's line is Nvidia's 2.4 billion dollars, or any number of H200s. The two figures are of different kinds, and Singapore's tables name no goods and no maker.
+- That any two of these series can be added or chained. They are different countries' records, under different lines, in different currencies and months.
+- That the 600,000 is wrong. That report is from November 2026 and is about Hong Kong; the US figures end in August 2026, and they would not show chips that reached Hong Kong some other way.
+- That the ceiling is a count of chips. It is a sum of dollars divided by a press price, and it moves with that price.
+- How many H200s entered mainland China. No figure found here states it.
+
+## What would settle more
+
+- The US figures for September and October 2026, when UN Comtrade or the Census Bureau's service has them. A step of billions of dollars to mainland China or Hong Kong under 8471.50, 8471.80 or 8473.30 would be the first official trace of large shipments.
+- A hand query of China's customs service at stats.customs.gov.cn for the eight-digit lines under 8473.30 and 8471.50, by month and by origin. Even that would show a class of goods, not a product.
+- Singapore's tables for November 2026 and after, and a saved copy of them: they would show whether the line stays high, not what the goods are.
+- Nvidia's quarterly report for the quarter to Oct 25, 2026. On Nov 17, 2026 Nvidia said: "we plan to file our 10-Q in the coming weeks" [cn-o38-nvda-q3fy27-call-transcript-pdf]. The Securities and Exchange Commission's record of Nvidia's filings, fetched on Nov 23, 2026, lists no report for that quarter; the newest quarterly report in it is the one for the quarter to Jul 26, 2026 [cn-le05-sec-submissions-20261123].
+!! cn-le05-sec-submissions-20261123 | 0001045810-26-000075
+
+## Files
+
+- china_customs_imports.tsv: the six lines of table 14 in five issues (September and December 2025; March, June and September 2026), with our quarterly subtractions.
+- china_imports_by_origin_202609.tsv: table 16 for chapters 84 and 85 and five origins.
+- us_exports_monthly.tsv and us_exports_summary.tsv: US exports by month, heading and destination, January 2025 to August 2026.
+- singapore_line_84718010.tsv: Singapore's line 84718010 month by month, January 2025 to October 2026, read again from the raw answers another agent kept (a reading, not a saved source).
+- coverage_codes.tsv, classification_decisions_2025.tsv: the codes behind each line of table 14, and the nine decisions.
+- derived_figures.tsv: every piece of arithmetic in this note, made by the script: the year-earlier comparison, the ceiling, the price at which it would reach 600,000, the Singapore sums and the comparisons with Nvidia's own figures.
+- numbers_check.tsv: each figure as the exact piece of the saved copy it was read from; the checker found every line.
+- All are built by build_tables.py in the folder above; the searches are logged in search_log.tsv there.

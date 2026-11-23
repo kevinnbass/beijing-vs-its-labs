@@ -1,0 +1,62 @@
+#!/usr/bin/env python3
+"""Ask the Internet Archive (only through the machine's queue, wayback-get) for official pages that refuse this machine.
+
+Run: python3 -I archive_pass.py archive/<list>.tsv
+list: key <TAB> address <TAB> date wanted (YYYYMMDD or empty). Everything is written inside this folder's archive/:
+  <key>.avail.json   the Archive's availability answer (kept; a rerun asks nothing twice)
+  <key>.body         the capture as archived (web/<timestamp>id_/<address>); kept
+  <key>.meta.json    address, capture address, capture time, sha256, bytes, status line
+  <key>.txt          text of the capture (pdftotext for a PDF, tags removed for HTML; a Word file is left for a later step)
+  <list>.log         one line per key; <list>.DONE when the list is finished
+These captures are NOT in research/primary: words from them are "read, not saved" for the project's checkers.
+Adapted from A12_tenders_and_provinces/tools/archive_pass.py.
+"""
+import hashlib, html, json, re, subprocess, sys
+from datetime import datetime, timezone
+from pathlib import Path
+
+A = Path(__file__).resolve().parent / 'archive'
+
+
+def main():
+    lst = Path(sys.argv[1]); log = lst.with_suffix('.log')
+    def say(*a):
+        s = ' '.join(str(x) for x in a); print(s, flush=True)
+        with log.open('a', encoding='utf-8') as f: f.write(s + '\n')
+    for ln in lst.read_text(encoding='utf-8').splitlines():
+        if not ln.strip() or ln.startswith('#'): continue
+        key, url, date = (ln.split('\t') + ['', ''])[:3]
+        av = A / f'{key}.avail.json'; body = A / f'{key}.body'; meta = A / f'{key}.meta.json'
+        if not (av.exists() and av.stat().st_size > 2):
+            q = 'https://archive.org/wayback/available?url=' + re.sub(r'^https?://', '', url) + (f'&timestamp={date}' if date else '')
+            p = subprocess.run(['wayback-get', q, '-o', str(av), '--max-wait', '2400'], capture_output=True, text=True)
+            if p.returncode != 0: say(key, 'availability call failed, exit', p.returncode); continue
+        try: snap = (json.loads(av.read_text(encoding='utf-8', errors='replace')).get('archived_snapshots') or {}).get('closest') or {}
+        except Exception: snap = {}
+        if not snap.get('available') or str(snap.get('status')) != '200':
+            say(key, 'no usable capture', json.dumps(snap)); continue
+        ts = snap['timestamp']; cap = f'https://web.archive.org/web/{ts}id_/{url}'
+        if not (body.exists() and body.stat().st_size > 0 and meta.exists()):
+            p = subprocess.run(['wayback-get', cap, '-o', str(body), '--max-wait', '2400'], capture_output=True, text=True)
+            raw = body.read_bytes() if body.exists() else b''
+            meta.write_text(json.dumps({'key': key, 'url': url, 'capture': cap, 'capture_timestamp': ts,
+                                        'fetched_utc': datetime.now(timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ'), 'exit': p.returncode,
+                                        'status_line': (p.stderr.strip().splitlines() or [''])[-1], 'bytes': len(raw),
+                                        'sha256': hashlib.sha256(raw).hexdigest()}, indent=1))
+            if p.returncode != 0: say(key, 'capture fetch failed, exit', p.returncode); continue
+        raw = body.read_bytes(); t = ''
+        if raw[:4] == b'%PDF':
+            t = subprocess.run(['pdftotext', '-layout', str(body), '-'], capture_output=True, timeout=120).stdout.decode('utf-8', 'replace')
+        elif raw[:4] in (b'\xd0\xcf\x11\xe0', b'PK\x03\x04'):
+            t = ''
+        else:
+            s = raw.decode('utf-8', 'replace')
+            if '�' in s[:3000]: s = raw.decode('gb18030', 'replace')
+            s = re.sub(r'(?is)<(script|style)\b.*?</\1>', ' ', s)
+            t = html.unescape(re.sub(r'(?s)<[^>]+>', ' ', s))
+        (A / f'{key}.txt').write_text(t, encoding='utf-8')
+        say(key, ts, 'bytes', len(raw), 'text characters', len(re.sub(r'\s+', '', t)))
+    lst.with_suffix('.DONE').write_text(datetime.now(timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ') + '\n')
+
+
+main()

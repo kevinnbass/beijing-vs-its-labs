@@ -1,0 +1,27 @@
+# What Alibaba, Tencent, Baidu and others said about chips, on results calls and in investor records
+
+@deck {N_ROWS} dated remarks from the {N_CALLS} results calls that Alibaba, Tencent and Baidu held from November 2023 to November 2026, and {M_ROWS} more from other calls, company filings, investor records and one press report. Each is in the exact words of a saved copy. {N_SA_ROWS} of the first {N_ROWS}, all of Tencent's and Baidu's among them, rest on a stock-data site's transcripts, whose speaker labels are unchecked.
+
+@note Draft by Claude, Anthropic's model. Local; not published.
+@note Read with care: Tencent's {N_T_ROWS} rows, Baidu's {N_B_ROWS} and Alibaba's {N_ALI_SA_ROWS} of {ALI_SA_DATE} come from transcripts on a stock-data site (stockanalysis.com). Nobody has checked its text or its speaker labels against the recordings. Alibaba's other {N_ALI_OWN_ROWS} rows come from the company's own transcripts. {M_SA_ROWS} rows of the second table come from the same site. English in round brackets after Chinese words is mine, or the project's argument's where it has one; it is not an official translation.
+@note Written Nov 23, 2026 (UTC); revised the same day in rounds 2 and 4. Idea 36 of the chip-policy project. The table is built by a script from the saved transcripts; every quotation was found in its saved copy.
+
+## What was looked for
+
+Every remark on chip supply by executives of Alibaba, Tencent and Baidu on their quarterly results calls: Nvidia chips, export controls, home-made chips, their own chips, and import approvals. The period is the {N_Q} quarters reported from November 2023 to November 2026. In round 4 a second table was added from what two other readers of the project found: calls of other Chinese AI companies, and the filed reports and investor records of iFlytek, SenseTime and Zhipu.
+
+## Where
+
+- **Alibaba's own transcripts.** Alibaba posts an English transcript of each call on its investor site. {N_OWN} were saved, for the calls of {OWN_FIRST} to {OWN_LAST}. Where an executive spoke Chinese these transcripts mark the English "(Translation)": the translation is Alibaba's [cn-o36-alibaba-call-20251125-own].
+- **A stock-data site.** For Tencent and Baidu, and for Alibaba's call of Nov 19, 2026, the transcripts are from the stock-data site stockanalysis.com: {N_SA_TENCENT} Tencent calls (one was already held by the project), {N_SA_BAIDU} Baidu calls and {N_SA_ALIBABA} Alibaba call. The site's text and speaker labels are its own. They were not checked against the recordings.
+- **Not used.** Alibaba's investor site listed no transcript yet for the call of Nov 19, 2026 when its data file was read on Nov 23, 2026 [cn-o36-index-alibaba-ir-q2026]. Baidu's investor site answers 403 to a request for its robots file, so it was not fetched. The address tried for Tencent's quarterly results page returned 404, and whether Tencent posts transcripts of its own was not established.
+- **The project's two tables of what the companies said** (tables/labs_said.tsv and tables/labs_said_more.tsv). Two other readers of the project made them, from {L9_CALLS} call transcripts of eight companies and from iFlytek's and SenseTime's own documents. The second table here takes {M_ROWS} of their rows by script. I checked each quotation against its saved copy and, for the call transcripts, the speaker label and the date on the page. I did not read those calls and documents whole.
+
+**Coverage of the first table.** All {N_CALLS} calls of the {N_Q} quarters were saved: no quarter is missing. {N_CALLS_ROWS} calls yielded at least one row. In the other {N_CALLS_NOROWS} the reading found no remark on chip supply beyond spending on GPUs and renting them out: {NOROW_LIST}.
+
+**How the rows were chosen.** A script listed every paragraph of the {N_CALLS} transcripts that holds one of a list of words (chip, GPU, Nvidia, export, import, semiconductor, domestic, self-developed and others): {N_CAND} paragraphs. I read the sentences that hold those words, with the sentence before and after each, and kept the remarks on supply. Remarks only about spending or about renting GPUs to customers were left out. The speaker and the date of each row are read from the page by the build script.
+
+## The first table: the three companies' results calls
+
+Each row gives the date the page prints, the speaker and title as the page gives them, and exact words. The column headed About is my label, not the speaker's.
+

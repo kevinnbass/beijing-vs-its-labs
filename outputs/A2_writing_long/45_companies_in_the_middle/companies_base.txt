@@ -1,0 +1,80 @@
+# The companies in the middle
+@deck The same two years from the buyers' side. China's AI companies ordered Nvidia chips, said why, pushed back, trained abroad, and built chips of their own.
+
+@note Draft by Claude, Anthropic's model. Local; not published. Written Nov 23, 2026 (UTC).
+@note How to read it. Words between quotation marks are a source's exact words, found in the saved copy by a script. A filled reference number is a document, a filing or a named person on the record. An open number is a press report citing unnamed people. English in round brackets after Chinese is our rendering, not an official translation.
+@note The author's interest. Anthropic has argued in public for controls on chip exports to China (that is from the model's general knowledge; no saved page is cited for it), so judge this piece by its sources.
+
+## Between two governments
+
+ByteDance, Alibaba, Tencent, Baidu and DeepSeek stood between two governments.
+Since 2022 Washington has restricted which Nvidia chips may be exported to China [cn-clips-alibaba-20f].
+!! cn-clips-alibaba-20f | since 2022, the U.S. government has implemented a series of measures restricting the export to China of advanced computing chips
+From 2024 the security and planning side of their own state pressed them to use home-made chips instead.
+Here is what the companies did, in five steps, in their own words where they spoke. Tencent's and Baidu's words come from a stock-data site's transcripts, whose speaker labels are unchecked.
+
+**1. They ordered**
+
+A Shanghai government body wrote, in a reply dated Apr 30, 2025, that in the city internet companies' own computing clusters run mainly on Nvidia cards [cn-counter-b11-5].
+!! cn-counter-b11-5 | 主要以英伟达高性能卡为主
+!! cn-counter-b11-5 | 上海市经济和信息化委员会2025年4月30日
+The orders are reported from unnamed people. In the first three months of 2025 Chinese companies including ByteDance, Alibaba and Tencent "have placed at least $16 billion in orders for" Nvidia's H20 chip [cn-labs-h20-orders-20250402-relay1].
+!! cn-labs-h20-orders-20250402-relay1 | in the first three months of the year
+!! cn-labs-h20-orders-20250402-relay1 | Chinese companies including ByteDance, Alibaba Group and Tencent Holdings have placed at least
+By Dec 31, 2025 Chinese companies "have placed orders for more than 2 million H200 chips for 2026" [cn-labs-h200-two-million-202512-relay1-wayback].
+!! cn-labs-h200-two-million-202512-relay1-wayback | Dec 31 (Reuters)
+
+**2. They said why**
+
+Tencent's president, Mar 18, 2026, naming no maker: "you actually want to have access to the most state-of-the-art, you know, training chips to the extent possible" [cn-o36-tencent-call-20260318-sa].
+!! cn-o36-tencent-call-20260318-sa | Earnings Call: Q4 2025 Mar 18, 2026
+A Baidu executive vice president, of its AI cloud group, May 18, 2026: "Domestic chips are still catching up with the most advanced global products in certain frontier training scenarios. Inference is an area where domestic chips can be highly relevant and competitive." [cn-o36-baidu-call-20260518-sa]
+!! cn-o36-baidu-call-20260518-sa | Earnings Call: Q1 2026 May 18, 2026
+Another model maker, iFlytek, which is on the US Entity List, told investors on Aug 21, 2026 what the others used: "其他模型厂商普遍使用性能领先两代的英伟达芯片" (other model makers commonly use Nvidia chips two generations ahead in performance) [cn-le26-iflytek-ir-20260821].
+!! cn-le26-iflytek-ir-20260821 | 时间2026.08.21
+!! cn-le26-iflytek-ir-20260821 | 尤其是在讯飞被列入美国实体清单的背景下
+
+**3. They pushed back, and asked**
+
+The Financial Times, Aug 20, 2025: "tech giants from Alibaba to ByteDance argued that their AI development would be impaired without Nvidia's chips", though by some close to them "they have become more accepting of a switch" [man-cn-ft-20250821-regulators].
+!! man-cn-ft-20250821-regulators | Published AUG 20 2025
+Nori Chiou of White Oak Capital Partners, quoted by Reuters in December 2025, said cloud companies were "lobbying the government to relax restrictions on a conditional basis" [cn-labs-h200-lobby].
+!! cn-labs-h200-lobby | said Nori Chiou, investment director at White Oak Capital Partners
+On the record the companies said less.
+Tencent's president, Aug 13, 2025: "we don't really have a definite answer on the import situation yet" [cn-labs-tencent-q2-call-20250813-relay1].
+!! cn-labs-tencent-q2-call-20250813-relay1 | Earnings Call: Q2 2025 Aug 13, 2025
+Its chief strategy officer, May 13, 2026, put a shortage of chips down partly to "policy restrictions on certain, you know, foreign design GPUs being brought into China" [cn-o36-tencent-call-20260513-sa]. He did not say whose policy.
+!! cn-o36-tencent-call-20260513-sa | Earnings Call: Q1 2026 May 13, 2026
+!! cn-o36-tencent-call-20260513-sa | a combination of policy restrictions on certain
+One company asked in public. Its message of Jul 30, 2026 on the commerce ministry's message board asked how to import H200 chips lawfully; the reply of Aug 19 speaks only of what exporters must do [cn-acts-mofcom-inquiry-20260819].
+!! cn-acts-mofcom-inquiry-20260819 | 留言时间: 2026-07-30
+!! cn-acts-mofcom-inquiry-20260819 | 我司计划合规进口H200数据中心GPU
+!! cn-acts-mofcom-inquiry-20260819 | 答复时间: 2026-08-19
+!! cn-acts-mofcom-inquiry-20260819 | 出口经营者应当了解拟出口货物、技术和服务的性能指标、主要用途等
+
+**4. They trained abroad, and one went back to Nvidia**
+
+The Financial Times, November 2025: Alibaba and ByteDance "are among the tech groups training their latest large language models (LLMs) in data centres across Southeast Asia", leasing that is, by the paper's account, "compliant with US export controls" [cn-tolerate-ft-offshore].
+The same paper, Aug 13, 2025, by three unnamed people: DeepSeek "was encouraged by authorities to adopt Huawei's Ascend processor rather than use Nvidia's systems", met "persistent technical issues", and ended by using "Nvidia chips for training and Huawei's for inference" [man-cn-ft-202508-deepseek].
+!! man-cn-ft-202508-deepseek | Published AUG 13 2025
+!! man-cn-ft-202508-deepseek | according to three people familiar with the matter
+
+**5. They built and bought their own**
+
+Baidu's chief executive, April 2025: a cluster "comprising 30,000 of its self-developed, third generation P800 Kunlun chips" [man-cn-labs-baidu-30k-reuters-alt1].
+Alibaba's chief executive, May 13, 2026, gave a commercial reason for its own chips: "gross margins on mainstream foreign AI chips are very high, basically in the 60% to 80% range" [cn-o36-alibaba-call-20260513-own].
+!! cn-o36-alibaba-call-20260513-own | Wednesday, 13 May 2026
+Tencent's chief strategy officer, Nov 18, 2026: "that inference can be run very effectively on a surprisingly limited number of domestic chips" [cn-o36-tencent-call-20261118-sa].
+!! cn-o36-tencent-call-20261118-sa | Earnings Call: Q3 2026 Nov 18, 2026
+Of DeepSeek's later model, V4, Reuters wrote in April 2026: "Huawei said its chips were used in some of the V4's training process" [cn-labs-v4-training-reuters-relay1-wayback]. A rival's filing disputes it, and nobody has checked either claim [cn-le26-iflytek-ir-20260429].
+!! cn-labs-v4-training-reuters-relay1-wayback | BEIJING, April 24 (Reuters)
+!! cn-le26-iflytek-ir-20260429 | DS V4 的训练仍然是基于英伟达卡进行的
+
+## What the five steps add up to
+
+The companies were neither simply held back by their state nor simply in step with it.
+For training their largest models most of them preferred Nvidia [cn-tolerate-ft-offshore].
+!! cn-tolerate-ft-offshore | leading most Chinese groups to prefer Nvidia's advanced products for the task
+For inference, the everyday work of running a trained model, they were turning to home-made chips, some of them their own [cn-tolerate-ft-offshore].
+!! cn-tolerate-ft-offshore | increasingly turning to locally made Chinese chips for
+Both are in the record at once.

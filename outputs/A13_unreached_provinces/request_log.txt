@@ -1,0 +1,88 @@
+# A13: every web search, page save and Archive call, in order, Nov 23, 2026 (UTC). Fields: number @@ kind @@ where it was limited to, or the saved id @@ the words searched, or the address @@ what came back
+1 @@ search @@ no limit @@ 广东省算力基础设施发展"粤算"行动计划（2024-2025年） 国产 自主可控 占比 @@ the plan's number 粤通联〔2024〕3号; no text
+2 @@ search @@ no limit @@ 浙江省 算力基础设施高质量发展 行动方案 OR 实施方案 通信管理局 国产算力 占比 @@ no provincial computing plan named
+3 @@ search @@ no limit @@ 重庆市算力基础设施高质量发展行动计划 国产算力 占比 自主可控 @@ addresses on cq.gov.cn sites; no share in the summaries
+4 @@ save @@ cn-o39b-guangdong-yuesuan-shantou-pdf @@ https://www.shantou.gov.cn/attachment/0/129/129156/2416513.pdf @@ 404
+5 @@ save @@ cn-o39b-guangzhou-draft-attachment @@ https://gxj.gz.gov.cn/hdjlpt/yjzj/api/attachments/view/709baea99b3a6f296dae8bb0fb71d0e3 @@ 200, a Word file of a Guangzhou city draft; not a provincial document; not used
+6 @@ save @@ cn-o39b-chongqing-jjxxw-doc-202312 @@ https://jjxxw.cq.gov.cn/zwgk_213/zcwj/qtwj/202312/W020231222570556221444.doc @@ no connection (Network is unreachable)
+7 @@ search @@ no limit @@ 广东省算力基础设施高质量发展行动暨"粤算"行动计划 粤通联〔2024〕3号 全文 @@ no text
+8 @@ search @@ miit.gov.cn @@ 通信管理局 等部门 关于印发 算力基础设施高质量发展 实施方案 OR 行动方案 OR 行动计划 省 @@ the Guangdong plan on gdca.miit.gov.cn
+9 @@ search @@ no limit @@ 安徽省 算力基础设施高质量发展 行动方案 OR 实施方案 国产算力 占比 自主可控 到2027年 @@ no plan named
+10 @@ save @@ cn-o39b-guangdong-yuesuan-2024 @@ https://gdca.miit.gov.cn/zwgk/zcwj/wjfb/art/2024/art_8d6908d847994bc4a2f0c9eb3517e780.html @@ 200, the Guangdong plan in full
+11 @@ search @@ zjca, ahca, jxca, cqca .miit.gov.cn @@ 算力基础设施高质量发展 通信管理局 浙江 OR 安徽 OR 江西 OR 重庆 印发 实施方案 OR 行动方案 @@ no computing plan of these four on the communications administrations' sites
+12 @@ search @@ shxca, sxca, gxca, hica, qhca .miit.gov.cn @@ 算力基础设施高质量发展 通信管理局 陕西 OR 山西 OR 广西 OR 海南 OR 青海 印发 实施方案 OR 行动方案 OR 行动计划 @@ no computing plan of these five
+13 @@ search @@ xjca, xzca, jlca, hlca, nxca, ynca .miit.gov.cn @@ 算力基础设施高质量发展 通信管理局 新疆 OR 西藏 OR 吉林 OR 黑龙江 OR 宁夏 OR 云南 印发 实施方案 OR 行动方案 OR 行动计划 @@ no computing plan of these six
+14 @@ search @@ no limit @@ "浙江省" "算力基础设施高质量发展" 实施方案 OR 行动方案 OR 实施意见 印发 通知 国产 @@ no plan named
+15 @@ search @@ no limit @@ "山西省算力基础设施高质量发展" 实施方案 国产 自主可控 占比 @@ no text
+16 @@ search @@ no limit @@ "陕西省" "算力基础设施高质量发展" 行动方案 OR 实施方案 OR 行动计划 印发 国产 自主可控 @@ no plan named
+17 @@ save @@ cn-o39b-govcn-difang-pdf-202404 @@ https://www.gov.cn/lianbo/difang/202404/P020240704395454679454.pdf @@ 200, a Zhejiang notice on equipment renewal; not a computing plan; not used
+18 @@ save @@ cn-o39b-zhejiang-zjgov-attach-b6aa @@ https://www.zj.gov.cn/attach/0/b6aaea3aa59b47e48da439711b768fc0.pdf @@ timeout; what the file is was never learned
+19 @@ save @@ cn-o39b-shanxi-jincheng-pdf-202401 @@ https://xxgk.jcgov.gov.cn/szfgzbm/jcsdsjyyj/fdzdgknr_31650/fgwj/202401/P020240104640065569342.pdf @@ 200, Shanxi's 2022 opinion on the digital economy on a city site; not a computing plan; not used
+20 @@ save @@ cn-o39b-shaanxi-sndrc-pdf-202403 @@ https://sndrc.shaanxi.gov.cn/zfxxgk/zc/fgwj/sfzggwwj/2024/202403/P020241107379032342019.pdf @@ no connection; what the file is was never learned
+21 @@ save @@ cn-o39b-cqca-domestic-compute-reading-2026 @@ https://cqca.miit.gov.cn/zwgk/zcwj/zcjd/art/2026/art_33db208c418d41e0b506f9db571da33c.html @@ 200, a note on a national plan carried by Chongqing's communications administration; not a Chongqing document; not used
+22 @@ save @@ cn-o39b-broker-table-202410 @@ https://pdf.dfcfw.com/pdf/H3_AP202410071640177315_1.pdf @@ 200, a 2024 report by a server maker and a state research institute; its table 1 names computing plans of Shanxi, Chongqing, Anhui and Ningxia by title
+# --- after the stop at about 06:50 UTC (an account limit); work went on from 07:04 UTC ---
+23 @@ search @@ no limit @@ "山西省算力基础设施高质量发展实施方案" 国产 OR 自主可控 OR 安全可靠 到2025年 目标 @@ no text
+24 @@ search @@ no limit @@ "安徽省智能算力基础设施建设方案" 2023-2025年 国产 自主可控 占比 @@ no text
+25 @@ search @@ no limit @@ "算力山城" "强算赋能" 行动计划 2023-2025年 国产 自主可控 重庆市算力网络发展 @@ a district document names two city plans (2023 to 2025, and a three-year plan for 2024 to 2026)
+26 @@ search @@ no limit @@ "重庆市算力高质量发展三年行动计划" 2024—2026年 国产算力 占比 自主可控 @@ addresses on cq.gov.cn sites and a portal article
+27 @@ search @@ no limit @@ 江西省 算力基础设施高质量发展 实施方案 OR 行动方案 OR 行动计划 印发 国产化 自主可控 占比 到2025年 OR 到2027年 @@ the number of Jiangxi's measures, 赣发改数据〔2025〕945号
+28 @@ search @@ no limit @@ 广西 算力基础设施高质量发展 行动计划 OR 实施方案 OR 规划 自治区 印发 国产化 自主可控 占比 智算 @@ no Guangxi plan
+29 @@ search @@ no limit @@ 青海省 绿色算力 行动方案 OR 若干措施 OR 规划 全文 国产 自主可控 占比 省政府办公厅 @@ names of two Qinghai documents and of a 2022 plan; no text
+30 @@ save @@ cn-o39b-chongqing-sina-article @@ https://cj.sina.com.cn/articles/view/7750558190/1cdf821ee001011av4 @@ 200, a portal article on Chongqing's three-year plan
+31 @@ save @@ cn-o39b-qinghai-zero-carbon-plan-2022-sina @@ https://news.sina.com.cn/sx/2022-12-29/detail-imxyitkk9346342.shtml @@ 200, a portal account of Qinghai's 2022 plan
+32 @@ save @@ cn-o39b-jiangxi-jdz-pdf-2026 @@ https://fg.jdz.gov.cn/zwgk/fdzdgknr/fgzc/zcwj/P020260713596393303970.pdf @@ 200 with a script challenge page (1,334 bytes) and no text; not used
+33 @@ save @@ cn-o39b-thepaper-25554623 @@ https://m.thepaper.cn/detail/25554623 @@ 403; not used
+34 @@ Archive @@ o39b-chongqing-jjxxw-doc-202312 @@ availability of https://jjxxw.cq.gov.cn/zwgk_213/zcwj/qtwj/202312/W020231222570556221444.doc @@ answered after 28 minutes in the queue: no capture
+35 @@ Archive @@ o39b-chongqing-hub-plan-2026-doc @@ availability of https://www.cq.gov.cn/zwgk/zfxxgkml/szfwj/xzgfxwj/szfbgt/202606/W020260616657395503810.doc @@ answered after 30 minutes in the queue: no capture
+36 @@ withdrawn @@ o39b-qinghai-green-compute-2024 @@ availability of http://www.qinghai.gov.cn/xxgk/xxgk/fd/zfwj/202403/t20240323_213922.html @@ NOT ASKED: the call was withdrawn before it went out, when the owner's hand-saved copy of the page arrived (07:39 UTC); not counted as a request
+37 @@ withdrawn @@ o39b-qinghai-compute-15fyp-2026 @@ availability of http://www.qinghai.gov.cn/xxgk/xxgk/fd/zfwj/202608/t20260831_429553.html @@ NOT ASKED: the call was withdrawn before it went out, when the owner's hand-saved copy of the page arrived (07:39 UTC); not counted as a request
+38 @@ search @@ no limit @@ 海南省 算力基础设施 OR 算力产业 高质量发展 行动方案 OR 实施方案 OR 若干措施 印发 国产 自主可控 占比 @@ no Hainan computing plan
+39 @@ search @@ no limit @@ 新疆维吾尔自治区 算力基础设施 OR 算力产业 高质量发展 实施方案 OR 行动方案 OR 规划 印发 国产 自主可控 占比 @@ no Xinjiang plan; Chongqing's 2026 files came up
+40 @@ search @@ no limit @@ 西藏自治区 算力基础设施 OR 算力产业 高质量发展 实施方案 OR 行动方案 OR 规划 印发 国产 自主可控 @@ the name of a Tibet plan (算力珠峰)
+41 @@ search @@ no limit @@ 吉林省 算力基础设施高质量发展 实施方案 OR 行动方案 OR 行动计划 印发 国产 自主可控 占比 通信管理局 OR 省政府办公厅 @@ no Jilin plan
+42 @@ search @@ no limit @@ 西藏自治区 "算力珠峰" 高质量发展行动计划 印发 国产算力 占比 @@ press pages on projects; no plan text
+43 @@ search @@ no limit @@ 黑龙江省 算力基础设施高质量发展 OR 算力产业 行动方案 OR 实施方案 OR 行动计划 印发 国产 自主可控 占比 @@ no Heilongjiang computing plan
+44 @@ search @@ no limit @@ 宁夏回族自治区 算力基础设施高质量发展 OR 算力产业 实施方案 OR 行动方案 OR 行动计划 印发 国产化率 OR 国产算力 占比 2024 OR 2025 @@ the name of Ningxia's hub plan for 2025 to 2027
+45 @@ search @@ no limit @@ 云南省 算力基础设施高质量发展 OR 算力产业 实施方案 OR 行动方案 OR 行动计划 印发 国产 自主可控 占比 @@ no Yunnan computing plan; Chongqing's 2026 files came up
+46 @@ save @@ cn-o39b-yunnan-compute-power-plan-eastmoney @@ https://finance.eastmoney.com/a/202605273750345779.html @@ 200, a note on Yunnan's AI and energy plan; not a computing plan; not used
+47 @@ save @@ cn-o39b-tibet-xinhua-20260909 @@ https://www.news.cn/info/20260909/7e67053d8b1a46c39897269e4203959c/c.html @@ 200, a Xinhua feature on a state telecom company in Tibet; it does not name the plan; not used
+48 @@ search @@ no limit @@ "东数西算"工程宁夏枢纽建设实施方案（2025—2027年） 国产 自主可控 占比 全文 @@ no text
+49 @@ search @@ no limit @@ "关于融入全国一体化算力网推进全省算力高质量发展的若干措施" 江西 赣发改数据〔2025〕945号 国产 自主可控 @@ no text
+50 @@ search @@ shanxi.gov.cn, sxca.miit.gov.cn, gov.cn @@ 山西省算力基础设施高质量发展实施方案 印发 通知 @@ press accounts of the plan; a city copy of Shanxi's 2024 measures
+51 @@ search @@ ah.gov.cn, gov.cn, nda.gov.cn @@ 安徽省智能算力基础设施建设方案（2023—2025年） 印发 @@ accounts of the plan; Anhui's digital-infrastructure plan on another province's site
+52 @@ search @@ nx.gov.cn, gov.cn, nda.gov.cn @@ "东数西算"工程宁夏枢纽建设实施方案（2025—2027年） 自治区 印发 @@ a newspaper account on a city government site
+53 @@ search @@ jiangxi.gov.cn, gov.cn, nda.gov.cn @@ 江西省 关于融入全国一体化算力网推进全省算力高质量发展的若干措施 印发 @@ a city government copy and two provincial addresses
+54 @@ save @@ cn-o39b-shanxi-measures-2024-jincheng @@ https://xxgk.jcgov.gov.cn/szfgzbm/jcsdsjyyj/fdzdgknr_31650/fgwj/202412/t20241209_2072113.shtml @@ 200, Shanxi's 2024 measures in full on a city government site
+55 @@ save @@ cn-o39b-shanxi-plan-2024-datong-news @@ https://www.dt.gov.cn/dtszf/sxyw/202401/1ef4ac3482244dca961d821f4818b166.shtml @@ 404
+56 @@ save @@ cn-o39b-anhui-digital-infra-2023-sd-copy @@ http://bdb.shandong.gov.cn/art/2023/12/25/art_329234_10324704.html @@ 200, Anhui's digital-infrastructure plan in full on Shandong's big data bureau site
+57 @@ save @@ cn-o39b-anhui-compute-plan-2023-jswx @@ https://www.jswx.gov.cn/csj/ah/202312/t20231208_3330482.shtml @@ 200, an account of Anhui's computing plan on Jiangsu's cyberspace site
+58 @@ save @@ cn-o39b-ningxia-hub-plan-2024-yinchuan-news @@ https://yinchuan.gov.cn/xwzx/mrdt/202412/t20241218_4762046.html @@ 200, Ningxia Daily's account of the hub plan on Yinchuan's government site
+59 @@ save @@ cn-o39b-jiangxi-measures-2025-jdz @@ https://www.jdz.gov.cn/zwzx/ztbd/szjj/zcwj_22393/t1078708.shtml @@ 200 with a script challenge page (1,334 bytes) and no text
+60 @@ search @@ gov.cn @@ 浙江省 算力基础设施 OR 智能算力 OR 算力产业 印发 通知 实施意见 OR 行动方案 OR 实施方案 国产 @@ the names of a 2025 opinion on the intelligent-computing cloud and of 2025 AI measures
+61 @@ search @@ gov.cn @@ 陕西省 算力基础设施 OR 智能算力 OR 算力产业 高质量发展 印发 通知 实施方案 OR 行动方案 OR 若干措施 @@ no Shaanxi computing plan; digital-economy measures of Jan 2024
+62 @@ search @@ gov.cn @@ 广西壮族自治区 算力基础设施 OR 智能算力 OR 算力产业 高质量发展 印发 通知 行动方案 OR 实施方案 OR 若干措施 @@ no Guangxi computing plan; a digital-economy plan and an AI plan
+63 @@ search @@ gov.cn @@ 新疆维吾尔自治区 算力基础设施 OR 智能算力 OR 算力产业 高质量发展 印发 通知 实施方案 OR 行动方案 OR 若干措施 @@ no Xinjiang plan text; press pages
+64 @@ search @@ gov.cn @@ 海南省 算力基础设施 OR 智能算力 OR 算力产业 高质量发展 印发 通知 实施方案 OR 行动方案 OR 若干措施 @@ no Hainan computing plan; an AI plan
+65 @@ save @@ cn-o39b-zhejiang-cloud-opinion-2025-mofcom @@ https://dzswgf.mofcom.gov.cn/news/43/2025/6/1750139040688.html @@ connection reset
+66 @@ save @@ cn-o39b-shaanxi-digital-measures-2024-shangluo @@ https://www.shangluo.gov.cn/gxj/info/1033/2744.htm @@ no connection
+67 @@ save @@ cn-o39b-guangxi-ai-plus-2026-tzxm @@ https://new.tzxm.gov.cn/zckd/cyzc/202601/t20260109_1403187.shtml @@ 200, Guangxi's AI plan on a state investment-approval site
+68 @@ save @@ cn-o39b-xinjiang-compute-news-2025 @@ https://nynct.xinjiang.gov.cn/xjnynct/c113572/202507/3915f7623d8747c1a299e5becc021cd5.shtml @@ 200, a People's Daily feature on a regional department's site; it names no plan
+69 @@ save @@ cn-o39b-shanxi-plan-2024-huzhou-news @@ https://kjj.huzhou.gov.cn/art/2024/1/26/art_1229209487_58936371.html @@ timeout
+70 @@ save @@ cn-o39b-ningxia-hub-policy-2022 @@ https://www.nx.gov.cn/wxb/wxzcgk/202208/t20220815_3672063.html @@ 200, a 2022 work plan for the Ningxia hub; outside 2023 to 2026 and no words on home-made hardware; not used
+71 @@ search @@ no limit @@ 浙江省 "关于构建新型算力体系打造算力产业高地的若干意见" 国产 自主可控 占比 @@ no text
+72 @@ search @@ gov.cn @@ 吉林省 算力基础设施 OR 智能算力 OR 算力产业 高质量发展 印发 通知 实施方案 OR 行动方案 OR 若干措施 @@ no Jilin computing plan; a digital-economy plan of Dec 2023
+73 @@ search @@ gov.cn @@ 黑龙江省 算力基础设施 OR 智能算力 OR 算力产业 高质量发展 印发 通知 实施方案 OR 行动方案 OR 若干措施 @@ no Heilongjiang computing plan
+74 @@ search @@ gov.cn @@ 云南省 算力基础设施 OR 智能算力 OR 算力产业 高质量发展 印发 通知 实施方案 OR 行动方案 OR 若干措施 @@ no Yunnan computing plan
+75 @@ search @@ gov.cn @@ 西藏自治区 算力 "算力珠峰" OR 算力基础设施 OR 算力产业 印发 行动计划 OR 实施方案 @@ a press account of the Tibet plan on the regional cyberspace office's site
+76 @@ save @@ cn-o39b-tibet-compute-plan-2024-wxb @@ https://wxb.xzdw.gov.cn/qwfb/xgbmfb/202406/t20240627_482287.html @@ 200, that account
+77 @@ save @@ cn-o39b-jilin-digital-plan-2023 @@ https://xxgk.jl.gov.cn/szf/gkml/202312/t20231206_8847939.html @@ 200, Jilin's digital-economy plan on the provincial government's site
+78 @@ save @@ cn-o39b-zhejiang-cloud-opinion-2025-quzhou @@ https://www.qz.gov.cn/art/2025/6/24/art_1229566643_5535021.html @@ timeout
+79 @@ save @@ cn-o39b-shaanxi-digital-measures-2024 @@ https://www.shaanxi.gov.cn/zfxxgk/zcwjk/szf_14998/qtwj/202401/t20240126_2315239.html @@ no connection
+80 @@ Archive @@ o39b-jiangxi-measures-2025-jdz @@ availability of https://www.jdz.gov.cn/zwzx/ztbd/szjj/zcwj_22393/t1078708.shtml @@ a capture of Jun 10, 2026
+81 @@ Archive @@ o39b-guangxi-digital-plan-2024 @@ availability of http://dsjfzj.gxzf.gov.cn/zfxxgkzl/fdzdgknr_zfxxgkzl/zcwj_zfxxgkzl/gsf_zfxxgkzl/t21165362.shtml @@ a capture of May 18, 2026
+82 @@ search @@ no limit @@ 浙江省 "关于促进智算云创新发展的实施意见" 2025—2027年 全文 "新增算力国产化" @@ press pages; no text
+83 @@ save @@ cn-o39b-zhejiang-cloud-opinion-2025-stcn @@ https://www.stcn.com/article/detail/1851122.html @@ timeout
+84 @@ save @@ cn-o39b-zhejiang-cloud-opinion-2025-cena @@ https://epaper.cena.com.cn/pc/attachment/202506/17/2a400daa-c506-4a9c-a26d-1a084fcd7314.pdf @@ not saved (see the record in research/primary)
+85 @@ Archive @@ o39b-jiangxi-measures-2025-jdz @@ the capture of Jun 10, 2026 of https://www.jdz.gov.cn/zwzx/ztbd/szjj/zcwj_22393/t1078708.shtml @@ 200, 126,377 bytes, kept in archive/; Jiangxi's measures in full
+86 @@ Archive @@ o39b-guangxi-digital-plan-2024 @@ the capture of May 18, 2026 of http://dsjfzj.gxzf.gov.cn/zfxxgkzl/fdzdgknr_zfxxgkzl/zcwj_zfxxgkzl/gsf_zfxxgkzl/t21165362.shtml @@ 200, 71,724 bytes (served from the queue's own cache), kept in archive/; Guangxi's digital-economy plan in full

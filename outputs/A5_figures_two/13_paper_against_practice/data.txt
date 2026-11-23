@@ -1,0 +1,149 @@
+# Data for the figure "Paper against practice" (build.py in this folder reads it; ../common.py explains the format).
+# Extra fields on a record line: side=paper|practice  dir=away|toward  place=<name>  tier=province|city|national  term=home-made|controllable, the plan's own word: 国产 or 国产化, or 自主可控 (targets only)
+#   status=expected where the plan itself marks the target 预期性 (expected, not binding); midyear= and year= for a plan that gives two dated values
+# V lines give the numbers the builder draws: "V name=number | words in the page that carry the number" (the words are checked;
+# the builder also refuses a number that is not written in its words).
+
+# ---- on paper: targets set by provincial-level governments (they do not all count the same thing; each record says what it counts) ----
+# Round 4: the eight of tables/provinces_31.tsv with result "share", largest first; the wording of each share follows its own
+# Chinese (以上 "or more", 超过 "over", 达到 or 将达 "reach"): build.py reads it from the quoted words.
+@ shandong acct 2022-07-31 - cn-o39-shandong-network-2022 side=paper dir=away place=Shandong tier=province term=home-made
+T by 2025
+L Shandong's action plan for a unified computing network, 2022 to 2025, as the provincial daily reported it: by 2025, home-made computing is to reach 90% in the province. The plan was released on Jul 31, 2022; the report is of Aug 1, 2022, on the provincial government's site. The plan's own text is not held.
+S Shandong province, action plan for a unified computing network, 2022 to 2025, as reported by Dazhong Daily on the provincial government's site
+Q 国产化算力将达90%
+E home-made computing will reach 90%
+D 7月31日上午，在2022中国算力大会
+D 时间：2022-08-01 09:19 来源：大众日报
+V target=90 | 国产化算力将达90%
+N 到2025年，全省数据中心总算力超过12EFLOPS
+N 《山东一体化算力网络建设行动方案（2022－2025年）》
+
+@ jiangsu doc 2030-12-31 Undated_plan;_targets_for_2025_and_2030 cn-factions-jiangsu-plan side=paper dir=away place=Jiangsu tier=province term=home-made status=expected midyear=2025 year=2030
+T by 2030; 50% by 2025
+L Jiangsu's plan for computing infrastructure: home-made chips are to be 70% or more of the chips in use in newly built computing centres by 2030, and 50% by 2025. The plan's own table of indicators gives the line the values 50 for 2025 and 70 for 2030 and marks it "预期性" (expected, that is, indicative), not binding. The only line of that table marked "约束性" (binding) is the one on energy efficiency. The saved PDF carries no date of issue.
+S Jiangsu province, plan for computing infrastructure issued by four provincial bodies (the saved PDF carries no date of issue)
+Q 新建算力中心国产算力芯片使用占比达 70%以上
+E home-made computing chips reach 70% or more of use in newly built computing centres
+D 指标名称 2025 年 2030 年 属性
+V mid=50 | 新建算力中心国产算力芯片使用占比(%) 50 70 预期性
+V target=70 | 新建算力中心国产算力芯片使用占比(%) 50 70 预期性
+N 集群内数据中心平均 PUE ≤1.25 <1.25 约束性
+N 基础软硬件 和云操作系统实现自主可控,新建算力中心国产算力芯片使 用占比达 70%以上
+
+@ guangdong doc 2024-03-07 - cn-o39b-guangdong-yuesuan-2024 side=paper dir=away place=Guangdong tier=province term=home-made
+T by the end of 2025
+L Guangdong's plan for computing infrastructure, 2024 to 2025: strive for home-made computing to reach 70% of newly added computing by the end of 2025. It counts computing, not chips alone. Issued by the Guangdong Communications Administration and eight other bodies on Mar 7, 2024.
+S Guangdong province, plan for computing infrastructure, 2024 to 2025, issued by the Guangdong Communications Administration and eight other bodies
+Q 力争到2025年底，新增国产化算力占比达到70%
+E strive for home-made computing to reach 70% of newly added computing by the end of 2025
+D 2024年3月7日
+V target=70 | 新增国产化算力占比达到70%
+N 广东省通信管理局等九部门关于印发
+
+@ tianjin doc 2024-07-18 - cn-o39-tianjin-plan-2024 side=paper dir=away place=Tianjin tier=city term=home-made
+T by 2026
+L Tianjin's plan for the computing industry, 2024 to 2026: by 2026, home-made chips are to be over 60% of the chips in use in the city's computing centres. It covers all the city's centres, not only new ones. The plan was written Jul 1, 2024 and issued Jul 18, 2024.
+S Tianjin, plan for the computing industry, 2024 to 2026, issued by the city government's general office
+Q 全市算力中心国产算力芯片使用占比超过 60%
+E home-made computing chips are over 60% of use in the city's computing centres
+D 发 文 日 期 : 2024年07月18日
+D 成 文 日 期 : 2024年07月01日
+V target=60 | 到 2026 年,全市算力中心国产算力芯片使用占比超过 60%
+N 天津市算力产业发展实施方案(2024—2026年)
+
+@ hebei doc 2024-05-08 - cn-o39-hebei-opinion-2024-xiongan side=paper dir=away place=Hebei tier=province term=controllable
+T by 2025
+L Hebei's opinions on computing and the AI industry: by 2025, 60% or more of newly added basic software and hardware for computing is to be independently controllable. It counts software and hardware together, and its word is independently controllable, not home-made. The opinions are dated May 8, 2024; the saved copy is on the Xiong'an New Area's official site, which credits the provincial government's site.
+S Hebei province, opinions of the provincial government's general office, May 8, 2024 (copy on the Xiong'an New Area's site)
+Q 新增算力基础软硬件设施自主可控比例60%以上
+E newly added basic software and hardware for computing: 60% or more independently controllable
+D 河北省人民政府办公厅 2024年5月8日
+V target=60 | 新增算力基础软硬件设施自主可控比例60%以上
+N 到2025年,算力基础设施布局进一步优化完善
+N 来源: 河北省人民政府网站
+
+@ nmg doc 2023-10-10 - cn-o39-nmg-plan-pdf-wayback side=paper dir=away place=Inner_Mongolia tier=region term=home-made
+T by 2025
+L Inner Mongolia's work plan for the digital economy, 2023 to 2025: by 2025, home-made computing is to reach 50% or more, among the goals for the region's part of the national computing network (its national hub). Issued by the regional government's general office, dated Oct 10, 2023. The saved copy is an Internet Archive capture of the official PDF.
+S Inner Mongolia autonomous region, work plan for the digital economy, 2023 to 2025, issued by the regional government's general office (Internet Archive capture of the official PDF)
+Q 国产化算力占比达 50%以上
+E home-made computing reaches 50% or more
+D 2023 年 10 月 10 日 （此件公开发布）
+V target=50 | 国产化算力占比达 50%以上
+N 加快推动布局合理、规 模适度、绿色集约的全国一体化算力网络内蒙古枢纽节点建设。到 2025 年，集群建成的数据中心服务器装机能力突破 500 万台
+N 内蒙古自治区人民政府办公厅 关于印发自治区推动数字经济高质量发展 工作方案（2023—2025 年）的通知
+
+@ shanghai-target doc 2024-03-22 - cn-policy-shanghai-domestic-target side=paper dir=away place=Shanghai tier=city term=home-made
+T by 2025
+L Shanghai's plan for 2024 and 2025: by 2025, home-made chips are to be over 50% of the chips in use in the city's newly built intelligent computing centres.
+S Shanghai's plan, as carried by the business daily Yicai
+Q 到2025年,本市新建智算中心国产算力芯片使用占比超过50%
+E by 2025, home-made computing chips are over 50% of use in the city's newly built intelligent computing centres
+D 上海市通信管理局 2024-03-22
+V target=50 | 国产算力芯片使用占比超过50%
+N 上海市智能算力基础设施高质量发展“算力浦江”智算行动实施方案(2024-2025年)
+
+@ sichuan doc 2024-11-15 - cn-factions-sichuan50 side=paper dir=away place=Sichuan tier=province term=home-made
+T plan for 2024 to 2027
+L Sichuan's action plan for 2024 to 2027: strive for home-made computing equipment to exceed 50%. The wording is about equipment, not chips alone. The notice is dated Nov 15, 2024 and was published on Nov 22, 2024.
+S Sichuan province, action plan for computing infrastructure, 2024 to 2027
+Q 力争国产化算力设备占比超过50%
+E strive for home-made computing equipment to exceed 50%
+D 四川省能源局 2024年11月15日
+D 发布时间:2024-11-22
+V target=50 | 力争国产化算力设备占比超过50%
+N 四川省算力基础设施高质量发展行动方案(2024—2027年)
+
+@ national doc 2023-12-25 - cn-policy-computing-network-1779 side=paper dir=away place=National tier=national
+T no percentage
+L The national opinions on a computing network set no share for home-made chips. Their aim is worded without a number.
+S National Development and Reform Commission and four other bodies, opinions of Dec 25, 2023
+Q 算力网关键核心技术基本实现安全可靠
+E the key core technologies of the computing network are in the main secure and reliable
+D 制发日期: 2023-12-25
+N cn-le14-tnw-295b-plan-20260609 | at least 80 per cent of the core technology, AI chips included
+N cn-le14-tnw-295b-plan-20260609 | according to Bloomberg, citing people familiar with the matter
+
+# ---- in practice ----
+@ shanghai-reply doc 2025-04-30 - cn-counter-b11-5 side=practice dir=toward
+T a Shanghai government body, in its own words
+L Shanghai's Commission of Economy and Informatization, in a written reply: internet companies' own computing clusters run mainly on Nvidia cards, and the three state telecom operators mainly buy Huawei and other home-made clusters. The reply gives no percentage.
+S Shanghai Municipal Commission of Economy and Informatization, written reply dated Apr 30, 2025 (published Nov 10, 2025)
+Q 互联网企业自建算力集群,满足市场化企业需求,主要以英伟达高性能卡为主
+E internet companies build their own computing clusters to meet market demand, mainly with Nvidia high-performance cards
+Q 三大运营商主要购置华为等国产化智算集群
+E the three telecom operators mainly buy Huawei and other home-made clusters
+D 上海市经济和信息化委员会2025年4月30日
+D 发布日期:2025-11-10
+
+@ idc-2025 count 2026-04-01 - man-cn-usside-012 side=practice dir=toward
+T the year 2025
+L The research firm IDC's count for 2025, as reported by Reuters: of about 4 million AI accelerator cards shipped in China, Nvidia had 55%, Chinese makers together 41% and AMD 4%.
+S Reuters, as carried by MarketScreener, reporting counts by the research firm IDC
+Q Nvidia remained the market leader, shipping around 2.2 million cards and holding a 55% share.
+Q Chinese vendors collectively shipped 1.65 million cards, accounting for 41% of the total market
+Q shipping roughly 160,000 cards for a 4% share
+D BEIJING, April 1 (Rtrs)
+D PUBLISHED: 2026-04-01
+V nvidia=55 | holding a 55% share
+V chinese=41 | accounting for 41% of the total market
+V amd=4 | for a 4% share
+N reached approximately 4 million units in China in 2025
+
+@ idc-2026 count 2026-10-13 - cn-usside-044-relay1 side=practice dir=toward
+T January to June 2026
+L The same firm's count for January to June 2026, as reported by Reuters, which words it as China's market for data-centre AI chips: of 2.008 million AI accelerators shipped, Nvidia had 34% and Huawei 28%. Four more Chinese makers are named with 7%, 5%, 4% and 3%. The remaining 19% (our subtraction) is not broken down. The report gives no total for Chinese makers and does not mention AMD.
+S Reuters, as carried by Mint (India), reporting counts by the research firm IDC
+Q Nvidia's share of China's market for data-centre AI chips fell to 34% in the first half of 2026
+Q giving it a 28% share of the overall market
+Q Alibaba's chip-design unit T-Head held 7%, followed by Cambricon with 5%, Baidu's Kunlunxin with 4% and Hygon with 3%.
+D PUBLISHED: 2026-10-13
+V nvidia=34 | Nvidia's share of China's market for data-centre AI chips fell to 34% in the first half of 2026
+V huawei=28 | giving it a 28% share of the overall market
+V thead=7 | T-Head held 7%
+V cambricon=5 | Cambricon with 5%
+V kunlunxin=4 | Kunlunxin with 4%
+V hygon=3 | Hygon with 3%
+N Total AI-accelerator shipments reached 2.008 million units in the first half.
+N from January through June

@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Micron And Nvidia</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap">
+<style>
+
+:root {
+  --page: #f9f9f7; --surface: #fcfcfb; --ink: #0b0b0b; --ink2: #52514e; --muted: #7a7872;
+  --grid: #e1e0d9; --axis: #c3c2b7; --border: rgba(11,11,11,0.12); --wash: rgba(11,11,11,0.045);
+  --toward: #256abf; --away: #c44e18; --us: #898781; --rest: #cfcdc4; --pin-on: #ffffff; --link: #1c5cab;
+  --toward-tint: rgba(37,106,191,0.085); --away-tint: rgba(196,78,24,0.085); --slot: rgba(11,11,11,0.028);
+  --font-text: "Inter", system-ui, -apple-system, "Segoe UI", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+  --font-head: "Space Grotesk", "Inter", system-ui, sans-serif;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --page: #0d0d0d; --surface: #1a1a19; --ink: #f0efec; --ink2: #c3c2b7; --muted: #8f8d86;
+  --grid: #2c2c2a; --axis: #45453f; --border: rgba(255,255,255,0.14); --wash: rgba(255,255,255,0.06);
+  --toward: #3987e5; --away: #d95926; --us: #898781; --rest: #45453f; --pin-on: #0d0d0d; --link: #86b6ef;
+  --toward-tint: rgba(57,135,229,0.14); --away-tint: rgba(217,89,38,0.14); --slot: rgba(255,255,255,0.035); color-scheme: dark } }
+:root[data-theme="dark"] {
+  --page: #0d0d0d; --surface: #1a1a19; --ink: #f0efec; --ink2: #c3c2b7; --muted: #8f8d86;
+  --grid: #2c2c2a; --axis: #45453f; --border: rgba(255,255,255,0.14); --wash: rgba(255,255,255,0.06);
+  --toward: #3987e5; --away: #d95926; --us: #898781; --rest: #45453f; --pin-on: #0d0d0d; --link: #86b6ef;
+  --toward-tint: rgba(57,135,229,0.14); --away-tint: rgba(217,89,38,0.14); --slot: rgba(255,255,255,0.035); color-scheme: dark }
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--page); color: var(--ink); font-family: var(--font-text); font-size: 16px; line-height: 1.5; }
+[hidden] { display: none !important; }
+a { color: var(--link); }
+.wrap { max-width: 1312px; margin: 0 auto; padding: 28px 16px 48px; background: var(--page); }
+#figure { background: var(--page); }
+header { margin-bottom: 18px; }
+.topline { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 4px 24px; margin: 0 0 12px; }
+.eyebrow { font: 700 12px/1.35 var(--font-text); letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin: 0; }
+.draft { font: 500 12px/1.35 var(--font-text); color: var(--muted); margin: 0; }
+h1 { font-family: var(--font-head); font-size: clamp(27px, 3.3vw, 44px); line-height: 1.08; letter-spacing: -0.015em; margin: 0 0 12px; max-width: 27ch; text-wrap: balance; }
+.deck { margin: 0; color: var(--ink2); font-size: 18px; line-height: 1.45; max-width: 82ch; }
+.key { display: flex; flex-wrap: wrap; gap: 9px 26px; margin: 16px 0 0; padding: 0; list-style: none; font-size: 14.5px; color: var(--ink2); }
+.key li { display: flex; align-items: center; gap: 8px; }
+.key b { color: var(--ink); font-weight: 600; }
+i.sw { display: inline-block; flex: none; width: 13px; height: 13px; border-radius: 50%; }
+i.sw.toward { background: var(--toward); } i.sw.away { background: var(--away); }
+.card { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 20px 22px; min-width: 0; }
+.card h2 { font-family: var(--font-head); font-size: 22px; line-height: 1.2; margin: 0 0 4px; text-wrap: balance; }
+.card .sub { margin: 0 0 12px; color: var(--ink2); font-size: 14.5px; max-width: 78ch; }
+.card + .card, .gap { margin-top: 16px; }
+
+/* numbered marks */
+i.p { display: inline-grid; place-items: center; flex: none; width: 22px; height: 22px; border-radius: 50%; font: 700 11px/1 var(--font-text);
+  font-style: normal; font-variant-numeric: tabular-nums; border: 2.5px solid; }
+i.p.toward { border-color: var(--toward); } i.p.away { border-color: var(--away); }
+i.p.neutral { border-color: var(--ink2); } i.p.solid.neutral { background: var(--ink2); color: var(--pin-on); }
+i.p.hollow { background: var(--surface); color: var(--ink); }
+i.p.solid.toward { background: var(--toward); color: var(--pin-on); } i.p.solid.away { background: var(--away); color: var(--pin-on); }
+a.mk { display: flex; align-items: flex-start; gap: 8px; padding: 3px 5px; margin: 0 -5px; border-radius: 8px; text-decoration: none; color: inherit; font-size: 13px; line-height: 1.3; }
+a.mk .mt { padding-top: 2.5px; min-width: 0; }
+a.mk b { font-weight: 700; white-space: nowrap; font-variant-numeric: tabular-nums; }
+a.mk .mt > span { color: var(--ink2); }
+a.mk:hover, a.mk.hl, a.mk:focus-visible { background: var(--wash); outline: none; }
+a.mk:hover i.p, a.mk.hl i.p, a.mk:focus-visible i.p { outline: 2.5px solid var(--ink); outline-offset: 1px; }
+
+/* the records */
+#records { margin-top: 16px; }
+#records summary { display: flex; align-items: baseline; gap: 12px; cursor: pointer; list-style: none; }
+#records summary::-webkit-details-marker { display: none; }
+#records summary h2 { margin: 0 0 4px; }
+#records summary .fold { font-size: 12.5px; color: var(--muted); text-decoration: underline; }
+#records:not([open]) summary h2 { margin-bottom: 0; }
+.cols { display: grid; grid-template-columns: 1fr; gap: 4px 34px; }
+@media (min-width: 900px) { .cols { grid-template-columns: 1fr 1fr; } }
+.lcol h3 { font: 700 13px/1.2 var(--font-text); letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin: 14px 0 8px; }
+.lcol ol { list-style: none; margin: 0; padding: 0; }
+li.ev { display: grid; grid-template-columns: 24px 1fr; gap: 10px; padding: 8px 6px; border-top: 1px solid var(--grid); border-radius: 6px; scroll-margin-top: 14px; overflow-wrap: anywhere; }
+li.ev.hl, li.ev:target { background: var(--wash); }
+.when { font-weight: 700; font-size: 13px; white-space: nowrap; }
+.what { font-size: 14.5px; }
+.said { display: block; font-size: 13.5px; color: var(--ink2); margin-top: 2px; }
+.src { display: block; font-size: 12.5px; color: var(--muted); margin-top: 2px; }
+.notes ul { margin: 6px 0 0; padding-left: 20px; color: var(--ink2); font-size: 14px; max-width: 112ch; }
+.notes li { margin: 4px 0; }
+.care { margin-top: 16px; padding: 14px 18px; border: 1px solid var(--border); border-left: 4px solid var(--ink); border-radius: 10px; background: var(--surface); }
+.care h2 { font: 700 13px/1.2 var(--font-text); letter-spacing: 0.08em; text-transform: uppercase; margin: 0 0 6px; }
+.care p, .care li { font-size: 14.5px; color: var(--ink2); margin: 0; max-width: 118ch; }
+.care ul { margin: 0; padding-left: 18px; } .care li { margin: 3px 0; }
+.care b { color: var(--ink); font-weight: 600; }
+.srcline { font-size: 12.5px; color: var(--muted); margin: 10px 0 0; max-width: 130ch; }
+
+#tip { position: fixed; z-index: 10; max-width: 370px; background: var(--ink); color: var(--page); padding: 10px 12px; border-radius: 10px; font-size: 13px; line-height: 1.4;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.25); pointer-events: none; }
+#tip .tw { font-weight: 700; font-size: 12px; opacity: 0.8; } #tip .tt { font-weight: 600; margin: 2px 0 6px; }
+#tip .tq { font-style: italic; opacity: 0.92; } #tip .te { opacity: 0.92; margin-top: 3px; } #tip .ts { margin-top: 6px; font-size: 12px; opacity: 0.75; }
+
+/* Layout: headline and key; a table of three questions (rows) asked of two cases (columns); read with care; the records. */
+.cmp { display: grid; grid-template-columns: minmax(150px, 0.62fr) minmax(0, 1fr) minmax(0, 1.5fr); gap: 8px 10px; }
+.cmp-h { padding: 2px 4px 8px; border-bottom: 3px solid var(--away); }
+.cmp-h.corner { border-color: transparent; }
+.cmp-h b { display: block; font: 700 26px/1.1 var(--font-head); letter-spacing: -0.01em; }
+.cmp-h span { display: block; font: 700 12px/1.3 var(--font-text); letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin-bottom: 3px; }
+.q { padding: 12px 10px 10px 0; align-self: start; }
+.q b { display: block; font: 700 16px/1.25 var(--font-text); text-wrap: balance; }
+.q span { display: block; font-size: 12.5px; line-height: 1.35; color: var(--muted); margin-top: 4px; }
+.cell { border-radius: 11px; padding: 11px 14px 12px; min-width: 0; background: var(--slot); }
+.cell .cl { display: none; }
+.cell.has { background: var(--away-tint); }
+.cell.none { background: transparent; box-shadow: inset 0 0 0 2px var(--axis); background-image: repeating-linear-gradient(135deg, var(--slot) 0 6px, transparent 6px 14px); }
+.verdict { font: 700 30px/1.05 var(--font-head); letter-spacing: -0.015em; margin: 1px 0 6px; }
+.cell p { font-size: 14px; line-height: 1.42; color: var(--ink2); margin: 6px 0 0; max-width: 62ch; }
+.cell p b { color: var(--ink); font-weight: 600; }
+.cell .zh { font-size: 15px; color: var(--ink); margin: 8px 0 0; }
+.cell .zh span { color: var(--ink2); font-size: 14px; }
+.marks { display: grid; grid-template-columns: 1fr; gap: 0 18px; margin-top: 2px; }
+@media (min-width: 1040px) { .marks.two { grid-template-columns: 1fr 1fr; } }
+.quiet { font-size: 14px; color: var(--muted); margin: 0; }
+.tally { font: 700 12px/1.3 var(--font-text); letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink2); margin: 0 0 4px; }
+@media (max-width: 820px) {
+  .cmp { display: block; }
+  .cmp-h { display: none; }
+  .q { padding: 14px 0 2px; border-top: 2px solid var(--axis); margin-top: 12px; }
+  .q:first-of-type { border-top: 0; margin-top: 0; padding-top: 0; }
+  .cell { margin-top: 8px; }
+  .cell .cl { display: block; font: 700 11.5px/1.25 var(--font-text); letter-spacing: 0.07em; text-transform: uppercase; color: var(--ink2); margin-bottom: 5px; }
+  .verdict { font-size: 26px; }
+}
+
+</style>
+</head>
+<body>
+<div class="wrap">
+ <div id="figure">
+  <header>
+   <div class="topline"><p class="eyebrow">China · two foreign chip makers · what Beijing published · 2023 to 2026</p><p class="draft">Draft by Claude, Anthropic’s model. Local; not published.</p></div>
+   <h1>For Micron, Beijing published a conclusion: buyers should stop. For Nvidia, a case and a summons.</h1>
+   <p class="deck">What Beijing put in writing in two cases. In 2023 the cyberspace regulator’s review office published its conclusion that Micron’s products failed a security review, and that operators of critical infrastructure should stop buying them. From 2024 to 2026 the published acts found about Nvidia were an antitrust case and a summons, and state media warned about its chips in public. An instruction not to buy Nvidia chips was found only in press reports citing unnamed people and in two company filings.</p>
+   <ul class="key">
+    <li><i class="p solid away" aria-hidden="true">1</i><span><b>Filled:</b> on the record (a government document or a company filing). 6 records</span></li>
+    <li><i class="p hollow away" aria-hidden="true">1</i><span><b>Open:</b> a press report citing unnamed people. 5 records</span></li>
+    <li><span>All marks are orange: every act here points away from the foreign chip.</span></li>
+   </ul>
+  </header>
+
+  <section class="card" id="cmp">
+   <div class="cmp">
+    <div class="cmp-h corner"></div>
+    <div class="cmp-h"><span>2023</span><b>Micron</b></div>
+    <div class="cmp-h"><span>2024 to 2026</span><b>Nvidia</b></div>
+
+    <div class="q"><b>Did Beijing publish a text saying buyers should stop?</b><span>a conclusion, a decision or a notice that names the company’s products</span></div>
+    <div class="cell has"><div class="cl">Micron · 2023</div>
+     <div class="verdict">Yes, published</div>
+     <a class="mk" href="#r1" data-n="1" data-tip="1" aria-label="1. May 21, 2023: the review office’s conclusion: Micron’s products fail the cybersecurity review. On the record: a government document or an official"><i class="p away solid">1</i><span class="mt"><b>May 21, 2023</b> <span>the review office’s conclusion</span></span></a>
+     <p class="zh">“应停止采购美光公司产品” <span>(should stop buying Micron’s products)</span></p>
+     <p><b>Addressed to buyers:</b> “关键信息基础设施的运营者” (operators of critical information infrastructure).</p>
+     <p><b>Issued by</b> the cyberspace regulator’s review office (the Cybersecurity Review Office), and published on the regulator’s site.</p>
+    </div>
+    <div class="cell none"><div class="cl">Nvidia · 2024 to 2026</div>
+     <div class="verdict">None found</div>
+     <p><b>in the 103 policy pages read.</b> A text of this kind could have been found: the Micron conclusion is among those pages.</p>
+     <p>When the finance ministry did publish a purchase bar by name, on Jun 22, 2026, “不得采购46家美国企业（不包括在华美资企业）生产的产品” (government buyers may not buy products made by 46 American firms, leaving out American-funded firms in China), its list named no chip maker.</p>
+    </div>
+
+    <div class="q"><b>What else did it publish against the company?</b><span>acts the state body announced itself</span></div>
+    <div class="cell has"><div class="cl">Micron · 2023</div>
+     <a class="mk" href="#r1" data-n="1" data-tip="1" aria-label="1. May 21, 2023: the review office’s conclusion: Micron’s products fail the cybersecurity review. On the record: a government document or an official"><i class="p away solid">1</i><span class="mt"><b>May 21, 2023</b> <span>the same text gives the review’s result</span></span></a>
+     <p>“不予通过网络安全审查” (does not pass the cybersecurity review), “按照《网络安全法》等法律法规” (under the Cybersecurity Law and other laws and regulations).</p>
+    </div>
+    <div class="cell has"><div class="cl">Nvidia · 2024 to 2026</div>
+     <div class="marks"><a class="mk" href="#r2" data-n="2" data-tip="1" aria-label="2. Dec 9, 2024: market regulator opens an antitrust case. On the record: a government document or an official"><i class="p away solid">2</i><span class="mt"><b>Dec 9, 2024</b> <span>market regulator opens an antitrust case</span></span></a><a class="mk" href="#r3" data-n="3" data-tip="1" aria-label="3. Jul 31, 2025: cyberspace regulator summons Nvidia over the H20. On the record: a government document or an official"><i class="p away solid">3</i><span class="mt"><b>Jul 31, 2025</b> <span>cyberspace regulator summons Nvidia over the H20</span></span></a><a class="mk" href="#r4" data-n="4" data-tip="1" aria-label="4. Sept 15, 2025: preliminary finding that Nvidia broke the antitrust law. On the record: a government document or an official"><i class="p away solid">4</i><span class="mt"><b>Sept 15, 2025</b> <span>preliminary finding that Nvidia broke the antitrust law</span></span></a></div>
+     <p><b>Addressed to Nvidia itself:</b> it is investigated, and it must explain and hand in proof. None of the three tells a buyer to stop.</p>
+     <p><b>State media warned in public.</b> Of 42 state and Party media items on Nvidia chips found, the seven that only warn about them date from Aug 1, 2025 to Sept 24, 2025. They warn and urge; none forbids buying. They are not drawn here.</p>
+    </div>
+
+    <div class="q"><b>Where does an instruction not to buy appear without being published?</b><span>press reports citing unnamed people, and what companies told the US securities regulator</span></div>
+    <div class="cell"><div class="cl">Micron · 2023</div>
+     <p class="quiet">Not searched for in this project. The words were in the published conclusion.</p>
+    </div>
+    <div class="cell has"><div class="cl">Nvidia · 2024 to 2026</div>
+     <p class="tally">5 press reports citing unnamed people · 2 company filings</p>
+     <div class="marks two"><a class="mk" href="#r5" data-n="5" data-tip="1" aria-label="5. Sept 27, 2024: regulators discourage buying the H20: “guidance rather than an outright ban”. Press report citing unnamed people"><i class="p away hollow">5</i><span class="mt"><b>Sept 27, 2024</b> <span>regulators discourage buying the H20: “guidance rather than an outright ban”</span></span></a><a class="mk" href="#r6" data-n="6" data-tip="1" aria-label="6. Aug 20, 2025: three bodies move to dissuade firms from buying the H20. Press report citing unnamed people"><i class="p away hollow">6</i><span class="mt"><b>Aug 20, 2025</b> <span>three bodies move to dissuade firms from buying the H20</span></span></a><a class="mk" href="#r7" data-n="7" data-tip="1" aria-label="7. Sept 2025: Alibaba’s annual report: regulator asked firms to halt purchases of “certain chips”. On the record: a filing or a named person"><i class="p away solid">7</i><span class="mt"><b>Sept 2025</b> <span>Alibaba’s annual report: regulator asked firms to halt purchases of “certain chips”</span></span></a><a class="mk" href="#r8" data-n="8" data-tip="1" aria-label="8. Sept 17, 2025: firms told to end testing and orders of the RTX Pro 6000D. Press report citing unnamed people"><i class="p away hollow">8</i><span class="mt"><b>Sept 17, 2025</b> <span>firms told to end testing and orders of the RTX Pro 6000D</span></span></a><a class="mk" href="#r9" data-n="9" data-tip="1" aria-label="9. Nov 5, 2025: state-funded data centres told to use only home-made AI chips. Press report citing unnamed people"><i class="p away hollow">9</i><span class="mt"><b>Nov 5, 2025</b> <span>state-funded data centres told to use only home-made AI chips</span></span></a><a class="mk" href="#r10" data-n="10" data-tip="1" aria-label="10. Jan 14, 2026: firms told not to buy the H200 “unless necessary”. Press report citing unnamed people"><i class="p away hollow">10</i><span class="mt"><b>Jan 14, 2026</b> <span>firms told not to buy the H200 “unless necessary”</span></span></a><a class="mk" href="#r11" data-n="11" data-tip="1" aria-label="11. Aug 26, 2026: Nvidia’s quarterly report: licensed sales “were restricted by the PRC government”. On the record: a filing or a named person"><i class="p away solid">11</i><span class="mt"><b>Aug 26, 2026</b> <span>Nvidia’s quarterly report: licensed sales “were restricted by the PRC government”</span></span></a></div>
+    </div>
+   </div>
+  </section>
+  <section class="care">
+   <h2>Read with care</h2>
+   <ul>
+    <li><b>The comparison cuts both ways.</b> Beijing can publish such a text and, for Nvidia, none was found; or its way with Nvidia was guidance it did not publish, as the two company filings say. The figure cannot tell these apart.</li>
+    <li><b>None found is a statement about what was read:</b> the 103 policy pages of this project. It is not a claim that no such text exists.</li>
+    <li>The Micron conclusion came from the Cybersecurity Review Office, which sits in the cyberspace regulator: “网络安全审查办公室设在国家互联网信息办公室” (the office is set up in the Cyberspace Administration). It speaks to operators of critical information infrastructure, not to every buyer, and it is not about Nvidia.</li>
+    <li>Alibaba’s filing does not name Nvidia: it says “certain chips”. Nvidia’s own reports changed their words over time: from Nov 19, 2025 the Chinese government “restricted customers from purchasing, importing, or using our data center products”; from Feb 25, 2026, “discouraged customers from purchasing, importing, or using our data center products”. From November 2025 the same reports also say Nvidia is “already effectively foreclosed from the China market by U.S. export controls”.</li>
+    <li>Open marks rest on unnamed people. In the answers found, Beijing’s spokespeople confirmed none of them: “我不了解你提到的情况” (I am not aware of what you mention), said the foreign ministry on Aug 13, 2025; asked about another report on Dec 10, 2025, it said “具体情况建议向中方主管部门询问” (for the details, ask the competent Chinese departments).</li>
+    <li>The marks under Nvidia are a selection, not a count of everything reported. English renderings of Chinese are ours, not official translations.</li>
+   </ul>
+  </section>
+ </div>
+
+ <details class="card" id="records" open>
+  <summary><h2>The records</h2><span class="fold">show or hide</span></summary>
+  <p class="sub">One line for each numbered mark: the date of the act where the page gives it, otherwise the date of the report; our summary; the page’s own words; the source. Point at a mark in the figure to read the words there.</p>
+  <div class="cols">
+   <section class="lcol"><ol><li id="r1" class="ev" data-n="1"><i class="p away solid">1</i><div><span class="when">May 21, 2023</span> <span class="what">The Cybersecurity Review Office, which sits in the cyberspace regulator, concludes that Micron’s products did not pass its cybersecurity review, and says that operators of critical information infrastructure in China should stop buying them. The text was published on the regulator’s site. The same text welcomes companies of all countries that obey Chinese law.</span> <span class="said">“我国内关键信息基础设施的运营者应停止采购美光公司产品” (operators of critical information infrastructure in China should stop buying Micron’s products); “网络安全审查办公室依法作出不予通过网络安全审查的结论” (the Cybersecurity Review Office has, under the law, concluded that they do not pass the cybersecurity review); “按照《网络安全法》等法律法规” (under the Cybersecurity Law and other laws and regulations)</span> <span class="src"><a href="https://www.cac.gov.cn/2023-05/21/c_1686348043518073.htm">Cybersecurity Review Office, published on the Cyberspace Administration’s site</a> · saved copy cn-policy-micron-decision</span></div></li><li id="r2" class="ev" data-n="2"><i class="p away solid">2</i><div><span class="when">Dec 9, 2024</span> <span class="what">The market regulator opens an antitrust investigation of Nvidia. The notice is about Nvidia; it tells no buyer anything.</span> <span class="said">“市场监管总局依法对英伟达公司开展立案调查” (the regulator has opened an investigation of Nvidia under the law)</span> <span class="src"><a href="https://www.samr.gov.cn/fldes/sjdt/gzdt/art/2024/art_5d9c11763cd147febf930c90ffd4b4d2.html">State Administration for Market Regulation</a> · saved copy cn-policy-samr-open-original</span></div></li><li id="r3" class="ev" data-n="3"><i class="p away solid">3</i><div><span class="when">Jul 31, 2025</span> <span class="what">The cyberspace regulator summons Nvidia and requires it to explain the risk of backdoors in the H20 chips it sells to China, and to hand in proof. The notice is addressed to Nvidia, not to buyers.</span> <span class="said">“约谈了英伟达公司,要求英伟达公司就对华销售的H20算力芯片漏洞后门安全风险问题进行说明并提交相关证明材料” (summoned Nvidia and required it to explain the backdoor security risks of the H20 chips sold to China and to submit supporting material)</span> <span class="src"><a href="https://www.cac.gov.cn/2025-07/31/c_1755675743897163.htm">Cyberspace Administration of China</a> · saved copy cn-policy-cac-h20-original</span></div></li><li id="r4" class="ev" data-n="4"><i class="p away solid">4</i><div><span class="when">Sept 15, 2025</span> <span class="what">The market regulator announces a preliminary finding that Nvidia broke the antitrust law, and a further investigation. The notice gives no facts. By Nvidia’s own account the finding concerns the “degraded products” that American export controls required it to offer the Chinese market. No page read says the case has ended: the regulator’s review of its 2025 work, posted Apr 10, 2026, still lists the further investigation.</span> <span class="said">“经初步调查,英伟达公司违反《中华人民共和国反垄断法》” (after a preliminary investigation, Nvidia violated the Anti-Monopoly Law); “市场监管总局依法决定对其实施进一步调查” (the regulator has decided to investigate it further under the law)</span> <span class="src"><a href="https://www.samr.gov.cn/xw/zj/art/2025/art_66b8363c3a194ba0a394a843d6cf3fd1.html">State Administration for Market Regulation</a> · saved copy cn-policy-samr-further-original</span></div></li><li id="r5" class="ev" data-n="5"><i class="p away hollow">5</i><div><span class="when">Sept 27, 2024</span> <span class="what">Regulators discourage companies from buying Nvidia’s H20, Bloomberg reports: “The policy has taken the form of guidance rather than an outright ban”. It calls this “window guidance”, which it explains as “instructions without the force of law”. Bloomberg’s report is of Sept 27; the copy used was carried on Sept 28, Singapore time.</span> <span class="said">“Chinese regulators have been discouraging companies from purchasing Nvidia’s H20 chips”</span> <span class="src"><a href="https://www.businesstimes.com.sg/companies-markets/china-urges-local-companies-stay-away-nvidias-chips">Bloomberg, Sept 27, 2024, as carried by The Business Times (Singapore)</a> · saved copy cn-factions-bloomberg-flexibility-202409-relay1</span></div></li><li id="r6" class="ev" data-n="6"><i class="p away hollow">6</i><div><span class="when">Aug 20, 2025</span> <span class="what">The cyberspace regulator, the state planner and the industry ministry move to dissuade companies from buying the H20, the Financial Times reports, by people it does not name. By its account the cyberspace regulator gave an informal notice, “window guidance”, “instructing them to halt new orders for Nvidia’s H20 chips”. The same article says some firms held off H20 orders to see whether a better Nvidia chip for China would come.</span> <span class="said">“A group of Chinese regulators have mobilised in an effort to dissuade domestic tech companies from acquiring the H20”; “the Cyberspace Administration of China (CAC), the National Development and Reform Commission (NDRC) and the Ministry of Industry and Information Technology (MIIT) moved in response”</span> <span class="src"><a href="https://www.ft.com/content/b8e30c54-b71c-4113-8b3e-8f54bc36587d">Financial Times, Aug 20, 2025</a> · saved copy man-cn-ft-20250821-regulators</span></div></li></ol></section>
+   <section class="lcol"><ol><li id="r7" class="ev" data-n="7"><i class="p away solid">7</i><div><span class="when">Sept 2025</span> <span class="what">Alibaba’s annual report to the US securities regulator: the cyberspace regulator “requested Chinese technology companies to halt purchases of certain chips”. The sentence does not name Nvidia.</span> <span class="said">“In September 2025, the Cyberspace Administration of China requested Chinese technology companies to halt purchases of certain chips.”</span> <span class="src"><a href="https://data.alibabagroup.com/ir_filings/SEC/BABA/000119312526231755/baba-20260331.htm">Alibaba, annual report on Form 20-F for the year to Mar 31, 2026</a> · saved copy cn-clips-alibaba-20f</span></div></li><li id="r8" class="ev" data-n="8"><i class="p away hollow">8</i><div><span class="when">Sept 17, 2025</span> <span class="what">The cyberspace regulator tells companies, ByteDance and Alibaba among them, to end their testing and orders of Nvidia’s RTX Pro 6000D, the Financial Times reports, by three unnamed people. The paper calls it a ban: “The ban goes beyond earlier guidance from regulators”. It reports an order told to companies, not a published rule.</span> <span class="said">“told companies, including ByteDance and Alibaba, this week to end their testing and orders of the RTX Pro 6000D”</span> <span class="src"><a href="https://www.ft.com/content/12adf92d-3e34-428a-8d61-c9169511915c">Financial Times, Sept 17, 2025</a> · saved copy man-cn-ft-20250917-6000d</span></div></li><li id="r9" class="ev" data-n="9"><i class="p away hollow">9</i><div><span class="when">Nov 5, 2025</span> <span class="what">Guidance requires new data centre projects that took state money to use only home-made AI chips, Reuters reports. It adds: “It is unclear whether the guidance applies nationwide or only to certain provinces”.</span> <span class="said">“The Chinese government has issued guidance requiring new data centre projects that have received any state funds to only use domestically-made artificial intelligence chips”; “It is unclear whether the guidance applies nationwide or only to certain provinces, sources said”</span> <span class="src"><a href="https://www.thestandard.com.hk/china/article/316018/China-bans-foreign-AI-chips-from-state-funded-data-centres-sources-say">Reuters, Nov 5, 2025, on The Standard (Hong Kong)</a> · saved copy ms-bj-20251105-statefunded-standard</span></div></li><li id="r10" class="ev" data-n="10"><i class="p away hollow">10</i><div><span class="when">Jan 14, 2026</span> <span class="what">Officials tell technology companies not to buy the H200 “unless necessary”, and customs agents are told the chips “are not permitted to enter China”, Reuters reports, by three people. Reuters wrote that it was unclear whether Beijing wanted a ban, was still weighing restrictions, or could use the measures as “a bargaining tactic in talks with Washington”.</span> <span class="said">“explicitly instructed not to purchase the chips unless necessary”; “Chinese customs authorities told customs agents this week that Nvidia’s H200 artificial intelligence chips are not permitted to enter China”</span> <span class="src"><a href="https://finance.yahoo.com/news/chinas-customs-agents-told-nvidias-065002091.html/">Reuters, Jan 14, 2026, on Yahoo Finance</a> · saved copy cn-acts-reuters-customs-20260114</span></div></li><li id="r11" class="ev" data-n="11"><i class="p away solid">11</i><div><span class="when">Aug 26, 2026</span> <span class="what">Nvidia’s quarterly report to the US securities regulator: the United States granted licences for some H20 and H200 sales, “but such sales were restricted by the PRC government”. It does not say by what act. The same report says Nvidia is “already effectively foreclosed from the China market by U.S. export controls”.</span> <span class="said">“Beginning in February 2026, the USG granted licenses that would allow us to ship small amounts of H200 products to specific China-based customers”</span> <span class="src"><a href="https://www.sec.gov/Archives/edgar/data/1045810/000104581026000075/nvda-20260726.htm">Nvidia, quarterly report on Form 10-Q for the quarter to Jul 26, 2026</a> · saved copy man-ms-sec-10q-2026-07</span></div></li></ol></section>
+  </div>
+ </details>
+</div>
+<div id="tip" hidden></div>
+<script>
+
+const EV = {"1": {"w": "May 21, 2023", "l": "Micron, 2023", "t": "The Cybersecurity Review Office, which sits in the cyberspace regulator, concludes that Micron’s products did not pass its cybersecurity review, and says that operators of critical information infrastructure in China should stop buying them. The text was published on the regulator’s site. The same text welcomes companies of all countries that obey Chinese law.", "q": "我国内关键信息基础设施的运营者应停止采购美光公司产品", "e": "operators of critical information infrastructure in China should stop buying Micron's products", "s": "Cybersecurity Review Office, published on the Cyberspace Administration’s site", "k": "On the record: a government document or an official"}, "2": {"w": "Dec 9, 2024", "l": "Nvidia, 2024 to 2026", "t": "The market regulator opens an antitrust investigation of Nvidia. The notice is about Nvidia; it tells no buyer anything.", "q": "市场监管总局依法对英伟达公司开展立案调查", "e": "the regulator has opened an investigation of Nvidia under the law", "s": "State Administration for Market Regulation", "k": "On the record: a government document or an official"}, "3": {"w": "Jul 31, 2025", "l": "Nvidia, 2024 to 2026", "t": "The cyberspace regulator summons Nvidia and requires it to explain the risk of backdoors in the H20 chips it sells to China, and to hand in proof. The notice is addressed to Nvidia, not to buyers.", "q": "约谈了英伟达公司,要求英伟达公司就对华销售的H20算力芯片漏洞后门安全风险问题进行说明并提交相关证明材料", "e": "summoned Nvidia and required it to explain the backdoor security risks of the H20 chips sold to China and to submit supporting material", "s": "Cyberspace Administration of China", "k": "On the record: a government document or an official"}, "4": {"w": "Sept 15, 2025", "l": "Nvidia, 2024 to 2026", "t": "The market regulator announces a preliminary finding that Nvidia broke the antitrust law, and a further investigation. The notice gives no facts. By Nvidia’s own account the finding concerns the “degraded products” that American export controls required it to offer the Chinese market. No page read says the case has ended: the regulator’s review of its 2025 work, posted Apr 10, 2026, still lists the further investigation.", "q": "经初步调查,英伟达公司违反《中华人民共和国反垄断法》", "e": "after a preliminary investigation, Nvidia violated the Anti-Monopoly Law", "s": "State Administration for Market Regulation", "k": "On the record: a government document or an official"}, "5": {"w": "Sept 27, 2024", "l": "Nvidia, 2024 to 2026", "t": "Regulators discourage companies from buying Nvidia’s H20, Bloomberg reports: “The policy has taken the form of guidance rather than an outright ban”. It calls this “window guidance”, which it explains as “instructions without the force of law”. Bloomberg’s report is of Sept 27; the copy used was carried on Sept 28, Singapore time.", "q": "The policy has taken the form of guidance rather than an outright ban", "e": "", "s": "Bloomberg, Sept 27, 2024, as carried by The Business Times (Singapore)", "k": "Press report citing unnamed people"}, "6": {"w": "Aug 20, 2025", "l": "Nvidia, 2024 to 2026", "t": "The cyberspace regulator, the state planner and the industry ministry move to dissuade companies from buying the H20, the Financial Times reports, by people it does not name. By its account the cyberspace regulator gave an informal notice, “window guidance”, “instructing them to halt new orders for Nvidia’s H20 chips”. The same article says some firms held off H20 orders to see whether a better Nvidia chip for China would come.", "q": "A group of Chinese regulators have mobilised in an effort to dissuade domestic tech companies from acquiring the H20", "e": "", "s": "Financial Times, Aug 20, 2025", "k": "Press report citing unnamed people"}, "7": {"w": "Sept 2025", "l": "Nvidia, 2024 to 2026", "t": "Alibaba’s annual report to the US securities regulator: the cyberspace regulator “requested Chinese technology companies to halt purchases of certain chips”. The sentence does not name Nvidia.", "q": "In September 2025, the Cyberspace Administration of China requested Chinese technology companies to halt purchases of certain chips.", "e": "", "s": "Alibaba, annual report on Form 20-F for the year to Mar 31, 2026", "k": "On the record: a filing or a named person"}, "8": {"w": "Sept 17, 2025", "l": "Nvidia, 2024 to 2026", "t": "The cyberspace regulator tells companies, ByteDance and Alibaba among them, to end their testing and orders of Nvidia’s RTX Pro 6000D, the Financial Times reports, by three unnamed people. The paper calls it a ban: “The ban goes beyond earlier guidance from regulators”. It reports an order told to companies, not a published rule.", "q": "told companies, including ByteDance and Alibaba, this week to end their testing and orders of the RTX Pro 6000D", "e": "", "s": "Financial Times, Sept 17, 2025", "k": "Press report citing unnamed people"}, "9": {"w": "Nov 5, 2025", "l": "Nvidia, 2024 to 2026", "t": "Guidance requires new data centre projects that took state money to use only home-made AI chips, Reuters reports. It adds: “It is unclear whether the guidance applies nationwide or only to certain provinces”.", "q": "The Chinese government has issued guidance requiring new data centre projects that have received any state funds to only use domestically-made artificial intelligence chips", "e": "", "s": "Reuters, Nov 5, 2025, on The Standard (Hong Kong)", "k": "Press report citing unnamed people"}, "10": {"w": "Jan 14, 2026", "l": "Nvidia, 2024 to 2026", "t": "Officials tell technology companies not to buy the H200 “unless necessary”, and customs agents are told the chips “are not permitted to enter China”, Reuters reports, by three people. Reuters wrote that it was unclear whether Beijing wanted a ban, was still weighing restrictions, or could use the measures as “a bargaining tactic in talks with Washington”.", "q": "explicitly instructed not to purchase the chips unless necessary", "e": "", "s": "Reuters, Jan 14, 2026, on Yahoo Finance", "k": "Press report citing unnamed people"}, "11": {"w": "Aug 26, 2026", "l": "Nvidia, 2024 to 2026", "t": "Nvidia’s quarterly report to the US securities regulator: the United States granted licences for some H20 and H200 sales, “but such sales were restricted by the PRC government”. It does not say by what act. The same report says Nvidia is “already effectively foreclosed from the China market by U.S. export controls”.", "q": "but such sales were restricted by the PRC government", "e": "", "s": "Nvidia, quarterly report on Form 10-Q for the quarter to Jul 26, 2026", "k": "On the record: a filing or a named person"}};
+const tip = document.getElementById('tip');
+function line(cls, text) { const d = document.createElement('div'); d.className = cls; d.textContent = text; return d; }
+function show(a) {
+  const e = EV[a.dataset.n]; if (!e) return;
+  const kids = [line('tw', [e.w, e.l].filter(Boolean).join(' \u00b7 ')), line('tt', e.t)];
+  if (e.q) kids.push(line('tq', '\u201c' + e.q + '\u201d'));
+  if (e.e) kids.push(line('te', 'Our English: ' + e.e));
+  const foot = [e.s, e.k].filter(Boolean).join(' \u00b7 ');
+  if (foot) kids.push(line('ts', foot));
+  tip.replaceChildren(...kids);
+  tip.hidden = false;
+  const r = a.getBoundingClientRect(), w = tip.offsetWidth, h = tip.offsetHeight;
+  let x = Math.min(Math.max(8, r.left + r.width / 2 - w / 2), window.innerWidth - w - 8), y = r.top - h - 10;
+  if (y < 8) y = r.bottom + 10;
+  tip.style.left = x + 'px'; tip.style.top = y + 'px';
+}
+function hl(n, on) { document.querySelectorAll('[data-n="' + n + '"]').forEach(el => el.classList.toggle('hl', on)); }
+document.querySelectorAll('[data-n]').forEach(el => {
+  const n = el.dataset.n, t = el.hasAttribute('data-tip');
+  el.addEventListener('mouseenter', () => { hl(n, true); if (t) show(el); });
+  el.addEventListener('mouseleave', () => { hl(n, false); tip.hidden = true; });
+  el.addEventListener('focus', () => { hl(n, true); if (t) show(el); });
+  el.addEventListener('blur', () => { hl(n, false); tip.hidden = true; });
+});
+window.addEventListener('scroll', () => { tip.hidden = true; }, { passive: true });
+const recs = document.getElementById('records');
+if (recs && recs.tagName === 'DETAILS') {
+  const toRecord = () => { if (/^#r[0-9]+$/.test(location.hash)) { recs.open = true; const el = document.getElementById(location.hash.slice(1)); if (el) el.scrollIntoView(); } };
+  if (window.matchMedia('(max-width: 820px)').matches && !/^#r[0-9]+$/.test(location.hash)) recs.open = false;
+  document.querySelectorAll('a.mk, a.pinlink, a.u').forEach(a => a.addEventListener('click', () => { recs.open = true; }));
+  window.addEventListener('hashchange', toRecord); toRecord();
+}
+
+</script>
+</body>
+</html>

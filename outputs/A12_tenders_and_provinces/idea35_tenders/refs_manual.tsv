@@ -1,0 +1,15 @@
+# References that are not notices. id <TAB> kind <TAB> label <TAB> address (empty = the address in the saved copy's record).
+# Kind REC is the build script's label for press reports of on-the-record material; each label says what the report rests on.
+cn-labs-state-tenders-2024-wayback	REC	A press report of published documents, not of spoken words: Reuters, Jan 14, 2024, as carried by Investing.com, on its own review of tender documents. Internet Archive capture of Jan 16, 2024. The tender documents themselves are not held	
+cn-counter-b8-2-wayback	REC	A press report of published documents, not of spoken words: Reuters, dated Apr 22, 2024 on the page, as carried by MarketScreener, on its own review of tender documents. Internet Archive capture of Apr 23, 2024	
+cn-counter-b8-3-wayback	REC	A press report of published documents, not of spoken words: Reuters, Mar 27, 2026, as carried by Investing.com, on universities' purchase notices. Internet Archive capture of the same day	
+cn-counter-b8-5	REC	A press report of a published document, not of spoken words: Reuters, Nov 11, 2026, as carried by PiQ Markets, on a university's own purchase record	
+cn-tolerate-projects-relay1	REC	A press report of published documents and company statements, not of spoken words: Reuters factbox, Nov 13, 2026, as carried by the radio station WSAU, listing computing-centre projects	
+cn-tolerate-bit	DOC	Beijing Institute of Technology, Analysis and Testing Center: notice that its computing centre has gone into formal operation, Nov 20, 2026	
+cn-o35-jilin-songyuan-project	DOC	Jilin provincial government site, investment-promotion pages: a project sheet for a computing centre in Songyuan, Apr 27, 2026	
+cn-o35-c114-cmcc-inference-2025	REC	A press report of a published tender result, not of spoken words: C114, a Chinese telecoms trade site, Aug 19, 2025, on a China Mobile tender. The operator's own notice is not held	
+cn-le17-c114-w3542-1307004	REC	A press report of a published tender notice, not of spoken words: C114, a Chinese telecoms trade site, Mar 17, 2026, on China Mobile's tender for AI supernode equipment. The operator's own notice is not held	
+cn-le17-c114-w118-1308371	REC	A press report of a published list of bid candidates, not of spoken words: C114, Apr 10, 2026, on the result of the same China Mobile tender	
+cn-le17-c114-w118-1321457	REC	A press report of a published tender notice, not of spoken words: C114, Nov 21, 2026, on China Mobile's second-batch tender for new-generation AI supernode equipment	
+cn-le17-whuf-134121	NOTICE	Wuhan University, record of a decentralised purchase of GPU cards (A100 40GB), Jul 6, 2026	
+cn-le17-whu-131281	NOTICE	Wuhan University, result notice for one Nvidia 6000D card, Aug 13, 2026	

@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>H200 Funnel</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap">
+<style>
+:root { --page: #f9f9f7; --surface: #fcfcfb; --ink: #0b0b0b; --ink2: #52514e; --muted: #7a7872; --grid: #e1e0d9; --axis: #c3c2b7; --border: rgba(11,11,11,0.12); --wash: rgba(11,11,11,0.045); --toward: #256abf; --away: #c44e18; --us: #898781; --rest: #cfcdc4; --pin-on: #ffffff; --link: #1c5cab; --font-text: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif; --font-head: "Space Grotesk", "Inter", system-ui, sans-serif; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --page: #0d0d0d; --surface: #1a1a19; --ink: #f0efec; --ink2: #c3c2b7; --muted: #8f8d86; --grid: #2c2c2a; --axis: #45453f; --border: rgba(255,255,255,0.14); --wash: rgba(255,255,255,0.06); --toward: #3987e5; --away: #d95926; --us: #898781; --rest: #45453f; --pin-on: #0d0d0d; --link: #86b6ef; color-scheme: dark; } }
+:root[data-theme="dark"] { --page: #0d0d0d; --surface: #1a1a19; --ink: #f0efec; --ink2: #c3c2b7; --muted: #8f8d86; --grid: #2c2c2a; --axis: #45453f; --border: rgba(255,255,255,0.14); --wash: rgba(255,255,255,0.06); --toward: #3987e5; --away: #d95926; --us: #898781; --rest: #45453f; --pin-on: #0d0d0d; --link: #86b6ef; color-scheme: dark; }
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--page); color: var(--ink); font-family: var(--font-text); font-size: 16px; line-height: 1.5; }
+a { color: var(--link); }
+.wrap { max-width: 1232px; margin: 0 auto; padding: 26px 16px 48px; background: var(--page); }
+.draft { margin: 0 0 18px; font-size: 12.5px; line-height: 20px; color: var(--muted); }
+.eyebrow { font: 700 12px/1.2 var(--font-text); letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin: 0 0 12px; }
+h1 { font-family: var(--font-head); font-size: clamp(27px, 3.5vw, 44px); line-height: 1.08; letter-spacing: -0.015em; margin: 0 0 12px; max-width: 26ch; text-wrap: balance; }
+.deck { margin: 0; color: var(--ink2); font-size: 17.5px; max-width: 76ch; }
+.key { display: flex; flex-wrap: wrap; gap: 8px 24px; margin: 16px 0 0; padding: 0; list-style: none; font-size: 14.5px; color: var(--ink2); }
+.key li { display: flex; align-items: center; gap: 8px; }
+.key b { color: var(--ink); font-weight: 600; }
+i.sw { display: inline-block; flex: none; width: 13px; height: 13px; border-radius: 3px; }
+i.sw.toward { background: var(--toward); } i.sw.away { background: var(--away); } i.sw.us { background: var(--us); }
+/* tier marks: filled = on the record; open = a press report citing unnamed people */
+i.mk { display: inline-block; flex: none; width: 13px; height: 13px; border-radius: 50%; border: 2.5px solid var(--ink2); vertical-align: -1.5px; }
+i.mk.solid { background: var(--ink2); } i.mk.open { background: var(--surface); }
+i.mk.toward { border-color: var(--toward); } i.mk.away { border-color: var(--away); } i.mk.us { border-color: var(--us); }
+i.mk.solid.toward { background: var(--toward); } i.mk.solid.away { background: var(--away); } i.mk.solid.us { background: var(--us); }
+.card { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 20px 22px; min-width: 0; }
+.card h2 { font-family: var(--font-head); font-size: 21px; line-height: 1.2; margin: 0 0 4px; text-wrap: balance; }
+.card .sub { margin: 0 0 12px; color: var(--ink2); font-size: 14.5px; max-width: 76ch; }
+.srcn { color: var(--muted); font-size: 12.5px; }
+.notes { margin-top: 16px; }
+.notes ul { margin: 6px 0 0; padding-left: 20px; color: var(--ink2); font-size: 14px; max-width: 108ch; }
+.notes li { margin: 4px 0; }
+.imgnote { display: none; margin: 14px 2px 0; font-size: 12px; line-height: 1.4; color: var(--muted); }
+table.tv { width: 100%; border-collapse: collapse; font-size: 14px; }
+table.tv th { text-align: left; font: 700 12px/1.3 var(--font-text); letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); padding: 6px 10px 6px 0; border-bottom: 1px solid var(--axis); }
+table.tv td { padding: 8px 10px 8px 0; border-bottom: 1px solid var(--grid); vertical-align: top; color: var(--ink2); }
+table.tv td b { color: var(--ink); }
+.scrollx { overflow-x: auto; }
+
+#fig { background: var(--page); }
+header { margin-bottom: 18px; }
+h1 { max-width: none; font-size: clamp(26px, 3.25vw, 40px); }
+@media (max-width: 1000px) { h1 br { display: none; } }
+.pin { display: inline-grid; place-items: center; flex: none; width: 22px; height: 22px; border-radius: 50%; font: 700 11px/1 var(--font-text); border: 2.5px solid;
+  background: var(--surface); color: var(--ink); font-variant-numeric: tabular-nums; }
+.pin.toward { border-color: var(--toward); } .pin.away { border-color: var(--away); } .pin.us { border-color: var(--us); }
+.pin.solid { background: var(--ink2); border-color: var(--ink2); color: var(--pin-on); }      /* filled: on the record */
+.row { display: grid; grid-template-columns: 22px minmax(200px, 290px) minmax(0, 1fr); gap: 4px 14px; padding: 14px 0 13px; border-top: 1px solid var(--grid); align-items: start; }
+.lab b { display: block; font-weight: 600; font-size: 16.5px; line-height: 1.3; }
+.lab span { display: block; font-size: 13.5px; color: var(--ink2); line-height: 1.35; margin-top: 2px; }
+.track { display: flex; align-items: center; gap: 10px; min-height: 24px; min-width: 0; }
+.track i { display: block; flex: none; height: 18px; min-width: 4px; border-radius: 0 4px 4px 0; width: calc((100% - 270px) * var(--f)); }
+.track i.toward { background: var(--toward); } .track i.away { background: var(--away); } .track i.us { background: var(--us); }
+.track em { font: 700 24px/1 var(--font-head); font-style: normal; white-space: nowrap; letter-spacing: -0.01em; }
+.track em small { font: 500 14px/1 var(--font-text); color: var(--ink2); margin-right: 3px; letter-spacing: 0; }
+.ours { font-size: 12.5px; color: var(--muted); line-height: 1.3; }
+.said { margin: 7px 0 0; font-size: 13.5px; color: var(--ink2); line-height: 1.4; max-width: 84ch; }
+.onrec { display: grid; grid-template-columns: 22px 1fr; gap: 14px; border-top: 1px solid var(--axis); padding-top: 13px; font-size: 14.5px; color: var(--ink2); line-height: 1.45; }
+.onrec b { color: var(--ink); font-weight: 600; } .onrec p { margin: 0; }
+.onrec ul { list-style: none; margin: 6px 0 0; padding: 0; } .onrec li { padding: 5px 0 0; font-size: 13.5px; line-height: 1.42; max-width: 104ch; }
+.onrec i.mk { margin: 4px 0 0 4px; }
+.srcn a { white-space: nowrap; }
+@media (max-width: 760px) { .srcn a { white-space: normal; } }
+.when { margin-top: 16px; }
+.when svg { display: block; width: 100%; height: auto; }
+svg text { font-family: var(--font-text); }
+.ax { stroke: var(--axis); stroke-width: 1; } .tk { stroke: var(--axis); stroke-width: 1; }
+.mo { font-size: 12px; font-weight: 500; fill: var(--muted); } .mo.yr { fill: var(--ink2); font-weight: 600; }
+.pw { font-size: 12.5px; font-weight: 700; fill: var(--ink); text-anchor: middle; } .pd { font-size: 12px; font-weight: 500; fill: var(--ink2); text-anchor: middle; }
+circle.c { fill: var(--surface); stroke-width: 2.5; } circle.c.toward { stroke: var(--toward); } circle.c.away { stroke: var(--away); } circle.c.us { stroke: var(--us); }
+circle.c.solid { fill: var(--ink2); stroke: var(--ink2); }
+.pn { font-size: 11px; font-weight: 700; fill: var(--ink); text-anchor: middle; } .pn.on { fill: var(--pin-on); }
+.order { display: none; list-style: none; margin: 4px 0 0; padding: 0; }
+.order li { display: flex; align-items: center; gap: 10px; padding: 7px 0; border-top: 1px solid var(--grid); font-size: 14.5px; }
+.order li b { font-weight: 600; } .order li span { color: var(--ink2); margin-left: auto; white-space: nowrap; }
+.order li span.pin { margin-left: 0; }                 /* the mark stays at the left; only the date goes to the right */
+.order li span.pin.solid { color: var(--pin-on); }
+@media (max-width: 760px) {
+  .row { grid-template-columns: 22px minmax(0, 1fr); } .barcol { grid-column: 1 / -1; }
+  .track { flex-direction: column; align-items: flex-start; gap: 5px; } .track em { order: 1; } .track .ours { order: 2; } .track i { order: 3; width: calc(100% * var(--f)); }
+  .when svg { display: none; } .order { display: block; }
+}
+
+</style>
+</head>
+<body>
+<div class="wrap">
+ <p class="draft">Draft by Claude, Anthropic’s model. Local; not published.</p>
+ <div id="fig">
+  <header>
+   <p class="eyebrow">China · Nvidia’s H200 chip · Dec 2025 to Nov 2026</p>
+   <h1>Reported ordered: more than 2 million H200 chips.<br> Reported delivered: about 10,000 each, to a few buyers.</h1>
+   <p class="deck">Five press reports citing unnamed people, and two sums from one United States government table of licence applications. They are separate counts, not one tally: they do not add up, and they are listed in the order of a sale, not in the order of their dates. An application names a consignee; it is not an order. Bars are drawn to one scale.</p>
+   <ul class="key">
+    <li><i class="sw toward"></i><span><b>Toward Nvidia:</b> ordering it, letting it in</span></li>
+    <li><i class="sw away"></i><span><b>Away from Nvidia:</b> holding it back</span></li>
+    <li><i class="sw us"></i><span><b>Washington’s table</b> of licence applications</span></li>
+    <li><span class="pin toward" aria-hidden="true">1</span><span><b>Open mark:</b> a press report citing unnamed people. Five bars</span></li>
+    <li><span class="pin us solid" aria-hidden="true">2</span><span><b>Filled mark:</b> on the record. Bars 2 and 3, and Nvidia’s own account</span></li>
+   </ul>
+  </header>
+  <section class="card">
+   <h2>The H200, step by step, in numbers</h2>
+   <p class="sub">The H200 is the Nvidia chip the United States allowed for sale to approved customers in China. Under each bar: the source’s own words, and how a sum was made.</p>
+<div class="row"><span class="pin toward" aria-hidden="true">1</span>
+ <div class="lab"><b>Ordered by Chinese companies</b><span>for 2026</span></div>
+ <div class="barcol"><div class="track"><i class="toward" style="--f:1.0000"></i><em><small>more than</small>2 million</em></div>
+  <p class="said">“Chinese technology companies have placed orders for more than 2 million H200 chips for 2026”; the report gives this on the word of “two of the people” it spoke to. <span class="srcn"><a href="https://web.archive.org/web/20260101170120/https://www.investing.com/news/stock-market-news/exclusivenvidia-sounds-out-tsmc-on-new-h200-chip-order-as-china-demand-jumps-sources-say-4426223">Reuters, Dec 31, 2025</a></span></p></div></div>
+<div class="row"><span class="pin us solid" aria-hidden="true">2</span>
+ <div class="lab"><b>Approved by Washington, not shipped</b><span>Nvidia as exporter</span></div>
+ <div class="barcol"><div class="track"><i class="us" style="--f:0.2899"></i><em>579,868</em><span class="ours">our sum of the table’s 17 rows with Nvidia as exporter</span></div>
+  <p class="said">The committee’s summary: “BIS approved the export, re-export, or transfer (in-country) of 879,868 covered integrated circuits to PRC companies across 21 license applications, as of May 11, 2026”. The table marks each of the 21 “Approved, not shipped”. Nvidia is the exporter in 17 of them, AMD in 4 (300,000 chips, kept apart here). No approved application is for more than 75,000 chips. <span class="srcn"><a href="https://democrats-foreignaffairs.house.gov/wp-content/uploads/2026/11/11.19.26-ECRA-Information-Disclosure-HFAC-Summary.pdf">House Foreign Affairs Committee, summary made public Nov 19, 2026</a></span></p></div></div>
+<div class="row"><span class="pin us solid" aria-hidden="true">3</span>
+ <div class="lab"><b>Returned by Washington without action</b><span>Nvidia as exporter</span></div>
+ <div class="barcol"><div class="track"><i class="us" style="--f:0.8695"></i><em>1,738,950</em><span class="ours">our sum of the table’s 7 rows with Nvidia as exporter</span></div>
+  <p class="said">The table marks these RWA, the export bureau’s short form: “Returned without action (RWA)”. Among Nvidia’s 7 are all 5 applications for consignees in Indonesia, Malaysia and Thailand (1,118,500 chips), named for ByteDance, BytePlus, TikTok and Alibaba. With AMD’s 2, 1,888,950 of the table’s 3,444,160 chips: 55% of the chips in the applications the summary records. The table gives no reasons, and the committee says some applications are “not fully reflected in the May 11, 2026, summary document”. <span class="srcn"><a href="https://democrats-foreignaffairs.house.gov/wp-content/uploads/2026/11/11.19.26-ECRA-Information-Disclosure-of-BIS-License-Decisions.pdf">Commerce Department table, status May 11, 2026</a></span></p></div></div>
+<div class="row"><span class="pin toward" aria-hidden="true">4</span>
+ <div class="lab"><b>Approved by Beijing, with conditions</b><span>for ByteDance, Alibaba and Tencent</span></div>
+ <div class="barcol"><div class="track"><i class="toward" style="--f:0.2000"></i><em><small>more than</small>400,000</em></div>
+  <p class="said">“ByteDance, Alibaba, and Tencent have been approved to purchase more than 400,000 H200 chips in total”. “The Chinese government is only granting approvals with conditions”. <span class="srcn"><a href="https://www.thestandard.com.hk/innovation/article/322910/China-gives-nod-to-ByteDance-Alibaba-and-Tencent-to-buy-Nvidias-H200-chips-says-sources">Reuters, Jan 28, 2026</a></span></p></div></div>
+<div class="row"><span class="pin toward" aria-hidden="true">5</span>
+ <div class="lab"><b>Under discussion in Beijing</b><span>the total Beijing might approve</span></div>
+ <div class="barcol"><div class="track"><i class="toward" style="--f:0.1000"></i><em><small>fewer than</small>200,000</em></div>
+  <p class="said">“Beijing is still determining the exact number of Nvidia chips to approve”; “it could amount to fewer than 200,000 in total”. <span class="srcn"><a href="https://www.aol.ca/articles/china-plans-let-top-ai-150506000.html">The Information, through Reuters, Jul 8, 2026</a></span></p></div></div>
+<div class="row"><span class="pin toward" aria-hidden="true">6</span>
+ <div class="lab"><b>Delivered</b><span>to ByteDance and to Tencent</span></div>
+ <div class="barcol"><div class="track"><i class="toward" style="--f:0.0100"></i><em><small>about</small>10,000 each</em><span class="ours">the bar is drawn for both buyers: 2 × 10,000</span></div>
+  <p class="said">“ByteDance and Tencent have each received about 10,000 H200 processors in recent weeks”; “Beijing wants them to keep the hardware outside mainland China”. <span class="srcn"><a href="https://web.archive.org/web/20260908131431/https://www.investing.com/news/stock-market-news/nvidia-h200-chips-reach-china-in-small-shipments-ft-reports-4866385">Financial Times, through Reuters, Aug 18, 2026</a></span></p></div></div>
+<div class="row"><span class="pin away" aria-hidden="true">7</span>
+ <div class="lab"><b>Stored in Hong Kong, awaiting shipment</b><span>to China: a stockpile of H200 chips</span></div>
+ <div class="barcol"><div class="track"><i class="away" style="--f:0.3000"></i><em><small>about</small>600,000</em></div>
+  <p class="said">“About 600,000 of Nvidia’s advanced artificial intelligence chips are stored in Hong Kong awaiting shipment to China”, “as Beijing withholds approval for large-scale imports despite demand from technology firms”. <span class="srcn"><a href="https://www.channelnewsasia.com/east-asia/nvidia-chips-pile-up-hong-kong-china-withhold-import-approval-6527371">Reuters, Nov 5, 2026</a></span></p></div></div>
+   <div class="onrec"><i class="mk solid"></i><div><p><b>On the record: Nvidia’s own account, in money, not in chips.</b></p>
+    <ul>
+     <li><b>Results call of May 20, 2026.</b> “While the US government has approved licenses for H200 to be shipped to China-based customers, we have yet to generate any revenue, and we are uncertain whether any imports will be allowed into the country”. <span class="srcn"><a href="https://s201.q4cdn.com/141608511/files/doc_financials/2027/q1/NVDA-Q1-2027-Earnings-Call-20-May-2026-5_00-PM-ET.pdf">Nvidia, transcript of the call</a></span></li>
+     <li><b>Quarter to Jul 26, 2026, filed Aug 26, 2026.</b> “we have made a fraction of the allowed shipments under the USG’s H200 licensing program”. “Those shipments account for less than 1% of Data Center revenue in our most recent quarter”. <span class="srcn"><a href="https://www.sec.gov/Archives/edgar/data/1045810/000104581026000075/nvda-20260726.htm">Nvidia, Form 10-Q</a></span></li>
+     <li><b>Results call of Nov 17, 2026, for the quarter ended Oct 25, 2026.</b> “Q3 sales of licensed Hopper Data Center products to China was $2.4 billion”; “we are no longer shipping licensed Hopper Data Center products to China”. Nvidia gave no reason. The Hopper family includes the H200.
+      <span class="srcn"><a href="https://s201.q4cdn.com/141608511/files/content_files/NVDA-3Q27-Earnings-Transcript.pdf">Nvidia, transcript of the call</a></span></li>
+    </ul></div></div>
+  </section>
+  <section class="card when">
+   <h2>The date of each count</h2>
+   <p class="sub">In date order: 1, 4, 2, 3, 5, 6, 7. A later count does not update an earlier one; each counts a different thing. Bars 2 and 3 give the table’s status on May 11, 2026; the table was made public on Nov 19, 2026.</p>
+<svg viewBox="0 0 1152 104" role="img" aria-labelledby="st-t st-d"><title id="st-t">The date of each count</title><desc id="st-d">1 ordered, Dec 31, 2025; 4 approved by Beijing, Jan 28, 2026; 2 approved by Washington (status date), May 11, 2026; 3 returned by Washington (status date), May 11, 2026; 5 under discussion, Jul 8, 2026; 6 delivered, Aug 18, 2026; 7 stored in Hong Kong, Nov 5, 2026</desc>
+<line class="ax" x1="34" y1="62" x2="1118" y2="62"/>
+<line class="tk" x1="34.0" y1="62" x2="34.0" y2="68"/><text class="mo yr" x="38.0" y="84">Dec 2025</text>
+<line class="tk" x1="126.1" y1="62" x2="126.1" y2="68"/><text class="mo yr" x="130.1" y="84">Jan 2026</text>
+<line class="tk" x1="218.1" y1="62" x2="218.1" y2="68"/><text class="mo" x="222.1" y="84">Feb</text>
+<line class="tk" x1="301.3" y1="62" x2="301.3" y2="68"/><text class="mo" x="305.3" y="84">Mar</text>
+<line class="tk" x1="393.4" y1="62" x2="393.4" y2="68"/><text class="mo" x="397.4" y="84">Apr</text>
+<line class="tk" x1="482.4" y1="62" x2="482.4" y2="68"/><text class="mo" x="486.4" y="84">May</text>
+<line class="tk" x1="574.5" y1="62" x2="574.5" y2="68"/><text class="mo" x="578.5" y="84">Jun</text>
+<line class="tk" x1="663.6" y1="62" x2="663.6" y2="68"/><text class="mo" x="667.6" y="84">Jul</text>
+<line class="tk" x1="755.7" y1="62" x2="755.7" y2="68"/><text class="mo" x="759.7" y="84">Aug</text>
+<line class="tk" x1="847.7" y1="62" x2="847.7" y2="68"/><text class="mo" x="851.7" y="84">Sept</text>
+<line class="tk" x1="936.8" y1="62" x2="936.8" y2="68"/><text class="mo" x="940.8" y="84">Oct</text>
+<line class="tk" x1="1028.9" y1="62" x2="1028.9" y2="68"/><text class="mo" x="1032.9" y="84">Nov</text>
+<line class="tk" x1="1118.0" y1="62" x2="1118.0" y2="68"/>
+<text class="pw" x="123.1" y="16">ordered</text><text class="pd" x="123.1" y="32">Dec 31</text>
+<circle class="c toward" cx="123.1" cy="48" r="10"/><text class="pn" x="123.1" y="52">1</text>
+<text class="pw" x="206.3" y="16">Beijing approved</text><text class="pd" x="206.3" y="32">Jan 28</text>
+<circle class="c toward" cx="206.3" cy="48" r="10"/><text class="pn" x="206.3" y="52">4</text>
+<text class="pw" x="512.1" y="16">Washington’s table</text><text class="pd" x="512.1" y="32">May 11</text>
+<circle class="c us solid" cx="500.1" cy="48" r="10"/><text class="pn on" x="500.1" y="52">2</text>
+<circle class="c us solid" cx="524.1" cy="48" r="10"/><text class="pn on" x="524.1" y="52">3</text>
+<text class="pw" x="684.4" y="16">discussed</text><text class="pd" x="684.4" y="32">Jul 8</text>
+<circle class="c toward" cx="684.4" cy="48" r="10"/><text class="pn" x="684.4" y="52">5</text>
+<text class="pw" x="806.2" y="16">delivered</text><text class="pd" x="806.2" y="32">Aug 18</text>
+<circle class="c toward" cx="806.2" cy="48" r="10"/><text class="pn" x="806.2" y="52">6</text>
+<text class="pw" x="1040.8" y="16">stored</text><text class="pd" x="1040.8" y="32">Nov 5</text>
+<circle class="c away" cx="1040.8" cy="48" r="10"/><text class="pn" x="1040.8" y="52">7</text>
+</svg>
+   <ol class="order"><li><span class="pin toward" aria-hidden="true">1</span><b>ordered</b><span>Dec 31, 2025</span></li><li><span class="pin toward" aria-hidden="true">4</span><b>approved by Beijing</b><span>Jan 28, 2026</span></li><li><span class="pin us solid" aria-hidden="true">2</span><b>approved by Washington (status date)</b><span>May 11, 2026</span></li><li><span class="pin us solid" aria-hidden="true">3</span><b>returned by Washington (status date)</b><span>May 11, 2026</span></li><li><span class="pin toward" aria-hidden="true">5</span><b>under discussion</b><span>Jul 8, 2026</span></li><li><span class="pin toward" aria-hidden="true">6</span><b>delivered</b><span>Aug 18, 2026</span></li><li><span class="pin away" aria-hidden="true">7</span><b>stored in Hong Kong</b><span>Nov 5, 2026</span></li></ol>
+  </section>
+ <p class="imgnote">Draft by Claude, Anthropic’s model. Local; not published.</p>
+ </div>
+ <section class="card notes">
+  <h2>Read with care</h2>
+  <ul>
+   <li>The bars count different things at different dates, so no bar is a share of another. Five rest on unnamed people; two are sums of a government table.</li>
+   <li>Washington’s table is the Commerce Department’s, with the status of each licence application as of May 11, 2026. The House Foreign Affairs Committee made it public on Nov 19, 2026. It covers 3,444,160 chips in 54 applications: “Covered integrated circuits are the following products: NVIDIA’s H200 and AMD’s MI325X.”
+    It does not say which chip a row is; bars 2 and 3 count the rows with Nvidia as exporter. An application names a consignee; it is not an order. “Approved” in bar 2 is Washington’s licence; bar 4 is Beijing’s approval, by a press report.</li>
+   <li>The sums are ours, of the table’s rows as the project read them from its page images; the totals equal the figures the committee’s summary prints. Nvidia’s chips and AMD’s are not added in the bars. With AMD’s, the approved count is 879,868 in 21 applications and the returned count 1,888,950 in 9.</li>
+   <li>The 55% is a share of the chips in the applications the summary records, not of everything applied for. The committee’s example: “For example, NVIDIA applied on December 19, 2025, to export 445,000 H200s to Tencent”; the table shows that application at 75,000 chips, approved. With it counted in full the share would be 49.5% (our arithmetic).</li>
+   <li>No approved application in the table is above 75,000 chips, and all five above it were returned. Reuters reported that cap on May 14, 2026: “each approved customer can purchase up to 75,000 chips”. It also wrote that “not a single delivery has been made so far”, and that the “path to a completed sale has been obstructed by a tangle of requirements on both sides”.</li>
+   <li>Beijing’s approval of Jan 28, 2026 was not yet a purchase: a source said “customers were not yet converting the approvals to purchase orders”.</li>
+   <li>The total under discussion in July was, in the report’s words, “less than half of what the companies requested earlier this year”.</li>
+   <li>The first report of deliveries names two buyers; by November more are reported: “Several major Chinese internet companies have each obtained about 10,000 H200 chips in the past few months” (<a href="https://www.channelnewsasia.com/east-asia/nvidia-chips-pile-up-hong-kong-china-withhold-import-approval-6527371">Reuters, Nov 5, 2026</a>).</li>
+   <li>Nvidia’s figures are sums of money, not counts of chips. Neither its call of Nov 17, 2026 nor Reuters’s report of it says how many of those chips crossed into the mainland.</li>
+   <li>How many H200 chips have entered the mainland is not known. The Hong Kong report says small quantities were shipped by other routes, in its words, “without specifying how many”.</li>
+  </ul>
+ </section>
+</div>
+</body>
+</html>

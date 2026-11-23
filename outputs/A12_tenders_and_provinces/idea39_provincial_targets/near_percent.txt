@@ -1,0 +1,89 @@
+# For each document that sets no share (groups none, also, account, notfound): every place where 国产, 自主可控, 安全可控,
+# 安全可靠 or 自主化 stands within 60 characters of a percent sign. Written by build.py. Each place was read by a person;
+# none sets a share of home-made hardware (round 4 reading, after the list: see the end of this file).
+
+== Beijing | cn-factions-beijing-plan-20240424 | home-made words: 19; percent signs: 2; near each other: 3
+   …家相关部署进一步优化算力布局。北京市算力互联互通和运行服务平台功能逐步完善，智算资源供需调度高效协同。（二）智算设施建设自主化。到2027年，实现智算基础设施软硬件产品全栈自主可控，整体性能达到国内领先水平，具备100%自主可控智算中心建设能力，…
+   …行服务平台功能逐步完善，智算资源供需调度高效协同。（二）智算设施建设自主化。到2027年，实现智算基础设施软硬件产品全栈自主可控，整体性能达到国内领先水平，具备100%自主可控智算中心建设能力，有效支撑对标国际领先水平的通用和行业垂类大模型的训练和…
+   …。（二）智算设施建设自主化。到2027年，实现智算基础设施软硬件产品全栈自主可控，整体性能达到国内领先水平，具备100%自主可控智算中心建设能力，有效支撑对标国际领先水平的通用和行业垂类大模型的训练和推理。（三）智算能力赋能精准化。智能算力精准赋能…
+
+== Guizhou | cn-o39-guizhou-ai-plan-2025-wayback | home-made words: 7; percent signs: 0; near each other: 0
+
+== Henan | cn-o39-henan-plan-2024-wayback | home-made words: 10; percent signs: 4; near each other: 1
+   …施的抗风险能力，保障数据安全和算力基础设施稳定运行。（四）发展目标。到2026年年底，形成布局合理、绿色低碳、高效集约、安全可靠的算力基础设施发展格局，全省算力基础设施标准机架数达到35万架，平均利用率达到70%以上，算力规模超过120EFlops…
+
+== Hubei | cn-o39-hubei-measures-2025 | home-made words: 1; percent signs: 10; near each other: 0
+
+== Fujian | cn-o39-fujian-measures-2025 | home-made words: 4; percent signs: 4; near each other: 1
+   …，并根据全省公共算力应用需求、资源利用率等情况，谋划建设一批中型算力基础设施项目，合理扩大算力建设规模，推动智算中心提升国产化率。新建及改扩建数据中心电能利用效率（PUE）降至1.25以内，数据中心整体上架率不低于65%，打造不少于20个算力应…
+
+== Liaoning | cn-o39-liaoning-compute-plan-2024-news | home-made words: 1; percent signs: 0; near each other: 0
+
+== Liaoning | cn-o39-liaoning-ai-plan-2025 | home-made words: 5; percent signs: 0; near each other: 0
+
+== Jilin | cn-o39-jilin-ai-opinion-2025 | home-made words: 2; percent signs: 0; near each other: 0
+
+== Heilongjiang | cn-o39-heilongjiang-ai-plus-2026 | home-made words: 1; percent signs: 4; near each other: 0
+
+== Hunan | cn-o39-hunan-green-compute-plan-2025-wayback | home-made words: 13; percent signs: 5; near each other: 1
+   …三是关联产业潜力迸发。攻克高性能异构算法等关键核心技术40余项，2024年人工智能产业规模达710亿元。集成电路整线装备国产化率达95%，2024年新一代半导体产业规模达300亿元。85英寸、100英寸以上超高清显示面板出货量全球领先，2024…
+
+== Hunan | cn-o39-hunan-green-compute-measures-2025 | home-made words: 1; percent signs: 14; near each other: 0
+
+== Gansu | man-cn-o39-gansu-ai-plus-2026 | home-made words: 2; percent signs: 2; near each other: 0
+
+== Gansu | cn-o39-gansu-hub-measures-2022 | home-made words: 0; percent signs: 5; near each other: 0
+
+== Ningxia | cn-o39-ningxia-ai-measures-2023 | home-made words: 6; percent signs: 6; near each other: 0
+
+== Yunnan | cn-o39-yunnan-digital-channel-2026 | home-made words: 1; percent signs: 3; near each other: 0
+
+== Shanxi | cn-o39b-shanxi-measures-2024-jincheng | home-made words: 4; percent signs: 14; near each other: 4
+   …予每户企业最高不超过50万元奖励。支持算网协同发展，鼓励网络基础设施运营商优化网络架构，持续推动网络提速降费。（六）支持自主可控数据中心建设。鼓励算力企业加大信创产品应用力度，提升数据中心自主可控、安全可靠水平，对基础软硬件实现国产化90%以上的新…
+   …运营商优化网络架构，持续推动网络提速降费。（六）支持自主可控数据中心建设。鼓励算力企业加大信创产品应用力度，提升数据中心自主可控、安全可靠水平，对基础软硬件实现国产化90%以上的新建、改建数据中心，给予最高不超过500万元的一次性奖励。对通过第三方…
+   …网络架构，持续推动网络提速降费。（六）支持自主可控数据中心建设。鼓励算力企业加大信创产品应用力度，提升数据中心自主可控、安全可靠水平，对基础软硬件实现国产化90%以上的新建、改建数据中心，给予最高不超过500万元的一次性奖励。对通过第三方机构安全性…
+   …。（六）支持自主可控数据中心建设。鼓励算力企业加大信创产品应用力度，提升数据中心自主可控、安全可靠水平，对基础软硬件实现国产化90%以上的新建、改建数据中心，给予最高不超过500万元的一次性奖励。对通过第三方机构安全性测试的算力上下游产品，按照…
+
+== Anhui | cn-o39b-anhui-digital-infra-2023-sd-copy | home-made words: 14; percent signs: 3; near each other: 0
+
+== Guangxi | cn-o39-guangxi-digital-plan-2024-wayback | home-made words: 5; percent signs: 11; near each other: 1
+   …6年，实现公共数据汇聚量达90亿条，公共数据需求满足率超80%。（自治区数据局，各设区市人民政府按职责分工负责）7.建设安全可靠的数据流通利用基础设施。建设公共数据授权运营和公共数据资源登记支撑平台，在数据交易中心开设行业数据产品专区，面向市场提供…
+
+== Jiangxi | cn-o39-jiangxi-industry-compute-2026-wayback | home-made words: 0; percent signs: 0; near each other: 0
+
+== Qinghai | cn-o39-qinghai-compute-15fyp-2026-wayback | home-made words: 5; percent signs: 30; near each other: 0
+
+== Shaanxi | cn-le16-shaanxi-ai-plus-2025-sohu | home-made words: 0; percent signs: 1; near each other: 0
+
+== Hainan | cn-le16-hainan-ai-plus-2026-smartcity | home-made words: 3; percent signs: 1; near each other: 0
+
+== Chongqing | cn-o39-chongqing-hub-plan-2026-wayback | home-made words: 5; percent signs: 3; near each other: 0
+
+== Zhejiang | cn-le25-zhejiang-ai-measures-2025-smartcity | home-made words: 4; percent signs: 15; near each other: 0
+
+== Tibet | cn-o39b-tibet-compute-plan-2024-wxb | home-made words: 0; percent signs: 4; near each other: 0
+
+== Xinjiang | cn-le16-xinjiang-plan-2024-indicators | home-made words: 2; percent signs: 24; near each other: 0
+
+== Shandong | cn-o39-shandong-digital-infra-2023 | home-made words: 0; percent signs: 10; near each other: 0
+
+== Shandong | cn-o39-shandong-compute-draft-note | home-made words: 2; percent signs: 0; near each other: 0
+
+== Guangdong | cn-o39-guangdong-agi-opinion-2023 | home-made words: 4; percent signs: 0; near each other: 0
+
+== Guangdong | cn-o39-guangdong-ai-measures-2024 | home-made words: 2; percent signs: 1; near each other: 0
+
+# ---- the reading ----
+# Round 4 reading of the 11 places listed above (second builder, Nov 23, 2026, about 12:40 UTC). build.py appends this file
+# to near_percent.txt and stops if the count of places changes from 11.
+# Beijing, 3 places, one passage: 具备100%自主可控智算中心建设能力. A capability to build by 2027, not a share of use (its row says so).
+# Henan, 1 place: 安全可靠 stands in the plan's goal sentence; the percent is the average rack use rate, 平均利用率达到70%以上.
+# Fujian, 1 place: 推动智算中心提升国产化率 (raise the rate, no number); the percent is the rack occupancy rate, 上架率不低于65%.
+# Hunan, 1 place: 集成电路整线装备国产化率达95%. A rate already reached, for complete production lines of chip-making
+#   equipment, in the plan's account of the province's base; not a share of computing hardware, and not a target.
+# Shanxi, 4 places, one passage: the one-off reward for new or rebuilt data centres whose basic software and hardware are
+#   90% or more home-made (国产化90%以上). A reward, not a target: the row and table 4 say so.
+# Guangxi, 1 place: 建设安全可靠的数据流通利用基础设施 follows 公共数据需求满足率超80%, a rate for public data requests.
+# None of the 11 sets a share of home-made computing hardware.
+# Not caught by this scan, by design: the word 自主 alone (Zhejiang's 自主算力服务 vouchers, 30% against 10%); the vouchers
+#   are read in vouchers.txt, not here.

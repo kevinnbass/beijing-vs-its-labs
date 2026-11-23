@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Six Sentences</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap">
+<style>
+:root { --page: #f9f9f7; --surface: #fcfcfb; --ink: #0b0b0b; --ink2: #52514e; --muted: #7a7872; --grid: #e1e0d9; --axis: #c3c2b7; --border: rgba(11,11,11,0.12); --wash: rgba(11,11,11,0.045); --toward: #256abf; --away: #c44e18; --us: #898781; --rest: #cfcdc4; --pin-on: #ffffff; --link: #1c5cab; --font-text: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif; --font-head: "Space Grotesk", "Inter", system-ui, sans-serif; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --page: #0d0d0d; --surface: #1a1a19; --ink: #f0efec; --ink2: #c3c2b7; --muted: #8f8d86; --grid: #2c2c2a; --axis: #45453f; --border: rgba(255,255,255,0.14); --wash: rgba(255,255,255,0.06); --toward: #3987e5; --away: #d95926; --us: #898781; --rest: #45453f; --pin-on: #0d0d0d; --link: #86b6ef; color-scheme: dark; } }
+:root[data-theme="dark"] { --page: #0d0d0d; --surface: #1a1a19; --ink: #f0efec; --ink2: #c3c2b7; --muted: #8f8d86; --grid: #2c2c2a; --axis: #45453f; --border: rgba(255,255,255,0.14); --wash: rgba(255,255,255,0.06); --toward: #3987e5; --away: #d95926; --us: #898781; --rest: #45453f; --pin-on: #0d0d0d; --link: #86b6ef; color-scheme: dark; }
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--page); color: var(--ink); font-family: var(--font-text); font-size: 16px; line-height: 1.5; }
+a { color: var(--link); }
+.wrap { max-width: 1232px; margin: 0 auto; padding: 26px 16px 48px; background: var(--page); }
+.draft { margin: 0 0 18px; font-size: 12.5px; line-height: 20px; color: var(--muted); }
+.eyebrow { font: 700 12px/1.2 var(--font-text); letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin: 0 0 12px; }
+h1 { font-family: var(--font-head); font-size: clamp(27px, 3.5vw, 44px); line-height: 1.08; letter-spacing: -0.015em; margin: 0 0 12px; max-width: 26ch; text-wrap: balance; }
+.deck { margin: 0; color: var(--ink2); font-size: 17.5px; max-width: 76ch; }
+.key { display: flex; flex-wrap: wrap; gap: 8px 24px; margin: 16px 0 0; padding: 0; list-style: none; font-size: 14.5px; color: var(--ink2); }
+.key li { display: flex; align-items: center; gap: 8px; }
+.key b { color: var(--ink); font-weight: 600; }
+i.sw { display: inline-block; flex: none; width: 13px; height: 13px; border-radius: 3px; }
+i.sw.toward { background: var(--toward); } i.sw.away { background: var(--away); } i.sw.us { background: var(--us); }
+/* tier marks: filled = on the record; open = a press report citing unnamed people */
+i.mk { display: inline-block; flex: none; width: 13px; height: 13px; border-radius: 50%; border: 2.5px solid var(--ink2); vertical-align: -1.5px; }
+i.mk.solid { background: var(--ink2); } i.mk.open { background: var(--surface); }
+i.mk.toward { border-color: var(--toward); } i.mk.away { border-color: var(--away); } i.mk.us { border-color: var(--us); }
+i.mk.solid.toward { background: var(--toward); } i.mk.solid.away { background: var(--away); } i.mk.solid.us { background: var(--us); }
+.card { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 20px 22px; min-width: 0; }
+.card h2 { font-family: var(--font-head); font-size: 21px; line-height: 1.2; margin: 0 0 4px; text-wrap: balance; }
+.card .sub { margin: 0 0 12px; color: var(--ink2); font-size: 14.5px; max-width: 76ch; }
+.srcn { color: var(--muted); font-size: 12.5px; }
+.notes { margin-top: 16px; }
+.notes ul { margin: 6px 0 0; padding-left: 20px; color: var(--ink2); font-size: 14px; max-width: 108ch; }
+.notes li { margin: 4px 0; }
+.imgnote { display: none; margin: 14px 2px 0; font-size: 12px; line-height: 1.4; color: var(--muted); }
+table.tv { width: 100%; border-collapse: collapse; font-size: 14px; }
+table.tv th { text-align: left; font: 700 12px/1.3 var(--font-text); letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); padding: 6px 10px 6px 0; border-bottom: 1px solid var(--axis); }
+table.tv td { padding: 8px 10px 8px 0; border-bottom: 1px solid var(--grid); vertical-align: top; color: var(--ink2); }
+table.tv td b { color: var(--ink); }
+.scrollx { overflow-x: auto; }
+
+#fig { background: var(--page); }
+header { margin-bottom: 20px; }
+.wall { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: auto repeat(3, auto); grid-auto-flow: column; gap: 14px 18px; }
+.colh { display: flex; align-items: center; gap: 9px; margin: 0; font: 700 13px/1.2 var(--font-text); letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink); }
+.qc { background: var(--surface); border: 1px solid var(--border); border-left: 4px solid var(--axis); border-radius: 12px; padding: 20px 22px 16px; display: flex; flex-direction: column; min-width: 0; }
+.qc.away { border-left-color: var(--away); } .qc.toward { border-left-color: var(--toward); }
+.qc .q { font: 600 21.5px/1.32 var(--font-text); letter-spacing: -0.006em; margin: 0; text-wrap: pretty; }
+.qc .q.zh { font-family: "Noto Sans CJK SC", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", var(--font-text); font-weight: 700; font-size: 22px; line-height: 1.45; letter-spacing: 0.01em; text-indent: -0.42em; }
+.qc .en { font-size: 15.5px; line-height: 1.42; color: var(--ink2); margin: 8px 0 0; }
+.at { margin-top: auto; padding-top: 16px; display: grid; grid-template-columns: 14px minmax(0, 1fr); gap: 2px 10px; font-size: 13.5px; line-height: 1.42; color: var(--ink2); }
+.at i.mk { margin-top: 3px; }
+.at b { color: var(--ink); font-weight: 600; }
+.at .kind { grid-column: 2; font-size: 12.5px; color: var(--muted); }
+.limit { margin-top: 16px; background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 18px 22px; display: grid; grid-template-columns: 150px minmax(0, 1fr); gap: 6px 22px; align-items: start; }
+.limit h2 { margin: 3px 0 0; font: 700 13px/1.2 var(--font-text); letter-spacing: 0.08em; text-transform: uppercase; }
+.limit .q { font: 600 20px/1.32 var(--font-text); margin: 0; }
+.limit .at { padding-top: 10px; }
+.limit .more { margin: 10px 0 0; font-size: 14.5px; color: var(--ink2); max-width: 88ch; }
+.foot { margin: 14px 2px 0; font-size: 13px; color: var(--ink2); }
+.imgnote { margin-top: 6px; }
+@media (max-width: 800px) {
+  .wall { grid-template-columns: minmax(0, 1fr); grid-template-rows: none; grid-auto-flow: row; }
+  .colh.toward { margin-top: 12px; } .qc .q { font-size: 19px; } .qc .q.zh { font-size: 19.5px; }
+  .limit { grid-template-columns: minmax(0, 1fr); }
+}
+
+</style>
+</head>
+<body>
+<div class="wrap">
+ <p class="draft">Draft by Claude, Anthropic’s model. Local; not published.</p>
+ <div id="fig">
+  <header>
+   <p class="eyebrow">China · Nvidia chips · six sentences from the record</p>
+   <h1>Beijing mostly pulled one way on Nvidia chips. Its AI companies pulled the other.</h1>
+   <p class="deck">Three sentences show the Chinese state pulling away from Nvidia. Three show China’s AI companies pulling toward it. Three are on the record; three are press reports citing unnamed people.</p>
+   <ul class="key">
+    <li><i class="mk solid"></i><span><b>Filled mark:</b> on the record (a government document, a filing, a named official)</span></li>
+    <li><i class="mk open"></i><span><b>Open mark:</b> a press report citing unnamed people</span></li>
+   </ul>
+  </header>
+  <div class="wall">
+<h2 class="colh away"><i class="sw away"></i>Beijing pulls away from Nvidia</h2>
+<article class="qc away"><p class="q">“Authorities privately told companies to halt their Nvidia purchases, while officials publicly raised cybersecurity concerns about the U.S. company’s products.”</p><p class="at"><i class="mk open away" title="press report citing unnamed people"></i><span><b>The Wall Street Journal</b>, <a href="https://www.wsj.com/world/china/china-ai-chips-race-949050d0">Jul 23, 2026, on the summer of 2025</a></span><span class="kind">A press report citing unnamed people.</span></p></article>
+<article class="qc away"><p class="q">“In September 2025, the Cyberspace Administration of China requested Chinese technology companies to halt purchases of certain chips.”</p><p class="at"><i class="mk solid away" title="on the record"></i><span><b>Alibaba</b>, <a href="https://data.alibabagroup.com/ir_filings/SEC/BABA/000119312526231755/baba-20260331.htm">annual report to the US securities regulator (Form 20-F), for the year to Mar 31, 2026</a></span><span class="kind">On the record: a company filing. The sentence does not name Nvidia.</span></p></article>
+<article class="qc away"><p class="q zh" lang="zh-Hans">“指导国产大模型加大力度适配国产算力芯片”</p><p class="en">(guiding home-made large models to do more to adapt to home-made computing chips)</p><p class="at"><i class="mk solid away" title="on the record"></i><span><b>Li Chao, of the state planner’s policy research office (NDRC)</b>, <a href="https://www.ndrc.gov.cn/xwdt/wszb/202605xwfbh/wzsl/202605/t20260522_1405394_ext.html">press conference of May 22, 2026</a></span><span class="kind">On the record: a named official. The sentence does not name Nvidia.</span></p></article>
+<h2 class="colh toward"><i class="sw toward"></i>The companies pull toward it</h2>
+<article class="qc toward"><p class="q">“Chinese firms still want Nvidia chips despite government pressure not to buy, sources say”</p><p class="at"><i class="mk open toward" title="press report citing unnamed people"></i><span><b>Reuters</b>, <a href="https://www.tradingview.com/news/reuters.com,2025:newsml_L1N3UK0DM:0-chinese-firms-still-want-nvidia-chips-despite-government-pressure-not-to-buy-sources-say/">headline of Sept 4, 2025</a></span><span class="kind">A press report citing unnamed people.</span></p></article>
+<article class="qc toward"><p class="q zh" lang="zh-Hans">“互联网企业自建算力集群，满足市场化企业需求，主要以英伟达高性能卡为主”</p><p class="en">(internet companies’ own computing clusters, which serve market demand, run mainly on Nvidia high-performance cards)</p><p class="at"><i class="mk solid toward" title="on the record"></i><span><b>Shanghai’s Commission of Economy and Informatization</b>, <a href="https://www.sheitc.sh.gov.cn/rddbta/20251110/e6cfe3270ca5483e93cbc55701492e6d.html">written reply dated Apr 30, 2025 (published Nov 10, 2025)</a></span><span class="kind">On the record: a government document. It speaks of computing in Shanghai.</span></p></article>
+<article class="qc toward"><p class="q">“Chinese technology companies have placed orders for more than 2 million H200 chips for 2026”</p><p class="at"><i class="mk open toward" title="press report citing unnamed people"></i><span><b>Reuters</b>, <a href="https://web.archive.org/web/20260101170120/https://www.investing.com/news/stock-market-news/exclusivenvidia-sounds-out-tsmc-on-new-h200-chip-order-as-china-demand-jumps-sources-say-4426223">Dec 31, 2025</a></span><span class="kind">A press report citing unnamed people.</span></p></article>
+  </div>
+  <section class="limit">
+   <h2>The limit</h2>
+   <div><p class="q">“The policy has taken the form of guidance rather than an outright ban”</p>
+    <p class="at"><i class="mk open" title="press report citing unnamed people"></i><span><b>Bloomberg</b>, <a href="https://www.businesstimes.com.sg/companies-markets/china-urges-local-companies-stay-away-nvidias-chips">Sept 27, 2024, as carried by The Business Times on Sept 28, 2024</a></span><span class="kind">A press report citing unnamed people.</span></p>
+    <p class="more">By this and later reports the pressure came as unpublished guidance; state media also warned in public, in the 7 items found that only warn about Nvidia’s chips, all dated Aug 1 to Sept 24, 2025. No published Chinese order against buying Nvidia chips was found in the 103 policy pages read.
+     This is one of five limits on the headline. The others: Beijing was not one actor; some purchases were approved and some chips came in; the companies had reasons of their own, and American curbs pushed too; and what Beijing meant by it is read both ways.</p></div>
+  </section>
+  <p class="foot">Words between quotation marks are the source’s own and were found in its saved copy by a script. English in round brackets is ours, not an official translation.</p>
+  <p class="imgnote">Draft by Claude, Anthropic’s model. Local; not published.</p>
+ </div>
+</div>
+</body>
+</html>

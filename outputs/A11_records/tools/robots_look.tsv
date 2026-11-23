@@ -1,0 +1,16 @@
+stockanalysis.com	200	*=True	Claude-User=True	https://stockanalysis.com/quote/hkg/0700/transcripts/346447-q2-2025/
+stockanalysis.com	200	*=True	Claude-User=True	https://stockanalysis.com/stocks/baba/transcripts/
+www.alibabagroup.com	200	*=True	Claude-User=True	https://www.alibabagroup.com/en-US/ir-financial-reports-quarterly-results
+data.alibabagroup.com	200	*=True	Claude-User=True	https://data.alibabagroup.com/ecms-files/1532295521/x/transcript.pdf
+www.tencent.com	200	*=True	Claude-User=True	https://www.tencent.com/en-us/investors/quarterly-result.html
+static.www.tencent.com	200	*=True	Claude-User=True	https://static.www.tencent.com/uploads/2025/08/13/x.pdf
+ir.baidu.com	403	*=False	Claude-User=False	https://ir.baidu.com/financial-reports
+www.appropriations.senate.gov	410	*=None	Claude-User=None	https://www.appropriations.senate.gov/hearings/watch?hearingid=04CFDE61-BD72-4D6A-B175-AE7A14071721
+www.appropriations.senate.gov	410	*=None	Claude-User=None	https://www.appropriations.senate.gov/download/lutnick-testimony-fy27
+www.senate.gov	200	*=True	Claude-User=True	https://www.senate.gov/isvp/?comm=approps&type=arch&filename=appropsC042226
+www.govinfo.gov	200	*=True	Claude-User=True	https://www.govinfo.gov/app/details/CHRG-119shrg00000/
+www.congress.gov	200	*=True	Claude-User=False	https://www.congress.gov/event/119th-congress/senate-event/337000
+s201.q4cdn.com	403	*=False	Claude-User=False	https://s201.q4cdn.com/141608511/files/content_files/NVDA-3Q27-Earnings-Transcript.pdf
+investor.nvidia.com	200	*=True	Claude-User=True	https://investor.nvidia.com/feed/SECFiling.svc/GetEdgarFilingList?year=2026
+www.ecfr.gov	200	*=True	Claude-User=True	https://www.ecfr.gov/current/title-17/section-249.308a
+www.fool.com	200	*=True	Claude-User=True	https://www.fool.com/earnings/call-transcripts/2025/11/18/baidu-bidu-q3-2025-earnings-call-transcript/

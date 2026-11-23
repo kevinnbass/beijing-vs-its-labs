@@ -1,0 +1,53 @@
+figure	value	how (all arithmetic is ours)
+600,000 chips at 27,000 US dollars each, billion US dollars	16.2	600,000 x 27,000; the price is a press figure from unnamed people
+the same in Hong Kong dollars at 7.8 to the US dollar, billion	126	the 7.8 rate is from general knowledge of the peg, not from a saved page
+16.2 billion divided by 2.4 billion	6.75	ratio; 2.4 billion is the licensed sales Nvidia stated for the quarter to Oct 25, 2026
+Nvidia: 1% of 89.0 billion (quarter to Jul 26, 2026) plus 2.4 billion (quarter to Oct 25, 2026), billion US dollars	3.29	sum; the first part is an upper bound
+that sum as a share of 16.2 billion, per cent	20	ratio; depends on the press price
+2.4 billion as a number of chips at the press price	88,889	2,400,000,000 / 27,000
+office machines and computers division, September 2026: total exports minus imports, million Hong Kong dollars	32089	difference, the release tables 6 and 7
+the same division, average month of January to September 2026: total exports minus imports, million Hong Kong dollars	19198	difference of the nine-month totals, divided by 9
+Hong Kong imports of US origin, three named headings, 2025, million US dollars	1168.8	sum of 12 months
+the same: January to July 2026	1108.5	sum of 7 months
+the same: highest month in the 19 months	226.1 (202603)	maximum
+Hong Kong imports of origin Other Asia, nes (code 490), three named headings, January to July 2026, million US dollars	2414.2	sum of 7 months
+Hong Kong imports, three named headings, all origins, January to July 2026, million US dollars	49077.4	sum of 7 months
+Hong Kong total exports, three named headings, January to July 2026, million US dollars	65880.7	sum of 7 months
+Hong Kong chips (8542.31): imports minus total exports, 2025, million US dollars	11671.4	difference of sums
+the same: January to July 2026	5953.3	difference of sums
+office machines and computers division, imports, September 2026, million Hong Kong dollars	103358	the release, table 7
+the same division, total exports, September 2026, million Hong Kong dollars	135447	the release, table 6
+the same division, imports, January to September 2026, million Hong Kong dollars	660400	the release, table 7
+the same division, total exports, January to September 2026, million Hong Kong dollars	833184	the release, table 6
+the same division, imports, average month of January to September 2026, million Hong Kong dollars	73378	January-September divided by 9
+months, of the 19, in which total exports exceeded imports under the three named headings	19	count
+smallest and largest monthly excess of exports over imports, three named headings, million US dollars	489.9 and 3559.2	minimum and maximum
+months, of the 19, in which chip (8542.31) imports exceeded total exports	19	count
+US exports to Hong Kong, three named headings, January to August 2026, million US dollars (US as reporter)	1088.5	sum of 8 months
+Hong Kong imports, three named headings, all origins: average month of 2025, then of January to July 2026, million US dollars	4940 then 7011	sums divided by 12 and by 7
+Hong Kong imports, three named headings, mainland China origin: average month of 2025, then of January to July 2026, million US dollars	2397 then 3851	sums divided by 12 and by 7
+Hong Kong imports, three named headings, South Korea origin: average month of 2025, then of January to July 2026, million US dollars	354 then 1125	sums divided by 12 and by 7
+Hong Kong imports, three named headings, origin Other Asia, nes (code 490): average month of 2025, then of January to July 2026, million US dollars	949 then 345	sums divided by 12 and by 7
+Hong Kong imports, three named headings, United States origin: average month of 2025, then of January to July 2026, million US dollars	97 then 158	sums divided by 12 and by 7
+Hong Kong total exports, three named headings: average month of 2025, then of January to July 2026, million US dollars	5967 then 9412	sums divided by 12 and by 7
+Hong Kong imports of origin Other Asia, nes (code 490), three named headings, March 2025 alone, million US dollars	4063.0	one month
+Hong Kong imports, three named headings, origins United States and Other Asia, nes (code 490) together, February to July 2026, million US dollars	3061.7	sum of 6 months, two origins
+Hong Kong total exports to mainland China, 8473.30 parts and accessories of computers: January to July 2025, then January to July 2026, billion US dollars	16.46 then 36.90	sums of 7 months each
+Hong Kong total exports to mainland China, 8471.80 other units of computers: January to July 2025, then January to July 2026, billion US dollars	12.75 then 7.02	sums of 7 months each
+Hong Kong total exports to mainland China, 8471.50 processing units: January to July 2025, then January to July 2026, billion US dollars	3.90 then 4.19	sums of 7 months each
+Hong Kong total exports to mainland China, 8542.31 processors and controllers (chips): January to July 2025, then January to July 2026, billion US dollars	48.56 then 52.37	sums of 7 months each
+Hong Kong total exports under the three named headings, January to July 2026: all destinations, then mainland China, billion US dollars	65.9 then 48.1	sums of 7 months
+Hong Kong imports under 8473.30 recorded as origin Other Asia, nes (code 490), 2025, against Taiwan's own exports of computer parts to Hong Kong, thousand US dollars; ratio	3,328,303 against 1,082,525; 3.07	imports are by origin and CIF, exports by destination and FOB: two measures, set side by side
+Hong Kong imports under 8473.30 recorded as origin Other Asia, nes (code 490), January to July 2026, against Taiwan's own exports of computer parts to Hong Kong, thousand US dollars; ratio	1,891,365 against 1,731,044; 1.09	imports are by origin and CIF, exports by destination and FOB: two measures, set side by side
+Taiwan's exports to Hong Kong, January to October 2026, thousand US dollars: computers (all of heading 8471); computer parts (8473.30); integrated circuits	1,668,618; 3,022,251; 60,377,131	L18's table of the saved ministry page; cells re-checked here
+the same, computers plus computer parts, January to October 2026, billion US dollars	4.69	sum of two groups
+the same, computers plus computer parts, July to October 2026, billion US dollars	2.13	sum of two groups, four months
+the same, October 2026 alone, million US dollars	604	one month
+office machines and computers division (75), imports, June, July, August, September 2026, million Hong Kong dollars	70,381; 76,920; 101,100; 103,358	Hong Kong's monthly table 410-50031
+the same division, total exports, June, July, August, September 2026, million Hong Kong dollars	95,154; 105,222; 106,211; 135,447	Hong Kong's monthly table 410-50032
+the same division: total exports minus imports, June, July, August, September 2026, million Hong Kong dollars	24,773; 28,302; 5,111; 32,089	ours
+the same: average month of 2025, then of January to September 2026	8,340 then 19,270	ours, from the monthly figures
+the same: August plus September 2026	37,200	ours
+months, of the 21 from January 2025 to September 2026, in which the division's total exports exceeded its imports	21	count
+Singapore, line 84718010: re-exports to Hong Kong, January to June 2026, then July to October 2026, thousand Singapore dollars (units of the second in brackets)	23,389 then 230,839 (44,007)	raw answers of Singapore's statistics service, kept by L18 with their sha256; not in research/primary
+Singapore, line 84718010: re-exports to mainland China, July to October 2026, thousand Singapore dollars	3,036,175	raw answers of Singapore's statistics service, kept by L18 with their sha256; not in research/primary

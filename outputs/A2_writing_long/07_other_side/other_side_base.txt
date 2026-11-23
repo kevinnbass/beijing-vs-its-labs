@@ -1,0 +1,58 @@
+# The other side at full strength
+@deck The best honest case that Beijing and China's AI companies were not in real conflict over Nvidia's chips, put as strongly as the sources allow. Then what that case cannot explain.
+
+@note Draft by Claude, Anthropic's model. Local; not published. Written Nov 23, 2026 (UTC).
+@note How to read it. Words between quotation marks are a source's exact words, found in the saved copy by a script. A filled reference number is a document, a filing or a named person on the record. An open number is a press report citing unnamed people or a research firm's count. Where a statement rests on a Chinese text, the English is our rendering, not an official translation.
+@note The author's interest. Anthropic has argued in public for controls on chip exports to China (that is from the model's general knowledge; no saved page is cited for it), so judge this piece by its sources.
+
+## The case, in seven parts
+
+The claim under test: Beijing's chip policy pulled against China's own AI companies, which wanted Nvidia's chips. The strongest reply is that there was a preference, not a conflict, and that part of what stood between the companies and Nvidia's chips was American.
+
+1. **Ministers welcomed Nvidia, and ministries approved purchases.** Vice Premier He Lifeng told Nvidia's chief executive on Apr 17, 2025 that Nvidia was welcome [cn-policy-he-welcomes]. The commerce minister told him on Jul 17, 2025 that he hoped Nvidia would supply Chinese customers [cn-policy-wang-nvidia]. Reuters, Jan 30, 2026, from unnamed people, on the H200: "China's industry and commerce ministries have granted approvals for all four companies" (DeepSeek, ByteDance, Alibaba and Tencent) [cn-acts-reuters-deepseek-20260130].
+!! cn-acts-reuters-deepseek-20260130 | China has given its top AI startup DeepSeek approval to buy
+!! cn-acts-reuters-deepseek-20260130 | had been given permission to purchase more than 400,000 H200 chips in total
+!! cn-policy-he-welcomes | 新华社北京4月17日电
+!! cn-policy-he-welcomes | 欢迎包括英伟达公司在内的更多美资企业深耕中国市场
+!! cn-policy-wang-nvidia | 7月17日,商务部部长王文涛会见美国英伟达公司总裁兼首席执行官黄仁勋
+!! cn-policy-wang-nvidia | 希望包括英伟达在内的跨国公司为中国客户提供优质可靠的产品和服务
+!! cn-acts-reuters-deepseek-20260130 | SINGAPORE, Jan 30 (Reuters)
+2. **No ban was published.** No published order against buying Nvidia chips was found in the 103 policy pages read. One of that kind was published in May 2023, when the cyberspace regulator's review office concluded that operators of critical information infrastructure should stop buying Micron's products [cn-policy-micron-decision].
+!! cn-policy-micron-decision | 2023年05月21日
+!! cn-policy-micron-decision | 关键信息基础设施的运营者应停止采购美光公司产品
+!! cn-policy-micron-decision | 网络安全审查办公室依法作出不予通过网络安全审查的结论
+3. **The written rules stop at the state's own purchases.** The purchase notices of Dec 26, 2023 bind Party and government bodies and say that other units may leave the requirement out [cn-policy-desktop-2023]. Every home-made percentage found in a published text is a province's or a city's, and Jiangsu's plan marks its own as indicative, not binding [cn-factions-jiangsu-plan].
+!! cn-factions-jiangsu-plan | 新建算力中心国产算力芯片使用占比(%) 50 70 预期性
+!! cn-factions-jiangsu-plan | 2025 年 2030 年 属性
+!! cn-policy-desktop-2023 | 发布日期:2023年12月26日
+!! cn-policy-desktop-2023 | 其他单位可不在采购需求中提出此项要求
+4. **Chips came in.** By the research firm IDC's count, "Nvidia shipped 678,000 AI accelerators in China from January through June" of 2026; the firm does not say which Nvidia products [cn-usside-044-relay1]. Tencent's chief strategy officer spoke on Mar 18, 2026 of buying "higher-end imported GPUs which are now becoming available again" [cn-o36-tencent-call-20260318-sa].
+!! cn-usside-044-relay1 | IDC did not specify which Nvidia products made up its 34% market share
+!! cn-usside-044-relay1 | in the first half of 2026
+!! cn-o36-tencent-call-20260318-sa | Earnings Call: Q4 2025 Mar 18, 2026
+!! cn-o36-tencent-call-20260318-sa | It comes from us purchasing
+5. **Washington stood in the way too.** Nvidia's reports since November 2025 say: "we are already effectively foreclosed from the China market by U.S. export controls" [man-ms-sec-10q-2025-10]. Washington's table of licence applications shows that by May 11, 2026 it had returned without action 55% of the chips in the applications its summary records. It gives no reason, and the House committee that released it says the summary does not show every application in full [cn-usdocs-hfac-decisions-20261119] [cn-usdocs-hfac-summary-20261119]. The person who told Reuters that Chinese firms pulled back after guidance from Beijing also said the shift "was partly triggered by changes on the U.S. side" [cn-acts-reuters-us-approvals-20260514-wayback].
+!! man-ms-sec-10q-2025-10 | November 19, 2025
+!! man-ms-sec-10q-2026-07 | already effectively foreclosed from the China market by U.S. export controls
+!! cn-usdocs-hfac-decisions-20261119 | H200 License and Equivalent Application Status as of May 11, 2026
+!! cn-usdocs-hfac-decisions-20261119 | Bytedance System SDN 508,000 RWA Malaysia
+!! cn-usdocs-hfac-summary-20261119 | BIS received applications to sell 3,444,160 covered integrated circuits
+!! cn-usdocs-hfac-summary-20261119 | not fully reflected in the May 11, 2026, summary document
+!! cn-acts-reuters-us-approvals-20260514-wayback | Chinese firms pulled back after guidance from Beijing, one source said
+6. **Beijing may have wanted more chips, not fewer.** The Congressional Research Service, Sept 19, 2025: China "may use its purported security concerns about the H20 to press for technology disclosures and access to more advanced chips, such as Nvidia's B30 chip" [cn-usdocs-crs-r48642-20250919].
+!! cn-usdocs-crs-r48642-20250919 | September 19, 2025
+7. **The companies had a path of their own.** Alibaba says its chip unit "has brought proprietary GPUs into scaled production" [cn-policy-alibaba-own-gpu]. Zhipu said in January 2026 that its image model had completed "its full training cycle on Chinese-made chips" [cn-train-infoworld-zhipu-glm]. The President, asked on May 15, 2026 whether China had bought any H200s: "No, because they chose not to. They want to try and develop their own." [cn-usdocs-trump-20260515]
+!! cn-train-infoworld-zhipu-glm | PUBLISHED: January 14, 2026
+!! cn-usdocs-trump-20260515 | But they haven't bought any so far?
+!! cn-usdocs-trump-20260515 | May 15, 2026
+
+## What this case cannot explain
+
+- **Two filings.** Nvidia told the US securities regulator on Nov 19, 2025 that the Chinese government "restricted customers from purchasing, importing, or using our data center products" [man-ms-sec-10q-2025-10]. Alibaba told it: "In September 2025, the Cyberspace Administration of China requested Chinese technology companies to halt purchases of certain chips." [cn-clips-alibaba-20f]
+- **Orders that became almost nothing** (reported, from unnamed people). Chinese companies "have placed orders for more than 2 million H200 chips for 2026" [cn-labs-h200-two-million-202512-relay1-wayback]. By August 2026 ByteDance and Tencent had "about 10,000 H200 processors" each [cn-tolerate-reutersaug26-relay1-wayback]. In November about 600,000 chips waited in Hong Kong "as Beijing withholds approval for large-scale imports despite demand from technology firms" [cn-clips-evidence-1].
+!! cn-clips-evidence-1 | About 600,000 of Nvidia's advanced artificial intelligence chips are stored in Hong Kong awaiting shipment to China
+- **Licences without sales.** Nvidia, on its call of May 20, 2026, of chips Washington had licensed: "we have yet to generate any revenue, and we are uncertain whether any imports will be allowed into the country" [cn-o38-nvda-q1fy27-call-transcript-pdf].
+!! cn-o38-nvda-q1fy27-call-transcript-pdf | Corrected Transcript 20-May-2026
+!! cn-o38-nvda-q1fy27-call-transcript-pdf | While the US government has approved licenses for H200 to be shipped to China-based customers
+
+Each part of that case is in the record, some as a reading or a company's own claim. Together they limit the claim: Beijing was not one actor, it warned and guided but published no ban, some chips came in, the companies had reasons of their own and American curbs pushed too, and what Beijing meant is not settled. They do not show that nothing stood between the companies and the chips they ordered.

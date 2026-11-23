@@ -1,0 +1,57 @@
+# typed line of transcription.txt @@ how it stands in the saved capture of the same page. Written by build.py.
+man-cn-o39-qinghai-green-compute-2024 @@ 青海省人民政府办公厅 @@ word for word
+man-cn-o39-qinghai-green-compute-2024 @@ 关于印发青海省绿色算力基地建设方案的通知 @@ word for word
+man-cn-o39-qinghai-green-compute-2024 @@ 青政办〔2024〕7号 @@ word for word
+man-cn-o39-qinghai-green-compute-2024 @@ 《青海省绿色算力基地建设方案》已经省政府第26次常务会议审议通过,现印发给你们,请认真抓好贯彻落实。 @@ word for word
+man-cn-o39-qinghai-green-compute-2024 @@ 青海省人民政府办公厅 @@ word for word
+man-cn-o39-qinghai-green-compute-2024 @@ 2024年2月5日 @@ word for word
+man-cn-o39-qinghai-green-compute-2024 @@ 全省数据中心标准机架规模超过10万架,上架率达到65%以上。 @@ word for word
+man-cn-o39-qinghai-green-compute-2024 @@ 算力规模稳步扩张。算力总规模超过2.06EFLOPS,其中智能算力占比超过35%。 @@ word for word
+man-cn-o39-qinghai-green-compute-2024 @@ 运载能力不断提升。省内数据中心间时延低于2ms,至国家算力枢纽节点时延不高于20ms,重点场所算力网络(OTN)通达率超过50%,1ms全光城市数量达到5个。 @@ word for word
+man-cn-o39-qinghai-green-compute-2024 @@ 存储能力持续增长。存力总规模超过10.7EB,先进存储容量占比达到30%以上,数据中心核心数据灾备存储达到100%。 @@ word for word
+man-cn-o39-qinghai-green-compute-2024 @@ 7.着力推动创新应用。加大技术攻关力度,深化清洁能源、数据中心、智能电网等各领域的交叉创新,不断形成技术优势。支持有条件的地区开展“清洁能源+绿色算力”型源网荷储一体化模式、自主可控绿色数据中心等试点示范、应用推广。 @@ word for word
+man-cn-o39-qinghai-compute-15fyp-2026 @@ 青海省人民政府 @@ word for word
+man-cn-o39-qinghai-compute-15fyp-2026 @@ 关于印发《青海省绿色算力产业发展“十五五”规划》的通知 @@ word for word
+man-cn-o39-qinghai-compute-15fyp-2026 @@ 青政〔2026〕57号 @@ word for word
+man-cn-o39-qinghai-compute-15fyp-2026 @@ 现将《青海省绿色算力产业发展“十五五”规划》印发给你们，请认真贯彻执行。 @@ word for word
+man-cn-o39-qinghai-compute-15fyp-2026 @@ 青海省人民政府 @@ word for word
+man-cn-o39-qinghai-compute-15fyp-2026 @@ 2026年8月25日 @@ word for word
+man-cn-o39-qinghai-compute-15fyp-2026 @@ 基本形成底座坚实、链条完整、业态丰富、安全可控的绿色算力产业体系。 @@ word for word
+man-cn-o39-qinghai-compute-15fyp-2026 @@ 表1 “十五五”时期绿色算力产业发展主要指标 @@ NOT in the capture text (a table or box that is an image there too): rests on the page image alone
+man-cn-o39-qinghai-compute-15fyp-2026 @@ 序号 类别 指标名称 单位 2025年 2030年 指标属性 @@ NOT in the capture text (a table or box that is an image there too): rests on the page image alone
+man-cn-o39-qinghai-compute-15fyp-2026 @@ 1 算电协同 数据中心平均电能利用效率（PUE） / 1.20 ≤1.18 约束性 @@ NOT in the capture text (a table or box that is an image there too): rests on the page image alone
+man-cn-o39-qinghai-compute-15fyp-2026 @@ 2 算电协同 数据中心绿电使用占比 % 80 ≥90 预期性 @@ NOT in the capture text (a table or box that is an image there too): rests on the page image alone
+man-cn-o39-qinghai-compute-15fyp-2026 @@ 3 算力设施 数据中心标准机架规模 万架 4 15 预期性 @@ NOT in the capture text (a table or box that is an image there too): rests on the page image alone
+man-cn-o39-qinghai-compute-15fyp-2026 @@ 4 算力设施 算力规模（FP16） PFLOPS 2.2万 10万 预期性 @@ NOT in the capture text (a table or box that is an image there too): rests on the page image alone
+man-cn-o39-qinghai-compute-15fyp-2026 @@ 5 算力设施 互联网省际出口带宽 Tbps 21.9 29 预期性 @@ NOT in the capture text (a table or box that is an image there too): rests on the page image alone
+man-cn-o39-qinghai-compute-15fyp-2026 @@ 6 数据要素 高质量数据集数量 个 / 30 预期性 @@ NOT in the capture text (a table or box that is an image there too): rests on the page image alone
+man-cn-o39-qinghai-compute-15fyp-2026 @@ 7 数据要素 特色应用场景数量 个 / 50 预期性 @@ NOT in the capture text (a table or box that is an image there too): rests on the page image alone
+man-cn-o39-qinghai-compute-15fyp-2026 @@ 推动算力中心部署自主可控、安全可靠的算力设备，探索建设国产算力生态中试场。 @@ word for word
+man-cn-o39-qinghai-compute-15fyp-2026 @@ 专栏1 算力基础设施提质升级 @@ NOT in the capture text (a table or box that is an image there too): rests on the page image alone
+man-cn-o39-qinghai-compute-15fyp-2026 @@ 3. 搭建国产生态适配中试基地。依托青海绿色算电协同独特禀赋，构建覆盖国芯、国算、国模、国用的一体化适配验证中试载体，完整打通自主可控算力产业全链条。 @@ NOT in the capture text (a table or box that is an image there too): rests on the page image alone
+man-cn-o39-qinghai-compute-15fyp-2026 @@ 五、培育高原特色算力制造产业 @@ word for word
+man-cn-o39-qinghai-compute-15fyp-2026 @@ (一)发展绿色算力设备制造业。 @@ word for word
+man-cn-o39-qinghai-compute-15fyp-2026 @@ 发展电子设备整机装配，引进一批自主可控计算机及服务器、网络设备企业的生产线落地，有序发展设备认证测试、运维服务等业务。 @@ word for word
+man-cn-o39-hunan-green-compute-plan-2025 @@ 关于印发《湖南省绿色智能计算产业高质量发展规划（2025—2030年）》的通知 @@ word for word
+man-cn-o39-hunan-green-compute-plan-2025 @@ 时间：2025年02月24日 11:30 @@ word for word
+man-cn-o39-hunan-green-compute-plan-2025 @@ 湘工信信软〔2025〕53号 @@ word for word
+man-cn-o39-hunan-green-compute-plan-2025 @@ 《湖南省绿色智能计算产业高质量发展规划（2025—2030年）》已经省人民政府同意，现印发给你们，请认真贯彻执行。 @@ word for word
+man-cn-o39-hunan-green-compute-plan-2025 @@ 湖南省工业和信息化厅 @@ word for word
+man-cn-o39-hunan-green-compute-plan-2025 @@ 2025年2月23日 @@ word for word
+man-cn-o39-hunan-green-compute-plan-2025 @@ 三是关联产业潜力迸发。攻克高性能异构算法等关键核心技术40余项，2024年人工智能产业规模达710亿元。集成电路整线装备国产化率达95%，2024年新一代半导体产业规模达300亿元。 @@ word for word
+man-cn-o39-hunan-green-compute-plan-2025 @@ 表1 绿色智能计算产业发展主要目标 @@ word for word
+man-cn-o39-hunan-green-compute-plan-2025 @@ 分类目标 单位 2025年 2027年 2030年 属性 @@ word for word
+man-cn-o39-hunan-green-compute-plan-2025 @@ 产业规模 绿色智能计算产业规模 万亿元 1 1.3 2 预期性 @@ word for word
+man-cn-o39-hunan-green-compute-plan-2025 @@ 产业基础 特色产业集群 个 3 6 8 预期性 @@ word for word
+man-cn-o39-hunan-green-compute-plan-2025 @@ 产业基础 特色产业园区 个 4 8 10 预期性 @@ word for word once the repeated category cell is set aside
+man-cn-o39-hunan-green-compute-plan-2025 @@ 智能发展 智能算力规模 EFlops 3 5.25 12 预期性 @@ word for word
+man-cn-o39-hunan-green-compute-plan-2025 @@ 智能发展 行业大模型数量 个 40 50 80 预期性 @@ word for word once the repeated category cell is set aside
+man-cn-o39-hunan-green-compute-plan-2025 @@ 智能发展 典型应用场景 个 150 200 300 预期性 @@ word for word once the repeated category cell is set aside
+man-cn-o39-hunan-green-compute-plan-2025 @@ 绿色发展 智算中心平均利用率 % 60 70 75 预期性 @@ word for word
+man-cn-o39-hunan-green-compute-plan-2025 @@ 绿色发展 智算中心平均PUE / 1.4 1.35 1.3 约束性 @@ word for word once the repeated category cell is set aside
+man-cn-o39-hunan-green-compute-plan-2025 @@ 绿色发展 绿色园区 个 3 7 10 预期性 @@ word for word once the repeated category cell is set aside
+man-cn-o39-hunan-green-compute-plan-2025 @@ 锻造先进计算“硬内核”。发展关键计算基础硬件，推进芯片技术路线整合和迭代，推动产品性能升级，支持计算芯片制造、封装、测试等生产线布局，缩小与国际先进产品差距。 @@ word for word
+man-cn-o39-hunan-green-compute-plan-2025 @@ 采用国产芯片、持续自主调优，培育适应音视频内容制作需求的视听多模态大模型，运用智能渲染技术提升分辨率和刷新率，提供安全、高质、高效的视频生成、剪辑、修复、内容理解与分析等辅助服务。 @@ word for word
+man-cn-o39-hunan-green-compute-plan-2025 @@ 专栏1 特色集群培育工程 @@ word for word
+man-cn-o39-hunan-green-compute-plan-2025 @@ 长沙市新一代自主安全计算系统产业集群。推动打造计算整机“湖南造”、关键零部件“湖南产”、核心元器件“湖南芯”的全本地配套、全国产智能计算系统。 @@ word for word
+man-cn-o39-hunan-green-compute-plan-2025 @@ 强化智能算力供给。推动传统数据中心改造升级为智算中心，提升智能算力供给能力。加快建设国家新一代人工智能公共算力开放创新平台，推动央企在湘布局建设智能计算万卡集群，增强智能计算万卡集群调度能力。加强新招引或升级改造的数据中心建设项目、数据平台类项目，在绿色节能、供应链安全、需求预期等方面可行性评估。 @@ word for word

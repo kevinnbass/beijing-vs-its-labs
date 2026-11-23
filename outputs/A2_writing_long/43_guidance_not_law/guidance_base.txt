@@ -1,0 +1,84 @@
+# Guidance, not law
+@deck How Beijing steered China's AI companies away from Nvidia's chips without publishing an order, shown on this one case.
+
+@note Draft by Claude, Anthropic's model. Local; not published. Written Nov 23, 2026 (UTC).
+@note How to read it. Words between quotation marks are a source's exact words, found in the saved copy by a script. A filled reference number is a document, a filing or a named person on the record. An open number is a press report citing unnamed people. English in round brackets after Chinese is our rendering, not an official translation.
+@note The author's interest. Anthropic has argued in public for controls on chip exports to China (that is from the model's general knowledge; no saved page is cited for it), so judge this piece by its sources.
+
+## Pressure without a rule
+
+From 2024 the security and planning side of the Chinese state pressed China's AI companies to buy home-made chips rather than Nvidia's. It did so through guidance that was never published and, in August and September 2025, through warnings in state media. No published order was found in the 103 policy pages read. Five things in the record show how that works.
+
+**1. The press reports call it guidance** (press reports citing unnamed people)
+
+Bloomberg, Sept 27, 2024: regulators were discouraging purchases of Nvidia's H20 chip through what it called window guidance, "instructions without the force of law" [cn-factions-bloomberg-flexibility-202409-relay1].
+!! cn-factions-bloomberg-flexibility-202409-relay1 | Chinese regulators have been discouraging companies from purchasing Nvidia's H20 chips
+!! cn-factions-bloomberg-flexibility-202409-relay1 | issued so-called window guidance
+!! cn-factions-bloomberg-flexibility-202409-relay1 | PUBLISHED: 2024-09-27
+The Financial Times, Aug 20, 2025: in July the cyberspace regulator sent companies "an informal notice", "instructing them to halt new orders for Nvidia's H20 chips" [man-cn-ft-20250821-regulators].
+!! man-cn-ft-20250821-regulators | Published AUG 20 2025
+!! man-cn-ft-20250821-regulators | according to people with knowledge of the regulator's effort
+!! man-cn-ft-20250821-regulators | Lutnick told CNBC on July 15
+!! man-cn-ft-20250821-regulators | A week after his comments
+One headline says ban: the same paper's "China bans tech companies from buying Nvidia's AI chips", Sept 17, 2025. It describes an order told to companies, by three unnamed people, not a published rule [man-cn-ft-20250917-6000d].
+!! man-cn-ft-20250917-6000d | Published SEP 17 2025
+!! man-cn-ft-20250917-6000d | according to three people with knowledge of the matter
+
+**2. In public, state media warned, in August and September 2025** (on the record)
+
+Of 42 state-media items on Nvidia chips found from July 2025 to November 2026, the seven that only warn about them all date from Aug 1 to Sept 24, 2025 [cn-acts-peoplesdaily-bjd-20250801] [cn-media-stdaily-security-forum].
+!! cn-acts-peoplesdaily-bjd-20250801 | 2025-08-01
+!! cn-acts-peoplesdaily-bjd-20250801 | 绝不能让“带病”的芯片上岗
+!! cn-media-stdaily-security-forum | 2025-09-24
+One, from an account of the state broadcaster on Aug 10, said of the H20: "作为消费者，我们当然可以选择，不买" (as consumers we can of course choose not to buy) [cn-le13-yuyuan-qq-20250810b] [cn-le13-cja36-winners-xinhuanet-20261108].
+!! cn-le13-yuyuan-qq-20250810b | 2025-08-10T11:47:34+08:00
+!! cn-le13-yuyuan-qq-20250810b | 既不环保，也不先进，更不安全
+!! cn-le13-cja36-winners-xinhuanet-20261108 | 发布端/账号/媒体名称：玉渊谭天Bilibili账号 原创单位：中央广播电视总台
+They warn and urge. None forbids.
+
+**3. Two published texts tell buyers to stop; neither is about Nvidia** (on the record)
+
+On May 21, 2023 the cyberspace regulator's review office published its conclusion on Micron: operators of critical information infrastructure should stop buying its products [cn-policy-micron-decision] [cn-policy-review-measures].
+!! cn-policy-micron-decision | 2023年05月21日
+!! cn-policy-micron-decision | 网络安全审查办公室依法作出不予通过网络安全审查的结论
+!! cn-policy-micron-decision | 关键信息基础设施的运营者应停止采购美光公司产品
+!! cn-policy-review-measures | 网络安全审查办公室设在国家互联网信息办公室
+On Jun 22, 2026 the finance ministry barred government buyers from the products of 46 named American firms; Nvidia is not on the list [cn-le14-mof-us-firms-measures-20260622] [cn-le14-mof-us-firms-list-20260622].
+!! cn-le14-mof-us-firms-measures-20260622 | 不得采购46家美国企业（不包括在华美资企业）生产的产品
+!! cn-le14-mof-us-firms-measures-20260622 | 财政部 2026年6月22日
+!! cn-le14-mof-us-firms-list-20260622 | Lockheed Martin
+For Nvidia the cyberspace regulator published a summons, on Jul 31, 2025, and no such conclusion that we found [cn-policy-cac-h20-original].
+!! cn-policy-cac-h20-original | 于2025年7月31日约谈了英伟达公司
+
+**4. The written rules cover only the state's own buying** (on the record)
+
+Notices published on Dec 26, 2023 require Party and government bodies to write into their purchases of computers and servers that the processor and operating system meet a security evaluation. The same sentence adds: "其他单位可不在采购需求中提出此项要求" (other units may leave this requirement out) [cn-policy-desktop-2023] [cn-policy-server-procurement-2023].
+!! cn-policy-desktop-2023 | 发布日期:2023年12月26日
+!! cn-policy-desktop-2023 | 应当将CPU、操作系统符合安全可靠测评要求纳入采购需求，其他单位可不在采购需求中提出此项要求
+!! cn-policy-server-procurement-2023 | 发布日期:2023年12月26日
+!! cn-policy-server-procurement-2023 | 应当将CPU、操作系统符合安全可靠测评要求纳入采购需求
+!! cn-policy-server-procurement-2023 | 其他单位可不在采购需求中提出此项要求
+No published national share for home-made chips was found: every percentage found in a published text is a province's or a city's, and the national computing-network opinions of December 2023 set none [cn-policy-computing-network-1779].
+!! cn-policy-computing-network-1779 | 算力网关键核心技术基本实现安全可靠
+
+**5. Asked in public, officials did not say** (on the record)
+
+Asked what Beijing was doing about Nvidia's chips, the foreign ministry's spokespeople sent reporters elsewhere at least four times from August 2025 to November 2026 [cn-counter-b3-2] [cn-acts-mfa-20251210] [cn-acts-mfa-20260129] [cn-acts-mfa-20261109].
+!! cn-counter-b3-2 | 2025年8月22日外交部发言人毛宁主持例行记者会
+!! cn-counter-b3-2 | 这个问题建议向中方主管部门了解
+!! cn-acts-mfa-20251210 | 2025年12月10日外交部发言人郭嘉昆主持例行记者会
+!! cn-acts-mfa-20251210 | 具体情况建议向中方主管部门询问
+!! cn-acts-mfa-20260129 | 2026年1月29日外交部发言人郭嘉昆主持例行记者会
+!! cn-acts-mfa-20260129 | 具体问题建议向中方主管部门进行询问
+!! cn-acts-mfa-20261109 | 2026年11月9日外交部发言人郭嘉昆主持例行记者会
+!! cn-acts-mfa-20261109 | 约60万枚英伟达先进人工智能芯片存放在香港
+On Nov 9, 2026: "具体情况建议向中方主管部门询问" (for specifics, I suggest you ask the competent Chinese departments) [cn-acts-mfa-20261109].
+
+## What guidance did here
+
+It left no rule to cite, and by the reports it was tightened and eased within two weeks. An unnamed person told Reuters on Jan 14, 2026 that officials' wording "is basically a ban for now, though this might change in the future should things evolve" [cn-acts-reuters-customs-20260114]. On Jan 28 Reuters reported approvals "with conditions" for three companies [ms-bj-20260128-h200-nod-standard].
+!! cn-acts-reuters-customs-20260114 | PUBLISHED: 2026-01-14
+!! cn-acts-reuters-customs-20260114 | The wording from the officials is so severe that it
+!! ms-bj-20260128-h200-nod-standard | PUBLISHED: 2026-01-28
+So ban is the wrong word for what Beijing did. Nothing is the wrong word too: Nvidia told the US securities regulator on Nov 19, 2025 that the Chinese government "restricted customers from purchasing, importing, or using our data center products" [man-ms-sec-10q-2025-10].
+!! man-ms-sec-10q-2025-10 | November 19, 2025

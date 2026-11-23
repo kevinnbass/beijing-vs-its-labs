@@ -1,0 +1,82 @@
+== date
+2026-11-23 12:22 UTC
+== core copies: python3 -I check_core_copies.py
+surviving sentence: same as the argument in 04_right_and_too_flat/right_too_flat_base.txt
+surviving sentence: same as the argument in 05_questions_and_answers/questions_answers_base.txt
+control: a copy with one word changed is not found
+08, statement of the answer: 8 of 8 sentences stand in the argument's own paragraph
+limits in the argument: 5 ("five")
+old wording: 20 delivered files searched for 22 retired phrases and 31 ids; control phrase "five limits" found: True
+result: the folder agrees with the core in what it copies, and the retired wording is gone
+exit=0
+== idea 3: python3 -I 03_thread/make_thread_plain.py
+thread: about 688 words; 13 sources (7 on the record); quotations checked 7, hidden statements 27, all found; control rejected
+argument, counted by script: 21 points, 209 sources, 5 limits; figure: 61 records
+thread: 10 posts; characters with the number in front (plain / X weighted):
+  1/10: 275 / 275  (room left 5)
+  2/10: 266 / 266  (room left 14)
+  3/10: 270 / 270  (room left 10)
+  4/10: 269 / 269  (room left 11)
+  5/10: 277 / 277  (room left 3)
+  6/10: 271 / 271  (room left 9)
+  7/10: 276 / 276  (room left 4)
+  8/10: 266 / 266  (room left 14)
+  9/10: 276 / 276  (room left 4)
+  10/10: 276 / 276  (room left 4)
+longest post: 277 characters; limit 280
+control: a 281-character line is over the limit, and 141 Chinese characters weigh 282
+exit=0
+== idea 4: bash 04_right_and_too_flat/build.sh
+right_too_flat: about 1063 words; 22 sources (11 on the record); quotations checked 29, hidden statements 23, all found; control rejected
+exit=0
+== idea 5: python3 -I 05_questions_and_answers/build.py
+questions_answers: about 1404 words; 27 sources (20 on the record); quotations checked 22, hidden statements 44, all found; control rejected
+argument, counted by script: 21 points, 209 sources, 5 limits
+state media, from tables/state_media_items.tsv: 42 items; 7 only warn, dated 2025-08-01 to 2025-09-24 ("Aug 1 to Sept 24, 2025")
+licence table, from tables/house_licence_table.tsv: 54 applications, 3,444,160 chips; returned without action 1,888,950 (54.85%, shown as 55%); approved 879,868 in 21, every one marked "Approved, not shipped": True; statuses ['Approved, not shipped', 'RWA', 'Rejected', 'Submitted']
+ids cited: 30; on the do-not-cite list of 20: 0
+  1. Did China ban Nvidia chips?  sentences in the answer: 3; sources cited: 1
+  2. Then what did Beijing do in public?  sentences in the answer: 3; sources cited: 5
+  3. Has anyone said on the record that purchases were restricted?  sentences in the answer: 3; sources cited: 3
+  4. Do China's AI companies want Nvidia chips?  sentences in the answer: 3; sources cited: 2
+  5. Why would Beijing hold back chips its own companies want?  sentences in the answer: 3; sources cited: 3
+  6. What are the 600,000 chips in Hong Kong?  sentences in the answer: 3; sources cited: 2
+  7. Was an import permit refused?  sentences in the answer: 3; sources cited: 2
+  8. Did any Nvidia chips get in?  sentences in the answer: 3; sources cited: 3
+  9. Did the whole Chinese government take one side?  sentences in the answer: 3; sources cited: 3
+  10. Was Beijing the only thing in the way?  sentences in the answer: 3; sources cited: 4
+questions: 10; longest answer: 3 sentences; control: a four-sentence answer counts as 4
+exit=0
+== idea 8: bash 08_what_would_change/build.sh
+cn-le05-sec-submissions-20261123: saved 2026-11-23T08:51:16Z; 1003 filings in the record, the newest dated 2026-11-19; 18 quarterly reports (10-Q)
+newest quarterly report: filed 2026-08-26 for the period ended 2026-07-26
+result: no report for a period ending on or after 2026-10-25 is in the record; both controls hold
+licence table: 54 rows, 3,444,160 chips; RWA 1,888,950 (54.85%, shown as 55%); "Approved, not shipped" 879,868; plain "Approved" rows: 0
+customs, parts and accessories of computers, as printed: Jan-Sep 2025 US$18.9 billion; Jan-Sep 2026 US$82.2 billion
+ids cited: 50; on the do-not-cite list of 20: 0
+notes named: 5; missing: 0
+documents listed: 12
+result: every number, id and note name agrees with its file
+what_would_change: about 3068 words; 50 sources (33 on the record); quotations checked 48, hidden statements 52, all found; control rejected
+exit=0
+== idea 33: python3 -I 33_timeline_plain_text/gen_timeline.py
+timeline: about 3171 words; 0 sources (0 on the record); quotations checked 0, hidden statements 30, all found; control rejected
+timeline: 61 records from figure_events.tsv (figure_data.txt holds 61); May 21, 2023 to Nov 19, 2026
+tiers: 22 published documents or officials, 14 companies or named people on the record, 25 press reports citing unnamed people
+rows: Beijing holds Nvidia back 24; Beijing lets Nvidia in 13; The companies reach for Nvidia 14; The companies turn to home-made chips 10
+compared with figure_data.txt: id, date, date label, row and wording equal in 61 of 61 records; ids on the do-not-cite list: 0 of 20 listed
+records with no exact day: 2 (After summer 2025 (Wall Street Journal); Sept 2025 (Alibaba, Form 20-F filed with the SEC))
+quoted phrases: 30 in the table; 30 found in the saved copy and kept; 0 not found, marks taken off (records none)
+extra reference lines written: 5; controls: true phrase found, false phrase rejected
+exit=0
+== look checks (render_and_look.py --check; exit 0 required)
+LOOKED: outputs/A1_writing_short/03_thread/thread.html | 9 screenshots in research/looks/thread-ba692f4c74b8/run-20261123T121307Z | 20261123T121331Z: Round 4. Opened all 9 tiles (3 at 1280, 6 at 390). Ten posts: post 1 says five limits, posts 5 to 9 are limits 1 to 5, the numbers stand in post 7, post 9 gives the two readings with the caption note. Leaves-out list says 21 points and 209 sources. Thirteen references and the build-check line are whole. No cut text, no overlap, no sideways scroll; long addresses wrap or are cut with a mark.
+exit=0
+LOOKED: outputs/A1_writing_short/04_right_and_too_flat/right_too_flat.html | 12 screenshots in research/looks/right_too_flat-6a2678ebab76/run-20261123T121728Z | 20261123T121810Z: Round 4, final render. Opened all 12 tiles (5 at 1280, 7 at 390). Six rows; row 4 reads It says more than the record shows and adds the tangle of requirements on both sides; row 5 now reads The motive is not settled, with Reuters of Jan 14, 2026, the commission and the Trade Representative's captions; the surviving sentence is the argument's new one. At 390 cells stack with bold labels. 22 references and the build-check line are whole. No cut text, overlap or sideways scroll.
+exit=0
+LOOKED: outputs/A1_writing_short/05_questions_and_answers/questions_answers.html | 16 screenshots in research/looks/questions_answers-b03780bdea4a/run-20261123T121407Z | 20261123T121441Z: Round 4. Opened all 16 tiles (6 at 1280, 10 at 390). Ten questions: the header says five limits; question 2 has the state-media count, 3 Nvidia's two reports, 5 the two readings with the caption note, 8 Nvidia's own words, 10 Washington's table and the 55 percent. The leaves-out list says 21 points and 209 sources. 27 references and the build-check line are whole. No cut text, overlap or sideways scroll.
+exit=0
+LOOKED: outputs/A1_writing_short/08_what_would_change/what_would_change.html | 30 screenshots in research/looks/what_would_change-e89840bed3e4/run-20261123T121441Z | 20261123T121546Z: Round 4. Opened all 30 tiles (11 at 1280, 19 at 390, the whole page). Twelve documents under four heads with labelled bullets: five limits in the opening; new items on Beijing's motive, the antitrust case and Washington's returned applications; the 10-Q item cites the SEC's own record. Smaller gaps, the five notes and What is not open read whole; the notes list wraps at 390. 50 references and the build-check line are complete. No cut text, overlap or sideways scroll.
+exit=0
+== result
+all builds and look checks passed

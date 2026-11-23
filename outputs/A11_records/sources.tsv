@@ -1,0 +1,86 @@
+# Idea 38: Nvidia investor-site filings feed (year 2026), fetched afresh
+cn-o38-nvda-feed-secfilings-2026-b	https://investor.nvidia.com/feed/SECFiling.svc/GetEdgarFilingList?apiKey=SITE_PUBLIC_KEY&exchange=CIK&symbol=0001045810&formGroupIdList=&excludeNoDocuments=true&pageSize=-1&pageNumber=0&tagList=&includeTags=true&year=2026&excludeSelection=1
+# Idea 38: investor-site financial reports feed (fiscal 2027), to find the call transcript, commentary and supplemental document
+cn-o38-nvda-feed-finreports-fy2027	https://investor.nvidia.com/feed/FinancialReport.svc/GetFinancialReportList?apiKey=SITE_PUBLIC_KEY&reportTypes=First%20Quarter|Second%20Quarter|Third%20Quarter|Fourth%20Quarter&excludeReportTypes=&reportSubTypeList[]=&excludeSelection=1&year=2027
+# Idea 38: documents named by the financial reports feed for the quarter ended Oct 25, 2026 (third quarter of fiscal 2027)
+cn-o38-nvda-q3fy27-call-transcript-pdf	https://s201.q4cdn.com/141608511/files/content_files/NVDA-3Q27-Earnings-Transcript.pdf
+cn-o38-nvda-q3fy27-supplemental-pdf	https://s201.q4cdn.com/141608511/files/doc_financials/2027/Q327/Supplemental-Financial-Information-NVDA-2027-Q3.pdf
+cn-o38-nvda-q3fy27-presentation-pdf	https://s201.q4cdn.com/141608511/files/doc_financials/2027/Q327/NVDA-F3Q27-Quarterly-Presentation.pdf
+cn-o38-nvda-q3fy27-revenue-trend-pdf	https://s201.q4cdn.com/141608511/files/doc_financials/2027/Q327/Rev-by-Mkt-Qtrly-Trend-Q327.pdf
+cn-o38-nvda-q3fy27-press-release	https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-third-quarter-fiscal-2027
+# Idea 38: the two quarters before, for comparison
+cn-o38-nvda-q2fy27-call-transcript-pdf	https://s201.q4cdn.com/141608511/files/content_files/TRANSCRIPT_-NVIDIA-Corp-NVDA-US-Q2-2027-Earnings-Call-26-August-2026-5_00-PM-ET.pdf
+cn-o38-nvda-q2fy27-cfo-commentary-pdf	https://s201.q4cdn.com/141608511/files/doc_financials/2027/Q227/Q2FY27-CFO-Commentary.pdf
+cn-o38-nvda-q1fy27-call-transcript-pdf	https://s201.q4cdn.com/141608511/files/doc_financials/2027/q1/NVDA-Q1-2027-Earnings-Call-20-May-2026-5_00-PM-ET.pdf
+cn-o38-nvda-q1fy27-cfo-commentary-pdf	https://s201.q4cdn.com/141608511/files/doc_financials/2027/Q127/Q1FY27-CFO-Commentary.pdf
+# Idea 36: index pages (where transcripts are listed)
+cn-o36-index-stockanalysis-tencent	https://stockanalysis.com/quote/hkg/0700/transcripts/
+cn-o36-index-stockanalysis-alibaba	https://stockanalysis.com/stocks/baba/transcripts/
+cn-o36-index-stockanalysis-baidu	https://stockanalysis.com/stocks/bidu/transcripts/
+cn-o36-index-alibaba-ir-quarterly	https://www.alibabagroup.com/en-US/ir-financial-reports-quarterly-results
+cn-o36-index-tencent-ir-quarterly	https://www.tencent.com/en-us/investors/quarterly-result.html
+# Idea 36: Alibaba investor site, the data files behind its quarterly results page (one per year tab)
+cn-o36-index-alibaba-ir-q2026	https://data.alibabagroup.com/data/index/ir/quarterly-results/q2026/list.json
+cn-o36-index-alibaba-ir-q2025	https://data.alibabagroup.com/data/index/ir/quarterly-results/q2025/list.json
+cn-o36-index-alibaba-ir-q2024	https://data.alibabagroup.com/data/index/ir/quarterly-results/q2024/list.json
+cn-o36-index-alibaba-ir-q2023	https://data.alibabagroup.com/data/index/ir/quarterly-results/q2023/list.json
+cn-o36-index-stockanalysis-baidu-hk	https://stockanalysis.com/quote/hkg/9888/transcripts/
+cn-o36-index-stockanalysis-alibaba-hk	https://stockanalysis.com/quote/hkg/9988/transcripts/
+# Idea 36: results-call transcripts (list made by tools/make_call_sources.py from the saved index pages)
+cn-o36-alibaba-call-20231116-own	https://data.alibabagroup.com/ecms-files/1508695866/34822d0a-3bee-4b88-aaea-ef0f9a519921/EN%20September%202023%20Q%20-%20Alibaba%20Earnings%20Call.pdf
+cn-o36-alibaba-call-20240207-own	https://data.alibabagroup.com/ecms-files/1508664153/722c440c-4773-4047-b323-9afe264b61b7/EN%20December%202023%20Q%20-%20Alibaba%20Earnings%20Call.pdf
+cn-o36-alibaba-call-20240514-own	https://data.alibabagroup.com/ecms-files/1508695866/7d2a4c4a-27b3-4b8a-8e08-0006458d9a4c/EN%20March%202024%20Q%20-%20Alibaba%20Earnings%20Call.pdf
+cn-o36-alibaba-call-20240815-own	https://data.alibabagroup.com/ecms-files/1508664153/93bcf2a8-9ef0-4b21-8691-9483b811375a/EN%20June%202024%20Q%20-%20Alibaba%20Earnings%20Call.pdf
+cn-o36-alibaba-call-20241115-own	https://data.alibabagroup.com/ecms-files/1508664153/b1dc39d3-c828-4da9-b83b-2f46553a030d/EN%20September%202024%20Q%20-%20Alibaba%20Earnings%20Call.pdf
+cn-o36-alibaba-call-20250220-own	https://data.alibabagroup.com/ecms-files/1508664153/b53e16e7-d0e6-45f0-9b51-411a5722387f/EN%20December%202024%20Q%20-%20Alibaba%20Earnings%20Call.pdf
+cn-o36-alibaba-call-20250515-own	https://data.alibabagroup.com/ecms-files/1508664153/dae26c71-3535-4e31-ac44-d26aa3722173/EN%20March%202025%20Q%20-%20Alibaba%20Earnings%20Call.pdf
+cn-o36-alibaba-call-20250829-own	https://data.alibabagroup.com/ecms-files/1508695866/dc0ee71c-1968-4e9f-bc2c-23c7b0cb6dd5/EN%20Jun%202025%20Q%20-%20Alibaba%20Earnings%20Call.pdf
+cn-o36-alibaba-call-20251125-own	https://data.alibabagroup.com/ecms-files/1508695866/ddad448e-9a73-4e7c-8aed-e777dedab16c/EN%20Sep%202025%20Q%20-%20Alibaba%20Earnings%20Call.pdf
+cn-o36-alibaba-call-20260319-own	https://data.alibabagroup.com/ecms-files/1508664153/f00a936b-507c-4926-a9d4-652c1a4821ff/EN%20Dec%202025%20Q%20-%20Alibaba%20Earnings%20Call.pdf
+cn-o36-alibaba-call-20260513-own	https://data.alibabagroup.com/ecms-files/1508695866/9e0f30c9-651f-41f9-a269-90db4b7d0dd7/EN%20Mar%202026%20Q%20-%20Alibaba%20Earnings%20Call.pdf
+cn-o36-alibaba-call-20260820-own	https://data.alibabagroup.com/ecms-files/1567773279/9a0e4864-83fe-4a69-aa1e-e5c14f5b2e73/EN%20Jun%202026%20Q%20-%20Alibaba%20Earnings%20Call.pdf
+cn-o36-alibaba-call-20261119-sa	https://stockanalysis.com/quote/hkg/9988/transcripts/736903-q2-2027/
+cn-o36-baidu-call-20231121-sa	https://stockanalysis.com/quote/hkg/9888/transcripts/90570-q3-2023/
+cn-o36-baidu-call-20240228-sa	https://stockanalysis.com/quote/hkg/9888/transcripts/126363-q4-2023/
+cn-o36-baidu-call-20240516-sa	https://stockanalysis.com/quote/hkg/9888/transcripts/171749-q1-2024/
+cn-o36-baidu-call-20240822-sa	https://stockanalysis.com/quote/hkg/9888/transcripts/195267-q2-2024/
+cn-o36-baidu-call-20241121-sa	https://stockanalysis.com/quote/hkg/9888/transcripts/223467-q3-2024/
+cn-o36-baidu-call-20250218-sa	https://stockanalysis.com/quote/hkg/9888/transcripts/250430-q4-2024/
+cn-o36-baidu-call-20250521-sa	https://stockanalysis.com/quote/hkg/9888/transcripts/316821-q1-2025/
+cn-o36-baidu-call-20250820-sa	https://stockanalysis.com/quote/hkg/9888/transcripts/348924-q2-2025/
+cn-o36-baidu-call-20251118-sa	https://stockanalysis.com/quote/hkg/9888/transcripts/377103-q3-2025/
+cn-o36-baidu-call-20260226-sa	https://stockanalysis.com/quote/hkg/9888/transcripts/401608-q4-2025/
+cn-o36-baidu-call-20260518-sa	https://stockanalysis.com/quote/hkg/9888/transcripts/571599-q1-2026/
+cn-o36-baidu-call-20260818-sa	https://stockanalysis.com/quote/hkg/9888/transcripts/673679-q2-2026/
+cn-o36-baidu-call-20261116-sa	https://stockanalysis.com/quote/hkg/9888/transcripts/735818-q3-2026/
+cn-o36-tencent-call-20231115-sa	https://stockanalysis.com/quote/hkg/0700/transcripts/89632-q3-2023/
+cn-o36-tencent-call-20240320-sa	https://stockanalysis.com/quote/hkg/0700/transcripts/131103-q4-2023/
+cn-o36-tencent-call-20240514-sa	https://stockanalysis.com/quote/hkg/0700/transcripts/156588-q1-2024/
+cn-o36-tencent-call-20240814-sa	https://stockanalysis.com/quote/hkg/0700/transcripts/386083-q2-2024/
+cn-o36-tencent-call-20241113-sa	https://stockanalysis.com/quote/hkg/0700/transcripts/221754-q3-2024/
+cn-o36-tencent-call-20250319-sa	https://stockanalysis.com/quote/hkg/0700/transcripts/256177-q4-2024/
+cn-o36-tencent-call-20250514-sa	https://stockanalysis.com/quote/hkg/0700/transcripts/328715-q1-2025/
+cn-o36-tencent-call-20251113-sa	https://stockanalysis.com/quote/hkg/0700/transcripts/374535-q3-2025/
+cn-o36-tencent-call-20260318-sa	https://stockanalysis.com/quote/hkg/0700/transcripts/419871-q4-2025/
+cn-o36-tencent-call-20260513-sa	https://stockanalysis.com/quote/hkg/0700/transcripts/609405-q1-2026/
+cn-o36-tencent-call-20260812-sa	https://stockanalysis.com/quote/hkg/0700/transcripts/667897-q2-2026/
+cn-o36-tencent-call-20261118-sa	https://stockanalysis.com/quote/hkg/0700/transcripts/731168-q3-2026/
+# Idea 37: the committee's own pages for the hearing of Apr 22, 2026
+cn-o37-senate-hearing-watch	https://www.appropriations.senate.gov/hearings/watch?hearingid=04CFDE61-BD72-4D6A-B175-AE7A14071721
+cn-o37-senate-isvp-player	https://www.senate.gov/isvp/?comm=approps&type=arch&stt=&filename=appropsC042226&auto_play=false&wmode=transparent&poster=https%3A%2F%2Fwww%2Eappropriations%2Esenate%2Egov%2Fthemes%2Fappropriations%2Fimages%2Fvideo%2Dposter%2Dflash%2Dfit%2Epng
+cn-o37-lutnick-testimony-fy27	https://www.appropriations.senate.gov/download/lutnick-testimony-fy27
+cn-o37-lutnick-testimony-fy27-file	https://www.appropriations.senate.gov/download/lutnick-testimony-fy27&download=1
+cn-o37-senate-video-master-m3u8	https://www-senate-gov-msl3archive.akamaized.net/appropriations/appropsC042226_1/master.m3u8
+cn-o37-senate-video-master-m3u8-live	https://www-senate-gov-media-srs.akamaized.net/hls/live/2036802/approps/appropsC042226/master.m3u8
+cn-o37-govinfo-shrg-119-207	https://www.govinfo.gov/content/pkg/CHRG-119shrg61929/html/CHRG-119shrg61929.htm
+cn-o37-senate-hearing-page-b	https://www.appropriations.senate.gov/hearings/a-review-of-the-presidents-fiscal-year-2027-budget-request-for-the-department-of-commerce
+cn-o37-govinfo-cjs-fy2025-volume	https://www.govinfo.gov/content/pkg/CHRG-118shrg55290/html/CHRG-118shrg55290.htm
+# Idea 38: the US export rule of Nov 16, 2026 (context for the week Nvidia stopped shipping), as described by law firms and the press
+cn-o38-us-rule-20261116-sidley	https://www.sidley.com/en/insights/newsupdates/2026/11/new-export-controls-on-advanced-chips-close-remote-compute-access-loopholes-five-key-takeaways
+cn-o38-us-rule-20261116-orrick	https://www.orrick.com/en/Insights/2026/11/US-Government-Establishes-Export-Controls-to-Address-China-AI-Remote-Access-Concerns
+cn-o38-us-rule-20261116-latham	https://www.lw.com/en/insights/us-commerce-department-adopts-rule-restricting-remote-access-to-advanced-ai-chips
+cn-o38-us-rule-20261116-techcrunch	https://techcrunch.com/2026/11/16/us-tightens-ai-chip-export-controls-to-deter-chinese-companies-from-accessing-compute-remotely/
+cn-o38-us-rule-fr-search	https://www.federalregister.gov/api/v1/documents.json?conditions%5Bterm%5D=%22Addressing+Remote+Access+to+Advanced+Semiconductors%22&order=newest&per_page=5
+cn-o38-us-rule-fr-20261119-text	https://www.govinfo.gov/content/pkg/FR-2026-11-19/html/2026-23529.htm
+# Round 2 (Nov 23, 2026): the same filings feed, fetched once more under a new id
+cn-o38-nvda-feed-secfilings-2026-c	https://investor.nvidia.com/feed/SECFiling.svc/GetEdgarFilingList?apiKey=SITE_PUBLIC_KEY&exchange=CIK&symbol=0001045810&formGroupIdList=&excludeNoDocuments=true&pageSize=-1&pageNumber=0&tagList=&includeTags=true&year=2026&excludeSelection=1

@@ -1,0 +1,12 @@
+# TrendForce's figures for China's AI chip market, as the trade site Silicon UK reported them in June 2026 (idea 14; read by build.py).
+# A different measure from IDC's counts in share.tsv: not one series with them, and drawn in a panel of its own.
+#   year    2025 = TrendForce's figure for "last year" | 2026 = expected (a forecast made in June 2026)
+#   who     foreign = Nvidia, AMD and other foreign suppliers, together | makers = Chinese makers of AI chips | own = chips tech firms develop mainly for their own use
+#   share   per cent, as the report gives it; build.py reads both years' figures from the words of the quotes.tsv line named in qkey and stops if they differ
+year	who	dir	share	qkey
+2025	foreign	toward	34	tf.foreign
+2025	makers	away	46	tf.makers
+2025	own	own	20	tf.own
+2026	foreign	toward	21	tf.foreign
+2026	makers	away	56	tf.makers
+2026	own	own	23	tf.own

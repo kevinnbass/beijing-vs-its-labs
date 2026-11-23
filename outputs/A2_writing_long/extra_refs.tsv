@@ -1,0 +1,13 @@
+# Extra references for the six prose pieces in this folder (scripts/cn_doc_build.py reads this file with --refs).
+# Columns, tab-separated: saved id | kind | label | address (optional). Kinds as in argument/argument_refs.tsv.
+# Every date in a label was read in the saved page (its PUBLISHED line, its dateline or its own text), not taken from the id.
+# Round 4 (Nov 23, 2026): only sources that are in neither argument/argument_refs.tsv nor argument/argument_refs_more.tsv are listed here.
+# Removed this round because the core file now carries them: cn-acts-mfa-20260129, cn-labs-v4-training-reuters-relay1-wayback, cn-o36-tencent-call-20261118-sa.
+# Removed because no piece cites them any longer: cn-clips-mfa-new-1 (the core's copy of the same press conference, cn-acts-mfa-20261109, is cited instead), cn-counter-b5-1.
+cn-acts-mfa-20251210	OFF	Ministry of Foreign Affairs, regular press conference of Dec 10, 2025 (spokesperson Guo Jiakun). The ministry's own record
+cn-counter-b3-2	OFF	Ministry of Foreign Affairs, regular press conference of Aug 22, 2025 (spokesperson Mao Ning). The ministry's own record
+cn-labs-tencent-q2-call-20250813-relay1	REC	Tencent, results call of Aug 13, 2025: transcript on the stock-data site Stock Analysis. The speaker labels are the site's; nobody has checked them against the recording
+cn-policy-review-measures	DOC	Cybersecurity Review Measures, published on the Cyberspace Administration's site on Jan 4, 2022, in force from Feb 15, 2022. Article 4 places the Cybersecurity Review Office in the Cyberspace Administration
+cn-acts-reuters-customs-20260114	PRESS	Reuters, Jan 14, 2026, as carried by Yahoo Finance (the copy the figure now cites for this report)
+cn-o36-alibaba-call-20260513-own	FIL	Alibaba Group, results call of May 13, 2026 (March quarter 2026): the company's own English transcript, on its investor site. It marks the chief executive's answers as a translation
+cn-o36-baidu-call-20260518-sa	REC	Baidu, results call of May 18, 2026: transcript on the stock-data site Stock Analysis. The speaker labels are the site's; nobody has checked them against the recording

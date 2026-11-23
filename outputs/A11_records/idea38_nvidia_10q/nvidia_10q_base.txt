@@ -1,0 +1,102 @@
+# Nvidia's report for the quarter to Oct 25, 2026: not filed yet
+
+@deck The quarterly report had not been filed on Nov 23, 2026: neither Nvidia's own list of its filings nor the SEC's record, fetched at 08:51 UTC on Nov 23, 2026, lists one. Nvidia's commentary and call transcript give the $2.4 billion and the stop, and no reason for it. Its earlier reports name the Chinese government; its calls do not.
+
+@note Draft by Claude, Anthropic's model. Local; not published.
+@note Written Nov 23, 2026 (UTC); revised the same day in rounds 2 and 4. Idea 38 of the chip-policy project. Nvidia's staff are named by office, not by name.
+
+## What was looked for
+
+Four things: the Form 10-Q for the quarter ended Oct 25, 2026 (the quarterly report a US-listed company files with the Securities and Exchange Commission, the SEC); the transcript of the results call of Nov 17, 2026; the chief financial officer's written commentary; and what these say about China, the H200 and other licensed products, the $2.4 billion that Reuters reported, and why shipments stopped.
+
+## Is the 10-Q filed? Not as of Nov 23, 2026, 08:51 UTC
+
+- **Nvidia's investor site, its list of SEC filings for 2026**, fetched a second time at 06:41 UTC on Nov 23, 2026 [cn-o38-nvda-feed-secfilings-2026-c]. It lists 123 filings. The newest is a Form 144 received on Nov 19, 2026, then a Form 8-K received on Nov 17, 2026. The only 10-Q rows of the year are those filed on Aug 26, 2026 and May 20, 2026: none after the quarter's end. The August row is the control: the list does show a 10-Q when one is filed. The first reading, at 05:37 UTC on Nov 23, 2026 [cn-o38-nvda-feed-secfilings-2026-b], was the same, byte for byte.
+!! cn-o38-nvda-feed-secfilings-2026-c | FETCHED: 2026-11-23T06:41:25Z
+!! cn-o38-nvda-feed-secfilings-2026-c | 11/19/2026 15:46:31
+!! cn-o38-nvda-feed-secfilings-2026-c | 11/17/2026 15:21:23
+!! cn-o38-nvda-feed-secfilings-2026-c | 08/26/2026 00:00:00
+!! cn-o38-nvda-feed-secfilings-2026-b | FETCHED: 2026-11-23T05:37:23Z
+- **Nvidia's investor site, the documents it lists for each quarter**, fetched once, at 05:37 UTC on Nov 23, 2026 [cn-o38-nvda-feed-finreports-fy2027]. For the third quarter it lists: Press Release, Webcast, Transcript, CFO Commentary, NVIDIA Quarterly Revenue Trend, Presentation, Supplemental Financial Information. There is no 10-Q among them. For the first and second quarters of the same year it lists a 10-Q.
+!! cn-o38-nvda-feed-finreports-fy2027 | FETCHED: 2026-11-23T05:37:38Z
+!! cn-o38-nvda-feed-finreports-fy2027 | Supplemental Financial Information
+!! cn-o38-nvda-feed-finreports-fy2027 | NVDA-2027-Q2-10Q-Final-including-exhibits.pdf
+- **The SEC's own record of the company's filings**, saved by the project at 08:51 UTC on Nov 23, 2026 [cn-le05-sec-submissions-20261123]. Its newest entry is a Form 144 filed on Nov 19, 2026. Its newest 10-Q was filed on Aug 26, 2026, for the period ended Jul 26, 2026. It lists no 10-Q for the period ended Oct 25, 2026, and no notice of a late filing in 2026. The control: the record does list quarterly reports, 18 of them, the one of Aug 26, 2026 among them. An earlier reading of the SEC's list through a web reader (read, not saved) showed the same.
+!! cn-le05-sec-submissions-20261123 | FETCHED: 2026-11-23T08:51:16Z
+!! cn-le05-sec-submissions-20261123 | 0001045810-26-000075
+- **Nvidia's own words**, in the commentary published with the results on Nov 17, 2026: "We plan to file our 10-Q in the coming weeks. In the interim, we have provided a supplemental document with additional financial information on our investor website." [cn-counter-b17-1] That supplemental document is saved [cn-o38-nvda-q3fy27-supplemental-pdf].
+!! cn-o38-nvda-q3fy27-supplemental-pdf | For the Quarter Ended October 25, 2026
+
+## What Nvidia said, quarter by quarter
+
+All words below are Nvidia's, from its commentary, its call transcripts and its last filed report. Hopper is Nvidia's name for the chip generation; Reuters says "The Hopper family includes the H200" [cn-acts-reuters-halt-20261118-relay2].
+
+1. **First quarter of fiscal 2027, reported May 20, 2026: nothing shipped.** Commentary: "No shipments of Data Center Hopper products to China occurred during the quarter, compared with $4.6 billion in the first quarter of fiscal year 2026." [cn-o38-nvda-q1fy27-cfo-commentary-pdf] On the call, the chief financial officer: "While the US government has approved licenses for H200 to be shipped to China-based customers, we have yet to generate any revenue, and we are uncertain whether any imports will be allowed into the country." [cn-o38-nvda-q1fy27-call-transcript-pdf]
+!! cn-o38-nvda-q1fy27-call-transcript-pdf | 20-May-2026
+2. **Quarter to Jul 26, 2026, reported Aug 26, 2026: under 1%.** Commentary: "Shipments of Data Center Hopper products to China during the quarter were less than 1% of Data Center revenue." [cn-o38-nvda-q2fy27-cfo-commentary-pdf] On the call, the chief financial officer: "In Q2, we shipped less than 1% of our total data center revenue in Hopper 200 products to customers based in China in accordance with the US government licenses."; and "given ongoing geopolitical uncertainty, there is no China data center compute revenue in our forward outlook" [cn-o38-nvda-q2fy27-call-transcript-pdf]. The Form 10-Q for that quarter says the United States granted licences for some H200 sales, "but such sales were restricted by the PRC government" [man-ms-sec-10q-2026-07].
+!! cn-o38-nvda-q2fy27-call-transcript-pdf | 26-Aug-2026
+3. **Quarter to Oct 25, 2026, reported Nov 17, 2026: $2.4 billion, then a stop.** Commentary: "Shipments of Data Center Hopper products to China during the quarter were $2.4 billion."; and for the quarter ahead: "We are not assuming any Data Center compute revenue from China in our outlook." [cn-counter-b17-1] On the call, the interim chief executive, who is also the chief financial officer: "Q3 sales of licensed Hopper Data Center products to China was $2.4 billion. Our guidance does not have any licensed Hopper Data Center products included, and we are no longer shipping licensed Hopper Data Center products to China." [cn-o38-nvda-q3fy27-call-transcript-pdf]
+!! cn-o38-nvda-q3fy27-call-transcript-pdf | Interim Chief Executive Officer, and Executive Vice President and Chief
+!! cn-o38-nvda-q3fy27-call-transcript-pdf | All our statements are made as of today, November 17, 2026
+
+The outlook sentence in point 3 is about the next quarter, not the one reported. It stands under the heading "Outlook for the fourth quarter of fiscal 2027, which includes an additional week, is as follows:" [cn-counter-b17-1], and the Form 8-K that carries the results has the same sentence: "We are not assuming any Data Center compute revenue from China in our outlook." [ms-p3-nvda-8k-20261117-pdf] It does not say that no such revenue came in the quarter reported, which had $2.4 billion of it.
+
+**The size of it.** The same commentary gives Data Center revenue for the quarter as "a record $107.6 billion" [cn-counter-b17-1]. $2.4 billion is about 2.2% of that (the division is mine). The quarter before, the share was "less than 1%" [cn-o38-nvda-q2fy27-cfo-commentary-pdf].
+
+**Reuters's report holds.** Reuters wrote that Nvidia "sold $2.4 billion worth of licensed Hopper-generation data centre products to China in the quarter ended October 25" [cn-acts-reuters-halt-20261118-relay2]. Nvidia's transcript and commentary say the same. The argument now cites Nvidia's own transcript for it, in point 19.
+
+## Nvidia's words on the Chinese government, report by report
+
+The reports Nvidia files with the SEC have said more about Beijing than its calls. The table gives the sentence in each report since November 2024. The project's fuller table, one row for each sentence, is tables/nvidia_wording_by_filing.tsv (107 rows); a script checks that each report below has its row there.
+
+| Filed | Nvidia's words on the Chinese government | Beside them, in the same report |
+| Nov 20, 2024, Form 10-Q [man-ms-nvda-2024q3-10q-58a58e] | it "may also encourage customers to purchase from our China-based competitors, or impose restrictions on the sale to certain customers of our products" | the word foreclosed is not in this report (a script's count, which finds it in each report below) |
+| Aug 27, 2025, Form 10-Q [man-ms-sec-10q-2025-07] | it "has and may continue to encourage customers to purchase from our China-based competitors, or impose restrictions on the sale to certain customers of our products"; "China's government publicly questioned whether our H20 products have built-in vulnerabilities", "discouraging customers from purchasing our products" | a product for China's data-centre market needs "approval from the USG" |
+| Nov 19, 2025, Form 10-Q [man-ms-sec-10q-2025-10] | it "has encouraged customers to purchase from our China-based competitors and restricted customers from purchasing, importing, or using our data center products, including any China-specific product designed to comply with U.S. export controls" | "we are already effectively foreclosed from the China market by U.S. export controls"; a competitive product needs "approval from both the USG and the Chinese government" |
+| Feb 25 and May 20, 2026, Form 10-K and Form 10-Q [man-ms-sec-10k-fy2026] [man-ms-sec-10q-2026-04] | the same sentence, now with "discouraged customers from purchasing, importing, or using our data center products" where the report before had restricted; of the H200 licences, it does "not yet know whether any imports will be allowed into China" | both sentences kept |
+| Aug 26, 2026, Form 10-Q [man-ms-sec-10q-2026-07] | the same sentence kept; and sales under the American licences for the H20 and the H200 "were restricted by the PRC government" | both kept; the second now reads "for wide distribution in China's data center market with the approval from both the USG and the Chinese government" |
+| Quarter ended Oct 25, 2026 | no report filed yet | the results papers of Nov 17, 2026 name no Chinese restriction (below) |
+!! man-ms-nvda-2024q3-10q-58a58e | The Chinese government may also encourage customers to purchase from our China-based
+!! man-ms-sec-10q-2026-07 | Beginning in August 2025, the USG granted licenses that would have allowed us to ship certain H20 products to certain China-based customers, but such sales were restricted by the PRC government
+!! man-ms-sec-10k-fy2026 | government has encouraged customers to purchase from our China-based competitors and discouraged customers
+
+- **The two early rows are warnings, and both run on.** In November 2024 and August 2025 the sentence on encouraging customers to buy from Chinese competitors ends with the words "or impose restrictions on the sale to certain customers of our products" [man-ms-nvda-2024q3-10q-58a58e] [man-ms-sec-10q-2025-07]. Only from November 2025 do the reports say that Beijing has restricted customers; the two reports of 2026 before August say discouraged.
+- **The same reports put the shut-out on Washington too.** From November 2025: "we are already effectively foreclosed from the China market by U.S. export controls" [man-ms-sec-10q-2025-10].
+- **The calls named no Chinese restriction.** On the results calls held the same days, Nvidia named no Chinese restriction. Its chief financial officer spoke of geopolitics. Aug 27, 2025: "We have not included H20 in our Q3 outlook as we continue to work through geopolitical issues" [ms-sgp-nvda-q2fy26-call-transcript-pdf]. The calls of May 20 and Aug 26, 2026 are quoted above: imports that might not "be allowed into the country" [cn-o38-nvda-q1fy27-call-transcript-pdf], and "ongoing geopolitical uncertainty" [cn-o38-nvda-q2fy27-call-transcript-pdf], on the day the report said "restricted by the PRC government" [man-ms-sec-10q-2026-07]. In the transcripts of the four calls quoted in this note (Aug 27, 2025; May 20, Aug 26 and Nov 17, 2026) the words PRC, Beijing and Chinese government do not occur (a script's count; the same count finds the word China in each of the four).
+
+## Why shipments stopped: Nvidia does not say
+
+- **No reason is given.** In the transcript of the call the word China comes twice, both times in the passage quoted above; the word H200 comes not at all (a script's count). Reuters noted the same: "She did not explain why Nvidia had stopped shipping the processors or whether the halt would be permanent." [cn-acts-reuters-halt-20261118-relay2]
+- **What stands near it on the call.** Later in the same prepared remarks, in the outlook: "New export controls were released by the U.S. Commerce Department this week. However, with demand far exceeding supply, we expect our performance to remain strong." [cn-o38-nvda-q3fy27-call-transcript-pdf] She did not tie this to the stop. Asked about growth, she said: "we did look at an assessment in terms of the current export controls, and we're still going to spend some time studying those" [cn-o38-nvda-q3fy27-call-transcript-pdf].
+- **The US rule of that week, in its own text.** The transcript does not name the rule; an analyst on the call spoke of "the new BIS rules" [cn-o38-nvda-q3fy27-call-transcript-pdf]. I take it to be the one printed two days later. That rule is "Addressing Remote Access to Advanced Semiconductors", an interim final rule of the Commerce Department's Bureau of Industry and Security, printed in the Federal Register of Nov 19, 2026: "This rule is effective November 19, 2026." [cn-o38-us-rule-fr-20261119-text] Its summary puts two things first: exports "to overseas data centers that remotely supply significant volumes of compute to companies headquartered in Country Group D:5 or Macau", and a new licence requirement for "Indonesia, Malaysia, Singapore, Thailand, or Brazil" [cn-o38-us-rule-fr-20261119-text]. China is in that group: the rule speaks of "Macau, the People's Republic of China (PRC), or other Country Group D:5 headquartered entities setting up cloud servers or data centers in other countries" [cn-o38-us-rule-fr-20261119-text].
+!! cn-o38-us-rule-fr-20261119-text | Bureau of Industry and Security
+!! cn-o38-us-rule-fr-20261119-text | Interim final rule
+!! cn-o38-us-rule-fr-20261119-text | Thursday, November 19, 2026
+- **The rule does not name the H200.** The saved text of the rule does not hold the word H200 (a script's search; the word Brazil, a control, is found). Its text of the licensing section provides "a case-by-case license review policy" for chips under stated performance limits "when destined to end-users located in China or Macau" [cn-o38-us-rule-fr-20261119-text]. I read the summary and that section, not the whole rule, and this is not a legal reading.
+- **The last filed report put the limit on Beijing's side.** For the quarter to Jul 26, 2026: "but such sales were restricted by the PRC government" [man-ms-sec-10q-2026-07]. Whether that still held in the quarter to Oct 25, 2026, when $2.4 billion was shipped, the saved documents do not say.
+
+So the record holds three things side by side: a stop with no reason given; a new US rule the same week, whose summary puts data centres abroad and five other countries first; and an earlier filing that put the limit on the Chinese government. None of the saved documents says which of these, if any, caused the stop.
+
+## One more figure, to be read with care
+
+This figure is not in the papers of the earlier quarters in the same form, so it needs its own caution. Nvidia's supplemental document gives revenue by where the customer's head office is. For China (including Hong Kong) the three months to Oct 25, 2026 show $11,050 million, against $2,973 million a year before [cn-o38-nvda-q3fy27-supplemental-pdf]. This is not a count of chips sent to China. Nvidia's own caution: "Revenue by geographic region is designated based on the location of the headquarters of direct customers. The end customer and shipping location may be different from our direct customers’ headquarters location." [cn-o38-nvda-q3fy27-supplemental-pdf]
+!! cn-o38-nvda-q3fy27-supplemental-pdf | China (including Hong Kong) 11,050 2,973
+
+The project's table of this line, made from Nvidia's reports (tables/nvidia_china_revenue.tsv), has nine quarters counted this way, from the quarter ended Oct 27, 2024 to the one ended Oct 25, 2026. In $ million, in order: 8,142, 7,818, 9,659, 3,985, 2,973, 3,060, 4,550, 7,880, 11,050. Two of the nine are the table's own subtractions of nine-month figures from annual ones. The latest quarter is the highest of the nine. The line covers every product Nvidia sells, not only data-centre chips.
+
+## What it changes for the argument
+
+- **Point 11** of the argument now carries the table above, report by report, and the three call lines beside it. Nothing in this note changes it.
+- **Point 11** also carries the line from the call of May 20, 2026: "we are uncertain whether any imports will be allowed into the country" [cn-o38-nvda-q1fy27-call-transcript-pdf]. It speaks of imports into China and names no authority.
+- **Point 19** now cites Nvidia's own transcript for the $2.4 billion and for the words "we are no longer shipping licensed Hopper Data Center products to China" [cn-o38-nvda-q3fy27-call-transcript-pdf], beside Reuters.
+- **The numbers table** (the argument's section 4) now has Nvidia's own account of the last two quarters: under 1% of Data Center revenue, then $2.4 billion. The quarter before those, nothing was shipped. The jump came in the quarter from late July to late October 2026. Nvidia's words are "Shipments of Data Center Hopper products to China" [cn-counter-b17-1]; they do not say how many chips reached the mainland or stayed in Hong Kong.
+- **Do not say why the shipments stopped.** No saved document gives the reason. The argument says Nvidia gave none, and that should stay.
+- **The open list** of the argument now cites the SEC's record for the report not being filed.
+- **What to read when the 10-Q comes.** The passage on the H200 in the risk factors, where the sentence "but such sales were restricted by the PRC government" stood last time [man-ms-sec-10q-2026-07]: whether it is kept, changed or dropped.
+
+## What this note does not show
+
+- The 10-Q itself: it does not exist yet in the places looked. The check should be run again; the feed addresses are in the references.
+- The SEC's record and Nvidia's lists show what was filed up to the times given. They cannot show when the report will come.
+- The table of wording quotes one sentence a report. Each report says more; the project's table has the rest.
+- The Federal Register rule was searched and read in part only.

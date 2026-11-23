@@ -1,0 +1,60 @@
+# The second band of the video: what the saved record says about the claim being made at that moment. build.py reads this.
+# An entry starts "@ <part of the clip> [+seconds] | <VERDICT IN CAPITALS>". The part names are those of
+# ../40_checked_by_ear/units.tsv (L1 ... L8); the band appears when that part's first word is spoken (plus the seconds
+# given, where the part before it is too short to read) and stays until the next entry appears.
+# The next line is the text shown. A mark can stand before a source: [solid away] [solid toward] [open away] [open toward].
+#   solid = a document, a filing or a named person on the record; open = a press report citing unnamed people.
+#   away (orange) = away from Nvidia chips; toward (blue) = toward them. Same meaning as in the project's figure.
+# Put between straight double quotes ONLY a source's exact words. Every quotation needs a line "!! saved id | exact words"
+# under it; build.py stops if a quotation has none, and scripts/cn_has.py must find every such line in its saved copy.
+# {POLICY_PAGES} is replaced by the count of "### Row N" entries in ../../../NOTE_policies_checked.md (the policy pages read).
+# {NV_APPROVED} is replaced by the sum of Nvidia's chips marked "Approved, not shipped" in ../../../tables/house_licence_table.tsv
+# (the project's copy of the Commerce Department's table, status on May 11, 2026). build.py stops unless that sum and AMD's
+# make the 879,868 chips in 21 applications that the committee's saved summary states.
+# A mark without a direction, [solid] or [open], is drawn in ink: on the record, or a press report, neither toward nor away.
+# A lower line that would run past three lines is set in smaller type by build.py until it fits (never under size 30).
+# The verdicts follow ../22_clips_marked_up/marks.txt (and so ASSESSMENT.md section 5 and the argument).
+# Round 4 (Nov 23, 2026): rewritten for the rebuilt core. The round-2 text is kept as tmp_work/bands.round2.txt.
+
+@ L1 | HIS CRITICS' WORDS · NOTHING TO CHECK YET
+The claim comes next. The project's answer to it: yes on direction, with five limits. Beijing was not one actor. Guidance and public warnings, not a published ban. Some purchases were approved and some chips came in. The companies had reasons of their own, and US curbs pushed too. What Beijing meant by it is not settled.
+
+@ L3 | BORNE OUT ON DIRECTION, WITH FIVE LIMITS · TOO FLAT AS WORDED
+[solid away] Nvidia, report signed Nov 19, 2025: the Chinese government "restricted customers from purchasing, importing, or using our data center products"
+!! man-ms-sec-10q-2025-10 | restricted customers from purchasing, importing, or using our data center products
+!! man-ms-sec-10q-2025-10 | For the quarterly period ended October 26, 2025
+!! man-ms-sec-10q-2025-10 | November 19, 2025
+
+@ L4 | BORNE OUT BY THE RECORD
+[solid toward] US Commerce Secretary, Apr 22, 2026: "my understanding is their cloud companies want to buy these chips"
+!! cn-us-lutnick-0422-rev-transcript-b | my understanding is their cloud companies want to buy these chips
+
+@ L5a | HIS 600,000 MATCHES ONE PRESS REPORT, BY TWO UNNAMED PEOPLE · IT SAYS HONG KONG, NOT A PORT
+[open away] Reuters, Nov 5, 2026: "About 600,000 of Nvidia's advanced artificial intelligence chips are stored in Hong Kong awaiting shipment to China"
+!! cn-clips-evidence-1 | About 600,000 of Nvidia's advanced artificial intelligence chips are stored in Hong Kong awaiting shipment to China
+!! cn-clips-evidence-1 | two people familiar with the matter said
+
+@ L5b | SAYS MORE THAN THE RECORD SHOWS: NO PERMIT RULE WAS FOUND
+No permit rule for these chips was found in the {POLICY_PAGES} policy pages read. [open away] Reuters, Nov 5, 2026: Beijing "withholds approval for large-scale imports"
+!! cn-clips-evidence-1 | withholds approval for large-scale imports
+
+@ L5c +1.8 | SUPPORTED ON DIRECTION · WHAT BEIJING MEANT BY IT IS NOT SETTLED
+[solid away] US Commerce Secretary, Apr 22, 2026: the Chinese central government has not let them buy, "because they're trying to keep their investment focused on their own domestic industry". He called that his understanding.
+!! cn-us-lutnick-0422-rev-transcript-b | because they're trying to keep their investment focused on their own domestic industry
+!! cn-us-lutnick-0422-rev-transcript-b | Chinese central government has not let them as of yet buy the chips
+!! cn-us-lutnick-0422-rev-transcript-b | So that's my understanding of what's happening
+
+@ L6a | HE BREAKS OFF: NO VERDICT · THE RECORD ON SELLING INTO CHINA
+[solid] The US Commerce Department's table, May 11, 2026: {NV_APPROVED} Nvidia chips approved for named companies in China, each marked "Approved, not shipped"
+!! cn-usdocs-hfac-decisions-20261119 | Approved, not shipped
+!! cn-usdocs-hfac-decisions-20261119 | H200 License and Equivalent Application Status as of May 11, 2026
+!! cn-usdocs-hfac-summary-20261119 | BIS approved the export, re-export, or transfer (in-country) of 879,868 covered integrated circuits to PRC companies across 21 license applications, as of May 11, 2026
+!! cn-usdocs-hfac-summary-20261119 | Covered integrated circuits are the following products: NVIDIA's H200 and AMD's MI325X.
+
+@ L6b | ALLEGATION
+The speaker's allegation. No saved source here establishes it.
+
+@ L8 | BORNE OUT ON DIRECTION · TOO FLAT AS WORDED
+Fair on the import question. Too flat on the government, which was not one actor. [open toward] Reuters, Jan 30, 2026: "China's industry and commerce ministries have granted approvals for all four companies"
+!! cn-acts-reuters-deepseek-20260130 | China's industry and commerce ministries have granted approvals for all four companies
+!! cn-acts-reuters-deepseek-20260130 | 2026-01-30

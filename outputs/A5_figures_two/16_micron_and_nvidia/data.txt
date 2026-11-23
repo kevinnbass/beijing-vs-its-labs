@@ -1,0 +1,139 @@
+# Data for the figure "Micron and Nvidia side by side" (build.py in this folder reads it; ../common.py explains the format).
+# Extra fields on a record line: case=micron|nvidia   row=<row or rows, comma-separated>   dir=away
+#   rows: order        a published text that tells buyers to stop buying
+#         published    other acts against the company that Beijing published itself
+#         unpublished  the instruction not to buy, where it is not published: press reports citing unnamed people, company filings
+
+# ---- Micron, 2023 ----
+@ micron-decision doc 2023-05-21 - cn-policy-micron-decision case=micron row=order,published dir=away
+T the review office's conclusion: Micron's products fail the cybersecurity review
+L The Cybersecurity Review Office, which sits in the cyberspace regulator, concludes that Micron's products did not pass its cybersecurity review, and says that operators of critical information infrastructure in China should stop buying them. The text was published on the regulator's site. The same text welcomes companies of all countries that obey Chinese law.
+S Cybersecurity Review Office, published on the Cyberspace Administration's site
+Q 我国内关键信息基础设施的运营者应停止采购美光公司产品
+E operators of critical information infrastructure in China should stop buying Micron's products
+Q 网络安全审查办公室依法作出不予通过网络安全审查的结论
+E the Cybersecurity Review Office has, under the law, concluded that they do not pass the cybersecurity review
+Q 按照《网络安全法》等法律法规
+E under the Cybersecurity Law and other laws and regulations
+D 2023年05月21日 20:00
+N cn-policy-review-measures | 网络安全审查办公室设在国家互联网信息办公室
+
+# ---- Nvidia, 2024 to 2026: published ----
+@ nv-case doc 2024-12-09 - cn-policy-samr-open-original case=nvidia row=published dir=away
+T market regulator opens an antitrust case
+L The market regulator opens an antitrust investigation of Nvidia. The notice is about Nvidia; it tells no buyer anything.
+S State Administration for Market Regulation
+Q 市场监管总局依法对英伟达公司开展立案调查
+E the regulator has opened an investigation of Nvidia under the law
+D 发布时间:2024-12-09
+
+@ nv-summons doc 2025-07-31 - cn-policy-cac-h20-original case=nvidia row=published dir=away
+T cyberspace regulator summons Nvidia over the H20
+L The cyberspace regulator summons Nvidia and requires it to explain the risk of backdoors in the H20 chips it sells to China, and to hand in proof. The notice is addressed to Nvidia, not to buyers.
+S Cyberspace Administration of China
+Q 约谈了英伟达公司,要求英伟达公司就对华销售的H20算力芯片漏洞后门安全风险问题进行说明并提交相关证明材料
+E summoned Nvidia and required it to explain the backdoor security risks of the H20 chips sold to China and to submit supporting material
+D 国家互联网信息办公室于2025年7月31日约谈了英伟达公司
+
+@ nv-finding doc 2025-09-15 - cn-policy-samr-further-original case=nvidia row=published dir=away
+T preliminary finding that Nvidia broke the antitrust law
+L The market regulator announces a preliminary finding that Nvidia broke the antitrust law, and a further investigation. The notice gives no facts. By Nvidia's own account the finding concerns the "degraded products" that American export controls required it to offer the Chinese market. No page read says the case has ended: the regulator's review of its 2025 work, posted Apr 10, 2026, still lists the further investigation.
+S State Administration for Market Regulation
+Q 经初步调查,英伟达公司违反《中华人民共和国反垄断法》
+E after a preliminary investigation, Nvidia violated the Anti-Monopoly Law
+Q 市场监管总局依法决定对其实施进一步调查
+E the regulator has decided to investigate it further under the law
+D 发布时间:2025-09-15
+N man-ms-sec-10q-2026-07 | which required us to offer degraded products to the Chinese market
+N cn-le25-samr-2025-merger-review-20260410 | 对英伟达公司实施进一步调查
+N cn-le25-samr-2025-merger-review-20260410 | 发布时间：2026-04-10
+
+# ---- Nvidia, 2024 to 2026: not published ----
+@ nv-guidance press 2024-09-27 - cn-factions-bloomberg-flexibility-202409-relay1 case=nvidia row=unpublished dir=away
+T regulators discourage buying the H20: "guidance rather than an outright ban"
+L Regulators discourage companies from buying Nvidia's H20, Bloomberg reports: "The policy has taken the form of guidance rather than an outright ban". It calls this "window guidance", which it explains as "instructions without the force of law". Bloomberg's report is of Sept 27; the copy used was carried on Sept 28, Singapore time.
+S Bloomberg, Sept 27, 2024, as carried by The Business Times (Singapore)
+Q The policy has taken the form of guidance rather than an outright ban
+Q Chinese regulators have been discouraging companies from purchasing Nvidia's H20 chips
+Q window guidance
+Q instructions without the force of law
+D on Friday (Sep 27)
+D Published Sat, Sep 28, 2024
+
+@ nv-dissuade press 2025-08-20 - man-cn-ft-20250821-regulators case=nvidia row=unpublished dir=away
+T three bodies move to dissuade firms from buying the H20
+L The cyberspace regulator, the state planner and the industry ministry move to dissuade companies from buying the H20, the Financial Times reports, by people it does not name. By its account the cyberspace regulator gave an informal notice, "window guidance", "instructing them to halt new orders for Nvidia's H20 chips". The same article says some firms held off H20 orders to see whether a better Nvidia chip for China would come.
+S Financial Times, Aug 20, 2025
+Q A group of Chinese regulators have mobilised in an effort to dissuade domestic tech companies from acquiring the H20
+Q the Cyberspace Administration of China (CAC), the National Development and Reform Commission (NDRC) and the Ministry of Industry and Information Technology (MIIT) moved in response
+D Published AUG 20 2025
+N instructing them to halt new orders for Nvidia's H20 chips
+N window guidance
+N an informal notice
+N according to people with knowledge of the regulator's effort
+N Some Chinese tech companies have held off H20 orders because they want to see if the China-specific Blackwell chip
+
+@ nv-alibaba rec 2025-09-10 Sept_2025 cn-clips-alibaba-20f case=nvidia row=unpublished dir=away
+T Alibaba's annual report: regulator asked firms to halt purchases of "certain chips"
+L Alibaba's annual report to the US securities regulator: the cyberspace regulator "requested Chinese technology companies to halt purchases of certain chips". The sentence does not name Nvidia.
+S Alibaba, annual report on Form 20-F for the year to Mar 31, 2026
+Q In September 2025, the Cyberspace Administration of China requested Chinese technology companies to halt purchases of certain chips.
+D In September 2025, the Cyberspace Administration of China requested
+
+@ nv-6000d press 2025-09-17 - man-cn-ft-20250917-6000d case=nvidia row=unpublished dir=away
+T firms told to end testing and orders of the RTX Pro 6000D
+L The cyberspace regulator tells companies, ByteDance and Alibaba among them, to end their testing and orders of Nvidia's RTX Pro 6000D, the Financial Times reports, by three unnamed people. The paper calls it a ban: "The ban goes beyond earlier guidance from regulators". It reports an order told to companies, not a published rule.
+S Financial Times, Sept 17, 2025
+Q told companies, including ByteDance and Alibaba, this week to end their testing and orders of the RTX Pro 6000D
+Q The ban goes beyond earlier guidance from regulators
+D Published SEP 17 2025
+N according to three people with knowledge of the matter
+
+@ nv-statefunded press 2025-11-05 - ms-bj-20251105-statefunded-standard case=nvidia row=unpublished dir=away
+T state-funded data centres told to use only home-made AI chips
+L Guidance requires new data centre projects that took state money to use only home-made AI chips, Reuters reports. It adds: "It is unclear whether the guidance applies nationwide or only to certain provinces".
+S Reuters, Nov 5, 2025, on The Standard (Hong Kong)
+Q The Chinese government has issued guidance requiring new data centre projects that have received any state funds to only use domestically-made artificial intelligence chips
+Q It is unclear whether the guidance applies nationwide or only to certain provinces, sources said
+D PUBLISHED: 2025-11-05
+
+@ nv-unless press 2026-01-14 - cn-acts-reuters-customs-20260114 case=nvidia row=unpublished dir=away
+T firms told not to buy the H200 "unless necessary"
+L Officials tell technology companies not to buy the H200 "unless necessary", and customs agents are told the chips "are not permitted to enter China", Reuters reports, by three people. Reuters wrote that it was unclear whether Beijing wanted a ban, was still weighing restrictions, or could use the measures as "a bargaining tactic in talks with Washington".
+S Reuters, Jan 14, 2026, on Yahoo Finance
+Q explicitly instructed not to purchase the chips unless necessary
+Q Chinese customs authorities told customs agents this week that Nvidia's H200 artificial intelligence chips are not permitted to enter China
+D PUBLISHED: 2026-01-14
+N are not permitted to enter China, according to three people briefed on the matter
+N or whether these measures could be used as a bargaining tactic in talks with Washington
+
+@ nv-10q rec 2026-08-26 - man-ms-sec-10q-2026-07 case=nvidia row=unpublished dir=away
+T Nvidia's quarterly report: licensed sales "were restricted by the PRC government"
+L Nvidia's quarterly report to the US securities regulator: the United States granted licences for some H20 and H200 sales, "but such sales were restricted by the PRC government". It does not say by what act. The same report says Nvidia is "already effectively foreclosed from the China market by U.S. export controls".
+S Nvidia, quarterly report on Form 10-Q for the quarter to Jul 26, 2026
+Q but such sales were restricted by the PRC government
+Q Beginning in February 2026, the USG granted licenses that would allow us to ship small amounts of H200 products to specific China-based customers
+D Date: August 26, 2026
+D For the quarterly period ended July 26, 2026
+N already effectively foreclosed from the China market by U.S. export controls
+
+# ---- checked phrases outside the records ----
+# The foreign ministry's answer when asked about a report of limits on the H200 (note under the figure)
+! cn-acts-mfa-20251210 | 具体情况建议向中方主管部门询问
+! cn-acts-mfa-20251210 | 2025年12月10日外交部发言人郭嘉昆主持例行记者会
+# The Micron text's welcome clause (record line)
+! cn-policy-micron-decision | 欢迎各国企业、各类平台产品服务进入中国市场
+# The finance ministry's purchase bar by name, Jun 22, 2026 (cell "None found"): its list of 46 firms names no chip maker
+# (checked by build.py: no maker's name in the list's saved text, while a defence firm's name is found)
+! cn-le14-mof-us-firms-measures-20260622 | 不得采购46家美国企业（不包括在华美资企业）生产的产品
+! cn-le14-mof-us-firms-measures-20260622 | 财政部 2026年6月22日
+! cn-le14-mof-us-firms-list-20260622 | Lockheed Martin
+# Nvidia's earlier reports, by date (note under the figure; tables/nvidia_wording_by_filing.tsv)
+! man-ms-sec-10q-2025-10 | restricted customers from purchasing, importing, or using our data center products
+! man-ms-sec-10q-2025-10 | November 19, 2025
+! man-ms-sec-10k-fy2026 | discouraged customers from purchasing, importing, or using our data center products
+! man-ms-sec-10k-fy2026 | February 25, 2026
+! man-ms-sec-10q-2025-10 | already effectively foreclosed from the China market by U.S. export controls
+# The answers of Beijing's spokespeople (note under the figure)
+! cn-against2-mfa-h20-20250813 | 我不了解你提到的情况
+! cn-against2-mfa-h20-20250813 | 2025年8月13日外交部发言人林剑答记者问

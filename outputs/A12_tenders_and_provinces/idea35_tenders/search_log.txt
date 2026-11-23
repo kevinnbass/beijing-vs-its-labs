@@ -1,0 +1,23 @@
+# Idea 35: web searches run on Nov 23, 2026 (UTC), in order. Fields: number @@ where the search was limited to @@ the words searched
+1 @@ ccgp.gov.cn @@ 中标公告 GPU服务器 "H100" 英伟达 2025 采购项目 中标供应商
+2 @@ edu.cn @@ 大学 GPU服务器 采购 成交公告 "A100" OR "H100" OR "L40S" NVIDIA 2024 2025
+3 @@ ccgp.gov.cn @@ 中标公告 智算中心 "昇腾" AI服务器 采购 2025 中标金额
+4 @@ edu.cn @@ 大学 采购公告 OR 中标公告 "昇腾" OR "寒武纪" OR "海光" GPU 服务器 国产 算力平台 2025
+5 @@ ccgp.gov.cn @@ 中标公告 主要标的信息 货物品牌 华为 货物型号 Atlas 800 昇腾 训练服务器
+6 @@ ccgp.gov.cn @@ 中标公告 OR 成交公告 主要标的信息 寒武纪 MLU OR 思元 智能计算 服务器
+7 @@ ccgp.gov.cn @@ 中标公告 主要标的信息 GPU服务器 货物型号 "4090" OR "A100" OR "H20" OR "L40S" 英伟达 NVIDIA 2024
+8 @@ ccgp.gov.cn @@ 中标公告 国产 智算 算力 "海光" DCU OR "昆仑芯" OR "鲲鹏" 人工智能服务器 2025 2026
+9 @@ edu.cn @@ 成交结果公告 OR 竞价结果 "RTX 4090" OR "4090D" OR "H20" OR "H100" 显卡 GPU 服务器 2025 2026 采购与招投标
+10 @@ edu.cn @@ 成交结果公告 OR 中标公告 昇腾 Atlas OR 鲲鹏 OR 寒武纪 OR 海光 人工智能 服务器 国产 算力 采购与招标
+11 @@ ccgp.gov.cn @@ 中标公告 主要标的信息 华为 Atlas 昇腾 智算 OR 人工智能计算中心 OR 政务 算力 2025 2026 中标金额
+12 @@ b2b.10086.cn, chinatelecom.com.cn, chinaunicombidding.cn, cebpubservice.com, ggzy.gov.cn, chinabidding.com, sasac.gov.cn @@ 中国移动 OR 中国电信 OR 中国联通 人工智能服务器 集中采购 中标候选人公示 昇腾 OR 国产 AI服务器 标包 2025 2026
+13 @@ ccgp.gov.cn, edu.cn @@ "H20" GPU 服务器 英伟达 采购 中标 OR 成交 OR 招标公告 "H20" 96GB 2025
+14 @@ ccgp.gov.cn, edu.cn @@ 中标公告 OR 成交公告 "寒武纪" OR "MLU370" OR "思元370" OR "思元590" 加速卡 服务器 采购
+15 @@ ccgp.gov.cn, edu.cn @@ 中标公告 OR 成交公告 "海光" DCU OR "深算" OR "K100" 加速卡 AI服务器 采购 国产GPU 2025
+16 @@ ccgp.gov.cn @@ 中标（成交）结果公告 GPU服务器 "英伟达" OR "NVIDIA" "RTX 4090" OR "RTX4090" OR "H100" 公安局 OR 气象局 OR 医院 OR 研究院 2024 2025
+17 @@ edu.cn, ac.cn, cas.cn @@ "H200" OR "H100" GPU 服务器 采购公告 OR 询价公告 OR 成交公告 OR 中标公告 研究院 OR 研究所 OR 实验室 2025 2026 英伟达
+18 @@ no limit @@ 中标结果公告 智算中心 OR 人工智能计算中心 昇腾 OR 鲲鹏 国产化 算力 采购 政府采购网 2025 2026 中标金额 万元
+19 @@ edu.cn @@ 成交结果公告 OR 竞价结果 OR 采购结果 2026 GPU "RTX 5090" OR "5090D" OR "RTX PRO 6000" OR "H20" OR "H200" 显卡 服务器 大学
+20 @@ ccgp.gov.cn @@ 中标（成交）结果公告 昇腾 OR "Atlas 800" OR "Atlas 500" 人工智能 政务 OR 公安 OR 法院 OR 检察院 OR 医院 OR 大数据局 算力 2025 2026
+21 @@ edu.cn @@ 2026 成交结果公告 OR 中标公告 国产 GPU 加速卡 昇腾 OR 海光 OR 寒武纪 OR 沐曦 OR 摩尔线程 服务器 大学 采购
+22 @@ ccgp.gov.cn @@ 中标公告 2026 GPU服务器 主要标的信息 "A100" OR "A800" OR "H100" OR "L40S" OR "4090" 英伟达 货物型号

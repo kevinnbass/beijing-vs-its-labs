@@ -1,0 +1,14 @@
+# Sources this page cites that are not in the argument's references file. Columns: saved id <TAB> kind <TAB> label <TAB> address (optional).
+# The references file has no kind for commentary. Analysts' pieces are entered as REC (a named person's published words) and their label begins "Commentary (opinion)".
+# Round 4: rows the argument's references files now hold were taken out, so the argument's own labels are used. Senator Coons's letter is cited by the copy the argument uses.
+cn-clips-pottinger-house-20260114	REC	Matt Pottinger, written testimony to the House Foreign Affairs Committee, Jan 14, 2026. The committee's own copy of his statement, not a press report
+cn-counter-b5-1	REC	Wall Street Journal, as carried by Mint (India), Aug 23, 2025, reporting words of Nvidia's chief executive
+cn-counter-b3-2	OFF	Ministry of Foreign Affairs, spokeswoman Mao Ning's regular press conference of Aug 22, 2025. The ministry's own record
+cn-acts-mfa-20251210	OFF	Ministry of Foreign Affairs, spokesman Guo Jiakun's regular press conference of Dec 10, 2025. The ministry's own record
+cn-clips-mfa-new-1	OFF	Ministry of Foreign Affairs, spokesman Guo Jiakun's regular press conference of Nov 9, 2026. The ministry's own record
+cn-acts-mfa-20261118	OFF	Ministry of Foreign Affairs, spokesman Guo Jiakun's regular press conference of Nov 18, 2026. The ministry's own record
+cn-factions-analysis-trivium-april	REC	Commentary (opinion). Trivium China, note of Apr 30, 2026, on its own site. The firm's own published words, not a press report
+cn-factions-gewirtz-xi	REC	Commentary (opinion). Julian Gewirtz, essay in the New York Review of Books, published online Feb 5, 2026. His own published words, not a press report
+cnpol-x-fedasiuk-2055097086312624481	REC	Commentary (opinion). Ryan Fedasiuk, post on X, May 15, 2026. His own published words, not a press report
+cn-factions-kyle-wapo-relay1	REC	Commentary (opinion). Washington Post, published Nov 18, 2026, as carried by Jewish World Review, quoting Kyle Chan of the Brookings Institution
+cn-counter-b3-4	REC	Commentary (opinion). Tom's Hardware, Aug 23, 2025, quoting Jimmy Goodrich of RAND Corporation

@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Places Reports Name</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap">
+<style>
+/* Colour and type tokens are those of ../../../figure/template.html. Layout: headline; the map beside its key; the numbered records; notes. */
+:root {
+  --page: #f9f9f7; --surface: #fcfcfb; --ink: #0b0b0b; --ink2: #52514e; --muted: #7a7872;
+  --grid: #e1e0d9; --axis: #c3c2b7; --border: rgba(11,11,11,0.12); --wash: rgba(11,11,11,0.045);
+  --toward: #256abf; --away: #c44e18; --us: #898781; --pin-on: #ffffff; --link: #1c5cab;
+  --land: #eceae3; --main: #dad8cd; --coast: #b4b2a6; --provline: #f4f3ee; --tint: rgba(37,106,191,0.26); --tint-o: 0.26;
+  --font-text: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-head: "Space Grotesk", "Inter", system-ui, sans-serif;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --page: #0d0d0d; --surface: #1a1a19; --ink: #f0efec; --ink2: #c3c2b7; --muted: #8f8d86;
+  --grid: #2c2c2a; --axis: #45453f; --border: rgba(255,255,255,0.14); --wash: rgba(255,255,255,0.06);
+  --toward: #3987e5; --away: #d95926; --us: #898781; --pin-on: #0d0d0d; --link: #86b6ef;
+  --land: #262624; --main: #3a3a36; --coast: #5c5b54; --provline: #252523; --tint: rgba(57,135,229,0.36); --tint-o: 0.36; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --page: #0d0d0d; --surface: #1a1a19; --ink: #f0efec; --ink2: #c3c2b7; --muted: #8f8d86;
+  --grid: #2c2c2a; --axis: #45453f; --border: rgba(255,255,255,0.14); --wash: rgba(255,255,255,0.06);
+  --toward: #3987e5; --away: #d95926; --us: #898781; --pin-on: #0d0d0d; --link: #86b6ef;
+  --land: #262624; --main: #3a3a36; --coast: #5c5b54; --provline: #252523; --tint: rgba(57,135,229,0.36); --tint-o: 0.36; color-scheme: dark }
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--page); color: var(--ink); font-family: var(--font-text); font-size: 16px; line-height: 1.5; }
+[hidden] { display: none !important; }
+a { color: var(--link); }
+.wrap { max-width: 1480px; margin: 0 auto; padding: 30px 16px 48px; background: var(--page); }
+header { margin-bottom: 20px; }
+.eyebrow { font: 700 12px/1 var(--font-text); letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin: 0 0 12px; }
+h1 { font-family: var(--font-head); font-size: clamp(27px, 3.4vw, 44px); line-height: 1.1; letter-spacing: -0.015em; margin: 0 0 12px; max-width: 30ch; text-wrap: balance; }
+.deck { margin: 0; color: var(--ink2); font-size: 18px; max-width: 80ch; }
+.draft { margin: 12px 0 0; font-size: 12.5px; color: var(--muted); }
+.card { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 20px 22px; min-width: 0; }
+.card h2 { font-family: var(--font-head); font-size: 22px; line-height: 1.2; margin: 0 0 4px; text-wrap: balance; }
+.card .sub { margin: 0 0 12px; color: var(--ink2); font-size: 14.5px; max-width: 72ch; }
+.card .sub b { color: var(--ink); font-weight: 600; }
+.row { display: grid; gap: 16px; grid-template-columns: 1fr; }
+@media (min-width: 1000px) { .row.top { grid-template-columns: minmax(0, 8fr) minmax(0, 4fr); align-items: start; } }
+
+/* numbered marks, as HTML: a circle, or a diamond for a plan */
+a.p { display: inline-grid; place-items: center; flex: none; width: 22px; height: 22px; border-radius: 50%; font: 700 11px/1 var(--font-text);
+  font-variant-numeric: tabular-nums; text-decoration: none; border: 2.5px solid; vertical-align: middle; }
+a.p.toward { border-color: var(--toward); } a.p.away { border-color: var(--away); }
+a.p.hollow { background: var(--surface); color: var(--ink); }
+a.p.solid.toward { background: var(--toward); color: var(--pin-on); } a.p.solid.away { background: var(--away); color: var(--pin-on); }
+a.p.us { border-color: var(--us); } a.p.solid.us { background: var(--us); color: #0b0b0b; }
+a.p.plan { border-radius: 3px; transform: rotate(45deg); width: 19px; height: 19px; margin: 2px 3px; }
+a.p.plan > span { transform: rotate(-45deg); }
+a.p:hover, a.p.hl, a.p:focus-visible { outline: 2.5px solid var(--ink); outline-offset: 1px; }
+
+/* the map */
+.hint { display: none; margin: 0 0 6px; font-size: 13px; font-weight: 600; color: var(--ink2); }
+@media (max-width: 760px) { .hint { display: block; } }
+.scroll { overflow-x: auto; margin: 0 -6px; padding: 0 6px; }
+.scroll svg { display: block; width: 100%; min-width: 660px; height: auto; }
+svg text { font-family: var(--font-text); }
+/* the land is drawn twice: first wider in the coast colour, then filled, so only the outer edge of the land shows as a line */
+.casing { fill: var(--coast); stroke: var(--coast); stroke-width: 2.2; stroke-linejoin: round; fill-rule: evenodd; }
+.land { fill: var(--land); stroke: var(--land); stroke-width: 0.8; stroke-linejoin: round; fill-rule: evenodd; }
+.main { fill: var(--main); stroke: var(--provline); stroke-width: 0.8; stroke-linejoin: round; fill-rule: evenodd; }
+.tint { fill: var(--toward); stroke: var(--toward); stroke-width: 0.6; stroke-linejoin: round; fill-rule: evenodd; opacity: var(--tint-o); }
+.edge { fill: none; stroke: var(--coast); stroke-width: 0.7; stroke-linejoin: round; stroke-linecap: round; }
+.halo { fill: var(--surface); }
+.ctx { font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; fill: var(--muted); }
+.mapnote { font-size: 12px; font-weight: 600; fill: var(--ink2); paint-order: stroke; stroke: var(--surface); stroke-width: 3px; stroke-linejoin: round; }
+.plab { font-size: 13px; font-weight: 700; fill: var(--ink); paint-order: stroke; stroke: var(--surface); stroke-width: 3.5px; stroke-linejoin: round; }
+a.pin { cursor: pointer; outline: none; }
+a.pin .m { stroke-width: 2.5; }
+a.pin.toward .m { stroke: var(--toward); } a.pin.away .m { stroke: var(--away); }
+a.pin.hollow .m { fill: var(--surface); }
+a.pin.solid.toward .m { fill: var(--toward); } a.pin.solid.away .m { fill: var(--away); }
+a.pin.us .m { stroke: var(--us); } a.pin.solid.us .m { fill: var(--us); } a.pin.solid.us text { fill: #0b0b0b; }
+a.pin text { font-size: 11px; font-weight: 700; text-anchor: middle; fill: var(--ink); pointer-events: none; font-variant-numeric: tabular-nums; }
+a.pin.solid text { fill: var(--pin-on); }
+a.pin:hover .m, a.pin.hl .m, a.pin:focus-visible .m { stroke: var(--ink); stroke-width: 3; }
+.mapsrc { margin: 10px 0 0; font-size: 12px; color: var(--muted); max-width: 100ch; }
+
+/* the key */
+.key { margin: 10px 0 0; padding: 0; list-style: none; font-size: 14.5px; color: var(--ink2); }
+.key li { display: grid; grid-template-columns: 30px 1fr; gap: 10px; align-items: start; padding: 9px 0; border-top: 1px solid var(--grid); }
+.key li > :first-child { justify-self: center; margin-top: 1px; }
+.key b { color: var(--ink); font-weight: 600; }
+i.sw { display: inline-block; width: 14px; height: 14px; border-radius: 50%; margin-top: 4px !important; }
+i.sw.toward { background: var(--toward); } i.sw.away { background: var(--away); } i.sw.us { background: var(--us); }
+i.sq { display: inline-block; width: 22px; height: 15px; border-radius: 3px; margin-top: 3px !important; box-shadow: inset 0 0 0 1px var(--coast); }
+i.sq.t { background: linear-gradient(var(--tint), var(--tint)), var(--main); } i.sq.m { background: var(--main); }
+
+/* the records */
+#records, .notes { margin-top: 16px; }
+.cols { display: grid; grid-template-columns: 1fr; gap: 8px 34px; }
+@media (min-width: 900px) { .cols { grid-template-columns: 1fr 1fr; } }
+.lcol h3 { font: 700 13px/1.3 var(--font-text); letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin: 12px 0 8px; }
+.lcol ol { list-style: none; margin: 0 0 6px; padding: 0; }
+li.ev > div { min-width: 0; }
+li.ev { display: grid; grid-template-columns: 28px 1fr; gap: 10px; padding: 9px 6px; border-top: 1px solid var(--grid); border-radius: 6px; scroll-margin-top: 14px; }
+li.ev.hl, li.ev:target { background: var(--wash); }
+.place { font-weight: 700; font-size: 15px; }
+.when { font-size: 13px; color: var(--ink2); white-space: normal; }
+.what { display: block; font-size: 14.5px; margin-top: 2px; }
+.src { display: block; font-size: 12.5px; color: var(--muted); margin-top: 3px; }
+.notes ul { margin: 6px 0 0; padding-left: 20px; color: var(--ink2); font-size: 14px; max-width: 110ch; }
+.notes li { margin: 5px 0; }
+
+#tip { position: fixed; z-index: 10; max-width: 380px; background: var(--ink); color: var(--page); padding: 10px 12px; border-radius: 10px; font-size: 13px; line-height: 1.4;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.25); pointer-events: none; }
+#tip .tw { font-weight: 700; font-size: 12px; opacity: 0.8; } #tip .tt { font-weight: 600; margin: 2px 0 6px; }
+#tip .tq { font-style: italic; opacity: 0.92; } #tip .ts { margin-top: 6px; font-size: 12px; opacity: 0.75; }
+</style>
+</head>
+<body>
+<div class="wrap" id="figure">
+ <header>
+  <p class="eyebrow">China · Nvidia chips · places named in saved sources, %%SPAN%%</p>
+  <h1>In %%N_SRC%% saved sources, most places named for Nvidia chips are outside mainland China, or are plans on paper</h1>
+  <p class="deck">%%N_REC%% records from %%N_SRC%% saved sources. %%N_OUT_PRESS%% press reports put chips outside the mainland: waiting in Hong Kong, or used in data centres in Southeast Asia and Japan. %%N_OUT_PAPER%% records on paper lie outside it too: a Japanese firm’s notice of a data centre moved to Chiba, and licence applications for consignees in Malaysia, Indonesia and Thailand that Washington returned without action. %%N_PLAN%% are plans, tenders and contracts on the mainland that name Nvidia chips. %%N_THERE%% says chips are on the mainland: a cluster that a city government said had entered operation.</p>
+  <p class="draft">Draft by Claude, Anthropic’s model. Local; not published.</p>
+ </header>
+ <div class="row top">
+  <section class="card" id="mapcard">
+   <h2>Places the sources name</h2>
+   <p class="sub"><b>This map shows places that reports and records name. It does not show where chips are.</b> Each number is one record, listed below. A mark sits on the area its source names, not on a site. Point at a mark to read the source’s own words.</p>
+   <p class="hint">Swipe the map sideways to see all of it.</p>
+   <div class="scroll" tabindex="0" role="group" aria-label="Map; scroll sideways on a narrow screen">
+%%MAP%%
+   </div>
+   <p class="mapsrc">Outlines: Natural Earth, 1:10m states and provinces, version 5.1.2 (naturalearthdata.com), public domain; drawn here in a Lambert azimuthal equal-area projection. Boundaries are as Natural Earth draws them and take no position on any dispute.</p>
+  </section>
+  <section class="card" id="keycard">
+   <h2>How to read the marks</h2>
+   <ul class="key">
+    <li><i class="sw away"></i><span><b>Away from Nvidia (orange):</b> chips held back, waiting for Beijing’s approval. %%N_AWAY%% record</span></li>
+    <li><i class="sw toward"></i><span><b>Toward Nvidia (blue):</b> Chinese companies using, renting or planning to install its chips. %%N_TOWARD%% records</span></li>
+    <li><i class="sw us"></i><span><b>Grey:</b> the United States government’s own table of licence applications, returned without action. %%N_US%% record</span></li>
+    <li><a class="p hollow toward" aria-hidden="true" tabindex="-1"><span>1</span></a><span><b>Circle:</b> chips reported or said to be at the place. %%N_CIRCLE%% records</span></li>
+    <li><a class="p solid toward plan" aria-hidden="true" tabindex="-1"><span>1</span></a><span><b>Diamond:</b> a plan, tender, contract or licence application that names Nvidia chips. It does not show that chips arrived. %%N_DIAMOND%% records</span></li>
+    <li><a class="p solid toward" aria-hidden="true" tabindex="-1"><span>1</span></a><span><b>Filled:</b> on the record: documents, a named company or a government body, as the outlet cited reports them; for %%N_PAPER%% records the document itself is saved. %%N_SOLID%% records</span></li>
+    <li><a class="p hollow toward" aria-hidden="true" tabindex="-1"><span>1</span></a><span><b>Open:</b> a press report citing unnamed people. %%N_HOLLOW%% records</span></li>
+    <li><i class="sq t"></i><span><b>Blue shading:</b> a province or country that a source names for chips in use or planned. The exact spot of a mark means nothing: no source here names a site more exactly than the list below says.</span></li>
+    <li><i class="sq m"></i><span><b>Darker land:</b> mainland China. Hong Kong “operates outside mainland China’s customs border”, as Reuters puts it.</span></li>
+   </ul>
+  </section>
+ </div>
+ <section class="card" id="records">
+  <h2>What each source says</h2>
+  <p class="sub">Each line is my summary; words between quote marks are the page’s own, checked by script against the saved copy. The link goes to the page.</p>
+  <div class="cols">
+%%LIST%%
+  </div>
+ </section>
+ <section class="card notes">
+  <h2>Read with care</h2>
+  <ul>
+   <li>This map shows places that reports and records name. It does not show where chips are. A mark is what one source says about one place: it is not proof that chips are there, and the map is not a count. The %%N_SRC%% sources read for it do not settle where the chips Nvidia has sold are now.</li>
+   <li>Open marks rest on unnamed people. Filled marks rest on documents or on a named company or government body, as the outlet cited reports them. The tender and investment papers themselves were not read for this map. %%N_PAPER_CAP%% filled marks rest on documents that are themselves saved: Datasection’s notice and the Commerce Department’s table.</li>
+   <li>A diamond is a plan, a tender, a contract or a licence application. It shows that a paper names Nvidia chips, not that chips arrived. Of the Gansu centre Reuters writes: “The documents do not establish whether the processors have been delivered.” The licence applications drawn in grey were returned without action: no licence was given.</li>
+   <li>Not on the map, because the report names no place: chips that Beijing let in. Reuters, Nov 5, 2026, citing one unnamed person: “Several major Chinese internet companies have each obtained about 10,000 H200 chips in the past few months”.</li>
+   <li>The chips are not all one kind. Hong Kong: H200. Japan: B200 in the Financial Times’s report, B300 in the firm’s notice. The licence table covers Nvidia’s H200 and AMD’s MI325X; the applications drawn name Nvidia as exporter. Plans and tenders: H100 and H200. The Jiangsu cluster: H800.</li>
+   <li>Both reports of capacity rented abroad say it was within the rules at the time: leasing data centres abroad is “compliant with US export controls” (Financial Times, Nov 27, 2025); the paper calls the arrangement in Japan “a legal but geopolitically fraught strategy” (Dec 20, 2025). Later, on Nov 16, 2026, the US Commerce Department released a rule “to address remote access to advanced super intelligence (SI) chips and servers”, aimed at “remote computing arrangements involving data centers in third countries”.</li>
+   <li>Not drawn, from the Reuters review of Nov 13, 2026: a cluster in Fujian. Reuters lists it with facilities “already using restricted Nvidia hardware”, but says only that a Shanghai-listed company’s venture “had built an H800 cluster” and that its services contract “ended early”. It does not say plainly that the cluster runs. Also not drawn: two small university purchases (three H100 processors and two H200 chips).</li>
+   <li>These are the places named in %%N_SRC%% saved sources, not a survey. Dates are of the report or document unless the page gives the date of the act. English for Japanese words is mine.</li>
+  </ul>
+ </section>
+</div>
+<div id="tip" hidden></div>
+<script>
+const EV = %%EVJSON%%;
+const tip = document.getElementById('tip');
+function line(cls, text) { const d = document.createElement('div'); d.className = cls; d.textContent = text; return d; }
+function show(a) {
+  const e = EV[a.dataset.n]; if (!e) return;
+  tip.replaceChildren(line('tw', e.p + ' · ' + e.w), line('tt', e.t), line('tq', '“' + e.q + '”'), line('ts', e.s + ' · ' + e.k));
+  tip.hidden = false;
+  const r = a.getBoundingClientRect(), w = tip.offsetWidth, h = tip.offsetHeight;
+  let x = Math.min(Math.max(8, r.left + r.width / 2 - w / 2), window.innerWidth - w - 8), y = r.top - h - 10;
+  if (y < 8) y = r.bottom + 10;
+  tip.style.left = x + 'px'; tip.style.top = y + 'px';
+}
+function mark(n, on) { document.querySelectorAll('[data-n="' + n + '"]').forEach(el => el.classList.toggle('hl', on)); }
+document.querySelectorAll('[data-n]').forEach(el => {
+  const n = el.dataset.n, t = el.hasAttribute('data-tip');
+  el.addEventListener('mouseenter', () => { mark(n, true); if (t) show(el); });
+  el.addEventListener('mouseleave', () => { mark(n, false); tip.hidden = true; });
+  el.addEventListener('focus', () => { mark(n, true); if (t) show(el); });
+  el.addEventListener('blur', () => { mark(n, false); tip.hidden = true; });
+});
+window.addEventListener('scroll', () => { tip.hidden = true; }, { passive: true });
+</script>
+</body>
+</html>

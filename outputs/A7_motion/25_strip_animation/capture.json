@@ -1,0 +1,94 @@
+{
+ "page": "strip_animation.html",
+ "fps": 30,
+ "frames": 765,
+ "mp4": "strip_animation.mp4",
+ "master": "_master_lossless.mkv",
+ "crf": 15,
+ "gif": {
+  "file": "strip_animation.gif",
+  "fps": 15,
+  "width": 1280,
+  "colors": 160
+ },
+ "webp": {
+  "file": "strip_animation.webp",
+  "fps": 15,
+  "width": 1280,
+  "quality": 82
+ },
+ "stills": [
+  [
+   "00s",
+   0
+  ],
+  [
+   "02s",
+   60
+  ],
+  [
+   "04s",
+   120
+  ],
+  [
+   "06s",
+   180
+  ],
+  [
+   "08s",
+   240
+  ],
+  [
+   "10s",
+   300
+  ],
+  [
+   "12s",
+   360
+  ],
+  [
+   "14s",
+   420
+  ],
+  [
+   "16s",
+   480
+  ],
+  [
+   "18s",
+   540
+  ],
+  [
+   "20s",
+   600
+  ],
+  [
+   "22s",
+   660
+  ],
+  [
+   "24s",
+   720
+  ],
+  [
+   "last",
+   764
+  ]
+ ],
+ "expect": [],
+ "label_control": {
+  "id": "c36",
+  "x": 249.3,
+  "y": 144
+ },
+ "made_from": {
+  "../../../figure/figure_data.txt": "f108aeb2bdb553ad689410eefabf9254abbacc3dbe915c086f71d824e28b2995",
+  "../../../figure/figure_events.tsv": "ee1def9e73f091f8c7f1cbafa741dcdeb99642a81dd3251c54b170ef7249718e",
+  "../../../figure/beijing_vs_labs.html": "2166fb15bac19c0630ec86443d51a47d35b728810589b3797a79c4e893cc147f",
+  "../../../figure/template.html": "9bdfccd5f89093ef5b91ac9cd2e99ad4e455579da6d2e6584da1ea7f42577ce2",
+  "../a7lib.py": "309ff6b577cafbdcd7ed7f88f9be8f4c62964fd6da18e809e3f25f360ddcd85b",
+  "build.py": "ffcb8d58ccb78b0bae44cf24ad6859893884cf7ceeac72d3601196b8704a4f6f",
+  "quotes.tsv": "c44a52227075303cfc711a030824b7bd4930715b32c81fecf916e74b8732ffc1",
+  "strip_animation.html": "81fd7809e24c5af5016c9aae0346eea864b037cc38e7be0363908db2436d22f9"
+ }
+}

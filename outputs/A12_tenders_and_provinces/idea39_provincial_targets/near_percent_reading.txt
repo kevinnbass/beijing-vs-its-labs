@@ -1,0 +1,13 @@
+# Round 4 reading of the 11 places listed above (second builder, Nov 23, 2026, about 12:40 UTC). build.py appends this file
+# to near_percent.txt and stops if the count of places changes from 11.
+# Beijing, 3 places, one passage: 具备100%自主可控智算中心建设能力. A capability to build by 2027, not a share of use (its row says so).
+# Henan, 1 place: 安全可靠 stands in the plan's goal sentence; the percent is the average rack use rate, 平均利用率达到70%以上.
+# Fujian, 1 place: 推动智算中心提升国产化率 (raise the rate, no number); the percent is the rack occupancy rate, 上架率不低于65%.
+# Hunan, 1 place: 集成电路整线装备国产化率达95%. A rate already reached, for complete production lines of chip-making
+#   equipment, in the plan's account of the province's base; not a share of computing hardware, and not a target.
+# Shanxi, 4 places, one passage: the one-off reward for new or rebuilt data centres whose basic software and hardware are
+#   90% or more home-made (国产化90%以上). A reward, not a target: the row and table 4 say so.
+# Guangxi, 1 place: 建设安全可靠的数据流通利用基础设施 follows 公共数据需求满足率超80%, a rate for public data requests.
+# None of the 11 sets a share of home-made computing hardware.
+# Not caught by this scan, by design: the word 自主 alone (Zhejiang's 自主算力服务 vouchers, 30% against 10%); the vouchers
+#   are read in vouchers.txt, not here.

@@ -1,0 +1,21 @@
+word	calls_with_it	calls_read	which
+revenue (control)	39	39	39 calls
+untranslated passage marker	1	39	Alibaba 2026-11-19
+Nvidia	0	39	
+H20	2	39	Baidu 2025-08-20; Tencent 2025-05-14
+H200	0	39	
+H800	1	39	Tencent 2023-11-15
+A100 or V100	1	39	Alibaba 2026-08-20
+Huawei	0	39	
+misspellings of Nvidia or Huawei	0	39	
+Ascend	0	39	
+Cyberspace Administration	0	39	
+customs	0	39	
+Hong Kong (chips context not checked)	32	39	32 calls
+import/imported/imports (of chips or GPUs, same sentence)	6	39	Alibaba 2025-02-20; Baidu 2024-05-16; Tencent 2025-05-14; Tencent 2025-08-13; Tencent 2026-03-18; Tencent 2026-11-18
+export control / export restriction	5	39	Alibaba 2023-11-16; Alibaba 2025-02-20; Alibaba 2026-11-19; Baidu 2023-11-21; Baidu 2025-05-21
+BIS	2	39	Alibaba 2026-11-19; Tencent 2025-05-14
+domestic chip(s)	10	39	Alibaba 2025-02-20; Alibaba 2026-03-19; Alibaba 2026-05-13; Alibaba 2026-08-20; Alibaba 2026-11-19; Baidu 2025-05-21; Baidu 2025-08-20; Baidu 2026-05-18; Baidu 2026-08-18; Tencent 2026-11-18
+T-Head	4	39	Alibaba 2026-03-19; Alibaba 2026-05-13; Alibaba 2026-08-20; Alibaba 2026-11-19
+Kunlun	4	39	Baidu 2026-02-26; Baidu 2026-05-18; Baidu 2026-08-18; Baidu 2026-11-16
+ASIC	3	39	Tencent 2025-05-14; Tencent 2026-05-13; Tencent 2026-08-12

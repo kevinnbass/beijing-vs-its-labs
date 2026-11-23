@@ -1,0 +1,35 @@
+# Search and fetch log, agent A10 (ideas 34 and 42). One line per web search or web read; saves through fetch.py are in sources.tsv and research/primary/routes.jsonl.
+# n	idea	kind	query or address	result
+1	34	search	proclamation semiconductors Section 232 January 2026 25% tariff ... HTSUS 8471.50 8471.80 8473.30 annex H200	found Proclamation of Jan 14, 2026 (White House page, Federal Register public-inspection PDF, fact sheet)
+2	34	search	China customs monthly statistics imports integrated circuits 8542.31 ... stats.customs.gov.cn	only aggregators (Trading Economics, OEC, CEIC, Statista); no official page in results
+3	34	save	whitehouse.gov proclamation; public-inspection.federalregister.gov/2026-01052.pdf; presidency.ucsb.edu fact sheet	first two saved (200); fact sheet 403
+4	34	save	whitehouse.gov fact sheet of Jan 14, 2026	saved cn-o34-us232-factsheet-wh; names "the NVIDIA H200 and AMD MI325X"
+5	34	search	BIS rule January 2026 H200 exports China license requirements third-party testing in the United States	found Federal Register rule 2026-00789 (Jan 15, 2026), BIS press release, law-firm notes
+6	34	search	Nvidia H200 HTS code classification 8473.30 OR 8542.31 OR 8471.80	Nvidia export-regulations page; CBP ruling N359764; a trade-court opinion on an Nvidia card; no page stating the H200's code
+7	34	save	govinfo BIS rule; nvidia.com export-regulations; rulings.cbp.gov N359764; cit.uscourts.gov 26-04; bis.gov press release	all five saved (200)
+8	34	save	api.census.gov exports/hs (US exports to China, Hong Kong, Macau by heading)	200 but the body is a "Missing Key" page: the API needs a key, which needs a sign-up. Not pursued
+9	34	save	comtradeapi.un.org public preview, six months in one call	400 "Maximum number of periods for preview is 1"
+10	34+42	save	comtradeapi.un.org public preview, one month per call, reporters USA, China, Hong Kong; headings 847150, 847180, 847330, 854231	202501 to 202608 saved (20 calls); 202609 returned 0 rows; 202610 returned 429 (too many requests) and was not retried
+11	34	save	comtradeapi.un.org getDA (which months China has reported)	saved; China's latest monthly period there is 202412
+12	34	search	海关总署 2026年 进口主要商品量值表 集成电路 自动数据处理设备及其零部件	a university's monthly monitor of chip trade from customs data (delab.uibe.edu.cn); finance-site relays
+13	34	search	海关 归类 GPU 加速卡 显卡 服务器 税则号列 ... 归类决定	no Chinese customs classification decision for these chips found; Hong Kong trade circulars surfaced
+14	34	save	english.customs.gov.cn monthly bulletin page; stats.customs.gov.cn; customs.gov.cn monthly index; university monitor PDF	English page 200; stats.customs.gov.cn 412; customs.gov.cn 412; PDF 200
+15	34	save	english.customs.gov.cn tables 14, 16, 18 for Sept 2026; coverage page; explanatory-notes index	all 200
+16	34	save	english.customs.gov.cn explanatory notes 2024; coverage spreadsheet 2024	both 200 (the spreadsheet is a binary file)
+17	34	save	english.customs.gov.cn 2025 bulletin page; table 14 for Mar 2026, Jun 2026, Dec 2025	all 200
+18	42	search	Hong Kong Census and Statistics Department "Hong Kong Merchandise Trade Statistics" imports monthly report September 2026 ...	Hong Kong Government press releases of monthly trade figures (info.gov.hk) and their PDF tables; no table by tariff heading
+19	42	search	Hong Kong government response Nvidia H200 chips stored in Hong Kong 600,000 customs OR "Commerce and Economic Development Bureau" ...	relays of the Reuters report only; no Hong Kong government statement; one relay (investinglive) of the Financial Times with "around 500,000 units"
+20	42	search	Nvidia H200 chips Hong Kong warehouses stockpile awaiting mainland approval ... own reporting SCMP OR Bloomberg OR "Financial Times" OR Nikkei OR Caixin	relays of Reuters; the Financial Times report of August 2026; no outlet with its own sources for the 600,000
+21	42	save	info.gov.hk release for September 2026; investinglive relay	both saved (200)
+22	42	save	gia.info.gov.hk PDF of the release's tables	saved (200)
+23	42	read	censtatd.gov.hk/en/scode230.html (Hong Kong statistics office, trade statistics page), through the web reader	read, not saved: lists aggregate web tables, a "Build Your Own Tables" tool and "Concepts and Methods" sections; no file by tariff heading named
+24	42	search	censtatd.gov.hk "Hong Kong Merchandise Trade Statistics" "Imports" monthly pdf ...	monthly press releases only
+25	42	search	Hong Kong trade statistics coverage "transhipment" "goods in transit" excluded ... "import declaration" 14 days	United Nations pages holding Hong Kong's own descriptions (questionnaire, workshop slides, declarations guide)
+26	42	search	英伟达 H200 香港 60万 存放 仓库 等待 内地 进口 香港政府 回应 OR 海关 OR 物流 2026年11月	Chinese-language relays of Reuters; no Hong Kong government or customs reply found
+27	42	search	Nvidia earnings call November 2026 Kress H200 inventory Hong Kong "no longer shipping" inventory charge ...	reports of the results call; nothing on where stock is held; the charge of the half year to Jul 26, 2026 is in the saved quarterly report
+28	42	read	tradeidds.censtatd.gov.hk (Hong Kong's table-building tool), through the web reader	HTTP 499; not opened; not scripted
+29	42	save	tid.gov.hk circulars 2026 No. 3 and No. 51; unstats.un.org questionnaire page for Hong Kong	all saved (200); circular No. 51 reproduces China customs' 2025 classification decisions
+30	34	search	Taiwan Ministry of Finance exports October 2026 press release exports to Mainland China and Hong Kong ...	press coverage of the release only (totals by market and product group); read, not saved; Taiwan's own figures not pulled
+31	42	save	unstats.un.org: Hong Kong statistics office's Bangkok workshop slides (2006) and its declarations guide; tid.gov.hk trade statistics page	all saved (200); the tid page holds no text of use
+32	34	save	comtradeapi.un.org public preview, October 2026, second try (--retry)	200 with 0 rows
+33	34+42	save	comtradeapi.un.org reference lists: partner codes, reporter codes, flow codes	all saved (200)

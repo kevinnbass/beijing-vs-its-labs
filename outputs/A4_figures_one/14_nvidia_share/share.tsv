@@ -1,0 +1,18 @@
+# Nvidia's share of AI chips in China: the data behind idea 14 (read by build.py). Tab-separated.
+#   period   before = "before US export curbs tightened" (Reuters's own description: NOT the same series as the two below)
+#            y2025  = the year 2025; h2026 = January to June 2026 (both: counts by the research firm IDC, as reported by Reuters)
+#   who      a short key; label = the name as shown; dir = toward (Nvidia, blue) | away (Chinese makers, orange) | other (grey)
+#   share    per cent, as the source gives it; qkey = the line of quotes.tsv whose words hold "<share>%" for this maker
+# What is left of 100 in a period is worked out by build.py and shown as "not broken down in the report" (our subtraction).
+# The 2026 page does not mention AMD: no AMD row for h2026 (build.py checks the page for the name, with a control).
+period	who	label	dir	share	qkey
+before	nvidia	Nvidia	toward	95	before.nvidia
+y2025	nvidia	Nvidia	toward	55	y2025.nvidia
+y2025	amd	AMD	other	4	y2025.amd
+y2025	chinese	Chinese makers	away	41	y2025.chinese
+h2026	nvidia	Nvidia	toward	34	h2026.nvidia
+h2026	huawei	Huawei	away	28	h2026.huawei
+h2026	thead	T-Head	away	7	h2026.others
+h2026	cambricon	Cambricon	away	5	h2026.others
+h2026	kunlunxin	Kunlunxin	away	4	h2026.others
+h2026	hygon	Hygon	away	3	h2026.others

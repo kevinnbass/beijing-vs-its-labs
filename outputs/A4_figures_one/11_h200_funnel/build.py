@@ -1,0 +1,242 @@
+#!/usr/bin/env python3
+"""Idea 11: the H200 funnel alone. Seven bars with their sources and dates, as a page and an image.
+
+Run: python3 -I build.py                                   checks quotes.tsv with scripts/cn_has.py, writes funnel.html
+     python3 build.py --png     the same, then writes funnel.png (the figure alone, twice size)
+Reads quotes.tsv (this folder), ../h200_funnel.tsv (the seven rows), ../a4lib.py (shared helpers) and, through
+a4lib.house(), the project's tables/house_licence_table.tsv (Washington's table of licence applications).
+Nothing is written unless cn_has.py exits 0 and the guard finds every quotation and number on the page in quotes.tsv,
+in a date read from a page, or among the sums made here.
+Round 4 (Nov 23, 2026): the bars follow the core figure's. Five are press reports citing unnamed people; two are sums of
+one United States government table (status as of May 11, 2026). The old multiplied ceiling for Washington's step is gone.
+The bars are separate counts, not one tally; an application names a consignee and is not an order. Both are said on the figure.
+Before the page or image is called done or shown: scripts/render_and_look.py on funnel.html and funnel.png.
+"""
+import sys
+from datetime import date
+from pathlib import Path
+
+HERE = Path(__file__).resolve().parent
+sys.path.insert(0, str(HERE.parent))
+import a4lib as A   # noqa: E402
+
+esc, qm, fmt = A.esc, A.qm, A.fmt
+STRIP = {'ordered': 'ordered', 'wapproved': 'Washington’s table', 'wreturned': 'Washington’s table', 'approved': 'Beijing approved',
+         'discussed': 'discussed', 'delivered': 'delivered', 'waiting': 'stored'}
+LIST = {'ordered': 'ordered', 'wapproved': 'approved by Washington (status date)', 'wreturned': 'returned by Washington (status date)',
+        'approved': 'approved by Beijing', 'discussed': 'under discussion', 'delivered': 'delivered', 'waiting': 'stored in Hong Kong'}
+NUM = {2: 'two', 3: 'three', 4: 'four', 5: 'five', 6: 'six', 7: 'seven'}
+
+CSS = '''
+#fig { background: var(--page); }
+header { margin-bottom: 18px; }
+h1 { max-width: none; font-size: clamp(26px, 3.25vw, 40px); }
+@media (max-width: 1000px) { h1 br { display: none; } }
+.pin { display: inline-grid; place-items: center; flex: none; width: 22px; height: 22px; border-radius: 50%; font: 700 11px/1 var(--font-text); border: 2.5px solid;
+  background: var(--surface); color: var(--ink); font-variant-numeric: tabular-nums; }
+.pin.toward { border-color: var(--toward); } .pin.away { border-color: var(--away); } .pin.us { border-color: var(--us); }
+.pin.solid { background: var(--ink2); border-color: var(--ink2); color: var(--pin-on); }      /* filled: on the record */
+.row { display: grid; grid-template-columns: 22px minmax(200px, 290px) minmax(0, 1fr); gap: 4px 14px; padding: 14px 0 13px; border-top: 1px solid var(--grid); align-items: start; }
+.lab b { display: block; font-weight: 600; font-size: 16.5px; line-height: 1.3; }
+.lab span { display: block; font-size: 13.5px; color: var(--ink2); line-height: 1.35; margin-top: 2px; }
+.track { display: flex; align-items: center; gap: 10px; min-height: 24px; min-width: 0; }
+.track i { display: block; flex: none; height: 18px; min-width: 4px; border-radius: 0 4px 4px 0; width: calc((100% - 270px) * var(--f)); }
+.track i.toward { background: var(--toward); } .track i.away { background: var(--away); } .track i.us { background: var(--us); }
+.track em { font: 700 24px/1 var(--font-head); font-style: normal; white-space: nowrap; letter-spacing: -0.01em; }
+.track em small { font: 500 14px/1 var(--font-text); color: var(--ink2); margin-right: 3px; letter-spacing: 0; }
+.ours { font-size: 12.5px; color: var(--muted); line-height: 1.3; }
+.said { margin: 7px 0 0; font-size: 13.5px; color: var(--ink2); line-height: 1.4; max-width: 84ch; }
+.onrec { display: grid; grid-template-columns: 22px 1fr; gap: 14px; border-top: 1px solid var(--axis); padding-top: 13px; font-size: 14.5px; color: var(--ink2); line-height: 1.45; }
+.onrec b { color: var(--ink); font-weight: 600; } .onrec p { margin: 0; }
+.onrec ul { list-style: none; margin: 6px 0 0; padding: 0; } .onrec li { padding: 5px 0 0; font-size: 13.5px; line-height: 1.42; max-width: 104ch; }
+.onrec i.mk { margin: 4px 0 0 4px; }
+.srcn a { white-space: nowrap; }
+@media (max-width: 760px) { .srcn a { white-space: normal; } }
+.when { margin-top: 16px; }
+.when svg { display: block; width: 100%; height: auto; }
+svg text { font-family: var(--font-text); }
+.ax { stroke: var(--axis); stroke-width: 1; } .tk { stroke: var(--axis); stroke-width: 1; }
+.mo { font-size: 12px; font-weight: 500; fill: var(--muted); } .mo.yr { fill: var(--ink2); font-weight: 600; }
+.pw { font-size: 12.5px; font-weight: 700; fill: var(--ink); text-anchor: middle; } .pd { font-size: 12px; font-weight: 500; fill: var(--ink2); text-anchor: middle; }
+circle.c { fill: var(--surface); stroke-width: 2.5; } circle.c.toward { stroke: var(--toward); } circle.c.away { stroke: var(--away); } circle.c.us { stroke: var(--us); }
+circle.c.solid { fill: var(--ink2); stroke: var(--ink2); }
+.pn { font-size: 11px; font-weight: 700; fill: var(--ink); text-anchor: middle; } .pn.on { fill: var(--pin-on); }
+.order { display: none; list-style: none; margin: 4px 0 0; padding: 0; }
+.order li { display: flex; align-items: center; gap: 10px; padding: 7px 0; border-top: 1px solid var(--grid); font-size: 14.5px; }
+.order li b { font-weight: 600; } .order li span { color: var(--ink2); margin-left: auto; white-space: nowrap; }
+.order li span.pin { margin-left: 0; }                 /* the mark stays at the left; only the date goes to the right */
+.order li span.pin.solid { color: var(--pin-on); }
+@media (max-width: 760px) {
+  .row { grid-template-columns: 22px minmax(0, 1fr); } .barcol { grid-column: 1 / -1; }
+  .track { flex-direction: column; align-items: flex-start; gap: 5px; } .track em { order: 1; } .track .ours { order: 2; } .track i { order: 3; width: calc(100% * var(--f)); }
+  .when svg { display: none; } .order { display: block; }
+}
+'''
+
+
+def strip(rows):
+    """When each count dates from: one mark per bar on a line of months. Bars that share a date (the two sums of
+    Washington's table) stand side by side under one label."""
+    W, H, GL, GR, AY = 1152, 104, 34, 34, 62
+    a = date(min(r['date'] for r in rows).year, min(r['date'] for r in rows).month, 1)
+    last = max(r['date'] for r in rows)
+    b = date(last.year + (last.month == 12), last.month % 12 + 1, 1)
+    X = lambda d: GL + (d - a).days / (b - a).days * (W - GL - GR)
+    out = [f'<svg viewBox="0 0 {W} {H}" role="img" aria-labelledby="st-t st-d"><title id="st-t">The date of each count</title>'
+           f'<desc id="st-d">{esc("; ".join(str(r["n"]) + " " + LIST[r["key"]] + ", " + fmt(r["date"]) for r in sorted(rows, key=lambda r: (r["date"], r["n"]))))}</desc>',
+           f'<line class="ax" x1="{GL}" y1="{AY}" x2="{W - GR}" y2="{AY}"/>']
+    d = a
+    while d <= b:
+        x = X(d); first = d == a or d.month == 1
+        if d < b:
+            out.append(f'<line class="tk" x1="{x:.1f}" y1="{AY}" x2="{x:.1f}" y2="{AY + 6}"/><text class="mo{" yr" if first else ""}" x="{x + 4:.1f}" y="{AY + 22}">{A.MON[d.month - 1]}{" " + str(d.year) if first else ""}</text>')
+        else:
+            out.append(f'<line class="tk" x1="{x:.1f}" y1="{AY}" x2="{x:.1f}" y2="{AY + 6}"/>')
+        d = date(d.year + (d.month == 12), d.month % 12 + 1, 1)
+    days = sorted({r['date'] for r in rows})
+    for dd in days:
+        grp = [r for r in rows if r['date'] == dd]; x = X(dd)
+        assert len({STRIP[r['key']] for r in grp}) == 1, 'bars that share a date share a label'
+        out.append(f'<text class="pw" x="{x:.1f}" y="16">{esc(STRIP[grp[0]["key"]])}</text><text class="pd" x="{x:.1f}" y="32">{A.MON[dd.month - 1]} {dd.day}</text>')
+        for i, r in enumerate(grp):
+            cx = x + (i - (len(grp) - 1) / 2) * 24
+            solid = r['tier'] == 'solid'
+            out.append(f'<circle class="c {r["dir"]}{" solid" if solid else ""}" cx="{cx:.1f}" cy="{AY - 14}" r="10"/><text class="pn{" on" if solid else ""}" x="{cx:.1f}" y="{AY - 10}">{r["n"]}</text>')
+    out.append('</svg>')
+    return '\n'.join(out)
+
+
+def joined(xs):
+    xs = list(xs)
+    return xs[0] if len(xs) == 1 else ', '.join(xs[:-1]) + ' and ' + xs[-1]
+
+
+def main():
+    qfile = HERE / 'quotes.tsv'
+    A.check(qfile)                                   # stops here if a quotation is not found in its saved copy
+    Q = A.quotes(qfile); A.guard_control(Q)
+    rows, H = A.funnel(Q)
+    for n, r in enumerate(rows, 1): r['n'] = n
+    top = max(r['chips'] for r in rows)
+    press = [r for r in rows if r['tier'] == 'open']; docs = [r for r in rows if r['tier'] == 'solid']
+    R = {r['key']: r for r in rows}
+    delivered = R['delivered']; per = A.count(delivered['number'])
+    d_rec = A.day(Q, 'onrecord'); period = fmt(date(*A.parse_date(Q['onrecord.period'])))
+    d_q1, d_q3, d_q3end, d_cap = A.day(Q, 'nvq1'), A.day(Q, 'nvq3'), A.day(Q, 'nvq3.end'), A.day(Q, 'cap')
+    first, last = min(r['date'] for r in rows), max(r['date'] for r in rows)
+    bydate = sorted(rows, key=lambda r: (r['date'], r['n']))
+    f = lambda v: f'{v:,}'
+    places, names = joined(H['places']), joined(H['names'])
+    cap = A.count(Q['cap'].split('up to ')[1].split(' chips')[0])           # the cap Reuters reported, read from its sentence
+    assert cap == H['cap'], 'the largest approved application in the table is not the cap Reuters reported'
+    assert H['tencent_status'] == 'Approved, not shipped'
+    status, released = fmt(H['status']), fmt(H['released'])
+
+    under = {
+        'ordered': f'{qm(Q["ordered"])}; the report gives this on the word of {qm("two of the people")} it spoke to.',
+        'wapproved': (f'The committee’s summary: {qm(Q["wapproved"])}. The table marks each of the {H["appr"][1]} {qm(Q["table.marked"])}. Nvidia is the exporter in {H["appr_nv"][1]} of them, '
+                      f'AMD in {H["appr_amd"][1]} ({f(H["appr_amd"][0])} chips, kept apart here). No approved application is for more than {f(H["cap"])} chips.'),
+        'wreturned': (f'The table marks these RWA, the export bureau’s short form: {qm(Q["table.rwa"])}. Among Nvidia’s {H["rwa_nv"][1]} are all {H["abroad"][1]} applications for consignees in {places} '
+                      f'({f(H["abroad"][0])} chips), named for {names}. With AMD’s {H["rwa_amd"][1]}, {f(H["rwa"][0])} of the table’s {f(H["all"][0])} chips: {H["share"]}% of the chips in the applications the summary records. '
+                      f'The table gives no reasons, and the committee says some applications are {qm(Q["table.notfull"])}.'),
+        'approved': f'{qm(Q["approved"])}. {qm(Q["approved.conditions"])}.',
+        'discussed': f'{qm(Q["discussed.what"])}; {qm(Q["discussed"])}.',
+        'delivered': f'{qm(Q["delivered"])}; {qm(Q["delivered.outside"])}.',
+        'waiting': f'{qm(Q["waiting"])}, {qm(Q["waiting.withholds"])}.',
+    }
+    srclink = {
+        'wapproved': lambda r: A.link(r['sid'], f'House Foreign Affairs Committee, summary made public {released}'),
+        'wreturned': lambda r: A.link(r['sid'], f'Commerce Department table, status {status}'),
+    }
+    rr = []
+    for r in rows:
+        note = ''
+        if r['key'] == 'wapproved': note = f'<span class="ours">our sum of the table’s {r["apps"]} rows with Nvidia as exporter</span>'
+        if r['key'] == 'wreturned': note = f'<span class="ours">our sum of the table’s {r["apps"]} rows with Nvidia as exporter</span>'
+        if r['key'] == 'delivered': note = f'<span class="ours">the bar is drawn for both buyers: 2 × {per:,}</span>'
+        qual = f'<small>{esc(r["shown"][0])}</small>' if r['shown'][0] else ''
+        link = srclink[r['key']](r) if r['key'] in srclink else A.link(r['sid'], f'{r["by"]}, {fmt(r["date"])}')
+        rr.append(f'''<div class="row"><span class="pin {r["dir"]}{" solid" if r["tier"] == "solid" else ""}" aria-hidden="true">{r["n"]}</span>
+ <div class="lab"><b>{esc(r["label"])}</b><span>{esc(r["what"])}</span></div>
+ <div class="barcol"><div class="track"><i class="{r["dir"]}" style="--f:{r["chips"] / top:.4f}"></i><em>{qual}{esc(r["shown"][1])}</em>{note}</div>
+  <p class="said">{under[r["key"]]} <span class="srcn">{link}</span></p></div></div>''')
+    order = ''.join(f'<li><span class="pin {r["dir"]}{" solid" if r["tier"] == "solid" else ""}" aria-hidden="true">{r["n"]}</span><b>{LIST[r["key"]]}</b><span>{fmt(r["date"])}</span></li>' for r in bydate)
+    docnums = joined(str(r['n']) for r in docs)
+
+    page = A.head('H200 Funnel', CSS) + f'''<body>
+<div class="wrap">
+ <p class="draft">{A.NOTE}</p>
+ <div id="fig">
+  <header>
+   <p class="eyebrow">China · Nvidia’s H200 chip · {A.MON[first.month - 1]} {first.year} to {A.MON[last.month - 1]} {last.year}</p>
+   <h1>Reported ordered: more than 2 million H200 chips.<br> Reported delivered: about {per:,} each, to a few buyers.</h1>
+   <p class="deck">{NUM[len(press)].capitalize()} press reports citing unnamed people, and {NUM[len(docs)]} sums from one United States government table of licence applications. They are separate counts, not one tally: they do not add up, and they are listed in the order of a sale, not in the order of their dates. An application names a consignee; it is not an order. Bars are drawn to one scale.</p>
+   <ul class="key">
+    <li><i class="sw toward"></i><span><b>Toward Nvidia:</b> ordering it, letting it in</span></li>
+    <li><i class="sw away"></i><span><b>Away from Nvidia:</b> holding it back</span></li>
+    <li><i class="sw us"></i><span><b>Washington’s table</b> of licence applications</span></li>
+    <li><span class="pin toward" aria-hidden="true">1</span><span><b>Open mark:</b> a press report citing unnamed people. {NUM[len(press)].capitalize()} bars</span></li>
+    <li><span class="pin us solid" aria-hidden="true">2</span><span><b>Filled mark:</b> on the record. Bars {docnums}, and Nvidia’s own account</span></li>
+   </ul>
+  </header>
+  <section class="card">
+   <h2>The H200, step by step, in numbers</h2>
+   <p class="sub">The H200 is the Nvidia chip the United States allowed for sale to approved customers in China. Under each bar: the source’s own words, and how a sum was made.</p>
+{chr(10).join(rr)}
+   <div class="onrec"><i class="mk solid"></i><div><p><b>On the record: Nvidia’s own account, in money, not in chips.</b></p>
+    <ul>
+     <li><b>Results call of {fmt(d_q1)}.</b> {qm(Q["nvq1"])}. <span class="srcn">{A.link(Q["nvq1"].sid, "Nvidia, transcript of the call")}</span></li>
+     <li><b>Quarter to {period}, filed {fmt(d_rec)}.</b> {qm(Q["onrecord.fraction"])}. {qm(Q["onrecord"])}. <span class="srcn">{A.link(Q["onrecord"].sid, "Nvidia, Form 10-Q")}</span></li>
+     <li><b>Results call of {fmt(d_q3)}, for the quarter ended {fmt(d_q3end)}.</b> {qm(Q["nvq3"])}; {qm(Q["nvq3.stopped"])}. Nvidia gave no reason. The Hopper family includes the H200.
+      <span class="srcn">{A.link(Q["nvq3"].sid, "Nvidia, transcript of the call")}</span></li>
+    </ul></div></div>
+  </section>
+  <section class="card when">
+   <h2>The date of each count</h2>
+   <p class="sub">In date order: {", ".join(str(r["n"]) for r in bydate)}. A later count does not update an earlier one; each counts a different thing. Bars {docnums} give the table’s status on {status}; the table was made public on {released}.</p>
+{strip(rows)}
+   <ol class="order">{order}</ol>
+  </section>
+ {A.IMGNOTE}
+ </div>
+ <section class="card notes">
+  <h2>Read with care</h2>
+  <ul>
+   <li>The bars count different things at different dates, so no bar is a share of another. {NUM[len(press)].capitalize()} rest on unnamed people; {NUM[len(docs)]} are sums of a government table.</li>
+   <li>Washington’s table is the Commerce Department’s, with the status of each licence application as of {status}. The House Foreign Affairs Committee made it public on {released}. It covers {f(H["all"][0])} chips in {H["all"][1]} applications: {qm(Q["table.products"])}
+    It does not say which chip a row is; bars {docnums} count the rows with Nvidia as exporter. An application names a consignee; it is not an order. “Approved” in bar {R["wapproved"]["n"]} is Washington’s licence; bar {R["approved"]["n"]} is Beijing’s approval, by a press report.</li>
+   <li>The sums are ours, of the table’s rows as the project read them from its page images; the totals equal the figures the committee’s summary prints. Nvidia’s chips and AMD’s are not added in the bars. With AMD’s, the approved count is {f(H["appr"][0])} in {H["appr"][1]} applications and the returned count {f(H["rwa"][0])} in {H["rwa"][1]}.</li>
+   <li>The {H["share"]}% is a share of the chips in the applications the summary records, not of everything applied for. The committee’s example: {qm(Q["table.tencent"])}; the table shows that application at {f(H["tencent_shown"])} chips, approved. With it counted in full the share would be {H["share_full"]}% (our arithmetic).</li>
+   <li>No approved application in the table is above {f(H["cap"])} chips, and all {NUM[H["over"]]} above it were returned. Reuters reported that cap on {fmt(d_cap)}: {qm(Q["cap"])}. It also wrote that {qm(Q["cap.nodelivery"])}, and that the {qm(Q["cap.tangle"])}.</li>
+   <li>Beijing’s approval of {fmt(R["approved"]["date"])} was not yet a purchase: a source said {qm(Q["approved.notconverting"])}.</li>
+   <li>The total under discussion in July was, in the report’s words, {qm(Q["discussed.half"])}.</li>
+   <li>The first report of deliveries names two buyers; by November more are reported: {qm(Q["later.several"])} ({A.link(Q["later.several"].sid, f"Reuters, {fmt(last)}")}).</li>
+   <li>Nvidia’s figures are sums of money, not counts of chips. Neither its call of {fmt(d_q3)} nor Reuters’s report of it says how many of those chips crossed into the mainland.</li>
+   <li>How many H200 chips have entered the mainland is not known. The Hong Kong report says small quantities were shipped by other routes, in its words, {qm(Q["waiting.howmany"].split("routes ")[1])}.</li>
+  </ul>
+ </section>
+</div>
+</body>
+</html>
+'''
+    dates = ([fmt(r['date']) for r in rows] + [fmt(d_rec), period, fmt(d_q1), fmt(d_q3), fmt(d_q3end), fmt(d_cap), status, released]
+             + [f'{A.MON[r["date"].month - 1]} {r["date"].day}' for r in rows])
+    # ours: the sums of Washington's table and the shares made from them (a4lib.house); the numbers 1 to 7 on the marks;
+    # "2 x" for the two buyers named in the sentence; 10: the filing's name, Form 10-Q
+    ours = [H[k][0] for k in ('all', 'appr', 'appr_nv', 'appr_amd', 'rwa', 'rwa_nv', 'rwa_amd', 'abroad')] + [H[k][1] for k in ('all', 'appr', 'appr_nv', 'appr_amd', 'rwa', 'rwa_nv', 'rwa_amd', 'abroad')]
+    ours += [H['share'], H['share_full'], H['tencent_shown'], H['cap'], *range(1, len(rows) + 1), '10']
+    A.guard(page, Q, ours=ours, dates=dates)
+    for banned in ('750,000', 'cleared by Washington', 'Democrats', 'more than half', 'subsidiar'):
+        assert banned not in page, f'the page still says "{banned}"'
+    out = HERE / 'funnel.html'
+    out.write_text(page, encoding='utf-8'); print('written', out, len(page), 'bytes')
+    print(f'bars: {len(rows)} ({len(press)} press reports, {len(docs)} sums of Washington\'s table): ' + '; '.join(f'{r["n"]} {r["key"]} {r["chips"]:,}' for r in rows))
+    print(f'table: all {f(H["all"][0])} in {H["all"][1]}; approved {f(H["appr"][0])} in {H["appr"][1]} (Nvidia {f(H["appr_nv"][0])} in {H["appr_nv"][1]}, AMD {f(H["appr_amd"][0])} in {H["appr_amd"][1]}); '
+          f'returned {f(H["rwa"][0])} in {H["rwa"][1]} (Nvidia {f(H["rwa_nv"][0])} in {H["rwa_nv"][1]}, AMD {f(H["rwa_amd"][0])} in {H["rwa_amd"][1]}) = {H["share"]}% of the table; abroad {f(H["abroad"][0])} in {H["abroad"][1]}; '
+          f'above the cap of {f(H["cap"])}: {H["over"]}, all returned; with Tencent\'s {f(H["tencent_full"])} counted in full: {H["share_full"]}%')
+    if '--png' in sys.argv:
+        A.png(out, [('#fig', HERE / 'funnel.png')], width=1256, height=1000, css=A.FIG_EXPORT,
+              fits=[('.track', '.card'), ('.track em', '.card'), ('.track .ours', '.card'), ('.lab', '.row'), ('.said', '.card'), ('.onrec li', '.card'), ('.card', '#fig'), ('.imgnote', '#fig')])
+
+
+main()

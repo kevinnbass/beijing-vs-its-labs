@@ -1,0 +1,55 @@
+line_in_the_customs_table	tariff_headings_per_2024_coverage_spreadsheet	issue_month	month_value_usd_thousand	period	period_value_usd_thousand	pct_change_column_value (as printed; it fits the MONTH against the same month a year earlier, not the period)	quantity_unit	month_quantity	period_quantity	pct_change_column_quantity (as printed)	kind	saved_id
+Automatic data processing machines and parts thereof	whole of 8471, 8473.30 and three monitor headings	202509	7219770	January to September 2025	70059353	-11.8	-	-	-	-	source	cn-le18-gacc-t14-202509
+Automatic data processing machines and parts thereof	whole of 8471, 8473.30 and three monitor headings	202512	9708362	January to December 2025	94045501	18.1	-	-	-	-	source	cn-o34-gacc-t14-imports-202512
+Automatic data processing machines and parts thereof	whole of 8471, 8473.30 and three monitor headings	202603	15433053	January to March 2026	35738307	30.1	-	-	-	-	source	cn-o34-gacc-t14-imports-202603
+Automatic data processing machines and parts thereof	whole of 8471, 8473.30 and three monitor headings	202606	18993940	January to June 2026	88276131	157.3	-	-	-	-	source	cn-o34-gacc-t14-imports-202606
+Automatic data processing machines and parts thereof	whole of 8471, 8473.30 and three monitor headings	202609	28626572	January to September 2026	157417438	297.0	-	-	-	-	source	cn-o34-gacc-t14-imports-202609
+Automatic data processing machines and parts thereof	whole of 8471, 8473.30 and three monitor headings			2026 first quarter (January to March)	35738307						ours	
+Automatic data processing machines and parts thereof	whole of 8471, 8473.30 and three monitor headings			2026 second quarter (ours: January-June minus January-March)	52537824						ours	
+Automatic data processing machines and parts thereof	whole of 8471, 8473.30 and three monitor headings			2026 third quarter (ours: January-September minus January-June)	69141307						ours	
+Automatic data processing machines and parts thereof	whole of 8471, 8473.30 and three monitor headings			2025 monthly average (ours: January-December 2025 divided by 12)	7837125						ours	
+Automatic data processing machines	8471.30 to 8471.49	202509	103599	January to September 2025	820771	-39.1	10000N	12	77	-57.0	source	cn-le18-gacc-t14-202509
+Automatic data processing machines	8471.30 to 8471.49	202512	145190	January to December 2025	1257646	46.0	10000N	16	125	62.3	source	cn-o34-gacc-t14-imports-202512
+Automatic data processing machines	8471.30 to 8471.49	202603	89307	January to March 2026	296335	81.8	10000N	10	39	121.4	source	cn-o34-gacc-t14-imports-202603
+Automatic data processing machines	8471.30 to 8471.49	202606	123281	January to June 2026	865763	30.0	10000N	14	92	135.6	source	cn-o34-gacc-t14-imports-202606
+Automatic data processing machines	8471.30 to 8471.49	202609	233748	January to September 2026	1415095	126.4	10000N	16	134	38.2	source	cn-o34-gacc-t14-imports-202609
+Automatic data processing machines	8471.30 to 8471.49			2026 first quarter (January to March)	296335						ours	
+Automatic data processing machines	8471.30 to 8471.49			2026 second quarter (ours: January-June minus January-March)	569428						ours	
+Automatic data processing machines	8471.30 to 8471.49			2026 third quarter (ours: January-September minus January-June)	549332						ours	
+Automatic data processing machines	8471.30 to 8471.49			2025 monthly average (ours: January-December 2025 divided by 12)	104804						ours	
+Central processing units	8471.50	202509	1481583	January to September 2025	17665786	39.3	10000N	228	2,354	110.6	source	cn-le18-gacc-t14-202509
+Central processing units	8471.50	202512	1331109	January to December 2025	21906102	6.4	10000N	177	2,887	70.5	source	cn-o34-gacc-t14-imports-202512
+Central processing units	8471.50	202603	2178654	January to March 2026	5166426	7.8	10000N	292	615	36.7	source	cn-o34-gacc-t14-imports-202603
+Central processing units	8471.50	202606	1429061	January to June 2026	9733798	-32.4	10000N	247	1,317	-37.3	source	cn-o34-gacc-t14-imports-202606
+Central processing units	8471.50	202609	1901753	January to September 2026	15221685	28.4	10000N	190	1,949	-16.4	source	cn-o34-gacc-t14-imports-202609
+Central processing units	8471.50			2026 first quarter (January to March)	5166426						ours	
+Central processing units	8471.50			2026 second quarter (ours: January-June minus January-March)	4567372						ours	
+Central processing units	8471.50			2026 third quarter (ours: January-September minus January-June)	5487887						ours	
+Central processing units	8471.50			2025 monthly average (ours: January-December 2025 divided by 12)	1825508						ours	
+Storage units	8471.70	202509	2161164	January to September 2025	14855491	3.7	10000N	2,110	15,165	16.0	source	cn-le18-gacc-t14-202509
+Storage units	8471.70	202512	2175933	January to December 2025	20968429	6.6	10000N	1,966	20,938	-1.2	source	cn-o34-gacc-t14-imports-202512
+Storage units	8471.70	202603	3840861	January to March 2026	8497415	125.2	10000N	2,089	5,125	27.8	source	cn-o34-gacc-t14-imports-202603
+Storage units	8471.70	202606	4918095	January to June 2026	21940506	136.3	10000N	1,709	10,048	-17.9	source	cn-o34-gacc-t14-imports-202606
+Storage units	8471.70	202609	5864322	January to September 2026	38214240	171.9	10000N	1,667	14,780	-20.9	source	cn-o34-gacc-t14-imports-202609
+Storage units	8471.70			2026 first quarter (January to March)	8497415						ours	
+Storage units	8471.70			2026 second quarter (ours: January-June minus January-March)	13443091						ours	
+Storage units	8471.70			2026 third quarter (ours: January-September minus January-June)	16273734						ours	
+Storage units	8471.70			2025 monthly average (ours: January-December 2025 divided by 12)	1747369						ours	
+Parts and accessories of automatic data processing machines	8473.30	202509	2621216	January to September 2025	18890284	3.9	T	4,247	36,515	9.8	source	cn-le18-gacc-t14-202509
+Parts and accessories of automatic data processing machines	8473.30	202512	4830257	January to December 2025	28546799	116.3	T	4,942	49,144	21.4	source	cn-o34-gacc-t14-imports-202512
+Parts and accessories of automatic data processing machines	8473.30	202603	7938277	January to March 2026	17298255	273.1	T	3,703	10,882	-14.8	source	cn-o34-gacc-t14-imports-202603
+Parts and accessories of automatic data processing machines	8473.30	202606	9771799	January to June 2026	44804153	318.2	T	3,713	21,948	-17.6	source	cn-o34-gacc-t14-imports-202606
+Parts and accessories of automatic data processing machines	8473.30	202609	16652479	January to September 2026	82203919	536.9	T	4,460	33,439	5.2	source	cn-o34-gacc-t14-imports-202609
+Parts and accessories of automatic data processing machines	8473.30			2026 first quarter (January to March)	17298255						ours	
+Parts and accessories of automatic data processing machines	8473.30			2026 second quarter (ours: January-June minus January-March)	27505898						ours	
+Parts and accessories of automatic data processing machines	8473.30			2026 third quarter (ours: January-September minus January-June)	37399766						ours	
+Parts and accessories of automatic data processing machines	8473.30			2025 monthly average (ours: January-December 2025 divided by 12)	2378900						ours	
+Electronic integrated circuits	8542.3 (all integrated circuits: processors, memories, amplifiers, others)	202509	41051541	January to September 2025	305517509	14.2	100MN	555	4,436	11.9	source	cn-le18-gacc-t14-202509
+Electronic integrated circuits	8542.3 (all integrated circuits: processors, memories, amplifiers, others)	202512	42612005	January to December 2025	424333398	16.8	100MN	510	5,917	6.7	source	cn-o34-gacc-t14-imports-202512
+Electronic integrated circuits	8542.3 (all integrated circuits: processors, memories, amplifiers, others)	202603	49776738	January to March 2026	128007745	54.1	100MN	547	1,457	14.4	source	cn-o34-gacc-t14-imports-202603
+Electronic integrated circuits	8542.3 (all integrated circuits: processors, memories, amplifiers, others)	202606	59596105	January to June 2026	298020484	72.2	100MN	537	3,047	6.6	source	cn-o34-gacc-t14-imports-202606
+Electronic integrated circuits	8542.3 (all integrated circuits: processors, memories, amplifiers, others)	202609	71716226	January to September 2026	499249660	75.2	100MN	565	4,755	1.7	source	cn-o34-gacc-t14-imports-202609
+Electronic integrated circuits	8542.3 (all integrated circuits: processors, memories, amplifiers, others)			2026 first quarter (January to March)	128007745						ours	
+Electronic integrated circuits	8542.3 (all integrated circuits: processors, memories, amplifiers, others)			2026 second quarter (ours: January-June minus January-March)	170012739						ours	
+Electronic integrated circuits	8542.3 (all integrated circuits: processors, memories, amplifiers, others)			2026 third quarter (ours: January-September minus January-June)	201229176						ours	
+Electronic integrated circuits	8542.3 (all integrated circuits: processors, memories, amplifiers, others)			2025 monthly average (ours: January-December 2025 divided by 12)	35361116						ours	

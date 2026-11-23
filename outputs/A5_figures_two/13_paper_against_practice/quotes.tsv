@@ -1,0 +1,64 @@
+# Quotations and number-bearing phrases behind the figure "Paper against practice".
+# Written by build.py from data.txt; checked by scripts/cn_has.py. Columns: saved id, tab, the source's exact words.
+cn-o39-shandong-network-2022	国产化算力将达90%
+cn-o39-shandong-network-2022	7月31日上午，在2022中国算力大会
+cn-o39-shandong-network-2022	时间：2022-08-01 09:19 来源：大众日报
+cn-o39-shandong-network-2022	到2025年，全省数据中心总算力超过12EFLOPS
+cn-o39-shandong-network-2022	《山东一体化算力网络建设行动方案（2022－2025年）》
+cn-factions-jiangsu-plan	新建算力中心国产算力芯片使用占比达 70%以上
+cn-factions-jiangsu-plan	指标名称 2025 年 2030 年 属性
+cn-factions-jiangsu-plan	新建算力中心国产算力芯片使用占比(%) 50 70 预期性
+cn-factions-jiangsu-plan	集群内数据中心平均 PUE ≤1.25 <1.25 约束性
+cn-factions-jiangsu-plan	基础软硬件 和云操作系统实现自主可控,新建算力中心国产算力芯片使 用占比达 70%以上
+cn-o39b-guangdong-yuesuan-2024	力争到2025年底，新增国产化算力占比达到70%
+cn-o39b-guangdong-yuesuan-2024	2024年3月7日
+cn-o39b-guangdong-yuesuan-2024	新增国产化算力占比达到70%
+cn-o39b-guangdong-yuesuan-2024	广东省通信管理局等九部门关于印发
+cn-o39-tianjin-plan-2024	全市算力中心国产算力芯片使用占比超过 60%
+cn-o39-tianjin-plan-2024	发 文 日 期 : 2024年07月18日
+cn-o39-tianjin-plan-2024	成 文 日 期 : 2024年07月01日
+cn-o39-tianjin-plan-2024	到 2026 年,全市算力中心国产算力芯片使用占比超过 60%
+cn-o39-tianjin-plan-2024	天津市算力产业发展实施方案(2024—2026年)
+cn-o39-hebei-opinion-2024-xiongan	新增算力基础软硬件设施自主可控比例60%以上
+cn-o39-hebei-opinion-2024-xiongan	河北省人民政府办公厅 2024年5月8日
+cn-o39-hebei-opinion-2024-xiongan	到2025年,算力基础设施布局进一步优化完善
+cn-o39-hebei-opinion-2024-xiongan	来源: 河北省人民政府网站
+cn-o39-nmg-plan-pdf-wayback	国产化算力占比达 50%以上
+cn-o39-nmg-plan-pdf-wayback	2023 年 10 月 10 日 （此件公开发布）
+cn-o39-nmg-plan-pdf-wayback	加快推动布局合理、规 模适度、绿色集约的全国一体化算力网络内蒙古枢纽节点建设。到 2025 年，集群建成的数据中心服务器装机能力突破 500 万台
+cn-o39-nmg-plan-pdf-wayback	内蒙古自治区人民政府办公厅 关于印发自治区推动数字经济高质量发展 工作方案（2023—2025 年）的通知
+cn-policy-shanghai-domestic-target	到2025年,本市新建智算中心国产算力芯片使用占比超过50%
+cn-policy-shanghai-domestic-target	上海市通信管理局 2024-03-22
+cn-policy-shanghai-domestic-target	国产算力芯片使用占比超过50%
+cn-policy-shanghai-domestic-target	上海市智能算力基础设施高质量发展“算力浦江”智算行动实施方案(2024-2025年)
+cn-factions-sichuan50	力争国产化算力设备占比超过50%
+cn-factions-sichuan50	四川省能源局 2024年11月15日
+cn-factions-sichuan50	发布时间:2024-11-22
+cn-factions-sichuan50	四川省算力基础设施高质量发展行动方案(2024—2027年)
+cn-policy-computing-network-1779	算力网关键核心技术基本实现安全可靠
+cn-policy-computing-network-1779	制发日期: 2023-12-25
+cn-le14-tnw-295b-plan-20260609	at least 80 per cent of the core technology, AI chips included
+cn-le14-tnw-295b-plan-20260609	according to Bloomberg, citing people familiar with the matter
+cn-counter-b11-5	互联网企业自建算力集群,满足市场化企业需求,主要以英伟达高性能卡为主
+cn-counter-b11-5	三大运营商主要购置华为等国产化智算集群
+cn-counter-b11-5	上海市经济和信息化委员会2025年4月30日
+cn-counter-b11-5	发布日期:2025-11-10
+man-cn-usside-012	Nvidia remained the market leader, shipping around 2.2 million cards and holding a 55% share.
+man-cn-usside-012	Chinese vendors collectively shipped 1.65 million cards, accounting for 41% of the total market
+man-cn-usside-012	shipping roughly 160,000 cards for a 4% share
+man-cn-usside-012	BEIJING, April 1 (Rtrs)
+man-cn-usside-012	PUBLISHED: 2026-04-01
+man-cn-usside-012	holding a 55% share
+man-cn-usside-012	accounting for 41% of the total market
+man-cn-usside-012	for a 4% share
+man-cn-usside-012	reached approximately 4 million units in China in 2025
+cn-usside-044-relay1	Nvidia's share of China's market for data-centre AI chips fell to 34% in the first half of 2026
+cn-usside-044-relay1	giving it a 28% share of the overall market
+cn-usside-044-relay1	Alibaba's chip-design unit T-Head held 7%, followed by Cambricon with 5%, Baidu's Kunlunxin with 4% and Hygon with 3%.
+cn-usside-044-relay1	PUBLISHED: 2026-10-13
+cn-usside-044-relay1	T-Head held 7%
+cn-usside-044-relay1	Cambricon with 5%
+cn-usside-044-relay1	Kunlunxin with 4%
+cn-usside-044-relay1	Hygon with 3%
+cn-usside-044-relay1	Total AI-accelerator shipments reached 2.008 million units in the first half.
+cn-usside-044-relay1	from January through June

@@ -1,0 +1,7 @@
+www.orrick.com	200	*=True	Claude-User=True	https://www.orrick.com/en/Insights/2026/11/US-Government-Establishes-Export-Controls-to-Address-China-AI-Remote-Access-Concerns
+www.sidley.com	200	*=True	Claude-User=True	https://www.sidley.com/en/insights/newsupdates/2026/11/new-export-controls-on-advanced-chips-close-remote-compute-access-loopholes-five-key-takeaways
+www.lw.com	200	*=True	Claude-User=True	https://www.lw.com/en/insights/us-commerce-department-adopts-rule-restricting-remote-access-to-advanced-ai-chips
+techcrunch.com	200	*=True	Claude-User=True	https://techcrunch.com/2026/11/16/us-tightens-ai-chip-export-controls-to-deter-chinese-companies-from-accessing-compute-remotely/
+www.cnbc.com	200	*=True	Claude-User=False	https://www.cnbc.com/2026/11/18/nvidia-us-ai-chip-export-controls-data-centers-.html
+www.federalregister.gov	200	*=True	Claude-User=True	https://www.federalregister.gov/documents/search?conditions%5Bterm%5D=remote+access
+www.bis.gov	200	*=True	Claude-User=True	https://www.bis.gov/press-release/x

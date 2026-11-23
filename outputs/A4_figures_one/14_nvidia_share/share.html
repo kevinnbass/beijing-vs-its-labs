@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nvidia’s China Share</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap">
+<style>
+:root { --page: #f9f9f7; --surface: #fcfcfb; --ink: #0b0b0b; --ink2: #52514e; --muted: #7a7872; --grid: #e1e0d9; --axis: #c3c2b7; --border: rgba(11,11,11,0.12); --wash: rgba(11,11,11,0.045); --toward: #256abf; --away: #c44e18; --us: #898781; --rest: #cfcdc4; --pin-on: #ffffff; --link: #1c5cab; --font-text: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif; --font-head: "Space Grotesk", "Inter", system-ui, sans-serif; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --page: #0d0d0d; --surface: #1a1a19; --ink: #f0efec; --ink2: #c3c2b7; --muted: #8f8d86; --grid: #2c2c2a; --axis: #45453f; --border: rgba(255,255,255,0.14); --wash: rgba(255,255,255,0.06); --toward: #3987e5; --away: #d95926; --us: #898781; --rest: #45453f; --pin-on: #0d0d0d; --link: #86b6ef; color-scheme: dark; } }
+:root[data-theme="dark"] { --page: #0d0d0d; --surface: #1a1a19; --ink: #f0efec; --ink2: #c3c2b7; --muted: #8f8d86; --grid: #2c2c2a; --axis: #45453f; --border: rgba(255,255,255,0.14); --wash: rgba(255,255,255,0.06); --toward: #3987e5; --away: #d95926; --us: #898781; --rest: #45453f; --pin-on: #0d0d0d; --link: #86b6ef; color-scheme: dark; }
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--page); color: var(--ink); font-family: var(--font-text); font-size: 16px; line-height: 1.5; }
+a { color: var(--link); }
+.wrap { max-width: 1232px; margin: 0 auto; padding: 26px 16px 48px; background: var(--page); }
+.draft { margin: 0 0 18px; font-size: 12.5px; line-height: 20px; color: var(--muted); }
+.eyebrow { font: 700 12px/1.2 var(--font-text); letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin: 0 0 12px; }
+h1 { font-family: var(--font-head); font-size: clamp(27px, 3.5vw, 44px); line-height: 1.08; letter-spacing: -0.015em; margin: 0 0 12px; max-width: 26ch; text-wrap: balance; }
+.deck { margin: 0; color: var(--ink2); font-size: 17.5px; max-width: 76ch; }
+.key { display: flex; flex-wrap: wrap; gap: 8px 24px; margin: 16px 0 0; padding: 0; list-style: none; font-size: 14.5px; color: var(--ink2); }
+.key li { display: flex; align-items: center; gap: 8px; }
+.key b { color: var(--ink); font-weight: 600; }
+i.sw { display: inline-block; flex: none; width: 13px; height: 13px; border-radius: 3px; }
+i.sw.toward { background: var(--toward); } i.sw.away { background: var(--away); } i.sw.us { background: var(--us); }
+/* tier marks: filled = on the record; open = a press report citing unnamed people */
+i.mk { display: inline-block; flex: none; width: 13px; height: 13px; border-radius: 50%; border: 2.5px solid var(--ink2); vertical-align: -1.5px; }
+i.mk.solid { background: var(--ink2); } i.mk.open { background: var(--surface); }
+i.mk.toward { border-color: var(--toward); } i.mk.away { border-color: var(--away); } i.mk.us { border-color: var(--us); }
+i.mk.solid.toward { background: var(--toward); } i.mk.solid.away { background: var(--away); } i.mk.solid.us { background: var(--us); }
+.card { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 20px 22px; min-width: 0; }
+.card h2 { font-family: var(--font-head); font-size: 21px; line-height: 1.2; margin: 0 0 4px; text-wrap: balance; }
+.card .sub { margin: 0 0 12px; color: var(--ink2); font-size: 14.5px; max-width: 76ch; }
+.srcn { color: var(--muted); font-size: 12.5px; }
+.notes { margin-top: 16px; }
+.notes ul { margin: 6px 0 0; padding-left: 20px; color: var(--ink2); font-size: 14px; max-width: 108ch; }
+.notes li { margin: 4px 0; }
+.imgnote { display: none; margin: 14px 2px 0; font-size: 12px; line-height: 1.4; color: var(--muted); }
+table.tv { width: 100%; border-collapse: collapse; font-size: 14px; }
+table.tv th { text-align: left; font: 700 12px/1.3 var(--font-text); letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); padding: 6px 10px 6px 0; border-bottom: 1px solid var(--axis); }
+table.tv td { padding: 8px 10px 8px 0; border-bottom: 1px solid var(--grid); vertical-align: top; color: var(--ink2); }
+table.tv td b { color: var(--ink); }
+.scrollx { overflow-x: auto; }
+
+#fig { background: var(--page); }
+header { margin-bottom: 18px; }
+h1 { max-width: none; font-size: clamp(26px, 3.25vw, 40px); }
+@media (max-width: 1000px) { h1 br { display: none; } }
+i.sw.rest { background: repeating-linear-gradient(45deg, var(--rest) 0 3px, transparent 3px 6px); box-shadow: inset 0 0 0 1px var(--axis); }
+.plot svg { display: block; width: 100%; height: auto; }
+.plot svg.narrow { display: none; }
+@media (max-width: 760px) { .plot svg.wide { display: none; } .plot svg.narrow { display: block; } }
+svg text { font-family: var(--font-text); }
+.wash { fill: var(--wash); }
+.g { stroke: var(--grid); stroke-width: 1; } .g0 { stroke: var(--axis); stroke-width: 1; }
+.tk { fill: var(--muted); font-weight: 500; text-anchor: end; }
+.zh { fill: var(--muted); font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
+.s.toward { fill: var(--toward); } .s.away { fill: var(--away); } .s.other { fill: var(--us); }
+.s.under { fill: var(--surface); } .s.tint { fill: var(--toward); fill-opacity: 0.2; }
+.s.rest { stroke: var(--axis); stroke-width: 1; }
+.hb { fill: var(--rest); }
+.band.toward { fill: var(--toward); fill-opacity: 0.11; }
+.edge { fill: none; stroke-width: 2; stroke-linecap: round; } .edge.toward { stroke: var(--toward); }
+.nm { font-weight: 600; text-anchor: middle; } .vl { font-family: var(--font-head); font-weight: 700; text-anchor: middle; letter-spacing: -0.01em; }
+.on { fill: var(--pin-on); } .ink { fill: var(--ink); } .ink2 { fill: var(--ink2); }
+.cp { fill: var(--ink); font-weight: 700; text-anchor: middle; } .cs { fill: var(--muted); font-weight: 500; text-anchor: middle; }
+.ol { fill: var(--ink); font-weight: 600; } .od { fill: var(--ink2); font-weight: 500; }
+.br { stroke: var(--ink2); stroke-width: 1; fill: none; }
+.fine { font-size: 13.5px; color: var(--ink2); margin: 12px 0 0; max-width: 100ch; }
+.fine b { color: var(--ink); font-weight: 600; }
+.tf { margin-top: 16px; }
+.tfrow { display: grid; grid-template-columns: 96px minmax(0, 1fr); gap: 4px 14px; align-items: center; padding: 9px 0; border-top: 1px solid var(--grid); }
+.tflab b { display: block; font-weight: 600; font-size: 15.5px; line-height: 1.2; } .tflab span { display: block; font-size: 12.5px; color: var(--muted); }
+.tfbar { display: flex; gap: 2px; height: 28px; }
+.tfbar i { display: flex; align-items: center; padding-left: 9px; border-radius: 4px; min-width: 0; font: 700 15px/1 var(--font-head); font-style: normal; white-space: nowrap; }
+.tfbar i.toward { background: var(--toward); color: var(--pin-on); } .tfbar i.away { background: var(--away); color: var(--pin-on); }
+.tfbar i.own, i.sw.own { background: color-mix(in srgb, var(--away) 45%, var(--surface)); } .tfbar i.own { color: var(--ink); }
+.tfsrc { margin: 9px 0 0; font-size: 13px; color: var(--ink2); }
+.tf .key { margin: 0 0 10px; font-size: 13.5px; }
+@media (max-width: 760px) { .tfrow { grid-template-columns: minmax(0, 1fr); } .tflab b, .tflab span { display: inline; } .tflab span { margin-left: 6px; } }
+.below { display: grid; gap: 16px; margin-top: 16px; }
+@media (max-width: 700px) { table.tv thead { display: none; } table.tv tr { display: block; padding: 8px 0; border-bottom: 1px solid var(--grid); }
+  table.tv td { display: block; border: 0; padding: 2px 0; } }
+
+</style>
+</head>
+<body>
+<div class="wrap">
+ <p class="draft">Draft by Claude, Anthropic’s model. Local; not published.</p>
+ <div id="fig">
+  <header>
+   <p class="eyebrow">China · AI chips · who sold them</p>
+   <h1>Nvidia’s share of China’s AI chips fell from 55% to 34%.<br> Huawei reached 28%.</h1>
+   <p class="deck">Counts of AI chips shipped in China in 2025 and in January to June 2026, by the research firm IDC, as reported by Reuters. The 95% at left is Reuters’s own description of an earlier time. It is not from the same series, so it stands apart. A second research firm, TrendForce, counts differently; its figures have a panel of their own. These are different measures, not one series.</p>
+   <ul class="key">
+    <li><i class="sw toward"></i><span><b>Nvidia</b></span></li>
+    <li><i class="sw away"></i><span><b>Chinese makers</b></span></li>
+    <li><i class="sw us"></i><span><b>AMD</b>, in the 2025 count only</span></li>
+    <li><i class="sw rest"></i><span><b>Not broken down</b> in the report</span></li>
+    <li><i class="mk open"></i><span><b>Open mark:</b> press reports of research firms’ counts</span></li>
+    <li><i class="mk solid"></i><span><b>Filled mark:</b> on the record (a chip maker’s prospectus)</span></li>
+   </ul>
+  </header>
+  <section class="card plot">
+   <h2>Nvidia from the bottom, Chinese makers from the top</h2>
+   <p class="sub">Each column is the whole market at one reading. Nvidia’s share is joined across the two IDC columns; the first column stands apart.</p>
+<svg class="wide" viewBox="0 0 1152 540" role="img" aria-labelledby="ch-tw ch-dw"><title id="ch-tw">Nvidia’s share of AI chips in China, three readings</title><desc id="ch-dw">Before US export curbs tightened: Nvidia about 95 per cent, in Reuters’s own description; not part of the series. 2025: Nvidia 55, AMD 4, Chinese makers 41. January to June 2026: Nvidia 34, Huawei 28, T-Head 7, Cambricon 5, Kunlunxin 4, Hygon 3, not broken down 19. The 2026 report does not mention AMD.</desc><defs><pattern id="hatchw" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect class="hb" width="3" height="7"/></pattern></defs><rect class="wash" x="58" y="34" width="274" height="500" rx="8"/>
+<line class="g0" x1="66" y1="440.0" x2="324" y2="440.0"/><line class="g0" x1="374" y1="440.0" x2="1140" y2="440.0"/><text class="tk" font-size="12" x="53" y="444.0">0</text>
+<line class="g" x1="66" y1="349.5" x2="324" y2="349.5"/><line class="g" x1="374" y1="349.5" x2="1140" y2="349.5"/><text class="tk" font-size="12" x="53" y="353.5">25</text>
+<line class="g" x1="66" y1="259.0" x2="324" y2="259.0"/><line class="g" x1="374" y1="259.0" x2="1140" y2="259.0"/><text class="tk" font-size="12" x="53" y="263.0">50</text>
+<line class="g" x1="66" y1="168.5" x2="324" y2="168.5"/><line class="g" x1="374" y1="168.5" x2="1140" y2="168.5"/><text class="tk" font-size="12" x="53" y="172.5">75</text>
+<line class="g" x1="66" y1="78.0" x2="324" y2="78.0"/><line class="g" x1="374" y1="78.0" x2="1140" y2="78.0"/><text class="tk" font-size="12" x="53" y="82.0">100%</text>
+<text class="zh" font-size="11.5" x="72" y="54">A different yardstick</text><text class="zh" font-size="11.5" x="374" y="54">Counts of AI chips shipped in China, by the research firm IDC</text>
+<rect class="s under" x="120" y="97.1" width="150" height="341.9" rx="3"></rect><rect class="s tint" x="120" y="97.1" width="150" height="341.9" rx="3"><title>Nvidia, about 95%: Reuters’s own description of the time before US export curbs tightened</title></rect><text class="nm ink" font-size="14" x="195.0" y="120.1">Nvidia</text><text class="vl ink" font-size="32" x="195.0" y="152.1"><tspan font-family="Inter, sans-serif" font-weight="600" font-size="14">about </tspan>95%</text>
+<rect class="s toward" x="432" y="241.9" width="150" height="197.1" rx="3"><title>Nvidia 55% · 2025, IDC, reported by Reuters</title></rect><text class="nm on" font-size="14" x="507.0" y="264.9">Nvidia</text><text class="vl on" font-size="32" x="507.0" y="296.9">55%</text>
+<rect class="s away" x="432" y="79.0" width="150" height="146.4" rx="3"><title>Chinese makers 41% · 2025, IDC, reported by Reuters</title></rect>
+<text class="nm on" font-size="14" x="507.0" y="102.0">Chinese makers</text><text class="vl on" font-size="32" x="507.0" y="134.0">41%</text>
+<rect class="s other" x="432" y="227.4" width="150" height="12.5" rx="3"><title>AMD 4% · 2025, IDC, reported by Reuters</title></rect>
+<rect class="s toward" x="762" y="317.9" width="150" height="121.1" rx="3"><title>Nvidia 34% · Jan to Jun 2026, IDC, reported by Reuters</title></rect><text class="nm on" font-size="14" x="837.0" y="340.9">Nvidia</text><text class="vl on" font-size="32" x="837.0" y="372.9">34%</text>
+<rect class="s away" x="762" y="79.0" width="150" height="99.4" rx="3"><title>Huawei 28% · Jan to Jun 2026, IDC, reported by Reuters</title></rect>
+<rect class="s away" x="762" y="180.4" width="150" height="23.3" rx="3"><title>T-Head 7% · Jan to Jun 2026, IDC, reported by Reuters</title></rect>
+<rect class="s away" x="762" y="205.7" width="150" height="16.1" rx="3"><title>Cambricon 5% · Jan to Jun 2026, IDC, reported by Reuters</title></rect>
+<rect class="s away" x="762" y="223.8" width="150" height="12.5" rx="3"><title>Kunlunxin 4% · Jan to Jun 2026, IDC, reported by Reuters</title></rect>
+<rect class="s away" x="762" y="238.3" width="150" height="8.9" rx="3"><title>Hygon 3% · Jan to Jun 2026, IDC, reported by Reuters</title></rect>
+<text class="nm on" font-size="14" x="837.0" y="102.0">Huawei</text><text class="vl on" font-size="32" x="837.0" y="134.0">28%</text>
+<rect class="s rest" fill="url(#hatchw)" x="762" y="249.1" width="150" height="66.8" rx="3"><title>Not broken down in the report: 19% (our subtraction) · Jan to Jun 2026, IDC, reported by Reuters</title></rect>
+<polygon class="band toward" points="582,439.0 582,241.9 762,317.9 762,439.0"/><line class="edge toward" x1="583" y1="241.9" x2="761" y2="317.9"/>
+<text class="ol" font-size="13" text-anchor="end" x="423" y="238.2">AMD 4%</text>
+<path class="br" d="M918,181.4 H921 V246.1 H918"/><text class="ol" font-size="13" x="930" y="200.8">Four more Chinese makers</text><text class="od" font-size="12.5" x="930" y="217.8">T-Head 7%, Cambricon 5%,</text><text class="od" font-size="12.5" x="930" y="233.8">Kunlunxin 4%, Hygon 3%</text>
+<text class="ol" font-size="13" x="930" y="279.5">Not broken down in the report</text><text class="od" font-size="12.5" x="930" y="296.5">19%, by our subtraction</text>
+<text class="cp" font-size="15" x="195.0" y="466.0">Before US export curbs tightened</text>
+<text class="cs" font-size="12.5" x="195.0" y="483.0">Reuters’s own description,</text>
+<text class="cs" font-size="12.5" x="195.0" y="500.0">May 14, 2026</text>
+<text class="cp" font-size="15" x="507.0" y="466.0">2025</text>
+<text class="cs" font-size="12.5" x="507.0" y="483.0">IDC, reported by Reuters,</text>
+<text class="cs" font-size="12.5" x="507.0" y="500.0">Apr 1, 2026</text>
+<text class="cp" font-size="15" x="837.0" y="466.0">Jan to Jun 2026</text>
+<text class="cs" font-size="12.5" x="837.0" y="483.0">IDC, reported by Reuters,</text>
+<text class="cs" font-size="12.5" x="837.0" y="500.0">Oct 13, 2026</text>
+</svg>
+<svg class="narrow" viewBox="0 0 358 404" role="img" aria-labelledby="ch-tn ch-dn"><title id="ch-tn">Nvidia’s share of AI chips in China, three readings</title><desc id="ch-dn">Before US export curbs tightened: Nvidia about 95 per cent, in Reuters’s own description; not part of the series. 2025: Nvidia 55, AMD 4, Chinese makers 41. January to June 2026: Nvidia 34, Huawei 28, T-Head 7, Cambricon 5, Kunlunxin 4, Hygon 3, not broken down 19. The 2026 report does not mention AMD.</desc><defs><pattern id="hatchn" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect class="hb" width="3" height="7"/></pattern></defs><rect class="wash" x="34" y="14" width="90" height="384" rx="8"/>
+<line class="g0" x1="42" y1="300.0" x2="116" y2="300.0"/><line class="g0" x1="136" y1="300.0" x2="356" y2="300.0"/><text class="tk" font-size="10" x="29" y="304.0">0</text>
+<line class="g" x1="42" y1="239.5" x2="116" y2="239.5"/><line class="g" x1="136" y1="239.5" x2="356" y2="239.5"/><text class="tk" font-size="10" x="29" y="243.5">25</text>
+<line class="g" x1="42" y1="179.0" x2="116" y2="179.0"/><line class="g" x1="136" y1="179.0" x2="356" y2="179.0"/><text class="tk" font-size="10" x="29" y="183.0">50</text>
+<line class="g" x1="42" y1="118.5" x2="116" y2="118.5"/><line class="g" x1="136" y1="118.5" x2="356" y2="118.5"/><text class="tk" font-size="10" x="29" y="122.5">75</text>
+<line class="g" x1="42" y1="58.0" x2="116" y2="58.0"/><line class="g" x1="136" y1="58.0" x2="356" y2="58.0"/><text class="tk" font-size="10" x="29" y="62.0">100%</text>
+<text class="zh" font-size="9" x="41" y="28">Different</text><text class="zh" font-size="9" x="41" y="40">yardstick</text><text class="zh" font-size="9" x="136" y="34">IDC’s counts of chips shipped</text>
+<rect class="s under" x="48" y="71.1" width="62" height="227.9" rx="3"></rect><rect class="s tint" x="48" y="71.1" width="62" height="227.9" rx="3"><title>Nvidia, about 95%: Reuters’s own description of the time before US export curbs tightened</title></rect><text class="nm ink" font-size="10.5" x="79.0" y="85.1">Nvidia</text><text class="vl ink" font-size="19" x="79.0" y="105.1"><tspan font-family="Inter, sans-serif" font-weight="600" font-size="10">about </tspan>95%</text>
+<rect class="s toward" x="148" y="167.9" width="62" height="131.1" rx="3"><title>Nvidia 55% · 2025, IDC, reported by Reuters</title></rect><text class="nm on" font-size="10.5" x="179.0" y="181.9">Nvidia</text><text class="vl on" font-size="19" x="179.0" y="201.9">55%</text>
+<rect class="s away" x="148" y="59.0" width="62" height="97.2" rx="3"><title>Chinese makers 41% · 2025, IDC, reported by Reuters</title></rect>
+<text class="nm on" font-size="10.5" x="179.0" y="73.0">Chinese</text><text class="nm on" font-size="10.5" x="179.0" y="85.5">makers</text><text class="vl on" font-size="19" x="179.0" y="105.5">41%</text>
+<rect class="s other" x="148" y="158.2" width="62" height="7.7" rx="3"><title>AMD 4% · 2025, IDC, reported by Reuters</title></rect>
+<rect class="s toward" x="278" y="218.7" width="62" height="80.3" rx="3"><title>Nvidia 34% · Jan to Jun 2026, IDC, reported by Reuters</title></rect><text class="nm on" font-size="10.5" x="309.0" y="232.7">Nvidia</text><text class="vl on" font-size="19" x="309.0" y="252.7">34%</text>
+<rect class="s away" x="278" y="59.0" width="62" height="65.8" rx="3"><title>Huawei 28% · Jan to Jun 2026, IDC, reported by Reuters</title></rect>
+<rect class="s away" x="278" y="126.8" width="62" height="14.9" rx="3"><title>T-Head 7% · Jan to Jun 2026, IDC, reported by Reuters</title></rect>
+<rect class="s away" x="278" y="143.7" width="62" height="10.1" rx="3"><title>Cambricon 5% · Jan to Jun 2026, IDC, reported by Reuters</title></rect>
+<rect class="s away" x="278" y="155.8" width="62" height="7.7" rx="3"><title>Kunlunxin 4% · Jan to Jun 2026, IDC, reported by Reuters</title></rect>
+<rect class="s away" x="278" y="165.5" width="62" height="5.3" rx="3"><title>Hygon 3% · Jan to Jun 2026, IDC, reported by Reuters</title></rect>
+<text class="nm on" font-size="10.5" x="309.0" y="73.0">Huawei</text><text class="vl on" font-size="19" x="309.0" y="93.0">28%</text>
+<rect class="s rest" fill="url(#hatchn)" x="278" y="172.7" width="62" height="44.0" rx="3"><title>Not broken down in the report: 19% (our subtraction) · Jan to Jun 2026, IDC, reported by Reuters</title></rect>
+<polygon class="band toward" points="210,299.0 210,167.9 278,218.7 278,299.0"/><line class="edge toward" x1="211" y1="167.9" x2="277" y2="218.7"/>
+<text class="cp" font-size="10.5" x="79.0" y="320.0">Before US curbs</text>
+<text class="cp" font-size="10.5" x="79.0" y="333.5">tightened</text>
+<text class="cs" font-size="10" x="79.0" y="348.0">Reuters,</text>
+<text class="cs" font-size="10" x="79.0" y="362.5">May 14, 2026</text>
+<text class="cp" font-size="10.5" x="179.0" y="320.0">2025</text>
+<text class="cs" font-size="10" x="179.0" y="334.5">IDC, through Reuters,</text>
+<text class="cs" font-size="10" x="179.0" y="349.0">Apr 1, 2026</text>
+<text class="cp" font-size="10.5" x="309.0" y="320.0">Jan to Jun 2026</text>
+<text class="cs" font-size="10" x="309.0" y="334.5">IDC, through Reuters,</text>
+<text class="cs" font-size="10" x="309.0" y="349.0">Oct 13, 2026</text>
+</svg>
+   <p class="fine"><b>Read with care.</b> The 95% is a description, with no date and no count behind it; the 55% and 34% are counts of chips shipped. A full year stands beside a half year.
+    For 2025 the report gives Chinese makers together. For 2026 it names five of them and leaves 19% not broken down (our subtraction); it does not mention AMD.
+    <i class="mk solid"></i> For 2025 a Chinese chip maker gives the same share on the record: by IDC’s data and its own sales, Enflame’s prospectus of Sept 8, 2026 puts Nvidia at about 2.2 million of about 4 million cards shipped, about 55%.</p>
+  </section>
+  <section class="card tf">
+   <h2>A second research firm counts differently</h2>
+   <p class="sub">TrendForce’s figures, as the trade site Silicon UK reported them in June 2026: the combined share of Nvidia, AMD and other foreign suppliers “is expected to fall to 21 percent in China this year, from 34 percent last year”. For 2025 that is 34% for all foreign suppliers together, where IDC’s count gives Nvidia alone 55%. Different measures, not one series.</p>
+   <ul class="key">
+    <li><i class="sw toward"></i><span><b>Foreign suppliers together:</b> Nvidia, AMD and others</span></li>
+    <li><i class="sw away"></i><span><b>Chinese makers of AI chips,</b> such as Huawei and Cambricon</span></li>
+    <li><i class="sw own"></i><span><b>Tech firms’ own chips,</b> developed mainly for their own use</span></li>
+   </ul>
+<div class="tfrow"><div class="tflab"><b>2025</b></div><div class="tfbar" role="img" aria-label="2025: foreign suppliers together 34%, Chinese makers of AI chips 46%, tech firms’ own chips 20%"><i class="toward" style="flex:34" title="foreign suppliers together: 34%"><span>34%</span></i><i class="away" style="flex:46" title="Chinese makers of AI chips: 46%"><span>46%</span></i><i class="own" style="flex:20" title="tech firms’ own chips: 20%"><span>20%</span></i></div></div>
+<div class="tfrow"><div class="tflab"><b>2026</b><span>expected</span></div><div class="tfbar" role="img" aria-label="2026, expected: foreign suppliers together 21%, Chinese makers of AI chips 56%, tech firms’ own chips 23%"><i class="toward" style="flex:21" title="foreign suppliers together: 21%"><span>21%</span></i><i class="away" style="flex:56" title="Chinese makers of AI chips: 56%"><span>56%</span></i><i class="own" style="flex:23" title="tech firms’ own chips: 23%"><span>23%</span></i></div></div>
+   <p class="tfsrc"><i class="mk open"></i> TrendForce, <a href="https://www.silicon.co.uk/ai-2/huawei-cambricon-ai-630499">as reported by Silicon UK, June 2026</a>. The 2026 figures are what the firm expected then, not a count.</p>
+  </section>
+ <p class="imgnote">Draft by Claude, Anthropic’s model. Local; not published.</p>
+ </div>
+ <div class="below">
+  <section class="card">
+   <h2>The numbers, in the sources’ words</h2>
+   <p class="sub">Every quotation was found in the saved copy of its source by a script.</p>
+   <table class="tv"><thead><tr><th>Reading</th><th>Nvidia</th><th>Others</th><th>Source</th></tr></thead><tbody>
+    <tr><td><b>Before US export curbs tightened</b><br>no date given</td><td>about 95%: “Before U.S. export curbs tightened, Nvidia commanded about 95% of China’s advanced chip market.”</td><td>Others: not given</td><td><i class="mk open"></i> <a href="https://web.archive.org/web/20260616124310/https://www.marketscreener.com/news/us-clears-h200-chip-sales-to-10-china-firms-as-nvidia-ceo-looks-for-breakthrough-ce7f5bddd98df020">Reuters, May 14, 2026</a>, in its own words</td></tr>
+    <tr><td><b>2025</b><br>the whole year</td><td>55%: “shipping around 2.2 million cards and holding a 55% share”</td><td>Chinese makers 41%: “Chinese vendors collectively shipped 1.65 million cards, accounting for 41% of the total market”. AMD 4%: “shipping roughly 160,000 cards for a 4% share”</td>
+     <td><i class="mk open"></i> <a href="https://in.marketscreener.com/news/chinese-chipmakers-claim-nearly-half-of-of-local-market-as-nvidia-s-lead-shrinks-idc-says-ce7e51dfdd88f123">Reuters, Apr 1, 2026</a>: “according to data from an IDC report reviewed by Reuters”.<br><i class="mk solid"></i> <a href="https://static.cninfo.com.cn/finalpage/2026-09-08/1225552227.PDF">Enflame, prospectus signed Sept 8, 2026</a>, by IDC’s data and its own sales, “根据IDC数据和发行人销售量情况”:
+      <span lang="zh-Hans">“2025年中国AI加速卡整体出货规模约400万张，其中英伟达以约220万张出货量占据约55%的市场份额”</span> (about 4 million AI accelerator cards were shipped in China in 2025; Nvidia, with about 2.2 million, held about 55% of the market)</td></tr>
+    <tr><td><b>Jan to Jun 2026</b><br>half a year</td><td>34%: “Nvidia’s share of China’s market for data-centre AI chips fell to 34% in the first half of 2026”</td><td>Huawei 28%: “Huawei shipped 572,000 AI accelerators, up from more than 300,000 a year earlier, giving it a 28% share of the overall market”. “Alibaba’s chip-design unit T-Head held 7%, followed by Cambricon with 5%, Baidu’s Kunlunxin with 4% and Hygon with 3%”. Not broken down: 19% (our subtraction). The page does not mention AMD</td>
+     <td><i class="mk open"></i> <a href="https://www.livemint.com/technology/nividas-china-ai-chip-share-falls-as-huawei-closes-gap-report-finds/amp-11791858728043.html">Reuters, carried by Mint, Oct 13, 2026</a>: “according to an IDC report seen by Reuters”</td></tr>
+    <tr><td><b>TrendForce</b><br>2025, and 2026 as expected; a different measure</td><td>not given alone. Foreign suppliers together, 34% then 21%: “The combined market share of Nvidia, AMD and other foreign suppliers is expected to fall to 21 percent in China this year, from 34 percent last year”</td>
+     <td>Chinese makers of AI chips: “domestic companies such as Huawei Technologies and Cambricon Technologies that are developing specialised AI chips” “are expected to take market share of 56 percent within China in 2026, up from 46 percent last year”. Tech firms’ own chips: “Application-specific chips (ASICs) being developed by tech firms, mainly for their own use” “are expected to account for another 23 percent of the Chinese market, up from 20 percent in 2025”</td>
+     <td><i class="mk open"></i> <a href="https://www.silicon.co.uk/ai-2/huawei-cambricon-ai-630499">Silicon UK, June 2026</a>: “according to Taipei-based TrendForce”</td></tr>
+   </tbody></table>
+  </section>
+  <section class="card notes">
+   <h2>Read with care</h2>
+   <ul>
+    <li>Not one series. The 95% is Reuters’s own sentence, with no date, no count and no source named. The 55% and 34% are IDC’s counts. The chart does not join the first to the others.</li>
+    <li>TrendForce’s figures are a third measure. For 2025 it gives all foreign suppliers together 34%, where IDC’s count, as Reuters reported it, gives Nvidia 55% and AMD 4%. The two firms do not measure the same thing, so neither is drawn on the other’s chart. TrendForce’s 2026 figures are a forecast made in June 2026.</li>
+    <li>The 2025 share has two sources. Reuters reported IDC’s count. Enflame, a Chinese maker of AI chips, gives the same 55% in its prospectus, from IDC’s data and its own sales. English in round brackets is ours, not an official translation.</li>
+    <li>Not like for like on the Chinese side. For 2025 the report gives all Chinese makers together (41%). For 2026 it names five, which add up to 47% (our addition), and leaves 19% not broken down (our subtraction). The report says: “Nine of the 11 Chinese chipmakers tracked by IDC increased shipments from a year earlier”. So 47% is the least the Chinese makers held, not the whole.</li>
+    <li>Huawei’s share in 2025 is not given as a percentage. The report says it led the Chinese makers, “shipping around 812,000 AI chips, roughly half of all domestically branded shipments”.</li>
+    <li>What the 34% counts is not fully known: “IDC did not specify which Nvidia products made up its 34% market share”.</li>
+    <li>Nvidia’s chief executive has put it lower. Reuters, May 14, 2026, reports him “saying its share of AI accelerators in China has effectively fallen to zero”.</li>
+    <li>AMD appears in the 2025 count only (4%). The 2026 report does not mention AMD, so nothing is drawn for it there.</li>
+    <li>A share of chips shipped in a period is not a share of chips in use.</li>
+   </ul>
+  </section>
+ </div>
+</div>
+</body>
+</html>

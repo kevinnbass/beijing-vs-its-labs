@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Beijing vs. Labs Card</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap">
+<style>
+:root { --page: #f9f9f7; --surface: #fcfcfb; --ink: #0b0b0b; --ink2: #52514e; --muted: #7a7872; --grid: #e1e0d9; --axis: #c3c2b7; --border: rgba(11,11,11,0.12); --wash: rgba(11,11,11,0.045); --toward: #256abf; --away: #c44e18; --us: #898781; --rest: #cfcdc4; --pin-on: #ffffff; --link: #1c5cab; --font-text: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif; --font-head: "Space Grotesk", "Inter", system-ui, sans-serif; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --page: #0d0d0d; --surface: #1a1a19; --ink: #f0efec; --ink2: #c3c2b7; --muted: #8f8d86; --grid: #2c2c2a; --axis: #45453f; --border: rgba(255,255,255,0.14); --wash: rgba(255,255,255,0.06); --toward: #3987e5; --away: #d95926; --us: #898781; --rest: #45453f; --pin-on: #0d0d0d; --link: #86b6ef; color-scheme: dark; } }
+:root[data-theme="dark"] { --page: #0d0d0d; --surface: #1a1a19; --ink: #f0efec; --ink2: #c3c2b7; --muted: #8f8d86; --grid: #2c2c2a; --axis: #45453f; --border: rgba(255,255,255,0.14); --wash: rgba(255,255,255,0.06); --toward: #3987e5; --away: #d95926; --us: #898781; --rest: #45453f; --pin-on: #0d0d0d; --link: #86b6ef; color-scheme: dark; }
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--page); color: var(--ink); font-family: var(--font-text); font-size: 16px; line-height: 1.5; }
+a { color: var(--link); }
+.wrap { max-width: 1232px; margin: 0 auto; padding: 26px 16px 48px; background: var(--page); }
+.draft { margin: 0 0 18px; font-size: 12.5px; line-height: 20px; color: var(--muted); }
+.eyebrow { font: 700 12px/1.2 var(--font-text); letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin: 0 0 12px; }
+h1 { font-family: var(--font-head); font-size: clamp(27px, 3.5vw, 44px); line-height: 1.08; letter-spacing: -0.015em; margin: 0 0 12px; max-width: 26ch; text-wrap: balance; }
+.deck { margin: 0; color: var(--ink2); font-size: 17.5px; max-width: 76ch; }
+.key { display: flex; flex-wrap: wrap; gap: 8px 24px; margin: 16px 0 0; padding: 0; list-style: none; font-size: 14.5px; color: var(--ink2); }
+.key li { display: flex; align-items: center; gap: 8px; }
+.key b { color: var(--ink); font-weight: 600; }
+i.sw { display: inline-block; flex: none; width: 13px; height: 13px; border-radius: 3px; }
+i.sw.toward { background: var(--toward); } i.sw.away { background: var(--away); } i.sw.us { background: var(--us); }
+/* tier marks: filled = on the record; open = a press report citing unnamed people */
+i.mk { display: inline-block; flex: none; width: 13px; height: 13px; border-radius: 50%; border: 2.5px solid var(--ink2); vertical-align: -1.5px; }
+i.mk.solid { background: var(--ink2); } i.mk.open { background: var(--surface); }
+i.mk.toward { border-color: var(--toward); } i.mk.away { border-color: var(--away); } i.mk.us { border-color: var(--us); }
+i.mk.solid.toward { background: var(--toward); } i.mk.solid.away { background: var(--away); } i.mk.solid.us { background: var(--us); }
+.card { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 20px 22px; min-width: 0; }
+.card h2 { font-family: var(--font-head); font-size: 21px; line-height: 1.2; margin: 0 0 4px; text-wrap: balance; }
+.card .sub { margin: 0 0 12px; color: var(--ink2); font-size: 14.5px; max-width: 76ch; }
+.srcn { color: var(--muted); font-size: 12.5px; }
+.notes { margin-top: 16px; }
+.notes ul { margin: 6px 0 0; padding-left: 20px; color: var(--ink2); font-size: 14px; max-width: 108ch; }
+.notes li { margin: 4px 0; }
+.imgnote { display: none; margin: 14px 2px 0; font-size: 12px; line-height: 1.4; color: var(--muted); }
+table.tv { width: 100%; border-collapse: collapse; font-size: 14px; }
+table.tv th { text-align: left; font: 700 12px/1.3 var(--font-text); letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); padding: 6px 10px 6px 0; border-bottom: 1px solid var(--axis); }
+table.tv td { padding: 8px 10px 8px 0; border-bottom: 1px solid var(--grid); vertical-align: top; color: var(--ink2); }
+table.tv td b { color: var(--ink); }
+.scrollx { overflow-x: auto; }
+
+.cardwrap { width: min(100%, 1200PX); container-type: inline-size; box-shadow: 0 0 0 1PX var(--border), 0 10PX 34PX rgba(11,11,11,0.07); }
+#card { width: 100.0000cqw; height: 56.2500cqw; background: var(--page); color: var(--ink); padding: 2.6667cqw 3.6667cqw 1.5000cqw; display: grid; grid-template-columns: 37.6667cqw minmax(0, 1fr);
+  grid-template-rows: minmax(0, 1fr) auto; column-gap: 3.0000cqw; row-gap: 1.0000cqw; overflow: hidden; font-size: 1.3333cqw; line-height: 1.4; }
+#card p, #card h1, #card h2 { margin: 0; max-width: none; }
+#card .l { display: flex; flex-direction: column; min-height: 0; }
+#card .eb { font: 700 1.0417cqw/1.2 var(--font-text); letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+#card .hl { font: 700 3.1667cqw/1.08 var(--font-head); letter-spacing: -0.015em; margin-top: 1.0000cqw; text-wrap: nowrap; }
+#card .dk { font-size: 1.2917cqw; line-height: 1.4; color: var(--ink2); margin-top: 1.0000cqw; text-wrap: pretty; }
+#card .says { margin-top: auto; padding-top: 1.5000cqw; display: grid; gap: 1.1667cqw; }
+#card .say { border-left: 0.2500cqw solid; padding: 0.0833cqw 0 0.1667cqw 1.3333cqw; }
+#card .say.away { border-color: var(--away); } #card .say.toward { border-color: var(--toward); }
+#card .who { font: 700 1.0000cqw/1.3 var(--font-text); letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink2); display: flex; align-items: center; gap: 0.6667cqw; }
+#card .q { font: 600 1.7083cqw/1.25 var(--font-text); margin-top: 0.4167cqw; letter-spacing: -0.005em; text-wrap: balance; }
+#card .by { font-size: 1.0833cqw; line-height: 1.35; color: var(--muted); margin-top: 0.4167cqw; white-space: nowrap; }
+#card i.mk { width: 1.0000cqw; height: 1.0000cqw; border-width: 0.2083cqw; vertical-align: -0.1250cqw; }
+#card i.sw { width: 0.9167cqw; height: 0.9167cqw; border-radius: 0.2083cqw; }
+#card .fn { background: var(--surface); border: 1PX solid var(--border); border-radius: 1.1667cqw; padding: 1.4167cqw 1.8333cqw 0.5000cqw; display: flex; flex-direction: column; min-height: 0; }
+#card .fn h2 { font: 700 1.7500cqw/1.2 var(--font-head); }
+#card .fs { font-size: 1.0833cqw; line-height: 1.38; color: var(--ink2); margin-top: 0.2500cqw; }
+#card .fk { display: flex; gap: 1.3333cqw; font-size: 1.0417cqw; color: var(--ink2); margin-top: 0.5833cqw; align-items: center; }
+#card .fk span { display: inline-flex; align-items: center; gap: 0.5000cqw; }
+#card .rows { margin-top: 0.7500cqw; display: grid; flex: 1; grid-auto-rows: 1fr; min-height: 0; }
+#card .r { border-top: 1PX solid var(--grid); display: flex; flex-direction: column; justify-content: center; min-height: 0; }
+#card .lab { display: flex; align-items: baseline; gap: 0.8333cqw; white-space: nowrap; }
+#card .lab b { font-weight: 600; font-size: 1.5417cqw; }
+#card .lab span { font-size: 1.0000cqw; color: var(--muted); }
+#card .bar { display: flex; align-items: center; gap: 0.8333cqw; margin-top: 0.0833cqw; height: 2.5833cqw; }
+#card .bar i { display: block; flex: none; height: 1.4167cqw; border-radius: 0 0.3333cqw 0.3333cqw 0; }
+#card .bar i.toward { background: var(--toward); } #card .bar i.away { background: var(--away); } #card .bar i.us { background: var(--us); }
+#card .bar em { font: 700 2.3333cqw/1 var(--font-head); font-style: normal; white-space: nowrap; letter-spacing: -0.01em; }
+#card .bar em small { font: 500 1.2500cqw/1 var(--font-text); color: var(--ink2); letter-spacing: 0; margin-right: 0.2500cqw; }
+#card .bar .nt { font-size: 1.0000cqw; line-height: 1.25; color: var(--muted); white-space: nowrap; }
+#card .ft { grid-column: 1 / -1; border-top: 1PX solid var(--axis); padding-top: 0.6667cqw; font-size: 0.9417cqw; line-height: 1.4; color: var(--muted); }
+#card .ft .last { display: flex; justify-content: space-between; gap: 2.0000cqw; white-space: nowrap; }
+#card .ft b { color: var(--ink2); font-weight: 600; }
+
+.below { display: grid; gap: 16px; margin-top: 22px; }
+@media (max-width: 700px) { table.tv thead { display: none; } table.tv tr { display: block; padding: 8px 0; border-bottom: 1px solid var(--grid); }
+  table.tv td { display: block; border: 0; padding: 2px 0; } }
+
+</style>
+</head>
+<body>
+<div class="wrap">
+ <p class="draft">Draft by Claude, Anthropic’s model. Local; not published. A card for a post; the image file beside this page is card.png.</p>
+<div class="cardwrap"><div id="card" role="img" aria-label="Card: Beijing mostly pulled one way on Nvidia chips. Its AI companies pulled the other. The numbers are in the table below.">
+ <div class="l">
+  <p class="eb">China · Nvidia chips · Sept 2024 to Nov 2026</p>
+  <h1 class="hl">Beijing mostly pulled<br>one way on Nvidia chips.<br>Its AI companies<br>pulled the other.</h1>
+  <p class="dk">From 2024 Beijing’s security and planning side pressed AI companies, through unpublished guidance the press reported, to buy home-made chips. They kept ordering Nvidia’s.</p>
+  <div class="says">
+   <div class="say away"><p class="who"><i class="mk solid away"></i>Beijing holds Nvidia back</p>
+    <p class="q">“but such sales were restricted by the PRC government”</p>
+    <p class="by">Nvidia, Form 10-Q, Aug 26, 2026, on US-licensed H200 sales.</p></div>
+   <div class="say toward"><p class="who"><i class="mk open toward"></i>The companies reach for Nvidia</p>
+    <p class="q">“Chinese firms still want Nvidia chips despite government pressure not to buy”</p>
+    <p class="by">Reuters headline, Sept 4, 2025, on a report citing unnamed people.</p></div>
+  </div>
+ </div>
+ <section class="fn">
+  <h2>The H200 chip, in six numbers</h2>
+  <p class="fs">Four press reports citing unnamed people, and two sums from one United States government table of licence applications. Separate counts, not one tally. An application names a consignee; it is not an order.</p>
+  <p class="fk"><span><i class="sw toward"></i>toward Nvidia: ordering it, letting it in</span><span><i class="sw away"></i>away: held back</span><span><i class="sw us"></i>Washington’s table</span></p>
+  <div class="rows">
+<div class="r"><p class="lab"><b>Ordered by Chinese companies</b><span><i class="mk open toward"></i> Reuters, Dec 31, 2025</span></p><div class="bar"><i class="toward" style="width:25.0000cqw"></i><em><small>more than</small>2 million</em></div></div>
+<div class="r"><p class="lab"><b>Approved by Washington, not shipped</b><span><i class="mk solid us"></i> US table, status May 11, 2026</span></p><div class="bar"><i class="us" style="width:7.2500cqw"></i><em>579,868</em><span class="nt">Nvidia’s chips, in 17 applications.<br>AMD’s 300,000, in 4 more, are apart.</span></div></div>
+<div class="r"><p class="lab"><b>Returned by Washington without action</b><span><i class="mk solid us"></i> the same table</span></p><div class="bar"><i class="us" style="width:21.7500cqw"></i><em>1,738,950</em><span class="nt">Nvidia’s chips,<br>in 7 applications</span></div></div>
+<div class="r"><p class="lab"><b>Approved by Beijing, with conditions</b><span><i class="mk open toward"></i> Reuters, Jan 28, 2026</span></p><div class="bar"><i class="toward" style="width:5.0000cqw"></i><em><small>more than</small>400,000</em></div></div>
+<div class="r"><p class="lab"><b>Delivered</b><span><i class="mk open toward"></i> Financial Times, through Reuters, Aug 18, 2026</span></p><div class="bar"><i class="toward" style="width:0.3333cqw"></i><em><small>about</small>10,000 each</em><span class="nt">to ByteDance and to Tencent</span></div></div>
+<div class="r"><p class="lab"><b>Stored in Hong Kong, awaiting shipment</b><span><i class="mk open away"></i> Reuters, Nov 5, 2026</span></p><div class="bar"><i class="away" style="width:7.5000cqw"></i><em><small>about</small>600,000</em></div></div>
+  </div>
+ </section>
+ <div class="ft">
+  <p><b>Sources.</b> Reuters (Dec 31, 2025; Jan 28, 2026; Nov 5, 2026); the Financial Times, through Reuters (Aug 18, 2026); the Commerce Department’s table of licence applications, status at May 11, 2026, made public by the House Foreign Affairs Committee on Nov 19, 2026.
+   Lines: Nvidia, Form 10-Q for the quarter to Jul 26, 2026; Reuters, Sept 4, 2025. The guidance from 2024: Bloomberg, Sept 27, 2024.</p>
+  <p><b>Read with care: five limits.</b> Beijing was not one actor; the pressure came as reported guidance and public warnings, not a published ban; some purchases were approved and some chips came in;
+   the companies had reasons of their own, and American curbs pushed too; what Beijing meant by it is read both ways. <b>Washington’s table:</b> with AMD’s chips, 1,888,950 were returned without action,
+   55% of the chips in the applications its summary records; it gives no reasons, and “approved” there is Washington’s licence, not Beijing’s.</p>
+  <p class="last"><span><i class="mk solid"></i> <b>Filled mark:</b> on the record (a filing, a document, a named person). <i class="mk open"></i> <b>Open mark:</b> a press report citing unnamed people.</span><span>Draft by Claude, Anthropic’s model. Local; not published.</span></p>
+ </div>
+</div></div>
+ <div class="below">
+  <section class="card">
+   <h2>What the card rests on</h2>
+   <p class="sub">Each number and line on the card, in the source’s own words. Every quotation was found in the saved copy of its source by a script.</p>
+   <table class="tv"><thead><tr><th>On the card</th><th>The source’s words</th><th>Source</th><th>Kind</th></tr></thead><tbody>
+<tr><td><b>Ordered by Chinese companies</b><br>more than 2 million</td><td>“Chinese technology companies have placed orders for more than 2 million H200 chips for 2026”</td><td><a href="https://web.archive.org/web/20260101170120/https://www.investing.com/news/stock-market-news/exclusivenvidia-sounds-out-tsmc-on-new-h200-chip-order-as-china-demand-jumps-sources-say-4426223">Reuters, Dec 31, 2025</a></td><td><i class="mk open toward"></i> press report citing unnamed people</td></tr>
+<tr><td><b>Approved by Washington, not shipped</b><br>579,868</td><td>“BIS approved the export, re-export, or transfer (in-country) of 879,868 covered integrated circuits to PRC companies across 21 license applications, as of May 11, 2026”. The table marks each of them “Approved, not shipped”. Nvidia’s part, 579,868 in 17 applications, is our sum of the table’s rows; AMD’s is 300,000 in 4.</td><td><a href="https://democrats-foreignaffairs.house.gov/wp-content/uploads/2026/11/11.19.26-ECRA-Information-Disclosure-HFAC-Summary.pdf">Commerce Department table, status May 11, 2026; made public by the House Foreign Affairs Committee, Nov 19, 2026</a></td><td><i class="mk solid us"></i> on the record: a United States government table</td></tr>
+<tr><td><b>Returned by Washington without action</b><br>1,738,950</td><td>The table marks these applications RWA, the export bureau’s short form: “Returned without action (RWA)”. 1,738,950 is our sum of the 7 rows so marked with Nvidia as exporter; with AMD’s 2 (150,000) the count is 1,888,950.</td><td><a href="https://democrats-foreignaffairs.house.gov/wp-content/uploads/2026/11/11.19.26-ECRA-Information-Disclosure-of-BIS-License-Decisions.pdf">Commerce Department table, status May 11, 2026; made public by the House Foreign Affairs Committee, Nov 19, 2026</a></td><td><i class="mk solid us"></i> on the record: a United States government table</td></tr>
+<tr><td><b>Approved by Beijing, with conditions</b><br>more than 400,000</td><td>“ByteDance, Alibaba, and Tencent have been approved to purchase more than 400,000 H200 chips in total”</td><td><a href="https://www.thestandard.com.hk/innovation/article/322910/China-gives-nod-to-ByteDance-Alibaba-and-Tencent-to-buy-Nvidias-H200-chips-says-sources">Reuters, Jan 28, 2026</a></td><td><i class="mk open toward"></i> press report citing unnamed people</td></tr>
+<tr><td><b>Delivered</b><br>about 10,000 each</td><td>“ByteDance and Tencent have each received about 10,000 H200 processors in recent weeks”</td><td><a href="https://web.archive.org/web/20260908131431/https://www.investing.com/news/stock-market-news/nvidia-h200-chips-reach-china-in-small-shipments-ft-reports-4866385">Financial Times, through Reuters, Aug 18, 2026</a></td><td><i class="mk open toward"></i> press report citing unnamed people</td></tr>
+<tr><td><b>Stored in Hong Kong, awaiting shipment</b><br>about 600,000</td><td>“About 600,000 of Nvidia’s advanced artificial intelligence chips are stored in Hong Kong awaiting shipment to China”</td><td><a href="https://www.channelnewsasia.com/east-asia/nvidia-chips-pile-up-hong-kong-china-withhold-import-approval-6527371">Reuters, Nov 5, 2026</a></td><td><i class="mk open away"></i> press report citing unnamed people</td></tr>
+<tr><td><b>Beijing holds Nvidia back</b><br>one line</td><td>“but such sales were restricted by the PRC government”</td><td><a href="https://www.sec.gov/Archives/edgar/data/1045810/000104581026000075/nvda-20260726.htm">Nvidia, Form 10-Q, Aug 26, 2026</a></td><td><i class="mk solid away"></i> on the record: a company filing</td></tr>
+<tr><td><b>The companies reach for Nvidia</b><br>one line</td><td>“Chinese firms still want Nvidia chips despite government pressure not to buy, sources say”</td><td><a href="https://www.tradingview.com/news/reuters.com,2025:newsml_L1N3UK0DM:0-chinese-firms-still-want-nvidia-chips-despite-government-pressure-not-to-buy-sources-say/">Reuters, Sept 4, 2025</a></td><td><i class="mk open toward"></i> press report citing unnamed people</td></tr>
+   </tbody></table>
+  </section>
+  <section class="card notes">
+   <h2>Read with care</h2>
+   <ul>
+    <li>The six numbers are separate counts: four press reports citing unnamed people and two sums of one United States government table. They are not steps of one tally and do not add up.</li>
+    <li>Washington’s table is the Commerce Department’s, with the status of each application as of May 11, 2026; the House Foreign Affairs Committee made it public on Nov 19, 2026. It covers 3,444,160 chips in 54 applications, Nvidia’s H200 and AMD’s MI325X.
+     An application names a consignee; it is not an order. “Approved” there is Washington’s licence, not Beijing’s. The table gives no reason for returning an application.</li>
+    <li>The sums are ours, of the table’s rows. The card’s bars count Nvidia’s chips only; its footer gives the returned count with AMD’s, and says so. With AMD’s the approved count is 879,868 and the returned count 1,888,950, which is 55% of the chips in the applications the summary records.
+     All 5 applications for consignees in Indonesia, Malaysia and Thailand (1,118,500 chips) are among those returned. The committee says some applications are “not fully reflected in the May 11, 2026, summary document”: “For example, NVIDIA applied on December 19, 2025, to export 445,000 H200s to Tencent”, an application the table shows at 75,000.
+     With that one counted in full the share would be 49.5% (our arithmetic).</li>
+    <li>The card leaves out one reported number that the funnel page carries: a total of fewer than 200,000 chips under discussion in Beijing (The Information, through Reuters, Jul 8, 2026).</li>
+    <li>The bar for the chips delivered is drawn for both named buyers together (20,000); the report gives about 10,000 each.</li>
+    <li>On the record, in money and not in chips: on its results call of Nov 17, 2026, for the quarter ended Oct 25, 2026, Nvidia said “Q3 sales of licensed Hopper Data Center products to China was $2.4 billion”. The Hopper family includes the H200. Neither the call nor Reuters’s report of it says how many of those chips crossed into the mainland.</li>
+    <li>The Reuters headline is from Sept 4, 2025, when the chip at issue was the H20. The United States allowed H200 sales to China only later.</li>
+    <li>The sentence under the headline rests on the argument this card goes with. Bloomberg’s report of Sept 27, 2024 (carried by The Business Times on Sept 28, 2024): “The policy has taken the form of guidance rather than an outright ban”.</li>
+    <li>The five limits, in the argument’s words: Beijing was not one actor; the pressure came as public warnings and unpublished guidance, not as a published ban (no published Chinese order against buying Nvidia chips was found in the 103 policy pages read);
+     some purchases were approved and some chips came in; the companies had reasons of their own, and American curbs and conditions pushed too; and what Beijing meant by it is not settled.</li>
+   </ul>
+  </section>
+ </div>
+</div>
+</body>
+</html>

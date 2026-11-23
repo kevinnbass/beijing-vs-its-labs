@@ -1,0 +1,119 @@
+# Idea 21, the one-page brief: every quotation, number-bearing phrase and date its text shows, and the words behind each
+# statement it makes without quoting, with the saved id that holds them.
+# Checked by: python3 -I scripts/cn_has.py quotes.tsv   (build.py runs it and stops if it fails)
+# A line "#@ key" names the line under it for build.py. A key of letters only is also the name of a reference in brief.txt.
+# <key>.date lines hold the page's own date words (<key>.year where those words carry no year); <key>.pub.date a second date.
+# Round 4 (Nov 23, 2026): five limits; Nvidia's sentence of Nov 19, 2025; Washington's table; the two readings of Beijing's aim.
+
+#@ ndrc
+cn-policy-ndrc-chip-adaptation-2026	指导国产大模型加大力度适配国产算力芯片
+#@ ndrc.date
+cn-policy-ndrc-chip-adaptation-2026	2026/05/22
+# the page gives his office (政研室, the policy research office); it does not call him spokesperson
+#@ ndrc.office
+cn-policy-ndrc-chip-adaptation-2026	李超 2026/05/22 政研室
+
+#@ nv
+man-ms-sec-10q-2025-10	restricted customers from purchasing, importing, or using our data center products
+#@ nv.who
+man-ms-sec-10q-2025-10	The Chinese government has encouraged customers to purchase from our China-based competitors and restricted customers from purchasing, importing, or using our data center products
+#@ nv.date
+man-ms-sec-10q-2025-10	Date: November 19, 2025
+#@ nv.form
+man-ms-sec-10q-2025-10	FORM 10-Q
+#@ foreclosed
+man-ms-sec-10q-2025-10	already effectively foreclosed from the China market by U.S. export controls
+
+#@ shanghai
+cn-counter-b11-5	互联网企业自建算力集群，满足市场化企业需求，主要以英伟达高性能卡为主
+# the reply's own date, at its foot; the commission published it on Nov 10, 2025
+#@ shanghai.date
+cn-counter-b11-5	上海市经济和信息化委员会2025年4月30日
+#@ shanghai.pub.date
+cn-counter-b11-5	发布日期：2025-11-10
+
+#@ ordered
+cn-labs-h200-two-million-202512-relay1-wayback	more than 2 million H200 chips for 2026
+#@ ordered.who
+cn-labs-h200-two-million-202512-relay1-wayback	Chinese technology companies have placed orders for more than 2 million H200 chips
+#@ ordered.date
+cn-labs-h200-two-million-202512-relay1-wayback	Published 12/31/2025
+
+#@ waiting
+cn-clips-evidence-1	About 600,000 of Nvidia's advanced artificial intelligence chips are stored in Hong Kong awaiting shipment to China
+#@ waiting.withholds
+cn-clips-evidence-1	as Beijing withholds approval for large-scale imports despite demand from technology firms
+#@ waiting.camein
+cn-clips-evidence-1	China has allowed some of the chips to enter the country in recent months
+# the date of the Reuters report is read in another saved copy of it (Yahoo), which keeps the Reuters dateline; CNA's own stamp is a day later, Singapore time
+#@ waiting.date
+cn-clips-reuters-hongkong-yahoo	Nov 5 (Reuters) - About 600,000 of Nvidia's
+#@ waiting.year
+cn-clips-reuters-hongkong-yahoo	PUBLISHED: 2026-11-06
+# the day the cited copy (CNA) carries: the CNA page is not a Nov 5 page
+#@ waiting.pub.date
+cn-clips-evidence-1	PUBLISHED: 2026-11-06
+
+#@ mofcom
+cn-policy-wang-nvidia	希望包括英伟达在内的跨国公司为中国客户提供优质可靠的产品和服务
+#@ mofcom.date
+cn-policy-wang-nvidia	7月17日，商务部部长王文涛会见美国英伟达公司总裁兼首席执行官黄仁勋
+#@ mofcom.year
+cn-policy-wang-nvidia	2025-07-18 13:36
+
+#@ bloomberg
+cn-factions-bloomberg-flexibility-202409-relay1	guidance rather than an outright ban
+# Bloomberg's report is of Sept 27, 2024 (the page's own time stamp, in UTC); The Business Times carried it on Sept 28, Singapore time
+#@ bloomberg.date
+cn-factions-bloomberg-flexibility-202409-relay1	2024-09-27T22:23:29.000Z
+#@ bloomberg.pub.date
+cn-factions-bloomberg-flexibility-202409-relay1	Published Sat, Sep 28, 2024
+#@ bloomberg.unnamed
+cn-factions-bloomberg-flexibility-202409-relay1	said the people, who asked not to be identified because the matter is private
+
+# --- Washington's table of licence applications: the Commerce Department's, status as of May 11, 2026, made public by the
+# --- House Foreign Affairs Committee on Nov 19, 2026. The share shown is made by a4lib.house() from the project's
+# --- tables/house_licence_table.tsv; the two figures the committee's summary prints must equal its sums (the build checks).
+#@ table
+cn-usdocs-hfac-decisions-20261119	H200 License and Equivalent Application Status as of May 11, 2026
+#@ table.date
+cn-usdocs-hfac-decisions-20261119	H200 License and Equivalent Application Status as of May 11, 2026
+#@ table.pub.date
+cn-usdocs-hfac-summary-20261119	House Foreign Affairs Committee ECRA Disclosure | 11.19.2026
+#@ table.release.date
+cn-usdocs-hfac-summary-20261119	House Foreign Affairs Committee ECRA Disclosure | 11.19.2026
+#@ wapproved
+cn-usdocs-hfac-summary-20261119	BIS approved the export, re-export, or transfer (in-country) of 879,868 covered integrated circuits to PRC companies across 21 license applications, as of May 11, 2026
+#@ wapproved.date
+cn-usdocs-hfac-decisions-20261119	H200 License and Equivalent Application Status as of May 11, 2026
+#@ table.all
+cn-usdocs-hfac-summary-20261119	BIS received applications to sell 3,444,160 covered
+#@ table.notfull
+cn-usdocs-hfac-summary-20261119	not fully reflected in the May 11, 2026, summary document
+#@ table.tencent
+cn-usdocs-hfac-summary-20261119	For example, NVIDIA applied on December 19, 2025, to export 445,000 H200s to Tencent
+#@ table.rwa
+cn-le04-bis-ear-748	Returned without action (RWA)
+#@ table.rwarow
+cn-usdocs-hfac-decisions-20261119	Bytedance System SDN 508,000 RWA Malaysia
+
+# --- what Beijing meant: two readings ---
+#@ uscc
+cn-le03-uscc-2025-full	exert leverage and ease pressure as a negotiating tactic
+#@ uscc.whole
+cn-le03-uscc-2025-full	signaling China's willingness to both exert leverage and ease pressure as a negotiating tactic
+#@ uscc.context
+cn-le03-uscc-2025-full	The move coincided with SAMR dropping its anti-trust probe into Google
+# the report's month, on its title page (no day is given)
+#@ uscc.month
+cn-le03-uscc-2025-full	ONE HUNDRED NINETEENTH CONGRESS FIRST SESSION NOVEMBER 2025
+
+# captions of a Bloomberg Television interview (the video's caption track; its maker is not stated); not checked by ear
+#@ greer
+cn-le01-greer-bbg-20260515-subs-ttml	a sovereign decision for China
+#@ greer.asked
+cn-le01-greer-bbg-20260515-subs-ttml	Will China allow their companies to buy them?
+#@ greer.title
+cn-le01-greer-bbg-20260515-youtube	Greer: US, China Willing to Continue Trade Truce
+# the day the video was posted is not in the page's readable text: build.py reads it from the saved page's own
+# datePublished mark (a4lib.posted) and stops if it is missing

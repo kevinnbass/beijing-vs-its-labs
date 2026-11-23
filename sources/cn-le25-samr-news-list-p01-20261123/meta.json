@@ -1,0 +1,7 @@
+{
+ "id": "cn-le25-samr-news-list-p01-20261123",
+ "url": "https://www.samr.gov.cn/api-gateway/jpaas-publish-server/front/page/build/unit?parseType=bulidstatic&webId=29e9522dc89d4e088a953d8cede72f4c&tplSetId=5c30fb89ae5e48b9aefe3cdf49853830&pageType=column&tagId=%E5%86%85%E5%AE%B9%E5%8C%BA%E5%9F%9F&editType=null&pageId=39cd9de1f309431483ef3008309f39ca&paramJson=%7B%22pageNo%22%3A+1%2C+%22pageSize%22%3A+99%7D",
+ "route": "https://www.samr.gov.cn/api-gateway/jpaas-publish-server/front/page/build/unit?parseType=bulidstatic&webId=29e9522dc89d4e088a953d8cede72f4c&tplSetId=5c30fb89ae5e48b9aefe3cdf49853830&pageType=column&tagId=%E5%86%85%E5%AE%B9%E5%8C%BA%E5%9F%9F&editType=null&pageId=39cd9de1f309431483ef3008309f39ca&paramJson=%7B%22pageNo%22%3A+1%2C+%22pageSize%22%3A+99%7D",
+ "fetched_utc": "2026-11-23T09:27:13Z",
+ "sha256": "edd5f4776a129ee49ed92d2770d6a8157ab22fc9b344d7eabae60908a769d37d"
+}

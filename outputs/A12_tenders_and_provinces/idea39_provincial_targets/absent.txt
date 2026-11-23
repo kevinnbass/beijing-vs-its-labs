@@ -1,0 +1,10 @@
+# Words a script must NOT find in a page, each with a control word it MUST find (so the search could have seen a hit).
+# Fields: saved id @@ words that are absent (";;" between several) @@ control word that is present
+cn-o39-hunan-green-compute-measures-2025 @@ 国产 @@ 算力
+cn-o39-gansu-hub-measures-2022 @@ 国产 ;; 自主可控 @@ 算力
+cn-o39-shandong-digital-infra-2023 @@ 国产 ;; 自主可控 @@ 智能算力
+cn-policy-computing-network-1779 @@ 国产 ;; 自主可控 @@ 安全可靠
+cn-o39-jiangxi-industry-compute-2026-wayback @@ 国产 ;; 自主可控 @@ 算力
+cn-le16-shaanxi-ai-plus-2025-sohu @@ 国产 ;; 自主可控 @@ 算力
+cn-o39-chongqing-hub-plan-2026-wayback @@ 国产 @@ 自主可控
+cn-o39b-tibet-compute-plan-2024-wxb @@ 国产 ;; 自主可控 @@ 智算

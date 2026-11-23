@@ -1,0 +1,71 @@
+# Idea 14, Nvidia's share over time: every quotation, number-bearing phrase and date it shows, with the saved id that holds it.
+# Checked by: python3 -I scripts/cn_has.py quotes.tsv   (build.py runs it and stops if it fails)
+# A line "#@ key" names the line under it for build.py. <key>.date lines hold the page's own date words.
+
+# --- before US export curbs tightened: Reuters's own description (not IDC's series) ---
+#@ before.nvidia
+cn-acts-reuters-us-approvals-20260514-wayback	Before U.S. export curbs tightened, Nvidia commanded about 95% of China's advanced chip market.
+#@ before.date
+cn-acts-reuters-us-approvals-20260514-wayback	Published on 05/14/2026
+#@ before.zero
+cn-acts-reuters-us-approvals-20260514-wayback	saying its share of AI accelerators in China has effectively fallen to zero
+
+# --- 2025: IDC's counts, reported by Reuters on Apr 1, 2026 (hand-saved from MarketScreener) ---
+#@ y2025.nvidia
+man-cn-usside-012	shipping around 2.2 million cards and holding a 55% share
+#@ y2025.amd
+man-cn-usside-012	shipping roughly 160,000 cards for a 4% share
+#@ y2025.chinese
+man-cn-usside-012	Chinese vendors collectively shipped 1.65 million cards, accounting for 41% of the total market
+#@ y2025.total
+man-cn-usside-012	Total shipments of AI accelerator cards by Nvidia, AMD, and Chinese chipmakers reached approximately 4 million units in China in 2025
+#@ y2025.huawei
+man-cn-usside-012	shipping around 812,000 AI chips, roughly half of all domestically branded shipments
+#@ y2025.idc
+man-cn-usside-012	according to data from an IDC report reviewed by Reuters
+#@ y2025.date
+man-cn-usside-012	BEIJING, April 1 (Rtrs)
+#@ y2025.year
+man-cn-usside-012	© Reuters - 2026
+
+# --- January to June 2026: IDC's counts, reported by Reuters, carried by Mint on Oct 13, 2026 ---
+#@ h2026.nvidia
+cn-usside-044-relay1	Nvidia's share of China's market for data-centre AI chips fell to 34% in the first half of 2026
+#@ h2026.huawei
+cn-usside-044-relay1	Huawei shipped 572,000 AI accelerators, up from more than 300,000 a year earlier, giving it a 28% share of the overall market
+#@ h2026.others
+cn-usside-044-relay1	Alibaba's chip-design unit T-Head held 7%, followed by Cambricon with 5%, Baidu's Kunlunxin with 4% and Hygon with 3%
+#@ h2026.tracked
+cn-usside-044-relay1	Nine of the 11 Chinese chipmakers tracked by IDC increased shipments from a year earlier
+#@ h2026.idc
+cn-usside-044-relay1	according to an IDC report seen by Reuters
+#@ h2026.notspecified
+cn-usside-044-relay1	IDC did not specify which Nvidia products made up its 34% market share
+#@ h2026.period
+cn-usside-044-relay1	Nvidia shipped 678,000 AI accelerators in China from January through June, down 44% from a year earlier
+#@ h2026.date
+cn-usside-044-relay1	PUBLISHED: 2026-10-13
+
+# --- round 4: 2025 again, on the record. A Chinese chip maker's prospectus, which combines IDC's data with its own sales ---
+#@ enflame
+cn-le08-enflame-final-prospectus	2025年中国AI加速卡整体出货规模约400万张，其中英伟达以约220万张出货量占据约55%的市场份额
+#@ enflame.basis
+cn-le08-enflame-final-prospectus	根据IDC数据和发行人销售量情况
+#@ enflame.date
+cn-le08-enflame-final-prospectus	招股说明书签署日期2026年9月8日
+
+# --- round 4: a second research firm, counting differently. TrendForce, as the trade site Silicon UK reported it in June 2026 ---
+#@ tf.foreign
+cn-le19-tf2026-silicon	The combined market share of Nvidia, AMD and other foreign suppliers is expected to fall to 21 percent in China this year, from 34 percent last year
+#@ tf.makers
+cn-le19-tf2026-silicon	are expected to take market share of 56 percent within China in 2026, up from 46 percent last year
+#@ tf.makers.who
+cn-le19-tf2026-silicon	domestic companies such as Huawei Technologies and Cambricon Technologies that are developing specialised AI chips
+#@ tf.own
+cn-le19-tf2026-silicon	are expected to account for another 23 percent of the Chinese market, up from 20 percent in 2025
+#@ tf.own.who
+cn-le19-tf2026-silicon	Application-specific chips (ASICs) being developed by tech firms, mainly for their own use
+#@ tf.who
+cn-le19-tf2026-silicon	according to Taipei-based TrendForce
+#@ tf.date
+cn-le19-tf2026-silicon	PUBLISHED: 2026-06-29

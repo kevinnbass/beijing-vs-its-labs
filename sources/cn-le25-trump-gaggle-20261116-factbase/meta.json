@@ -1,0 +1,7 @@
+{
+ "id": "cn-le25-trump-gaggle-20261116-factbase",
+ "url": "https://rollcall.com/api/factbase/transcripts?person=trump&slug=donald-trump-press-gaggle-before-marine-one-departure-november-16-2026&speaker_flag=1",
+ "route": "https://rollcall.com/api/factbase/transcripts?person=trump&slug=donald-trump-press-gaggle-before-marine-one-departure-november-16-2026&speaker_flag=1",
+ "fetched_utc": "2026-11-23T09:15:33Z",
+ "sha256": "b38555c4434581939cafc26a4ef45b0057aa0bb5e3e514f46dc50d4c29560778"
+}

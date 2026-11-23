@@ -1,0 +1,96 @@
+# saved id <TAB> exact words of the page. Written by build.py from rows.txt; check with scripts/cn_has.py.
+# For the hand-saved PDFs with a damaged text layer the words are those of transcription.txt (our reading of the page images).
+cn-o39b-guangdong-yuesuan-2024	力争到2025年底，新增国产化算力占比达到70%
+cn-o39b-guangdong-yuesuan-2024	粤通联〔2024〕3号
+cn-o39b-guangdong-yuesuan-2024	广东省通信管理局等九部门
+cn-o39b-guangdong-yuesuan-2024	广东省人民政府国有资产监督管理委员会 2024年3月7日
+cn-o39b-guangdong-yuesuan-2024	发布时间：2024-03-22
+cn-o39b-shanxi-measures-2024-jincheng	对基础软硬件实现国产化90%以上的新建、改建数据中心，给予最高不超过500万元的一次性奖励
+cn-o39b-shanxi-measures-2024-jincheng	晋政办发〔2024〕35号
+cn-o39b-shanxi-measures-2024-jincheng	山西省人民政府办公厅 2024年6月25日
+cn-o39b-shanxi-measures-2024-jincheng	本措施自2024年7月1日起施行，有效期至2026年12月31日
+cn-o39b-broker-table-202410	山西省算力基础设施高质量发展实施方
+cn-o39-ningxia-reply-2023	对基础软硬件实现国产化率90%以上的数据中心，给予企业最高不超过1000万元奖励
+cn-o39-ningxia-ai-measures-2023	鼓励超算、智算中心采用国产自主可控的软硬件
+cn-o39b-ningxia-hub-plan-2024-yinchuan-news	智算占比达到80%以上
+cn-o39-ningxia-reply-2023	发布日期:2025-05-12
+cn-o39-ningxia-ai-measures-2023	宁夏回族自治区人民政府办公厅 2023年8月13日
+cn-o39-ningxia-ai-measures-2023	宁政办规发〔2023〕8号
+cn-o39b-ningxia-hub-plan-2024-yinchuan-news	自治区党委办公厅、政府办公厅联合印发《“东数西算”工程宁夏枢纽建设实施方案（2025—2027年）》
+cn-o39b-ningxia-hub-plan-2024-yinchuan-news	来源：宁夏日报 2024-12-18
+cn-o39b-anhui-digital-infra-2023-sd-copy	支持运用安全可控的软硬件装备，构建大规模安全可控的算力服务
+cn-o39b-anhui-compute-plan-2023-jswx	开展智能算力国产软硬件协同攻坚及应用
+cn-o39b-anhui-digital-infra-2023-sd-copy	安徽省通信管理局 2023年12月11日
+cn-o39b-anhui-digital-infra-2023-sd-copy	发布日期：2023-12-25
+cn-o39b-anhui-compute-plan-2023-jswx	2023-12-08
+cn-o39b-anhui-compute-plan-2023-jswx	《安徽省智能算力基础设施建设方案（2023-2025年）》
+cn-o39b-jilin-digital-plan-2023	夯实算力基础设施
+cn-o39-jilin-ai-opinion-2025	推动智算中心加强国产芯片部署
+cn-o39b-jilin-digital-plan-2023	吉政办发〔2023〕34号
+cn-o39b-jilin-digital-plan-2023	成文日期：2023年12月01日
+cn-o39-guangxi-digital-plan-2024-wayback	算力规模达到5EFLOPS，存力规模达到20EB，智能算力占比达35%
+cn-o39-guangxi-digital-plan-2024-wayback	适配调试国产办公软件、国产办公管理系统、国产安全管理软件
+cn-o39-guangxi-digital-plan-2024-wayback	桂数发〔2024〕17号
+cn-o39-guangxi-digital-plan-2024-wayback	广西壮族自治区大数据发展局 2024年7月9日
+cn-o39b-guangxi-ai-plus-2026-tzxm	桂政办发〔2025〕61号
+cn-o39-jiangxi-industry-compute-2026-wayback	江西省工业领域算力服务和数据筑基三年行动方案
+cn-o39-jiangxi-industry-compute-2026-wayback	江西省工业和信息化厅 2026年4月30日
+cn-o39-qinghai-compute-15fyp-2026-wayback	推动算力中心部署自主可控、安全可靠的算力设备，探索建设国产算力生态中试场
+cn-o39-qinghai-green-compute-2024-wayback	自主可控绿色数据中心等试点示范、应用推广
+cn-o39-qinghai-compute-15fyp-2026-wayback	青政〔2026〕57号
+cn-o39-qinghai-compute-15fyp-2026-wayback	2026年8月25日
+cn-o39-qinghai-green-compute-2024-wayback	青政办〔2024〕7号
+cn-o39-qinghai-green-compute-2024-wayback	2024年2月5日
+man-cn-o39-qinghai-compute-15fyp-2026	1 算电协同 数据中心平均电能利用效率（PUE） / 1.20 ≤1.18 约束性
+man-cn-o39-qinghai-compute-15fyp-2026	2 算电协同 数据中心绿电使用占比 % 80 ≥90 预期性
+man-cn-o39-qinghai-compute-15fyp-2026	3 算力设施 数据中心标准机架规模 万架 4 15 预期性
+man-cn-o39-qinghai-compute-15fyp-2026	4 算力设施 算力规模（FP16） PFLOPS 2.2万 10万 预期性
+man-cn-o39-qinghai-compute-15fyp-2026	5 算力设施 互联网省际出口带宽 Tbps 21.9 29 预期性
+man-cn-o39-qinghai-compute-15fyp-2026	6 数据要素 高质量数据集数量 个 / 30 预期性
+man-cn-o39-qinghai-compute-15fyp-2026	7 数据要素 特色应用场景数量 个 / 50 预期性
+cn-o39-chongqing-hub-plan-2026-wayback	确保新建数据中心绿电占比超过80%
+cn-o39-chongqing-hub-plan-2026-wayback	探索建设集自主可控芯片、通信网络、训练框架于一体的万卡级算力集群
+cn-o39-chongqing-hub-plan-2026-wayback	渝府办发〔2026〕26号
+cn-o39-chongqing-hub-plan-2026-wayback	2026年6月15日
+cn-o39-chongqing-hub-plan-2026-wayback	重庆市人民政府办公厅关于印发《重庆市建设新型能源算力枢纽实施方案》的通知
+cn-o39-chongqing-hub-plan-2026-wayback	新建数据中心绿电占比 % — 80 80
+cn-o39-chongqing-hub-plan-2026-wayback	新一代智能终端、智能体等普及率 % 50 70 80
+cn-o39-chongqing-hub-plan-2026-wayback	10 新建数据中心PUE值 — 1.3 1.25 1.2
+cn-o39b-chongqing-sina-article	《重庆市算力高质量发展三年行动计划》正式发布
+cn-o39b-chongqing-sina-article	《重庆市算力网络发展“算力山城 强算赋能”行动计划（2023—2025年）》
+cn-le25-zhejiang-ai-measures-2025-smartcity	倡导政府部门、算力中心、经营主体采购或应用国产软硬件
+cn-le25-zhejiang-ai-measures-2025-smartcity	使用自主算力服务的，可按照不高于合同实际执行金额的30%给予补助
+cn-le25-zhejiang-ai-measures-2025-smartcity	采用非自主算力服务的，可按照不高于合同实际执行金额的10%，给予最高800万元补助
+cn-le25-zhejiang-ai-measures-2025-smartcity	现将《关于支持人工智能创新发展的若干措施》印发给你们
+cn-le25-zhejiang-ai-measures-2025-smartcity	本措施自2025年5月31日起实施，有效期至2027年12月31日
+cn-le16-shaanxi-ai-plus-2025-sohu	深度融入全国一体化算力网，充分利用国家超算西安中心、西安雁塔人工智能创新发展中心等既有算力资源，按需建设算力基础设施
+cn-le16-shaanxi-digital-measures-2024-mofcom	统筹算力基础设施建设
+cn-le16-shaanxi-ai-plus-2025-sohu	陕发改高技〔2025〕1665号
+cn-le16-shaanxi-ai-plus-2025-sohu	陕西省发展和改革委员会 2025年11月14日
+cn-le16-shaanxi-ai-plus-2025-sohu	16.加强多元融合算力供给
+cn-le16-shaanxi-digital-measures-2024-mofcom	中共陕西省委 陕西省人民政府印发《关于推动数字经济高质量发展的政策措施》的通知
+cn-le16-hainan-ai-plus-2026-smartcity	以基础要素突破为支撑点， 构建自主可控算力底座，建设高质量行业数据集
+cn-le16-hainan-ai-plus-2026-smartcity	琼府办〔2026〕6号
+cn-o39-heilongjiang-ai-plus-2026	无人机生产制造企业使用国产人工智能芯片
+cn-o39-heilongjiang-ai-plus-2026	2026年2月14日
+cn-o39-yunnan-digital-channel-2026	促进国产操作系统生态发展
+cn-o39-yunnan-digital-channel-2026	2026年5月15日
+cn-o39b-tibet-compute-plan-2024-wxb	到2026年,算力规模达到100PFlops,智算算力占比达到60%
+cn-o39b-tibet-compute-plan-2024-wxb	西藏通信管理局会同自治区发展和改革委员会、经济和信息化厅等六部门联合印发了《“算力珠峰”高质量发展行动计划(2024—2026)》
+cn-o39b-tibet-compute-plan-2024-wxb	文章来源： 人民邮电报
+cn-le16-xinjiang-plan-2024-indicators	统筹推进电力与算力协同发展，支持面向人工智能模型训练的智算中心和面向视频渲染的融合算力中心建设，培育发展绿色算力产业
+cn-le16-xinjiang-drc-cppcc-197-reply-202510	推动哈密建成自治区首张基于自主可控非IP协议的城市算力网
+cn-le16-xinjiang-drc-cppcc-197-reply-202510	发布时间：2025-09-05
+man-cn-o39-gansu-ai-plus-2026	支持国产化算力集群和全栈国产框架平台建设
+man-cn-o39-gansu-ai-plus-2026	甘政发〔2026〕1号
+man-cn-o39-gansu-ai-plus-2026	2026年1月6日
+man-cn-o39-gansu-ai-plus-2026	新一代智能终端、智能体应用普及率达70%左右
+man-cn-o39-gansu-ai-plus-2026	政务服务“智能办”占比超60%
+cn-o39-hunan-green-compute-plan-2025-wayback	集成电路整线装备国产化率达95%
+cn-o39-hunan-green-compute-plan-2025-wayback	采用国产芯片、持续自主调优，培育适应音视频内容制作需求的视听多模态大模型
+cn-o39-hunan-green-compute-plan-2025-wayback	缩小与国际先进产品差距
+cn-o39-hunan-green-compute-plan-2025-wayback	湘工信信软〔2025〕53号
+cn-o39-hunan-green-compute-plan-2025-wayback	智算中心平均PUE / 1.4 1.35 1.3 约束性
+cn-o39-hunan-green-compute-plan-2025-wayback	智能算力规模 EFlops 3 5.25 12 预期性
+man-cn-o39-hunan-green-compute-plan-2025	绿色发展 智算中心平均PUE / 1.4 1.35 1.3 约束性
+man-cn-o39-hunan-green-compute-plan-2025	2025年2月23日

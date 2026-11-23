@@ -1,0 +1,63 @@
+# Quotations and number-bearing phrases behind the figure "Micron and Nvidia side by side".
+# Written by build.py from data.txt; checked by scripts/cn_has.py. Columns: saved id, tab, the source's exact words.
+cn-policy-micron-decision	我国内关键信息基础设施的运营者应停止采购美光公司产品
+cn-policy-micron-decision	网络安全审查办公室依法作出不予通过网络安全审查的结论
+cn-policy-micron-decision	按照《网络安全法》等法律法规
+cn-policy-micron-decision	2023年05月21日 20:00
+cn-policy-review-measures	网络安全审查办公室设在国家互联网信息办公室
+cn-policy-samr-open-original	市场监管总局依法对英伟达公司开展立案调查
+cn-policy-samr-open-original	发布时间:2024-12-09
+cn-policy-cac-h20-original	约谈了英伟达公司,要求英伟达公司就对华销售的H20算力芯片漏洞后门安全风险问题进行说明并提交相关证明材料
+cn-policy-cac-h20-original	国家互联网信息办公室于2025年7月31日约谈了英伟达公司
+cn-policy-samr-further-original	经初步调查,英伟达公司违反《中华人民共和国反垄断法》
+cn-policy-samr-further-original	市场监管总局依法决定对其实施进一步调查
+cn-policy-samr-further-original	发布时间:2025-09-15
+man-ms-sec-10q-2026-07	which required us to offer degraded products to the Chinese market
+cn-le25-samr-2025-merger-review-20260410	对英伟达公司实施进一步调查
+cn-le25-samr-2025-merger-review-20260410	发布时间：2026-04-10
+cn-factions-bloomberg-flexibility-202409-relay1	The policy has taken the form of guidance rather than an outright ban
+cn-factions-bloomberg-flexibility-202409-relay1	Chinese regulators have been discouraging companies from purchasing Nvidia's H20 chips
+cn-factions-bloomberg-flexibility-202409-relay1	window guidance
+cn-factions-bloomberg-flexibility-202409-relay1	instructions without the force of law
+cn-factions-bloomberg-flexibility-202409-relay1	on Friday (Sep 27)
+cn-factions-bloomberg-flexibility-202409-relay1	Published Sat, Sep 28, 2024
+man-cn-ft-20250821-regulators	A group of Chinese regulators have mobilised in an effort to dissuade domestic tech companies from acquiring the H20
+man-cn-ft-20250821-regulators	the Cyberspace Administration of China (CAC), the National Development and Reform Commission (NDRC) and the Ministry of Industry and Information Technology (MIIT) moved in response
+man-cn-ft-20250821-regulators	Published AUG 20 2025
+man-cn-ft-20250821-regulators	instructing them to halt new orders for Nvidia's H20 chips
+man-cn-ft-20250821-regulators	window guidance
+man-cn-ft-20250821-regulators	an informal notice
+man-cn-ft-20250821-regulators	according to people with knowledge of the regulator's effort
+man-cn-ft-20250821-regulators	Some Chinese tech companies have held off H20 orders because they want to see if the China-specific Blackwell chip
+cn-clips-alibaba-20f	In September 2025, the Cyberspace Administration of China requested Chinese technology companies to halt purchases of certain chips.
+cn-clips-alibaba-20f	In September 2025, the Cyberspace Administration of China requested
+man-cn-ft-20250917-6000d	told companies, including ByteDance and Alibaba, this week to end their testing and orders of the RTX Pro 6000D
+man-cn-ft-20250917-6000d	The ban goes beyond earlier guidance from regulators
+man-cn-ft-20250917-6000d	Published SEP 17 2025
+man-cn-ft-20250917-6000d	according to three people with knowledge of the matter
+ms-bj-20251105-statefunded-standard	The Chinese government has issued guidance requiring new data centre projects that have received any state funds to only use domestically-made artificial intelligence chips
+ms-bj-20251105-statefunded-standard	It is unclear whether the guidance applies nationwide or only to certain provinces, sources said
+ms-bj-20251105-statefunded-standard	PUBLISHED: 2025-11-05
+cn-acts-reuters-customs-20260114	explicitly instructed not to purchase the chips unless necessary
+cn-acts-reuters-customs-20260114	Chinese customs authorities told customs agents this week that Nvidia's H200 artificial intelligence chips are not permitted to enter China
+cn-acts-reuters-customs-20260114	PUBLISHED: 2026-01-14
+cn-acts-reuters-customs-20260114	are not permitted to enter China, according to three people briefed on the matter
+cn-acts-reuters-customs-20260114	or whether these measures could be used as a bargaining tactic in talks with Washington
+man-ms-sec-10q-2026-07	but such sales were restricted by the PRC government
+man-ms-sec-10q-2026-07	Beginning in February 2026, the USG granted licenses that would allow us to ship small amounts of H200 products to specific China-based customers
+man-ms-sec-10q-2026-07	Date: August 26, 2026
+man-ms-sec-10q-2026-07	For the quarterly period ended July 26, 2026
+man-ms-sec-10q-2026-07	already effectively foreclosed from the China market by U.S. export controls
+cn-acts-mfa-20251210	具体情况建议向中方主管部门询问
+cn-acts-mfa-20251210	2025年12月10日外交部发言人郭嘉昆主持例行记者会
+cn-policy-micron-decision	欢迎各国企业、各类平台产品服务进入中国市场
+cn-le14-mof-us-firms-measures-20260622	不得采购46家美国企业（不包括在华美资企业）生产的产品
+cn-le14-mof-us-firms-measures-20260622	财政部 2026年6月22日
+cn-le14-mof-us-firms-list-20260622	Lockheed Martin
+man-ms-sec-10q-2025-10	restricted customers from purchasing, importing, or using our data center products
+man-ms-sec-10q-2025-10	November 19, 2025
+man-ms-sec-10k-fy2026	discouraged customers from purchasing, importing, or using our data center products
+man-ms-sec-10k-fy2026	February 25, 2026
+man-ms-sec-10q-2025-10	already effectively foreclosed from the China market by U.S. export controls
+cn-against2-mfa-h20-20250813	我不了解你提到的情况
+cn-against2-mfa-h20-20250813	2025年8月13日外交部发言人林剑答记者问

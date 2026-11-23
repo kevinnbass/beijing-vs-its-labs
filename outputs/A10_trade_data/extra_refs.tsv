@@ -1,0 +1,44 @@
+# Extra references for the two notes of agent A10 (ideas 34 and 42). Columns: saved id | kind | label | address (blank = the saved page's own address)
+cn-o34-us232-proclamation-fr-pi	OFF	The President of the United States, proclamation "Adjusting Imports of Semiconductors, Semiconductor Manufacturing Equipment, and Their Derivative Products Into the United States", signed Jan 14, 2026, with its annex. The Federal Register's public-inspection copy
+cn-o34-us232-factsheet-wh	OFF	The White House, fact sheet on that proclamation, Jan 14, 2026
+cn-o34-bis-rule-20260115	OFF	US Department of Commerce, Bureau of Industry and Security, final rule revising the licence review policy for chip exports to China and Macau. Federal Register of Jan 15, 2026 (FR Doc. 2026-00789), effective the same day
+cn-o34-cbp-n359764	OFF	US Customs and Border Protection, ruling N359764 of Mar 31, 2026, on the tariff classification of an AI server rack
+cn-o34-cit-26-04	OFF	US Court of International Trade, slip opinion 26-4, dated Jan 27, 2026 (Atlas Power LLC v. United States), on an Nvidia circuit board
+cn-o34-census-exports-hs6-cn-hk-mo	OFF	US Census Bureau, answer of its trade data service to a request without a key, Nov 23, 2026. The saved copy is the refusal page, not data
+cn-o34-gacc-english-monthly	DOC	General Administration of Customs of China, English site: the Monthly Bulletin page for 2026, which lists 18 monthly tables. Saved Nov 23, 2026
+cn-o34-gacc-t14-imports-202512	DOC	General Administration of Customs of China, monthly table 14, "Major Import Commodities in Quantity and Value", December 2025 issue, dated Jan 8, 2026 on the page
+cn-o34-gacc-t14-imports-202603	DOC	General Administration of Customs of China, monthly table 14, March 2026 issue, dated Apr 8, 2026 on the page
+cn-o34-gacc-t14-imports-202606	DOC	General Administration of Customs of China, monthly table 14, June 2026 issue, dated Jul 22, 2026 on the page
+cn-o34-gacc-t14-imports-202609	DOC	General Administration of Customs of China, monthly table 14, September 2026 issue, dated Oct 27, 2026 on the page
+cn-o34-gacc-t16-imports-bycountry-202609	DOC	General Administration of Customs of China, monthly table 16, "Imports by Selected Countries (Regions) and by HS Divisions", September 2026 issue, dated Oct 27, 2026 on the page
+cn-o34-gacc-explanatory-2024	DOC	General Administration of Customs of China, explanatory notes to its statistics, 2024 edition (the newest on its English site when saved)
+cn-o34-gacc-coverage-imports-2024-xls	DOC	General Administration of Customs of China, spreadsheet "Coverage of major imports (2024)": the tariff codes behind each line of table 14. A spreadsheet: read by our script, and not checkable by the quotation checker
+cn-o34-uibe-chip-monitor-202605	COUNT	Digital Economy Laboratory of the University of International Business and Economics, Beijing: monthly monitor of China's chip trade for January to March 2026, dated May 3, 2026. It compiles customs figures by six-digit heading; it is not a customs publication
+cn-o34-comtrade-da-china-monthly	OFF	United Nations Comtrade, list of the monthly periods China has reported, as answered on Nov 23, 2026
+cn-o34-comtrade-m-202603	OFF	United Nations Comtrade, public preview answer for March 2026: the United States and Hong Kong as reporters, four tariff headings. Official figures each government reports to the United Nations
+cn-o34-comtrade-m-202607	OFF	United Nations Comtrade, public preview answer for July 2026: the United States and Hong Kong as reporters, four tariff headings
+cn-o34-comtrade-m-202608	OFF	United Nations Comtrade, public preview answer for August 2026: the United States as reporter (Hong Kong had not yet reported that month), four tariff headings
+cn-o42-hk-tid-circular-2026-51	DOC	General Administration of Customs of China, announcement 2025 No. 259 of Dec 30, 2025, publishing its commodity classification decisions for 2025, as reproduced in a circular of Hong Kong's Trade and Industry Department
+cn-o42-hk-trade-release-202609	OFF	Hong Kong Government, press release "External merchandise trade statistics for September 2026", Oct 28, 2026, with a Government spokesman's commentary
+cn-o42-hk-trade-release-202609-tables	OFF	Hong Kong Census and Statistics Department, the tables attached to that press release (tables 5 to 7: main suppliers and principal commodity divisions)
+cn-o42-un-hk-trade-practice	OFF	United Nations Statistics Division, questionnaire on national practice in compiling trade statistics: Hong Kong's answers. The page gives its date of release as Apr 7, 2003, so it is old
+cn-o42-investinglive-ft-eases	PRESS	investingLive, summary of a Financial Times report, Aug 19, 2026. A relay, not the Financial Times's own text
+cn-tolerate-ftaug26	PRESS	Financial Times, as carried by Yahoo Finance, Aug 19, 2026
+cn-clips-reuters-hongkong-yahoo	PRESS	Reuters, datelined Nov 5, 2026, as carried by Yahoo News, whose page is dated Nov 6, 2026. The Nov 5 dateline stands on this copy; it is the fuller of the two saved copies of the report
+cn-labs-mfa-hongkong-chips-20261109	OFF	Ministry of Foreign Affairs of China, record of the spokesperson's regular press conference of Nov 9, 2026
+ms-bj-202611-h200-hongkong-tnw	PRESS	The Next Web, Nov 6, 2026: a relay of the Reuters report
+cn-o34-nvidia-export-page	FIL	Nvidia, its page on export regulation compliance and the classification of its products, as saved Nov 23, 2026
+cn-labs-h200-lobby	PRESS	Reuters, as carried by The Business Times (Singapore), Dec 13, 2025. The sentence quoted here is Reuters's own description of the chip
+cn-o42-hk-csd-declarations-guide	OFF	Hong Kong Census and Statistics Department, guide "How to Complete and Lodge Import/Export Declarations", as kept on a United Nations statistics site. An older edition; its date was not established
+cn-o42-hk-csd-un-bangkok-slides	OFF	Hong Kong Census and Statistics Department, slides for a United Nations workshop on compiling trade statistics, Bangkok, Dec 12 to 15, 2006
+cn-o34-bis-press-rule	OFF	US Department of Commerce, Bureau of Industry and Security, press release of Jan 13, 2026 on its rule for chip exports to China
+cn-o34-comtrade-ref-partners	OFF	United Nations Comtrade, its list of partner codes (which number stands for which country or territory), as saved Nov 23, 2026
+cn-o34-comtrade-ref-flows	OFF	United Nations Comtrade, its list of trade-flow codes (import, export, re-export), as saved Nov 23, 2026
+cn-acts-reuters-customs-20260114	PRESS	Reuters, Jan 14, 2026, as carried by Yahoo Finance
+cn-le18-sg-T010001-metadata	OFF	Singapore Department of Statistics, table service: the description of table T010001, "Merchandise Trade Value by Commodity and Market, Monthly", with the names of its tariff lines; data source given as Enterprise Singapore. Saved Nov 23, 2026. It holds no figures
+cn-le18-un-trade-practice-sg	OFF	United Nations Statistics Division, questionnaire on national practice in compiling trade statistics: Singapore's answers. The page gives its date of release as Apr 7, 2003, so it is old
+cn-le18-hk-csd-410-50031	OFF	Hong Kong Census and Statistics Department, monthly table 410-50031, external merchandise trade by ten principal commodity divisions, imports: the answer of its data service, saved Nov 23, 2026
+cn-le18-hk-csd-410-50032	OFF	Hong Kong Census and Statistics Department, monthly table 410-50032, external merchandise trade by ten principal commodity divisions, total exports: the answer of its data service, saved Nov 23, 2026
+cn-le18-tw-mof-exp-cnhk-groups	OFF	Ministry of Finance of Taiwan, trade statistics database: exports by destination and product group, January 2023 to October 2026. The result page of one query, saved Nov 23, 2026
+cn-le18-tw-mof-notes	OFF	Ministry of Finance of Taiwan, trade statistics database: its notes on how the figures are compiled, saved Nov 23, 2026
+clip-luckey	CLIP	Palmer Luckey, in a clip of 56 seconds posted on X by @overton_news, Nov 19, 2026. Words from a machine transcript of the clip (the project's file transcripts_two_clips.md); nobody has checked them by ear	https://x.com/overton_news/status/2123392702821580811

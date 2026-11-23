@@ -1,0 +1,28 @@
+# Nvidia revenue from customers in China (including Hong Kong), $ millions. Columns: period (Nvidia fiscal; FY ends late January) | period_end | basis (billing = customer's billing location, used until the Oct 2025 10-Q; headquarters = direct customer's headquarters, used from the Oct 2025 10-Q, prior periods recast) | value | source saved id | printed or derived | check (value found by script within 500 characters after 'China (including Hong Kong)' in the source). Not a count of chips entering China; covers all products. Source: the filings named.
+period	period_end	basis	value_musd	source	how	check
+FY2023 (year)	2023-01-29	billing	5785	man-ms-sec-10k-fy2025	printed	found
+FY2024 (year)	2024-01-28	billing	10306	man-ms-sec-10k-fy2025	printed	found
+FY2024 (year)	2024-01-28	headquarters	12330	man-ms-sec-10k-fy2026	printed	found
+Q1 FY2025	2024-04-28	billing	2491	man-ms-sec-10q-2025-04	printed	found
+Q2 FY2025	2024-07-28	billing	3667	man-ms-sec-10q-2025-07	printed	found
+H1 FY2025	2024-07-28	headquarters	9088		derived: 9M FY2025 minus Q3 FY2025	our subtraction
+Q3 FY2025	2024-10-27	billing	5416	man-ms-nvda-2024q3-10q-58a58e	printed	found
+Q3 FY2025	2024-10-27	headquarters	8142	man-ms-sec-10q-2025-10	printed	found
+9M FY2025	2024-10-27	headquarters	17230	man-ms-sec-10q-2025-10	printed	found
+FY2025 (year)	2025-01-26	billing	17108	man-ms-sec-10k-fy2025	printed	found
+FY2025 (year)	2025-01-26	headquarters	25048	man-ms-sec-10k-fy2026	printed	found
+Q4 FY2025	2025-01-26	headquarters	7818		derived: FY2025 year minus 9M FY2025	our subtraction
+Q1 FY2026	2025-04-27	billing	5522	man-ms-sec-10q-2025-04	printed	found
+Q1 FY2026	2025-04-27	headquarters	9659	man-ms-sec-10q-2026-04	printed	found
+Q2 FY2026	2025-07-27	billing	2769	man-ms-sec-10q-2025-07	printed	found
+Q2 FY2026	2025-07-27	headquarters	3985	man-ms-sec-10q-2026-07	printed	found
+H1 FY2026	2025-07-27	headquarters	13644	man-ms-sec-10q-2026-07	printed	found
+Q3 FY2026	2025-10-26	headquarters	2973	man-ms-sec-10q-2025-10	printed	found
+9M FY2026	2025-10-26	headquarters	16617	man-ms-sec-10q-2025-10	printed	found
+FY2026 (year)	2026-01-25	headquarters	19677	man-ms-sec-10k-fy2026	printed	found
+Q4 FY2026	2026-01-25	headquarters	3060		derived: FY2026 year minus 9M FY2026	our subtraction
+Q1 FY2027	2026-04-26	headquarters	4550	man-ms-sec-10q-2026-04	printed	found
+Q2 FY2027	2026-07-26	headquarters	7880	man-ms-sec-10q-2026-07	printed	found
+H1 FY2027	2026-07-26	headquarters	12430	man-ms-sec-10q-2026-07	printed	found
+Q3 FY2027	2026-10-25	headquarters	11050	ms-p3-nvda-8k-20261117-pdf	printed	found
+9M FY2027	2026-10-25	headquarters	23480	ms-p3-nvda-8k-20261117-pdf	printed	found

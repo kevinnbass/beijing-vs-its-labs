@@ -1,0 +1,13 @@
+# page @@ control word (count) @@ words counted at zero. Written by build.py.
+cn-o39b-guangdong-yuesuan-2024 @@ 力争 (2) @@ 约束性 (0), 预期性 (0)
+cn-o39b-ningxia-hub-plan-2024-yinchuan-news @@ 安全可靠 (2) @@ 国产 (0), 自主可控 (0), 安全可控 (0), 自主化 (0), 信创 (0)
+cn-o39-guangxi-digital-plan-2024-wayback @@ 信创 (24) @@ 自主可控 (0), 安全可控 (0), 自主化 (0)
+cn-o39b-guangxi-ai-plus-2026-tzxm @@ 智能算力 (2) @@ 国产 (0), 自主可控 (0)
+cn-o39-jiangxi-industry-compute-2026-wayback @@ 算力券 (2) @@ 国产 (0), 自主可控 (0), 安全可控 (0), 自主化 (0), 信创 (0)
+capture o39b-jiangxi-measures-2025-jdz @@ 自主可控 (2) @@ 国产 (0), 信创 (0), 安全可控 (0), 自主化 (0)
+cn-o39-chongqing-hub-plan-2026-wayback @@ 自主可控 (6) @@ 国产 (0), 信创 (0), 自主化 (0)
+cn-o39b-chongqing-sina-article @@ 安全可靠 (2) @@ 国产 (0), 自主可控 (0), 安全可控 (0), 自主化 (0), 信创 (0)
+cn-le16-shaanxi-ai-plus-2025-sohu @@ 算力基础设施 (2) @@ 国产 (0), 自主可控 (0), 安全可控 (0), 自主化 (0), 信创 (0)
+cn-le16-shaanxi-digital-measures-2024-mofcom @@ 算力基础设施 (4) @@ 国产 (0), 自主可控 (0), 安全可控 (0), 自主化 (0), 信创 (0)
+cn-le16-hainan-ai-plus-2026-smartcity @@ 自主可控 (4) @@ 国产 (0), 信创 (0), 自主化 (0)
+cn-o39b-tibet-compute-plan-2024-wxb @@ 算力珠峰 (6) @@ 国产 (0), 自主可控 (0), 安全可控 (0), 安全可靠 (0), 自主化 (0), 信创 (0)

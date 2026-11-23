@@ -1,0 +1,116 @@
+# China's chip policy pulled against its own AI companies
+@deck From 2024 to 2026 the Chinese state pressed its AI companies to move off Nvidia's chips, and the companies kept ordering them. That holds on direction, with five limits.
+
+@note Draft by Claude, Anthropic's model. Local; not published. Written Nov 23, 2026 (UTC).
+@note How to read it. Words between quotation marks are a source's exact words, found in the saved copy by a script. A filled reference number is a document, a filing or a named person on the record. An open number is a press report citing unnamed people, a caption track or a machine transcript. Where a statement rests on a Chinese text, the English is our rendering, not an official translation.
+@note The author's interest. Anthropic has argued in public for controls on chip exports to China (that is from the model's general knowledge; no saved page is cited for it), so judge this piece by its sources.
+
+## The finding
+
+For two years the Chinese state pulled China's AI companies away from Nvidia's chips, and the companies kept reaching for them.
+That answers a question raised by a clip posted on Nov 19, 2026, in which Palmer Luckey said: "China doesn't want NVIDIA to sell GPUs to Chinese companies." [clip-luckey]
+And next: "there are Chinese companies that want to buy Nvidia GPUs" [cnpol-x-overton-2123392702821580811].
+The first sentence is from a machine transcript of the clip (0:11 to 0:16), the second from the text of the post that carries it. Nobody has checked either by ear.
+He is right on direction. Five limits follow at the end.
+
+## The declared line: use home-made chips
+
+Xi Jinping said in 2016 that having core technology controlled by others is China's greatest hidden danger [cn-xi-20160419].
+!! cn-xi-20160419 | 核心技术受制于人是我们最大的隐患
+!! cn-xi-20160419 | (2016年4月19日)
+Eight of China's 31 provincial-level governments were found to set a share for home-made computing hardware; Jiangsu marks its own, 70% or more of chips in new computing centres by 2030, as indicative, not binding [cn-factions-jiangsu-plan].
+!! cn-factions-jiangsu-plan | 新建算力中心国产算力芯片使用占比达 70%以上
+!! cn-factions-jiangsu-plan | 新建算力中心国产算力芯片使用占比(%) 50 70 预期性
+!! cn-factions-jiangsu-plan | 2025 年 2030 年 属性
+In May 2026 the state planner (NDRC) said it was guiding home-made large models to do more to adapt to home-made chips [cn-policy-ndrc-chip-adaptation-2026].
+!! cn-policy-ndrc-chip-adaptation-2026 | 指导国产大模型加大力度适配国产算力芯片
+!! cn-policy-ndrc-chip-adaptation-2026 | 李超 2026/05/22
+
+## What the companies bought
+
+A Shanghai government body wrote, in a reply dated Apr 30, 2025 (published Nov 10, 2025), that in the city the internet companies' own computing clusters run mainly on Nvidia cards [cn-counter-b11-5].
+!! cn-counter-b11-5 | 发布日期:2025-11-10
+!! cn-counter-b11-5 | 上海市经济和信息化委员会2025年4月30日
+!! cn-counter-b11-5 | 主要以英伟达高性能卡为主
+The big companies' orders are reported from unnamed people: in the first three months of 2025 Chinese companies including ByteDance, Alibaba and Tencent "have placed at least $16 billion in orders for" Nvidia's H20 chip (The Information, through Reuters) [cn-labs-h20-orders-20250402-relay1].
+!! cn-labs-h20-orders-20250402-relay1 | in the first three months of the year
+!! cn-labs-h20-orders-20250402-relay1 | Chinese companies including ByteDance, Alibaba Group and Tencent Holdings have placed at least
+!! cn-labs-h20-orders-20250402-relay1 | citing two people with direct knowledge of the transactions
+
+## What Beijing did
+
+**On the record**
+
+The cyberspace regulator summoned Nvidia on Jul 31, 2025 over backdoor risks in the H20 [cn-policy-cac-h20-original].
+!! cn-policy-cac-h20-original | 于2025年7月31日约谈了英伟达公司
+!! cn-policy-cac-h20-original | H20算力芯片漏洞后门安全风险
+Nvidia told the US securities regulator on Nov 19, 2025 that the Chinese government "has encouraged customers to purchase from our China-based competitors and restricted customers from purchasing, importing, or using our data center products" [man-ms-sec-10q-2025-10].
+!! man-ms-sec-10q-2025-10 | November 19, 2025
+Alibaba told it: "In September 2025, the Cyberspace Administration of China requested Chinese technology companies to halt purchases of certain chips." [cn-clips-alibaba-20f]
+That sentence does not name Nvidia.
+
+**Reported, from unnamed people**
+
+The Financial Times, Aug 20, 2025: in July the cyberspace regulator sent companies "an informal notice", "instructing them to halt new orders for Nvidia's H20 chips" [man-cn-ft-20250821-regulators].
+!! man-cn-ft-20250821-regulators | Published AUG 20 2025
+!! man-cn-ft-20250821-regulators | according to people with knowledge of the regulator's effort
+!! man-cn-ft-20250821-regulators | Lutnick told CNBC on July 15
+!! man-cn-ft-20250821-regulators | A week after his comments
+Reuters, Jan 14, 2026: customs agents were told that H200 chips "are not permitted to enter China" [cn-acts-reuters-customs-20260114].
+!! cn-acts-reuters-customs-20260114 | PUBLISHED: 2026-01-14
+!! cn-acts-reuters-customs-20260114 | according to three people briefed on the matter
+
+## The numbers
+
+For the H200, Nvidia's second most powerful AI chip, the counts are not one series [cn-acts-reuters-us-approvals-20260514-wayback].
+!! cn-acts-reuters-us-approvals-20260514-wayback | Nvidia's second-most powerful AI chip, the H200
+Washington's and Nvidia's are on the record; the rest come from unnamed people.
+
+- Ordered for 2026: "more than 2 million H200 chips" (Reuters, Dec 31, 2025) [cn-labs-h200-two-million-202512-relay1-wayback].
+!! cn-labs-h200-two-million-202512-relay1-wayback | Dec 31 (Reuters)
+- Applied for in Washington by May 11, 2026: 3,444,160 chips, Nvidia's H200 and AMD's MI325X together, in a Commerce Department table the House Foreign Affairs Committee made public on Nov 19, 2026. An application is not an order [cn-usdocs-hfac-summary-20261119] [cn-usdocs-hfac-decisions-20261119] [cn-labs-us-chip-licences-20261119].
+!! cn-usdocs-hfac-summary-20261119 | BIS received applications to sell 3,444,160 covered integrated circuits
+!! cn-usdocs-hfac-summary-20261119 | Covered integrated circuits are the following products: NVIDIA's H200 and AMD's MI325X.
+!! cn-usdocs-hfac-decisions-20261119 | H200 License and Equivalent Application Status as of May 11, 2026
+!! cn-labs-us-chip-licences-20261119 | PUBLISHED: 2026-11-19
+!! cn-labs-us-chip-licences-20261119 | Chairman Brian Mast exercised his authorities under the Export Control Reform Act
+- Of those, licensed by Washington and not yet shipped: 879,868 (Nvidia's: 579,868). Returned without action: 1,888,950, or 55% of the chips in the applications the summary records; no reason is given. The sums are ours [cn-usdocs-hfac-summary-20261119] [cn-usdocs-hfac-decisions-20261119].
+!! cn-usdocs-hfac-summary-20261119 | 879,868 covered integrated circuits to PRC companies across 21 license applications
+!! cn-usdocs-hfac-summary-20261119 | not fully reflected in the May 11, 2026, summary document
+!! cn-usdocs-hfac-decisions-20261119 | Approved, not shipped
+!! cn-usdocs-hfac-decisions-20261119 | Bytedance System SDN 508,000 RWA Malaysia
+- Approved by Beijing, with conditions: "more than 400,000 H200 chips in total" (Reuters, Jan 28, 2026) [ms-bj-20260128-h200-nod-standard].
+!! ms-bj-20260128-h200-nod-standard | The Chinese government is only granting approvals with conditions
+- Delivered by August 2026: "about 10,000 H200 processors" each for ByteDance and Tencent (Financial Times, through Reuters, Aug 18, 2026) [cn-tolerate-reutersaug26-relay1-wayback].
+!! cn-tolerate-reutersaug26-relay1-wayback | Aug 18 (Reuters)
+- Waiting in Hong Kong: about 600,000 (Reuters, Nov 5, 2026) [cn-clips-evidence-1].
+!! cn-clips-evidence-1 | About 600,000 of Nvidia's advanced artificial intelligence chips are stored in Hong Kong awaiting shipment to China
+- Nvidia, Nov 17, 2026, on the quarter to Oct 25: "Q3 sales of licensed Hopper Data Center products to China was $2.4 billion" (the Hopper family includes the H200). It said it had stopped shipping them and gave no reason [cn-o38-nvda-q3fy27-call-transcript-pdf] [cn-acts-reuters-halt-20261118-relay2].
+!! cn-o38-nvda-q3fy27-call-transcript-pdf | we are no longer shipping licensed Hopper Data Center products to China
+!! cn-o38-nvda-q3fy27-call-transcript-pdf | All our statements are made as of today, November 17, 2026
+!! cn-acts-reuters-halt-20261118-relay2 | in the quarter ended October 25
+!! cn-acts-reuters-halt-20261118-relay2 | The Hopper family includes the H200
+!! cn-acts-reuters-halt-20261118-relay2 | She did not explain why Nvidia had stopped shipping the processors
+
+## Five limits
+
+1. **Beijing was not one actor.** Vice Premier He Lifeng told Nvidia's chief executive in April 2025 that Nvidia was welcome [cn-policy-he-welcomes]. The Financial Times, Nov 13, 2026: the commerce ministry "favoured imports", while security officials "viewed dependence on Nvidia as a strategic vulnerability" [man-e2596eab15f4].
+!! cn-policy-he-welcomes | 欢迎包括英伟达公司在内的更多美资企业深耕中国市场
+!! cn-policy-he-welcomes | 新华社北京4月17日电
+!! man-e2596eab15f4 | NOV 13 2026
+2. **Public warnings and unpublished guidance, not a published ban.** No published order against buying Nvidia chips was found in the 103 policy pages read. Of 42 state-media items on Nvidia chips found, the seven that only warn about them all date from Aug 1 to Sept 24, 2025 [cn-acts-peoplesdaily-bjd-20250801] [cn-media-stdaily-security-forum].
+!! cn-acts-peoplesdaily-bjd-20250801 | 2025-08-01
+!! cn-acts-peoplesdaily-bjd-20250801 | 绝不能让“带病”的芯片上岗
+!! cn-media-stdaily-security-forum | 2025-09-24
+3. **Some chips came in.** See the approvals, deliveries and sales listed above.
+4. **The companies had reasons of their own, and American curbs and conditions pushed too.** Alibaba says its chip unit "has brought proprietary GPUs into scaled production" [cn-policy-alibaba-own-gpu]. Nvidia's reports since November 2025 say: "we are already effectively foreclosed from the China market by U.S. export controls" [man-ms-sec-10q-2025-10].
+!! man-ms-sec-10k-fy2026 | we are already effectively foreclosed from the China market by U.S. export controls
+!! man-ms-sec-10q-2026-07 | already effectively foreclosed from the China market by U.S. export controls
+5. **What Beijing meant by it is not settled.** The US-China commission, November 2025, read an antitrust move against Nvidia, made as the regulator dropped a probe into Google, as "signaling China's willingness to both exert leverage and ease pressure as a negotiating tactic" [cn-le03-uscc-2025-full]. The US Trade Representative called the choice to buy "a sovereign decision for China" (captions, not checked by ear, at 5:59) [cn-le01-greer-bbg-20260515-subs-ttml]. The direction stands under either reading.
+!! cn-le03-uscc-2025-full | NOVEMBER 2025
+!! cn-le03-uscc-2025-full | The move coincided with SAMR dropping its anti-trust probe into Google
+!! cn-le01-greer-bbg-20260515-subs-ttml | Will China allow their companies to buy them?
+
+**What survives**
+
+From 2024 the security and planning side of the Chinese state pressed China's AI companies, through unpublished guidance that the press reported, to buy home-made chips rather than Nvidia's. The companies kept ordering Nvidia chips in the millions and, by the reports, had received a small part by late 2026. They were also turning to home-made chips, for their own reasons and under American curbs. Whether Beijing meant lasting policy or leverage is read both ways.

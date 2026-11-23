@@ -1,0 +1,5 @@
+# Sources that captions_base.txt names and the argument's references file does not (same columns: id, kind, label, address).
+# Both are cited only by hidden check lines, so they are not printed in the list: that the review office sits in the Cyberspace
+# Administration; and Reuters's Nov 5 dateline on the Hong Kong report, which the CNA copy does not print.
+cn-policy-review-measures	DOC	Cybersecurity Review Measures, in force from Feb 15, 2022. Text on the Cyberspace Administration of China's site	https://www.cac.gov.cn/2022-01/04/c_1642894602182845.htm
+cn-clips-reuters-hongkong-yahoo	PRESS	Reuters report on Nvidia chips stored in Hong Kong, with its dateline Nov 5, as carried by Yahoo News Malaysia on Nov 6, 2026	https://malaysia.news.yahoo.com/exclusive-nvidia-chips-pile-hong-112651215.html

@@ -1,0 +1,62 @@
+# saved id <TAB> the source's own words. One line per dated record (the figure's mark number order). Checked by scripts/cn_has.py.
+cn-policy-micron-decision	我国内关键信息基础设施的运营者应停止采购美光公司产品
+cn-policy-desktop-2023	应当将CPU、操作系统符合安全可靠测评要求纳入采购需求
+cn-factions-bloomberg-flexibility-202409-relay1	The policy has taken the form of guidance rather than an outright ban
+cn-policy-samr-open-original	市场监管总局依法对英伟达公司开展立案调查
+cn-policy-he-welcomes	欢迎包括英伟达公司在内的更多美资企业深耕中国市场
+cn-xi-round-j-6	集中力量攻克高端芯片、基础软件等核心技术
+cn-policy-wang-nvidia	希望包括英伟达在内的跨国公司为中国客户提供优质可靠的产品和服务
+cn-policy-h20-mofcom	继续取消一系列不合理的对华经贸限制措施
+cn-acts-mss-xinhua-20250721	一些境外生产的芯片、智能设备或者软件可能在设计制造阶段就被故意预埋了“后门”
+cn-policy-cac-h20-original	约谈了英伟达公司,要求英伟达公司就对华销售的H20算力芯片漏洞后门安全风险问题进行说明并提交相关证明材料
+man-cn-factions-wsj-ding	Anyone who resisted employing domestic chips was a traitor
+cn-le13-yuyuan-qq-20250810b	作为消费者,我们当然可以选择,不买
+cn-le11-ft-h20justify-aggregoctt	explain why they need to order Nvidia’s H20 chips instead of using domestic alternatives
+man-cn-ft-20250821-regulators	A group of Chinese regulators have mobilised in an effort to dissuade domestic tech companies from acquiring the H20
+cn-clips-alibaba-20f	In September 2025, the Cyberspace Administration of China requested Chinese technology companies to halt purchases of certain chips.
+cn-policy-samr-further-original	市场监管总局依法决定对其实施进一步调查
+man-cn-ft-20250917-6000d	told companies, including ByteDance and Alibaba, this week to end their testing and orders of the RTX Pro 6000D
+man-cn-ft-20251009-customs	Teams of customs officers have been mobilised at major ports across the country in the past few weeks to carry out stringent checks on semiconductor shipments
+ms-bj-20251105-statefunded-standard	requiring new data centre projects that have received any state funds to only use domestically-made artificial intelligence chips
+man-ms-sec-10q-2025-10	The Chinese government has encouraged customers to purchase from our China-based competitors and restricted customers from purchasing, importing, or using our data center products
+cn-acts-reuters-customs-20260114	are not permitted to enter China, according to three people briefed on the matter
+ms-bj-20260128-h200-nod-standard	have been approved to purchase more than 400,000 H200 chips in total
+cn-acts-reuters-deepseek-20260130	China's industry and commerce ministries have granted approvals for all four companies
+man-70f4668d5f56	approval to sell its second-most powerful artificial intelligence chips to China
+cn-us-lutnick-0422-rev-transcript-b	Chinese central government has not let them as of yet buy the chips because they're trying to keep their investment focused on their own domestic industry
+cn-acts-reuters-us-approvals-20260514-wayback	not a single delivery has been made so far
+cn-xi-round-f-6	一个稳定开放的政策环境是中国政府长期不变的承诺
+cn-policy-ndrc-chip-adaptation-2026	指导国产大模型加大力度适配国产算力芯片
+cn-le14-itsec-2026-2	人工智能训练推理芯片
+cn-le17-whuf-134391	国行合规RTX PRO 6000D型号，非消费级游戏卡、非改装卡、非海外版受限型号
+cn-acts-reuters-ti-cap-20260708-relay1	they may soon receive permission to buy some H200 chips
+man-a7d2f1a9f963	There have been minimal exports of any H200s to China so far
+cn-tolerate-reutersaug26-relay1-wayback	ByteDance and Tencent have each received about 10,000 H200 processors in recent weeks
+man-ms-sec-10q-2026-07	such sales were restricted by the PRC government
+cn-tolerate-mof	中国企业在境外自建自营算力中心
+cn-clips-evidence-1	as Beijing withholds approval for large-scale imports despite demand from technology firms
+cn-acts-mofcom-20261117	对中国企业与其他国家企业正常贸易合作横加干涉
+cn-labs-baidu-ascend-2023-relay1	They were ordering 910B chips to prepare for a future where they may no longer be able to purchase from Nvidia
+cn-policy-tencent-us-curbs-relay1	seek domestically produced AI chips
+cn-labs-h20-orders-20250402-relay1	have placed at least $16 billion in orders for
+man-cn-labs-baidu-30k-reuters-alt1	comprising 30,000 of its self-developed, third generation P800 Kunlun chips
+cn-counter-b11-5	主要以英伟达高性能卡为主
+cn-cnpress-yicai-zhou-360-20250723	最近采购的(芯片)都是华为的产品
+man-cn-ft-202508-deepseek	prompting it to use Nvidia chips for training and Huawei's for inference
+man-cn-ft-20250821-regulators	tech giants from Alibaba to ByteDance argued that their AI development would be impaired without Nvidia's chips
+cn-labs-rtx6000d-demand-20250916-relay1	is seen as expensive for what it does
+cn-tolerate-ft-offshore	are among the tech groups training their latest large language models (LLMs) in data centres across Southeast Asia
+cn-labs-h200-demand-20251210-relay1	should Beijing give them the green light
+cn-labs-h200-lobby	aggressively placing large orders and lobbying the government to relax restrictions on a conditional basis
+cn-labs-h200-two-million-202512-relay1-wayback	have placed orders for more than 2 million H200 chips for 2026
+cn-policy-alibaba-own-gpu	chip design subsidiary T-Head has brought proprietary GPUs into scaled production
+man-f45c9fd5177c	big tech giants including ByteDance and Alibaba plan to place orders
+cn-le29-zhipu-results-20260331-en	adaptation of domestic chips
+cn-labs-v4-training-reuters-relay1-wayback	Huawei said its chips were used in some of the V4
+cn-policy-qiushi-cuda-gap	迁移成本高昂、适配周期漫长
+cn-acts-mofcom-inquiry-20260819	我司计划合规进口H200数据中心GPU
+cn-le26-iflytek-ir-20260821	其他模型厂商普遍使用性能领先两代的英伟达芯片
+cn-factions-rtx-orders-oct-wayback	have ordered more than 3 million of
+cn-o36-tencent-call-20261118-sa	our cloud business today is primarily running inference
+cn-o36-tencent-call-20261118-sa	no matter when you actually started leasing or building capacities outside of China
+cn-labs-alibaba-nov-supply	公司绝大部分新增AI芯片供给将以自研平头哥国产芯片为主

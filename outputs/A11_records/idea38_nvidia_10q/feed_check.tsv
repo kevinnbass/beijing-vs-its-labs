@@ -1,0 +1,68 @@
+key	value
+filings_feed_fetched_utc	2026-11-23T06:41:25Z
+filings_feed_sha256	f145b01193b7bb11971b0cfaeb13ad29affb99481bc4798b0f7db2af4641e423
+filings_listed_2026	123
+filings_feed_id	cn-o38-nvda-feed-secfilings-2026-c
+earlier_feed_fetched_utc	2026-11-23T05:37:23Z
+earlier_feed_same_bytes	True
+newest_1	144 | filed 2026-11-19 | received 11/19/2026 15:46:31 | Report of proposed sale of securities
+newest_2	8-K | filed 2026-11-17 | received 11/17/2026 15:21:23 | Current report filing
+newest_3	13F-HR | filed 2026-11-16 | received 11/16/2026 15:49:12 | Form 13F Holdings Report
+newest_4	8-K | filed 2026-11-12 | received 11/12/2026 07:53:04 | Current report filing
+10Q_rows_2026	2026-08-26; 2026-05-20
+10Q_filed_after_2026-10-25	0
+NT_10Q_rows_2026	0
+reports_feed_fetched_utc	2026-11-23T05:37:38Z
+documents_listed_Third_Quarter_2027	Press Release; Webcast; Transcript; CFO Commentary; NVIDIA Quarterly Revenue Trend; Presentation; Supplemental Financial Information
+has_10Q_Third_Quarter_2027	False
+documents_listed_Second_Quarter_2027	Press Release; Webcast; Transcript; CFO Commentary; NVIDIA Quarterly Revenue Trend; 10-Q; Presentation
+has_10Q_Second_Quarter_2027	True
+documents_listed_First_Quarter_2027	Press Release; Webcast; Transcript; CFO Commentary; NVIDIA Quarterly Revenue Trend; 10-Q; Presentation
+has_10Q_First_Quarter_2027	True
+call_transcript_mentions_China	2
+call_transcript_mentions_Hopper	4
+call_transcript_mentions_H200	0
+call_transcript_mentions_export_control	3
+china_share_of_data_center_revenue_pct	2.2
+call_transcript_mentions_PRC	0
+call_transcript_mentions_Beijing	0
+call_transcript_mentions_Chinese_government	0
+call_2025-08-27_names_chinese_authority	0
+call_2025-08-27_says_China	15
+call_2026-05-20_names_chinese_authority	0
+call_2026-05-20_says_China	3
+call_2026-08-26_names_chinese_authority	0
+call_2026-08-26_says_China	2
+call_2026-11-17_names_chinese_authority	0
+call_2026-11-17_says_China	2
+calls_counted	4
+sec_record_id	cn-le05-sec-submissions-20261123
+sec_record_fetched_utc	2026-11-23T08:51:16Z
+sec_record_url	https://data.sec.gov/submissions/CIK0001045810.json
+sec_record_entries	1003
+sec_newest_entry	144 | 2026-11-19
+sec_10Q_rows	18
+sec_newest_10Q	2026-08-26 | period 2026-07-26 | 0001045810-26-000075
+sec_10Q_for_period_2026-10-25	0
+sec_10Q_filed_after_2026-10-25	0
+sec_NT_filings_2026	0
+wording_table_rows	107
+wording_row_date_man-ms-nvda-2024q3-10q-58a58e	2024-11-20
+wording_row_date_man-ms-sec-10q-2025-07	2025-08-27
+wording_row_date_man-ms-sec-10q-2025-10	2025-11-19
+wording_row_date_man-ms-sec-10k-fy2026	2026-02-25
+wording_row_date_man-ms-sec-10q-2026-04	2026-05-20
+wording_row_date_man-ms-sec-10q-2026-07	2026-08-26
+wording_row_date_ms-p3-nvda-8k-20261117-pdf	2026-11-17
+foreclosed_in_man-ms-nvda-2024q3-10q-58a58e	0
+foreclosed_in_man-ms-sec-10q-2025-07	1
+foreclosed_in_man-ms-sec-10q-2025-10	2
+foreclosed_in_man-ms-sec-10k-fy2026	3
+foreclosed_in_man-ms-sec-10q-2026-04	2
+foreclosed_in_man-ms-sec-10q-2026-07	2
+rev_hq_quarters	9
+rev_hq_first_period_end	2024-10-27
+rev_hq_last_period_end	2026-10-25
+rev_hq_values	8,142; 7,818; 9,659; 3,985; 2,973; 3,060; 4,550; 7,880; 11,050
+rev_hq_derived	2
+rev_hq_last_is_highest	True

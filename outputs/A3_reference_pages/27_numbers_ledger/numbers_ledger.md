@@ -1,0 +1,332 @@
+# The numbers ledger
+
+*The numbers that bear on the question, from the argument, the figure, the two tier files and the project's tables: what each counts, who said it, when, on whose word, and which later number updates it. Most of the chip counts rest on unnamed people.*
+
+Draft by Claude, Anthropic's model. Local; not published. Written Nov 23, 2026 (UTC).
+
+Each number is quoted in the source's own words, which a script found in the saved copy. English in round brackets after Chinese is ours, not an official translation.
+
+One clip is quoted from a speech program's transcript. Nobody has checked it by ear.
+
+## How to read a row
+
+The first column gives the number and what it counts. The second gives the source's own words, who said it and when, and **on whose word** it rests. The third says which later number replaces or updates it, or that none is held.
+
+**On whose word** is one of six things:
+
+- **Document**: a text a government body published.
+- **Filing**: a company's report to a securities regulator or a stock exchange, its results, or its own published statement.
+- **Named person**: an official or executive on the record, sometimes as the press reported the words.
+- **Unnamed people**: a press report that cites people it does not name.
+- **Research firm**: a firm's count, as the press or a company reported it.
+- **Records**: public tender or procurement records, as a news agency read them.
+
+Two more labels appear: **the outlet's own words**, where a report states a number without saying whose it is, and **ours**, for a number this project made.
+
+A date is the date of the act where the page gives one, otherwise the date of the report. A number that is found shows what the source says, not that it is true.
+
+## 1. The H200, step by step
+
+The H200 is the Nvidia chip that the President said on Dec 8, 2025 the United States would allow to be sold to approved customers in China [1]. The rows run in the order of the steps: ordered, cleared, approved, delivered, waiting. They are not one series: they come from different reports and count different things.
+
+| The number and what it counts | The source's words, who, when, on whose word | What updates it |
+|---|---|---|
+| **More than 2 million** H200 chips ordered by Chinese companies for 2026 | "Chinese technology companies have placed orders for more than 2 million H200 chips for 2026" [2]. Reuters, Dec 31, 2025. **Unnamed people** (two). | No later count of orders is held. The later rows count what was approved and delivered, which is far less. |
+| **700,000** H200 units Nvidia had in stock | "Nvidia currently holds just 700,000 units in stock" [2]. Reuters, Dec 31, 2025. **Unnamed people** (two). | None held. The 600,000 below is a different count, made eleven months later: chips stored in Hong Kong. |
+| **Around 10** Chinese firms cleared by Washington; **up to 75,000** chips each | "The U.S. has cleared around 10 Chinese firms"; "each approved customer can purchase up to 75,000 chips" [3]. Reuters, May 14, 2026. **Unnamed people** (three; two for the 75,000). | A later report gives a different ceiling: the companies were cleared "to purchase up to 100,000 H200 chips each" (Financial Times, through Reuters, Aug 18, 2026) [4]. Neither report says the ceiling was raised. Reuters in November 2026 still counts 10: "Washington approved H200 sales to 10 Chinese companies" [5]. In Washington's own table (below) no approved application is above 75,000. |
+| **More than 400,000** H200 chips approved by Beijing, with conditions, for ByteDance, Alibaba and Tencent | "ByteDance, Alibaba, and Tencent have been approved to purchase more than 400,000 H200 chips in total" [6]. Reuters, Jan 28, 2026. **Unnamed people** (four). | Two days later the count of companies was four: "China's industry and commerce ministries have granted approvals for all four companies" [7]. The next total held is the row below. |
+| **Fewer than 200,000** H200 chips under discussion for Alibaba, ByteDance and DeepSeek | "it could amount to fewer than 200,000 in total"; "less than half of what the companies requested earlier this year" [8]. The Information, through Reuters, Jul 8, 2026. **Unnamed people**. | It is for a different group of three than the 400,000 above. The next number held is what arrived: about 10,000 each. |
+| **None** delivered by May 2026 | "not a single delivery has been made so far" [3]. Reuters, May 14, 2026. **Unnamed people** (three). By one of them, "Chinese firms pulled back after guidance from Beijing"; the same person said the shift "was partly triggered by changes on the U.S. side, though exactly what changed remains unclear", and Reuters wrote that the "path to a completed sale has been obstructed by a tangle of requirements on both sides" [3]. | On the record six days later: the row below. Replaced on Jul 14, 2026 by the under secretary's words, and in August by deliveries of about 10,000 each. |
+| **No revenue** yet from the licensed H200, by May 20, 2026 | "we have yet to generate any revenue, and we are uncertain whether any imports will be allowed into the country" [9]. Nvidia, results call of May 20, 2026. **Filing**: the company's own results call. | Updated by Nvidia's report for the quarter to Jul 26, 2026: less than 1% of Data Center revenue, four rows down. |
+| **Very few** exported by July 2026 | "There have been minimal exports of any H200s to China so far"; the number was "very few" [10]. Jeffrey Kessler, under secretary of commerce, to a House committee, Jul 14, 2026, as Reuters reported it. **Named person**. He gave no figure. | The first figure held is the row below. |
+| **About 10,000 each** for ByteDance and Tencent | "ByteDance and Tencent have each received about 10,000 H200 processors in recent weeks" [4]. Financial Times, through Reuters, Aug 18, 2026. **Unnamed people** (two). | Updated on Nov 5, 2026: "Several major Chinese internet companies have each obtained about 10,000 H200 chips in the past few months" [11]. The later report does not say how many companies. |
+| **About 600,000** Nvidia chips stored in Hong Kong, waiting | "About 600,000 of Nvidia's advanced artificial intelligence chips are stored in Hong Kong awaiting shipment to China" [11]. Reuters, Nov 5, 2026. **Unnamed people** (two). | The latest count held. Reuters repeated it on Nov 18, 2026: "around 600,000 H200 chips were being stored in Hong Kong" [5]. Palmer Luckey's clip has the same figure: "There's 600,000 H200 GPUs sitting in a port right now" [12] (a speech program's transcript, 0:18 to 0:25; not checked by ear). The words "in a port" are his. |
+| **Less than 1%** of Nvidia's Data Center revenue: its H200 shipments to China in the quarter to Jul 26, 2026 | Those shipments "account for less than 1% of Data Center revenue in our most recent quarter" [13]. Nvidia, quarterly report (Form 10-Q). **Filing**. | The next quarter is given in dollars, not as a share: the row below the next. The two are not one measure. |
+| **$0.4 billion** charge Nvidia took on the H200 | "we incurred a $0.4 billion charge associated with H200 for excess inventory and purchase obligations, as the demand for H200 products diminished" [13]. Nvidia, the same report, for the first half of its fiscal year. **Filing**. | None held. |
+| **$2.4 billion** of licensed Hopper products sold to China in the quarter to Oct 25, 2026 | "Q3 sales of licensed Hopper Data Center products to China was $2.4 billion" [14]. Nvidia, results call for the quarter ended Oct 25, 2026. **Filing**: the company's own results call. Reuters reported the same figure on Nov 18, 2026 [5]. | The latest held. Nvidia went on: "we are no longer shipping licensed Hopper Data Center products to China" [14]. It gave no reason. Neither the call nor the report says how many chips this was, or how many crossed into the mainland. |
+| **No more than 50%**: H200 shipments to China and Macau, against shipments for use in the United States | The aggregate shipments to China and Macau "will be no more than 50% of the total product shipped to customers for end use in the United States of that product" [15]. The Commerce Department's rule, Federal Register of Jan 15, 2026. **Document**. | None held. It is one of Washington's conditions on the licences, not a Chinese rule. |
+| **25%** tariff on the licensed chips | They "are subject to a 25% tariff upon importation into the United States"; "We have been unable to pass along any of the tariff to our customers" [13]. Nvidia, quarterly report to Jul 26, 2026. **Filing**. | None held. |
+| **3.4 million** AI chips requested for sale to China; **more than 879,000** approved by the US export bureau | "requested sales of 3.4 million AI chips to China, and the approval of more than 879,000 by BIS" [16]. The House Foreign Affairs Committee's chairman, release of Nov 19, 2026. **Document**. | The table by status below gives the exact counts. It is not the same count as the 10 firms above: it covers Nvidia and AMD, and more than one chip. |
+
+**Washington's own table, by status.** The Commerce Department's table of licence applications for Nvidia's H200 and AMD's comparable MI325X, with their status on May 11, 2026, was made public on Nov 19, 2026 by the full House Foreign Affairs Committee: its chairman's release [16], with the committee's "unanimous consent" at a business meeting [17]. The files sit on the committee Democrats' site. The sums below are ours: a script over the table's 54 rows, as the project read them from the page images (tables/house_licence_table.tsv). The table's text layer is out of order, so its rows cannot be quoted [18]. The committee's summary states two of the numbers in its own words: "applications to sell 3,444,160 covered" and "879,868 covered integrated circuits to PRC companies across 21 license applications" [19].
+
+| Status on May 11, 2026 | Chips | Applications | What the rows show |
+|---|---|---|---|
+| Returned without action (RWA) | 1,888,950 | 9 | 55% of the chips in the applications the summary records. Among them every application for more than 75,000 chips (five) and all 1,118,500 chips for consignees in Malaysia, Indonesia and Thailand, which the table names for ByteDance, BytePlus, TikTok and Alibaba. Nvidia 1,738,950 in 7; AMD 150,000 in 2 |
+| Approved, not shipped | 879,868 | 21 | Nvidia 579,868 in 17; AMD 300,000 in 4; all for locations in China; none above 75,000 |
+| Submitted | 600,342 | 23 | Nvidia 492,492 in 18; AMD 75,000 in 1; Semsotai USA 32,850 in 4 |
+| Rejected | 75,000 | 1 | one AMD application, for UCloud |
+| All | 3,444,160 | 54 | Nvidia 2,811,310 in 42; AMD 600,000 in 8; Semsotai USA 32,850 in 4 |
+
+Read the 55% with the committee's own caution. Some applications are "not fully reflected in the May 11, 2026, summary document"; "For example, NVIDIA applied on December 19, 2025, to export 445,000 H200s to Tencent" [19]. The table shows an Nvidia application of that date for Tencent at 75,000 chips, approved. Counted at 445,000, the returned share would be 49.5% (ours). So the 55% is a share of the table, not of everything applied for. The table gives no reason for any return; RWA is the export bureau's own short form: "If your original application was returned without action (RWA)" [20]. An application names a consignee; it is not an order, and an approval here is Washington's licence, not Beijing's.
+
+## 2. Other orders for Nvidia chips, and prices
+
+| The number and what it counts | The source's words, who, when, on whose word | What updates it |
+|---|---|---|
+| **At least $16 billion** of H20 chips ordered by Chinese companies including ByteDance, Alibaba and Tencent in January to March 2025 | They "have placed at least $16 billion in orders for Nvidia's H20 server chips in the first three months of the year" [21]. The Information, through Reuters, on The Indian Express, Apr 3, 2025. **Unnamed people** (two). | None held for the H20 orders. It is in dollars; the H200 rows above are in chips. |
+| **About $60 million**: Nvidia's H20 revenue under the American licences of August 2025 | "We generated approximately $60 million in H20 revenue under those licenses." [22] Nvidia, annual report for the year ended Jan 25, 2026. **Filing**. | None held. |
+| **More than 3 million** RTX PRO 5500 cards ordered by ByteDance, Alibaba and Tencent; **over $35 billion** | They "have ordered more than 3 million of" the cards "with a collective sticker price of over $35 billion" [23]. Reuters, Oct 20, 2026. **Unnamed people** (two). | None held. This is not the H200. Reuters calls it "a less powerful but export-compliant chip" [23]. Two listed companies announced purchases of cards of that name: the next two rows. |
+| **20,000** RTX PRO 5500 cards bought by Tianyang Technology | "20,000 张具体型号为 NVIDIA RTX PRO 5500 Blackwell 的英伟达 GPU 产品" (20,000 Nvidia GPUs of that model), "区别于大模型训练用 GPU 产品" (unlike GPUs for training large models) [24]. Tianyang Technology, notice to the Shenzhen exchange, Oct 13, 2026. **Filing**. | None held. The seller is named only as Company X. The exchange later called the company's first report of the purchase, a WeChat post of Oct 9, "不准确、不完整" (inaccurate, incomplete) [25]. |
+| **4,225 million yuan** of PRO5500 GPUs bought by a Youzu subsidiary | "向A公司采购型号为PRO5500(PCIe)的GPU产品,协议总金额为人民币422,500万元" (GPUs of the model PRO5500 (PCIe), bought from Company A, for a total of 422,500 ten-thousand yuan, including tax) [26]. Youzu Interactive, notice dated Nov 3, 2026. **Filing**. | None held. The notice does not name the maker, and says the price may change: "订单价格可能会因原厂或上级供应商调整而发生变动" (the order price may change if the original maker or an upstream supplier adjusts it) [26]. |
+| **About 100 billion yuan**: ByteDance's planned spending on Nvidia chips in 2026; **roughly 85 billion yuan** in 2025 | "ByteDance plans to spend about 100 billion yuan on Nvidia's chips in 2026, up from roughly 85 billion yuan in 2025, if China allows H200 sales" [2]. South China Morning Post, through Reuters, Dec 31, 2025. **Unnamed people**. | None held. It is a plan with a condition: if China allows the sales. |
+| **Around 50,000 yuan**: the price of Nvidia's RTX6000D | A banned chip sold on the grey market "at less than half the RTX6000D's price of around 50,000 yuan" [27]. Reuters, Sept 16, 2025. **Unnamed people** (two). | None held. Big firms turned this chip down as "expensive for what it does" [27]. |
+| **8,000** RTX PRO 6000D cards arrived at iSoftStone | "软通动力到货8000张英伟达GPU卡的传言为事实,具体型号是英伟达6000D" (the rumour that iSoftStone had received 8,000 Nvidia GPU cards is true; the model is Nvidia's 6000D) [28]. National Business Daily, Oct 13, 2026, from a person close to the company. **Unnamed people** (one). | None held. |
+| **Over 10%** discount: the H20 against Huawei's chip in 2024 | The H20 sold "in some cases at an over 10% discount to Huawei's Ascend 910B" [29]. Reuters, May 24, 2024 (UTC). **Unnamed people** (three). | None held. It shows weak demand for the H20 in 2024, before the large orders of 2025. |
+| **Over 30,000** H20 chips ordered by Alibaba | Alibaba had ordered "over 30,000 H20 chips" [29]. Reuters, the same report. **Unnamed people**. | The $16 billion of 2025 above is a later count, in dollars, of orders by Chinese companies including Alibaba. |
+
+## 3. Nvidia's share in China, and its chips in use
+
+The first row is a news agency's description and the second Nvidia's chief executive's own words. The next six are counts of the research firm IDC, as Reuters and a Chinese chip maker report them; one more is the firm TrendForce's, a different measure. The last is a newspaper's own words. They are not one series.
+
+| The number and what it counts | The source's words, who, when, on whose word | What updates it |
+|---|---|---|
+| **About 95%** of China's advanced chip market, before US curbs tightened | "Before U.S. export curbs tightened, Nvidia commanded about 95% of China's advanced chip market." [3] Reuters, May 14, 2026. **The outlet's own words**: no source is given. | Nvidia's chief executive gave the same 95% as a starting point: the row below. Later figures are the research firms' counts. They measure AI accelerator cards, so the fall from 95% to 55% is not a measured fall. |
+| **95% to 50%**: Nvidia's share in China, by its chief executive, May 2025 | Huang said Nvidia's market share "in China dropped to 50%, from 95% at the start of former U.S. President Joe Biden's administration" [30]. Reuters, May 21, 2025 (UTC). **Named person**: Jensen Huang, at Computex in Taipei. | He did not say what the share measures. The counts below are the research firm's. |
+| **55%**: Nvidia's share of AI accelerator cards in China in 2025; **around 2.2 million** cards | "Nvidia remained the market leader, shipping around 2.2 million cards and holding a 55% share." [31] IDC, through Reuters, Apr 1, 2026. **Research firm**. The chip maker Enflame gives the same count from IDC's data and its own sales: "英伟达以约220万张出货量占据约55%的市场份额" (Nvidia held about 55% of the market with about 2.2 million cards shipped) [32], final prospectus of September 2026. | Updated by the same firm for January to June 2026: 34%, two rows down. |
+| **41%**: Chinese makers' share in 2025; **1.65 million** cards. **4%**: AMD's | "Chinese vendors collectively shipped 1.65 million cards, accounting for 41% of the total market"; AMD shipped "roughly 160,000 cards for a 4% share" [31]. IDC, through Reuters, Apr 1, 2026. **Research firm**. | The later report gives no total for Chinese makers and does not mention AMD. It names Huawei at 28% and four more Chinese makers: three rows down. |
+| **34%**: Nvidia's share of AI chips for data centres in January to June 2026; **678,000** shipped | "Nvidia shipped 678,000 AI accelerators in China from January through June, down 44% from a year earlier"; "its 34% market share" [33]. IDC, through Reuters, on Mint, Oct 13, 2026. **Research firm**. | The latest held. The firm "did not specify which Nvidia products made up its 34% market share" [33]. |
+| **28%**: Huawei's share in January to June 2026; **572,000** shipped | "Huawei shipped 572,000 AI accelerators, up from more than 300,000 a year earlier, giving it a 28% share of the overall market" [33]. IDC, through Reuters, on Mint, Oct 13, 2026. **Research firm**. | The latest held. For the whole of 2025 the same firm counted "around 812,000 AI chips" from Huawei [31]. |
+| **7%, 5%, 4% and 3%**: T-Head, Cambricon, Kunlunxin and Hygon in January to June 2026 | "T-Head held 7%, followed by Cambricon with 5%, Baidu's Kunlunxin with 4% and Hygon with 3%" [33]. IDC, through Reuters, on Mint, Oct 13, 2026. **Research firm**. | The latest held. With Nvidia's 34% and Huawei's 28% these make 81%. The remaining 19% is **ours**, by subtraction: the report does not break it down. |
+| **34% to 21%**: the combined share of Nvidia, AMD and other foreign suppliers, 2025 to 2026 (a forecast) | "The combined market share of Nvidia, AMD and other foreign suppliers is expected to fall to 21 percent in China this year, from 34 percent last year" [34]. TrendForce, as Silicon UK reported it, June 2026. **Research firm**. | None held. A different measure from IDC's: its 34% for 2025 is every foreign supplier together, not Nvidia alone in 2026. |
+| **Hundreds of thousands** of Nvidia chips in use by Chinese companies | "Chinese companies are using hundreds of thousands of Nvidia chips to stay within striking distance of their American rivals for now" [35]. Wall Street Journal, Jul 23, 2026. **The outlet's own words**: the sentence gives no source. | None held. It is not a count. |
+
+## 4. Nvidia's revenue from customers based in China
+
+From Nvidia's own reports to the Securities and Exchange Commission, not from the press. Nvidia counts revenue by where its direct customer has its headquarters; it has done so since its report of November 2025 and recast the earlier periods. China includes Hong Kong. This is not a count of chips entering China: "The end customer and shipping location may be different from our direct customers' headquarters location." [36] It covers every product, not only chips for data centres.
+
+| Quarter ended | Revenue from customers based in China, $ million | Source |
+|---|---|---|
+| Oct 27, 2024 | 8,142 | quarterly report of Nov 2025, prior-year column [37]. **Filing** |
+| Jan 26, 2025 | 7,818 | **ours**: the year to Jan 26, 2025 (25,048) [22] less the nine months to Oct 27, 2024 (17,230) [37] |
+| Apr 27, 2025 | 9,659 | quarterly report of May 2026, prior-year column [38]. **Filing** |
+| Jul 27, 2025 | 3,985 | quarterly report of Aug 2026, prior-year column [13]. **Filing** |
+| Oct 26, 2025 | 2,973 | quarterly report of Nov 2025 [37]. **Filing** |
+| Jan 25, 2026 | 3,060 | **ours**: the year to Jan 25, 2026 (19,677) [22] less the nine months to Oct 26, 2025 (16,617) [37] |
+| Apr 26, 2026 | 4,550 | quarterly report of May 2026 [38]. **Filing** |
+| Jul 26, 2026 | 7,880 | quarterly report of Aug 2026 [13]. **Filing** |
+| Oct 25, 2026 | 11,050 | Form 8-K of Nov 17, 2026, with the results [36]. **Filing** |
+
+The line fell by about two thirds from the quarter ended Apr 27, 2025 to the quarter ended Oct 26, 2025, then rose. The latest quarter is the highest of these nine, and 9.5% of Nvidia's revenue of $115,844 million that quarter (the division is ours) [36]. For the next quarter the same filing says: "We are not assuming any Data Center compute revenue from China in our outlook." [36] Nvidia's interim chief executive on CNBC, Nov 17, 2026: "Our shipments to China are approximately about 10 percent." [39] She went on to name the gaming, automotive and workstation businesses. Nvidia's quarterly report for the quarter ended Oct 25, 2026 had not been filed by Nov 23, 2026; that quarter's figures are from its Form 8-K.
+
+## 5. Home-made chips: what the companies ordered, built and sold
+
+| The number and what it counts | The source's words, who, when, on whose word | What updates it |
+|---|---|---|
+| **1,600** Huawei chips ordered by Baidu, for 200 servers | "Baidu ordered 1,600 of Huawei Technologies' 910B Ascend AI chips" [40]. Reuters, Nov 7, 2023; the order was placed in August 2023. **Unnamed people** (two). | For Baidu's own chips, the row below. |
+| **30,000** of Baidu's own Kunlun chips in one cluster | A cluster "comprising 30,000 of its self-developed, third generation P800 Kunlun chips" [41]. Baidu's chief executive at its developer conference, Apr 25, 2025, as Reuters reported it. **Named person**. | None held. |
+| **More than 100,000** Huawei chips ordered by ByteDance in 2024; **fewer than 30,000** received by July | "ByteDance has ordered more than 100,000 Ascend 910B chips this year but has received fewer than 30,000 as of July" [42]. Reuters, Sept 30, 2024. **Unnamed people** (one). A spokesman answered for ByteDance: "The entire premise here is wrong." | For 2026 a plan in money, not chips: the row below. |
+| **More than RMB 40 billion ($5.6 billion)** of Huawei chips ByteDance plans to buy in 2026 | ByteDance "is reportedly planning to purchase more than RMB 40 billion ($5.6 billion) worth of Huawei's Ascend AI chips in 2026" [43]. TechNode, Dec 29, 2025. **Unnamed people**. | None held. Set it beside the about 100 billion yuan for Nvidia chips in section 2: both are plans for 2026, from different reports. |
+| **160,000** Huawei chips DeepSeek is likely to order | "Bloomberg reported that DeepSeek will likely place an order for 160000 units of Huawei Ascend 950DT chips" [44]. Bloomberg, as retold by Huawei Central, a fan site, Sept 4, 2026. **Unnamed people**, at two removes: Bloomberg's own article is not held. | None held. |
+| **50,000** home-made cards in the cluster on which Meituan says it trained a model | "业界首个在五万卡国产算力集群上完成全流程训练与推理的万亿参数模型" (the first trillion-parameter model trained and served end to end on a home-made cluster of 50,000 cards) [45]. Meituan's technical blog, June 2026. **Filing**: the company's own published claim. | None held. It is the company's own claim; nobody here has checked it. |
+| **At or below 200,000**: Huawei's capacity to make Ascend chips in 2025, by a US estimate | "Our assessment is that Huawei Ascend chip production capacity for 2025 will be at or below 200,000" [46]. Jeffrey Kessler, under secretary of commerce, to a congressional hearing, as Reuters reported on Jun 12, 2025. **Named person**. | A later count is far higher: the research firm IDC has Huawei "shipping around 812,000 AI chips" in 2025 [31]. The two do not count the same thing: one is a forecast of what could be made, the other a count of what was shipped. |
+| **25.7 million yuan** to **3,530.8 million yuan**: Cambricon's revenue in the first quarter of 2024 and the third quarter of 2026 | "营业收入25,666,105.86" (revenue, in yuan, first quarter) [47]; "营业收入3,530,828,294.64" (revenue, in yuan, the quarter) [48]. Cambricon Technologies, its annual report for 2024 and its report for the third quarter of 2026. **Filing**. | None held. Its five largest customers, whom it does not name, took 88.66% of its sales in 2025: "前五名客户销售额576,030.47万元,占年度销售总额88.66%" [49]. |
+| **At least 50 per cent** more time and cost to move one team's work from Nvidia's software to Huawei's | Moving to Huawei's chips "could add at least 50 per cent in time and costs for his team" [50]. A developer at a research institute, whom the paper names, in the South China Morning Post, Aug 10, 2026. **Named person**; it is his estimate for his own team. | None held. |
+
+## 6. Targets and rules on paper
+
+These are published texts, except the rows marked otherwise. Every home-made percentage found in a published text is a province's or a city's; no national one was found in the 103 policy pages read.
+
+| The number and what it counts | The source's words, who, when, on whose word | What updates it |
+|---|---|---|
+| **8 of 31** provincial-level governments set a share for home-made computing hardware | **Ours**: a count by script over the project's table of the 31 (tables/provinces_31.tsv). 8 set a share; 21 have a plan that was read and sets none; Tibet is known only from a trade newspaper's account; for Xinjiang no computing plan was found. Most of the eight are aims; Jiangsu's, Shanghai's and Sichuan's are the next three rows. | None held. |
+| **70% or more by 2030, 50% by 2025**: home-made chips in Jiangsu's newly built computing centres. Marked indicative, not binding | The plan's table of indicators, under the heading "2025 年 2030 年 属性" (2025, 2030, nature), has the row "新建算力中心国产算力芯片使用占比(%) 50 70 预期性" (share of home-made computing chips in use in newly built computing centres, in %: 50, 70, indicative) [51]. Its text gives the 2030 figure in a sentence: "新建算力中心国产算力芯片使用占比达 70%以上" (home-made computing chips to be 70% or more of those in use in newly built computing centres) [51]. Jiangsu province, plan from four provincial bodies. **Document**. The saved copy carries no date of issue. | None held. The label 预期性 (indicative) is the plan's own. In that part of the table only the energy-efficiency row is binding: "集群内数据中心平均 PUE ≤1.25 <1.25 约束性" (average PUE of data centres in the cluster: at most 1.25, under 1.25, binding) [51]. The same table gives home-made storage 80 for 2025 and 90 for 2030, also indicative. |
+| **Over 50%**: home-made chips in Shanghai's newly built intelligent computing centres, by 2025 | "到2025年,本市新建智算中心国产算力芯片使用占比超过50%,国产存储使用占比超过50%" (by 2025 home-made computing chips make up over 50% of use in the city's newly built intelligent computing centres, and home-made storage over 50%) [52]. Shanghai's plan, as carried by the business daily Yicai, Mar 22, 2024. **Document**, in a newspaper's copy. | A later Shanghai text sets a different measure for 2027: "智算规模力争达到200EFLOPS,其中自主可控算力占比超70%" (intelligent computing to reach 200 EFLOPS, of which independently controllable computing over 70%) [53], issued Mar 25, 2025. |
+| **Over 50%**: home-made computing equipment in Sichuan | "力争国产化算力设备占比超过50%" (strive for home-made computing equipment to be over 50%) [54]. Sichuan province, action plan signed Nov 15, 2024. **Document**. | None held. |
+| **Above 90%**: the home-made rate of Guizhou's computing capacity | "贵州算力总规模中,智算占比、国产化率、区域集中度均超过90%" (of Guizhou's total computing capacity, the share of intelligent computing, the home-made rate and the regional concentration are each above 90%) [55]. People's Daily, on a provincial press conference, published Mar 24, 2026. **Document**: the province's own figure of what is in place, not a target. It does not say how the rate is counted. | None held. |
+| **20%** price deduction for home-made products in government purchasing | "对本国产品的报价给予20%的价格扣除" (the bid price of home-made products is given a 20% deduction) [56]. General Office of the State Council, Sept 28, 2025. **Document**. | None held. It governs government purchasing, not what a company buys with its own money. |
+| **40% and 30%, then 30% for all**: what Beijing E-Town's vouchers repay on rented computing. E-Town is a development zone, not the city | Its rule of Mar 28, 2024: "30%(非国产人工智能算力)或40%(国产人工智能算力)" (30% for non-home-made AI computing, or 40% for home-made) [57]. Its rule of Nov 26, 2024 pays "按照实际使用算力结算费用的30%" (30% of the fees settled for the computing actually used), whatever the chip, and says "原政策(京技管发〔2024〕10号)同时废止" (the former policy, No. 10 of 2024, is repealed at the same time) [58]. The zone's management committee. **Document**. | The rule of Nov 26, 2024 is the one in force, to Dec 31, 2027. Apart from the voucher it pays up to 10% of what a cloud firm pays for servers with home-made AI chips: "实际采购国产智算芯片服务器部分金额最高10%的支持" [58]. The 40% and 30% are not the rule in force. |
+| **4 of 15** local voucher rules pay more for home-made computing; **11** pay one rate whatever the chip | **Ours**: the argument's count (point 3) over the project's voucher tables (tables/local_vouchers.tsv and local_vouchers_more.tsv), one rule in force for each local government whose text is saved in a form a script could check and which states a share of the bill. The four, as shares of the bill for home-made against other computing: Hangzhou 30% and 20%, Zhejiang 30% and 10%, Wenzhou 30% and 10%, Binjiang 60% and 30%. | These are the rules found, not a census. Do not write that local governments in general paid less for foreign computing. |
+| **100%**: Beijing's aim for 2027. It is a capability, not a share of use | "具备100%自主可控智算中心建设能力" (have the capability to build intelligent computing centres that are 100% independently controllable) [59]. Beijing's economy and information technology bureau and its communications administration, plan signed Apr 24, 2024. **Document**. | None held. It says what the city means to be able to build by 2027, not what share of chips in use is to be home-made. |
+| **Nine**, then **two more**: AI chips on the state's security-and-reliability lists, every one from a Chinese maker | The ninth and last row of the list of May 26, 2026: "9 PH100 摩尔线程智能科技(北京)股份有限公司 I级" [60]. The list of Sept 20, 2026 adds "昇腾950 深圳市海思半导体有限公司" and "昆仑芯M100 昆仑芯(北京)科技股份有限公司" (HiSilicon's Ascend 950 and Kunlunxin's M100) [61]. The two state evaluation centres, on the first centre's own site. **Document**. | None held. No purchase rule read ties AI-chip buying to these lists. |
+| **70%** of core basic components and key basic materials to be self-supplied by 2025 | "到2025年,70%的核心基础零部件、关键基础材料实现自主保障" (by 2025, 70% of core basic components and key basic materials are self-supplied) [62]. State Council, Made in China 2025, May 8, 2015. **Document**. | None held. It is about components and materials in general, not chips alone. |
+| **Equal numbers** of home-made and foreign AI chips for new data centres | "the Chinese government now wants tech companies to buy equal numbers of domestic and foreign-made AI chips for new internet data centers" [63]. The Information, May 13, 2024. **Unnamed people**. Reported, not a published rule. | The later reports do not repeat this ratio. Reuters, Nov 5, 2025: new data centres that took state money were told "to only use domestically-made artificial intelligence chips"; the same report: "It is unclear whether the guidance applies nationwide or only to certain provinces" [64]. |
+| **2027**: the year by which state mobile operators were told to drop foreign processors | Foreign processors "should be phased out of their networks by 2027" [65]. Wall Street Journal, as retold by Telecoms.com; no date was found in the copy held. **Unnamed people**. | None held. It is about processors in telecom networks, not AI chips. |
+| **100% by 2027**: home-made information technology in state enterprises | "确保到 2027 年央企国企 100% 完成信创替代" (making sure that by 2027 central and state enterprises complete 100% substitution) [66]. A listed company's filing dated Jun 3, 2025, describing a 2022 notice. **Filing**. | None held. The notice the filing describes is not reproduced in any saved page. |
+
+## 7. Nvidia chips in state hands, in public records
+
+These rows count what tender and procurement records show. They bear on the limit that Beijing was not one actor: state bodies bought and planned for Nvidia chips too.
+
+| The number and what it counts | The source's words, who, when, on whose word | What updates it |
+|---|---|---|
+| **More than 100** tenders in which state bodies bought Nvidia A100 chips | "The review includes more than 100 tenders where state entities have procured A100 chips" [67]. Reuters, published Jan 14, 2024. **Records**: tender documents Reuters read. | A second review, Apr 23, 2024: "10 Chinese entities acquired advanced Nvidia chips embedded in server products" [68]. The two reviews count different things. |
+| **Two** H200 chips bought by a defence-linked university for **874,700 yuan** | It "bought two H200 chips last month for 874,700 yuan" [69]. Reuters, Nov 11, 2026. **Records**: a procurement record of Oct 21 on the university's site, as Reuters read it. | None held. The university's own page is not held. |
+| **Approximately 3,072** Nvidia processors planned for one computing centre in Gansu; a **3 billion yuan** centre in Shaanxi | "a computing centre that plans to install approximately 3,072 Nvidia processors"; "a project for a 3 billion yuan computing centre specifying Nvidia H100 and H200 processors" [70]. Reuters, Nov 13, 2026. **Records**: tender documents and a state company's statement, as Reuters read them. | None held. Reuters says the documents do not "establish whether the processors have been delivered" [70]. |
+| **39** planned data centres with **over 115,000** restricted Nvidia chips | "Chinese companies are preparing to equip 39 new AI data centers"; "with over 115,000 high-performance Nvidia Hopper GPUs" [71]. Bloomberg, as retold by Tom's Hardware, Jul 11, 2025. **Records**: "official investment documents, tenders, and filings reviewed by Bloomberg" [71]. Bloomberg's own article is not held. | None held. These are plans; no saved page shows the chips arrived. |
+
+## 8. This project's own counts
+
+These are ours. No source states them. Each comes from a script over a data file or from the subtraction or division shown.
+
+- **The sums by status** in Washington's table (section 1), except the total and the approved count, which the committee's summary states; among them **55%** and, with the application of Dec 19, 2025 counted at 445,000, **49.5%**; and **1,118,500**, the chips in the returned applications for consignees in Malaysia, Indonesia and Thailand.
+- **7,818 and 3,060** ($ million): the two fourth quarters of section 4, a year less its first nine months; and **9.5%**, the latest quarter's share of Nvidia's revenue.
+- **19%**: what is left of the market in January to June 2026 after the six makers the report names (section 3).
+- **8 of 31** provinces and **4 of 15** voucher rules (section 6).
+- **103**: the policy lines read, each in its saved page. No published order against buying Nvidia chips was found among them.
+
+## Read with care
+
+- **Most chip counts rest on unnamed people.** In section 1 the figures that do not are Washington's table and its committee's release, the American rule's 50% cap, and Nvidia's own (three from its filings, two from its results calls). The under secretary's statement that very few had been exported is on the record, but it is not a figure.
+- **The steps are not one series.** Ordered, cleared, approved and delivered come from different reports, for different groups of companies, at different dates. Do not subtract one from another. An application in Washington's table names a consignee; it is not an order, and approved there means an American licence, not a Chinese one.
+- **The shares are not one series.** The 95% is a news agency's description and the chief executive's starting point; the 55% and 34% are IDC's counts of AI accelerator cards; TrendForce's 34% and 21% are another firm's measure, of every foreign supplier together.
+- **Revenue is not chips.** Nvidia's China line is revenue by where its direct customers have their headquarters, for every product.
+- **A target on paper is not what was done.** Section 6 shows what provinces and cities set, not what was installed.
+- **Money and chips are different units.** No saved page gives a price that turns one into the other for these orders.
+
+## What is not in this ledger
+
+- The full tables these rows draw on. They are in the table files beside this page (the record as table files): Washington's licence table, Nvidia's revenue table, 115 published market numbers, the 31 provinces and the local voucher rules.
+- Trade figures. No customs line counts Nvidia chips; the trade tables are among the table files.
+- Numbers in the two tier files that do not bear on the question: the sums of Hong Kong's subsidy scheme, counts of rare-earth and export-control measures, and the dates and document numbers of laws.
+- The count of 18 processors on the 2023 evaluation list. It was made by a script over the saved table and is not a number in the page's own words.
+- Counts in the two clips other than the 600,000.
+- Any number from a page that is not saved.
+
+## References
+
+Each entry: its kind; what it is; the saved page's own title where the record holds one; the address; the saved copy (research/primary/<id>).
+
+[1] Official document, or an official on the record. The President, post of Dec 8, 2025, as kept by the American Presidency Project. Page title: Truth Social Posts of December 8, 2025 | The American Presidency Project. https://www.presidency.ucsb.edu/documents/truth-social-posts-december-8-2025 Saved copy: cn-clips-followup-3-relay1
+
+[2] Press report citing unnamed people. Reuters, Dec 31, 2025, as carried by Investing.com. Internet Archive capture of Jan 1, 2026. https://web.archive.org/web/20260101170120/https://www.investing.com/news/stock-market-news/exclusivenvidia-sounds-out-tsmc-on-new-h200-chip-order-as-china-demand-jumps-sources-say-4426223 Saved copy: cn-labs-h200-two-million-202512-relay1-wayback
+
+[3] Press report citing unnamed people. Reuters, May 14, 2026, as carried by MarketScreener. Internet Archive capture of Jun 16, 2026. https://web.archive.org/web/20260616124310/https://www.marketscreener.com/news/us-clears-h200-chip-sales-to-10-china-firms-as-nvidia-ceo-looks-for-breakthrough-ce7f5bddd98df020 Saved copy: cn-acts-reuters-us-approvals-20260514-wayback
+
+[4] Press report citing unnamed people. Reuters, relaying the Financial Times, Aug 18, 2026, as carried by Investing.com. Internet Archive capture of Sept 8, 2026. https://web.archive.org/web/20260908131431/https://www.investing.com/news/stock-market-news/nvidia-h200-chips-reach-china-in-small-shipments-ft-reports-4866385 Saved copy: cn-tolerate-reutersaug26-relay1-wayback
+
+[5] Press report of words spoken on the record. Reuters, Nov 18, 2026, as carried by AOL, reporting Nvidia's interim chief executive on its results call. Page title: Nvidia stops shipping US-approved AI chips to China - AOL. https://www.aol.com/articles/nvidia-stops-shipping-us-approved-091611000.html Saved copy: cn-acts-reuters-halt-20261118-relay2
+
+[6] Press report citing unnamed people. Reuters, Jan 28, 2026, as carried by The Standard (Hong Kong). Page title: China gives nod to ByteDance, Alibaba and Tencent to buy Nvidia's H200 chips, says sources. https://www.thestandard.com.hk/innovation/article/322910/China-gives-nod-to-ByteDance-Alibaba-and-Tencent-to-buy-Nvidias-H200-chips-says-sources Saved copy: ms-bj-20260128-h200-nod-standard
+
+[7] Press report citing unnamed people. Reuters, Jan 30, 2026, as carried by Tiger Brokers. Page title: China Conditionally Approves DeepSeek To Buy Nvidia's H200 Chips - Sources. https://www.itiger.com/hans/news/2607233096 Saved copy: cn-acts-reuters-deepseek-20260130
+
+[8] Press report citing unnamed people. Reuters, relaying The Information, as carried by AOL, Jul 8, 2026. Page title: China plans to let top AI firms buy limited Nvidia H200 chips, the Information reports - AOL. https://www.aol.ca/articles/china-plans-let-top-ai-150506000.html Saved copy: cn-acts-reuters-ti-cap-20260708-relay1
+
+[9] Company filing or statement. Nvidia, results call of May 20, 2026 (first quarter of its fiscal year 2027): the transcript on Nvidia's investor site. https://s201.q4cdn.com/141608511/files/doc_financials/2027/q1/NVDA-Q1-2027-Earnings-Call-20-May-2026-5_00-PM-ET.pdf Saved copy: cn-o38-nvda-q1fy27-call-transcript-pdf
+
+[10] Press report of words spoken on the record. Reuters, Jul 14, 2026, as carried by Investing.com, reporting the testimony of Jeffrey Kessler, under secretary of commerce for industry and security, to the House Foreign Affairs Committee. Hand-saved. https://www.investing.com/news/stock-market-news/us-official-says-shipments-of-h200-chips-to-china-have-begun-4791235 Saved copy: man-a7d2f1a9f963
+
+[11] Press report citing unnamed people. Reuters, datelined Nov 5, 2026, as carried by CNA (Singapore) on Nov 6, 2026. The CNA page shows only its own date; the Nov 5 dateline stands on the copy carried by Yahoo, which is also saved. Page title: Nvidia chips pile up in Hong Kong as China withholds import approval. https://www.channelnewsasia.com/east-asia/nvidia-chips-pile-up-hong-kong-china-withhold-import-approval-6527371 Saved copy: cn-clips-evidence-1
+
+[12] Caption track or machine transcript, not checked by ear. Palmer Luckey, in a clip of 56 seconds posted on X by @overton_news, Nov 19, 2026. Words from a machine transcript of the clip (the file transcripts_two_clips.md, beside this note); nobody has checked them by ear. https://x.com/overton_news/status/2123392702821580811
+
+[13] Company filing or statement. Nvidia, quarterly report on Form 10-Q for the quarter to Jul 26, 2026, filed with the US Securities and Exchange Commission on Aug 26, 2026. https://www.sec.gov/Archives/edgar/data/1045810/000104581026000075/nvda-20260726.htm Saved copy: man-ms-sec-10q-2026-07
+
+[14] Company filing or statement. Nvidia, results call for the third quarter of its fiscal year 2027 (the quarter ended Oct 25, 2026): the transcript on Nvidia's investor site. https://s201.q4cdn.com/141608511/files/content_files/NVDA-3Q27-Earnings-Transcript.pdf Saved copy: cn-o38-nvda-q3fy27-call-transcript-pdf
+
+[15] Official document, or an official on the record. US Commerce Department, Bureau of Industry and Security, rule revising licence review for advanced computing chips, Federal Register of Jan 15, 2026. Hand-saved. https://www.govinfo.gov/content/pkg/FR-2026-01-15/html/2026-00789.htm Saved copy: man-ms-admin-bis-jan2026-rule-8ec187
+
+[16] Official document, or an official on the record. House Foreign Affairs Committee, chairman's press release of Nov 19, 2026 on making public the licence information for Nvidia's and AMD's chips to China. Page title: Chairman Brian Mast Exercises Legislative Authority to Publicly Release AI Chip License Information for China. https://foreignaffairs.house.gov/news/press-releases/chairman-brian-mast-exercises-legislative-authority-to-publicly-release-ai-chip-license-information-for-china Saved copy: cn-labs-us-chip-licences-20261119
+
+[17] Official document, or an official on the record. House Foreign Affairs Committee, the ranking member's remarks at the business meeting of Nov 19, 2026, on the committee Democrats' site. Page title: Meeks Delivers Remarks During HFAC Disclosure of BIS Licenses of NVIDIA & AMD Chips to China | House Foreign Affairs Committee. https://democrats-foreignaffairs.house.gov/2026/11/meeks-delivers-remarks-during-hfac-disclosure-of-bis-licenses-of-nvidia-amd-chips-to-china/ Saved copy: cn-le04-meeks-remarks-20261119
+
+[18] Official document, or an official on the record. House Foreign Affairs Committee, disclosure of Nov 19, 2026: the Commerce Department's table of licence applications for Nvidia's H200 and AMD's MI325X, with their status as of May 11, 2026 (its text layer is out of order; the rows were read from the page images). https://democrats-foreignaffairs.house.gov/wp-content/uploads/2026/11/11.19.26-ECRA-Information-Disclosure-of-BIS-License-Decisions.pdf Saved copy: cn-usdocs-hfac-decisions-20261119
+
+[19] Official document, or an official on the record. House Foreign Affairs Committee, disclosure of Nov 19, 2026, made by the full committee (its chairman's release; approved by unanimous consent at a business meeting; the files are on the committee Democrats' site): the committee's summary, which cites a Commerce Department summary dated May 11, 2026. https://democrats-foreignaffairs.house.gov/wp-content/uploads/2026/11/11.19.26-ECRA-Information-Disclosure-HFAC-Summary.pdf Saved copy: cn-usdocs-hfac-summary-20261119
+
+[20] Official document, or an official on the record. US Commerce Department, Bureau of Industry and Security, Export Administration Regulations part 748 (applications), on the bureau's site. Page title: EAR 748 | Bureau of Industry and Security. https://www.bis.gov/regulations/ear/748 Saved copy: cn-le04-bis-ear-748
+
+[21] Press report citing unnamed people. Reuters, relaying The Information, as carried by The Indian Express, Apr 3, 2025. Page title: Chinese firms place $16 billion in order for new Nvidia chips: Report. https://indianexpress.com/article/technology/artificial-intelligence/chinese-firms-place-16-billion-in-order-for-new-nvidia-chips-report-9921792/ Saved copy: cn-labs-h20-orders-20250402-relay1
+
+[22] Company filing or statement. Nvidia, annual report on Form 10-K for the fiscal year ended Jan 25, 2026, filed with the US Securities and Exchange Commission. https://www.sec.gov/Archives/edgar/data/1045810/000104581026000021/nvda-20260125.htm Saved copy: man-ms-sec-10k-fy2026
+
+[23] Press report citing unnamed people. Reuters, Oct 20, 2026, as carried by Investing.com. Internet Archive capture of Oct 22, 2026. https://web.archive.org/web/20261022060355/https://www.investing.com/news/stock-market-news/exclusivebytedance-alibaba-tencent-place-over-35-billion-worth-of-nvidia-chip-orders-4959231 Saved copy: cn-factions-rtx-orders-oct-wayback
+
+[24] Company filing or statement. Tianyang Technology, notice 2026-070 of a purchase contract, Oct 13, 2026, on the exchanges' disclosure site. https://static.cninfo.com.cn/finalpage/2026-10-13/1225602580.PDF Saved copy: cn-filings-tianyang-20261013-contract
+
+[25] Press report of words spoken on the record. China Economic Net, Oct 20, 2026, as carried by 10jqka: report of the Shenzhen Stock Exchange's monitoring letter to Tianyang Technology. Page title: 天阳科技蹭英伟达热点收监管函 上市即巅峰光大证券保荐. https://news.10jqka.com.cn/20261020/c680877154.shtml Saved copy: cn-le08-tianyang-szse-letter-10jqka
+
+[26] Company filing or statement. Youzu Interactive, notice of a major contract, dated Nov 3, 2026, on the exchanges' disclosure site (cninfo). https://static.cninfo.com.cn/finalpage/2026-11-04/1225656231.PDF Saved copy: cn-le08-youzu-contract-20261104
+
+[27] Press report citing unnamed people. Reuters, Sept 16, 2025, as carried by TradingView. Page title: Nvidia's new RTX6000D chip for China finds little favour with major firms, sources say. https://www.tradingview.com/news/reuters.com,2025:newsml_L2N3V202J:0-nvidia-s-new-rtx6000d-chip-for-china-finds-little-favour-with-major-firms-sources-say/ Saved copy: cn-labs-rtx6000d-demand-20250916-relay1
+
+[28] Press report citing unnamed people. National Business Daily, Oct 13, 2026. Page title: 软通动力“大手笔”购卡加码服务器生意 上半年计算产品与智能电子业务营收占比已过半 | 每经网. https://www.nbd.com.cn/articles/2026-10-13/4603594.html Saved copy: cn-cnpress-nbd-isoftstone-6000d-20261013
+
+[29] Press report citing unnamed people. Reuters, May 24, 2024 (UTC), as carried by Yahoo News Canada. Page title: Exclusive-Nvidia cuts China prices in Huawei chip fight, sources say. https://ca.news.yahoo.com/exclusive-nvidia-cuts-china-prices-033402120.html Saved copy: cn-le10-h20-discount-20240523-yahooca
+
+[30] Press report of words spoken on the record. Reuters, May 21, 2025 (UTC), reporting Nvidia's chief executive at Computex in Taipei, as carried by a radio station's site (KELO). Page title: Nvidia says US export controls on AI to China were ‘a failure’. https://kelofm.com/2025/05/20/nvidia-says-us-export-controls-on-ai-to-china-were-a-failure/ Saved copy: cn-usside-028
+
+[31] Research firm's count, through the press. Reuters, Apr 1, 2026, as carried by MarketScreener, reporting counts by the research firm IDC. Hand-saved. https://in.marketscreener.com/news/chinese-chipmakers-claim-nearly-half-of-of-local-market-as-nvidia-s-lead-shrinks-idc-says-ce7e51dfdd88f123 Saved copy: man-cn-usside-012
+
+[32] Company filing or statement. Enflame (Shanghai), final prospectus for its listing on the Shanghai exchange's STAR Market, signed Sept 8, 2026, on the exchanges' disclosure site (cninfo). https://static.cninfo.com.cn/finalpage/2026-09-08/1225552227.PDF Saved copy: cn-le08-enflame-final-prospectus
+
+[33] Research firm's count, through the press. Reuters, as carried by Mint (India), Oct 13, 2026, reporting counts by the research firm IDC. Page title: Nvidias China AI-chip share falls as Huawei closes gap, report finds | Mint. https://www.livemint.com/technology/nividas-china-ai-chip-share-falls-as-huawei-closes-gap-report-finds/amp-11791858728043.html Saved copy: cn-usside-044-relay1
+
+[34] Research firm's count, through the press. Silicon UK, June 2026, reporting figures of the research firm TrendForce. Page title: China-Produced AI Chips Dominate Domestic Market | Silicon UK. https://www.silicon.co.uk/ai-2/huawei-cambricon-ai-630499 Saved copy: cn-le19-tf2026-silicon
+
+[35] Press report citing unnamed people. Wall Street Journal, Jul 23, 2026. Hand-saved from the Journal's site; read whole. Page title: Inside China’s All-Out Push to Catch Up With American AI Chips. https://www.wsj.com/world/china/china-ai-chips-race-949050d0 Saved copy: man-cn-factions-wsj-ding
+
+[36] Company filing or statement. Nvidia, Form 8-K of Nov 17, 2026, with its results for the quarter ended Oct 25, 2026. Copy on the filings service Nvidia's investor site uses. https://d18rn0p25nwr6d.cloudfront.net/CIK-0001045810/46a9c98c-87ae-40f5-acac-7d9264b18eb4.pdf Saved copy: ms-p3-nvda-8k-20261117-pdf
+
+[37] Company filing or statement. Nvidia, quarterly report on Form 10-Q for the quarter ended Oct 26, 2025, filed with the US Securities and Exchange Commission; signed Nov 19, 2025. https://www.sec.gov/Archives/edgar/data/1045810/000104581025000230/nvda-20251026.htm Saved copy: man-ms-sec-10q-2025-10
+
+[38] Company filing or statement. Nvidia, quarterly report on Form 10-Q for the quarter ended Apr 26, 2026, filed with the US Securities and Exchange Commission; signed May 20, 2026. https://www.sec.gov/Archives/edgar/data/1045810/000104581026000052/nvda-20260426.htm Saved copy: man-ms-sec-10q-2026-04
+
+[39] Press report of words spoken on the record. Nvidia's interim chief executive on CNBC, Nov 17, 2026. CNBC's transcript, which it calls unofficial, on its owner's press site. Page title: CNBC | VERSANT Press Room. https://pressroom.versantmedia.com/cnbc/press-releases/cnbc-exclusive-transcript-nvidia-interim-ceo-colette-kress-speaks-cnbcs-jim Saved copy: cn-against2-kress-global-h200-halt-20261117
+
+[40] Press report citing unnamed people. Reuters, Nov 7, 2023, as carried by The Business Times (Singapore). Page title: Baidu placed AI chip order from Huawei in shift away from Nvidia: sources. https://www.businesstimes.com.sg/companies-markets/telcos-media-tech/baidu-placed-ai-chip-order-huawei-shift-away-nvidia-sources Saved copy: cn-labs-baidu-ascend-2023-relay1
+
+[41] Press report of words spoken on the record. Reuters, Apr 25, 2025, as carried by StreetInsider, reporting Baidu's chief executive at its developer conference. Hand-saved. https://www.streetinsider.com/Reuters/China%27s%2BBaidu%2Bsays%2Bits%2BKunlun%2Bchip%2Bcluster%2Bcan%2Btrain%2BDeepSeek-like%2Bmodels/24685241.html Saved copy: man-cn-labs-baidu-30k-reuters-alt1
+
+[42] Press report citing unnamed people. Reuters, Sept 30, 2024, as carried by the radio station WSAU. An early version of the article. Page title: Exclusive-ByteDance plans new AI model trained with Huawei chips, sources say. https://wsau.com/2024/09/30/exclusive-bytedance-plans-new-ai-model-trained-with-huawei-chips-sources-say/ Saved copy: cn-labs-bytedance-huawei-denial-202409-relay1
+
+[43] Press report citing unnamed people. TechNode, Dec 29, 2025, on ByteDance's reported plan to buy Huawei chips. Page title: ByteDance reportedly plans to purchase $5.6 billion worth of Huawei’s Ascend AI chips · TechNode. https://technode.com/2025/12/29/bytedance-reportedly-plans-to-purchase-5-6-billion-worth-of-huaweis-ascend-ai-chips/ Saved copy: cn-labs-bytedance-ascend-budget-2026
+
+[44] Press report citing unnamed people. Huawei Central (a fan site), Sept 4, 2026, retelling a Bloomberg report. Internet Archive capture of Sept 23, 2026. Bloomberg's own article is not held. https://web.archive.org/web/20260923135723/https://www.huaweicentral.com/deepseek-to-order-160000-huawei-ai-chips-over-nvidia/ Saved copy: cn-labs-deepseek-160k-relay1-wayback
+
+[45] Company filing or statement. Meituan, its technical team's blog, Jun 30, 2026, on its model LongCat-2.0. A company's own claim. Page title: 美团 LongCat-2.0 正式发布：在国产算力集群上完成全流程训练与推理的万亿参数模型 | 美团 · 技术团队. https://tech.meituan.com/2026/06/30/LongCat2.0.html Saved copy: cn-usside-070
+
+[46] Press report of words spoken on the record. Reuters, Jun 12, 2025, as carried by Yahoo, reporting the testimony of Jeffrey Kessler, under secretary of commerce for industry and security, to a congressional hearing. Page title: US says China's Huawei can't make more than 200,000 AI chips in 2025. https://www.yahoo.com/news/us-says-chinas-huawei-cant-184914596.html Saved copy: cn-usside-023-relay2
+
+[47] Company filing or statement. Cambricon Technologies, annual report for 2024 (posted Apr 19, 2025), as served by Sina Finance's copy of the Shanghai exchange's filings. http://file.finance.sina.com.cn/211.154.219.97:9494/MRGG/CNSESH_STOCK/2025/2025-4/2025-04-19/10904723.PDF Saved copy: cn-le19-cambricon-2024-annual
+
+[48] Company filing or statement. Cambricon Technologies, report for the third quarter of 2026 (posted Oct 24, 2026), Sina Finance's copy. http://file.finance.sina.com.cn/211.154.219.97:9494/MRGG/CNSESH_STOCK/2026/2026-10/2026-10-24/12657969.PDF Saved copy: cn-le19-cambricon-2026q3
+
+[49] Company filing or statement. Cambricon Technologies, annual report for 2025 (posted Mar 13, 2026), Sina Finance's copy. http://file.finance.sina.com.cn/211.154.219.97:9494/MRGG/CNSESH_STOCK/2026/2026-3/2026-03-13/11993143.PDF Saved copy: cn-le19-cambricon-2025-annual
+
+[50] Press report citing unnamed people. South China Morning Post, Aug 10, 2026. Internet Archive capture of the same day; opening paragraphs only. https://web.archive.org/web/20260810121441/https://www.scmp.com/tech/big-tech/article/3363491/chinas-top-ai-still-trained-nvidia-chips-what-delaying-switch-local-tech Saved copy: cn-labs-cuda-transition-202608-wayback
+
+[51] Chinese state document. Jiangsu province, plan for computing infrastructure issued by four provincial bodies, with targets for 2025 and 2030. PDF on the provincial communications administration's site; the PDF carries no date of issue. https://jsca.miit.gov.cn/cms_files/filemanager/1190535345/attach/20243/814819077f4f4b898e5f57dd8f4972e9.pdf Saved copy: cn-factions-jiangsu-plan
+
+[52] Chinese state document. Shanghai's plan for computing infrastructure for 2024 and 2025, as carried by the business daily Yicai, Mar 22, 2024. Page title: 上海：到2025年本市智能算力占比达总算力50%以上. https://www.yicai.com/news/102038362.html Saved copy: cn-policy-shanghai-domestic-target
+
+[53] Chinese state document. Shanghai Municipal Commission of Economy and Informatization, implementation opinions on the intelligent-computing cloud industry, 2025 to 2027, issued Mar 25, 2025. Page title: 上海市经济和信息化委员会关于印发《上海市关于促进智算云产业创新发展的实施意见（2025-2027年）》的通知. https://www.shanghai.gov.cn/qtsj/20250610/4e13aa7106cb4b69903ab97d58f124de.html Saved copy: cn-factions-shanghai-cloud-20250324
+
+[54] Chinese state document. Sichuan province, action plan for computing infrastructure, 2024 to 2027, on a state investment-approval site, November 2024. Page title: 关于印发《四川省算力基础设施高质量发展行动方案（2024—2027年）》的通知_发展规划_投资项目在线审批监管平台. https://new.tzxm.gov.cn/zckd/fzgh/202411/t20241122_1394663.shtml Saved copy: cn-factions-sichuan50
+
+[55] Chinese state document. People's Daily report of a Guizhou provincial press conference, as carried on the Digital China Summit site, Mar 24, 2026. A province's own figure. Page title: 贵州算力市场化率已超90%_数字快讯_数字中国建设峰会. https://www.szzg.gov.cn/2026/xwzx/szkx/202603/t20260324_5299845.htm Saved copy: cn-policy-guizhou-localization-2026
+
+[56] Chinese state document. General Office of the State Council, notice on a home-made product standard in government purchasing, dated Sept 28, 2025. Text on the finance ministry's site. Page title: 国务院办公厅关于在政府采购中实施本国产品标准及相关政策的通知. https://www.mof.gov.cn/zhengwuxinxi/caizhengxinwen/202509/t20250930_3973725.htm Saved copy: cn-policy-domestic-product-standard-2025
+
+[57] Chinese state document. Beijing Economic-Technological Development Area (E-Town) management committee, policies for an AI-native industry zone (京技管发〔2024〕10号), Mar 28, 2024. On the Beijing government's portal. Page title: 北京经济技术开发区关于加快打造AI原生产业创新高地的若干政策_市级_首都之窗_北京市人民政府门户网站. https://www.beijing.gov.cn/zhengce/gfxwj/sj/202406/t20240613_3711893.html Saved copy: cn-factions-etwon-vouchers
+
+[58] Chinese state document. Beijing Economic-Technological Development Area (E-Town, a development zone, not the city), management committee, measures on an AI-native industry hub, on the zone's page: the rule that repeals 京技管发〔2024〕10号 and is in force to Dec 31, 2027. Page title: 北京经济技术开发区管理委员会关于印发《北京经济技术开发区关于加快打造AI原生产业创新高地的若干政策》的通知_政策文件_北京经济技术开发区. https://kfqgw.beijing.gov.cn/zwgkkfq/2024zcwj/202411/t20241126_3950424.html Saved copy: cn-le28-etown-29hao-20241126
+
+[59] Chinese state document. Beijing Municipal Bureau of Economy and Information Technology and Beijing Communications Administration, implementation plan for computing infrastructure, 2024 to 2027, Apr 24, 2024. Reproduced on the national science and technology information site. Page title: 北京市经济和信息化局 北京市通信管理局关于印发《北京市算力基础设施建设实施方案（2024—2027年）》的通知. https://www.ncsti.gov.cn/zcfg/zcwj/202405/t20240507_155635.html Saved copy: cn-factions-beijing-plan-20240424
+
+[60] Chinese state document. China Information Technology Security Evaluation Center and National Secrecy Science and Technology Evaluation Center, announcement 2026 No. 2 of security-and-reliability evaluation results, May 26, 2026 (its first table is of AI training and inference chips). On the first centre's own site. Page title: 安全可靠测评结果公告（2026年第2号）. http://www.itsec.gov.cn/aqkkcp/cpgg/202605/t20260526_259396.html Saved copy: cn-le14-itsec-2026-2
+
+[61] Chinese state document. China Information Technology Security Evaluation Center and National Secrecy Science and Technology Evaluation Center, announcement 2026 No. 3 of security-and-reliability evaluation results, Sept 20, 2026. On the first centre's own site. Page title: 安全可靠测评结果公告（2026年第3号）. http://www.itsec.gov.cn/aqkkcp/cpgg/202609/t20260920_275291.html Saved copy: cn-le14-itsec-2026-3
+
+[62] Chinese state document. State Council, Made in China 2025, May 8, 2015. A copy on the state planner's site that says it is abridged. Page title: 【国务院关于印发《中国制造2025》的通知<br>国发〔2015〕28号】-国家发展和改革委员会. https://www.ndrc.gov.cn/xxgk/zcfb/qt/201505/t20150520_967388.html Saved copy: cn-policy-mic2025
+
+[63] Press report citing unnamed people. The Information, May 13, 2024. The article's text as held in a public awards file. https://sopawards.com/wp-content/uploads/2025/05/8006_Qianer-Liu_Articles-1-to-4.pdf Saved copy: cn-factions-information-20240513-sopa
+
+[64] Press report citing unnamed people. Reuters, Nov 5, 2025, as carried by The Standard (Hong Kong). Page title: China bans foreign AI chips from state-funded data centres, sources say. https://www.thestandard.com.hk/china/article/316018/China-bans-foreign-AI-chips-from-state-funded-data-centres-sources-say Saved copy: ms-bj-20251105-statefunded-standard
+
+[65] Press report citing unnamed people. Wall Street Journal, as retold by Telecoms.com (a trade site). Internet Archive capture of Apr 21, 2024. The Journal's own article is not held. https://web.archive.org/web/20240421123309/https://www.telecoms.com/telecoms-law/china-reportedly-ordering-operators-to-phase-out-foreign-chips-from-networks Saved copy: cn-policy-telecom-2027-wayback
+
+[66] Company filing or statement. Yunyong Technology, exchange filing dated Jun 3, 2025 by its board. It describes a 2022 notice it does not reproduce. https://static.cninfo.com.cn/finalpage/2025-06-04/1223748250.PDF Saved copy: cn-policy-yunyong-document79-filing
+
+[67] Press report citing unnamed people. Reuters, published Jan 14, 2024, as carried by Investing.com: a review of public tender documents. Internet Archive capture of Jan 16, 2024. https://web.archive.org/web/20240116061406/https://www.investing.com/news/stock-market-news/exclusivechinas-military-and-government-acquire-nvidia-chips-despite-us-ban-3274170 Saved copy: cn-labs-state-tenders-2024-wayback
+
+[68] Press report citing unnamed people. Reuters, Apr 23, 2024, as carried by MarketScreener: a review of public tender documents. Internet Archive capture. https://web.archive.org/web/20240423040744/https://www.marketscreener.com/quote/stock/NVIDIA-CORPORATION-57355629/news/China-acquired-recently-banned-Nvidia-chips-in-Super-Micro-Dell-servers-tenders-show-46496801/ Saved copy: cn-counter-b8-2-wayback
+
+[69] Press report citing unnamed people. Reuters, Nov 11, 2026, as carried by PiQ Markets: a university's procurement record, as Reuters read it. Page title: Exclusive-PLA-linked Chinese university bought Nvidia H200 chips despite US blacklist, records show. https://piqmarkets.com/reuters/exclusive-pla-linked-chinese-university-bought-nvidia-h200-chips-despite-us-blacklist-records-show-2026-11-11-05-13-08 Saved copy: cn-counter-b8-5
+
+[70] Press report citing unnamed people. Reuters, Nov 13, 2026, as carried by the radio station WSAU: a review of tender documents for computing centres. Page title: Factbox-China’s $3 billion-plus pipeline of Nvidia-powered AI data centres. https://wsau.com/2026/11/13/chinas-3-billion-plus-pipeline-of-nvidia-powered-ai-data-centres/ Saved copy: cn-tolerate-projects-relay1
+
+[71] Press report citing unnamed people. Bloomberg, as retold by Tom's Hardware, Jul 11, 2025. Bloomberg's own article is not held. Page title: China plans 39 AI data centers with 115,000 restricted Nvidia Hopper GPUs — move raises alarm over sourcing, effectiveness of bans. https://www.tomshardware.com/pc-components/gpus/china-plans-39-ai-data-centers-with-115-000-restricted-nvidia-hopper-gpus-move-raises-alarm-over-sourcing-effectiveness-of-bans Saved copy: cn-acts-bloomberg-projects-th-20250711
+
+Build check: 115 quotations and 108 further statements were looked for in the saved copies of 71 sources and all were found; a planted false quotation was rejected. 41 sources are documents, filings or named people on the record; 30 are press reports citing unnamed people, counts or machine transcripts. A quotation that is found shows what the source says, not that it is true.

@@ -1,0 +1,156 @@
+# The verdict on each part of each sentence of the two clips. build.py reads this file.
+# The parts and their words come from ../40_checked_by_ear/compared.json (the first speech pass); they are not typed here.
+# An entry starts "@ <part> | <code>". Codes: A borne out by the record; AB borne out on direction, too flat as worded;
+# B too flat; C not established by any saved source; D outside what this project checked.
+# A second line that starts with "= " replaces the part's own words and source: it is used where the words are quoted
+# from another saved source than the first speech pass (Luckey's L4, from the text of the post: core change of Nov 23, 2026).
+# Everything after that is the reason, in the document's small markup: exact words of a source between
+# straight double quotes with its saved id in square brackets in the same entry; "!! id | words" lines are hidden checks.
+# The verdicts follow ASSESSMENT.md sections 5 and 6 and ARGUMENT_referenced.md. They do not go beyond them.
+# Round 4: {NV_APPROVED}, {NV_APPS}, {RWA_CHIPS}, {RWA_PCT}, {SEA_CHIPS} and {SEA_APPS} are filled in by build.py from
+# ../../../tables/house_licence_table.tsv (the project's copy of the Commerce Department's table); they are not typed.
+
+@ L1 | D
+He is repeating what his critics say to him. It is not a claim of his own.
+
+@ L2 | D
+Still his critics' words, as he tells them.
+
+@ L3 | AB
+This is the claim the project tested. On direction the record bears it out. Nvidia told US securities regulators, in its report signed Nov 19, 2025, that the Chinese government "restricted customers from purchasing, importing, or using our data center products" [man-ms-sec-10q-2025-10]. Alibaba told them: "In September 2025, the Cyberspace Administration of China requested Chinese technology companies to halt purchases of certain chips." [cn-clips-alibaba-20f] That sentence does not name Nvidia. As a flat statement it goes too far. The argument sets five limits on it. First, China was not one actor: Reuters reported on Jan 30, 2026, on purchases of the H200 by DeepSeek, ByteDance, Alibaba and Tencent, that "China's industry and commerce ministries have granted approvals for all four companies" [cn-acts-reuters-deepseek-20260130]. Second, the pressure came as public warnings and unpublished guidance, not as a published ban: Bloomberg's report of September 2024 said "The policy has taken the form of guidance rather than an outright ban" [cn-factions-bloomberg-flexibility-202409-relay1]. Third, some purchases were approved and some chips came in (sentence L5). Fourth, the companies had reasons of their own, and American curbs and conditions pushed too: the same Nvidia report says "we are already effectively foreclosed from the China market by U.S. export controls" [man-ms-sec-10q-2025-10]. Fifth, what Beijing meant by it is not settled (sentence L5, the last part).
+!! man-ms-sec-10q-2025-10 | For the quarterly period ended October 26, 2025
+!! man-ms-sec-10q-2025-10 | November 19, 2025
+!! cn-acts-reuters-deepseek-20260130 | Nvidia's H200
+!! cn-acts-reuters-deepseek-20260130 | DeepSeek
+!! cn-acts-reuters-deepseek-20260130 | ByteDance
+!! cn-acts-reuters-deepseek-20260130 | Alibaba
+!! cn-acts-reuters-deepseek-20260130 | Tencent
+
+@ L4 | A
+= "there are Chinese companies that want to buy Nvidia GPUs" [cnpol-x-overton-2123392702821580811]
+These words are quoted from the text of the post that carries the clip, not from the speech program. The post begins the sentence with the word Like, and so does a second speech pass; the first speech pass has no such word. Nobody has checked either by ear. On the substance, the Commerce Secretary told a Senate subcommittee on Apr 22, 2026: "my understanding is their cloud companies want to buy these chips" [cn-us-lutnick-0422-rev-transcript-b]. A Shanghai government body wrote, in a reply dated Apr 30, 2025 (published Nov 10, 2025), that in the city the internet companies' own computing clusters run mainly on Nvidia high-performance cards: "主要以英伟达高性能卡为主" [cn-counter-b11-5]. Reuters reported on Dec 31, 2025, by two unnamed people, that Chinese technology companies "have placed orders for more than 2 million H200 chips for 2026" [cn-labs-h200-two-million-202512-relay1-wayback]. The same companies were also turning to home-made chips (the argument, point 20).
+!! cnpol-x-overton-2123392702821580811 | Like there are Chinese companies that want to buy Nvidia GPUs.
+!! cn-counter-b11-5 | 发布日期:2025-11-10
+!! cn-counter-b11-5 | 上海市经济和信息化委员会2025年4月30日
+
+@ L5a | A | by one press report that cites unnamed people
+His 600,000 matches one report. Reuters, Nov 5, 2026, by two unnamed people: "About 600,000 of Nvidia's advanced artificial intelligence chips are stored in Hong Kong awaiting shipment to China" [cn-clips-evidence-1]. The report says Hong Kong; the words about a port are his. The same report says: "China has allowed some of the chips to enter the country in recent months".
+!! cn-clips-evidence-1 | two people familiar with the matter said
+
+@ L5b | B
+This says more than the record shows. No permit rule for these chips was found in the 103 policy pages read. Reuters's words are that Beijing "withholds approval for large-scale imports" [cn-clips-evidence-1]. An approval step is reported, though no rule for it was found: a Hong Kong paper's account of a Financial Times report, Aug 19, 2026, says purchases "需通過國家發改委審批" (must pass the state planner's approval) [cn-cnpress-hkej-h200-ndrc-20260819]. And approvals were reported: Reuters said on Jan 28, 2026 that ByteDance, Alibaba and Tencent "have been approved to purchase more than 400,000 H200 chips in total" [ms-bj-20260128-h200-nod-standard].
+!! cn-cnpress-hkej-h200-ndrc-20260819 | 2026年8月19日
+
+@ L5c | AB
+On direction the record supports the reason he gives. In May 2026 Li Chao, of the state planner's policy research office, said at its press conference that it was guiding home-made large models to do more to adapt to home-made computing chips: "指导国产大模型加大力度适配国产算力芯片" [cn-policy-ndrc-chip-adaptation-2026]. The Commerce Secretary gave the same reason on Apr 22, 2026: the Chinese central government had not let the companies buy "because they're trying to keep their investment focused on their own domestic industry" [cn-us-lutnick-0422-rev-transcript-b]. He called that his understanding. As a flat statement of Beijing's motive it goes too far, and this is the fifth of the argument's five limits: what Beijing meant by it is not settled. No Chinese document found states the motive. The US-China commission saw in the market regulator's move against Nvidia, which came as the regulator dropped an antitrust probe into Google, "China's willingness to both exert leverage and ease pressure as a negotiating tactic" [cn-usdocs-uscc-2025-ch1]. The Congressional Research Service, in September 2025, read the pressure as a push for more chips, not fewer: China "may use its purported security concerns about the H20 to press for technology disclosures and access to more advanced chips, such as Nvidia's B30 chip" [cn-usdocs-crs-r48642-20250919]. The Trade Representative reads it the other way: whether Chinese companies may buy is "a sovereign decision for China" (captions of a Bloomberg interview of May 15, 2026, not checked by ear; 5:59 in the recording) [cn-le01-greer-bbg-20260515-subs-ttml]. The direction stands under either reading.
+!! cn-usdocs-uscc-2025-ch1 | The move coincided with SAMR dropping its anti-trust probe into Google
+!! cn-policy-ndrc-chip-adaptation-2026 | 李超 2026/05/22 政研室
+!! cn-policy-ndrc-chip-adaptation-2026 | 国家发展改革委5月份新闻发布会
+!! cn-us-lutnick-0422-rev-transcript-b | So that's my understanding of what's happening
+!! cn-usdocs-crs-r48642-20250919 | September 19, 2025
+!! cn-le01-greer-bbg-20260515-subs-ttml | Will China allow their companies to buy them?
+
+@ L6a | D
+The sentence breaks off. A transcript of the whole talk, published by The Singju Post, has him finish the thought after the clip ends: "they're thrilled to have Jensen out" [cn-clips-singju-luckey]. What Beijing thinks of that was not checked for this project.
+
+@ L6b | C
+The speaker's allegation. He gives it as his critics' words and agrees with it in his next sentence. No saved source here establishes it.
+
+@ L7 | C
+With these words he takes up the charge in the sentence before. It is the speaker's allegation. No saved source here establishes it.
+
+@ L8 | AB
+A fair summary of the import question in 2025 and 2026. The US Trade Representative said on May 26, 2026: "what passes for the private sector in China is interested in the highest technology chips they can get. And the government in China and the party are interested in promoting their domestic production of chips and indigenous innovation." [cn-counter-b22-2] Nvidia, for its part, says in its quarterly report: "we have been unable to sell all the products for which we have licenses" [man-ms-sec-10q-2026-07]. It is too flat about the government, which was not one actor. The Financial Times reported on Nov 13, 2026 that the commerce ministry "favoured imports", while security officials "viewed dependence on Nvidia as a strategic vulnerability" [man-e2596eab15f4]. The industry and commerce ministries approved purchases (sentence L3). The Trade Representative said on Nov 20, 2026 that the Chinese side is "not as monolithic as people would have you believe" (machine captions of a Bloomberg interview, not checked by ear; 1:06 to 1:35 in the recording) [cn-le01-greer-bbg-20261120-autocaps-ttml]. A second caption track of that interview differs on one word and on a sentence break, so whether he puts the split inside the government needs a listen; the listening sheet has that line.
+!! cn-le01-greer-bbg-20261120-subs-ttml | We want war chips
+
+@ P1a | D
+A question. Whether the President agreed to limits was not checked for this project.
+
+@ P1b | D
+Still the question. Whether the idea was Jensen Huang's, and whether he passed it to the President, was not checked. The idea itself was stated in public by the Commerce Secretary, as reported on Jul 15, 2025: "You want to sell the Chinese enough that their developers get addicted to the American technology stack" [cn-acts-lutnick-july15-bloomberg].
+!! cn-acts-lutnick-july15-bloomberg | 2025-07-15T16:22:11.905Z
+
+@ P2 | D
+A question.
+
+@ P3 | D
+An opinion, so there is nothing to check. Two things in the record bear on it. The idea he attacks was the Commerce Secretary's stated aim (sentence P1). And Beijing's declared policy is to end such dependence: Xi Jinping said in 2016 that having core technology controlled by others is China's greatest hidden danger, "核心技术受制于人是我们最大的隐患" [cn-xi-20160419].
+
+@ P4a | D
+An opinion and a forecast.
+
+@ P4b | A | in part
+DeepSeek's own technical report says: "DeepSeek-V3 is trained on a cluster equipped with 2048 NVIDIA H800 GPUs." [cn-clips-technical-1] That is one company's account of one model. This note goes no further than that.
+
+@ P4c | B
+Open weight means that anyone can download the model's parameters. It does not mean that a model has no guardrails. It means they can be taken off. The UK's AI Security Institute: "Safeguards designed to prevent harmful behaviours can also be quickly and cheaply removed from open-weight models." [cn-clips-technical-2]
+!! cn-clips-technical-2 | all have their parameters openly available for download on the internet
+
+@ P5 | A
+The UK institute says the same (sentence P4). The US standards agency (NIST) tested DeepSeek's models in September 2025 and found that the most secure of them "complied with 94% of overtly malicious requests that used common jailbreaking techniques, compared to 8% of requests for U.S. reference models" [cn-clips-primary-7].
+!! cn-clips-primary-7 | in September 2025 CAISI conducted a technical evaluation
+
+@ P6a | A
+The outages happened. The aviation regulator (FAA): "On November 13 at approximately 3:30 p.m. ET, the FAA experienced a technical problem that resulted in issuing a nationwide ground stop." [cn-clips-evidence-2] A trade publication reported on Nov 16, 2026 a "nearly 24-hour outage on November 12" of Microsoft 365, Outlook among its services [cn-clips-ms-pir-report].
+!! cn-clips-ms-pir-report | 2026-11-16T11:43:24-05:00
+!! cn-clips-ms-pir-report | including Outlook, Exchange Online, Teams, and Copilot
+
+@ P6b | C
+The authorities that have spoken say they see no attack behind the outages. The White House, Nov 18, 2026: "no indication of a coordinated cyberattack, state-sponsored activity, or malign actor behind the recent tech outages" [cn-clips-whitehouse-outages]. The aviation regulator: "we have no indication that this was a cyberattack or an outside nefarious actor" [cn-clips-evidence-2]. Microsoft, as reported, put its outage down to "a software bug introduced in July" [cn-clips-ms-pir-report].
+!! cn-clips-whitehouse-outages | 2026-11-18T15:43:23+00:00
+
+@ P7a | C
+That systems are being patched in a hurry is borne out (next part). That the patching is aimed at Chinese tools is not. Two senators wrote on Nov 17, 2026 that "last month, AI uncovered decades-old serious vulnerabilities in PHP" [cn-clips-senate-cyber-letter]. They do not say whose AI. None of the saved statements on the outages says that the weaknesses were found by Chinese tools, or that the patching is aimed at them. On Chinese models in attacks, see sentence P11. The program put a full stop in the middle of this sentence, before the word Being.
+!! cn-clips-senate-cyber-letter | November 17, 2026
+
+@ P7b | A
+The Director of National Intelligence gave the same account, in the White House release of Nov 18, 2026: "Lots of institutions, because these vulnerabilities have been identified, are patching", and "they're not coming back as expected in all cases" [cn-clips-whitehouse-outages]. An industry group's note of the same date is more cautious: "This analysis finds no public evidence that such patching caused any specific outage in the cluster" [cn-clips-evidence-3].
+!! cn-clips-whitehouse-outages | Director of National Intelligence Jay Clayton
+!! cn-clips-evidence-3 | 2026-11-18T13:50:34+00:00
+
+@ P8 | D
+A forecast.
+
+@ P9 | D
+The same forecast, said again.
+
+@ P10 | D
+A forecast.
+
+@ P11 | D
+A forecast, so it cannot be checked. The present, as the saved record has it: an FBI notice of Nov 13, 2026, about a tool that attackers use, says "Chinese models are most prevalent, with DeepSeek Flash family models dominating usage due to their balance of capabilities, relatively low cost, and lack of observable guardrails when framed for penetration testing" [cn-clips-technical-4]. The same notice says the tool also works with American models. And Anthropic reported on Nov 13, 2025 that a group it judged to be Chinese and state-sponsored "manipulated our Claude Code tool" against "roughly thirty global targets" [cn-clips-technical-3]. That is Anthropic's own report, and this note was drafted by Anthropic's model.
+!! cn-clips-technical-4 | 13 NOVEMBER 2026
+!! cn-clips-technical-4 | threat actors have weaponized
+!! cn-clips-technical-4 | frontier models (Anthropic Claude, OpenAI GPT)
+!! cn-clips-technical-3 | 2025-11-13T00:00:00.000Z
+!! cn-clips-technical-3 | whom we assess with high confidence was a Chinese state-sponsored group
+
+@ P12a | B
+Not borne out as worded. The chips cleared for sale to China were not the most powerful. The Commerce Secretary, as reported on Jul 15, 2025: "We don't sell them our best stuff, not our second best stuff, not even our third best - I think fourth best is where we've come out" [cn-acts-lutnick-july15-bloomberg]. The President said of Nvidia on May 15, 2026: "they have much higher level than the H200" [cn-usdocs-trump-20260515]. And in May 2026 the H200 chips that Washington had cleared had not arrived. The Commerce Department's own table, with the status of each licence application on May 11, 2026, marks every approved one "Approved, not shipped": {NV_APPROVED} of Nvidia's chips, in {NV_APPS} applications (the sum is ours, from the project's copy of the table) [cn-usdocs-hfac-decisions-20261119]. Nvidia said on its results call of May 20, 2026: "we have yet to generate any revenue, and we are uncertain whether any imports will be allowed into the country" [cn-o38-nvda-q1fy27-call-transcript-pdf]. Reuters, May 14, 2026: "not a single delivery has been made so far" [cn-acts-reuters-us-approvals-20260514-wayback]. The program put a full stop in the middle of this sentence, before the word Possible.
+!! cn-usdocs-trump-20260515 | May 15, 2026
+!! cn-usdocs-hfac-decisions-20261119 | H200 License and Equivalent Application Status as of May 11, 2026
+!! cn-o38-nvda-q1fy27-call-transcript-pdf | Corrected Transcript 20-May-2026
+!! cn-o38-nvda-q1fy27-call-transcript-pdf | While the US government has approved licenses for H200 to be shipped to China-based customers
+
+@ P12b | C
+The speaker's allegation. No saved source here establishes it.
+
+@ P12c | A
+Nvidia did ask to sell chips to China directly, under US licences. The Commerce Department's table of licence applications for Nvidia's H200 and AMD's comparable MI325X, with their status on May 11, 2026, was made public on Nov 19, 2026 by the House Foreign Affairs Committee [cn-labs-us-chip-licences-20261119]. The committee's summary: "BIS received applications to sell 3,444,160 covered integrated circuits" [cn-usdocs-hfac-summary-20261119]. BIS is the Commerce Department's export control bureau, and that count covers both companies. By the table, {NV_APPROVED} of Nvidia's chips, in {NV_APPS} applications, were approved, each marked "Approved, not shipped"; and {RWA_CHIPS} chips, {RWA_PCT}% of the chips in the applications the summary records, were in applications returned without action, for which the table gives no reason (the sums are ours, from the project's copy of the table) [cn-usdocs-hfac-decisions-20261119]. The committee says the summary does not show every application in full. An application names a consignee and is not an order, and an approval there is Washington's licence, not Beijing's.
+!! cn-labs-us-chip-licences-20261119 | November 19, 2026
+!! cn-usdocs-hfac-summary-20261119 | Covered integrated circuits are the following products: NVIDIA's H200 and AMD's MI325X.
+!! cn-usdocs-hfac-summary-20261119 | not fully reflected in the May 11, 2026, summary document
+!! cn-usdocs-hfac-decisions-20261119 | H200 License and Equivalent Application Status as of May 11, 2026
+!! cn-le04-bis-ear-748 | If your original application was returned without action (RWA)
+!! cn-clips-corroboration-1 | the U.S. Commerce Department's Bureau of Industry and Security (BIS)
+
+@ P12d | A
+Chinese companies did use Nvidia chips in data centres abroad. The Financial Times reported on Nov 27, 2025 that Alibaba and ByteDance "are among the tech groups training their latest large language models (LLMs) in data centres across Southeast Asia", that "Data centre clusters have boomed in Singapore and Malaysia, fuelled by Chinese demand", and that the leasing it describes was "compliant with US export controls" [cn-tolerate-ft-offshore]. Shipping chips to such companies' own names abroad is another matter: in the Commerce Department's table of May 11, 2026, all {SEA_CHIPS} chips in the {SEA_APPS} applications for consignees in Malaysia, Indonesia and Thailand are marked RWA, returned without action; the table gives no reason (the sum is ours) [cn-usdocs-hfac-decisions-20261119]. On Nov 16, 2026 the Commerce Department's export control bureau issued a rule "to address remote access to advanced super intelligence (SI) chips and servers" [cn-clips-corroboration-1]. The words about dangerous tools are his opinion.
+!! cn-usdocs-hfac-decisions-20261119 | Bytedance System SDN 508,000 RWA Malaysia
+!! cn-usdocs-hfac-decisions-20261119 | PT Byteplus Technologies 203,000 RWA Indonesia
+!! cn-usdocs-hfac-decisions-20261119 | TikTok (System) Thailand 154,000 RWA Thailand
+!! cn-tolerate-ft-offshore | 2025-11-27T07:24:23.504Z
+!! cn-clips-corroboration-1 | FOR IMMEDIATE RELEASE | November 16, 2026
+
+@ P13 | D
+His conclusion, which is an opinion.

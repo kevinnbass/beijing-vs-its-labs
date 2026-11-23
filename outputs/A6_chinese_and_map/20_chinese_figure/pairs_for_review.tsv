@@ -1,0 +1,399 @@
+where	English (the core figure)	Chinese
+record, block 1 of the data [BH cn-policy-micron-decision] T	The Cybersecurity Review Office's published review conclusion fails Micron's products; operators of critical information infrastructure are to stop buying them. Not about Nvidia	网络安全审查办公室公布审查结论：美光公司产品"不予通过网络安全审查"，关键信息基础设施的运营者"应停止采购美光公司产品"。对象不是英伟达
+record, block 1 of the data [BH cn-policy-micron-decision] S	Cybersecurity Review Office, on the Cyberspace Administration's site	网络安全审查办公室，发布于国家网信办网站
+record, block 1 of the data [BH cn-policy-micron-decision] E (the core's English, not shown) and Q (source, Chinese, shown)	operators of critical information infrastructure in China should stop buying Micron's products	我国内关键信息基础设施的运营者应停止采购美光公司产品
+record, block 2 of the data [BH cn-policy-desktop-2023] T	Finance and industry ministries: Party and government bodies from township level up, and the public institutions attached to them, must require that the processor and operating system of the desktop computers they buy meet the security-and-reliability evaluation; other units need not	财政部、工业和信息化部：乡镇以上党政机关，以及乡镇以上党委和政府直属事业单位等，采购台式计算机时"应当将CPU、操作系统符合安全可靠测评要求纳入采购需求"；"其他单位可不在采购需求中提出此项要求"
+record, block 2 of the data [BH cn-policy-desktop-2023] S	Ministry of Finance and Ministry of Industry and Information Technology	财政部、工业和信息化部
+record, block 2 of the data [BH cn-policy-desktop-2023] E (the core's English, not shown) and Q (source, Chinese, shown)	shall include in the purchase requirement that the CPU and operating system meet the security-and-reliability evaluation	应当将CPU、操作系统符合安全可靠测评要求纳入采购需求
+record, block 3 of the data [BH cn-factions-bloomberg-flexibility-202409-relay1] T	Regulators discourage buying Nvidia's H20: "guidance rather than an outright ban"	监管部门劝阻企业购买英伟达H20：是指导，不是明令禁止（原文："guidance rather than an outright ban"）
+record, block 3 of the data [BH cn-factions-bloomberg-flexibility-202409-relay1] S	Bloomberg, on The Business Times (whose page is dated Sept 28, Singapore time)	彭博社，载于新加坡《商业时报》（The Business Times；其网页日期为新加坡时间9月28日）
+record, block 3 of the data [BH cn-factions-bloomberg-flexibility-202409-relay1] Q (source, English) and Z (my Chinese)	The policy has taken the form of guidance rather than an outright ban	这一政策采取的是指导的形式，而不是明令禁止
+record, block 4 of the data [BH cn-policy-samr-open-original] T	Market regulator announces that it has opened an antitrust case against Nvidia, under the antitrust law and its 2020 conditions on Nvidia's purchase of Mellanox	市场监管总局宣布：依据反垄断法及其2020年对英伟达收购迈络思所附的条件，"依法对英伟达公司开展立案调查"
+record, block 4 of the data [BH cn-policy-samr-open-original] S	State Administration for Market Regulation	国家市场监督管理总局（市场监管总局）
+record, block 4 of the data [BH cn-policy-samr-open-original] E (the core's English, not shown) and Q (source, Chinese, shown)	the regulator has opened an investigation of Nvidia under the law	市场监管总局依法对英伟达公司开展立案调查
+record, block 5 of the data [BH cn-xi-round-j-6] T	Xi Jinping to the Politburo: concentrate forces to conquer high-end chips	习近平在中央政治局集体学习时强调："集中力量攻克高端芯片、基础软件等核心技术"
+record, block 5 of the data [BH cn-xi-round-j-6] S	Xinhua readout, on the Party members' site	新华社通稿，载于共产党员网
+record, block 5 of the data [BH cn-xi-round-j-6] E (the core's English, not shown) and Q (source, Chinese, shown)	concentrate forces to conquer core technologies such as high-end chips and basic software	集中力量攻克高端芯片、基础软件等核心技术
+record, block 6 of the data [BH cn-acts-mss-xinhua-20250721] T	Security ministry warns that some chips made abroad may have had backdoors planted on purpose when they were designed and made	国家安全部提醒：一些境外生产的芯片、智能设备或者软件，可能在设计制造阶段就被故意预埋了"后门"
+record, block 6 of the data [BH cn-acts-mss-xinhua-20250721] S	Ministry of State Security (its WeChat account), carried by Xinhua	国家安全部（其微信公众号），新华网刊载
+record, block 6 of the data [BH cn-acts-mss-xinhua-20250721] E (the core's English, not shown) and Q (source, Chinese, shown)	some chips, smart devices or software made abroad may have had backdoors planted on purpose at the design and manufacturing stage	一些境外生产的芯片、智能设备或者软件可能在设计制造阶段就被故意预埋了“后门”
+record, block 7 of the data [BH cn-policy-cac-h20-original] T	Cyberspace regulator summons Nvidia over the security risks of vulnerabilities and backdoors in its H20 chips	国家网信办就"H20算力芯片漏洞后门安全风险"约谈英伟达
+record, block 7 of the data [BH cn-policy-cac-h20-original] S	Cyberspace Administration of China	国家互联网信息办公室（国家网信办）
+record, block 7 of the data [BH cn-policy-cac-h20-original] E (the core's English, not shown) and Q (source, Chinese, shown)	summoned Nvidia and required it to explain the backdoor security risks of the H20 chips sold to China and to submit supporting material	约谈了英伟达公司,要求英伟达公司就对华销售的H20算力芯片漏洞后门安全风险问题进行说明并提交相关证明材料
+record, block 8 of the data [BH man-cn-factions-wsj-ding] date label	After summer 2025	2025年夏之后
+record, block 8 of the data [BH man-cn-factions-wsj-ding] T	After a Huawei briefing in summer 2025, Vice Premier Ding Xuexiang warns the biggest AI users, by people familiar with the message: anyone resisting home-made chips is "a traitor". The report, of Jul 23, 2026, gives no date for the warning	据知情人士说，在2025年夏华为的一次汇报之后，国务院副总理丁薛祥警告最大的几家AI用户：谁抵制使用国产芯片，谁就是叛徒（原文："a traitor"）。这篇2026年7月23日的报道没有给出警告的日期
+record, block 8 of the data [BH man-cn-factions-wsj-ding] S	Wall Street Journal	《华尔街日报》
+record, block 8 of the data [BH man-cn-factions-wsj-ding] C (label on the strip)	"traitor" warning	叛徒警告
+record, block 8 of the data [BH man-cn-factions-wsj-ding] Q (source, English) and Z (my Chinese)	Anyone who resisted employing domestic chips was a traitor	凡是抵制使用国产芯片的，就是叛徒
+record, block 9 of the data [BH man-cn-ft-20250821-regulators] T	Three regulators move to dissuade companies from buying the H20, starting about a week after Jul 15 (the report is of Aug 20)	三家监管部门着手劝阻企业购买H20，大约从7月15日之后一周开始（报道日期为8月20日）
+record, block 9 of the data [BH man-cn-ft-20250821-regulators] S	Financial Times	英国《金融时报》
+record, block 9 of the data [BH man-cn-ft-20250821-regulators] Q (source, English) and Z (my Chinese)	A group of Chinese regulators have mobilised in an effort to dissuade domestic tech companies from acquiring the H20	中国多家监管部门已行动起来，力图劝阻国内科技企业购入H20
+record, block 10 of the data [BH cn-clips-alibaba-20f] date label	Sept 2025	2025年9月
+record, block 10 of the data [BH cn-clips-alibaba-20f] T	Alibaba's annual report: the cyberspace regulator "requested Chinese technology companies to halt purchases of certain chips"	阿里巴巴年报：国家网信办要求中国科技公司停止采购某些芯片（原文："requested Chinese technology companies to halt purchases of certain chips"）
+record, block 10 of the data [BH cn-clips-alibaba-20f] S	Alibaba, Form 20-F filed with the SEC	阿里巴巴，向美国证券交易委员会提交的20-F年度报告
+record, block 10 of the data [BH cn-clips-alibaba-20f] Q (source, English) and Z (my Chinese)	In September 2025, the Cyberspace Administration of China requested Chinese technology companies to halt purchases of certain chips.	2025年9月，中国国家互联网信息办公室要求中国科技公司停止采购某些芯片。
+record, block 11 of the data [BH cn-policy-samr-further-original] T	Market regulator announces, after a preliminary investigation, a further investigation of Nvidia under the antitrust law and its 2020 conditions; the one-sentence notice gives no facts	市场监管总局宣布：经初步调查，决定依据反垄断法及其2020年所附条件对英伟达"实施进一步调查"；这则只有一句话的通告没有列出事实
+record, block 11 of the data [BH cn-policy-samr-further-original] S	State Administration for Market Regulation	国家市场监督管理总局（市场监管总局）
+record, block 11 of the data [BH cn-policy-samr-further-original] E (the core's English, not shown) and Q (source, Chinese, shown)	the regulator has decided to investigate it further under the law	市场监管总局依法决定对其实施进一步调查
+record, block 12 of the data [BH man-cn-ft-20250917-6000d] T	Cyberspace regulator tells ByteDance and Alibaba to end testing and orders of the RTX Pro 6000D	国家网信办要求字节跳动和阿里巴巴停止测试和订购RTX Pro 6000D
+record, block 12 of the data [BH man-cn-ft-20250917-6000d] S	Financial Times	英国《金融时报》
+record, block 12 of the data [BH man-cn-ft-20250917-6000d] Q (source, English) and Z (my Chinese)	told companies, including ByteDance and Alibaba, this week to end their testing and orders of the RTX Pro 6000D	本周要求包括字节跳动和阿里巴巴在内的企业停止测试和订购RTX Pro 6000D
+record, block 13 of the data [BH man-cn-ft-20251009-customs] T	Customs teams sent to major ports to check chip shipments	海关人员被派往主要口岸，检查芯片货物
+record, block 13 of the data [BH man-cn-ft-20251009-customs] S	Financial Times	英国《金融时报》
+record, block 13 of the data [BH man-cn-ft-20251009-customs] Q (source, English) and Z (my Chinese)	Teams of customs officers have been mobilised at major ports across the country in the past few weeks to carry out stringent checks on semiconductor shipments	过去几周，全国各主要口岸已调集多批海关人员，对半导体货物进行严格查验
+record, block 14 of the data [BH ms-bj-20251105-statefunded-standard] T	Reported: government guidance requires new data-centre projects that took any state funds to use only home-made AI chips; whether nationwide or only in some provinces is unclear	据报道：政府指导意见要求，凡获得过任何国家资金的新建数据中心项目只使用国产AI芯片；是全国适用还是只在部分省份适用，尚不清楚
+record, block 14 of the data [BH ms-bj-20251105-statefunded-standard] S	Reuters, on The Standard (Hong Kong)	路透社，载于香港《英文虎报》（The Standard）
+record, block 14 of the data [BH ms-bj-20251105-statefunded-standard] Q (source, English) and Z (my Chinese)	requiring new data centre projects that have received any state funds to only use domestically-made artificial intelligence chips	要求凡是获得过任何国家资金的新建数据中心项目，只使用国产人工智能芯片
+record, block 15 of the data [BH cn-acts-reuters-customs-20260114] T	Customs agents told the H200 is "not permitted"; companies told not to buy it "unless necessary". Reuters: it is unclear whether Beijing wants a ban, is still weighing restrictions, or could use the measures as "a bargaining tactic in talks with Washington"	海关告知报关代理：H200不准进入中国（原文："not permitted"）；企业被告知非必要不购买（原文："unless necessary"）。路透社称，尚不清楚北京方面是想禁止、仍在权衡限制措施，还是可能把这些措施用作与华盛顿谈判的筹码（原文："a bargaining tactic in talks with Washington"）
+record, block 15 of the data [BH cn-acts-reuters-customs-20260114] S	Reuters, on Yahoo Finance	路透社，载于雅虎财经（Yahoo Finance）
+record, block 15 of the data [BH cn-acts-reuters-customs-20260114] C (label on the strip)	H200 "not permitted"	H200不准进入中国
+record, block 15 of the data [BH cn-acts-reuters-customs-20260114] Q (source, English) and Z (my Chinese)	are not permitted to enter China, according to three people briefed on the matter	不被允许进入中国，据三名知情人士称
+record, block 16 of the data [BH cn-us-lutnick-0422-rev-transcript-b] T	US Commerce Secretary to the Senate, as his "understanding": the Chinese central government "has not let them as of yet buy the chips"	美国商务部长在参议院作证，称这是他的了解（原文："my understanding"）：中国中央政府至今没有让这些企业购买芯片（原文："has not let them as of yet buy the chips"）
+record, block 16 of the data [BH cn-us-lutnick-0422-rev-transcript-b] S	Howard Lutnick, Senate hearing (Rev transcript)	霍华德·卢特尼克（Howard Lutnick），参议院听证会（Rev网站文字记录）
+record, block 16 of the data [BH cn-us-lutnick-0422-rev-transcript-b] Q (source, English) and Z (my Chinese)	Chinese central government has not let them as of yet buy the chips because they're trying to keep their investment focused on their own domestic industry	中国中央政府至今没有让它们购买这些芯片，因为他们想让投资集中在本国的产业上
+record, block 17 of the data [BH cn-acts-reuters-us-approvals-20260514-wayback] T	About ten firms cleared by Washington, "not a single delivery"; by one person, firms "pulled back after guidance from Beijing", a shift "partly triggered by changes on the U.S. side"	华盛顿已批准约十家企业购买，却一次交付都没有（原文："not a single delivery"）；据一名人士说，企业在北京方面给出指导后退缩（原文："pulled back after guidance from Beijing"），这一转变部分由美方的变化引发（原文："partly triggered by changes on the U.S. side"）
+record, block 17 of the data [BH cn-acts-reuters-us-approvals-20260514-wayback] S	Reuters, on MarketScreener	路透社，载于MarketScreener
+record, block 17 of the data [BH cn-acts-reuters-us-approvals-20260514-wayback] Q (source, English) and Z (my Chinese)	not a single delivery has been made so far	至今一次交付都没有完成
+record, block 18 of the data [BH cn-policy-ndrc-chip-adaptation-2026] T	State planner, at its press conference: it is guiding home-made large models to step up adaptation to home-made computing chips	国家发展改革委在新闻发布会上表示："指导国产大模型加大力度适配国产算力芯片"
+record, block 18 of the data [BH cn-policy-ndrc-chip-adaptation-2026] S	National Development and Reform Commission, press conference	国家发展改革委新闻发布会文字实录
+record, block 18 of the data [BH cn-policy-ndrc-chip-adaptation-2026] E (the core's English, not shown) and Q (source, Chinese, shown)	guiding domestic large models to step up adaptation to domestic computing chips	指导国产大模型加大力度适配国产算力芯片
+record, block 19 of the data [BH cn-le14-itsec-2026-2] T	The state evaluation centre lists the AI chips that passed its security-and-reliability evaluation: nine, all from makers registered in China. By the centre's guide of June 2026 only entities registered in China may apply, and applying is voluntary	中国信息安全测评中心公布安全可靠测评结果："人工智能训练推理芯片"共九款，均出自在中国境内注册的厂商。按该中心2026年6月的指南，只有中国境内注册的实体可以送测，送测出于自愿
+record, block 19 of the data [BH cn-le14-itsec-2026-2] S	China Information Technology Security Evaluation Center, announcement 2026 No. 2	中国信息安全测评中心，安全可靠测评结果公告（2026年第2号）
+record, block 19 of the data [BH cn-le14-itsec-2026-2] E (the core's English, not shown) and Q (source, Chinese, shown)	AI training and inference chips [the table's heading]	人工智能训练推理芯片
+record, block 20 of the data [BH man-ms-sec-10q-2026-07] T	Nvidia's quarterly filing: licensed H200 sales "were restricted by the PRC government"	英伟达季度报告：已获许可的H200销售受到中国政府限制（原文："were restricted by the PRC government"）
+record, block 20 of the data [BH man-ms-sec-10q-2026-07] S	Nvidia, Form 10-Q filed with the SEC	英伟达，向美国证券交易委员会提交的10-Q季度报告
+record, block 20 of the data [BH man-ms-sec-10q-2026-07] Q (source, English) and Z (my Chinese)	such sales were restricted by the PRC government	这类销售受到中国政府的限制
+record, block 21 of the data [BH cn-clips-evidence-1] T	About 600,000 Nvidia chips wait in Hong Kong "as Beijing withholds approval"	约60万枚英伟达芯片存放在香港待运，北京方面迟迟未批准大规模进口（原文："as Beijing withholds approval for large-scale imports"）
+record, block 21 of the data [BH cn-clips-evidence-1] S	Reuters (its dateline is Nov 5), on CNA, whose page is dated Nov 6	路透社（电头日期为11月5日），载于亚洲新闻台（CNA），其网页日期为11月6日
+record, block 21 of the data [BH cn-clips-evidence-1] C (label on the strip)	600,000 wait in Hong Kong	60万枚在香港待运
+record, block 21 of the data [BH cn-clips-evidence-1] Q (source, English) and Z (my Chinese)	as Beijing withholds approval for large-scale imports despite demand from technology firms	尽管科技企业有需求，北京方面仍迟迟未批准大规模进口
+record, block 22 of the data [BL cn-policy-he-welcomes] T	Vice Premier He Lifeng to Jensen Huang: more American firms, Nvidia included, are welcome to put down deep roots in the Chinese market	国务院副总理何立峰会见黄仁勋："欢迎包括英伟达公司在内的更多美资企业深耕中国市场"
+record, block 22 of the data [BL cn-policy-he-welcomes] S	Xinhua, in People's Daily	新华社，载于《人民日报》（人民网）
+record, block 22 of the data [BL cn-policy-he-welcomes] E (the core's English, not shown) and Q (source, Chinese, shown)	more American companies, Nvidia included, are welcome to work the Chinese market in depth	欢迎包括英伟达公司在内的更多美资企业深耕中国市场
+record, block 23 of the data [BL cn-policy-wang-nvidia] T	Commerce minister to Huang: he hopes multinationals, Nvidia included, will give Chinese customers high-quality, reliable products and services	商务部部长王文涛会见黄仁勋："希望包括英伟达在内的跨国公司为中国客户提供优质可靠的产品和服务"
+record, block 23 of the data [BL cn-policy-wang-nvidia] S	Ministry of Commerce	商务部
+record, block 23 of the data [BL cn-policy-wang-nvidia] E (the core's English, not shown) and Q (source, Chinese, shown)	we hope multinationals including Nvidia will provide Chinese customers with quality, reliable products and services	希望包括英伟达在内的跨国公司为中国客户提供优质可靠的产品和服务
+record, block 24 of the data [BL cn-policy-h20-mofcom] T	Commerce ministry answers the US go-ahead for the H20 by asking Washington to lift more restrictions	商务部回应美方批准对华销售H20：美方应"继续取消一系列不合理的对华经贸限制措施"
+record, block 24 of the data [BL cn-policy-h20-mofcom] S	Ministry of Commerce	商务部新闻发言人答记者问
+record, block 24 of the data [BL cn-policy-h20-mofcom] E (the core's English, not shown) and Q (source, Chinese, shown)	go on removing a series of unreasonable economic and trade restrictions on China	继续取消一系列不合理的对华经贸限制措施
+record, block 25 of the data [BL ms-bj-20260128-h200-nod-standard] T	Conditional approval for ByteDance, Alibaba and Tencent to buy more than 400,000 H200s	字节跳动、阿里巴巴和腾讯获有条件批准，可购买合计超过40万枚H200
+record, block 25 of the data [BL ms-bj-20260128-h200-nod-standard] S	Reuters, on The Standard (Hong Kong)	路透社，载于香港《英文虎报》（The Standard）
+record, block 25 of the data [BL ms-bj-20260128-h200-nod-standard] Q (source, English) and Z (my Chinese)	have been approved to purchase more than 400,000 H200 chips in total	已获准购买合计超过40万枚H200芯片
+record, block 26 of the data [BL cn-acts-reuters-deepseek-20260130] T	Industry and commerce ministries have approved DeepSeek, ByteDance, Alibaba and Tencent; the conditions "are being decided" by the state planner	工业和商务两个主管部门已批准DeepSeek、字节跳动、阿里巴巴和腾讯四家企业；条件正由国家发展改革委确定（原文："are being decided"）
+record, block 26 of the data [BL cn-acts-reuters-deepseek-20260130] S	Reuters, on Tiger Brokers	路透社，载于老虎证券（Tiger Brokers）
+record, block 26 of the data [BL cn-acts-reuters-deepseek-20260130] C (label on the strip)	conditional approval	有条件批准
+record, block 26 of the data [BL cn-acts-reuters-deepseek-20260130] Q (source, English) and Z (my Chinese)	China's industry and commerce ministries have granted approvals for all four companies	中国的工业和商务主管部门已批准全部四家企业
+record, block 27 of the data [BL man-70f4668d5f56] T	"Nvidia has won Beijing's approval" to sell the H200; a Chinese buyer is unsure the approval is final	英伟达已获北京方面批准销售H200（原文："Nvidia has won Beijing's approval"）；一家中国买方不确定这是不是最终批准
+record, block 27 of the data [BL man-70f4668d5f56] S	Reuters, on Investing.com	路透社，载于Investing.com
+record, block 27 of the data [BL man-70f4668d5f56] Q (source, English) and Z (my Chinese)	approval to sell its second-most powerful artificial intelligence chips to China	获准向中国销售其性能第二强的人工智能芯片
+record, block 28 of the data [BL cn-acts-reuters-ti-cap-20260708-relay1] T	Officials tell Alibaba, ByteDance and DeepSeek they may soon buy some H200s: fewer than 200,000 in all	官员告知阿里巴巴、字节跳动和DeepSeek，可能很快获准购买部分H200；总数或不到20万枚
+record, block 28 of the data [BL cn-acts-reuters-ti-cap-20260708-relay1] S	The Information, through Reuters on AOL	The Information，经路透社转述，载于AOL
+record, block 28 of the data [BL cn-acts-reuters-ti-cap-20260708-relay1] Q (source, English) and Z (my Chinese)	they may soon receive permission to buy some H200 chips	它们可能很快获准购买一些H200芯片
+record, block 29 of the data [BL man-a7d2f1a9f963] T	US export chief to Congress: H200 shipments to China have begun, "very few"	美国出口管制主管官员在国会作证：H200已开始对华发货，数量极少（原文："very few"）
+record, block 29 of the data [BL man-a7d2f1a9f963] S	Jeffrey Kessler, House hearing, as reported by Reuters	杰弗里·凯斯勒（Jeffrey Kessler），众议院听证会，据路透社报道
+record, block 29 of the data [BL man-a7d2f1a9f963] Q (source, English) and Z (my Chinese)	There have been minimal exports of any H200s to China so far	迄今为止，H200对华出口数量极少
+record, block 30 of the data [BL cn-tolerate-reutersaug26-relay1-wayback] T	ByteDance and Tencent each receive about 10,000 H200s; Beijing wants them to keep the hardware outside mainland China, and regulators told companies they may ship it to Hong Kong and use it there	字节跳动和腾讯各收到约1万枚H200；北京方面希望这些芯片留在中国内地以外，监管机构告知企业可运往香港并在那里使用
+record, block 30 of the data [BL cn-tolerate-reutersaug26-relay1-wayback] S	Financial Times, through Reuters on Investing.com	英国《金融时报》，经路透社转述，载于Investing.com
+record, block 30 of the data [BL cn-tolerate-reutersaug26-relay1-wayback] C (label on the strip)	10,000 each arrive	各到货约1万枚
+record, block 30 of the data [BL cn-tolerate-reutersaug26-relay1-wayback] Q (source, English) and Z (my Chinese)	ByteDance and Tencent have each received about 10,000 H200 processors in recent weeks	字节跳动和腾讯最近几周各收到约1万枚H200处理器
+record, block 31 of the data [BL cn-tolerate-mof] T	In a draft list put out for comment, the commerce and science ministries propose automatic licences for technology exports to computing centres that Chinese companies build and run abroad	商务部、科技部在公开征求意见的目录修订稿中提出：对"中国企业在境外自建自营算力中心"等情形的技术出口，"适用自动许可等便利措施"
+record, block 31 of the data [BL cn-tolerate-mof] S	Ministry of Commerce spokesperson, on the draft of the commerce and science ministries	商务部新闻发言人，就商务部、科技部的修订稿答记者问
+record, block 31 of the data [BL cn-tolerate-mof] E (the core's English, not shown) and Q (source, Chinese, shown)	computing centres that Chinese companies build and run abroad	中国企业在境外自建自营算力中心
+record, block 32 of the data [CN cn-labs-h20-orders-20250402-relay1] T	Chinese companies, ByteDance, Alibaba and Tencent among them, order at least $16 billion of H20 chips in three months	包括字节跳动、阿里巴巴和腾讯在内的中国企业三个月内订购至少160亿美元的H20芯片
+record, block 32 of the data [CN cn-labs-h20-orders-20250402-relay1] S	The Information, through Reuters on The Indian Express	The Information，经路透社转述，载于《印度快报》（The Indian Express）
+record, block 32 of the data [CN cn-labs-h20-orders-20250402-relay1] Q (source, English) and Z (my Chinese)	have placed at least $16 billion in orders for	已下达至少160亿美元的订单
+record, block 33 of the data [CN cn-counter-b11-5] T	Shanghai's economy commission, on computing in the city: internet companies' own clusters, serving market-oriented firms, run mainly on Nvidia high-performance cards; the three big telecom operators mainly buy Huawei and other home-made clusters	上海市经济和信息化委员会谈本市算力：互联网企业自建算力集群，满足市场化企业需求，"主要以英伟达高性能卡为主"；"三大运营商主要购置华为等国产化智算集群"
+record, block 33 of the data [CN cn-counter-b11-5] S	Shanghai Commission of Economy and Informatization, written reply dated Apr 30, 2025 (published Nov 10, 2025)	上海市经济和信息化委员会的书面答复，落款日期2025年4月30日（2025年11月10日公布）
+record, block 33 of the data [CN cn-counter-b11-5] E (the core's English, not shown) and Q (source, Chinese, shown)	mainly on Nvidia high-performance cards	主要以英伟达高性能卡为主
+record, block 34 of the data [CN man-cn-ft-20250821-regulators] T	Alibaba, ByteDance and others had argued that their AI development would be impaired without Nvidia's chips; by people close to them, they have since become more accepting of a switch	阿里巴巴、字节跳动等企业曾主张，没有英伟达芯片，其AI研发将受损；据接近这些企业的人士说，它们此后对转用其他芯片更能接受了（原文："more accepting of a switch"）
+record, block 34 of the data [CN man-cn-ft-20250821-regulators] S	Financial Times	英国《金融时报》
+record, block 34 of the data [CN man-cn-ft-20250821-regulators] Q (source, English) and Z (my Chinese)	tech giants from Alibaba to ByteDance argued that their AI development would be impaired without Nvidia's chips	从阿里巴巴到字节跳动的科技巨头主张，没有英伟达的芯片，它们的AI研发将受到损害
+record, block 35 of the data [CN cn-tolerate-ft-offshore] T	Alibaba and ByteDance train their newest models in data centres in Southeast Asia	阿里巴巴和字节跳动在东南亚的数据中心训练最新模型
+record, block 35 of the data [CN cn-tolerate-ft-offshore] S	Financial Times, on The Irish Times	英国《金融时报》，载于《爱尔兰时报》
+record, block 35 of the data [CN cn-tolerate-ft-offshore] Q (source, English) and Z (my Chinese)	are among the tech groups training their latest large language models (LLMs) in data centres across Southeast Asia	属于在东南亚各地数据中心训练其最新大语言模型（LLM）的科技集团之列
+record, block 36 of the data [CN cn-labs-h200-demand-20251210-relay1] T	ByteDance and Alibaba keen on large H200 orders "should Beijing give them the green light"	字节跳动和阿里巴巴有意大量订购H200，前提是北京方面放行（原文："should Beijing give them the green light"）
+record, block 36 of the data [CN cn-labs-h200-demand-20251210-relay1] S	Reuters, on WHTC	路透社，载于WHTC（美国电台网站）
+record, block 36 of the data [CN cn-labs-h200-demand-20251210-relay1] Q (source, English) and Z (my Chinese)	should Beijing give them the green light	只要北京方面给它们开绿灯
+record, block 37 of the data [CN cn-labs-h200-lobby] T	An investment director sees cloud providers and enterprise customers "aggressively placing large orders and lobbying the government to relax restrictions on a conditional basis"	一位投资总监说，他看到云服务商和企业客户正在大举下单，并游说政府有条件地放宽限制（原文："aggressively placing large orders and lobbying the government to relax restrictions on a conditional basis"）
+record, block 37 of the data [CN cn-labs-h200-lobby] S	Nori Chiou, White Oak Capital Partners, quoted by Reuters, on The Business Times	White Oak Capital Partners投资总监Nori Chiou，路透社引述，载于新加坡《商业时报》（The Business Times）
+record, block 37 of the data [CN cn-labs-h200-lobby] Q (source, English) and Z (my Chinese)	aggressively placing large orders and lobbying the government to relax restrictions on a conditional basis	正在大举下单，并游说政府有条件地放宽限制
+record, block 38 of the data [CN cn-labs-h200-two-million-202512-relay1-wayback] T	Chinese companies have ordered more than 2 million H200s for 2026	中国企业已为2026年订购超过200万枚H200
+record, block 38 of the data [CN cn-labs-h200-two-million-202512-relay1-wayback] S	Reuters, on Investing.com	路透社，载于Investing.com
+record, block 38 of the data [CN cn-labs-h200-two-million-202512-relay1-wayback] C (label on the strip)	2 million H200s ordered	订购超200万枚H200
+record, block 38 of the data [CN cn-labs-h200-two-million-202512-relay1-wayback] Q (source, English) and Z (my Chinese)	have placed orders for more than 2 million H200 chips for 2026	已为2026年下单订购超过200万枚H200芯片
+record, block 39 of the data [CN cn-policy-qiushi-cuda-gap] T	Party journal's investigation: moving off Nvidia's software is costly and slow	党刊调研文章：开发者深度绑定英伟达的CUDA生态，"迁移成本高昂、适配周期漫长"
+record, block 39 of the data [CN cn-policy-qiushi-cuda-gap] S	Qiushi and CCID, carried by the National Data Administration	求是杂志社与赛迪研究院联合课题组，国家数据局网站转载
+record, block 39 of the data [CN cn-policy-qiushi-cuda-gap] E (the core's English, not shown) and Q (source, Chinese, shown)	migration is costly and adaptation slow	迁移成本高昂、适配周期漫长
+record, block 40 of the data [CN cn-acts-mofcom-inquiry-20260819] T	A company asks the commerce ministry, on its public message board, how to import H200s lawfully; the reply speaks only of exports	一家企业在商务部网站的公众留言栏咨询如何合规进口H200："我司计划合规进口H200数据中心GPU"；答复只谈出口
+record, block 40 of the data [CN cn-acts-mofcom-inquiry-20260819] S	Ministry of Commerce message board (reply of Aug 19, 2026)	商务部网站公众留言（2026年8月19日答复）
+record, block 40 of the data [CN cn-acts-mofcom-inquiry-20260819] E (the core's English, not shown) and Q (source, Chinese, shown)	our company plans to import H200 data-centre GPUs in compliance	我司计划合规进口H200数据中心GPU
+record, block 41 of the data [CN cn-factions-rtx-orders-oct-wayback] T	ByteDance, Alibaba and Tencent order over 3 million of the weaker RTX PRO 5500, worth over $35 billion	字节跳动、阿里巴巴和腾讯订购超过300万块性能较弱的RTX PRO 5500，价值超过350亿美元
+record, block 41 of the data [CN cn-factions-rtx-orders-oct-wayback] S	Reuters, on Investing.com	路透社，载于Investing.com
+record, block 41 of the data [CN cn-factions-rtx-orders-oct-wayback] Q (source, English) and Z (my Chinese)	have ordered more than 3 million of	已订购超过300万块
+record, block 42 of the data [CH cn-labs-baidu-ascend-2023-relay1] T	Baidu ordered 1,600 Huawei chips in August 2023, ahead of new US curbs, "to prepare for a future" without Nvidia	百度在2023年8月、美国新一轮管制出台之前订购1600枚华为芯片，为买不到英伟达芯片的将来做准备（原文："to prepare for a future"）
+record, block 42 of the data [CH cn-labs-baidu-ascend-2023-relay1] S	Reuters, on The Business Times	路透社，载于新加坡《商业时报》（The Business Times）
+record, block 42 of the data [CH cn-labs-baidu-ascend-2023-relay1] Q (source, English) and Z (my Chinese)	They were ordering 910B chips to prepare for a future where they may no longer be able to purchase from Nvidia	他们订购910B芯片，是为将来可能再也无法向英伟达采购做准备
+record, block 43 of the data [CH cn-policy-tencent-us-curbs-relay1] T	Tencent's president: US curbs will make it seek home-made AI chips	腾讯总裁：美国的管制将使公司寻求国产AI芯片
+record, block 43 of the data [CH cn-policy-tencent-us-curbs-relay1] S	Martin Lau on a results call, reported by Reuters on WTAQ	刘炽平在业绩电话会上的表态，据路透社报道，载于WTAQ（美国电台网站）
+record, block 43 of the data [CH cn-policy-tencent-us-curbs-relay1] C (label on the strip)	after US curbs	在美国管制之后
+record, block 43 of the data [CH cn-policy-tencent-us-curbs-relay1] Q (source, English) and Z (my Chinese)	seek domestically produced AI chips	寻求国产AI芯片
+record, block 44 of the data [CH man-cn-labs-baidu-30k-reuters-alt1] T	Baidu switches on a cluster of 30,000 of its own Kunlun chips	百度点亮由3万枚自研昆仑芯P800组成的集群
+record, block 44 of the data [CH man-cn-labs-baidu-30k-reuters-alt1] S	Robin Li at Baidu's developer conference, reported by Reuters on StreetInsider	李彦宏在百度开发者大会上宣布，据路透社报道，载于StreetInsider
+record, block 44 of the data [CH man-cn-labs-baidu-30k-reuters-alt1] Q (source, English) and Z (my Chinese)	comprising 30,000 of its self-developed, third generation P800 Kunlun chips	由3万枚自研的第三代昆仑芯P800芯片组成
+record, block 45 of the data [CN cn-labs-rtx6000d-demand-20250916-relay1] T	Some major firms pass over Nvidia's RTX6000D as "expensive for what it does" and look to other Nvidia chips; Reuters adds that Beijing has become increasingly keen for firms to switch to home-made chips "even if Nvidia's products are preferred by many companies"	一些大型科技企业选择不订购英伟达RTX6000D，认为其价格与性能不相称（原文："expensive for what it does"），转而寻求英伟达的其他芯片；路透社还说，北京方面越来越希望企业转用国产芯片，即便许多企业更青睐英伟达产品（原文："even if Nvidia's products are preferred by many companies"）
+record, block 45 of the data [CN cn-labs-rtx6000d-demand-20250916-relay1] S	Reuters, on TradingView	路透社，载于TradingView
+record, block 45 of the data [CN cn-labs-rtx6000d-demand-20250916-relay1] Q (source, English) and Z (my Chinese)	is seen as expensive for what it does	被认为价格与其功用不相称
+record, block 46 of the data [CH cn-policy-alibaba-own-gpu] T	Alibaba: its chip unit "has brought proprietary GPUs into scaled production"	阿里巴巴：旗下芯片公司已实现自研GPU的规模化量产（原文："has brought proprietary GPUs into scaled production"）
+record, block 46 of the data [CH cn-policy-alibaba-own-gpu] S	Alibaba results release	阿里巴巴业绩公告
+record, block 46 of the data [CH cn-policy-alibaba-own-gpu] Q (source, English) and Z (my Chinese)	chip design subsidiary T-Head has brought proprietary GPUs into scaled production	芯片设计子公司平头哥已实现自研GPU的规模化量产
+record, block 47 of the data [CH man-f45c9fd5177c] T	ByteDance and Alibaba plan to order Huawei's new 950PR chip after tests go well	测试顺利，字节跳动和阿里巴巴计划订购华为新款950PR芯片
+record, block 47 of the data [CH man-f45c9fd5177c] S	Reuters, on Investing.com	路透社，载于Investing.com
+record, block 47 of the data [CH man-f45c9fd5177c] Q (source, English) and Z (my Chinese)	big tech giants including ByteDance and Alibaba plan to place orders	包括字节跳动和阿里巴巴在内的科技巨头计划下单
+record, block 48 of the data [CH cn-le29-zhipu-results-20260331-en] T	Zhipu, facing a "computing power shortage", says it will invest more in adapting home-made chips	智谱称面临算力短缺（原文："computing power shortage"），将加大国产芯片适配方面的投入
+record, block 48 of the data [CH cn-le29-zhipu-results-20260331-en] S	Zhipu results announcement, on the company's investor site	智谱业绩公告，载于公司投资者关系网站
+record, block 48 of the data [CH cn-le29-zhipu-results-20260331-en] Q (source, English) and Z (my Chinese)	adaptation of domestic chips	国产芯片的适配
+record, block 49 of the data [CH cn-labs-v4-training-reuters-relay1-wayback] T	DeepSeek previews a model adapted for Huawei chips; Huawei says its chips did part of the training	DeepSeek发布适配华为芯片的新模型预览版；华为称其芯片参与了部分训练
+record, block 49 of the data [CH cn-labs-v4-training-reuters-relay1-wayback] S	Huawei's statement, reported by Reuters on Investing.com	华为的声明，据路透社报道，载于Investing.com
+record, block 49 of the data [CH cn-labs-v4-training-reuters-relay1-wayback] Q (source, English) and Z (my Chinese)	Huawei said its chips were used in some of the V4	华为表示，其芯片被用于V4的部分（训练过程）
+record, block 50 of the data [CH cn-labs-alibaba-nov-supply] T	Alibaba's chief executive expects that from 2027 most of its added AI chip supply will be its own T-Head chips, with other home-made chips bought too	阿里巴巴CEO吴泳铭判断：2027年及之后，"公司绝大部分新增AI芯片供给将以自研平头哥国产芯片为主"，"同时也会采购其他国产芯片"
+record, block 50 of the data [CH cn-labs-alibaba-nov-supply] S	Eddie Wu on a results call, reported by National Business Daily	吴泳铭在业绩电话会上的表态，据《每日经济新闻》报道
+record, block 50 of the data [CH cn-labs-alibaba-nov-supply] E (the core's English, not shown) and Q (source, Chinese, shown)	most of the company's added AI chip supply will be its own T-Head home-made chips	公司绝大部分新增AI芯片供给将以自研平头哥国产芯片为主
+record, block 51 of the data [CH cn-o36-tencent-call-20261118-sa] T	Tencent's chief strategy officer: its cloud business runs mainly inference, which "can be run very effectively on a surprisingly limited number of domestic chips"	腾讯首席战略官：其云业务目前主要运行推理，而推理用数量少得出人意料的国产芯片就能很有效地运行（原文："can be run very effectively on a surprisingly limited number of domestic chips"）
+record, block 51 of the data [CH cn-o36-tencent-call-20261118-sa] S	James Mitchell on Tencent's results call (transcript on a stock-data site)	詹姆斯·米切尔（James Mitchell）在腾讯业绩电话会上的发言（文字记录载于一家股票数据网站）
+record, block 51 of the data [CH cn-o36-tencent-call-20261118-sa] Q (source, English) and Z (my Chinese)	our cloud business today is primarily running inference	我们的云业务目前主要是在运行推理
+record, block 52 of the data [BH cn-le13-yuyuan-qq-20250810b] T	State broadcaster's account: the H20 is neither green, advanced nor safe, and as consumers we can of course choose not to buy it	中央广播电视总台旗下账号玉渊谭天称：H20既不环保，也不先进，也不安全，"作为消费者，我们当然可以选择，不买"
+record, block 52 of the data [BH cn-le13-yuyuan-qq-20250810b] S	Yuyuan Tantian (China Media Group), on its own Tencent News channel	玉渊谭天（中央广播电视总台），载于其腾讯新闻账号
+record, block 52 of the data [BH cn-le13-yuyuan-qq-20250810b] E (the core's English, not shown) and Q (source, Chinese, shown)	as consumers we can of course choose not to buy	作为消费者,我们当然可以选择,不买
+record, block 53 of the data [BH man-ms-sec-10q-2025-10] T	Nvidia's quarterly report: the Chinese government "restricted customers from purchasing, importing, or using our data center products"; the same report: "we are already effectively foreclosed from the China market by U.S. export controls"	英伟达季度报告：中国政府限制客户购买、进口或使用其数据中心产品（原文："restricted customers from purchasing, importing, or using our data center products"）；同一份报告还说，美国的出口管制实际上已把公司挡在中国市场之外（原文："we are already effectively foreclosed from the China market by U.S. export controls"）
+record, block 53 of the data [BH man-ms-sec-10q-2025-10] S	Nvidia, Form 10-Q filed with the SEC	英伟达，向美国证券交易委员会提交的10-Q季度报告
+record, block 53 of the data [BH man-ms-sec-10q-2025-10] Q (source, English) and Z (my Chinese)	The Chinese government has encouraged customers to purchase from our China-based competitors and restricted customers from purchasing, importing, or using our data center products	中国政府鼓励客户向我们在中国的竞争对手采购，并限制客户购买、进口或使用我们的数据中心产品
+record, block 54 of the data [CN man-cn-ft-202508-deepseek] T	DeepSeek, encouraged by authorities to use Huawei chips, fails to train its next model on them and uses "Nvidia chips for training and Huawei's for inference"	DeepSeek在有关部门鼓励下采用华为芯片，但未能用它们训练出下一代模型，于是用英伟达芯片训练、用华为芯片推理（原文："Nvidia chips for training and Huawei's for inference"）
+record, block 54 of the data [CN man-cn-ft-202508-deepseek] S	Financial Times	英国《金融时报》
+record, block 54 of the data [CN man-cn-ft-202508-deepseek] Q (source, English) and Z (my Chinese)	prompting it to use Nvidia chips for training and Huawei's for inference	促使它用英伟达芯片做训练、用华为芯片做推理
+record, block 55 of the data [CH cn-cnpress-yicai-zhou-360-20250723] T	360's founder: its recent chip purchases are all Huawei's, and for inference home-made chips are better value than the H20; they trail Nvidia's, he says, but must be used, through gritted teeth	360创始人周鸿祎："最近采购的（芯片）都是华为的产品"；谈到用于推理的H20，他说"相比之下国产芯片性价比更高"；他说国产芯片与英伟达有差距，但"只有咬牙坚持用"
+record, block 55 of the data [CH cn-cnpress-yicai-zhou-360-20250723] S	Zhou Hongyi, reported by Yicai	周鸿祎，据第一财经报道
+record, block 55 of the data [CH cn-cnpress-yicai-zhou-360-20250723] E (the core's English, not shown) and Q (source, Chinese, shown)	the chips bought recently are all Huawei products	最近采购的(芯片)都是华为的产品
+record, block 56 of the data [BH cn-le11-ft-h20justify-aggregoctt] T	Regulators such as the industry ministry ask Alibaba, ByteDance and others to explain why they need the H20 instead of home-made chips; a data-centre operator: "It's not banned but has kind of become a politically incorrect thing to do"	工业和信息化部等监管部门要求阿里巴巴、字节跳动等企业说明为何需要H20而不用国产芯片；一位数据中心运营商说：没有被禁，但这多少成了一件政治不正确的事（原文："It's not banned but has kind of become a politically incorrect thing to do"）
+record, block 56 of the data [BH cn-le11-ft-h20justify-aggregoctt] S	Financial Times (full text in a syndicated copy)	英国《金融时报》（全文见一份转载稿）
+record, block 56 of the data [BH cn-le11-ft-h20justify-aggregoctt] Q (source, English) and Z (my Chinese)	explain why they need to order Nvidia’s H20 chips instead of using domestic alternatives	说明为何需要订购英伟达的H20芯片，而不使用国产替代品
+record, block 57 of the data [BL cn-xi-round-f-6] T	Premier Li Qiang to US business leaders, Nvidia's among them: a stable, open policy environment is the Chinese government's long-standing, unchanging commitment	国务院总理李强会见美国工商界人士（其中有英伟达公司的负责人）："一个稳定开放的政策环境是中国政府长期不变的承诺"
+record, block 57 of the data [BL cn-xi-round-f-6] S	Xinhua	新华社
+record, block 57 of the data [BL cn-xi-round-f-6] E (the core's English, not shown) and Q (source, Chinese, shown)	a stable and open policy environment is the Chinese government's long-standing, unchanging commitment	一个稳定开放的政策环境是中国政府长期不变的承诺
+record, block 58 of the data [BL cn-le17-whuf-134391] T	Wuhan University and Beihang publish notices to buy Nvidia's RTX PRO 6000D (2 and 4 cards), with suppliers held to the government procurement law's rules; Wuhan asks for the compliant China-market model	武汉大学和北京航空航天大学发布采购英伟达RTX PRO 6000D的公告（分别为2张和4张），供应商须符合政府采购法规定的条件；武汉大学要求"国行合规RTX PRO 6000D型号"
+record, block 58 of the data [BL cn-le17-whuf-134391] S	Wuhan University purchase filing (also Beihang's notice of Jul 11 and a Wuhan award of one card, published Aug 13, 2026)	武汉大学采购公告（另有北航7月11日的公告，以及武汉大学2026年8月13日公布的一张卡的成交结果）
+record, block 58 of the data [BL cn-le17-whuf-134391] E (the core's English, not shown) and Q (source, Chinese, shown)	the compliant China-market RTX PRO 6000D model, not a consumer gaming card, not a modified card, not a restricted overseas version	国行合规RTX PRO 6000D型号，非消费级游戏卡、非改装卡、非海外版受限型号
+record, block 59 of the data [BL cn-acts-mofcom-20261117] T	Commerce ministry spokesperson: the new US curbs on remote access to advanced chips interfere in Chinese firms' normal trade with other countries' firms; China will take countermeasures if Washington persists	商务部新闻发言人：美方限制远程获取先进芯片的新措施"对中国企业与其他国家企业正常贸易合作横加干涉"；"若美方一意孤行，中方将采取反制措施"
+record, block 59 of the data [BL cn-acts-mofcom-20261117] S	Ministry of Commerce	商务部
+record, block 59 of the data [BL cn-acts-mofcom-20261117] E (the core's English, not shown) and Q (source, Chinese, shown)	interferes in the normal trade cooperation between Chinese firms and other countries' firms	对中国企业与其他国家企业正常贸易合作横加干涉
+record, block 60 of the data [CN cn-le26-iflytek-ir-20260821] T	iFlytek's filed investor record: rival model makers commonly use Nvidia chips two generations ahead; it expects tighter US export controls to push the whole industry to home-made computing	科大讯飞披露的投资者关系活动记录："其他模型厂商普遍使用性能领先两代的英伟达芯片"；公司预计，"随着美国对顶尖芯片出口管制越来越严格"，"全行业都会被倒逼转向国产算力"
+record, block 60 of the data [CN cn-le26-iflytek-ir-20260821] S	iFlytek, record of its results meeting, filed on the Shenzhen exchange's site (cninfo)	科大讯飞业绩说明会记录，披露于巨潮资讯网（cninfo，深圳证券交易所的信息披露网站）
+record, block 60 of the data [CN cn-le26-iflytek-ir-20260821] E (the core's English, not shown) and Q (source, Chinese, shown)	other model makers commonly use Nvidia chips that are two generations ahead in performance	其他模型厂商普遍使用性能领先两代的英伟达芯片
+record, block 61 of the data [CN cn-o36-tencent-call-20261118-sa] T	Tencent's president on the new US curbs: "It sets everyone back in China", with less advanced computing for everyone "no matter when you actually started leasing or building capacities outside of China"	腾讯总裁谈美国的新管制：这让中国的每一家都倒退（原文："It sets everyone back in China"），不论何时开始在中国境外租用或自建算力，大家手里的先进算力都变少了（原文："no matter when you actually started leasing or building capacities outside of China"）
+record, block 61 of the data [CN cn-o36-tencent-call-20261118-sa] S	Martin Lau on Tencent's results call (transcript on a stock-data site)	刘炽平在腾讯业绩电话会上的发言（文字记录载于一家股票数据网站）
+record, block 61 of the data [CN cn-o36-tencent-call-20261118-sa] Q (source, English) and Z (my Chinese)	no matter when you actually started leasing or building capacities outside of China	不论你实际上何时开始在中国境外租用或建设算力
+page: page title 1	Beijing vs. Its Labs	北京与AI企业
+page: page title 2	Dated record, 2023 to November 2026	按日期排列的记录，2023年至2026年11月
+page: line above the headline	China · Nvidia chips · 2023 to November 2026	中国 · 英伟达芯片 · 2023年至2026年11月
+page: headline	Beijing mostly pulled one way on Nvidia chips. Its AI companies pulled the other.	英伟达芯片：北京方面大体往一边拉，中国AI企业往另一边拉
+page: deck	61 dated records of what Chinese authorities did about Nvidia’s chips and what China’s big AI companies did. Orange points away from Nvidia; blue points toward it. The exceptions on each side are drawn too: Beijing sometimes let chips in, and the companies also turned to home-made ones.	61条有日期的记录：中国有关部门对英伟达芯片做了什么，中国的大型AI企业又做了什么。橙色表示远离英伟达，蓝色表示靠向英伟达。双方的例外也一并画出：北京方面有时放行芯片，企业也在转向国产芯片。
+page: key 1	Away from Nvidia: holding it back, or choosing home-made chips	远离英伟达：加以限制，或选用国产芯片
+page: key 2	Toward Nvidia: buying it, using it, letting it in	靠向英伟达：购买、使用、放行
+page: key 3	Filled: on the record (a government document, published state media, a filing, a named person). 36 records	实心：有公开记录可查（政府文件、公开发表的官方媒体内容、公司披露文件、具名人士）。共36条
+page: key 4	Open: a press report citing unnamed people. 25 records	空心：援引未具名人士的媒体报道。共25条
+page: panel title 1	The dated record	按日期排列的记录
+page: panel title 2	The H200, in reported numbers	H200：见诸报道的数字
+page: panel title 3	Nvidia’s share of AI chips in China	英伟达在中国AI芯片市场的份额
+page: panel title 4	Nvidia’s own figures: revenue from customers based in China	英伟达自己的数字：来自总部在中国的客户的收入
+page: panel title 5	The line on paper	成文政策
+page: panel title 6	Inside Beijing: not one actor	北京内部：并非铁板一块
+page: panel title 7	Local vouchers for rented computing	地方算力券：对租用算力的补贴
+page: panel title 8	The records	记录明细
+page: panel title 9	Read with care	阅读须知
+page: panel subtitle 1	Each number is one record, listed under “The records” below. Point at a mark to read the source’s own words.	每个编号是一条记录，逐条列在下方的记录明细里。把鼠标指向圆点，可以看到来源的原话；点击圆点，可跳到下方对应的那条记录。
+page: panel subtitle 2	Press reports citing unnamed people, and two sums from one United States government table of licence applications. They are separate counts, not one tally. An application names a consignee; it is not an order. Bars are drawn to one scale.	援引未具名人士的媒体报道，加上美国政府同一张许可申请表格中的两项合计。这些数字各自独立，不是同一笔账。一份申请只列明收货方，不是订单。各条按同一比例绘制。
+page: panel subtitle 3	Three reported readings. The first uses a different yardstick from the two IDC counts.	三个见诸报道的数字。第一个数字的口径与后两个IDC统计不同。
+page: panel subtitle 4	Billions of dollars by quarter, from Nvidia’s reports to the SEC; Hong Kong included. Counted by where the direct customer has its head office, for every product. It is not a count of chips entering China. Nvidia’s note: “The end customer and shipping location may be different from our direct customers’ headquarters location.”	按季度列出，单位十亿美元，出自英伟达向美国证券交易委员会提交的报告；含香港。按直接客户总部所在地统计，涵盖所有产品。这不是进入中国的芯片数量。英伟达注明：最终客户和发货地点可能与直接客户的总部所在地不同（原文：“The end customer and shipping location may be different from our direct customers’ headquarters location.”）
+page: panel subtitle 5	From government documents. Shares for home-made computing are set by provinces and cities; no published national share was found. First, the 31 provincial-level governments by what their plans set.	出自政府文件。国产算力的占比由省、市制定；没有找到公开发布的全国性占比。先看31个省级政府的规划各定了什么。
+page: panel subtitle 6	Which bodies appear on which side, by record number. A report that names several bodies is listed under each. The antitrust case is listed apart: it is aimed at Nvidia the company.	哪些机构出现在哪一边，按记录编号列出。一篇报道点名多个机构的，分别列在各机构名下。反垄断案件单列：它针对的是英伟达公司本身。
+page: panel subtitle 7	The most a local rule pays of a firm’s bill for rented computing, for home-made computing and for other computing, as each rule’s own text states it. One measure throughout.	地方规定对企业租用算力的账单最多补贴多少，国产算力和其他算力各是多少，均按各规定原文。全图用同一口径。
+page: panel subtitle 8	Dates are of the act where it is known, otherwise of the report. Each line is my summary; the link goes to the page it rests on. A line beside an open mark is what unnamed people told the paper named; none is confirmed.	能确定行为发生日期的，用行为日期；否则用报道日期。每条文字是本页的概括；链接指向它所依据的网页。空心圆点旁的文字，是未具名人士对所列媒体的说法；没有一条得到证实。
+page: hint	Swipe the chart sideways to see 2025 and 2026.	左右滑动图表，查看2025年和2026年。
+page: strip: title	Dated record, 2023 to November 2026	按日期排列的记录，2023年至2026年11月
+page: strip: description	Each numbered mark is one dated record, listed below the chart. Four rows: Beijing holds Nvidia back, Beijing lets Nvidia in, the companies reach for Nvidia, the companies turn to home-made chips.	每个带编号的圆点是一条有日期的记录，逐条列在图的下方。共四行：北京限制英伟达，北京放行英伟达，企业争取英伟达芯片，企业转向国产芯片。
+page: strip: row, who 1	Beijing	北京
+page: strip: row, who 2	Beijing	北京
+page: strip: row, who 3	The companies	企业
+page: strip: row, who 4	The companies	企业
+page: strip: row, what 1	holds Nvidia back	限制英伟达
+page: strip: row, what 2	lets Nvidia in	放行英伟达
+page: strip: row, what 3	reach for Nvidia	争取英伟达芯片
+page: strip: row, what 4	turn to home-made chips	转向国产芯片
+page: strip: tick 1	2023	2023年
+page: strip: tick 2	2024	2024年
+page: strip: tick 3	Jan 2025	2025年1月
+page: strip: tick 4	Apr	4月
+page: strip: tick 5	Jul	7月
+page: strip: tick 6	Oct	10月
+page: strip: tick 7	Jan 2026	2026年1月
+page: strip: tick 8	Apr	4月
+page: strip: tick 9	Jul	7月
+page: strip: tick 10	Oct	10月
+page: strip: note	2023 and 2024 are drawn narrower	2023年和2024年画得较窄
+page: strip: flag 1	Jul 2025 · US clears H20 sales again	2025年7月 · 美国重新批准H20对华销售
+page: strip: flag 2	Dec 8, 2025 · US allows the H200	2025年12月8日 · 美国允许对华销售H200
+page: strip: flag 3	Nov 17, 2026 · H200 shipments stop	2026年11月17日 · 英伟达停止H200发货
+page: H200 bars: label 1	Ordered by Chinese companies for 2026 50	中国企业为2026年订购 50
+page: H200 bars: label 2	Approved by Washington: Nvidia as exporter	华盛顿已批准：以英伟达为出口商的申请
+page: H200 bars: label 3	Returned by Washington without action: Nvidia as exporter	华盛顿未予处理即退回：以英伟达为出口商的申请
+page: H200 bars: label 4	Approved by Beijing, with conditions 22	北京方面有条件批准 22
+page: H200 bars: label 5	Total Beijing was weighing by July 31	到7月，北京方面考虑放行的总量 31
+page: H200 bars: label 6	Reached the two buyers named 33	已到报道点名的两家买方手中 33
+page: H200 bars: label 7	Stored in Hong Kong, awaiting shipment to China 36	存放在香港，等待运往中国 36
+page: H200 bars: value 1	more than 2,000,000	超过200万枚
+page: H200 bars: value 2	579,868	579,868枚
+page: H200 bars: value 3	1,738,950	1,738,950枚
+page: H200 bars: value 4	more than 400,000	超过40万枚
+page: H200 bars: value 5	fewer than 200,000	不到20万枚
+page: H200 bars: value 6	about 10,000 each	各约1万枚
+page: H200 bars: value 7	about 600,000	约60万枚
+page: H200 bars: note 1	Reuters, Dec 31, 2025	路透社，2025年12月31日
+page: H200 bars: note 2	in 17 applications, each marked “Approved, not shipped” at May 11, 2026. With AMD’s comparable chip (300,000 in 4 applications) the count is 879,868. Commerce Department table, released by the House Foreign Affairs Committee, Nov 19, 2026; the sums are mine	共17份申请，截至2026年5月11日均标为“Approved, not shipped”（已批准、未发货）。加上AMD的同类芯片（300,000枚，4份申请），合计879,868枚。美国商务部的表格，由众议院外交事务委员会于2026年11月19日公布；各项合计为本页所算
+page: H200 bars: note 3	in 7 applications, among them all 5 for consignees in Indonesia, Malaysia and Thailand (1,118,500 chips), named for ByteDance, BytePlus, TikTok and Alibaba. With AMD’s 2, 1,888,950 of the table’s 3,444,160 chips. The table gives no reasons. Same table	共7份申请，其中包括收货方在印度尼西亚、马来西亚和泰国的全部5份（1,118,500枚），收货方名称带有ByteDance、BytePlus、TikTok和Alibaba字样。加上AMD的2份，在表内3,444,160枚芯片中占1,888,950枚。表格没有说明原因。同一表格
+page: H200 bars: note 4	for ByteDance, Alibaba and Tencent. Reuters, Jan 28, 2026	对象是字节跳动、阿里巴巴和腾讯。路透社，2026年1月28日
+page: H200 bars: note 5	The Information, through Reuters, Jul 8, 2026	The Information，经路透社转述，2026年7月8日
+page: H200 bars: note 6	ByteDance and Tencent (Financial Times, through Reuters, Aug 18, 2026); several firms by November (Reuters, Nov 5, 2026)	字节跳动和腾讯（英国《金融时报》，经路透社转述，2026年8月18日）；到11月已是数家企业（路透社，2026年11月5日）
+page: H200 bars: note 7	as Beijing “withholds approval for large-scale imports”. Reuters, Nov 5, 2026	北京方面迟迟未批准大规模进口（原文：“withholds approval for large-scale imports”）。路透社，2026年11月5日
+page: share: label 1	Before US curbs tightened	美国收紧出口管制之前
+page: share: label 2	2025	2025年
+page: share: label 3	Jan to Jun 2026	2026年1月至6月
+page: share: key 1	Nvidia about 95%	英伟达约95%
+page: share: key 2	Nvidia 55%	英伟达55%
+page: share: key 3	Chinese makers 41%	中国厂商41%
+page: share: key 4	Nvidia 34%	英伟达34%
+page: share: key 5	Huawei 28%	华为28%
+page: share: key 6	others 38%	其他38%
+page: share: caption 1	Nvidia: about 95% of China’s advanced chip market. Reuters, May 14, 2026	英伟达：约占中国先进芯片市场的95%。 路透社，2026年5月14日
+page: share: caption 2	Nvidia 55%, AMD 4%, Chinese makers 41% of AI accelerator cards shipped. By IDC’s data and its own sales, Enflame’s prospectus puts Nvidia at about 2.2 million cards of about 4 million. IDC, reported by Reuters, Apr 1, 2026; Enflame’s prospectus, Sept 2026	按AI加速卡出货量计：英伟达55%，AMD 4%，中国厂商41%。燧原科技的招股说明书依据IDC数据和自身销量，称英伟达约220万张，总量约400万张。 IDC数据，据路透社报道，2026年4月1日；燧原科技招股说明书，2026年9月
+page: share: caption 3	Nvidia 34%, Huawei 28%. In the other 38% the report names T-Head 7%, Cambricon 5%, Kunlunxin 4% and Hygon 3%; the remaining 19% (my subtraction) is not broken down. IDC, reported by Reuters, Oct 13, 2026	英伟达34%，华为28%。其余38%中，报道点名平头哥7%、寒武纪5%、昆仑芯4%、海光3%；剩下的19%（本页相减所得）没有细分。 IDC数据，据路透社报道，2026年10月13日
+page: share: caption 4	Grey is AMD (4% in 2025). Hatched is the part the report does not break down.	灰色是AMD（2025年为4%）。斜线部分是报道没有细分的部分。
+page: revenue: sentence	The line fell by about two thirds between the quarters ended April and October 2025. In the latest quarter it was the highest of the nine.	这条线在截至2025年4月和截至2025年10月的两个季度之间下降了约三分之二。最近一个季度是这九个季度中最高的。
+page: revenue: chart read aloud	Millions of dollars by quarter ended. Oct 27, 2024: 8,142; Jan 26, 2025: 7,818; Apr 27, 2025: 9,659; Jul 27, 2025: 3,985; Oct 26, 2025: 2,973; Jan 25, 2026: 3,060; Apr 26, 2026: 4,550; Jul 26, 2026: 7,880; Oct 25, 2026: 11,050	按季度截止日列出，单位百万美元。2024年10月27日：8,142；2025年1月26日：7,818；2025年4月27日：9,659；2025年7月27日：3,985；2025年10月26日：2,973；2026年1月25日：3,060；2026年4月26日：4,550；2026年7月26日：7,880；2026年10月25日：11,050
+page: revenue: bar 1	Quarter ended Oct 27, 2024: $8,142 million	截至2024年10月27日的季度：8,142百万美元
+page: revenue: bar 2	Quarter ended Jan 26, 2025: $7,818 million (my subtraction: 25,048 for the year less 17,230 for its first nine months)	截至2025年1月26日的季度：7,818百万美元（本页相减所得：全年25,048减去前九个月的17,230）
+page: revenue: bar 3	Quarter ended Apr 27, 2025: $9,659 million	截至2025年4月27日的季度：9,659百万美元
+page: revenue: bar 4	Quarter ended Jul 27, 2025: $3,985 million	截至2025年7月27日的季度：3,985百万美元
+page: revenue: bar 5	Quarter ended Oct 26, 2025: $2,973 million	截至2025年10月26日的季度：2,973百万美元
+page: revenue: bar 6	Quarter ended Jan 25, 2026: $3,060 million (my subtraction: 19,677 for the year less 16,617 for its first nine months)	截至2026年1月25日的季度：3,060百万美元（本页相减所得：全年19,677减去前九个月的16,617）
+page: revenue: bar 7	Quarter ended Apr 26, 2026: $4,550 million	截至2026年4月26日的季度：4,550百万美元
+page: revenue: bar 8	Quarter ended Jul 26, 2026: $7,880 million	截至2026年7月26日的季度：7,880百万美元
+page: revenue: bar 9	Quarter ended Oct 25, 2026: $11,050 million	截至2026年10月25日的季度：11,050百万美元
+page: revenue: month 1	Oct2024	10月2024
+page: revenue: month 2	Jan2025	1月2025
+page: revenue: month 3	Apr2025	4月2025
+page: revenue: month 4	Jul2025	7月2025
+page: revenue: month 5	Oct2025	10月2025
+page: revenue: month 6	Jan2026	1月2026
+page: revenue: month 7	Apr2026	4月2026
+page: revenue: month 8	Jul2026	7月2026
+page: revenue: month 9	Oct2026	10月2026
+page: revenue: note 1	Quarter ended in the month shown. * My subtraction: the year’s figure less its first nine months. Nvidia’s reports: quarter ended Oct 26, 2025, year ended Jan 25, 2026, quarter ended Apr 26, 2026, quarter ended Jul 26, 2026, results filed Nov 17, 2026.	图中月份是季度截止的月份。* 本页相减所得：全年数字减去前九个月。英伟达的报告：截至2025年10月26日的季度、截至2026年1月25日的财年、截至2026年4月26日的季度、截至2026年7月26日的季度、2026年11月17日提交的业绩文件。
+page: revenue: note 2	Of the latest quarter Nvidia said that “Q3 sales of licensed Hopper Data Center products to China was $2.4 billion” and that “we are no longer shipping licensed Hopper Data Center products to China” (results call, Nov 17, 2026). It did not say why.	关于最近一个季度，英伟达说，获许可的Hopper数据中心产品第三季度对华销售额为24亿美元（原文：“Q3 sales of licensed Hopper Data Center products to China was $2.4 billion”），并说公司已不再向中国发运这类产品（原文：“we are no longer shipping licensed Hopper Data Center products to China”）（业绩电话会，2026年11月17日）。它没有说明原因。
+page: 31 governments: bar read aloud	31 provincial-level governments: 8 set a share; 21 have a plan read, with no share; 1 known only from a press account (Tibet); 1 not reached (Xinjiang).	31个省级政府：8个定了占比；21个的规划已读，未定占比；1个只见于媒体报道（西藏）；1个未能查到（新疆）。
+page: 31 governments: key 1	8 set a share	8个定了占比
+page: 31 governments: key 2	21 have a plan read, with no share	21个的规划已读，未定占比
+page: 31 governments: key 3	1 known only from a press account (Tibet)	1个只见于媒体报道（西藏）
+page: 31 governments: key 4	1 not reached (Xinjiang)	1个未能查到（新疆）
+page: 31 governments: row 1	Jiangsu70% or moreof chips in new computing centres, by 2030 (50% for 2025); marked indicative (预期性) source	江苏70%以上新建算力中心的国产算力芯片使用占比，2030年（2025年为50%）；属“预期性”指标 来源
+page: 31 governments: row 2	Guangdong70%of newly added computing, by the end of 2025; strives for (力争); a plan of nine bodies source	广东70%新增算力中的国产化占比，到2025年底；用词是“力争”；九个部门的方案 来源
+page: 31 governments: row 3	Tianjinover 60%of chips in the city’s computing centres, by 2026 source	天津超过60%全市算力中心的国产算力芯片使用占比，到2026年 来源
+page: 31 governments: row 4	Hebei60% or moreof newly added computing software and hardware, independently controllable (自主可控), by 2025; the province’s own page source	河北60%以上新增算力基础软硬件设施的“自主可控”比例，到2025年；河北省政府自己的网页 来源
+page: 31 governments: row 5	Shanghaiover 50%of chips in new intelligent-computing centres, by 2025; a copy on another site source	上海超过50%新建智算中心的国产算力芯片使用占比，到2025年；转载于其他网站的文本 来源
+page: 31 governments: row 6	Sichuanover 50%of computing equipment; strives for (力争); a copy on another site source	四川超过50%国产化算力设备占比；用词是“力争”；转载于其他网站的文本 来源
+page: 31 governments: row 7	Inner Mongolia50% or moreof computing, by 2025, among the goals for the region’s national computing hub source	内蒙古50%以上国产化算力占比，到2025年，是该区国家算力枢纽的目标之一 来源
+page: 31 governments: row 8	Shandong90%of the province’s data-centre computing, by 2025; a newspaper’s account of the plan source	山东90%全省数据中心的国产化算力占比，到2025年；报纸对规划的报道 来源
+page: line on paper: row 1	20%price edge in government purchasing for goods that meet China’s home-made product standard; in force from Jan 1, 2026, and products of foreign-funded firms that meet the standard take part on equal terms State Council office, Sept 2025; finance ministry, Dec 2025	20%政府采购中，符合本国产品标准的货物享受的报价扣除；自2026年1月1日起施行，符合该标准的外资企业产品平等参与 国务院办公厅，2025年9月；财政部，2025年12月
+page: line on paper: row 2	11 of 11AI chips that have passed the state security-and-reliability evaluation come from makers registered in China, 8 of them (lists of May and Sept 2026). Only entities registered in China may apply; firms apply of their own accord, and buyers choose whether to use the results evaluation centre, Sept 2026	全部11款通过国家安全可靠测评的AI芯片，全部出自在中国境内注册的厂商，共8家（2026年5月和9月两批名单）。只有中国境内注册的实体可以送测；企业自愿申请，测评结果由企业和用户自主选择使用 测评中心，2026年9月
+page: line on paper: row 3	46US firms whose products government buyers may not buy (not counting US-owned firms in China). Nvidia, Intel, AMD, Micron and Qualcomm are not among them finance ministry, Jun 22, 2026	46家美国企业的产品，政府采购人不得采购（不包括在华美资企业）。英伟达、英特尔、AMD、美光和高通不在其列 财政部，2026年6月22日
+page: line on paper: row 4	None founda published national share for home-made AI chips, or a published order not to buy Nvidia’s, in the policy pages and the national document lists read. A draft national plan with at least 80% of its core technology home-made, AI chips included, was reported (Bloomberg, Jun 2026, through relays; unnamed people, who said details could change); asked about the report, the state planner gave no share and said “在具体建设过程中，市场力量将起决定性作用” (in the actual building, market forces will play the decisive role), and that it would strengthen coordination and policy guidance (press conference, Jun 18, 2026: the site’s text file). Every binding purchase rule found is addressed to Party and state bodies, public institutions or public money, or, in the Micron case of 2023 (the earliest record here), to operators of critical information infrastructure.	没有找到在所阅读的政策网页和全国性文件目录中，没有找到公开发布的全国性国产AI芯片占比，也没有找到公开发布的不准购买英伟达芯片的命令。有报道称，一份全国性规划草案要求至少80%的核心技术（包括AI芯片）为国产（彭博社，2026年6月，经其他媒体转述；消息来自未具名人士，他们说细节可能变化）；被问到这篇报道时，国家发展改革委没有给出占比，只说“在具体建设过程中，市场力量将起决定性作用”，并表示将“加强统筹协调和政策引导”（新闻发布会，2026年6月18日：网站的文本文件）。找到的每一条有约束力的采购规定，针对的都是党政机关、事业单位或财政资金；2023年的美光案（这里最早的一条记录）则针对关键信息基础设施的运营者。
+page: vouchers: key 1	home-made computing	国产算力
+page: vouchers: key 2	other computing	其他算力
+page: vouchers: key 3	one rate for all	各类算力一个比例
+page: vouchers: group 1	Pay more for home-made computing: 4	对国产算力补贴更多：4个
+page: vouchers: group 2	One rate for all computing: 11	各类算力一个比例：11个
+page: vouchers: row 1	Hangzhou city Jul 2024	杭州市 2024年7月
+page: vouchers: row 2	Zhejiang province Apr 2025guidance to places that issue vouchers; in force from May 31, 2025; a copy on another site	浙江省 2025年4月对发放算力券的地方的指导；自2025年5月31日起实施；转载于其他网站的文本
+page: vouchers: row 3	Wenzhou city Aug 2025	温州市 2025年8月
+page: vouchers: row 4	Binjiang district, Hangzhou Aug 2026a copy on a policy site	杭州市滨江区 2026年8月载于一家政策网站的文本
+page: vouchers: row 5	Beijing E-Town, a development zone Nov 2024replaced a rule of Mar 2024 that paid 40% against 30%; servers with home-made chips get a separate purchase subsidy of up to 10%	北京经济技术开发区（是开发区，不是北京市） 2024年11月取代了2024年3月按40%对30%支付的规定；装国产芯片的服务器另有最高10%的采购支持
+page: vouchers: row 6	Longhua district, Shenzhen Nov 2024	深圳市龙华区 2024年11月
+page: vouchers: row 7	Shanxi province Dec 202430% for national projects and model makers; in force from Jul 2024	山西省 2024年12月国家级项目和大模型企业为30%；自2024年7月起施行
+page: vouchers: row 8	Shenzhen city Dec 202460% for start-ups; separate support for moving models to home-made chips	深圳市 2024年12月初创企业为60%；把模型迁移到国产芯片另有支持
+page: vouchers: row 9	Wuhan city Feb 2025up to 200,000 yuan; the same rate for one-person AI firms in a rule of Feb 2026	武汉市 2025年2月最高20万元；2026年2月的一项规定对一人AI企业给同样的比例
+page: vouchers: row 10	Shandong province May 2025a copy on another site	山东省 2025年5月转载于其他网站的文本
+page: vouchers: row 11	Shanghai city Jul 2025building support, up to 10%, for home-made computing only	上海市 2025年7月建设支持最高10%，只给国产（自主）算力
+page: vouchers: row 12	Qiaokou district, Wuhan Aug 2025on top of the city’s	武汉市硚口区 2025年8月在市级支持的基础上
+page: vouchers: row 13	Hongshan district, Wuhan Sept 2025for small and medium firms	武汉市洪山区 2025年9月面向中小企业
+page: vouchers: row 14	Hunan province Oct 2025a copy on another site	湖南省 2025年10月转载于其他网站的文本
+page: vouchers: row 15	Qingdao city Mar 2026the same rate as its rule of Mar 2025; a copy on another site	青岛市 2026年3月与其2025年3月的规定比例相同；转载于其他网站的文本
+page: vouchers: row read aloud 1	Hangzhou city: home-made 30%, other 20%	杭州市：国产30%，其他20%
+page: vouchers: row read aloud 2	Zhejiang province: home-made 30%, other 10%	浙江省：国产30%，其他10%
+page: vouchers: row read aloud 3	Wenzhou city: home-made 30%, other 10%	温州市：国产30%，其他10%
+page: vouchers: row read aloud 4	Binjiang district, Hangzhou: home-made 60%, other 30%	杭州市滨江区：国产60%，其他30%
+page: vouchers: row read aloud 5	Beijing E-Town, a development zone: 30% for all computing	北京经济技术开发区（是开发区，不是北京市）：各类算力一律30%
+page: vouchers: row read aloud 6	Longhua district, Shenzhen: 30% for all computing	深圳市龙华区：各类算力一律30%
+page: vouchers: row read aloud 7	Shanxi province: 20% for all computing	山西省：各类算力一律20%
+page: vouchers: row read aloud 8	Shenzhen city: 50% for all computing	深圳市：各类算力一律50%
+page: vouchers: row read aloud 9	Wuhan city: 50% for all computing	武汉市：各类算力一律50%
+page: vouchers: row read aloud 10	Shandong province: 5% for all computing	山东省：各类算力一律5%
+page: vouchers: row read aloud 11	Shanghai city: 30% for all computing	上海市：各类算力一律30%
+page: vouchers: row read aloud 12	Qiaokou district, Wuhan: 50% for all computing	武汉市硚口区：各类算力一律50%
+page: vouchers: row read aloud 13	Hongshan district, Wuhan: 20% for all computing	武汉市洪山区：各类算力一律20%
+page: vouchers: row read aloud 14	Hunan province: 30% for all computing	湖南省：各类算力一律30%
+page: vouchers: row read aloud 15	Qingdao city: 20% for all computing	青岛市：各类算力一律20%
+page: vouchers: one-rate label 1	30% for all	一律30%
+page: vouchers: one-rate label 2	30% for all	一律30%
+page: vouchers: one-rate label 3	20% for all	一律20%
+page: vouchers: one-rate label 4	50% for all	一律50%
+page: vouchers: one-rate label 5	50% for all	一律50%
+page: vouchers: one-rate label 6	5% for all	一律5%
+page: vouchers: one-rate label 7	30% for all	一律30%
+page: vouchers: one-rate label 8	50% for all	一律50%
+page: vouchers: one-rate label 9	20% for all	一律20%
+page: vouchers: one-rate label 10	30% for all	一律30%
+page: vouchers: one-rate label 11	20% for all	一律20%
+page: vouchers: note	4 of the 15 local governments shown pay more for home-made computing; the other 11 pay one rate for all. Every rule shown still pays for other computing. One row per government: its latest rule found that states a share of the bill; these are the rules found and read, not a census. Left out: rules known only from the press (Chengdu, 50% against 30%), held only as Word files the checker cannot read (Beijing city; Longgang district, Shenzhen), not yet among the saved pages (Xiamen), drafts, and rules that give no share of the bill. Support for building or buying with home-made chips only is separate: Beijing city’s plan for 2024 to 2027 supports, by a share of the investment, “采购自主可控GPU芯片开展智能算力服务的企业” (firms that buy independently controllable GPU chips to provide computing services). The tiers are the rules’ own words: 国产 or 自主 (home-made, independent) against 非国产, 非自主 or 其他 (other).	图中15个地方政府里，4个对国产算力补贴更多，其余11个各类算力一个比例。图中每一项规定都仍然补贴其他算力。每个政府一行：取所找到的、写明账单补贴比例的最新一项规定；这些是找到并读过的规定，不是普查。没有列入的有：只见于媒体报道的规定（成都，50%对30%）、只存有核查程序读不了的Word文件的规定（北京市；深圳市龙岗区）、尚未存入的规定（厦门）、征求意见稿，以及没有写明账单补贴比例的规定。只对用国产芯片建设或购置的支持另算：北京市2024年至2027年的方案，按投资额的一定比例支持“采购自主可控GPU芯片开展智能算力服务的企业”。分档用的是各规定自己的用词：“国产”或“自主”，对“非国产”“非自主”或“其他”。
+page: inside Beijing: column 1	Held Nvidia back, or steered buyers to home-made chips	限制英伟达，或引导买方转向国产芯片
+page: inside Beijing: column 2	Let it in, or welcomed it	放行，或表示欢迎
+page: inside Beijing: column 3	Acted against Nvidia the company	对英伟达公司本身采取行动
+page: inside Beijing: body 1	Cyberspace regulator	国家网信办
+page: inside Beijing: body 2	State planner (NDRC)	国家发展改革委
+page: inside Beijing: body 3	Industry ministry	工业和信息化部
+page: inside Beijing: body 4	Vice Premier Ding Xuexiang’s chip committee, as the Journal describes it	《华尔街日报》所说的丁薛祥牵头的芯片委员会
+page: inside Beijing: body 5	Security ministry	国家安全部
+page: inside Beijing: body 6	State media (the state broadcaster’s account)	官方媒体（中央广播电视总台旗下账号）
+page: inside Beijing: body 7	Customs	海关
+page: inside Beijing: body 8	Finance and industry ministries (a purchase rule for Party and state bodies’ desktop computers)	财政部、工业和信息化部（只针对党政机关及相关事业单位的台式计算机采购）
+page: inside Beijing: body 9	Commerce ministry	商务部
+page: inside Beijing: body 10	Premier Li Qiang	国务院总理李强
+page: inside Beijing: body 11	Vice Premier He Lifeng	国务院副总理何立峰
+page: inside Beijing: body 12	“Industry and commerce ministries”, as Reuters put it	路透社所说的工业和商务主管部门（原文：“industry and commerce ministries”）
+page: inside Beijing: body 13	Market regulator: an antitrust case against Nvidia the company	市场监管总局：针对英伟达公司本身的反垄断案件
+page: inside Beijing: note 1	The Financial Times (Nov 13, 2026, citing unnamed people): security-focused officials within the cyberspace regulator and the security ministry “viewed dependence on Nvidia as a strategic vulnerability”, the commerce ministry “favoured imports”, and the 2025 push to restrict “was led by the National Development and Reform Commission”. The US Trade Representative, Nov 20, 2026 (Bloomberg Television; machine captions, not checked by ear, 01:06 to 01:35): it is “not as monolithic as people would have you believe”; in his “own analysis” there are some who think “we’d like to have access” and “others who think, well, we don’t want American chips anyway”. The two caption tracks break the sentence differently, so whether he puts the split inside the government is not settled.	英国《金融时报》（2026年11月13日，援引未具名人士）报道：国家网信办和国家安全部内部侧重安全的官员把对英伟达的依赖看作战略弱点（原文：“viewed dependence on Nvidia as a strategic vulnerability”），商务部倾向于进口（原文：“favoured imports”），2025年的限制行动由国家发展改革委牵头（原文：“was led by the National Development and Reform Commission”）。美国贸易代表2026年11月20日说（彭博电视；机器字幕，未经人耳核对，01:06至01:35）：情况并不像人们让你以为的那样铁板一块（原文：“not as monolithic as people would have you believe”）；按他自己的分析（原文：“my own analysis”），有人认为希望能买到（原文：“we’d like to have access”），也有人认为反正不要美国芯片（原文：“others who think, well, we don’t want American chips anyway”）。两条字幕轨的断句不同，因此他是否把这一分歧放在政府内部，并无定论。
+page: inside Beijing: note 2	The market regulator’s Party group lists the Nvidia case, with its cases on Qualcomm and DuPont China, under “坚决落实党中央重大决策部署” (carrying out the Party centre’s major decisions) and “敢于斗争” (daring to struggle) (Party members’ paper, Sept 24, 2026). Nvidia’s reports say the preliminary finding concerns the “degraded products” US export controls required it to offer the Chinese market. A standing rule cuts the other way: the regulator’s 2020 approval of Nvidia’s Mellanox purchase obliges Nvidia to keep supplying its accelerators to the Chinese market, unless lifted since (the parties may apply to lift the conditions six years after they took effect) (decision).	市场监管总局党组把英伟达案与高通公司、杜邦中国集团的案件一并列在“坚决落实党中央重大决策部署”和“敢于斗争”之下（共产党员手机报，2026年9月24日）。英伟达的报告说，初步调查结论涉及美国出口管制要求它向中国市场提供的降规产品（原文：“degraded products”）。有一项规定（如未解除）方向正相反：市场监管总局2020年附条件批准英伟达收购迈络思，条件之一是英伟达须“向中国市场继续供应英伟达GPU加速器”；交易双方可在条件生效6年后申请解除（公告全文）。
+page: records: column 1	Beijing	北京方面
+page: records: column 2	The companies	企业
+page: note 1	Open marks rest on unnamed people. In the answers found, no Chinese authority confirmed any of them: asked about such reports, the foreign ministry said it was not aware of the matter (Aug 13, 2025), that the question should go to the competent departments (Jan 29, 2026), and that its position on US chips was consistent (Nov 9, 2026).	空心圆点依据的是未具名人士的说法。在找到的答复中，没有中国主管部门证实其中任何一条：被问到这类报道时，外交部发言人先后表示“我不了解你提到的情况”（2025年8月13日）、“具体问题建议向中方主管部门进行询问”（2026年1月29日）、“中方在美国输华芯片问题上的立场是一贯的”（2026年11月9日）。
+page: note 2	No published Chinese order against buying Nvidia chips was found in the policy pages and national document lists read. The published acts against Nvidia that were found are a summons and an antitrust case. The public warnings found came in one burst: of 42 state and Party media items on Nvidia chips found from Jul 2025 to Nov 2026, the 7 that only warn about Nvidia’s chips all date from Aug 1, 2025 to Sept 24, 2025 (4 others mix a warning with a welcome), and none of them is an order. Earlier, on Dec 3, 2024, an industry body, the Internet Society of China, had called on companies to be careful in choosing to buy American chips, citing US export controls, and in the same sentence to use chips made in China by domestic and foreign-funded firms alike.	在所阅读的政策网页和全国性文件目录中，没有找到公开发布的、不准购买英伟达芯片的中国政府命令。找到的针对英伟达的公开举措，是一次约谈和一起反垄断案件。找到的公开警示集中在一段时间：在2025年7月至2026年11月间找到的42篇涉及英伟达芯片的官方媒体和党媒内容中，只对英伟达芯片提出警示的7篇全部出自2025年8月1日至2025年9月24日（另有4篇既有警示也有欢迎），其中没有一篇是命令。更早的2024年12月3日，行业组织中国互联网协会曾以美国出口管制为由，呼吁企业“审慎选择采购美国芯片”，并在同一句话里呼吁“积极使用内外资企业在华生产制造的芯片”。
+page: note 3	Records 4 and 16 are an antitrust case against Nvidia the company. By Nvidia’s own reports the preliminary finding concerns the degraded products that US export controls required it to offer the Chinese market. They are drawn orange as pressure on Nvidia, not as a wish for fewer Nvidia chips. The White House said on Nov 1, 2025 that China would end its investigations of US firms in the chip supply chain, naming none; neither the regulator’s own news list (read to Nov 23, 2026) nor Nvidia’s reports say the Nvidia case has ended, and the regulator’s review of its 2025 work, posted Apr 10, 2026, lists the further investigation.	第4条和第16条记录是针对英伟达公司本身的反垄断案件。按英伟达自己的报告，初步调查结论涉及美国出口管制要求其向中国市场提供的降规产品。这两条画成橙色，表示对英伟达的压力，并不表示希望英伟达芯片减少。白宫2025年11月1日说，中国将终止对芯片供应链上美国企业的各项调查，但没有点名；市场监管总局自己的新闻列表（读至2026年11月23日）和英伟达的报告都没有说英伟达案已经结束，总局2026年4月10日发布的2025年工作回顾仍列有“对英伟达公司实施进一步调查”。
+page: note 4	What Beijing meant is not settled. American bodies read its antitrust moves as leverage or pressure: the US-China commission (2025), “exert leverage and ease pressure as a negotiating tactic”; the Congressional Research Service (Sept 2025), “to pressure Nvidia to provide its advanced chips to China”. Yet asked whether China would let its companies buy the H200, the Trade Representative said “that’s gonna be a sovereign decision for China” (May 15, 2026, Bloomberg Television; captions, not checked by ear, at 05:59). Either reading leaves the direction of the acts drawn here as it is.	北京方面的用意并无定论。美国的一些机构把它的反垄断举措看作筹码或施压：美中经济与安全审查委员会（2025年）认为，这显示中国愿意把施加影响和缓解压力都用作谈判手段（原文：“exert leverage and ease pressure as a negotiating tactic”）；国会研究服务处（2025年9月）认为，这是为了向英伟达施压，要它向中国提供先进芯片（原文：“to pressure Nvidia to provide its advanced chips to China”）。不过，被问到中国是否会让本国企业购买H200时，美国贸易代表说，那将是中国的主权决定（原文：“that’s gonna be a sovereign decision for China”；2026年5月15日，彭博电视；字幕，未经人耳核对，05:59处）。无论取哪一种解读，这里所画各项举措的方向都不变。
+page: note 5	The H200 also had to pass American conditions: testing in the United States, a cap at half of the shipments to American customers, and a 25% tariff (Commerce Department rule of Jan 15, 2026; Nvidia’s report for the quarter ended Jul 26, 2026). By May 11, 2026 Washington had returned without action 1,888,950 of the 3,444,160 chips in the applications listed, more than half of that list (the bars above). The committee that released the table says the summary does not show every application in full; its example is an Nvidia application of Dec 19, 2025 for 445,000 chips for Tencent, which the table shows at 75,000.	H200还须过美方的条件：在美国境内检测、数量不超过发往美国客户的一半、缴纳25%的关税（美国商务部2026年1月15日的规则；英伟达截至2026年7月26日季度的报告）。截至2026年5月11日，在表内所列申请的3,444,160枚芯片中，华盛顿未予处理即退回的有1,888,950枚，超过该表所列的一半（见上方条形图）。公布这份表格的委员会说，这份汇总没有完整反映每一份申请；它举的例子是英伟达2025年12月19日为腾讯申请44.5万枚的一份申请，表中只显示为7.5万枚。
+page: note 6	The chip at issue changed over time: the H20 (2024 to 2025), the RTX Pro 6000D (2025), the H200 (from December 2025).	所涉芯片前后有变化：H20（2024年至2025年）、RTX Pro 6000D（2025年）、H200（2025年12月起）。
+page: note 7	The records are a selection made to show both sides, not a census. The count of marks in a row is not a measure.	这些记录是为呈现双方情况而作的选取，不是全面统计。某一行圆点的多少不代表分量。
+page: note 8	Records 1 and 2 are not about Nvidia. Record 1 is the 2023 review conclusion that failed Micron’s products, a published instruction to operators of critical information infrastructure to stop buying one foreign chip maker’s products; record 2 is a purchase rule for Party and state bodies’ desktop computers. They are drawn in orange as steps away from foreign chips. Record 30 is two universities’ own buying, in notices that hold suppliers to the government procurement law’s conditions; it is not an act of the central government. Records 35 and 37 do not name Nvidia; they are drawn blue because they back Chinese firms’ computing abroad, where by record 47 Nvidia chips are used. Records 42 and 55 are a city body’s and a Party journal’s documents about what the companies use; they are drawn in the companies’ row.	第1条和第2条记录与英伟达无关。第1条是2023年认定美光产品未通过审查的结论，是一项公开发布的、要求关键信息基础设施运营者停止采购一家外国芯片厂商产品的指示；第2条是针对党政机关台式计算机的采购规定。这两条画成橙色，表示远离外国芯片的举措。第30条是两所高校自己的采购，其公告要求供应商符合政府采购法规定的条件；这不是中央政府的举措。第35条和第37条没有提到英伟达；画成蓝色，是因为它们支持中国企业在境外使用算力，而按第47条记录，那里用的是英伟达芯片。第42条和第55条是一个市级部门和一份党刊关于企业用什么芯片的文件；它们画在企业一栏。
+page: note 9	English renderings of Chinese are mine, not official translations.	引号之内只放来源的原话：来源为中文的，照录中文原文；来源为英文的，保留英文原文，其中文译文为本页所译，不是官方译文，也不放在引号之内。本页中文由Claude（Anthropic的模型）译自英文版，尚未经中文母语读者审校。
+page: strip: scroll area read aloud	Dated strip; scroll sideways on a narrow screen	时间轴；窄屏上可左右滑动
+page (Chinese page only): draft note under the key		草稿，由Anthropic的模型Claude制作。仅存于本机，未发布。中文为Claude所译，尚未经中文母语读者审校。Draft by Claude, Anthropic’s model. Local; not published.
+pop-up labels. Core page: its English for a Chinese source, no quote marks. Chinese page: my Chinese for an English source, no quote marks, then the source's own words in quote marks; a Chinese source shows its own words only	In our English: 	本页中文译文： (then 英文原文：“...”); a Chinese source: 原文：“...”
+pop-up and marks: fixed words	On the record	有公开记录
+pop-up and marks: fixed words	Press report, unnamed sources	媒体报道，未具名消息人士
+pop-up and marks: fixed words	aria-label="record 	aria-label="第

@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>US Licences And Shipments</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap">
+<style>
+
+:root {
+  --page: #f9f9f7; --surface: #fcfcfb; --ink: #0b0b0b; --ink2: #52514e; --muted: #7a7872;
+  --grid: #e1e0d9; --axis: #c3c2b7; --border: rgba(11,11,11,0.12); --wash: rgba(11,11,11,0.045);
+  --toward: #256abf; --away: #c44e18; --us: #898781; --rest: #cfcdc4; --pin-on: #ffffff; --link: #1c5cab;
+  --toward-tint: rgba(37,106,191,0.085); --away-tint: rgba(196,78,24,0.085); --slot: rgba(11,11,11,0.028);
+  --font-text: "Inter", system-ui, -apple-system, "Segoe UI", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+  --font-head: "Space Grotesk", "Inter", system-ui, sans-serif;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --page: #0d0d0d; --surface: #1a1a19; --ink: #f0efec; --ink2: #c3c2b7; --muted: #8f8d86;
+  --grid: #2c2c2a; --axis: #45453f; --border: rgba(255,255,255,0.14); --wash: rgba(255,255,255,0.06);
+  --toward: #3987e5; --away: #d95926; --us: #898781; --rest: #45453f; --pin-on: #0d0d0d; --link: #86b6ef;
+  --toward-tint: rgba(57,135,229,0.14); --away-tint: rgba(217,89,38,0.14); --slot: rgba(255,255,255,0.035); color-scheme: dark } }
+:root[data-theme="dark"] {
+  --page: #0d0d0d; --surface: #1a1a19; --ink: #f0efec; --ink2: #c3c2b7; --muted: #8f8d86;
+  --grid: #2c2c2a; --axis: #45453f; --border: rgba(255,255,255,0.14); --wash: rgba(255,255,255,0.06);
+  --toward: #3987e5; --away: #d95926; --us: #898781; --rest: #45453f; --pin-on: #0d0d0d; --link: #86b6ef;
+  --toward-tint: rgba(57,135,229,0.14); --away-tint: rgba(217,89,38,0.14); --slot: rgba(255,255,255,0.035); color-scheme: dark }
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--page); color: var(--ink); font-family: var(--font-text); font-size: 16px; line-height: 1.5; }
+[hidden] { display: none !important; }
+a { color: var(--link); }
+.wrap { max-width: 1312px; margin: 0 auto; padding: 28px 16px 48px; background: var(--page); }
+#figure { background: var(--page); }
+header { margin-bottom: 18px; }
+.topline { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 4px 24px; margin: 0 0 12px; }
+.eyebrow { font: 700 12px/1.35 var(--font-text); letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin: 0; }
+.draft { font: 500 12px/1.35 var(--font-text); color: var(--muted); margin: 0; }
+h1 { font-family: var(--font-head); font-size: clamp(27px, 3.3vw, 44px); line-height: 1.08; letter-spacing: -0.015em; margin: 0 0 12px; max-width: 27ch; text-wrap: balance; }
+.deck { margin: 0; color: var(--ink2); font-size: 18px; line-height: 1.45; max-width: 82ch; }
+.key { display: flex; flex-wrap: wrap; gap: 9px 26px; margin: 16px 0 0; padding: 0; list-style: none; font-size: 14.5px; color: var(--ink2); }
+.key li { display: flex; align-items: center; gap: 8px; }
+.key b { color: var(--ink); font-weight: 600; }
+i.sw { display: inline-block; flex: none; width: 13px; height: 13px; border-radius: 50%; }
+i.sw.toward { background: var(--toward); } i.sw.away { background: var(--away); }
+.card { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 20px 22px; min-width: 0; }
+.card h2 { font-family: var(--font-head); font-size: 22px; line-height: 1.2; margin: 0 0 4px; text-wrap: balance; }
+.card .sub { margin: 0 0 12px; color: var(--ink2); font-size: 14.5px; max-width: 78ch; }
+.card + .card, .gap { margin-top: 16px; }
+
+/* numbered marks */
+i.p { display: inline-grid; place-items: center; flex: none; width: 22px; height: 22px; border-radius: 50%; font: 700 11px/1 var(--font-text);
+  font-style: normal; font-variant-numeric: tabular-nums; border: 2.5px solid; }
+i.p.toward { border-color: var(--toward); } i.p.away { border-color: var(--away); }
+i.p.neutral { border-color: var(--ink2); } i.p.solid.neutral { background: var(--ink2); color: var(--pin-on); }
+i.p.hollow { background: var(--surface); color: var(--ink); }
+i.p.solid.toward { background: var(--toward); color: var(--pin-on); } i.p.solid.away { background: var(--away); color: var(--pin-on); }
+a.mk { display: flex; align-items: flex-start; gap: 8px; padding: 3px 5px; margin: 0 -5px; border-radius: 8px; text-decoration: none; color: inherit; font-size: 13px; line-height: 1.3; }
+a.mk .mt { padding-top: 2.5px; min-width: 0; }
+a.mk b { font-weight: 700; white-space: nowrap; font-variant-numeric: tabular-nums; }
+a.mk .mt > span { color: var(--ink2); }
+a.mk:hover, a.mk.hl, a.mk:focus-visible { background: var(--wash); outline: none; }
+a.mk:hover i.p, a.mk.hl i.p, a.mk:focus-visible i.p { outline: 2.5px solid var(--ink); outline-offset: 1px; }
+
+/* the records */
+#records { margin-top: 16px; }
+#records summary { display: flex; align-items: baseline; gap: 12px; cursor: pointer; list-style: none; }
+#records summary::-webkit-details-marker { display: none; }
+#records summary h2 { margin: 0 0 4px; }
+#records summary .fold { font-size: 12.5px; color: var(--muted); text-decoration: underline; }
+#records:not([open]) summary h2 { margin-bottom: 0; }
+.cols { display: grid; grid-template-columns: 1fr; gap: 4px 34px; }
+@media (min-width: 900px) { .cols { grid-template-columns: 1fr 1fr; } }
+.lcol h3 { font: 700 13px/1.2 var(--font-text); letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin: 14px 0 8px; }
+.lcol ol { list-style: none; margin: 0; padding: 0; }
+li.ev { display: grid; grid-template-columns: 24px 1fr; gap: 10px; padding: 8px 6px; border-top: 1px solid var(--grid); border-radius: 6px; scroll-margin-top: 14px; overflow-wrap: anywhere; }
+li.ev.hl, li.ev:target { background: var(--wash); }
+.when { font-weight: 700; font-size: 13px; white-space: nowrap; }
+.what { font-size: 14.5px; }
+.said { display: block; font-size: 13.5px; color: var(--ink2); margin-top: 2px; }
+.src { display: block; font-size: 12.5px; color: var(--muted); margin-top: 2px; }
+.notes ul { margin: 6px 0 0; padding-left: 20px; color: var(--ink2); font-size: 14px; max-width: 112ch; }
+.notes li { margin: 4px 0; }
+.care { margin-top: 16px; padding: 14px 18px; border: 1px solid var(--border); border-left: 4px solid var(--ink); border-radius: 10px; background: var(--surface); }
+.care h2 { font: 700 13px/1.2 var(--font-text); letter-spacing: 0.08em; text-transform: uppercase; margin: 0 0 6px; }
+.care p, .care li { font-size: 14.5px; color: var(--ink2); margin: 0; max-width: 118ch; }
+.care ul { margin: 0; padding-left: 18px; } .care li { margin: 3px 0; }
+.care b { color: var(--ink); font-weight: 600; }
+.srcline { font-size: 12.5px; color: var(--muted); margin: 10px 0 0; max-width: 130ch; }
+
+#tip { position: fixed; z-index: 10; max-width: 370px; background: var(--ink); color: var(--page); padding: 10px 12px; border-radius: 10px; font-size: 13px; line-height: 1.4;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.25); pointer-events: none; }
+#tip .tw { font-weight: 700; font-size: 12px; opacity: 0.8; } #tip .tt { font-weight: 600; margin: 2px 0 6px; }
+#tip .tq { font-style: italic; opacity: 0.92; } #tip .te { opacity: 0.92; margin-top: 3px; } #tip .ts { margin-top: 6px; font-size: 12px; opacity: 0.75; }
+
+/* Layout: headline and key; the warning (five yardsticks); the steps (a dated rail, then two lanes: allowed | shipped or sold); read with care; the records. */
+.ys { display: grid; grid-template-columns: 1fr; gap: 6px 22px; margin-top: 8px; }
+@media (min-width: 760px) { .ys { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 1100px) { .ys { grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 6px 14px; } }
+.ys div { border-top: 2px solid var(--ink2); padding-top: 6px; font-size: 13px; line-height: 1.35; color: var(--ink2); }
+.ys div b { display: block; font: 700 14.5px/1.25 var(--font-text); color: var(--ink); margin-bottom: 2px; }
+.st { display: grid; grid-template-columns: minmax(200px, 0.78fr) minmax(0, 1.2fr) minmax(0, 1.2fr); gap: 6px 8px; }
+.st-h { padding: 2px 4px 8px; border-bottom: 3px solid var(--ink2); align-self: end; }
+.st-h.corner { border-color: transparent; font: 700 12px/1.2 var(--font-text); letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); padding-left: 44px; }
+.st-h b { display: block; font: 700 18px/1.2 var(--font-head); }
+.st-h span { display: block; font-size: 12.5px; color: var(--muted); margin-top: 2px; }
+.stw { position: relative; padding: 9px 10px 9px 44px; }
+.stw::before { content: ""; position: absolute; left: 14px; top: -6px; bottom: -6px; border-left: 2px solid var(--axis); }
+.stw.first::before { top: 20px; } .stw.last::before { bottom: calc(100% - 20px); }
+.stw i.p { position: absolute; left: 4px; top: 9px; }
+.stw a { text-decoration: none; color: inherit; display: block; border-radius: 8px; }
+.stw a:hover i.p, .stw a.hl i.p, .stw a:focus-visible i.p { outline: 2.5px solid var(--ink); outline-offset: 1px; }
+.stw b { display: block; font: 700 15.5px/1.25 var(--font-text); font-variant-numeric: tabular-nums; white-space: normal; }
+.stw span { display: block; font-size: 12.5px; line-height: 1.35; color: var(--ink2); margin-top: 2px; }
+.sc { border-radius: 10px; padding: 9px 13px 10px; min-width: 0; background: var(--slot); }
+.sc.has { background: var(--wash); }
+.sc.stop { background: var(--surface); box-shadow: inset 0 0 0 2.5px var(--ink); }
+.sc .cl { display: none; }
+.sc .big { font: 700 23px/1.12 var(--font-head); letter-spacing: -0.012em; text-wrap: balance; }
+.sc .big small { font: 600 15px/1.2 var(--font-text); letter-spacing: 0; color: var(--ink2); }
+.sc .unit { margin: 6px 0 0; padding-left: 8px; border-left: 3px solid var(--ink2); font: 700 11px/1.35 var(--font-text); letter-spacing: 0.05em; text-transform: uppercase; color: var(--ink2); }
+.sc .unit span { font-weight: 500; color: var(--muted); }
+.sc p { font-size: 13px; line-height: 1.4; color: var(--ink2); margin: 6px 0 0; max-width: 56ch; }
+.brk { grid-column: 1 / -1; display: flex; align-items: center; gap: 12px; margin: 8px 0 2px; font: 700 12px/1.3 var(--font-text); letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink); }
+.brk::before { content: ""; width: 30px; border-top: 2px dashed var(--ink); opacity: 0.55; } .brk::after { content: ""; flex: 1; border-top: 2px dashed var(--ink); opacity: 0.55; }
+.scale { font-size: 12.5px; color: var(--muted); margin: 10px 0 0; }
+.lt { margin-top: 16px; padding-top: 12px; border-top: 2px dashed var(--axis); }
+.lt h3 { font: 700 12px/1.3 var(--font-text); letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink); margin: 0 0 8px; }
+.lt table { border-collapse: collapse; font-size: 14px; font-variant-numeric: tabular-nums; }
+.lt th { text-align: left; font: 700 12px/1.3 var(--font-text); color: var(--muted); padding: 4px 18px 6px 0; border-bottom: 1px solid var(--axis); }
+.lt td { padding: 5px 18px 5px 0; border-bottom: 1px solid var(--grid); }
+.lt td:nth-child(n+2), .lt th:nth-child(n+2) { text-align: right; }
+.lt tr.all td { font-weight: 700; border-bottom: 0; }
+.lt p { font-size: 13px; line-height: 1.45; color: var(--ink2); margin: 8px 0 0; max-width: 112ch; }
+@media (max-width: 820px) {
+  .st { display: block; }
+  .st-h { display: none; }
+  .stw { margin-top: 6px; padding-bottom: 4px; }
+  .stw::before { display: none; }
+  .sc { display: none; margin: 6px 0 0 44px; }
+  .sc.has, .sc.stop { display: block; }
+  .sc .cl { display: block; font: 700 11.5px/1.25 var(--font-text); letter-spacing: 0.07em; text-transform: uppercase; color: var(--muted); margin-bottom: 4px; }
+  .sc .big { font-size: 21px; }
+  .brk { margin: 16px 0 4px; }
+}
+
+</style>
+</head>
+<body>
+<div class="wrap">
+ <div id="figure">
+  <header>
+   <div class="topline"><p class="eyebrow">United States · licensed Nvidia chip sales to China · December 2025 to November 2026</p><p class="draft">Draft by Claude, Anthropic’s model. Local; not published.</p></div>
+   <h1>Washington said yes in December 2025. Shipments began in mid‑2026. In November Nvidia said they had stopped.</h1>
+   <p class="deck">11 dated steps on the American side: what Washington allowed, and what officials, Nvidia and the press say went out. In April and May 2026 nothing had been sold or delivered. By July an official called exports minimal. In November Nvidia gave its sales for the quarter and said it was no longer shipping. It gave no reason. Washington’s own table, made public in November, shows 879,868 of Nvidia’s and AMD’s chips approved by May 11, 2026, each approved application marked not shipped, and 55% of the chips in the applications its summary records returned without action.</p>
+   <ul class="key">
+    <li><i class="p solid neutral" aria-hidden="true">1</i><span><b>Filled:</b> on the record (an official, a filing, a government record, a named executive). 9 records</span></li>
+    <li><i class="p hollow neutral" aria-hidden="true">1</i><span><b>Open:</b> a press report citing unnamed people. 2 records</span></li>
+    <li><span>Marks are grey: this figure is about Washington and Nvidia, not about which way Beijing pulled.</span></li>
+   </ul>
+  </header>
+
+  <section class="care" style="margin-top:0">
+   <h2>Read this first: these numbers do not count the same things</h2>
+   <p>No step is a part of the step before it, and none can be subtracted from another. Five different yardsticks are in use:</p>
+   <div class="ys">
+    <div><b>Chips in licence applications</b>Nvidia’s H200 and AMD’s MI325X together. The Commerce Department’s table, status of May 11, 2026.</div>
+    <div><b>Firms, and a ceiling per firm</b>The H200 only. Press reports citing unnamed people.</div>
+    <div><b>Chips received</b>The H200, by two named buyers. A press report citing unnamed people.</div>
+    <div><b>A share of revenue</b>Nvidia’s Data Center revenue in one quarter. Its filing.</div>
+    <div><b>US dollars</b>Licensed Hopper products sold in one quarter. Nvidia’s results calls.</div>
+   </div>
+  </section>
+  <section class="card gap" id="steps">
+<div class="st" role="table" aria-label="Dated steps on the US side">
+<div class="st-h corner">Date and who says it</div>
+<div class="st-h"><b>Washington allowed or licensed</b><span>what could be sold: decisions, licences, ceilings</span></div>
+<div class="st-h"><b>Shipped or sold</b><span>what went out, by officials’, Nvidia’s and press accounts</span></div>
+<div class="stw first"><a class="pinlink" href="#r1" data-n="1" data-tip="1" aria-label="1. Dec 8, 2025: the President’s post. On the record: a government document or an official"><i class="p neutral solid">1</i><b>Dec 8, 2025</b><span>the President’s post</span></a></div>
+<div class="sc has" role="cell"><div class="cl">Washington allowed or licensed</div><div class="big">H200 sales allowed</div><div class="unit"><span>Counted in</span> a decision · no number of chips</div><p>to “approved customers in China”, in the President’s words.</p></div>
+<div class="sc" role="cell"></div>
+<div class="stw"><a class="pinlink" href="#r2" data-n="2" data-tip="1" aria-label="2. From Feb 2026: Nvidia’s quarterly report, looking back. On the record: a filing or a named person"><i class="p neutral solid">2</i><b>From Feb 2026</b><span>Nvidia’s quarterly report, looking back</span></a></div>
+<div class="sc has" role="cell"><div class="cl">Washington allowed or licensed</div><div class="big">Licences granted</div><div class="unit"><span>Counted in</span> licences · H200 · no number given</div><p>for what Nvidia’s filing calls “small amounts of H200 products”.</p></div>
+<div class="sc" role="cell"></div>
+<div class="stw"><a class="pinlink" href="#r3" data-n="3" data-tip="1" aria-label="3. Apr 22, 2026: the Commerce Secretary, to a Senate subcommittee. On the record: a government document or an official"><i class="p neutral solid">3</i><b>Apr 22, 2026</b><span>the Commerce Secretary, to a Senate subcommittee</span></a></div>
+<div class="sc" role="cell"></div>
+<div class="sc has" role="cell"><div class="cl">Shipped or sold</div><div class="big">None sold yet</div><div class="unit"><span>Counted in</span> H200 chips sold</div><p>“So we have not sold them chips as of yet.” He calls it his understanding.</p></div>
+<div class="stw"><a class="pinlink" href="#r4" data-n="4" data-tip="1" aria-label="4. May 14, 2026: Reuters, from unnamed people. Press report citing unnamed people"><i class="p neutral hollow">4</i><b>May 14, 2026</b><span>Reuters, from unnamed people</span></a></div>
+<div class="sc has" role="cell"><div class="cl">Washington allowed or licensed</div><div class="big">about 10 firms, up to 75,000 each</div><div class="unit"><span>Counted in</span> firms, and a ceiling per firm · H200</div><p>By this report of May 14, 2026, from unnamed people. In Washington’s own table (step 11) no approved application is above 75,000.</p></div>
+<div class="sc has" role="cell"><div class="cl">Shipped or sold</div><div class="big">No delivery</div><div class="unit"><span>Counted in</span> H200 deliveries</div><p>“not a single delivery has been made so far”</p></div>
+<div class="stw"><a class="pinlink" href="#r5" data-n="5" data-tip="1" aria-label="5. May 20, 2026: Nvidia, on its results call. On the record: a filing or a named person"><i class="p neutral solid">5</i><b>May 20, 2026</b><span>Nvidia, on its results call</span></a></div>
+<div class="sc" role="cell"></div>
+<div class="sc has" role="cell"><div class="cl">Shipped or sold</div><div class="big">No revenue yet</div><div class="unit"><span>Counted in</span> US dollars · licensed H200 sales</div><p>“we have yet to generate any revenue, and we are uncertain whether any imports will be allowed into the country”</p></div>
+<div class="stw"><a class="pinlink" href="#r6" data-n="6" data-tip="1" aria-label="6. Jul 14, 2026: a Commerce under secretary, to a House committee. On the record: a filing or a named person"><i class="p neutral solid">6</i><b>Jul 14, 2026</b><span>a Commerce under secretary, to a House committee</span></a></div>
+<div class="sc" role="cell"></div>
+<div class="sc has" role="cell"><div class="cl">Shipped or sold</div><div class="big">Shipments have begun</div><div class="unit"><span>Counted in</span> H200 shipments · no number given</div><p>“minimal exports of any H200s to China so far”; the number was “very few”.</p></div>
+<div class="stw"><a class="pinlink" href="#r7" data-n="7" data-tip="1" aria-label="7. Aug 18, 2026: the Financial Times, from unnamed people. Press report citing unnamed people"><i class="p neutral hollow">7</i><b>Aug 18, 2026</b><span>the Financial Times, from unnamed people</span></a></div>
+<div class="sc has" role="cell"><div class="cl">Washington allowed or licensed</div><div class="big">up to 100,000 each</div><div class="unit"><span>Counted in</span> a ceiling per firm · H200</div><p>A higher ceiling than the 75,000 reported in May. The two come from different reports.</p></div>
+<div class="sc has" role="cell"><div class="cl">Shipped or sold</div><div class="big">about 10,000 each, to two buyers</div><div class="unit"><span>Counted in</span> chips received · H200 · ByteDance and Tencent</div><p>received “in recent weeks”, the report says.</p></div>
+<div class="stw"><a class="pinlink" href="#r8" data-n="8" data-tip="1" aria-label="8. Quarter to Jul 26, 2026: Nvidia’s quarterly report, filed Aug 26, 2026. On the record: a filing or a named person"><i class="p neutral solid">8</i><b>Quarter to Jul 26, 2026</b><span>Nvidia’s quarterly report, filed Aug 26, 2026</span></a></div>
+<div class="sc" role="cell"></div>
+<div class="sc has" role="cell"><div class="cl">Shipped or sold</div><div class="big">less than 1% of Data Center revenue</div><div class="unit"><span>Counted in</span> a share of Nvidia’s revenue · H200 shipments under the licences</div><p>Data Center revenue that quarter was $89.0 billion, so less than $0.89 billion (our multiplication). Nvidia: “a fraction of the allowed shipments”.</p></div>
+<div class="stw"><a class="pinlink" href="#r9" data-n="9" data-tip="1" aria-label="9. Quarter to Oct 25, 2026: Nvidia, on its results call of Nov 17, 2026. On the record: a filing or a named person"><i class="p neutral solid">9</i><b>Quarter to Oct 25, 2026</b><span>Nvidia, on its results call of Nov 17, 2026</span></a></div>
+<div class="sc" role="cell"></div>
+<div class="sc has" role="cell"><div class="cl">Shipped or sold</div><div class="big">$2.4 billion sold</div><div class="unit"><span>Counted in</span> US dollars · licensed Hopper products, the H200 among them</div><p>“Q3 sales of licensed Hopper Data Center products to China was $2.4 billion.” About 2% of that quarter’s Data Center revenue of $107.6 billion (our division). No count of chips is given.</p></div>
+<div class="stw"><a class="pinlink" href="#r10" data-n="10" data-tip="1" aria-label="10. Nov 17, 2026: the same results call. On the record: a filing or a named person"><i class="p neutral solid">10</i><b>Nov 17, 2026</b><span>the same results call</span></a></div>
+<div class="sc" role="cell"></div>
+<div class="sc stop" role="cell"><div class="cl">Shipped or sold</div><div class="big">Nvidia says shipments have stopped</div><p>“we are no longer shipping licensed Hopper Data Center products to China”. Nvidia gave no reason.</p></div>
+<div class="brk">Made public two days later: the licence record, looking back</div>
+<div class="stw last"><a class="pinlink" href="#r11" data-n="11" data-tip="1" aria-label="11. Nov 19, 2026: the Commerce Department’s table of licence applications, made public by the House Foreign Affairs Committee. On the record: a government document or an official"><i class="p neutral solid">11</i><b>Nov 19, 2026</b><span>the Commerce Department’s table of licence applications, made public by the House Foreign Affairs Committee</span></a></div>
+<div class="sc has" role="cell"><div class="cl">Washington allowed or licensed</div><div class="big">879,868 approved</div><div class="unit"><span>Counted in</span> chips in licence applications · Nvidia’s H200 and AMD’s MI325X together</div><p>In 21 applications: Nvidia 579,868 in 17, AMD 300,000 in 4. The table holds 54 applications for 3,444,160 chips; each status is in the table below.</p></div>
+<div class="sc has" role="cell"><div class="cl">Shipped or sold</div><div class="big">Not shipped, as of May 11, 2026</div><div class="unit"><span>Counted in</span> licence applications · their status</div><p>Every approved application is marked “Approved, not shipped”.</p></div>
+</div>
+   <div class="lt">
+    <h3>Step 11: Washington’s table by status, May 11, 2026</h3>
+    <table><thead><tr><th>Status</th><th>Chips</th><th>Applications</th></tr></thead><tbody><tr><td>Approved, not shipped</td><td>879,868</td><td>21</td></tr><tr><td>Returned without action</td><td>1,888,950</td><td>9</td></tr><tr><td>Submitted</td><td>600,342</td><td>23</td></tr><tr><td>Rejected</td><td>75,000</td><td>1</td></tr><tr class="all"><td>All</td><td>3,444,160</td><td>54</td></tr></tbody></table>
+    <p>Our sums of the table’s 54 rows; they match the committee’s own totals. Nvidia’s and AMD’s chips are added together, as in the table; a third exporter, Semsotai USA, has 32,850 chips in 4 applications, all still submitted.
+    Returned without action is 55% of the chips in the applications the summary records, among them every application above 75,000 chips (five) and every one for a consignee in Malaysia, Indonesia or Thailand (1,118,500 chips). The table gives no reasons.
+    The committee says the summary does not show every application in full: Nvidia’s application of Dec 19, 2025 “to export 445,000 H200s to Tencent” stands in the table at 75,000, approved. Counted in full, the share returned would be 49.5% (our arithmetic).</p>
+   </div>
+   <p class="scale">The steps are in date order; the spacing is not to scale, and no bar is drawn because the numbers share no scale. A quarter’s figure sits at the date it was made public.</p>
+  </section>
+  <section class="care">
+   <h2>Read with care</h2>
+   <ul>
+    <li><b>Sold or shipped “to China” is not the same as arrived in the mainland.</b> The August report says small batches “have been allowed to enter mainland China” and also that “Beijing wants them to keep the hardware outside mainland China”. Where the chips sold later are now is not known.</li>
+    <li><b>The licence table is Washington’s own record, looking back.</b> It gives each application’s status on May 11, 2026, and was made public on Nov 19, 2026 by the House Foreign Affairs Committee, by unanimous consent. An application names a consignee; it is not an order, and an approval there is Washington’s licence, not Beijing’s.</li>
+    <li><b>This is the American side only.</b> Why so little went out is a separate question: Nvidia’s filing says such sales “were restricted by the PRC government”, and the Commerce Secretary said the Chinese central government had not let the companies buy.</li>
+    <li><b>The last quarter’s filing is not out.</b> Nvidia’s quarterly report (Form 10-Q) for the quarter ended Oct 25, 2026 was not yet filed when looked for on Nov 23, 2026. Its commentary on the quarter says: “We plan to file our 10-Q in the coming weeks.” The $2.4 billion is from its results call and that commentary.</li>
+    <li>Open marks rest on unnamed people. The two ceilings (75,000 and 100,000 a firm) come from two different reports. Washington’s table states no ceiling; no approved application in it is above 75,000.</li>
+    <li>The H200 is, in Reuters’s words, “Nvidia’s second-most powerful AI chip”. Hopper is the chip family it belongs to. BIS is the Commerce Department’s Bureau of Industry and Security; by the committee’s summary the approvals were BIS’s.</li>
+   </ul>
+  </section>
+ </div>
+
+ <details class="card" id="records" open>
+  <summary><h2>The records</h2><span class="fold">show or hide</span></summary>
+  <p class="sub">One line for each numbered step: its date, our summary, the page’s own words, and the source. Point at a step’s number to read the words there.</p>
+  <div class="cols">
+   <section class="lcol"><ol><li id="r1" class="ev" data-n="1"><i class="p neutral solid">1</i><div><span class="when">Dec 8, 2025</span> <span class="what">The President writes that the United States will allow Nvidia to ship its H200 chips to approved customers in China. The post gives no number of chips.</span> <span class="said">“the United States will allow NVIDIA to ship its H200 products to approved customers in China”</span> <span class="src"><a href="https://www.presidency.ucsb.edu/documents/truth-social-posts-december-8-2025">The President, post of Dec 8, 2025, as kept by the American Presidency Project</a> · saved copy cn-clips-followup-3-relay1</span></div></li><li id="r2" class="ev" data-n="2"><i class="p neutral solid">2</i><div><span class="when">From Feb 2026</span> <span class="what">Nvidia’s later quarterly report says the US government began granting licences in February 2026, for what it calls “small amounts” of H200 products to named customers in China.</span> <span class="said">“Beginning in February 2026, the USG granted licenses that would allow us to ship small amounts of H200 products to specific China-based customers”</span> <span class="src"><a href="https://www.sec.gov/Archives/edgar/data/1045810/000104581026000075/nvda-20260726.htm">Nvidia, quarterly report on Form 10-Q for the quarter to Jul 26, 2026</a> · saved copy man-ms-sec-10q-2026-07</span></div></li><li id="r3" class="ev" data-n="3"><i class="p neutral solid">3</i><div><span class="when">Apr 22, 2026</span> <span class="what">The Commerce Secretary, asked in the Senate how many H200 chips had been licensed, answers that none has been sold yet. He calls it his understanding. The words are from a commercial transcript. The committee’s own page for the hearing offers the video and his prepared remarks, and no transcript.</span> <span class="said">“So we have not sold them chips as of yet.”; “That’s my understanding as I sit here with you today.”</span> <span class="src"><a href="https://www.rev.com/transcripts/commerce-department-budget-hearing">Commerce Secretary Howard Lutnick, Senate hearing (Rev’s transcript)</a> · saved copy cn-us-lutnick-0422-rev-transcript-b</span></div></li><li id="r4" class="ev" data-n="4"><i class="p neutral hollow">4</i><div><span class="when">May 14, 2026</span> <span class="what">Reuters, from unnamed people: the Commerce Department has approved about 10 Chinese companies to buy the H200, each “up to 75,000 chips”, and “not a single delivery has been made so far”.</span> <span class="said">“The U.S. Commerce Department has approved around 10 Chinese companies including Alibaba, Tencent, ByteDance and JD.com to purchase Nvidia’s H200 chips”; “each approved customer can purchase up to 75,000 chips under the U.S. licensing terms”</span> <span class="src"><a href="https://web.archive.org/web/20260616124310/https://www.marketscreener.com/news/us-clears-h200-chip-sales-to-10-china-firms-as-nvidia-ceo-looks-for-breakthrough-ce7f5bddd98df020">Reuters, May 14, 2026, as carried by MarketScreener</a> · saved copy cn-acts-reuters-us-approvals-20260514-wayback</span></div></li><li id="r5" class="ev" data-n="5"><i class="p neutral solid">5</i><div><span class="when">May 20, 2026</span> <span class="what">Nvidia says on its results call that the US government has approved licences for the H200, that it has made no revenue from them yet, and that it does not know whether imports will be allowed.</span> <span class="said">“While the US government has approved licenses for H200 to be shipped to China-based customers, we have yet to generate any revenue, and we are uncertain whether any imports will be allowed into the country.”</span> <span class="src"><a href="https://s201.q4cdn.com/141608511/files/doc_financials/2027/q1/NVDA-Q1-2027-Earnings-Call-20-May-2026-5_00-PM-ET.pdf">Nvidia, results call of May 20, 2026 (the transcript on its investor site)</a> · saved copy cn-o38-nvda-q1fy27-call-transcript-pdf</span></div></li><li id="r6" class="ev" data-n="6"><i class="p neutral solid">6</i><div><span class="when">Jul 14, 2026</span> <span class="what">The under secretary of commerce for industry and security tells the House Foreign Affairs Committee that shipments have begun and are “very few”, as Reuters reports.</span> <span class="said">“There have been minimal exports of any H200s to China so far”; “He said shipments of H200 chips have begun but the number was ’very few.’”</span> <span class="src"><a href="https://www.investing.com/news/stock-market-news/us-official-says-shipments-of-h200-chips-to-china-have-begun-4791235">Reuters, Jul 14, 2026, as carried by Investing.com</a> · saved copy man-a7d2f1a9f963</span></div></li></ol></section>
+   <section class="lcol"><ol><li id="r7" class="ev" data-n="7"><i class="p neutral hollow">7</i><div><span class="when">Aug 18, 2026</span> <span class="what">The Financial Times, from unnamed people, as relayed by Reuters: ByteDance and Tencent have each received about 10,000 H200 chips, and the United States “has cleared the companies to purchase up to 100,000 H200 chips each”.</span> <span class="said">“ByteDance and Tencent have each received about 10,000 H200 processors in recent weeks”; “the U.S. has cleared the companies to purchase up to 100,000 H200 chips each”</span> <span class="src"><a href="https://web.archive.org/web/20260908131431/https://www.investing.com/news/stock-market-news/nvidia-h200-chips-reach-china-in-small-shipments-ft-reports-4866385">Reuters, relaying the Financial Times, Aug 18, 2026, as carried by Investing.com</a> · saved copy cn-tolerate-reutersaug26-relay1-wayback</span></div></li><li id="r8" class="ev" data-n="8"><i class="p neutral solid">8</i><div><span class="when">Quarter to Jul 26, 2026</span> <span class="what">Nvidia’s quarterly report: it has “made a fraction of the allowed shipments”, and those shipments are “less than 1% of Data Center revenue” for the quarter. The same report gives Data Center revenue as $89.0 billion.</span> <span class="said">“Those shipments account for less than 1% of Data Center revenue in our most recent quarter.”; “we have made a fraction of the allowed shipments under the USG’s H200 licensing program”</span> <span class="src"><a href="https://www.sec.gov/Archives/edgar/data/1045810/000104581026000075/nvda-20260726.htm">Nvidia, quarterly report on Form 10-Q for the quarter to Jul 26, 2026</a> · saved copy man-ms-sec-10q-2026-07</span></div></li><li id="r9" class="ev" data-n="9"><i class="p neutral solid">9</i><div><span class="when">Quarter to Oct 25, 2026</span> <span class="what">Nvidia says on its results call that its sales of licensed Hopper Data Center products to China in the quarter were $2.4 billion. Its commentary on the quarter gives the same sum, and Data Center revenue of $107.6 billion. Reuters, reporting the call, says the quarter ended Oct 25 and that the Hopper family includes the H200. Nvidia’s quarterly report (Form 10-Q) for this quarter was not yet filed when looked for on Nov 23, 2026.</span> <span class="said">“Q3 sales of licensed Hopper Data Center products to China was $2.4 billion.”</span> <span class="src"><a href="https://s201.q4cdn.com/141608511/files/content_files/NVDA-3Q27-Earnings-Transcript.pdf">Nvidia, results call for the quarter ended Oct 25, 2026 (the transcript on its investor site)</a> · saved copy cn-o38-nvda-q3fy27-call-transcript-pdf</span></div></li><li id="r10" class="ev" data-n="10"><i class="p neutral solid">10</i><div><span class="when">Nov 17, 2026</span> <span class="what">On the same call Nvidia says it is no longer shipping these products to China and that its guidance includes none. It gave no reason. Reuters wrote that its interim chief executive “did not explain why Nvidia had stopped shipping the processors or whether the halt would be permanent”.</span> <span class="said">“we are no longer shipping licensed Hopper Data Center products to China”; “Our guidance does not have any licensed Hopper Data Center products included”</span> <span class="src"><a href="https://s201.q4cdn.com/141608511/files/content_files/NVDA-3Q27-Earnings-Transcript.pdf">Nvidia, results call for the quarter ended Oct 25, 2026 (the transcript on its investor site)</a> · saved copy cn-o38-nvda-q3fy27-call-transcript-pdf</span></div></li><li id="r11" class="ev" data-n="11"><i class="p neutral solid">11</i><div><span class="when">Nov 19, 2026</span> <span class="what">The House Foreign Affairs Committee makes public, by unanimous consent and under its chairman’s powers, the Commerce Department’s table of licence applications for Nvidia’s H200 and AMD’s MI325X, with their status on May 11, 2026. Every approved application is marked “Approved, not shipped”. An application names a consignee; it is not an order, and an approval there is Washington’s licence, not Beijing’s. The committee says the summary does not show every application in full: an Nvidia application of Dec 19, 2025 “to export 445,000 H200s to Tencent” stands in the table at 75,000.</span> <span class="said">“H200 License and Equivalent Application Status as of May 11, 2026”</span> <span class="src"><a href="https://democrats-foreignaffairs.house.gov/wp-content/uploads/2026/11/11.19.26-ECRA-Information-Disclosure-of-BIS-License-Decisions.pdf">Commerce Department, table of May 11, 2026, made public by the House Foreign Affairs Committee on Nov 19, 2026</a> · saved copy cn-usdocs-hfac-decisions-20261119</span></div></li></ol></section>
+  </div>
+ </details>
+</div>
+<div id="tip" hidden></div>
+<script>
+
+const EV = {"1": {"w": "Dec 8, 2025", "l": "washington allowed or licensed", "t": "The President writes that the United States will allow Nvidia to ship its H200 chips to approved customers in China. The post gives no number of chips.", "q": "the United States will allow NVIDIA to ship its H200 products to approved customers in China", "e": "", "s": "The President, post of Dec 8, 2025, as kept by the American Presidency Project", "k": "On the record: a government document or an official"}, "2": {"w": "From Feb 2026", "l": "washington allowed or licensed", "t": "Nvidia’s later quarterly report says the US government began granting licences in February 2026, for what it calls “small amounts” of H200 products to named customers in China.", "q": "Beginning in February 2026, the USG granted licenses that would allow us to ship small amounts of H200 products to specific China-based customers", "e": "", "s": "Nvidia, quarterly report on Form 10-Q for the quarter to Jul 26, 2026", "k": "On the record: a filing or a named person"}, "3": {"w": "Apr 22, 2026", "l": "shipped or sold", "t": "The Commerce Secretary, asked in the Senate how many H200 chips had been licensed, answers that none has been sold yet. He calls it his understanding. The words are from a commercial transcript. The committee’s own page for the hearing offers the video and his prepared remarks, and no transcript.", "q": "So we have not sold them chips as of yet.", "e": "", "s": "Commerce Secretary Howard Lutnick, Senate hearing (Rev’s transcript)", "k": "On the record: a government document or an official"}, "4": {"w": "May 14, 2026", "l": "washington allowed or licensed and shipped or sold", "t": "Reuters, from unnamed people: the Commerce Department has approved about 10 Chinese companies to buy the H200, each “up to 75,000 chips”, and “not a single delivery has been made so far”.", "q": "The U.S. Commerce Department has approved around 10 Chinese companies including Alibaba, Tencent, ByteDance and JD.com to purchase Nvidia’s H200 chips", "e": "", "s": "Reuters, May 14, 2026, as carried by MarketScreener", "k": "Press report citing unnamed people"}, "5": {"w": "May 20, 2026", "l": "shipped or sold", "t": "Nvidia says on its results call that the US government has approved licences for the H200, that it has made no revenue from them yet, and that it does not know whether imports will be allowed.", "q": "While the US government has approved licenses for H200 to be shipped to China-based customers, we have yet to generate any revenue, and we are uncertain whether any imports will be allowed into the country.", "e": "", "s": "Nvidia, results call of May 20, 2026 (the transcript on its investor site)", "k": "On the record: a filing or a named person"}, "6": {"w": "Jul 14, 2026", "l": "shipped or sold", "t": "The under secretary of commerce for industry and security tells the House Foreign Affairs Committee that shipments have begun and are “very few”, as Reuters reports.", "q": "There have been minimal exports of any H200s to China so far", "e": "", "s": "Reuters, Jul 14, 2026, as carried by Investing.com", "k": "On the record: a filing or a named person"}, "7": {"w": "Aug 18, 2026", "l": "washington allowed or licensed and shipped or sold", "t": "The Financial Times, from unnamed people, as relayed by Reuters: ByteDance and Tencent have each received about 10,000 H200 chips, and the United States “has cleared the companies to purchase up to 100,000 H200 chips each”.", "q": "ByteDance and Tencent have each received about 10,000 H200 processors in recent weeks", "e": "", "s": "Reuters, relaying the Financial Times, Aug 18, 2026, as carried by Investing.com", "k": "Press report citing unnamed people"}, "8": {"w": "Quarter to Jul 26, 2026", "l": "shipped or sold", "t": "Nvidia’s quarterly report: it has “made a fraction of the allowed shipments”, and those shipments are “less than 1% of Data Center revenue” for the quarter. The same report gives Data Center revenue as $89.0 billion.", "q": "Those shipments account for less than 1% of Data Center revenue in our most recent quarter.", "e": "", "s": "Nvidia, quarterly report on Form 10-Q for the quarter to Jul 26, 2026", "k": "On the record: a filing or a named person"}, "9": {"w": "Quarter to Oct 25, 2026", "l": "shipped or sold", "t": "Nvidia says on its results call that its sales of licensed Hopper Data Center products to China in the quarter were $2.4 billion. Its commentary on the quarter gives the same sum, and Data Center revenue of $107.6 billion. Reuters, reporting the call, says the quarter ended Oct 25 and that the Hopper family includes the H200. Nvidia’s quarterly report (Form 10-Q) for this quarter was not yet filed when looked for on Nov 23, 2026.", "q": "Q3 sales of licensed Hopper Data Center products to China was $2.4 billion.", "e": "", "s": "Nvidia, results call for the quarter ended Oct 25, 2026 (the transcript on its investor site)", "k": "On the record: a filing or a named person"}, "10": {"w": "Nov 17, 2026", "l": "shipped or sold", "t": "On the same call Nvidia says it is no longer shipping these products to China and that its guidance includes none. It gave no reason. Reuters wrote that its interim chief executive “did not explain why Nvidia had stopped shipping the processors or whether the halt would be permanent”.", "q": "we are no longer shipping licensed Hopper Data Center products to China", "e": "", "s": "Nvidia, results call for the quarter ended Oct 25, 2026 (the transcript on its investor site)", "k": "On the record: a filing or a named person"}, "11": {"w": "Nov 19, 2026", "l": "washington allowed or licensed and shipped or sold", "t": "The House Foreign Affairs Committee makes public, by unanimous consent and under its chairman’s powers, the Commerce Department’s table of licence applications for Nvidia’s H200 and AMD’s MI325X, with their status on May 11, 2026. Every approved application is marked “Approved, not shipped”. An application names a consignee; it is not an order, and an approval there is Washington’s licence, not Beijing’s. The committee says the summary does not show every application in full: an Nvidia application of Dec 19, 2025 “to export 445,000 H200s to Tencent” stands in the table at 75,000.", "q": "H200 License and Equivalent Application Status as of May 11, 2026", "e": "", "s": "Commerce Department, table of May 11, 2026, made public by the House Foreign Affairs Committee on Nov 19, 2026", "k": "On the record: a government document or an official"}};
+const tip = document.getElementById('tip');
+function line(cls, text) { const d = document.createElement('div'); d.className = cls; d.textContent = text; return d; }
+function show(a) {
+  const e = EV[a.dataset.n]; if (!e) return;
+  const kids = [line('tw', [e.w, e.l].filter(Boolean).join(' \u00b7 ')), line('tt', e.t)];
+  if (e.q) kids.push(line('tq', '\u201c' + e.q + '\u201d'));
+  if (e.e) kids.push(line('te', 'Our English: ' + e.e));
+  const foot = [e.s, e.k].filter(Boolean).join(' \u00b7 ');
+  if (foot) kids.push(line('ts', foot));
+  tip.replaceChildren(...kids);
+  tip.hidden = false;
+  const r = a.getBoundingClientRect(), w = tip.offsetWidth, h = tip.offsetHeight;
+  let x = Math.min(Math.max(8, r.left + r.width / 2 - w / 2), window.innerWidth - w - 8), y = r.top - h - 10;
+  if (y < 8) y = r.bottom + 10;
+  tip.style.left = x + 'px'; tip.style.top = y + 'px';
+}
+function hl(n, on) { document.querySelectorAll('[data-n="' + n + '"]').forEach(el => el.classList.toggle('hl', on)); }
+document.querySelectorAll('[data-n]').forEach(el => {
+  const n = el.dataset.n, t = el.hasAttribute('data-tip');
+  el.addEventListener('mouseenter', () => { hl(n, true); if (t) show(el); });
+  el.addEventListener('mouseleave', () => { hl(n, false); tip.hidden = true; });
+  el.addEventListener('focus', () => { hl(n, true); if (t) show(el); });
+  el.addEventListener('blur', () => { hl(n, false); tip.hidden = true; });
+});
+window.addEventListener('scroll', () => { tip.hidden = true; }, { passive: true });
+const recs = document.getElementById('records');
+if (recs && recs.tagName === 'DETAILS') {
+  const toRecord = () => { if (/^#r[0-9]+$/.test(location.hash)) { recs.open = true; const el = document.getElementById(location.hash.slice(1)); if (el) el.scrollIntoView(); } };
+  if (window.matchMedia('(max-width: 820px)').matches && !/^#r[0-9]+$/.test(location.hash)) recs.open = false;
+  document.querySelectorAll('a.mk, a.pinlink, a.u').forEach(a => a.addEventListener('click', () => { recs.open = true; }));
+  window.addEventListener('hashchange', toRecord); toRecord();
+}
+
+</script>
+</body>
+</html>
