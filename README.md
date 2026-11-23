@@ -168,3 +168,5 @@ The sections above describe the source files and were written before the outputs
 
 - The 46 outputs made from this record (a thread, an article, figures, reference pages, two short videos, research notes): [outputs/README.md](outputs/README.md).
 - What was left out, and why: [HELD_BACK.md](HELD_BACK.md).
+- The same as a site, with a page that links everything: https://kevinnbass.github.io/beijing-vs-its-labs/
+- The licence: [LICENSE.md](LICENSE.md).
