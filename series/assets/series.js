@@ -133,9 +133,11 @@
     if (i > 0) extra.push(E('button', {'data-act': 'part', 'data-k': D.order[i - 1], text: '‹ part'}));
     if (i < D.order.length - 1) extra.push(E('button', {'data-act': 'part', 'data-k': D.order[i + 1], text: 'part ›'}));
     var box = E('div', {'class': 'pv'}, [vbar(extra), E('div', {'class': 'kick', text: 'This part of the image'}), E('h2', {text: p.l})]);
-    var m = /(\d+) sources?\b/.exec(p.l || ''), n = p.r.length;
+    var m = /(\d+) sources?\b/.exec(p.l || ''), n = p.r.length, rc = /(\d+) (?:dated )?records\b(?:\D*?\(listed first\)[;,] (?:the other )?(\d+))?/.exec(p.l || '');
+    var why = (m && +m[1] < n) ? ' The image counts sources; this list holds every saved copy behind the part, which can be more.' :      // records: both groups where the label names two ("N records ... (listed first); M are ...")
+      (rc && +rc[1] + (rc[2] ? +rc[2] : 0) > n) ? ' The image counts records; this list holds each saved copy behind the part once, and one copy can carry more than one record, so the list can be shorter.' : '';
     box.appendChild(E('p', {'class': 'mut', text: n === 0 ? 'No document stands behind this part; its heading says what is known and what is not held.' :
-      'It rests on ' + plural(n, 'document', 'documents') + '.' + ((m && +m[1] < n) ? ' The image counts sources; this list holds every saved copy behind the part, which can be more.' : '')}));
+      'It rests on ' + plural(n, 'document', 'documents') + '.' + why}));
     var on = p.r.filter(function (r) { return D.docs[r[0]] && D.docs[r[0]].o === false; }), off = p.r.filter(function (r) { return D.docs[r[0]] && D.docs[r[0]].o !== false; });
     var groups = (n > 12 && on.length && off.length) ? [['On the record', on], ['Not on the record, or kind not given', off]] : [[null, p.r]];
     groups.forEach(function (g) {
@@ -168,9 +170,9 @@
         if (t && p.l.toLowerCase().indexOf(t) < 0) return;
         holder.appendChild(E('li', {}, [E('button', {'data-act': 'part', 'data-k': k}, [E('span', {text: p.l}), E('span', {'class': 'c', text: plural(p.r.length, 'doc.', 'docs.')})])])); });
       else Object.keys(D.docs).forEach(function (id) { var d = D.docs[id];
-        if (t && (d.n + ' ' + d.s + ' ' + d.kw).toLowerCase().indexOf(t) < 0) return;
+        if (t && (d.n + ' ' + d.d + ' ' + d.s + ' ' + d.kw).toLowerCase().indexOf(t) < 0) return;
         var n = (partsOf[id] || []).length;
-        holder.appendChild(E('li', {}, [E('button', {'data-act': 'doc', 'data-id': id}, [E('i', {'class': 'dot' + (d.o === true ? ' o' : d.o === null ? ' u' : '')}), E('span', {text: d.n}), E('span', {'class': 'c', text: n ? plural(n, 'part', 'parts') : ''})])])); });
+        holder.appendChild(E('li', {}, [E('button', {'data-act': 'doc', 'data-id': id}, [E('i', {'class': 'dot' + (d.o === true ? ' o' : d.o === null ? ' u' : '')}), E('span', {text: d.n + (d.d ? ' (' + d.d + ')' : '')}), E('span', {'class': 'c', text: n ? plural(n, 'part', 'parts') : ''})])])); });
     }
     if (!det.hasAttribute('data-made')) { det.setAttribute('data-made', ''); f.addEventListener('input', fill); fill(); }
   }

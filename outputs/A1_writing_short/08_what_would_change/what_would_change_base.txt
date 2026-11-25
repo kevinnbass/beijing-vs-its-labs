@@ -187,7 +187,7 @@ Each document below says which limit it bears on. None would turn the direction 
 Each is a page in the project's outputs folder, named here as folder / folder / file. They give the detail behind the lines that begin Looked for.
 
 - Idea 34, customs figures: A10_trade_data / idea34_customs / customs_figures.html
-- Idea 42, the Hong Kong stockpile: A10_trade_data / idea42_hongkong / hongkong_stockpile.html
+- Idea 42, the reported Hong Kong stockpile: A10_trade_data / idea42_hongkong / hongkong_stockpile.html
 - Idea 37, the hearing's own record: A11_records / idea37_hearing_record / hearing_record.html
 - Idea 38, Nvidia's quarterly report: A11_records / idea38_nvidia_10q / nvidia_10q.html
 - Idea 40, the clips by ear: A8_clips / 40_checked_by_ear / LISTEN_SHEET.html

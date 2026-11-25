@@ -107,7 +107,7 @@ Washington's side is on the record. The table of licence applications for Nvidia
 
 ## The two tiers
 
-- **On the record.** Government documents, company filings, named people speaking on the record, published commentaries of state media or an industry body, a named news outlet's account of a state document, and an institution's own notice. In the argument their reference numbers are filled. In the figure their marks are filled. 251 of the 318 sources that the argument or the figure classes.
+- **On the record.** Government documents, company filings, named people speaking on the record, published commentaries of state media or an industry body, a named news outlet's account of a state document, and an institution's own notice. In the argument their reference numbers are filled. In the figure their marks are filled. 251 of the 318 sources that the argument or the figure classes: the argument's 300, and 18 that the figure uses and the argument does not cite.
 - **Reported.** Press reports that cite unnamed people, a research firm's counts as the press gave them, and caption tracks or machine transcripts that nobody has checked by ear. Their numbers and marks are open. 67 of the 318.
 - What Beijing told companies in private is in the second tier: do not buy, cancel orders, customs holds, who approved what. It is reported, not published policy. No published Chinese order against buying Nvidia chips was found in the 82 policy pages read.
 - **Not classed here.** 797 more sources are named only in the tables or the two evidence files. `sources.csv` gives their address and hash and the files that name them; it does not class them.

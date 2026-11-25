@@ -1,5 +1,5 @@
 {
- "made_utc": "2026-11-25T04:35:24Z",
+ "made_utc": "2026-11-25T06:39:34Z",
  "note": "sha256 of each image's inputs (the figure page, its tagged page, PNG and JPG) and of the page image; a later build lends what has not changed",
  "images": [
   {
@@ -8,10 +8,10 @@
    "page": "index.html",
    "html": "a3066fd31fbf49ed7342b71e2e8ff2d1c3c2e7f86f2498e31204ebda9f9f39e7",
    "nav": "273b3569d163e3f3b5ee006925128e63415a87c1f92f82536677e50b7a87c72c",
-   "png": "f461096eca2ccc6fe1e6cd850109d79c9f8d899edecd3d040cb341c413010dba",
-   "jpg": "2cf5176268f9c61e3abceb67195e01810696919a32a84f1cdff4e88485e87593",
+   "png": "f2eebabd12c284b9e494c3ef868b87acb79987d6a4e400775634408395587106",
+   "jpg": "5ef783480d03f1ff17d6d14512fb4003d6f4310d46a5e85ba938c53b608c1d03",
    "geom": "g1",
-   "display": "eeb2b969c64bf00c2bf53ebaa28f89100c19a252b00c92f8334328864875a804"
+   "display": "0585f9d81595c10cd6cf5210bc6203912832105f0d862ad48fc6a87da46c5875"
   },
   {
    "stem": "bvl-s1-the-whole-story",
@@ -19,10 +19,10 @@
    "page": "02_chapter-I_the-whole-story.html",
    "html": "e2d8f8192246fd9018b2f32c7de13777c48bebadabc9fd123ddeaad61fb03cda",
    "nav": "8b7faa5b036a88c5da2c50de2a98c0da209caa06011413464fea2627851e8514",
-   "png": "ea207cfa104f1cdaeb28af8ab2a811dd96f8ebd4a1be19f4f90640910d1857fd",
-   "jpg": "727de87cc1a49b0d300415812e12802f7a8d0f3ecc12c67aaaade3d77bba05cd",
+   "png": "46950f5b9b01428080e966647efb4d93264bdcd894b1ca35a620352c72df86c1",
+   "jpg": "1843404f7604180797a6b0e09f9a5a95707bb5b72a4271d6776227676a95a729",
    "geom": "g1",
-   "display": "b28a8a18dc6ce042a218372862a94864d70493caf88afd59bfb2fa0187bbd327"
+   "display": "8a261394f24f5598663454e66afac3cee1dab80fcf7d0ddf546cbca643f9f439"
   },
   {
    "stem": "bvl-00-the-board",
@@ -39,12 +39,12 @@
    "stem": "bvl-01-the-pull",
    "position": 4,
    "page": "04_figure-01_the-pull.html",
-   "html": "11f897ca6d389e5f354f82f0283de4fe30035633ec8088917be7b7fcaad19a66",
-   "nav": "739659eeabc70b46ae0e7fdd28da4e508d178ddc67d973e7542e80912d69c29b",
-   "png": "29c42d361bb7072283f5e12313cc6381abd5df0e8a2b435e934ee325a71f0be9",
-   "jpg": "8e3f51c69fe98f69128060811e961d35586e3747eb0000f6b77324b6d86c41ed",
+   "html": "b4aba096594e23541ebcb7611bb7e0b2f0aac48140cd79b81f329e4607b8aca2",
+   "nav": "c5dae7296f99133824c7b0b789b16eed59dcfe982625d00045b08b21a7e6dada",
+   "png": "726cd0db0ebdbd247de7d69edd054a9159fa1124bd8bc7eb66a30b63dd32fc9a",
+   "jpg": "53fa9495806d826504de192f5179dba588fa54c89e4ebcc09de42a95bbac8868",
    "geom": "g1",
-   "display": "7a09650b6077700ccaea2fd07877d6d66698bda3fc6b1df1c5115a6c20a0e25b"
+   "display": "42ac0efd1a83f7e9f4aefa5eb7f78252d8d93d1867f668c13b83e75603efaa56"
   },
   {
    "stem": "bvl-02-four-chips",
@@ -62,7 +62,7 @@
    "position": 6,
    "page": "06_chapter-II_the-declared-line.html",
    "html": "35e0bb7e80d016478cbac47ca6f4c0c1e1d40e94d729822d9e662a3d276e8b39",
-   "nav": "dd77a04dea333c43d160540e57aa0d0ff64d0451e906414ca99b6e01119db7f8",
+   "nav": "1fa8f5859fdd223a45f86a2b725c24c41ed09fc394b44ffdc2d1a965788fc918",
    "png": "38f1c59b2457a41653f0df85b5f72d2321babb335c2c86613b5ee8c7678a3204",
    "jpg": "8de28787017e9e2021b6eecde3eba1ddcbea3ba25b9df50874d82416f44875ab",
    "geom": "g1",
@@ -128,7 +128,7 @@
    "position": 12,
    "page": "12_chapter-III_the-companies.html",
    "html": "63d77c7f1f90ff323e40a9969b47e80a32ee1673d0a84699b20a25978444dc24",
-   "nav": "cfda931cdbdf4bca664d932525436479101dd4588aaf5caf13b65d104e29678c",
+   "nav": "f6d0e0f0fe1de3c7153a1ffdd7e4ffb2a3bbbd8deafc5cb6a717657f768a65d8",
    "png": "7bcbfd061b6b18a51ec96fc01ffa2edcbe56507ffb1f00e6c6515735c69e009e",
    "jpg": "feaff65c8510142fc102231a0a0c1bd195344021b1e716ca884ba0bc8b118482",
    "geom": "g1",
@@ -171,12 +171,12 @@
    "stem": "bvl-s4-what-beijing-did",
    "position": 16,
    "page": "16_chapter-IV_what-beijing-did.html",
-   "html": "f0b8abdfbf39f83d3a8dc56e795a255ae10237d3600b66a60a28265228dd7855",
-   "nav": "962a76f995d278dff2ac680e969b2a2f0cac31992554e208b68c41a0b80c63f7",
-   "png": "078b94df6fa464b673d24880e8bae5a4dfc7edbac713278a49956af3302656a5",
-   "jpg": "b20112471db4ed833a2f1ebc1a71d2b88e3d6f169d9bc1b33e7522998c0e1c11",
+   "html": "111b76162502fa4978ebd38d5173b98ccdfae54379a1423470173a55b8ef6b45",
+   "nav": "cec93b47420d640f870cc2e5d9ae2cc3111e5e87df1d52a25ed5bb49b826a47e",
+   "png": "9a2adf17e073fe10ff31ded3c170d5fb4442748a847cbb433b3c03b46bfcee0d",
+   "jpg": "b19a507c8deb3459d36e256df24cc41e6fae56eb02ffe540622e0f10fd74a5d9",
    "geom": "g1",
-   "display": "118c721057ffe5b811a85975c296b7d6a4ba78f268642d4ccff47ff4eaa77039"
+   "display": "c46f4ed68ce0b11db8f4386edfc5d64eb95661c48651feb768fe58ce57c1de5f"
   },
   {
    "stem": "bvl-11-who-inside-beijing",
@@ -293,7 +293,7 @@
    "position": 27,
    "page": "27_figure-20_tenders.html",
    "html": "68d507b448d835ebc8e55c964cd662dde92d77c37bbb8c61ccce8e6c1a21be96",
-   "nav": "92859e5af7e1985b3db44f0df545239b959f033b6fa135eaa6994bb3926f7229",
+   "nav": "f7dd5ce1f556adcb0068c33ff9689e2ed357b7197f11bb547ba74d59c0abab5d",
    "png": "7255b399a849a059912bd795a80ae9d12dae5a583c57407874b9387bec843f8f",
    "jpg": "043cf0a2df7d30561b3a4fae8210d488ea6855b5b19043f9c7c62d1239a5bb23",
    "geom": "g1",
@@ -304,7 +304,7 @@
    "position": 28,
    "page": "28_chapter-VI_how-it-is-read.html",
    "html": "bcac5aab3335b678620d87dfa34127ca8b0a1aa4bdac2c2bc1e7b272a27c7a9d",
-   "nav": "d770da4de1373f4c6e88fbef27117b423df1f44c64491c155bddff60d442eaee",
+   "nav": "9fed1e1bc6221b8686dd02f4c4af783f122f8109c3fe447e1e064c23c588efc2",
    "png": "2005265f5c0ba3041a69e8ef3d579f249767b29422ed2c13cee81a9343c48949",
    "jpg": "c03acc8fb1b453e3c74156981e9255eab58e917d9e6474fa299339746fde06d2",
    "geom": "g1",
@@ -369,12 +369,12 @@
    "stem": "bvl-26-the-case-against",
    "position": 34,
    "page": "34_figure-26_the-case-against.html",
-   "html": "03de79ec8f923282186bc3a5bc36b96f179f5f2d9d66e287bf068c9404b3a0b9",
-   "nav": "ef60f372a01a9944632b295dec47f7c305f8a1560815040bffce24aca1c33ca5",
-   "png": "5428da93a642c8aaf0dae7deca8dd029506fed5f8627fb3e50bb50b3be4bfe55",
-   "jpg": "c0acbc5e9012ed6838206770be1a760fb733df0ce5d0d4092fe2344f7f97e65f",
+   "html": "3cb0ec9adc335dda70d8038ef755e8dfe84fe35a3e4d5b49ac03feb540258cc1",
+   "nav": "fe8df9d2be22d56a6098ee6f5428427a7a9d62d2968b9aa169660257395534c4",
+   "png": "75800cca59eaee56aa48e9c0b51b999029eb0180fdc5b57e31c6cb32f3d2e29a",
+   "jpg": "3640912ef44d21b73c8ce5aa2ce655c22390222419467ca831be691fdcee7058",
    "geom": "g1",
-   "display": "59f14420544d5695a6c2c6373a3b6fbfcf7c1b75ee79a9f8fde5d341d4517768"
+   "display": "bdc52b43fdaf18ab4300dc3580e19404ca7f9b098b08c472aab2214d97238edd"
   }
  ]
 }

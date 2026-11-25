@@ -14,10 +14,10 @@ First made public Nov 23, 2026 at the owner's word to put everything in; this ve
 The 34 images are in `series/` as their public edition was built: each image as drawn and looked at, its parts naming the documents behind them with their public addresses, and only the words the image itself prints. Nothing else of the series' working folder is here:
 
 - The local viewer's reader pages: they show the text of saved articles round each passage an image rests on. 5275 files.
-- The scripts that build the series: their own checks name, word for word, what the project leaves out. 38 scripts (and 70 earlier copies of them).
-- The series' working notes and data tables: briefs, rulings, round notes, records of the edits to the argument and the figure, records of each look at a page, and the tables the figures are drawn from. 762 files.
+- The scripts that build the series: their own checks name, word for word, what the project leaves out. 38 scripts (and 78 earlier copies of them).
+- The series' working notes and data tables: briefs, rulings, round notes, records of the edits to the argument and the figure, records of each look at a page, and the tables the figures are drawn from. 889 files.
 - The figure pages and pictures the series is drawn from, and the local atlas pages that link them to the reader pages. 240 files.
-- Earlier builds of the public edition. 1368 files.
+- Earlier builds of the public edition. 1938 files.
 
 The saved copies of press articles were never part of this repository: `sources.csv` gives each one's address and hash.
 
