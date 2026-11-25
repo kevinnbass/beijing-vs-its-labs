@@ -15,7 +15,9 @@ run "idea 3" "python3 -I 03_thread/make_thread_plain.py" python3 -I 03_thread/ma
 run "idea 4" "bash 04_right_and_too_flat/build.sh" bash 04_right_and_too_flat/build.sh
 run "idea 5" "python3 -I 05_questions_and_answers/build.py" python3 -I 05_questions_and_answers/build.py
 run "idea 8" "bash 08_what_would_change/build.sh" bash 08_what_would_change/build.sh
-run "idea 33" "python3 -I 33_timeline_plain_text/gen_timeline.py" python3 -I 33_timeline_plain_text/gen_timeline.py
+# round 10 (Nov 25, 2026): A1_SKIP_33="<reason>" leaves idea 33 as it is (a round told to rebuild only some items); unset, it is rebuilt
+if [ -n "${A1_SKIP_33:-}" ]; then echo "== idea 33: not rebuilt: $A1_SKIP_33"
+else run "idea 33" "python3 -I 33_timeline_plain_text/gen_timeline.py" python3 -I 33_timeline_plain_text/gen_timeline.py; fi
 echo "== look checks (render_and_look.py --check; exit 0 required)"
 $RL --check 03_thread/thread.html --with 03_thread/thread_base.txt $AR; rc=$?; echo "exit=$rc"; [ $rc -eq 0 ] || fail=1
 $RL --check 04_right_and_too_flat/right_too_flat.html --with 04_right_and_too_flat/right_too_flat_base.txt 04_right_and_too_flat/extra_refs.tsv $AR; rc=$?; echo "exit=$rc"; [ $rc -eq 0 ] || fail=1

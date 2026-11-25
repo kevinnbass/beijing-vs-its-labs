@@ -273,7 +273,7 @@ def bars(evs):
          f'（{f(h["appr_amd"][0])}枚，{h["appr_amd"][1]}份申请），合计{f(h["appr"][0])}枚。表格“H200 License and Equivalent Application Status as of May 11, 2026”（截至2026年5月11日的H200许可及同类申请状态），'
          '由众议院外交事务委员会于2026年11月19日公布；各项合计为本页所算', []),   # touch-up 6b sync (Nov 24, 2026): the table by its title, as the English builder now names it
         ('华盛顿未予处理即退回：以英伟达为出口商的申请', f(h['rwa_nv'][0]) + '枚', h['rwa_nv'][0], 'us',
-         f'共{h["rwa_nv"][1]}份申请，其中包括收货方在{places}的全部{h["abroad"][1]}份（{f(h["abroad"][0])}枚），收货方名称带有ByteDance、BytePlus、TikTok和Alibaba字样。'
+         f'共{h["rwa_nv"][1]}份申请，其中包括表中芯片所在地为{places}的全部{h["abroad"][1]}份（{f(h["abroad"][0])}枚），所列名称带有ByteDance、BytePlus、TikTok和Alibaba字样。'
          f'加上AMD的{h["rwa_amd"][1]}份，在表内{f(h["all"][0])}枚芯片中占{f(h["rwa"][0])}枚。表格没有说明原因。同一表格', []),
         ('北京方面有条件批准', '超过40万枚', 400_000, 'toward', '对象是字节跳动、阿里巴巴和腾讯。路透社，2026年1月28日', [by(evs, 'ms-bj-20260128-h200-nod-standard')]),
         ('到7月，北京方面考虑放行的总量', '不到20万枚', 200_000, 'toward', 'The Information，经路透社转述，2026年7月8日', [by(evs, 'cn-acts-reuters-ti-cap-20260708-relay1')]),
@@ -642,8 +642,8 @@ def bodies(evs):
     col = lambda title, cls, rows: (f'<div class="bcol"><h4><i class="sw {cls}"></i>{title}</h4><ul>' + ''.join(f'<li><span>{esc(n)}</span><span class="pins">{p}</span></li>' for n, p in rows) + '</ul></div>')
     return ('<div class="bodies">' + col('限制英伟达，或引导买方转向国产芯片', 'away', held) + col('放行，或表示欢迎', 'toward', let) + '</div>'
             '<div class="bodies one">' + col('对英伟达公司本身采取行动', 'away', firm) + '</div>'
-            '<p class="fine">英国《金融时报》（2026年11月13日，援引未具名人士）报道：国家网信办和国家安全部内部侧重安全的官员把对英伟达的依赖看作战略弱点（原文：“viewed dependence on Nvidia as a strategic vulnerability”），'
-            '商务部倾向于进口（原文：“favoured imports”），2025年的限制行动由国家发展改革委牵头（原文：“was led by the National Development and Reform Commission”）。'
+            '<p class="fine">英国《金融时报》（2026年11月13日）报道：国家网信办和国家安全部内部侧重安全的官员把对英伟达的依赖看作战略弱点（原文：“viewed dependence on Nvidia as a strategic vulnerability”），'
+            '商务部倾向于进口（原文：“favoured imports”），据该报未具名的知情人士，2025年的限制行动由国家发展改革委牵头（原文：“was led by the National Development and Reform Commission”）。'
             f'美国贸易代表2026年11月20日说（<a href="{url("cn-le01-greer-bbg-20261120-youtube")}">彭博电视</a>；机器字幕，未经人耳核对，01:06至01:35）：'
             '情况并不像人们让你以为的那样铁板一块（原文：“not as monolithic as people would have you believe”）；'
             '按他自己的分析（原文：“my own analysis”），有人认为希望能买到（原文：“we’d like to have access”），也有人认为反正不要美国芯片（原文：“others who think, well, we don’t want American chips anyway”）。'

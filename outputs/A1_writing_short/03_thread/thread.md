@@ -36,7 +36,7 @@ Order: the claim, the declared line, what the companies bought, what Beijing did
 
 ## What the thread leaves out
 
-- It gives one source for each claim; posts 7 and 9 need more than one. The full argument has 21 points and 392 sources; it is in ARGUMENT_referenced.html in the project folder.
+- It gives one source for each claim; posts 7 and 9 need more than one. The full argument has 21 points and 395 sources; it is in ARGUMENT_referenced.html in the project folder.
 - With five limits and ten posts, the numbers have no post of their own: they stand in limit 3 (post 7). That post carries four reported numbers from three Reuters reports, of Dec 31, 2025, Jan 28, 2026 and Nov 5, 2026. The copy the post cites for the last is CNA's page, which shows only its own date, Nov 6, 2026; Reuters's dateline of Nov 5 stands on Yahoo's copy of the same report, also saved.
 - Washington's side is left out for length: the conditions it set, and its own table of licence applications, which shows chips approved and not shipped and others returned without action. The argument sets them out under its fourth limit.
 - Post 6 names one press report. The public warnings in state media, and the dates they fall between, are in the argument's points 4 and 18.
@@ -45,7 +45,7 @@ Order: the claim, the declared line, what the companies bought, what Beijing did
 
 ## References
 
-Each entry: its kind; what it is; the saved page's own title where the record holds one; the address; the saved copy (research/primary/<id>).
+Each entry: its kind; what it is; the saved page's own title where the record holds one; the address; the id of the saved copy.
 
 [1] Caption track or machine transcript, not checked by ear. Palmer Luckey, in a clip of 56 seconds posted on X by @overton_news, Nov 19, 2026. Words from a machine transcript of the clip (the transcript file is held back: see HELD_BACK.md); nobody has checked them by ear. https://x.com/overton_news/status/2123392702821580811
 

@@ -15,6 +15,10 @@ the 27 transcripts; the five cities, Chengdu now read in a full copy), adds the 
 lists, customs and tariff texts, the reply's words, the catalogues, the SEC record of Nov 25, the hearing prints, Chongqing,
 the count's searches) and withdraws nine wordings the core replaced and one this round found untrue on the page ("the reply names no chip
 maker"); a control finds each of the ten in the page's before-copy of round 9.
+Round 10 (Nov 25, 2026, the core's batch of 20:58 UTC and voucher round 7) moves the SEC record of Nov 25 to its reading of 10:45 UTC
+(the argument's new id), adds the phrases the page now copies (the commission and the market regulator named in full, the Trade
+Representative named, the operator or consignee an application names) and withdraws the four wordings they replace; a control finds
+each of the four in the page's before-copy of round 10.
 Controls: a number changed by one, a share changed by 0.1 and a count changed in a copied phrase must not be found.
 """
 import csv, re, sys
@@ -69,7 +73,7 @@ COPIED = ['the latest annual reports of fifteen US-listed Chinese companies',
           'not a census of every numbered announcement',
           'speaks only of exporters and export controls; it does not answer the question about imports',                               # round 9 (core edit 8b, Fra01-021)
           'three Chinese catalogues, of technologies banned or restricted from import, of goods under import licence, and of dual-use items and technologies under import and export licence',
-          'or on Nov 25, 2026 at 06:49 UTC [cn-ga31-official-sec-submissions-20261125]',
+          'or on Nov 25, 2026 at 10:45 UTC [cn-ga31-official-sec-submissions-20261125-b]',     # round 10 (AP10-28): the reading of 10:45 UTC
           '409 Senate hearing prints of the 119th Congress issued or changed since Apr 22, 2026 holds none of this hearing',
           'Tianjin\'s rule names as its basis the national computing-network opinions of December 2023, which say "鼓励面向中小企业发放算力券、运力券"',
           'no saved page says under which line an importer in China or Hong Kong declares the chips',
@@ -80,7 +84,11 @@ COPIED = ['the latest annual reports of fifteen US-listed Chinese companies',
           "neither document says whether",
           'One Chinese official text sets the chip beside the talks: asked on Jul 18, 2025',            # round 7 (core edit 6e, G): point 21's new sentence
           'the answer neither confirms nor denies that the chip was part of the talks',
-          'despite receiving some licenses, we have since stopped shipping H200s to China']   # round 8 after core edit 7c (R3a): The Standard's words, as point 19 quotes them
+          'despite receiving some licenses, we have since stopped shipping H200s to China',
+          # round 10 (the core's batch of 20:58 UTC, Nov 25, 2026: AP10-C04, AP10-C05, AP10-21)
+          "saw in the move against Nvidia of China's market regulator, the State Administration for Market Regulation,",
+          'the US Trade Representative, Jamieson Greer,',
+          'names a data-centre operator or ultimate consignee; it is not an order']   # round 8 after core edit 7c (R3a): The Standard's words, as point 19 quotes them
 low_arg = ARG.lower()
 miss_arg = [c for c in COPIED if c.lower() not in low_arg]
 miss_page = [c for c in COPIED if c.lower() not in text.lower()]
@@ -111,6 +119,16 @@ if before9.is_file():
     print(f'control: {len(seen)} of the {len(NEW9)} wordings withdrawn in round 9 are found in the before-copy of round 9')
     if len(seen) != len(NEW9): bad.append(f'control: withdrawn wordings not found in the before-copy, so the search may be wrong: {[w for w in NEW9 if w not in seen]}')
 if 'then interim chief executive' not in text.lower(): bad.append('control: the phrase "then interim chief executive" is not found by the same search')
+# round 10: the wordings the core's batch of 20:58 UTC replaced; none may stand in the page, and each must stand in the before-copy of round 10
+WITHDRAWN10 = ['at 06:49 utc', 'an application names a consignee', 'the us-china commission,', "saw in the market regulator's move"]
+hits10 = [w for w in WITHDRAWN10 if w in text.lower()]
+print(f'withdrawn in round 10: {len(WITHDRAWN10)} searched; found: {len(hits10)}')
+if hits10: bad.append(f'withdrawn wordings stand in the page: {hits10}')
+before10 = HERE / 'what_would_change_base.before-round10-20261125.txt'
+if before10.is_file():
+    old10 = before10.read_text(encoding='utf-8').lower(); seen10 = [w for w in WITHDRAWN10 if w in old10]
+    print(f'control: {len(seen10)} of the {len(WITHDRAWN10)} wordings withdrawn in round 10 are found in the before-copy of round 10')
+    if len(seen10) != len(WITHDRAWN10): bad.append(f'control: round 10 wordings not found in the before-copy: {[w for w in WITHDRAWN10 if w not in seen10]}')
 
 line = next((ln for ln in (PROJ / 'tables' / 'trade_derived_figures.tsv').read_text(encoding='utf-8').splitlines()
              if ln.startswith('China customs table 14, Parts and accessories of automatic data processing machines: Jan-Sep 2025 and Jan-Sep 2026 as printed')), None)

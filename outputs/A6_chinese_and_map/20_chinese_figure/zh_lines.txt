@@ -63,7 +63,7 @@ ET Cyberspace regulator summons Nvidia over the security risks of vulnerabilitie
 ES Cyberspace Administration of China
 
 @ BH man-cn-factions-wsj-ding
-D 2025年夏之后
+D 2025年夏一次汇报之后
 T 据知情人士说，在2025年夏华为的一次汇报之后，国务院副总理丁薛祥警告最大的几家AI用户：谁抵制使用国产芯片，谁就是叛徒（原文："a traitor"）。这篇2026年7月23日的报道没有给出警告的日期
 S 《华尔街日报》
 Z 凡是抵制使用国产芯片的，就是叛徒
@@ -293,9 +293,9 @@ ET Party journal's investigation: moving off Nvidia's software is costly and slo
 ES Qiushi and CCID, carried by the National Data Administration
 
 @ CN cn-acts-mofcom-inquiry-20260819
-T 一家企业在商务部网站的公众留言栏咨询如何合规进口H200："我司计划合规进口H200数据中心GPU"；答复只谈出口
+T 一家企业在商务部网站的公众留言栏咨询如何合规进口H200："我司计划合规进口H200数据中心GPU"；答复只谈出口经营者
 S 商务部网站公众留言（2026年8月19日答复）
-ET A company asks the commerce ministry, on its public message board, how to import H200s lawfully; the reply speaks only of exports
+ET A company asks the commerce ministry, on its public message board, how to import H200s lawfully; the reply speaks only of exporters
 ES Ministry of Commerce message board (reply of Aug 19, 2026)
 
 @ CN cn-factions-rtx-orders-oct-wayback
@@ -376,10 +376,10 @@ ET Tencent's chief strategy officer: its cloud business runs mainly inference, w
 ES James Mitchell on Tencent's results call (transcript on a stock-data site)
 
 @ BH cn-le13-yuyuan-qq-20250810b
-T 中央广播电视总台旗下账号玉渊谭天称：H20既不环保，也不先进，也不安全，"作为消费者，我们当然可以选择，不买"
-S 玉渊谭天（中央广播电视总台），载于其腾讯新闻账号
-ET State broadcaster's account: the H20 is neither green, advanced nor safe, and as consumers we can of course choose not to buy it
-ES Yuyuan Tantian (China Media Group), on its own Tencent News channel
+T 玉渊谭天称：H20既不环保，也不先进，也不安全，"作为消费者，我们当然可以选择，不买"
+S 玉渊谭天，载于其腾讯新闻账号
+ET Yuyuan Tantian (玉渊谭天): the H20 is neither green, advanced nor safe, and as consumers we can of course choose not to buy it
+ES Yuyuan Tantian (玉渊谭天), on its own Tencent News channel
 
 @ BH man-ms-sec-10q-2025-10
 T 英伟达季度报告：中国政府限制客户购买、进口或使用其数据中心产品（原文："restricted customers from purchasing, importing, or using our data center products"）；同一份报告还说，美国的出口管制实际上已把公司挡在中国市场之外（原文："we are already effectively foreclosed from the China market by U.S. export controls"）

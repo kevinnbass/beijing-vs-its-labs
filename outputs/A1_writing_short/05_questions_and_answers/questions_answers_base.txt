@@ -37,10 +37,13 @@
 !! cn-counter-b11-5 | 上海市经济和信息化委员会2025年4月30日
 !! cn-counter-b11-5 | 发布日期:2025-11-10
 
-5. **Why would Beijing hold back chips its own companies want?** Its declared policy is to end dependence on foreign core technology and to raise the share of home-made chips: in May 2026 Li Chao, of the state planner's policy research office, said it was guiding home-made large models to do more to adapt to home-made computing chips [cn-policy-ndrc-chip-adaptation-2026]. But what Beijing meant by its acts against Nvidia is not settled, and no Chinese document found states a motive for the unpublished guidance to companies or ties an act against Nvidia to the trade talks, though Beijing's own texts give purposes for its public acts (security, national interests, fair competition). A US commission's report to Congress saw in the market regulator's move against Nvidia "China's willingness to both exert leverage and ease pressure as a negotiating tactic" [cn-usdocs-uscc-2025-ch1], while the US Trade Representative called buying the H200 "a sovereign decision for China" (captions, not checked by ear, at 5:59) [cn-le01-greer-bbg-20260515-subs-ttml].
+5. **Why would Beijing hold back chips its own companies want?** Its declared policy is to end dependence on foreign core technology and to raise the share of home-made chips: in May 2026 Li Chao, of the state planner's policy research office, said it was guiding home-made large models to do more to adapt to home-made computing chips [cn-policy-ndrc-chip-adaptation-2026]. But what Beijing meant by its acts against Nvidia is not settled, and no Chinese document found states a motive for the unpublished guidance to companies or ties an act against Nvidia to the trade talks, though Beijing's own texts give purposes for its public acts (security, national interests, fair competition). The US-China Economic and Security Review Commission, in its report to Congress, saw in the move against Nvidia of China's market regulator, the State Administration for Market Regulation, "China's willingness to both exert leverage and ease pressure as a negotiating tactic" [cn-usdocs-uscc-2025-ch1], while the US Trade Representative, Jamieson Greer, called buying the H200 "a sovereign decision for China" (captions, not checked by ear, at 5:59) [cn-le01-greer-bbg-20260515-subs-ttml].
 !! cn-policy-ndrc-chip-adaptation-2026 | 指导国产大模型加大力度适配国产算力芯片
 !! cn-policy-ndrc-chip-adaptation-2026 | 李超 2026/05/22 政研室
 !! cn-usdocs-uscc-2025-ch1 | The move coincided with SAMR dropping its anti-trust probe into Google
+!! cn-usdocs-uscc-2025-ch1 | U.S.-China Economic and Security Review Commission
+!! cn-usdocs-uscc-2025-ch1 | State Administration for Market Regulation
+!! cn-counter-b22-2 | Jamieson Greer
 !! cn-le01-greer-bbg-20260515-subs-ttml | Will China allow their companies to buy them?
 
 6. **What are the 600,000 chips in Hong Kong?** A number from one press report, not from a record. Reuters, Nov 5, 2026, citing two unnamed people: "About 600,000 of Nvidia's advanced artificial intelligence chips are stored in Hong Kong awaiting shipment to China" [cn-clips-evidence-1]. Asked about that report on Nov 9, 2026, the foreign ministry's spokesman said to ask the departments in charge [cn-acts-mfa-20261109].
@@ -79,7 +82,7 @@ From 2024 the security and planning side of the Chinese state pressed China's AI
 
 ## What these answers leave out
 
-- Each answer gives one to six sources. The full argument has 21 points and 392 sources; it is in ARGUMENT_referenced.html in the project folder.
+- Each answer gives one to six sources. The full argument has 21 points and 395 sources; it is in ARGUMENT_referenced.html in the project folder.
 - Where the chips that Nvidia sold are now is not known.
 - The numbers in questions 4, 6 and 8 are press reports citing unnamed people. Nvidia's own words in question 8 give no number.
 - Question 2, the antitrust case. No saved page says the case has ended. By Nvidia's own account the finding is about what it held back from Chinese customers: "our compliance with applicable U.S. export controls, which required us to offer degraded products to the Chinese market, discriminated unfairly against customers in the China market" [man-ms-sec-10q-2026-07]. The answer does not say what the case shows about Beijing's wishes; that is read more than one way (question 5).
@@ -92,5 +95,7 @@ From 2024 the security and planning side of the Chinese state pressed China's AI
 !! cn-o38-nvda-q3fy27-call-transcript-pdf | conference call for the third quarter of fiscal 2027
 !! cn-counter-b17-1 | October 25, 2026
 !! cn-acts-reuters-halt-20261118-relay2 | did not explain why Nvidia had stopped shipping the processors or whether the halt would be permanent
-- Question 10. The 55% is a share of the chips in the applications that Washington's summary of May 11, 2026 records, Nvidia's H200 and AMD's MI325X together. The committee that made the table public says some applications are "not fully reflected in the May 11, 2026, summary document" [cn-usdocs-hfac-summary-20261119], so it is not a share of everything applied for. An application names a consignee; it is not an order, and an approval there is Washington's licence, not Beijing's.
+- Question 10. The 55% is a share of the chips in the applications that Washington's summary of May 11, 2026 records, Nvidia's H200 and AMD's MI325X together. The committee that made the table public says some applications are "not fully reflected in the May 11, 2026, summary document" [cn-usdocs-hfac-summary-20261119], so it is not a share of everything applied for. An application names a data-centre operator or ultimate consignee; it is not an order, and an approval there is Washington's licence, not Beijing's.
 !! cn-usdocs-hfac-summary-20261119 | Covered integrated circuits are the following products: NVIDIA's H200 and AMD's MI325X.
+!! cn-usdocs-hfac-decisions-20261119 | Data Center Operator or
+!! cn-usdocs-hfac-decisions-20261119 | Ultimate Consignee

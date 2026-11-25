@@ -251,7 +251,7 @@ E migration is costly and adaptation slow
 
 
 @ CN doc 2026-07-30 - cn-acts-mofcom-inquiry-20260819
-T A company asks the commerce ministry, on its public message board, how to import H200s lawfully; the reply speaks only of exports
+T A company asks the commerce ministry, on its public message board, how to import H200s lawfully; the reply speaks only of exporters
 S Ministry of Commerce message board (reply of Aug 19, 2026)
 Q 我司计划合规进口H200数据中心GPU
 E our company plans to import H200 data-centre GPUs in compliance
@@ -358,8 +358,8 @@ Q our cloud business today is primarily running inference
 
 
 @ BH doc 2025-08-10 - cn-le13-yuyuan-qq-20250810b
-T State broadcaster's account: the H20 is neither green, advanced nor safe, and as consumers we can of course choose not to buy it
-S Yuyuan Tantian (China Media Group), on its own Tencent News channel
+T Yuyuan Tantian (玉渊谭天): the H20 is neither green, advanced nor safe, and as consumers we can of course choose not to buy it
+S Yuyuan Tantian (玉渊谭天), on its own Tencent News channel
 Q 作为消费者,我们当然可以选择,不买
 E as consumers we can of course choose not to buy
 

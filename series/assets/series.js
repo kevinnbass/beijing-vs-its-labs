@@ -133,9 +133,10 @@
     if (i > 0) extra.push(E('button', {'data-act': 'part', 'data-k': D.order[i - 1], text: '‹ part'}));
     if (i < D.order.length - 1) extra.push(E('button', {'data-act': 'part', 'data-k': D.order[i + 1], text: 'part ›'}));
     var box = E('div', {'class': 'pv'}, [vbar(extra), E('div', {'class': 'kick', text: 'This part of the image'}), E('h2', {text: p.l})]);
-    var m = /(\d+) sources?\b/.exec(p.l || ''), n = p.r.length, rc = /(\d+) (?:dated )?records\b(?:\D*?\(listed first\)[;,] (?:the other )?(\d+))?/.exec(p.l || '');
+    var ac = /^A count\b\D*?(\d[\d,]*)/.exec(p.l || ''), m = /(\d+) sources?\b/.exec(p.l || ''), n = p.r.length, rc = /(\d+) (?:dated )?records\b(?:\D*?\(listed first\)[;,] (?:the other )?(\d+))?/.exec(p.l || '');
     var why = (m && +m[1] < n) ? ' The image counts sources; this list holds every saved copy behind the part, which can be more.' :      // records: both groups where the label names two ("N records ... (listed first); M are ...")
-      (rc && +rc[1] + (rc[2] ? +rc[2] : 0) > n) ? ' The image counts records; this list holds each saved copy behind the part once, and one copy can carry more than one record, so the list can be shorter.' : '';
+      (rc && +rc[1] + (rc[2] ? +rc[2] : 0) > n) ? ' The image counts records; this list holds each saved copy behind the part once, and one copy can carry more than one record, so the list can be shorter.' :
+      (ac && +ac[1].replace(/,/g, '') !== n) ? ' The image counts what this label names; this list holds the saved copies behind it, which can be more or fewer.' : '';
     box.appendChild(E('p', {'class': 'mut', text: n === 0 ? 'No document stands behind this part; its heading says what is known and what is not held.' :
       'It rests on ' + plural(n, 'document', 'documents') + '.' + why}));
     var on = p.r.filter(function (r) { return D.docs[r[0]] && D.docs[r[0]].o === false; }), off = p.r.filter(function (r) { return D.docs[r[0]] && D.docs[r[0]].o !== false; });

@@ -164,7 +164,10 @@ def main():
     nclass = [next((c for c, ws in NCLASS if any(w in l for w in ws)), None) for l in notices]
     assert None not in nclass, [l for l, c in zip(notices, nclass) if c is None]
     assert nclass.count('drug regulator') == 1 and nclass.count('university') >= 8 and nclass.count('carrier') >= 6, Counter(nclass)
-    assert sum('Purchasing centre for central state bodies' in l for l in notices) == 1, 'the central purchasing centre\'s tender document'
+    # round 10 (the core's batch of 20:58 UTC, Nov 25, 2026, row AP10-23): the award notice's label now names its issuer as the tender document's does,
+    # so two labels begin with the centre's name: its tender document and its award, both of GC-HGX250062 (rung 2's words give both as the centre's)
+    _pc = sorted(l for l in notices if l.startswith('Purchasing centre for central state bodies'))
+    assert len(_pc) == 2 and sum('tender document' in l for l in _pc) == 1 and sum('award notice' in l for l in _pc) == 1 and all('GC-HGX250062' in l for l in _pc), _pc
     assert all(refs.get(s, {}).get('kind') == 'NOTICE' for s in ('cn-ga31-h20notices-7', 'cn-ga31-h20notices-19', 'cn-ga31-operators-63', 'cn-ga31-operators-7', 'cn-ga31-operators-32'))      # the award naming H20 modules, its tender document, and three carrier notices the words of rung 2 rest on
     assert {f for f in ('IDC', 'TrendForce') if any(f in l for l in lab_of('COUNT'))} == {'IDC', 'TrendForce'}, lab_of('COUNT')                                   # research firms' counts (two firms)
     assert all(refs.get(s, {}).get('kind') == 'FIL' for s in ('cn-filings-tianyang-20261013-contract', 'cn-le08-youzu-contract-20261104', 'cn-ga01-hzyl-contract-20261112'))   # listed firms' notices of PRO 5500 purchases: rung 2

@@ -63,8 +63,8 @@ D All our statements are made as of today, November 17, 2026
 
 # ---- rung 3: officials and official records ----
 @ ex-lutnick doc 2026-04-22 - cn-us-lutnick-0422-rev-transcript-b rung=3 dir=neutral
-T the US Commerce Secretary, to a Senate subcommittee
-L The US Commerce Secretary to a Senate subcommittee. He calls it his understanding. The words are from a commercial transcript; the committee's own page for the hearing offers the video and his prepared remarks, and no transcript.
+T the US Commerce Secretary, Howard Lutnick, to a Senate subcommittee
+L The US Commerce Secretary, Howard Lutnick, to a Senate subcommittee. He calls it his understanding. The words are from a commercial transcript; the committee's own page for the hearing offers the video and his prepared remarks, and no transcript.
 S Commerce Secretary Howard Lutnick, Senate hearing (Rev's transcript)
 Q Chinese central government has not let them as of yet buy the chips
 Q So that's my understanding of what's happening.
@@ -82,8 +82,8 @@ N 政研室谢谢您的提问
 
 # ---- rung 4: reports of named people's words or of a state document (a newspaper, a post, a transcript site) ----
 @ ex-bessent rec 2026-11-20 - cn-against2-bessent-orders-20261120 rung=4 dir=neutral
-T the US Treasury Secretary, on CNBC
-L The US Treasury Secretary on CNBC, in CNBC's transcript, which it calls unofficial. He gives it as what "we have seen".
+T the US Treasury Secretary, Scott Bessent, on CNBC
+L The US Treasury Secretary, Scott Bessent, on CNBC, in CNBC's transcript, which it calls unofficial. He gives it as what "we have seen".
 S Treasury Secretary Scott Bessent on CNBC (CNBC's transcript)
 Q I think what we have seen is a paucity of orders from the Chinese on the H200s as they try to build out their own chip stack
 D Friday, November 20, 2026
@@ -121,6 +121,9 @@ D BEIJING, April 1 (Rtrs)
 D PUBLISHED: 2026-04-01
 
 # ---- checked phrases outside the examples ----
+# rungs 3 and 4: the two officials' names, as the argument's point 12 gives them since the core's batch of 20:58 UTC, Nov 25, 2026 (round 10)
+! cn-o37-senate-hearing-page-b | Howard Lutnick
+! cn-against2-bessent-orders-20261120 | Treasury Secretary Scott Bessent
 # a title that stands inside one source's label in the list of sources
 ! man-e2596eab15f4 | Jensen Huang's years-long effort to get close to China
 # rung 2: Nvidia gave no reason for the stop (its own call says none; Reuters says so in terms)

@@ -15,6 +15,9 @@ filing dated after Aug 26, 2026 (so the record reaches past that day).
 (Round 9, Nov 25, 2026: a third record, research/primary/cn-ga31-official-sec-submissions-20261125, fetched Nov 25, 2026 at
 06:49 UTC, which the argument now cites; the page says it too lists no report for that quarter, with filings up to Nov 23;
 before-copy check_filing_feed.before-round9-20261125.py.)
+(Round 10, Nov 25, 2026: the argument now cites the reading of the same record at 10:45 UTC, research/primary/
+cn-ga31-official-sec-submissions-20261125-b (core row AP10-28 to -31; its body has the same sha256 as the 06:49 reading), and so does
+the page; the third record read here is that one. Before-copy check_filing_feed.before-round10-20261125.py.)
 """
 import json, sys
 from pathlib import Path
@@ -22,7 +25,7 @@ from pathlib import Path
 PRIMARY = Path(__file__).resolve().parents[5] / 'research' / 'primary'
 ok = True
 for SID, said_newest in (('cn-le05-sec-submissions-20261123', None), ('cn-ga06-sec-submissions-20261124', '2026-11-23'),
-                          ('cn-ga31-official-sec-submissions-20261125', '2026-11-23')):      # round 9: the record of Nov 25, 2026, 06:49 UTC, which the argument cites
+                          ('cn-ga31-official-sec-submissions-20261125-b', '2026-11-23')):    # round 10: the record of Nov 25, 2026, 10:45 UTC, which the argument cites
     d = PRIMARY / SID
     rec = json.loads((d / 'body.json').read_text(encoding='utf-8'))['filings']['recent']
     fetched = json.loads((d / 'meta.json').read_text())['fetched_utc']

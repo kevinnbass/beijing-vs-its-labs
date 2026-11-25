@@ -208,7 +208,7 @@ def to_md(bl, num, refs, tail):
             o.extend('| ' + ' | '.join(md_inline(c, num) for c in r) + ' |' for r in v[1:]); o.append('')
     if refs is not None:
         o.append('## References\n')
-        o.append('Each entry: its kind; what it is; the saved page\'s own title where the record holds one; the address; the saved copy (research/primary/<id>).\n')
+        o.append('Each entry: its kind; what it is; the saved page\'s own title where the record holds one; the address; the id of the saved copy.\n')
         for sid, n in sorted(num.items(), key=lambda x: x[1]):
             r = refs[sid]; t = title_of(sid) if not sid.startswith('clip-') else ''; a = address(sid, r)
             line = f'[{n}] {KIND[r["kind"]]}. {r["label"]}.'
@@ -249,7 +249,7 @@ CSS = """
 body { margin:0; background:var(--page); color:var(--ink); font-family:var(--font-text); font-size:17px; line-height:1.62; }
 a { color:var(--link); }
 .wrap { max-width:1120px; margin:0 auto; padding:34px 16px 64px; }
-.col { max-width:760px; margin:0 auto; }
+.col { max-width:760px; margin:0 auto; overflow-wrap:break-word; }
 .eyebrow { font:700 12px/1 var(--font-text); letter-spacing:0.1em; text-transform:uppercase; color:var(--muted); margin:0 0 12px; }
 h1 { font-family:var(--font-head); font-size:clamp(28px,4.4vw,44px); line-height:1.08; letter-spacing:-0.015em; margin:0 0 14px; text-wrap:balance; }
 .deck { margin:0 0 14px; color:var(--ink2); font-size:19px; line-height:1.45; }
