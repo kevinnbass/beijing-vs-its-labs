@@ -6,7 +6,11 @@ Run: python3 -I check_numbers.py     (reads only; exit 1 on any difference)
   tables/trade_derived_figures.tsv   China's imports of computer parts, Jan to Sep 2025 and 2026, as printed
   loose_ends/hkexnews_saved_ids.tsv  ids that may no longer be cited: none may stand in the page
   outputs/<folder>/<folder>/<file>   the five notes the page names must exist
-Control: a number changed by one must not be found in the page.
+Round 5 (Nov 24, 2026) adds: the share with the application of 445,000 both ways; words the page copies from the argument
+  (each must stand in argument/argument_base.txt); wordings withdrawn by core edits 5 and 6 (none may stand in the page).
+Round 8 (Nov 25, 2026, core edits 7 and 7c) adds one copied phrase, Nvidia's sentence as The Standard carries it (ruling
+R3a), and withdraws "one carrier" and "one site" (the statement has two carriers).
+Controls: a number changed by one, a share changed by 0.1 and a count changed in a copied phrase must not be found.
 """
 import csv, re, sys
 from pathlib import Path
@@ -26,6 +30,59 @@ for said in (f'{total:,} chips', f'{rwa:,} are in applications marked RWA', f'{p
              f"the table's {len(hl)} rows", f'approved {appr:,} of', f'returned {rwa:,} without action'):
     if said not in text: bad.append(f'the page does not say "{said}"')
 if f'{rwa + 1:,}' in text: bad.append('control: a changed number was found in the page')
+
+# the application of 445,000 the committee names (round 5): the table's only Nvidia row for Tencent of Dec 19, 2025, and
+# the returned share counted with the 445,000 both ways (the argument's section 4; atlas/core_edit/APPLIED_6.txt B1)
+ten = [r for r in hl if r['date_submitted'] == '12/19/2025' and r['exporter'] == 'Nvidia' and r['consignee'].startswith('Tencent')]
+if len(ten) != 1 or chips(ten[0]) != 75000 or ten[0]['status'] != 'Approved, not shipped':
+    bad.append(f'the table does not hold exactly one approved Nvidia row for Tencent of Dec 19, 2025 for 75,000 chips: {ten}')
+else:
+    same, further = 100 * rwa / (total - 75000 + 445000), 100 * rwa / (total + 445000)
+    print(f'with the 445,000: {same:.2f}% if the Tencent row of Dec 19, 2025 is that application, {further:.2f}% if it is a further one')
+    for said in ('The table\'s only Tencent row of that date is an Nvidia application for 75,000 chips, approved',
+                 f'it would be {same:.1f}% if that row is the application and {further:.1f}% if the 445,000 is a further one'):
+        if said not in text: bad.append(f'the page does not say "{said}"')
+    if f'{same + 0.1:.1f}%' in text: bad.append('control: a changed share was found in the page')
+
+# words the page copies from the argument (round 5): each must stand, as written, in argument/argument_base.txt and in the page
+ARG = (PROJ / 'argument' / 'argument_base.txt').read_text(encoding='utf-8')
+COPIED = ['the latest annual reports of fifteen US-listed Chinese companies',
+          "only Alibaba's says a Chinese authority asked firms to stop buying chips",
+          'the 76 results-call transcripts of eight Chinese companies, November 2023 to November 2026, and 42 records of four smaller model makers',   # round 8: 43 -> 42, as the argument now has it (changed after edit 7, Nov 25, 2026)
+          'no speaker and no record names a Chinese authority as restricting chip purchases, though 25 of the transcripts leave out passages spoken in another language',
+          "nor do the President's own posts on four calls with Xi and on two rounds",
+          'of the round of September 2026,',
+          'or of the video calls of Dec 5, 2025 and Apr 30, 2026 was found in the Treasury',
+          'names five calls between Xi and the President from January 2025 to November 2026; both sides',
+          "Of five cities' voucher rules sought, Suzhou's and Wuhu's were reached, Nanjing's only through an application guide, and Chengdu's and Qingyang's only through press accounts",
+          'Tianjin\'s rule names as its basis the national computing-network opinions of December 2023, which say "鼓励面向中小企业发放算力券、运力券"',
+          'no saved page says under which line an importer in China or Hong Kong declares the chips',
+          'Nvidia\'s own classification list, "provided for informational purposes only", gives the subheadings it applies itself: 8471.80 for its HGX H200 and HGX H20 parts, 8473.30 for its H200 NVL and H20 NVL16 parts and 8471.50 for its DGX H200 systems',
+          'has nothing on Nvidia after the notice of Sept 15, 2025',
+          'posted Jun 5, 2026, lists the further investigation with no outcome',
+          'its report of Oct 13, 2026 on the RTX PRO 5500',
+          "neither document says whether",
+          'One Chinese official text sets the chip beside the talks: asked on Jul 18, 2025',            # round 7 (core edit 6e, G): point 21's new sentence
+          'the answer neither confirms nor denies that the chip was part of the talks',
+          'despite receiving some licenses, we have since stopped shipping H200s to China']   # round 8 after core edit 7c (R3a): The Standard's words, as point 19 quotes them
+low_arg = ARG.lower()
+miss_arg = [c for c in COPIED if c.lower() not in low_arg]
+miss_page = [c for c in COPIED if c.lower() not in text.lower()]
+print(f'copied from the argument: {len(COPIED) - len(miss_arg)} of {len(COPIED)} stand in the argument, {len(COPIED) - len(miss_page)} of {len(COPIED)} in the page')
+if miss_arg: bad.append(f'no longer in the argument: {miss_arg}')
+if miss_page: bad.append(f'not in the page: {miss_page}')
+if COPIED[2].replace('76', '77').lower() in low_arg: bad.append('control: a changed count was found in the argument')
+
+# wordings withdrawn by core edits 5 and 6 (round 5): none may stand in the page
+WITHDRAWN = ['were not reached (qingyang', 'voucher rules of five cities were not reached', 'read it two ways', 'no chinese document found states it',
+             'states the motive', "commerce department's table", 'shows that application at 75,000', 'which the table shows at 75,000',
+             'under which line the chips are declared', 'four others are not', 'its interim chief executive', '31 saved official pages', '30 official readouts',
+             '24 of the transcripts', 'hgx boards', 'nvl16 cards',     # the last three: touch-up 6b (Nov 24, 2026), items 22 and 26
+             'one carrier', 'one site']                                # core edit 7c (Nov 25, 2026, ruling R3a): Nvidia's statement has two carriers
+hits = [w for w in WITHDRAWN if w in text.lower()]
+print(f'withdrawn wordings searched: {len(WITHDRAWN)}; found: {len(hits)}')
+if hits: bad.append(f'withdrawn wordings stand in the page: {hits}')
+if 'then interim chief executive' not in text.lower(): bad.append('control: the phrase "then interim chief executive" is not found by the same search')
 
 line = next((ln for ln in (PROJ / 'tables' / 'trade_derived_figures.tsv').read_text(encoding='utf-8').splitlines()
              if ln.startswith('China customs table 14, Parts and accessories of automatic data processing machines: Jan-Sep 2025 and Jan-Sep 2026 as printed')), None)

@@ -2,8 +2,8 @@
 
 @deck It is a sample found by search and proves nothing about proportions. {{N_ALL}} notices from Chinese universities, research institutes and one earthquake agency: {{N_N}} name Nvidia hardware, and {{N_WHU_N}} of those {{N_N}} are one university's (Wuhan University); {{N_H}} name home-made accelerator hardware; {{N_S}} name no accelerator. Later records add China Mobile's purchases, which by the trade press's accounts put the larger part of a 2025 purchase and all of a March 2026 tender on equipment of Huawei's CANN software, and two universities' notices of July 2026 to buy Nvidia's RTX PRO 6000D. A notice to buy is neither a purchase made nor a delivery.
 
-@note Draft by Claude, Anthropic's model. Local; not published.
-@note Written Nov 23, 2026 (UTC) for idea 35 of the chip-policy project, and brought into line the same day with the project's fourth edit of its core. Words between straight double quotes are a page's own words and were found in its saved copy by a script. English in round brackets and in the right-hand column is ours, not an official translation. The press pages cited report published tender documents, not unnamed people. Buyers are named as their notices name them: no saved page calls them public or state bodies, and this note does not.
+@note Draft by Claude, Anthropic's model.
+@note Written Nov 23, 2026 (UTC) for idea 35 of the chip-policy project, and brought into line the same day with the project's fourth edit of its core; its later records were brought into line on Nov 24, 2026 with the core's table of purchase records as it then stood. Words between straight double quotes are a page's own words and were found in its saved copy by a script. English in round brackets and in the right-hand column is ours, not an official translation. The press pages cited report published tender documents, not unnamed people. Buyers are named as their notices name them: no saved page calls them public or state bodies, and this note does not.
 
 ## The question
 
@@ -42,7 +42,9 @@ Idea 35 asked for a census of tenders: how many name Nvidia hardware and how man
 !! cn-counter-b8-2-wayback | April 22, 2024
 - Reuters, Mar 27, 2026: Beihang University "said in a March 16 notice this year it had procured a machine-learning workstation built on a Super Micro system, configured with four Nvidia A100 chips" [cn-counter-b8-3-wayback].
 !! cn-counter-b8-3-wayback | Published 03/27/2026
-- Reuters, Nov 11, 2026: a defence-linked university "bought two H200 chips last month for 874,700 yuan", "according to an October 21 procurement record on its website" [cn-counter-b8-5]. The project's record says that page answered not found when it was fetched on Nov 20, 2026.
+- Reuters, Nov 11, 2026: a defence-linked university "bought two H200 chips last month for 874,700 yuan", "according to an October 21 procurement record on its website" [cn-counter-b8-5]. The project's record says that page answered not found when it was fetched on Nov 20, 2026. An Internet Archive capture of the notice, taken Nov 11, 2026 and saved later, names "NVIDIA H200 141G PCIe显卡2片" (two Nvidia H200 141G PCIe cards) and "成交金额：87.47（万元）" (a contract amount of 874,700 yuan) [cn-ga13-nwpu-som-88690-wayback].
+!! cn-ga13-nwpu-som-88690-wayback | 2026-10-21
+!! cn-ga13-nwpu-som-88690-wayback | web.archive.org/web/20261111052318
 !! cn-counter-b8-5 | 2026-11-11
 - Reuters, Nov 13, 2026, a list of computing-centre projects, among them one in Jilin: "an April government prospectus describes another 2.26 billion yuan" project "combining Nvidia H100 processors with Chinese-developed chips" [cn-tolerate-projects-relay1].
 !! cn-tolerate-projects-relay1 | 2026-11-13
@@ -71,7 +73,7 @@ This is a sample found by search. It proves nothing about proportions. The searc
 
 These are not in the sample or its count. The first was found by this note in its first round; the others were found and saved by a later agent of the project (its table is the core's tables/procurement_records.tsv). Each is quoted here from the saved page.
 
-- **China Mobile, 2025: an inference purchase in six lots.** C114, a telecoms trade site, reported on Aug 19, 2025 that China Mobile's tender for AI inference servers had six lots: "标包1、标包2、标包3和标包4均为类CUDA生态设备，总含税价超17亿元；标包5和标包6为CANN生态设备，总含税价约34亿元" (lots 1 to 4 are equipment of the CUDA-like kind, over 1.7 billion yuan with tax; lots 5 and 6 are equipment of the CANN kind, about 3.4 billion yuan) [cn-o35-c114-cmcc-inference-2025]. The page does not say whose chips the CUDA-like lots hold. China Mobile's own notice is not held.
+- **China Mobile, 2025: an inference purchase in six lots.** C114, a telecoms trade site, reported on Aug 19, 2025 that China Mobile's tender for AI inference servers had six lots: "标包1、标包2、标包3和标包4均为类CUDA生态设备，总含税价超17亿元；标包5和标包6为CANN生态设备，总含税价约34亿元" (lots 1 to 4 are equipment of the CUDA-like kind, over 1.7 billion yuan with tax; lots 5 and 6 are equipment of the CANN kind, about 3.4 billion yuan) [cn-o35-c114-cmcc-inference-2025]. The page does not say whose chips the CUDA-like lots hold. Kunlunxin, Baidu's chip designer, says on its own site that in this purchase's CUDA-like section its products took the largest share in three lots, "在三个标包中均取得份额第一" [cn-ga13-kunlunxin-news-5201-cmcc]: a maker's own claim. China Mobile's own notice is not held.
 !! cn-o35-c114-cmcc-inference-2025 | 2025-8-19
 !! cn-o35-c114-cmcc-inference-2025 | 据来自中国移动的官方信息显示
 - **China Mobile, March 2026: a tender for CANN equipment only.** C114, Mar 17, 2026: "采购产品为人工智能超节点设备（CANN生态），采购规模约为6208卡（776套计算节点）。" (the product bought is AI supernode equipment, of the CANN ecosystem, about 6,208 cards in 776 computing nodes) [cn-le17-c114-w3542-1307004]. On Apr 10, 2026 the same site reported five winning firms, with bids from 2.059 to 2.07 billion yuan, and wrote that the purchase was explicitly tied to Huawei's CANN, "并明确锁定华为CANN" [cn-le17-c114-w118-1308371].
@@ -92,6 +94,12 @@ These are not in the sample or its count. The first was found by this note in it
 !! cn-le17-whuf-134121 | 预算金额(元) 150000.00
 !! cn-le17-whu-131281 | 发布日期:2026-08-13
 !! cn-le17-whu-131281 | 成交金额 54000
+- **Other records of 2026 in the core's table.** That table now holds {{N_PROC}} rows (counted by build.py). Among those of 2026 not described above, university notices name Nvidia cards: Northwestern Polytechnical University's school of cyber security rented a server with an "NVIDIA HGX H200 8-GPU SXM 141GB" module (a result notice of Jan 28, 2026, read in an Internet Archive capture) [cn-ga13-nwpu-cyber-17680-wayback]; Fudan University bought four "英伟达RTX Pro6000计算显卡" (Nvidia RTX Pro6000 compute cards; a result notice of Nov 9, 2026) [cn-ga13-fudan-798838]; Southeast University's result notice of Nov 18, 2026 lists "GPU计算卡 乾端 H100 2块 348000", the model column reading H100 and the brand column the supplier's own name [cn-ga13-ccgp-seu-gpu-card-27711420]. Others name home-made machines: Central China Normal University's award of Nov 24, 2026 is for a "华为Atlas 800I A3" [cn-ga13-ccgp-ccnu-training-27739829], and Peking University's tender of Nov 23, 2026 buys inference cards to "基于国产AI算力开展模型推理验证和算法开发" (run model inference tests and develop algorithms on home-made AI computing) [cn-ga13-ccgp-pku-inference-card-27734000]. A result or award notice records a contract decision, not a delivery.
+!! cn-ga13-nwpu-cyber-17680-wayback | 2026-01-28
+!! cn-ga13-fudan-798838 | 2026-11-09
+!! cn-ga13-ccgp-seu-gpu-card-27711420 | 2026年11月18日
+!! cn-ga13-ccgp-ccnu-training-27739829 | 2026年11月24日
+!! cn-ga13-ccgp-pku-inference-card-27734000 | 2026年11月23日
 - **A count from Wuhan University's own lists.** The same agent saved and read {{N_WHU_L17}} result notices of Wuhan University dated Sept 1, 2025 to Nov 23, 2026, chosen from the university's own lists of result notices. {{N_WHU_L17_NV}} of them name Nvidia somewhere in the notice. build.py recounts both numbers from that agent's tables and checks that each of the {{N_WHU_L17_NV}} saved pages holds the name. They are the notices that agent chose to read, not a census of the university's purchases.
 
 ## Three details in the notices
@@ -113,15 +121,16 @@ These are not in the sample or its count. The first was found by this note in it
 
 - **No purchase notice that names the H20.** Four searches had the name among their words (7, 9, 13, 19); search 13 asked for it alone, on both groups of sites. It returned the Hefei notice for H200 cards in table 1, so it could see a notice that names a chip.
 - **No notice in which a Cambricon, Hygon or Kunlun accelerator is the thing bought.** Four searches asked (6, 8, 14, 15). Searches of the same kind found the Huawei notices in table 2.
-- **No notice from a police body, a court, a procuratorate, a hospital or a weather bureau that names an accelerator.** Searches 16 and 20 asked by those words.
+- **No notice from a police body, a court, a procuratorate, a hospital or a weather bureau that names an accelerator.** Searches 16 and 20 asked by those words. Among the later records, a hospital's tender of Nov 24, 2026 asks for "国产GPU算力机1台" (one home-made GPU computing machine) and names no maker [cn-ga13-ccgp-df-guilin-med-ai-27746099].
+!! cn-ga13-ccgp-df-guilin-med-ai-27746099 | 2026年11月24日
 - **No carrier's own notice.** China Mobile's purchasing site came up in one search and was not opened; a page saved from the national trading platform holds only titles. The China Mobile records in this note are a trade site's accounts.
-- **In the sample, no notice of 2026 that names an Nvidia chip of the A or H series.** Three searches asked for 2026 notices (17, 19, 22). Between them they returned the 2025 notices for the H100 and the H200, so they could see a hit. The later records hold one: Wuhan University's filing of July 2026 for A100 cards [cn-le17-whuf-134121].
+- **In the sample, no notice of 2026 that names an Nvidia chip of the A or H series.** Three searches asked for 2026 notices (17, 19, 22). Between them they returned the 2025 notices for the H100 and the H200, so they could see a hit. The later records hold several: Wuhan University's filing of July 2026 for A100 cards [cn-le17-whuf-134121], Northwestern Polytechnical University's records of January and October 2026 for H200 modules and cards [cn-ga13-nwpu-cyber-17680-wayback] [cn-ga13-nwpu-som-88690-wayback], and Southeast University's result notice of November 2026 for two cards whose model column reads H100 [cn-ga13-ccgp-seu-gpu-card-27711420].
 - **Three notices seen in search summaries were gone.** Two pages at Beihang University and one at Northwestern Polytechnical University answered not found on Nov 23, 2026. By the search summaries, read and not saved, they concerned A100, A800 and RTX 5090 cards. Why the pages are gone is not known.
 
 ## What a reader may and may not conclude
 
 - **May.** That Chinese universities and research institutes published notices naming Nvidia hardware in 2024, 2025 and 2026, and that two universities posted notices in July 2026 to buy the RTX PRO 6000D: these are their own documents. That some of the largest purchases of AI hardware in the sample were made under project names that say home-made. That many award notices name no chip. That, by a trade site's accounts of its notices, China Mobile put about 3.4 of over 5 billion yuan of a 2025 purchase, and all of a March 2026 tender, on CANN-ecosystem equipment.
-- **May not.** Any share, ratio or trend between Nvidia and home-made hardware: this is a sample found by search. That a notice to buy was a purchase made, or that a card named in a notice was delivered. How the cards reached China, or whether any sale met United States export rules: no notice says. Whose chips are in China Mobile's CUDA-like lots. Anything about China's AI companies: none of their purchases is in the sample. Anything about bodies whose purchases are not published.
+- **May not.** Any share, ratio or trend between Nvidia and home-made hardware: this is a sample found by search. That a notice to buy was a purchase made, or that a card named in a notice was delivered. How the cards reached China, or whether any sale met United States export rules: no notice says. Whose chips are in China Mobile's CUDA-like lots, beyond one chip maker's own claim to the largest share of three of them. Anything about China's AI companies: none of their purchases is in the sample. Anything about bodies whose purchases are not published.
 
 ## The files
 

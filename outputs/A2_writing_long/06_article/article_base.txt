@@ -1,7 +1,7 @@
 # China's chip policy pulled against its own AI companies
 @deck From 2024 to 2026 the Chinese state pressed its AI companies to move off Nvidia's chips, and the companies kept ordering them. That holds on direction, with five limits.
 
-@note Draft by Claude, Anthropic's model. Local; not published. Written Nov 23, 2026 (UTC).
+@note Draft by Claude, Anthropic's model. Written Nov 23, 2026 (UTC).
 @note How to read it. Words between quotation marks are a source's exact words, found in the saved copy by a script. A filled reference number is a document, a filing or a named person on the record. An open number is a press report citing unnamed people, a caption track or a machine transcript. Where a statement rests on a Chinese text, the English is our rendering, not an official translation.
 @note The author's interest. Anthropic has argued in public for controls on chip exports to China (that is from the model's general knowledge; no saved page is cited for it), so judge this piece by its sources.
 
@@ -68,13 +68,15 @@ Washington's and Nvidia's are on the record; the rest come from unnamed people.
 
 - Ordered for 2026: "more than 2 million H200 chips" (Reuters, Dec 31, 2025) [cn-labs-h200-two-million-202512-relay1-wayback].
 !! cn-labs-h200-two-million-202512-relay1-wayback | Dec 31 (Reuters)
-- Applied for in Washington by May 11, 2026: 3,444,160 chips, Nvidia's H200 and AMD's MI325X together, in a Commerce Department table the House Foreign Affairs Committee made public on Nov 19, 2026. An application is not an order [cn-usdocs-hfac-summary-20261119] [cn-usdocs-hfac-decisions-20261119] [cn-labs-us-chip-licences-20261119].
+- Applied for in Washington by May 11, 2026: 3,444,160 chips, Nvidia's H200 and AMD's MI325X together, in the table of licence applications from the Commerce Department's Bureau of Industry and Security (BIS) that the House Foreign Affairs Committee made public on Nov 19, 2026. An application is not an order [cn-usdocs-hfac-summary-20261119] [cn-usdocs-hfac-decisions-20261119] [cn-labs-us-chip-licences-20261119] [cn-le04-bis-ear-748].
 !! cn-usdocs-hfac-summary-20261119 | BIS received applications to sell 3,444,160 covered integrated circuits
+!! cn-usdocs-hfac-summary-20261119 | According to a BIS summary provided to the House Foreign Affairs Committee dated May 11, 2026
+!! cn-le04-bis-ear-748 | Bureau of Industry and Security, U.S. Department of Commerce
 !! cn-usdocs-hfac-summary-20261119 | Covered integrated circuits are the following products: NVIDIA's H200 and AMD's MI325X.
 !! cn-usdocs-hfac-decisions-20261119 | H200 License and Equivalent Application Status as of May 11, 2026
 !! cn-labs-us-chip-licences-20261119 | PUBLISHED: 2026-11-19
 !! cn-labs-us-chip-licences-20261119 | Chairman Brian Mast exercised his authorities under the Export Control Reform Act
-- Of those, licensed by Washington and not yet shipped: 879,868 (Nvidia's: 579,868). Returned without action: 1,888,950, or 55% of the chips in the applications the summary records; no reason is given. The sums are ours [cn-usdocs-hfac-summary-20261119] [cn-usdocs-hfac-decisions-20261119].
+- Of those, licensed by Washington and not yet shipped: 879,868 (Nvidia's: 579,868). Returned without action: 1,888,950, or 55% of the chips in the applications BIS's summary records; no reason is given. The sums are ours [cn-usdocs-hfac-summary-20261119] [cn-usdocs-hfac-decisions-20261119].
 !! cn-usdocs-hfac-summary-20261119 | 879,868 covered integrated circuits to PRC companies across 21 license applications
 !! cn-usdocs-hfac-summary-20261119 | not fully reflected in the May 11, 2026, summary document
 !! cn-usdocs-hfac-decisions-20261119 | Approved, not shipped
@@ -98,7 +100,7 @@ Washington's and Nvidia's are on the record; the rest come from unnamed people.
 !! cn-policy-he-welcomes | 欢迎包括英伟达公司在内的更多美资企业深耕中国市场
 !! cn-policy-he-welcomes | 新华社北京4月17日电
 !! man-e2596eab15f4 | NOV 13 2026
-2. **Public warnings and unpublished guidance, not a published ban.** No published order against buying Nvidia chips was found in the 103 policy pages read. Of 42 state-media items on Nvidia chips found, the seven that only warn about them all date from Aug 1 to Sept 24, 2025 [cn-acts-peoplesdaily-bjd-20250801] [cn-media-stdaily-security-forum].
+2. **Public warnings and unpublished guidance, not a published ban.** No published order against buying Nvidia chips was found in the 82 policy pages read. Of 75 state-media items on Nvidia chips found, 11 of the 14 that only warn about them date from Jul 31 to Sept 24, 2025 [cn-ga02-gt-cac-summons-news-202507] [cn-acts-peoplesdaily-bjd-20250801] [cn-media-stdaily-security-forum]; the three found later are in Global Times in 2026, and the items after September 2025 are what two rounds of searches found, a sample and not a full count.
 !! cn-acts-peoplesdaily-bjd-20250801 | 2025-08-01
 !! cn-acts-peoplesdaily-bjd-20250801 | 绝不能让“带病”的芯片上岗
 !! cn-media-stdaily-security-forum | 2025-09-24
@@ -106,7 +108,7 @@ Washington's and Nvidia's are on the record; the rest come from unnamed people.
 4. **The companies had reasons of their own, and American curbs and conditions pushed too.** Alibaba says its chip unit "has brought proprietary GPUs into scaled production" [cn-policy-alibaba-own-gpu]. Nvidia's reports since November 2025 say: "we are already effectively foreclosed from the China market by U.S. export controls" [man-ms-sec-10q-2025-10].
 !! man-ms-sec-10k-fy2026 | we are already effectively foreclosed from the China market by U.S. export controls
 !! man-ms-sec-10q-2026-07 | already effectively foreclosed from the China market by U.S. export controls
-5. **What Beijing meant by it is not settled.** The US-China commission, November 2025, read an antitrust move against Nvidia, made as the regulator dropped a probe into Google, as "signaling China's willingness to both exert leverage and ease pressure as a negotiating tactic" [cn-le03-uscc-2025-full]. The US Trade Representative called the choice to buy "a sovereign decision for China" (captions, not checked by ear, at 5:59) [cn-le01-greer-bbg-20260515-subs-ttml]. The direction stands under either reading.
+5. **What Beijing meant by it is not settled.** The US-China commission, November 2025, read an antitrust move against Nvidia, made as the regulator dropped a probe into Google, as "signaling China's willingness to both exert leverage and ease pressure as a negotiating tactic" [cn-le03-uscc-2025-full]. The US Trade Representative called the choice to buy "a sovereign decision for China" (captions, not checked by ear, at 5:59) [cn-le01-greer-bbg-20260515-subs-ttml]. The direction stands under either reading of what Beijing meant by it.
 !! cn-le03-uscc-2025-full | NOVEMBER 2025
 !! cn-le03-uscc-2025-full | The move coincided with SAMR dropping its anti-trust probe into Google
 !! cn-le01-greer-bbg-20260515-subs-ttml | Will China allow their companies to buy them?

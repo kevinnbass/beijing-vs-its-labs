@@ -8,7 +8,7 @@ Run: python3 -I build.py
    space or the end. Inside a quotation only its last mark counts. Control: a four-sentence answer must count as 4.
 3. Counts the text shows, each taken from a file and compared with the words in the text (the run stops if they differ):
      the argument's points, sources and limits     argument/argument_base.txt, argument/argument_refs.tsv
-     state-media items, and those that only warn    tables/state_media_items.tsv (42; 7, Aug 1 to Sept 24, 2025)
+     state-media items, and those that only warn    tables/state_media_items.tsv (75; 14 only warn, 11 of them from Jul 31 to Sept 24, 2025 and 3 later)
      the share of chips returned without action     tables/house_licence_table.tsv (55% of the table's chips)
    and no id on the do-not-cite list (loose_ends/hkexnews_saved_ids.tsv) may be cited.
 Exit 1 if the build or any check fails.
@@ -76,9 +76,10 @@ def main():
     # state media: all items, and those that only warn
     sm = table('state_media_items.tsv')
     warn = sorted(r['date'] for r in sm if r['stance'] == 'warns')
-    span = f'{day(warn[0])} to {day(warn[-1])}, {warn[-1][:4]}'
+    win = [d for d in warn if d <= '2025-09-24']; late = [d for d in warn if d > '2025-09-24']      # the burst after the summons, and the warnings found later (core edit 6)
+    span = f'{day(win[0])} to {day(win[-1])}, {win[-1][:4]}'
     print(f'state media, from tables/state_media_items.tsv: {len(sm)} items; {len(warn)} only warn, dated {warn[0]} to {warn[-1]} ("{span}")')
-    for said in (f'the {len(sm)} state and Party media items found', f'the {WORDS.get(len(warn))} that only warn', span):
+    for said in (f'the {len(sm)} state and Party media items found', f'{len(win)} of the {len(warn)} that only warn', span, f'the {dict([(3, "three")]).get(len(late), len(late))} found later'):
         if said not in text: bad.append(f'the text does not say "{said}"')
     if 'warn against' in text: bad.append('the text says "warn against": two of the seven items do not speak of buying')
 

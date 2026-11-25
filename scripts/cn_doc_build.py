@@ -44,7 +44,7 @@ def main():
     B.LINK_FILES = False
     B.load_clip()
     refs = B.load_refs()
-    refs.setdefault('clip-pottinger', {'kind': 'CLIP', 'label': 'Matt Pottinger with Christiane Amanpour, in a clip of 2 minutes 22 seconds posted on X by @amanpour, Nov 18, 2026. Words from a speech program\'s transcript of the clip (research/cn_chip_policy_20261120/transcripts_two_clips.md); nobody has checked them by ear', 'addr': 'https://x.com/amanpour/status/2123118808290189692'})
+    refs.setdefault('clip-pottinger', {'kind': 'CLIP', 'label': 'Matt Pottinger with Christiane Amanpour, in a clip of 2 minutes 22 seconds posted on X by @amanpour, Nov 18, 2026. Words from a speech program\'s transcript of the clip (the project's transcript file, held back: see HELD_BACK.md); nobody has checked them by ear', 'addr': 'https://x.com/amanpour/status/2123118808290189692'})
     if '--refs' in opt:
         for ln in Path(opt['--refs']).read_text(encoding='utf-8').splitlines():
             if not ln.strip() or ln.startswith('#'): continue

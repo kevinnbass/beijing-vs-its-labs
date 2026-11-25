@@ -129,8 +129,11 @@ def main():
     t_row = [r for r in lt if r['date_submitted'] == '12/19/2025' and 'Tencent' in r['consignee']]
     assert len(t_row) == 1 and t_row[0]['status'] == 'Approved, not shipped'
     tencent = said(r'to export ([\d,]+) H200s to Tencent')
-    full_pct = rwa[0] / (total - cnt(t_row[0]) + tencent) * 100        # our arithmetic: the share if that application counted in full
-    assert round(rwa_pct) == 55 and round(full_pct, 1) == 49.5, (rwa_pct, full_pct)
+    # round 5 (core edit 6, point 16): neither document says whether the table's only Tencent row of Dec 19, 2025 (75,000,
+    # approved) is the application of 445,000, so both readings are given, as the argument gives them (49.52% or 48.57%)
+    full_pct = rwa[0] / (total - cnt(t_row[0]) + tencent) * 100        # our arithmetic: if that row is the application, counted at 445,000
+    more_pct = rwa[0] / (total + tencent) * 100                         # our arithmetic: if the 445,000 is a further application
+    assert round(rwa_pct) == 55 and round(full_pct, 1) == 49.5 and round(more_pct, 1) == 48.6 and cnt(t_row[0]) == 75_000, (rwa_pct, full_pct, more_pct)
     third = [r for r in lt if r['exporter'] not in ('Nvidia', 'AMD')]
     assert {r['exporter'] for r in third} == {'Semsotai USA'} and all(r['status'] == 'Submitted' for r in third)
     dc3 = [float(m.group(1)) for _, w in by['call']['N'] for m in [re.search(r'Data Center revenue for the third quarter was a record \$([0-9.]+) billion', w)] if m]
@@ -189,7 +192,7 @@ def main():
     <table><thead><tr><th>Status</th><th>Chips</th><th>Applications</th></tr></thead><tbody>{trs}</tbody></table>
     <p>Our sums of the table’s {len(lt)} rows; they match the committee’s own totals. Nvidia’s and AMD’s chips are added together, as in the table; a third exporter, Semsotai USA, has {n(sum(cnt(r) for r in third))} chips in {len(third)} applications, all still submitted.
     Returned without action is {rwa_pct:.0f}% of the chips in the applications the summary records, among them every application above 75,000 chips ({C.WORDS[n_big]}) and every one for a consignee in Malaysia, Indonesia or Thailand ({n(n_abroad)} chips). The table gives no reasons.
-    The committee says the summary does not show every application in full: Nvidia’s application of Dec 19, 2025 “to export 445,000 H200s to Tencent” stands in the table at 75,000, approved. Counted in full, the share returned would be {full_pct:.1f}% (our arithmetic).</p>
+    The committee says the summary does not show every application in full; for example, Nvidia applied on Dec 19, 2025 “to export 445,000 H200s to Tencent”. The table’s only Tencent row of that date is for {n(cnt(t_row[0]))}, approved, and neither document says whether it is that application. If it is, counted at 445,000, the share returned would be {full_pct:.1f}%; if the 445,000 is a further application, {more_pct:.1f}% (our arithmetic).</p>
    </div>""")
 
     figure = f"""
@@ -197,7 +200,7 @@ def main():
    <h2>Read this first: these numbers do not count the same things</h2>
    <p>No step is a part of the step before it, and none can be subtracted from another. Five different yardsticks are in use:</p>
    <div class="ys">
-    <div><b>Chips in licence applications</b>Nvidia’s H200 and AMD’s MI325X together. The Commerce Department’s table, status of May 11, 2026.</div>
+    <div><b>Chips in licence applications</b>Nvidia’s H200 and AMD’s MI325X together. Washington’s licence table, status of May 11, 2026, made public by the House Foreign Affairs Committee.</div>
     <div><b>Firms, and a ceiling per firm</b>The H200 only. Press reports citing unnamed people.</div>
     <div><b>Chips received</b>The H200, by two named buyers. A press report citing unnamed people.</div>
     <div><b>A share of revenue</b>Nvidia’s Data Center revenue in one quarter. Its filing.</div>
@@ -239,7 +242,7 @@ def main():
     out = C.finish(HERE, NAME, page, lines)
     C.records_tsv(HERE / 'records.tsv', recs, [('lane', lambda r: '; '.join(LANES[x][0] for x in r['lanes'])), ('numbers_shown', lambda r: '; '.join(f'{k}={x}' for k, x in r['V'].items()))])
     print(f'steps {len(recs)}; on the record {n_solid}, press reports {n_open}; licence table {len(lt)} rows, {n(total)} chips, by status {st}, approved by exporter {ex}, '
-          f'returned {rwa_pct:.1f}% ({full_pct:.1f}% with the Tencent application in full); our arithmetic: under ${under:.2f} billion, third-quarter share {pct3:.2f}%; {summary}')
+          f'returned {rwa_pct:.1f}% ({full_pct:.1f}% if the Tencent row is the 445,000 application, {more_pct:.1f}% if that is a further one); our arithmetic: under ${under:.2f} billion, third-quarter share {pct3:.2f}%; {summary}')
     if '--png' in sys.argv:
         C.export_png(out, [('#figure', HERE / f'{NAME}.png')])
 

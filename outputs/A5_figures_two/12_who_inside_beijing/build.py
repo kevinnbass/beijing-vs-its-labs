@@ -128,7 +128,12 @@ def main():
     # counts taken from the project's tables
     sm = C.table('state_media_items.tsv'); st = Counter(r['stance'] for r in sm)
     warns = sorted(date.fromisoformat(r['date']) for r in sm if r['stance'] == 'warns')
-    assert len(sm) == 42 and len(warns) == 7 and st['mixed'] == 4, (len(sm), st)
+    # round 5 (core edit 6): rows 43 to 75 were added (found by searches and links; after Sept 24, 2025 a sample, not a census).
+    # The warnings up to Sept 24, 2025 (the burst after the summons) and the later ones, as the core figure's state_media() counts them.
+    win = [d for d in warns if d <= date(2025, 9, 24)]; late = [r for r in sm if r['stance'] == 'warns' and date.fromisoformat(r['date']) > date(2025, 9, 24)]
+    iso = sorted(date.fromisoformat(r['date']) for r in sm if re.fullmatch(r'\d{4}-\d\d-\d\d', r['date']))
+    assert (len(sm), len(warns), len(win), len(late), st['mixed']) == (75, 14, 11, 3, 8), (len(sm), st)
+    assert all(r['outlet'].startswith('Global Times') and r['date'].startswith('2026') for r in late), late
     media_ids = {r['saved_id'] for r in sm if r['stance'] == 'warns'}
     assert all(r['sid'] in media_ids for r in recs if 'media' in r['rows']), 'a state-media mark is not one of the census\'s warning items'
     pr = Counter(r['result'] for r in C.table('provinces_31.tsv')); assert sum(pr.values()) == 31, pr
@@ -179,9 +184,9 @@ def main():
    <ul>
     <li><b>Open marks rest on unnamed people.</b> In the answers found, Beijing’s spokespeople confirmed none of them: “我不了解你提到的情况” (I am not aware of what you mention), said the foreign ministry on Aug 13, 2025; asked on Nov 9, 2026 about the chips stored in Hong Kong, it said “具体情况建议向中方主管部门询问” (for the details, ask the competent Chinese departments).</li>
     <li><b>The marks are a selection, not a count.</b> An act by several bodies is drawn once in each body’s row, with the same number. The grouping of the rows is ours. {C.WORDS[len(away_rows)].capitalize()} named bodies and people have a mark on the side that points away from Nvidia and {C.WORDS[len(toward_rows)]} on the side that points toward it; the industry ministry is on both.</li>
-    <li><b>The state-media marks are warnings, not orders.</b> Of {len(sm)} state and Party media items on Nvidia chips found from July 2025 to November 2026, the {C.WORDS[len(warns)]} that only warn about them all date from {C.fmt(warns[0])} to {C.fmt(warns[-1])}; {C.WORDS[st['mixed']]} others mix a warning with a welcome. The security ministry’s article names no maker.</li>
-    <li><b>No published order against buying Nvidia chips was found</b> in the 103 policy pages read. The purchase rules bind Party and government bodies. Every share for home-made computing hardware found in a published text is a province’s or a city’s ({pr['share']} of 31 provincial-level governments were found to set one); the national computing-network opinions of December 2023 set none. These shares are not drawn.</li>
-    <li>The chip at issue changed: the H20 (2024 to 2025), the RTX Pro 6000D (2025), the H200 (from December 2025). English renderings of Chinese are ours, not official translations.</li>
+    <li><b>The state-media marks are warnings, not orders.</b> Of {len(sm)} state and Party media items on Nvidia chips found from {C.MON[iso[0].month - 1]} {iso[0].year} to {C.MON[iso[-1].month - 1]} {iso[-1].year}, {len(win)} of the {len(warns)} that only warn about them date from {C.fmt(win[0])} to {C.fmt(win[-1])}, and the {C.WORDS[len(late)]} found later are in Global Times in 2026; {C.WORDS[st['mixed']]} others mix a warning with a welcome. The items after September 2025 are what two rounds of searches found, a sample and not a full count. The security ministry’s article names no maker.</li>
+    <li><b>No published order against buying Nvidia chips was found</b> in the 82 policy pages read. The purchase rules bind Party and government bodies. No published national plan found sets a home-made share for computing centres: every such share found is a province’s or a city’s ({pr['share']} of 31 provincial-level governments were found to set one for home-made computing hardware), and the national computing-network opinions of December 2023 set none. These shares are not drawn.</li>
+    <li>The chip at issue in these marks changed: the H20 (2024 to 2025), the RTX Pro 6000D (2025), the H200 (from December 2025). English renderings of Chinese are ours, not official translations.</li>
    </ul>
   </section>"""
 
@@ -208,7 +213,7 @@ def main():
     C.records_tsv(HERE / 'records.tsv', recs, [('body', lambda r: '; '.join(ROWNAME[k].replace('“', '').replace('”', '') for k in r['rows'])), ('kind_of_act', lambda r: COLNAME[r['col']]), ('direction', lambda r: r['dir'])])
     per = {ck: sum(r['col'] == ck for r in recs) for ck in COLKEYS + ['case']}
     print(f'records {len(recs)} ({per}); on the record {n_solid}, press reports {n_open}; bodies and people with a mark away {len(away_rows)}, toward {len(toward_rows)}, on both {both}; '
-          f'state media {len(sm)} items, {len(warns)} warn ({C.fmt(warns[0])} to {C.fmt(warns[-1])}); provinces with a share {pr["share"]} of 31; {summary}')
+          f'state media {len(sm)} items, {len(warns)} warn ({len(win)} from {C.fmt(win[0])} to {C.fmt(win[-1])}, {len(late)} later), {st["mixed"]} mixed; provinces with a share {pr["share"]} of 31; {summary}')
     if '--png' in sys.argv:
         C.export_png(out, [('#figure', HERE / f'{NAME}.png')])
 

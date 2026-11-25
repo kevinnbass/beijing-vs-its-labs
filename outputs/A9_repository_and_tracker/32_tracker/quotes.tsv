@@ -50,6 +50,7 @@ man-a7d2f1a9f963	There have been minimal exports of any H200s to China so far
 man-a7d2f1a9f963	very few
 cn-tolerate-reutersaug26-relay1-wayback	ByteDance and Tencent have each received about 10,000 H200 processors in recent weeks
 cn-tolerate-reutersaug26-relay1-wayback	10,000
+cn-acts-reuters-rtx5500-20260927	The ministry told some Chinese companies the government intends to approve the purchases
 cn-tolerate-mof	中国企业在境外自建自营算力中心
 cn-labs-h20-orders-20250402-relay1	have placed at least $16 billion in orders for
 cn-labs-h20-orders-20250402-relay1	$16 billion
@@ -97,6 +98,10 @@ cn-acts-mofcom-20261117	对中国企业与其他国家企业正常贸易合作�
 cn-le26-iflytek-ir-20260821	其他模型厂商普遍使用性能领先两代的英伟达芯片
 cn-o36-tencent-call-20261118-sa	no matter when you actually started leasing or building capacities outside of China
 cn-o36-tencent-call-20261118-sa	It sets everyone back in China
+cn-acts-reuters-rtx5500-20260927	China's Ministry of Industry and Information Technology recently asked companies including ByteDance and Alibaba to report their plans to purchase Nvidia's RTX PRO 5500 chips
+cn-acts-reuters-rtx5500-20260927	The Information reported on Sunday, citing two people familiar with the matter
+cn-acts-reuters-rtx5500-20260927	Reuters could not immediately verify the report.
+cn-acts-reuters-rtx5500-20260927	Sept 27 (Reuters)
 cn-acts-reuters-us-approvals-20260514-wayback	Nvidia commanded about 95% of China's advanced chip market
 cn-acts-reuters-ti-cap-20260708-relay1	it could amount to fewer than 200,000 in total
 cn-clips-evidence-1	About 600,000 of Nvidia's advanced artificial intelligence chips are stored in Hong Kong awaiting shipment to China
@@ -209,6 +214,7 @@ cn-le14-itsec-scope-20230727	送测单位应为中国境内注册的实体
 cn-le14-mof-us-firms-measures-20260622	采购人在政府采购活动中，不得采购46家美国企业（不包括在华美资企业）生产的产品。
 cn-le14-mof-us-firms-measures-20260622	财库〔2026〕10号
 cn-le14-mof-us-firms-list-20260622	Lockheed Martin
+cn-le15-sheitc-8cea38	市区协同给予最多1年、最高100%的租金补贴
 cn-counter-b4-2	使用国产算力设施开展模型训练、推理和应用的企业补贴比例不超过算力合同费用的30%，使用其他算力设施的企业补贴比例不超过算力合同费用的20%
 cn-counter-b4-2	杭州市人民政府办公厅 2024年7月18日
 cn-le25-zhejiang-ai-measures-2025-smartcity	使用自主算力服务的，可 按照不高于合同实际执行金额的30%给予补助
@@ -294,7 +300,7 @@ cn-usside-017	November 1, 2025
 cn-le25-samr-2025-merger-review-20260410	对英伟达公司实施进一步调查
 cn-o39b-shanxi-measures-2024-jincheng	按照算力服务合同金额的20%，给予总额不超过100万元的“算力券”奖励
 cn-o39b-shanxi-measures-2024-jincheng	按照算力服务合同金额的30%，给予总额不超过200万元的“算力券”奖励
-cn-o39b-shanxi-measures-2024-jincheng	成文日期： 2024年12月09日
+cn-o39b-shanxi-measures-2024-jincheng	山西省人民政府办公厅 2024年6月25日
 cn-o39b-shanxi-measures-2024-jincheng	本措施自2024年7月1日起施行
 cn-le28-sz-longhua-2024-20hao	补贴额度不超过企业采购金额的30%，上限不超过300万元
 cn-le28-sz-longhua-2024-20hao	成文日期： 2024-11-27
@@ -314,6 +320,19 @@ cn-le28-shandong-ai-measures-2025-smartcity	按规定给予不超过算力交易
 cn-le28-shandong-ai-measures-2025-smartcity	2025年5月12日，山东省政府新闻办举行省政府政策例行吹风会
 cn-le28-hunan-aiplus-smartcity	对购买算力服务的企业，按不超过年度算力总支出的30%给予补贴，最高不超过1000万元
 cn-le28-hunan-aiplus-smartcity	2025年10月30日，湖南发布《湖南省贯彻落实国务院“人工智能+”行动的实施方案》
+cn-ga05-sichuan-compute-net-measures-jiemian	设立“算力券”，对企业购买国产算力费用给予支持，一般企业支持比例不超过20%，成立3年内的初创企业可提高至30%、人工智能一人公司（OPC）可提高至40%，每家单位每年支持最高不超过100万元
+cn-ga05-sichuan-compute-net-measures-jiemian	本办法自印发之日起实施
+cn-ga05-sichuan-compute-net-measures-cls-20260813	财联社8月13日电，《四川省推进算力网建设的若干政策措施（试行）》发布
+cn-ga04-wh-voucher-rule-2026-24hao	算力使用方按照智算服务合同实际发生费用的 25 ％兑付
+cn-ga04-wh-voucher-rule-2026-24hao	具身智能等未来产业领域企业，经有关部门会商认定后，兑付比例提升至 45 ％
+cn-ga04-wh-voucher-rule-2026-24hao	兑付比例提升至 70 ％，单个企业每年最高兑付不超过 10 万元
+cn-ga04-wh-voucher-rule-2026-24hao	芜湖市数据资源管理局 2026 年 7 月 15 日
+cn-ga04-sz-suzhou-aiplus-2026-18hao	对符合条件的科技研发企业，按实际支付智能算力租用费用的 30%，给予每年最高200万元补贴
+cn-ga04-sz-suzhou-aiplus-2026-jiedu	本《若干措施》自2026年1月31日起施行，有效期至2027年1月30日
+cn-ga04-sz-suzhou-aiplus-2025-5hao	按实际支付人工智能算力费用 20% 给予每年最高 200 万元补贴
+cn-ga04-sz-suzhou-aiplus-2025-5hao	2025年2月13日苏州市人民政府苏府规字〔2025〕5号文发布
+cn-ga04-tj-voucher-rule-sina-20250514	按照算力服务合同的10%申请算力券，同一企业每年度累计兑现算力券金额不超过200万元
+cn-ga04-tj-voucher-rule-sina-20250514	2025年05月14日 15:33 看点资讯
 cn-le15-chengdu-sina-6a5ce645	自主可控智能算力不超过服务费用的50%、非自主可控智能算力不超过服务费用的30%
 cn-labs-baidu-ascend-2023-relay1	Baidu ordered 1,600 of Huawei
 man-cn-factions-wsj-ding	July 23, 2026
@@ -343,16 +362,41 @@ man-cn-ft-20251009-customs	Teams of customs officers have been mobilised
 cn-usdocs-hfac-decisions-20261119	H200 License and Equivalent Application Status as of May 11, 2026
 cn-labs-us-chip-licences-20261119	November 19, 2026
 cn-counter-b17-1	We plan to file our 10-Q in the coming weeks.
+cn-usdocs-hfac-summary-20261119	According to a BIS summary provided to the House Foreign Affairs Committee dated May 11, 2026
+cn-usdocs-hfac-summary-20261119	NVIDIA applied on December 19, 2025, to export 445,000 H200s to Tencent
+cn-le04-bis-ear-748	Bureau of Industry and Security, U.S. Department of Commerce
+cn-ga06-sec-submissions-20261124	FETCHED: 2026-11-24
+cn-ga01-bnn-turnaround-20261123	may not be permitted into China
+cn-acts-mfa-20261112	你提到的具体情况我不了解
+cn-ga15-mfa-20261123	关于美国出口管制措施，中方此前已表明立场
+cn-acts-reuters-rtx5500-20260927	intends to approve the purchases
+cn-acts-reuters-rtx5500-20260927	could not immediately verify the report
+cn-acts-reuters-rtx5500-20260927	citing two people familiar with the matter
+cn-acts-reuters-rtx5500-20260927	report their plans to purchase Nvidia's RTX PRO 5500 chips
+cn-le04-dailycaller-20261120	PUBLISHED: 2026-11-20
+cn-ga06-nvda-8k-20261123-pdf	Date: November 23, 2026
+cn-ga06-nvda-8k-20261123-pdf	On November 22, 2026, the Board of Directors of NVIDIA Corporation reinstated
+cn-le04-standard-900000-20261120	in a statement
+cn-le04-standard-900000-20261120	despite receiving some licenses, we have since stopped shipping H200s to China
+cn-le04-standard-900000-20261120	PUBLISHED: 2026-11-20T04:57:40.000+0800
+cn-le04-dailycaller-20261120	PUBLISHED: 2026-11-20T20:29:43.000Z
 cn-le05-sec-submissions-20261123	2026-07-26
 cn-le05-sec-submissions-20261123	FETCHED: 2026-11-23
+cn-ga06-sec-submissions-20261124	2026-07-26
+cn-ga06-sec-submissions-20261124	"filingDate":["2026-11-23"
 cn-counter-b17-1	CFO Commentary on Third Quarter Fiscal 2027 Results
 cn-counter-b17-1	October 25, 2026
 cn-o38-nvda-q3fy27-call-transcript-pdf	Q3 sales of licensed Hopper Data Center products to China was $2.4 billion
 cn-acts-reuters-halt-20261118-relay2	did not explain why Nvidia had stopped shipping the processors or whether the halt would be permanent
+cn-le04-standard-900000-20261120	subject to strict conditions and limited volumes
+cn-le04-dailycaller-20261120	The review and licensing process spanned more than half a year, with approvals subject to strict conditions and limited volumes.
+cn-le04-dailycaller-20261120	Despite receiving some licenses, we have already stopped shipping H200s to China.
 cn-o38-nvda-q3fy27-call-transcript-pdf	All our statements are made as of today, November 17, 2026
 cn-acts-reuters-halt-20261118-relay2	in the quarter ended October 25
+cn-ga06-nvda-8k-20261123-pdf	On November 22, 2026, the Board of Directors of NVIDIA Corporation reinstated Jen-Hsun Huang as NVIDIA's President, Chief Executive Officer and member of the Board of Directors, effective immediately.
+cn-le04-standard-900000-20261120	Nvidia said in a statement that the approvals were
+cn-le04-dailycaller-20261120	a company spokesperson told the Daily Caller News Foundation
 cn-le04-meeks-remarks-20261119	unanimous consent
-cn-usdocs-hfac-summary-20261119	NVIDIA applied on December 19, 2025, to export 445,000 H200s to Tencent
 cn-labs-us-chip-licences-20261119	Chairman Brian Mast exercised his authorities under the Export Control Reform Act
 cn-usdocs-hfac-summary-20261119	Covered integrated circuits are the following products: NVIDIA's H200 and AMD's MI325X.
 cn-usdocs-hfac-summary-20261119	BIS received applications to sell 3,444,160 covered
@@ -367,6 +411,23 @@ cn-le01-greer-bbg-20261120-subs-ttml	We want war chips
 cn-le01-greer-bbg-20261120-autocaps-ttml	But the Chinese side did not raise this issue with us.
 cn-le01-greer-bbg-20261120-autocaps-ttml	Ambassador Greer was on that trip with the president.
 cn-le01-greer-bbg-20261120-subs-ttml	They're quite eager to get the most advanced chips they can within the Chinese government
+cn-ga01-bnn-turnaround-20261123	have begun canceling orders
+cn-ga01-bnn-turnaround-20261123	could not determine the scale of the cancellations or whether the US or China would restrict shipments
+cn-ga01-bnn-turnaround-20261123	could require Chinese government approval
+cn-ga01-bnn-turnaround-20261123	PUBLISHED: 2026-11-23T12:59:32.848Z
+cn-ga01-bnn-turnaround-20261123	Some Chinese customers have begun canceling orders amid concerns that the RTX PRO 5500
+cn-ga01-bnn-turnaround-20261123	a graphics card designed for professional computers that can also run AI models
+cn-ga01-bnn-turnaround-20261123	Large purchases of this new Nvidia chip by internet companies such as ByteDance and Alibaba could require Chinese government approval, according to two people familiar with the matter
+cn-ga01-bnn-turnaround-20261123	industry regulator did not respond to comment requests
+cn-acts-mfa-20261112	你提到的具体情况我不了解。中方在美国输华芯片问题上的立场是一贯的。
+cn-acts-mfa-20261112	2026年11月12日外交部发言人毛宁主持例行记者会
+cn-acts-mfa-20261112	法新社记者：位于西安的中国西北工业大学的采购记录显示，该校购买了英伟达H200芯片，而该芯片受到美国的出口管制
+cn-acts-mfa-20261112	毛宁：你提到的具体情况我不了解
+cn-acts-mfa-20261112	我们坚决反对美方泛化国家安全概念
+cn-ga15-mfa-20261123	2026年11月23日外交部发言人郭嘉昆主持例行记者会
+cn-ga15-mfa-20261123	路透社记者：美国总统特朗普称只愿向中国出售旧款芯片，正就此与中方进行沟通
+cn-ga15-mfa-20261123	是否正与美方进行谈判
+cn-ga15-mfa-20261123	郭嘉昆：关于美国出口管制措施，中方此前已表明立场
 cn-le25-samr-news-list-p08-20261123	市场监管总局暂停对杜邦中国集团有限公司的反垄断调查程序
 man-ms-sec-10q-2026-07	our compliance with applicable U.S. export controls, which required us to offer degraded products to the Chinese market, discriminated unfairly against customers in the China market
 cn-le25-samr-2025-merger-review-20260410	2026-04-10

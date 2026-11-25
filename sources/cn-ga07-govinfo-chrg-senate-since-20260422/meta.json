@@ -1,0 +1,7 @@
+{
+ "id": "cn-ga07-govinfo-chrg-senate-since-20260422",
+ "url": "https://api.govinfo.gov/collections/CHRG/2026-04-22T00:00:00Z?offsetMark=*&pageSize=1000&congress=119&docClass=shrg&api_key=DEMO_KEY",
+ "route": "https://api.govinfo.gov/collections/CHRG/2026-04-22T00:00:00Z?offsetMark=*&pageSize=1000&congress=119&docClass=shrg&api_key=DEMO_KEY",
+ "fetched_utc": "2026-11-24T10:29:51Z",
+ "sha256": "b36c13550785b6fff8387a8d507ade99181b84c75b9bb1ff618def011ec03491"
+}

@@ -26,6 +26,10 @@ tracker.html is written only if every check passes:
 It also prints a date screen (is each record's date written in its saved page?). For records already in the list that
 is a report, not a stop; add_record.py refuses a new record whose date is not in its page unless a reason is given.
 A quotation that is found shows what the source says, not that it is true.
+Round 8 (core edit 7, Nov 25, 2026): a record of the figure's data file may carry an "N" line, its fixed number in the
+figure (record 62 keeps 62 though it stands at its date among the others). This page shows no record numbers, so the
+line is read (as scripts/cn_figure_build.py reads it) and checked only to be a whole number given to one record;
+a record added here with add_record.py takes no "N" line.
 """
 import html, re, subprocess, sys
 from datetime import date
@@ -63,19 +67,23 @@ def smart(s): return re.sub(r'"([^"]*)"', '“\\1”', s).replace("'", '’')
 
 
 def load_data(f):
-    """Return (records, extra checks). A record: lane, kind, date, dl (date label or None), sid, T, S, Q, E, U, C."""
+    """Return (records, extra checks). A record: lane, kind, date, dl (date label or None), sid, T, S, Q, E, U, C, N (the
+    figure's fixed number, or '')."""
     evs, checks, cur = [], [], None
     for n, ln in enumerate(f.read_text(encoding='utf-8').splitlines(), 1):
         if not ln.strip() or ln.startswith('#'): continue
         if ln.startswith('@ '):
             p = ln.split()
             if len(p) != 6 or p[1] not in LANES or p[2] not in KINDS: sys.exit(f'{f.name} line {n}: bad record line: {ln[:70]}')
-            cur = dict(lane=p[1], kind=p[2], date=date.fromisoformat(p[3]), dl=None if p[4] == '-' else p[4].replace('_', ' '), sid=p[5], T='', S='', Q='', E='', U='', C='', line=n)
+            cur = dict(lane=p[1], kind=p[2], date=date.fromisoformat(p[3]), dl=None if p[4] == '-' else p[4].replace('_', ' '), sid=p[5], T='', S='', Q='', E='', U='', C='', N='', line=n)
             evs.append(cur)
         elif ln.startswith('! '):
             sid, q = ln[2:].split(' | ', 1); checks.append((sid.strip(), q.strip()))
-        elif ln[:2] in ('T ', 'S ', 'Q ', 'E ', 'U ', 'C ') and cur is not None: cur[ln[0]] = ln[2:].strip()
+        elif ln[:2] in ('T ', 'S ', 'Q ', 'E ', 'U ', 'C ', 'N ') and cur is not None: cur[ln[0]] = ln[2:].strip()
         else: sys.exit(f'{f.name} line {n} not understood: {ln[:70]}')
+    fixed = [e['N'] for e in evs if e['N']]
+    if any(not x.isdigit() or int(x) < 1 for x in fixed) or len(set(fixed)) != len(fixed):
+        sys.exit(f'{f.name}: an "N" line (a fixed record number) is not a whole number above 0, or is given twice: {fixed}')
     return evs, checks
 
 
@@ -210,7 +218,8 @@ def verify(evs, checks, log):
 
 
 def house(f):
-    """Counts of the Commerce Department's table (a copy of tables/house_licence_table.tsv). Returns (values, problems)."""
+    """Counts of the licence table the House Foreign Affairs Committee made public (a copy of tables/house_licence_table.tsv).
+    Returns (values, problems)."""
     lines = [ln for ln in f.read_text(encoding='utf-8').splitlines() if ln.strip() and not ln.startswith('#')]
     head = lines[0].split('\t'); rows = [dict(zip(head, ln.split('\t'))) for ln in lines[1:]]
     bad = []
@@ -225,6 +234,8 @@ def house(f):
     if any(r['status'] != 'RWA' for r in rows if r['n'] > cap): bad.append('house table: an application above the largest approved one is not RWA')
     ten = [r for r in rows if r['date_submitted'] == '12/19/2025' and r['exporter'] == 'Nvidia' and 'Tencent' in r['consignee']]
     if len(ten) != 1: bad.append(f'house table: {len(ten)} rows for Nvidia\'s application of Dec 19, 2025 for Tencent (one expected)')
+    ten_any = [r for r in rows if r['date_submitted'] == '12/19/2025' and 'Tencent' in r['consignee']]
+    if len(ten_any) != 1: bad.append(f'house table: {len(ten_any)} Tencent rows of Dec 19, 2025 from any exporter (the state of play says the table has only one)')
     if not L.has(f'export {TENCENT_FULL:,} H200s to Tencent', SUMMARY): bad.append('the summary does not give the Tencent application at the figure used here')
     tch = ten[0]['n'] if ten else 0
     v = dict(ALL=f'{allc:,}', ALL_N=str(len(rows)), RWA=f'{rwa:,}', RWA_N=str(len(st('RWA'))), RWA_PCT=f'{round(100 * rwa / allc)}%',
@@ -232,7 +243,8 @@ def house(f):
              APPR_AMD=S([r for r in appr if r['exporter'] == 'AMD']), APPR_AMD_N=str(sum(r['exporter'] == 'AMD' for r in appr)),
              SUB=S(st('Submitted')), SUB_N=str(len(st('Submitted'))), REJ=S(st('Rejected')), REJ_N=str(len(st('Rejected'))),
              SEA=S(sea), CAP=f'{cap:,}', TENCENT_CHIPS=f'{tch:,}', TENCENT_STATUS=(ten[0]['status'].lower() if ten else '?'),
-             ALT_PCT=f'{100 * rwa / (allc - tch + TENCENT_FULL):.1f}%')
+             ALT_PCT=f'{100 * rwa / (allc - tch + TENCENT_FULL):.1f}%',      # if the table's Tencent row is the committee's application of 445,000
+             ALT_FURTHER_PCT=f'{100 * rwa / (allc + TENCENT_FULL):.1f}%')           # if the 445,000 is a further application, not in the table
     if sum(len(st(s)) for s in ('RWA', 'Approved, not shipped', 'Submitted', 'Rejected')) != len(rows): bad.append('house table: statuses do not add up')
     return v, bad
 
@@ -398,7 +410,7 @@ PAGE = """<!doctype html>
  <p class="eyebrow">China · Nvidia chips · the dated record, kept up to date</p>
  <h1>Beijing mostly pulled one way on Nvidia chips. Its AI companies pulled the other.</h1>
  <p class="deck">%%N%% dated records of what Chinese authorities did about Nvidia’s chips and what China’s big AI companies did, newest first, under the state of play and a dated log. The exceptions on each side are listed too: Beijing sometimes let chips in, and the companies also turned to home-made ones.</p>
- <p class="note">Draft by Claude, Anthropic’s model. Local; not published. Last entry in the log: %%LAST%%.</p>
+ <p class="note">Draft by Claude, Anthropic’s model. Last entry in the log: %%LAST%%.</p>
  <ul class="key">
   <li><i class="m away solid"></i><span><b>Orange, away from Nvidia:</b> holding it back, or choosing home-made chips. %%N_AWAY%% records</span></li>
   <li><i class="m toward solid"></i><span><b>Blue, toward Nvidia:</b> buying it, using it, letting it in. %%N_TOWARD%% records</span></li>
@@ -434,10 +446,10 @@ PAGE = """<!doctype html>
  <h2>Read with care</h2>
  <ul>
   <li>Open marks rest on unnamed people. What they say Beijing told companies is reported, not published policy.</li>
-  <li>No published Chinese order against buying Nvidia chips was found in the 103 policy pages read. The published acts against Nvidia that were found are a summons and an antitrust case.</li>
+  <li>No published Chinese order against buying Nvidia chips was found in the 82 policy pages read. The published acts against Nvidia that were found are a summons and an antitrust case.</li>
   <li>The records are a selection made to show both sides, not a census. The number of records on a side is not a measure.</li>
   <li>A quotation that is found shows what the source says, not that it is true.</li>
-  <li>The state of play is written on its date from the saved sources; it does not update itself. Its counts of the Commerce Department’s table are a script’s sums of the table’s rows, and they add Nvidia’s and AMD’s chips together.</li>
+  <li>The state of play is written on its date from the saved sources; it does not update itself. Its counts of the licence table that the House Foreign Affairs Committee made public are a script’s sums of the table’s rows, and they add Nvidia’s and AMD’s chips together.</li>
   <li>Caption tracks and machine transcripts have not been checked by ear; where one is quoted, the time in the recording is given.</li>
   <li>English in round brackets after Chinese is our rendering, not an official translation.</li>
   <li>%%DATENOTE%%</li>

@@ -1,7 +1,7 @@
 # The key Chinese passages, side by side
 @deck The Chinese passages that carry the argument. The page's own Chinese stands beside our English, with who issued it and when.
 
-@note Draft by Claude, Anthropic's model. Local; not published. Written Nov 23, 2026 (UTC).
+@note Draft by Claude, Anthropic's model. Written Nov 23, 2026 (UTC).
 @note The English is ours, not an official translation. It stands in round brackets. The Chinese between quotation marks was found in the saved copy of its page by a script.
 @note The address of each page is in the reference list at the end, under the number that follows the passage's source.
 
@@ -9,9 +9,9 @@
 
 This page is for a reader who wants to check our English against the Chinese. Each row gives one passage: who issued it and when, the page's own words, and our English. The number after the source leads to the reference list, which gives the page's address and the name of the saved copy.
 
-The 48 passages are taken from the argument (ARGUMENT_referenced.md): what it quotes from Chinese state bodies, the Party, state media and a few companies. By a script's count they hold 52 of the argument's 86 Chinese quotations, some at greater length; the 34 left out are mostly from company filings, the trade press and purchase notices. The English is the argument's own wording wherever it gives one. A second reader went through the argument's Chinese quotations on Nov 23, 2026 and found faults in the English beside 34 of the 50 it then had; the argument was corrected, and this page takes the corrected wording. The second reader is not a native reader of Chinese, and no native reader has checked this page.
+The 61 passages are taken from the argument (ARGUMENT_referenced.md): what it quotes from Chinese state bodies, the Party, state media and a few companies. By a script's count they hold 71 of the argument's 130 Chinese quotations, some at greater length; the 59 left out are mostly from company filings, the trade press, press reports from unnamed people and purchase notices, and the rest are details from state texts beside the passages here. The English is the argument's own wording wherever it gives one. A second reader went through the argument's Chinese quotations on Nov 23, 2026 and found faults in the English beside 34 of the 50 it then had; the argument was corrected, and this page takes the corrected wording. The quotations the argument gained on Nov 24, 2026 were not part of that review: passages 19 to 23, 35, 50 to 52, 57 and 59 to 61, the second quotation of passage 29 and the end of passage 32. Their English is the argument's own, or ours where it gives none (passages 51 and 52). The second reader is not a native reader of Chinese, and no native reader has checked this page.
 
-Most passages are texts that a Chinese state body or the Party published, or an official's words on an official site. Some are not: state-media commentaries and an industry body's statement (section 3), company filings and two company chiefs' words as newspapers reported them (section 4), a company's question on a ministry's message board (passage 36), and a scholar's advice printed by a Party paper (passage 42). Each row says which. None is a press report from unnamed people: Beijing's instructions to companies are reported that way and are not on this page.
+Most passages are texts that a Chinese state body or the Party published, or an official's words on an official site. Some are not: state-media commentaries and an industry body's statement (section 3), company filings and two company chiefs' words as newspapers reported them (section 4), a company's question on a ministry's message board (passage 42), a scholar's advice printed by a Party paper (passage 48), a provincial text held only as a news site carries it (passage 19), a vice minister's words as a local office of his ministry reported them (passage 23), and a state-owned group's news item (passage 51). Each row says which. None is a press report from unnamed people: Beijing's instructions to companies are reported that way and are not on this page.
 
 A passage that is found shows what the page says. It does not show that the words were carried out.
 
@@ -32,7 +32,7 @@ These carry point 1 of the argument. They set an aim. None of them names Nvidia.
 
 ## 2. Rules and targets on paper
 
-These carry points 2 and 3. The purchase rule binds Party and government bodies and the public institutions attached to them. Passage 6 stands in the same sentence as passage 5: it lets every other buyer leave the rule out. Passages 10 to 17 are the eight provincial-level governments found to set a share for home-made computing hardware; most are aims. Passage 18 is Beijing city's plan, which sets an ability to build, not a share.
+These carry points 2 and 3. The purchase rule binds Party and government bodies and the public institutions attached to them. Passage 6 stands in the same sentence as passage 5: it lets every other buyer leave the rule out. Passages 10 to 17 are the eight provincial-level governments found to set a share for home-made computing hardware; two are worded as aims (力争, strive to) and one is marked indicative. Passage 18 is Beijing city's plan, which sets an ability to build, not a share. Passage 19 is the one local voucher rule found that pays for home-made computing only (the argument counts 19 rules; the other 18 also pay for other computing). Passages 20 to 23 are national: the state planner backs home-made computing and vouchers; the national computing-network opinions set a share for green power, not for home-made chips; and the 2015 roadmap's forecast is advice, as the vice minister said at its launch. No published national plan found sets a home-made share for computing centres.
 
 | Who and when | The Chinese | Our English |
 | 5. **Ministry of Finance and Ministry of Industry and Information Technology**, purchasing standard for desktop computers, signed Dec 16, 2023 and published Dec 26, 2023 [cn-policy-desktop-2023] | "乡镇以上党政机关,以及乡镇以上党委和政府直属事业单位及部门所属为机关提供支持保障的事业单位在采购台式计算机时,应当将CPU、操作系统符合安全可靠测评要求纳入采购需求" | (Party and government bodies at township level and above, and the public institutions attached to them, shall, when buying desktop computers, write into the purchase requirement that the processor and the operating system meet the security-and-reliability evaluation) |
@@ -49,6 +49,23 @@ These carry points 2 and 3. The purchase rule binds Party and government bodies 
 | 16. **Inner Mongolia**, the regional government's general office, Oct 10, 2023: among the goals for the region's national computing hub [cn-o39-nmg-plan-pdf-wayback] | "国产化算力占比达50%以上" | (home-made computing to be 50% or more) |
 | 17. **Shandong**, a plan of 2022, by the provincial daily's account on the provincial government's site, Aug 1, 2022 [cn-o39-shandong-network-2022] | "国产化算力将达90%" | (home-made computing will reach 90%) |
 | 18. **Beijing city**, plan for computing infrastructure, from two city bodies, Apr 24, 2024: its aim for 2027 [cn-factions-beijing-plan-20240424] | "具备100%自主可控智算中心建设能力" | (have the ability to build computing centres that are 100% independently controllable) |
+| 19. **Sichuan province**, measures for building the computing network (trial), from the provincial development and reform commission and other bodies, reported Aug 13, 2026; held as the news site Jiemian carries their text, without number or date [cn-ga05-sichuan-compute-net-measures-jiemian] [cn-ga05-sichuan-compute-net-measures-cls-20260813] | "对企业购买国产算力费用给予支持" | (support for what firms spend buying home-made computing) |
+| 20. **The state planner's spokesman, Li Chao**, as Xinhua reported on the State Council's site, Oct 5, 2025 [cn-ga04-govcn-ndrc-aivoucher-liichao-202510] | "将在“两重”建设中支持国产算力、模型、语料库发展" and, in the same paragraph, "持续在算力等领域发放“人工智能券”，为企业使用算力服务提供补贴" | (support home-made computing, models and corpora in its two major construction programmes) and (keep issuing AI vouchers in computing and other fields, to subsidise firms' use of computing services) |
+| 21. **National Development and Reform Commission and four other bodies**, opinions on a national computing network, Dec 25, 2023 [cn-policy-computing-network-1779] | "国家枢纽节点新建数据中心绿电占比超过80%" and "鼓励面向中小企业发放算力券、运力券" | (over 80% green power in new data centres at the national hubs) and (encourage issuing vouchers for computing and for network capacity to small firms) |
+| 22. **National Advisory Committee on Building a Manufacturing Power**, technology roadmap for the key fields of Made in China 2025, October 2015: home-made high-performance computers and servers by 2025 [cn-policy-roadmap-original] | "国内市场占有率预计超80%" | (over 80% of the home market) |
+| 23. **Vice Minister of Industry and Information Technology Xin Guobin**, at the roadmap's launch on Sept 29, 2015, as a local office of the industry ministry reported it [cn-policy-roadmap-status] | "路线图不是指令企业怎么做,而是指导性的、参考性的" | (the roadmap does not tell firms what to do; it is guidance and reference) |
+!! cn-ga05-sichuan-compute-net-measures-jiemian | 四川省发展和改革委员会等部门印发《四川省推进算力网建设的若干政策措施（试行）》
+!! cn-ga05-sichuan-compute-net-measures-jiemian | 一般企业支持比例不超过20%，成立3年内的初创企业可提高至30%、人工智能一人公司（OPC）可提高至40%
+!! cn-ga05-sichuan-compute-net-measures-cls-20260813 | 财联社8月13日电，《四川省推进算力网建设的若干政策措施（试行）》发布
+!! cn-ga04-govcn-ndrc-aivoucher-liichao-202510 | 国家发展改革委政策研究室副主任、新闻发言人李超
+!! cn-ga04-govcn-ndrc-aivoucher-liichao-202510 | 2025-10-0522:33来源:新华社
+!! cn-policy-computing-network-1779 | 发改数据〔2023〕1779号
+!! cn-policy-computing-network-1779 | 2023年12月25日
+!! cn-policy-roadmap-original | 国家制造强国建设战略咨询委员会2015年10月
+!! cn-policy-roadmap-original | 2、2025年目标
+!! cn-policy-roadmap-original | 国产高性能计算机与服务器国际市场占有率预计达40%
+!! cn-policy-roadmap-status | 国家制造强国建设战略咨询委员会于2015年9月29日在北京召开发布会
+!! cn-policy-roadmap-status | 工业和信息化部辛国斌副部长出席会议并致辞
 !! cn-policy-desktop-2023 | 2023年12月16日
 !! cn-policy-desktop-2023 | 发布日期:2023年12月26日
 !! cn-le14-itsec-scope-20230727 | 2026-06-30 来源: 中国信息安全测评中心
@@ -77,20 +94,26 @@ On passages 13 and 15. The word 力争 (strive to) marks an aim, not a rule.
 
 ## 3. Warnings, commentaries and acts in public
 
-These carry points 4, 10 and 18. Passage 19 names no maker. Passages 20 and 21 are state-media commentaries that name Nvidia's chip; they warn, and neither is an order. Passage 22 is an industry body's statement and passage 23 a signed newspaper commentary. Passages 24 to 26 are regulators' acts against Nvidia by name. Passages 28 and 29 are the state planner speaking in public.
+These carry points 4, 10, 18 and 21. Passage 24 names no maker. Passages 25 and 26 are state-media commentaries that name Nvidia's chip; they warn, and neither is an order. Passage 27 is an industry body's statement and passage 28 a signed newspaper commentary. Passages 29 to 31 are regulators' acts against Nvidia by name. Passages 33 and 34 are the state planner speaking in public. Passages 29, 32 and 35 give the purposes Beijing's own texts state for its public acts: security, national interests and fair competition (point 21). No Chinese document found states a motive for the unpublished guidance to companies, or ties an act against Nvidia to the trade talks.
 
 | Who and when | The Chinese | Our English |
-| 19. **Ministry of State Security**, article reproduced by Xinhua on Jul 21, 2025 [cn-acts-mss-xinhua-20250721] | "一些境外生产的芯片、智能设备或者软件可能在设计制造阶段就被故意预埋了“后门”" | (some chips, smart devices and software made abroad may have had backdoors planted on purpose when they were designed and made) |
-| 20. **People's Daily's commentary account**, a signed piece of Aug 1, 2025, as carried by Beijing Daily's site [cn-acts-peoplesdaily-bjd-20250801] | "绝不能让“带病”的芯片上岗" | ('sick' chips must never be allowed on duty) |
-| 21. **Yuyuan Tantian**, an account of the state broadcaster, Aug 10, 2025, of the H20 [cn-le13-yuyuan-qq-20250810b] | "作为消费者，我们当然可以选择，不买" | (as consumers we can of course choose not to buy) |
-| 22. **Internet Society of China**, an industry body, statement of Dec 3, 2024, calling on Chinese companies [cn-against2-isc-supply-risk-20241203] | "审慎选择采购美国芯片" and, in the same sentence, "积极使用内外资企业在华生产制造的芯片" | (be prudent in choosing to buy American chips) and (actively use chips made in China by domestic and foreign-funded firms alike) |
-| 23. **Economic Daily**, a signed commentary of Dec 14, 2025, after Washington cleared the H200 [cn-le13-ed-h200-cecn-20251214] | "中国用户可能会选择性购买H200芯片，但不会再全盘埋单" | (Chinese users may buy the H200 selectively, but will not again pay for the whole lot) |
-| 24. **Cyberspace Administration of China** (the cyberspace regulator), Jul 31, 2025 [cn-policy-cac-h20-original] | "约谈了英伟达公司,要求英伟达公司就对华销售的H20算力芯片漏洞后门安全风险问题进行说明并提交相关证明材料" | (summoned Nvidia and required it to explain the security risks of vulnerabilities and backdoors in the H20 chips sold to China and to submit supporting material) |
-| 25. **State Administration for Market Regulation** (the market regulator), notice of Dec 9, 2024 [cn-policy-samr-open-original] | "市场监管总局依法对英伟达公司开展立案调查" | (the regulator has opened an investigation of Nvidia under the law) |
-| 26. The market regulator, notice of Sept 15, 2025 [cn-policy-samr-further-original] | "经初步调查,英伟达公司违反《中华人民共和国反垄断法》和《市场监管总局关于附加限制性条件批准英伟达公司收购迈络思科技有限公司股权案反垄断审查决定的公告》,市场监管总局依法决定对其实施进一步调查" | (after a preliminary investigation, Nvidia violated the Anti-Monopoly Law and the regulator's decision approving its purchase of Mellanox with conditions; the regulator has decided to investigate further) |
-| 27. **The market regulator's Party group**, an account of its work in the Party members' paper, Sept 24, 2026 [cn-media-party-samr-september] | "依法对英伟达、高通公司、杜邦中国集团立案调查，在重要时间节点上发布权威声音" | (it opened cases against Nvidia, Qualcomm and DuPont China under the law, and spoke with authority at important moments) |
-| 28. **Li Chao**, of the state planner's policy research office, at its press conference of May 22, 2026 [cn-policy-ndrc-chip-adaptation-2026] | "指导国产大模型加大力度适配国产算力芯片" | (guiding home-made large models to do more to adapt to home-made computing chips) |
-| 29. **Li Chao**, at the state planner's press conference of Jun 18, 2026, asked about reports of large investment in a computing network [cn-le27-ndrc-presser-20260618-json] | "在具体建设过程中，市场力量将起决定性作用；我们将会同有关部门，加强统筹协调和政策引导" | (in the actual building, market forces will play the decisive role; we will, with the departments concerned, strengthen overall coordination and policy guidance) |
+| 24. **Ministry of State Security**, article reproduced by Xinhua on Jul 21, 2025 [cn-acts-mss-xinhua-20250721] | "一些境外生产的芯片、智能设备或者软件可能在设计制造阶段就被故意预埋了“后门”" | (some chips, smart devices and software made abroad may have had backdoors planted on purpose when they were designed and made) |
+| 25. **People's Daily's commentary account**, a signed piece of Aug 1, 2025, as carried by Beijing Daily's site [cn-acts-peoplesdaily-bjd-20250801] | "绝不能让“带病”的芯片上岗" | ('sick' chips must never be allowed on duty) |
+| 26. **Yuyuan Tantian**, an account of the state broadcaster, Aug 10, 2025, of the H20 [cn-le13-yuyuan-qq-20250810b] | "作为消费者，我们当然可以选择，不买" | (as consumers we can of course choose not to buy) |
+| 27. **Internet Society of China**, an industry body, statement of Dec 3, 2024, calling on Chinese companies [cn-against2-isc-supply-risk-20241203] | "审慎选择采购美国芯片" and, in the same sentence, "积极使用内外资企业在华生产制造的芯片" | (be prudent in choosing to buy American chips) and (actively use chips made in China by domestic and foreign-funded firms alike) |
+| 28. **Economic Daily**, a signed commentary of Dec 14, 2025, after Washington cleared the H200 [cn-le13-ed-h200-cecn-20251214] | "中国用户可能会选择性购买H200芯片，但不会再全盘埋单" | (Chinese users may buy the H200 selectively, but will not again pay for the whole lot) |
+| 29. **Cyberspace Administration of China** (the cyberspace regulator), Jul 31, 2025 [cn-policy-cac-h20-original] | "约谈了英伟达公司,要求英伟达公司就对华销售的H20算力芯片漏洞后门安全风险问题进行说明并提交相关证明材料" and, for its purpose, "为维护中国用户网络安全、数据安全" | (summoned Nvidia and required it to explain the security risks of vulnerabilities and backdoors in the H20 chips sold to China and to submit supporting material) and (to safeguard Chinese users' cyber and data security) |
+| 30. **State Administration for Market Regulation** (the market regulator), notice of Dec 9, 2024 [cn-policy-samr-open-original] | "市场监管总局依法对英伟达公司开展立案调查" | (the regulator has opened an investigation of Nvidia under the law) |
+| 31. The market regulator, notice of Sept 15, 2025 [cn-policy-samr-further-original] | "经初步调查,英伟达公司违反《中华人民共和国反垄断法》和《市场监管总局关于附加限制性条件批准英伟达公司收购迈络思科技有限公司股权案反垄断审查决定的公告》,市场监管总局依法决定对其实施进一步调查" | (after a preliminary investigation, Nvidia violated the Anti-Monopoly Law and the regulator's decision approving its purchase of Mellanox with conditions; the regulator has decided to investigate further) |
+| 32. **The market regulator's Party group**, an account of its work in the Party members' paper, Sept 24, 2026 [cn-media-party-samr-september] | "依法对英伟达、高通公司、杜邦中国集团立案调查，在重要时间节点上发布权威声音，有力维护国家利益" | (it opened cases against Nvidia, Qualcomm and DuPont China under the law, spoke with authority at important moments, and forcefully safeguarded national interests) |
+| 33. **Li Chao**, of the state planner's policy research office, at its press conference of May 22, 2026 [cn-policy-ndrc-chip-adaptation-2026] | "指导国产大模型加大力度适配国产算力芯片" | (guiding home-made large models to do more to adapt to home-made computing chips) |
+| 34. **Li Chao**, at the state planner's press conference of Jun 18, 2026, asked about reports of large investment in a computing network [cn-le27-ndrc-presser-20260618-json] | "在具体建设过程中，市场力量将起决定性作用；我们将会同有关部门，加强统筹协调和政策引导" | (in the actual building, market forces will play the decisive role; we will, with the departments concerned, strengthen overall coordination and policy guidance) |
+| 35. **The market regulator** (its National Anti-Monopoly Bureau), annual report on antitrust enforcement for 2025, posted Jun 5, 2026: it lists the further investigation of Nvidia among cases that served [cn-ga15-samr-antitrust-annual-2025-pdf] [cn-ga15-samr-antitrust-annual-2025-notice] | "维护公平竞争" | (to protect fair competition) |
+!! cn-ga15-samr-antitrust-annual-2025-pdf | 对英伟达违反《中华人民共和国反垄断法》（以下简称《反垄断法》）实施进一步调查
+!! cn-ga15-samr-antitrust-annual-2025-pdf | 立案调查高通收购Autotalks违法实施经营者集中，维护公平竞争
+!! cn-ga15-samr-antitrust-annual-2025-notice | 发布时间：2026-06-05
+!! cn-policy-cac-h20-original | 为维护中国用户网络安全、数据安全
+!! cn-media-party-samr-september | 坚持从政治上认识和把握市场监管工作，敢于斗争、善于斗争
 !! cn-acts-mss-xinhua-20250721 | 来源：国家安全部微信公众号
 !! cn-acts-mss-xinhua-20250721 | 境外生产芯片可能故意留“后门”
 !! cn-acts-peoplesdaily-bjd-20250801 | 2025-08-01
@@ -108,25 +131,25 @@ These carry points 4, 10 and 18. Passage 19 names no maker. Passages 20 and 21 a
 !! cn-le27-ndrc-presser-20260618-json | 2026-06-18 10:17:12
 !! cn-le27-ndrc-presser-20260618-json | 近期有外媒报道中国政府正在研究大规模投资建设算力网
 
-On passage 19. The article is the security ministry's, as the page's source line says. Its headline is shorter than the sentence quoted and leaves out the word for some. It names no chip maker.
+On passage 24. The article is the security ministry's, as the page's source line says. Its headline is shorter than the sentence quoted and leaves out the word for some. It names no chip maker.
 
-On passage 25. The notice is dated Dec 9, 2024 and says the case was opened recently; it does not give the day.
+On passage 30. The notice is dated Dec 9, 2024 and says the case was opened recently; it does not give the day.
 
-On passage 29. He gave no investment figure and no home-made share. The sentence runs on from market forces to coordination and policy guidance.
+On passage 34. He gave no investment figure and no home-made share. The sentence runs on from market forces to coordination and policy guidance.
 
 ## 4. What the companies used and wanted
 
-These carry points 5, 6, 8 and 20. Passage 30 is a Shanghai government body describing the city's computing: internet companies on Nvidia, the big telecom operators on home-made hardware. Passages 32 and 33 are companies' own filings. Passage 36 is a company's question; passage 37 is the ministry's reply on the same page.
+These carry points 5, 6, 8 and 20. Passage 36 is a Shanghai government body describing the city's computing: internet companies on Nvidia, the big telecom operators on home-made hardware. Passages 38 and 39 are companies' own filings. Passage 42 is a company's question; passage 43 is the ministry's reply on the same page.
 
 | Who and when | The Chinese | Our English |
-| 30. **Shanghai Municipal Commission of Economy and Informatization**, written reply to a proposal, dated Apr 30, 2025 (published Nov 10, 2025) [cn-counter-b11-5] | "互联网企业自建算力集群,满足市场化企业需求,主要以英伟达高性能卡为主;三大运营商主要购置华为等国产化智算集群" | (the internet companies' own computing clusters, which serve market demand, run mainly on Nvidia high-performance cards; the three big telecom operators mainly buy Huawei and other home-made clusters) |
-| 31. **The Party journal Qiushi's economics desk and the research institute CCID**, a joint study group's investigation, carried by the National Data Administration, May 3, 2026 [cn-policy-qiushi-cuda-gap] | "数百万开发者深度绑定CUDA生态,迁移成本高昂、适配周期漫长,国产替代即便性能达标,规模化应用仍面临障碍" | (millions of developers are deeply tied to the CUDA ecosystem; migration is costly and adaptation slow; even where home-made substitutes meet the performance mark, use at scale faces obstacles) |
-| 32. **Enflame**, a Chinese maker of AI chips, in its reply to the exchange's listing inquiry: of the start of the period its accounts cover [cn-filings-enflame-2026-inquiry] | "出于商业化考量，互联网行业客户采购主要以国际产品为主" | (for commercial reasons, internet companies bought mainly international products) |
-| 33. **iFlytek**, a model maker, in the record of its results meeting of Aug 21, 2026 [cn-le26-iflytek-ir-20260821] | "其他模型厂商普遍使用性能领先两代的英伟达芯片，其生态更完善，各类算法的训练与移植效率更高" | (other model makers commonly use Nvidia chips two generations ahead in performance, with a better ecosystem and more efficient training) |
-| 34. **Alibaba's chief executive** on its results call, as reported by National Business Daily on Nov 19, 2026: his judgement for 2027 and after [cn-labs-alibaba-nov-supply] | "公司绝大部分新增AI芯片供给将以自研平头哥国产芯片为主" | (most of the company's added AI chip supply will be its own T-Head chips) |
-| 35. **The founder of 360**, as reported by the business daily Yicai on Jul 23, 2025, granting that home-made chips trail Nvidia's [cn-cnpress-yicai-zhou-360-20250723] | "只有咬牙坚持用" | (only by gritting one's teeth and sticking with them) |
-| 36. **A company**, question on the commerce ministry's public message board, dated Jul 30, 2026 [cn-acts-mofcom-inquiry-20260819] | "我司计划合规进口H200数据中心GPU,本次咨询该类高端算力芯片的进口合规政策与申报流程" | (our company plans to import H200 data-centre GPUs in compliance, and asks about the import compliance policy and declaration procedure for such high-end computing chips) |
-| 37. **The commerce ministry**, its reply on the same page, dated Aug 19, 2026 [cn-acts-mofcom-inquiry-20260819] | "出口经营者应当向国务院商务主管部门申请许可" | (export operators shall apply to the State Council's commerce department for a licence) |
+| 36. **Shanghai Municipal Commission of Economy and Informatization**, written reply to a proposal, dated Apr 30, 2025 (published Nov 10, 2025) [cn-counter-b11-5] | "互联网企业自建算力集群,满足市场化企业需求,主要以英伟达高性能卡为主;三大运营商主要购置华为等国产化智算集群" | (the internet companies' own computing clusters, which serve market demand, run mainly on Nvidia high-performance cards; the three big telecom operators mainly buy Huawei and other home-made clusters) |
+| 37. **The Party journal Qiushi's economics desk and the research institute CCID**, a joint study group's investigation, carried by the National Data Administration, May 3, 2026 [cn-policy-qiushi-cuda-gap] | "数百万开发者深度绑定CUDA生态,迁移成本高昂、适配周期漫长,国产替代即便性能达标,规模化应用仍面临障碍" | (millions of developers are deeply tied to the CUDA ecosystem; migration is costly and adaptation slow; even where home-made substitutes meet the performance mark, use at scale faces obstacles) |
+| 38. **Enflame**, a Chinese maker of AI chips, in its reply to the exchange's listing inquiry: of the start of the period its accounts cover [cn-filings-enflame-2026-inquiry] | "出于商业化考量，互联网行业客户采购主要以国际产品为主" | (for commercial reasons, internet companies bought mainly international products) |
+| 39. **iFlytek**, a model maker, in the record of its results meeting of Aug 21, 2026 [cn-le26-iflytek-ir-20260821] | "其他模型厂商普遍使用性能领先两代的英伟达芯片，其生态更完善，各类算法的训练与移植效率更高" | (other model makers commonly use Nvidia chips two generations ahead in performance, with a better ecosystem and more efficient training) |
+| 40. **Alibaba's chief executive** on its results call, as reported by National Business Daily on Nov 19, 2026: his judgement for 2027 and after [cn-labs-alibaba-nov-supply] | "公司绝大部分新增AI芯片供给将以自研平头哥国产芯片为主" | (most of the company's added AI chip supply will be its own T-Head chips) |
+| 41. **The founder of 360**, as reported by the business daily Yicai on Jul 23, 2025, granting that home-made chips trail Nvidia's [cn-cnpress-yicai-zhou-360-20250723] | "只有咬牙坚持用" | (only by gritting one's teeth and sticking with them) |
+| 42. **A company**, question on the commerce ministry's public message board, dated Jul 30, 2026 [cn-acts-mofcom-inquiry-20260819] | "我司计划合规进口H200数据中心GPU,本次咨询该类高端算力芯片的进口合规政策与申报流程" | (our company plans to import H200 data-centre GPUs in compliance, and asks about the import compliance policy and declaration procedure for such high-end computing chips) |
+| 43. **The commerce ministry**, its reply on the same page, dated Aug 19, 2026 [cn-acts-mofcom-inquiry-20260819] | "出口经营者应当向国务院商务主管部门申请许可" | (export operators shall apply to the State Council's commerce department for a licence) |
 !! cn-counter-b11-5 | 发布日期:2025-11-10
 !! cn-counter-b11-5 | 上海市经济和信息化委员会2025年4月30日
 !! cn-counter-b11-5 | 提升本市智算多样性
@@ -143,25 +166,36 @@ These carry points 5, 6, 8 and 20. Passage 30 is a Shanghai government body desc
 !! cn-acts-mofcom-inquiry-20260819 | 留言时间:2026-07-30
 !! cn-acts-mofcom-inquiry-20260819 | 答复时间:2026-08-19
 
-On passage 30. The reply speaks of Shanghai's computing, not the nation's. It gives the operators' purchases a purpose: "提升本市智算多样性" [cn-counter-b11-5] (to diversify the city's computing).
+On passage 36. The reply speaks of Shanghai's computing, not the nation's. It gives the operators' purchases a purpose: "提升本市智算多样性" [cn-counter-b11-5] (to diversify the city's computing).
 
-On passage 33. The same record says iFlytek is on the US Entity List. It is a company's account of its rivals.
+On passage 39. The same record says iFlytek is on the US Entity List. It is a company's account of its rivals.
 
-On passage 34. He gave it as a judgement "结合当前形势" [cn-labs-alibaba-nov-supply] (in light of the present situation), for 2027 and after, with other home-made chips bought for part of the company's inference.
+On passage 40. He gave it as a judgement "结合当前形势" [cn-labs-alibaba-nov-supply] (in light of the present situation), for 2027 and after, with other home-made chips bought for part of the company's inference.
 
-On passages 36 and 37. The company asks about importing. The reply speaks only of what exporters must do, as passage 37 shows. It does not answer the question about imports.
+On passages 42 and 43. The company asks about importing. The reply speaks only of what exporters must do, as passage 43 shows. It does not answer the question about imports.
 
 ## 5. The open door and the welcomes
 
-These carry point 17: Beijing was not one actor. A vice premier and a minister welcomed Nvidia by name, and the leader and the premier welcomed American firms. Passage 42 is a scholar's advice printed by a Party paper, not an act of the state.
+These carry point 17: Beijing was not one actor. A vice premier and a minister welcomed Nvidia by name, and the leader and the premier welcomed American firms. Passage 48 is a scholar's advice printed by a Party paper, not an act of the state. Passage 50 is the leader's pledge on government purchasing; it covers products made in China, not imported chips. Passages 51 and 52 are state-linked builders planning on Nvidia's chips in their own words; neither page says how the chips would be obtained.
 
 | Who and when | The Chinese | Our English |
-| 38. **Vice Premier He Lifeng** to Nvidia's chief executive, Apr 17, 2025, in Xinhua's account printed in People's Daily of Apr 18 [cn-policy-he-welcomes] | "欢迎包括英伟达公司在内的更多美资企业深耕中国市场" | (more American firms, Nvidia among them, are welcome to put down deeper roots in the Chinese market) |
-| 39. **Commerce Minister Wang Wentao** to Nvidia's chief executive, Jul 17, 2025, in the ministry's account [cn-policy-wang-nvidia] | "希望包括英伟达在内的跨国公司为中国客户提供优质可靠的产品和服务" | (we hope multinationals, Nvidia among them, will give Chinese customers high-quality, reliable products and services) |
-| 40. **Xi Jinping**, meeting the American executives who came with the President, May 14, 2026, in Xinhua's account [cn-acts-xi-us-business-20260514] | "中方欢迎美国对华加强互利合作，相信美国企业在华将拥有更广阔前景" | (China welcomes more mutually beneficial American cooperation and believes American firms will have broader prospects in China) |
-| 41. **Premier Li Qiang** to American business representatives, Nvidia's among them, May 14, 2026, in Xinhua's account [cn-xi-round-f-6] | "一个稳定开放的政策环境是中国政府长期不变的承诺" | (a stable and open policy environment is the Chinese government's long-standing commitment) |
-| 42. **Zhang Xin**, a university scholar, in an interview printed by People's Daily Overseas Edition on Jul 22, 2025 [cn-media-pd-h20-gmw] | "国内企业的最优策略是“双线并行”" and "一边积极申请、储备进口高端芯片" | (the best strategy for Chinese firms is two lines at once) and (on one side, actively apply for and stock imported high-end chips) |
-| 43. **The commerce ministry**, its spokesperson's answers on a draft on technology exports put out for comment, Oct 16, 2026 [cn-tolerate-mof] | "中国企业在境外自建自营算力中心" and "适用自动许可等便利措施" | (Chinese firms' own computing centres abroad) and (automatic licences and other facilitation apply) |
+| 44. **Vice Premier He Lifeng** to Nvidia's chief executive, Apr 17, 2025, in Xinhua's account printed in People's Daily of Apr 18 [cn-policy-he-welcomes] | "欢迎包括英伟达公司在内的更多美资企业深耕中国市场" | (more American firms, Nvidia among them, are welcome to put down deeper roots in the Chinese market) |
+| 45. **Commerce Minister Wang Wentao** to Nvidia's chief executive, Jul 17, 2025, in the ministry's account [cn-policy-wang-nvidia] | "希望包括英伟达在内的跨国公司为中国客户提供优质可靠的产品和服务" | (we hope multinationals, Nvidia among them, will give Chinese customers high-quality, reliable products and services) |
+| 46. **Xi Jinping**, meeting the American executives who came with the President, May 14, 2026, in Xinhua's account [cn-acts-xi-us-business-20260514] | "中方欢迎美国对华加强互利合作，相信美国企业在华将拥有更广阔前景" | (China welcomes more mutually beneficial American cooperation and believes American firms will have broader prospects in China) |
+| 47. **Premier Li Qiang** to American business representatives, Nvidia's among them, May 14, 2026, in Xinhua's account [cn-xi-round-f-6] | "一个稳定开放的政策环境是中国政府长期不变的承诺" | (a stable and open policy environment is the Chinese government's long-standing commitment) |
+| 48. **Zhang Xin**, a university scholar, in an interview printed by People's Daily Overseas Edition on Jul 22, 2025 [cn-media-pd-h20-gmw] | "国内企业的最优策略是“双线并行”" and "一边积极申请、储备进口高端芯片" | (the best strategy for Chinese firms is two lines at once) and (on one side, actively apply for and stock imported high-end chips) |
+| 49. **The commerce ministry**, its spokesperson's answers on a draft on technology exports put out for comment, Oct 16, 2026 [cn-tolerate-mof] | "中国企业在境外自建自营算力中心" and "适用自动许可等便利措施" | (Chinese firms' own computing centres abroad) and (automatic licences and other facilitation apply) |
+| 50. **Xi Jinping**, speech at his meeting with representatives of international business, Beijing, Mar 28, 2025, in People's Daily's database of his speeches [cn-ga03-jhsjk-xi-intl-business-20250328] | "保障外资企业在华生产的产品依法平等参与政府采购" | (ensure that products foreign-funded firms make in China take part equally, by law, in government purchasing) |
+| 51. **Sinomach**, a state-owned engineering group (Reuters's words), news on its group site, Feb 11, 2025: its design institute has won a 3-billion-yuan computing-centre project in Xi'an that uses [cn-ga12-sinomach-changan-zhisuan-20250225] [cn-tolerate-projects-relay1] | "英伟达H100、H200算力芯片" | (Nvidia H100 and H200 computing chips) |
+| 52. **A county's investment service centre** (Xianyou, Putian), an undated project listing on the Fujian commerce department's investment site: a computing centre seeking investors [cn-ga12-fj-xianyou-zhisuan-cn] | "全部采用H100的服务器" | (servers that are all H100 servers) |
+!! cn-ga03-jhsjk-xi-intl-business-20250328 | 会见国际工商界代表时的讲话（2025年3月28日，北京）
+!! cn-ga12-sinomach-changan-zhisuan-20250225 | 发布时间：2025-02-11
+!! cn-ga12-sinomach-changan-zhisuan-20250225 | 总投资达30亿元
+!! cn-ga12-sinomach-changan-zhisuan-20250225 | 国机集团机械工业第六设计研究院有限公司（简称“中机六院”）中标长安智算中心项目
+!! cn-ga12-sinomach-changan-zhisuan-20250225 | 西安航天基地国家超算中心
+!! cn-tolerate-projects-relay1 | state-owned engineering group Sinomach
+!! cn-ga12-fj-xianyou-zhisuan-cn | 主办单位： 福建省商务厅
+!! cn-ga12-fj-xianyou-zhisuan-cn | 发起单位： 仙游县招商服务中心
 !! cn-policy-he-welcomes | 新华社北京4月17日电中共中央政治局委员、国务院副总理何立峰17日晚在人民大会堂会见美国英伟达公司总裁兼首席执行官黄仁勋
 !! cn-policy-he-welcomes | 《 人民日报 》( 2025年04月18日
 !! cn-policy-wang-nvidia | 7月17日,商务部部长王文涛会见美国英伟达公司总裁兼首席执行官黄仁勋
@@ -175,18 +209,27 @@ These carry point 17: Beijing was not one actor. A vice premier and a minister w
 !! cn-media-pd-h20-gmw | 另一边用算法创新和国产生态把算力缺口补回来
 !! cn-tolerate-mof | 2026年10月16日，商务部、科技部发布2026年第48号公告
 
-On passage 42. Her second line, on the other side, is to fill the gap with algorithms and home-made chips. The words are the scholar's, in answer to the paper's reporter.
+On passage 48. Her second line, on the other side, is to fill the gap with algorithms and home-made chips. The words are the scholar's, in answer to the paper's reporter.
 
 ## 6. The limits: stop-buying lines were published for others; none was found for Nvidia
 
-These carry point 18. Passage 44 shows what a published instruction looks like. It is from the review office's conclusion on Micron, not Nvidia. Passage 45 is a purchase bar by name whose list holds no chip maker. No such text about Nvidia's chips was found in the 103 policy pages read. Passage 46 is a 2020 decision that obliges Nvidia to go on supplying China, unless its conditions have since been lifted. Passages 47 and 48 are what spokespeople said when asked.
+Passages 53 to 60 carry point 18, and passage 61 point 21. Passage 53 shows what a published instruction looks like. It is from the review office's conclusion on Micron, not Nvidia. Passage 54 is a purchase bar by name whose list holds no chip maker. No such text about Nvidia's chips was found in the 82 policy pages read. Passage 55 is a 2020 decision that obliges Nvidia to go on supplying China, unless its conditions have since been lifted. Passages 56 to 60 are what the foreign ministry's spokespeople said when asked: none confirms an instruction and none denies one. Passage 61 is the one Chinese official text found that sets the chip beside the trade talks: it neither confirms nor denies that the chip was part of them.
 
 | Who and when | The Chinese | Our English |
-| 44. **The cyberspace regulator's review office** (the Cybersecurity Review Office), conclusion of its review of Micron's products, published on the regulator's site on May 21, 2023 [cn-policy-micron-decision] | "我国内关键信息基础设施的运营者应停止采购美光公司产品" | (operators of critical information infrastructure in China should stop buying Micron's products) |
-| 45. **Ministry of Finance**, notice of Jun 22, 2026 on certain American firms in government purchasing [cn-le14-mof-us-firms-measures-20260622] | "不得采购46家美国企业（不包括在华美资企业）生产的产品" | (government buyers may not buy products made by 46 American firms, leaving out American-funded firms in China) |
-| 46. **Market regulator**, decision approving Nvidia's purchase of Mellanox with conditions, Apr 16, 2020 [cn-policy-mellanox-conditions] | "依据公平、合理、无歧视原则向中国市场继续供应英伟达GPU加速器、迈络思高速网络互联设备和相关软件、配件" | (continue to supply Nvidia GPU accelerators, Mellanox high-speed networking equipment and related software and accessories to the Chinese market on fair, reasonable and non-discriminatory terms) |
-| 47. **Foreign ministry spokesman**, Aug 13, 2025, asked about a report that China had told its firms to avoid the H20 [cn-against2-mfa-h20-20250813] | "我不了解你提到的情况" | (I am not aware of what you mention) |
-| 48. **Foreign ministry spokesman**, regular press conference of Sept 18, 2025 [cn-media-mfa-rtx-transcript] | "具体问题建议向中方主管部门了解" | (for specifics, I suggest you ask the competent Chinese departments) |
+| 53. **The cyberspace regulator's review office** (the Cybersecurity Review Office), conclusion of its review of Micron's products, published on the regulator's site on May 21, 2023 [cn-policy-micron-decision] | "我国内关键信息基础设施的运营者应停止采购美光公司产品" | (operators of critical information infrastructure in China should stop buying Micron's products) |
+| 54. **Ministry of Finance**, notice of Jun 22, 2026 on certain American firms in government purchasing [cn-le14-mof-us-firms-measures-20260622] | "不得采购46家美国企业（不包括在华美资企业）生产的产品" | (government buyers may not buy products made by 46 American firms, leaving out American-funded firms in China) |
+| 55. **Market regulator**, decision approving Nvidia's purchase of Mellanox with conditions, Apr 16, 2020 [cn-policy-mellanox-conditions] | "依据公平、合理、无歧视原则向中国市场继续供应英伟达GPU加速器、迈络思高速网络互联设备和相关软件、配件" | (continue to supply Nvidia GPU accelerators, Mellanox high-speed networking equipment and related software and accessories to the Chinese market on fair, reasonable and non-discriminatory terms) |
+| 56. **Foreign ministry spokesman**, Aug 13, 2025, asked about a report that China had told its firms to avoid the H20 [cn-against2-mfa-h20-20250813] | "我不了解你提到的情况" | (I am not aware of what you mention) |
+| 57. **Foreign ministry spokeswoman**, Aug 22, 2025, asked about reports that China had stopped Chinese companies using the H20 [cn-counter-b3-2] | The question: "此前有报道称中方阻止中国公司使用H20芯片"; the answer: "这个问题建议向中方主管部门了解" | (earlier reports said China had stopped Chinese companies using the H20 chip) and (for this question, I suggest you ask the competent Chinese departments) |
+| 58. **Foreign ministry spokesman**, regular press conference of Sept 18, 2025 [cn-media-mfa-rtx-transcript] | "具体问题建议向中方主管部门了解" | (for specifics, I suggest you ask the competent Chinese departments) |
+| 59. **Foreign ministry spokesman**, Nov 18, 2026, asked about Nvidia's statement that it would no longer supply Hopper data-centre products to China [cn-acts-mfa-20261118] | "中方此前已经多次阐明在美国输华芯片问题上的原则立场" | (China has already stated many times its principled position on US chip exports to China) |
+| 60. **Foreign ministry spokesman**, Nov 23, 2026, asked about the President's saying he would sell China only older chips, and whether China was negotiating with Washington [cn-ga15-mfa-20261123] | "关于美国出口管制措施，中方此前已表明立场" | (China has already stated its position on US export-control measures) |
+| 61. **The commerce ministry's spokesperson**, Jul 18, 2025, asked about American officials' remark that approving H20 sales was part of the trade negotiations; the answer first describes what followed the London talks [cn-factions-mofcom-us-initiative-20250718] | "美方近日又主动表示将批准对华销售英伟达H20芯片" | (the US side has recently also said, of its own accord, that it will approve sales of Nvidia's H20 chips to China) |
+!! cn-counter-b3-2 | 2025年8月22日外交部发言人毛宁主持例行记者会
+!! cn-acts-mfa-20261118 | 2026年11月18日外交部发言人郭嘉昆主持例行记者会
+!! cn-acts-mfa-20261118 | 将不再向中国提供Hopper数据中心产品
+!! cn-ga15-mfa-20261123 | 2026年11月23日外交部发言人郭嘉昆主持例行记者会
+!! cn-ga15-mfa-20261123 | 美国总统特朗普称只愿向中国出售旧款芯片，正就此与中方进行沟通
 !! cn-policy-micron-decision | 2023年05月21日
 !! cn-policy-micron-decision | 网络安全审查办公室依法作出不予通过网络安全审查的结论
 !! cn-le14-mof-us-firms-measures-20260622 | 财政部 2026年6月22日
@@ -196,12 +239,15 @@ These carry point 18. Passage 44 shows what a published instruction looks like. 
 !! cn-against2-mfa-h20-20250813 | 2025年8月13日外交部发言人林剑答记者问
 !! cn-against2-mfa-h20-20250813 | 中国已要求本土企业避免使用英伟达H20芯片
 !! cn-media-mfa-rtx-transcript | 2025年9月18日外交部发言人林剑主持例行记者会
+!! cn-factions-mofcom-us-initiative-20250718 | 中美经贸谈判的一部分
+!! cn-factions-mofcom-us-initiative-20250718 | 中美伦敦经贸会谈后
+!! cn-factions-mofcom-us-initiative-20250718 | 2025-07-18
 
-On passage 46. The decision lets the parties apply to lift the conditions six years after they took effect. Whether they were lifted is not known from the page.
+On passage 55. The decision lets the parties apply to lift the conditions six years after they took effect. Whether they were lifted is not known from the page.
 
 ## What this page does not show
 
 - It does not show Beijing's instructions to companies. Those are reported by the press from unnamed people and are not published texts.
-- It does not show every Chinese passage read, nor every Chinese quotation of the argument (52 of 86, by a script's count). The fuller record is in OFFICIAL_RECORD.md, and the 103 policy lines, the local voucher rules and the provincial plans are in the searchable page beside this one.
+- It does not show every Chinese passage read, nor every Chinese quotation of the argument (71 of 130, by a script's count). The fuller record is in OFFICIAL_RECORD.md, and the 103 policy lines, the local voucher rules and the provincial plans are in the searchable page beside this one.
 - A second reader, not a native reader of Chinese, reviewed the argument's Chinese quotations; no native reader has checked this page. Where a passage here is longer than the argument's quotation, the English for the added words is from OFFICIAL_RECORD.md and was not part of that review.
-- The copy of the Shanghai plan (passage 11) is a newspaper's, not the city's own page, and Shandong's figure (passage 17) is known from a newspaper's account of the plan, not the plan's text.
+- The copy of the Shanghai plan (passage 11) is a newspaper's, not the city's own page, and Shandong's figure (passage 17) is known from a newspaper's account of the plan, not the plan's text. Sichuan's measures (passage 19) are held only as a news site carries their text, without number or date.

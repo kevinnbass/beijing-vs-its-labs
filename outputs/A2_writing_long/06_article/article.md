@@ -2,7 +2,7 @@
 
 *From 2024 to 2026 the Chinese state pressed its AI companies to move off Nvidia's chips, and the companies kept ordering them. That holds on direction, with five limits.*
 
-Draft by Claude, Anthropic's model. Local; not published. Written Nov 23, 2026 (UTC).
+Draft by Claude, Anthropic's model. Written Nov 23, 2026 (UTC).
 
 How to read it. Words between quotation marks are a source's exact words, found in the saved copy by a script. A filled reference number is a document, a filing or a named person on the record. An open number is a press report citing unnamed people, a caption track or a machine transcript. Where a statement rests on a Chinese text, the English is our rendering, not an official translation.
 
@@ -35,24 +35,24 @@ The Financial Times, Aug 20, 2025: in July the cyberspace regulator sent compani
 For the H200, Nvidia's second most powerful AI chip, the counts are not one series [13]. Washington's and Nvidia's are on the record; the rest come from unnamed people.
 
 - Ordered for 2026: "more than 2 million H200 chips" (Reuters, Dec 31, 2025) [14].
-- Applied for in Washington by May 11, 2026: 3,444,160 chips, Nvidia's H200 and AMD's MI325X together, in a Commerce Department table the House Foreign Affairs Committee made public on Nov 19, 2026. An application is not an order [15] [16] [17].
-- Of those, licensed by Washington and not yet shipped: 879,868 (Nvidia's: 579,868). Returned without action: 1,888,950, or 55% of the chips in the applications the summary records; no reason is given. The sums are ours [15] [16].
-- Approved by Beijing, with conditions: "more than 400,000 H200 chips in total" (Reuters, Jan 28, 2026) [18].
-- Delivered by August 2026: "about 10,000 H200 processors" each for ByteDance and Tencent (Financial Times, through Reuters, Aug 18, 2026) [19].
-- Waiting in Hong Kong: about 600,000 (Reuters, Nov 5, 2026) [20].
-- Nvidia, Nov 17, 2026, on the quarter to Oct 25: "Q3 sales of licensed Hopper Data Center products to China was $2.4 billion" (the Hopper family includes the H200). It said it had stopped shipping them and gave no reason [21] [22].
+- Applied for in Washington by May 11, 2026: 3,444,160 chips, Nvidia's H200 and AMD's MI325X together, in the table of licence applications from the Commerce Department's Bureau of Industry and Security (BIS) that the House Foreign Affairs Committee made public on Nov 19, 2026. An application is not an order [15] [16] [17] [18].
+- Of those, licensed by Washington and not yet shipped: 879,868 (Nvidia's: 579,868). Returned without action: 1,888,950, or 55% of the chips in the applications BIS's summary records; no reason is given. The sums are ours [15] [16].
+- Approved by Beijing, with conditions: "more than 400,000 H200 chips in total" (Reuters, Jan 28, 2026) [19].
+- Delivered by August 2026: "about 10,000 H200 processors" each for ByteDance and Tencent (Financial Times, through Reuters, Aug 18, 2026) [20].
+- Waiting in Hong Kong: about 600,000 (Reuters, Nov 5, 2026) [21].
+- Nvidia, Nov 17, 2026, on the quarter to Oct 25: "Q3 sales of licensed Hopper Data Center products to China was $2.4 billion" (the Hopper family includes the H200). It said it had stopped shipping them and gave no reason [22] [23].
 
 ## Five limits
 
-**1.** **Beijing was not one actor.** Vice Premier He Lifeng told Nvidia's chief executive in April 2025 that Nvidia was welcome [23]. The Financial Times, Nov 13, 2026: the commerce ministry "favoured imports", while security officials "viewed dependence on Nvidia as a strategic vulnerability" [24].
+**1.** **Beijing was not one actor.** Vice Premier He Lifeng told Nvidia's chief executive in April 2025 that Nvidia was welcome [24]. The Financial Times, Nov 13, 2026: the commerce ministry "favoured imports", while security officials "viewed dependence on Nvidia as a strategic vulnerability" [25].
 
-**2.** **Public warnings and unpublished guidance, not a published ban.** No published order against buying Nvidia chips was found in the 103 policy pages read. Of 42 state-media items on Nvidia chips found, the seven that only warn about them all date from Aug 1 to Sept 24, 2025 [25] [26].
+**2.** **Public warnings and unpublished guidance, not a published ban.** No published order against buying Nvidia chips was found in the 82 policy pages read. Of 75 state-media items on Nvidia chips found, 11 of the 14 that only warn about them date from Jul 31 to Sept 24, 2025 [26] [27] [28]; the three found later are in Global Times in 2026, and the items after September 2025 are what two rounds of searches found, a sample and not a full count.
 
 **3.** **Some chips came in.** See the approvals, deliveries and sales listed above.
 
-**4.** **The companies had reasons of their own, and American curbs and conditions pushed too.** Alibaba says its chip unit "has brought proprietary GPUs into scaled production" [27]. Nvidia's reports since November 2025 say: "we are already effectively foreclosed from the China market by U.S. export controls" [9].
+**4.** **The companies had reasons of their own, and American curbs and conditions pushed too.** Alibaba says its chip unit "has brought proprietary GPUs into scaled production" [29]. Nvidia's reports since November 2025 say: "we are already effectively foreclosed from the China market by U.S. export controls" [9].
 
-**5.** **What Beijing meant by it is not settled.** The US-China commission, November 2025, read an antitrust move against Nvidia, made as the regulator dropped a probe into Google, as "signaling China's willingness to both exert leverage and ease pressure as a negotiating tactic" [28]. The US Trade Representative called the choice to buy "a sovereign decision for China" (captions, not checked by ear, at 5:59) [29]. The direction stands under either reading.
+**5.** **What Beijing meant by it is not settled.** The US-China commission, November 2025, read an antitrust move against Nvidia, made as the regulator dropped a probe into Google, as "signaling China's willingness to both exert leverage and ease pressure as a negotiating tactic" [30]. The US Trade Representative called the choice to buy "a sovereign decision for China" (captions, not checked by ear, at 5:59) [31]. The direction stands under either reading of what Beijing meant by it.
 
 ### What survives
 
@@ -62,7 +62,7 @@ From 2024 the security and planning side of the Chinese state pressed China's AI
 
 Each entry: its kind; what it is; the saved page's own title where the record holds one; the address; the saved copy (research/primary/<id>).
 
-[1] Caption track or machine transcript, not checked by ear. Palmer Luckey, in a clip of 56 seconds posted on X by @overton_news, Nov 19, 2026. Words from a machine transcript of the clip (the file transcripts_two_clips.md, beside this note); nobody has checked them by ear. https://x.com/overton_news/status/2123392702821580811
+[1] Caption track or machine transcript, not checked by ear. Palmer Luckey, in a clip of 56 seconds posted on X by @overton_news, Nov 19, 2026. Words from a machine transcript of the clip (the transcript file is held back: see HELD_BACK.md); nobody has checked them by ear. https://x.com/overton_news/status/2123392702821580811
 
 [2] Press report of words spoken on the record. Post on X by @overton_news, Nov 19, 2026, which carries the clip of Palmer Luckey and gives his words as text. The post does not name the programme. https://x.com/overton_news/status/2123392702821580811 Saved copy: cnpol-x-overton-2123392702821580811
 
@@ -90,34 +90,38 @@ Each entry: its kind; what it is; the saved page's own title where the record ho
 
 [14] Press report citing unnamed people. Reuters, Dec 31, 2025, as carried by Investing.com. Internet Archive capture of Jan 1, 2026. https://web.archive.org/web/20260101170120/https://www.investing.com/news/stock-market-news/exclusivenvidia-sounds-out-tsmc-on-new-h200-chip-order-as-china-demand-jumps-sources-say-4426223 Saved copy: cn-labs-h200-two-million-202512-relay1-wayback
 
-[15] Official document, or an official on the record. House Foreign Affairs Committee, disclosure of Nov 19, 2026, made by the full committee (its chairman's release; approved by unanimous consent at a business meeting; the files are on the committee Democrats' site): the committee's summary, which cites a Commerce Department summary dated May 11, 2026. https://democrats-foreignaffairs.house.gov/wp-content/uploads/2026/11/11.19.26-ECRA-Information-Disclosure-HFAC-Summary.pdf Saved copy: cn-usdocs-hfac-summary-20261119
+[15] Official document, or an official on the record. House Foreign Affairs Committee, disclosure of Nov 19, 2026, made by the full committee (its chairman's release; approved by unanimous consent at a business meeting; the files are on the committee Democrats' site): the committee's summary, which cites a BIS summary dated May 11, 2026 (BIS: the Commerce Department's Bureau of Industry and Security). https://democrats-foreignaffairs.house.gov/wp-content/uploads/2026/11/11.19.26-ECRA-Information-Disclosure-HFAC-Summary.pdf Saved copy: cn-usdocs-hfac-summary-20261119
 
-[16] Official document, or an official on the record. House Foreign Affairs Committee, disclosure of Nov 19, 2026: the Commerce Department's table of licence applications for Nvidia's H200 and AMD's MI325X, with their status as of May 11, 2026 (its text layer is out of order; the rows were read from the page images). https://democrats-foreignaffairs.house.gov/wp-content/uploads/2026/11/11.19.26-ECRA-Information-Disclosure-of-BIS-License-Decisions.pdf Saved copy: cn-usdocs-hfac-decisions-20261119
+[16] Official document, or an official on the record. House Foreign Affairs Committee, disclosure of Nov 19, 2026: the table of licence applications (the file's name: BIS License Decisions) for Nvidia's H200 and AMD's MI325X, with their status as of May 11, 2026 (its text layer is out of order; the rows were read from the page images). https://democrats-foreignaffairs.house.gov/wp-content/uploads/2026/11/11.19.26-ECRA-Information-Disclosure-of-BIS-License-Decisions.pdf Saved copy: cn-usdocs-hfac-decisions-20261119
 
 [17] Official document, or an official on the record. House Foreign Affairs Committee, chairman's press release of Nov 19, 2026 on making public the licence information for Nvidia's and AMD's chips to China. Page title: Chairman Brian Mast Exercises Legislative Authority to Publicly Release AI Chip License Information for China. https://foreignaffairs.house.gov/news/press-releases/chairman-brian-mast-exercises-legislative-authority-to-publicly-release-ai-chip-license-information-for-china Saved copy: cn-labs-us-chip-licences-20261119
 
-[18] Press report citing unnamed people. Reuters, Jan 28, 2026, as carried by The Standard (Hong Kong). Page title: China gives nod to ByteDance, Alibaba and Tencent to buy Nvidia's H200 chips, says sources. https://www.thestandard.com.hk/innovation/article/322910/China-gives-nod-to-ByteDance-Alibaba-and-Tencent-to-buy-Nvidias-H200-chips-says-sources Saved copy: ms-bj-20260128-h200-nod-standard
+[18] Official document, or an official on the record. US Commerce Department, Bureau of Industry and Security, Export Administration Regulations part 748 (applications), on the bureau's site. Page title: EAR 748 | Bureau of Industry and Security. https://www.bis.gov/regulations/ear/748 Saved copy: cn-le04-bis-ear-748
 
-[19] Press report citing unnamed people. Reuters, relaying the Financial Times, Aug 18, 2026, as carried by Investing.com. Internet Archive capture of Sept 8, 2026. https://web.archive.org/web/20260908131431/https://www.investing.com/news/stock-market-news/nvidia-h200-chips-reach-china-in-small-shipments-ft-reports-4866385 Saved copy: cn-tolerate-reutersaug26-relay1-wayback
+[19] Press report citing unnamed people. Reuters, Jan 28, 2026, as carried by The Standard (Hong Kong). Page title: China gives nod to ByteDance, Alibaba and Tencent to buy Nvidia's H200 chips, says sources. https://www.thestandard.com.hk/innovation/article/322910/China-gives-nod-to-ByteDance-Alibaba-and-Tencent-to-buy-Nvidias-H200-chips-says-sources Saved copy: ms-bj-20260128-h200-nod-standard
 
-[20] Press report citing unnamed people. Reuters, datelined Nov 5, 2026, as carried by CNA (Singapore) on Nov 6, 2026. The CNA page shows only its own date; the Nov 5 dateline stands on the copy carried by Yahoo, which is also saved. Page title: Nvidia chips pile up in Hong Kong as China withholds import approval. https://www.channelnewsasia.com/east-asia/nvidia-chips-pile-up-hong-kong-china-withhold-import-approval-6527371 Saved copy: cn-clips-evidence-1
+[20] Press report citing unnamed people. Reuters, relaying the Financial Times, Aug 18, 2026, as carried by Investing.com. Internet Archive capture of Sept 8, 2026. https://web.archive.org/web/20260908131431/https://www.investing.com/news/stock-market-news/nvidia-h200-chips-reach-china-in-small-shipments-ft-reports-4866385 Saved copy: cn-tolerate-reutersaug26-relay1-wayback
 
-[21] Company filing or statement. Nvidia, results call for the third quarter of its fiscal year 2027 (the quarter ended Oct 25, 2026): the transcript on Nvidia's investor site. https://s201.q4cdn.com/141608511/files/content_files/NVDA-3Q27-Earnings-Transcript.pdf Saved copy: cn-o38-nvda-q3fy27-call-transcript-pdf
+[21] Press report citing unnamed people. Reuters, datelined Nov 5, 2026, as carried by CNA (Singapore) on Nov 6, 2026. The CNA page shows only its own date; the Nov 5 dateline stands on the copy carried by Yahoo, which is also saved. Page title: Nvidia chips pile up in Hong Kong as China withholds import approval. https://www.channelnewsasia.com/east-asia/nvidia-chips-pile-up-hong-kong-china-withhold-import-approval-6527371 Saved copy: cn-clips-evidence-1
 
-[22] Press report of words spoken on the record. Reuters, Nov 18, 2026, as carried by AOL, reporting Nvidia's interim chief executive on its results call. Page title: Nvidia stops shipping US-approved AI chips to China - AOL. https://www.aol.com/articles/nvidia-stops-shipping-us-approved-091611000.html Saved copy: cn-acts-reuters-halt-20261118-relay2
+[22] Company filing or statement. Nvidia, results call for the third quarter of its fiscal year 2027 (the quarter ended Oct 25, 2026): the transcript on Nvidia's investor site. https://s201.q4cdn.com/141608511/files/content_files/NVDA-3Q27-Earnings-Transcript.pdf Saved copy: cn-o38-nvda-q3fy27-call-transcript-pdf
 
-[23] Official document, or an official on the record. Xinhua's account of Vice Premier He Lifeng's meeting with Nvidia's chief executive on Apr 17, 2025, in People's Daily of Apr 18, 2025. Page title: 何立峰会见美国英伟达公司总裁兼首席执行官黄仁勋时指出 中国始终是外资企业投资和贸易的沃土 欢迎美资企业深化互利合作 --国际--人民网. https://world.people.com.cn/n1/2025/0418/c1002-40462541.html Saved copy: cn-policy-he-welcomes
+[23] Press report of words spoken on the record. Reuters, Nov 18, 2026, as carried by AOL, reporting Nvidia's interim chief executive on its results call. Page title: Nvidia stops shipping US-approved AI chips to China - AOL. https://www.aol.com/articles/nvidia-stops-shipping-us-approved-091611000.html Saved copy: cn-acts-reuters-halt-20261118-relay2
 
-[24] Press report citing unnamed people. Financial Times, "Jensen Huang’s years-long effort to get close to China", Nov 13, 2026. Hand-saved from the publisher's site; the address printed on the copy is cut short and is not given. (No address given.) Saved copy: man-e2596eab15f4
+[24] Official document, or an official on the record. Xinhua's account of Vice Premier He Lifeng's meeting with Nvidia's chief executive on Apr 17, 2025, in People's Daily of Apr 18, 2025. Page title: 何立峰会见美国英伟达公司总裁兼首席执行官黄仁勋时指出 中国始终是外资企业投资和贸易的沃土 欢迎美资企业深化互利合作 --国际--人民网. https://world.people.com.cn/n1/2025/0418/c1002-40462541.html Saved copy: cn-policy-he-welcomes
 
-[25] Published commentary or statement (state media, industry body). People's Daily's commentary account (人民日报评论), a signed piece of Aug 1, 2025, as carried by Beijing Daily's site. Page title: 人民日报评论：英伟达，让我怎么相信你？. https://xinwen.bjd.com.cn/content/s688c9a7ae4b0aabe0a046f83.html Saved copy: cn-acts-peoplesdaily-bjd-20250801
+[25] Press report citing unnamed people. Financial Times, "Jensen Huang’s years-long effort to get close to China", Nov 13, 2026. Hand-saved from the publisher's site; the address printed on the copy is cut short and is not given. (No address given.) Saved copy: man-e2596eab15f4
 
-[26] Published commentary or statement (state media, industry body). Science and Technology Daily, report of a forum on information security, Sept 24, 2025. The sentence relied on is the reporter's summary of what academician Shen Changxiang stressed. Page title: 第九届国家信息安全与自主可控战略高层论坛在京举行. https://www.stdaily.com/web/gdxw/2025-09/24/content_406839.html Saved copy: cn-media-stdaily-security-forum
+[26] Published commentary or statement (state media, industry body). Global Times, Jul 31, 2025 (Ma Tong), news report of the summons quoting the telecom industry expert Xiang Ligang. Page title: China's cyberspace regulator summons Nvidia over potential security risks in H20 chips. https://www.globaltimes.cn/page/202507/1339752.shtml Saved copy: cn-ga02-gt-cac-summons-news-202507
 
-[27] Company filing or statement. Alibaba Group, results release, Mar 19, 2026. Page title: Alibaba Reports Solid Progress in AI + Cloud on the Strength of Its Full-Stack Capabilities-Alibaba Group. https://www.alibabagroup.com/en-US/document-1971445322303406080 Saved copy: cn-policy-alibaba-own-gpu
+[27] Published commentary or statement (state media, industry body). People's Daily's commentary account (人民日报评论), a signed piece of Aug 1, 2025, as carried by Beijing Daily's site. Page title: 人民日报评论：英伟达，让我怎么相信你？. https://xinwen.bjd.com.cn/content/s688c9a7ae4b0aabe0a046f83.html Saved copy: cn-acts-peoplesdaily-bjd-20250801
 
-[28] Official document, or an official on the record. US-China Economic and Security Review Commission, 2025 report to Congress, November 2025: the whole report, whose chapter 1 is also listed on its own (the passage cited is in chapter 1 and rests on Reuters and the Financial Times). https://www.uscc.gov/sites/default/files/2025-11/2025_Annual_Report_to_Congress.pdf Saved copy: cn-le03-uscc-2025-full
+[28] Published commentary or statement (state media, industry body). Science and Technology Daily, report of a forum on information security, Sept 24, 2025. The sentence relied on is the reporter's summary of what academician Shen Changxiang stressed. Page title: 第九届国家信息安全与自主可控战略高层论坛在京举行. https://www.stdaily.com/web/gdxw/2025-09/24/content_406839.html Saved copy: cn-media-stdaily-security-forum
 
-[29] Caption track or machine transcript, not checked by ear. US Trade Representative Jamieson Greer, interview on Bloomberg Television posted May 15, 2026 ("Greer: US, China Willing to Continue Trade Truce"): the video's English caption track (its maker is not stated; it is not YouTube's automatic track), not checked by ear; the words quoted are at 5:59. https://www.youtube.com/watch?v=ckzJQyMyCoE Saved copy: cn-le01-greer-bbg-20260515-subs-ttml
+[29] Company filing or statement. Alibaba Group, results release, Mar 19, 2026. Page title: Alibaba Reports Solid Progress in AI + Cloud on the Strength of Its Full-Stack Capabilities-Alibaba Group. https://www.alibabagroup.com/en-US/document-1971445322303406080 Saved copy: cn-policy-alibaba-own-gpu
 
-Build check: 18 quotations and 52 further statements were looked for in the saved copies of 29 sources and all were found; a planted false quotation was rejected. 18 sources are documents, filings or named people on the record; 11 are press reports citing unnamed people, counts or machine transcripts. A quotation that is found shows what the source says, not that it is true.
+[30] Official document, or an official on the record. US-China Economic and Security Review Commission, 2025 report to Congress, November 2025: the whole report, whose chapter 1 is also listed on its own (the passage cited is in chapter 1 and rests on Reuters and the Financial Times). https://www.uscc.gov/sites/default/files/2025-11/2025_Annual_Report_to_Congress.pdf Saved copy: cn-le03-uscc-2025-full
+
+[31] Caption track or machine transcript, not checked by ear. US Trade Representative Jamieson Greer, interview on Bloomberg Television posted May 15, 2026 ("Greer: US, China Willing to Continue Trade Truce"): the video's English caption track (its maker is not stated; it is not YouTube's automatic track), not checked by ear; the words quoted are at 5:59. https://www.youtube.com/watch?v=ckzJQyMyCoE Saved copy: cn-le01-greer-bbg-20260515-subs-ttml
+
+Build check: 18 quotations and 54 further statements were looked for in the saved copies of 31 sources and all were found; a planted false quotation was rejected. 20 sources are documents, filings or named people on the record; 11 are press reports citing unnamed people, counts or machine transcripts. A quotation that is found shows what the source says, not that it is true.

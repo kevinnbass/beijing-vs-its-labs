@@ -2,7 +2,7 @@
 
 *The same two years from the buyers' side. China's AI companies ordered Nvidia chips, said why, pushed back, trained abroad, and built chips of their own.*
 
-Draft by Claude, Anthropic's model. Local; not published. Written Nov 23, 2026 (UTC).
+Draft by Claude, Anthropic's model. Written Nov 23, 2026 (UTC).
 
 How to read it. Words between quotation marks are a source's exact words, found in the saved copy by a script. A filled reference number is a document, a filing or a named person on the record. An open number is a press report citing unnamed people. English in round brackets after Chinese is our rendering, not an official translation.
 
@@ -24,13 +24,13 @@ Tencent's president, Mar 18, 2026, naming no maker: "you actually want to have a
 
 The Financial Times, Aug 20, 2025: "tech giants from Alibaba to ByteDance argued that their AI development would be impaired without Nvidia's chips", though by some close to them "they have become more accepting of a switch" [8]. Nori Chiou of White Oak Capital Partners, quoted by Reuters in December 2025, said cloud companies were "lobbying the government to relax restrictions on a conditional basis" [9]. On the record the companies said less. Tencent's president, Aug 13, 2025: "we don't really have a definite answer on the import situation yet" [10]. Its chief strategy officer, May 13, 2026, put a shortage of chips down partly to "policy restrictions on certain, you know, foreign design GPUs being brought into China" [11]. He did not say whose policy. One company asked in public. Its message of Jul 30, 2026 on the commerce ministry's message board asked how to import H200 chips lawfully; the reply of Aug 19 speaks only of what exporters must do [12].
 
-### 4. They trained abroad, and one went back to Nvidia
+### 4. They trained abroad, and one was reported to go back to Nvidia
 
 The Financial Times, November 2025: Alibaba and ByteDance "are among the tech groups training their latest large language models (LLMs) in data centres across Southeast Asia", leasing that is, by the paper's account, "compliant with US export controls" [13]. The same paper, Aug 13, 2025, by three unnamed people: DeepSeek "was encouraged by authorities to adopt Huawei's Ascend processor rather than use Nvidia's systems", met "persistent technical issues", and ended by using "Nvidia chips for training and Huawei's for inference" [14].
 
 ### 5. They built and bought their own
 
-Baidu's chief executive, April 2025: a cluster "comprising 30,000 of its self-developed, third generation P800 Kunlun chips" [15]. Alibaba's chief executive, May 13, 2026, gave a commercial reason for its own chips: "gross margins on mainstream foreign AI chips are very high, basically in the 60% to 80% range" [16]. Tencent's chief strategy officer, Nov 18, 2026: "that inference can be run very effectively on a surprisingly limited number of domestic chips" [17]. Of DeepSeek's later model, V4, Reuters wrote in April 2026: "Huawei said its chips were used in some of the V4's training process" [18]. A rival's filing disputes it, and nobody has checked either claim [19].
+Baidu's chief executive, April 2025: a cluster "comprising 30,000 of its self-developed, third generation P800 Kunlun chips" [15]. Alibaba's chief executive, May 13, 2026, gave a commercial reason for its own chips: "gross margins on mainstream foreign AI chips are very high, basically in the 60% to 80% range" [16]. Tencent's chief strategy officer, Nov 18, 2026: "that inference can be run very effectively on a surprisingly limited number of domestic chips" [17]. Of DeepSeek's later model, V4, Reuters wrote in April 2026: "Huawei said its chips were used in some of the V4's training process" [18]. Huawei's own pages of that day speak of adapting and serving the model and of a training reference implementation offered so that users can fine-tune quickly [19] [20]; neither says that Huawei's chips trained V4. DeepSeek's own report on V4 names no chip for its training, and says one of its schemes was validated "on both NVIDIA GPUs and HUAWEI Ascend NPUs platforms" [21]. A rival, iFlytek, told investors days later that V4's training was still done on Nvidia cards, a competitor's claim that nobody has checked [22].
 
 ## What the five steps add up to
 
@@ -76,6 +76,12 @@ Each entry: its kind; what it is; the saved page's own title where the record ho
 
 [18] Press report of words spoken on the record. Reuters, Apr 24, 2026, as carried by Investing.com, reporting DeepSeek's and Huawei's statements on the model V4. Internet Archive capture. https://web.archive.org/web/20260427022630/https://www.investing.com/news/stock-market-news/deepseek-unveils-new-ai-model-tailored-for-huawei-chips-as-china-pushes-for-tech-autonomy-4637544 Saved copy: cn-labs-v4-training-reuters-relay1-wayback
 
-[19] Company filing or statement. iFlytek, record of investor-relations activity of Apr 29, 2026, on the exchanges' disclosure site (cninfo). A competitor's statement about DeepSeek; not checked. https://static.cninfo.com.cn/finalpage/2026-04-29/1225268679.PDF Saved copy: cn-le26-iflytek-ir-20260429
+[19] Company filing or statement. Huawei Cloud, news page on DeepSeek-V4, Apr 24, 2026 (huaweicloud.com). Internet Archive capture of Jun 8, 2026. https://www.huaweicloud.com/news/2026/20260424172129152.html Saved copy: cn-labs-v4-huawei-official-wayback
 
-Build check: 19 quotations and 27 further statements were looked for in the saved copies of 19 sources and all were found; a planted false quotation was rejected. 14 sources are documents, filings or named people on the record; 5 are press reports citing unnamed people, counts or machine transcripts. A quotation that is found shows what the source says, not that it is true.
+[20] Company filing or statement. Post signed 昇腾CANN (Ascend CANN) on the AtomGit open-source site, Apr 24, 2026, on Ascend's support for DeepSeek V4. The account is taken from the page's own label. Page title: DeepSeek V4正式发布，昇腾超节点系列产品全面支持_CANN_昇腾CANN-AtomGit开源社区. https://gitcode.csdn.net/69eaff6d54b52172bc6fbb13.html Saved copy: cn-ga08-gitcode-ascend-v4-69eaff6d
+
+[21] Company filing or statement. DeepSeek-AI, DeepSeek-V4 technical report, arXiv 2606.19348, version 1 of Apr 26, 2026 (PDF). https://arxiv.org/pdf/2606.19348 Saved copy: cn-ga08-arxiv-deepseek-v4-pdf
+
+[22] Company filing or statement. iFlytek, record of investor-relations activity of Apr 29, 2026, on the exchanges' disclosure site (cninfo). A competitor's statement about DeepSeek; not checked. https://static.cninfo.com.cn/finalpage/2026-04-29/1225268679.PDF Saved copy: cn-le26-iflytek-ir-20260429
+
+Build check: 20 quotations and 31 further statements were looked for in the saved copies of 22 sources and all were found; a planted false quotation was rejected. 17 sources are documents, filings or named people on the record; 5 are press reports citing unnamed people, counts or machine transcripts. A quotation that is found shows what the source says, not that it is true.

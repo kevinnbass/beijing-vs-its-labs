@@ -9,7 +9,9 @@ Kinds to rungs (round 4: the argument has eleven kinds; its own builder counts a
   1 DOC, PUB      Chinese state documents, and published commentary of state media or an industry body
   2 FIL, NOTICE   company filings and statements, and an institution's own published notice (two universities)
   3 OFF, NAMED    officials on the record and official records; one named analyst's written testimony
-  4 REC, ACCT     press reports naming their source: a named person's words, or a named newspaper's account of a state document
+  4 REC, ACCT     press reports naming their source: a named person's words, a company's statement (round 8: the argument's
+                  REC rows include company statements, among them Nvidia's statement as two news sites carried it, The
+                  Standard and the Daily Caller News Foundation, edit 7c), or a named news outlet's account of a state document
   5 PRESS, COUNT, CLIP   unnamed people, a research firm's counts, caption tracks or machine transcripts not checked by ear
 The examples and their words are in data.txt; quotes.tsv is written from it and checked by scripts/cn_has.py before
 anything else is written.
@@ -26,28 +28,29 @@ B = C.B
 NAME = 'ladder_of_evidence'
 RUNG_OF = {'DOC': 1, 'PUB': 1, 'FIL': 2, 'NOTICE': 2, 'OFF': 3, 'NAMED': 3, 'REC': 4, 'ACCT': 4, 'PRESS': 5, 'COUNT': 5, 'CLIP': 5}
 RUNGS = {  # name, what sits on it, what it shows about this claim, what it does not show ({SM} is filled in from tables/state_media_items.tsv)
-    1: ('Chinese state documents and state media', 'texts of the Chinese party-state and its bodies; published commentary of state media and of an industry body',
+    1: ('Chinese state documents and state media', 'texts of the Chinese party-state and its bodies; what state media and an industry body published: commentary, reports, statements',
         'The declared line: end dependence on foreign core technology and use home-made chips. The purchase rules for state bodies, the provincial targets, '
         'the antitrust case and the summons. A Shanghai government body’s own statement that internet companies’ clusters run mainly on Nvidia. '
         'And the public warnings: state media warned about Nvidia’s chips, {SM}; a Party paper also printed a scholar’s advice to stock imported chips.',
-        'Any order telling companies not to buy Nvidia chips. None was found in the 103 policy pages read. The commentaries warn and urge; none forbids.'),
-    2: ('Company filings and own notices', 'what companies told securities regulators and investors: filings, results releases, the company’s own transcript of a results call; and two universities’ own purchase notices',
+        'Any order telling companies not to buy Nvidia chips. None was found in the 82 policy pages read. The commentaries warn and urge; none forbids.'),
+    2: ('Company filings and own notices', 'what companies told securities regulators, exchanges and investors: filings, results releases, the company’s own transcript of a results call; and institutions’ own purchase notices (universities, and a centre of the drug regulator)',
         'Alibaba told the US securities regulator that the cyberspace regulator asked firms to halt purchases of certain chips. Nvidia told it that the Chinese government restricted, and later discouraged, customers’ purchases, '
         'and that its licensed sales were restricted; the same reports say it is foreclosed from the China market by US export controls. On its own results calls Nvidia said in May 2026 '
         'that it had no revenue yet from the licensed chips, and in November 2026 that it had sold $2.4 billion of licensed Hopper products to China in a quarter and was no longer shipping. '
-        'Alibaba also says its own chips are in scaled production. Two universities posted notices to buy an Nvidia card in July 2026.',
-        'Who gave the instruction, or how. Alibaba’s sentence does not name Nvidia. Nvidia gave no reason for stopping. A notice to buy is neither a purchase made nor a delivery.'),
+        'Alibaba also says its own chips are in scaled production. Listed Chinese firms told the Shenzhen exchange of purchases of cards named PRO 5500. '
+        'Universities’ own notices of 2026 seek or buy a few Nvidia cards at a time, or rent a server that holds them; some central buyers’ notices of November 2026 ask for home-made computing.',
+        'Who gave the instruction, or how. Alibaba’s sentence does not name Nvidia. Nvidia gave no reason for stopping. A notice to buy is not a purchase made, and a contract is not a delivery.'),
     3: ('Officials and official records', 'named officials, in their own body’s account or a transcript; official records, most of them American (hearings, reports, rules, the licence table); one analyst’s written testimony. Executives’ words reach us through rungs 2 and 4',
         'American officials state the conflict in their own names, as their understanding; American bodies read Beijing’s acts as leverage in trade talks, or as a push for more advanced chips. Washington’s own licence table marks every approved application not shipped. '
         'Chinese officials stand on both sides in public: the state planner says it is guiding model makers to home-made chips; a vice premier and the commerce minister welcome Nvidia, and the premier tells American firms, Nvidia’s among them, that an open policy is a lasting commitment; asked about the reports, spokespeople confirm nothing.',
         'Any Chinese official saying that purchases were stopped.'),
-    4: ('Press reports naming their source', 'a named person’s words at a hearing, on a results call, on television or in a post, or a named newspaper’s account of a state document, as a newspaper, a post or a transcript site gives them',
+    4: ('Press reports naming their source', 'a named person’s words at a hearing, on a results call, on television or in a post, a company’s statement, or a named news outlet’s account of a state document, as a news outlet, a post or a transcript site gives them',
         'The Treasury Secretary’s view that Chinese orders were few. A Tencent executive’s remark that policy restrictions kept foreign-designed chips out of China; he does not say whose policy. '
         'And the companies’ own turn to home-made chips, in their executives’ words.',
         'A first-hand record. Each of these passes through a reporter, a post or a transcript site; the speaker labels of the Tencent transcripts are the site’s and are unchecked.'),
-    5: ('Press reports citing unnamed people', 'also a research firm’s counts, and caption tracks or machine transcripts that nobody has checked by ear',
-        'Who told whom, and when: the guidance not to buy, the warning about traitors, the customs checks, the split inside Beijing. Every count of chips ordered, approved by Beijing, delivered and waiting. '
-        'Nvidia’s market share. The clip that raised the question, and the Trade Representative’s and the Treasury Secretary’s words on Bloomberg Television, in caption tracks or transcripts.',
+    5: ('Press reports citing unnamed people', 'also research firms’ counts, and caption tracks or machine transcripts that nobody has checked by ear',
+        'Who told whom, and when: the guidance not to buy, the warning about traitors, the customs checks, the split inside Beijing. Every count of the chips ordered across China’s companies, approved by Beijing, delivered and waiting; '
+        'the counts single buyers give of their own purchases are on rung 2. Nvidia’s market share, and the foreign suppliers’ share. The clip that raised the question, and the Trade Representative’s and the Treasury Secretary’s words on Bloomberg Television, in caption tracks or transcripts.',
         'Confirmation. In the answers found, Beijing’s spokespeople confirmed none of these reports.'),
 }
 GROUPS = [  # label, the points in it (the argument's own sections; "T" is its table of numbers)
@@ -147,9 +150,18 @@ def main():
     assert sorted(k for k in pts if k != 'T') == list(range(1, 22)), 'the argument has 21 numbered points'
     assert set(kinds) <= set(RUNG_OF), set(kinds) - set(RUNG_OF)
     assert on == sum(v for k, v in kinds.items() if k in B.SOLID), 'the rungs above the line hold exactly the kinds the argument counts as on the record'
+    # round 5: the words of the rungs that describe kinds rest on these (a change in the references stops the build here)
+    lab_of = lambda k: [r['label'] for r in refs.values() if r['kind'] == k]
+    notices = lab_of('NOTICE')
+    assert sum('Universit' in l for l in notices) == len(notices) - 1 and sum('National Medical Products Administration' in l for l in notices) == 1, notices      # universities, and a centre of the drug regulator
+    assert {f for f in ('IDC', 'TrendForce') if any(f in l for l in lab_of('COUNT'))} == {'IDC', 'TrendForce'}, lab_of('COUNT')                                   # research firms' counts (two firms)
+    assert all(refs.get(s, {}).get('kind') == 'FIL' for s in ('cn-filings-tianyang-20261013-contract', 'cn-le08-youzu-contract-20261104', 'cn-ga01-hzyl-contract-20261112'))   # listed firms' notices of PRO 5500 purchases: rung 2
+    assert all(refs.get(s, {}).get('kind') == 'NOTICE' for s in ('cn-ga13-nwpu-som-88690-wayback', 'cn-ga13-ccgp-nmpa-cmde-ai-rental-27742397', 'cn-ga13-ccgp-pku-inference-card-27734000'))
+    assert kinds['NAMED'] == 1 and kinds['ACCT'] >= 2
     sm = C.table('state_media_items.tsv'); warns = sorted(C.date.fromisoformat(r['date']) for r in sm if r['stance'] == 'warns')
-    assert len(sm) == 42 and len(warns) == 7, (len(sm), len(warns))
-    RUNGS[1] = RUNGS[1][:2] + (RUNGS[1][2].replace('{SM}', f'in the {C.WORDS[len(warns)]} of {len(sm)} state and Party media items found that only warn about them, all dated {C.fmt(warns[0])} to {C.fmt(warns[-1])}'),) + RUNGS[1][3:]
+    win = [d for d in warns if d <= C.date(2025, 9, 24)]
+    assert (len(sm), len(warns), len(win)) == (75, 14, 11), (len(sm), len(warns), len(win))      # the table since core edit 6 (atlas/core_edit/p6_work_5/count_census.py)
+    RUNGS[1] = RUNGS[1][:2] + (RUNGS[1][2].replace('{SM}', f'in {len(warns)} of {len(sm)} state and Party media items found that only warn about them, {len(win)} of them dated {C.fmt(win[0])} to {C.fmt(win[-1])} and {len(warns) - len(win)} later, in Global Times in 2026 (the items after September 2025 are what two rounds of searches found, a sample and not a full count)'),) + RUNGS[1][3:]
     assert '{' not in RUNGS[1][2]
     cols = [p for _, ps in GROUPS for p in ps]
     cellc = {(p, k): sum(rung[i] == k for i in pts[p]) for p in cols for k in range(1, 6)}
@@ -216,7 +228,25 @@ def main():
 
     def listing(ps):
         ps = [str(p) for p in ps]
+        assert ps, 'listing() needs at least one item; the sentences below say "No point ..." for an empty list'
         return ps[0] if len(ps) == 1 else ', '.join(ps[:-1]) + ' and ' + ps[-1]
+
+    def points(ps, verb_one, verb_many):
+        return f'Point {ps[0]} {verb_one}' if len(ps) == 1 else f'Points {listing(ps)} {verb_many}'
+
+    # round 5 (core edit 6): since the argument's sources grew in core edits 6 and 6e no point cites only rung 1, so the sentence says that
+    # and names the points that cite only sources on the record (no rung-5 source), counted here like every other number
+    on_only = [p for p in cols if p != 'T' and not cellc[(p, 5)]]
+    if only1:
+        say1 = points(only1, 'cites only rung 1.', 'cite only rung 1.')
+    else:
+        say1 = 'No point cites only rung 1; ' + (points(on_only, 'cites only sources on the record (rungs 1 to 4).', 'cite only sources on the record (rungs 1 to 4).').replace('Point', 'point', 1) if on_only else 'every point cites at least one source of the lowest rung.')
+    if only5:
+        say5 = points(only5, 'cites only the lowest rung', 'cite only the lowest rung') + f', and so do {t5} of the {t_all} sources behind the numbers.'
+    else:
+        say5 = f'No point cites only the lowest rung; {t5} of the {t_all} sources behind the numbers are on it.'
+    say_out = (f'{C.WORDS.get(len(outside), len(outside)).capitalize()} of the {total} sources are cited only outside the points and the table, '
+               f'in the argument’s opening and in its list of what is left open (reference{"s" if len(outside) != 1 else ""} {listing([num[s] for s in outside])}).') if outside else ''
 
     figure = f"""
   <section class="card" id="ladder">
@@ -227,8 +257,8 @@ def main():
   <section class="card gap" id="matrix">
    <h2>Which rung each point of the argument stands on</h2>
    <p class="sub">The argument’s {len(pts) - 1} points and its table of numbers, in its own order. A number is how many sources of that rung the point cites.
-   Points {listing(only1)} cite only rung 1. Points {listing(only5)} cite only the lowest rung, and so do {t5} of the {t_all} sources behind the numbers.
-   {C.WORDS.get(len(outside), len(outside)).capitalize()} of the {total} sources are cited only outside the points and the table, in the argument’s opening and in its list of what is left open (references {listing([num[s] for s in outside])}).</p>
+   {say1} {say5}
+   {say_out}</p>
    <p class="hint">Swipe the table sideways to see every point.</p>
    <div class="scroll" tabindex="0" role="group" aria-label="Table of points against rungs; scroll sideways on a narrow screen">
 {chr(10).join(mx)}
@@ -240,7 +270,7 @@ def main():
    <h2>Read with care</h2>
    <ul>
     <li><b>A rung says how a statement reached us, not whether it is true.</b> A document can be wrong and an unnamed person right. A quotation that was found in a saved copy shows what the source says.</li>
-    <li><b>The rungs follow the argument’s own labels</b> for its {total} sources; the same source sits on one rung only. The argument has {C.WORDS[len(kinds)]} kinds of source; this figure puts its state documents and the published commentary of state media and an industry body on rung 1, filings and two universities’ notices on rung 2, officials, official records and one analyst’s testimony on rung 3, and reports of named people’s words and one newspaper’s account of a state document on rung 4. Rungs 1 to 4 hold exactly the kinds the argument counts as on the record. A named person’s words on rung 4 still pass through a reporter, a post or a transcript site.</li>
+    <li><b>The rungs follow the argument’s own labels</b> for its {total} sources; the same source sits on one rung only. The argument has {C.WORDS[len(kinds)]} kinds of source; this figure puts its state documents and what state media and an industry body published on rung 1, filings and institutions’ own purchase notices on rung 2, officials, official records and {C.WORDS[kinds['NAMED']]} analyst’s testimony on rung 3, and reports of named people’s words or companies’ statements, and news outlets’ accounts of state documents, on rung 4. Rungs 1 to 4 hold exactly the kinds the argument counts as on the record. A named person’s words on rung 4 still pass through a reporter, a post or a transcript site.</li>
     <li>What the count cannot weigh: one company filing may carry more than several press reports. The count of squares is not a score.</li>
     <li>English renderings of Chinese are ours, not official translations.</li>
    </ul>
@@ -248,7 +278,7 @@ def main():
 
     key = f"""   <ul class="key">
     <li><span class="u" aria-hidden="true"></span><span><b>Filled:</b> on the record (a document, a filing, a named person). {on} sources</span></li>
-    <li><span class="u open" aria-hidden="true"></span><span><b>Open:</b> unnamed people, a research firm’s count, caption tracks or machine transcripts. {off} sources</span></li>
+    <li><span class="u open" aria-hidden="true"></span><span><b>Open:</b> unnamed people, research firms’ counts, caption tracks or machine transcripts. {off} sources</span></li>
     <li><span>Numbers in circles are the reference numbers of the referenced argument (ARGUMENT_referenced).</span></li>
    </ul>"""
 
@@ -283,7 +313,7 @@ def main():
         eyebrow=f'China · Nvidia chips · how firm each source is · {total} sources of the referenced argument',
         h1='The direction rests on documents and filings. The mechanics rest on unnamed people.',
         deck=f'The {total} sources behind the argument, sorted onto five rungs by how each statement reached us. {on} are documents, filings or named people on the record. '
-             f'{off} are press reports citing unnamed people, a research firm’s counts, or caption tracks and machine transcripts: they carry who told whom, and {t5} of the {t_all} sources behind the numbers.',
+             f'{off} are press reports citing unnamed people, research firms’ counts, or caption tracks and machine transcripts: they carry who told whom, and {t5} of the {t_all} sources behind the numbers.',
         key=key, figure=figure, below=below, css=CSS, tipjson=json.dumps(tip, ensure_ascii=False).replace('</', '<\\/'))
     out = C.finish(HERE, NAME, page, lines)
     with open(HERE / 'sources.tsv', 'w', encoding='utf-8') as fh:

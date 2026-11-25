@@ -6,6 +6,8 @@ Run: python3 -I build.py                                   checks quotes.tsv wit
                                                             page.pdf) and a picture of each sheet (pdftoppm): brief_A4.png, brief_Letter.png
 Reads brief.txt (the text and the references), quotes.tsv (this folder), ../a4lib.py, and shows ../../../figure/beijing_vs_labs_top.png
 (the image is not copied: rebuild the PDFs after the figure is rebuilt).
+Round 5 (Nov 24, 2026, core edit 6): the state-media warnings as a4lib.warnings() now counts them; a reference line may quote
+a title ({q:key}, from the same saved page); the licence table is named by its title and release.
 Round 4 (Nov 23, 2026): the core's top image now also holds three panels of numbers and is 1.45 times as tall as wide; whole,
 it would print about 105 mm wide with unreadable type. The brief therefore shows that image down to the foot of its first
 card: the headline, the key and the dated strip. The cut is found here in the image itself (crop_line), not typed.
@@ -25,7 +27,7 @@ esc, qm, fmt = A.esc, A.qm, A.fmt
 FIG = '../../../figure/beijing_vs_labs_top.png'
 HEADLINE = 'Beijing mostly pulled one way on Nvidia chips. Its AI companies pulled the other.'     # the core figure's, checked in its template
 MONTH = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
-NUMW = {5: 'five', 6: 'six', 7: 'seven', 8: 'eight', 9: 'nine'}
+NUMW = {1: 'one', 2: 'two', 3: 'three', 4: 'four', 5: 'five', 6: 'six', 7: 'seven', 8: 'eight', 9: 'nine'}
 PAPER = {'A4': ('210mm', '297mm', 'a4', 210.0), 'Letter': ('215.9mm', '279.4mm', 'letter', 215.9)}
 MIN_FIG_MM = {'A4': 170, 'Letter': 160}             # under these widths the build stops: the strip's own type gets too small to read
 
@@ -165,6 +167,9 @@ def main():
             if not mm: sys.exit(f'{k}.month holds no month and year')
             d = f'{mm.group(1).capitalize()} {mm.group(2)}'; dates.append(d); label = label.replace('{month}', d)
         if '{posted}' in label: d = fmt(A.posted(Q[k + '.title'].sid)); dates.append(d); label = label.replace('{posted}', d)
+        for qk in re.findall(r'\{q:([a-z.]+)\}', label):           # a title in the source's own words, from quotes.tsv (same saved id)
+            if Q[qk].sid != Q[k].sid: sys.exit(f'{k}: the quoted words {qk} are not from the reference\'s own saved page')
+            label = label.replace('{q:' + qk + '}', '“' + A.curly(str(Q[qk])) + '”')
         if '{' in label: sys.exit(f'{k}: an unfilled mark in its reference line')
         lis.append(f'<li id="r{num[k]}"><span class="c {tier[k]}">{num[k]}</span><span>{esc(label)} '
                    f'<a class="u" href="{esc(r["addr"], quote=True)}">{esc(r["addr"])}</a></span></li>')
@@ -194,10 +199,11 @@ def main():
 </body>
 </html>
 '''
-    # ours: the reference numbers 1 to 10 (1 to 5 also number the limits); 103 = the project's count of policy pages read
+    # ours: the reference numbers 1 to 10 (1 to 5 also number the limits); 82 = the project's count of policy pages read
     # (the argument, point 18); and what fill() made: the share of Washington's table, the caption's time
-    A.guard(page, Q, ours=[*range(1, 11), '103', *ours], dates=dates)
-    for banned in ('four limits', 'spokesperson', '750,000', 'Democrats', 'more than half'):
+    A.guard(page, Q, ours=[*range(1, 11), '82', *ours], dates=dates)
+    # withdrawn by core edit 6 (atlas/core_edit/APPLIED_6.txt): the warnings are not all of Aug 1 to Sept 24, 2025; the table is not the Commerce Department's
+    for banned in ('four limits', 'spokesperson', '750,000', 'Democrats', 'more than half', 'all date from', 'Aug 1 to', 'Commerce Department’s table', 'US Commerce Department, table'):
         if banned in page: sys.exit(f'the page still says "{banned}"')
     words = re.sub(r'<a class="c[^>]*>\d+</a>', ' ', cols)
     words = sum(1 for w in re.sub(r'<[^>]+>', ' ', f'{title} {answer} {words}').split() if re.search(r'\w', w))   # a stray full stop is not a word

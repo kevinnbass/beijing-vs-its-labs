@@ -2,7 +2,7 @@
 
 @deck No. Each customs line holds every maker's goods, and no saved page says under which line these chips are declared. Two official lines rose steeply in 2026: China's imports of computer parts, and Singapore's re-exports of one kind of computer unit to the mainland. Neither can be read as a count of Nvidia chips.
 
-@note Draft by Claude, Anthropic's model. Local; not published. Written Nov 23, 2026 (UTC). Idea 34 of the output list.
+@note Draft by Claude, Anthropic's model. Written Nov 23, 2026 (UTC). Idea 34 of the output list.
 @note A finding: this note says what public trade figures can and cannot show. It counts no chips.
 @note Anthropic has argued in public for controls on chip exports to China (that is from my general knowledge; no saved page is cited for it), so judge this note by its sources.
 @note A filled number is a government document, an official figure, a filing or a named person on the record. An open number is a press report citing unnamed people, or a count that is not official. Words between quotation marks were found in the saved copy by a script. English in round brackets after Chinese is my rendering, not an official translation.

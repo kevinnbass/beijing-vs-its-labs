@@ -1,0 +1,7 @@
+{
+ "id": "cn-ga02-cctv-award-notice-api-20260424",
+ "url": "https://api.cntv.cn/Article/contentinfo?id=ARTIDCGhajJXNhKdTAlCbNJk260424&serviceId=tvcctv",
+ "route": "https://api.cntv.cn/Article/contentinfo?id=ARTIDCGhajJXNhKdTAlCbNJk260424&serviceId=tvcctv",
+ "fetched_utc": "2026-11-24T10:49:08Z",
+ "sha256": "01ca0f746ec6977f8551eb47f38006183322f5deedf32ba56f33c983fb6bb03f"
+}

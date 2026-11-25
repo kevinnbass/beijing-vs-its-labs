@@ -71,8 +71,8 @@ cn-factions-bloomberg-flexibility-202409-relay1	Published Sat, Sep 28, 2024
 #@ bloomberg.unnamed
 cn-factions-bloomberg-flexibility-202409-relay1	said the people, who asked not to be identified because the matter is private
 
-# --- Washington's table of licence applications: the Commerce Department's, status as of May 11, 2026, made public by the
-# --- House Foreign Affairs Committee on Nov 19, 2026. The share shown is made by a4lib.house() from the project's
+# --- Washington's table of licence applications, "H200 License and Equivalent Application Status as of May 11, 2026", made
+# --- public by the House Foreign Affairs Committee on Nov 19, 2026 (named by its title since core edit 6; the reference line quotes it). The share shown is made by a4lib.house() from the project's
 # --- tables/house_licence_table.tsv; the two figures the committee's summary prints must equal its sums (the build checks).
 #@ table
 cn-usdocs-hfac-decisions-20261119	H200 License and Equivalent Application Status as of May 11, 2026

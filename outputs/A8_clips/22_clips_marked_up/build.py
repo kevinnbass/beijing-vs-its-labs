@@ -21,6 +21,7 @@ LABEL = {'A': 'Borne out by the record', 'AB': 'Borne out on direction; too flat
          'C': 'Not established by any saved source', 'D': 'Outside what this project checked'}
 SHORT = {'A': 'Borne out'}
 ORDER = ['A', 'AB', 'B', 'C', 'D']
+LEFT_CODE = 'X'                        # round 7 (OB10): a part whose words this project leaves out: no verdict, no text
 NUM = ['no', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten']
 
 
@@ -39,7 +40,7 @@ def load_marks():
         if ln.startswith('#') or not ln.strip(): continue
         if ln.startswith('@ '):
             parts = [x.strip() for x in ln[2:].split('|')]
-            if parts[1] not in LABEL: sys.exit(f'marks.txt: unknown code in: {ln}')
+            if parts[1] not in LABEL and parts[1] != LEFT_CODE: sys.exit(f'marks.txt: unknown code in: {ln}')
             if parts[0] in marks: sys.exit(f'marks.txt: {parts[0]} twice')
             cur = marks[parts[0]] = {'code': parts[1], 'qual': parts[2] if len(parts) > 2 else '', 'text': [], 'hidden': [], 'own': ''}
         elif cur is None: sys.exit(f'marks.txt: text before the first entry: {ln[:60]}')
@@ -71,14 +72,21 @@ def clip_lines(clip, c, marks):
             m = marks[u['id']]
             if '"' in u['text']: sys.exit(f'{u["id"]}: the transcript words hold a straight double quote')
             when = f'**{clock(u["start"])} to {clock(u["end"])}.** ' if len(us) > 1 else ''
-            words = m['own'] or f'"{u["text"]}" [{c["cite"]}]'
+            if u.get('left_out'):                                  # round 7: words the project leaves out (../40_checked_by_ear/compare.py, LEAVE)
+                if m['own'] or not u['text'].startswith('[') or '"' in u['text']: sys.exit(f'{u["id"]}: a left-out part must show only the bracket')
+                if m['code'] != LEFT_CODE or m['text'] or m['hidden']: sys.exit(f'{u["id"]}: a left-out part takes code {LEFT_CODE}, with no verdict and no text')
+                out.append(f'{when}{u["text"]}'); out.append('')   # OB10: only the bracket: no verdict, no description
+                continue
+            if m['code'] == LEFT_CODE: sys.exit(f'{u["id"]}: code {LEFT_CODE} is only for a part whose words are left out')
+            else:
+                words = m['own'] or f'"{u["text"]}" [{c["cite"]}]'
             out.append(f'{when}{words} **{label(m)}.** {" ".join(m["text"])}')
             out += m['hidden'] + ['']
     return out, len(sentences), len(units)
 
 
 def table_numbers():
-    """Sums over the project's copy of the Commerce Department's table of licence applications (status on May 11, 2026)."""
+    """Sums over the project's copy of the licence table the House Foreign Affairs Committee released (status on May 11, 2026)."""
     rows = list(csv.DictReader((l for l in TABLE.read_text(encoding='utf-8').splitlines() if not l.startswith('#')), delimiter='\t'))
     n = lambda r: int(r['chip_count'].replace(',', ''))
     tot = sum(n(r) for r in rows)
@@ -104,6 +112,10 @@ def main():
     ids = [u['id'] for c in data['clips'].values() for u in c['units'] if u['in_transcript']]
     if sorted(ids) != sorted(marks): sys.exit(f'marks.txt and the clips do not match: {sorted(set(ids) ^ set(marks))}')
     L, P = data['clips']['luckey'], data['clips']['pottinger']
+    lefts = [u for c in (L, P) for u in c['units'] if u.get('left_out')]
+    n_left = len(lefts)
+    LEFT = lefts[0]['text'] if lefts else ''
+    if any(u['text'] != LEFT for u in lefts): sys.exit('STOPPED: the left-out parts do not show one and the same bracket')
     body_l, ns_l, nu_l = clip_lines('luckey', L, marks)
     body_p, ns_p, nu_p = clip_lines('pottinger', P, marks)
     count = lambda c, code: sum(1 for u in c['units'] if u['in_transcript'] and marks[u['id']]['code'] == code)
@@ -116,15 +128,16 @@ def main():
     o = ['# The two clips, sentence by sentence',
          f"@deck Every sentence of Palmer Luckey's {length_words(L['duration'])} and of Matt Pottinger's {length_words(P['duration'])} with Christiane Amanpour, each with a verdict and its sources.",
          '',
-         f'@note Draft by Claude, Anthropic\'s model. Local; not published. Built {today.strftime("%b")} {today.day}, {today.year} (UTC).',
-         "@note The words of both clips are a speech program's transcripts [clip-luckey] [clip-pottinger], but for one sentence of Luckey's (L4), which is quoted from the text of the post that carries the clip. Nobody has checked any of them by ear. Times are minutes and seconds into each clip. A page for checking them by ear is in the folder 40_checked_by_ear, beside this one.",
+         f'@note Draft by Claude, Anthropic\'s model. Built {today.strftime("%b")} {today.day}, {today.year} (UTC).',
+         "@note The words of both clips are a speech program's transcripts [clip-luckey] [clip-pottinger], but for one sentence of Luckey's (L4), which is quoted from the text of the post that carries the clip. Nobody has checked any of them by ear. Times are minutes and seconds into each clip. A page for checking them by ear is held back (see HELD_BACK.md).",
+         f"@note {NUM[n_left].capitalize()} parts are shown only as {LEFT}: this project leaves their words out, and they carry no verdict." if n_left else '',
          "@note Anthropic has argued in public for controls on chip exports to China (that is from the model's general knowledge; no saved page is cited for it), so judge this note by its sources.",
          '',
          '## How to read the verdicts',
          '',
          '- **Borne out by the record.** A saved source states it. Where that source is a press report citing unnamed people, the line says so.',
          '- **Too flat.** The direction is right, but the wording says more than the record shows.',
-         "- **Not established by any saved source.** Nothing saved for this project states it. Where the sentence charges a person or a company with wrongdoing, the line says that it is the speaker's allegation and stops there.",
+         "- **Not established by any saved source.** Nothing saved for this project states it.",  # OB10: the clause on allegation lines went with the last such line (L7, left out)
          '- **Outside what this project checked.** A question, an opinion, a forecast, or a matter this project did not look into.',
          '',
          "The verdicts follow the project's assessment of the two clips and its referenced argument. They do not go beyond them. Words between quotation marks were found in the saved copy by a script. Where Chinese words are quoted, the English beside them is ours, not an official translation.",
@@ -135,6 +148,10 @@ def main():
          '']
     # a list, not a table: at phone width the page drops a table's header row, and the two columns of numbers lose their names
     for code in ORDER: o.append(f"- **{LABEL[code]}:** {count(L, code)} of the {nu_l} parts of Luckey's clip, {count(P, code)} of the {nu_p} parts of Pottinger's.")
+    if count(L, LEFT_CODE) or count(P, LEFT_CODE):         # round 7 (OB10): counted apart, not as a verdict
+        o.append(f"- **Left out of this project, with no verdict:** {count(L, LEFT_CODE)} of the {nu_l} parts of Luckey's clip, {count(P, LEFT_CODE)} of the {nu_p} parts of Pottinger's.")
+    for c, n in ((L, nu_l), (P, nu_p)):
+        if sum(count(c, k) for k in ORDER + [LEFT_CODE]) != n: sys.exit('STOPPED: the counts by verdict do not add up to the parts')
     o += ['',
           f"**Read with care.** These are counts of parts of sentences, not of weight. Of the {count(P, 'D')} parts of Pottinger's clip marked outside, {NUM[asked]} are the interviewer's question and the rest are opinions and forecasts.",
           '',
@@ -172,7 +189,7 @@ def main():
     print(r.stdout.strip())
     if r.returncode != 0:
         print(r.stderr.strip()); sys.exit('STOPPED: cn_doc_build.py did not pass; nothing was written')
-    print('verdicts by clip (parts): ' + '; '.join(f'{LABEL[c]}: {count(L, c)} + {count(P, c)}' for c in ORDER))
+    print('verdicts by clip (parts): ' + '; '.join(f'{LABEL[c]}: {count(L, c)} + {count(P, c)}' for c in ORDER) + f'; left out, no verdict: {count(L, LEFT_CODE)} + {count(P, LEFT_CODE)}')
 
 
 if __name__ == '__main__':

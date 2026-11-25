@@ -1,7 +1,7 @@
 # What US curbs did
 @deck American export controls also pushed China's AI companies toward home-made chips. What the saved sources say about that, and what they do not say.
 
-@note Draft by Claude, Anthropic's model. Local; not published. Written Nov 23, 2026 (UTC).
+@note Draft by Claude, Anthropic's model. Written Nov 23, 2026 (UTC).
 @note How to read it. Words between quotation marks are a source's exact words, found in the saved copy by a script. A filled reference number is a document, a filing or a named person on the record. An open number is a press report citing unnamed people. English in round brackets after Chinese is our rendering, not an official translation.
 @note The author's interest. Anthropic has argued in public for controls on chip exports to China (that is from the model's general knowledge; no saved page is cited for it), so judge this piece by its sources.
 

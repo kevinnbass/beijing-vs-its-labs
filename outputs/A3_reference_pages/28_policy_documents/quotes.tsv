@@ -170,9 +170,9 @@ cn-policy-capitalonline-chip-use	性价比差异:英伟达的芯片生产规模�
 cn-policy-capitalonline-chip-use	2025年2月17日
 cn-policy-capitalonline-chip-use	着重凸显平台卓越的芯片兼容性,支持英伟达、 华为、燧原等多种芯片类型
 cn-policy-capitalonline-chip-use	公司在这方面投入了大量资源,帮助 国产芯片优化运行效率。
-cn-policy-efficiency-ft-relay	If these new regulations are strictly enforced, Chinese firms would be barred from purchasing NVIDIA’s H20 chip
-cn-policy-efficiency-ft-relay	the new regulations have not yet been strictly enforced, and H20 chips continue to sell strongly in the Chinese market without any significant impact so far.
-cn-policy-efficiency-ft-relay	2025-03-27
+cn-ga21-ft-efficiency-harici	Beijing has introduced energy efficiency rules for the use of advanced chips that, if strictly enforced, would prevent Chinese companies from buying Nvidia’s best-selling processors in the country
+cn-ga21-ft-efficiency-harici	They added that the rules are not strictly enforced and have not yet impacted sales of H20 chips in China, which continue to experience strong demand
+cn-ga21-ft-efficiency-harici	2025-03-26
 cn-policy-baidu-own-chip-wayback	Baidu AI chips have been used for our search engine, cloud, and Xiaodu’s business needs, while powering our deep learning computing needs.
 cn-policy-baidu-own-chip-wayback	As of December 31, 2024, PaddlePaddle has been equipped with more than 60 series of chips.
 cn-policy-baidu-own-chip-wayback	March 28, 2025
@@ -306,6 +306,7 @@ cn-policy-shanghai-domestic-target	到2025年，本市新建智算中心国产�
 cn-factions-beijing-plan-20240424	具备100%自主可控智算中心建设能力
 cn-o39-hebei-opinion-2024-wayback	新增算力基础软硬件设施自主可控比例60%以上
 cn-o39b-shanxi-measures-2024-jincheng	对基础软硬件实现国产化90%以上的新建、改建数据中心，给予最高不超过500万元的一次性奖励
+cn-ga05-tibet-xzca-compute-everest-plan-20240625	到2026年，算力规模达到100PFLOPS，智算算力占比达到60%
 cn-o39-tianjin-plan-2024	到 2026 年，全市算力中心国产算力芯片使用占比超过 60％
 cn-o39-guangxi-digital-plan-2024-wayback	算力规模达到5EFLOPS，存力规模达到20EB，智能算力占比达35%
 cn-o39-henan-plan-2024-wayback	鼓励智算、超算中心采用昇腾、海光等自主可控技术路线
@@ -326,7 +327,6 @@ cn-o39-yunnan-digital-channel-2026	促进国产操作系统生态发展
 cn-o39-chongqing-hub-plan-2026-wayback	探索建设集自主可控芯片、通信网络、训练框架于一体的万卡级算力集群
 cn-factions-jiangsu-plan	新建算力中心国产算力芯片使用占比达 70%以上
 cn-le16-hainan-ai-plus-2026-smartcity	以基础要素突破为支撑点， 构建自主可控算力底座，建设高质量行业数据集
-cn-o39b-tibet-compute-plan-2024-wxb	到2026年,算力规模达到100PFlops,智算算力占比达到60%
 cn-o39-ningxia-ai-measures-2023	每年总计发放不超过 4000万元“算力券
 cn-factions-etwon-vouchers	每次抵扣费用最高为结算费用的30%（非国产人工智能算力）或40%（国产人工智能算力），每家企业每年累计抵扣费用最高不超过2000万元
 cn-factions-etwon-vouchers	给予购买合同中的实际采购国产智算芯片服务器部分金额最高10%的补贴，每个项目累计不超过1000万元
@@ -341,34 +341,47 @@ cn-le28-sz-longhua-2024-20hao	通过发放算力券为企业提供补贴，补�
 cn-le28-sz-gxj-2024-13hao	对租用智能算力开展大模型训练的企业、高等院校和科研机构，按不超过服务合同金额的50%，给予最高1000万元资助，对初创企业提高资助比例至60%。
 cn-le28-sz-gxj-2024-13hao	市、区联合给予不超过50%、单家企业最高300万元资助。
 cn-le28-wuhan-2025-3hao	对企业使用算力服务费用给予50％最高20万元补助，补助期限不超过三年。
+cn-ga04-sz-suzhou-aiplus-2025-5hao	按实际支付人工智能算力费用 20% 给予每年最高 200 万元补贴
 cn-le28-sz-gxj-2025-3hao	给予不超过30%、单家企业最高150万元资助
 cn-le28-sz-gxj-2025-3hao	申报单位具有人工智能芯片、开发框架、算子库等全栈国产技术
 cn-le28-qingdao-2025-15hao	按照实际支付算力费用不超过20%的比例，给予企业最高100万元补贴。
 cn-le25-zhejiang-ai-measures-2025-smartcity	使用自主算力服务的，可 按照不高于合同实际执行金额的30%给予补助； 采用非自主算力服务的，可按照不高于合同实际执行金额的10%，给予最高800万元补助。
 cn-le15-hangzhou-2025-draft-cls	对使用国产算力和非国产算力服务的用户补贴合同实际发生金额的30%和10%，符合市级算力券条件的，可叠加补贴比例至45%和25%
+cn-ga04-wh-voucher-rule-2025-15hao	算力券按照算力服务合同费用的 25% 兑付，最低不少于 1 万元
+cn-ga04-tj-voucher-rule-sina-20250514	按照算力服务合同的10%申请算力券，同一企业每年度累计兑现算力券金额不超过200万元
+cn-ga04-lg-ai-shixi-2025-20250529	按申报指南发布前一周期年度内实际发生的算力服务费用的30%予以支持，每家企业每年最高不超过600万元
 cn-le28-sz-fgw-aivoucher-2025	按照国家发展改革委人工智能券（算力券）工作有关要求和我市人工智能券（算力券）相关规定
 cn-le28-sz-fgw-aivoucher-2025	拟上报核算后算力服务总额11.68亿元，算力服务申请补助总额1.29亿元
 cn-le15-hangzhou-2025-plan-hznews	试行智能券政策，对企业、高校、科研机构采购智能算力服务给予30%或10%分档补贴
 cn-le28-hz-gb-2025-29hao	根据算力合同费用给予最高800万元算力券补助
 cn-le28-gz-huangpu-2025-7hao	发放最高1000万元“算力券”，对企业本地部署开源模型、云部署、API调用等方面智能算力服务成本予以支持，单个企业最高可享受50万元。
 cn-le15-sheitc-8cea38	对租用智能算力的主体，市级给予最高30%租金补贴，并推荐申报国家智能券补贴
+cn-le15-sheitc-8cea38	按照“补早补小”原则，市区协同给予最多1年、最高100%的租金补贴
 cn-le15-sheitc-8cea38	对自主智能算力设施部署项目，给予最高10%建设支持
 cn-le28-wuhan-qiaokou-2025-1hao	创新设置年度总额 500万元的“普惠算力券”和“特惠算力券”，支持符合条件的企业购买算力服务，在市级支持基础上，按算力服务费的50%最高给予20万元资金支持。
+cn-ga04-bj-jxj-guide2025-3-20250808	补贴金额最高不超过实际智能算力费用的20%
 cn-le15-zj-oss-web1825-e66330	对采购自主智能算力服务的企业、高校、科研机构等主体，各区一般按照不高于合同实际执行金额的30%给予补贴；采购非自主智能算力服务的，一般按照不高于合同实际执行金额的10%给予补贴
 cn-le28-wuhan-hongshan-2025-2hao	对购买算力服务的中小企业，按照购买算力服务费用给予最高不超过20%的补贴，每家每年最高不超过20万元
 cn-le28-sz-gxj-ycz-centre-list-20250915	将1家国产人工智能生态源头创新中心予以认定
+cn-ga04-qy-36kr-tzj-20250924	对企业使用本地算力给予30%补贴，单个企业最高可获200万元支持
+cn-ga04-nj-fund-guide-2025-3-pdf	补贴最高不超过智能算力合同结算额的30%
 cn-le28-hz-gb-2025-65hao	通过智能券、算力券等形式，对采购智能算力服务和模型服务的专精特新企业按规定给予分档补贴。
+cn-ga04-sz-suzhou-aiplus-2026-18hao	对符合条件的科技研发企业，按实际支付智能算力租用费用的 30%，给予每年最高200万元补贴
 cn-le28-wuhan-2026-4hao-opc	当年支持周期内使用算力服务费用的50％给予最高20万元补助，补助期限不超过3年。
+cn-ga04-bj-jxj-guide2026-1-20260214	对北京市人工智能领域的新型研发机构开展研究攻关，按照不超过补贴期内算力合同额的50%予以补贴，最高不超过3000万元
 cn-le28-qingdao-2026-9hao-smartcity	按照实际支付算力费用不超过20%的比例，给予企业最高100万元补贴。
 cn-le15-guangzhou-10743475	重点突破国产化AI算力芯片适配、异构算力动态调度技术，构建自主可控的智算中心架构。
 cn-le15-chengdu-sina-6a5ce645	《管理办法》明确自主可控智能算力不超过服务费用的50%、非自主可控智能算力不超过服务费用的30%，其中中小企业抵扣比例分别增加10%
 cn-tolerate-shtemplate	方向一 算力券：支持租用非关联方智能算力资源
 cn-le28-govcn-ndrc-briefing-20260522	指导国产大模型加大力度适配国产算力芯片，在保持快速发展的同时，确保自主可控、向善发展、行稳致远
+cn-ga04-lg-ai-shixi-2026rev-20260622	按评定结果分为五个支持档次，分档确定每年支持额度
+cn-ga04-wh-voucher-rule-2026-24hao	算力使用方按照智算服务合同实际发生费用的 25 ％兑付
 cn-cnpress-binjiang-rental-reply-20260720	新增补助租用非国产算力，上调国产算力补助比例10个百分点，单家补助上限由100万元提升至2000万元
 cn-le15-binjiang-2026-6-keceyun	按不超过实际租用算力结算费用的30%（非自主人工智能算力）或60%（自主人工智能算力），给予单家企业最高2000万元支持
+cn-ga05-sichuan-compute-net-measures-jiemian	设立“算力券”，对企业购买国产算力费用给予支持，一般企业支持比例不超过20%，成立3年内的初创企业可提高至30%、人工智能一人公司（OPC）可提高至40%，每家单位每年支持最高不超过100万元
+cn-ga05-hubei-voucher-plan-ctdsb-20261001	企事业单位按实际发生费用的20%予以补贴，其中购买自主可控算力服务的，按实际发生费用的30%予以补贴
 cn-le28-xian-2026-8hao-qujiang	强化算力保障，推行算力券和词元券消费补贴措施。
 cn-le28-hz-gb-2026-30hao	按不超过研发投入30%的比例给予算力券补助，每年申领算力券金额不超过1000万元
-cn-le14-huabenlihe-policy-list	对采用国产算力芯片的智算项目按实际投资给予20%—40%补贴
 cn-le14-huabenlihe-policy-list	上海《智算中心建设导则（2025版）》对液冷占比、芯片国产化率、PUE/WUE设阶梯准入
 cn-le28-shandong-ai-measures-2025-smartcity	按规定给予不超过算力交易金额的5%奖补支持，每个企业奖补总额最高500万元。
 cn-le28-hunan-aiplus-smartcity	对购买算力服务的企业，按不超过年度算力总支出的30%给予补贴，最高不超过1000万元。
@@ -380,6 +393,7 @@ cn-le28-chongqing-ai155-smartcity	加大市级算力券支持力度，积极争�
 cn-policy-2014-outline	到2015年
 cn-policy-2014-outline	到2020年
 cn-policy-computing-network-1779	到2025年底
+cn-ga21-ft-efficiency-harici	Published on 26.03.2025 15:31
 cn-policy-baidu-own-chip-wayback	equipped with more than 60 series of chips
 cn-policy-firms-want-nvidia	domestic rivals such as Huawei and Cambricon
 cn-policy-telecom-2027-wayback	Earlier this year

@@ -1,4 +1,4 @@
-# The tracker's state of play (build.py reads this file). Written Nov 23, 2026. Markup, one thing per line:
+# The tracker's state of play (build.py reads this file). Written Nov 23, 2026; dated Nov 24, 2026 in round 5 and Nov 25, 2026 in round 8 (see the log). Markup, one thing per line:
 #   @title words                  the section's heading
 #   @sub words                    the line under it
 #   @src id | label | address     the link text for a saved id cited in [square brackets]; the address is optional
@@ -15,17 +15,18 @@
 # Every number in an item must stand in one of its quotations or hidden checks, come from {{...}}, or be listed with !OURS.
 # Dates (Nov 23, 2026) and times in a recording (1:06) are exempt from that rule; hidden checks back the ones that matter.
 
-@title State of play, Nov 23, 2026
+@title State of play, Nov 25, 2026
 @sub Where the record stands on the day of the last log entry, from saved sources only. Each link opens the page whose saved copy holds the words quoted.
 
 @src cn-le05-sec-submissions-20261123 | the commission's record of Nvidia's filings
+@src cn-ga06-sec-submissions-20261124 | the same record, fetched Nov 24
 @src cn-counter-b17-1 | Nvidia's CFO commentary
 @src cn-o38-nvda-q3fy27-call-transcript-pdf | Nvidia's results call
 @src cn-acts-reuters-halt-20261118-relay2 | Reuters
 @src cn-labs-us-chip-licences-20261119 | the committee chairman's release
 @src cn-le04-meeks-remarks-20261119 | the ranking member's remarks
 @src cn-usdocs-hfac-summary-20261119 | the committee's summary
-@src cn-usdocs-hfac-decisions-20261119 | the Commerce Department's table
+@src cn-usdocs-hfac-decisions-20261119 | the licence table (BIS License Decisions)
 @src cn-le01-greer-bbg-20261120-autocaps-ttml | captions, automatic track | https://www.youtube.com/watch?v=wR6CzdqN4M0
 @src cn-le01-greer-bbg-20261120-subs-ttml | captions, second track | https://www.youtube.com/watch?v=wR6CzdqN4M0
 @src man-ms-sec-10q-2025-10 | Nvidia's 10-Q, November 2025
@@ -34,25 +35,43 @@
 @src cn-le25-samr-2025-merger-review-20260410 | the regulator's review of 2025
 @src cn-le25-samr-news-list-p08-20261123 | the regulator's news list
 @src cn-le25-samr-news-list-p01-20261123 | the same list, newest page
+@src cn-ga01-bnn-turnaround-20261123 | Reuters, as carried by BNN Bloomberg
+@src cn-acts-mfa-20261112 | the foreign ministry's press conference of Nov 12
+@src cn-ga15-mfa-20261123 | the foreign ministry's press conference of Nov 23
+@src cn-ga06-nvda-8k-20261123-pdf | Nvidia's Form 8-K, Nov 23, 2026
+@src cn-le04-standard-900000-20261120 | The Standard (Hong Kong)
+@src cn-le04-dailycaller-20261120 | the Daily Caller News Foundation
 
 ## The answer so far
-- Yes on direction, with five limits. From 2024 to 2026 the Chinese state's declared policy, and what its regulators did, pulled China's AI companies away from Nvidia chips; the companies went on using those chips, ordering them and asking for them. The limits: Beijing was not one actor; the pressure came as public warnings and unpublished guidance, not as a published ban; some purchases were approved and some chips came in; the companies had reasons of their own, and American curbs and conditions pushed too; and what Beijing meant by it is not settled. That is the project's argument as rebuilt on Nov 23, 2026, in short; the records below are its dated evidence.
+- Yes on direction, with five limits. From 2024 to 2026 the Chinese state's declared policy, and what its regulators did, pulled China's AI companies away from Nvidia chips; the companies went on using those chips, ordering them and asking for them. The limits: Beijing was not one actor; the pressure came as public warnings and unpublished guidance, not as a published ban; some purchases were approved and some chips came in; the companies had reasons of their own, and American curbs and conditions pushed too; and what Beijing meant by it is not settled. That is the project's argument as revised on Nov 25, 2026, in short; the records below are its dated evidence.
 
 ## The newest facts
-- Nvidia's report to the Securities and Exchange Commission for the quarter ended Oct 25, 2026 (its 10-Q) was not yet filed when looked for on Nov 23, 2026: the commission's record of the company's filings, fetched that day, lists none for that quarter; the latest quarterly report it lists is for the quarter ended Jul 26, 2026 [cn-le05-sec-submissions-20261123]. Nvidia's chief financial officer's commentary on the quarter says: "We plan to file our 10-Q in the coming weeks." [cn-counter-b17-1]
+- Nvidia's report to the Securities and Exchange Commission for the quarter ended Oct 25, 2026 (its 10-Q) was not yet filed when looked for on Nov 23, 2026: the commission's record of the company's filings, fetched that day, lists none for that quarter; the latest quarterly report it lists is for the quarter ended Jul 26, 2026 [cn-le05-sec-submissions-20261123]. The same record, fetched again on Nov 24, 2026, lists filings up to Nov 23 and still none for that quarter [cn-ga06-sec-submissions-20261124]. Nvidia's chief financial officer's commentary on the quarter says: "We plan to file our 10-Q in the coming weeks." [cn-counter-b17-1]
 !NOT cn-le05-sec-submissions-20261123 | 2026-10-25
 !! cn-le05-sec-submissions-20261123 | 2026-07-26
 !! cn-le05-sec-submissions-20261123 | FETCHED: 2026-11-23
+!NOT cn-ga06-sec-submissions-20261124 | 2026-10-25
+!! cn-ga06-sec-submissions-20261124 | 2026-07-26
+!! cn-ga06-sec-submissions-20261124 | FETCHED: 2026-11-24
+!! cn-ga06-sec-submissions-20261124 | "filingDate":["2026-11-23"
 !! cn-counter-b17-1 | CFO Commentary on Third Quarter Fiscal 2027 Results
 !! cn-counter-b17-1 | October 25, 2026
-- On its results call of Nov 17, 2026, Nvidia said: "Q3 sales of licensed Hopper Data Center products to China was $2.4 billion", and: "we are no longer shipping licensed Hopper Data Center products to China" [cn-o38-nvda-q3fy27-call-transcript-pdf]. Reuters: "The Hopper family includes the H200". Nvidia gave no reason; Reuters wrote that its interim chief executive "did not explain why Nvidia had stopped shipping the processors or whether the halt would be permanent" [cn-acts-reuters-halt-20261118-relay2]. None of these says how many of those chips crossed into the mainland.
+- On its results call of Nov 17, 2026, Nvidia said: "Q3 sales of licensed Hopper Data Center products to China was $2.4 billion", and: "we are no longer shipping licensed Hopper Data Center products to China" [cn-o38-nvda-q3fy27-call-transcript-pdf]. Reuters: "The Hopper family includes the H200". Nvidia gave no reason; Reuters wrote that its then interim chief executive "did not explain why Nvidia had stopped shipping the processors or whether the halt would be permanent" [cn-acts-reuters-halt-20261118-relay2]; Nvidia's Board reinstated the chief executive on Nov 22, 2026 [cn-ga06-nvda-8k-20261123-pdf]. Nvidia made a statement after the licence table below was made public, and two saved news pages carry its words. The Standard of Hong Kong, in a page stamped Nov 20, 2026, 04:57 Hong Kong time, has Nvidia say "in a statement" that the approvals were "subject to strict conditions and limited volumes" and that "despite receiving some licenses, we have since stopped shipping H200s to China" [cn-le04-standard-900000-20261120]. The Daily Caller News Foundation, in a page stamped Nov 20, 2026, 20:29 UTC, about a day later, quotes an Nvidia spokesperson at more length: "The review and licensing process spanned more than half a year, with approvals subject to strict conditions and limited volumes." and "Despite receiving some licenses, we have already stopped shipping H200s to China." [cn-le04-dailycaller-20261120] Neither page says on which day the statement was made, and it gives no reason for the stop either. None of these says how many of those chips crossed into the mainland.
 !! cn-o38-nvda-q3fy27-call-transcript-pdf | All our statements are made as of today, November 17, 2026
 !! cn-acts-reuters-halt-20261118-relay2 | in the quarter ended October 25
-- On Nov 19, 2026 the House Foreign Affairs Committee made public the Commerce Department's table of licence applications for Nvidia's H200 and AMD's MI325X, with their status on May 11, 2026, under its chairman's powers and by the committee's "unanimous consent" [cn-labs-us-chip-licences-20261119] [cn-le04-meeks-remarks-20261119]. {{RWA_PCT}} of the chips in the Commerce Department's summary of May 11, 2026 were in applications returned without action, and the committee says that summary is incomplete: some applications are "not fully reflected in the May 11, 2026, summary document", for example: "NVIDIA applied on December 19, 2025, to export 445,000 H200s to Tencent" [cn-usdocs-hfac-summary-20261119]. The table shows that application at {{TENCENT_CHIPS}} chips, {{TENCENT_STATUS}}; counted at 445,000, the share would be {{ALT_PCT}} [cn-usdocs-hfac-decisions-20261119].
+!! cn-ga06-nvda-8k-20261123-pdf | On November 22, 2026, the Board of Directors of NVIDIA Corporation reinstated Jen-Hsun Huang as NVIDIA's President, Chief Executive Officer and member of the Board of Directors, effective immediately.
+!! cn-ga06-nvda-8k-20261123-pdf | Date: November 23, 2026
+!! cn-le04-standard-900000-20261120 | PUBLISHED: 2026-11-20T04:57:40.000+0800
+!! cn-le04-standard-900000-20261120 | Nvidia said in a statement that the approvals were
+!! cn-le04-dailycaller-20261120 | PUBLISHED: 2026-11-20T20:29:43.000Z
+!! cn-le04-dailycaller-20261120 | a company spokesperson told the Daily Caller News Foundation
+- On Nov 19, 2026 the House Foreign Affairs Committee made public the table of licence applications for Nvidia's H200 and AMD's MI325X, from the Commerce Department's Bureau of Industry and Security (BIS), with their status on May 11, 2026, under its chairman's powers and by the committee's "unanimous consent" [cn-labs-us-chip-licences-20261119] [cn-le04-meeks-remarks-20261119]. {{RWA_PCT}} of the chips in BIS's summary of May 11, 2026 were in applications returned without action, and the committee says that summary is incomplete: some applications are "not fully reflected in the May 11, 2026, summary document", for example: "NVIDIA applied on December 19, 2025, to export 445,000 H200s to Tencent" [cn-usdocs-hfac-summary-20261119]. The table's only Tencent row of that date is an Nvidia application for {{TENCENT_CHIPS}} chips, {{TENCENT_STATUS}}; neither document says whether that row is the application of 445,000. So the {{RWA_PCT}} is a share of the table, not of everything applied for: it would be {{ALT_PCT}} if that row is the application, counted at 445,000, and {{ALT_FURTHER_PCT}} if the 445,000 is a further application (our arithmetic) [cn-usdocs-hfac-decisions-20261119].
 !! cn-labs-us-chip-licences-20261119 | Chairman Brian Mast exercised his authorities under the Export Control Reform Act
 !! cn-labs-us-chip-licences-20261119 | November 19, 2026
 !! cn-usdocs-hfac-decisions-20261119 | H200 License and Equivalent Application Status as of May 11, 2026
 !! cn-usdocs-hfac-summary-20261119 | Covered integrated circuits are the following products: NVIDIA's H200 and AMD's MI325X.
+!! cn-usdocs-hfac-summary-20261119 | According to a BIS summary provided to the House Foreign Affairs Committee dated May 11, 2026
+!! cn-le04-bis-ear-748 | Bureau of Industry and Security, U.S. Department of Commerce
 - The counts, by a script over the table's {{ALL_N}} rows: {{ALL}} chips in all. Returned without action: {{RWA}} in {{RWA_N}} applications, among them every application for a consignee in Malaysia, Indonesia or Thailand ({{SEA}} chips) and every one above {{CAP}} chips. Approved, not shipped: {{APPR}} in {{APPR_N}} ({{APPR_NV}} in Nvidia's {{APPR_NV_N}}, {{APPR_AMD}} in AMD's {{APPR_AMD_N}}). Still submitted: {{SUB}} in {{SUB_N}}. Rejected: {{REJ}} in {{REJ_N}}. The summary gives the same total and the same approved count [cn-usdocs-hfac-summary-20261119]. The figures add Nvidia's and AMD's chips together. The table gives no reasons. An application names a consignee: it is not an order, and an approval there is Washington's licence, not Beijing's [cn-usdocs-hfac-decisions-20261119].
 !! cn-usdocs-hfac-summary-20261119 | BIS received applications to sell {{ALL}} covered
 !! cn-usdocs-hfac-summary-20261119 | {{APPR}} covered integrated circuits to PRC companies across {{APPR_N}} license applications
@@ -61,11 +80,26 @@
 !RAW cn-le01-greer-bbg-20261120-youtube | "ownerChannelName":"Bloomberg Television"
 !! cn-le01-greer-bbg-20261120-autocaps-ttml | Ambassador Greer was on that trip with the president.
 !! cn-le01-greer-bbg-20261120-subs-ttml | They're quite eager to get the most advanced chips they can within the Chinese government
+- Reuters reported on Nov 23, 2026, from two people familiar with the matter, that some Chinese customers "have begun canceling orders" for Nvidia's RTX PRO 5500, a graphics card for professional computers that can also run AI models, amid concerns that it "may not be permitted into China"; Reuters "could not determine the scale of the cancellations or whether the US or China would restrict shipments". By two people familiar with the matter, large purchases of the card by internet companies such as ByteDance and Alibaba "could require Chinese government approval"; China's industry regulator did not respond to requests for comment [cn-ga01-bnn-turnaround-20261123]. A press report citing unnamed people, as carried by BNN Bloomberg.
+!! cn-ga01-bnn-turnaround-20261123 | PUBLISHED: 2026-11-23T12:59:32.848Z
+!! cn-ga01-bnn-turnaround-20261123 | Some Chinese customers have begun canceling orders amid concerns that the RTX PRO 5500
+!! cn-ga01-bnn-turnaround-20261123 | a graphics card designed for professional computers that can also run AI models
+!! cn-ga01-bnn-turnaround-20261123 | Large purchases of this new Nvidia chip by internet companies such as ByteDance and Alibaba could require Chinese government approval, according to two people familiar with the matter
+!! cn-ga01-bnn-turnaround-20261123 | industry regulator did not respond to comment requests
+- The foreign ministry answered two more questions on chips in November 2026. On Nov 12, a reporter of Agence France-Presse said that procurement records of Northwestern Polytechnical University, in Xi'an, show that it bought Nvidia H200 chips, which are under US export controls, and asked for more information; the spokesperson, Mao Ning, said: "你提到的具体情况我不了解。中方在美国输华芯片问题上的立场是一贯的。" (I am not aware of the specific situation you mention. China's position on US chip exports to China is consistent), and that China firmly opposes the American side's stretching of the concept of national security [cn-acts-mfa-20261112]. On Nov 23, a reporter of Reuters asked about the President's saying he would sell China only older chips, and whether China was negotiating with Washington; the spokesperson, Guo Jiakun, said: "关于美国出口管制措施，中方此前已表明立场" (China has already stated its position on US export-control measures) [cn-ga15-mfa-20261123].
+!! cn-acts-mfa-20261112 | 2026年11月12日外交部发言人毛宁主持例行记者会
+!! cn-acts-mfa-20261112 | 法新社记者：位于西安的中国西北工业大学的采购记录显示，该校购买了英伟达H200芯片，而该芯片受到美国的出口管制
+!! cn-acts-mfa-20261112 | 毛宁：你提到的具体情况我不了解
+!! cn-acts-mfa-20261112 | 我们坚决反对美方泛化国家安全概念
+!! cn-ga15-mfa-20261123 | 2026年11月23日外交部发言人郭嘉昆主持例行记者会
+!! cn-ga15-mfa-20261123 | 路透社记者：美国总统特朗普称只愿向中国出售旧款芯片，正就此与中方进行沟通
+!! cn-ga15-mfa-20261123 | 是否正与美方进行谈判
+!! cn-ga15-mfa-20261123 | 郭嘉昆：关于美国出口管制措施，中方此前已表明立场
 
 ## What would change the answer next
 - Nvidia's 10-Q for the quarter ended Oct 25, 2026, and what it says of the Chinese government. The wording has changed from report to report: in November 2025 the government "restricted customers from purchasing, importing, or using our data center products" [man-ms-sec-10q-2025-10]; in the report of August 2026 the sales under the American licences "were restricted by the PRC government" [man-ms-sec-10q-2026-07]. Whether the next report keeps, drops or adds to those words is the next record on Nvidia's own side.
-- Any published Chinese rule. No published Chinese order against buying Nvidia chips was found in the 103 policy pages read, and such an order could have been found: the 2023 review conclusion telling operators of critical information infrastructure to stop buying Micron's products is among those pages, "应停止采购美光公司产品" [cn-policy-micron-decision]. A published order, or a published permit rule for these imports, would change the second limit: so far the pressure is public warnings and unpublished guidance.
-!OURS 103 | the count of policy pages read for the project (NOTE_policies_checked.md, policies_checked_quotes.tsv)
+- Any published Chinese rule. No published Chinese order against buying Nvidia chips was found in the 82 policy pages read, and such an order could have been found: the 2023 review conclusion telling operators of critical information infrastructure to stop buying Micron's products is among those pages, "应停止采购美光公司产品" [cn-policy-micron-decision]. A published order, or a published permit rule for these imports, would change the second limit: so far the pressure is public warnings and unpublished guidance.
+!OURS 82 | the count of policy pages read for the project (NOTE_policies_checked.md: 103 lines on 83 saved pages, one page empty)
 - The end of the antitrust case. No page read says the Nvidia case ended: the market regulator's review of its 2025 work, posted Apr 10, 2026, still lists "对英伟达公司实施进一步调查" (a further investigation of Nvidia) [cn-le25-samr-2025-merger-review-20260410], and its news list to Nov 23, 2026 has a suspension of the case against DuPont China, "市场监管总局暂停对杜邦中国集团有限公司的反垄断调查程序", and none for Nvidia [cn-le25-samr-news-list-p08-20261123] [cn-le25-samr-news-list-p01-20261123]. By Nvidia's account the preliminary finding is that "our compliance with applicable U.S. export controls, which required us to offer degraded products to the Chinese market, discriminated unfairly against customers in the China market" [man-ms-sec-10q-2026-07]. An end to the case would be a new act of the state; it would not by itself settle what Beijing meant, the fifth limit.
 !! cn-le25-samr-2025-merger-review-20260410 | 2026-04-10
 !! cn-le25-samr-news-list-p08-20261123 | 暂停对杜邦中国集团

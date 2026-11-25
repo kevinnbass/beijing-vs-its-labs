@@ -48,6 +48,7 @@
 7	again	BH	cn-factions-bloomberg-flexibility-202409-relay1
 
 # 8. Limit 3, approvals and arrivals: the rest of the row "Beijing lets Nvidia in"
+#    Since core edit 7 (Nov 25, 2026) the "*" line below also brings on record 62 (the press report of Sept 27, 2026 on the RTX PRO 5500)
 8	again	BL	ms-bj-20260128-h200-nod-standard
 8	new	BL	*
 

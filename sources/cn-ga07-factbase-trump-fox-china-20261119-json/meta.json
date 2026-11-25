@@ -1,0 +1,7 @@
+{
+ "id": "cn-ga07-factbase-trump-fox-china-20261119-json",
+ "url": "https://rollcall.com/api/factbase/transcripts?person=trump&slug=donald-trump-interview-jacqui-heinrich-fox-news-november-19-2026",
+ "route": "https://rollcall.com/api/factbase/transcripts?person=trump&slug=donald-trump-interview-jacqui-heinrich-fox-news-november-19-2026",
+ "fetched_utc": "2026-11-24T10:46:51Z",
+ "sha256": "eac3bf65c02c54e556647ef8c751201f8c1b477a182257ed06ce7e10b2257b10"
+}

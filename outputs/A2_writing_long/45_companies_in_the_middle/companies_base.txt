@@ -1,7 +1,7 @@
 # The companies in the middle
 @deck The same two years from the buyers' side. China's AI companies ordered Nvidia chips, said why, pushed back, trained abroad, and built chips of their own.
 
-@note Draft by Claude, Anthropic's model. Local; not published. Written Nov 23, 2026 (UTC).
+@note Draft by Claude, Anthropic's model. Written Nov 23, 2026 (UTC).
 @note How to read it. Words between quotation marks are a source's exact words, found in the saved copy by a script. A filled reference number is a document, a filing or a named person on the record. An open number is a press report citing unnamed people. English in round brackets after Chinese is our rendering, not an official translation.
 @note The author's interest. Anthropic has argued in public for controls on chip exports to China (that is from the model's general knowledge; no saved page is cited for it), so judge this piece by its sources.
 
@@ -52,7 +52,7 @@ One company asked in public. Its message of Jul 30, 2026 on the commerce ministr
 !! cn-acts-mofcom-inquiry-20260819 | 答复时间: 2026-08-19
 !! cn-acts-mofcom-inquiry-20260819 | 出口经营者应当了解拟出口货物、技术和服务的性能指标、主要用途等
 
-**4. They trained abroad, and one went back to Nvidia**
+**4. They trained abroad, and one was reported to go back to Nvidia**
 
 The Financial Times, November 2025: Alibaba and ByteDance "are among the tech groups training their latest large language models (LLMs) in data centres across Southeast Asia", leasing that is, by the paper's account, "compliant with US export controls" [cn-tolerate-ft-offshore].
 The same paper, Aug 13, 2025, by three unnamed people: DeepSeek "was encouraged by authorities to adopt Huawei's Ascend processor rather than use Nvidia's systems", met "persistent technical issues", and ended by using "Nvidia chips for training and Huawei's for inference" [man-cn-ft-202508-deepseek].
@@ -66,8 +66,12 @@ Alibaba's chief executive, May 13, 2026, gave a commercial reason for its own ch
 !! cn-o36-alibaba-call-20260513-own | Wednesday, 13 May 2026
 Tencent's chief strategy officer, Nov 18, 2026: "that inference can be run very effectively on a surprisingly limited number of domestic chips" [cn-o36-tencent-call-20261118-sa].
 !! cn-o36-tencent-call-20261118-sa | Earnings Call: Q3 2026 Nov 18, 2026
-Of DeepSeek's later model, V4, Reuters wrote in April 2026: "Huawei said its chips were used in some of the V4's training process" [cn-labs-v4-training-reuters-relay1-wayback]. A rival's filing disputes it, and nobody has checked either claim [cn-le26-iflytek-ir-20260429].
+Of DeepSeek's later model, V4, Reuters wrote in April 2026: "Huawei said its chips were used in some of the V4's training process" [cn-labs-v4-training-reuters-relay1-wayback]. Huawei's own pages of that day speak of adapting and serving the model and of a training reference implementation offered so that users can fine-tune quickly [cn-labs-v4-huawei-official-wayback] [cn-ga08-gitcode-ascend-v4-69eaff6d]; neither says that Huawei's chips trained V4. DeepSeek's own report on V4 names no chip for its training, and says one of its schemes was validated "on both NVIDIA GPUs and HUAWEI Ascend NPUs platforms" [cn-ga08-arxiv-deepseek-v4-pdf]. A rival, iFlytek, told investors days later that V4's training was still done on Nvidia cards, a competitor's claim that nobody has checked [cn-le26-iflytek-ir-20260429].
 !! cn-labs-v4-training-reuters-relay1-wayback | BEIJING, April 24 (Reuters)
+!! cn-labs-v4-huawei-official-wayback | 华为云首发适配
+!! cn-ga08-gitcode-ascend-v4-69eaff6d | 实现了高吞吐、低时延的DeepSeek V4模型推理部署
+!! cn-ga08-gitcode-ascend-v4-69eaff6d | 为便于用户快速微调
+!! cn-ga08-arxiv-deepseek-v4-pdf | arXiv:2606.19348v1 [cs.CL] 26 Apr 2026
 !! cn-le26-iflytek-ir-20260429 | DS V4 的训练仍然是基于英伟达卡进行的
 
 ## What the five steps add up to

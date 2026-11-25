@@ -14,6 +14,8 @@ committee's licence table), provinces_31.tsv (the 31 provincial-level government
 evaluation lists), state_media_items.tsv (the census of state and Party media items). The local-voucher rows are in
 vouchers() below, drawn from tables/local_vouchers.tsv and tables/local_vouchers_more.tsv (agent L28's table), every rate a "!" line.
 Notes in the template name records as %%REC:<saved id>%%; the build puts in the record's number.
+Records are numbered by date, Beijing's rows first, then the companies'; a block with an "N" line keeps the number given
+there (core edit 7, Nov 25, 2026: record 62, added after the figure was made public, so that no record changed its number).
 Before the page is called done or published: scripts/render_and_look.py (look at every screenshot).
 Fourth edit (Nov 23, 2026, agent F1): the drafter D4's changes (loose_ends/D4_figure), checked and corrected by F1
 (loose_ends/F1_figure_build/CHANGES.txt).
@@ -64,11 +66,11 @@ def load():
         if ln.startswith('@ '):
             _, lane, kind, d, dl, sid = ln.split()
             assert lane in LANES and kind in ('doc', 'rec', 'press'), (n, ln)
-            cur = dict(lane=lane, kind=kind, date=date.fromisoformat(d), dl=None if dl == '-' else dl.replace('_', ' '), sid=sid, T='', S='', Q='', E='', U='', C='')
+            cur = dict(lane=lane, kind=kind, date=date.fromisoformat(d), dl=None if dl == '-' else dl.replace('_', ' '), sid=sid, T='', S='', Q='', E='', U='', C='', N='')
             evs.append(cur)
         elif ln.startswith('! '):
             sid, q = ln[2:].split(' | ', 1); checks.append((sid.strip(), q.strip()))
-        elif ln[:2] in ('T ', 'S ', 'Q ', 'E ', 'U ', 'C '):
+        elif ln[:2] in ('T ', 'S ', 'Q ', 'E ', 'U ', 'C ', 'N '):
             cur[ln[0]] = smart(ln[2:].strip()) if ln[0] in 'TSC' else ln[2:].strip()
         else: sys.exit(f'line {n} not understood: {ln[:60]}')
     return evs, checks
@@ -86,11 +88,23 @@ def verify(evs, checks):
 
 
 def number(evs):
+    """Number the records by date, Beijing's rows first and then the companies', except a record with an "N" line, which
+    keeps the number given there (core edit 7, Nov 25, 2026: a record added after the figure was made public takes the
+    next free number, so no earlier record changes its number). Returns each side's records by date, fixed ones included,
+    for the lists under the chart."""
+    free = [e for e in evs if not e['N']]
+    b = sorted([e for e in free if e['lane'][0] == 'B'], key=lambda e: e['date'])
+    c = sorted([e for e in free if e['lane'][0] == 'C'], key=lambda e: e['date'])
+    for i, e in enumerate(b + c, 1): e['n'] = i
+    for e in evs:
+        if e['N']: e['n'] = int(e['N'])
+    assert sorted(e['n'] for e in evs) == list(range(1, len(evs) + 1)), 'the record numbers do not run from 1 to the number of records'
+    assert all(e['n'] > len(free) for e in evs if e['N']), 'a fixed number falls among the numbers given by date'
+    for e in evs:
+        e['when'] = e['dl'] or fmt(e['date']); e['url'] = e['U'] or L.url_of(e['sid'])
+        e['dir'] = LANES[e['lane']][2]; e['solid'] = e['kind'] != 'press'
     b = sorted([e for e in evs if e['lane'][0] == 'B'], key=lambda e: e['date'])
     c = sorted([e for e in evs if e['lane'][0] == 'C'], key=lambda e: e['date'])
-    for i, e in enumerate(b + c, 1):
-        e['n'] = i; e['when'] = e['dl'] or fmt(e['date']); e['url'] = e['U'] or L.url_of(e['sid'])
-        e['dir'] = LANES[e['lane']][2]; e['solid'] = e['kind'] != 'press'
     return b, c
 
 
@@ -162,7 +176,7 @@ def by(evs, sid, lane=None):
 
 
 def hfac():
-    """The House committee's table (Commerce Department data, status as of May 11, 2026): sums by exporter, status and
+    """The House committee's table (by its summary, a BIS summary; status as of May 11, 2026): sums by exporter, status and
     location, made here from tables/house_licence_table.tsv (54 rows, read twice from the page images and checked
     against the text layer by agent L04). The totals must equal the summary's own figures, which "!" lines check in the
     saved summary. The table does not say which chip each row is (the summary: Nvidia's H200 and AMD's MI325X); the
@@ -195,7 +209,7 @@ def bars(evs):
         ('Ordered by Chinese companies for 2026', 'more than 2,000,000', 2_000_000, 'toward', 'Reuters, Dec 31, 2025', [by(evs, 'cn-labs-h200-two-million-202512-relay1-wayback')]),
         ('Approved by Washington: Nvidia as exporter', f(h['appr_nv'][0]), h['appr_nv'][0], 'us',
          f'in {h["appr_nv"][1]} applications, each marked “Approved, not shipped” at May 11, 2026. With AMD’s comparable chip '
-         f'({f(h["appr_amd"][0])} in {h["appr_amd"][1]} applications) the count is {f(h["appr"][0])}. Commerce Department table, '
+         f'({f(h["appr_amd"][0])} in {h["appr_amd"][1]} applications) the count is {f(h["appr"][0])}. The table “H200 License and Equivalent Application Status as of May 11, 2026”, '
          'released by the House Foreign Affairs Committee, Nov 19, 2026; the sums are mine', []),
         ('Returned by Washington without action: Nvidia as exporter', f(h['rwa_nv'][0]), h['rwa_nv'][0], 'us',
          f'in {h["rwa_nv"][1]} applications, among them all {h["abroad"][1]} for consignees in {places} ({f(h["abroad"][0])} chips), named for ByteDance, BytePlus, TikTok and Alibaba. '
@@ -277,7 +291,7 @@ def provinces():
     one = lambda k: [r['government'] for r in pr if r['result'] == k]
     acc, nr = one('account_only'), one('not_reached')
     seg = [('away', cnt['share'], f'{cnt["share"]} set a share'), ('rest', cnt['plan_no_share'], f'{cnt["plan_no_share"]} have a plan read, with no share'),
-           ('other', cnt['account_only'], f'{cnt["account_only"]} known only from a press account ({", ".join(acc)})'),
+           ('other', cnt['account_only'], f'{cnt["account_only"]} known only from accounts of its plan ({", ".join(acc)})'),
            ('none', cnt['not_reached'], f'{cnt["not_reached"]} not reached ({", ".join(nr)})')]
     shares = [  # government, share as written, of what and by when, how it is worded or held, saved id
         ('Jiangsu', '70% or more', 'of chips in new computing centres, by 2030 (50% for 2025)', 'marked indicative (预期性)', 'cn-factions-jiangsu-plan'),
@@ -331,14 +345,20 @@ def paper(evs):
 
 
 def vouchers():
-    """Local computing vouchers: the most a voucher or rental subsidy pays of the bill for rented computing, for home-made
+    """Local computing vouchers: the general rate a voucher or rental subsidy pays of the bill for rented computing (the rate
+    for an ordinary applicant; a higher rate for a named kind of firm, whatever the chip, is in the row's note), for home-made
     computing against other computing, as each rule states it (one measure throughout). Rule for a row (agent F1,
     applied row by row to tables/local_vouchers.tsv, agent L15, and tables/local_vouchers_more.tsv, agent L28): a local rule in force (not a draft, a plan or an application guide) whose official text or a full copy
     is saved under research/primary, whose words the checker finds, and which states a share of the bill for rented
-    computing. One row per government: its latest such rule; an earlier rule of the same government goes in the row's
-    note. Every rate and date is a "!" line. Left out, and said so under the chart: a press account only (Chengdu), Word
-    files the checker cannot read (Beijing city's notes; Longgang district), a copy not yet saved (Xiamen), drafts, and
-    rules without a share of the bill (Guangzhou's Huangpu district; Hangzhou's rule of 2026, a share of R&D spending)."""
+    computing. One row per government: its latest such rule of general application; an earlier rule of the same
+    government, or a later one for one class of firm only (Wuhan's of Feb 2026, for one-person AI firms), goes in the row's
+    note. Every rate and date is a "!" line. Left out, and said so under the chart: a press account only (Chengdu),
+    application guides (Beijing city; Nanjing), rules no longer in force or without a share of the bill (Longgang district;
+    Guangzhou's Huangpu district; Hangzhou's rule of 2026, a share of R&D spending), a copy not yet saved (Xiamen), and drafts.
+    Since core edit 6 (Nov 24, 2026, at the owner's word) the list also holds the four rules found that day which the same
+    rule counts: Sichuan (a voucher for home-made computing only; its text held as a news site carries it), Wuhu, Suzhou and
+    Tianjin. A rule that pays for home-made computing only is drawn as one orange dot. The counts are asserted against
+    the count by script over both tables (atlas/core_edit/p6_work_4/vcount.py)."""
     rows = [  # place, rule (month on its page), home-made %, other %, saved id, note
         ('Hangzhou city', 'Jul 2024', 30, 20, 'cn-counter-b4-2', ''),
         ('Zhejiang province', 'Apr 2025', 30, 10, 'cn-le25-zhejiang-ai-measures-2025-smartcity', 'guidance to places that issue vouchers; in force from May 31, 2025; a copy on another site'),
@@ -346,43 +366,53 @@ def vouchers():
         ('Binjiang district, Hangzhou', 'Aug 2026', 60, 30, 'cn-le15-binjiang-2026-6-keceyun', 'a copy on a policy site'),
         ('Beijing E-Town, a development zone', 'Nov 2024', 30, 30, 'cn-le28-etown-29hao-20241126', 'replaced a rule of Mar 2024 that paid 40% against 30%; servers with home-made chips get a separate purchase subsidy of up to 10%'),
         ('Longhua district, Shenzhen', 'Nov 2024', 30, 30, 'cn-le28-sz-longhua-2024-20hao', ''),
-        ('Shanxi province', 'Dec 2024', 20, 20, 'cn-o39b-shanxi-measures-2024-jincheng', '30% for national projects and model makers; in force from Jul 2024'),
+        ('Shanxi province', 'Jun 2024', 20, 20, 'cn-o39b-shanxi-measures-2024-jincheng', '30% for national projects and model makers; in force from Jul 2024'),
         ('Shenzhen city', 'Dec 2024', 50, 50, 'cn-le28-sz-gxj-2024-13hao', '60% for start-ups; separate support for moving models to home-made chips'),
         ('Wuhan city', 'Feb 2025', 50, 50, 'cn-le28-wuhan-2025-3hao', 'up to 200,000 yuan; the same rate for one-person AI firms in a rule of Feb 2026'),
         ('Qingdao city', 'Mar 2026', 20, 20, 'cn-le28-qingdao-2026-9hao-smartcity', 'the same rate as its rule of Mar 2025; a copy on another site'),
-        ('Shanghai city', 'Jul 2025', 30, 30, 'cn-le15-sheitc-8cea38', 'building support, up to 10%, for home-made computing only'),
+        ('Shanghai city', 'Jul 2025', 30, 30, 'cn-le15-sheitc-8cea38', 'up to 100% for a year at most, city and districts together, for early-stage and small firms; building support, up to 10%, for home-made computing only'),
         ('Qiaokou district, Wuhan', 'Aug 2025', 50, 50, 'cn-le28-wuhan-qiaokou-2025-1hao', 'on top of the city’s'),
         ('Hongshan district, Wuhan', 'Sept 2025', 20, 20, 'cn-le28-wuhan-hongshan-2025-2hao', 'for small and medium firms'),
         ('Shandong province', 'May 2025', 5, 5, 'cn-le28-shandong-ai-measures-2025-smartcity', 'a copy on another site'),
         ('Hunan province', 'Oct 2025', 30, 30, 'cn-le28-hunan-aiplus-smartcity', 'a copy on another site'),
+        ('Sichuan province', 'Aug 2026', 20, 0, 'cn-ga05-sichuan-compute-net-measures-jiemian', '30% for start-ups, 40% for one-person AI firms; the text as a news site, Jiemian, carries it, without number or date; the month is that of the reports'),
+        ('Wuhu city', 'Jul 2026', 25, 25, 'cn-ga04-wh-voucher-rule-2026-24hao', '45% for firms in future industries, 70% for small firms in incubators'),
+        ('Suzhou city', 'Jan 2026', 30, 30, 'cn-ga04-sz-suzhou-aiplus-2026-18hao', 'for technology R&D firms; in force from Jan 31, 2026, by the city’s own reading; its rule of Feb 2025 paid 20%'),
+        ('Tianjin city', 'May 2025', 10, 10, 'cn-ga04-tj-voucher-rule-sina-20250514', 'the text as a page on Sina carries it, dated May 14, 2025'),
     ]
     mx = 60
-    assert max(max(hm, ot) for _, _, hm, ot, _, _ in rows) <= mx and all(ot > 0 for _, _, _, ot, _, _ in rows)
-    ti = [r for r in rows if r[2] != r[3]]; one = [r for r in rows if r[2] == r[3]]
+    assert max(max(hm, ot) for _, _, hm, ot, _, _ in rows) <= mx
+    only = [r for r in rows if r[3] == 0]                    # a rule that pays for home-made computing only
+    ti = [r for r in rows if r[2] != r[3] and r[3] > 0]; one = [r for r in rows if r[2] == r[3]]
+    # the count by script of the published rule over both voucher tables (atlas/core_edit/p6_work_4/vcount.py; Nov 24, 2026: 19 counted, 4 tiered, 1 home-made only, 14 one rate)
+    assert (len(rows), len(ti), len(only), len(one)) == (19, 4, 1, 14), (len(rows), len(ti), len(only), len(one))
     assert all(hm > ot for _, _, hm, ot, _, _ in ti), 'a rule pays more for other computing'
     key = lambda r: (int(r[1].split()[-1]), MON.index(r[1].split()[0]))
     ti.sort(key=key); one.sort(key=key)
 
     def row(place, when, hm, ot, sid, note):
-        if hm == ot:
+        if ot == 0:
+            x = hm / mx
+            dots = f'<i class="vd away" style="--x:{x:.4f}"></i><b class="vn side" style="left:calc({x * 100:.2f}% + 11px)">{hm}%, home-made computing only</b>'
+        elif hm == ot:
             x = hm / mx
             side = f'right:calc({(1 - x) * 100:.2f}% + 11px)' if x > 0.6 else f'left:calc({x * 100:.2f}% + 11px)'
             dots = f'<i class="vd both" style="--x:{x:.4f}"></i><b class="vn side" style="{side}">{hm}% for all</b>'
         else:
             dots = (f'<i class="vl" style="--a:{ot / mx:.4f};--b:{hm / mx:.4f}"></i><i class="vd toward" style="--x:{ot / mx:.4f}"></i>'
                     f'<i class="vd away" style="--x:{hm / mx:.4f}"></i><b class="vn" style="--x:{ot / mx:.4f}">{ot}%</b><b class="vn" style="--x:{hm / mx:.4f}">{hm}%</b>')
-        lab = f'home-made {hm}%, other {ot}%' if hm != ot else f'{hm}% for all computing'
+        lab = f'home-made {hm}%, no voucher for other computing' if ot == 0 else (f'home-made {hm}%, other {ot}%' if hm != ot else f'{hm}% for all computing')
         return (f'<div class="vr"><div class="vlab">{esc(place)} <a class="srcn" href="{url(sid)}">{esc(when)}</a>{("<span class=vnote>" + esc(note) + "</span>") if note else ""}</div>'
                 f'<div class="vt" role="img" aria-label="{esc(place, quote=True)}: {lab}">{dots}</div></div>')
     axis = '<div class="vr axis"><div></div><div class="vt">' + ''.join(f'<span style="--x:{v / mx:.4f}">{v}%</span>' for v in (0, 20, 40, 60)) + '</div></div>'
     out = ['<div class="vkey"><span><i class="sw away"></i>home-made computing</span><span><i class="sw toward"></i>other computing</span><span><i class="sw both"></i>one rate for all</span></div>',
            '<div class="vgrid">',
-           f'<div class="vgrp va"><h3>Pay more for home-made computing: {len(ti)}</h3>' + ''.join(row(*r) for r in ti) + axis + '</div>',
+           f'<div class="vgrp va"><h3>Pay more for home-made computing: {len(ti)}</h3>' + ''.join(row(*r) for r in ti) + f'<h3>Pay for home-made computing only: {len(only)}</h3>' + ''.join(row(*r) for r in only) + axis + '</div>',
            f'<div class="vgrp vb"><h3>One rate for all computing: {len(one)}</h3>' + ''.join(row(*r) for r in one) + axis + '</div>',
-           f'<p class="fine vf">{len(ti)} of the {len(rows)} local governments shown pay more for home-made computing; the other {len(one)} pay one rate for all. Every rule shown still pays for other computing. '
-           'One row per government: its latest rule found that states a share of the bill; these are the rules found and read, not a census. '
-           'Left out: rules known only from the press (Chengdu, 50% against 30%), held only as Word files the checker cannot read (Beijing city; Longgang district, Shenzhen), '
-           'not yet among the saved pages (Xiamen), drafts, and rules that give no share of the bill. '
+           f'<p class="fine vf">{len(ti)} of the {len(rows)} local governments shown pay more for home-made computing and still pay for other computing; {len(only)}, Sichuan province, pays for home-made computing only (its measures are held as the news site Jiemian carries their text, without number or date); the other {len(one)} pay one rate for all. The rate shown is the one for an ordinary applicant. '
+           'One row per government: its latest general rule found that states a share of the bill (a later rule for one class of firm is in the row’s note); these are the rules found and read, not a census. '
+           'Left out: rules known only from the press (Chengdu, 50% against 30%), application guides (Beijing city; Nanjing), rules no longer in force or with no share of the bill (Longgang district, Shenzhen, among them), '
+           'not yet among the saved pages (Xiamen), and drafts. '
            'Support for building or buying with home-made chips only is separate: Beijing city’s plan for 2024 to 2027 supports, by a share of the investment, “采购自主可控GPU芯片开展智能算力服务的企业” (firms that buy independently controllable GPU chips to provide computing services). '
            'The tiers are the rules’ own words: 国产 or 自主 (home-made, independent) against 非国产, 非自主 or 其他 (other).</p>', '</div>']
     return '\n'.join(out), len(ti), len(rows)
@@ -402,7 +432,8 @@ def bodies(evs):
     let = [('Commerce ministry', P('cn-policy-wang-nvidia', 'cn-policy-h20-mofcom', 'cn-tolerate-mof', 'cn-acts-mofcom-20261117')),
            ('Premier Li Qiang', P('cn-xi-round-f-6')),
            ('Vice Premier He Lifeng', P('cn-policy-he-welcomes')),
-           ('“Industry and commerce ministries”, as Reuters put it', P('cn-acts-reuters-deepseek-20260130'))]
+           ('“Industry and commerce ministries”, as Reuters put it', P('cn-acts-reuters-deepseek-20260130')),
+           ('Industry ministry, as The Information reported its intention', P('cn-acts-reuters-rtx5500-20260927'))]      # record 62 (core edit 7, Nov 25, 2026)
     firm = [('Market regulator: an antitrust case against Nvidia the company', P('cn-policy-samr-open-original', 'cn-policy-samr-further-original'))]
     col = lambda title, cls, rows: (f'<div class="bcol"><h4><i class="sw {cls}"></i>{title}</h4><ul>' + ''.join(f'<li><span>{esc(n)}</span><span class="pins">{p}</span></li>' for n, p in rows) + '</ul></div>')
     return ('<div class="bodies">' + col('Held Nvidia back, or steered buyers to home-made chips', 'away', held) + col('Let it in, or welcomed it', 'toward', let) + '</div>'
@@ -420,14 +451,17 @@ def bodies(evs):
 
 
 def state_media():
-    """The census of state and Party media items on Nvidia chips (tables/state_media_items.tsv, agent L13): how many,
-    how many warn against buying, and the first and last dates of those warnings."""
+    """The state and Party media items on Nvidia chips (tables/state_media_items.tsv: agent L13's census, rows 1 to 42, and
+    agent GA02's rows 43 to 75, found by searches and links): how many, how many only warn, how many of those are dated up to
+    Sept 24, 2025 (the burst after the summons) with their first and last dates, and how many are later."""
     rows = table('state_media_items.tsv')
     st = Counter(r['stance'] for r in rows)
     warns = sorted(date.fromisoformat(r['date']) for r in rows if r['stance'] == 'warns')
     iso = sorted(date.fromisoformat(r['date']) for r in rows if re.fullmatch(r'\d{4}-\d\d-\d\d', r['date']))
-    assert len(rows) == 42 and st['warns'] == 7 and len(warns) == 7, (len(rows), st)    # L13's own counts
-    return dict(SM_N=str(len(rows)), SM_W=str(len(warns)), SM_W0=fmt(warns[0]), SM_W1=fmt(warns[-1]), SM_MIX=str(st['mixed']),
+    win = [d for d in warns if d <= date(2025, 9, 24)]; late = [r for r in rows if r['stance'] == 'warns' and date.fromisoformat(r['date']) > date(2025, 9, 24)]
+    # the counts of atlas/core_edit/p6_work_5/count_census.py over the table (Nov 24, 2026), and what the template says of the later warnings
+    assert (len(rows), st['warns'], len(win), len(late)) == (75, 14, 11, 3) and all(r['outlet'].startswith('Global Times') and r['date'].startswith('2026') for r in late), (len(rows), st)
+    return dict(SM_N=str(len(rows)), SM_W=str(len(warns)), SM_WIN=str(len(win)), SM_WLATE={3: 'three'}[len(late)], SM_W0=fmt(warns[0]), SM_W1=fmt(win[-1]), SM_MIX=str(st['mixed']),
                 SM_FROM=f'{MON[iso[0].month - 1]} {iso[0].year}', SM_TO=f'{MON[iso[-1].month - 1]} {iso[-1].year}')
 
 

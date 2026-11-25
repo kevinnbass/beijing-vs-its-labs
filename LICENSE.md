@@ -2,7 +2,7 @@
 
 This repository holds three kinds of material, and each is offered on its own terms.
 
-## 1. The scripts (`scripts/`, and the build scripts beside the outputs): MIT License
+## 1. The scripts (`scripts/`, the build scripts beside the outputs, and the series' page script `series/assets/series.js`): MIT License
 
 Copyright (c) 2026 the author of this repository
 
@@ -21,8 +21,8 @@ OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
 
 ## 2. The argument, the figures, the tables and the other text written for this repository: CC BY 4.0
 
-The argument, the figure and the other figures and pages under `outputs/`, the two evidence files, the tables as
-compiled, the two short videos, the README and the other text written for this repository are offered under the
+The argument, the figure and the other figures and pages under `outputs/`, the 34 images of the series and its pages
+under `series/`, the two evidence files, the tables as compiled, the two short videos, the README and the other text written for this repository are offered under the
 Creative Commons Attribution 4.0 International licence: https://creativecommons.org/licenses/by/4.0/
 
 You may copy, share and adapt them for any purpose if you give credit, link to this repository and say what you
@@ -33,7 +33,7 @@ Claude, Anthropic's model, and may be corrected; the repository's history shows 
 
 ## 3. What is not ours to license
 
-- Passages quoted from news reports, company filings, results calls, posts, broadcasts and statements belong to their
+- Passages quoted from news reports (on the images of the series as elsewhere), company filings, results calls, posts, broadcasts and statements belong to their
   publishers, authors and speakers. They are quoted so that a reader can check each line against its source.
 - The texts of government documents included under `sources/` are public documents and are reproduced as published;
   they belong to the bodies that issued them. English in round brackets after Chinese is our rendering.

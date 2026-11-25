@@ -309,7 +309,7 @@ def main():
         share = f'The page says: "{r["share"]}"' if r.get('share') else ''
         said = ' '.join(x for x in (share, r['words'], r['plain']) if x)
         if r['result'] != 'share':
-            said += ('. ' if r['plain'] and not r['words'] else ' ') + {'account': 'No share in the account.', 'notfound': 'No share in the two pages cited.'}.get(r['result'], 'No share in the page read.')
+            said += ('. ' if r['plain'] and not r['words'] else ' ') + {'account': 'No share in either account.', 'notfound': 'No share in the two pages cited.'}.get(r['result'], 'No share in the page read.')
         m = re.match(r'(https?://\S+)\s*(.*)', r['official'])
         if m and r['basis'] == 'wayback': off = 'Official address: given in table.tsv.'
         elif m and r['basis'] in ('official', 'hand'): off = 'Official address: in the references, with the saved copy.'
@@ -321,7 +321,7 @@ def main():
         if re.search(r'https?://', line): stop(f"{r['gov']}: an address inside a table cell; it cannot wrap there")
         tgt = trow2 if r.get('table') == '2' else trow
         tgt.append(line); tgt.extend(f'!! {c[0]} | {c[1]}' for c in r['check'])
-        tsv.append('\t'.join([r.get('table', '1'), r['gov'], r['result'], r['doc'], r.get('share') or {'account': 'no share in the account', 'notfound': 'no computing plan found; no share in the pages cited'}.get(r['result'], 'no share in the page read'), ' '.join(x for x in (r['words'], r['plain']) if x),
+        tsv.append('\t'.join([r.get('table', '1'), r['gov'], r['result'], r['doc'], r.get('share') or {'account': 'no share in either account', 'notfound': 'no computing plan found; no share in the pages cited'}.get(r['result'], 'no share in the page read'), ' '.join(x for x in (r['words'], r['plain']) if x),
                               ' '.join(x for x in (r['english'], r['limits']) if x), BASIS[r['basis']], r['official'], ' '.join(ids)]))
     (HERE / 'table.tsv').write_text('\n'.join(tsv) + '\n', encoding='utf-8')
     fill['TABLE'] = '\n'.join(trow); fill['TABLE2'] = '\n'.join(trow2)

@@ -7,6 +7,9 @@ Reads quotes.tsv (this folder), ../h200_funnel.tsv (the six rows) and ../a4lib.p
 Nothing is written unless cn_has.py exits 0 and the guard finds every quotation and number on the page in quotes.tsv.
 Bar lengths, the sums of Washington's table (made by a4lib.house() from the project's tables/house_licence_table.tsv)
 and every date come from those files through a4lib.py, not from typing. Round 4: the rows follow the core figure's bars.
+Round 5 (Nov 24, 2026, core edits 5 and 6): the licence table is named by its own title and its release, not as the
+Commerce Department's; the committee's example of 445,000 chips for Tencent is not said to be the table's row of 75,000,
+and the share is given both ways (a4lib.house()).
 Before the card is called done or shown: scripts/render_and_look.py on card.html and on card.png.
 """
 import re, sys
@@ -136,7 +139,7 @@ def main():
   </div>
  </section>
  <div class="ft">
-  <p><b>Sources.</b> Reuters ({reut_txt}); {"; ".join(relays)}; the Commerce Department’s table of licence applications, status at {fmt(H["status"])}, made public by the House Foreign Affairs Committee on {fmt(H["released"])}.
+  <p><b>Sources.</b> Reuters ({reut_txt}); {"; ".join(relays)}; the table {qm(Q["wapproved.date"])}, made public by the House Foreign Affairs Committee on {fmt(H["released"])}.
    Lines: Nvidia, Form 10-Q for the quarter to {period}; Reuters, {fmt(d_toward)}. The guidance from {d_first.year}: Bloomberg, {fmt(d_first)}.</p>
   <p><b>Read with care: five limits.</b> Beijing was not one actor; the pressure came as reported guidance and public warnings, not a published ban; some purchases were approved and some chips came in;
    the companies had reasons of their own, and American curbs pushed too; what Beijing meant by it is read both ways. <b>Washington’s table:</b> with AMD’s chips, {f(H["rwa"][0])} were returned without action,
@@ -157,7 +160,7 @@ def main():
                      f'with AMD’s {H["rwa_amd"][1]} ({f(H["rwa_amd"][0])}) the count is {f(H["rwa"][0])}.')
         else: words = qm(r['words'])
         if r['tier'] == 'solid':
-            src = A.link(r['sid'], f'Commerce Department table, status {fmt(H["status"])}; made public by the House Foreign Affairs Committee, {fmt(H["released"])}')
+            src = A.link(r['sid'], f'Licence table, status {fmt(H["status"])}; made public by the House Foreign Affairs Committee, {fmt(H["released"])}')
             kind = '<i class="mk solid us"></i> on the record: a United States government table'
         else:
             src = A.link(r['sid'], f'{r["by"]}, {fmt(r["date"])}'); kind = f'<i class="mk open {r["dir"]}"></i> press report citing unnamed people'
@@ -183,17 +186,17 @@ def main():
    <h2>Read with care</h2>
    <ul>
     <li>The {num[len(rows)]} numbers are separate counts: {num[len(press)]} press reports citing unnamed people and {num[len(docs)]} sums of one United States government table. They are not steps of one tally and do not add up.</li>
-    <li>Washington’s table is the Commerce Department’s, with the status of each application as of {fmt(H["status"])}; the House Foreign Affairs Committee made it public on {fmt(H["released"])}. It covers {f(H["all"][0])} chips in {H["all"][1]} applications, Nvidia’s H200 and AMD’s MI325X.
+    <li>Washington’s table, {qm(Q["wapproved.date"])}, gives the status of each application; the House Foreign Affairs Committee made it public on {fmt(H["released"])}, and its summary cites {qm(Q["table.bis"])}. BIS is the Commerce Department’s Bureau of Industry and Security. The table covers {f(H["all"][0])} chips in {H["all"][1]} applications, Nvidia’s H200 and AMD’s MI325X.
      An application names a consignee; it is not an order. “Approved” there is Washington’s licence, not Beijing’s. The table gives no reason for returning an application.</li>
     <li>The sums are ours, of the table’s rows. The card’s bars count Nvidia’s chips only; its footer gives the returned count with AMD’s, and says so. With AMD’s the approved count is {f(H["appr"][0])} and the returned count {f(H["rwa"][0])}, which is {H["share"]}% of the chips in the applications the summary records.
-     All {H["abroad"][1]} applications for consignees in {places} ({f(H["abroad"][0])} chips) are among those returned. The committee says some applications are {qm(Q["table.notfull"])}: {qm(Q["table.tencent"])}, an application the table shows at {f(H["tencent_shown"])}.
-     With that one counted in full the share would be {H["share_full"]}% (our arithmetic).</li>
+     All {H["abroad"][1]} applications for consignees in {places} ({f(H["abroad"][0])} chips) are among those returned. The committee says some applications are {qm(Q["table.notfull"])}: {qm(Q["table.tencent"])}. The table’s only Tencent row of that date is for {f(H["tencent_shown"])} chips, approved;
+     neither document says whether it is that application. The share would be {H["share_full"]}% if it is, counted at {f(H["tencent_full"])}, and {H["share_further"]}% if the {f(H["tencent_full"])} is a further application (our arithmetic).</li>
     <li>The card leaves out one reported number that the funnel page carries: a total of {esc(lo["shown"][0])} {esc(lo["shown"][1])} chips under discussion in Beijing ({esc(lo["by"])}, {fmt(lo["date"])}).</li>
     <li>The bar for the chips delivered is drawn for both named buyers together ({both:,}); the report gives about {A.count(delivered["number"]):,} each.</li>
     <li>On the record, in money and not in chips: on its results call of {fmt(d_call)}, for the quarter ended {fmt(d_q3)}, Nvidia said {qm(Q["nvq3"])}. The Hopper family includes the H200. Neither the call nor Reuters’s report of it says how many of those chips crossed into the mainland.</li>
     <li>The Reuters headline is from {fmt(d_toward)}, when the chip at issue was the H20. The United States allowed H200 sales to China only later.</li>
     <li>The sentence under the headline rests on the argument this card goes with. Bloomberg’s report of {fmt(d_first)} (carried by The Business Times on {fmt(d_carried)}): {qm(Q["care.guidance"])}.</li>
-    <li>The five limits, in the argument’s words: Beijing was not one actor; the pressure came as public warnings and unpublished guidance, not as a published ban (no published Chinese order against buying Nvidia chips was found in the 103 policy pages read);
+    <li>The five limits, in the argument’s words: Beijing was not one actor; the pressure came as public warnings and unpublished guidance, not as a published ban (no published Chinese order against buying Nvidia chips was found in the 82 policy pages read);
      some purchases were approved and some chips came in; the companies had reasons of their own, and American curbs and conditions pushed too; and what Beijing meant by it is not settled.</li>
    </ul>
   </section>
@@ -203,11 +206,15 @@ def main():
 </html>
 """
     dates = [fmt(d) for d in alld] + [period, span, fmt(d_call), fmt(d_q3), fmt(d_carried), fmt(H['status']), fmt(H['released']), fmt(lo['date'])]
-    # ours: sums of Washington's table and the shares made from them (a4lib.house); 2 x 10,000; 103 = the project's count of policy pages read
+    # ours: sums of Washington's table and the shares made from them (a4lib.house); 2 x 10,000; 82 = the project's count of policy pages read
     ours = [H[k][0] for k in ('all', 'appr', 'appr_nv', 'appr_amd', 'rwa', 'rwa_nv', 'rwa_amd', 'abroad')] + [H[k][1] for k in ('all', 'appr_nv', 'appr_amd', 'rwa_nv', 'rwa_amd', 'abroad')]
-    ours += [H['share'], H['share_full'], H['tencent_shown'], both, '103', '10']          # 10: the filing's name, Form 10-Q
+    ours += [H['share'], H['share_full'], H['share_further'], H['tencent_shown'], both, '82', '10']          # 10: the filing's name, Form 10-Q
+    assert H['tencent_status'] == 'Approved, not shipped'                  # the page says the Tencent row is approved
     A.guard(page, Q, ours=ours, dates=dates)
-    for banned in ('750,000', 'four limits', 'Democrats', 'more than half'):
+    # withdrawn by core edit 6 (atlas/core_edit/APPLIED_6.txt, part 05): the table is not called the Commerce Department's,
+    # and the Tencent row of 75,000 is not called the application of 445,000
+    for banned in ('750,000', 'four limits', 'Democrats', 'more than half', 'Commerce Department’s table', 'Commerce Department table',
+                   'Commerce Department’s, with', 'shows that application', 'an application the table shows', 'counted in full'):
         assert banned not in page, f'the page still says "{banned}"'
     out = HERE / 'card.html'
     out.write_text(page, encoding='utf-8'); print('written', out, len(page), 'bytes')

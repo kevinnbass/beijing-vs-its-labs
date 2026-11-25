@@ -1,9 +1,9 @@
 {
- "captured_utc": "2026-11-23T12:14:03Z",
+ "captured_utc": "2026-11-25T02:51:20Z",
  "page": "strip_animation.html",
- "page_sha256": "81fd7809e24c5af5016c9aae0346eea864b037cc38e7be0363908db2436d22f9",
+ "page_sha256": "bdb1918e886be005458ae2a7f7d6d1f68936108a74cb162039b509b01f2b5fa6",
  "mp4": "strip_animation.mp4",
- "mp4_sha256": "b60e23743bed8aa8b583a50bbb1f5df05682cb152a6754ed43895c81dd0a4ad6",
+ "mp4_sha256": "0ce47f2252db276b4c0d857cbf38dc3f5a088f5ff200fb53c82f67d21a65dbb9",
  "frames": 765,
  "fps": 30,
  "fonts": [
@@ -24,13 +24,13 @@
   ]
  },
  "made_from": {
-  "../../../figure/figure_data.txt": "f108aeb2bdb553ad689410eefabf9254abbacc3dbe915c086f71d824e28b2995",
-  "../../../figure/figure_events.tsv": "ee1def9e73f091f8c7f1cbafa741dcdeb99642a81dd3251c54b170ef7249718e",
-  "../../../figure/beijing_vs_labs.html": "2166fb15bac19c0630ec86443d51a47d35b728810589b3797a79c4e893cc147f",
-  "../../../figure/template.html": "9bdfccd5f89093ef5b91ac9cd2e99ad4e455579da6d2e6584da1ea7f42577ce2",
-  "../a7lib.py": "309ff6b577cafbdcd7ed7f88f9be8f4c62964fd6da18e809e3f25f360ddcd85b",
+  "../../../figure/figure_data.txt": "e8348dc5ba9568c63caa44a74da3143f0a907522ccd57ecbade47ef144247781",
+  "../../../figure/figure_events.tsv": "b11feb7df552f0c506e8f13ca2268423b645afb9e2cfa67d45ab9b09955e281c",
+  "../../../figure/beijing_vs_labs.html": "6fa1e9bfacf46cda7c2fea55c0edc9b4330ade5f88fa27a964562438a9b2d8c0",
+  "../../../figure/template.html": "36fbb0fb75b447fc87e0a1312302d7c43630978859ab9ed6dab8209034b7d805",
+  "../a7lib.py": "f72e99447430db9739ea6cc7c48c6c8645e6bb12515c95eb82b44dab093ab1e8",
   "build.py": "ffcb8d58ccb78b0bae44cf24ad6859893884cf7ceeac72d3601196b8704a4f6f",
-  "quotes.tsv": "c44a52227075303cfc711a030824b7bd4930715b32c81fecf916e74b8732ffc1",
-  "strip_animation.html": "81fd7809e24c5af5016c9aae0346eea864b037cc38e7be0363908db2436d22f9"
+  "quotes.tsv": "5c3df8e31c1ee962ced1e9fa7bc67414b06666460e060113e2c426da5db92d21",
+  "strip_animation.html": "bdb1918e886be005458ae2a7f7d6d1f68936108a74cb162039b509b01f2b5fa6"
  }
 }

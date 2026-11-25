@@ -36,17 +36,29 @@ call_2026-08-26_says_China	2
 call_2026-11-17_names_chinese_authority	0
 call_2026-11-17_says_China	2
 calls_counted	4
-sec_record_id	cn-le05-sec-submissions-20261123
-sec_record_fetched_utc	2026-11-23T08:51:16Z
+sec_record_id	cn-ga06-sec-submissions-20261124
+sec_record_fetched_utc	2026-11-24T10:27:05Z
 sec_record_url	https://data.sec.gov/submissions/CIK0001045810.json
-sec_record_entries	1003
-sec_newest_entry	144 | 2026-11-19
+sec_record_entries	1005
+sec_newest_entry	4 | 2026-11-23
+sec_newest_day_entries	4 | report 2026-11-19 | 0001696841-26-000016 | accepted 2026-11-23T21:54:28.000Z ;; 8-K | report 2026-11-22 | 0001045810-26-000090 | accepted 2026-11-23T13:57:54.000Z
 sec_10Q_rows	18
 sec_newest_10Q	2026-08-26 | period 2026-07-26 | 0001045810-26-000075
 sec_10Q_for_period_2026-10-25	0
 sec_10Q_filed_after_2026-10-25	0
 sec_NT_filings_2026	0
-wording_table_rows	107
+sec0_record_id	cn-le05-sec-submissions-20261123
+sec0_record_fetched_utc	2026-11-23T08:51:16Z
+sec0_record_url	https://data.sec.gov/submissions/CIK0001045810.json
+sec0_record_entries	1003
+sec0_newest_entry	144 | 2026-11-19
+sec0_newest_day_entries	144 | report - | 0001921094-26-001223 | accepted 2026-11-19T21:45:59.000Z
+sec0_10Q_rows	18
+sec0_newest_10Q	2026-08-26 | period 2026-07-26 | 0001045810-26-000075
+sec0_10Q_for_period_2026-10-25	0
+sec0_10Q_filed_after_2026-10-25	0
+sec0_NT_filings_2026	0
+wording_table_rows	109
 wording_row_date_man-ms-nvda-2024q3-10q-58a58e	2024-11-20
 wording_row_date_man-ms-sec-10q-2025-07	2025-08-27
 wording_row_date_man-ms-sec-10q-2025-10	2025-11-19

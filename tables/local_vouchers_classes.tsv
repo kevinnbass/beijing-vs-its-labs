@@ -1,0 +1,67 @@
+# The class of every local voucher rule in tables/local_vouchers.tsv (rows A1 to A20) and tables/local_vouchers_more.tsv (rows B1 to B45), by the published counting rule (a local rule in force, not a draft, plan, application guide or payout list, whose official text or a full copy is saved, whose rate words the checker finds there, and which states a share of the bill; one rule per government). Counted 19: 4 pay more for home-made computing and still pay for other computing, 1 pays for home-made computing only, 14 pay one rate whatever the chip; read and not counted 46. Columns: row_id (A = local_vouchers.tsv, B = local_vouchers_more.tsv, numbered in the file's order) | government | class | reason (for a row not counted: the part of the rule it fails) | deciding_words (for a counted rule: the row's rate words, found by the checker in the saved copy, whose sentence and rates decide the class; for a row not counted: the row's own words cell) | saved_id (the copy read). Made by scripts/cn_voucher_classes.py --write; do not edit by hand. The rule is applied as atlas/core_edit/edit6_parts/vcount_as_stands.py applies it; one reason differs from that script's label (row B36, Longgang's measures of December 2024: a rule since repealed or revised, since Longgang has no counted rule).
+row_id	government	class	reason	deciding_words	saved_id
+A1	Hangzhou	pays more for home-made and still pays for other computing		使用国产算力设施开展模型训练、推理和应用的企业补贴比例不超过算力合同费用的30%，使用其他算力设施的企业补贴比例不超过算力合同费用的20%	cn-counter-b4-2
+A2	Hangzhou	read and not counted	a draft	对使用国产算力和非国产算力服务的用户补贴合同实际发生金额的30%和10%，符合市级算力券条件的，可叠加补贴比例至45%和25%	cn-le15-hangzhou-2025-draft-cls
+A3	Hangzhou	read and not counted	no checkable text of the rule is saved	试行智能券政策，对企业、高校、科研机构采购智能算力服务给予30%或10%分档补贴	cn-le15-hangzhou-2025-plan-hznews
+A4	Binjiang	read and not counted	an earlier or narrower rule of a government whose rule in force is counted (row A6)	对于使用杭州人工智能计算中心算力资源的，按照不超过服务合同金额的50%给予算力补贴，单个主体年度最高补贴100万元	cn-le15-zj-oss-web2945-cd1d68
+A5	Binjiang	read and not counted	an earlier or narrower rule of a government whose rule in force is counted (row A6)	新增补助租用非国产算力，上调国产算力补助比例10个百分点，单家补助上限由100万元提升至2000万元	cn-cnpress-binjiang-rental-reply-20260720
+A6	Binjiang	pays more for home-made and still pays for other computing		按不超过实际租用算力结算费用的30%（非自主人工智能算力）或60%（自主人工智能算力），给予单家企业最高2000万元支持	cn-le15-binjiang-2026-6-keceyun
+A7	Wenzhou	pays more for home-made and still pays for other computing		对采购自主智能算力服务的企业、高校、科研机构等主体，各区一般按照不高于合同实际执行金额的30%给予补贴；采购非自主智能算力服务的，一般按照不高于合同实际执行金额的10%给予补贴	cn-le15-zj-oss-web1825-e66330
+A8	E-Town	read and not counted	an earlier or narrower rule of a government whose rule in force is counted (row B1)	每次抵扣费用最高为结算费用的30%（非国产人工智能算力）或40%（国产人工智能算力），每家企业每年累计抵扣费用最高不超过2000万元 / 给予购买合同中的实际采购国产智算芯片服务器部分金额最高10%的补贴，每个项目累计不超过1000万元	cn-factions-etwon-vouchers
+A9	E-Town	read and not counted	an application guide, not the rule	按照实际使用算力结算费用的30%，经评审认定，给予最高2000万元支持	cn-le15-bj-etown-202603-doc
+A10	Beijing city	read and not counted	an application guide, not the rule	补贴金额最高不超过实际智能算力费用的20% / 单次申领算力券金额最高不超过智能算力合同额的20% / 算力券补贴金额最高不超过实际智能算力费用的20%	cn-ga04-bj-jxj-guide2025-3-20250808
+A11	Beijing city	read and not counted	not a voucher rule	对采购自主可控GPU芯片开展智能算力服务的企业，按照投资额的一定比例给予支持	cn-factions-beijing-plan-20240424
+A12	Shanghai	one rate		对租用智能算力的主体，市级给予最高30%租金补贴，并推荐申报国家智能券补贴	cn-le15-sheitc-8cea38
+A13	Shanghai	read and not counted	an application guide, not the rule	方向一 算力券：支持租用非关联方智能算力资源 (template tables list A800, A100, H100 rentals)	cn-tolerate-shtemplate
+A14	Chengdu	read and not counted	no checkable text of the rule is saved	《管理办法》明确自主可控智能算力不超过服务费用的50%、非自主可控智能算力不超过服务费用的30%，其中中小企业抵扣比例分别增加10%	cn-le15-chengdu-sina-6a5ce645
+A15	Shanxi	one rate		按照算力服务合同金额的20%，给予总额不超过100万元的“算力券”奖励	cn-o39b-shanxi-measures-2024-jincheng
+A16	Ningxia	read and not counted	it states no share of the bill	每年总计发放不超过 4000万元“算力券”	cn-o39-ningxia-ai-measures-2023
+A17	Ningxia	read and not counted	not a voucher rule	对基础软硬件实现国产化率90%以上的数据中心，给予企业最高不超过1000万元奖励	cn-o39-ningxia-reply-2023
+A18	Sichuan	pays for home-made computing only		设立“算力券”，对企业购买国产算力费用给予支持，一般企业支持比例不超过20%，成立3年内的初创企业可提高至30%、人工智能一人公司（OPC）可提高至40%，每家单位每年支持最高不超过100万元	cn-ga05-sichuan-compute-net-measures-jiemian
+A19	Longgang	read and not counted	a draft	鼓励使用本区算力和国产算力，通过算力券的形式按照上年度实际支付算力服务费用划分不同梯度比例给予补贴	cn-ga04-lg-ai-draft-2024-docx
+A20	Shanghai	read and not counted	not a voucher rule	上海《智算中心建设导则（2025版）》对液冷占比、芯片国产化率、PUE/WUE设阶梯准入	cn-le14-huabenlihe-policy-list
+B1	E-Town	one rate		每年发放1亿元的“算力券”，支持企业购买算力服务，按照实际使用算力结算费用的30%，经评审认定，给予最高2000万元支持。	cn-le28-etown-29hao-20241126
+B2	E-Town	read and not counted	an application guide, not the rule	支持企业2024年1月1日至2024年12月31日期间实际发生并使用算力的结算费用，给予最高30%的补贴	cn-le28-etown-voucher2024-guide-docx
+B3	E-Town	read and not counted	an application guide, not the rule	算力支持范围为用于人工智能大模型训练与推理的GPU，非智能算力资源不予支持	cn-le28-etown-voucher2025h1-guide-docx
+B4	E-Town	read and not counted	not a voucher rule	申报主体提供的智能算力服务应基于全国产化智能算力芯片，服务企业不少于5家，并在区内部署智能算力服务器。	cn-le28-etown-guochan-dizuo-guide-docx
+B5	Shenzhen	one rate		对租用智能算力开展大模型训练的企业、高等院校和科研机构，按不超过服务合同金额的50%，给予最高1000万元资助，对初创企业提高资助比例至60%。	cn-le28-sz-gxj-2024-13hao
+B6	Shenzhen	read and not counted	not a voucher rule	给予不超过30%、单家企业最高150万元资助 / 申报单位具有人工智能芯片、开发框架、算子库等全栈国产技术	cn-le28-sz-gxj-2025-3hao
+B7	Shenzhen	read and not counted	it states no share of the bill	按照国家发展改革委人工智能券（算力券）工作有关要求和我市人工智能券（算力券）相关规定 / 拟上报核算后算力服务总额11.68亿元，算力服务申请补助总额1.29亿元	cn-le28-sz-fgw-aivoucher-2025
+B8	Longhua	one rate		通过发放算力券为企业提供补贴，补贴额度不超过企业采购金额的30%，上限不超过300万元。	cn-le28-sz-longhua-2024-20hao
+B9	Longgang	read and not counted	an application guide, not the rule	按申报指南发布前一周期年度内实际发生的算力服务费用的30%予以支持，每家企业每年最高不超过600万元	cn-le28-sz-longgang-2025-att-1759340
+B10	Guangzhou Development Zone and Huangpu	read and not counted	it states no share of the bill	发放最高1000万元“算力券”，对企业本地部署开源模型、云部署、API调用等方面智能算力服务成本予以支持，单个企业最高可享受50万元。	cn-le28-gz-huangpu-2025-7hao
+B11	Guangzhou	read and not counted	not a voucher rule	重点突破国产化AI算力芯片适配、异构算力动态调度技术，构建自主可控的智算中心架构。	cn-le15-guangzhou-10743475
+B12	Wuhan	one rate		对企业使用算力服务费用给予50％最高20万元补助，补助期限不超过三年。	cn-le28-wuhan-2025-3hao
+B13	Wuhan	read and not counted	an earlier or narrower rule of a government whose rule in force is counted (row B12)	当年支持周期内使用算力服务费用的50％给予最高20万元补助，补助期限不超过3年。	cn-le28-wuhan-2026-4hao-opc
+B14	Qiaokou	one rate		创新设置年度总额 500万元的“普惠算力券”和“特惠算力券”，支持符合条件的企业购买算力服务，在市级支持基础上，按算力服务费的50%最高给予20万元资金支持。	cn-le28-wuhan-qiaokou-2025-1hao
+B15	Hongshan	one rate		对购买算力服务的中小企业，按照购买算力服务费用给予最高不超过20%的补贴，每家每年最高不超过20万元	cn-le28-wuhan-hongshan-2025-2hao
+B16	Qingdao	read and not counted	an earlier or narrower rule of a government whose rule in force is counted (row B17)	按照实际支付算力费用不超过20%的比例，给予企业最高100万元补贴。	cn-le28-qingdao-2025-15hao
+B17	Qingdao	one rate		按照实际支付算力费用不超过20%的比例，给予企业最高100万元补贴。	cn-le28-qingdao-2026-9hao-smartcity
+B18	Hangzhou	read and not counted	it states no share of the bill	通过智能券、算力券等形式，对采购智能算力服务和模型服务的专精特新企业按规定给予分档补贴。	cn-le28-hz-gb-2025-65hao
+B19	Hangzhou	read and not counted	it states no share of the bill	根据算力合同费用给予最高800万元算力券补助	cn-le28-hz-gb-2025-29hao
+B20	Hangzhou	read and not counted	it states no share of the bill	按不超过研发投入30%的比例给予算力券补助，每年申领算力券金额不超过1000万元	cn-le28-hz-gb-2026-30hao
+B21	Zhejiang	pays more for home-made and still pays for other computing		使用自主算力服务的，可 按照不高于合同实际执行金额的30%给予补助； 采用非自主算力服务的，可按照不高于合同实际执行金额的10%，给予最高800万元补助。	cn-le25-zhejiang-ai-measures-2025-smartcity
+B22	Shandong	one rate		按规定给予不超过算力交易金额的5%奖补支持，每个企业奖补总额最高500万元。	cn-le28-shandong-ai-measures-2025-smartcity
+B23	Hunan	one rate		对购买算力服务的企业，按不超过年度算力总支出的30%给予补贴，最高不超过1000万元。	cn-le28-hunan-aiplus-smartcity
+B24	Guizhou	read and not counted	not a voucher rule	支持在贵安新区新建智算中心项目，优先对国产化比例高的项目给予奖励。	cn-le28-guizhou-hub-incentives-smartcity
+B25	Inner Mongolia	read and not counted	not a voucher rule	核心是支持企业采用国产化算力建设超大规模智算中心，打造一批词元工厂 / 支持产业带动性强的模型企业优先采购国产算力	cn-le28-neimenggu-token18-smartcity
+B26	Hefei	read and not counted	it states no share of the bill	将Token调用及智能体服务纳入算力券使用范围	cn-le28-hefei-agent-measures-smartcity
+B27	Chongqing	read and not counted	not a voucher rule	加大市级算力券支持力度，积极争取国家人工智能券（算力券）支持	cn-le28-chongqing-ai155-smartcity
+B28	Xi'an	read and not counted	not a voucher rule	强化算力保障，推行算力券和词元券消费补贴措施。	cn-le28-xian-2026-8hao-qujiang
+B29	national (the state planner)	read and not counted	not a voucher rule	指导国产大模型加大力度适配国产算力芯片，在保持快速发展的同时，确保自主可控、向善发展、行稳致远	cn-le28-govcn-ndrc-briefing-20260522
+B30	Tianjin	read and not counted	not a voucher rule	到 2026 年，全市算力中心国产算力芯片使用占比超过 60％	cn-le28-tj-compute-plan-2024-18hao
+B31	Shenzhen	read and not counted	a draft	对租用智能算力开展大模型训练的企业、高等院校和科研机构，按不超过服务合同金额的50%，给予最高1000万元资助，对初创企业提高资助比例至60%。 / 对基于国产芯片完成大模型训推适配、形成优秀行业解决方案的示范项目，按不超过项目实际投入的20%给予最高100万元资助。	cn-le28-sz-gxj-2026rev-draft-zip
+B32	Shenzhen	read and not counted	not a voucher rule	将1家国产人工智能生态源头创新中心予以认定 / 鲲鹏产业源头创新中心（深圳）有限公司	cn-le28-sz-gxj-ycz-centre-list-20250915
+B33	Xiamen	read and not counted	no checkable text of the rule is saved	升级“算力券”，对购买符合条件的智能算力服务的企业、高校、科研机构分档予以补助。其中：对年度营业收入10亿元（含）以上的企业，按照购买算力服务费用给予最高不超过30%的补助，每家每年最高不超过1000万元 / 对新建、改造或扩建符合国家政策规定和能耗标准的智算中心项目，按照服务器采购金额的10%给予补助，单个项目最高不超过6000万元。	wayback/xm_202504.txt
+B34	Hubei	read and not counted	no checkable text of the rule is saved	企事业单位按实际发生费用的20%予以补贴，其中购买自主可控算力服务的，按实际发生费用的30%予以补贴	cn-ga05-hubei-voucher-plan-ctdsb-20261001
+B35	Beijing city	read and not counted	an application guide, not the rule	对北京市人工智能领域的新型研发机构开展研究攻关，按照不超过补贴期内算力合同额的50%予以补贴，最高不超过3000万元 / (Word) 对于国家有关部门明确声明存在安全隐患或不建议使用的算力设备，本政策不予支持。	cn-ga04-bj-jxj-guide2026-1-20260214
+B36	Longgang	read and not counted	a rule since repealed or revised, of a government with no counted rule	(Word) 对购买算力的企业，按最高不超过算力服务费用的30%予以支持，最高不超过600万元	cn-ga04-lg-ai-measures-2024-docx
+B37	Longgang	read and not counted	a repealed or expired rule	按申报指南发布前一周期年度内实际发生的算力服务费用的30%予以支持，每家企业每年最高不超过600万元	cn-ga04-lg-ai-shixi-2025-20250529
+B38	Longgang	read and not counted	it states no share of the bill	按评定结果分为五个支持档次，分档确定每年支持额度	cn-ga04-lg-ai-shixi-2026rev-20260622
+B39	Wuhu	read and not counted	an earlier or narrower rule of a government whose rule in force is counted (row B40)	算力券按照算力服务合同费用的 25% 兑付，最低不少于 1 万元	cn-ga04-wh-voucher-rule-2025-15hao
+B40	Wuhu	one rate		算力使用方按照智算服务合同实际发生费用的 25 ％兑付	cn-ga04-wh-voucher-rule-2026-24hao
+B41	Suzhou	read and not counted	an earlier or narrower rule of a government whose rule in force is counted (row B42)	按实际支付人工智能算力费用 20% 给予每年最高 200 万元补贴	cn-ga04-sz-suzhou-aiplus-2025-5hao
+B42	Suzhou	one rate		对符合条件的科技研发企业，按实际支付智能算力租用费用的 30%，给予每年最高200万元补贴	cn-ga04-sz-suzhou-aiplus-2026-18hao
+B43	Nanjing	read and not counted	an application guide, not the rule	补贴最高不超过智能算力合同结算额的30%	cn-ga04-nj-fund-guide-2025-3-pdf
+B44	Tianjin	one rate		按照算力服务合同的10%申请算力券，同一企业每年度累计兑现算力券金额不超过200万元	cn-ga04-tj-voucher-rule-sina-20250514
+B45	Qingyang	read and not counted	no checkable text of the rule is saved	对企业使用本地算力给予30%补贴，单个企业最高可获200万元支持	cn-ga04-qy-36kr-tzj-20250924

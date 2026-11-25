@@ -1,9 +1,9 @@
 # Beijing and its AI companies, in twelve captions
 @deck The on-screen captions of the silent explainer video (idea 24), in the order shown. The video shows exactly the twelve numbered captions below, each with the source lines under it.
 
-@note Draft by Claude, Anthropic's model. Local; not published.
+@note Draft by Claude, Anthropic's model.
 @note Words between quotation marks are a source's exact words, found in its saved copy by a script. Statements taken from Chinese pages are our English renderings, not official translations. On the record means a government document, a filing or a named person. Reported means a press report citing unnamed people: it is not published policy. Captions means the caption track of a broadcast, which nobody has checked by ear.
-@note The video is explainer.mp4 in this folder. Each caption stays on screen while the marks it speaks of appear on the dated strip, in date order, and long enough to be read at 2.5 words a second. The small numbers beside the words are the reference numbers of this document. Three counts are our own sums over the project's tables, made by the build script, which stops if a caption's number differs from its sum: the 579,868 chips, the 55%, and the seven of 42 state-media items.
+@note The video is explainer.mp4 in this folder. Each caption stays on screen while the marks it speaks of appear on the dated strip, in date order, and long enough to be read at 2.5 words a second. The small numbers beside the words are the reference numbers of this document. Three counts are our own sums over the project's tables, made by the build script, which stops if a caption's number differs from its sum: the 579,868 chips, the 55%, and the counts and dates of the state-media items that only warn.
 
 ## The captions
 
@@ -52,7 +52,7 @@
 !! cn-clips-reuters-hongkong-yahoo | Nov 5 (Reuters) - About 600,000
 !! cn-clips-reuters-hongkong-yahoo | 2026-11-06
 - Ordered by Chinese companies for 2026: "more than 2 million H200 chips". Reuters, Dec 31, 2025 [cn-labs-h200-two-million-202512-relay1-wayback]
-- Licensed by Washington for Nvidia: 579,868 chips, each application "Approved, not shipped". Commerce Department table, status at May 11, 2026; our sum [cn-usdocs-hfac-decisions-20261119]
+- Licensed by Washington for Nvidia: 579,868 chips, each application "Approved, not shipped". Licence table released by a House committee, status at May 11, 2026; our sum [cn-usdocs-hfac-decisions-20261119]
 - Approved by Beijing, with conditions: "more than 400,000 H200 chips in total". Reuters, Jan 28, 2026 [ms-bj-20260128-h200-nod-standard]
 - Waiting in Hong Kong: "About 600,000". Reuters, Nov 5, 2026 [cn-clips-evidence-1]
 
@@ -64,16 +64,22 @@
 - On the record: Ministry of Commerce, account of the meeting of Jul 17, 2025 [cn-policy-wang-nvidia]
 - Reported, from unnamed people: Financial Times, Nov 13, 2026 [man-e2596eab15f4]
 
-7. **Limit 2 of 5.** Public warnings and unpublished guidance, not a published ban. No published order against buying Nvidia chips was found in the 103 policy pages read. The seven state-media items found that only warn about Nvidia's chips all date from Aug 1 to Sept 24, 2025.
+7. **Limit 2 of 5.** Public warnings and unpublished guidance, not a published ban. No published order against buying Nvidia chips was found in the 82 policy pages read. Of the 14 state-media items found that only warn about Nvidia's chips, 11 date from Jul 31 to Sept 24, 2025; the three found later are Global Times items of 2026.
 !! cn-policy-micron-decision | 应停止采购美光公司产品
 !! cn-policy-micron-decision | 网络安全审查办公室依法作出不予通过网络安全审查的结论
 !! cn-policy-review-measures | 网络安全审查办公室设在国家互联网信息办公室
-!! cn-acts-peoplesdaily-bjd-20250801 | 2025-08-01
-!! cn-acts-peoplesdaily-bjd-20250801 | 绝不能让“带病”的芯片上岗
+!! cn-ga02-gt-cac-summons-news-202507 | Published: Jul 31, 2025 02:05 PM
+!! cn-ga02-gt-cac-summons-news-202507 | Deploying these chips in networked computing centers risks covertly transferring algorithms and methods abroad
 !! cn-media-stdaily-security-forum | 2025-09-24
+!! cn-ga02-gt-cap-h200-sales-202603 | Published: Mar 03, 2026 05:23 PM
+!! cn-ga02-gt-cap-h200-sales-202603 | Ma Jihua, a veteran tech industry analyst
+!! cn-ga02-gt-restart-h200-optional-202603 | Published: Mar 18, 2026
+!! cn-ga02-gt-restart-h200-optional-202603 | Ma Jihua, a veteran industry analyst
+!! cn-ga02-gt-isnt-buying-opinion-202611 | Published: Nov 06, 2026 07:50 PM
+!! cn-ga02-gt-isnt-buying-opinion-202611 | OPINION / VIEWPOINT
 !! cn-factions-bloomberg-flexibility-202409-relay1 | on Friday (Sep 27)
 - Our own reading. A published one could have been found: the 2023 conclusion of the cyberspace regulator's review office on Micron's products is among the pages [cn-policy-micron-decision]
-- Our own count, of 42 state and Party media items: the first of the seven in People's Daily [cn-acts-peoplesdaily-bjd-20250801], the last in Science and Technology Daily [cn-media-stdaily-security-forum]
+- Our own count, of 75 state and Party media items (those after September 2025 are what two rounds of searches found, a sample and not a full count): the 11 run from Global Times [cn-ga02-gt-cac-summons-news-202507] to Science and Technology Daily [cn-media-stdaily-security-forum]; the later three: an analyst quoted in news reports of Mar 3 [cn-ga02-gt-cap-h200-sales-202603] and Mar 18 [cn-ga02-gt-restart-h200-optional-202603], and an unsigned commentary of Nov 6, 2026 [cn-ga02-gt-isnt-buying-opinion-202611]
 - Reported, from unnamed people: Bloomberg, Sept 27, 2024: "guidance rather than an outright ban" [cn-factions-bloomberg-flexibility-202409-relay1]
 
 8. **Limit 3 of 5.** Some purchases were approved and some chips came in. Reported: ByteDance and Tencent "have each received about 10,000 H200 processors in recent weeks" [cn-tolerate-reutersaug26-relay1-wayback]. A US official told Congress: "There have been minimal exports of any H200s to China so far" [man-a7d2f1a9f963].
@@ -91,10 +97,12 @@
 !! cn-usdocs-hfac-summary-20261119 | not fully reflected in the May 11, 2026, summary document
 !! cn-usdocs-hfac-summary-20261119 | 11.19.2026
 !! cn-le04-bis-ear-748 | Returned without action (RWA)
+!! cn-le04-bis-ear-748 | Bureau of Industry and Security, U.S. Department of Commerce
+!! cn-usdocs-hfac-summary-20261119 | According to a BIS summary provided to the House Foreign Affairs Committee dated May 11, 2026
 - On the record: Alibaba, results release, Mar 19, 2026 [cn-policy-alibaba-own-gpu]; Nvidia, Form 10-Q signed Nov 19, 2025 [man-ms-sec-10q-2025-10]
-- On the record: the Commerce Department's table, made public by the House Foreign Affairs Committee on Nov 19, 2026; our sum; the committee says the summary does not show every application in full [cn-usdocs-hfac-summary-20261119]
+- On the record: the table of licence applications from the Commerce Department's Bureau of Industry and Security (BIS), made public by the House Foreign Affairs Committee on Nov 19, 2026; our sum; the committee says BIS's summary does not show every application in full [cn-usdocs-hfac-summary-20261119]
 
-10. **Limit 5 of 5.** What Beijing meant by it is not settled. A US commission saw in the antitrust move against Nvidia "China's willingness to both exert leverage and ease pressure as a negotiating tactic" [cn-usdocs-uscc-2025-ch1]. Asked whether China would let its companies buy the H200, the US Trade Representative called it "a sovereign decision for China" [cn-le01-greer-bbg-20260515-subs-ttml]. The direction stands under either reading.
+10. **Limit 5 of 5.** What Beijing meant by it is not settled. A US commission saw in the antitrust move against Nvidia "China's willingness to both exert leverage and ease pressure as a negotiating tactic" [cn-usdocs-uscc-2025-ch1]. Asked whether China would let its companies buy the H200, the US Trade Representative called it "a sovereign decision for China" [cn-le01-greer-bbg-20260515-subs-ttml]. The direction stands under either reading of what Beijing meant by it.
 !! cn-usdocs-uscc-2025-ch1 | TRADE RELATIONS (YEAR IN REVIEW)
 !! cn-le01-greer-bbg-20260515-subs-ttml | Will China allow their companies to buy them?
 - On the record: US-China Economic and Security Review Commission, 2025 annual report [cn-usdocs-uscc-2025-ch1]

@@ -12,6 +12,8 @@
 #   E  my English rendering, where Q is Chinese
 #   U  the address to link (only where the saved copy's own address is cut short or is a relay to avoid)
 #   C  a short label drawn beside the mark on the strip: start|end dx dy words
+#   N  the record's fixed number (core edit 7, Nov 25, 2026): a record added after the figure was made public takes the next
+#      free number, so that no earlier record changes its number; records without N are numbered by date as before
 # LANE: BH Beijing holds Nvidia back | BL Beijing lets Nvidia in | CN companies reach for Nvidia | CH companies turn to home-made chips
 # KIND: doc  a government document or an official on the record
 #       rec  a company, or a named person outside government, on the record (filing, results, a named executive or analyst)
@@ -205,6 +207,18 @@ S 英国《金融时报》，经路透社转述，载于Investing.com
 Q ByteDance and Tencent have each received about 10,000 H200 processors in recent weeks
 Z 字节跳动和腾讯最近几周各收到约1万枚H200处理器
 C end 118 -19 各到货约1万枚
+
+@ BL press 2026-09-27 - cn-acts-reuters-rtx5500-20260927
+N 62
+T 据报道，两名人士称：工业和信息化部要求包括字节跳动和阿里巴巴在内的企业报告购买英伟达RTX PRO 5500的计划，并告知其中一些企业，政府打算批准这些采购。报道的是意向，不是已经给出的批准；路透社未能立即核实这一报道
+S The Information，经路透社转述，载于AOL
+Q The ministry told some Chinese companies the government intends to approve the purchases
+Z 该部告知一些中国企业，政府打算批准这些采购
+
+! cn-acts-reuters-rtx5500-20260927 | China's Ministry of Industry and Information Technology recently asked companies including ByteDance and Alibaba to report their plans to purchase Nvidia's RTX PRO 5500 chips
+! cn-acts-reuters-rtx5500-20260927 | The Information reported on Sunday, citing two people familiar with the matter
+! cn-acts-reuters-rtx5500-20260927 | Reuters could not immediately verify the report.
+! cn-acts-reuters-rtx5500-20260927 | Sept 27 (Reuters)
 
 @ BL doc 2026-10-16 - cn-tolerate-mof
 T 商务部、科技部在公开征求意见的目录修订稿中提出：对"中国企业在境外自建自营算力中心"等情形的技术出口，"适用自动许可等便利措施"
@@ -525,7 +539,8 @@ Z 不论你实际上何时开始在中国境外租用或建设算力
 ! cn-le14-mof-us-firms-measures-20260622 | 采购人在政府采购活动中，不得采购46家美国企业（不包括在华美资企业）生产的产品。
 ! cn-le14-mof-us-firms-measures-20260622 | 财库〔2026〕10号
 ! cn-le14-mof-us-firms-list-20260622 | Lockheed Martin
-# Panels: local vouchers (the most paid of the bill for rented computing; home-made against other)
+# Panels: local vouchers (the general rate paid of the bill for rented computing; home-made against other; higher rates for named kinds of firm in the notes)
+! cn-le15-sheitc-8cea38 | 市区协同给予最多1年、最高100%的租金补贴
 ! cn-counter-b4-2 | 使用国产算力设施开展模型训练、推理和应用的企业补贴比例不超过算力合同费用的30%，使用其他算力设施的企业补贴比例不超过算力合同费用的20%
 ! cn-counter-b4-2 | 杭州市人民政府办公厅 2024年7月18日
 ! cn-le25-zhejiang-ai-measures-2025-smartcity | 使用自主算力服务的，可 按照不高于合同实际执行金额的30%给予补助
@@ -616,7 +631,7 @@ Z 不论你实际上何时开始在中国境外租用或建设算力
 # Panels: local vouchers, the rows F1 added from L15's and L28's tables (rate words, and the date on the page)
 ! cn-o39b-shanxi-measures-2024-jincheng | 按照算力服务合同金额的20%，给予总额不超过100万元的“算力券”奖励
 ! cn-o39b-shanxi-measures-2024-jincheng | 按照算力服务合同金额的30%，给予总额不超过200万元的“算力券”奖励
-! cn-o39b-shanxi-measures-2024-jincheng | 成文日期： 2024年12月09日
+! cn-o39b-shanxi-measures-2024-jincheng | 山西省人民政府办公厅 2024年6月25日
 ! cn-o39b-shanxi-measures-2024-jincheng | 本措施自2024年7月1日起施行
 ! cn-le28-sz-longhua-2024-20hao | 补贴额度不超过企业采购金额的30%，上限不超过300万元
 ! cn-le28-sz-longhua-2024-20hao | 成文日期： 2024-11-27
@@ -636,6 +651,20 @@ Z 不论你实际上何时开始在中国境外租用或建设算力
 ! cn-le28-shandong-ai-measures-2025-smartcity | 2025年5月12日，山东省政府新闻办举行省政府政策例行吹风会
 ! cn-le28-hunan-aiplus-smartcity | 对购买算力服务的企业，按不超过年度算力总支出的30%给予补贴，最高不超过1000万元
 ! cn-le28-hunan-aiplus-smartcity | 2025年10月30日，湖南发布《湖南省贯彻落实国务院“人工智能+”行动的实施方案》
+# Panels: local vouchers, the four rules added by core edit 6 (Nov 24, 2026; rate words, and the date on the page or of the report)
+! cn-ga05-sichuan-compute-net-measures-jiemian | 设立“算力券”，对企业购买国产算力费用给予支持，一般企业支持比例不超过20%，成立3年内的初创企业可提高至30%、人工智能一人公司（OPC）可提高至40%，每家单位每年支持最高不超过100万元
+! cn-ga05-sichuan-compute-net-measures-jiemian | 本办法自印发之日起实施
+! cn-ga05-sichuan-compute-net-measures-cls-20260813 | 财联社8月13日电，《四川省推进算力网建设的若干政策措施（试行）》发布
+! cn-ga04-wh-voucher-rule-2026-24hao | 算力使用方按照智算服务合同实际发生费用的 25 ％兑付
+! cn-ga04-wh-voucher-rule-2026-24hao | 具身智能等未来产业领域企业，经有关部门会商认定后，兑付比例提升至 45 ％
+! cn-ga04-wh-voucher-rule-2026-24hao | 兑付比例提升至 70 ％，单个企业每年最高兑付不超过 10 万元
+! cn-ga04-wh-voucher-rule-2026-24hao | 芜湖市数据资源管理局 2026 年 7 月 15 日
+! cn-ga04-sz-suzhou-aiplus-2026-18hao | 对符合条件的科技研发企业，按实际支付智能算力租用费用的 30%，给予每年最高200万元补贴
+! cn-ga04-sz-suzhou-aiplus-2026-jiedu | 本《若干措施》自2026年1月31日起施行，有效期至2027年1月30日
+! cn-ga04-sz-suzhou-aiplus-2025-5hao | 按实际支付人工智能算力费用 20% 给予每年最高 200 万元补贴
+! cn-ga04-sz-suzhou-aiplus-2025-5hao | 2025年2月13日苏州市人民政府苏府规字〔2025〕5号文发布
+! cn-ga04-tj-voucher-rule-sina-20250514 | 按照算力服务合同的10%申请算力券，同一企业每年度累计兑现算力券金额不超过200万元
+! cn-ga04-tj-voucher-rule-sina-20250514 | 2025年05月14日 15:33 看点资讯
 ! cn-le15-chengdu-sina-6a5ce645 | 自主可控智能算力不超过服务费用的50%、非自主可控智能算力不超过服务费用的30%
 ! cn-le15-zj-oss-web1825-e66330 | 温州市人民政府办公室 2025年8月29日
 
@@ -645,3 +674,4 @@ Z 不论你实际上何时开始在中国境外租用或建设算力
 ! man-70f4668d5f56 | Nvidia has won Beijing's approval
 ! man-a7d2f1a9f963 | shipments of H200 chips have begun but the number was "very few."
 ! cn-le29-zhipu-results-20260331-en | Faced with the computing power shortage that has outstripped supply since February 2026
+! cn-usdocs-hfac-decisions-20261119 | H200 License and Equivalent Application Status as of May 11, 2026

@@ -7,7 +7,7 @@
 #             reward     a number tied to a reward in a document that was read; no target
 #             other      a document was read in its own text and sets no share
 #             earlier    no computing plan found; the document the first note read stands, and sets no share
-#             account    the computing plan is known only from a press account; no share in the account
+#             account    the computing plan is known only from accounts of it (the issuer's or the press's); no share in them
 #             notfound   no computing plan was found; other pages of the government were read and set no share
 #   basis     official   saved official page: a copy in the project's store of a page on the issuing body's own site or its government's own site
 #             wayback    saved Archive capture: a copy in the project's store of an Internet Archive capture of the official page
@@ -35,7 +35,7 @@ basis: official
 doc: Plan for computing infrastructure, 2024 to 2025, known as the Yue Suan plan (number 粤通联〔2024〕3号). Guangdong Communications Administration (the industry ministry's office in the province) and eight other bodies, among them the provincial cyberspace office and the central bank's Guangdong branch. Dated Mar 7, 2024; posted Mar 22, 2024.
 share: 力争到2025年底，新增国产化算力占比达到70%
 words:
-english: (strive for home-made computing to make up 70% of newly added computing by the end of 2025). An aim: it opens with 力争 (strive), and the page does not mark it binding or expected (the words 约束性 and 预期性 are not in it). It counts computing power, not chips, and the page does not say how home-made is judged.
+english: (strive for home-made computing to make up 70% of newly added computing by the end of 2025). An aim: it opens with 力争 (strive), and the page does not mark it binding or indicative (the words 约束性 and 预期性 are not in it). It counts computing power, not chips, and the page does not say how home-made is judged.
 limits: The first note read two AI documents for Guangdong and found no computing plan. This is the plan.
 official: https://gdca.miit.gov.cn/zwgk/zcwj/wjfb/art/2024/art_8d6908d847994bc4a2f0c9eb3517e780.html
 ids: cn-o39b-guangdong-yuesuan-2024
@@ -146,7 +146,7 @@ basis: wayback
 doc: Two provincial plans, both read in full. One: plan for a green computing base (number 青政办〔2024〕7号), General Office of the Qinghai Provincial People's Government, Feb 5, 2024. Two: plan for the green computing industry in the fifteenth five-year period (number 青政〔2026〕57号), Qinghai Provincial People's Government, Aug 25, 2026. Saved Internet Archive captures of the provincial government's pages, and the PDFs the owner saved by hand, read as page images.
 share:
 words: The 2026 plan says: "推动算力中心部署自主可控、安全可靠的算力设备，探索建设国产算力生态中试场" The 2024 plan says: "自主可控绿色数据中心等试点示范、应用推广"
-english: (2026: push computing centres to deploy independently controllable, secure and reliable computing equipment, and explore building a pilot test site for a home-made computing ecosystem. 2024: trials and wider use of independently controllable green data centres, among other things). Neither plan sets a share or a target for home-made chips or computing. The 2026 plan's table of seven indicators for 2030 has none for home-made hardware: energy efficiency is marked binding (约束性) and six are marked expected (预期性), among them green power use of at least 90%. The table is an image in the capture and was read on page 2 of the hand-saved PDF.
+english: (2026: push computing centres to deploy independently controllable, secure and reliable computing equipment, and explore building a pilot test site for a home-made computing ecosystem. 2024: trials and wider use of independently controllable green data centres, among other things). Neither plan sets a share or a target for home-made chips or computing. The 2026 plan's table of seven indicators for 2030 has none for home-made hardware: energy efficiency is marked binding (约束性) and six are marked indicative (预期性), among them green power use of at least 90%. The table is an image in the capture and was read on page 2 of the hand-saved PDF.
 limits: The hand-saved PDFs' text layers are damaged and are not quoted: the quotations stand in the captures' own text, and the table rows were read from the page images and typed into transcription.txt beside the saved copy [man-cn-o39-qinghai-compute-15fyp-2026].
 official: http://www.qinghai.gov.cn/xxgk/xxgk/fd/zfwj/202608/t20260831_429553.html (the 2026 plan) and http://www.qinghai.gov.cn/xxgk/xxgk/fd/zfwj/202403/t20240323_213922.html (the 2024 plan)
 ids: cn-o39-qinghai-compute-15fyp-2026-wayback cn-o39-qinghai-green-compute-2024-wayback man-cn-o39-qinghai-compute-15fyp-2026
@@ -252,17 +252,20 @@ check: cn-o39-yunnan-digital-channel-2026 | 2026年5月15日
 
 gov: Tibet
 result: account
-basis: account
-doc: Action plan for computing, 2024 to 2026 (“算力珠峰”高质量发展行动计划(2024—2026)). Tibet Communications Administration with six regional departments. Known only from a trade newspaper's account on the regional cyberspace office's site, Jun 27, 2024.
+basis: official
+doc: Action plan for computing, 2024 to 2026 (“算力珠峰”高质量发展行动计划(2024—2026)). Tibet Communications Administration with six regional departments. Known only from accounts of it: the administration's own news item on its site, Jun 25, 2024, and a trade newspaper's account on the regional cyberspace office's site, Jun 27, 2024.
 share:
-words: The account says: "到2026年,算力规模达到100PFlops,智算算力占比达到60%"
-english: (by 2026, computing reaches 100 PFlops and the share of intelligent computing reaches 60%). None of the home-made words is in the account. It is an account, not the plan.
-limits: The plan's text was not found in {{S_Tibet}} searches, one of them limited to government sites.
-official: Not found.
-ids: cn-o39b-tibet-compute-plan-2024-wxb
+words: The administration's item says: "到2026年，算力规模达到100PFLOPS，智算算力占比达到60%"
+english: (by 2026, computing reaches 100 PFLOPS and the share of intelligent computing reaches 60%). None of the home-made words, and not the word 芯片 (chip), is in either account. They are accounts, not the plan.
+limits: The plan's text was not found in {{S_Tibet}} searches, one of them limited to government sites, nor, by the session's table, among the entries of the administration's own list of documents, which a later agent of the project read.
+official: Not found: the plan's own text is not held.
+ids: cn-ga05-tibet-xzca-compute-everest-plan-20240625 cn-o39b-tibet-compute-plan-2024-wxb
+check: cn-ga05-tibet-xzca-compute-everest-plan-20240625 | 西藏自治区通信管理局会同区发展和改革委员会、经济和信息化厅等六部门联合印发了
+check: cn-ga05-tibet-xzca-compute-everest-plan-20240625 | 2024-06-25
 check: cn-o39b-tibet-compute-plan-2024-wxb | 西藏通信管理局会同自治区发展和改革委员会、经济和信息化厅等六部门联合印发了《“算力珠峰”高质量发展行动计划(2024—2026)》
 check: cn-o39b-tibet-compute-plan-2024-wxb | 文章来源： 人民邮电报
-absent: cn-o39b-tibet-compute-plan-2024-wxb | 算力珠峰 | 国产, 自主可控, 安全可控, 安全可靠, 自主化, 信创
+absent: cn-ga05-tibet-xzca-compute-everest-plan-20240625 | 算力珠峰 | 国产, 自主可控, 安全可控, 安全可靠, 自主化, 信创, 芯片
+absent: cn-o39b-tibet-compute-plan-2024-wxb | 算力珠峰 | 国产, 自主可控, 安全可控, 安全可靠, 自主化, 信创, 芯片
 
 gov: Xinjiang
 result: notfound
@@ -299,7 +302,7 @@ basis: wayback
 doc: Plan for the green intelligent computing industry, 2025 to 2030 (number 湘工信信软〔2025〕53号), Hunan Department of Industry and Information Technology, with the provincial government's agreement, Feb 23, 2025. Saved Internet Archive capture of the department's page, and the PDF the owner saved by hand, read as page images.
 share:
 words: The page says: "集成电路整线装备国产化率达95%"; "采用国产芯片、持续自主调优，培育适应音视频内容制作需求的视听多模态大模型"
-english: (the home-made rate of whole-line equipment for integrated circuits has reached 95%; using home-made chips and continued tuning of our own, grow a multimodal audio-visual large model suited to the needs of audio and video content production). No share or target for home-made chips or computing. The 95% stands in the plan's account of the province's industry today and measures equipment for making chips. The plan's table of nine goals has none for home-made hardware: the average energy efficiency of intelligent computing centres is marked binding (约束性) and eight are marked expected (预期性).
+english: (the home-made rate of whole-line equipment for integrated circuits has reached 95%; using home-made chips and continued tuning of our own, grow a multimodal audio-visual large model suited to the needs of audio and video content production). No share or target for home-made chips or computing. The 95% stands in the plan's account of the province's industry today and measures equipment for making chips. The plan's table of nine goals has none for home-made hardware: the average energy efficiency of intelligent computing centres is marked binding (约束性) and eight are marked indicative (预期性).
 limits: On foreign products it has one sentence about computing chips: "缩小与国际先进产品差距" (narrow the gap with advanced international products). The hand-saved PDF's text layer is damaged and is not quoted: the quotations stand in the capture's own text, which agrees with our reading of the page images [man-cn-o39-hunan-green-compute-plan-2025].
 official: https://gxt.hunan.gov.cn/gxt/xxgk_71033/ghjh/202502/t20250224_33594213.html
 ids: cn-o39-hunan-green-compute-plan-2025-wayback man-cn-o39-hunan-green-compute-plan-2025

@@ -1,13 +1,13 @@
 # Guidance, not law
 @deck How Beijing steered China's AI companies away from Nvidia's chips without publishing an order, shown on this one case.
 
-@note Draft by Claude, Anthropic's model. Local; not published. Written Nov 23, 2026 (UTC).
+@note Draft by Claude, Anthropic's model. Written Nov 23, 2026 (UTC).
 @note How to read it. Words between quotation marks are a source's exact words, found in the saved copy by a script. A filled reference number is a document, a filing or a named person on the record. An open number is a press report citing unnamed people. English in round brackets after Chinese is our rendering, not an official translation.
 @note The author's interest. Anthropic has argued in public for controls on chip exports to China (that is from the model's general knowledge; no saved page is cited for it), so judge this piece by its sources.
 
 ## Pressure without a rule
 
-From 2024 the security and planning side of the Chinese state pressed China's AI companies to buy home-made chips rather than Nvidia's. It did so through guidance that was never published and, in August and September 2025, through warnings in state media. No published order was found in the 103 policy pages read. Five things in the record show how that works.
+From 2024 the security and planning side of the Chinese state pressed China's AI companies to buy home-made chips rather than Nvidia's. It did so through guidance that was never published and through warnings in state media, most of those found from Jul 31 to Sept 24, 2025. No published order was found in the 82 policy pages read. Five things in the record show how that works.
 
 **1. The press reports call it guidance** (press reports citing unnamed people)
 
@@ -20,13 +20,15 @@ The Financial Times, Aug 20, 2025: in July the cyberspace regulator sent compani
 !! man-cn-ft-20250821-regulators | according to people with knowledge of the regulator's effort
 !! man-cn-ft-20250821-regulators | Lutnick told CNBC on July 15
 !! man-cn-ft-20250821-regulators | A week after his comments
-One headline says ban: the same paper's "China bans tech companies from buying Nvidia's AI chips", Sept 17, 2025. It describes an order told to companies, by three unnamed people, not a published rule [man-cn-ft-20250917-6000d].
+Headlines do say ban. The same paper's "China bans tech companies from buying Nvidia's AI chips", Sept 17, 2025, describes an order told to companies, by three unnamed people, not a published rule [man-cn-ft-20250917-6000d]. Reuters's "China bans foreign AI chips from state-funded data centres, sources say", Nov 5, 2025, describes guidance to new data-centre projects that took state money, by two unnamed people, not a published rule [ms-bj-20251105-statefunded-standard].
+!! ms-bj-20251105-statefunded-standard | 2025-11-05T16:36:20
+!! ms-bj-20251105-statefunded-standard | two sources familiar with the matter told Reuters
 !! man-cn-ft-20250917-6000d | Published SEP 17 2025
 !! man-cn-ft-20250917-6000d | according to three people with knowledge of the matter
 
-**2. In public, state media warned, in August and September 2025** (on the record)
+**2. In public, state media warned, mostly from Jul 31 to Sept 24, 2025** (on the record)
 
-Of 42 state-media items on Nvidia chips found from July 2025 to November 2026, the seven that only warn about them all date from Aug 1 to Sept 24, 2025 [cn-acts-peoplesdaily-bjd-20250801] [cn-media-stdaily-security-forum].
+Of 75 state-media items on Nvidia chips found from July 2025 to November 2026, 11 of the 14 that only warn about them date from Jul 31 to Sept 24, 2025 [cn-ga02-gt-cac-summons-news-202507] [cn-acts-peoplesdaily-bjd-20250801] [cn-media-stdaily-security-forum]; the three found later are in Global Times in 2026 (the items after September 2025 are what two rounds of searches found, a sample and not a full count).
 !! cn-acts-peoplesdaily-bjd-20250801 | 2025-08-01
 !! cn-acts-peoplesdaily-bjd-20250801 | 绝不能让“带病”的芯片上岗
 !! cn-media-stdaily-security-forum | 2025-09-24
@@ -58,8 +60,13 @@ Notices published on Dec 26, 2023 require Party and government bodies to write i
 !! cn-policy-server-procurement-2023 | 发布日期:2023年12月26日
 !! cn-policy-server-procurement-2023 | 应当将CPU、操作系统符合安全可靠测评要求纳入采购需求
 !! cn-policy-server-procurement-2023 | 其他单位可不在采购需求中提出此项要求
-No published national share for home-made chips was found: every percentage found in a published text is a province's or a city's, and the national computing-network opinions of December 2023 set none [cn-policy-computing-network-1779].
+No published national plan found sets a home-made share for computing centres: every such share found is a province's or a city's, and the national computing-network opinions of December 2023 set none [cn-policy-computing-network-1779].
 !! cn-policy-computing-network-1779 | 算力网关键核心技术基本实现安全可靠
+Two national texts hold a home-made percentage of other kinds: the 20% price preference for home-made products in government purchasing [cn-policy-domestic-product-standard-2025], and an advisory committee's roadmap of October 2015, which expected home-made high-performance computers and servers to hold over 80% of the home market by 2025 [cn-policy-roadmap-original].
+!! cn-policy-domestic-product-standard-2025 | 对本国产品的报价给予20%的价格扣除
+!! cn-policy-roadmap-original | 国家制造强国建设战略咨询委员会2015年10月
+!! cn-policy-roadmap-original | 2、2025年目标
+!! cn-policy-roadmap-original | 国产高性能计算机与服务器国际市场占有率预计达40%、国内市场占有率预计超80%
 
 **5. Asked in public, officials did not say** (on the record)
 

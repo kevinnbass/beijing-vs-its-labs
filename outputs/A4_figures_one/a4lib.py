@@ -26,7 +26,7 @@ import cn_srclib as L                        # noqa: E402
 import cn_argument_build as B                # noqa: E402  (import only: load_refs, address, KIND, SOLID)
 
 esc = html.escape
-NOTE = 'Draft by Claude, Anthropic’s model. Local; not published.'
+NOTE = 'Draft by Claude, Anthropic’s model.'
 MON = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec']
 _MNAME = {n: i // 2 + 1 for i, n in enumerate(['jan', 'january', 'feb', 'february', 'mar', 'march', 'apr', 'april', 'may', 'may', 'jun', 'june',
                                                'jul', 'july', 'aug', 'august', 'sep', 'september', 'oct', 'october', 'nov', 'november', 'dec', 'december'])}
@@ -155,11 +155,17 @@ def count(words):
 
 
 def house(Q):
-    """Washington's table of licence applications (Commerce Department data, status as of May 11, 2026, made public by the
-    House Foreign Affairs Committee on Nov 19, 2026), summed here from the project's tables/house_licence_table.tsv
-    (54 rows, read from the page images by the project). Nothing is typed: every figure is a sum of that table, and the
-    two figures the committee's own summary prints (all chips; chips approved, with the count of applications) must
-    stand in the builder's quotes.tsv and equal the sums, or the build stops."""
+    """Washington's table of licence applications ("H200 License and Equivalent Application Status as of May 11, 2026",
+    made public by the House Foreign Affairs Committee on Nov 19, 2026; its summary cites "a BIS summary", BIS being the
+    Commerce Department's Bureau of Industry and Security; neither document names the Commerce Department as the table's
+    maker, so the outputs do not call it the department's table: core edit 6, part 05), summed here from the project's
+    tables/house_licence_table.tsv (54 rows, read from the page images by the project). Nothing is typed: every figure is
+    a sum of that table, and the two figures the committee's own summary prints (all chips; chips approved, with the count
+    of applications) must stand in the builder's quotes.tsv and equal the sums, or the build stops.
+    The committee's example of an application of 445,000 chips for Tencent (Dec 19, 2025): the table's only Tencent row of
+    that date is for 75,000, and neither document says whether it is that application (core edit 6, part 05.1). So the
+    share is given both ways: share_full if that row is the application (counted at 445,000), share_further if the
+    445,000 is a further application."""
     lines = [l for l in (PROJ / 'tables' / 'house_licence_table.tsv').read_text(encoding='utf-8').splitlines() if l.strip() and not l.startswith('#')]
     hdr = lines[0].split('\t')
     rows = [dict(zip(hdr, l.split('\t'))) for l in lines[1:]]
@@ -182,17 +188,20 @@ def house(Q):
     assert all(r['status'] == R_ for r in rows if r['n'] > cap), 'an application above the largest approved one is not marked returned'
     t['cap'], t['over'] = cap, len([r for r in rows if r['n'] > cap])
     t['share'] = round(100 * t['rwa'][0] / t['all'][0])                 # of the chips in the applications the summary records
-    # the committee's example of an application the summary does not show in full: Nvidia, Dec 19, 2025, for Tencent
+    # the committee's example of an application the summary does not show in full: Nvidia, Dec 19, 2025, for Tencent.
+    # The table's only Tencent row of that date; whether it is that application, neither document says.
     m = re.search(r'NVIDIA applied on December (\d+), (\d{4}), to export ([\d,]+) H200s to Tencent', Q['table.tencent'])
     assert m, 'the committee\'s example is not in quotes.tsv'
-    same = [r for r in rows if r['exporter'] == 'Nvidia' and 'Tencent' in r['consignee'] and r['date_submitted'] == f'12/{int(m.group(1))}/{m.group(2)}']
-    assert len(same) == 1, 'the table does not hold exactly one Nvidia application of that date for Tencent'
+    same = [r for r in rows if 'Tencent' in r['consignee'] and r['date_submitted'] == f'12/{int(m.group(1))}/{m.group(2)}']
+    assert len(same) == 1 and same[0]['exporter'] == 'Nvidia', 'the table does not hold exactly one Tencent row of that date, with Nvidia as exporter'
     t['tencent_full'], t['tencent_shown'], t['tencent_status'] = int(m.group(3).replace(',', '')), same[0]['n'], same[0]['status']
     # the names the table gives the consignees abroad (names only: the table does not call them subsidiaries)
     abroad = [r for r in rows if r['location'] != 'China']
     t['names'] = [n for n in ('ByteDance', 'BytePlus', 'TikTok', 'Alibaba') if any(n.lower() in r['consignee'].lower() for r in abroad)]
     assert all(any(n.lower() in r['consignee'].lower() for n in t['names']) for r in abroad), 'a consignee abroad carries none of the four names'
-    t['share_full'] = round(1000 * t['rwa'][0] / (t['all'][0] + t['tencent_full'] - t['tencent_shown'])) / 10
+    t['share_full'] = round(1000 * t['rwa'][0] / (t['all'][0] + t['tencent_full'] - t['tencent_shown'])) / 10    # if the row is the application
+    t['share_further'] = round(1000 * t['rwa'][0] / (t['all'][0] + t['tencent_full'])) / 10                     # if the 445,000 is a further one
+    assert t['share_further'] < t['share_full'] < t['share'], 'the two readings of the committee\'s example should each lower the share'
     t['status'] = day(Q, 'wapproved'); t['released'] = day(Q, 'table.release')
     return t
 
@@ -228,15 +237,35 @@ def funnel(Q, card=False):
 
 
 # ---------- two readings of the project's own records ----------
+MONTH = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+
+
 def warnings():
     """The state and Party media items that only warn about Nvidia's chips, counted from the project's
-    tables/state_media_items.tsv (stance = warns), with the first and last of their dates."""
+    tables/state_media_items.tsv (stance = warns). Since core edit 6 (Nov 24, 2026) the table holds 75 items (rows 43 on
+    were found by searches and links; after Sept 24, 2025 they are a sample, not a census) and the warnings run into 2026.
+    Returned: the items in all, the warnings in all; those of the first year with a warning (the burst: count and span of
+    dates); the later ones (count, their outlet, which must be one outlet, and their months)."""
     lines = [l for l in (PROJ / 'tables' / 'state_media_items.tsv').read_text(encoding='utf-8').splitlines() if l.strip() and not l.startswith('#')]
     hdr = lines[0].split('\t'); rows = [dict(zip(hdr, l.split('\t'))) for l in lines[1:]]
     assert len(rows) > 30 and any(r['stance'] == 'mixed' for r in rows), 'control: the table should hold items of other stances too'
-    days = sorted(date.fromisoformat(r['date']) for r in rows if r['stance'] == 'warns')
-    assert days and days[0].year == days[-1].year
-    return {'n': len(days), 'all': len(rows), 'span': f'{MON[days[0].month - 1]} {days[0].day} to {fmt(days[-1])}'}
+    assert all(len(l.split('\t')) == len(hdr) for l in lines[1:]), 'a row of the state-media table does not have its header\'s cells'
+    warns = sorted((date.fromisoformat(r['date']), r['outlet']) for r in rows if r['stance'] == 'warns')
+    assert warns, 'no warning in the table'
+    y0 = warns[0][0].year
+    burst = [d for d, _ in warns if d.year == y0]; later = [(d, o) for d, o in warns if d.year != y0]
+    span = (f'{MON[burst[0].month - 1]} {burst[0].day} to {fmt(burst[-1])}' if burst[0].year == burst[-1].year else f'{fmt(burst[0])} to {fmt(burst[-1])}')
+    outlets = {re.sub(r'\s*\(.*$', '', o).strip() for _, o in later}
+    assert len(outlets) <= 1, f'the later warnings come from more than one outlet: {sorted(outlets)}; the sentences that say one outlet must change'
+    mo = []
+    for d, _ in later:
+        if (d.year, d.month) not in [(a, b) for a, b in mo]: mo.append((d.year, d.month))
+    yrs = sorted({a for a, _ in mo})
+    if len(yrs) == 1: months = ' and '.join(MONTH[b - 1] for _, b in mo) + f' {yrs[0]}' if len(mo) <= 2 else None
+    else: months = None
+    assert later == [] or months, 'the later warnings span more than two months or more than one year: the wording that names their months must change'
+    return {'items': len(rows), 'warn': len(warns), 'burst': len(burst), 'span': span, 'later': len(later),
+            'later_outlet': next(iter(outlets)) if outlets else '', 'later_months': months or ''}
 
 
 def caption_time(sid, words):

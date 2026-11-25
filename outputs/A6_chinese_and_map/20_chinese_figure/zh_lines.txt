@@ -14,6 +14,8 @@
 # Second reader's faults applied here (loose_ends/L23_chinese_review, B1 to B20): B1, B2, B3 (source line), B5, B6,
 # B7, B8 (record), B10, B11, B13, B14, B17; B15 is the core's drop of that record. The rest are in the template
 # and the builder.
+# Round 8 (core edit 7, Nov 25, 2026): one block added, BL cn-acts-reuters-rtx5500-20260927 (the core's record 62). Its
+# number is fixed by the core's "N 62" line, which make_inputs.py carries into figure_data.txt; no block here gives numbers.
 
 @ BH cn-policy-micron-decision
 T 网络安全审查办公室公布审查结论：美光公司产品"不予通过网络安全审查"，关键信息基础设施的运营者"应停止采购美光公司产品"。对象不是英伟达
@@ -219,6 +221,13 @@ Z 字节跳动和腾讯最近几周各收到约1万枚H200处理器
 C 各到货约1万枚
 ET ByteDance and Tencent each receive about 10,000 H200s; Beijing wants them to keep the hardware outside mainland China, and regulators told companies they may ship it to Hong Kong and use it there
 ES Financial Times, through Reuters on Investing.com
+
+@ BL cn-acts-reuters-rtx5500-20260927
+T 据报道，两名人士称：工业和信息化部要求包括字节跳动和阿里巴巴在内的企业报告购买英伟达RTX PRO 5500的计划，并告知其中一些企业，政府打算批准这些采购。报道的是意向，不是已经给出的批准；路透社未能立即核实这一报道
+S The Information，经路透社转述，载于AOL
+Z 该部告知一些中国企业，政府打算批准这些采购
+ET Reported, by two people: the industry ministry asks companies including ByteDance and Alibaba to report their plans to buy Nvidia's RTX PRO 5500, and tells some the government intends to approve the purchases. An intention reported, not an approval given; Reuters could not immediately verify the report
+ES The Information, through Reuters on AOL
 
 @ BL cn-tolerate-mof
 T 商务部、科技部在公开征求意见的目录修订稿中提出：对"中国企业在境外自建自营算力中心"等情形的技术出口，"适用自动许可等便利措施"
@@ -434,3 +443,4 @@ ES Martin Lau on Tencent's results call (transcript on a stock-data site)
 ! man-70f4668d5f56 | Nvidia has won Beijing's approval
 ! man-a7d2f1a9f963 | shipments of H200 chips have begun but the number was "very few."
 ! cn-le29-zhipu-results-20260331-en | Faced with the computing power shortage that has outstripped supply since February 2026
+! cn-usdocs-hfac-decisions-20261119 | H200 License and Equivalent Application Status as of May 11, 2026

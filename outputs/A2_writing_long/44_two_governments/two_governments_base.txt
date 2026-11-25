@@ -1,7 +1,7 @@
 # Two governments, one chip
 @deck Nvidia's H200 needed a yes from Washington and a yes from Beijing. A dated account of each side's steps, from December 2025 to November 2026.
 
-@note Draft by Claude, Anthropic's model. Local; not published. Written Nov 23, 2026 (UTC).
+@note Draft by Claude, Anthropic's model. Written Nov 23, 2026 (UTC).
 @note How to read it. Words between quotation marks are a source's exact words, found in the saved copy by a script. A filled reference number is a document, a filing or a named person on the record. An open number is a press report citing unnamed people or a caption track. Where a statement rests on a Chinese text, the English is our rendering, not an official translation.
 @note The author's interest. Anthropic has argued in public for controls on chip exports to China (that is from the model's general knowledge; no saved page is cited for it), so judge this piece by its sources.
 
@@ -21,7 +21,7 @@ Each step is marked on the record or reported (a press report citing unnamed peo
 !! man-ms-admin-bis-jan2026-rule-8ec187 | will be no more than 50% of the total product shipped to customers for end use in the United States of that product
 - **February 2026. On the record.** Nvidia's filing: from that month the US government "granted licenses that would allow us to ship small amounts of H200 products to specific China-based customers", with "a 25% tariff upon importation into the United States" [man-ms-sec-10q-2026-07].
 !! man-ms-sec-10q-2026-07 | Beginning in February 2026, the USG granted licenses
-- **May 11, 2026. On the record.** The Commerce Department's table of applications for the H200 and AMD's comparable chip, made public by the House Foreign Affairs Committee on Nov 19, 2026: 879,868 chips licensed (Nvidia's: 579,868), each marked "Approved, not shipped"; 1,888,950 returned without action, 55% of the chips in the applications the summary records. No reason is given. The sums are ours [cn-usdocs-hfac-decisions-20261119] [cn-usdocs-hfac-summary-20261119] [cn-labs-us-chip-licences-20261119].
+- **May 11, 2026. On the record.** The table of licence applications for the H200 and AMD's comparable chip, from the Commerce Department's Bureau of Industry and Security, made public by the House Foreign Affairs Committee on Nov 19, 2026: 879,868 chips licensed (Nvidia's: 579,868), each marked "Approved, not shipped"; 1,888,950 returned without action, 55% of the chips in the applications the summary records. No reason is given. The sums are ours [cn-usdocs-hfac-decisions-20261119] [cn-usdocs-hfac-summary-20261119] [cn-labs-us-chip-licences-20261119].
 !! cn-usdocs-hfac-decisions-20261119 | H200 License and Equivalent Application Status as of May 11, 2026
 !! cn-usdocs-hfac-decisions-20261119 | Bytedance System SDN 508,000 RWA Malaysia
 !! cn-usdocs-hfac-summary-20261119 | 879,868 covered integrated circuits to PRC companies across 21 license applications

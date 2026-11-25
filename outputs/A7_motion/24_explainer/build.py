@@ -19,9 +19,12 @@ Order of work, and what stops it:
      text the page shows in each chapter with captions.md, and stops on any difference.
   3. The last two captions, joined, must be the sentence of ../../../ARGUMENT_referenced.md, section 6, word for word.
      There must be five captions titled "Limit N of 5". The count of policy pages must equal the rows of
-     ../../../NOTE_policies_checked.md. The 579,868 chips and the 55% must equal sums over the House committee's table,
-     and the seven of 42 state-media items and their dates must equal the census table. Phrases the core withdrew
-     ("750,000", "four limits", "more than half of the chips applied for", "Democrats") must not appear.
+     ../../../NOTE_policies_checked.md. The 579,868 chips and the 55% must equal sums over the licence table the House
+     committee released. The state-media items (how many, how many only warn, how many of those in the burst of the
+     first year with its first and last dates, and the later ones, their outlet and year) must equal the sums over
+     tables/state_media_items.tsv, and the argument must give the same counts (round 5, after core edit 6). Phrases
+     the core withdrew ("750,000", "four limits", "more than half of the chips applied for", "Democrats", "the
+     Commerce Department's table") must not appear.
   4. quotes.tsv (the source words behind every mark, label and dashed line of the strip) must pass scripts/cn_has.py.
   5. chapters.tsv must bring every record on screen exactly once.
 Writes  captions.md, captions.html (through cn_doc_build.py), quotes.tsv, explainer.html, capture.json.
@@ -46,8 +49,9 @@ FPS, RATE, BOX_RATE, DIM = 25, 2.5, 4.0, 0.28    # the most words a second: of t
 ROWS = r'(.+?:) (.+?\.) (.+)'                    # a line of the numbers chapter: what is counted, its value (the source's words where quoted), the source
 DOC_TITLE, DOC_EYEBROW = 'Twelve Checked Captions', 'China chip policy · captions of the explainer video'
 KINDS = ('On the record', 'Reported', 'Captions, not checked by ear', 'Our own reading', 'Our own count', "From the project's")   # how a source line may begin
-GONE = ('750,000', 'four limits', 'more than half of the chips applied for', 'Democrats', 'more exact', 'at a lower rate')    # wording the core withdrew
-NUMWORD = {5: 'five', 6: 'six', 7: 'seven', 8: 'eight', 9: 'nine'}
+GONE = ('750,000', 'four limits', 'more than half of the chips applied for', 'Democrats', 'more exact', 'at a lower rate',
+        "Commerce Department's table", 'Commerce Department table', "Commerce Department's summary", 'Aug 1 to Sept 24')    # wording the core withdrew (the last four: core edit 6)
+NUMWORD = {2: 'two', 3: 'three', 4: 'four', 5: 'five', 6: 'six', 7: 'seven', 8: 'eight', 9: 'nine'}
 CARD_TOP, PAD = 48, 4
 esc = L.esc
 
@@ -235,14 +239,14 @@ def check_substance(caps):
     for c in caps:
         for g in GONE:
             if g.lower() in everything(c).lower(): sys.exit(f'caption {c["k"]} holds wording the core withdrew: {g}')
-    assert any('the 103 policy pages' in everything(c) for c in caps), 'control: a phrase that is there must be seen'
+    assert any('the 82 policy pages' in everything(c) for c in caps), 'control: a phrase that is there must be seen'
     # policy pages
     pages = L.policy_rows()
     note = (L.PROJ / 'NOTE_policies_checked.md').read_text(encoding='utf-8')
     if '[cn-policy-micron-decision]' not in note: sys.exit('a caption says the 2023 conclusion on Micron is among the policy pages read; the note does not list it')
     assert '[cn-policy-no-such-page]' not in note, 'control: an id that is not in the note must not be found'
     seen = [int(m.group(1)) for c in caps for m in re.finditer(r'(\d+) policy pages', everything(c))]
-    if not seen or any(n != pages for n in seen): sys.exit(f'a caption gives {seen} policy pages; the note holds {pages} rows')
+    if not seen or any(n != pages for n in seen): sys.exit(f'a caption gives {seen} policy pages; the note has {pages} pages read')
     # the House committee's table
     t = L.house_table()
     cell = [i for c in caps for i in c['items'] if i.startswith('Licensed by Washington for Nvidia')]
@@ -253,16 +257,30 @@ def check_substance(caps):
     if not all(x in arg for x in (f'{t["appr_nv"]:,} in Nvidia\'s {t["n_appr_nv"]}', f'{t["rwa"]:,} of the {t["all"]:,} chips in it, {t["rwa_pct"]}%', share)): sys.exit('the argument no longer gives these sums of the House table')
     assert f'{t["appr"]:,} chips, each application' not in cell[0], 'control: the sum of both makers must not pass for Nvidia\'s'
     out.append(f'House table: Nvidia approved and not shipped {t["appr_nv"]:,} in {t["n_appr_nv"]} applications; returned without action {t["rwa"]:,} of {t["all"]:,} = {t["rwa_pct"]}% (summed here, equal to the captions and to the argument)')
-    # the state-media census
+    # the state-media items (since core edit 6: a census of 42 and further items found by searches and links)
     sm = L.state_media()
     mon = lambda d: f'{L.MON[d.month - 1]} {d.day}'
     assert sm['first'].year == sm['last'].year
-    line = f'The {NUMWORD[sm["warns"]]} state-media items found that only warn about Nvidia\'s chips all date from {mon(sm["first"])} to {mon(sm["last"])}, {sm["last"].year}.'
+    later = sm['later']
+    if not later: sys.exit('no warning found after the first year: caption 7 must be reworded')
+    yrs = sorted({d.year for d, _, _ in later})
+    if len(yrs) != 1 or not all(o.startswith('Global Times') for _, _, o in later): sys.exit(f'the later warnings are not all Global Times items of one year: {later}')
+    line = (f'Of the {sm["warns"]} state-media items found that only warn about Nvidia\'s chips, {sm["n_burst"]} date from {mon(sm["first"])} to {mon(sm["last"])}, {sm["last"].year}; '
+            f'the {NUMWORD[len(later)]} found later are Global Times items of {yrs[0]}.')
     hit = [c for c in caps if line in c['text']]
     if len(hit) != 1: sys.exit(f'one caption must read: {line}')
     its = ' '.join(hit[0]['items'])
     if f'{sm["n"]} state and Party media items' not in its or f'[{sm["first_id"]}]' not in its or f'[{sm["last_id"]}]' not in its: sys.exit('the source line of the state-media count must give the count of items and cite the first and the last of the warnings')
-    out.append(f'state media: {sm["warns"]} of {sm["n"]} items only warn, {sm["first"]} to {sm["last"]} (counted here, equal to caption {hit[0]["k"]})')
+    if not all(f'[{sid}]' in its for _, sid, _ in later): sys.exit('the source lines of the state-media count must cite each later warning')
+    if 'a sample and not a full count' not in its: sys.exit('the source line of the state-media count must say that the later items are a sample and not a full count')     # touch-up 6b (Nov 24, 2026), item 21
+    # the argument must give the same counts (its answer and point 4)
+    # touch-up 6b (Nov 24, 2026): the answer no longer carries the counts; point 18 does, in these words, and the caveat reads as below
+    want_arg = (f'{sm["n_burst"]} of the {sm["warns"]} that only warn about Nvidia\'s chips are dated {mon(sm["first"])} to {mon(sm["last"])}, {sm["last"].year}',
+                f'Of {sm["n"]} state and Party media items on Nvidia chips found', f'The {NUMWORD[len(later)]} found later are Global Times items of {yrs[0]}', 'a sample of what these outlets printed and not a full count')
+    if not all(x in arg for x in want_arg): sys.exit(f'the argument no longer gives these counts of the state-media table: {[x for x in want_arg if x not in arg]}')
+    assert f'{sm["n_burst"] + 1} of the {sm["warns"]} that only warn' not in arg, 'control: a wrong count must not be found in the argument'
+    out.append(f'state media: {sm["warns"]} of {sm["n"]} items only warn; {sm["n_burst"]} of them {sm["first"]} to {sm["last"]}, {len(later)} later ({", ".join(str(d) for d, _, _ in later)}, all Global Times) '
+               f'(counted here, equal to caption {hit[0]["k"]} and to the argument)')
     return out, pages
 
 
@@ -352,13 +370,13 @@ def main():
 <div class="card" id="capbox">
 {chr(10).join(caption_html(c, len(caps), num, refs) for c in caps)}
 </div>
-<p class="draft" id="draft">Small numbers: the references of the captions document. English renderings of Chinese are ours, not official translations. Draft by Claude, Anthropic’s model. Local; not published.</p>
+<p class="draft" id="draft">Small numbers: the references of the captions document. English renderings of Chinese are ours, not official translations. Draft by Claude, Anthropic’s model.</p>
 <div id="bar"></div>"""
     below = f"""  <p>A silent explainer of {int(TOTAL // 60)} minutes {round(TOTAL % 60)} seconds: the dated strip in {len(caps)} chapters. Each caption stays on screen while the marks it speaks of appear in date order. This page draws any moment of it; the video beside it was captured from this page frame by frame.</p>
   <p>The video file, <code>explainer.mp4</code> (1280 by 720, no sound, no voice):</p>
   <video data-src="explainer.mp4" controls muted playsinline preload="metadata" width="1280" height="720"></video>
   <p>The captions as a checked text, with the list of sources: <a href="captions.html">captions.html</a>.</p>
-  <p class="small">Draft by Claude, Anthropic’s model. Local; not published.</p>"""
+  <p class="small">Draft by Claude, Anthropic’s model.</p>"""
     (HERE / 'explainer.html').write_text(L.page('Chip Policy Explainer', stage, below, scene, css), encoding='utf-8')
     slug = lambda s: re.sub(r'[^a-z0-9]+', '_', s.lower()).strip('_')
     ends = [frames - 1 if c['k'] == len(caps) else round((edges[c['k']] - 0.6) * FPS) for c in caps]

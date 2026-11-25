@@ -7,7 +7,8 @@ For every label (the labels beside marks and the three dated flags) and every ma
 mark's edge to the label's box, in strip units (the strip is drawn 1,400 units wide). A distance under MIN_GAP fails.
 Control: the first label is moved onto another record's mark and measured again; if that is not reported as a
 collision the check cannot fail and the script stops with an error. Exit 0 only if every width passes and the control
-behaves. Round 4: 61 marks, 10 labels (7 beside marks, 3 dated flags).
+behaves. Round 4: 61 marks, 10 labels (7 beside marks, 3 dated flags). Round 8 (core edit 7): the expected counts are
+read from figure_data.txt (one mark per "@" block, one label per "C" line, plus the 3 flags); 62 marks, 10 labels.
 """
 import sys
 from pathlib import Path
@@ -16,6 +17,8 @@ from playwright.sync_api import sync_playwright
 F = Path(__file__).resolve().parent
 PAGE = F / 'beijing_vs_labs_zh.html'
 MIN_GAP, WIDTHS = 2.0, (1500, 1280, 390)
+_data = (F / 'figure_data.txt').read_text(encoding='utf-8').splitlines()
+N_MARKS, N_LABELS = sum(l.startswith('@ ') for l in _data), sum(l.startswith('C ') for l in _data) + 3
 
 MEASURE = """() => {
   const svg = document.querySelector('#hero svg'), k = 1400 / svg.getBoundingClientRect().width;
@@ -51,7 +54,7 @@ def main():
             pg = br.new_context(viewport={'width': w, 'height': 1000}, device_scale_factor=1, locale='zh-CN').new_page()
             pg.goto(PAGE.as_uri()); pg.evaluate('document.fonts.ready.then(() => 1)'); pg.wait_for_timeout(500)
             d = pg.evaluate(MEASURE); g = gaps(d)
-            assert len(d['marks']) == 61 and len(d['labels']) == 10, (len(d['marks']), len(d['labels']))
+            assert len(d['marks']) == N_MARKS and len(d['labels']) == N_LABELS, (len(d['marks']), N_MARKS, len(d['labels']), N_LABELS)
             own = lambda x: x[1].split(' ')[0] == x[2]                      # a label beside its own mark is meant to sit close
             other = [x for x in g if not own(x)]
             print(f'width {w}: {len(d["labels"])} labels, {len(d["marks"])} marks; smallest distance {g[0][0]:.1f} ("{g[0][1]}" and mark {g[0][2]}); '

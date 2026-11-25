@@ -1,16 +1,16 @@
 # Did China ban Nvidia? Questions and answers
 @deck Ten questions a newcomer asks. Each answer is at most three sentences and names its source.
 
-@note Draft by Claude, Anthropic's model. Local; not published. Written Nov 23, 2026 (UTC).
+@note Draft by Claude, Anthropic's model. Written Nov 23, 2026; brought into line with the argument on Nov 25, 2026 (UTC).
 @note Words between quotation marks were found in the saved copy by a script. English given for Chinese sources is ours, not an official translation.
 @note Two kinds of source are kept apart. A filled number is a document, a filing or a named person on the record. An open number is a press report citing unnamed people, or a caption track that nobody has checked by ear. No published instruction from Beijing to the companies was found. What is known of such instructions comes from company filings and from press reports, and each answer says which.
 @note The short answer: yes, Beijing's policy pulled against what its own AI companies wanted, with five limits. Questions 1, 7, 8, 9 and 10 give four of the limits; question 5 gives the fifth.
 
 ## The ten questions
 
-1. **Did China ban Nvidia chips?** No published ban was found. None of the 103 Chinese policy pages read holds an order against buying Nvidia chips, and Bloomberg's report of Sept 27, 2024, from unnamed people, says: "The policy has taken the form of guidance rather than an outright ban" [cn-factions-bloomberg-flexibility-202409-relay1]. Some chips also came in (question 8).
+1. **Did China ban Nvidia chips?** No published ban was found. None of the 82 Chinese policy pages read holds an order against buying Nvidia chips, and Bloomberg's report of Sept 27, 2024, from unnamed people, says: "The policy has taken the form of guidance rather than an outright ban" [cn-factions-bloomberg-flexibility-202409-relay1]. Some chips also came in (question 8).
 
-2. **Then what did Beijing do in public?** Two regulators acted against Nvidia by name. The market regulator announced an antitrust case against it on Dec 9, 2024 and a preliminary finding against it on Sept 15, 2025, and the cyberspace regulator summoned it over security risks in its H20 chip on Jul 31, 2025 [cn-policy-samr-open-original] [cn-policy-samr-further-original] [cn-policy-cac-h20-original]. State media warned about Nvidia's chips too: of the 42 state and Party media items found, the seven that only warn about them all date from Aug 1 to Sept 24, 2025, the first a People's Daily commentary [cn-acts-peoplesdaily-bjd-20250801] [cn-media-stdaily-security-forum].
+2. **Then what did Beijing do in public?** Two regulators acted against Nvidia by name. The market regulator announced an antitrust case against it on Dec 9, 2024 and a preliminary finding against it on Sept 15, 2025, and the cyberspace regulator summoned it over security risks in its H20 chip on Jul 31, 2025 [cn-policy-samr-open-original] [cn-policy-samr-further-original] [cn-policy-cac-h20-original]. State media warned about Nvidia's chips too: of the 75 state and Party media items found, 11 of the 14 that only warn about them date from Jul 31 to Sept 24, 2025, the first a Global Times report of the day of the summons [cn-ga02-gt-cac-summons-news-202507] [cn-acts-peoplesdaily-bjd-20250801] [cn-media-stdaily-security-forum]; the three found later are in Global Times in 2026, two of them an industry analyst's words in news reports and one the paper's own unsigned commentary, and the items after September 2025 are what two rounds of searches found, a sample of what these outlets printed and not a full count.
 !! cn-policy-samr-open-original | 发布时间：2024-12-09
 !! cn-policy-samr-open-original | 市场监管总局依法对英伟达公司开展立案调查
 !! cn-policy-samr-further-original | 发布时间：2025-09-15
@@ -21,6 +21,11 @@
 !! cn-acts-peoplesdaily-bjd-20250801 | 人民日报评论:英伟达,让我怎么相信你?
 !! cn-media-stdaily-security-forum | 2025-09-24
 !! cn-media-stdaily-security-forum | 政企用户应加快国产软硬件替代进程
+!! cn-ga02-gt-cap-h200-sales-202603 | Published: Mar 03, 2026 05:23 PM
+!! cn-ga02-gt-cap-h200-sales-202603 | Ma Jihua
+!! cn-ga02-gt-restart-h200-optional-202603 | Ma Jihua, a veteran industry analyst
+!! cn-ga02-gt-isnt-buying-opinion-202611 | Published: Nov 06, 2026 07:50 PM
+!! cn-ga02-gt-isnt-buying-opinion-202611 | OPINION / VIEWPOINT
 
 3. **Has anyone said on the record that purchases were restricted?** Yes: two companies, in reports filed with the US securities regulator. Alibaba's annual report says, without naming Nvidia: "In September 2025, the Cyberspace Administration of China requested Chinese technology companies to halt purchases of certain chips." [cn-clips-alibaba-20f] Nvidia's report of November 2025 says the Chinese government "restricted customers from purchasing, importing, or using our data center products", and its report of August 2026 that its licensed H200 sales "were restricted by the PRC government" [man-ms-sec-10q-2025-10] [man-ms-sec-10q-2026-07].
 !! man-ms-sec-10q-2025-10 | For the quarterly period ended October 26, 2025
@@ -32,7 +37,7 @@
 !! cn-counter-b11-5 | 上海市经济和信息化委员会2025年4月30日
 !! cn-counter-b11-5 | 发布日期:2025-11-10
 
-5. **Why would Beijing hold back chips its own companies want?** Its declared policy is to end dependence on foreign core technology and to raise the share of home-made chips: in May 2026 Li Chao, of the state planner's policy research office, said it was guiding home-made large models to do more to adapt to home-made computing chips [cn-policy-ndrc-chip-adaptation-2026]. But what Beijing meant by its acts against Nvidia is not settled, and no Chinese document found states the motive. A US commission's report to Congress saw in the market regulator's move against Nvidia "China's willingness to both exert leverage and ease pressure as a negotiating tactic" [cn-usdocs-uscc-2025-ch1], while the US Trade Representative called buying the H200 "a sovereign decision for China" (captions, not checked by ear, at 5:59) [cn-le01-greer-bbg-20260515-subs-ttml].
+5. **Why would Beijing hold back chips its own companies want?** Its declared policy is to end dependence on foreign core technology and to raise the share of home-made chips: in May 2026 Li Chao, of the state planner's policy research office, said it was guiding home-made large models to do more to adapt to home-made computing chips [cn-policy-ndrc-chip-adaptation-2026]. But what Beijing meant by its acts against Nvidia is not settled, and no Chinese document found states a motive for the unpublished guidance to companies or ties an act against Nvidia to the trade talks, though Beijing's own texts give purposes for its public acts (security, national interests, fair competition). A US commission's report to Congress saw in the market regulator's move against Nvidia "China's willingness to both exert leverage and ease pressure as a negotiating tactic" [cn-usdocs-uscc-2025-ch1], while the US Trade Representative called buying the H200 "a sovereign decision for China" (captions, not checked by ear, at 5:59) [cn-le01-greer-bbg-20260515-subs-ttml].
 !! cn-policy-ndrc-chip-adaptation-2026 | 指导国产大模型加大力度适配国产算力芯片
 !! cn-policy-ndrc-chip-adaptation-2026 | 李超 2026/05/22 政研室
 !! cn-usdocs-uscc-2025-ch1 | The move coincided with SAMR dropping its anti-trust probe into Google
@@ -73,7 +78,7 @@ From 2024 the security and planning side of the Chinese state pressed China's AI
 
 ## What these answers leave out
 
-- Each answer gives one to five sources. The full argument has 21 points and 209 sources; it is in ARGUMENT_referenced.html in the project folder.
+- Each answer gives one to six sources. The full argument has 21 points and 300 sources; it is in ARGUMENT_referenced.html in the project folder.
 - Where the chips that Nvidia sold are now is not known.
 - The numbers in questions 4, 6 and 8 are press reports citing unnamed people. Nvidia's own words in question 8 give no number.
 - Question 2, the antitrust case. No saved page says the case has ended. By Nvidia's own account the finding is about what it held back from Chinese customers: "our compliance with applicable U.S. export controls, which required us to offer degraded products to the Chinese market, discriminated unfairly against customers in the China market" [man-ms-sec-10q-2026-07]. The answer does not say what the case shows about Beijing's wishes; that is read more than one way (question 5).

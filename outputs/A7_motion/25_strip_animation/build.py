@@ -91,12 +91,12 @@ def main():
 </div>
 <div class="foot" id="foot"><p><b>Read with care.</b> Open marks rest on unnamed people; in the answers found, no Chinese authority confirmed any of them. No published Chinese order against buying Nvidia chips was found in the policy pages and national document lists read. Marks {not_nv[0]} and {not_nv[1]} are not about Nvidia; marks {case[0]} and {case[1]} are an antitrust case against Nvidia the company. The records are a selection made to show both sides, not a census: the count of marks in a row is not a measure. The exceptions on each side are drawn too: Beijing sometimes let chips in, and the companies also turned to home-made ones.</p>
 <p><b>Source.</b> One mark for each of {total} dated records, 2023 to November 2026. A script found each record’s own words in a saved copy of its source. The numbers on the marks are those of the figure “Beijing vs. its labs”, which lists every record.</p></div>
-<p class="draft" id="draft">Draft by Claude, Anthropic’s model. Local; not published.</p>"""
+<p class="draft" id="draft">Draft by Claude, Anthropic’s model.</p>"""
     below = f"""  <p>The dated strip as a short silent animation: the {total} marks appear in date order while the date runs at the top right. This page draws any moment of it; the video files beside it were captured from this page frame by frame.</p>
   <p>The video file, <code>strip_animation.mp4</code> (1280 by 720, no sound):</p>
   <video data-src="strip_animation.mp4" controls muted playsinline preload="metadata" width="1280" height="720"></video>
   <p>For a post: <code>strip_animation.gif</code> or <code>strip_animation.webp</code> (both 1280 by 720).</p>
-  <p class="small">Draft by Claude, Anthropic’s model. Local; not published.</p>"""
+  <p class="small">Draft by Claude, Anthropic’s model.</p>"""
     (HERE / 'strip_animation.html').write_text(L.page('Dated Strip Animation', stage, below, scene, css), encoding='utf-8')
 
     dur = frames / FPS

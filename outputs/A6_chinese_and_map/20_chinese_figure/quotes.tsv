@@ -29,6 +29,7 @@ man-70f4668d5f56	approval to sell its second-most powerful artificial intelligen
 cn-acts-reuters-ti-cap-20260708-relay1	they may soon receive permission to buy some H200 chips
 man-a7d2f1a9f963	There have been minimal exports of any H200s to China so far
 cn-tolerate-reutersaug26-relay1-wayback	ByteDance and Tencent have each received about 10,000 H200 processors in recent weeks
+cn-acts-reuters-rtx5500-20260927	The ministry told some Chinese companies the government intends to approve the purchases
 cn-tolerate-mof	中国企业在境外自建自营算力中心
 cn-labs-h20-orders-20250402-relay1	have placed at least $16 billion in orders for
 cn-counter-b11-5	主要以英伟达高性能卡为主
@@ -60,6 +61,10 @@ cn-le17-whuf-134391	国行合规RTX PRO 6000D型号，非消费级游戏卡、�
 cn-acts-mofcom-20261117	对中国企业与其他国家企业正常贸易合作横加干涉
 cn-le26-iflytek-ir-20260821	其他模型厂商普遍使用性能领先两代的英伟达芯片
 cn-o36-tencent-call-20261118-sa	no matter when you actually started leasing or building capacities outside of China
+cn-acts-reuters-rtx5500-20260927	China's Ministry of Industry and Information Technology recently asked companies including ByteDance and Alibaba to report their plans to purchase Nvidia's RTX PRO 5500 chips
+cn-acts-reuters-rtx5500-20260927	The Information reported on Sunday, citing two people familiar with the matter
+cn-acts-reuters-rtx5500-20260927	Reuters could not immediately verify the report.
+cn-acts-reuters-rtx5500-20260927	Sept 27 (Reuters)
 cn-acts-reuters-us-approvals-20260514-wayback	Nvidia commanded about 95% of China's advanced chip market
 cn-acts-reuters-ti-cap-20260708-relay1	it could amount to fewer than 200,000 in total
 cn-clips-evidence-1	About 600,000 of Nvidia's advanced artificial intelligence chips are stored in Hong Kong awaiting shipment to China
@@ -174,6 +179,7 @@ cn-le14-itsec-scope-20230727	送测单位应为中国境内注册的实体
 cn-le14-mof-us-firms-measures-20260622	采购人在政府采购活动中，不得采购46家美国企业（不包括在华美资企业）生产的产品。
 cn-le14-mof-us-firms-measures-20260622	财库〔2026〕10号
 cn-le14-mof-us-firms-list-20260622	Lockheed Martin
+cn-le15-sheitc-8cea38	市区协同给予最多1年、最高100%的租金补贴
 cn-counter-b4-2	使用国产算力设施开展模型训练、推理和应用的企业补贴比例不超过算力合同费用的30%，使用其他算力设施的企业补贴比例不超过算力合同费用的20%
 cn-counter-b4-2	杭州市人民政府办公厅 2024年7月18日
 cn-le25-zhejiang-ai-measures-2025-smartcity	使用自主算力服务的，可 按照不高于合同实际执行金额的30%给予补助
@@ -260,7 +266,7 @@ cn-usside-017	November 1, 2025
 cn-le25-samr-2025-merger-review-20260410	对英伟达公司实施进一步调查
 cn-o39b-shanxi-measures-2024-jincheng	按照算力服务合同金额的20%，给予总额不超过100万元的“算力券”奖励
 cn-o39b-shanxi-measures-2024-jincheng	按照算力服务合同金额的30%，给予总额不超过200万元的“算力券”奖励
-cn-o39b-shanxi-measures-2024-jincheng	成文日期： 2024年12月09日
+cn-o39b-shanxi-measures-2024-jincheng	山西省人民政府办公厅 2024年6月25日
 cn-o39b-shanxi-measures-2024-jincheng	本措施自2024年7月1日起施行
 cn-le28-sz-longhua-2024-20hao	补贴额度不超过企业采购金额的30%，上限不超过300万元
 cn-le28-sz-longhua-2024-20hao	成文日期： 2024-11-27
@@ -280,6 +286,19 @@ cn-le28-shandong-ai-measures-2025-smartcity	按规定给予不超过算力交易
 cn-le28-shandong-ai-measures-2025-smartcity	2025年5月12日，山东省政府新闻办举行省政府政策例行吹风会
 cn-le28-hunan-aiplus-smartcity	对购买算力服务的企业，按不超过年度算力总支出的30%给予补贴，最高不超过1000万元
 cn-le28-hunan-aiplus-smartcity	2025年10月30日，湖南发布《湖南省贯彻落实国务院“人工智能+”行动的实施方案》
+cn-ga05-sichuan-compute-net-measures-jiemian	设立“算力券”，对企业购买国产算力费用给予支持，一般企业支持比例不超过20%，成立3年内的初创企业可提高至30%、人工智能一人公司（OPC）可提高至40%，每家单位每年支持最高不超过100万元
+cn-ga05-sichuan-compute-net-measures-jiemian	本办法自印发之日起实施
+cn-ga05-sichuan-compute-net-measures-cls-20260813	财联社8月13日电，《四川省推进算力网建设的若干政策措施（试行）》发布
+cn-ga04-wh-voucher-rule-2026-24hao	算力使用方按照智算服务合同实际发生费用的 25 ％兑付
+cn-ga04-wh-voucher-rule-2026-24hao	具身智能等未来产业领域企业，经有关部门会商认定后，兑付比例提升至 45 ％
+cn-ga04-wh-voucher-rule-2026-24hao	兑付比例提升至 70 ％，单个企业每年最高兑付不超过 10 万元
+cn-ga04-wh-voucher-rule-2026-24hao	芜湖市数据资源管理局 2026 年 7 月 15 日
+cn-ga04-sz-suzhou-aiplus-2026-18hao	对符合条件的科技研发企业，按实际支付智能算力租用费用的 30%，给予每年最高200万元补贴
+cn-ga04-sz-suzhou-aiplus-2026-jiedu	本《若干措施》自2026年1月31日起施行，有效期至2027年1月30日
+cn-ga04-sz-suzhou-aiplus-2025-5hao	按实际支付人工智能算力费用 20% 给予每年最高 200 万元补贴
+cn-ga04-sz-suzhou-aiplus-2025-5hao	2025年2月13日苏州市人民政府苏府规字〔2025〕5号文发布
+cn-ga04-tj-voucher-rule-sina-20250514	按照算力服务合同的10%申请算力券，同一企业每年度累计兑现算力券金额不超过200万元
+cn-ga04-tj-voucher-rule-sina-20250514	2025年05月14日 15:33 看点资讯
 cn-le15-chengdu-sina-6a5ce645	自主可控智能算力不超过服务费用的50%、非自主可控智能算力不超过服务费用的30%
 cn-le15-zj-oss-web1825-e66330	温州市人民政府办公室 2025年8月29日
 cn-us-lutnick-0422-rev-transcript-b	So that's my understanding of what's happening
@@ -287,3 +306,4 @@ cn-acts-reuters-us-approvals-20260514-wayback	The shift in China was partly trig
 man-70f4668d5f56	Nvidia has won Beijing's approval
 man-a7d2f1a9f963	shipments of H200 chips have begun but the number was "very few."
 cn-le29-zhipu-results-20260331-en	Faced with the computing power shortage that has outstripped supply since February 2026
+cn-usdocs-hfac-decisions-20261119	H200 License and Equivalent Application Status as of May 11, 2026

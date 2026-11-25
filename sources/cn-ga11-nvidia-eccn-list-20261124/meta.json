@@ -1,0 +1,7 @@
+{
+ "id": "cn-ga11-nvidia-eccn-list-20261124",
+ "url": "https://api-prod.nvidia.com/services/eccn/v1/getECCN",
+ "route": "https://api-prod.nvidia.com/services/eccn/v1/getECCN",
+ "fetched_utc": "2026-11-24T10:40:03Z",
+ "sha256": "3990225a37c7cf46f6e3a50f83ecfb3bfed82c0f393e3ebf16f26a99ecd760ea"
+}

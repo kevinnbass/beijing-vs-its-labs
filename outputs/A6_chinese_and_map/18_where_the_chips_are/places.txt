@@ -85,14 +85,16 @@ L 1 end -15 5 Inzai, Chiba
 @ 5 out paper plan us 2026-05-11 cn-usdocs-hfac-decisions-20261119
 P Malaysia, Indonesia and Thailand
 W Table as of May 11, 2026
-T A US Commerce Department table lists five applications, with Nvidia as exporter, to ship 1,118,500 chips to consignees here, named for ByteDance, BytePlus, TikTok and Alibaba. All five are marked "RWA" (returned without action): none was approved, and the table gives no reasons. An application names a consignee; it is not an order. The sum is mine.
-S US Commerce Department table of licence applications, released by the House Foreign Affairs Committee, Nov 19, 2026
+T The licence table of May 11, 2026 from the US Commerce Department's Bureau of Industry and Security (BIS) lists five applications, with Nvidia as exporter, to ship 1,118,500 chips to consignees here, named for ByteDance, BytePlus, TikTok and Alibaba. All five are marked "RWA" (returned without action): none was approved, and the table gives no reasons. An application names a consignee; it is not an order. The sum is mine.
+S Licence table of BIS (H200 licence and application status as of May 11, 2026), released by the House Foreign Affairs Committee, Nov 19, 2026
 Q Bytedance System SDN 508,000 RWA Malaysia
 + PT Byteplus Technologies 203,000 RWA Indonesia
 + Alibaba Cloud 50,500 RWA Malaysia 203,000 RWA Malaysia
 + TikTok (System) Thailand 154,000 RWA Thailand
 + H200 License and Equivalent Application Status as of May 11, 2026
 + @cn-le04-bis-ear-748 | Returned without action (RWA)
++ @cn-le04-bis-ear-748 | Bureau of Industry and Security, U.S. Department of Commerce
++ @cn-usdocs-hfac-summary-20261119 | According to a BIS summary provided to the House Foreign Affairs Committee dated May 11, 2026
 + @cn-usdocs-hfac-summary-20261119 | House Foreign Affairs Committee ECRA Disclosure | 11.19.2026
 G admin:Malaysia;admin:Indonesia;admin:Thailand |
 F anchors

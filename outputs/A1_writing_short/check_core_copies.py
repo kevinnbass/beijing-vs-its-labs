@@ -10,7 +10,8 @@ Run: python3 -I check_core_copies.py     (reads only; exit 1 on any difference)
    questions and the list of documents must each say that number.
 4. Old wording. The texts written here (the base files, the plain thread, the plain timeline) must not hold any
    phrase the rounds have retired (list below). No delivered file, built pages included, may hold an id that may no
-   longer be cited (loose_ends/hkexnews_saved_ids.tsv and the ids ROUND4.md names).
+   longer be cited (loose_ends/hkexnews_saved_ids.tsv, the ids ROUND4.md names and, since round 8, the copies from
+   idc.com and trendforce.com in loose_ends/terms_saved_ids.tsv).
 Controls: a copy with one word changed must be reported as different; a phrase known to be present must be found
 by the same search that looks for the retired ones.
 """
@@ -70,12 +71,25 @@ for f, said in (('03_thread/thread_base.txt', f'with {word} limits'), ('05_quest
 # 4. old wording and ids that may no longer be cited
 RETIRED_WORDS = ['four limits', 'four cautions', '20 points', '750,000', 'more than half', 'democrat', 'at a lower rate', 'public universit', 'state universit',
                  'more exact', 'warn against', 'first press report', "bloomberg's first report", 'sept 28, 2024', '70 sources', '63 sources', '53 records', '59 records',
-                 'people’s daily had run', "people's daily had run", 'undated', 'state telecom operators']
+                 'people’s daily had run', "people's daily had run", 'undated', 'state telecom operators',
+                 # withdrawn by core edits 5 and 6 (Nov 24, 2026; outputs/ROUND5.md), added in round 5
+                 'no chinese document found states it', 'states the motive', '42 items', '42 state', 'the seven that', 'aug 1 to sept 24', 'none after',
+                 "commerce department's table", 'shows that application at 75,000', 'which the table shows at 75,000', 'were not reached (qingyang',
+                 'voucher rules of five cities were not reached', 'read it two ways', 'every such rule still pays', '31 official', '31 saved official',
+                 '30 official readouts', '213 sources', 'four others are not', 'under which line the chips are declared',
+                 # withdrawn by core edit 7 (Nov 25, 2026; outputs/ROUND8.md): the argument has 299 sources, the figure 62 records; added in round 8
+                 '297 sources', '61 records', '61 dated records',
+                 # withdrawn by core edit 7c (Nov 25, 2026, ruling R3a): 300 sources; Nvidia's statement has two carriers
+                 '299 sources', 'one carrier']
 RETIRED_IDS = {ln.split('\t')[0] for ln in (PROJ / 'loose_ends' / 'hkexnews_saved_ids.tsv').read_text(encoding='utf-8').splitlines() if ln.strip()}
 if len(RETIRED_IDS) < 10: fail('control: the do-not-cite list is shorter than expected')
 RETIRED_IDS |= {'cn-le08-moore-final-prospectus', 'cn-le29-sensetime-2025-annual-en', 'cn-media-yuyuan-thepaper', 'cn-factions-tencent-reuters-20261120-relay1',
                 'cn-policy-ai-chip-evaluation', 'cn-clips-mfa-new-1', 'cn-us-lutnick-0422-coons-letter', 'cn-clips-trump-may15-wayback',
                 'cn-acts-ft-lutnick-20250821-wayback', 'ms-bj-20250917-cac-6000d-engadget', 'cn-tolerate-customs-relay1'}
+# round 8 (core edit 7b, Nov 25, 2026; ruling R5): the copies saved from idc.com and trendforce.com, replaced today, read from their list
+TERMS_IDS = {ln.split('\t')[0].strip() for ln in (PROJ / 'loose_ends' / 'terms_saved_ids.tsv').read_text(encoding='utf-8').splitlines() if ln.strip() and not ln.startswith('#')}
+if len(TERMS_IDS) < 19: fail(f'control: the list of copies saved against a site\'s terms holds {len(TERMS_IDS)} ids, fewer than the 19 it had when added')
+RETIRED_IDS |= TERMS_IDS
 files = sorted(p for pat in ('*/*_base.txt', '*/*.md', '*/*.html', '*/thread_plain.txt', '*/timeline.txt', '*/*refs*.tsv')
                for p in HERE.glob(pat) if not p.parent.name.startswith('superseded'))
 found_control = False

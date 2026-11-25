@@ -147,6 +147,12 @@ def main():
     if (len(win), len(nvw)) != (72, 23): sys.exit(f'WHU recount: {len(win)} and {len(nvw)}, not 72 and 23 as L17 wrote: read and change the note')
     print(f'WHU recount (L17 tables): {len(win)} result notices dated 2025-09-01 to 2026-11-23; {len(nvw)} name Nvidia in the notice; each of the {len(nvw)} saved pages holds the word')
     fill['N_WHU_L17'] = len(win); fill['N_WHU_L17_NV'] = len(nvw)
+    # round 5: the core's table of purchase records, counted here (each row must have the header's number of cells)
+    pr = [l.rstrip('\n').split('\t') for l in (ROOT / 'research/cn_chip_policy_20261120/tables/procurement_records.tsv').read_text(encoding='utf-8').splitlines() if l.strip() and not l.startswith('#')]
+    if any(len(x) != len(pr[0]) for x in pr[1:]): sys.exit('procurement_records.tsv: a row without the header\'s number of cells')
+    fill['N_PROC'] = len(pr) - 1
+    if fill['N_PROC'] != 51: sys.exit(f'procurement_records.tsv now has {fill["N_PROC"]} rows, not 51: read the new rows and change the later records')
+    print(f'core table of purchase records: {fill["N_PROC"]} rows')
     for y in years:
         for k in CLASSES: fill[f'C_{y}_{k}'] = c[(y, k)]
         fill[f'C_{y}_ALL'] = sum(c[(y, k)] for k in CLASSES)

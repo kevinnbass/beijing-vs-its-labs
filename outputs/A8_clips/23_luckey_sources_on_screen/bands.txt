@@ -7,14 +7,23 @@
 #   away (orange) = away from Nvidia chips; toward (blue) = toward them. Same meaning as in the project's figure.
 # Put between straight double quotes ONLY a source's exact words. Every quotation needs a line "!! saved id | exact words"
 # under it; build.py stops if a quotation has none, and scripts/cn_has.py must find every such line in its saved copy.
-# {POLICY_PAGES} is replaced by the count of "### Row N" entries in ../../../NOTE_policies_checked.md (the policy pages read).
+# {POLICY_PAGES} is replaced by the count of saved pages read in ../../../NOTE_policies_checked.md (an entry counts unless its verdict is PAGE EMPTY; a page behind several entries counts once: 82 of the 83 pages behind its 103 entries).
 # {NV_APPROVED} is replaced by the sum of Nvidia's chips marked "Approved, not shipped" in ../../../tables/house_licence_table.tsv
-# (the project's copy of the Commerce Department's table, status on May 11, 2026). build.py stops unless that sum and AMD's
+# (the project's copy of the licence table, status on May 11, 2026, from the Commerce Department's Bureau of Industry and
+# Security, BIS, released by the House Foreign Affairs Committee on Nov 19, 2026). build.py stops unless that sum and AMD's
 # make the 879,868 chips in 21 applications that the committee's saved summary states.
 # A mark without a direction, [solid] or [open], is drawn in ink: on the record, or a press report, neither toward nor away.
 # A lower line that would run past three lines is set in smaller type by build.py until it fits (never under size 30).
 # The verdicts follow ../22_clips_marked_up/marks.txt (and so ASSESSMENT.md section 5 and the argument).
 # Round 4 (Nov 23, 2026): rewritten for the rebuilt core. The round-2 text is kept as tmp_work/bands.round2.txt.
+# Round 5 (Nov 24, 2026, after core edit 6): L6a names the licence table by its release, not as the Commerce Department's
+# table. The text before is kept as bands.before-round5-20261124.txt.
+# Round 7 (Nov 24, 2026, builder OB10): the project leaves out the words of part L6b (0:44 to 0:46; the session's ruling,
+# ../40_checked_by_ear/compare.py LEAVE). Its entry has no verdict and no text, so the lower band is empty for that
+# stretch (for a while the band of the next sentence, L7, carried a note; see the line after next).
+# An entry with nothing after "|" and no text shows nothing. The text before is in tmp_work/ob10_superseded/bands.txt.
+# OB10, consistency ruling: the sentence of 0:46 to 0:49 (L7) is left out too, as in the atlas figure; its band is gone, so
+# the empty band of L6b runs from 0:44 to the next sentence. The text before is in tmp_work/ob10_superseded_3/bands.txt.
 
 @ L1 | HIS CRITICS' WORDS · NOTHING TO CHECK YET
 The claim comes next. The project's answer to it: yes on direction, with five limits. Beijing was not one actor. Guidance and public warnings, not a published ban. Some purchases were approved and some chips came in. The companies had reasons of their own, and US curbs pushed too. What Beijing meant by it is not settled.
@@ -45,14 +54,14 @@ No permit rule for these chips was found in the {POLICY_PAGES} policy pages read
 !! cn-us-lutnick-0422-rev-transcript-b | So that's my understanding of what's happening
 
 @ L6a | HE BREAKS OFF: NO VERDICT · THE RECORD ON SELLING INTO CHINA
-[solid] The US Commerce Department's table, May 11, 2026: {NV_APPROVED} Nvidia chips approved for named companies in China, each marked "Approved, not shipped"
+[solid] The licence table the House Foreign Affairs Committee released on Nov 19, 2026, status at May 11, 2026: {NV_APPROVED} Nvidia chips approved for named companies in China, each marked "Approved, not shipped"
 !! cn-usdocs-hfac-decisions-20261119 | Approved, not shipped
+!! cn-labs-us-chip-licences-20261119 | November 19, 2026
 !! cn-usdocs-hfac-decisions-20261119 | H200 License and Equivalent Application Status as of May 11, 2026
 !! cn-usdocs-hfac-summary-20261119 | BIS approved the export, re-export, or transfer (in-country) of 879,868 covered integrated circuits to PRC companies across 21 license applications, as of May 11, 2026
 !! cn-usdocs-hfac-summary-20261119 | Covered integrated circuits are the following products: NVIDIA's H200 and AMD's MI325X.
 
-@ L6b | ALLEGATION
-The speaker's allegation. No saved source here establishes it.
+@ L6b |
 
 @ L8 | BORNE OUT ON DIRECTION · TOO FLAT AS WORDED
 Fair on the import question. Too flat on the government, which was not one actor. [open toward] Reuters, Jan 30, 2026: "China's industry and commerce ministries have granted approvals for all four companies"

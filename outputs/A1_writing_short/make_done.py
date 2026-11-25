@@ -100,8 +100,8 @@ the source says, not that it is true.
   bears out; where his words are too flat). The first column is there so that each row says which words it judges. On
   a phone the cells stack, so each cell starts with its own label in bold.
 - **What it does not show:** it follows `ASSESSMENT.md` section 5 and the argument's points 16, 18 and 19, and uses
-  point 17 and point 20 only for the two limits they state. It does not weigh the smuggling claim at 0:42 to 0:47: it
-  calls it the speaker's allegation and says no saved source here establishes it. It does not judge his argument about
+  point 17 and point 20 only for the two limits they state. Its words at 0:44 to 0:46 are left out of this
+  project. It does not judge his argument about
   what the United States should do. The words are from the speech program's transcript; nobody has checked them by ear.
 - **To know:** it is one web page of about {w4} words (the builder's count), more than one sheet if printed with its
   {r4} references. One added source: a transcript site's text of the whole interview (`cn-clips-singju-luckey`), used

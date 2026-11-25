@@ -18,6 +18,9 @@ Order: the table's date column, then its record number. A record with no exact d
 as the warning about traitors) stands where the figure places it, and a note names every such record.
 Cross-check: every record's date, date label, row and wording are compared with figure/figure_data.txt (the run
 stops on any difference), so the list follows the figure's data file, not only the table made from it.
+Since round 8 (Nov 25, 2026, core edit 7) the data file's "N" line is read as scripts/cn_figure_build.py reads it: records
+are numbered by date, Beijing's rows first and then the companies', except a record with an "N" line, which keeps that
+number (record 62). The table's numbers must equal that numbering; the timeline itself prints no record number.
 
 Quotation marks: the table's text puts curly marks round some words. A phrase keeps its marks only if it stands in
 the saved copy of that record's source (scripts/cn_srclib.py: has). Where it does not (English put for Chinese
@@ -70,6 +73,21 @@ def load():
     return rows
 
 
+def number(fig):
+    """The figure's record numbers, as scripts/cn_figure_build.py number() gives them since core edit 7 (Nov 25, 2026): by
+    date, Beijing's rows first and then the companies', except a record with an "N" line, which keeps the number given there.
+    Returns one number per record of fig, in fig's order; raises ValueError where the numbers would not run 1 to N."""
+    free = [d for d in fig if not d['N']]
+    b = sorted([d for d in free if d['code'][0] == 'B'], key=lambda d: d['date'])
+    c = sorted([d for d in free if d['code'][0] == 'C'], key=lambda d: d['date'])
+    num = {id(d): i for i, d in enumerate(b + c, 1)}
+    for d in fig:
+        if d['N']: num[id(d)] = int(d['N'])
+    if sorted(num.values()) != list(range(1, len(fig) + 1)): raise ValueError('the record numbers do not run from 1 to the number of records')
+    if any(num[id(d)] <= len(free) for d in fig if d['N']): raise ValueError('a fixed number falls among the numbers given by date')
+    return [num[id(d)] for d in fig]
+
+
 def main():
     rows = load()
     fig, cur = [], None                    # the figure's data file: @ LANE KIND DATE DATELABEL SAVED-ID, then T (the line shown)
@@ -77,8 +95,9 @@ def main():
         if ln.startswith('@ '):
             c = ln.split()
             if len(c) != 6: sys.exit(f'figure_data.txt: unexpected record line: {ln}')
-            cur = {'lane': LANE[c[1]], 'kind': c[2], 'date': c[3], 'label': c[4].replace('_', ' '), 'saved_id': c[5], 'text': None}; fig.append(cur)
+            cur = {'lane': LANE[c[1]], 'code': c[1], 'kind': c[2], 'date': c[3], 'label': c[4].replace('_', ' '), 'saved_id': c[5], 'text': None, 'N': ''}; fig.append(cur)
         elif ln.startswith('T ') and cur is not None and cur['text'] is None: cur['text'] = ln[2:].strip()
+        elif ln.startswith('N ') and cur is not None: cur['N'] = ln[2:].strip()      # round 8: the record's fixed number (core edit 7)
     n_fig = len(fig)
     if n_fig != len(rows): sys.exit(f'{len(rows)} rows in the table but {n_fig} records in figure_data.txt')
     key = lambda d: (d['saved_id'], d['date'], d['lane'], L.norm(d['text']))
@@ -89,6 +108,16 @@ def main():
     bent = dict(rows[0]); bent['text'] = bent['text'] + ' x'       # control: one changed word must show as a difference
     if sorted(key(d) for d in fig) == sorted(key(r) for r in [bent] + rows[1:]): sys.exit('control: a changed wording was not seen')
     labels = {key(d): d['label'] for d in fig}
+    # round 8: the table's record numbers against the numbering of figure_data.txt (N lines kept), with a control
+    by_key = {key(r): int(r['n']) for r in rows}
+    differs = lambda ns: [(d['saved_id'], n, by_key[key(d)]) for d, n in zip(fig, ns) if by_key[key(d)] != n]
+    try: nums = number(fig)
+    except ValueError as e: sys.exit(f'figure_data.txt: {e}')
+    if differs(nums): sys.exit(f'the table numbers records otherwise than figure_data.txt does (by date, N lines kept), for example: {differs(nums)[:3]}')
+    fixed = [(d['saved_id'], d['N']) for d in fig if d['N']]
+    try: by_date_only = differs(number([dict(d, N='') for d in fig]))
+    except ValueError: by_date_only = ['numbering by date alone failed']
+    if fixed and not by_date_only: sys.exit('control: numbering by date alone, the N lines left out, was not seen to differ from the table')
     for r in rows:                         # a date label of words must be the table's shown_as; "-" means a full day is shown
         lab = labels[key(r)]
         if (lab == '-') != bool(FULL_DAY.fullmatch(r['shown_as'])) or (lab != '-' and lab != r['shown_as']):
@@ -139,7 +168,7 @@ def main():
     loose = [r for r in rows if not FULL_DAY.fullmatch(r['shown_as'])]
     loose_txt = '; '.join(f'{r["shown_as"]} ({r["source"]})' for r in loose)
     notes = [
-        "Draft by Claude, Anthropic's model. Local; not published.",
+        "Draft by Claude, Anthropic's model.",
         f'Made by a script (gen_timeline.py) from the figure\'s table of records, figure/figure_events.tsv. Nothing was retyped. {len(rows)} records, in date order, from {first} to {last}.',
         'Each line: date | who | what | source | address. The second field, who, is the row of the figure the record sits in: which side it is about and which way it points. It is not always the speaker.',
         f'Two tiers, marked at the end of each source: {on_record} records are on the record ({count["doc"]} published documents or officials, {count["rec"]} companies or named people outside government); {count["press"]} are press reports citing unnamed people.',
@@ -174,6 +203,8 @@ def main():
     print(f'tiers: {count["doc"]} published documents or officials, {count["rec"]} companies or named people on the record, {count["press"]} press reports citing unnamed people')
     print('rows: ' + '; '.join(f'{v} {n}' for v, n in lanes.items()))
     print(f'compared with figure_data.txt: id, date, date label, row and wording equal in {len(rows)} of {len(rows)} records; ids on the do-not-cite list: 0 of {len(retired)} listed')
+    print(f'record numbers: equal to the numbering of figure_data.txt in {len(rows)} of {len(rows)} (by date, Beijing\'s rows first; kept by an N line: '
+          f'{", ".join(f"{s} as {n}" for s, n in fixed) or "none"}); control: numbering by date alone differs from the table in {len(by_date_only)} records')
     print(f'records with no exact day: {len(loose)} ({loose_txt or "none"})')
     print(f'quoted phrases: {len(report)} in the table; {n_kept} found in the saved copy and kept; {len(off)} not found, marks taken off (records {", ".join(map(str, off_n)) or "none"})')
     for x in off: print(f'  record {x[0]} [{x[1]}] {x[2]}: {x[3]}')

@@ -1,16 +1,16 @@
 # The record as a dated list
 
-*61 dated records of what Chinese authorities did about Nvidia chips and what China's AI companies did, as plain lines for pasting.*
+*62 dated records of what Chinese authorities did about Nvidia chips and what China's AI companies did, as plain lines for pasting.*
 
-Draft by Claude, Anthropic's model. Local; not published.
+Draft by Claude, Anthropic's model.
 
-Made by a script (gen_timeline.py) from the figure's table of records, figure/figure_events.tsv. Nothing was retyped. 61 records, in date order, from May 21, 2023 to Nov 19, 2026.
+Made by a script (gen_timeline.py) from the figure's table of records, figure/figure_events.tsv. Nothing was retyped. 62 records, in date order, from May 21, 2023 to Nov 19, 2026.
 
 Each line: date | who | what | source | address. The second field, who, is the row of the figure the record sits in: which side it is about and which way it points. It is not always the speaker.
 
-Two tiers, marked at the end of each source: 36 records are on the record (22 published documents or officials, 14 companies or named people outside government); 25 are press reports citing unnamed people.
+Two tiers, marked at the end of each source: 36 records are on the record (22 published documents or officials, 14 companies or named people outside government); 26 are press reports citing unnamed people.
 
-By row: Beijing holds Nvidia back, 24; Beijing lets Nvidia in, 13; The companies reach for Nvidia, 14; The companies turn to home-made chips, 10.
+By row: Beijing holds Nvidia back, 24; Beijing lets Nvidia in, 14; The companies reach for Nvidia, 14; The companies turn to home-made chips, 10.
 
 Words between quotation marks are the source's own: all 30 such phrases were found in the saved copy of the record's source by the script.
 
@@ -74,6 +74,7 @@ English given for Chinese sources is ours, not an official translation.
 | Aug 18, 2026 | Beijing lets Nvidia in | ByteDance and Tencent each receive about 10,000 H200s; Beijing wants them to keep the hardware outside mainland China, and regulators told companies they may ship it to Hong Kong and use it there | Financial Times, through Reuters on Investing.com; press report citing unnamed people | https://www.investing.com/news/stock-market-news/nvidia-h200-chips-reach-china-in-small-shipments-ft-reports-4866385 |
 | Aug 21, 2026 | The companies reach for Nvidia | iFlytek’s filed investor record: rival model makers commonly use Nvidia chips two generations ahead; it expects tighter US export controls to push the whole industry to home-made computing | iFlytek, record of its results meeting, filed on the Shenzhen exchange’s site (cninfo); on the record: a company or a named person outside government | https://static.cninfo.com.cn/finalpage/2026-08-23/1225493949.PDF |
 | Aug 26, 2026 | Beijing holds Nvidia back | Nvidia’s quarterly filing: licensed H200 sales “were restricted by the PRC government” | Nvidia, Form 10-Q filed with the SEC; on the record: a company or a named person outside government | https://www.sec.gov/Archives/edgar/data/1045810/000104581026000075/nvda-20260726.htm |
+| Sept 27, 2026 | Beijing lets Nvidia in | Reported, by two people: the industry ministry asks companies including ByteDance and Alibaba to report their plans to buy Nvidia’s RTX PRO 5500, and tells some the government intends to approve the purchases. An intention reported, not an approval given; Reuters could not immediately verify the report | The Information, through Reuters on AOL; press report citing unnamed people | https://www.aol.ca/articles/china-weighs-allowing-bytedance-alibaba-152402000.html |
 | Oct 16, 2026 | Beijing lets Nvidia in | In a draft list put out for comment, the commerce and science ministries propose automatic licences for technology exports to computing centres that Chinese companies build and run abroad | Ministry of Commerce spokesperson, on the draft of the commerce and science ministries; on the record: a published document or an official | https://www.mofcom.gov.cn/xwfb/xwfyrth/art/2026/art_d7661dbf62794345a221404f82a25959.html?trk=article-ssr-frontend-pulse_little-text-block |
 | Oct 20, 2026 | The companies reach for Nvidia | ByteDance, Alibaba and Tencent order over 3 million of the weaker RTX PRO 5500, worth over $35 billion | Reuters, on Investing.com; press report citing unnamed people | https://www.investing.com/news/stock-market-news/exclusivebytedance-alibaba-tencent-place-over-35-billion-worth-of-nvidia-chip-orders-4959231 |
 | Nov 5, 2026 | Beijing holds Nvidia back | About 600,000 Nvidia chips wait in Hong Kong “as Beijing withholds approval” | Reuters (its dateline is Nov 5), on CNA, whose page is dated Nov 6; press report citing unnamed people | https://www.channelnewsasia.com/east-asia/nvidia-chips-pile-up-hong-kong-china-withhold-import-approval-6527371 |

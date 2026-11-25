@@ -4,7 +4,9 @@ Used by 24_explainer/build.py and 25_strip_animation/build.py. Nothing in this f
 
   load_events()              the dated records of ../../figure/figure_data.txt, numbered and placed exactly as
                              scripts/cn_figure_build.py does. Its load(), number(), X() and the placing loop of strip()
-                             are copied here, because importing that script would rebuild the figure.
+                             are copied here, because importing that script would rebuild the figure. Since core edit 7
+                             (Nov 25, 2026) a block with an "N" line keeps that number (record 62 stands at its date,
+                             Sept 27, 2026, between records 34 and 35), as the core's builder now reads it.
   check_against_figure(evs)  stops unless numbers, dates and saved ids equal figure/figure_events.tsv, every mark
                              stands where figure/beijing_vs_labs.html draws its circle, and the three dashed lines and
                              the labels beside marks carry the figure page's own words (so the copy cannot drift)
@@ -55,21 +57,31 @@ def load():
         if ln.startswith('@ '):
             _, lane, kind, d, dl, sid = ln.split()
             assert lane in LANES and kind in ('doc', 'rec', 'press'), (n, ln)
-            cur = dict(lane=lane, kind=kind, date=date.fromisoformat(d), dl=None if dl == '-' else dl.replace('_', ' '), sid=sid, T='', S='', Q='', E='', U='', C='')
+            cur = dict(lane=lane, kind=kind, date=date.fromisoformat(d), dl=None if dl == '-' else dl.replace('_', ' '), sid=sid, T='', S='', Q='', E='', U='', C='', N='')
             evs.append(cur)
         elif ln.startswith('! '):
             sid, q = ln[2:].split(' | ', 1); checks.append((sid.strip(), q.strip()))
-        elif ln[:2] in ('T ', 'S ', 'Q ', 'E ', 'U ', 'C '):
+        elif ln[:2] in ('T ', 'S ', 'Q ', 'E ', 'U ', 'C ', 'N '):
             cur[ln[0]] = smart(ln[2:].strip()) if ln[0] in 'TSC' else ln[2:].strip()
         else: sys.exit(f'figure_data.txt line {n} not understood: {ln[:60]}')
     return evs, checks
 
 
 def number(evs):
-    b = sorted([e for e in evs if e['lane'][0] == 'B'], key=lambda e: e['date'])
-    c = sorted([e for e in evs if e['lane'][0] == 'C'], key=lambda e: e['date'])
-    for i, e in enumerate(b + c, 1):
-        e['n'] = i; e['when'] = e['dl'] or fmt(e['date'])
+    """Number the records by date, Beijing's rows first and then the companies', except a record with an "N" line, which
+    keeps the number given there (core edit 7, Nov 25, 2026: a record added after the figure was made public takes the
+    next free number, so no earlier record changes its number). Copied from scripts/cn_figure_build.py as edit 7 left it,
+    without its address lookup (the videos print no address); the two asserts are the core's own."""
+    free = [e for e in evs if not e['N']]
+    b = sorted([e for e in free if e['lane'][0] == 'B'], key=lambda e: e['date'])
+    c = sorted([e for e in free if e['lane'][0] == 'C'], key=lambda e: e['date'])
+    for i, e in enumerate(b + c, 1): e['n'] = i
+    for e in evs:
+        if e['N']: e['n'] = int(e['N'])
+    assert sorted(e['n'] for e in evs) == list(range(1, len(evs) + 1)), 'the record numbers do not run from 1 to the number of records'
+    assert all(e['n'] > len(free) for e in evs if e['N']), 'a fixed number falls among the numbers given by date'
+    for e in evs:
+        e['when'] = e['dl'] or fmt(e['date'])
         e['dir'] = LANES[e['lane']][2]; e['solid'] = e['kind'] != 'press'
 
 
@@ -249,8 +261,15 @@ def made_from(here, files):
 
 
 def policy_rows():
-    """How many policy lines the project's note read (the "103 policy pages read")."""
-    return len(re.findall(r'(?m)^### Row \d+ ', (PROJ / 'NOTE_policies_checked.md').read_text(encoding='utf-8')))
+    """How many policy pages the project's note read (the "82 policy pages read"): an entry of NOTE_policies_checked.md
+    counts as read unless its verdict is PAGE EMPTY; an entry read in an Internet Archive capture is taken at the
+    capture; a saved page behind several entries counts once (the note has 103 entries on 83 saved pages, one empty)."""
+    docs = []
+    for e in re.split(r'(?m)^### Row ', (PROJ / 'NOTE_policies_checked.md').read_text(encoding='utf-8'))[1:]:
+        m = re.match(r'(\d+) · ([^·]+) · ([^·]+) · \[([^\]]+)\]', e)
+        v = re.search(r'Verdict: \*\*([^*]+)\*\*', e).group(1); c = re.search(r'- Read in: [^\n]*saved as \[([^\]]+)\]', e)
+        if v != 'PAGE EMPTY': docs.append(c.group(1) if c else m.group(4))
+    return len(set(docs))
 
 
 # ---------- the page ----------
@@ -292,9 +311,10 @@ def tsv(name):
 
 
 def house_table():
-    """Sums over the Commerce Department's table of licence applications (status at May 11, 2026; made public by the House
-    Foreign Affairs Committee on Nov 19, 2026), from tables/house_licence_table.tsv. Its two totals must equal the
-    figures printed in the committee's summary (the captions check those there by quotation)."""
+    """Sums over the licence table (applications for the H200 and AMD's MI325X, status at May 11, 2026, from the Commerce
+    Department's Bureau of Industry and Security, BIS; made public by the House Foreign Affairs Committee on Nov 19,
+    2026), from tables/house_licence_table.tsv. Its two totals must equal the figures printed in the committee's summary
+    (the captions check those there by quotation)."""
     rows = [dict(exp=r['exporter'], chips=int(r['chip_count'].replace(',', '')), status=r['status']) for r in tsv('house_licence_table.tsv')]
     sel = lambda **k: [r for r in rows if all(r[a] == b for a, b in k.items())]
     tot = lambda rs: sum(r['chips'] for r in rs)
@@ -308,12 +328,17 @@ def house_table():
 
 
 def state_media():
-    """The census of state and Party media items on Nvidia chips (tables/state_media_items.tsv): how many, how many only
-    warn, and the first and last of those."""
+    """The state and Party media items on Nvidia chips (tables/state_media_items.tsv; rows 43 to 75 were added in core
+    edit 6 of Nov 24, 2026, and in the core's words "the items after September 2025 are what two rounds of searches
+    found, a sample and not a full count"): how many, how many only warn, and how those split: the warnings of the first year (the burst: how many, the
+    first and last, their saved ids) and the later ones (date, saved id, outlet of each)."""
     rows = tsv('state_media_items.tsv')
-    warns = sorted((date.fromisoformat(r['date']), r['saved_id']) for r in rows if r['stance'] == 'warns')
+    warns = sorted((date.fromisoformat(r['date']), r['saved_id'], r['outlet']) for r in rows if r['stance'] == 'warns')
     assert rows and warns and any(r['stance'] != 'warns' for r in rows)
-    return dict(n=len(rows), warns=len(warns), first=warns[0][0], last=warns[-1][0], first_id=warns[0][1], last_id=warns[-1][1])
+    burst = [w for w in warns if w[0].year == warns[0][0].year]
+    later = [w for w in warns if w[0].year != warns[0][0].year]
+    assert len(burst) + len(later) == len(warns) and all(b[0] < l[0] for b in burst for l in later)
+    return dict(n=len(rows), warns=len(warns), n_burst=len(burst), first=burst[0][0], last=burst[-1][0], first_id=burst[0][1], last_id=burst[-1][1], later=later)
 
 
 CSS = """

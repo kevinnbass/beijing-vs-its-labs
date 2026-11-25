@@ -1,17 +1,17 @@
 # Nvidia's report for the quarter to Oct 25, 2026: not filed yet
 
-@deck The quarterly report had not been filed on Nov 23, 2026: neither Nvidia's own list of its filings nor the SEC's record, fetched at 08:51 UTC on Nov 23, 2026, lists one. Nvidia's commentary and call transcript give the $2.4 billion and the stop, and no reason for it. Its earlier reports name the Chinese government; its calls do not.
+@deck The quarterly report had not been filed when last looked for: the SEC's record of the company's filings, fetched at 10:27 UTC on Nov 24, 2026, lists none, nor did Nvidia's own list of its filings, fetched at 06:41 UTC on Nov 23, 2026. Nvidia's commentary and call transcript give the $2.4 billion and the stop, and no reason for it. Its earlier reports name the Chinese government; its calls do not.
 
-@note Draft by Claude, Anthropic's model. Local; not published.
-@note Written Nov 23, 2026 (UTC); revised the same day in rounds 2 and 4. Idea 38 of the chip-policy project. Nvidia's staff are named by office, not by name.
+@note Draft by Claude, Anthropic's model.
+@note Written Nov 23, 2026 (UTC); revised the same day in rounds 2 and 4; brought up to date on Nov 25, 2026 with the SEC's record as fetched on Nov 24, 2026. Idea 38 of the chip-policy project. Nvidia's staff are named by office, not by name.
 
 ## What was looked for
 
 Four things: the Form 10-Q for the quarter ended Oct 25, 2026 (the quarterly report a US-listed company files with the Securities and Exchange Commission, the SEC); the transcript of the results call of Nov 17, 2026; the chief financial officer's written commentary; and what these say about China, the H200 and other licensed products, the $2.4 billion that Reuters reported, and why shipments stopped.
 
-## Is the 10-Q filed? Not as of Nov 23, 2026, 08:51 UTC
+## Is the 10-Q filed? Not as of Nov 24, 2026, 10:27 UTC
 
-- **Nvidia's investor site, its list of SEC filings for 2026**, fetched a second time at 06:41 UTC on Nov 23, 2026 [cn-o38-nvda-feed-secfilings-2026-c]. It lists 123 filings. The newest is a Form 144 received on Nov 19, 2026, then a Form 8-K received on Nov 17, 2026. The only 10-Q rows of the year are those filed on Aug 26, 2026 and May 20, 2026: none after the quarter's end. The August row is the control: the list does show a 10-Q when one is filed. The first reading, at 05:37 UTC on Nov 23, 2026 [cn-o38-nvda-feed-secfilings-2026-b], was the same, byte for byte.
+- **Nvidia's investor site, its list of SEC filings for 2026**, fetched a second time at 06:41 UTC on Nov 23, 2026 [cn-o38-nvda-feed-secfilings-2026-c]. It lists 123 filings. At that time the newest was a Form 144 received on Nov 19, 2026, and the one before it a Form 8-K received on Nov 17, 2026. The only 10-Q rows of the year are those filed on Aug 26, 2026 and May 20, 2026: none after the quarter's end. The August row is the control: the list does show a 10-Q when one is filed. The first reading, at 05:37 UTC on Nov 23, 2026 [cn-o38-nvda-feed-secfilings-2026-b], was the same, byte for byte.
 !! cn-o38-nvda-feed-secfilings-2026-c | FETCHED: 2026-11-23T06:41:25Z
 !! cn-o38-nvda-feed-secfilings-2026-c | 11/19/2026 15:46:31
 !! cn-o38-nvda-feed-secfilings-2026-c | 11/17/2026 15:21:23
@@ -21,9 +21,18 @@ Four things: the Form 10-Q for the quarter ended Oct 25, 2026 (the quarterly rep
 !! cn-o38-nvda-feed-finreports-fy2027 | FETCHED: 2026-11-23T05:37:38Z
 !! cn-o38-nvda-feed-finreports-fy2027 | Supplemental Financial Information
 !! cn-o38-nvda-feed-finreports-fy2027 | NVDA-2027-Q2-10Q-Final-including-exhibits.pdf
-- **The SEC's own record of the company's filings**, saved by the project at 08:51 UTC on Nov 23, 2026 [cn-le05-sec-submissions-20261123]. Its newest entry is a Form 144 filed on Nov 19, 2026. Its newest 10-Q was filed on Aug 26, 2026, for the period ended Jul 26, 2026. It lists no 10-Q for the period ended Oct 25, 2026, and no notice of a late filing in 2026. The control: the record does list quarterly reports, 18 of them, the one of Aug 26, 2026 among them. An earlier reading of the SEC's list through a web reader (read, not saved) showed the same.
+- **The SEC's own record of the company's filings**, saved by the project twice: at 08:51 UTC on Nov 23, 2026 [cn-le05-sec-submissions-20261123], and again at 10:27 UTC on Nov 24, 2026 [cn-ga06-sec-submissions-20261124]. In the later reading the newest entries are two filed on Nov 23, 2026: a Form 8-K, in which Nvidia reports that its Board reinstated the chief executive on Nov 22, 2026 [cn-ga06-nvda-8k-20261123-pdf], and, later the same day by the record's own times, a Form 4. In the first reading the newest entry was a Form 144 filed on Nov 19, 2026. In both readings the newest 10-Q was filed on Aug 26, 2026, for the period ended Jul 26, 2026; neither lists a 10-Q for the period ended Oct 25, 2026, or a notice of a late filing in 2026. The control: the record does list quarterly reports, 18 of them, the one of Aug 26, 2026 among them. An earlier reading of the SEC's list through a web reader (read, not saved) showed the same.
+!! cn-ga06-sec-submissions-20261124 | FETCHED: 2026-11-24T10:27:05Z
+!! cn-ga06-sec-submissions-20261124 | 0001045810-26-000075
+!! cn-ga06-sec-submissions-20261124 | 0001696841-26-000016
+!! cn-ga06-sec-submissions-20261124 | 0001045810-26-000090
+!! cn-ga06-sec-submissions-20261124 | 2026-11-23T21:54:28.000Z
+!! cn-ga06-sec-submissions-20261124 | 2026-11-23T13:57:54.000Z
 !! cn-le05-sec-submissions-20261123 | FETCHED: 2026-11-23T08:51:16Z
 !! cn-le05-sec-submissions-20261123 | 0001045810-26-000075
+!! cn-ga06-nvda-8k-20261123-pdf | On November 22, 2026, the Board of Directors of NVIDIA Corporation reinstated Jen-Hsun Huang as NVIDIA's President, Chief Executive Officer and member of the Board of Directors, effective immediately.
+!! cn-ga06-nvda-8k-20261123-pdf | Date of Report (Date of earliest event reported): November 22, 2026
+!! cn-ga06-nvda-8k-20261123-pdf | Date: November 23, 2026
 - **Nvidia's own words**, in the commentary published with the results on Nov 17, 2026: "We plan to file our 10-Q in the coming weeks. In the interim, we have provided a supplemental document with additional financial information on our investor website." [cn-counter-b17-1] That supplemental document is saved [cn-o38-nvda-q3fy27-supplemental-pdf].
 !! cn-o38-nvda-q3fy27-supplemental-pdf | For the Quarter Ended October 25, 2026
 
@@ -35,7 +44,7 @@ All words below are Nvidia's, from its commentary, its call transcripts and its 
 !! cn-o38-nvda-q1fy27-call-transcript-pdf | 20-May-2026
 2. **Quarter to Jul 26, 2026, reported Aug 26, 2026: under 1%.** Commentary: "Shipments of Data Center Hopper products to China during the quarter were less than 1% of Data Center revenue." [cn-o38-nvda-q2fy27-cfo-commentary-pdf] On the call, the chief financial officer: "In Q2, we shipped less than 1% of our total data center revenue in Hopper 200 products to customers based in China in accordance with the US government licenses."; and "given ongoing geopolitical uncertainty, there is no China data center compute revenue in our forward outlook" [cn-o38-nvda-q2fy27-call-transcript-pdf]. The Form 10-Q for that quarter says the United States granted licences for some H200 sales, "but such sales were restricted by the PRC government" [man-ms-sec-10q-2026-07].
 !! cn-o38-nvda-q2fy27-call-transcript-pdf | 26-Aug-2026
-3. **Quarter to Oct 25, 2026, reported Nov 17, 2026: $2.4 billion, then a stop.** Commentary: "Shipments of Data Center Hopper products to China during the quarter were $2.4 billion."; and for the quarter ahead: "We are not assuming any Data Center compute revenue from China in our outlook." [cn-counter-b17-1] On the call, the interim chief executive, who is also the chief financial officer: "Q3 sales of licensed Hopper Data Center products to China was $2.4 billion. Our guidance does not have any licensed Hopper Data Center products included, and we are no longer shipping licensed Hopper Data Center products to China." [cn-o38-nvda-q3fy27-call-transcript-pdf]
+3. **Quarter to Oct 25, 2026, reported Nov 17, 2026: $2.4 billion, then a stop.** Commentary: "Shipments of Data Center Hopper products to China during the quarter were $2.4 billion."; and for the quarter ahead: "We are not assuming any Data Center compute revenue from China in our outlook." [cn-counter-b17-1] On the call, the then interim chief executive, who is also the chief financial officer: "Q3 sales of licensed Hopper Data Center products to China was $2.4 billion. Our guidance does not have any licensed Hopper Data Center products included, and we are no longer shipping licensed Hopper Data Center products to China." [cn-o38-nvda-q3fy27-call-transcript-pdf]
 !! cn-o38-nvda-q3fy27-call-transcript-pdf | Interim Chief Executive Officer, and Executive Vice President and Chief
 !! cn-o38-nvda-q3fy27-call-transcript-pdf | All our statements are made as of today, November 17, 2026
 
@@ -47,7 +56,7 @@ The outlook sentence in point 3 is about the next quarter, not the one reported.
 
 ## Nvidia's words on the Chinese government, report by report
 
-The reports Nvidia files with the SEC have said more about Beijing than its calls. The table gives the sentence in each report since November 2024. The project's fuller table, one row for each sentence, is tables/nvidia_wording_by_filing.tsv (107 rows); a script checks that each report below has its row there.
+The reports Nvidia files with the SEC have said more about Beijing than its calls. The table gives the sentence in each report since November 2024. The project's fuller table, one row for each sentence, is tables/nvidia_wording_by_filing.tsv (109 rows); a script checks that each report below has its row there.
 
 | Filed | Nvidia's words on the Chinese government | Beside them, in the same report |
 | Nov 20, 2024, Form 10-Q [man-ms-nvda-2024q3-10q-58a58e] | it "may also encourage customers to purchase from our China-based competitors, or impose restrictions on the sale to certain customers of our products" | the word foreclosed is not in this report (a script's count, which finds it in each report below) |

@@ -10,6 +10,9 @@ in a date read from a page, or among the sums made here.
 Round 4 (Nov 23, 2026): the bars follow the core figure's. Five are press reports citing unnamed people; two are sums of
 one United States government table (status as of May 11, 2026). The old multiplied ceiling for Washington's step is gone.
 The bars are separate counts, not one tally; an application names a consignee and is not an order. Both are said on the figure.
+Round 5 (Nov 24, 2026, core edits 5 and 6): the licence table is named by its own title and its release, not as the
+Commerce Department's; the committee's example of 445,000 chips for Tencent is not said to be the table's row of 75,000,
+and the share is given both ways (a4lib.house()).
 Before the page or image is called done or shown: scripts/render_and_look.py on funnel.html and funnel.png.
 """
 import sys
@@ -146,7 +149,7 @@ def main():
     }
     srclink = {
         'wapproved': lambda r: A.link(r['sid'], f'House Foreign Affairs Committee, summary made public {released}'),
-        'wreturned': lambda r: A.link(r['sid'], f'Commerce Department table, status {status}'),
+        'wreturned': lambda r: A.link(r['sid'], f'the licence table, status {status}'),
     }
     rr = []
     for r in rows:
@@ -203,10 +206,10 @@ def main():
   <h2>Read with care</h2>
   <ul>
    <li>The bars count different things at different dates, so no bar is a share of another. {NUM[len(press)].capitalize()} rest on unnamed people; {NUM[len(docs)]} are sums of a government table.</li>
-   <li>Washington’s table is the Commerce Department’s, with the status of each licence application as of {status}. The House Foreign Affairs Committee made it public on {released}. It covers {f(H["all"][0])} chips in {H["all"][1]} applications: {qm(Q["table.products"])}
+   <li>Washington’s table, {qm(Q["wapproved.date"])}, gives the status of each licence application. The House Foreign Affairs Committee made it public on {released}; its summary cites {qm(Q["table.bis"])}. BIS is the Commerce Department’s Bureau of Industry and Security. The table covers {f(H["all"][0])} chips in {H["all"][1]} applications: {qm(Q["table.products"])}
     It does not say which chip a row is; bars {docnums} count the rows with Nvidia as exporter. An application names a consignee; it is not an order. “Approved” in bar {R["wapproved"]["n"]} is Washington’s licence; bar {R["approved"]["n"]} is Beijing’s approval, by a press report.</li>
    <li>The sums are ours, of the table’s rows as the project read them from its page images; the totals equal the figures the committee’s summary prints. Nvidia’s chips and AMD’s are not added in the bars. With AMD’s, the approved count is {f(H["appr"][0])} in {H["appr"][1]} applications and the returned count {f(H["rwa"][0])} in {H["rwa"][1]}.</li>
-   <li>The {H["share"]}% is a share of the chips in the applications the summary records, not of everything applied for. The committee’s example: {qm(Q["table.tencent"])}; the table shows that application at {f(H["tencent_shown"])} chips, approved. With it counted in full the share would be {H["share_full"]}% (our arithmetic).</li>
+   <li>The {H["share"]}% is a share of the chips in the applications the summary records, not of everything applied for. The committee’s example: {qm(Q["table.tencent"])}. The table’s only Tencent row of that date is for {f(H["tencent_shown"])} chips, approved; neither document says whether it is that application. The share would be {H["share_full"]}% if it is, counted at {f(H["tencent_full"])}, and {H["share_further"]}% if the {f(H["tencent_full"])} is a further application (our arithmetic).</li>
    <li>No approved application in the table is above {f(H["cap"])} chips, and all {NUM[H["over"]]} above it were returned. Reuters reported that cap on {fmt(d_cap)}: {qm(Q["cap"])}. It also wrote that {qm(Q["cap.nodelivery"])}, and that the {qm(Q["cap.tangle"])}.</li>
    <li>Beijing’s approval of {fmt(R["approved"]["date"])} was not yet a purchase: a source said {qm(Q["approved.notconverting"])}.</li>
    <li>The total under discussion in July was, in the report’s words, {qm(Q["discussed.half"])}.</li>
@@ -224,16 +227,20 @@ def main():
     # ours: the sums of Washington's table and the shares made from them (a4lib.house); the numbers 1 to 7 on the marks;
     # "2 x" for the two buyers named in the sentence; 10: the filing's name, Form 10-Q
     ours = [H[k][0] for k in ('all', 'appr', 'appr_nv', 'appr_amd', 'rwa', 'rwa_nv', 'rwa_amd', 'abroad')] + [H[k][1] for k in ('all', 'appr', 'appr_nv', 'appr_amd', 'rwa', 'rwa_nv', 'rwa_amd', 'abroad')]
-    ours += [H['share'], H['share_full'], H['tencent_shown'], H['cap'], *range(1, len(rows) + 1), '10']
+    ours += [H['share'], H['share_full'], H['share_further'], H['tencent_shown'], H['cap'], *range(1, len(rows) + 1), '10']
     A.guard(page, Q, ours=ours, dates=dates)
-    for banned in ('750,000', 'cleared by Washington', 'Democrats', 'more than half', 'subsidiar'):
+    # withdrawn by core edit 6 (atlas/core_edit/APPLIED_6.txt, part 05): the table is not called the Commerce Department's,
+    # and the Tencent row of 75,000 is not called the application of 445,000
+    for banned in ('750,000', 'cleared by Washington', 'Democrats', 'more than half', 'subsidiar', 'Commerce Department’s table', 'Commerce Department table',
+                   'Commerce Department’s, with', 'shows that application', 'an application the table shows', 'counted in full'):
         assert banned not in page, f'the page still says "{banned}"'
     out = HERE / 'funnel.html'
     out.write_text(page, encoding='utf-8'); print('written', out, len(page), 'bytes')
     print(f'bars: {len(rows)} ({len(press)} press reports, {len(docs)} sums of Washington\'s table): ' + '; '.join(f'{r["n"]} {r["key"]} {r["chips"]:,}' for r in rows))
     print(f'table: all {f(H["all"][0])} in {H["all"][1]}; approved {f(H["appr"][0])} in {H["appr"][1]} (Nvidia {f(H["appr_nv"][0])} in {H["appr_nv"][1]}, AMD {f(H["appr_amd"][0])} in {H["appr_amd"][1]}); '
           f'returned {f(H["rwa"][0])} in {H["rwa"][1]} (Nvidia {f(H["rwa_nv"][0])} in {H["rwa_nv"][1]}, AMD {f(H["rwa_amd"][0])} in {H["rwa_amd"][1]}) = {H["share"]}% of the table; abroad {f(H["abroad"][0])} in {H["abroad"][1]}; '
-          f'above the cap of {f(H["cap"])}: {H["over"]}, all returned; with Tencent\'s {f(H["tencent_full"])} counted in full: {H["share_full"]}%')
+          f'above the cap of {f(H["cap"])}: {H["over"]}, all returned; the share {H["share_full"]}% if the Tencent row of {f(H["tencent_shown"])} is the application of {f(H["tencent_full"])}, '
+          f'{H["share_further"]}% if that is a further application')
     if '--png' in sys.argv:
         A.png(out, [('#fig', HERE / 'funnel.png')], width=1256, height=1000, css=A.FIG_EXPORT,
               fits=[('.track', '.card'), ('.track em', '.card'), ('.track .ours', '.card'), ('.lab', '.row'), ('.said', '.card'), ('.onrec li', '.card'), ('.card', '#fig'), ('.imgnote', '#fig')])

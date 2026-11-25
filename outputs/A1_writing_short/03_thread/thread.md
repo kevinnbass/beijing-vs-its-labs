@@ -2,7 +2,7 @@
 
 *Ten posts for X. Each is one claim with its source named in words, and each fits in 280 characters.*
 
-Draft by Claude, Anthropic's model. Local; not published.
+Draft by Claude, Anthropic's model.
 
 Written Nov 23, 2026 (UTC). Nothing here has been posted. The same posts as plain text, each with its source's address, the character counts and a note on images, are in thread_plain.txt beside this file.
 
@@ -24,7 +24,7 @@ Order: the claim, the declared line, what the companies bought, what Beijing did
 
 **5.** Limit 1: Beijing was not one actor. On Jul 17, 2025 China's commerce minister told Nvidia's chief executive he hoped multinationals, Nvidia among them, would give Chinese customers high-quality, reliable products and services. Source: the ministry's account; English ours. [6]
 
-**6.** Limit 2: warnings and guidance, not a published ban. Bloomberg, Sept 27, 2024, citing unnamed people: "The policy has taken the form of guidance rather than an outright ban". In 103 Chinese policy pages read, no published order against buying Nvidia chips was found. [7]
+**6.** Limit 2: warnings and guidance, not a published ban. Bloomberg, Sept 27, 2024, citing unnamed people: "The policy has taken the form of guidance rather than an outright ban". In 82 Chinese policy pages read, no published order against buying Nvidia chips was found. [7]
 
 **7.** Limit 3, in numbers: some were approved, some came in. Reuters, from unnamed people: over 2 million H200s ordered for 2026; over 400,000 approved by Beijing with conditions; about 10,000 each obtained by several firms; about 600,000 stored in Hong Kong awaiting shipment. [8] [9] [10]
 
@@ -36,7 +36,7 @@ Order: the claim, the declared line, what the companies bought, what Beijing did
 
 ## What the thread leaves out
 
-- It gives one source for each claim; posts 7 and 9 need more than one. The full argument has 21 points and 209 sources; it is in ARGUMENT_referenced.html in the project folder.
+- It gives one source for each claim; posts 7 and 9 need more than one. The full argument has 21 points and 300 sources; it is in ARGUMENT_referenced.html in the project folder.
 - With five limits and ten posts, the numbers have no post of their own: they stand in limit 3 (post 7). That post carries four reported numbers from three Reuters reports, of Dec 31, 2025, Jan 28, 2026 and Nov 5, 2026. The copy held of the last is CNA's page, which is dated Nov 6, 2026.
 - Washington's side is left out for length: the conditions it set, and its own table of licence applications, which shows chips approved and not shipped and others returned without action. The argument sets them out under its fourth limit.
 - Post 6 names one press report. The public warnings in state media, and the dates they fall between, are in the argument's points 4 and 18.
@@ -47,7 +47,7 @@ Order: the claim, the declared line, what the companies bought, what Beijing did
 
 Each entry: its kind; what it is; the saved page's own title where the record holds one; the address; the saved copy (research/primary/<id>).
 
-[1] Caption track or machine transcript, not checked by ear. Palmer Luckey, in a clip of 56 seconds posted on X by @overton_news, Nov 19, 2026. Words from a machine transcript of the clip (the file transcripts_two_clips.md, beside this note); nobody has checked them by ear. https://x.com/overton_news/status/2123392702821580811
+[1] Caption track or machine transcript, not checked by ear. Palmer Luckey, in a clip of 56 seconds posted on X by @overton_news, Nov 19, 2026. Words from a machine transcript of the clip (the transcript file is held back: see HELD_BACK.md); nobody has checked them by ear. https://x.com/overton_news/status/2123392702821580811
 
 [2] Press report of words spoken on the record. Post on X by @overton_news, Nov 19, 2026, which carries the clip of Palmer Luckey and gives his words as text. The post does not name the programme. https://x.com/overton_news/status/2123392702821580811 Saved copy: cnpol-x-overton-2123392702821580811
 

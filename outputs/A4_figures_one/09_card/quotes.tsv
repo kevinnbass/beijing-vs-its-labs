@@ -47,9 +47,15 @@ cn-clips-reuters-hongkong-yahoo	Nov 5 (Reuters) - About 600,000 of Nvidia's
 #@ waiting.year
 cn-clips-reuters-hongkong-yahoo	PUBLISHED: 2026-11-06
 
-# --- Washington's table of licence applications: the Commerce Department's, status as of May 11, 2026, made public by the
-# --- House Foreign Affairs Committee on Nov 19, 2026. The sums shown are made by a4lib.house() from the project's
+# --- Washington's table of licence applications, "H200 License and Equivalent Application Status as of May 11, 2026", made
+# --- public by the House Foreign Affairs Committee on Nov 19, 2026 (named so since core edit 6; its summary cites "a BIS
+# --- summary"). The sums shown are made by a4lib.house() from the project's
 # --- tables/house_licence_table.tsv; the two figures the committee's summary prints must equal them (the build checks).
+#@ table.bis
+cn-usdocs-hfac-summary-20261119	a BIS summary provided to the House Foreign Affairs Committee dated May 11, 2026
+# what BIS is: the bureau's own page (a statement made without quoting)
+#@ table.bis.who
+cn-le04-bis-ear-748	Bureau of Industry and Security, U.S. Department of Commerce
 #@ wapproved
 cn-usdocs-hfac-summary-20261119	BIS approved the export, re-export, or transfer (in-country) of 879,868 covered integrated circuits to PRC companies across 21 license applications, as of May 11, 2026
 #@ wapproved.date

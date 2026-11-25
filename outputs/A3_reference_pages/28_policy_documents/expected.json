@@ -1,12 +1,12 @@
 {
- "rows": 178,
+ "rows": 190,
  "kinds": {
-  "all": 178,
+  "all": 190,
   "official": 70,
   "company": 12,
   "press": 16,
   "other": 5,
-  "local": 75
+  "local": 87
  },
  "queries": {
   "英伟达": 10,
@@ -18,7 +18,7 @@
   "财库 119号": 1,
   "安全可靠 测评": 5,
   "no-such-word-zzqx": 0,
-  "算力券": 17,
+  "算力券": 26,
   "Province": 37
  },
  "query_with_kind": {

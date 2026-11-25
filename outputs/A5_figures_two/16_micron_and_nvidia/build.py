@@ -75,7 +75,10 @@ def main():
     # state and Party media (tables/state_media_items.tsv): the items that only warn about Nvidia's chips, and their dates
     sm = C.table('state_media_items.tsv')
     warns = sorted(C.date.fromisoformat(r['date']) for r in sm if r['stance'] == 'warns')
-    assert len(sm) == 42 and len(warns) == 7, (len(sm), len(warns))
+    # round 5 (core edit 6): rows 43 to 75 were added (found by searches and links; after Sept 24, 2025 a sample, not a census)
+    win = [d for d in warns if d <= C.date(2025, 9, 24)]; late = [r for r in sm if r['stance'] == 'warns' and C.date.fromisoformat(r['date']) > C.date(2025, 9, 24)]
+    assert (len(sm), len(warns), len(win), len(late)) == (75, 14, 11, 3), (len(sm), len(warns), len(win))
+    assert all(r['outlet'].startswith('Global Times') and r['date'].startswith('2026') for r in late), late
 
     figure = f"""
   <section class="card" id="cmp">
@@ -94,7 +97,7 @@ def main():
     </div>
     <div class="cell none"><div class="cl">Nvidia · 2024 to 2026</div>
      <div class="verdict">None found</div>
-     <p><b>in the 103 policy pages read.</b> A text of this kind could have been found: the Micron conclusion is among those pages.</p>
+     <p><b>in the 82 policy pages read.</b> A text of this kind could have been found: the Micron conclusion is among those pages.</p>
      <p>When the finance ministry did publish a purchase bar by name, on Jun 22, 2026, “不得采购46家美国企业（不包括在华美资企业）生产的产品” (government buyers may not buy products made by 46 American firms, leaving out American-funded firms in China), its list named no chip maker.</p>
     </div>
 
@@ -106,7 +109,7 @@ def main():
     <div class="cell has"><div class="cl">Nvidia · 2024 to 2026</div>
      <div class="marks">{''.join(C.mark(r) for r in pub)}</div>
      <p><b>Addressed to Nvidia itself:</b> it is investigated, and it must explain and hand in proof. None of the {words[len(pub)]} tells a buyer to stop.</p>
-     <p><b>State media warned in public.</b> Of {len(sm)} state and Party media items on Nvidia chips found, the {words[len(warns)]} that only warn about them date from {C.fmt(warns[0])} to {C.fmt(warns[-1])}. They warn and urge; none forbids buying. They are not drawn here.</p>
+     <p><b>State media warned in public.</b> Of {len(sm)} state and Party media items on Nvidia chips found, {len(warns)} only warn about them: {len(win)} dated {C.fmt(win[0])} to {C.fmt(win[-1])}, and {words[len(late)]} later ones in Global Times in 2026 (the items after September 2025 are what two rounds of searches found, a sample and not a full count). They warn and urge; none forbids buying. They are not drawn here.</p>
     </div>
 
     <div class="q"><b>Where does an instruction not to buy appear without being published?</b><span>press reports citing unnamed people, and what companies told the US securities regulator</span></div>
@@ -122,8 +125,8 @@ def main():
   <section class="care">
    <h2>Read with care</h2>
    <ul>
-    <li><b>The comparison cuts both ways.</b> Beijing can publish such a text and, for Nvidia, none was found; or its way with Nvidia was guidance it did not publish, as the {words[n_fil]} company filings say. The figure cannot tell these apart.</li>
-    <li><b>None found is a statement about what was read:</b> the 103 policy pages of this project. It is not a claim that no such text exists.</li>
+    <li><b>The comparison cuts both ways.</b> Beijing can publish such a text and, for Nvidia, none was found; or its way with Nvidia was guidance it did not publish, as press reports and company filings say. The figure cannot tell these apart.</li>
+    <li><b>None found is a statement about what was read:</b> the 82 policy pages read for this project. It is not a claim that no such text exists.</li>
     <li>The Micron conclusion came from the Cybersecurity Review Office, which sits in the cyberspace regulator: “网络安全审查办公室设在国家互联网信息办公室” (the office is set up in the Cyberspace Administration). It speaks to operators of critical information infrastructure, not to every buyer, and it is not about Nvidia.</li>
     <li>Alibaba’s filing does not name Nvidia: it says “certain chips”. Nvidia’s own reports changed their words over time: from Nov 19, 2025 the Chinese government “restricted customers from purchasing, importing, or using our data center products”; from Feb 25, 2026, “discouraged customers from purchasing, importing, or using our data center products”. From November 2025 the same reports also say Nvidia is “already effectively foreclosed from the China market by U.S. export controls”.</li>
     <li>Open marks rest on unnamed people. In the answers found, Beijing’s spokespeople confirmed none of them: “我不了解你提到的情况” (I am not aware of what you mention), said the foreign ministry on Aug 13, 2025; asked about another report on Dec 10, 2025, it said “具体情况建议向中方主管部门询问” (for the details, ask the competent Chinese departments).</li>
@@ -144,7 +147,7 @@ def main():
         eyebrow='China · two foreign chip makers · what Beijing published · 2023 to 2026',
         h1='For Micron, Beijing published a conclusion: buyers should stop. For Nvidia, a case and a summons.',
         deck=f'What Beijing put in writing in two cases. In 2023 the cyberspace regulator’s review office published its conclusion that Micron’s products failed a security review, and that operators of critical infrastructure should stop buying them. '
-             f'From 2024 to 2026 the published acts found about Nvidia were an antitrust case and a summons, and state media warned about its chips in public. An instruction not to buy Nvidia chips was found only in press reports citing unnamed people and in {words[n_fil]} company filings.',
+             f'From 2024 to 2026 the published acts found about Nvidia were an antitrust case and a summons, and state media warned about its chips in public. An instruction not to buy Nvidia chips was found only in press reports citing unnamed people and in what companies told the US securities regulator.',
         key=key, figure=figure, below=below, css=CSS,
         tipjson=C.tips(recs, lambda r: 'Micron, 2023' if r['case'] == 'micron' else 'Nvidia, 2024 to 2026'))
     out = C.finish(HERE, NAME, page, lines)

@@ -1,6 +1,6 @@
 # How to keep the tracker up to date
 
-Draft by Claude, Anthropic's model. Local; not published.
+Draft by Claude, Anthropic's model.
 
 The page is `tracker.html` in this folder. It is built from four files in `data/`: `figure_data.txt` (the records),
 `tracker_log.tsv` (the dated log), `state_of_play.txt` (the state of play at the top, added Nov 23, 2026) and

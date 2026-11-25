@@ -42,7 +42,7 @@ KIND = {'DOC': 'Chinese state document', 'OFF': 'Official document, or an offici
         'COUNT': "Research firm's count, through the press", 'CLIP': 'Caption track or machine transcript, not checked by ear',
         'PUB': 'Published commentary or statement (state media, industry body)',
         'NAMED': 'Named person on the record',      # added Nov 23, 2026 for a named analyst's written testimony
-        'ACCT': "A named newspaper's account of a state document",
+        'ACCT': "A named news outlet's account of a state document",
         'NOTICE': "An institution's own published notice"}      # a university's purchase notice (no saved page calls the two universities state bodies)
 SOLID = {'DOC', 'OFF', 'FIL', 'REC', 'PUB', 'NAMED', 'ACCT', 'NOTICE'}
 
@@ -101,25 +101,31 @@ def address(sid, r):
     return L.url_of(sid) or ''
 
 
+NO_TITLE = {'cn-ga01-bnn-turnaround-20261123'}      # (touch-up 6b, Nov 24, 2026) saved pages whose own headline the reference list does not print: this one's is about a person and a matter the note leaves out; its label says what the report is, and its address stays
+
+
 def title_of(sid):
+    if sid in NO_TITLE: return ''
     f = L.P / sid / 'text.txt'
     t = ''
     if f.exists():
         m = re.search(r'^TITLE: (.*)$', f.read_text(encoding='utf-8', errors='replace')[:4000], re.M)
         if m: t = m.group(1).strip()
     if not t: t = str(meta(sid).get('title') or '').strip()
-    t = re.sub(r'\s+', ' ', t)
+    t = re.sub(r'(?i)<br\s*/?>', ' ', t)                 # a saved page's title can carry a literal <br> (cn-policy-mic2025)
+    t = re.sub(r'\s+', ' ', t).strip()
     return t if len(t) > 8 else ''
 
 
 def check(lines, refs, need_all=True):
     """Return (problems, order of ids, count of quotations, count of hidden statements)."""
     bad, order, nq, nh = [], [], 0, 0
+    hidden = []                                           # (line, saved id) of every "!!" line: its id must also be cited (edit 6e)
     for n, ln in enumerate(lines, 1):
         if ln.startswith('!!'):
             try: sid, words = [x.strip() for x in ln[2:].split('|', 1)]
             except ValueError: bad.append(f'line {n}: bad hidden line'); continue
-            nh += 1
+            nh += 1; hidden.append((n, sid))
             if sid not in refs: bad.append(f'line {n}: hidden line names {sid}, not in the references file')
             elif not L.has(words, sid): bad.append(f'line {n}: NOT FOUND in {sid}: {words}')
             continue
@@ -136,6 +142,9 @@ def check(lines, refs, need_all=True):
                     bad.append(f'line {n}: NOT FOUND in {", ".join(ids)}: {part[:90]}')
     for i in refs:
         if need_all and i not in order and not refs[i].get('opt'): bad.append(f'references file: {i} is never cited')
+    if need_all:      # a statement checked in a document the text never cites rests on a source its reference list leaves out (two such lines stood until edit 6e of Nov 24, 2026)
+        for n, sid in hidden:
+            if sid not in order: bad.append(f'line {n}: the hidden line checks words in {sid}, which the text never cites in square brackets')
     return bad, order, nq, nh
 
 

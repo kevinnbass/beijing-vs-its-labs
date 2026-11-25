@@ -2,7 +2,7 @@
 
 *56 dated remarks from the 39 results calls that Alibaba, Tencent and Baidu held from November 2023 to November 2026, and 20 more from other calls, company filings, investor records and one press report. Each is in the exact words of a saved copy. 41 of the first 56, all of Tencent's and Baidu's among them, rest on a stock-data site's transcripts, whose speaker labels are unchecked.*
 
-Draft by Claude, Anthropic's model. Local; not published.
+Draft by Claude, Anthropic's model.
 
 Read with care: Tencent's 23 rows, Baidu's 14 and Alibaba's four of Nov 19, 2026 come from transcripts on a stock-data site (stockanalysis.com). Nobody has checked its text or its speaker labels against the recordings. Alibaba's other 15 rows come from the company's own transcripts. 6 rows of the second table come from the same site. English in round brackets after Chinese words is mine, or the project's argument's where it has one; it is not an official translation.
 

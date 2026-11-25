@@ -2,7 +2,7 @@
 
 @deck {N_ROWS} dated remarks from the {N_CALLS} results calls that Alibaba, Tencent and Baidu held from November 2023 to November 2026, and {M_ROWS} more from other calls, company filings, investor records and one press report. Each is in the exact words of a saved copy. {N_SA_ROWS} of the first {N_ROWS}, all of Tencent's and Baidu's among them, rest on a stock-data site's transcripts, whose speaker labels are unchecked.
 
-@note Draft by Claude, Anthropic's model. Local; not published.
+@note Draft by Claude, Anthropic's model.
 @note Read with care: Tencent's {N_T_ROWS} rows, Baidu's {N_B_ROWS} and Alibaba's {N_ALI_SA_ROWS} of {ALI_SA_DATE} come from transcripts on a stock-data site (stockanalysis.com). Nobody has checked its text or its speaker labels against the recordings. Alibaba's other {N_ALI_OWN_ROWS} rows come from the company's own transcripts. {M_SA_ROWS} rows of the second table come from the same site. English in round brackets after Chinese words is mine, or the project's argument's where it has one; it is not an official translation.
 @note Written Nov 23, 2026 (UTC); revised the same day in rounds 2 and 4. Idea 36 of the chip-policy project. The table is built by a script from the saved transcripts; every quotation was found in its saved copy.
 

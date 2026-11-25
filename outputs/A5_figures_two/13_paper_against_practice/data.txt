@@ -104,6 +104,16 @@ E the key core technologies of the computing network are in the main secure and 
 D 制发日期: 2023-12-25
 N cn-le14-tnw-295b-plan-20260609 | at least 80 per cent of the core technology, AI chips included
 N cn-le14-tnw-295b-plan-20260609 | according to Bloomberg, citing people familiar with the matter
+# round 5 (core edit 6, point 18): the two national texts that hold a home-made percentage of other kinds (shown in the track's note)
+N cn-policy-domestic-product-standard-2025 | 对本国产品的报价给予20%的价格扣除
+N cn-policy-domestic-product-standard-2025 | 国务院办公厅 2025年9月28日
+N cn-policy-roadmap-original | 国家制造强国建设战略咨询委员会2015年10月
+N cn-policy-roadmap-original | 2、2025年目标
+N cn-policy-roadmap-original | 国内市场占有率预计超80%
+N cn-policy-roadmap-original | 移动终端芯片的国内市场占有率预计分别达到80%、80%和40%
+N cn-policy-roadmap-original | 自主品牌工业机器人国内市场占有率达到70%以上
+N cn-policy-roadmap-status | 路线图不是指令企业怎么做,而是指导性的、参考性的
+N cn-policy-roadmap-status | 工业和信息化部辛国斌副部长出席会议并致辞
 
 # ---- in practice ----
 @ shanghai-reply doc 2025-04-30 - cn-counter-b11-5 side=practice dir=toward

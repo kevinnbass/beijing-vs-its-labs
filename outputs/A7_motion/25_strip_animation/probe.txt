@@ -1,4 +1,4 @@
 strip_animation.mp4: codec h264 (High), 1280 x 720, yuv420p, 30/1 frames a second, 765 frames, duration 25.500000 s, 1.05 MB, audio streams 0, container mov,mp4,m4a,3gp,3g2,mj2
-strip_animation.gif: codec gif, 1280 x 720, bgra, 15/1 frames a second, 383 frames, duration 25.540000 s, 0.92 MB, audio streams 0, container gif
-strip_animation.webp: animated WebP (read with Pillow), 1280 x 720, 339 frames, duration 25.53 s, 0.90 MB, no audio (the format has none)
-strip_animation.mp4 (sha256 b60e23743bed8aa8) was captured 2026-11-23T12:14:03Z from strip_animation.html (sha256 81fd7809e24c5af5); built from figure_data.txt f108aeb2bdb5, figure_events.tsv ee1def9e73f0, beijing_vs_labs.html 2166fb15bac1, template.html 9bdfccd5f890, a7lib.py 309ff6b577ca, build.py ffcb8d58ccb7, quotes.tsv c44a52227075
+strip_animation.gif: codec gif, 1280 x 720, bgra, 15/1 frames a second, 383 frames, duration 25.540000 s, 0.94 MB, audio streams 0, container gif
+strip_animation.webp: animated WebP (read with Pillow), 1280 x 720, 302 frames, duration 25.53 s, 0.90 MB, no audio (the format has none)
+strip_animation.mp4 (sha256 0ce47f2252db276b) was captured 2026-11-25T02:51:20Z from strip_animation.html (sha256 bdb1918e886be005); built from figure_data.txt e8348dc5ba95, figure_events.tsv b11feb7df552, beijing_vs_labs.html 662940cd1351, template.html 36fbb0fb75b4, a7lib.py f72e99447430, build.py ffcb8d58ccb7, quotes.tsv 5c3df8e31c1e

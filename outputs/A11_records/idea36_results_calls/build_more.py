@@ -35,6 +35,13 @@ TAB = {'A': lines_of('labs_said.tsv'), 'B': lines_of('labs_said_more.tsv')}
 for k in TAB:
     if TAB[k][1][:8] != ['company', 'date', 'event', 'speaker', 'title', 'source_kind', 'exact_words', 'saved_id']: sys.exit(f'table {k}: the columns changed')
 banned = {l.split('\t')[0] for l in (PROJ / 'loose_ends' / 'hkexnews_saved_ids.tsv').read_text(encoding='utf-8').splitlines() if l.strip() and not l.startswith('#')}
+# core edit 7b (Nov 25, 2026; atlas/ROUND8.txt R5): the copies saved from idc.com and trendforce.com are no longer cited either
+TERMS = PROJ / 'loose_ends' / 'terms_saved_ids.tsv'
+if not TERMS.is_file(): sys.exit(f'{TERMS} is missing: the list of copies saved against a site\'s terms is needed for the banned set')
+terms = {l.split('\t')[0] for l in TERMS.read_text(encoding='utf-8').splitlines() if l.strip() and not l.startswith('#')}
+old_ids = {l.split('\t')[0] for l in (PROJ / 'tables' / 'replaced_copies.tsv').read_text(encoding='utf-8').splitlines() if l.strip() and not l.startswith('#')}
+if len(terms) != 19 or not terms <= old_ids: sys.exit(f'{TERMS}: {len(terms)} ids, or some not among the old ids of tables/replaced_copies.tsv (core edit 7b lists 19, all there): read it before changing this line')
+banned |= terms
 banned |= {'cn-le08-moore-final-prospectus', 'cn-le29-sensetime-2025-annual-en', 'ms-bj-20260114-customs-h200-standard', 'cn-policy-ai-chip-evaluation', 'cn-media-yuyuan-thepaper', 'cn-factions-tencent-reuters-20261120-relay1', 'cn-labs-zhipu-results-20260331'}
 repl = {}
 rl = [l.split('\t') for l in (PROJ / 'tables' / 'replaced_copies.tsv').read_text(encoding='utf-8').splitlines() if l.strip() and not l.startswith('#')]

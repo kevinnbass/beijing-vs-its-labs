@@ -15,6 +15,22 @@ Writes  quotes.tsv            every source line and transcript line shown, for s
 Order: checks first. If a quotation in bands.txt has no "!!" line, or scripts/cn_has.py does not find every line of
 quotes.tsv in its saved copy (exit 0 required), nothing more is written. ffmpeg runs at low priority on 4 threads.
 The picture is the clip as posted, made smaller, with its sound unchanged. A LOCAL FILE FOR THE OWNER'S OWN USE: NOT TO BE POSTED.
+Round 7 (Nov 24, 2026, builder OB10): the project leaves out the words of part L6b (the session's ruling; compared.json
+carries that part as "left_out", with the bracket in place of its words). The upper band shows only the bracket there, with
+no label; quotes.tsv leaves the part out; the lower band is empty (bands.txt); "Read with care" says that stretch is left
+out; and a box in the page's surface colour, holding the same bracket, covers the clip's own burned-in captions in the
+picture for CAPTION_COVER (found frame by frame: tmp_work/ob10/strip_43.png ... strip_47.png). After the video is written,
+cover_check() reads frames of it and stops the build if a caption's white shows inside the box while it is on, with a
+control that the same test finds the caption in the clip itself and in the video once the box is off. The sound is copied
+unchanged, as before.
+Round 7, second part (OB10, at the coordinator's word that the ruling covers sound too): the sound of the same stretch,
+CAPTION_COVER, is silent. ../40_checked_by_ear/cut_copies.py (the one place this is done, also for the listening sheet's
+copies) decodes the clip's sound to 16-bit samples, sets the stretch to zero and writes a WAV; ffmpeg stores it
+losslessly (FLAC) in the video. After the video is written, cut_copies.check_sound() stops the build unless every sample
+in the stretch is 0 (controls: the clip's same stretch and the two seconds before it in the new video are not silent) and
+every sample before and after it equals the clip's own decoded sample (control: a shift of one sample is seen).
+cut_copies.check_edges() first checks that the left-out line lies inside the stretch and that no word of the second
+pass runs across its edges. "Read with care" says the stretch is left out in picture and sound.
 """
 import csv, json, re, subprocess, sys
 from datetime import datetime
@@ -38,7 +54,23 @@ PAGE_HEX, SURFACE_HEX = '0x0d0d0d', '0x1a1a19'
 DISC = 'm 12 0 b 18.63 0 24 5.37 24 12 b 24 18.63 18.63 24 12 24 b 5.37 24 0 18.63 0 12 b 0 5.37 5.37 0 12 0'
 RING = DISC + ' m 12 3.5 b 7.31 3.5 3.5 7.31 3.5 12 b 3.5 16.69 7.31 20.5 12 20.5 b 16.69 20.5 20.5 16.69 20.5 12 b 20.5 7.31 16.69 3.5 12 3.5'
 # Round 4: one full-size still for each of the nine states of the lower band (the brief asked for six).
-STILLS = [('L1', 4.0), ('L3', 3.0), ('L4', 2.0), ('L5a', 2.6), ('L5b', 2.0), ('L5c', 3.2), ('L6a', 6.4), ('L6b', 1.4), ('L8', 4.0)]   # (part, seconds after its band appears)
+STILLS = [('L1', 4.0), ('L3', 3.0), ('L4', 2.0), ('L5a', 2.6), ('L5b', 2.0), ('L5c', 3.2), ('L6a', 6.4), ('L6b', 1.0), ('L6b', 3.4), ('L8', 4.0)]   # (part, seconds after its band appears)
+# Round 7: the stretch in which the clip's own burned-in captions show the words of the left-out part, found frame by frame
+# (tmp_work/ob10/strip_*.png): the first such frame is at 44.50 s and the last at 46.67 s; the frames at 44.46 and 46.71 s
+# hold no caption. The box covers 44.44 to 46.70 s. COVER_BOX is in the clip's own pixels (1920 x 1080): the captions stand
+# at about x 670 to 1240, y 670 to 740, so the box leaves 40 px or more around them.
+# OB10, consistency ruling: the stretch is now 0:44 to 0:49 (parts L6b and L7), 44.44 to 49.27 s, with a wider box (the
+# caption words of the longer stretch span x 574 to 1338); why each edge and the box: ../40_checked_by_ear/cut_copies.py.
+CAPTION_COVER = (44.44, 49.27)
+COVER_BOX = (480, 640, 960, 130)                            # x, y, w, h in the clip's own pixels
+CHECK_AT = (44.50, 45.00, 45.50, 45.84, 46.30, 46.67, 47.40, 48.00, 48.60, 49.24)   # inside the cover; the clip shows a caption
+CHECK_OFF = 49.36                                           # after the cover: the next sentence's first caption
+CTRL = (480, 670, 1150, 749)                                # caption rows left of the chair (which is white in every frame)
+SOUND_WAV = HERE / 'tmp_work' / 'sound' / 'luckey_sound_silenced.wav'   # scratch: the clip's sound with CAPTION_COVER silent
+sys.path.insert(0, str(HERE.parent / '40_checked_by_ear'))            # python3 -I does not add it
+import cut_copies as CC                                               # noqa: E402  (round 7: one place for the silence and its checks)
+if (CC.STRETCH['luckey'][1:], CC.COVER['luckey'][0], CC.COVER['luckey'][1], CC.COVER['luckey'][2], CC.CTRL['luckey']) != (CAPTION_COVER, COVER_BOX, CHECK_AT, CHECK_OFF, CTRL):
+    sys.exit('STOPPED: the stretch, box or check times here differ from ../40_checked_by_ear/cut_copies.py')
 TABLE = PROJ / 'tables' / 'house_licence_table.tsv'
 FONT_DIR = Path('/usr/share/fonts/opentype/inter')
 SRC_SIZES = (38, 36, 34, 32, 30)        # the lower line's type size; the first at which it fits in three lines is used
@@ -87,7 +119,8 @@ def show(text):
 
 
 def table_numbers():
-    """Nvidia's chips marked "Approved, not shipped" in the project's copy of the Commerce Department's table, tied to the
+    """Nvidia's chips marked "Approved, not shipped" in the project's copy of the licence table (BIS's, released by the House
+    Foreign Affairs Committee on Nov 19, 2026), tied to the
     one total the committee's saved summary states (879,868 chips in 21 applications, Nvidia's and AMD's together)."""
     rows = list(csv.DictReader((l for l in TABLE.read_text(encoding='utf-8').splitlines() if not l.startswith('#')), delimiter='\t'))
     n = lambda r: int(r['chip_count'].replace(',', ''))
@@ -173,6 +206,16 @@ def chunks(units, duration, post_text):
     for a, b in zip(out, out[1:]): a['end'] = b['start']
     out[-1]['end'] = min(duration, out[-1]['last'] + 0.6)
     out[0]['start'] = max(0.0, out[0]['start'] - 0.3)
+    # Round 7: a part whose words the project leaves out is one line holding only the bracket, and nothing else
+    for u in units.values():
+        if not u.get('left_out'): continue
+        mine = [c for c in out if c['part'] == u['id']]
+        if len(mine) != 1 or len(u['words']) != 1 or not (u['text'].startswith('[') and u['text'].endswith(']')) or mine[0]['text'] != u['text']:
+            sys.exit(f'STOPPED: the left-out part {u["id"]} must be one line of the upper band holding only the bracket')
+        if not (CAPTION_COVER[0] <= u['start'] and u['end'] <= CAPTION_COVER[1]):
+            sys.exit(f'STOPPED: the left-out part {u["id"]} ({u["start"]} to {u["end"]} s) runs outside the cover of the picture\'s captions {CAPTION_COVER}')
+        mine[0].update(left_out=True, label='')
+    if not any(c.get('left_out') for c in out): sys.exit('STOPPED: compared.json no longer marks a left-out part; the cover and the read-with-care line would be wrong')
     letters = lambda t: re.sub(r'[^a-z0-9]', '', t.lower())
     for part, anchor in FROM_POST.items():
         mine = [c for c in out if c['part'] == part]
@@ -187,13 +230,48 @@ def chunks(units, duration, post_text):
     return out
 
 
+def cover_check():
+    """Round 7: read frames of the new video and of the clip. Inside CAPTION_COVER the box must hold no caption white (pixels
+    at 230 or more in all three colours); controls: the clip itself shows caption white in the box's place at each of those
+    times, and the new video shows it again just after the cover (CHECK_OFF). Stops the build otherwise."""
+    from PIL import Image
+    d = HERE / 'tmp_work' / 'cover_check'; d.mkdir(parents=True, exist_ok=True)
+    bx, by_, bw, bh = COVER_BOX
+    ox0, oy0 = VX + bx * VW / 1920, VY + by_ * VH / 1080
+    ox1, oy1 = ox0 + bw * VW / 1920, oy0 + bh * VH / 1080
+    inner = (int(ox0) + 2, int(oy0) + 2, int(ox1) - 2, int(oy1) - 2)
+    cx0, cy0, cx1, cy1 = CTRL
+    vctrl = (int(VX + cx0 * VW / 1920), int(VY + cy0 * VH / 1080), int(VX + cx1 * VW / 1920), int(VY + cy1 * VH / 1080))
+    def white(png, box):
+        b = Image.open(png).convert('RGB').crop(box).tobytes()
+        return sum(1 for i in range(0, len(b), 3) if min(b[i], b[i + 1], b[i + 2]) >= 230)
+    rows = []
+    for t in CHECK_AT + (CHECK_OFF,):
+        a, b = d / f'video_{t:.2f}.png', d / f'clip_{t:.2f}.png'
+        run(['nice', '-n', '19', 'ffmpeg', '-v', 'error', '-y', '-ss', f'{t:.2f}', '-i', OUT, '-frames:v', '1', a])
+        run(['nice', '-n', '19', 'ffmpeg', '-v', 'error', '-y', '-ss', f'{t:.2f}', '-i', SRC, '-frames:v', '1', b])
+        rows.append((t, white(b, (cx0, cy0, cx1, cy1)), white(a, inner), white(a, vctrl)))
+    for t, wc, wv, wa in rows:
+        print(f'  cover check {t:.2f} s ({"after the cover" if t == CHECK_OFF else "inside the cover"}): ' + (f'caption white in CTRL: clip {wc}, new video {wa}' if t == CHECK_OFF else f'caption white in CTRL of the clip {wc}; white anywhere in the new video\'s box {wv}'))
+    if any(wc < 300 for _, wc, _, _ in rows): sys.exit('STOPPED: control failed: the clip shows no caption at a time where one was found; the check could not see a leak')
+    if rows[-1][3] < 50: sys.exit('STOPPED: control failed: after the cover the test finds no caption in the new video')
+    if any(wv > 0 for _, _, wv, _ in rows[:-1]): sys.exit('STOPPED: white shows inside the cover of the new video')
+    print(f'cover check: no caption white inside the cover at {len(rows) - 1} times; controls behave')
+
+
 def main():
     data = json.loads(DATA.read_text(encoding='utf-8'))['clips']['luckey']
     units = {u['id']: u for u in data['units']}
     duration = float(run(['ffprobe', '-v', 'error', '-show_entries', 'format=duration', '-of', 'csv=p=0', SRC]).strip())
     if abs(duration - data['duration']) > 0.1: sys.exit('STOPPED: the video and the speech pass differ in length')
     note = (PROJ / 'NOTE_policies_checked.md').read_text(encoding='utf-8')
-    policy_pages = len(set(re.findall(r'^### Row (\d+) ', note, flags=re.M)))    # the policy pages read: one "### Row N" entry each
+    # the policy pages read: an entry counts unless its verdict is PAGE EMPTY; one read in an Internet Archive capture is taken at the
+    # capture; a saved page behind several entries counts once (103 entries on 83 saved pages, one empty: 82)
+    _docs = []
+    for _e in re.split(r'(?m)^### Row ', note)[1:]:
+        _m = re.match(r'(\d+) · ([^·]+) · ([^·]+) · \[([^\]]+)\]', _e); _c = re.search(r'- Read in: [^\n]*saved as \[([^\]]+)\]', _e)
+        if re.search(r'Verdict: \*\*([^*]+)\*\*', _e).group(1) != 'PAGE EMPTY': _docs.append(_c.group(1) if _c else _m.group(4))
+    policy_pages = len(set(_docs))
     raw = (PRIMARY / POST_ID / 'text.txt').read_text(encoding='utf-8')
     tw = json.loads(raw[raw.index('{'):])['tweet']
     d = datetime.strptime(tw['created_at'], '%a %b %d %H:%M:%S %z %Y')
@@ -205,7 +283,7 @@ def main():
          '# Written by build.py from bands.txt, the first speech pass and (one line of the upper band) the text of the post; do not edit.',
          '# clip-luckey is the machine transcript.']
     for b in bands: q += [f'{sid}\t{words}' for sid, words in b['checks']]
-    q += [f'{c.get("src", "clip-luckey")}\t{c["text"]}' for c in said]
+    q += [f'{c.get("src", "clip-luckey")}\t{c["text"]}' for c in said if not c.get('left_out')]   # round 7: a left-out part shows only the bracket
     q.append(f'{POST_ID}\t{tw["created_at"]}')
     q += [f'{sid}\t{words}' for sid, _, words in WHO]
     (HERE / 'quotes.tsv').write_text('\n'.join(q) + '\n', encoding='utf-8')
@@ -217,7 +295,7 @@ def main():
     def at(layer, style, x, y, text, an=7): add(layer, ts(0), end, style, '{\\an%d\\pos(%d,%d)\\q2}%s' % (an, x, y, text))
     # header
     at(1, 'Head', 40, 14, f'Palmer Luckey, {int(duration)} seconds, with the sources on screen')
-    at(3, 'Small', W - 40, 20, "Draft by Claude, Anthropic's model. Local; not published.", an=9)
+    at(3, 'Small', W - 40, 20, "Draft by Claude, Anthropic's model.", an=9)
     # left of the picture: the key
     at(4, 'Tag', 40, 88, 'KEY')
     key = [(132, 'solid', INK, 'On the record: a document,\\Na filing or a named person'), (212, 'open', INK, 'A press report citing\\Nunnamed people'),
@@ -230,25 +308,33 @@ def main():
     # right of the picture: read with care
     at(14, 'Tag', VX + VW + 40, 88, 'READ WITH CARE')
     swapped = [c for c in said if c.get('src')]
+    left = [u for u in units.values() if u.get('left_out')]
     care = ('The transcript is a speech program\'s. Nobody has checked it by ear.\\N\\N'
-            + ''.join(f'At {clock(c["start"])} the upper line is the text of the post instead: two speech passes differ on a word there.\\N\\N' for c in swapped) +
+            + ''.join(f'At {clock(c["start"])} the upper line is the text of the post instead: two speech passes differ on a word there.\\N\\N' for c in swapped)
+            + (f'From {clock(left[0]["start"])} to {clock(left[-1]["end"])} the words are left out of this project, in picture and sound.\\N\\N' if left else '') +
             'Words between quotation marks are a source\'s own, found in its saved copy by a script.\\N\\N'
             'The large captions inside the picture came with the clip.\\N\\N'
             'Pause to read. A lower line can stay a second or two after the words it answers.')
     add(15, ts(0), end, 'Side', '{\\an7}' + care, VX + VW + 40, 40, 132)
     # upper band: the machine transcript, with a clock
     t0, pos = 0.0, '{\\an7\\pos(%d,%d)\\q2\\1c%s}' % (PAD, B1Y + 14, MUTED)
-    for c in swapped:                                                            # the label says where the line comes from
-        add(16, ts(t0), ts(c['start']), 'Tag', pos + LABEL)
-        add(16, ts(c['start']), ts(c['end']), 'Tag', pos.replace(MUTED, INK) + c['label']); t0 = c['end']
+    for c in [c for c in said if 'label' in c]:                                  # the label says where the line comes from
+        if c['start'] > t0: add(16, ts(t0), ts(c['start']), 'Tag', pos + LABEL)  # (round 7: a left-out line has no label)
+        if c['label']: add(16, ts(c['start']), ts(c['end']), 'Tag', pos.replace(MUTED, INK) + c['label'])
+        t0 = c['end']
     add(16, ts(t0), end, 'Tag', pos + LABEL)
     for s in range(int(duration) + 1):
         add(17, ts(s), ts(min(s + 1, duration + 1)), 'Tag', '{\\an9\\pos(%d,%d)\\q2\\1c%s}%s' % (W - PAD, B1Y + 14, MUTED, clock(s)))
     for c in said: add(18, ts(c['start']), ts(c['end']), 'Said', '{\\an7}' + c['text'], PAD, PAD, B1Y + 48)
-    # lower band: the verdict and the source
+    # round 7: over the clip's own captions while they show the left-out words, a box (drawn by ffmpeg) holding the same bracket
+    bx, by_, bw, bh = COVER_BOX
+    sx, sy = VW / 1920, VH / 1080
+    if width(left[0]['text'], 26) > bw * sx - 16: sys.exit('STOPPED: the bracket does not fit inside the box over the picture\'s captions')
+    add(22, ts(CAPTION_COVER[0]), ts(CAPTION_COVER[1]), 'Side', '{\\an5\\pos(%d,%d)\\q2}%s' % (round(VX + (bx + bw / 2) * sx), round(VY + (by_ + bh / 2) * sy), left[0]['text']))
+    # lower band: the verdict and the source (round 7: an entry with no verdict and no text shows nothing)
     for b in bands:
-        add(19, ts(b['start']), ts(b['end']), 'Tag', '{\\an7\\pos(%d,%d)\\q2}%s' % (PAD, B2Y + 14, b['tag']))
-        add(20, ts(b['start']), ts(b['end']), 'Src', '{\\an7' + ('' if b['size'] == SRC_SIZES[0] else '\\fs%d' % b['size']) + '}' + show(b['text']), PAD, PAD, B2Y + 50)
+        if b['tag']: add(19, ts(b['start']), ts(b['end']), 'Tag', '{\\an7\\pos(%d,%d)\\q2}%s' % (PAD, B2Y + 14, b['tag']))
+        if b['text']: add(20, ts(b['start']), ts(b['end']), 'Src', '{\\an7' + ('' if b['size'] == SRC_SIZES[0] else '\\fs%d' % b['size']) + '}' + show(b['text']), PAD, PAD, B2Y + 50)
     at(21, 'Tag', W - PAD, B2Y + 14, '{\\1c' + MUTED + '}' + RIGHT_LABEL, an=9)
     style = lambda name, size, colour, bold, spacing: f'Style: {name},Inter,{size},{colour},&H000000FF,&H00000000,&H00000000,{bold},0,0,0,100,100,{spacing},0,1,0,0,7,0,0,0,1'
     ass = '\n'.join(['[Script Info]', '; Written by build.py. Do not edit: change bands.txt or build.py and rebuild.', 'ScriptType: v4.00+', f'PlayResX: {W}', f'PlayResY: {H}',
@@ -265,15 +351,21 @@ def main():
 
     load = json.loads(Path('HOME/.local/state/cluster/load_keeper.status.json').read_text()).get('main_run_mean')
     if load is not None and load >= 32: sys.exit(f'STOPPED before the video: the machine is busy (main_run_mean {load}); run again later')
-    graph = (f'color=c={PAGE_HEX}:s={W}x{H}:r=24000/1001[bg];[0:v]scale={VW}:{VH}:flags=lanczos[v];[bg][v]overlay={VX}:{VY}:shortest=1,'
+    CC.check_edges('luckey', json.loads(DATA.read_text(encoding='utf-8')))   # round 7: the left-out line inside the stretch
+    CC.silenced_wav(SRC, *CAPTION_COVER, SOUND_WAV)                        # the clip's sound, the stretch set to zero
+    cover = f"drawbox=x={bx}:y={by_}:w={bw}:h={bh}:color={SURFACE_HEX}:t=fill:enable='between(t,{CAPTION_COVER[0]:.2f},{CAPTION_COVER[1]:.2f})',"
+    graph = (f'color=c={PAGE_HEX}:s={W}x{H}:r=24000/1001[bg];[0:v]{cover}scale={VW}:{VH}:flags=lanczos[v];[bg][v]overlay={VX}:{VY}:shortest=1,'
              f'drawbox=x=40:y={B1Y}:w={W - 80}:h={B1H}:color={SURFACE_HEX}:t=fill,drawbox=x=40:y={B2Y}:w={W - 80}:h={B2H}:color={SURFACE_HEX}:t=fill,'
              'ass=captions.ass:fontsdir=/usr/share/fonts/opentype/inter,format=yuv420p[out]')
     tmp = HERE / 'luckey_with_sources.part.mp4'
-    run(['nice', '-n', '19', 'ffmpeg', '-v', 'error', '-y', '-threads', '4', '-i', SRC, '-filter_complex', graph, '-map', '[out]', '-map', '0:a', '-c:a', 'copy',
+    run(['nice', '-n', '19', 'ffmpeg', '-v', 'error', '-y', '-threads', '4', '-i', SRC, '-i', SOUND_WAV, '-filter_complex', graph, '-map', '[out]', '-map', '1:a:0', '-c:a', 'flac',
          '-c:v', 'libx264', '-preset', 'medium', '-crf', '20', '-threads', '4', '-movflags', '+faststart', '-f', 'mp4', tmp], cwd=HERE)
     tmp.replace(OUT)
     got = float(run(['ffprobe', '-v', 'error', '-show_entries', 'format=duration', '-of', 'csv=p=0', OUT]).strip())
     if abs(got - duration) > 0.2: sys.exit(f'STOPPED: the new video runs {got:.2f} s, the clip {duration:.2f} s')
+    cover_check()
+    CC.check_sound(SRC, OUT, *CAPTION_COVER)                  # round 7: the stretch silent, every other sample the clip's own
+    print('sound: the stretch is silent and the rest is the clip\'s own sound, sample for sample; controls behave')
     by = {b['part']: b for b in bands}
     (HERE / 'stills').mkdir(exist_ok=True)
     listing = []
@@ -286,7 +378,7 @@ def main():
         t = by[part]['start'] + plus
         name = names[n - 1]
         run(['nice', '-n', '19', 'ffmpeg', '-v', 'error', '-y', '-ss', f'{t:.2f}', '-i', OUT, '-frames:v', '1', '-vf', 'scale=1600:900:flags=lanczos', HERE / 'stills' / name])
-        listing.append(f'{name}\t{t:.2f}\t{clock(t)}\t{part}\t{by[part]["tag"]}')
+        listing.append(f'{name}\t{t:.2f}\t{clock(t)}\t{part}\t{by[part]["tag"] or "(nothing: the words of this stretch are left out of this project)"}')
     (HERE / 'stills' / 'stills.tsv').write_text('file\tseconds\ttime\tpart\twhat the lower band shows\n' + '\n'.join(listing) + '\n', encoding='utf-8')
     print(f'wrote {OUT.name} ({OUT.stat().st_size / 1e6:.1f} MB, {got:.2f} s) and {len(STILLS)} stills in stills/')
 

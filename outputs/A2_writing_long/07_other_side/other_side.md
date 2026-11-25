@@ -2,7 +2,7 @@
 
 *The best honest case that Beijing and China's AI companies were not in real conflict over Nvidia's chips, put as strongly as the sources allow. Then what that case cannot explain.*
 
-Draft by Claude, Anthropic's model. Local; not published. Written Nov 23, 2026 (UTC).
+Draft by Claude, Anthropic's model. Written Nov 23, 2026 (UTC).
 
 How to read it. Words between quotation marks are a source's exact words, found in the saved copy by a script. A filled reference number is a document, a filing or a named person on the record. An open number is a press report citing unnamed people or a research firm's count. Where a statement rests on a Chinese text, the English is our rendering, not an official translation.
 
@@ -12,11 +12,11 @@ The author's interest. Anthropic has argued in public for controls on chip expor
 
 The claim under test: Beijing's chip policy pulled against China's own AI companies, which wanted Nvidia's chips. The strongest reply is that there was a preference, not a conflict, and that part of what stood between the companies and Nvidia's chips was American.
 
-**1.** **Ministers welcomed Nvidia, and ministries approved purchases.** Vice Premier He Lifeng told Nvidia's chief executive on Apr 17, 2025 that Nvidia was welcome [1]. The commerce minister told him on Jul 17, 2025 that he hoped Nvidia would supply Chinese customers [2]. Reuters, Jan 30, 2026, from unnamed people, on the H200: "China's industry and commerce ministries have granted approvals for all four companies" (DeepSeek, ByteDance, Alibaba and Tencent) [3].
+**1.** **Ministers welcomed Nvidia, and ministries were reported to approve purchases.** Vice Premier He Lifeng told Nvidia's chief executive on Apr 17, 2025 that Nvidia was welcome [1]. The commerce minister told him on Jul 17, 2025 that he hoped Nvidia would supply Chinese customers [2]. Reuters, Jan 30, 2026, from unnamed people, on the H200: "China's industry and commerce ministries have granted approvals for all four companies" (DeepSeek, ByteDance, Alibaba and Tencent) [3].
 
-**2.** **No ban was published.** No published order against buying Nvidia chips was found in the 103 policy pages read. One of that kind was published in May 2023, when the cyberspace regulator's review office concluded that operators of critical information infrastructure should stop buying Micron's products [4].
+**2.** **No ban was published.** No published order against buying Nvidia chips was found in the 82 policy pages read. One of that kind was published in May 2023, when the cyberspace regulator's review office concluded that operators of critical information infrastructure should stop buying Micron's products [4].
 
-**3.** **The written rules stop at the state's own purchases.** The purchase notices of Dec 26, 2023 bind Party and government bodies and say that other units may leave the requirement out [5]. Every home-made percentage found in a published text is a province's or a city's, and Jiangsu's plan marks its own as indicative, not binding [6].
+**3.** **The written rules stop at the state's own purchases.** The purchase notices of Dec 26, 2023 bind Party and government bodies and say that other units may leave the requirement out [5]. No published national plan found sets a home-made share for computing centres: every such share found is a province's or a city's, and Jiangsu's plan marks its own as indicative, not binding [6].
 
 **4.** **Chips came in.** By the research firm IDC's count, "Nvidia shipped 678,000 AI accelerators in China from January through June" of 2026; the firm does not say which Nvidia products [7]. Tencent's chief strategy officer spoke on Mar 18, 2026 of buying "higher-end imported GPUs which are now becoming available again" [8].
 
@@ -29,8 +29,8 @@ The claim under test: Beijing's chip policy pulled against China's own AI compan
 ## What this case cannot explain
 
 - **Two filings.** Nvidia told the US securities regulator on Nov 19, 2025 that the Chinese government "restricted customers from purchasing, importing, or using our data center products" [9]. Alibaba told it: "In September 2025, the Cyberspace Administration of China requested Chinese technology companies to halt purchases of certain chips." [17]
-- **Orders that became almost nothing** (reported, from unnamed people). Chinese companies "have placed orders for more than 2 million H200 chips for 2026" [18]. By August 2026 ByteDance and Tencent had "about 10,000 H200 processors" each [19]. In November about 600,000 chips waited in Hong Kong "as Beijing withholds approval for large-scale imports despite demand from technology firms" [20].
-- **Licences without sales.** Nvidia, on its call of May 20, 2026, of chips Washington had licensed: "we have yet to generate any revenue, and we are uncertain whether any imports will be allowed into the country" [21].
+- **Orders of which only a small part arrived** (reported, from unnamed people). Chinese companies "have placed orders for more than 2 million H200 chips for 2026" [18]. By August 2026 ByteDance and Tencent had "about 10,000 H200 processors" each [19]. In November about 600,000 chips waited in Hong Kong "as Beijing withholds approval for large-scale imports despite demand from technology firms" [20].
+- **Licences, and sales that stopped.** Nvidia, on its call of May 20, 2026, of chips Washington had licensed: "we have yet to generate any revenue, and we are uncertain whether any imports will be allowed into the country" [21]. On its call of Nov 17, 2026 it reported that "Q3 sales of licensed Hopper Data Center products to China was $2.4 billion", and said: "we are no longer shipping licensed Hopper Data Center products to China" [22]; Hopper is the family of chips that includes the H200 [23].
 
 Each part of that case is in the record, some as a reading or a company's own claim. Together they limit the claim: Beijing was not one actor, it warned and guided but published no ban, some chips came in, the companies had reasons of their own and American curbs pushed too, and what Beijing meant is not settled. They do not show that nothing stood between the companies and the chips they ordered.
 
@@ -56,9 +56,9 @@ Each entry: its kind; what it is; the saved page's own title where the record ho
 
 [9] Company filing or statement. Nvidia, quarterly report on Form 10-Q for the quarter ended Oct 26, 2025, filed with the US Securities and Exchange Commission; signed Nov 19, 2025. https://www.sec.gov/Archives/edgar/data/1045810/000104581025000230/nvda-20251026.htm Saved copy: man-ms-sec-10q-2025-10
 
-[10] Official document, or an official on the record. House Foreign Affairs Committee, disclosure of Nov 19, 2026: the Commerce Department's table of licence applications for Nvidia's H200 and AMD's MI325X, with their status as of May 11, 2026 (its text layer is out of order; the rows were read from the page images). https://democrats-foreignaffairs.house.gov/wp-content/uploads/2026/11/11.19.26-ECRA-Information-Disclosure-of-BIS-License-Decisions.pdf Saved copy: cn-usdocs-hfac-decisions-20261119
+[10] Official document, or an official on the record. House Foreign Affairs Committee, disclosure of Nov 19, 2026: the table of licence applications (the file's name: BIS License Decisions) for Nvidia's H200 and AMD's MI325X, with their status as of May 11, 2026 (its text layer is out of order; the rows were read from the page images). https://democrats-foreignaffairs.house.gov/wp-content/uploads/2026/11/11.19.26-ECRA-Information-Disclosure-of-BIS-License-Decisions.pdf Saved copy: cn-usdocs-hfac-decisions-20261119
 
-[11] Official document, or an official on the record. House Foreign Affairs Committee, disclosure of Nov 19, 2026, made by the full committee (its chairman's release; approved by unanimous consent at a business meeting; the files are on the committee Democrats' site): the committee's summary, which cites a Commerce Department summary dated May 11, 2026. https://democrats-foreignaffairs.house.gov/wp-content/uploads/2026/11/11.19.26-ECRA-Information-Disclosure-HFAC-Summary.pdf Saved copy: cn-usdocs-hfac-summary-20261119
+[11] Official document, or an official on the record. House Foreign Affairs Committee, disclosure of Nov 19, 2026, made by the full committee (its chairman's release; approved by unanimous consent at a business meeting; the files are on the committee Democrats' site): the committee's summary, which cites a BIS summary dated May 11, 2026 (BIS: the Commerce Department's Bureau of Industry and Security). https://democrats-foreignaffairs.house.gov/wp-content/uploads/2026/11/11.19.26-ECRA-Information-Disclosure-HFAC-Summary.pdf Saved copy: cn-usdocs-hfac-summary-20261119
 
 [12] Press report citing unnamed people. Reuters, May 14, 2026, as carried by MarketScreener. Internet Archive capture of Jun 16, 2026. https://web.archive.org/web/20260616124310/https://www.marketscreener.com/news/us-clears-h200-chip-sales-to-10-china-firms-as-nvidia-ceo-looks-for-breakthrough-ce7f5bddd98df020 Saved copy: cn-acts-reuters-us-approvals-20260514-wayback
 
@@ -80,4 +80,8 @@ Each entry: its kind; what it is; the saved page's own title where the record ho
 
 [21] Company filing or statement. Nvidia, results call of May 20, 2026 (first quarter of its fiscal year 2027): the transcript on Nvidia's investor site. https://s201.q4cdn.com/141608511/files/doc_financials/2027/q1/NVDA-Q1-2027-Earnings-Call-20-May-2026-5_00-PM-ET.pdf Saved copy: cn-o38-nvda-q1fy27-call-transcript-pdf
 
-Build check: 15 quotations and 32 further statements were looked for in the saved copies of 21 sources and all were found; a planted false quotation was rejected. 15 sources are documents, filings or named people on the record; 6 are press reports citing unnamed people, counts or machine transcripts. A quotation that is found shows what the source says, not that it is true.
+[22] Company filing or statement. Nvidia, results call for the third quarter of its fiscal year 2027 (the quarter ended Oct 25, 2026): the transcript on Nvidia's investor site. https://s201.q4cdn.com/141608511/files/content_files/NVDA-3Q27-Earnings-Transcript.pdf Saved copy: cn-o38-nvda-q3fy27-call-transcript-pdf
+
+[23] Press report of words spoken on the record. Reuters, Nov 18, 2026, as carried by AOL, reporting Nvidia's interim chief executive on its results call. Page title: Nvidia stops shipping US-approved AI chips to China - AOL. https://www.aol.com/articles/nvidia-stops-shipping-us-approved-091611000.html Saved copy: cn-acts-reuters-halt-20261118-relay2
+
+Build check: 17 quotations and 34 further statements were looked for in the saved copies of 23 sources and all were found; a planted false quotation was rejected. 17 sources are documents, filings or named people on the record; 6 are press reports citing unnamed people, counts or machine transcripts. A quotation that is found shows what the source says, not that it is true.

@@ -8,9 +8,11 @@ Q2 FY2025	2024-07-28	billing	3667	man-ms-sec-10q-2025-07	printed	found
 H1 FY2025	2024-07-28	headquarters	9088		derived: 9M FY2025 minus Q3 FY2025	our subtraction
 Q3 FY2025	2024-10-27	billing	5416	man-ms-nvda-2024q3-10q-58a58e	printed	found
 Q3 FY2025	2024-10-27	headquarters	8142	man-ms-sec-10q-2025-10	printed	found
+9M FY2025	2024-10-27	billing	11574	man-ms-nvda-2024q3-10q-58a58e	printed	found
 9M FY2025	2024-10-27	headquarters	17230	man-ms-sec-10q-2025-10	printed	found
 FY2025 (year)	2025-01-26	billing	17108	man-ms-sec-10k-fy2025	printed	found
 FY2025 (year)	2025-01-26	headquarters	25048	man-ms-sec-10k-fy2026	printed	found
+Q4 FY2025	2025-01-26	billing	5534		derived: FY2025 year minus 9M FY2025	our subtraction
 Q4 FY2025	2025-01-26	headquarters	7818		derived: FY2025 year minus 9M FY2025	our subtraction
 Q1 FY2026	2025-04-27	billing	5522	man-ms-sec-10q-2025-04	printed	found
 Q1 FY2026	2025-04-27	headquarters	9659	man-ms-sec-10q-2026-04	printed	found

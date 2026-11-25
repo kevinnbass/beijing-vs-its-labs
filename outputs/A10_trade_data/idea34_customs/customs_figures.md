@@ -2,7 +2,7 @@
 
 *No. Each customs line holds every maker's goods, and no saved page says under which line these chips are declared. Two official lines rose steeply in 2026: China's imports of computer parts, and Singapore's re-exports of one kind of computer unit to the mainland. Neither can be read as a count of Nvidia chips.*
 
-Draft by Claude, Anthropic's model. Local; not published. Written Nov 23, 2026 (UTC). Idea 34 of the output list.
+Draft by Claude, Anthropic's model. Written Nov 23, 2026 (UTC). Idea 34 of the output list.
 
 A finding: this note says what public trade figures can and cannot show. It counts no chips.
 

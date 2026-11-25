@@ -1,6 +1,6 @@
-"""Idea 38: read the two saved Nvidia investor-site feeds, the SEC's own record of Nvidia's filings (saved by another agent
-as cn-le05-sec-submissions-20261123), the saved call transcript, six saved reports and two project tables, and write the
-facts the note states.
+"""Idea 38: read the two saved Nvidia investor-site feeds, the SEC's own record of Nvidia's filings (two readings saved by
+other agents: cn-le05-sec-submissions-20261123 and, newest, cn-ga06-sec-submissions-20261124), the saved call transcript,
+six saved reports and two project tables, and write the facts the note states.
 Run: python3 -I feed_check.py   -> feed_check.tsv (key <TAB> value) and prints it.
 Feeds: cn-o38-nvda-feed-secfilings-2026-c (every SEC filing of 2026 the site lists; -b is the first reading of the same feed) and cn-o38-nvda-feed-finreports-fy2027
 (the documents listed for each quarter of fiscal 2027). Control: the filings feed must list the 10-Q of Aug 26, 2026."""
@@ -47,18 +47,27 @@ for dcall, sid in CALLS:
     bt = (P / sid / 'text.txt').read_text(encoding='utf-8', errors='replace').split('STATUS: 200', 1)[1]
     put(f'call_{dcall}_names_chinese_authority', len(re.findall(AUTH, bt))); put(f'call_{dcall}_says_China', len(re.findall(r'\bChina\b', bt)))
 put('calls_counted', len(CALLS))
-# --- the SEC's own record of the company's filings (data.sec.gov submissions file), saved Nov 23, 2026 by agent L05
-S = 'cn-le05-sec-submissions-20261123'
-sm = json.loads((P / S / 'meta.json').read_text()); put('sec_record_id', S); put('sec_record_fetched_utc', sm['fetched_utc']); put('sec_record_url', sm['url'])
-rc = json.loads((P / S / 'body.json').read_text())['filings']['recent']
-srows = sorted(zip(rc['filingDate'], rc['form'], rc['reportDate'], rc['accessionNumber']), reverse=True)
-put('sec_record_entries', len(srows)); put('sec_newest_entry', f'{srows[0][1]} | {srows[0][0]}')
-sq = [x for x in srows if x[1] == '10-Q']
-if not any(x[0] == '2026-08-26' and x[2] == '2026-07-26' for x in sq): sys.exit('control failed: the SEC record does not list the 10-Q of Aug 26, 2026')
-put('sec_10Q_rows', len(sq)); put('sec_newest_10Q', f'{sq[0][0]} | period {sq[0][2]} | {sq[0][3]}')
-put('sec_10Q_for_period_2026-10-25', sum(1 for x in srows if x[1].startswith('10-Q') and x[2] == '2026-10-25'))
-put('sec_10Q_filed_after_2026-10-25', sum(1 for x in srows if x[1].startswith('10-Q') and x[0] > '2026-10-25'))
-put('sec_NT_filings_2026', sum(1 for x in srows if x[1].startswith('NT') and x[0] >= '2026-01-01'))
+# --- the SEC's own record of the company's filings (data.sec.gov submissions file): two readings, both saved in research/primary.
+# sec_*  : the newest reading, cn-ga06-sec-submissions-20261124 (saved Nov 24, 2026 by gap agent GA06; the argument's open list cites it)
+# sec0_* : the first reading, cn-le05-sec-submissions-20261123 (saved Nov 23, 2026 by agent L05)
+# Entries are ordered by filing date and then by the record's own acceptance time (acceptanceDateTime), newest first; a sort on
+# the form's name would put an 8-K before a Form 4 of the same day whatever their times (round 8, core edit 7).
+def sec(S, pre):
+    sm = json.loads((P / S / 'meta.json').read_text()); put(f'{pre}_record_id', S); put(f'{pre}_record_fetched_utc', sm['fetched_utc']); put(f'{pre}_record_url', sm['url'])
+    rc = json.loads((P / S / 'body.json').read_text())['filings']['recent']
+    srows = sorted(zip(rc['filingDate'], rc['acceptanceDateTime'], rc['form'], rc['reportDate'], rc['accessionNumber']), reverse=True)
+    srows = [(f, fm, rp, acc, at) for f, at, fm, rp, acc in srows]          # filed, form, report date, accession, accepted
+    put(f'{pre}_record_entries', len(srows)); put(f'{pre}_newest_entry', f'{srows[0][1]} | {srows[0][0]}')
+    day = [x for x in srows if x[0] == srows[0][0]]
+    put(f'{pre}_newest_day_entries', ' ;; '.join(f'{x[1]} | report {x[2] or "-"} | {x[3]} | accepted {x[4]}' for x in day))
+    sq = [x for x in srows if x[1] == '10-Q']
+    if not any(x[0] == '2026-08-26' and x[2] == '2026-07-26' for x in sq): sys.exit(f'control failed: the SEC record {S} does not list the 10-Q of Aug 26, 2026')
+    put(f'{pre}_10Q_rows', len(sq)); put(f'{pre}_newest_10Q', f'{sq[0][0]} | period {sq[0][2]} | {sq[0][3]}')
+    put(f'{pre}_10Q_for_period_2026-10-25', sum(1 for x in srows if x[1].startswith('10-Q') and x[2] == '2026-10-25'))
+    put(f'{pre}_10Q_filed_after_2026-10-25', sum(1 for x in srows if x[1].startswith('10-Q') and x[0] > '2026-10-25'))
+    put(f'{pre}_NT_filings_2026', sum(1 for x in srows if x[1].startswith('NT') and x[0] >= '2026-01-01'))
+sec('cn-ga06-sec-submissions-20261124', 'sec')
+sec('cn-le05-sec-submissions-20261123', 'sec0')
 # --- the project's table of Nvidia's wording, filing by filing (tables/nvidia_wording_by_filing.tsv)
 T = HERE.parents[2] / 'tables'
 wl = [l.split('\t') for l in (T / 'nvidia_wording_by_filing.tsv').read_text(encoding='utf-8').splitlines() if l.strip() and not l.startswith('#')]

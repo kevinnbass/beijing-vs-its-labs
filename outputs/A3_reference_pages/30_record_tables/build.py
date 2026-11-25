@@ -8,8 +8,9 @@ Reads   ../../../figure/figure_data.txt      the dated records: our line, the so
         ../../../argument/argument_base.txt  the argument (for the order in which its sources are first cited)
         ../../../argument/argument_refs.tsv  the argument's sources: saved id, kind, label, address
         ../../../tables/*.tsv                the project's plain tables (round 4), copied into tables/ here
-        ../../../loose_ends/hkexnews_saved_ids.tsv, ../../../tables/replaced_copies.tsv
-                                             the 20 saved ids no longer cited and their replacements
+        ../../../loose_ends/hkexnews_saved_ids.tsv, ../../../loose_ends/terms_saved_ids.tsv (since core edit 7b),
+        ../../../tables/replaced_copies.tsv  the saved ids no longer cited (Hong Kong exchange pages; copies from idc.com
+                                             and trendforce.com) and their replacements
 Writes  records.csv, records.tsv   one line per dated record, 16 columns
         references.csv             one line per source of the argument, 8 columns
         quotes.tsv                 saved id <TAB> the source's own words, for scripts/cn_has.py
@@ -18,6 +19,8 @@ Writes  records.csv, records.tsv   one line per dated record, 16 columns
 
 Nothing is written unless every check passes:
   - the two figure files hold the same records, one to one (date, saved id and row), and the same line of ours;
+  - figure_events.tsv numbers the records as scripts/cn_figure_build.py does since core edit 7 (Nov 25, 2026): by date,
+    Beijing's rows first, except a record with an "N" line in figure_data.txt, which keeps the number given there;
   - every quotation stands in its saved copy (scripts/cn_has.py on quotes.tsv, exit 0), and that checker's own control
     (a planted false quotation) is rejected; quotes.tsv is written first because it is what the checker reads;
   - the reference numbers equal those printed in ARGUMENT_referenced.md;
@@ -47,18 +50,20 @@ KIND = {'doc': 'a government document or an official on the record',
 # project's folder holds a table that has no line here.
 ABOUT = {
     'chip_evaluations.tsv': "The products in the security-and-reliability evaluation announcements saved from the China Information Technology Security Evaluation Center's site, one row per product per announcement",
-    'house_licence_table.tsv': "The Commerce Department's table of licence applications for Nvidia's H200 and AMD's MI325X, with their status on May 11, 2026, as the House Foreign Affairs Committee made it public on Nov 19, 2026; one row per application",
+    'house_licence_table.tsv': "The table of licence applications for Nvidia's H200 and AMD's MI325X, with their status on May 11, 2026, from the Commerce Department's Bureau of Industry and Security (BIS), as the House Foreign Affairs Committee made it public on Nov 19, 2026; one row per application",
     'labs_said.tsv': "What China's AI companies said about chip supply on results calls and in filings, January 2025 to November 2026",
     'labs_said_more.tsv': "The same for two more companies, iFlytek and SenseTime",
     'local_vouchers.tsv': "Local rules that pay part of the bill for computing: who issued each, when, and the rate for home-made and for other computing",
     'local_vouchers_more.tsv': "More such local rules, found in a second search",
+    'local_vouchers_classes.tsv': "The class of every local voucher rule of the two voucher tables by the published counting rule: 19 counted (4 pay more for home-made computing and still pay for other computing, 1 pays for home-made only, 14 pay one rate), 46 read and not counted, each with its reason",
     'market_numbers.tsv': "Published market numbers (shares, shipments, market sizes), one row per number. The column family names the measure; rows of different families are different measures",
     'nvidia_china_revenue.tsv': "Nvidia's revenue from customers in China, Hong Kong included, period by period, from its own filings",
-    'nvidia_wording_by_filing.tsv': "Nvidia's own sentences on China, filing by filing and call by call",
+    'nvidia_wording_by_filing.tsv': "Nvidia's own words on China, from its filings and results calls, and its executives' words and its statements as others carried them",
     'press_originals.tsv': "For each press report the argument cited at an earlier build: whether the copy held is the publisher's own page or another outlet's",
     'procurement_records.tsv': "Purchase records: the telecom carriers' central purchases, awards that name Nvidia cards, and tenders that require home-made chips",
     'provinces_31.tsv': "The 31 provincial-level governments: whether a published plan sets a share for home-made computing hardware, in the document's own words",
-    'replaced_copies.tsv': "The 20 saved pages that are no longer cited, and the copy that replaces each",
+    'replaced_copies.tsv': "The {all} saved pages that are no longer cited, and the copy that replaces each where one is needed: {hk} taken from the Hong Kong exchange's site and, since Nov 25, 2026, {terms} taken from idc.com and trendforce.com, saved against those sites' terms",
+    'rtx5500_notices.tsv': "Notices on the exchanges' disclosure site, Sept 14 to Nov 24, 2026, whose titles name a contract, a purchase or computing: 333 notices, 3 of which name the RTX PRO 5500",
     'state_media_items.tsv': "State and Party media items on Nvidia chips, July 2025 to November 2026, each with its stance",
     'talks_and_acts.tsv': "US-China trade meetings, May 2025 to November 2026, with each side's readout, beside Beijing's dated acts on Nvidia chips",
     'trade_annual_summary.tsv': "Yearly sums of monthly customs figures, series by series. No customs line counts Nvidia chips",
@@ -87,9 +92,11 @@ def read_blocks():
         if ln.startswith('@ '):
             p = ln.split()
             if len(p) != 6 or p[1] not in LANE or p[2] not in KIND: stop(f'figure_data.txt: bad record line: {ln}')
-            cur = {'lane': p[1], 'kind': p[2], 'date': p[3], 'label': p[4], 'sid': p[5], 'T': '', 'S': '', 'Q': '', 'E': '', 'U': ''}
+            cur = {'lane': p[1], 'kind': p[2], 'date': p[3], 'label': p[4], 'sid': p[5], 'T': '', 'S': '', 'Q': '', 'E': '', 'U': '', 'N': ''}
             out.append(cur)
-        elif cur is not None and re.match(r'[TSQEUC] ', ln):
+        elif cur is not None and re.match(r'[TSQEUCN] ', ln):
+            # N (core edit 7, Nov 25, 2026): the record's fixed number, read as scripts/cn_figure_build.py reads it
+            if ln[0] == 'N' and not re.fullmatch(r'[1-9]\d*', ln[2:].strip()): stop(f'figure_data.txt: an N line that is not a number: {ln[:60]}')
             if ln[0] != 'C':
                 if cur[ln[0]]: stop(f'figure_data.txt: two {ln[0]} lines in the record of {cur["date"]} {cur["sid"]}')
                 cur[ln[0]] = ln[2:].strip()
@@ -98,6 +105,22 @@ def read_blocks():
         else:
             stop(f'figure_data.txt: a line this script does not know: {ln[:60]}')
     return out
+
+
+def numbers_as_the_figure_gives_them(blocks):
+    """The mark numbers as scripts/cn_figure_build.py number() gives them since core edit 7 (Nov 25, 2026): by date,
+    Beijing's rows first and then the companies', except a record with an "N" line, which keeps the number given there.
+    Returns {(date, saved id, lane): number}. main() stops unless figure_events.tsv carries the same numbers."""
+    free = [b for b in blocks if not b['N']]
+    bj = sorted([b for b in free if b['lane'][0] == 'B'], key=lambda b: b['date'])
+    co = sorted([b for b in free if b['lane'][0] == 'C'], key=lambda b: b['date'])
+    num = {}
+    for i, b in enumerate(bj + co, 1): num[(b['date'], b['sid'], b['lane'])] = i
+    for b in blocks:
+        if b['N']: num[(b['date'], b['sid'], b['lane'])] = int(b['N'])
+    if sorted(num.values()) != list(range(1, len(blocks) + 1)): stop('the record numbers do not run from 1 to the number of records')
+    if not all(int(b['N']) > len(free) for b in blocks if b['N']): stop('a fixed number falls among the numbers given by date')
+    return num
 
 
 def data_lines(text):
@@ -139,17 +162,20 @@ def copy_tables(num):
         c = ln.split('\t')
         if ln.startswith('#') or len(c) < 2 or c[0] == 'old_id': continue
         retired[c[0]] = c[1] if c[1] and not c[1].startswith('(') else ''
-    hk_old = [ln.split('\t')[0] for ln in (PROJ / 'loose_ends' / 'hkexnews_saved_ids.tsv').read_text(encoding='utf-8').splitlines()
-              if ln.strip() and not ln.startswith('#')]
-    for o in hk_old:
-        if o not in retired: stop(f'{o} is in the list of ids no longer cited but not in replaced_copies.tsv')
+    ids_of = lambda name: [ln.split('\t')[0] for ln in (PROJ / 'loose_ends' / name).read_text(encoding='utf-8').splitlines()
+                           if ln.strip() and not ln.startswith('#')]
+    hk_old = ids_of('hkexnews_saved_ids.tsv')
+    terms_old = ids_of('terms_saved_ids.tsv')   # core edit 7b (Nov 25, 2026; atlas/ROUND8.txt R5): the copies from idc.com and trendforce.com
+    listed = set(hk_old) | set(terms_old)
+    if set(retired) != listed: stop(f'replaced_copies.tsv and the two lists of ids no longer cited differ: {sorted(set(retired) ^ listed)[:5]}')
+    n_listed = {'all': len(retired), 'hk': len(set(hk_old)), 'terms': len(set(terms_old) - set(hk_old))}
     for o, n in RETIRED_MORE.items(): retired.setdefault(o, n)
-    if len(retired) != len(hk_old) + len(RETIRED_MORE) - len(set(hk_old) & set(RETIRED_MORE)): stop('replaced_copies.tsv holds ids not in hkexnews_saved_ids.tsv')
+    if len(retired) != len(listed | set(RETIRED_MORE)): stop('the ids no longer cited do not add up')
     for n in set(retired.values()) - {''}:
         if not (B.L.P / n).is_dir(): stop(f'replacement copy {n} has no saved folder')
     dst.mkdir(exist_ok=True)
     out, raws = [], {}
-    for f in sorted(src.glob('*.tsv')):
+    for f in sorted(x for x in src.glob('*.tsv') if '.before-' not in x.name):   # the core's before-copies of an edit are not tables
         raw = f.read_bytes(); text = raw.decode('utf-8'); notes = []
         com, head, rows = data_lines(text)
         if f.name != 'replaced_copies.tsv':
@@ -159,10 +185,11 @@ def copy_tables(num):
                 for o in retired:
                     if re.search(re.escape(o) + r'(?![\w-])', line): hits[o] += 1
             for o, k in sorted(hits.items()):
-                if o in hk_old: why = 'a withdrawn copy, no longer cited by the project'
+                if o in listed: why = 'a withdrawn copy, no longer cited by the project'
                 elif o in FIGURE_RESOURCED: why = 'a source the figure no longer cites'
                 else: why = 'a copy the project no longer cites'
-                notes.append(f'{k} row(s) cite {o}, {why}; ' + (f'outputs/ROUND4.md names {retired[o]} in its place' if retired[o] else 'it has no replacement') +
+                notes.append(f'{k} row(s) cite {o}, {why}; ' + ((f'tables/replaced_copies.tsv names {retired[o]} in its place' if o in listed else
+                                                                 f'outputs/ROUND4.md names {retired[o]} in its place') if retired[o] else 'it has no replacement') +
                              (f'; the argument itself still cites {o} as reference {num[o]}' if o in num else ''))
         if f.name == 'press_originals.tsv':
             i_ref, i_id = head.index('ref'), head.index('saved_id_cited')
@@ -186,7 +213,7 @@ def copy_tables(num):
         if any(len(r) != len(head) for r in rows): stop(f'{f.name}: a row does not have {len(head)} fields')
         if f.name not in ABOUT: stop(f'{f.name}: no plain line for this table in ABOUT')
         raws[f.name] = raw
-        out.append({'name': f.name, 'rows': len(rows), 'cols': head, 'notes': notes, 'about': ABOUT[f.name],
+        out.append({'name': f.name, 'rows': len(rows), 'cols': head, 'notes': notes, 'about': ABOUT[f.name].format(**n_listed),
                     'sha': hashlib.sha256(raw).hexdigest()})
     stale = sorted(x.name for x in dst.glob('*') if x.name not in raws)
     if stale: stop(f'tables/ here holds files the project\'s tables folder does not: {stale} (move them aside by hand)')
@@ -208,11 +235,15 @@ def main():
         k = (e['date'], e['saved_id'], e['lane'])
         if k in by: stop(f'figure_events.tsv: two lines for {k}')
         by[k] = e
-    rows = []
+    rows, fixed = [], []
+    want_n = numbers_as_the_figure_gives_them(blocks)
     for b in blocks:
         k = (b['date'], b['sid'], LANE[b['lane']][0])
         e = by.pop(k, None)
         if e is None: stop(f'no line in figure_events.tsv for {k}')
+        if int(e['n']) != want_n[(b['date'], b['sid'], b['lane'])]:
+            stop(f'figure_events.tsv numbers {k} as {e["n"]}, but the figure\'s rule gives {want_n[(b["date"], b["sid"], b["lane"])]}')
+        if b['N']: fixed.append((int(b['N']), b['date'], e['shown_as']))
         if plain(e['text']) != plain(b['T']): stop(f'the two files give different lines of ours for {k}')
         if plain(e['source']) != plain(b['S']): stop(f'the two files give different sources for {k}')
         if e['kind'] != b['kind']: stop(f'the two files give different kinds for {k}')
@@ -294,11 +325,17 @@ def main():
     n_cn = sum(1 for r in rows if r['our_english']); n_approx = sum(1 for r in rows if r['date_exact'] == 'no')
     n_noaddr = sum(1 for r in ref_rows if not r['address'])
     n_extra = sum(1 for ln in (PROJ / 'figure' / 'figure_data.txt').read_text(encoding='utf-8').splitlines() if ln.startswith('! '))
+    fixed.sort()
+    if not fixed: n_note = ''
+    elif len(fixed) == 1: n_note = (f';\n                 record {fixed[0][0]} ({fixed[0][2]}), added after the figure was made public, keeps the next\n'
+                                    f'                 free number (the "N" line of figure_data.txt), so it stands out of date order')
+    else: n_note = (f';\n                 records {", ".join(str(f[0]) for f in fixed[:-1])} and {fixed[-1][0]}, added after the figure was made public, keep the next\n'
+                    f'                 free numbers (the "N" lines of figure_data.txt), so they stand out of date order')
     n_cn_solid = sum(1 for r in rows if r['our_english'] and r['kind'] != 'press')
     cn_note = 'all of them documents or people on the record' if n_cn_solid == n_cn else f'{n_cn_solid} of them documents or people on the record'
     readme = f"""The record as table files
 China chip policy: did Beijing's chip policy pull against China's own AI companies?
-Draft by Claude, Anthropic's model. Local; not published.
+Draft by Claude, Anthropic's model.
 
 Made by build.py in this folder from the project's own files (figure/figure_data.txt, figure/figure_events.tsv,
 argument/argument_base.txt, argument/argument_refs.tsv, tables/). Run "python3 -I build.py" to make them again.
@@ -314,7 +351,8 @@ FILES
   build.py         the script
 
 COLUMNS OF records.csv AND records.tsv
-  n              the record's mark number in the figure (figure/beijing_vs_labs.html), 1 to {len(rows)}
+  n              the record's mark number in the figure (figure/beijing_vs_labs.html), 1 to {len(rows)}. The files are in
+                 number order. Numbers go by date, Beijing's rows first, then the companies'{n_note}
   date           the date as year-month-day. The date of the act where the page gives it, otherwise of the report
   date_shown     the date as the figure prints it
   date_exact     yes, or no where the source gives only a season or a month and the day in "date" is a placing
@@ -356,6 +394,7 @@ COUNTS (taken from the files by build.py, not typed)
 
 CHECKS THE SCRIPT MADE BEFORE WRITING
   The two figure files hold the same {len(rows)} records, one to one, with the same line of ours.
+  The mark numbers are those the figure's builder gives (by date; a record with an "N" line keeps its number).
   scripts/cn_has.py on quotes.tsv: {has_line}
   The reference numbers equal those printed in ARGUMENT_referenced.md.
   Each table was read back and equals what was written.
@@ -390,6 +429,7 @@ PLAIN TABLES (tables/)
         (HERE / name).write_text(text, encoding='utf-8')
     print(f'records: {len(rows)} rows x {len(REC_COLS)} columns (csv and tsv); references: {len(ref_rows)} rows x {len(REF_COLS)} columns')
     print(f'cn_has.py: {has_line}')
+    print(f'numbers: as the figure gives them (by date; kept by an N line: {", ".join(str(f[0]) for f in fixed) or "none"})')
     print(f'kinds: doc {c_kind["doc"]}, rec {c_kind["rec"]}, press {c_kind["press"]}; with our English: {n_cn}; dates that are placings: {n_approx}')
     print(f'tables: {len(tabs)} copied, all byte for byte (sha256 of each copy equals the project\'s); rows in all: {sum(t["rows"] for t in tabs)}')
     for t in tabs:

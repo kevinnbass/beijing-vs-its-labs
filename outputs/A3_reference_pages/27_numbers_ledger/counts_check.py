@@ -2,7 +2,8 @@
 """Gate for the numbers ledger (round 4): recompute every count the ledger shows from the project's tables and stop
 unless the base file carries each one exactly. Run before cn_doc_build.py:
     python3 -I counts_check.py && python3 -I scripts/cn_doc_build.py numbers_ledger_base.txt ...
-Reads ../../../tables/house_licence_table.tsv, nvidia_china_revenue.tsv, provinces_31.tsv; writes nothing.
+Reads ../../../tables/house_licence_table.tsv, nvidia_china_revenue.tsv, provinces_31.tsv, market_numbers.tsv and
+rtx5500_notices.tsv (the last two since round 5, Nov 24, 2026); writes nothing.
 A control: the same comparison run on a copy of the base file with one number changed must fail.
 """
 import sys
@@ -41,7 +42,9 @@ def expected():
     rej = [r for r in H if r['status'] == 'Rejected']
     dec19 = [r for r in H if r['date_submitted'] == '12/19/2025' and r['exporter'] == 'Nvidia' and 'Tencent' in r['consignee']]
     if len(dec19) != 1 or num(dec19[0]) != 75000 or dec19[0]['status'] != 'Approved, not shipped': sys.exit('the Dec 19, 2025 Tencent row is not as the page says')
-    alt = round(100 * rwa[1] / (total - 75000 + 445000), 1)
+    if len([r for r in H if r['date_submitted'] == '12/19/2025' and 'Tencent' in r['consignee']]) != 1: sys.exit('not the only Tencent row of Dec 19, 2025')
+    alt = round(100 * rwa[1] / (total - 75000 + 445000), 1)   # the 75,000 row is the application of 445,000
+    alt2 = round(100 * rwa[1] / (total + 445000), 1)          # the 445,000 is a further application
     groups = sorted({g.strip() for r in sea for g in r['group'].split('(')[0].replace(' and ', ',').split(',') if g.strip()})
     want += [
         f'| Returned without action (RWA) | {fmt(rwa[1])} | {rwa[0]} | {share}% of the chips in the applications the summary records. Among them every application for more than 75,000 chips ({["zero","one","two","three","four","five","six"][len(over)]})',
@@ -51,13 +54,13 @@ def expected():
         f'| Submitted | {fmt(st["Submitted"][1])} | {st["Submitted"][0]} | Nvidia {fmt(ex[("Nvidia","Submitted")][1])} in {ex[("Nvidia","Submitted")][0]}; AMD {fmt(ex[("AMD","Submitted")][1])} in {ex[("AMD","Submitted")][0]}; Semsotai USA {fmt(ex[("Semsotai USA","Submitted")][1])} in {ex[("Semsotai USA","Submitted")][0]} |',
         f'| Rejected | {fmt(st["Rejected"][1])} | {st["Rejected"][0]} | one {rej[0]["exporter"]} application, for {rej[0]["consignee"].split()[0]} |',
         f'| All | {fmt(total)} | {len(H)} | Nvidia {fmt(ex_all["Nvidia"][1])} in {ex_all["Nvidia"][0]}; AMD {fmt(ex_all["AMD"][1])} in {ex_all["AMD"][0]}; Semsotai USA {fmt(ex_all["Semsotai USA"][1])} in {ex_all["Semsotai USA"][0]} |',
-        f'the returned share would be {alt}% (ours)',
-        f'among them **{share}%** and, with the application of Dec 19, 2025 counted at 445,000, **{alt}%**; and **{fmt(sum(map(num, sea)))}**',
+        f'the returned share would be {alt}% if that row is the application, counted at 445,000, and {alt2}% if the 445,000 is a further application (ours)',
+        f'among them **{share}%**; **{alt}%** or **{alt2}%** with the application of Dec 19, 2025 counted at 445,000 (as the table\'s row of that date, or as a further application); and **{fmt(sum(map(num, sea)))}**',
     ]
     if len(rej) != 1: sys.exit('not one rejected application')
     print(f'licence table: {len(H)} applications, {fmt(total)} chips; RWA {fmt(rwa[1])} in {rwa[0]} ({100*rwa[1]/total:.1f}%); '
           f'approved {fmt(st["Approved, not shipped"][1])}; submitted {fmt(st["Submitted"][1])}; rejected {fmt(st["Rejected"][1])}; '
-          f'outside China {fmt(sum(map(num, sea)))} in {len(sea)} ({", ".join(groups)}); over 75,000: {len(over)}; with Dec 19 at 445,000: {alt}%')
+          f'outside China {fmt(sum(map(num, sea)))} in {len(sea)} ({", ".join(groups)}); over 75,000: {len(over)}; with Dec 19 at 445,000: {alt}% (as that row) or {alt2}% (as a further application)')
 
     R = [r for r in rows('nvidia_china_revenue.tsv') if r['basis'] == 'headquarters' and r['period'].startswith('Q')]
     R.sort(key=lambda r: r['period_end'])
@@ -80,6 +83,13 @@ def expected():
     want.append(f'**{P["share"]} of 31** provincial-level governments set a share')
     if P['account_only'] != 1 or P['not_reached'] != 1: sys.exit('Tibet and Xinjiang are not one each')
     print(f'provinces: {dict(P)}')
+
+    M = rows('market_numbers.tsv')
+    want.append(f'{len(M)} published market numbers')
+    N = rows('rtx5500_notices.tsv'); k = sum(1 for r in N if r['names_card'] == 'yes')
+    words = ['No', 'One', 'Two', 'Three', 'Four', 'Five']
+    want.append(f'{words[k]} listed companies announced purchases of cards of that name: the next {words[k].lower()} rows. They are {k} of the {len(N)} notices')
+    print(f'market numbers: {len(M)} rows; RTX PRO 5500 notices: {len(N)}, {k} name the card')
     return want
 
 

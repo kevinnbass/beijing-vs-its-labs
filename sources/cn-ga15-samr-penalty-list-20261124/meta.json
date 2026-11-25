@@ -1,0 +1,7 @@
+{
+ "id": "cn-ga15-samr-penalty-list-20261124",
+ "url": "https://www.samr.gov.cn/api-gateway/jpaas-publish-server/front/page/build/unit?parseType=bulidstatic&webId=29e9522dc89d4e088a953d8cede72f4c&tplSetId=5c30fb89ae5e48b9aefe3cdf49853830&pageType=column&tagId=ajax%E5%88%86%E9%A1%B5&editType=null&pageId=734bd87d26a14ee683313c69c9bd8f65&paramJson=%7B%22pageNo%22%3A+1%2C+%22pageSize%22%3A+99%7D",
+ "route": "https://www.samr.gov.cn/api-gateway/jpaas-publish-server/front/page/build/unit?parseType=bulidstatic&webId=29e9522dc89d4e088a953d8cede72f4c&tplSetId=5c30fb89ae5e48b9aefe3cdf49853830&pageType=column&tagId=ajax%E5%88%86%E9%A1%B5&editType=null&pageId=734bd87d26a14ee683313c69c9bd8f65&paramJson=%7B%22pageNo%22%3A+1%2C+%22pageSize%22%3A+99%7D",
+ "fetched_utc": "2026-11-24T10:29:42Z",
+ "sha256": "a5d21fc013ccea7feae589e4f1c331db582fdd087da8146316dbbf445e92dd31"
+}

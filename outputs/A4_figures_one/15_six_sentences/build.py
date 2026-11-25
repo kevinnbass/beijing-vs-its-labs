@@ -9,6 +9,8 @@ Reads quotes.tsv and sentences.tsv (this folder) and ../a4lib.py (shared helpers
 Nothing is written unless cn_has.py exits 0 and the guard finds every quotation and number on the page in quotes.tsv.
 Chinese words stand between quotation marks exactly as the page has them; our English is in round brackets, without marks.
 Before the page or image is called done or shown: scripts/render_and_look.py on six_sentences.html and six_sentences.png.
+Round 5 (Nov 24, 2026, core edit 6): the state-media sentence under the limit gives the warnings as the project's table now
+counts them (a4lib.warnings(): those of the first year and the later ones), with the table's own caution on the later rows.
 """
 import re, sys
 from pathlib import Path
@@ -19,6 +21,7 @@ import a4lib as A   # noqa: E402
 
 esc, qm, fmt = A.esc, A.qm, A.fmt
 SIDE = {'away': 'Beijing pulls away from Nvidia', 'toward': 'The companies pull toward it'}
+NUMW = {1: 'one', 2: 'two', 3: 'three', 4: 'four', 5: 'five', 6: 'six', 7: 'seven', 8: 'eight', 9: 'nine'}
 
 CSS = '''
 #fig { background: var(--page); }
@@ -109,7 +112,7 @@ def main():
    <h2>The limit</h2>
    <div><p class="q">{qm(Q["limit"])}</p>
     <p class="at"><i class="mk open" title="press report citing unnamed people"></i><span><b>Bloomberg</b>, {A.link(Q["limit"].sid, f"{fmt(d_lim)}, as carried by The Business Times on {fmt(d_car)}")}</span><span class="kind">A press report citing unnamed people.</span></p>
-    <p class="more">By this and later reports the pressure came as unpublished guidance; state media also warned in public, in the {W["n"]} items found that only warn about Nvidia’s chips, all dated {W["span"]}. No published Chinese order against buying Nvidia chips was found in the 103 policy pages read.
+    <p class="more">By this and later reports the pressure came as unpublished guidance; state media also warned in public. Of the {W["warn"]} state and Party media items found that only warn about Nvidia’s chips, {W["burst"]} are dated {W["span"]}, and {NUMW[W["later"]]} later, all in {W["later_outlet"]}, in {W["later_months"]} (the items after September 2025 are what two rounds of searches found, a sample and not a full count). No published Chinese order against buying Nvidia chips was found in the 82 policy pages read.
      This is one of five limits on the headline. The others: Beijing was not one actor; some purchases were approved and some chips came in; the companies had reasons of their own, and American curbs pushed too; and what Beijing meant by it is read both ways.</p></div>
   </section>
   <p class="foot">Words between quotation marks are the source’s own and were found in its saved copy by a script. English in round brackets is ours, not an official translation.</p>
@@ -119,10 +122,11 @@ def main():
 </body>
 </html>
 '''
-    # ours: 103 = the project's count of policy pages read (the argument, point 18)
-    # ours: 103 = the project's count of policy pages read; the count of state-media items is made from the project's table
-    A.guard(page, Q, ours=['103', W['n']], dates=[fmt(r['date']) for r in rows] + [fmt(r['pub']) for r in rows if r['pub']] + [fmt(d_lim), fmt(d_car), W['span']])
-    for banned in ('four limits', 'spokesperson', 'Beijing pulled one way'):
+    # ours: 82 = the project's count of policy pages read (the argument, point 18); the counts of state-media warnings are
+    # made from the project's table by a4lib.warnings()
+    A.guard(page, Q, ours=['82', W['warn'], W['burst']], dates=[fmt(r['date']) for r in rows] + [fmt(r['pub']) for r in rows if r['pub']] + [fmt(d_lim), fmt(d_car), W['span'], W['later_months']])
+    # withdrawn by core edit 6 (atlas/core_edit/APPLIED_6.txt, part 02 and B1): the warnings are not all of Aug 1 to Sept 24, 2025
+    for banned in ('four limits', 'spokesperson', 'Beijing pulled one way', 'all dated', 'Aug 1 to', 'none after', 'the seven', ' 42 ', 'not a census', 'found by searches and links'):     # the last two: touch-up 6b (Nov 24, 2026), item 21
         assert banned not in page, f'the page still says "{banned}"'
     out = HERE / 'six_sentences.html'
     out.write_text(page, encoding='utf-8'); print('written', out, len(page), 'bytes')

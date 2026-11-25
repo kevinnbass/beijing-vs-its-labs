@@ -1,0 +1,7 @@
+{
+ "id": "cn-ga07-factbase-trump-presser-20261120-json",
+ "url": "https://rollcall.com/api/factbase/transcripts?person=trump&slug=donald-trump-press-conference-november-20-2026",
+ "route": "https://rollcall.com/api/factbase/transcripts?person=trump&slug=donald-trump-press-conference-november-20-2026",
+ "fetched_utc": "2026-11-24T10:47:48Z",
+ "sha256": "3194a6a57bbe7fd745b52b52bb040fdc02d10d557784d8f670f24671a1627bcc"
+}

@@ -6,9 +6,11 @@ Run: python3 -I make_inputs.py            writes both; stops if the core's Engli
 Reads: english_originals/figure_data.txt, english_originals/template.html.copy (copies of the core's
        ../../../figure/figure_data.txt and template.html; the script stops if a copy is not the core's present file),
        zh_lines.txt (the Chinese of every record) and template_body_zh.txt (the Chinese page body).
-Writes: figure_data.txt   the core's blocks in the core's order, each with its date, saved id, Q, E, U lines and label
+Writes: figure_data.txt   the core's blocks in the core's order, each with its date, saved id, N, Q, E, U lines and label
                           place unchanged, the T, S and label words in Chinese, and a Z line where Q is English; every
                           "!" check line of the core unchanged; then the extra check lines of zh_lines.txt.
+                          (Round 8, after core edit 7 of Nov 25, 2026: a core block's "N" line, the record's fixed number,
+                          is carried right after its "@" line, as the core has it.)
         template.html     the core template's head and styles with a few changes for Chinese type, then the Chinese body.
 So a re-sync to a changed core is: copy the three core files into english_originals/, change the Chinese where this
 script says the English changed, run it with --accept, then cn_figure_build.py.
@@ -69,7 +71,7 @@ def read_core():
         if ln.startswith('@ '):
             _, lane, kind, d, dl, sid = ln.split()
             cur = dict(lane=lane, kind=kind, date=d, dl=dl, sid=sid); items.append(('block', cur))
-        elif cur is not None and ln[:2] in ('T ', 'S ', 'Q ', 'E ', 'U ', 'C '): cur[ln[0]] = ln[2:].strip()
+        elif cur is not None and ln[:2] in ('T ', 'S ', 'Q ', 'E ', 'U ', 'C ', 'N '): cur[ln[0]] = ln[2:].strip()
         else:
             if ln.strip(): cur = None if (ln.startswith('#') or ln.startswith('!')) else cur
             items.append(('raw', ln))
@@ -118,6 +120,9 @@ def main():
         if any(('"' in z.get(k, '') or '“' in z.get(k, '')) for k in ('S', 'Z', 'D')): bad.append(f'{key}: quote marks in an S, Z or D line')
         if ' ' in z.get('D', ''): bad.append(f'{key}: a space in a D line')
         out.append(f'@ {b["lane"]} {b["kind"]} {b["date"]} {z.get("D", "-")} {b["sid"]}')
+        if 'N' in b:
+            assert re.fullmatch(r'\d+', b['N']), (key, b['N'])
+            out.append(f'N {b["N"]}')
         out.append(f'T {z.get("T", "")}'); out.append(f'S {z.get("S", "")}'); out.append(f'Q {b["Q"]}')
         if 'Z' in z: out.append(f'Z {z["Z"]}')
         if 'E' in b: out.append(f'E {b["E"]}')
