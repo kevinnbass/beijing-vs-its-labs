@@ -26,6 +26,19 @@ def squash(s):
     return re.sub(r'[\s"\']+', '', norm(s))
 
 
+def _read(b):
+    """A saved body as text: UTF-8, or GB18030 when UTF-8 leaves MANY unreadable characters: more than 20 and more than one in a hundred
+    (Nov 25, 2026: 14 pages the record cites have GB2312 bodies, which were read as UTF-8, so that only their text extracts were searched).
+    Two simpler rules were tried the same day and dropped: "more than 20 unreadable characters" read 33 UTF-8 pages with a few stray bytes as
+    GB and lost their non-ASCII words; "the page declares a GB character set" lost a UTF-8 page whose head names gb2312 (a check line of the
+    argument was no longer found). A GB page read as UTF-8 is unreadable in most of its Chinese; a UTF-8 page with stray bytes in a handful of places."""
+    raw = b.read_bytes(); s = raw.decode('utf-8', errors='replace'); bad = s.count('\ufffd')
+    if bad > 20 and bad * 100 > len(s):
+        try: return raw.decode('gb18030', errors='replace')
+        except Exception: pass
+    return s
+
+
 def page(sid):
     if sid in _cache: return _cache[sid]
     d = P / sid; t = ''
@@ -38,7 +51,7 @@ def page(sid):
                 with b.open('rb') as f: head = f.read(4096)
                 web = not head.startswith(b'%PDF') and bool(re.search(rb'(?i)<(!doctype|html|head|body)\b', head))
             if web and b.stat().st_size < 12_000_000:
-                raw = re.sub(r'(?is)<(script|style)\b.*?</\1>', ' ', b.read_text(encoding='utf-8', errors='replace'))
+                raw = re.sub(r'(?is)<(script|style)\b.*?</\1>', ' ', _read(b))
                 t += ' ' + html.unescape(re.sub(r'(?s)<[^>]+>', ' ', raw))
     _cache[sid] = squash(t)
     return _cache[sid]

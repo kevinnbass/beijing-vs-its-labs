@@ -1,21 +1,22 @@
 == date
-2026-11-25 03:06 UTC
+2026-11-25 19:31 UTC
 == core copies: python3 -I check_core_copies.py
 surviving sentence: same as the argument in 04_right_and_too_flat/right_too_flat_base.txt
 surviving sentence: same as the argument in 05_questions_and_answers/questions_answers_base.txt
 control: a copy with one word changed is not found
 08, statement of the answer: 8 of 8 sentences stand in the argument's own paragraph
 limits in the argument: 5 ("five")
-old wording: 20 delivered files searched for 47 retired phrases and 50 ids; control phrase "five limits" found: True
+old wording: 21 delivered files searched for 58 retired phrases and 50 ids; control phrase "five limits" found: True
+control: 9 of the 11 phrases retired in round 9 are found in the before-copies of round 9 (300 and 345 sources were retired before them)
 result: the folder agrees with the core in what it copies, and the retired wording is gone
 exit=0
 == idea 3: python3 -I 03_thread/make_thread_plain.py
-thread: about 688 words; 13 sources (7 on the record); quotations checked 7, hidden statements 27, all found; control rejected
-argument, counted by script: 21 points, 300 sources, 5 limits; figure: 62 records
+thread: about 708 words; 13 sources (7 on the record); quotations checked 7, hidden statements 27, all found; control rejected
+argument, counted by script: 21 points, 392 sources, 5 limits; figure: 62 records
 thread: 10 posts; characters with the number in front (plain / X weighted):
   1/10: 275 / 275  (room left 5)
   2/10: 266 / 266  (room left 14)
-  3/10: 270 / 270  (room left 10)
+  3/10: 276 / 276  (room left 4)
   4/10: 269 / 269  (room left 11)
   5/10: 277 / 277  (room left 3)
   6/10: 270 / 270  (room left 10)
@@ -27,21 +28,21 @@ longest post: 277 characters; limit 280
 control: a 281-character line is over the limit, and 141 Chinese characters weigh 282
 exit=0
 == idea 4: bash 04_right_and_too_flat/build.sh
-right_too_flat: about 1108 words; 25 sources (14 on the record); quotations checked 29, hidden statements 27, all found; control rejected
+right_too_flat: about 1144 words; 26 sources (15 on the record); quotations checked 29, hidden statements 28, all found; control rejected
 exit=0
 == idea 5: python3 -I 05_questions_and_answers/build.py
-questions_answers: about 1494 words; 28 sources (21 on the record); quotations checked 22, hidden statements 49, all found; control rejected
-argument, counted by script: 21 points, 300 sources, 5 limits
-state media, from tables/state_media_items.tsv: 75 items; 14 only warn, dated 2025-07-31 to 2026-11-06 ("Jul 31 to Sept 24, 2025")
+questions_answers: about 1549 words; 29 sources (22 on the record); quotations checked 22, hidden statements 51, all found; control rejected
+argument, counted by script: 21 points, 392 sources, 5 limits
+state media, from tables/state_media_items.tsv: 75 items; 19 only warn, dated 2025-07-31 to 2026-11-06 ("Jul 31 to Sept 24, 2025")
 licence table, from tables/house_licence_table.tsv: 54 applications, 3,444,160 chips; returned without action 1,888,950 (54.85%, shown as 55%); approved 879,868 in 21, every one marked "Approved, not shipped": True; statuses ['Approved, not shipped', 'RWA', 'Rejected', 'Submitted']
-ids cited: 34; on the do-not-cite list of 20: 0
+ids cited: 36; on the do-not-cite list of 20: 0
   1. Did China ban Nvidia chips?  sentences in the answer: 3; sources cited: 1
   2. Then what did Beijing do in public?  sentences in the answer: 3; sources cited: 6
   3. Has anyone said on the record that purchases were restricted?  sentences in the answer: 3; sources cited: 3
   4. Do China's AI companies want Nvidia chips?  sentences in the answer: 3; sources cited: 2
   5. Why would Beijing hold back chips its own companies want?  sentences in the answer: 3; sources cited: 3
   6. What are the 600,000 chips in Hong Kong?  sentences in the answer: 3; sources cited: 2
-  7. Was an import permit refused?  sentences in the answer: 3; sources cited: 2
+  7. Was an import permit refused?  sentences in the answer: 3; sources cited: 3
   8. Did any Nvidia chips get in?  sentences in the answer: 3; sources cited: 3
   9. Did the whole Chinese government take one side?  sentences in the answer: 3; sources cited: 3
   10. Was Beijing the only thing in the way?  sentences in the answer: 3; sources cited: 4
@@ -52,37 +53,40 @@ cn-le05-sec-submissions-20261123: saved 2026-11-23T08:51:16Z; 1003 filings in th
 newest quarterly report: filed 2026-08-26 for the period ended 2026-07-26
 cn-ga06-sec-submissions-20261124: saved 2026-11-24T10:27:05Z; 1005 filings in the record, the newest dated 2026-11-23; 18 quarterly reports (10-Q)
 newest quarterly report: filed 2026-08-26 for the period ended 2026-07-26
-result: no report for a period ending on or after 2026-10-25 is in either record; both controls hold in each
+cn-ga31-official-sec-submissions-20261125: saved 2026-11-25T06:49:19Z; 1005 filings in the record, the newest dated 2026-11-23; 18 quarterly reports (10-Q)
+newest quarterly report: filed 2026-08-26 for the period ended 2026-07-26
+result: no report for a period ending on or after 2026-10-25 is in any of the three records; both controls hold in each
 licence table: 54 rows, 3,444,160 chips; RWA 1,888,950 (54.85%, shown as 55%); "Approved, not shipped" 879,868; plain "Approved" rows: 0
 with the 445,000: 49.52% if the Tencent row of Dec 19, 2025 is that application, 48.57% if it is a further one
-copied from the argument: 19 of 19 stand in the argument, 19 of 19 in the page
-withdrawn wordings searched: 18; found: 0
+copied from the argument: 31 of 31 stand in the argument, 31 of 31 in the page
+withdrawn wordings searched: 28; found: 0
+control: 10 of the 10 wordings withdrawn in round 9 are found in the before-copy of round 9
 customs, parts and accessories of computers, as printed: Jan-Sep 2025 US$18.9 billion; Jan-Sep 2026 US$82.2 billion
-ids cited: 73; on the do-not-cite list of 20: 0
+ids cited: 84; on the do-not-cite list of 20: 0
 notes named: 5; missing: 0
 documents listed: 12
 result: every number, id and note name agrees with its file
-what_would_change: about 4077 words; 73 sources (50 on the record); quotations checked 61, hidden statements 88, all found; control rejected
+what_would_change: about 4489 words; 84 sources (61 on the record); quotations checked 62, hidden statements 106, all found; control rejected
 exit=0
 == idea 33: python3 -I 33_timeline_plain_text/gen_timeline.py
-timeline: about 3243 words; 0 sources (0 on the record); quotations checked 0, hidden statements 30, all found; control rejected
+timeline: about 3312 words; 0 sources (0 on the record); quotations checked 0, hidden statements 34, all found; control rejected
 timeline: 62 records from figure_events.tsv (figure_data.txt holds 62); May 21, 2023 to Nov 19, 2026
 tiers: 22 published documents or officials, 14 companies or named people on the record, 26 press reports citing unnamed people
-rows: Beijing holds Nvidia back 24; Beijing lets Nvidia in 14; The companies reach for Nvidia 14; The companies turn to home-made chips 10
+rows: Beijing holds Nvidia back 25; Beijing lets Nvidia in 13; The companies reach for Nvidia 14; The companies turn to home-made chips 10
 compared with figure_data.txt: id, date, date label, row and wording equal in 62 of 62 records; ids on the do-not-cite list: 0 of 20 listed
 record numbers: equal to the numbering of figure_data.txt in 62 of 62 (by date, Beijing's rows first; kept by an N line: cn-acts-reuters-rtx5500-20260927 as 62); control: numbering by date alone differs from the table in 28 records
-records with no exact day: 2 (After summer 2025 (Wall Street Journal); Sept 2025 (Alibaba, Form 20-F filed with the SEC))
-quoted phrases: 30 in the table; 30 found in the saved copy and kept; 0 not found, marks taken off (records none)
+records with no exact day: 2 (After a summer 2025 briefing (Wall Street Journal); Sept 2025 (Alibaba, Form 20-F filed with the SEC))
+quoted phrases: 34 in the table; 34 found in the saved copy and kept; 0 not found, marks taken off (records none)
 extra reference lines written: 4; controls: true phrase found, false phrase rejected
 exit=0
 == look checks (render_and_look.py --check; exit 0 required)
-LOOKED: outputs/A1_writing_short/03_thread/thread.html | 9 screenshots in research/looks/thread-ea8d1064184d/run-20261125T030455Z | 20261125T030552Z: Round 8, after core edit 7c. 2 of 9 screenshots differ by sha256 from the look recorded 20261125T025212Z (390-tile03, 1280-tile02), both opened; 7 byte-identical. The leaves-out list now says 21 points and 300 sources; posts 7 to 10 and the list read whole; nothing cut, overlapping or off the edge; no sideways scroll.
+LOOKED: outputs/A1_writing_short/03_thread/thread.html | 9 screenshots in research/looks/thread-fe3a9e20fcb9/run-20261125T191627Z | 20261125T191735Z: Round 9 (core edit 8b, Nov 25, 2026): post 3 now says Huawei's and other home-made clusters (276 characters), the leaves-out list says 392 sources and gives the Nov 5 dateline as on Yahoo's copy; reference labels follow the core. 9 shots: 1 byte-identical to the last recorded look (run-20261125T100533Z); the 8 that differ all opened: posts and lists read whole, nothing cut, overlapping or off the edge at 390 or 1280.
 exit=0
-LOOKED: outputs/A1_writing_short/04_right_and_too_flat/right_too_flat.html | 13 screenshots in research/looks/right_too_flat-b4a859019118/run-20261125T030458Z | 20261125T030631Z: Round 8, after core edit 7c: page bytes unchanged; stale only through argument/argument_refs.tsv (a row this page does not cite). All 13 new screenshots are byte-identical by sha256 to those of the look recorded 20261125T025326Z, so none was reopened.
+LOOKED: outputs/A1_writing_short/04_right_and_too_flat/right_too_flat.html | 13 screenshots in research/looks/right_too_flat-883153492086/run-20261125T191636Z | 20261125T191757Z: Round 9 (core edit 8b, Nov 25, 2026): the sheet's text is unchanged; only reference labels moved with the core (the import-licence catalogue's two issuers, Nvidia's file host). 13 shots: 8 byte-identical to the last recorded look (run-20261125T100538Z); the 5 that differ (1280-tile04, 05; 390-tile06, 07, 08) all opened: the reference list reads whole, links wrap, nothing cut or overlapping.
 exit=0
-LOOKED: outputs/A1_writing_short/05_questions_and_answers/questions_answers.html | 17 screenshots in research/looks/questions_answers-530786b84af5/run-20261125T030502Z | 20261125T030552Z: Round 8, after core edit 7c. 2 of 17 screenshots differ by sha256 from the look recorded 20261125T025223Z (1280-tile03, 390-tile05), both opened; 15 byte-identical. The leaves-out list says 21 points and 300 sources; the one-sentence answer and the list read whole; nothing cut, overlapping or off the edge.
+LOOKED: outputs/A1_writing_short/05_questions_and_answers/questions_answers.html | 17 screenshots in research/looks/questions_answers-374c091f2de9/run-20261125T191641Z | 20261125T192014Z: Round 9 (core edit 8b, Nov 25, 2026): Q7 now says the reply speaks only of exporters and export controls; the leaves-out list says 392 sources and gives the Nov 5 dateline as on Yahoo's copy; reference labels follow the core. 17 shots: 4 byte-identical to the last recorded look (run-20261125T100544Z); the 13 that differ all opened: answers, the one sentence, the list and the references read whole, nothing cut, overlapping or off the edge.
 exit=0
-LOOKED: outputs/A1_writing_short/08_what_would_change/what_would_change.html | 40 screenshots in research/looks/what_would_change-f6409ca86e63/run-20261125T030506Z | 20261125T030631Z: Round 8, after core edit 7c. 20 of 40 screenshots differ by sha256 from the look recorded 20261125T025326Z (1280 tiles 5, 12, 14; 390 tiles 10 to 26), all 20 opened; 20 byte-identical. Item 8 now gives Nvidia's sentence as carried by The Standard (page of Nov 20, 2026), reference 47 is The Standard's page with its title, the Daily Caller reference is gone; references 48 to 73 whole; build check 88 statements. Nothing cut, overlapping or off the edge; no sideways scroll.
+LOOKED: outputs/A1_writing_short/08_what_would_change/what_would_change.html | 46 screenshots in research/looks/what_would_change-d870337adbc8/run-20261125T191646Z | 20261125T193144Z: Round 9 (core edit 8b and voucher rounds, Nov 25, 2026): the answer now says pressed ... to move away; item 1 banned-import lists with the sixth batch, the customs and tariff texts, the reply's words, the three catalogues; item 2 Cybersecurity Review Office, point 11 words, 27 transcripts, FT attribution; item 3 attributions; item 8 the SEC record of Nov 25; item 9 119th Congress; local rules: Chengdu, Chongqing, the count's searches. 46 shots (was 43), all differ from run-20261125T100552Z, all 46 opened: nothing cut, overlapping or off the edge at 390 or 1280. The two flags 'undefined' are the literal query words in the address of reference 81 (cdgaoqi.com ... childId=undefined&oneId=undefined), the saved page's own address, not a fault of the page.
 exit=0
 == result
 all builds and look checks passed

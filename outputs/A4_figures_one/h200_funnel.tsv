@@ -13,7 +13,8 @@
 #   by       who reported it, as shown
 #   what     a few words on what is counted, as shown
 # The rows are separate counts, not one tally. Five are press reports citing unnamed people; two are sums of one United States
-# government table of licence applications (status as of May 11, 2026). An application names a consignee; it is not an order.
+# government table of licence applications (status as of May 11, 2026). An application names a data-centre operator or ultimate
+# consignee (the table's column; core edit 8b, Nov 25, 2026); it is not an order.
 # Dropped in round 4, as in the core: the old multiplied ceiling for Washington's step (our multiplication of a press report: firms times the cap for each).
 # Round 5 (Nov 24, 2026): the "by" cell of the two table rows no longer calls the table the Commerce Department's (core edit 6, part 05; not shown on either page).
 key	dir	tier	card	label	qual	number	times	by	what

@@ -157,27 +157,50 @@ table.pv td.sh { font: 700 15px/1.2 var(--font-head); color: var(--ink); white-s
 
 /* local vouchers (fourth edit) */
 #vouchers { margin-top: 16px; }
-.vgrid { display: grid; grid-template-columns: 1fr; grid-template-areas: "a" "b" "f"; gap: 6px 40px; align-items: start; }
-@media (min-width: 1000px) { .vgrid { grid-template-columns: 1fr 1fr; grid-template-rows: auto 1fr; grid-template-areas: "a b" "f b"; } }
+.vgrid { display: grid; grid-template-columns: 1fr; grid-template-areas: "a" "f" "b"; gap: 6px 40px; align-items: start; }
+@media (min-width: 1000px) { .vgrid { grid-template-columns: 1fr 1fr; grid-template-areas: "a f" "b b"; } }      /* voucher round 5: the rules that favour home-made computing beside the note (a, f); the third class below, the width of the card (b) */
 .vlab a.srcn { white-space: nowrap; }
-.vgrid .va { grid-area: a; } .vgrid .vb { grid-area: b; } .vgrid .vf { grid-area: f; margin-top: 14px; }
+.vgrid .va { grid-area: a; } .vgrid .vb { grid-area: b; } .vgrid .vc { grid-area: c; } .vgrid .vf { grid-area: f; margin-top: 8px; }
+@media (min-width: 1000px) { .vgrid .vb, .vgrid .vc { margin-top: 14px; } .vgrid .vc h4:first-child { margin-top: 37px; } }
 .vgrp h3 { font: 700 14px/1.3 var(--font-text); margin: 8px 0 4px; }
+.vgrp h4 { font: 600 13px/1.3 var(--font-text); color: var(--ink2); margin: 10px 0 4px; }
 .vkey { display: flex; flex-wrap: wrap; gap: 4px 18px; font-size: 12.5px; color: var(--ink2); margin-bottom: 2px; }
 .vkey span { display: flex; align-items: center; gap: 6px; }
-i.sw.both { background: linear-gradient(90deg, var(--away) 50%, var(--toward) 50%); }
-.vr { display: grid; grid-template-columns: minmax(150px, 42%) 1fr; gap: 12px; align-items: center; padding: 5px 0; border-top: 1px solid var(--grid); }
+i.sw.both { background: linear-gradient(90deg, var(--away) 50%, var(--toward) 50%); } i.sw.unk { background: var(--surface); border: 2.5px solid var(--ink2); }
+.vr { display: grid; grid-template-columns: minmax(150px, 42%) 1fr; gap: 0 12px; align-items: center; padding: 5px 0; border-top: 1px solid var(--grid); }
 .vlab { font-size: 13.5px; line-height: 1.45; }
-.vnote { display: block; font-size: 12px; color: var(--muted); }
+.vnote { grid-column: 1 / -1; font-size: 12px; line-height: 1.35; color: var(--muted); margin-top: 1px; }      /* a row’s note runs under its label and its marks, the whole width of the column */
+.vtag { font-size: 11px; color: var(--muted); border: 1px solid var(--axis); border-radius: 8px; padding: 0 6px; white-space: nowrap; }
 .vt { position: relative; height: 30px; margin: 0 22px 0 8px; }
 .vt .vl { position: absolute; top: 19px; height: 2px; left: calc(var(--a) * 100%); width: calc((var(--b) - var(--a)) * 100%); background: var(--axis); }
 .vt .vd { position: absolute; top: 14px; width: 12px; height: 12px; margin-left: -6px; border-radius: 50%; left: calc(var(--x) * 100%); }
 .vt .vd.away { background: var(--away); } .vt .vd.toward { background: var(--toward); }
 .vt .vd.both { background: linear-gradient(90deg, var(--away) 50%, var(--toward) 50%); }
+.vt .vd.unk { background: var(--surface); border: 2.5px solid var(--ink2); } .vt .vl.unk { background: none; height: 0; top: 19px; border-top: 2px dashed var(--ink2); }      /* two rates by a type of facility the rule does not name: neither colour */
 .vt .vn { position: absolute; top: 0; transform: translateX(-50%); left: calc(var(--x) * 100%); font: 700 12px/1 var(--font-head); white-space: nowrap; }
 .vt .vn.side { top: 14px; transform: none; left: auto; }
 .vr.axis { padding-top: 0; border-top: 0; }
 .vr.axis .vt { height: 16px; border-top: 1px solid var(--axis); }
 .vr.axis .vt span { position: absolute; top: 3px; transform: translateX(-50%); left: calc(var(--x) * 100%); font-size: 11px; color: var(--muted); }
+/* voucher round 5: the third class, its one-rate rules as a compact list in columns (place, month, a dot on the same 0 to 60% scale, the rate) */
+.vbtop { display: grid; grid-template-columns: 1fr; gap: 0 40px; align-items: start; }
+@media (min-width: 1000px) { .vbtop { grid-template-columns: 1fr 1fr; } }
+.vexpl { font-size: 12.5px; line-height: 1.4; color: var(--ink2); margin: 0 0 6px; max-width: 72ch; }
+.vmini { columns: 1; column-gap: 28px; margin-top: 8px; }
+@media (min-width: 620px) { .vmini { columns: 2; } }
+@media (min-width: 1000px) { .vmini { columns: 4; } }
+.vmh { font: 600 12.5px/1.3 var(--font-text); color: var(--ink2); margin: 10px 0 2px; break-after: avoid; break-inside: avoid; }
+.vmini > .vmh:first-child { margin-top: 0; }
+.vm { display: grid; grid-template-columns: 1fr 56px 30px; gap: 0 6px; align-items: center; font-size: 12px; line-height: 1.3; padding: 2px 0; border-top: 1px solid var(--grid); break-inside: avoid; }
+.vml a.srcn { white-space: nowrap; }
+.vmt { position: relative; height: 12px; background: linear-gradient(var(--axis), var(--axis)) 0 50% / 100% 1px no-repeat; }
+.vmt i { position: absolute; top: 2px; width: 8px; height: 8px; margin-left: -4px; border-radius: 50%; left: calc(var(--x) * 100%); background: linear-gradient(90deg, var(--away) 50%, var(--toward) 50%); }
+.vmp { font: 700 12px/1 var(--font-head); text-align: right; }
+.vdag { color: var(--muted); margin-left: 2px; }
+.vfl { font-size: 10px; font-weight: 700; color: var(--ink2); margin-left: 2px; }
+.vfoot { columns: 1; column-gap: 28px; margin-top: 10px; font-size: 12px; line-height: 1.35; color: var(--muted); }
+@media (min-width: 1000px) { .vfoot { columns: 2; } }
+.vfoot p { margin: 0 0 4px; break-inside: avoid; } .vfoot b { color: var(--ink2); }
 @media (max-width: 620px) { .vr { grid-template-columns: 1fr; gap: 2px; } .vr.axis > div:first-child { display: none; } }
 
 /* the records */
@@ -258,8 +281,8 @@ li.ev.hl, li.ev:target { background: var(--wash); }
   </section>
  </div>
  <section class="card" id="vouchers">
-  <h2>地方算力券：对租用算力的补贴</h2>
-  <p class="sub">地方规定对企业租用算力的账单按一般比例（普通申请者适用的比例）补贴多少，国产算力和其他算力各是多少，均按各规定原文；对某类企业的更高比例（不论用什么芯片）见该行附注。全图用同一口径。</p>
+  <h2>地方算力券及同类补贴</h2>
+  <p class="sub">地方规定对企业租用或购买算力的账单按一般比例（普通申请者适用的比例）补贴多少，国产算力和其他算力各是多少，均按各规定原文；对某类企业的更高比例（不论用什么芯片）见各规定所存文本。全图用同一口径。对国产算力有利的规定逐行画出，附有说明；只有一个比例的规定按政府类别和比例列出。</p>
 %%VOUCHERS%%
  </section>
  <section class="card" id="records">

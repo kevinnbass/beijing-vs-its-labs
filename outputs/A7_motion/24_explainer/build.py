@@ -272,6 +272,12 @@ def check_substance(caps):
     its = ' '.join(hit[0]['items'])
     if f'{sm["n"]} state and Party media items' not in its or f'[{sm["first_id"]}]' not in its or f'[{sm["last_id"]}]' not in its: sys.exit('the source line of the state-media count must give the count of items and cite the first and the last of the warnings')
     if not all(f'[{sid}]' in its for _, sid, _ in later): sys.exit('the source lines of the state-media count must cite each later warning')
+    # fork OUTB, Nov 25, 2026 (after core edit 8): the source line itself states the count of the burst and how many of its items bear the first date;
+    # both are taken from the table here (the recount of that day moved 11 to 16 and left 'the 11 run from' standing in the line, on screen)
+    n_first = sum(1 for r in L.tsv('state_media_items.tsv') if r['stance'] == 'warns' and r['date'] == sm['first'].isoformat())
+    want_run = f'the {sm["n_burst"]} run from {mon(sm["first"])}, {sm["first"].year}' + (f' ({NUMWORD[n_first]} items that day' if n_first > 1 else '')
+    if want_run not in its: sys.exit(f'the source line of the state-media count must read: {want_run} ...')
+    if f'the {sm["n_burst"] + 1} run from' in its: sys.exit('control failed: a wrong count of the burst was found in the source line')
     if 'a sample and not a full count' not in its: sys.exit('the source line of the state-media count must say that the later items are a sample and not a full count')     # touch-up 6b (Nov 24, 2026), item 21
     # the argument must give the same counts (its answer and point 4)
     # touch-up 6b (Nov 24, 2026): the answer no longer carries the counts; point 18 does, in these words, and the caveat reads as below

@@ -203,7 +203,9 @@ def main():
     # (the argument, point 18); and what fill() made: the share of Washington's table, the caption's time
     A.guard(page, Q, ours=[*range(1, 11), '82', *ours], dates=dates)
     # withdrawn by core edit 6 (atlas/core_edit/APPLIED_6.txt): the warnings are not all of Aug 1 to Sept 24, 2025; the table is not the Commerce Department's
-    for banned in ('four limits', 'spokesperson', '750,000', 'Democrats', 'more than half', 'all date from', 'Aug 1 to', 'Commerce Department’s table', 'US Commerce Department, table'):
+    for banned in ('four limits', 'spokesperson', '750,000', 'Democrats', 'more than half', 'all date from', 'Aug 1 to', 'Commerce Department’s table', 'US Commerce Department, table',
+                   # withdrawn by core edit 8b (Nov 25, 2026): the planner's 加大力度; the Shanghai clusters in the city; the readout's own date
+                   'models to adapt to', 'the city’s internet companies run', 'meeting with Nvidia’s chief executive, Jul'):
         if banned in page: sys.exit(f'the page still says "{banned}"')
     words = re.sub(r'<a class="c[^>]*>\d+</a>', ' ', cols)
     words = sum(1 for w in re.sub(r'<[^>]+>', ' ', f'{title} {answer} {words}').split() if re.search(r'\w', w))   # a stray full stop is not a word

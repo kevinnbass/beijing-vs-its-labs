@@ -14,7 +14,7 @@ The push on China's AI companies to move off Nvidia came from two capitals. From
 
 ### 2023: two early turns
 
-Reuters reported on Nov 7, 2023 that Baidu had ordered 1,600 Huawei AI chips that August, ahead of new US rules [2]. An unnamed person told Reuters why: "They were ordering 910B chips to prepare for a future where they may no longer be able to purchase from Nvidia" [2]. The same report calls the order "tiny relative to the thousands of chips top Chinese tech firms have historically ordered from Nvidia" [2]. Eight days later Tencent's president told analysts, of the new curbs: "And we will also try to look for domestic source for these training chips." [3]
+Reuters reported on Nov 7, 2023, by people it did not name, that Baidu had ordered 1,600 Huawei AI chips that August, ahead of new US rules [2]. An unnamed person told Reuters why: "They were ordering 910B chips to prepare for a future where they may no longer be able to purchase from Nvidia" [2]. The same report calls the order "tiny relative to the thousands of chips top Chinese tech firms have historically ordered from Nvidia" [2]. Eight days later Tencent's president told analysts, of the new curbs: "And we will also try to look for domestic source for these training chips." [3]
 
 ### What the seller and the buyers have said on the record
 
@@ -28,7 +28,7 @@ Washington licensed Nvidia's H200 chip on condition of "independent, third-party
 
 One official American body weighs the two. The US-China commission's 2026 report says of the Chinese state: "U.S. and allied controls did not drive China's indigenization efforts, but they have added urgency in recent years." [12] The Congressional Research Service, Sept 19, 2025, read Beijing's pressure over Nvidia's weaker H20 chip as a push for better ones: China "may use its purported security concerns about the H20 to press for technology disclosures and access to more advanced chips, such as Nvidia's B30 chip" [13]. Under the curbs some labs now claim to train on home-made chips. Zhipu said in January 2026 that its image model had completed "its full training cycle on Chinese-made chips"; it "did not say how many processors or how long it took to train its model" [14].
 
-American curbs gave the companies a reason of their own to line up home-made supply, and Alibaba, Tencent and iFlytek have said so on the record. No source says the curbs alone did it; the commission says they added urgency to an effort Beijing already had.
+American curbs gave the companies a reason of their own to line up home-made supply, and Alibaba, Tencent and iFlytek have said so on the record. None of the sources cited here says the curbs alone did it; the commission says they added urgency to an effort Beijing already had.
 
 ## References
 
@@ -42,7 +42,7 @@ Each entry: its kind; what it is; the saved page's own title where the record ho
 
 [4] Company filing or statement. Nvidia, quarterly report on Form 10-Q for the quarter ended Oct 26, 2025, filed with the US Securities and Exchange Commission; signed Nov 19, 2025. https://www.sec.gov/Archives/edgar/data/1045810/000104581025000230/nvda-20251026.htm Saved copy: man-ms-sec-10q-2025-10
 
-[5] Company filing or statement. iFlytek, record of investor-relations activity: its results meeting of Aug 21, 2026, on the exchanges' disclosure site (cninfo). The record lists the chairman, president, board secretary and finance director, not who gave each answer. https://static.cninfo.com.cn/finalpage/2026-08-23/1225493949.PDF Saved copy: cn-le26-iflytek-ir-20260821
+[5] Company filing or statement. iFlytek, record of investor-relations activity: its results meeting of Aug 21, 2026, on the disclosure site cninfo.com.cn. The record lists the chairman, president, board secretary and finance director, not who gave each answer. https://static.cninfo.com.cn/finalpage/2026-08-23/1225493949.PDF Saved copy: cn-le26-iflytek-ir-20260821
 
 [6] Press report of words spoken on the record. Tencent, results call of Nov 18, 2026: transcript on the stock-data site Stock Analysis. The speaker labels are the site's; nobody has checked them against the recording. Page title: Tencent Holdings (HKG:0700) Q3 2026 Earnings Call Transcript & Audio. https://stockanalysis.com/quote/hkg/0700/transcripts/731168-q3-2026/ Saved copy: cn-o36-tencent-call-20261118-sa
 
@@ -50,7 +50,7 @@ Each entry: its kind; what it is; the saved page's own title where the record ho
 
 [8] Company filing or statement. Nvidia, quarterly report on Form 10-Q for the quarter to Jul 26, 2026, filed with the US Securities and Exchange Commission on Aug 26, 2026. https://www.sec.gov/Archives/edgar/data/1045810/000104581026000075/nvda-20260726.htm Saved copy: man-ms-sec-10q-2026-07
 
-[9] Official document, or an official on the record. House Foreign Affairs Committee, disclosure of Nov 19, 2026: the table of licence applications (the file's name: BIS License Decisions) for Nvidia's H200 and AMD's MI325X, with their status as of May 11, 2026 (its text layer is out of order; the rows were read from the page images). https://democrats-foreignaffairs.house.gov/wp-content/uploads/2026/11/11.19.26-ECRA-Information-Disclosure-of-BIS-License-Decisions.pdf Saved copy: cn-usdocs-hfac-decisions-20261119
+[9] Official document, or an official on the record. House Foreign Affairs Committee, disclosure of Nov 19, 2026: the table of licence applications (the file's name: 11.19.26-ECRA-Information-Disclosure-of-BIS-License-Decisions) for Nvidia's H200 and AMD's MI325X, with their status as of May 11, 2026 (its text layer is out of order; the rows were read from the page images). https://democrats-foreignaffairs.house.gov/wp-content/uploads/2026/11/11.19.26-ECRA-Information-Disclosure-of-BIS-License-Decisions.pdf Saved copy: cn-usdocs-hfac-decisions-20261119
 
 [10] Official document, or an official on the record. House Foreign Affairs Committee, disclosure of Nov 19, 2026, made by the full committee (its chairman's release; approved by unanimous consent at a business meeting; the files are on the committee Democrats' site): the committee's summary, which cites a BIS summary dated May 11, 2026 (BIS: the Commerce Department's Bureau of Industry and Security). https://democrats-foreignaffairs.house.gov/wp-content/uploads/2026/11/11.19.26-ECRA-Information-Disclosure-HFAC-Summary.pdf Saved copy: cn-usdocs-hfac-summary-20261119
 
@@ -62,4 +62,4 @@ Each entry: its kind; what it is; the saved page's own title where the record ho
 
 [14] Press report of words spoken on the record. InfoWorld, Jan 14, 2026, reporting Zhipu's statement on its image model GLM-Image. A company's own claim. Page title: Chinese AI firm trains state-of-the-art model entirely on Huawei chips. https://www.infoworld.com/article/4116787/chinese-ai-firm-trains-state-of-the-art-model-entirely-on-huawei-chips.html Saved copy: cn-train-infoworld-zhipu-glm
 
-Build check: 14 quotations and 26 further statements were looked for in the saved copies of 14 sources and all were found; a planted false quotation was rejected. 12 sources are documents, filings or named people on the record; 2 are press reports citing unnamed people, counts or machine transcripts. A quotation that is found shows what the source says, not that it is true.
+Build check: 14 quotations and 27 further statements were looked for in the saved copies of 14 sources and all were found; a planted false quotation was rejected. 12 sources are documents, filings or named people on the record; 2 are press reports citing unnamed people, counts or machine transcripts. A quotation that is found shows what the source says, not that it is true.

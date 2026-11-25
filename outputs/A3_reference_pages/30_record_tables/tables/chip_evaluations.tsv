@@ -1,4 +1,4 @@
-# One row per product in each security-and-reliability evaluation announcement of the China Information Technology Security Evaluation Center (itsec.gov.cn), parsed by tools/itsec_tables.py from the saved pages. Columns: saved id; announcement title; date on the page; table heading (category); row cells as on the page (number, product, maker, grade).
+# One row per product (154 rows) in each security-and-reliability evaluation announcement of the China Information Technology Security Evaluation Center (itsec.gov.cn), parsed by script from the saved pages. Each of the page's tables is preceded by a row of its column headings as the page prints them (26 rows, whose cells begin 序号); they are kept as the page has them, and a count of products leaves them out. Columns: saved id; announcement title; date on the page; table heading (category); row cells as on the page (number, product, maker, grade).
 saved_id	title	page_date	category	cells
 cn-le14-itsec-2023-1	安全可靠测评结果公告（2023年第1号）	2023-12-26	附表一、中央处理器（CPU）	序号 | 产品名称 | 送测单位 | 安全可靠等级
 cn-le14-itsec-2023-1	安全可靠测评结果公告（2023年第1号）	2023-12-26	附表一、中央处理器（CPU）	1 | 鲲鹏920 | 深圳市海思半导体有限公司 | I级

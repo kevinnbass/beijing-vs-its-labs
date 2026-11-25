@@ -1,25 +1,25 @@
 {
- "rows": 190,
+ "rows": 369,
  "kinds": {
-  "all": 190,
+  "all": 369,
   "official": 70,
   "company": 12,
   "press": 16,
   "other": 5,
-  "local": 87
+  "local": 266
  },
  "queries": {
   "英伟达": 10,
   "Nvidia": 16,
-  "国产": 55,
-  "Shanghai": 7,
+  "国产": 79,
+  "Shanghai": 28,
   "procurement": 11,
   "Micron": 2,
   "财库 119号": 1,
   "安全可靠 测评": 5,
   "no-such-word-zzqx": 0,
-  "算力券": 26,
-  "Province": 37
+  "算力券": 125,
+  "Province": 44
  },
  "query_with_kind": {
   "国产|press": 2

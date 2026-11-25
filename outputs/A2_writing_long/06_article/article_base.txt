@@ -2,12 +2,12 @@
 @deck From 2024 to 2026 the Chinese state pressed its AI companies to move off Nvidia's chips, and the companies kept ordering them. That holds on direction, with five limits.
 
 @note Draft by Claude, Anthropic's model. Written Nov 23, 2026 (UTC).
-@note How to read it. Words between quotation marks are a source's exact words, found in the saved copy by a script. A filled reference number is a document, a filing or a named person on the record. An open number is a press report citing unnamed people, a caption track or a machine transcript. Where a statement rests on a Chinese text, the English is our rendering, not an official translation.
+@note How to read it. Words between quotation marks are a source's exact words, found in the saved copy by a script. A filled reference number is a document, a filing, a named person on the record or a state-media item. An open number is a press report citing unnamed people, a caption track or a machine transcript. Where a statement rests on a Chinese text, the English is our rendering, not an official translation.
 @note The author's interest. Anthropic has argued in public for controls on chip exports to China (that is from the model's general knowledge; no saved page is cited for it), so judge this piece by its sources.
 
 ## The finding
 
-For two years the Chinese state pulled China's AI companies away from Nvidia's chips, and the companies kept reaching for them.
+For two years the Chinese state pressed China's AI companies to move away from Nvidia's chips, and the companies kept reaching for them.
 That answers a question raised by a clip posted on Nov 19, 2026, in which Palmer Luckey said: "China doesn't want NVIDIA to sell GPUs to Chinese companies." [clip-luckey]
 And next: "there are Chinese companies that want to buy Nvidia GPUs" [cnpol-x-overton-2123392702821580811].
 The first sentence is from a machine transcript of the clip (0:11 to 0:16), the second from the text of the post that carries it. Nobody has checked either by ear.
@@ -18,7 +18,7 @@ He is right on direction. Five limits follow at the end.
 Xi Jinping said in 2016 that having core technology controlled by others is China's greatest hidden danger [cn-xi-20160419].
 !! cn-xi-20160419 | 核心技术受制于人是我们最大的隐患
 !! cn-xi-20160419 | (2016年4月19日)
-Eight of China's 31 provincial-level governments were found to set a share for home-made computing hardware; Jiangsu marks its own, 70% or more of chips in new computing centres by 2030, as indicative, not binding [cn-factions-jiangsu-plan].
+Nine of China's 31 provincial-level governments were found to set a share for home-made computing hardware, one of them, Zhejiang's, for the computing of one sector; Jiangsu marks its own, 70% or more of chips in new computing centres by 2030, as indicative, not binding [cn-factions-jiangsu-plan].
 !! cn-factions-jiangsu-plan | 新建算力中心国产算力芯片使用占比达 70%以上
 !! cn-factions-jiangsu-plan | 新建算力中心国产算力芯片使用占比(%) 50 70 预期性
 !! cn-factions-jiangsu-plan | 2025 年 2030 年 属性
@@ -100,7 +100,7 @@ Washington's and Nvidia's are on the record; the rest come from unnamed people.
 !! cn-policy-he-welcomes | 欢迎包括英伟达公司在内的更多美资企业深耕中国市场
 !! cn-policy-he-welcomes | 新华社北京4月17日电
 !! man-e2596eab15f4 | NOV 13 2026
-2. **Public warnings and unpublished guidance, not a published ban.** No published order against buying Nvidia chips was found in the 82 policy pages read. Of 75 state-media items on Nvidia chips found, 11 of the 14 that only warn about them date from Jul 31 to Sept 24, 2025 [cn-ga02-gt-cac-summons-news-202507] [cn-acts-peoplesdaily-bjd-20250801] [cn-media-stdaily-security-forum]; the three found later are in Global Times in 2026, and the items after September 2025 are what two rounds of searches found, a sample and not a full count.
+2. **Public warnings and unpublished guidance, not a published ban.** No published order against buying Nvidia chips was found in the 82 policy pages read. Of 75 state-media items on Nvidia chips found from July 2025 to November 2026, 16 of the 19 that only warn about them date from Jul 31 to Sept 24, 2025 [cn-ga02-gt-cac-summons-news-202507] [cn-acts-peoplesdaily-bjd-20250801] [cn-media-stdaily-security-forum]; the three found later are in Global Times in 2026, and the items after September 2025 are what two rounds of searches found, a sample and not a full count.
 !! cn-acts-peoplesdaily-bjd-20250801 | 2025-08-01
 !! cn-acts-peoplesdaily-bjd-20250801 | 绝不能让“带病”的芯片上岗
 !! cn-media-stdaily-security-forum | 2025-09-24
@@ -115,4 +115,4 @@ Washington's and Nvidia's are on the record; the rest come from unnamed people.
 
 **What survives**
 
-From 2024 the security and planning side of the Chinese state pressed China's AI companies, through unpublished guidance that the press reported, to buy home-made chips rather than Nvidia's. The companies kept ordering Nvidia chips in the millions and, by the reports, had received a small part by late 2026. They were also turning to home-made chips, for their own reasons and under American curbs. Whether Beijing meant lasting policy or leverage is read both ways.
+From 2024 the security and planning side of the Chinese state pressed China's AI companies, through unpublished guidance that the press reported, to buy home-made chips rather than Nvidia's. The companies kept ordering Nvidia chips, in the millions by the press reports, and by those reports had received a small part by late 2026. They were also turning to home-made chips, for their own reasons and under American curbs. Whether Beijing meant lasting policy or leverage is read both ways.

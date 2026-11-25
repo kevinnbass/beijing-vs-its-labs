@@ -59,6 +59,7 @@ for call in ('Tencent 2026-03-18', 'Tencent 2026-05-13'):
 v.update({'M_SA_CALLS': mc['more_sa_calls'], 'M_OWN_ROWS': mc['more_own_rows'], 'M_PRESS_ROWS': {1: 'one'}[int(mc['more_press_rows'])]})
 v.update({'M_ROWS': mc['more_rows'], 'M_SA_ROWS': mc['more_sa_rows'], 'M_ZH_ROWS': mc['more_chinese_rows'], 'L9_CALLS': mc['l9_calls'], 'L9_NVIDIA': mc['l9_nvidia'], 'L9_HUAWEI': mc['l9_huawei'],
           'L9_CYBER': mc['l9_cyberspace'], 'L9_CUSTOMS': mc['l9_customs'], 'L9_H200': mc['l9_h200'], 'L9_H20': mc['l9_h20'], 'L9_H20_WHICH': mc['l9_h20_which'], 'L9_UNTRANS': mc['l9_untranslated'],
+          'L9_UNTRANS_READER': mc['l9_untranslated_reader'], 'L9_UNTRANS_MISSED_W': {0: 'no', 1: 'one', 2: 'two'}[int(mc['l9_untranslated_missed'])],
           'N_UNTRANS': {1: 'one'}[int(un['calls_with_it'])], 'UNTRANS_WHICH': '; '.join(f"{x.split()[0]}, {nice(x.split()[1])}" for x in un['which'].split('; ')),
           'IFLY_TEXTS': mc['ifly_texts'], 'IFLY_REPORTS': mc['ifly_reports'], 'IFLY_RECORDS': mc['ifly_records'], 'IFLY_ANSWERS': mc['ifly_answers'], 'IFLY_WXB': {2: 'twice'}[int(mc['ifly_网信办'])], 'C_YUETAN': {2: 'twice'}[int(mc['control_约谈'])]})
 lines = []

@@ -15,6 +15,9 @@ cn-labs-h200-two-million-202512-relay1-wayback	two of the people said
 # old multiplied ceiling for Washington's step was dropped in round 4, as in the core)
 #@ cap
 cn-acts-reuters-us-approvals-20260514-wayback	each approved customer can purchase up to 75,000 chips
+# round 9b: the limit is given by two of the people the report did not name (core edit 8b words it so)
+#@ cap.unnamed
+cn-acts-reuters-us-approvals-20260514-wayback	under the U.S. licensing terms, two of them said
 #@ cap.date
 cn-acts-reuters-us-approvals-20260514-wayback	Published on 05/14/2026
 #@ cap.nodelivery

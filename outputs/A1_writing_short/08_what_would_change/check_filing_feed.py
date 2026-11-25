@@ -12,13 +12,17 @@ Oct 25, 2026, and the Nov 24 copy's newest filing is dated Nov 23, 2026.
 Controls: each record must hold the report filed Aug 26, 2026 (so the search can see a quarterly report), and some
 filing dated after Aug 26, 2026 (so the record reaches past that day).
 (Round 5, Nov 24, 2026: the second record added; before-copy check_filing_feed.before-round5-20261124.py.)
+(Round 9, Nov 25, 2026: a third record, research/primary/cn-ga31-official-sec-submissions-20261125, fetched Nov 25, 2026 at
+06:49 UTC, which the argument now cites; the page says it too lists no report for that quarter, with filings up to Nov 23;
+before-copy check_filing_feed.before-round9-20261125.py.)
 """
 import json, sys
 from pathlib import Path
 
 PRIMARY = Path(__file__).resolve().parents[5] / 'research' / 'primary'
 ok = True
-for SID, said_newest in (('cn-le05-sec-submissions-20261123', None), ('cn-ga06-sec-submissions-20261124', '2026-11-23')):
+for SID, said_newest in (('cn-le05-sec-submissions-20261123', None), ('cn-ga06-sec-submissions-20261124', '2026-11-23'),
+                          ('cn-ga31-official-sec-submissions-20261125', '2026-11-23')):      # round 9: the record of Nov 25, 2026, 06:49 UTC, which the argument cites
     d = PRIMARY / SID
     rec = json.loads((d / 'body.json').read_text(encoding='utf-8'))['filings']['recent']
     fetched = json.loads((d / 'meta.json').read_text())['fetched_utc']
@@ -34,5 +38,5 @@ for SID, said_newest in (('cn-le05-sec-submissions-20261123', None), ('cn-ga06-s
     late = [(f, fd, rd) for f, fd, rd in periodic if rd >= '2026-10-25' or (f == '10-Q' and fd > '2026-08-26')]
     if late: print(f'CHANGE THE TEXT: a report for the quarter ended Oct 25, 2026, or a later one, is in the record: {late}'); ok = False
     if q[-1] != ('2026-08-26', '2026-07-26'): print('CHANGE THE TEXT: the newest quarterly report is not the one the page names'); ok = False
-print('result: no report for a period ending on or after 2026-10-25 is in either record; both controls hold in each' if ok else 'result: FAILED')
+print('result: no report for a period ending on or after 2026-10-25 is in any of the three records; both controls hold in each' if ok else 'result: FAILED')
 sys.exit(0 if ok else 1)

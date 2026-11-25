@@ -24,7 +24,7 @@ BANDS = [  # band title, [(row key, name, what it is)]; ordered so that the bodi
                                ('mss', 'Security ministry', 'Ministry of State Security'),
                                ('ndrc', 'State planner', 'National Development and Reform Commission (NDRC)')]),
     ('Customs, rule-setters and state media', [('customs', 'Customs', 'customs authorities and their officers at the ports'),
-                                               ('rules', 'Bodies that set purchasing rules', 'finance and industry ministries, State Council’s office, evaluation centres; the purchase rules bind state buyers only'),
+                                               ('rules', 'Bodies that set purchasing rules', 'finance and industry ministries, State Council’s office, evaluation centres; the purchase rules apply to government purchasing only'),
                                                ('media', 'State media', 'People’s Daily’s commentary account; an account of the state broadcaster')]),
     ('Premier and vice premiers', [('ding', 'Vice Premier Ding Xuexiang', 'heads the chip committee, as the Wall Street Journal describes it'),
                                    ('li', 'Premier Li Qiang', 'received American business leaders in May 2026'),
@@ -101,6 +101,12 @@ CSS = """
 
 def main():
     recs, extra = C.load(HERE / 'data.txt')
+    # Core edit 8 (Nov 25, 2026): the words behind Zhejiang's share, which the note on published orders names with its scope. They are checked here and
+    # NOT held in data.txt, because atlas figure 11 (scripts/cn_atlas_11_who_inside_beijing.py) reads data.txt and would take every "!" line there as
+    # one of its own sources; the province note is this page's alone.
+    extra += [('cn-ga31-cndocs-52', '到2030年，浙江信息通信行业算力规模达150EFLOPS，国产化算力占比超60%'),
+              ('cn-ga31-cndocs-52', '重点工程4:算力网络一体化提升工程'),
+              ('cn-ga31-cndocs-52', '省通信管理局省发展改革委关于印发《浙江省信息通信业发展“十五五”规划》的通知')]
     for r in recs:
         r['rows'] = r['row'].split(',')
         if r['col'] == 'case':
@@ -132,11 +138,15 @@ def main():
     # The warnings up to Sept 24, 2025 (the burst after the summons) and the later ones, as the core figure's state_media() counts them.
     win = [d for d in warns if d <= date(2025, 9, 24)]; late = [r for r in sm if r['stance'] == 'warns' and date.fromisoformat(r['date']) > date(2025, 9, 24)]
     iso = sorted(date.fromisoformat(r['date']) for r in sm if re.fullmatch(r'\d{4}-\d\d-\d\d', r['date']))
-    assert (len(sm), len(warns), len(win), len(late), st['mixed']) == (75, 14, 11, 3, 8), (len(sm), st)
+    # core edit 8 (Nov 25, 2026): the recount of the table by its written rule (second coders and a third reader): 19 items only warn, 16 of them up to
+    # Sept 24, 2025, 3 later, 7 mixed; (75, 14, 11, 3, 8) before it.
+    assert (len(sm), len(warns), len(win), len(late), st['mixed']) == (75, 19, 16, 3, 7), (len(sm), st)
     assert all(r['outlet'].startswith('Global Times') and r['date'].startswith('2026') for r in late), late
     media_ids = {r['saved_id'] for r in sm if r['stance'] == 'warns'}
     assert all(r['sid'] in media_ids for r in recs if 'media' in r['rows']), 'a state-media mark is not one of the census\'s warning items'
     pr = Counter(r['result'] for r in C.table('provinces_31.tsv')); assert sum(pr.values()) == 31, pr
+    zj = [r for r in C.table('provinces_31.tsv') if r['government'] == 'Zhejiang']      # core edit 8: the note names Zhejiang's share with its scope; it must be a share in the table, from the sector plan
+    assert pr['share'] == 9 and len(zj) == 1 and zj[0]['result'] == 'share' and zj[0]['saved_ids'].split()[0] == 'cn-ga31-cndocs-52', (pr, zj)
     ev = [r for r in C.table('chip_evaluations.tsv') if '人工智能训练推理芯片' in r['category'] and not r['cells'].startswith('序号')]
     per_list = Counter(r['page_date'] for r in ev)
     assert per_list == {'2026-05-26': 9, '2026-09-20': 2}, per_list   # the record of the evaluation list says nine, then two more
@@ -166,13 +176,18 @@ def main():
                      'it faults Nvidia for what it held back, not for selling. No page read says the case has ended; the regulator’s review of Apr 10, 2026 still lists it. '
                      'Whether it was meant as leverage in trade talks is read both ways.</p></div></div>')
     g.append('</div>')
+    # Round 9 (Nov 25, 2026): where the page gives the act no date (DATELABEL No_date_given, set in data.txt for atlas figure 11), the grid says
+    # "No date given"; the list of records and the pop-ups add the date of the report, which is DATE for these records (checked: it stands in the S line).
+    undated = [r for r in recs if r['when'] == 'No date given']
+    assert undated and all(C.fmt(r['date']) in r['S'] for r in undated), [r['key'] for r in undated if C.fmt(r['date']) not in r['S']]
+    for r in undated: r['when'] = f'No date given; reported {C.fmt(r["date"])}'
 
     figure = f"""
   <section class="card" id="grid">
 {chr(10).join(g)}
    <div class="split">
     <h3>How one newspaper put the split</h3>
-    <p>The Financial Times, Nov 13, 2026, citing unnamed people: the commerce ministry <b>“favoured imports”</b>, while <b>“the national security-focused officials within”</b> the cyberspace regulator and the security ministry
+    <p>The Financial Times, Nov 13, 2026, in a passage that names no source: the commerce ministry <b>“favoured imports”</b>, while <b>“the national security-focused officials within”</b> the cyberspace regulator and the security ministry
     <b>“viewed dependence on Nvidia as a strategic vulnerability”</b>. <b>“Over the past year, the latter position has gained ground.”</b> The paper speaks of officials within those two bodies, not of the bodies as such.</p>
     <h3>And an American official</h3>
     <p>The US Trade Representative, on Bloomberg Television, video posted Nov 20, 2026 (captions, not checked by ear; 1:06 to 1:35): the Chinese side is <b>“not as monolithic as people would have you believe”</b>.
@@ -185,7 +200,7 @@ def main():
     <li><b>Open marks rest on unnamed people.</b> In the answers found, Beijing’s spokespeople confirmed none of them: “我不了解你提到的情况” (I am not aware of what you mention), said the foreign ministry on Aug 13, 2025; asked on Nov 9, 2026 about the chips stored in Hong Kong, it said “具体情况建议向中方主管部门询问” (for the details, ask the competent Chinese departments).</li>
     <li><b>The marks are a selection, not a count.</b> An act by several bodies is drawn once in each body’s row, with the same number. The grouping of the rows is ours. {C.WORDS[len(away_rows)].capitalize()} named bodies and people have a mark on the side that points away from Nvidia and {C.WORDS[len(toward_rows)]} on the side that points toward it; the industry ministry is on both.</li>
     <li><b>The state-media marks are warnings, not orders.</b> Of {len(sm)} state and Party media items on Nvidia chips found from {C.MON[iso[0].month - 1]} {iso[0].year} to {C.MON[iso[-1].month - 1]} {iso[-1].year}, {len(win)} of the {len(warns)} that only warn about them date from {C.fmt(win[0])} to {C.fmt(win[-1])}, and the {C.WORDS[len(late)]} found later are in Global Times in 2026; {C.WORDS[st['mixed']]} others mix a warning with a welcome. The items after September 2025 are what two rounds of searches found, a sample and not a full count. The security ministry’s article names no maker.</li>
-    <li><b>No published order against buying Nvidia chips was found</b> in the 82 policy pages read. The purchase rules bind Party and government bodies. No published national plan found sets a home-made share for computing centres: every such share found is a province’s or a city’s ({pr['share']} of 31 provincial-level governments were found to set one for home-made computing hardware), and the national computing-network opinions of December 2023 set none. These shares are not drawn.</li>
+    <li><b>No published order against buying Nvidia chips was found</b> in the 82 policy pages read. The 2023 purchase rules bind Party and government bodies from township level up and the institutions attached to them; other units may leave their requirement out. No published national plan found sets a home-made share for computing centres: every such share found is a province’s or a city’s ({pr['share']} of 31 provincial-level governments were found to set one for home-made computing; one of them, Zhejiang’s, is for the computing of one sector, the province’s information and communications industry, by 2030, as a project’s target), and the national computing-network opinions of December 2023 set none. These shares are not drawn.</li>
     <li>The chip at issue in these marks changed: the H20 (2024 to 2025), the RTX Pro 6000D (2025), the H200 (from December 2025). English renderings of Chinese are ours, not official translations.</li>
    </ul>
   </section>"""
@@ -197,7 +212,7 @@ def main():
     <li><i class="p hollow away" aria-hidden="true">1</i><span><b>Open:</b> a press report citing unnamed people. {n_open} records</span></li>
    </ul>"""
 
-    below = C.records_block(recs, 'One line for each numbered mark, in the order of the grid: the date of the act where the page gives it, otherwise the date of the report; '
+    below = C.records_block(recs, 'One line for each numbered mark, in the order of the grid: the date of the act, as far as the page gives it (where it gives none, the line says so and gives the date of the report); '
                             'our summary; the page\'s own words; the source. Point at a mark in the grid to read the words there.')
 
     page = C.page(

@@ -1,0 +1,7 @@
+{
+ "id": "cn-ga31-unsaved-sec-fts-q11",
+ "url": "https://efts.sec.gov/LATEST/search-index?q=%22Chinese%20government%22&forms=10-K,10-Q,20-F&ciks=0000002488,0000050863,0000804328,0001730168,0000723125,0001835632,0001375365,0001571996,0001046179&dateRange=custom&startdt=2024-01-01&enddt=2026-11-23",
+ "route": "https://efts.sec.gov/LATEST/search-index?q=%22Chinese%20government%22&forms=10-K,10-Q,20-F&ciks=0000002488,0000050863,0000804328,0001730168,0000723125,0001835632,0001375365,0001571996,0001046179&dateRange=custom&startdt=2024-01-01&enddt=2026-11-23",
+ "fetched_utc": "2026-11-25T06:56:37Z",
+ "sha256": "7168cbe8ef3a9b95ee23138dbb7829fce5a688f9d6ba226681389e33023465fa"
+}

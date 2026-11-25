@@ -67,17 +67,21 @@ def main():
     n_press = sum(not r['solid'] for r in unp); n_fil = sum(r['solid'] for r in unp)
     n_solid = sum(r['solid'] for r in recs); n_open = len(recs) - n_solid
     words = C.WORDS
-    # the finance ministry's purchase bar by name (Jun 22, 2026): its list of 46 American firms names no chip maker.
-    # Checked in the list's saved text; the control is a defence firm's name, which must be found.
+    # the finance ministry's purchase bar by name (issued Jun 22, 2026): its list of 46 American firms names none of the chip makers searched for.
+    # Checked in the list's saved text; the control is a defence firm's name, which must be found. Round 9 (core edit 8b): the page says "none of the
+    # chip makers searched for", not "no chip maker" (a negative over every maker), as the record and the argument now say; the count is made here.
     lst = C.L.page('cn-le14-mof-us-firms-list-20260622')
-    makers = ['nvidia', '英伟达', 'micron', '美光', 'intel', '英特尔', 'qualcomm', '高通', 'advancedmicro', '超威', 'broadcom', '博通', 'texasinstruments', '德州仪器']
+    MAKERS = [('Nvidia', ('nvidia', '英伟达')), ('Micron', ('micron', '美光')), ('Intel', ('intel', '英特尔')), ('Qualcomm', ('qualcomm', '高通')),
+              ('AMD', ('amd', 'advancedmicro', '超威')), ('Broadcom', ('broadcom', '博通')), ('Texas Instruments', ('texasinstruments', '德州仪器'))]
+    makers = [w for _, ws in MAKERS for w in ws]
     assert 'lockheedmartin' in lst and not [m for m in makers if m in lst], [m for m in makers if m in lst]
+    maker_names = ', '.join(n for n, _ in MAKERS[:-1]) + ' and ' + MAKERS[-1][0]
     # state and Party media (tables/state_media_items.tsv): the items that only warn about Nvidia's chips, and their dates
     sm = C.table('state_media_items.tsv')
     warns = sorted(C.date.fromisoformat(r['date']) for r in sm if r['stance'] == 'warns')
     # round 5 (core edit 6): rows 43 to 75 were added (found by searches and links; after Sept 24, 2025 a sample, not a census)
     win = [d for d in warns if d <= C.date(2025, 9, 24)]; late = [r for r in sm if r['stance'] == 'warns' and C.date.fromisoformat(r['date']) > C.date(2025, 9, 24)]
-    assert (len(sm), len(warns), len(win), len(late)) == (75, 14, 11, 3), (len(sm), len(warns), len(win))
+    assert (len(sm), len(warns), len(win), len(late)) == (75, 19, 16, 3), (len(sm), len(warns), len(win))
     assert all(r['outlet'].startswith('Global Times') and r['date'].startswith('2026') for r in late), late
 
     figure = f"""
@@ -98,7 +102,7 @@ def main():
     <div class="cell none"><div class="cl">Nvidia · 2024 to 2026</div>
      <div class="verdict">None found</div>
      <p><b>in the 82 policy pages read.</b> A text of this kind could have been found: the Micron conclusion is among those pages.</p>
-     <p>When the finance ministry did publish a purchase bar by name, on Jun 22, 2026, “不得采购46家美国企业（不包括在华美资企业）生产的产品” (government buyers may not buy products made by 46 American firms, leaving out American-funded firms in China), its list named no chip maker.</p>
+     <p>When the finance ministry issued a purchase bar by name, on Jun 22, 2026, “不得采购46家美国企业（不包括在华美资企业）生产的产品” (government buyers may not buy products made by 46 American firms, leaving out American-funded firms in China), its list named none of the {words[len(MAKERS)]} chip makers searched for ({maker_names}, in English and in Chinese).</p>
     </div>
 
     <div class="q"><b>What else did it publish against the company?</b><span>acts the state body announced itself</span></div>

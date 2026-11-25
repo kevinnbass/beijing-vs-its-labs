@@ -16,6 +16,8 @@
 # and the builder.
 # Round 8 (core edit 7, Nov 25, 2026): one block added, BL cn-acts-reuters-rtx5500-20260927 (the core's record 62). Its
 # number is fixed by the core's "N 62" line, which make_inputs.py carries into figure_data.txt; no block here gives numbers.
+# Core edit 8 (Nov 25, 2026): four records' lines gained words their pages state (the core's records 18, 47, 59, 60): BH man-cn-ft-20251009-customs,
+# CN cn-tolerate-ft-offshore, CH and CN cn-o36-tencent-call-20261118-sa. The Chinese of each was read again and extended; the core's check lines carry the new English words.
 
 @ BH cn-policy-micron-decision
 T 网络安全审查办公室公布审查结论：美光公司产品"不予通过网络安全审查"，关键信息基础设施的运营者"应停止采购美光公司产品"。对象不是英伟达
@@ -98,10 +100,10 @@ ET Cyberspace regulator tells ByteDance and Alibaba to end testing and orders of
 ES Financial Times
 
 @ BH man-cn-ft-20251009-customs
-T 海关人员被派往主要口岸，检查芯片货物
+T 海关人员被派往主要口岸，检查芯片货物；起初是为了确保企业在监管部门发出劝阻购买的指导之后，停止订购英伟达的H20和RTX Pro 6000D
 S 英国《金融时报》
 Z 过去几周，全国各主要口岸已调集多批海关人员，对半导体货物进行严格查验
-ET Customs teams sent to major ports to check chip shipments
+ET Customs teams sent to major ports to check chip shipments, at first so that companies stop ordering Nvidia's H20 and RTX Pro 6000D after regulators' guidance discouraging their purchase
 ES Financial Times
 
 @ BH ms-bj-20251105-statefunded-standard
@@ -154,11 +156,11 @@ ES Nvidia, Form 10-Q filed with the SEC
 
 @ BH cn-clips-evidence-1
 T 约60万枚英伟达芯片存放在香港待运，北京方面迟迟未批准大规模进口（原文："as Beijing withholds approval for large-scale imports"）
-S 路透社（电头日期为11月5日），载于亚洲新闻台（CNA），其网页日期为11月6日
+S 路透社，载于亚洲新闻台（CNA），其网页日期为11月6日；路透社11月5日的电头见雅虎转载的文本
 Z 尽管科技企业有需求，北京方面仍迟迟未批准大规模进口
 C 60万枚在香港待运
 ET About 600,000 Nvidia chips wait in Hong Kong "as Beijing withholds approval"
-ES Reuters (its dateline is Nov 5), on CNA, whose page is dated Nov 6
+ES Reuters, on CNA, whose page is dated Nov 6; Reuters's dateline of Nov 5 stands on Yahoo's copy
 
 @ BL cn-policy-he-welcomes
 T 国务院副总理何立峰会见黄仁勋："欢迎包括英伟达公司在内的更多美资企业深耕中国市场"
@@ -200,11 +202,11 @@ Z 获准向中国销售其性能第二强的人工智能芯片
 ET "Nvidia has won Beijing's approval" to sell the H200; a Chinese buyer is unsure the approval is final
 ES Reuters, on Investing.com
 
-@ BL cn-acts-reuters-ti-cap-20260708-relay1
-T 官员告知阿里巴巴、字节跳动和DeepSeek，可能很快获准购买部分H200；总数或不到20万枚
+@ BH cn-acts-reuters-ti-cap-20260708-relay1
+T 据报道，官员迄今未予批准（原文："have withheld approval so far"），并告知阿里巴巴、字节跳动和DeepSeek可能很快获准购买部分H200；总数或不到20万枚
 S The Information，经路透社转述，载于AOL
-Z 它们可能很快获准购买一些H200芯片
-ET Officials tell Alibaba, ByteDance and DeepSeek they may soon buy some H200s: fewer than 200,000 in all
+Z 中国官员有意扶持本土供应商，迄今未予批准
+ET By the report, officials "have withheld approval so far" and tell Alibaba, ByteDance and DeepSeek they may soon be permitted to buy some H200s: perhaps fewer than 200,000 in all
 ES The Information, through Reuters on AOL
 
 @ BL man-a7d2f1a9f963
@@ -256,10 +258,10 @@ ET Alibaba, ByteDance and others had argued that their AI development would be i
 ES Financial Times
 
 @ CN cn-tolerate-ft-offshore
-T 阿里巴巴和字节跳动在东南亚的数据中心训练最新模型
+T 阿里巴巴和字节跳动在东南亚的数据中心训练最新模型，以便使用英伟达的芯片（原文："to access Nvidia's chips"）
 S 英国《金融时报》，载于《爱尔兰时报》
 Z 属于在东南亚各地数据中心训练其最新大语言模型（LLM）的科技集团之列
-ET Alibaba and ByteDance train their newest models in data centres in Southeast Asia
+ET Alibaba and ByteDance train their newest models in data centres in Southeast Asia, "to access Nvidia's chips"
 ES Financial Times, on The Irish Times
 
 @ CN cn-labs-h200-demand-20251210-relay1
@@ -304,10 +306,10 @@ ET ByteDance, Alibaba and Tencent order over 3 million of the weaker RTX PRO 550
 ES Reuters, on Investing.com
 
 @ CH cn-labs-baidu-ascend-2023-relay1
-T 百度在2023年8月、美国新一轮管制出台之前订购1600枚华为芯片，为买不到英伟达芯片的将来做准备（原文："to prepare for a future"）
+T 据路透社未具名的消息人士，百度在2023年8月、美国新一轮管制出台之前订购1600枚华为芯片，为买不到英伟达芯片的将来做准备（原文："to prepare for a future"）
 S 路透社，载于新加坡《商业时报》（The Business Times）
 Z 他们订购910B芯片，是为将来可能再也无法向英伟达采购做准备
-ET Baidu ordered 1,600 Huawei chips in August 2023, ahead of new US curbs, "to prepare for a future" without Nvidia
+ET By people Reuters does not name, Baidu ordered 1,600 Huawei chips in August 2023, ahead of new US curbs, "to prepare for a future" without Nvidia
 ES Reuters, on The Business Times
 
 @ CH cn-policy-tencent-us-curbs-relay1
@@ -367,10 +369,10 @@ ET Alibaba's chief executive expects that from 2027 most of its added AI chip su
 ES Eddie Wu on a results call, reported by National Business Daily
 
 @ CH cn-o36-tencent-call-20261118-sa
-T 腾讯首席战略官：其云业务目前主要运行推理，而推理用数量少得出人意料的国产芯片就能很有效地运行（原文："can be run very effectively on a surprisingly limited number of domestic chips"）
+T 腾讯首席战略官：腾讯的云业务主要运行推理任务，而用数量少得出乎意料的国产芯片就能高效运行这些任务（原文："can be run very effectively on a surprisingly limited number of domestic chips"）；具体说，在国产芯片上，腾讯现在处理的词元（token）数量要多得多（原文："a far higher volume of tokens, specifically on domestic chips"）
 S 詹姆斯·米切尔（James Mitchell）在腾讯业绩电话会上的发言（文字记录载于一家股票数据网站）
 Z 我们的云业务目前主要是在运行推理
-ET Tencent's chief strategy officer: its cloud business runs mainly inference, which "can be run very effectively on a surprisingly limited number of domestic chips"
+ET Tencent's chief strategy officer: its cloud business runs mainly inference, which "can be run very effectively on a surprisingly limited number of domestic chips", and Tencent now drives "a far higher volume of tokens, specifically on domestic chips"
 ES James Mitchell on Tencent's results call (transcript on a stock-data site)
 
 @ BH cn-le13-yuyuan-qq-20250810b
@@ -431,10 +433,10 @@ ET iFlytek's filed investor record: rival model makers commonly use Nvidia chips
 ES iFlytek, record of its results meeting, filed on the Shenzhen exchange's site (cninfo)
 
 @ CN cn-o36-tencent-call-20261118-sa
-T 腾讯总裁谈美国的新管制：这让中国的每一家都倒退（原文："It sets everyone back in China"），不论何时开始在中国境外租用或自建算力，大家手里的先进算力都变少了（原文："no matter when you actually started leasing or building capacities outside of China"）
+T 腾讯总裁谈美国的新管制：这让中国各方都受挫（原文："It sets everyone back in China"），不论何时开始在中国境外租用或自建算力，各方可获得的先进算力都减少了（原文："no matter when you actually started leasing or building capacities outside of China"）；谈到训练，他说会受到影响（原文："it's going to be impacted"）
 S 刘炽平在腾讯业绩电话会上的发言（文字记录载于一家股票数据网站）
 Z 不论你实际上何时开始在中国境外租用或建设算力
-ET Tencent's president on the new US curbs: "It sets everyone back in China", with less advanced computing for everyone "no matter when you actually started leasing or building capacities outside of China"
+ET Tencent's president on the new US curbs: "It sets everyone back in China", with less advanced computing for everyone "no matter when you actually started leasing or building capacities outside of China"; on training, "it's going to be impacted"
 ES Martin Lau on Tencent's results call (transcript on a stock-data site)
 
 # Extra check lines for the Chinese page (exact words it quotes)
@@ -444,3 +446,5 @@ ES Martin Lau on Tencent's results call (transcript on a stock-data site)
 ! man-a7d2f1a9f963 | shipments of H200 chips have begun but the number was "very few."
 ! cn-le29-zhipu-results-20260331-en | Faced with the computing power shortage that has outstripped supply since February 2026
 ! cn-usdocs-hfac-decisions-20261119 | H200 License and Equivalent Application Status as of May 11, 2026
+# Core edit 8 (Nov 25, 2026): the heading under which Zhejiang's plan sets its share, quoted in the provinces panel
+! cn-ga31-cndocs-52 | 工程目标:到2030年,浙江信息通信行业算力规模达150EFLOPS,国产化算力占比超60%

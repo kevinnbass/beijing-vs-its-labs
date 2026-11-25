@@ -3,13 +3,13 @@ price of one H200 used below, US dollars	27000	a press report citing unnamed peo
 600,000 chips at that price, billion US dollars	16.2	600,000 x 27,000
 10,000 chips at that price, million US dollars	270	10,000 x 27,000
 chips that 2.4 billion US dollars buys at that price	88,889	2,400,000,000 / 27,000
-US exports, three named headings, to mainland China, Hong Kong and Macau: 2025, million US dollars	1809.3	sum of 12 months
+US exports, three named headings, to mainland China, Hong Kong and Macau: 2025, million US dollars	1809.5	sum of 12 months
 the same: average month of 2025	151	sum / 12
-the same: January to August 2026	1688.6	sum of 8 months
+the same: January to August 2026	1688.7	sum of 8 months
 the same: average month of January to August 2026	211	sum / 8
 the same: highest month in the 20 months	292.9 (202603)	maximum
 the same: August 2026	187.4	one month
-January to August 2026 total as a number of chips at that price	62,541	total / 27,000; a ceiling, since the headings hold many other goods
+January to August 2026 total as a number of chips at that price	62,544	total / 27,000; a ceiling, since the headings hold many other goods
 16.2 billion divided by the January to August 2026 total	9.6	ratio
 price at which the January to August 2026 total would hold 600,000 chips, US dollars a chip	2,814	total / 600,000
 that price as a share of the press price, per cent	10	ratio
@@ -19,12 +19,12 @@ that bound as a number of chips at the press price	32,963	bound / 27,000
 Nvidia, quarter to Oct 25, 2026: sales of licensed Hopper products to China, billion US dollars	2.4	read from its results call and its commentary
 days in that quarter (Jul 27 to Oct 25, 2026)	91	count of days
 of which inside the months the US export figures cover (to Aug 31, 2026)	36	count of days
-US exports, three named headings, to the three places, July plus August 2026, million US dollars	392.6	sum of the two months in us_exports_summary.tsv
+US exports, three named headings, to the three places, July plus August 2026, million US dollars	392.6	sum of the two months in us_exports_summary.tsv (of the dollar values)
 that as a share of 2.4 billion, per cent	16	ratio; customs value against sales, so rough
-US exports under all four headings to the three places, January to August 2026, million US dollars	8069.5	three named headings plus 8542.31
-that four-heading total as a number of chips at that price	298,870	total / 27,000; an outer bound, since the chip heading holds every processor sent from the United States
-US exports of chips (8542.31) to the three places, January to August 2026, million US dollars	6380.9	sum of 8 months
-of which re-exports (goods of foreign origin)	1237.4	sum of 8 months
+US exports under all four headings to the three places, January to August 2026, million US dollars	8069.7	three named headings plus 8542.31
+that four-heading total as a number of chips at that price	298,878	total / 27,000; an outer bound, since the chip heading holds every processor sent from the United States
+US exports of chips (8542.31) to the three places, January to August 2026, million US dollars	6381.0	sum of 8 months
+of which re-exports (goods of foreign origin)	1237.5	sum of 8 months
 China customs: parts and accessories of computers (8473.30), 2025, billion US dollars	28.5	table 14, December 2025 issue
 the same: January to September 2026	82.2	table 14, September 2026 issue
 the same: September 2026 alone	16.7	table 14, September 2026 issue
@@ -66,7 +66,7 @@ US exports to Singapore under the three named headings, July and August 2026, mi
 the same: average month of January to June 2026	314.0	sum of 6 months / 6
 the same: all of January to August 2026	2,558.6	sum of 8 months
 US exports to mainland China, Hong Kong and Macau under the three named headings: July and August 2026, then the average month of January to June 2026, million US dollars	205.2 and 187.4, then 216.0	from us_exports_summary.tsv
-January to August 2026: US exports under the three headings to the three places plus Singapore, as a number of chips at the press price	157,304	(1,688.6 + the Singapore total) million / 27,000; every kind of goods counted as if an H200
+January to August 2026: US exports under the three headings to the three places plus Singapore, as a number of chips at the press price	157,308	(1,688.7 + the Singapore total) million / 27,000; every kind of goods counted as if an H200
 Singapore, line 84718010: re-exports to mainland China, average month of January to June 2026, thousand Singapore dollars	2,995	six-month sum / 6
 Singapore raw files read, each matching its sha256 in the manifest	7	fetched 2026-11-23T09:06:21Z to 2026-11-23T09:20:25Z by L18; repeated rows with one value, taken once: 6
 Hong Kong total exports of computer parts (8473.30) to mainland China, by Hong Kong's own figures: January to July 2025, then January to July 2026, billion US dollars	16.46 then 36.90	sums of 7 months each (UN Comtrade, saved)

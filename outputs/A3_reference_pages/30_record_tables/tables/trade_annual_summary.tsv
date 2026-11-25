@@ -1,4 +1,4 @@
-# Sums by calendar year of the monthly figures in the named table, by build_l18.py. months_held = how many months of that year the sum covers (2026 is a part year; check it before comparing). Different series measure different things: never add or compare across rows without reading REPORT.md section 3.
+# Sums by calendar year of the monthly figures in the named monthly table (the last column; the monthly tables are in the project's working files, not among these tables), by script. months_held = how many months of that year the sum covers (2026 is a part year; check it before comparing). Different series measure different things: never add or compare across rows without reading what each series measures (section 3 of the project's trade-data report, a working file).
 series	measure	unit	year	months_held	sum	table
 Comtrade China M partner World	HS 847150	US dollars	2023	12	4840806262.0	comtrade_monthly.tsv
 Comtrade China M partner World	HS 847150	US dollars	2024	12	11795244007.0	comtrade_monthly.tsv

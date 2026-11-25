@@ -25,7 +25,7 @@
 T 网络安全审查办公室公布审查结论：美光公司产品"不予通过网络安全审查"，关键信息基础设施的运营者"应停止采购美光公司产品"。对象不是英伟达
 S 网络安全审查办公室，发布于国家网信办网站
 Q 我国内关键信息基础设施的运营者应停止采购美光公司产品
-E operators of critical information infrastructure in China should stop buying Micron's products
+E operators of critical information infrastructure in China shall stop buying Micron's products
 
 @ BH doc 2023-12-16 - cn-policy-desktop-2023
 T 财政部、工业和信息化部：乡镇以上党政机关，以及乡镇以上党委和政府直属事业单位等，采购台式计算机时"应当将CPU、操作系统符合安全可靠测评要求纳入采购需求"；"其他单位可不在采购需求中提出此项要求"
@@ -95,7 +95,7 @@ Q told companies, including ByteDance and Alibaba, this week to end their testin
 Z 本周要求包括字节跳动和阿里巴巴在内的企业停止测试和订购RTX Pro 6000D
 
 @ BH press 2025-10-09 - man-cn-ft-20251009-customs
-T 海关人员被派往主要口岸，检查芯片货物
+T 海关人员被派往主要口岸，检查芯片货物；起初是为了确保企业在监管部门发出劝阻购买的指导之后，停止订购英伟达的H20和RTX Pro 6000D
 S 英国《金融时报》
 Q Teams of customs officers have been mobilised at major ports across the country in the past few weeks to carry out stringent checks on semiconductor shipments
 Z 过去几周，全国各主要口岸已调集多批海关人员，对半导体货物进行严格查验
@@ -145,10 +145,11 @@ Z 这类销售受到中国政府的限制
 
 @ BH press 2026-11-05 - cn-clips-evidence-1
 T 约60万枚英伟达芯片存放在香港待运，北京方面迟迟未批准大规模进口（原文："as Beijing withholds approval for large-scale imports"）
-S 路透社（电头日期为11月5日），载于亚洲新闻台（CNA），其网页日期为11月6日
+S 路透社，载于亚洲新闻台（CNA），其网页日期为11月6日；路透社11月5日的电头见雅虎转载的文本
 Q as Beijing withholds approval for large-scale imports despite demand from technology firms
 Z 尽管科技企业有需求，北京方面仍迟迟未批准大规模进口
 C end -3 -42 60万枚在香港待运
+! cn-clips-reuters-hongkong-yahoo | Nov 5 (Reuters) - About 600,000 of Nvidia's
 
 @ BL doc 2025-04-17 - cn-policy-he-welcomes
 T 国务院副总理何立峰会见黄仁勋："欢迎包括英伟达公司在内的更多美资企业深耕中国市场"
@@ -188,11 +189,13 @@ Q approval to sell its second-most powerful artificial intelligence chips to Chi
 Z 获准向中国销售其性能第二强的人工智能芯片
 U https://www.investing.com/news/stock-market-news/chinese-authorities-approve-nvidias-h200-ai-chip-sales-source-says-4567348
 
-@ BL press 2026-07-08 - cn-acts-reuters-ti-cap-20260708-relay1
-T 官员告知阿里巴巴、字节跳动和DeepSeek，可能很快获准购买部分H200；总数或不到20万枚
+@ BH press 2026-07-08 - cn-acts-reuters-ti-cap-20260708-relay1
+T 据报道，官员迄今未予批准（原文："have withheld approval so far"），并告知阿里巴巴、字节跳动和DeepSeek可能很快获准购买部分H200；总数或不到20万枚
 S The Information，经路透社转述，载于AOL
-Q they may soon receive permission to buy some H200 chips
-Z 它们可能很快获准购买一些H200芯片
+Q Chinese officials, keen to nurture domestic suppliers, have withheld approval so far
+Z 中国官员有意扶持本土供应商，迄今未予批准
+! cn-acts-reuters-ti-cap-20260708-relay1 | they may soon receive permission to buy some H200 chips
+! cn-acts-reuters-ti-cap-20260708-relay1 | it could amount to fewer than 200,000 in total
 
 @ BL doc 2026-07-14 - man-a7d2f1a9f963
 T 美国出口管制主管官员在国会作证：H200已开始对华发货，数量极少（原文："very few"）
@@ -245,7 +248,7 @@ Q tech giants from Alibaba to ByteDance argued that their AI development would b
 Z 从阿里巴巴到字节跳动的科技巨头主张，没有英伟达的芯片，它们的AI研发将受到损害
 
 @ CN press 2025-11-27 - cn-tolerate-ft-offshore
-T 阿里巴巴和字节跳动在东南亚的数据中心训练最新模型
+T 阿里巴巴和字节跳动在东南亚的数据中心训练最新模型，以便使用英伟达的芯片（原文："to access Nvidia's chips"）
 S 英国《金融时报》，载于《爱尔兰时报》
 Q are among the tech groups training their latest large language models (LLMs) in data centres across Southeast Asia
 Z 属于在东南亚各地数据中心训练其最新大语言模型（LLM）的科技集团之列
@@ -290,10 +293,11 @@ Q have ordered more than 3 million of
 Z 已订购超过300万块
 
 @ CH press 2023-11-07 - cn-labs-baidu-ascend-2023-relay1
-T 百度在2023年8月、美国新一轮管制出台之前订购1600枚华为芯片，为买不到英伟达芯片的将来做准备（原文："to prepare for a future"）
+T 据路透社未具名的消息人士，百度在2023年8月、美国新一轮管制出台之前订购1600枚华为芯片，为买不到英伟达芯片的将来做准备（原文："to prepare for a future"）
 S 路透社，载于新加坡《商业时报》（The Business Times）
 Q They were ordering 910B chips to prepare for a future where they may no longer be able to purchase from Nvidia
 Z 他们订购910B芯片，是为将来可能再也无法向英伟达采购做准备
+! cn-labs-baidu-ascend-2023-relay1 | two people familiar with the matter said
 
 @ CH rec 2023-11-15 - cn-policy-tencent-us-curbs-relay1
 T 腾讯总裁：美国的管制将使公司寻求国产AI芯片
@@ -346,7 +350,7 @@ Q 公司绝大部分新增AI芯片供给将以自研平头哥国产芯片为主
 E most of the company's added AI chip supply will be its own T-Head home-made chips
 
 @ CH rec 2026-11-18 - cn-o36-tencent-call-20261118-sa
-T 腾讯首席战略官：其云业务目前主要运行推理，而推理用数量少得出人意料的国产芯片就能很有效地运行（原文："can be run very effectively on a surprisingly limited number of domestic chips"）
+T 腾讯首席战略官：腾讯的云业务主要运行推理任务，而用数量少得出乎意料的国产芯片就能高效运行这些任务（原文："can be run very effectively on a surprisingly limited number of domestic chips"）；具体说，在国产芯片上，腾讯现在处理的词元（token）数量要多得多（原文："a far higher volume of tokens, specifically on domestic chips"）
 S 詹姆斯·米切尔（James Mitchell）在腾讯业绩电话会上的发言（文字记录载于一家股票数据网站）
 Q our cloud business today is primarily running inference
 Z 我们的云业务目前主要是在运行推理
@@ -480,7 +484,7 @@ Q 其他模型厂商普遍使用性能领先两代的英伟达芯片
 E other model makers commonly use Nvidia chips that are two generations ahead in performance
 
 @ CN rec 2026-11-18 - cn-o36-tencent-call-20261118-sa
-T 腾讯总裁谈美国的新管制：这让中国的每一家都倒退（原文："It sets everyone back in China"），不论何时开始在中国境外租用或自建算力，大家手里的先进算力都变少了（原文："no matter when you actually started leasing or building capacities outside of China"）
+T 腾讯总裁谈美国的新管制：这让中国各方都受挫（原文："It sets everyone back in China"），不论何时开始在中国境外租用或自建算力，各方可获得的先进算力都减少了（原文："no matter when you actually started leasing or building capacities outside of China"）；谈到训练，他说会受到影响（原文："it's going to be impacted"）
 S 刘炽平在腾讯业绩电话会上的发言（文字记录载于一家股票数据网站）
 Q no matter when you actually started leasing or building capacities outside of China
 Z 不论你实际上何时开始在中国境外租用或建设算力
@@ -520,7 +524,7 @@ Z 不论你实际上何时开始在中国境外租用或建设算力
 ! cn-labs-alibaba-nov-supply | 同时也会采购其他国产芯片
 # Panels: the House committee's table (sums made by the builder from figure/hfac_rows.tsv; these are the summary's own totals)
 ! cn-usdocs-hfac-summary-20261119 | 3,444,160
-# Panels: the line on paper (the eight provincial shares; the 20% standard in force; the evaluation lists; the 46 firms)
+# Panels: the line on paper (the nine provincial shares; the 20% standard in force; the evaluation lists; the 46 firms)
 ! cn-o39b-guangdong-yuesuan-2024 | 力争到2025年底，新增国产化算力占比达到70%
 ! cn-o39-tianjin-plan-2024 | 到 2026 年，全市算力中心国产算力芯片使用占比超过 60％
 ! cn-o39-hebei-opinion-2024-wayback | 新增算力基础软硬件设施自主可控比例60%以上
@@ -668,6 +672,186 @@ Z 不论你实际上何时开始在中国境外租用或建设算力
 ! cn-le15-chengdu-sina-6a5ce645 | 自主可控智能算力不超过服务费用的50%、非自主可控智能算力不超过服务费用的30%
 ! cn-le15-zj-oss-web1825-e66330 | 温州市人民政府办公室 2025年8月29日
 
+# Core edit 8 (Nov 25, 2026), the third reader's proposals 46 to 49: four records keep their rows and their one-line texts gain words the pages state.
+! man-cn-ft-20251009-customs | The inspections started with the goal of ensuring that local companies stop ordering Nvidia's China-specific chips following guidance from Chinese regulators to discourage their purchase
+! man-cn-ft-20251009-customs | The targeted processors — Nvidia's H20 and RTX Pro 6000D
+! cn-tolerate-ft-offshore | to access Nvidia's chips
+! cn-o36-tencent-call-20261118-sa | a far higher volume of tokens, specifically on domestic chips
+! cn-o36-tencent-call-20261118-sa | Number two, when we look at training, then it's going to be impacted
+! cn-ga31-cndocs-52 | 到2030年，浙江信息通信行业算力规模达150EFLOPS，国产化算力占比超60%
+! cn-ga31-cndocs-52 | 省通信管理局省发展改革委关于印发《浙江省信息通信业发展“十五五”规划》的通知
+# Core edit 8: the two voucher rules that join the count
+! cn-ga31-unsaved-xm-5hao-2025-wayback | 对年度营业收入10亿元（含）以上的企业，按照购买算力服务费用给予最高不超过30%的补助，每家每年最高不超过1000万元
+! cn-ga31-unsaved-xm-5hao-2025-wayback | 厦门市人民政府办公厅2025年4月21日
+! cn-ga31-unsaved-xm-5hao-2025-wayback | 有效期至2027年12月31日
+! cn-ga31-provtexts-9 | 按不超过实际结算金额的20%补贴，最高不超过50万元
+! cn-ga31-provtexts-9 | 成文日期：2026-05-28
+! cn-ga31-provtexts-9 | 发布日期：2026-06-03
+! cn-ga31-provtexts-9 | 新政办发〔2026〕22号
+! cn-ga31-unsaved-sc-338hao-fgw-wayback | 设立算力券,对企业购买国产算力费用给予支持,一般企业支持比例不超过20%,成立3年内的初创企业可提高至30%
+! cn-ga31-unsaved-sc-338hao-fgw-wayback | 川发改数据〔2026〕338号
+! cn-ga31-unsaved-sc-338hao-fgw-wayback | 2026-08-11
+! cn-ga31-unsaved-sc-338hao-fgw-wayback | 2026-08-13
+# Panels: local vouchers, voucher round 3 (Nov 25, 2026): the rows that are new or read from another copy; each line is a rate, a date or a number that the row or its note states
+! cn-ga31-voucherrulesmissing-40 | 对采购智能算力服务和模型服务的用户企业，一般按不超过合同实际发生金额的30%给予补贴
+! cn-ga31-voucherrulesmissing-40 | 使用算力设施开展模型训练、推理和应用的，按照算力设施的不同类型给予30%或20%的分档补贴
+! cn-ga31-voucherrulesmissing-40 | 对于年申报智算合同累计金额50万元（含）以下的中小企业，按照不超过50%的比例给予补贴
+! cn-ga31-voucherrulesmissing-40 | 试行智能券政策，对采购智能算力服务的企业、高校、科研机构，给予合同发生金额的30%或10%分档补贴
+! cn-ga31-voucherrulesmissing-40 | 如另行申请杭州算力券，可叠加补贴比例至60%或30%
+! cn-ga31-voucherrulesmissing-40 | 本方案自2025年7月15日起施行
+! cn-ga31-voucherrulesmissing-40 | 杭州市人民政府2025年6月13日
+! cn-ga31-voucherrulesmissing-40 | 发布时间:2025-06-23
+! cn-ga31-voucherrulesmissing-40 | 杭政办函〔2024〕40号）自本方案施行之日起同时废止
+! cn-ga31-twelve-18 | 按不超过实际租用算力结算费用的30%（非自主人工智能算力）或60%（自主人工智能算力），给予单家企业最高2000万元支持
+! cn-ga31-twelve-18 | 杭州高新技术产业开发区管理委员会杭州市滨江区人民政府2026年8月10日
+! cn-ga31-plantexts-1 | 使用自主算力服务的，可 按照不高于合同实际执行金额的30%给予补助； 采用非自主算力服务的，可按照不高于合同实际执行金额的10%，给予最高800万元补助。
+! cn-ga31-plantexts-1 | 浙政发〔2025〕10号
+! cn-ga31-plantexts-1 | 浙江省人民政府2025年4月17日
+! cn-ga31-plantexts-1 | 本措施自2025年5月31日起实施，有效期至2027年12月31日
+! cn-ga31-twelve-17 | 按照算力服务合同的10%申请算力券，同一企业每年度累计兑现算力券金额不超过200万元
+! cn-ga31-twelve-17 | 市数据局 市财政局 2025年4月27日
+! cn-ga31-provtexts-9 | 支持疆内外企业、高校、科研机构等使用新疆智能算力资源及配套服务，对符合要求的申领主体，按不超过实际结算金额的20%补贴，最高不超过50万元
+! cn-ga31-provtexts-9 | （本文有删减）
+! cn-ga31-provtexts-9 | 使用新疆智能算力资源及配套服务
+! cn-ga31-plantexts-12 | 企事业单位按实际发生费用的20％予以补贴，其中购买自主可控算力服务的，按实际发生费用的30％予以补贴
+! cn-ga31-plantexts-12 | 湖北省数据局 湖北省财政厅 2026年9月30日
+! cn-ga31-plantexts-12 | 《湖北省算力券实施方案》已经省政府同意
+! cn-ga31-plantexts-12 | 同一主体年度补贴总额最高不超过300万元
+! cn-ga31-plantexts-12 | OPC（一人公司）按实际发生费用的30％予以补贴
+! cn-ga31-plantexts-13 | 对购买算力服务的，智能算力可按合同有效金额的30%给予激励，通用算力、超级算力可按合同有效金额的5%给予激励
+! cn-ga31-plantexts-13 | 对使用国产化算力开展适配的，可按合同有效金额的30%给予激励，同一需求主体年度累计激励额度不超过150万元
+! cn-ga31-plantexts-13 | 本办法自2026年4月1日起施行
+! cn-ga31-plantexts-13 | 贵州省大数据发展管理局 2026年1月30日
+! cn-ga31-sciowhole-115 | 非自主可控算力服务、国产人工智能大模型词元（Token）服务，按服务实际发生金额（不含税费，下同）的20%补贴；自主可控算力服务，按服务实际发生金额的30%补贴
+! cn-ga31-sciowhole-115 | 同一主体年度补贴总额最高300万元
+! cn-ga31-sciowhole-115 | 自2026年10月29日起施行，有效期1年
+! cn-ga31-sciowhole-115 | 武汉市数据局 2026年9月28日
+! cn-le28-wuhan-2025-3hao | 有效期至2027年3月18日
+! cn-ga31-voucherrulesmissing-37 | 对企业、高校院所等算力使用方（自建自用除外）给予不超过算力总支出20%的支持
+! cn-ga31-voucherrulesmissing-37 | 本政策自发布之日起实施，有效期至2027年12月31日
+! cn-ga31-voucherrulesmissing-37 | 皖政秘〔2025〕108号
+! cn-ga31-voucherrulesmissing-37 | 安徽省人民政府2025年8月11日
+! cn-ga31-voucherrulesmissing-8 | 算力券按照符合支持内容和支持时段内的算力合同实际发生金额给予不超过30%的补贴，同一单位年度补贴额度不超过200万元
+! cn-ga31-voucherrulesmissing-8 | 自2026年2月起实施，有效期至2028年12月
+! cn-ga31-voucherrulesmissing-8 | 发布时间:2026-10-15
+! cn-ga31-voucherrulesmissing-8 | 本细则由省数据和政务服务局、省财政厅负责解释
+! cn-ga31-unsaved3-sciowhole114-gxt-gfxwj | 按不超过算力需求方购买算力实际结算金额的30%补贴，最高不超过1000万元
+! cn-ga31-unsaved3-sciowhole114-gxt-gfxwj | 引导算力需求方优先使用国产算力资源
+! cn-ga31-unsaved3-sciowhole114-gxt-gfxwj | 补贴内容为在市场合理价格范围内购买的算力资源、算力服务、模型服务及国产化算力适配服务
+! cn-ga31-unsaved3-sciowhole114-gxt-gfxwj | 本细则自发布之日起施行，有效期三年
+! cn-ga31-unsaved3-sciowhole114-gxt-gfxwj | 文号:湘工信信息软件〔2026〕168号
+! cn-ga31-unsaved3-sciowhole114-gxt-gfxwj | 湖南省工业和信息化厅2026年5月6日
+! cn-ga31-voucherrulesmissing-4 | 算力创新券支付金额最高不超过同一服务合同实际发生额的25%
+! cn-ga31-voucherrulesmissing-4 | 可基于国产芯片并使用国产软件栈提供算力服务
+! cn-ga31-voucherrulesmissing-4 | 本办法自发布之日起施行
+! cn-ga31-voucherrulesmissing-4 | [成文日期]2026-06-22
+! cn-ga31-voucherrulesmissing-4 | [发文字号]京科发〔2026〕9号
+! cn-ga31-voucherrulesmissing-4 | 每年可使用的算力创新券额度最高为50万元
+! cn-ga31-voucherrulesmissing-4 | 第十七条 符合条件的算力设备拥有单位
+! cn-ga31-voucherrulesmissing-9 | 对一般申领对象，发放“算力券”可抵扣算力服务合同实际执行金额的30%，每个单位每年最高抵扣400万元
+! cn-ga31-voucherrulesmissing-9 | 发放“算力券”可抵扣算力服务合同实际执行金额的50%，每个单位每年最高抵扣400万元
+! cn-ga31-voucherrulesmissing-9 | 本办法自印发之日起实施，有效期2年
+! cn-ga31-voucherrulesmissing-9 | 黑工信数基联规〔2026〕9号
+! cn-ga31-voucherrulesmissing-9 | 黑龙江省工业和信息化厅黑龙江省财政厅2026年4月23日
+! cn-ga31-voucherrulesmissing-11 | 对用算主体购买智能算力服务给予支持，省市支持总额原则上不超过实际支付费用的50%
+! cn-ga31-voucherrulesmissing-11 | 各设区市可在该上限范围内，结合本地实际确定具体支持比例，单个主体支持上限不超过500万元
+! cn-ga31-voucherrulesmissing-11 | 词元券是指用于企业、高校院所、研究机构及OPC等主体购买智能算力服务（含智能算力租赁）进行模型训练、模型推理、智能体应用等的支持资金
+! cn-ga31-voucherrulesmissing-11 | 本方案自印发之日起施行，有效期至2027年6月30日
+! cn-ga31-voucherrulesmissing-11 | 苏发改智集发〔2026〕935号
+! cn-ga31-voucherrulesmissing-11 | 江苏省数据局2026年9月30日
+! cn-ga31-voucherrulesmissing-74 | 对年度购买智能算力服务总金额达到10万元（含）以上的企业，按照企业年度实际购买智能算力服务费用不超过50%的比例给予补助，单家企业补助不超过50万元
+! cn-ga31-voucherrulesmissing-74 | 本方案自印发之日起施行，有效期至2028年12月31日
+! cn-ga31-voucherrulesmissing-74 | 闽工信规〔2026〕1号
+! cn-ga31-voucherrulesmissing-74 | 福建省工业和信息化厅2026年2月4日
+! cn-ga31-voucherrulesmissing-15 | 对租用先进算力资源的，根据支持时段内实际发生金额按比例给予支持，支持比例最高不超过20%
+! cn-ga31-voucherrulesmissing-15 | 同一算力需求方当年累计兑现金额不超过100万元
+! cn-ga31-voucherrulesmissing-15 | 本办法自2026年8月6日起施行
+! cn-ga31-voucherrulesmissing-15 | 本管理办法由省发展改革委（省数据局）、省工业和信息化厅、省财政厅负责解释
+! cn-ga31-voucherrulesmissing-15 | 江西省算力券（数据券）是用于支持租用先进算力（指智算、超算）资源、购买数据产品或服务的政策工具
+! cn-ga31-voucherrulesmissing-16 | 供需双方单边奖补上限不超过合同实际执行金额的10%
+! cn-ga31-voucherrulesmissing-16 | 对单家企业的年度累计奖补总额不超过500万元
+! cn-ga31-voucherrulesmissing-16 | 本细则自2026年1月30日起施行，有效期至2028年12月31日止
+! cn-ga31-voucherrulesmissing-16 | 原《山东省省级财政支持数据基础设施建设奖补资金实施细则》（鲁数字〔2024〕52号）同步废止
+! cn-ga31-voucherrulesmissing-16 | 本细则由省大数据局、省财政厅负责解释
+! cn-ga31-voucherrulesmissing-16 | 发布日期:2026-03-03
+! cn-ga31-provtexts-20 | 供需双方单边奖补上限不超过合同实际执行金额的5%
+! cn-ga31-provtexts-20 | 同等条件下，对使用国产算力的企业优先予以支持
+! cn-ga31-voucherrulesmissing-17 | 按照算力资源使用费的20%予以奖励，每个使用单位每年可享受不超过100万元算力券奖励
+! cn-ga31-voucherrulesmissing-17 | 本政策措施自印发之日起实行，有效期3年
+! cn-ga31-voucherrulesmissing-17 | 豫政〔2025〕17号
+! cn-ga31-voucherrulesmissing-17 | 2025年8月4日
+! cn-ga31-voucherrulesmissing-71 | 单期补贴额度最高不超过当期对应算力服务费用的50%
+! cn-ga31-voucherrulesmissing-71 | 合同服务内容需明确为国产算力服务
+! cn-ga31-voucherrulesmissing-71 | 宁波大市范围内具有国产算力使用需求的企业、科研机构、高等院校等，统称算力需求方
+! cn-ga31-voucherrulesmissing-71 | 单个算力需求方年度累计申领算力券额度最高不超过150万元
+! cn-ga31-voucherrulesmissing-71 | 宁波市数据局2026年3月16日
+! cn-ga31-voucherrulesmissing-71 | 印发之日（2026年2月6日）之后签订
+! cn-ga31-voucherrulesmissing-71 | 第四期:2026年10月1日至2026年12月31日
+! cn-ga31-voucherrulesmissing-30 | 按照对应算力投入给予最高不超过50%的支持，每家每年最高不超过1000万元
+! cn-ga31-voucherrulesmissing-30 | 自2026年4月1日起执行，有效期至2027年12月31日
+! cn-ga31-voucherrulesmissing-30 | 厦数据规〔2026〕2号
+! cn-ga31-voucherrulesmissing-30 | 厦门市数据管理局2026年10月30日
+! cn-ga31-voucherrulesmissing-50 | 厦府办规〔2025〕5号）同时废止
+! cn-ga31-unsaved-xm-5hao-2025-wayback | 按照购买算力服务费用给予最高不超过40%的补助，每家每年最高不超过500万元
+! cn-ga31-unsaved-xm-5hao-2025-wayback | 按照购买算力服务费用给予最高不超过50%的补助，每家每年最高不超过200万元
+! cn-ga31-voucherrulesmissing-34 | 对购买智算中心算力服务的，年度实际支付算力服务费用低于100万元（含）部分按照40%比例年度最高给予不超过20万元补贴
+! cn-ga31-voucherrulesmissing-34 | 超过200万元部分按照25%比例年度最高给予不超过40万元补贴
+! cn-ga31-voucherrulesmissing-34 | 本政策自2024年5月30日后实施，有效期3年
+! cn-ga31-voucherrulesmissing-34 | 四川天府新区管委会办公室2024年4月24日
+! cn-ga31-voucherrulesmissing-34 | 100万元-200万元（含）部分按照30%比例
+! cn-ga31-voucherrulesmissing-36 | 依法依规对符合条件的OPC按使用算力、词元等服务费用的30%、每年给予不超过10万元资金支持
+! cn-ga31-voucherrulesmissing-36 | 鼓励各地制定算力券、词元券、模型券、语料券等支持政策
+! cn-ga31-voucherrulesmissing-36 | 冀政办字〔2026〕47号
+! cn-ga31-voucherrulesmissing-36 | 河北省人民政府办公厅2026年11月1日
+! cn-ga31-voucherrulesmissing-36 | 河北省支持人工智能OPC创新发展若干措施（试行）
+! cn-ga31-voucher2-shanxi-rules-yuncheng | 对符合要求的算力使用方，按照不超过实际执行的算力服务合同金额的20%，给予年度总额不超过100万元的算力券奖补
+! cn-ga31-voucher2-shanxi-rules-yuncheng | 对牵头参与国家级重大项目或开展大模型研发的算力使用方，按照不超过实际执行的算力服务合同金额的30%，给予年度总额不超过200万元的算力券奖补
+! cn-ga31-voucher2-shanxi-rules-yuncheng | 本细则由山西省数据局负责解释，自印发之日起施行，有效期两年
+! cn-ga31-voucher2-shanxi-rules-yuncheng | 发布时间:2026-09-11
+! cn-o39b-shanxi-measures-2024-jincheng | 本措施自2024年7月1日起施行，有效期至2026年12月31日
+! cn-ga31-voucherrulesmissing-54 | 对年度实际购买算力、Token服务费用超过100万元的企业，按实际购买服务费用10%补助算力券
+! cn-ga31-voucherrulesmissing-54 | 补贴比例提升至15%
+! cn-ga31-voucherrulesmissing-54 | 本政策措施自2026年4月1日起施行，有效期三年
+! cn-ga31-voucherrulesmissing-54 | 云府办〔2026〕65号
+! cn-ga31-voucherrulesmissing-54 | 成文日期:2026-03-31
+! cn-ga31-voucherrulesmissing-59 | 对同一主体每年购买算力服务费用100万元以上的，按照算力服务实际结算费用的30%给予最高200万元奖励
+! cn-ga31-voucherrulesmissing-59 | 按照其在平台结算额的10%给予每年最高200万元奖励
+! cn-ga31-voucherrulesmissing-59 | 内政数字〔2024〕147号
+! cn-ga31-voucherrulesmissing-59 | 内蒙古自治区能源局2024年9月24日
+! cn-ga31-voucherrulesmissing-60 | 对使用算力资源的企业或机构，按其实际发生的算力租赁支出最高30%的比例给予补贴，单个项目补贴总金额不超过1000万元
+! cn-ga31-voucherrulesmissing-60 | 最高按照合同总金额80%的比例予以核定
+! cn-ga31-voucherrulesmissing-60 | 按照采购额最高10%给予补贴，总金额不超过1000万元
+! cn-ga31-voucherrulesmissing-60 | 本政策自发布之日起实施，有效期至2027年12月31日
+! cn-ga31-voucherrulesmissing-60 | 沪自贸临管委〔2025〕40号
+! cn-ga31-voucherrulesmissing-60 | 2025年5月22日
+! cn-ga31-voucherrulesmissing-60 | 最高50%的比例给予补贴
+! cn-ga31-voucher2-qinghai-measures-wayback | 支持企业和单位租用我省数据中心服务和绿色算力，给予不超过租用费20%的算力券激励
+! cn-ga31-voucher2-qinghai-measures-wayback | 本《若干措施》自2024年4月1日起施行，有效期至2029年3月31日
+! cn-ga31-voucher2-qinghai-measures-wayback | 青数〔2024〕11号
+! cn-ga31-voucher2-qinghai-measures-wayback | 青海省人力资源和社会保障厅2024年3月21日
+! cn-ga31-vouchernamedrules-5 | 自主可控智能算力不超过服务费用的50%、非自主可控智能算力不超过服务费用的30%，其中，中小企业抵扣比例分别增加10%
+! cn-ga31-vouchernamedrules-5 | 本办法自2026年5月13日生效
+! cn-ga31-vcityeast-55 | 企业采购自主智能算力服务的，其研发投入（委外除外）中的算力成本部分，按照智算服务实际采购金额的50%给予算力补贴
+! cn-ga31-vcityeast-55 | 实施时间为2025年1月1日起,有效期至2027年12月31日止
+! cn-ga31-vcityeast-55 | 黄政发〔2025〕18号
+! cn-ga31-vcitywest-6 | 对租用国产智能算力
+! cn-ga31-vcitywest-6 | 按年度实际发生金额的10%，给予最高100万元补助
+! cn-ga31-vcitywest-6 | 长沙经济技术开发区管理委员会2026年3月23日
+! cn-ga31-voucherearlierrules-48 | 本细则自2026年6月21日起施行，有效期至2027年12月31日
+! cn-ga31-vcitysouth-53 | 最高按实际支付购买新区算力、数据、国产操作系统适配、国产芯片适配等服务费用的50%给予补贴
+! cn-ga31-voucher5-haidian-2025-measures | 鼓励大模型企业使用国产算力，按照实际结算额给予最高50%的补贴
+! cn-ga31-vcitynorth-31 | 需提供购买或租用gpu算力合同
+! cn-ga31-vcitynorth-10 | 对购买天津人工智能计算中心算力服务的，最高按照其实际购买金额的50%给予算力“服务券”
+! cn-ga31-vcitynorth-36 | 纯国产化算力
+! cn-ga31-vcitynorth-10 | 第十四条本政策自发布之日起生效，有效期四年
+! cn-ga31-vouchernamedrules-23 | 对使用本地国产算力资源的用户
+! cn-ga31-voucher5-sip-2025-37hao | 苏园管〔2025〕37号
+! cn-ga31-voucher5-sip-2025-37hao | 苏园管〔2023〕58号
+! cn-ga31-voucher5-sip-2025-37hao | 本措施自印发之日起施行，有效期三年
+! cn-ga31-voucher5-sip-2025-37hao | 苏州工业园区管理委员会2025年11月12日
+! cn-ga31-voucher5-zhongkai-plan-wayback | 本方案自印发之日起实施，至2027年12月31日结束
+! cn-ga31-voucher5-zhongkai-plan-wayback | 仲恺高新区党工委管委会综合办公室 2026年4月1日
+
 # Added for the Chinese version: exact words the Chinese page puts between quote marks (from zh_lines.txt)
 ! cn-us-lutnick-0422-rev-transcript-b | So that's my understanding of what's happening
 ! cn-acts-reuters-us-approvals-20260514-wayback | The shift in China was partly triggered by changes on the U.S. side
@@ -675,3 +859,4 @@ Z 不论你实际上何时开始在中国境外租用或建设算力
 ! man-a7d2f1a9f963 | shipments of H200 chips have begun but the number was "very few."
 ! cn-le29-zhipu-results-20260331-en | Faced with the computing power shortage that has outstripped supply since February 2026
 ! cn-usdocs-hfac-decisions-20261119 | H200 License and Equivalent Application Status as of May 11, 2026
+! cn-ga31-cndocs-52 | 工程目标:到2030年,浙江信息通信行业算力规模达150EFLOPS,国产化算力占比超60%

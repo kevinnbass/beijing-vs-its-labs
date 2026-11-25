@@ -134,8 +134,14 @@ def mirror_check():
     for fn in ('bars', 'revenue', 'provinces', 'paper', 'vouchers', 'bodies', 'hfac', 'evaluations', 'state_media'):
         a, b = ID.findall(en[fn]), ID.findall(zh[fn])
         assert a == b, f'{fn}(): the saved ids are not the core\'s, in its order:\n core {a}\n here {b}'
-    rate = re.compile(r", (\d+), (\d+), '((?:cn|man|ms)-[a-z0-9-]+)'")
-    assert rate.findall(en['vouchers']) == rate.findall(zh['vouchers']) and len(rate.findall(zh['vouchers'])) == 19, 'the voucher rows are not the core\'s'
+    # voucher round 3 (Nov 25, 2026): neither builder types a rate or a count any more (both take the counted rows and their rates from
+    # scripts/cn_voucher_classes.py); what is compared is each row's label in the tables, its month and the saved copy it links
+    row_en = re.compile(r"'([AB]\d+)': \('[^']*', '(\w+) (\d{4})', '((?:cn|man|ms)-[a-z0-9-]+)'")
+    row_zh = re.compile(r"'([AB]\d+)': \('[^']*', \((\d{4}), (\d+)\), '((?:cn|man|ms)-[a-z0-9-]+)'")
+    mon = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec']
+    a = [(k, int(y), mon.index(m) + 1, i) for k, m, y, i in row_en.findall(en['vouchers'])]; b = [(k, int(y), int(m), i) for k, y, m, i in row_zh.findall(zh['vouchers'])]
+    took = "rows[k] = (place, when, C[k]['h'], C[k]['o'], sid, note)"
+    assert a == b and len(b) >= 21 and took in en['vouchers'] and took in zh['vouchers'], 'the voucher rows are not the core\'s'      # 21 rows at core edit 8; 38 since voucher round 3
     num = re.compile(r"\('(\d{4}-\d\d-\d\d)', ([\d \-]+),")
     assert num.findall(en['revenue']) == num.findall(zh['revenue']) and len(num.findall(zh['revenue'])) == 9, 'the revenue figures are not the core\'s'
     for fn in ('hfac', 'evaluations', 'state_media'):          # the counting code itself: the same asserts
@@ -337,15 +343,17 @@ def revenue():
 
 def provinces():
     """The 31 provincial-level governments by what their published plans were found to set: counted here from
-    tables/provinces_31.tsv, as the core's builder counts them. The eight shares measure different things, so they are
-    listed with what each counts, never drawn as one series. Each share's words are a "!" line."""
+    tables/provinces_31.tsv, as the core's builder counts them. The nine shares measure different things, so they are
+    listed with what each counts, never drawn as one series. Each share's words are a "!" line. Core edit 8 (Nov 25, 2026):
+    Zhejiang is a ninth, as the core's builder has it; its share is for one sector's computing and is a project target
+    (the page's own heading is 工程目标), said in its row."""
     pr = table('provinces_31.tsv')
     cnt = Counter(r['result'] for r in pr)
     assert len(pr) == 31 and sum(cnt.values()) == 31 and set(cnt) == {'share', 'plan_no_share', 'account_only', 'not_reached'}, cnt
-    zh = {'Jiangsu': '江苏', 'Guangdong': '广东', 'Tianjin': '天津', 'Hebei': '河北', 'Shanghai': '上海', 'Sichuan': '四川', 'Inner Mongolia': '内蒙古', 'Shandong': '山东', 'Tibet': '西藏', 'Xinjiang': '新疆'}
+    zh = {'Jiangsu': '江苏', 'Guangdong': '广东', 'Tianjin': '天津', 'Hebei': '河北', 'Shanghai': '上海', 'Sichuan': '四川', 'Inner Mongolia': '内蒙古', 'Shandong': '山东', 'Zhejiang': '浙江', 'Tibet': '西藏', 'Xinjiang': '新疆'}
     one = lambda k: [zh[r['government']] for r in pr if r['result'] == k]
     acc, nr = one('account_only'), one('not_reached')
-    seg = [('away', cnt['share'], f'{cnt["share"]}个定了占比'), ('rest', cnt['plan_no_share'], f'{cnt["plan_no_share"]}个的规划已读，未定占比'),
+    seg = [('away', cnt['share'], f'{cnt["share"]}个设定了占比'), ('rest', cnt['plan_no_share'], f'已查阅{cnt["plan_no_share"]}个政府的规划，均未列明占比'),
            ('other', cnt['account_only'], f'{cnt["account_only"]}个的规划只见于有关报道（{"、".join(acc)}）'),
            ('none', cnt['not_reached'], f'{cnt["not_reached"]}个未能查到（{"、".join(nr)}）')]
     shares = [  # government, share as written, of what and by when, how it is worded or held, saved id
@@ -353,14 +361,17 @@ def provinces():
         ('Guangdong', '70%', '新增算力中的国产化占比，到2025年底', '用词是“力争”；九个部门的方案', 'cn-o39b-guangdong-yuesuan-2024'),
         ('Tianjin', '超过60%', '全市算力中心的国产算力芯片使用占比，到2026年', '', 'cn-o39-tianjin-plan-2024'),
         ('Hebei', '60%以上', '新增算力基础软硬件设施的“自主可控”比例，到2025年', '河北省政府自己的网页', 'cn-o39-hebei-opinion-2024-wayback'),
+        ('Zhejiang', '超60%', '仅为一个行业（全省信息通信行业）的国产化算力占比，到2030年', '是该行业五年规划中一项重点工程的“工程目标”；由省通信管理局、省发展改革委印发', 'cn-ga31-cndocs-52'),
         ('Shanghai', '超过50%', '新建智算中心的国产算力芯片使用占比，到2025年', '转载于其他网站的文本', 'cn-policy-shanghai-domestic-target'),
         ('Sichuan', '超过50%', '国产化算力设备占比', '用词是“力争”；转载于其他网站的文本', 'cn-factions-sichuan50'),
         ('Inner Mongolia', '50%以上', '国产化算力占比，到2025年，是该区国家算力枢纽的目标之一', '', 'cn-o39-nmg-plan-pdf-wayback'),
         ('Shandong', '90%', '全省数据中心的国产化算力占比，到2025年', '报纸对规划的报道', 'cn-o39-shandong-network-2022')]
     tab = {r['government']: r['saved_ids'].split()[0] for r in pr if r['result'] == 'share'}
     assert {g: s for g, _, _, _, s in shares} == tab, ('the shares listed are not the table\'s', tab)
-    lab = '；'.join(t for _, _, t in seg)
-    out = [f'<div class="prov"><div class="pv-bar" role="img" aria-label="31个省级政府：{esc(lab, quote=True)}。">'
+    # the bar read aloud: one sentence of its own (second reading of Nov 25, 2026, line 7); the keys keep their short forms
+    lab = (f'31个省级政府中，{cnt["share"]}个设定了占比；另有{cnt["plan_no_share"]}个政府的规划已查阅，均未列明占比；'
+           f'{cnt["account_only"]}个仅见有关其规划的报道（{"、".join(acc)}）；{cnt["not_reached"]}个未能查阅其规划（{"、".join(nr)}）。')
+    out = [f'<div class="prov"><div class="pv-bar" role="img" aria-label="{esc(lab, quote=True)}">'
            + ''.join(f'<i class="{c}" style="flex:{w}"></i>' for c, w, _ in seg) + '</div><div class="pv-keys">'
            + ''.join(f'<span><i class="k {c}"></i>{esc(t)}</span>' for c, _, t in seg) + '</div>', '<table class="pv"><tbody>']
     for g, sh, what, how, sid in shares:
@@ -400,69 +411,214 @@ def paper(evs):
 
 
 def vouchers():
-    """Local computing vouchers: the general rate a voucher or rental subsidy pays of the bill for rented computing (the
-    rate for an ordinary applicant; a higher rate for a named kind of firm, whatever the chip, is in the row's note), for
-    home-made computing against other computing, as each rule states it (one measure throughout). The rows, their order and
-    their rule for inclusion are the core builder's (mirror_check() compares the rates and saved ids); every rate and date
-    is a "!" line of the data. Round 5 (core edit 6, Nov 24, 2026): the four rules found that day which the published rule
-    counts (Sichuan, home-made computing only, its text as Jiemian carries it; Wuhu; Suzhou; Tianjin) and Shanghai's
-    up to 100% for early-stage and small firms, as the core's builder has them."""
-    rows = [  # place, rule (year and month on its page), home-made %, other %, saved id, note
-        ('杭州市', (2024, 7), 30, 20, 'cn-counter-b4-2', ''),
-        ('浙江省', (2025, 4), 30, 10, 'cn-le25-zhejiang-ai-measures-2025-smartcity', '对发放算力券的地方的指导；自2025年5月31日起实施；转载于其他网站的文本'),
-        ('温州市', (2025, 8), 30, 10, 'cn-le15-zj-oss-web1825-e66330', ''),
-        ('杭州市滨江区', (2026, 8), 60, 30, 'cn-le15-binjiang-2026-6-keceyun', '载于一家政策网站的文本'),
-        ('北京经济技术开发区（是开发区，不是北京市）', (2024, 11), 30, 30, 'cn-le28-etown-29hao-20241126', '取代了2024年3月按40%对30%支付的规定；装国产芯片的服务器另有最高10%的采购支持'),
-        ('深圳市龙华区', (2024, 11), 30, 30, 'cn-le28-sz-longhua-2024-20hao', ''),
-        ('山西省', (2024, 6), 20, 20, 'cn-o39b-shanxi-measures-2024-jincheng', '国家级项目和大模型企业为30%；自2024年7月起施行'),
-        ('深圳市', (2024, 12), 50, 50, 'cn-le28-sz-gxj-2024-13hao', '初创企业为60%；把模型迁移到国产芯片另有支持'),
-        ('武汉市', (2025, 2), 50, 50, 'cn-le28-wuhan-2025-3hao', '最高20万元；2026年2月的一项规定对一人AI企业给同样的比例'),
-        ('青岛市', (2026, 3), 20, 20, 'cn-le28-qingdao-2026-9hao-smartcity', '与其2025年3月的规定比例相同；转载于其他网站的文本'),
-        ('上海市', (2025, 7), 30, 30, 'cn-le15-sheitc-8cea38', '按补早补小原则，对初创和小型企业市区协同给予最多1年、最高100%的租金补贴；建设支持最高10%，只给国产（自主）算力'),
-        ('武汉市硚口区', (2025, 8), 50, 50, 'cn-le28-wuhan-qiaokou-2025-1hao', '在市级支持的基础上'),
-        ('武汉市洪山区', (2025, 9), 20, 20, 'cn-le28-wuhan-hongshan-2025-2hao', '面向中小企业'),
-        ('山东省', (2025, 5), 5, 5, 'cn-le28-shandong-ai-measures-2025-smartcity', '转载于其他网站的文本'),
-        ('湖南省', (2025, 10), 30, 30, 'cn-le28-hunan-aiplus-smartcity', '转载于其他网站的文本'),
-        ('四川省', (2026, 8), 20, 0, 'cn-ga05-sichuan-compute-net-measures-jiemian', '成立3年内的初创企业30%，人工智能一人公司40%；文本为新闻网站界面新闻所载，无文号、无日期；月份为报道的月份'),
-        ('芜湖市', (2026, 7), 25, 25, 'cn-ga04-wh-voucher-rule-2026-24hao', '具身智能等未来产业领域企业45%，算力产业孵化载体内的中小微企业70%'),
-        ('苏州市', (2026, 1), 30, 30, 'cn-ga04-sz-suzhou-aiplus-2026-18hao', '面向科技研发企业；按该市自己的解读，自2026年1月31日起施行；其2025年2月的规定为20%'),
-        ('天津市', (2025, 5), 10, 10, 'cn-ga04-tj-voucher-rule-sina-20250514', '文本为新浪网一个页面所载，日期为2025年5月14日'),
-    ]
+    """Local computing vouchers and like subsidies: the general rate a local rule pays of a firm's bill for rented or bought
+    computing (the rate for an ordinary applicant; a higher rate for a named kind of firm, whatever the chip, is in the
+    row's note), for home-made computing against other computing, as each rule states it (one measure throughout).
+    As in the core's builder since voucher round 3 (Nov 25, 2026): WHICH rules are drawn, each rule's two rates and its
+    class are not typed here; they are the counted rows of scripts/cn_voucher_classes.py (compute()). This function holds
+    only what the page says of each row in Chinese (SHOWN: the place, the year and month on its page, the saved copy the
+    row links, a note), in the core's order and with the core's saved ids and months (mirror_check() compares them).
+    38 rules where 21 were drawn. The third class is "state no higher rate for home-made computing"; inside it Hangzhou's
+    plan of 2025 (30% or 20% by a type of computing facility it does not name) is drawn apart, with its own mark, and never
+    as a one-rate rule. A rule that gives the payment another name than voucher carries a tag. Quote marks in a note hold
+    only a source's exact words, each part of a "!" line of the data. The Chinese of the notes follows the source's own
+    Chinese where the source is Chinese (the session's rule of Nov 25, 2026).
+    Voucher round 5 (Nov 25, 2026), as the core's builder: 90 rules, the rules found by searches that went province by
+    province and city by city. The rules that favour home-made computing and Hangzhou's are full rows with notes; the
+    rules of one rate are a compact list in columns, by kind of government and by rate (place, month linking the saved
+    copy, a dot on the same 0 to 60% scale, the rate); a dagger marks a rule that gives the payment another name than
+    voucher, a letter a note under the list (only notes on home-made computing and those the rulings ask for)."""
+    import cn_voucher_classes as VC
+    R = VC.compute(); C = R['counted']
+    SHOWN = {  # row of the voucher tables: place, rule (year and month on its page), the saved copy the row links (a saved id of the row), note
+        'A3': ('杭州市', (2025, 6), 'cn-ga31-voucherrulesmissing-40', '一般为30%；使用算力设施开展模型训练、推理和应用的，“按照算力设施的不同类型给予30%或20%的分档补贴”，方案没有写明哪一类设施适用哪一档；中小企业最高50%；自2025年7月15日起施行，同时废止2024年7月的规定（国产算力设施30%、其他算力设施20%）；文本见杭州市档案馆网站'),
+        'A6': ('杭州市滨江区', (2026, 8), 'cn-ga31-twelve-18', '文本见该区政协网站'),
+        'A7': ('温州市', (2025, 8), 'cn-le15-zj-oss-web1825-e66330', ''),
+        'A12': ('上海市', (2025, 7), 'cn-le15-sheitc-8cea38', '建设支持最高10%，只给国产（自主）算力'),
+        'A14': ('成都市', (2026, 4), 'cn-ga31-vouchernamedrules-5', '补贴自主可控算力；中小企业两档抵扣比例分别增加10%；自2026年5月13日起生效；文本见一家咨询公司的网页，已与市经信局签发文件的扫描件人工核对'),
+        'A18': ('四川省', (2026, 8), 'cn-ga31-unsaved-sc-338hao-fgw-wayback', '成立3年内的初创企业30%，人工智能一人公司40%；省发展改革委的措施（川发改数据〔2026〕338号），2026年8月11日成文、8月13日发布'),
+        'B1': ('北京经济技术开发区（是开发区，不是北京市）', (2024, 11), 'cn-le28-etown-29hao-20241126', '取代了2024年3月最高按40%和最高按30%支付的规定；装国产芯片的服务器另有最高10%的采购支持'),
+        'B5': ('深圳市', (2024, 12), 'cn-le28-sz-gxj-2024-13hao', '把模型迁移到国产芯片另有支持'),
+        'B8': ('深圳市龙华区', (2024, 11), 'cn-le28-sz-longhua-2024-20hao', ''),
+        'B10': ('广州开发区和黄埔区', (2025, 6), 'cn-le28-gz-huangpu-2025-7hao', ''),
+        'B15': ('武汉市洪山区', (2025, 9), 'cn-le28-wuhan-hongshan-2025-2hao', ''),
+        'B17': ('青岛市', (2026, 3), 'cn-le28-qingdao-2026-9hao-smartcity', ''),
+        'B21': ('浙江省', (2025, 4), 'cn-ga31-plantexts-1', '对发放算力券的地方的指导；落款日期为2025年4月17日（浙政发〔2025〕10号），自2025年5月31日起实施；省政府自己发布的PDF文件'),
+        'B34': ('湖北省', (2026, 9), 'cn-ga31-plantexts-12', '同一主体每年最高300万元；一人公司（OPC）不论用哪类算力都按30%补贴；文本连同印发通知见武汉市数据局网站'),
+        'B40': ('芜湖市', (2026, 7), 'cn-ga04-wh-voucher-rule-2026-24hao', ''),
+        'B42': ('苏州市', (2026, 1), 'cn-ga04-sz-suzhou-aiplus-2026-18hao', ''),
+        'B44': ('天津市', (2025, 4), 'cn-ga31-twelve-17', ''),
+        'B46': ('新疆维吾尔自治区', (2026, 5), 'cn-ga31-provtexts-9', ''),
+        'B47': ('贵州省', (2026, 1), 'cn-ga31-plantexts-13', '使用国产化算力开展适配另有30%的激励'),
+        'B48': ('武汉市', (2026, 9), 'cn-ga31-sciowhole-115', '市数据局的算力券管理办法，自2026年10月29日起施行，有效期1年；该市2025年2月的政策措施仍然有效，不论用什么芯片都按50%补助，最高20万元'),
+        'B49': ('安徽省', (2025, 8), 'cn-ga31-voucherrulesmissing-37', ''),
+        'B50': ('辽宁省', (2026, 10), 'cn-ga31-voucherrulesmissing-8', ''),
+        'B53': ('湖南省', (2026, 5), 'cn-ga31-unsaved3-sciowhole114-gxt-gfxwj', '细则写明的目的包括“引导算力需求方优先使用国产算力资源”，补贴比例并无不同'),
+        'B55': ('北京市', (2026, 6), 'cn-ga31-voucherrulesmissing-4', '算力开放单位须“可基于国产芯片并使用国产软件栈提供算力服务”：这是对供给方的条件，不是更高的补贴比例，也不是只补贴这类服务的规定'),
+        'B59': ('黑龙江省', (2026, 4), 'cn-ga31-voucherrulesmissing-9', ''),
+        'B61': ('江苏省', (2026, 9), 'cn-ga31-voucherrulesmissing-11', '省市支持总额的上限；各设区市在上限范围内自行确定具体比例'),
+        'B64': ('福建省', (2026, 2), 'cn-ga31-voucherrulesmissing-74', ''),
+        'B66': ('江西省', (2026, 8), 'cn-ga31-voucherrulesmissing-15', ''),
+        'B67': ('山东省', (2026, 1), 'cn-ga31-voucherrulesmissing-16', ''),
+        'B69': ('河南省', (2025, 8), 'cn-ga31-voucherrulesmissing-17', ''),
+        'B76': ('宁波市', (2026, 3), 'cn-ga31-voucherrulesmissing-71', '只有国产算力服务的合同可以申领；单个算力需求方每年最高150万元；按年度发放的规定，第四期算力券到2026年12月31日为止；文本见一家商业政策服务平台的页面，页面载有通知全文'),
+        'B80': ('厦门市', (2026, 10), 'cn-ga31-voucherrulesmissing-30', ''),
+        'B81': ('四川天府新区', (2024, 4), 'cn-ga31-voucherrulesmissing-34', ''),
+        'B84': ('河北省', (2026, 11), 'cn-ga31-voucherrulesmissing-36', ''),
+        'B91': ('山西省', (2026, 9), 'cn-ga31-voucher2-shanxi-rules-yuncheng', ''),
+        'B93': ('广州市白云区', (2026, 3), 'cn-ga31-voucherrulesmissing-54', ''),
+        'B96': ('内蒙古自治区', (2024, 9), 'cn-ga31-voucherrulesmissing-59', ''),
+        'B97': ('上海临港新片区', (2025, 5), 'cn-ga31-voucherrulesmissing-60', '租赁之外，采购芯片关键核心技术自主可控的智算设备，最高补贴采购额的10%'),
+        'B100': ('青海省', (2024, 3), 'cn-ga31-unsaved4copies-43', ''),
+        'B103': ('沈阳市', (2026, 1), 'cn-ga31-vouchernamedrules-4', '辽宁省数据和政务服务局在一份答复中称，两市算力券面向使用本地国产算力资源的用户；该市自己的政策文本未写明算力来源'),
+        'B105': ('无锡市', (2025, 5), 'cn-ga31-vcityeast-2', ''),
+        'B106': ('常州市', (2025, 1), 'cn-ga31-vcityeast-83', ''),
+        'B109': ('南通市', (2025, 9), 'cn-ga31-vcityeast-46', ''),
+        'B114': ('盐城市', (2026, 10), 'cn-ga31-vcityeast-47', ''),
+        'B117': ('连云港市', (2026, 11), 'cn-ga31-vcityeast-18', ''),
+        'B119': ('宿迁市', (2026, 2), 'cn-ga31-vcityeast-19', ''),
+        'B123': ('嘉兴市', (2024, 10), 'cn-ga31-vcityeast-23', ''),
+        'B127': ('金华市', (2025, 10), 'cn-ga31-vcityeast-61', ''),
+        'B129': ('台州市黄岩区', (2025, 7), 'cn-ga31-vcityeast-55', '补贴企业为自身研发采购的自主智能算力服务；适用于2025年1月1日至2027年12月31日的支出（黄政发〔2025〕18号）；对其他算力没有规定比例'),
+        'B130': ('衢州市', (2026, 3), 'cn-ga31-vcityeast-28', ''),
+        'B134': ('杭州市钱塘区', (2025, 12), 'cn-ga31-vcityeast-33', ''),
+        'B135': ('上海市徐汇区', (2025, 4), 'cn-ga31-vcityeast-34', ''),
+        'B139': ('上海市闵行区', (2026, 2), 'cn-ga31-vcityeast-35', ''),
+        'B142': ('上海市松江区', (2025, 11), 'cn-ga31-vcityeast-39', ''),
+        'B145': ('上海市青浦区', (2026, 9), 'cn-ga31-vcityeast-41', ''),
+        'B146': ('上海市普陀区', (2025, 1), 'cn-ga31-vcityeast-42', ''),
+        'B151': ('佛山市', (2025, 8), 'cn-ga31-vcitysouth-1', ''),
+        'B152': ('东莞市', (2025, 2), 'cn-ga31-vcitysouth-3', ''),
+        'B153': ('东莞滨海湾新区', (2026, 5), 'cn-ga31-vcitysouth-53', '同一个50%的比例，补贴购买新区算力、数据以及国产操作系统适配、国产芯片适配等服务的费用'),
+        'B154': ('珠海市', (2026, 3), 'cn-ga31-vcitysouth-70', ''),
+        'B156': ('中山市', (2026, 1), 'cn-ga31-vcitysouth-14', ''),
+        'B158': ('韶关市', (2026, 4), 'cn-ga31-vcitysouth-15', ''),
+        'B160': ('深圳市光明区', (2025, 3), 'cn-ga31-vcitysouth-24', ''),
+        'B162': ('广州市南沙区', (2025, 7), 'cn-ga31-vcitysouth-26', ''),
+        'B167': ('福州市', (2024, 3), 'cn-ga31-vcitysouth-41', ''),
+        'B168': ('泉州市', (2025, 12), 'cn-ga31-vcitysouth-33', ''),
+        'B169': ('漳州市', (2025, 7), 'cn-ga31-vcitysouth-34', ''),
+        'B171': ('南宁市', (2025, 4), 'cn-ga31-vcitysouth-39', ''),
+        'B172': ('广州市天河区', (2024, 11), 'cn-ga31-vcitysouth-46', ''),
+        'B175': ('北京市朝阳区', (2026, 5), 'cn-ga31-vcitynorth-3', ''),
+        'B176': ('北京市石景山区', (2024, 3), 'cn-ga31-vcitynorth-4', ''),
+        'B177': ('北京市丰台区', (2025, 10), 'cn-ga31-vcitynorth-8', ''),
+        'B178': ('天津市河北区', (2024, 4), 'cn-ga31-vcitynorth-10', '补贴购买一个点名的中心（天津人工智能计算中心）的算力服务，《天津日报》称该中心为纯国产化算力；自发布之日起生效，有效期四年（第十四条）'),
+        'B179': ('廊坊市', (2025, 2), 'cn-ga31-vcitynorth-29', ''),
+        'B180': ('大同市', (2025, 8), 'cn-ga31-vcitynorth-15', ''),
+        'B181': ('郑州市', (2024, 5), 'cn-ga31-vcitynorth-20', ''),
+        'B182': ('郑州高新区', (2025, 7), 'cn-ga31-vcitynorth-56', ''),
+        'B183': ('郑州航空港区', (2025, 11), 'cn-ga31-vcitynorth-35', ''),
+        'B185': ('北京市海淀区（中关村科学城）', (2025, 8), 'cn-ga31-voucher5-haidian-2025-measures', '补贴比例所在的句子“鼓励大模型企业使用国产算力”，比例并无不同；该区的申报指南对购买或租用GPU算力的合同按同一个50%补贴'),
+        'B191': ('淮南市', (2026, 11), 'cn-ga31-vcitywest-2', ''),
+        'B192': ('长沙经济技术开发区', (2026, 3), 'cn-ga31-vcitywest-6', '补贴为智能体应用租用国产智能算力的费用，每年最高100万元；开发区2026年3月23日的措施，文本见一个省级新闻网站'),
+        'B193': ('武汉市武昌区', (2026, 5), 'cn-ga31-vcitywest-27', ''),
+        'B194': ('成都高新区', (2026, 9), 'cn-ga31-vcitywest-12', ''),
+        'B196': ('合肥高新区', (2025, 1), 'cn-ga31-vcitywest-50', ''),
+        'B197': ('南昌高新区', (2026, 4), 'cn-ga31-vcitywest-48', ''),
+        'B206': ('温州市龙湾区和温州湾新区', (2026, 5), 'cn-ga31-voucherearlierrules-48', '该区和温州湾新区执行温州市的30%和10%，自2026年6月21日起施行，有效期至2027年12月31日；文本见一家媒体网站'),
+        'B207': ('温州市鹿城区', (2023, 10), 'cn-ga31-voucherearlierrules-35', ''),
+        'B209': ('苏州工业园区', (2025, 11), 'cn-ga31-voucher5-sip-2025-37hao', '园区2025年11月12日的措施，同时废止2023年的措施；读的是一家商业政策服务平台文件库所存的签发文件'),
+        'B214': ('惠州仲恺高新区', (2026, 4), 'cn-ga31-voucher5-zhongkai-plan-wayback', '有现行补贴比例的行动方案，自2026年4月1日起实施，至2027年12月31日结束；读的是互联网档案馆对该区页面的存档'),
+        'B216': ('深圳市福田区', (2024, 11), 'cn-ga31-voucher5-futian-2024-wayback', ''),
+    }
+    assert set(SHOWN) == set(C), ('the panel’s rows are not the counted rules', sorted(set(SHOWN) ^ set(C)))
+    rows = {}
+    for k, (place, when, sid, note) in SHOWN.items():
+        ids = [x.strip() for x in R['ROWS'][k]['saved_id'].split(';')]
+        assert sid in ids and (sid == C[k]['sid'] or k == 'A18'), (k, 'the row links a copy that is not the one the count reads')      # Sichuan links the issuer's own page (an Archive capture); the count reads the news site's full text
+        rows[k] = (place, when, C[k]['h'], C[k]['o'], sid, note)
     mx = 60
-    assert max(max(hm, ot) for _, _, hm, ot, _, _ in rows) <= mx
-    only = [r for r in rows if r[3] == 0]                    # a rule that pays for home-made computing only
-    ti = [r for r in rows if r[2] != r[3] and r[3] > 0]; one = [r for r in rows if r[2] == r[3]]
-    # the count by script of the published rule over both voucher tables (atlas/core_edit/p6_work_4/vcount.py; Nov 24, 2026: 19 counted, 4 tiered, 1 home-made only, 14 one rate)
-    assert (len(rows), len(ti), len(only), len(one)) == (19, 4, 1, 14), (len(rows), len(ti), len(only), len(one))
-    assert all(hm > ot for _, _, hm, ot, _, _ in ti), 'a rule pays more for other computing'
-    key = lambda r: r[1]
-    ti.sort(key=key); one.sort(key=key)
+    assert max(max(r[2], r[3]) for r in rows.values()) <= mx
+    key = lambda k: rows[k][1]
+    grp = lambda cls: sorted((k for k in C if C[k]['cls'] == cls), key=key)
+    ti, only, one, two = grp(VC.MORE), grp(VC.ONLY), grp(VC.ONE), grp(VC.TWO)
+    third = two + one
+    # the panel's counts are the classifier's, and the table it writes says the same
+    assert f'{len(rows)} / {len(ti)} / {len(only)} / {len(third)}' == R['line']
+    cls = [l.split('\t') for l in (TB / 'local_vouchers_classes.tsv').read_text(encoding='utf-8').split('\n') if l and not l.startswith('#')][1:]
+    assert {c[0]: c[2] for c in cls if c[2] != VC.NOT} == {k: C[k]['cls'] for k in C}, 'tables/local_vouchers_classes.tsv is not the classifier’s result: run scripts/cn_voucher_classes.py --write'
+    assert all(rows[k][2] > rows[k][3] > 0 for k in ti) and all(rows[k][3] == 0 for k in only) and all(rows[k][2] == rows[k][3] for k in third)
+    tiers = {k: sorted(int(x) for x in VC.BYTYPE.search(C[k]['sent']).groups()) for k in two}      # a rule of two rates by an unnamed type: its two rates, from its own sentence
+    assert all(len(set(v)) == 2 and max(v) <= mx for v in tiers.values())
 
-    def row(place, when, hm, ot, sid, note):
-        if ot == 0:
+    def row(k):
+        place, when, hm, ot, sid, note = rows[k]
+        if k in tiers:
+            lo, hi = tiers[k]
+            dots = (f'<i class="vl unk" style="--a:{lo / mx:.4f};--b:{hi / mx:.4f}"></i><i class="vd unk" style="--x:{lo / mx:.4f}"></i>'
+                    f'<i class="vd unk" style="--x:{hi / mx:.4f}"></i><b class="vn" style="--x:{lo / mx:.4f}">{lo}%</b><b class="vn" style="--x:{hi / mx:.4f}">{hi}%</b>')
+            lab = f'{hi}%或{lo}%，按算力设施的类型分档，规定没有写明类型'
+        elif ot == 0:
             x = hm / mx
-            dots = f'<i class="vd away" style="--x:{x:.4f}"></i><b class="vn side" style="left:calc({x * 100:.2f}% + 11px)">{hm}%，只补贴国产算力</b>'
-        elif hm == ot:
-            x = hm / mx
-            side = f'right:calc({(1 - x) * 100:.2f}% + 11px)' if x > 0.6 else f'left:calc({x * 100:.2f}% + 11px)'
-            dots = f'<i class="vd both" style="--x:{x:.4f}"></i><b class="vn side" style="{side}">一律{hm}%</b>'
+            side = f'right:calc({(1 - x) * 100:.2f}% + 11px)' if x >= 0.5 else f'left:calc({x * 100:.2f}% + 11px)'      # the words stay inside the row's own track
+            dots = f'<i class="vd away" style="--x:{x:.4f}"></i><b class="vn side" style="{side}">{hm}%，只补贴国产算力</b>'
+            lab = f'国产{hm}%，其他算力不补贴'
         else:
             dots = (f'<i class="vl" style="--a:{ot / mx:.4f};--b:{hm / mx:.4f}"></i><i class="vd toward" style="--x:{ot / mx:.4f}"></i>'
                     f'<i class="vd away" style="--x:{hm / mx:.4f}"></i><b class="vn" style="--x:{ot / mx:.4f}">{ot}%</b><b class="vn" style="--x:{hm / mx:.4f}">{hm}%</b>')
-        lab = f'国产{hm}%，其他算力不补贴' if ot == 0 else (f'国产{hm}%，其他{ot}%' if hm != ot else f'各类算力一律{hm}%')
-        return (f'<div class="vr"><div class="vlab">{esc(place)} <a class="srcn" href="{url(sid)}">{when[0]}年{when[1]}月</a>{("<span class=vnote>" + esc(note) + "</span>") if note else ""}</div>'
-                f'<div class="vt" role="img" aria-label="{esc(place, quote=True)}：{lab}">{dots}</div></div>')
+            lab = f'国产{hm}%，其他{ot}%'
+        tag = '' if C[k]['voucher'] else ' <span class="vtag">规定未以券命名</span>'
+        return (f'<div class="vr"><div class="vlab">{esc(place)} <a class="srcn" href="{url(sid)}">{when[0]}年{when[1]}月</a>{tag}</div>'
+                f'<div class="vt" role="img" aria-label="{esc(place, quote=True)}：{lab}">{dots}</div>{("<div class=vnote>" + esc(note) + "</div>") if note else ""}</div>')
     axis = '<div class="vr axis"><div></div><div class="vt">' + ''.join(f'<span style="--x:{v / mx:.4f}">{v}%</span>' for v in (0, 20, 40, 60)) + '</div></div>'
-    out = ['<div class="vkey"><span><i class="sw away"></i>国产算力</span><span><i class="sw toward"></i>其他算力</span><span><i class="sw both"></i>各类算力一个比例</span></div>',
+    place = lambda k: rows[k][0]
+    listed = lambda names: names[0] if len(names) == 1 else '、'.join(names[:-1]) + '和' + names[-1]
+    # the one-rate rules, compact: by kind of government, then by rate (highest first) and place (the core's order: its English place names)
+    PROVINCE_LEVEL_CITIES = ('Beijing city', 'Shanghai', 'Tianjin', 'Chongqing')      # the four cities of province level
+    def kind(k):
+        lv = R['ROWS'][k]['level']
+        if 'province' in lv or C[k]['gov'] in PROVINCE_LEVEL_CITIES: return 0
+        return 1 if lv == 'city' else 2
+    KINDS = ('省级政府', '城市', '区、开发区和新区')
+    by_kind = [sorted((k for k in one if kind(k) == i), key=lambda k: (-rows[k][2], rows[k][0])) for i in range(3)]
+    assert sum(map(len, by_kind)) == len(one) and all(by_kind)
+    letters, foot = {}, []
+    for k in [k for g in by_kind for k in g]:
+        if rows[k][5]:
+            letters[k] = 'abcdefghijklmnopqrstuvwxyz'[len(letters)]; foot.append((letters[k], k))
+    assert len(letters) <= 26
+    def mini(k):
+        place_, when, hm, ot, sid, note = rows[k]
+        dag = '' if C[k]['voucher'] else '<span class="vdag" title="规定未以券命名">†</span>'
+        fn = f'<sup class="vfl">{letters[k]}</sup>' if k in letters else ''
+        return (f'<div class="vm"><span class="vml">{esc(place_)} <a class="srcn" href="{url(sid)}">{when[0]}年{when[1]}月</a>{dag}{fn}</span>'
+                f'<span class="vmt" role="img" aria-label="{esc(place_, quote=True)}：各类算力一律{hm}%"><i style="--x:{hm / mx:.4f}"></i></span><b class="vmp">{hm}%</b></div>')
+    minis = ''.join(f'<div class="vmh">{KINDS[i]}：{len(g)}个</div>' + ''.join(mini(k) for k in g) for i, g in enumerate(by_kind))
+    notes = ''.join(f'<p><b>{l}</b> {esc(place(k))}：{esc(rows[k][5])}</p>' for l, k in foot)
+    (hz,) = two; lo, hi = tiers[hz]; (old,) = R['earlier'][hz]
+    old_h, old_o = VC.pct(R['ROWS'][old]['rate_home']), VC.pct(R['ROWS'][old]['rate_other']); old_year = R['ROWS'][old]['date'][:4]
+    assert old_year.isdigit() and old_h > old_o > 0
+    words = f'按照算力设施的不同类型给予{hi}%或{lo}%的分档补贴'      # the plan's own words, with its two rates in its own order
+    assert L.squash(words) in C[hz]['sent'], 'the quoted tier words are not the plan’s'
+    adapt = [k for k in one if k in getattr(VC, 'ADAPT', {})]
+    assert len(adapt) == 2 and all(k in letters for k in adapt), 'the two rules counted under the second named exception, each with its note'
+    nv = sum(not C[k]['voucher'] for k in one)
+    alt = R['alt']
+    out = ['<div class="vkey"><span><i class="sw away"></i>国产算力</span><span><i class="sw toward"></i>其他算力</span><span><i class="sw both"></i>各类算力适用同一比例</span>'
+           '<span><i class="sw unk"></i>按算力设施的类型分档，规定没有写明类型</span></div>',
            '<div class="vgrid">',
-           f'<div class="vgrp va"><h3>对国产算力补贴更多：{len(ti)}个</h3>' + ''.join(row(*r) for r in ti) + f'<h3>只补贴国产算力：{len(only)}个</h3>' + ''.join(row(*r) for r in only) + axis + '</div>',
-           f'<div class="vgrp vb"><h3>各类算力一个比例：{len(one)}个</h3>' + ''.join(row(*r) for r in one) + axis + '</div>',
-           f'<p class="fine vf">图中{len(rows)}个地方政府里，{len(ti)}个对国产算力补贴更多，同时仍补贴其他算力；{len(only)}个，即四川省，只补贴国产算力（其措施按新闻网站界面新闻所载的文本保存，无文号、无日期）；其余{len(one)}个各类算力一个比例。图中所示是普通申请者适用的比例。'
-           '每个政府一行：取所找到的、写明账单补贴比例的最新一项普遍适用的规定（只针对某一类企业的更新规定见该行附注）；这些是找到并读过的规定，不是普查。'
-           '没有列入的有：只见于媒体报道的规定（成都，50%对30%）、申报指南（北京市；南京市）、已不再有效或没有写明账单补贴比例的规定（其中包括深圳市龙岗区的规定）、'
-           '尚未存入的规定（厦门）以及征求意见稿。'
+           f'<div class="vgrp va"><h3>对国产算力补贴更多：{len(ti)}个</h3>' + ''.join(row(k) for k in ti) + f'<h3>只补贴国产算力：{len(only)}个</h3>' + ''.join(row(k) for k in only) + axis + '</div>',
+           f'<p class="fine vf">图中{len(rows)}个地方政府里，{len(ti)}个对国产算力补贴更多，同时仍补贴其他算力；{len(only)}个，即{listed([place(k) for k in only])}，只补贴国产算力；'
+           f'其余{len(third)}个没有对国产算力规定更高的比例：其中{len(one)}个各类算力适用同一比例，{place(hz)}的方案“{words}”，没有写明类型'
+           f'（该市{old_year}年的规定已废止，原按国产算力设施{old_h}%、其他算力设施{old_o}%补贴）。图中所示是普通申请者适用的比例。'
+           f'这里统计的是按比例补贴企业租用或购买算力费用的规定：多数称为算力券或类似名称；{len(R["other_name"])}个用的是别的名称（补贴、奖励或支持），图中以标签或†标出。'
+           '每个政府（省、市、区或开发区）一行：取所找到的、现行有效并写明账单补贴比例的最新一项普遍适用的规定。'
+           '这些是逐省、逐市检索找到、保存并读过的规定，不是对所有地方政府的普查：'
+           '检索覆盖31个省级政府、24个点名的城市和新区，以及四次逐市检索名单上的城市、区和开发区；其他区县只收录检索中碰到的。'
+           f'{len(rows)}个里，{len(R["own"])}个读的是发文政府或机构的官方页面或文件，{len(R["elsewhere"])}个读的是其他文本（其他机构的网站、新闻或商业网站，或互联网档案馆的存档）。'
+           '没有列入的有：只见于媒体报道或摘要的规定（其中有杭州市余杭区、绍兴市柯桥区和济南市）、申报指南（北京市经济和信息化局；南京市）、没有写明施行日期的方案（南京江北新区）、'
+           '已废止、已到期或没有写明账单补贴比例的规定（其中有深圳市龙岗区，以及南昌市对省级奖励的配套）、未能读到文本或只有扫描件的规定（重庆市；杭州市西湖区）、以及征求意见稿。'
+           f'换一种算法（规定数／补贴更多／只补贴国产／没有更高比例）：把{place(hz)}的两档读作国产和其他（已废止的规定就是这样分的），是{alt["hangzhou_more"]}；不计{place(hz)}，是{alt["hangzhou_out"]}。'
            '只对用国产芯片建设或购置的支持另算：北京市2024年至2027年的方案，按投资额的一定比例支持“采购自主可控GPU芯片开展智能算力服务的企业”。'
-           '分档用的是各规定自己的用词：“国产”或“自主”，对“非国产”“非自主”或“其他”。</p>', '</div>']
+           '分档用的是各规定自己的用词：“国产”或“自主”，对“非国产”“非自主”或“其他”。</p>',
+           f'<div class="vgrp vb"><div class="vbtop"><div><h3>没有对国产算力规定更高的比例：{len(third)}个</h3>'
+           f'<h4>按算力设施的类型分两档，规定没有写明类型：{len(two)}个</h4>' + ''.join(row(k) for k in two) + axis + '</div>'
+           f'<div><h4>各类算力适用同一比例：{len(one)}个</h4><p class="vexpl">每条规定：地点、规定的年月（链接到所存文本），以及它唯一的补贴比例，以同一条0至60%刻度上的圆点表示。'
+           f'†表示规定把这笔钱称为补贴、奖励或支持，而不称为券（{len(one)}个中有{nv}个）。字母表示列表下方的附注。'
+           f'其中两项规定在写明比例的句子里提到国产，但只有一个比例：{listed([place(k) for k in sorted(adapt)])}（附注{"、".join(letters[k] for k in sorted(adapt))}）。'
+           '比例之外对国产芯片的其他支持，见附注。</p></div></div>'
+           f'<div class="vmini">{minis}</div><div class="vfoot">{notes}</div></div>', '</div>']
     return '\n'.join(out), len(ti), len(rows)
 
 
@@ -509,7 +665,7 @@ def state_media():
     iso = sorted(date.fromisoformat(r['date']) for r in rows if re.fullmatch(r'\d{4}-\d\d-\d\d', r['date']))
     win = [d for d in warns if d <= date(2025, 9, 24)]; late = [r for r in rows if r['stance'] == 'warns' and date.fromisoformat(r['date']) > date(2025, 9, 24)]
     # the counts of atlas/core_edit/p6_work_5/count_census.py over the table (Nov 24, 2026), and what the template says of the later warnings
-    assert (len(rows), st['warns'], len(win), len(late)) == (75, 14, 11, 3) and all(r['outlet'].startswith('Global Times') and r['date'].startswith('2026') for r in late), (len(rows), st)
+    assert (len(rows), st['warns'], len(win), len(late)) == (75, 19, 16, 3) and all(r['outlet'].startswith('Global Times') and r['date'].startswith('2026') for r in late), (len(rows), st)
     if not all(r['outlet'].startswith('Global Times (English)') for r in late):   # the Chinese note says 英文版 (not an assert: mirror_check compares the asserts with the core's)
         sys.exit(f"a later warning is not in Global Times's English edition: {[r['outlet'] for r in late]}")
     return dict(SM_N=str(len(rows)), SM_W=str(len(warns)), SM_WIN=str(len(win)), SM_WLATE={3: '3'}[len(late)], SM_W0=fmt(warns[0]), SM_W1=fmt(win[-1]), SM_MIX=str(st['mixed']),

@@ -54,8 +54,9 @@ ABOUT = {
     'labs_said.tsv': "What China's AI companies said about chip supply on results calls and in filings, January 2025 to November 2026",
     'labs_said_more.tsv': "The same for two more companies, iFlytek and SenseTime",
     'local_vouchers.tsv': "Local rules that pay part of the bill for computing: who issued each, when, and the rate for home-made and for other computing",
-    'local_vouchers_more.tsv': "More such local rules, found in a second search",
-    'local_vouchers_classes.tsv': "The class of every local voucher rule of the two voucher tables by the published counting rule: 19 counted (4 pay more for home-made computing and still pay for other computing, 1 pays for home-made only, 14 pay one rate), 46 read and not counted, each with its reason",
+    'local_vouchers_more.tsv': "More such local rules, and other documents read about them (drafts, application notices and accounts of a rule among them), found in later searches",
+    # Round 9 (Nov 25, 2026, after voucher rounds 3 to 6): five classes now; the counts and the verbs are computed (v_only_verb, v_two_verb)
+    'local_vouchers_classes.tsv': "The class of every local voucher rule of the two voucher tables by the published counting rule: {v_counted} counted, of the rules found by searches that went province by province and city by city, saved and read (not a census of every local government): {v_more} pay more for home-made computing and still pay for other computing, {v_only} {v_only_verb} for home-made computing only, {v_one} pay one rate whatever the chip and {v_two} {v_two_verb} two rates by a type of computing facility that the rule does not name; {v_not} read and not counted, each with its reason",
     'market_numbers.tsv': "Published market numbers (shares, shipments, market sizes), one row per number. The column family names the measure; rows of different families are different measures",
     'nvidia_china_revenue.tsv': "Nvidia's revenue from customers in China, Hong Kong included, period by period, from its own filings",
     'nvidia_wording_by_filing.tsv': "Nvidia's own words on China, from its filings and results calls, and its executives' words and its statements as others carried them",
@@ -64,12 +65,36 @@ ABOUT = {
     'provinces_31.tsv': "The 31 provincial-level governments: whether a published plan sets a share for home-made computing hardware, in the document's own words",
     'replaced_copies.tsv': "The {all} saved pages that are no longer cited, and the copy that replaces each where one is needed: {hk} taken from the Hong Kong exchange's site and, since Nov 25, 2026, {terms} taken from idc.com and trendforce.com, saved against those sites' terms",
     'rtx5500_notices.tsv': "Notices on the exchanges' disclosure site, Sept 14 to Nov 24, 2026, whose titles name a contract, a purchase or computing: 333 notices, 3 of which name the RTX PRO 5500",
-    'state_media_items.tsv': "State and Party media items on Nvidia chips, July 2025 to November 2026, each with its stance",
-    'talks_and_acts.tsv': "US-China trade meetings, May 2025 to November 2026, with each side's readout, beside Beijing's dated acts on Nvidia chips",
+    'state_media_items.tsv': "State and Party media items on Nvidia and its chips, July 2025 to November 2026, each with its stance",
+    'talks_and_acts.tsv': "US-China trade meetings, May 2025 to November 2026, with each side's readout, beside Beijing's dated acts and words on Nvidia chips",
     'trade_annual_summary.tsv': "Yearly sums of monthly customs figures, series by series. No customs line counts Nvidia chips",
     'trade_derived_figures.tsv': "The sums and ratios worked out from the trade tables",
     'us_officials_statements.tsv': "Named American officials' words on China buying, blocking or bargaining over Nvidia chips. Words from caption tracks are machine-made and not checked by ear",
     'xi_searches.tsv': "The searches made of Xi Jinping's published speeches and activities, with the number of results each returned and the controls",
+    # Added Nov 25, 2026 (core edit 8): eleven tables of the gap sweep, copied into tables/ under plain names.
+    'rtx5500_buyers_later_notices.tsv': "Every notice of the three listed buyers of Nvidia's RTX PRO 5500 cards on the exchanges' disclosure site from Oct 1 to Nov 25, 2026 that the census of notices does not hold, with the Shenzhen exchange's letter to one of them: 26 rows, the letter among them, each with what it says on the cards",
+    'procurement_notices_sweep.tsv': "Sixty-one more purchase notices and filings on AI servers and cards, 2024 to November 2026, found by later searches and kept apart from the purchase records: how each names Nvidia, what it says on imports, and whether it requires or refuses Nvidia hardware by name",
+    'other_listed_buyers.tsv': "Other listed companies that in 2026 disclosed, or put out a tender for, a purchase or lease of servers with Nvidia chips, or a purchase of computing servers that was not completed",
+    'purchase_notices_2024_2025.tsv': "Purchase notices of January 2024 to June 2025, the window a search of Nov 25, 2026 covered, that name the H20, H800, A800, L20 or Nvidia; one row is a company's filing and one a scanned page read by eye",
+    'computing_centre_plans.tsv': "Plans, filings, bond disclosures and tenders for computing centres in mainland China that name Nvidia chips or, for comparison, home-made ones, each marked as an official page or a press account",
+    'import_lists_read.tsv': "China's published lists of goods whose import needs a licence or is banned, 2024 to 2026, each searched whole for computers, computer parts and chips, with the control that shows the search could find them",
+    'customs_and_tariff_texts_read.tsv': "The pages a search read for a rule on importing a graphics processor, an AI accelerator or a server (114 of them whole when it ran, 17 saved and read afterwards): China's customs and tariff announcements of January 2024 to November 2026 and what was read beside them, each with counts of chip words, customs numbers and words for licences, inspections and holds",
+    'provincial_ict_plans.tsv': "The provincial communications administrations' five-year plans for their sector, searched as a class for a home-made share of computing, chips or equipment: 30 units other than Zhejiang, with what could be read for each and the control that shows the search could find a share",
+    'wuhan_university_result_notices.tsv': "Result notices of purchases by filed bidding that Wuhan University's procurement centre published on its own site, June 2025 to November 2026, picked by titles on graphics cards, GPUs, servers and AI computing: 81 notices, each with its date, its price, and the Nvidia words and home-made words found on the page",
+    'xi_items_database_check.tsv': "A test of how complete the People's Daily database of Xi Jinping's speeches and activities is: 156 items of 2023 to November 2026 taken from Xinhua's lists and Qiushi's contents for their words on chips, computing power, AI, American firms or curbs, each looked for in the database, with the verdict and how it was reached",
+    'largest_records_naming_no_chip.tsv': "The ten largest award or candidate records of the procurement table that name no chip, with the rule that picked them, the routes tried for the chip and what the saved pages say, as it stood on Nov 24, 2026",
+    'results_calls_word_census.tsv': "How many of 61 results-call transcripts of eight Chinese companies, February 2025 to November 2026, hold each of 20 words or word patterns (Nvidia, Huawei, H20, domestic chips, the Cyberspace Administration, customs and others), with the control word",
+    'spokespeople_answers_census.tsv': "Every answer found in which a Chinese government spokesperson was asked about Nvidia chips, about American chips or about the sale of chips to China, December 2024 to September 2026, counted by one written rule: for the foreign ministry every press conference searched and the matching pages read twice, for the commerce ministry its regular briefings read and a search for its written answers, which is not a census",
+    'state_media_baseline_2024_2025h1.tsv': "A baseline for the state-media table: state and Party media items on Nvidia chips, January 2024 to June 2025, by the same rule; gathered by other routes, not a census, and not counted in that table",
+    'state_media_baseline_outside_scope.tsv': "Items that the searches for that baseline found and left out of it, each with the reason",
+    'reported_claims_outlets.tsv': "For nine claims the argument gives as reported by unnamed people: the first report, second reports with their own sources, relays, and any denial",
+    'numbers_first_reports.tsv': "The numbers in the story: who first reported each among the saved pages, and how later reports changed it",
+    'carriers_own_notices.tsv': "What the state telecom carriers' own notices, and others' accounts of the same purchases, say about the chips in the carriers' purchases of AI computing, 2023 to November 2026: each page classed by who states it, with counts of chip words on the page",
+    # Added Nov 25, 2026 (round 9 of the outputs): four tables of core edit 8b, in the words of the table helper's note (hand_out/TAB10_FOR_MAIN.txt item 3)
+    'miit_texts_word_counts.tsv': "Counts of eighteen words (home-made, chip, Nvidia, three share words and others) in 54 texts that the Ministry of Industry and Information Technology published on computing, AI, electronics and telecom, 2023 to 2026, one row per saved text",
+    'procurement_notices_oct_nov_2026.tsv': "Twenty-seven purchase notices for AI computing of Oct 13 to Nov 24, 2026, a reading sample: the chip words each prints, whether it names Nvidia, what it says on home-made products and imports, and whether it attaches a declaration on the home-made product standard",
+    'results_calls_read.tsv': "The 61 results-call transcripts of eight Chinese companies, February 2025 to November 2026, that the word census reads: company, call, date, saved id, the site that carries the transcript, what the page says of its source and of any part made by a model, and the number of markers of passages not translated",
+    'results_calls_authority_counts.tsv': "Counts from a search of 118 company texts (76 results-call transcripts and 42 records of four smaller companies) for the names of Chinese authorities beside a chip word: by group and word, the hits and the hits beside a chip word, with what each of those is",
 }
 REC_COLS = ['n', 'date', 'date_shown', 'date_exact', 'who', 'direction', 'figure_row', 'kind', 'kind_meaning', 'on_the_record',
             'our_line', 'source', 'source_words', 'our_english', 'address', 'saved_id']
@@ -169,6 +194,22 @@ def copy_tables(num):
     listed = set(hk_old) | set(terms_old)
     if set(retired) != listed: stop(f'replaced_copies.tsv and the two lists of ids no longer cited differ: {sorted(set(retired) ^ listed)[:5]}')
     n_listed = {'all': len(retired), 'hk': len(set(hk_old)), 'terms': len(set(terms_old) - set(hk_old))}
+    # core edit 8 (Nov 25, 2026): the voucher counts in the one-line description are counted from the table, not typed (they went stale at 19 and 46)
+    _, vh, vrows = data_lines((src / 'local_vouchers_classes.tsv').read_text(encoding='utf-8'))
+    vc = Counter(r[vh.index('class')] for r in vrows)
+    # round 9 (Nov 25, 2026): the class names are the classifier's own (scripts/cn_voucher_classes.py MORE, ONLY, ONE, TWO, NOT), a fifth
+    # class since voucher round 3 (Hangzhou's two rates by a type it does not name); the counts are taken from the table and must equal the
+    # classifier's compute() over the two voucher tables and the saved copies (the control: a table that has gone stale stops the build)
+    import cn_voucher_classes as VC
+    V_CLASSES = (VC.MORE, VC.ONLY, VC.ONE, VC.TWO, VC.NOT)
+    if set(vc) - set(V_CLASSES): stop(f'local_vouchers_classes.tsv: a class this script does not know: {sorted(set(vc) - set(V_CLASSES))}')
+    n_listed.update(v_more=vc[VC.MORE], v_only=vc[VC.ONLY], v_one=vc[VC.ONE], v_two=vc[VC.TWO], v_not=vc[VC.NOT],
+                    v_counted=vc[VC.MORE] + vc[VC.ONLY] + vc[VC.ONE] + vc[VC.TWO])
+    n_listed.update(v_only_verb='pays' if n_listed['v_only'] == 1 else 'pay', v_two_verb='pays' if n_listed['v_two'] == 1 else 'pay')
+    _R = VC.compute()
+    _want = {'v_more': _R['n'][VC.MORE], 'v_only': _R['n'][VC.ONLY], 'v_one': _R['n'][VC.ONE], 'v_two': _R['n'][VC.TWO], 'v_counted': len(_R['counted']), 'v_not': _R['not_counted']}
+    if any(n_listed[k] != v for k, v in _want.items()):
+        stop(f'local_vouchers_classes.tsv counts {[(k, n_listed[k]) for k in _want]} differ from the classifier\'s {sorted(_want.items())}: run scripts/cn_voucher_classes.py --write first')
     for o, n in RETIRED_MORE.items(): retired.setdefault(o, n)
     if len(retired) != len(listed | set(RETIRED_MORE)): stop('the ids no longer cited do not add up')
     for n in set(retired.values()) - {''}:
@@ -410,7 +451,7 @@ READ WITH CARE
   figure/figure_data.txt, on the lines that begin with "!"), and the reference lists of the two tier files.
 
 PLAIN TABLES (tables/)
-  These {len(tabs)} tables were made on Nov 23, 2026 by the project's research agents, each from saved pages, and are
+  These {len(tabs)} tables were made from Nov 23 to Nov 25, 2026 by the project's research agents, each from saved pages, and are
   the project's own (the folder tables/ beside the argument). They are copied here so that the record can be read in
   a spreadsheet. All {len(tabs)} are byte for byte the project's tables (build.py compares each copy's sha256 with the
   project's after writing; each is given below). Nothing in them is changed here. Their quotations were checked by the

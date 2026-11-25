@@ -2,8 +2,8 @@
 """Gate for the numbers ledger (round 4): recompute every count the ledger shows from the project's tables and stop
 unless the base file carries each one exactly. Run before cn_doc_build.py:
     python3 -I counts_check.py && python3 -I scripts/cn_doc_build.py numbers_ledger_base.txt ...
-Reads ../../../tables/house_licence_table.tsv, nvidia_china_revenue.tsv, provinces_31.tsv, market_numbers.tsv and
-rtx5500_notices.tsv (the last two since round 5, Nov 24, 2026); writes nothing.
+Reads ../../../tables/house_licence_table.tsv, nvidia_china_revenue.tsv, provinces_31.tsv, market_numbers.tsv,
+rtx5500_notices.tsv (the last two since round 5, Nov 24, 2026) and local_vouchers_classes.tsv (core edit 8, Nov 25, 2026); writes nothing.
 A control: the same comparison run on a copy of the base file with one number changed must fail.
 """
 import sys
@@ -83,6 +83,25 @@ def expected():
     want.append(f'**{P["share"]} of 31** provincial-level governments set a share')
     if P['account_only'] != 1 or P['not_reached'] != 1: sys.exit('Tibet and Xinjiang are not one each')
     print(f'provinces: {dict(P)}')
+    # core edit 8 (Nov 25, 2026): the voucher count the ledger prints, from the core's table of classes
+    # round 9 (Nov 25, 2026; voucher rounds 3 to 6): a fifth class, Hangzhou's two rates by a type of facility it does not name, which with the one-rate
+    # rules makes the third class, "states no higher rate for home-made computing"; the governments named in the row are taken from the table too
+    V = Counter(r['class'] for r in rows('local_vouchers_classes.tsv'))
+    MORE, ONLY, ONE, TWO, NOT = ('pays more for home-made and still pays for other computing', 'pays for home-made computing only', 'one rate',
+                                 'two rates by a type of computing facility that the rule does not name', 'read and not counted')
+    more, only, one, two = V[MORE], V[ONLY], V[ONE], V[TWO]
+    counted = more + only + one + two
+    if set(V) != {MORE, ONLY, ONE, TWO, NOT} or not (more and only and one and two) or counted + V[NOT] != sum(V.values()): sys.exit(f'voucher classes: an unknown class or an empty one: {dict(V)}')
+    if two != 1 or [r['government'] for r in rows('local_vouchers_classes.tsv') if r['class'] == TWO] != ['Hangzhou']: sys.exit('the rule of two rates by an unnamed type is not Hangzhou\'s alone')
+    words = ['no', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine']
+    want.append(f'**{more} of {counted}** local voucher rules pay more for home-made computing and still pay for other computing; **{only}** pay for home-made computing only; '
+                f'**{one + two}** state no higher rate for home-made computing (**{one}** pay one rate whatever the chip; Hangzhou\'s pays 30% or 20% by a type of computing facility that it does not name)')
+    gov = lambda c: [r['government'] for r in rows('local_vouchers_classes.tsv') if r['class'] == c]
+    want.append(f'The {words[more]}, as shares of the bill')
+    want += [f'{g} ' for g in gov(MORE) if g not in ('Wuhan', 'Longwan and Wenzhou Bay New Area')] + ['Wuhan\'s Data Bureau', 'Longwan district and Wenzhou Bay New Area']
+    want.append(f'The {words[only]} that pay for home-made computing only: ' + ', '.join(sorted(gov(ONLY), key=lambda g: ('Sichuan', 'Ningbo', 'Huangyan').index(g) if g in ('Sichuan', 'Ningbo', 'Huangyan') else 9)[:-1]) + ' and the ' + sorted(gov(ONLY), key=lambda g: ('Sichuan', 'Ningbo', 'Huangyan').index(g) if g in ('Sichuan', 'Ningbo', 'Huangyan') else 9)[-1])
+    want.append(f'**{more} of {counted}** voucher rules')
+    print(f'vouchers: counted {counted} ({more} pay more, {only} home-made only, {one} one rate, {two} two rates by an unnamed type); read and not counted {V[NOT]}')
 
     M = rows('market_numbers.tsv')
     want.append(f'{len(M)} published market numbers')

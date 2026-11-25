@@ -15,7 +15,7 @@ The H200 is Nvidia's second most powerful AI chip [1]. To reach a Chinese compan
 ## Washington's steps
 
 - **Dec 8, 2025. On the record.** The President posted that he had told Xi Jinping "the United States will allow NVIDIA to ship its H200 products to approved customers in China", and added: "President Xi responded positively!" [2] That is the President's account, not Xi's words.
-- **Jan 15, 2026. On the record.** The Commerce Department's rule took effect. It requires "independent, third-party testing in the United States" and caps shipments to China and Macau at half of those to customers in the United States [3].
+- **Jan 15, 2026. On the record.** The Commerce Department's rule took effect. It requires "independent, third-party testing in the United States", and that shipments to China and Macau be at most half of the same product shipped for end use in the United States [3].
 - **February 2026. On the record.** Nvidia's filing: from that month the US government "granted licenses that would allow us to ship small amounts of H200 products to specific China-based customers", with "a 25% tariff upon importation into the United States" [4].
 - **May 11, 2026. On the record.** The table of licence applications for the H200 and AMD's comparable chip, from the Commerce Department's Bureau of Industry and Security, made public by the House Foreign Affairs Committee on Nov 19, 2026: 879,868 chips licensed (Nvidia's: 579,868), each marked "Approved, not shipped"; 1,888,950 returned without action, 55% of the chips in the applications the summary records. No reason is given. The sums are ours [5] [6] [7].
 
@@ -52,7 +52,7 @@ Each entry: its kind; what it is; the saved page's own title where the record ho
 
 [4] Company filing or statement. Nvidia, quarterly report on Form 10-Q for the quarter to Jul 26, 2026, filed with the US Securities and Exchange Commission on Aug 26, 2026. https://www.sec.gov/Archives/edgar/data/1045810/000104581026000075/nvda-20260726.htm Saved copy: man-ms-sec-10q-2026-07
 
-[5] Official document, or an official on the record. House Foreign Affairs Committee, disclosure of Nov 19, 2026: the table of licence applications (the file's name: BIS License Decisions) for Nvidia's H200 and AMD's MI325X, with their status as of May 11, 2026 (its text layer is out of order; the rows were read from the page images). https://democrats-foreignaffairs.house.gov/wp-content/uploads/2026/11/11.19.26-ECRA-Information-Disclosure-of-BIS-License-Decisions.pdf Saved copy: cn-usdocs-hfac-decisions-20261119
+[5] Official document, or an official on the record. House Foreign Affairs Committee, disclosure of Nov 19, 2026: the table of licence applications (the file's name: 11.19.26-ECRA-Information-Disclosure-of-BIS-License-Decisions) for Nvidia's H200 and AMD's MI325X, with their status as of May 11, 2026 (its text layer is out of order; the rows were read from the page images). https://democrats-foreignaffairs.house.gov/wp-content/uploads/2026/11/11.19.26-ECRA-Information-Disclosure-of-BIS-License-Decisions.pdf Saved copy: cn-usdocs-hfac-decisions-20261119
 
 [6] Official document, or an official on the record. House Foreign Affairs Committee, disclosure of Nov 19, 2026, made by the full committee (its chairman's release; approved by unanimous consent at a business meeting; the files are on the committee Democrats' site): the committee's summary, which cites a BIS summary dated May 11, 2026 (BIS: the Commerce Department's Bureau of Industry and Security). https://democrats-foreignaffairs.house.gov/wp-content/uploads/2026/11/11.19.26-ECRA-Information-Disclosure-HFAC-Summary.pdf Saved copy: cn-usdocs-hfac-summary-20261119
 
@@ -74,9 +74,9 @@ Each entry: its kind; what it is; the saved page's own title where the record ho
 
 [15] Official document, or an official on the record. Commerce Secretary Howard Lutnick, hearing of the Senate appropriations subcommittee on commerce, justice and science, Apr 22, 2026. Rev's commercial transcript, not the committee's own print. Page title: Howard Lutnick Commerce Department Budget | Rev. https://www.rev.com/transcripts/commerce-department-budget-hearing Saved copy: cn-us-lutnick-0422-rev-transcript-b
 
-[16] Company filing or statement. Nvidia, results call of May 20, 2026 (first quarter of its fiscal year 2027): the transcript on Nvidia's investor site. https://s201.q4cdn.com/141608511/files/doc_financials/2027/q1/NVDA-Q1-2027-Earnings-Call-20-May-2026-5_00-PM-ET.pdf Saved copy: cn-o38-nvda-q1fy27-call-transcript-pdf
+[16] Company filing or statement. Nvidia, results call of May 20, 2026 (first quarter of its fiscal year 2027): the transcript on Nvidia's investor file host (s201.q4cdn.com). https://s201.q4cdn.com/141608511/files/doc_financials/2027/q1/NVDA-Q1-2027-Earnings-Call-20-May-2026-5_00-PM-ET.pdf Saved copy: cn-o38-nvda-q1fy27-call-transcript-pdf
 
-[17] Company filing or statement. Nvidia, results call for the third quarter of its fiscal year 2027 (the quarter ended Oct 25, 2026): the transcript on Nvidia's investor site. https://s201.q4cdn.com/141608511/files/content_files/NVDA-3Q27-Earnings-Transcript.pdf Saved copy: cn-o38-nvda-q3fy27-call-transcript-pdf
+[17] Company filing or statement. Nvidia, results call for the third quarter of its fiscal year 2027 (the quarter ended Oct 25, 2026): the transcript on Nvidia's investor file host (s201.q4cdn.com). https://s201.q4cdn.com/141608511/files/content_files/NVDA-3Q27-Earnings-Transcript.pdf Saved copy: cn-o38-nvda-q3fy27-call-transcript-pdf
 
 [18] Press report of words spoken on the record. Reuters, Nov 18, 2026, as carried by AOL, reporting Nvidia's interim chief executive on its results call. Page title: Nvidia stops shipping US-approved AI chips to China - AOL. https://www.aol.com/articles/nvidia-stops-shipping-us-approved-091611000.html Saved copy: cn-acts-reuters-halt-20261118-relay2
 

@@ -9,6 +9,7 @@ record	saved_id	result	phrase
 46	cn-labs-rtx6000d-demand-20250916-relay1	kept	even if Nvidia’s products are preferred by many companies
 20	man-ms-sec-10q-2025-10	kept	restricted customers from purchasing, importing, or using our data center products
 20	man-ms-sec-10q-2025-10	kept	we are already effectively foreclosed from the China market by U.S. export controls
+47	cn-tolerate-ft-offshore	kept	to access Nvidia’s chips
 48	cn-labs-h200-demand-20251210-relay1	kept	should Beijing give them the green light
 49	cn-labs-h200-lobby	kept	aggressively placing large orders and lobbying the government to relax restrictions on a conditional basis
 21	cn-acts-reuters-customs-20260114	kept	not permitted
@@ -23,9 +24,12 @@ record	saved_id	result	phrase
 26	cn-acts-reuters-us-approvals-20260514-wayback	kept	not a single delivery
 26	cn-acts-reuters-us-approvals-20260514-wayback	kept	pulled back after guidance from Beijing
 26	cn-acts-reuters-us-approvals-20260514-wayback	kept	partly triggered by changes on the U.S. side
+31	cn-acts-reuters-ti-cap-20260708-relay1	kept	have withheld approval so far
 32	man-a7d2f1a9f963	kept	very few
 34	man-ms-sec-10q-2026-07	kept	were restricted by the PRC government
 36	cn-clips-evidence-1	kept	as Beijing withholds approval
 59	cn-o36-tencent-call-20261118-sa	kept	can be run very effectively on a surprisingly limited number of domestic chips
+59	cn-o36-tencent-call-20261118-sa	kept	a far higher volume of tokens, specifically on domestic chips
 60	cn-o36-tencent-call-20261118-sa	kept	It sets everyone back in China
 60	cn-o36-tencent-call-20261118-sa	kept	no matter when you actually started leasing or building capacities outside of China
+60	cn-o36-tencent-call-20261118-sa	kept	it’s going to be impacted

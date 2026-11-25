@@ -12,7 +12,7 @@ Flip through all 34 images at https://kevinnbass.github.io/beijing-vs-its-labs/s
 
 <a href="https://kevinnbass.github.io/beijing-vs-its-labs/series/02_chapter-I_the-whole-story.html"><img src="series/thumbs/02_chapter-I_the-whole-story.jpg" width="320" alt="The map of chapter I"></a>
 
-The whole story in one image: of the 62 dated records in the figure that goes with the argument, 24 fall in the row “Beijing holds Nvidia back”, which takes in the wider line of rules and warnings, against 14 in “Beijing lets Nvidia in”; 14 show the companies reaching for Nvidia’s chips against 10 turning to home-made ones.
+The whole story in one image: of the 62 dated records in the figure that goes with the argument, 25 fall in the row “Beijing holds Nvidia back”, which takes in the wider line of rules and warnings, against 13 in “Beijing lets Nvidia in”; 14 show the companies reaching for Nvidia’s chips against 10 turning to home-made ones.
 
 - [Figure 00 · The board](https://kevinnbass.github.io/beijing-vs-its-labs/series/03_figure-00_the-board.html): Who acts on whom: two governments, Nvidia, China’s AI companies and China’s chip makers, with the strongest record on every link.
 - [Figure 01 · The pull](https://kevinnbass.github.io/beijing-vs-its-labs/series/04_figure-01_the-pull.html): Every dated record by which way each act pulled, round what Washington allowed and what Nvidia sold.
@@ -22,7 +22,7 @@ The whole story in one image: of the 62 dated records in the figure that goes wi
 
 <a href="https://kevinnbass.github.io/beijing-vs-its-labs/series/06_chapter-II_the-declared-line.html"><img src="series/thumbs/06_chapter-II_the-declared-line.jpg" width="320" alt="The map of chapter II"></a>
 
-In public the Chinese state says use home-made chips: the leader calls dependence on others for core technology the greatest hidden danger, purchase rules bind Party and government bodies, 8 of 31 provincial-level governments were found to set a home-made share, and the security ministry warned of backdoors.
+In public the Chinese state says use home-made chips: the leader calls dependence on others for core technology the greatest hidden danger, purchase rules bind Party and government bodies, 9 of 31 provincial-level governments were found to set a home-made share, and the security ministry warned of backdoors.
 
 - [Figure 03 · The leader’s line](https://kevinnbass.github.io/beijing-vs-its-labs/series/07_figure-03_xi-line.html): Xi Jinping’s dated statements on core technology and chips, and the search that never finds Nvidia.
 - [Figure 04 · Who is bound](https://kevinnbass.github.io/beijing-vs-its-labs/series/08_figure-04_who-is-bound.html): Whom the written purchase rules bind, ring by ring, and the evaluation lists.

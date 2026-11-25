@@ -7,12 +7,17 @@ Counts come from two files of the project, never from typing:
   ../../argument/argument_base.txt   the argument's text with saved ids       -> which point cites which source
 Kinds to rungs (round 4: the argument has eleven kinds; its own builder counts all but PRESS, COUNT and CLIP as on the record):
   1 DOC, PUB      Chinese state documents, and published commentary of state media or an industry body
-  2 FIL, NOTICE   company filings and statements, and an institution's own published notice (two universities)
+  2 FIL, NOTICE   company filings and statements, and a buyer's own published purchase notice (core edit 8, Nov 25, 2026: universities, a
+                  centre of the drug regulator, the purchasing centre for central state bodies, and the state telecom carriers'
+                  tender notices, most of them as tender sites carry them)
   3 OFF, NAMED    officials on the record and official records; one named analyst's written testimony
   4 REC, ACCT     press reports naming their source: a named person's words, a company's statement (round 8: the argument's
                   REC rows include company statements, among them Nvidia's statement as two news sites carried it, The
-                  Standard and the Daily Caller News Foundation, edit 7c), or a named news outlet's account of a state document
-  5 PRESS, COUNT, CLIP   unnamed people, a research firm's counts, caption tracks or machine transcripts not checked by ear
+                  Standard and the Daily Caller News Foundation, edit 7c), or a named news outlet's account of a document, a filing
+                  or an official act (round 9: the core's label for ACCT was widened in core edit 8b, and a Reuters factbox made
+                  from tender documents and company statements became ACCT)
+  5 PRESS, COUNT, CLIP   unnamed people, research firms' counts (the core's COUNT label also names brokers; the build asserts that
+                  every COUNT source of the argument is a research firm's), caption tracks or machine transcripts not checked by ear
 The examples and their words are in data.txt; quotes.tsv is written from it and checked by scripts/cn_has.py before
 anything else is written.
 """
@@ -29,28 +34,28 @@ NAME = 'ladder_of_evidence'
 RUNG_OF = {'DOC': 1, 'PUB': 1, 'FIL': 2, 'NOTICE': 2, 'OFF': 3, 'NAMED': 3, 'REC': 4, 'ACCT': 4, 'PRESS': 5, 'COUNT': 5, 'CLIP': 5}
 RUNGS = {  # name, what sits on it, what it shows about this claim, what it does not show ({SM} is filled in from tables/state_media_items.tsv)
     1: ('Chinese state documents and state media', 'texts of the Chinese party-state and its bodies; what state media and an industry body published: commentary, reports, statements',
-        'The declared line: end dependence on foreign core technology and use home-made chips. The purchase rules for state bodies, the provincial targets, '
-        'the antitrust case and the summons. A Shanghai government body’s own statement that internet companies’ clusters run mainly on Nvidia. '
+        'The declared line: end dependence on foreign core technology and use home-made chips. The purchase rules for government buying, the provincial targets, '
+        'the antitrust case and the summons. A Shanghai government body’s own statement that internet companies’ own clusters in the city run mainly on Nvidia. '
         'And the public warnings: state media warned about Nvidia’s chips, {SM}; a Party paper also printed a scholar’s advice to stock imported chips.',
         'Any order telling companies not to buy Nvidia chips. None was found in the 82 policy pages read. The commentaries warn and urge; none forbids.'),
-    2: ('Company filings and own notices', 'what companies told securities regulators, exchanges and investors: filings, results releases, the company’s own transcript of a results call; and institutions’ own purchase notices (universities, and a centre of the drug regulator)',
-        'Alibaba told the US securities regulator that the cyberspace regulator asked firms to halt purchases of certain chips. Nvidia told it that the Chinese government restricted, and later discouraged, customers’ purchases, '
-        'and that its licensed sales were restricted; the same reports say it is foreclosed from the China market by US export controls. On its own results calls Nvidia said in May 2026 '
+    2: ('Company filings and own notices', 'what companies told securities regulators, exchanges and investors: filings, results releases, the company’s own transcript of a results call; and buyers’ own purchase notices (universities, a centre of the drug regulator, the purchasing centre for central state bodies, and the state telecom carriers, most of whose notices are held as tender sites carry them)',
+        'Alibaba told the US securities regulator that the cyberspace regulator asked Chinese technology companies to halt purchases of certain chips. Nvidia told it that the Chinese government restricted, and later discouraged, customers’ purchases, '
+        'and that its licensed sales were restricted; the same reports say it is effectively foreclosed from the China market by US export controls. On its own results calls Nvidia said in May 2026 '
         'that it had no revenue yet from the licensed chips, and in November 2026 that it had sold $2.4 billion of licensed Hopper products to China in a quarter and was no longer shipping. '
         'Alibaba also says its own chips are in scaled production. Listed Chinese firms told the Shenzhen exchange of purchases of cards named PRO 5500. '
-        'Universities’ own notices of 2026 seek or buy a few Nvidia cards at a time, or rent a server that holds them; some central buyers’ notices of November 2026 ask for home-made computing.',
+        'Universities’ own notices of 2026 seek, buy or rent Nvidia cards, from two cards to six to eight eight-card servers; some central buyers’ notices of November 2026 ask for home-made computing. An award of April 2025 by the purchasing centre for central state bodies, for a university’s IT centre, names Nvidia H20 modules under a tender that allowed no imported products. {CARRIERS}',
         'Who gave the instruction, or how. Alibaba’s sentence does not name Nvidia. Nvidia gave no reason for stopping. A notice to buy is not a purchase made, and a contract is not a delivery.'),
     3: ('Officials and official records', 'named officials, in their own body’s account or a transcript; official records, most of them American (hearings, reports, rules, the licence table); one analyst’s written testimony. Executives’ words reach us through rungs 2 and 4',
         'American officials state the conflict in their own names, as their understanding; American bodies read Beijing’s acts as leverage in trade talks, or as a push for more advanced chips. Washington’s own licence table marks every approved application not shipped. '
-        'Chinese officials stand on both sides in public: the state planner says it is guiding model makers to home-made chips; a vice premier and the commerce minister welcome Nvidia, and the premier tells American firms, Nvidia’s among them, that an open policy is a lasting commitment; asked about the reports, spokespeople confirm nothing.',
+        'Chinese officials stand on both sides in public: the state planner says it is guiding home-made models to do more to adapt to home-made chips; a vice premier and the commerce minister welcome Nvidia, and the premier tells American firms, Nvidia’s among them, that an open policy is a lasting commitment; asked about the reports, spokespeople confirm nothing.',
         'Any Chinese official saying that purchases were stopped.'),
-    4: ('Press reports naming their source', 'a named person’s words at a hearing, on a results call, on television or in a post, a company’s statement, or a named news outlet’s account of a state document, as a news outlet, a post or a transcript site gives them',
+    4: ('Press reports naming their source', 'a named person’s words at a hearing, on a results call, on television or in a post, a company’s statement, or a named news outlet’s account of a document, a filing or an official act, as a news outlet, a post or a transcript site gives them',
         'The Treasury Secretary’s view that Chinese orders were few. A Tencent executive’s remark that policy restrictions kept foreign-designed chips out of China; he does not say whose policy. '
         'And the companies’ own turn to home-made chips, in their executives’ words.',
         'A first-hand record. Each of these passes through a reporter, a post or a transcript site; the speaker labels of the Tencent transcripts are the site’s and are unchecked.'),
     5: ('Press reports citing unnamed people', 'also research firms’ counts, and caption tracks or machine transcripts that nobody has checked by ear',
         'Who told whom, and when: the guidance not to buy, the warning about traitors, the customs checks, the split inside Beijing. Every count of the chips ordered across China’s companies, approved by Beijing, delivered and waiting; '
-        'the counts single buyers give of their own purchases are on rung 2. Nvidia’s market share, and the foreign suppliers’ share. The clip that raised the question, and the Trade Representative’s and the Treasury Secretary’s words on Bloomberg Television, in caption tracks or transcripts.',
+        'the counts single buyers give of their own purchases are on rung 2. Nvidia’s market share, and the foreign suppliers’ share. The clip that raised the question, and the Trade Representative’s and the Treasury Secretary’s words on Bloomberg Television and a Bloomberg podcast, in caption tracks or transcripts.',
         'Confirmation. In the answers found, Beijing’s spokespeople confirmed none of these reports.'),
 }
 GROUPS = [  # label, the points in it (the argument's own sections; "T" is its table of numbers)
@@ -153,16 +158,38 @@ def main():
     # round 5: the words of the rungs that describe kinds rest on these (a change in the references stops the build here)
     lab_of = lambda k: [r['label'] for r in refs.values() if r['kind'] == k]
     notices = lab_of('NOTICE')
-    assert sum('Universit' in l for l in notices) == len(notices) - 1 and sum('National Medical Products Administration' in l for l in notices) == 1, notices      # universities, and a centre of the drug regulator
+    # core edit 8: the notices are universities' (the central purchasing centre's tender document for one of them among them), one of a centre of the drug
+    # regulator, and the state carriers' tender notices; a notice of any other kind of buyer stops the build, so the words of rung 2 are looked at again
+    NCLASS = (('carrier', ('China Mobile', 'China Telecom', 'China Unicom')), ('drug regulator', ('National Medical Products Administration',)), ('university', ('Universit',)))
+    nclass = [next((c for c, ws in NCLASS if any(w in l for w in ws)), None) for l in notices]
+    assert None not in nclass, [l for l, c in zip(notices, nclass) if c is None]
+    assert nclass.count('drug regulator') == 1 and nclass.count('university') >= 8 and nclass.count('carrier') >= 6, Counter(nclass)
+    assert sum('Purchasing centre for central state bodies' in l for l in notices) == 1, 'the central purchasing centre\'s tender document'
+    assert all(refs.get(s, {}).get('kind') == 'NOTICE' for s in ('cn-ga31-h20notices-7', 'cn-ga31-h20notices-19', 'cn-ga31-operators-63', 'cn-ga31-operators-7', 'cn-ga31-operators-32'))      # the award naming H20 modules, its tender document, and three carrier notices the words of rung 2 rest on
     assert {f for f in ('IDC', 'TrendForce') if any(f in l for l in lab_of('COUNT'))} == {'IDC', 'TrendForce'}, lab_of('COUNT')                                   # research firms' counts (two firms)
     assert all(refs.get(s, {}).get('kind') == 'FIL' for s in ('cn-filings-tianyang-20261013-contract', 'cn-le08-youzu-contract-20261104', 'cn-ga01-hzyl-contract-20261112'))   # listed firms' notices of PRO 5500 purchases: rung 2
     assert all(refs.get(s, {}).get('kind') == 'NOTICE' for s in ('cn-ga13-nwpu-som-88690-wayback', 'cn-ga13-ccgp-nmpa-cmde-ai-rental-27742397', 'cn-ga13-ccgp-pku-inference-card-27734000'))
     assert kinds['NAMED'] == 1 and kinds['ACCT'] >= 2
     sm = C.table('state_media_items.tsv'); warns = sorted(C.date.fromisoformat(r['date']) for r in sm if r['stance'] == 'warns')
     win = [d for d in warns if d <= C.date(2025, 9, 24)]
-    assert (len(sm), len(warns), len(win)) == (75, 14, 11), (len(sm), len(warns), len(win))      # the table since core edit 6 (atlas/core_edit/p6_work_5/count_census.py)
+    assert (len(sm), len(warns), len(win)) == (75, 19, 16), (len(sm), len(warns), len(win))      # the table since core edit 6 (atlas/core_edit/p6_work_5/count_census.py)
     RUNGS[1] = RUNGS[1][:2] + (RUNGS[1][2].replace('{SM}', f'in {len(warns)} of {len(sm)} state and Party media items found that only warn about them, {len(win)} of them dated {C.fmt(win[0])} to {C.fmt(win[-1])} and {len(warns) - len(win)} later, in Global Times in 2026 (the items after September 2025 are what two rounds of searches found, a sample and not a full count)'),) + RUNGS[1][3:]
     assert '{' not in RUNGS[1][2]
+    # round 9 (core edit 8b): the kinds' words of rungs 4 and 5 rest on these
+    assert all(('IDC' in l or 'TrendForce' in l) for l in lab_of('COUNT')), lab_of('COUNT')          # every count is a research firm's (no broker's)
+    clip = lab_of('CLIP')
+    assert sum('Bloomberg Talks (a Bloomberg podcast)' in l for l in clip) == 1 and sum('Bloomberg Television' in l for l in clip) >= 3, clip
+    # round 9 (core edit 8b): the carriers' own notices, as the argument now words them, and how many of their pages name Nvidia, counted from
+    # tables/carriers_own_notices.tsv (its classes of a carrier's own notice, filing or news page and a site's record of a notice); the control is
+    # that the same column finds Nvidia words on press rows of the table
+    cn_rows = C.table('carriers_own_notices.tsv')
+    OWN = ("carrier's own notice", "a tender site's account of the notice", "carrier's own page", "carrier's own filing")
+    own = [r for r in cn_rows if r['who_states'].startswith(OWN)]
+    pages = {r['saved_id'] for r in own}; named = {r['saved_id'] for r in own if r['nvidia_words_on_page'] != 'none'}
+    ctl = [r for r in cn_rows if r['who_states'].startswith('press') and r['nvidia_words_on_page'] != 'none']
+    assert named == {'cn-ga31-carrierown-14'} and refs['cn-ga31-carrierown-14']['kind'] == 'NOTICE' and ctl, (len(pages), named, len(ctl))
+    RUNGS[2] = RUNGS[2][:2] + (RUNGS[2][2].replace('{CARRIERS}', f'The carriers’ own notices ask for home-made chips by maker or by origin, or label their lots by software ecosystem; of the {len(pages)} such pages read, {len(pages) - len(named)} name neither Nvidia nor an Nvidia model, and the other, a small tender of 2024 by a Jiangsu company that bears China Unicom’s name, names Nvidia cards as NV RTX 3090, NV RTX 4090 and NV Tesla A100.'),) + RUNGS[2][3:]
+    assert '{' not in RUNGS[2][2]
     cols = [p for _, ps in GROUPS for p in ps]
     cellc = {(p, k): sum(rung[i] == k for i in pts[p]) for p in cols for k in range(1, 6)}
     only1 = [p for p in cols if p != 'T' and cellc[(p, 1)] and not any(cellc[(p, k)] for k in (2, 3, 4, 5))]
@@ -270,7 +297,7 @@ def main():
    <h2>Read with care</h2>
    <ul>
     <li><b>A rung says how a statement reached us, not whether it is true.</b> A document can be wrong and an unnamed person right. A quotation that was found in a saved copy shows what the source says.</li>
-    <li><b>The rungs follow the argument’s own labels</b> for its {total} sources; the same source sits on one rung only. The argument has {C.WORDS[len(kinds)]} kinds of source; this figure puts its state documents and what state media and an industry body published on rung 1, filings and institutions’ own purchase notices on rung 2, officials, official records and {C.WORDS[kinds['NAMED']]} analyst’s testimony on rung 3, and reports of named people’s words or companies’ statements, and news outlets’ accounts of state documents, on rung 4. Rungs 1 to 4 hold exactly the kinds the argument counts as on the record. A named person’s words on rung 4 still pass through a reporter, a post or a transcript site.</li>
+    <li><b>The rungs follow the argument’s own labels</b> for its {total} sources; the same source sits on one rung only. The argument has {C.WORDS[len(kinds)]} kinds of source; this figure puts its state documents and what state media and an industry body published on rung 1, filings and buyers’ own purchase notices on rung 2, officials, official records and {C.WORDS[kinds['NAMED']]} analyst’s testimony on rung 3, and reports of named people’s words or companies’ statements, and news outlets’ accounts of documents, filings or official acts, on rung 4. Rungs 1 to 4 hold exactly the kinds the argument counts as on the record. A named person’s words on rung 4 still pass through a reporter, a post or a transcript site.</li>
     <li>What the count cannot weigh: one company filing may carry more than several press reports. The count of squares is not a score.</li>
     <li>English renderings of Chinese are ours, not official translations.</li>
    </ul>

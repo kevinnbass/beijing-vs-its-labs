@@ -11,13 +11,17 @@ P = Path('research/primary')
 HERE = Path(__file__).resolve().parent
 out = []
 def put(k, v): out.append((k, str(v)))
-a = 'cn-o38-nvda-feed-secfilings-2026-c'      # the newest reading (round 2); the first reading is -b
+a = 'cn-ga31-official-nvda-feed-secfilings-2026'      # the newest reading (core edit 8, Nov 25, 2026: saved 06:49 UTC that day by the sweep's official-pages agent)
+EARLIER = 'cn-o38-nvda-feed-secfilings-2026-c'      # the reading before it (Nov 23, 2026, 06:41 UTC); the very first reading, -b, is no longer named in the note
 m = json.loads((P / a / 'meta.json').read_text()); put('filings_feed_fetched_utc', m['fetched_utc']); put('filings_feed_sha256', m['sha256'])
 rows = json.loads((P / a / 'body.json').read_text())['GetEdgarFilingListResult']
 d = lambda s: datetime.strptime(s, '%m/%d/%Y %H:%M:%S')
 rows.sort(key=lambda r: d(r['ReceivedDate']), reverse=True)
 put('filings_listed_2026', len(rows))
-m0 = json.loads((P / 'cn-o38-nvda-feed-secfilings-2026-b' / 'meta.json').read_text())
+m0 = json.loads((P / EARLIER / 'meta.json').read_text())
+rows0 = json.loads((P / EARLIER / 'body.json').read_text())['GetEdgarFilingListResult']
+q = lambda rr: sorted(x['FilingDate'] for x in rr if x['FilingTypeMnemonic'].upper().startswith('10-Q'))
+put('earlier_feed_id', EARLIER); put('earlier_feed_same_10Q_rows', q(rows0) == q(rows)); put('earlier_feed_filings_listed', len(rows0))
 put('filings_feed_id', a); put('earlier_feed_fetched_utc', m0['fetched_utc']); put('earlier_feed_same_bytes', m0['sha256'] == m['sha256'])
 for i, r in enumerate(rows[:4], 1): put(f'newest_{i}', f"{r['FilingTypeMnemonic']} | filed {d(r['FilingDate']):%Y-%m-%d} | received {r['ReceivedDate']} | {r['FilingDescription']}")
 tq = [r for r in rows if r['FilingTypeMnemonic'].upper().startswith('10-Q')]
@@ -25,7 +29,8 @@ put('10Q_rows_2026', '; '.join(f"{d(r['FilingDate']):%Y-%m-%d}" for r in tq))
 if not any(d(r['FilingDate']).strftime('%Y-%m-%d') == '2026-08-26' for r in tq): sys.exit('control failed: the feed does not list the 10-Q of Aug 26, 2026')
 put('10Q_filed_after_2026-10-25', sum(1 for r in tq if d(r['FilingDate']) > datetime(2026, 10, 25)))
 put('NT_10Q_rows_2026', sum(1 for r in rows if r['FilingTypeMnemonic'].upper().startswith('NT')))
-b = 'cn-o38-nvda-feed-finreports-fy2027'
+b = 'cn-ga31-official-nvda-feed-finreports-fy2027'      # core edit 8: the reading of Nov 25, 2026 (the first, cn-o38-nvda-feed-finreports-fy2027, was of Nov 23)
+put('reports_feed_id', b)
 m = json.loads((P / b / 'meta.json').read_text()); put('reports_feed_fetched_utc', m['fetched_utc'])
 for r in json.loads((P / b / 'body.json').read_text())['GetFinancialReportListResult']:
     cats = [x['DocumentTitle'] for x in r['Documents']]
@@ -66,7 +71,7 @@ def sec(S, pre):
     put(f'{pre}_10Q_for_period_2026-10-25', sum(1 for x in srows if x[1].startswith('10-Q') and x[2] == '2026-10-25'))
     put(f'{pre}_10Q_filed_after_2026-10-25', sum(1 for x in srows if x[1].startswith('10-Q') and x[0] > '2026-10-25'))
     put(f'{pre}_NT_filings_2026', sum(1 for x in srows if x[1].startswith('NT') and x[0] >= '2026-01-01'))
-sec('cn-ga06-sec-submissions-20261124', 'sec')
+sec('cn-ga31-official-sec-submissions-20261125', 'sec')      # core edit 8: the newest reading (Nov 25, 2026, 06:49 UTC); the reading of Nov 24 (cn-ga06-sec-submissions-20261124) showed the same newest entries
 sec('cn-le05-sec-submissions-20261123', 'sec0')
 # --- the project's table of Nvidia's wording, filing by filing (tables/nvidia_wording_by_filing.tsv)
 T = HERE.parents[2] / 'tables'

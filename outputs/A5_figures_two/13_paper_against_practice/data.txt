@@ -5,7 +5,7 @@
 # the builder also refuses a number that is not written in its words).
 
 # ---- on paper: targets set by provincial-level governments (they do not all count the same thing; each record says what it counts) ----
-# Round 4: the eight of tables/provinces_31.tsv with result "share", largest first; the wording of each share follows its own
+# Round 4: the governments of tables/provinces_31.tsv with result "share" (eight then; nine since core edit 8 of Nov 25, 2026, with Zhejiang), largest first; the wording of each share follows its own
 # Chinese (以上 "or more", 超过 "over", 达到 or 将达 "reach"): build.py reads it from the quoted words.
 @ shandong acct 2022-07-31 - cn-o39-shandong-network-2022 side=paper dir=away place=Shandong tier=province term=home-made
 T by 2025
@@ -63,6 +63,17 @@ V target=60 | 新增算力基础软硬件设施自主可控比例60%以上
 N 到2025年,算力基础设施布局进一步优化完善
 N 来源: 河北省人民政府网站
 
+@ zhejiang doc 2026-07-29 - cn-ga31-cndocs-52 side=paper dir=away place=Zhejiang tier=province term=home-made
+T by 2030
+L Zhejiang's 15th five-year plan for its information and communications industry: by 2030, home-made computing is to be over 60% of the computing of that industry in the province. It is a share for one sector's computing, set as the target of a project in the plan, and it stands outside the plan's table of indicators. Issued by the Zhejiang Communications Administration with the provincial development and reform commission; posted Jul 29, 2026 on the administration's site.
+S Zhejiang province, 15th five-year plan for the information and communications industry, issued by the Zhejiang Communications Administration and the provincial development and reform commission
+Q 国产化算力占比超60%
+E home-made computing over 60%
+D 发布时间：2026-07-29
+V target=60 | 到2030年，浙江信息通信行业算力规模达150EFLOPS，国产化算力占比超60%
+N 省通信管理局省发展改革委关于印发《浙江省信息通信业发展“十五五”规划》的通知
+N 重点工程4:算力网络一体化提升工程
+
 @ nmg doc 2023-10-10 - cn-o39-nmg-plan-pdf-wayback side=paper dir=away place=Inner_Mongolia tier=region term=home-made
 T by 2025
 L Inner Mongolia's work plan for the digital economy, 2023 to 2025: by 2025, home-made computing is to reach 50% or more, among the goals for the region's part of the national computing network (its national hub). Issued by the regional government's general office, dated Oct 10, 2023. The saved copy is an Internet Archive capture of the official PDF.
@@ -100,7 +111,7 @@ T no percentage
 L The national opinions on a computing network set no share for home-made chips. Their aim is worded without a number.
 S National Development and Reform Commission and four other bodies, opinions of Dec 25, 2023
 Q 算力网关键核心技术基本实现安全可靠
-E the key core technologies of the computing network are in the main secure and reliable
+E among the goals for the end of 2025: the key core technologies of the computing network to be in the main secure and reliable
 D 制发日期: 2023-12-25
 N cn-le14-tnw-295b-plan-20260609 | at least 80 per cent of the core technology, AI chips included
 N cn-le14-tnw-295b-plan-20260609 | according to Bloomberg, citing people familiar with the matter
@@ -118,12 +129,12 @@ N cn-policy-roadmap-status | 工业和信息化部辛国斌副部长出席会议
 # ---- in practice ----
 @ shanghai-reply doc 2025-04-30 - cn-counter-b11-5 side=practice dir=toward
 T a Shanghai government body, in its own words
-L Shanghai's Commission of Economy and Informatization, in a written reply: internet companies' own computing clusters run mainly on Nvidia cards, and the three state telecom operators mainly buy Huawei and other home-made clusters. The reply gives no percentage.
+L Shanghai's Commission of Economy and Informatization, in a written reply: internet companies' own computing clusters run mainly on Nvidia cards, and the three state telecom operators mainly buy Huawei's and other home-made intelligent-computing clusters. The reply gives no percentage.
 S Shanghai Municipal Commission of Economy and Informatization, written reply dated Apr 30, 2025 (published Nov 10, 2025)
 Q 互联网企业自建算力集群,满足市场化企业需求,主要以英伟达高性能卡为主
-E internet companies build their own computing clusters to meet market demand, mainly with Nvidia high-performance cards
+E internet companies build their own computing clusters to meet the needs of market-oriented enterprises, mainly with Nvidia high-performance cards
 Q 三大运营商主要购置华为等国产化智算集群
-E the three telecom operators mainly buy Huawei and other home-made clusters
+E the three telecom operators mainly buy Huawei and other home-made intelligent-computing clusters
 D 上海市经济和信息化委员会2025年4月30日
 D 发布日期:2025-11-10
 

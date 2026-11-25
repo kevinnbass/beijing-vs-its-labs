@@ -1,33 +1,33 @@
 # Nvidia's report for the quarter to Oct 25, 2026: not filed yet
 
-@deck The quarterly report had not been filed when last looked for: the SEC's record of the company's filings, fetched at 10:27 UTC on Nov 24, 2026, lists none, nor did Nvidia's own list of its filings, fetched at 06:41 UTC on Nov 23, 2026. Nvidia's commentary and call transcript give the $2.4 billion and the stop, and no reason for it. Its earlier reports name the Chinese government; its calls do not.
+@deck The quarterly report had not been filed when last looked for: the SEC's record of the company's filings, fetched at 06:49 UTC on Nov 25, 2026, lists none, nor did Nvidia's own list of its filings, fetched at 06:49 UTC on Nov 25, 2026. Nvidia's commentary and call transcript give the $2.4 billion and the stop, and no reason for it. Its earlier reports name the Chinese government; its calls do not.
 
 @note Draft by Claude, Anthropic's model.
-@note Written Nov 23, 2026 (UTC); revised the same day in rounds 2 and 4; brought up to date on Nov 25, 2026 with the SEC's record as fetched on Nov 24, 2026. Idea 38 of the chip-policy project. Nvidia's staff are named by office, not by name.
+@note Written Nov 23, 2026 (UTC); revised the same day in rounds 2 and 4; brought up to date on Nov 25, 2026 with the SEC's record and Nvidia's own two lists as fetched that day, and with the project's corrected wording of the reports. Idea 38 of the chip-policy project. Nvidia's staff are named by office, not by name.
 
 ## What was looked for
 
 Four things: the Form 10-Q for the quarter ended Oct 25, 2026 (the quarterly report a US-listed company files with the Securities and Exchange Commission, the SEC); the transcript of the results call of Nov 17, 2026; the chief financial officer's written commentary; and what these say about China, the H200 and other licensed products, the $2.4 billion that Reuters reported, and why shipments stopped.
 
-## Is the 10-Q filed? Not as of Nov 24, 2026, 10:27 UTC
+## Is the 10-Q filed? Not as of Nov 25, 2026, 06:49 UTC
 
-- **Nvidia's investor site, its list of SEC filings for 2026**, fetched a second time at 06:41 UTC on Nov 23, 2026 [cn-o38-nvda-feed-secfilings-2026-c]. It lists 123 filings. At that time the newest was a Form 144 received on Nov 19, 2026, and the one before it a Form 8-K received on Nov 17, 2026. The only 10-Q rows of the year are those filed on Aug 26, 2026 and May 20, 2026: none after the quarter's end. The August row is the control: the list does show a 10-Q when one is filed. The first reading, at 05:37 UTC on Nov 23, 2026 [cn-o38-nvda-feed-secfilings-2026-b], was the same, byte for byte.
+- **Nvidia's investor site, its list of SEC filings for 2026**, last fetched at 06:49 UTC on Nov 25, 2026 [cn-ga31-official-nvda-feed-secfilings-2026]. It lists 125 filings. At that time the newest was a Form 4 received on Nov 23, 2026, and the one before it a Form 8-K received on Nov 23, 2026. The only 10-Q rows of the year are those filed on Aug 26, 2026 and May 20, 2026: none after the quarter's end. The August row is the control: the list does show a 10-Q when one is filed. An earlier reading, at 06:41 UTC on Nov 23, 2026 [cn-o38-nvda-feed-secfilings-2026-c], showed the same 10-Q rows.
+!! cn-ga31-official-nvda-feed-secfilings-2026 | FETCHED: 2026-11-25T06:49:19Z
+!! cn-ga31-official-nvda-feed-secfilings-2026 | 11/23/2026 15:54:48
+!! cn-ga31-official-nvda-feed-secfilings-2026 | 11/23/2026 07:58:17
+!! cn-ga31-official-nvda-feed-secfilings-2026 | 08/26/2026 00:00:00
 !! cn-o38-nvda-feed-secfilings-2026-c | FETCHED: 2026-11-23T06:41:25Z
-!! cn-o38-nvda-feed-secfilings-2026-c | 11/19/2026 15:46:31
-!! cn-o38-nvda-feed-secfilings-2026-c | 11/17/2026 15:21:23
-!! cn-o38-nvda-feed-secfilings-2026-c | 08/26/2026 00:00:00
-!! cn-o38-nvda-feed-secfilings-2026-b | FETCHED: 2026-11-23T05:37:23Z
-- **Nvidia's investor site, the documents it lists for each quarter**, fetched once, at 05:37 UTC on Nov 23, 2026 [cn-o38-nvda-feed-finreports-fy2027]. For the third quarter it lists: Press Release, Webcast, Transcript, CFO Commentary, NVIDIA Quarterly Revenue Trend, Presentation, Supplemental Financial Information. There is no 10-Q among them. For the first and second quarters of the same year it lists a 10-Q.
-!! cn-o38-nvda-feed-finreports-fy2027 | FETCHED: 2026-11-23T05:37:38Z
-!! cn-o38-nvda-feed-finreports-fy2027 | Supplemental Financial Information
-!! cn-o38-nvda-feed-finreports-fy2027 | NVDA-2027-Q2-10Q-Final-including-exhibits.pdf
-- **The SEC's own record of the company's filings**, saved by the project twice: at 08:51 UTC on Nov 23, 2026 [cn-le05-sec-submissions-20261123], and again at 10:27 UTC on Nov 24, 2026 [cn-ga06-sec-submissions-20261124]. In the later reading the newest entries are two filed on Nov 23, 2026: a Form 8-K, in which Nvidia reports that its Board reinstated the chief executive on Nov 22, 2026 [cn-ga06-nvda-8k-20261123-pdf], and, later the same day by the record's own times, a Form 4. In the first reading the newest entry was a Form 144 filed on Nov 19, 2026. In both readings the newest 10-Q was filed on Aug 26, 2026, for the period ended Jul 26, 2026; neither lists a 10-Q for the period ended Oct 25, 2026, or a notice of a late filing in 2026. The control: the record does list quarterly reports, 18 of them, the one of Aug 26, 2026 among them. An earlier reading of the SEC's list through a web reader (read, not saved) showed the same.
-!! cn-ga06-sec-submissions-20261124 | FETCHED: 2026-11-24T10:27:05Z
-!! cn-ga06-sec-submissions-20261124 | 0001045810-26-000075
-!! cn-ga06-sec-submissions-20261124 | 0001696841-26-000016
-!! cn-ga06-sec-submissions-20261124 | 0001045810-26-000090
-!! cn-ga06-sec-submissions-20261124 | 2026-11-23T21:54:28.000Z
-!! cn-ga06-sec-submissions-20261124 | 2026-11-23T13:57:54.000Z
+- **Nvidia's investor site, the documents it lists for each quarter**, last fetched at 06:49 UTC on Nov 25, 2026 [cn-ga31-official-nvda-feed-finreports-fy2027]. For the third quarter it lists: Press Release, Webcast, Transcript, CFO Commentary, NVIDIA Quarterly Revenue Trend, Presentation, Supplemental Financial Information. There is no 10-Q among them. For the first and second quarters of the same year it lists a 10-Q.
+!! cn-ga31-official-nvda-feed-finreports-fy2027 | FETCHED: 2026-11-25T06:49:19Z
+!! cn-ga31-official-nvda-feed-finreports-fy2027 | Supplemental Financial Information
+!! cn-ga31-official-nvda-feed-finreports-fy2027 | NVDA-2027-Q2-10Q-Final-including-exhibits.pdf
+- **The SEC's own record of the company's filings**, saved by the project on three days; the first reading, at 08:51 UTC on Nov 23, 2026 [cn-le05-sec-submissions-20261123], and the latest, at 06:49 UTC on Nov 25, 2026 [cn-ga31-official-sec-submissions-20261125], are set side by side here. In the latest reading the newest entries are two filed on Nov 23, 2026: a Form 8-K, in which Nvidia reports that its Board reinstated the chief executive on Nov 22, 2026 [cn-ga06-nvda-8k-20261123-pdf], and, later the same day by the record's own times, a Form 4. In the first reading the newest entry was a Form 144 filed on Nov 19, 2026. In both of these readings the newest 10-Q was filed on Aug 26, 2026, for the period ended Jul 26, 2026; neither lists a 10-Q for the period ended Oct 25, 2026, or a notice of a late filing in 2026. The control: the record does list quarterly reports, 18 of them, the one of Aug 26, 2026 among them. An earlier reading of the SEC's list through a web reader (read, not saved) showed the same.
+!! cn-ga31-official-sec-submissions-20261125 | FETCHED: 2026-11-25T06:49:19Z
+!! cn-ga31-official-sec-submissions-20261125 | 0001045810-26-000075
+!! cn-ga31-official-sec-submissions-20261125 | 0001696841-26-000016
+!! cn-ga31-official-sec-submissions-20261125 | 0001045810-26-000090
+!! cn-ga31-official-sec-submissions-20261125 | 2026-11-23T21:54:28.000Z
+!! cn-ga31-official-sec-submissions-20261125 | 2026-11-23T13:57:54.000Z
 !! cn-le05-sec-submissions-20261123 | FETCHED: 2026-11-23T08:51:16Z
 !! cn-le05-sec-submissions-20261123 | 0001045810-26-000075
 !! cn-ga06-nvda-8k-20261123-pdf | On November 22, 2026, the Board of Directors of NVIDIA Corporation reinstated Jen-Hsun Huang as NVIDIA's President, Chief Executive Officer and member of the Board of Directors, effective immediately.
@@ -35,6 +35,7 @@ Four things: the Form 10-Q for the quarter ended Oct 25, 2026 (the quarterly rep
 !! cn-ga06-nvda-8k-20261123-pdf | Date: November 23, 2026
 - **Nvidia's own words**, in the commentary published with the results on Nov 17, 2026: "We plan to file our 10-Q in the coming weeks. In the interim, we have provided a supplemental document with additional financial information on our investor website." [cn-counter-b17-1] That supplemental document is saved [cn-o38-nvda-q3fy27-supplemental-pdf].
 !! cn-o38-nvda-q3fy27-supplemental-pdf | For the Quarter Ended October 25, 2026
+!! cn-o38-nvda-q3fy27-supplemental-pdf | earnings press release and CFO commentary, each dated November 17, 2026
 
 ## What Nvidia said, quarter by quarter
 
@@ -60,8 +61,8 @@ The reports Nvidia files with the SEC have said more about Beijing than its call
 
 | Filed | Nvidia's words on the Chinese government | Beside them, in the same report |
 | Nov 20, 2024, Form 10-Q [man-ms-nvda-2024q3-10q-58a58e] | it "may also encourage customers to purchase from our China-based competitors, or impose restrictions on the sale to certain customers of our products" | the word foreclosed is not in this report (a script's count, which finds it in each report below) |
-| Aug 27, 2025, Form 10-Q [man-ms-sec-10q-2025-07] | it "has and may continue to encourage customers to purchase from our China-based competitors, or impose restrictions on the sale to certain customers of our products"; "China's government publicly questioned whether our H20 products have built-in vulnerabilities", "discouraging customers from purchasing our products" | a product for China's data-centre market needs "approval from the USG" |
-| Nov 19, 2025, Form 10-Q [man-ms-sec-10q-2025-10] | it "has encouraged customers to purchase from our China-based competitors and restricted customers from purchasing, importing, or using our data center products, including any China-specific product designed to comply with U.S. export controls" | "we are already effectively foreclosed from the China market by U.S. export controls"; a competitive product needs "approval from both the USG and the Chinese government" |
+| Aug 27, 2025, Form 10-Q [man-ms-sec-10q-2025-07] | it "has and may continue to encourage customers to purchase from our China-based competitors, or impose restrictions on the sale to certain customers of our products"; "China's government publicly questioned whether our H20 products have built-in vulnerabilities", "discouraging customers from purchasing our products" | Nvidia "may be unable to create a competitive product for China's data center market that receives approval from the USG" |
+| Nov 19, 2025, Form 10-Q [man-ms-sec-10q-2025-10] | it "has encouraged customers to purchase from our China-based competitors and restricted customers from purchasing, importing, or using our data center products, including any China-specific product designed to comply with U.S. export controls" | "we are already effectively foreclosed from the China market by U.S. export controls"; Nvidia is "unable to create and deliver a competitive product for China's data center market that receives approval from both the USG and the Chinese government" |
 | Feb 25 and May 20, 2026, Form 10-K and Form 10-Q [man-ms-sec-10k-fy2026] [man-ms-sec-10q-2026-04] | the same sentence, now with "discouraged customers from purchasing, importing, or using our data center products" where the report before had restricted; of the H200 licences, it does "not yet know whether any imports will be allowed into China" | both sentences kept |
 | Aug 26, 2026, Form 10-Q [man-ms-sec-10q-2026-07] | the same sentence kept; and sales under the American licences for the H20 and the H200 "were restricted by the PRC government" | both kept; the second now reads "for wide distribution in China's data center market with the approval from both the USG and the Chinese government" |
 | Quarter ended Oct 25, 2026 | no report filed yet | the results papers of Nov 17, 2026 name no Chinese restriction (below) |
@@ -69,9 +70,9 @@ The reports Nvidia files with the SEC have said more about Beijing than its call
 !! man-ms-sec-10q-2026-07 | Beginning in August 2025, the USG granted licenses that would have allowed us to ship certain H20 products to certain China-based customers, but such sales were restricted by the PRC government
 !! man-ms-sec-10k-fy2026 | government has encouraged customers to purchase from our China-based competitors and discouraged customers
 
-- **The two early rows are warnings, and both run on.** In November 2024 and August 2025 the sentence on encouraging customers to buy from Chinese competitors ends with the words "or impose restrictions on the sale to certain customers of our products" [man-ms-nvda-2024q3-10q-58a58e] [man-ms-sec-10q-2025-07]. Only from November 2025 do the reports say that Beijing has restricted customers; the two reports of 2026 before August say discouraged.
-- **The same reports put the shut-out on Washington too.** From November 2025: "we are already effectively foreclosed from the China market by U.S. export controls" [man-ms-sec-10q-2025-10].
-- **The calls named no Chinese restriction.** On the results calls held the same days, Nvidia named no Chinese restriction. Its chief financial officer spoke of geopolitics. Aug 27, 2025: "We have not included H20 in our Q3 outlook as we continue to work through geopolitical issues" [ms-sgp-nvda-q2fy26-call-transcript-pdf]. The calls of May 20 and Aug 26, 2026 are quoted above: imports that might not "be allowed into the country" [cn-o38-nvda-q1fy27-call-transcript-pdf], and "ongoing geopolitical uncertainty" [cn-o38-nvda-q2fy27-call-transcript-pdf], on the day the report said "restricted by the PRC government" [man-ms-sec-10q-2026-07]. In the transcripts of the four calls quoted in this note (Aug 27, 2025; May 20, Aug 26 and Nov 17, 2026) the words PRC, Beijing and Chinese government do not occur (a script's count; the same count finds the word China in each of the four).
+- **The two early rows are warnings, and both run on.** In November 2024 and August 2025 the sentence on encouraging customers to buy from China-based competitors ends with the words "or impose restrictions on the sale to certain customers of our products" [man-ms-nvda-2024q3-10q-58a58e] [man-ms-sec-10q-2025-07]. Only from November 2025 do the reports say that Beijing has restricted customers; the two reports of 2026 before August say discouraged.
+- **The same reports also say US export controls have in effect shut Nvidia out.** From November 2025: "we are already effectively foreclosed from the China market by U.S. export controls" [man-ms-sec-10q-2025-10].
+- **The calls quoted here named no Chinese restriction.** On the results calls quoted in this note, Nvidia named no Chinese restriction. Its chief financial officer spoke of geopolitics. Aug 27, 2025: "We have not included H20 in our Q3 outlook as we continue to work through geopolitical issues" [ms-sgp-nvda-q2fy26-call-transcript-pdf]. The calls of May 20 and Aug 26, 2026 are quoted above: imports that might not "be allowed into the country" [cn-o38-nvda-q1fy27-call-transcript-pdf], and "ongoing geopolitical uncertainty" [cn-o38-nvda-q2fy27-call-transcript-pdf], on the day the report said "restricted by the PRC government" [man-ms-sec-10q-2026-07]. In the transcripts of the four calls quoted in this note (Aug 27, 2025; May 20, Aug 26 and Nov 17, 2026) the words PRC, Beijing and Chinese government do not occur (a script's count; the same count finds the word China in each of the four).
 
 ## Why shipments stopped: Nvidia does not say
 

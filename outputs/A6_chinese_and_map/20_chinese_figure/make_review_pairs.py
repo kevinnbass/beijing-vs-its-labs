@@ -55,24 +55,61 @@ KINDS = [  # name, CSS selector, what to take ('text' or an attribute)
     ('revenue: sentence', '.revcard .big', 'text'), ('revenue: chart read aloud', '.rev', 'aria-label'), ('revenue: bar', '.rv', 'title'), ('revenue: month', '.rv span', 'text'), ('revenue: note', '.revwrap .fine', 'text'),
     ('31 governments: bar read aloud', '.pv-bar', 'aria-label'), ('31 governments: key', '.pv-keys span', 'text'), ('31 governments: row', 'table.pv tr', 'text'),
     ('line on paper: row', '.pp', 'text'),
-    ('vouchers: key', '.vkey span', 'text'), ('vouchers: group', '.vgrp h3', 'text'), ('vouchers: row', '.vr:not(.axis) .vlab', 'text'), ('vouchers: row read aloud', '.vr:not(.axis) .vt', 'aria-label'),
+    ('vouchers: key', '.vkey span', 'text'), ('vouchers: group', '.vgrp h3', 'text'), ('vouchers: sub-group', '.vgrp h4', 'text'), ('vouchers: row', '.vr:not(.axis) .vlab', 'text'), ('vouchers: row note', '.vr:not(.axis) .vnote', 'text'), ('vouchers: row read aloud', '.vr:not(.axis) .vt', 'aria-label'),
     ('vouchers: one-rate label', '.vn.side', 'text'), ('vouchers: note', '.vf', 'text'),
+    # round 9 (Nov 25, 2026): the compact list of one-rate rules and its lettered notes, drawn since voucher round 5, were not in this
+    # sheet. Its explanation and headings pair by position; the rules and the notes pair by the saved copy each rule links (below),
+    # because the two builders order the list and assign the letters each in its own way.
+    ('vouchers: one-rate list, explanation', '.vexpl', 'text'), ('vouchers: one-rate list, heading', '.vmh', 'text'),
     ('inside Beijing: column', '.bcol h4', 'text'), ('inside Beijing: body', '.bcol li > span:first-child', 'text'), ('inside Beijing: note', '.row.b .card:nth-child(2) > .fine', 'text'),
     ('records: column', '.lcol h3', 'text'), ('note', '.notes li', 'text'), ('strip: scroll area read aloud', '.scroll', 'aria-label'),
 ]
 GRAB = """(kinds) => kinds.map(([name, sel, what]) => [...document.querySelectorAll(sel)].map(el =>
   (what === 'text' ? (el.textContent || '') : (el.getAttribute(what) || '')).replace(/\\s+/g, ' ').trim()))"""
+GRAB_VM = """() => [[...document.querySelectorAll('.vm')].map(vm => {
+    const a = vm.querySelector('.vml .srcn'), f = vm.querySelector('.vml .vfl'), t = vm.querySelector('.vmt'), l = vm.querySelector('.vml');
+    return {href: a ? a.getAttribute('href') : '', letter: f ? f.textContent.trim() : '', aria: t ? (t.getAttribute('aria-label') || '') : '',
+            lab: l ? l.textContent.replace(/\\s+/g, ' ').trim() : '', place: l && l.firstChild ? l.firstChild.textContent.trim() : ''}; }),
+  [...document.querySelectorAll('.vfoot p')].map(p => { const b = p.querySelector('b');
+    return {letter: b ? b.textContent.trim() : '', text: p.textContent.replace(/\\s+/g, ' ').trim()}; })]"""
+vm = []
 with sync_playwright() as p:
     br = p.chromium.launch(); got = []
     for page in (CORE_PAGE, ZH_PAGE):
         pg = br.new_context(viewport={'width': 1280, 'height': 900}).new_page(); pg.goto(page.as_uri()); pg.wait_for_timeout(400)
         got.append(pg.evaluate(GRAB, [list(k) for k in KINDS]))
+        vm.append(pg.evaluate(GRAB_VM))
     br.close()
 for (name, sel, what), a, b in zip(KINDS, *got):
     a, b = [x for x in a if x], [x for x in b if x]
     assert a and len(a) == len(b), f'{name} ({sel}): {len(a)} on the core page, {len(b)} on the Chinese page'
     for i, (x, y) in enumerate(zip(a, b), 1):
         if x != y or CJK.search(y): rows.append((f'page: {name}' + (f' {i}' if len(a) > 1 else ''), x, y))
+# round 9: the one-rate rules, paired by the address of the saved copy each links; the lettered notes, by the rules they are attached to
+(en_r, en_n), (zh_r, zh_n) = vm
+pair_ok = lambda er, zr: bool(er) and len({r['href'] for r in er}) == len(er) == len(zr) and {r['href'] for r in er} == {r['href'] for r in zr}
+assert pair_ok(en_r, zh_r), f'one-rate rules: {len(en_r)} on the core page, {len(zh_r)} on the Chinese page, or their linked copies differ'
+_bad = [dict(r) for r in zh_r]; _bad[0]['href'] += '#control'
+assert not pair_ok(en_r, _bad), 'control failed: a rule linking another copy was not caught'
+ke, kz = {r['href']: r for r in en_r}, {r['href']: r for r in zh_r}
+for i, r in enumerate(en_r, 1):
+    z = kz[r['href']]
+    rows.append((f'page: vouchers: one-rate rule {i} (paired by its linked copy)', r['lab'], z['lab']))
+    rows.append((f'page: vouchers: one-rate rule {i} read aloud', r['aria'], z['aria']))
+letters = {}
+for h, r in ke.items():
+    if r['letter'] or kz[h]['letter']: letters.setdefault(r['letter'], set()).add(kz[h]['letter'])
+assert all(len(v) == 1 and '' not in v for v in letters.values()) and '' not in letters and len({next(iter(v)) for v in letters.values()}) == len(letters), f'lettered notes do not pair one to one: {letters}'
+ne, nz = {n['letter']: n['text'] for n in en_n}, {n['letter']: n['text'] for n in zh_n}
+assert set(ne) == set(letters) and set(nz) == {next(iter(v)) for v in letters.values()}, f'a lettered note is attached to no one-rate rule: {sorted(ne)} {sorted(nz)} {letters}'
+starts = lambda note, le, places: any(note.startswith(f'{le} {pl}') for pl in places)      # a note opens with its letter and its rule's place
+for le in sorted(ne):
+    lz = next(iter(letters[le]))
+    pe = {ke[h]['place'] for h in ke if ke[h]['letter'] == le}; pz = {kz[h]['place'] for h in kz if kz[h]['letter'] == lz}
+    assert starts(ne[le], le, pe) and starts(nz[lz], lz, pz), f'note {le} / {lz} does not open with its rule\'s place: {ne[le][:40]} | {nz[lz][:40]} | {pe} {pz}'
+    rows.append((f'page: vouchers: lettered note {le} (Chinese page: {lz})', ne[le], nz[lz]))
+_le = sorted(ne)[:2]
+assert len(_le) == 2 and not starts(ne[_le[0]], _le[0], {ke[h]['place'] for h in ke if ke[h]['letter'] == _le[1]}), 'control failed: a note paired with another rule\'s place passed'
 n_page = len(rows) - n_rec
 
 # ---------- Chinese page only, and the pop-up ----------

@@ -1,10 +1,9 @@
 group	governments	names
-share	8	Tianjin, Hebei, Inner Mongolia, Shanghai, Jiangsu, Shandong, Guangdong, Sichuan
-none	21	Beijing, Shanxi, Liaoning, Jilin, Heilongjiang, Zhejiang, Anhui, Fujian, Jiangxi, Henan, Hubei, Hunan, Guangxi, Hainan, Chongqing, Guizhou, Yunnan, Shaanxi, Gansu, Qinghai, Ningxia
+share	9	Tianjin, Hebei, Inner Mongolia, Shanghai, Jiangsu, Zhejiang, Shandong, Guangdong, Sichuan
+none	20	Beijing, Shanxi, Liaoning, Jilin, Heilongjiang, Anhui, Fujian, Jiangxi, Henan, Hubei, Hunan, Guangxi, Hainan, Chongqing, Guizhou, Yunnan, Shaanxi, Gansu, Qinghai, Ningxia
 account	1	Tibet
 notfound	1	Xinjiang
 all	31	
 none, document read: ai_digital	9	Jilin, Heilongjiang, Anhui, Guangxi, Hainan, Guizhou, Yunnan, Shaanxi, Gansu
-none, document read: ai_measures	1	Zhejiang
 none, document read: computing	9	Beijing, Liaoning, Fujian, Jiangxi, Henan, Hubei, Hunan, Chongqing, Qinghai
 none, document read: reward	2	Shanxi, Ningxia

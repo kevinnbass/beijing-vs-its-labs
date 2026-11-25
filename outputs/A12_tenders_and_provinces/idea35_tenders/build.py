@@ -151,8 +151,26 @@ def main():
     pr = [l.rstrip('\n').split('\t') for l in (ROOT / 'research/cn_chip_policy_20261120/tables/procurement_records.tsv').read_text(encoding='utf-8').splitlines() if l.strip() and not l.startswith('#')]
     if any(len(x) != len(pr[0]) for x in pr[1:]): sys.exit('procurement_records.tsv: a row without the header\'s number of cells')
     fill['N_PROC'] = len(pr) - 1
-    if fill['N_PROC'] != 51: sys.exit(f'procurement_records.tsv now has {fill["N_PROC"]} rows, not 51: read the new rows and change the later records')
+    if fill['N_PROC'] != 53: sys.exit(f'procurement_records.tsv now has {fill["N_PROC"]} rows, not 53: read the new rows and change the later records')      # 52 since core edit 8 (Nov 25, 2026): row 52 is the award of Apr 24, 2025 that names the H20, described under "What was not found"; 53 since core edit 8b (round 9 of the outputs): row 53 is Beihang's School of AI result of Jul 10, 2026 (four RTX 6000D cards), described under the later records
+    if not any(x[pr[0].index('saved_id')] == 'cn-ga31-counter-8' for x in pr[1:]): sys.exit('procurement_records.tsv: row 53 (cn-ga31-counter-8) is gone: read the table and change the later records')
     print(f'core table of purchase records: {fill["N_PROC"]} rows')
+    # round 9: the core's table of the carriers' own notices and others' accounts (tables/carriers_own_notices.tsv), counted here:
+    # rows of the carriers' own notices; pages of the carriers' own notices, filing and news page and of the sites' records of their
+    # notices, and how many hold no Nvidia name or model by the table's own count. The one page that does must be the Jiangsu company's
+    # tender the note names; control: a page of another class (a relay) holds such words, so the count can see a hit.
+    cr = [l.rstrip('\n').split('\t') for l in (ROOT / 'research/cn_chip_policy_20261120/tables/carriers_own_notices.tsv').read_text(encoding='utf-8').splitlines() if l.strip() and not l.startswith('#')]
+    ch = cr[0]; cr = [dict(zip(ch, x)) for x in cr[1:]]
+    if any(len(x) != len(ch) for x in cr): sys.exit('carriers_own_notices.tsv: a row without the header\'s number of cells')
+    own_cls = lambda w: w.startswith("carrier's own") or w.startswith("a tender site's account")      # noqa: E731
+    fill['N_CARR_OWN'] = sum(1 for x in cr if x['who_states'].startswith("carrier's own notice"))
+    pages = {}
+    for x in cr:
+        if own_cls(x['who_states']): pages.setdefault(x['saved_id'].split(';')[0].strip(), set()).add(x['nvidia_words_on_page'].strip())
+    with_nv = sorted(s for s, v in pages.items() if v != {'none'})
+    if with_nv != ['cn-ga31-carrierown-14']: sys.exit(f'carriers_own_notices.tsv: pages with Nvidia words are {with_nv}, not the one the note names: read them and change the note')
+    if not any(not own_cls(x['who_states']) and x['nvidia_words_on_page'].strip() not in ('none', '') for x in cr): sys.exit('carriers_own_notices.tsv: control: no relay page holds Nvidia words')
+    fill['N_CARR_PAGES'] = len(pages); fill['N_CARR_PAGES_NONE'] = len(pages) - len(with_nv)
+    print(f'carriers\' own notices (core table): {fill["N_CARR_OWN"]} rows; {fill["N_CARR_PAGES_NONE"]} of {fill["N_CARR_PAGES"]} pages of own notices, filing, news page and sites\' records with no Nvidia word; the other {with_nv[0]}; control: a relay page holds them')
     for y in years:
         for k in CLASSES: fill[f'C_{y}_{k}'] = c[(y, k)]
         fill[f'C_{y}_ALL'] = sum(c[(y, k)] for k in CLASSES)

@@ -1,0 +1,22 @@
+# How many of 61 results-call transcripts hold each of 20 words or word patterns: one row per pattern, counted by script on Nov 23, 2026 and counted again from the saved transcripts on Nov 25, 2026 with the same result. The transcripts are those of the calls that eight companies held from Feb 18, 2025 to Nov 19, 2026 (Alibaba, Baidu, JD.com, Kuaishou and Tencent, 8 calls each; Kingsoft Cloud, Meituan and Xiaomi, 7 each): 7 from Alibaba's own investor site and 54 from a site that publishes transcripts (stockanalysis.com). A call counts for a pattern when the pattern stands at least once anywhere in the transcript's text, whoever speaks. Columns: the word or pattern (letter case ignored, except for AMD and BIS); the number of calls that hold it; the number of calls read (61 in every row); which calls, by company and call date, where there are 16 or fewer. The counts in OFFICIAL_RECORD.md, section 8: Nvidia 0, Huawei 0, Cyberspace Administration 0, customs 0, H200 0; H20 in 3 calls; domestic chip(s) in 14; the control word revenue in 61 of 61. A second control is not a row: the same patterns find Nvidia, H20, Huawei and Cyberspace on a saved press page that holds all four [cn-le09-hwbusters-tencent-shrugs]. The row "chip ban / chip bank" counts the spellings chip ban, chip bank and H20 band: the transcripts print "chip bank" twice in Kingsoft Cloud's call of May 28, 2025 and "an H20 band" once in Tencent's of May 14, 2025, and those sentences do not say who restricted what. The 61 transcripts are listed one by one, with their saved ids, in tables/results_calls_read.tsv. What the table is not: the transcripts are in English, and 25 of them hold the marker of a passage that is not translated in one of its two usual spellings, [Foreign language] or [Non-English content] (a row of the table); two more hold it in another spacing (JD.com's call of Aug 13, 2026 and Meituan's of Nov 28, 2025), 27 in all, so what was said only in Chinese in those 27 is not counted; and a word's absence from a transcript is not a statement by the company.
+word	calls_with_it	calls_read	which
+revenue (control)	61	61	61 calls
+Nvidia	0	61	
+misspellings of Nvidia or Huawei	0	61	
+Huawei	0	61	
+Ascend	0	61	
+AMD	2	61	Tencent 2026-03-18; Tencent 2026-05-13
+H20	3	61	Baidu 2025-08-20; Kingsoft Cloud 2025-08-20; Tencent 2025-05-14
+H200	0	61	
+B30A	1	61	Kingsoft Cloud 2025-08-20
+chip ban / chip bank	2	61	Kingsoft Cloud 2025-05-28; Tencent 2025-05-14
+export control / export restriction	3	61	Alibaba 2025-02-20; Alibaba 2026-11-19; Baidu 2025-05-21
+BIS	2	61	Alibaba 2026-11-19; Tencent 2025-05-14
+import of chips/GPUs/semiconductors (same sentence)	5	61	Alibaba 2025-02-20; Tencent 2025-05-14; Tencent 2025-08-13; Tencent 2026-03-18; Tencent 2026-11-18
+domestic chip(s)	14	61	Alibaba 2025-02-20; Alibaba 2026-03-19; Alibaba 2026-05-13; Alibaba 2026-08-20; Alibaba 2026-11-19; Baidu 2025-05-21; Baidu 2025-08-20; Baidu 2026-05-18; Baidu 2026-08-18; Kingsoft Cloud 2025-05-28; Kingsoft Cloud 2025-08-20; Kingsoft Cloud 2026-05-27; Kingsoft Cloud 2026-08-19; Tencent 2026-11-18
+Cyberspace Administration	0	61	
+customs	0	61	
+security vulnerabilit(y/ies) / backdoor	1	61	Kingsoft Cloud 2025-08-20
+government / regulator in a chip sentence	1	61	Alibaba 2026-08-20
+untranslated passage marker	25	61	25 calls
+GPU	25	61	25 calls

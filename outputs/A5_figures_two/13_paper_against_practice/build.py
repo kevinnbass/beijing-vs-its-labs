@@ -140,8 +140,9 @@ def main():
         """The share as its own Chinese words put it: 以上 'or more', 超过 'over', 达到 or 将达 'reach' (the number alone)."""
         q, t = r['Q'][0][0], r['V']['target']
         kinds = [w for w in ('以上', '超过', '达到', '将达') if w in q]
+        if not kinds and '占比超' in q: kinds = ['占比超']      # core edit 8: 占比超 without 过 (Zhejiang: 占比超60%, a share over 60%)
         assert len(kinds) == 1, (r['key'], kinds)
-        return {'以上': f'{t}% or more', '超过': f'over {t}%', '达到': f'{t}%', '将达': f'{t}%'}[kinds[0]]
+        return {'以上': f'{t}% or more', '超过': f'over {t}%', '达到': f'{t}%', '将达': f'{t}%', '占比超': f'over {t}%'}[kinds[0]]
 
     # ---- on paper ----
     def target(key, big, by_words, note):
@@ -165,7 +166,7 @@ def main():
                 f'{track}{ticks}<p class="tg-note">{tag}{note} <span class="tg-src">Source: {C.T(r["S"])}.</span></p></div>')
 
     j, s = by['jiangsu']['V'], by['shanghai-target']['V']
-    order = ['shandong', 'jiangsu', 'guangdong', 'tianjin', 'hebei', 'nmg', 'shanghai-target', 'sichuan', 'national']
+    order = ['shandong', 'jiangsu', 'guangdong', 'tianjin', 'hebei', 'zhejiang', 'nmg', 'shanghai-target', 'sichuan', 'national']
     P = {k: phrase(by[k]) for k in order if k != 'national'}
     # Jiangsu: the plan's table gives 50 and 70 and marks the line expected; "binding" stands once in the saved copy, on the energy-efficiency line
     jp = C.L.page(by['jiangsu']['sid'])
@@ -185,10 +186,11 @@ def main():
 {target('guangdong', P['guangdong'], 'by the end of 2025', 'Home-made computing in what is newly added, not chips alone. The wording is “力争” (strive for).')}
 {target('tianjin', P['tianjin'], 'by 2026', 'Home-made chips in use in all the city’s computing centres, not only new ones.')}
 {target('hebei', P['hebei'], 'by 2025', 'Newly added computing software and hardware that is “自主可控” (independently controllable): not chips alone, and not the word home-made.')}
+{target('zhejiang', P['zhejiang'], 'by 2030', 'Home-made computing in one sector’s computing: the province’s information and communications industry. A project’s target in that sector’s five-year plan, posted Jul 29, 2026; it stands outside the plan’s table of indicators.')}
 {target('nmg', P['nmg'], 'by 2025', 'Home-made computing, among the goals for the region’s national computing hub.')}
 {target('shanghai-target', P['shanghai-target'], 'by 2025', 'Home-made chips in use in the city’s newly built intelligent computing centres.')}
 {target('sichuan', P['sichuan'], 'plan for 2024 to 2027', 'Home-made computing equipment, not chips alone. The wording is “力争” (strive for).')}
-{target('national', 'no percentage', 'national opinions, Dec 25, 2023', 'No published national plan found in the 82 policy pages read sets a home-made share for computing centres. Two national texts among them hold a home-made percentage of other kinds: a 20% price preference for home-made goods in government buying, and an advisory roadmap of October 2015 that expected home-made products in several fields to reach stated shares of the home market by 2025, among them high-performance computers and servers at over 80% and mobile-terminal chips at 40% (guidance, not an instruction, by the industry ministry’s account). Bloomberg reported in June 2026, from unnamed people, a draft national plan with “at least 80 per cent of the core technology, AI chips included” from local suppliers; no such plan was found published.')}
+{target('national', 'no percentage', 'national opinions, Dec 25, 2023', 'No published national plan found in the 82 policy pages read sets a home-made share for computing centres. Two national texts among them hold a home-made percentage of other kinds: a 20% price preference for home-made goods where they compete with others in a government purchase, and an advisory committee’s roadmap of October 2015 that expected home-made products in several fields to reach stated shares of the home market by 2025, among them high-performance computers and servers at over 80% and mobile-terminal chips at 40% (guidance, not an instruction, in the words of the industry ministry’s vice minister at its launch). Bloomberg reported in June 2026, from unnamed people, a draft national plan with “at least 80 per cent of the core technology, AI chips included” from local suppliers; no such plan was found published.')}
     <p class="axisnote">Scale of the {C.WORDS[len(order)]} tracks: a share in that place, as its plan defines it. A goal, not a count. Of the other {31 - len(share_set)} provincial-level governments, {res['plan_no_share']} have a plan that was read and sets no share, {C.WORDS[res['account_only']]} is known only from accounts of its plan (its issuer’s own among them), and for {C.WORDS[res['not_reached']]} no computing plan was found (tables/provinces_31.tsv).</p>
    </section>"""
 
@@ -227,7 +229,7 @@ def main():
       <div class="toward"><div class="who"><i class="sw toward"></i>Internet companies’ own clusters</div><div class="what">mainly Nvidia</div>
        <div class="zh">“主要以英伟达高性能卡为主” (mainly Nvidia high-performance cards)</div></div>
       <div class="away"><div class="who"><i class="sw away"></i>The three state telecom operators</div><div class="what">mainly Huawei and other home-made</div>
-       <div class="zh">“三大运营商主要购置华为等国产化智算集群” (the three operators mainly buy Huawei and other home-made clusters)</div></div>
+       <div class="zh">“三大运营商主要购置华为等国产化智算集群” (the three operators mainly buy Huawei and other home-made intelligent-computing clusters)</div></div>
      </div>
     </div>
     <div class="pr">
@@ -257,7 +259,7 @@ def main():
    <table class="msr">
     <thead><tr><th></th><th>Who says it</th><th>What it measures</th><th>Where and when</th></tr></thead>
     <tbody>
-     <tr><td>The targets</td><td data-h="Who says it">a provincial-level government, in a plan</td><td data-h="What it measures">a goal: a share of the chips, equipment or computing in that place. Three count home-made chips (Jiangsu and Shanghai in new centres, Tianjin in all); Guangdong, Inner Mongolia and Shandong home-made computing (Guangdong in what is newly added); Sichuan home-made equipment; Hebei software and hardware called independently controllable. Jiangsu’s plan marks its own target as expected, not binding; Shandong’s is known from a newspaper’s account</td><td data-h="Where and when">one government each; goals for 2025, 2026 and 2030, and a plan that runs to 2027</td></tr>
+     <tr><td>The targets</td><td data-h="Who says it">a provincial-level government, in a plan</td><td data-h="What it measures">a goal: a share of the chips, equipment or computing in that place. Three count home-made chips (Jiangsu and Shanghai in new centres, Tianjin in all); Guangdong, Inner Mongolia and Shandong home-made computing (Guangdong in what is newly added); Zhejiang home-made computing in one sector, its information and communications industry; Sichuan home-made equipment; Hebei software and hardware called independently controllable. Jiangsu’s plan marks its own target as expected, not binding; Shandong’s is known from a newspaper’s account</td><td data-h="Where and when">one government each; goals for 2025, 2026 and 2030, and a plan that runs to 2027</td></tr>
      <tr><td>The Shanghai reply</td><td data-h="Who says it">a city government body</td><td data-h="What it measures">no number: which cards the clusters of each kind of owner mainly run on</td><td data-h="Where and when">Shanghai; dated Apr 30, 2025 (published Nov 10, 2025)</td></tr>
      <tr><td>The research firm’s counts</td><td data-h="Who says it">IDC, as reported by Reuters</td><td data-h="What it measures">cards shipped in a period, by maker. Reuters words the first as AI accelerator cards and the second as the market for data-centre AI chips, so the two bars are not shown as one series</td><td data-h="Where and when">all of China; 2025, and January to June 2026</td></tr>
     </tbody>

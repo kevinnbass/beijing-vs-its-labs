@@ -16,7 +16,7 @@ Each step is marked on the record or reported (a press report citing unnamed peo
 
 - **Dec 8, 2025. On the record.** The President posted that he had told Xi Jinping "the United States will allow NVIDIA to ship its H200 products to approved customers in China", and added: "President Xi responded positively!" [cn-clips-followup-3-relay1] That is the President's account, not Xi's words.
 !! cn-clips-followup-3-relay1 | Truth Social Posts of December 8, 2025
-- **Jan 15, 2026. On the record.** The Commerce Department's rule took effect. It requires "independent, third-party testing in the United States" and caps shipments to China and Macau at half of those to customers in the United States [man-ms-admin-bis-jan2026-rule-8ec187].
+- **Jan 15, 2026. On the record.** The Commerce Department's rule took effect. It requires "independent, third-party testing in the United States", and that shipments to China and Macau be at most half of the same product shipped for end use in the United States [man-ms-admin-bis-jan2026-rule-8ec187].
 !! man-ms-admin-bis-jan2026-rule-8ec187 | The effective date of this rule is January 15, 2026
 !! man-ms-admin-bis-jan2026-rule-8ec187 | will be no more than 50% of the total product shipped to customers for end use in the United States of that product
 - **February 2026. On the record.** Nvidia's filing: from that month the US government "granted licenses that would allow us to ship small amounts of H200 products to specific China-based customers", with "a 25% tariff upon importation into the United States" [man-ms-sec-10q-2026-07].

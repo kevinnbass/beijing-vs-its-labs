@@ -4,7 +4,10 @@ table files and the note. Round 4 (Nov 23, 2026): all 31 governments, six groups
 
 Run: python3 -I build.py          (from anywhere; everything is written beside this file)
 Reads   provinces.txt       one line per document read (see its header; made by round4/make_rows.py)
-        vouchers.txt        one line per local voucher rule counted (see its header)
+        vouchers.txt        one line per local voucher rule that favours home-made computing (see its header; since round 9)
+        ../../../tables/local_vouchers_classes.tsv, local_vouchers.tsv, local_vouchers_more.tsv   the core's voucher tables, through
+                            scripts/cn_voucher_classes.py (imported; its compute() must equal the published table of classes)
+        ../../../tables/provincial_ict_plans.tsv   the core's class search of the plans of the kind that holds Zhejiang's share
         absent.txt          words that must not stand in a page, each with a control word that must
         note_template.txt   the note's text with {{PLACEHOLDERS}}
         ../../../tables/provinces_31.tsv   the core's table of the 31 governments: the groups here must agree with it
@@ -38,7 +41,7 @@ ALL_UNITS = ['Beijing', 'Tianjin', 'Hebei', 'Shanxi', 'Inner Mongolia', 'Liaonin
              'Tibet', 'Shaanxi', 'Gansu', 'Qinghai', 'Ningxia', 'Xinjiang']
 GROUPS = ('share', 'none', 'account', 'notfound', 'other', 'also')
 CORE_RESULT = {'share': 'share', 'plan_no_share': 'none', 'account_only': 'account', 'not_reached': 'notfound'}
-EXPECT = {'share': 8, 'none': 21, 'account': 1, 'notfound': 1}          # ROUND4.md section 3, item 4; the note's words assume these
+EXPECT = {'share': 9, 'none': 20, 'account': 1, 'notfound': 1}          # the note's words assume these (8 and 21 until core edit 8, Nov 25, 2026: Zhejiang's sector plan)
 EXTRA_QUOTES = [('cn-o39-hebei-opinion-2024-sjz', '新增算力基础软硬件设施自主可控比例60%以上'),
                 ('cn-o39-hebei-opinion-2024-sjz', '河北省人民政府办公厅 2024年5月8日')]
 BASIS = {'official': 'Saved official page', 'hand': 'Saved by hand from an official page', 'capture': 'Saved Archive capture',
@@ -52,7 +55,12 @@ VSHORT = {'Hangzhou city': 'Hangzhou', 'Zhejiang province': 'Zhejiang', 'Wenzhou
           'Beijing E-Town (a development zone, not the city)': 'E-Town', 'Longhua district of Shenzhen': 'Longhua', 'Shanxi province': 'Shanxi',
           'Shenzhen city': 'Shenzhen', 'Wuhan city': 'Wuhan', 'Qingdao city': 'Qingdao', 'Shanghai city': 'Shanghai', 'Qiaokou district of Wuhan': 'Qiaokou',
           'Hongshan district of Wuhan': 'Hongshan', 'Shandong province': 'Shandong', 'Hunan province': 'Hunan', 'Sichuan province': 'Sichuan',
-          'Wuhu city': 'Wuhu', 'Suzhou city': 'Suzhou', 'Tianjin city': 'Tianjin'}   # round 5: names in vcount_as_stands.py's output
+          'Wuhu city': 'Wuhu', 'Suzhou city': 'Suzhou', 'Tianjin city': 'Tianjin',   # round 5: names in vcount_as_stands.py's output
+          'Xiamen city': 'Xiamen', 'Xinjiang Uygur Autonomous Region': 'Xinjiang',   # core edit 8: names in tables/local_vouchers_classes.tsv
+          'Chengdu city': 'Chengdu', 'Hubei province': 'Hubei', 'Longwan district and Wenzhou Bay New Area (Wenzhou)': 'Longwan and Wenzhou Bay New Area',
+          'Ningbo city': 'Ningbo', 'Huangyan district (Taizhou)': 'Huangyan',
+          'Changsha Economic and Technological Development Zone': 'Changsha Economic and Technological Development Zone'}   # round 9: the 7 and the 4
+VHOME = re.compile(r'国产|自主|信创')      # round 9: the classifier's home-made words (cn_voucher_classes.py), for a voucher row that pays for home-made computing only
 HOME = re.compile(r'国产|自主可控|安全可控|安全可靠|自主化')
 MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec']
 CITE = re.compile(r'\[((?:cn|ms|man)-[A-Za-z0-9-]+)\]')
@@ -66,6 +74,9 @@ MORE_LABELS = {
     'cn-factions-etwon-vouchers': ("DOC", "Beijing E-Town (a development zone, not the city). Policies to build an AI-native industry, 京技管发〔2024〕10号, Mar 28, 2024; repealed by 京技管发〔2024〕29号 of Nov 26, 2024"),
     'cn-cnpress-binjiang-rental-reply-20260720': ("DOC", "Binjiang district of Hangzhou (Hangzhou High-tech Zone): a district bureau's reply, published Jul 20, 2026, describing its rule of May 2025"),
     'cn-policy-computing-network-1779': ("DOC", "National. Opinions on the national integrated computing network, December 2023"),
+    # core edit 8
+    'cn-ga31-cndocs-1': ("DOC", "Xinjiang Uygur Autonomous Region. Measures to speed the high-quality development of profit-oriented services, 2026 to 2028, General Office of the regional government, 新政办发〔2026〕22号: the copy in the government's gazette list"),
+    'cn-ga31-unsaved-sc-338hao-fgw-wayback': ("DOC", "Sichuan province. Notice issuing the measures for building the computing network (trial), 川发改数据〔2026〕338号, written Aug 11 and published Aug 13, 2026: the provincial development and reform commission's own page, as the Internet Archive captured it"),
 }
 
 
@@ -148,10 +159,10 @@ def load_vouchers():
         if not ln.strip() or ln.startswith('#'): continue
         if '"' in ln: sys.exit(f'vouchers.txt line {k}: a straight double quote')
         f = [x.strip() for x in ln.split(' @@ ')]
-        if len(f) != 11: sys.exit(f'vouchers.txt line {k}: {len(f)} fields, 11 wanted')
-        v = dict(zip(('place', 'level', 'date', 'home', 'other', 'src', 'words', 'checks', 'basis', 'where', 'note'), f))
+        if len(f) != 13: sys.exit(f'vouchers.txt line {k}: {len(f)} fields, 13 wanted')      # 11 until round 9; the two rates in words added
+        v = dict(zip(('place', 'level', 'date', 'home', 'other', 'home_en', 'other_en', 'src', 'words', 'checks', 'basis', 'where', 'note'), f))
         v['home'], v['other'] = int(v['home']), int(v['other'])
-        if v['basis'] not in ('official', 'copy'): sys.exit(f'vouchers.txt line {k}: basis {v["basis"]}')
+        if v['basis'] not in ('official', 'copy', 'capture'): sys.exit(f'vouchers.txt line {k}: basis {v["basis"]}')      # core edit 8: capture = an Internet Archive capture of the official file (Xiamen)
         meta = json.loads((PRIMARY / v['src'] / 'meta.json').read_text())
         if meta.get('status') != 200: sys.exit(f'vouchers.txt line {k}: {v["src"]} not saved with status 200')
         v['words'] = [w.strip() for w in v['words'].split(';;')]
@@ -161,7 +172,7 @@ def load_vouchers():
         ws = [w.replace(' ', '') for w in v['words']]
         if not any(f'{v["home"]}%' in w or f'{v["home"]}％' in w for w in ws): sys.exit(f'vouchers.txt line {k}: {v["home"]}% is not in the rate words')
         if v['other'] == 0:
-            if not any(HOME.search(w) for w in ws): sys.exit(f'vouchers.txt line {k}: other 0, and the rate words do not name home-made computing')
+            if not any(VHOME.search(w) for w in ws): sys.exit(f'vouchers.txt line {k}: other 0, and the rate words do not name home-made computing')
         elif not any(f'{v["other"]}%' in w or f'{v["other"]}％' in w for w in ws): sys.exit(f'vouchers.txt line {k}: {v["other"]}% is not in the rate words')
         out.append(v)
     return out
@@ -273,28 +284,60 @@ def main():
                               r['label'] if r['label'] != '-' else '', BASIS[r['basis']], r['where'], r['url'], ref]))
     (HERE / 'provinces.tsv').write_text('\n'.join(out) + '\n', encoding='utf-8')
 
-    # 7. vouchers: counted here, one row per government
+    # 7. vouchers (round 9): the count and the classes are the core's, computed by scripts/cn_voucher_classes.py (imported, so it runs
+    # once), whose result must equal the published table tables/local_vouchers_classes.tsv row by row. vouchers.txt holds the rules that
+    # favour home-made computing (the 7 that pay more and the 4 that pay for home-made only), which must equal the core's counted rows of
+    # those two classes with their rates; the other counted rules (no higher rate for home-made computing) are listed from the core's table.
+    import cn_voucher_classes as VC
+    R = VC.compute()
+    def _tab(name):
+        ls = [x for x in (PROJ / 'tables' / name).read_text(encoding='utf-8').split('\n') if x and not x.startswith('#')]
+        return [dict(zip(ls[0].split('\t'), x.split('\t'))) for x in ls[1:]]
+    ctab = _tab('local_vouchers_classes.tsv')
+    if [[c[k] for k in ('row_id', 'government', 'class', 'reason', 'deciding_words', 'saved_id')] for c in ctab] != [list(r) for r in R['out']]:
+        sys.exit('tables/local_vouchers_classes.tsv differs from what scripts/cn_voucher_classes.py computes now: the core table is stale; stop')
+    _vr = {f'A{i}': r for i, r in enumerate(_tab('local_vouchers.tsv'), 1)}; _vr.update({f'B{i}': r for i, r in enumerate(_tab('local_vouchers_more.tsv'), 1)})
+    _pc = lambda s: (lambda m: int(m.group(1)) if m else None)(re.search(r'(\d+)\s*[%％]', s))      # noqa: E731
+    _cl = {VC.MORE: 'tiered', VC.ONLY: 'home-made only'}
+    vcnt = [c for c in ctab if c['class'] != VC.NOT]
+    core_rows = {}
+    for c in vcnt:
+        if c['class'] not in _cl: continue
+        r = _vr[c['row_id']]; h = _pc(r['rate_home']); o = 0 if r['rate_other'].startswith('none') else (_pc(r['rate_other']) or h)
+        if c['government'] in core_rows: sys.exit(f'two counted rules for {c["government"]} in tables/local_vouchers_classes.tsv')
+        core_rows[c['government']] = (_cl[c['class']], h, o)
     if len({v['place'] for v in vouchers}) != len(vouchers): sys.exit('vouchers.txt: a government twice')
     if any(v['other'] > v['home'] for v in vouchers): sys.exit('vouchers.txt: a rule pays more for other computing: change the note')
-    tiered = [v for v in vouchers if v['home'] > v['other'] > 0]; only = [v for v in vouchers if v['other'] == 0]; one = [v for v in vouchers if v['home'] == v['other']]
-    if len(tiered) + len(only) + len(one) != len(vouchers): sys.exit('vouchers.txt: a row in no class')
-    if [v['place'] for v in only] != ['Sichuan province']: sys.exit(f'the note names Sichuan as the one rule that pays for home-made computing only: {[v["place"] for v in only]}')
-    # round 5: the rows, their rates and classes must be the count by script over the core's two tables (the published rule)
-    vc = subprocess.run([sys.executable, '-I', str(PROJ / 'atlas/core_edit/edit6_parts/vcount_as_stands.py')], capture_output=True, text=True)
-    if vc.returncode != 0: sys.exit('vcount_as_stands.py failed: ' + vc.stderr[-400:])
-    r0 = vc.stdout.split('\nR1 ')[0].splitlines()
-    head0 = r0[0]
-    core_rows = {m.group(1): (m.group(2), int(m.group(3)), int(m.group(4))) for m in (re.match(r'\s+[AB]\d+\s+(\S+(?: city)?)\s+(tiered|home-made only|one rate)\s+home (\d+) other (\d+)', x) for x in r0[1:]) if m}
-    mine = {VSHORT[v['place']]: ('tiered' if v in tiered else 'home-made only' if v in only else 'one rate', v['home'], v['other']) for v in vouchers}
+    tiered = [v for v in vouchers if v['home'] > v['other'] > 0]; only = [v for v in vouchers if v['other'] == 0]
+    if len(tiered) + len(only) != len(vouchers): sys.exit('vouchers.txt: a row that favours no kind of computing: such rules are listed from the core table')
+    mine = {VSHORT[v['place']]: ('tiered' if v in tiered else 'home-made only', v['home'], v['other']) for v in vouchers}
     def vdiff(a, b): return sorted(set(a.items()) ^ set(b.items()))
-    if vdiff(core_rows, mine): sys.exit(f'vouchers.txt differs from the count by script over the core tables: {vdiff(core_rows, mine)}')
+    if vdiff(core_rows, mine): sys.exit(f'vouchers.txt differs from the core\'s counted rules that favour home-made computing: {vdiff(core_rows, mine)}')
     bad = dict(mine); k0 = next(iter(bad)); bad[k0] = (bad[k0][0], bad[k0][1] + 1, bad[k0][2])          # control: one rate changed must be seen
     if not vdiff(core_rows, bad): sys.exit('vouchers control: a changed rate was not seen')
-    print(f'vouchers: equal to the count by script over the core tables ({head0.split(": ", 1)[1]}); control (one rate changed) reported')
-    (HERE / 'vouchers.tsv').write_text('place\tlevel\tdate\thome_made_pct\tother_pct\tpays_more_for_home_made\trests_on\tnote\tsaved_id\taddress\n' + '\n'.join(
-        '\t'.join([v['place'], v['level'], v['date'], str(v['home']), str(v['other']), 'yes' if v in tiered else 'home-made only' if v in only else 'no', v['where'], v['note'] if v['note'] != '-' else '', v['src'],
+    third = [c for c in vcnt if c['class'] in (VC.ONE, VC.TWO)]
+    one = sorted((c for c in vcnt if c['class'] == VC.ONE), key=lambda c: c['government'])
+    two = [c for c in vcnt if c['class'] == VC.TWO]
+    if len(vcnt) != len(R['counted']) or len(third) != R['third'] or (len(tiered), len(only), len(one), len(two)) != (R['n'][VC.MORE], R['n'][VC.ONLY], R['n'][VC.ONE], R['n'][VC.TWO]):
+        sys.exit('the counts from the core table and from cn_voucher_classes.py differ')
+    if R['line'] != f'{len(vcnt)} / {len(tiered)} / {len(only)} / {len(third)}': sys.exit(f'the classifier\'s line {R["line"]} is not the count of the table')
+    if [c['government'] for c in two] != ['Hangzhou']: sys.exit(f'the note words the rule of two rates by an unnamed type as Hangzhou\'s plan: {[c["government"] for c in two]}')
+    not_by = sorted(((v, k[1]) for k, v in R['by'].items() if k[0] == VC.NOT), key=lambda x: -x[0])
+    if sum(v for v, _ in not_by) != R['not_counted']: sys.exit('the reasons of the rows not counted do not add up')
+    print(f'vouchers: the core\'s table of classes equals cn_voucher_classes.py\'s result ({len(R["out"])} rows); voucher classes {R["line"]}; '
+          f'vouchers.txt equals its {len(tiered)} + {len(only)} rules that favour home-made computing, rates included; control (one rate changed) reported')
+    (HERE / 'vouchers.tsv').write_text('place\tlevel\tdate\thome_made_pct\tother_pct\thome_made_rate\tother_rate\tclass\trests_on\tnote\tsaved_id\taddress\n' + '\n'.join(
+        '\t'.join([v['place'], v['level'], v['date'], str(v['home']), str(v['other']), v['home_en'], v['other_en'], 'pays more for home-made and still pays for other computing' if v in tiered else 'pays for home-made computing only', v['where'], v['note'] if v['note'] != '-' else '', v['src'],
                    json.loads((PRIMARY / v['src'] / 'meta.json').read_text())['url']]) for v in vouchers) + '\n', encoding='utf-8')
-    print(f'vouchers: {len(vouchers)} local governments; {len(tiered)} pay more for home-made computing ({", ".join(v["place"] for v in tiered)}); {len(only)} pays for home-made computing only ({", ".join(v["place"] for v in only)}); {len(one)} pay one rate')
+    print(f'vouchers: {len(vcnt)} counted; {len(tiered)} pay more for home-made computing ({", ".join(v["place"] for v in tiered)}); {len(only)} pay for home-made computing only ({", ".join(v["place"] for v in only)}); '
+          f'{len(third)} state no higher rate ({len(one)} one rate, {len(two)} two rates by a type it does not name: {two[0]["government"]}); {R["not_counted"]} read and not counted')
+    # the plans of the kind that holds Zhejiang's share, searched as a class (core table): groups counted, and no share in any text read
+    ict = _tab('provincial_ict_plans.tsv')
+    if {r['unit'] for r in ict} != set(ALL_UNITS) - {'Zhejiang'}: sys.exit('provincial_ict_plans.tsv: not the 30 other units')
+    if not all(re.match(r'^(15th: )?(none|not known)', r['home_made_share_number_in_its_own_words_or_none']) for r in ict): sys.exit('provincial_ict_plans.tsv: a plan read sets a home-made share: read it and change the note')
+    icg = {g: sum(1 for r in ict if r['group'] == g) for g in ('the plan for 2026 to 2030 read in full', 'the plan for 2026 to 2030 read as a consultation draft', 'only the plan for 2021 to 2025 read', 'no plan text found')}
+    if sum(icg.values()) != len(ict): sys.exit('provincial_ict_plans.tsv: a group the note does not name')
+    print('plans of Zhejiang\'s kind (core table): ' + '; '.join(f'{g} {n}' for g, n in icg.items()) + '; no text read sets a home-made share')
 
     # 8. the note
     def cell_mid(r):
@@ -329,9 +372,9 @@ def main():
         o = ['| Local government and the rule\'s date | Home-made computing | Other computing | The rule\'s words; what the row rests on; source |']
         for v in vs:
             note = '' if v['note'] == '-' else v['note'] + '. '
-            oth = 'None: the voucher names home-made computing only' if v['other'] == 0 else f'{v["other"]}% of the bill'
-            o.append(f'| {v["place"]}, {v["date"]} | {v["home"]}% of the bill | {oth} | ' + '; '.join(f'"{w}"' for w in v['words'])
-                     + f'. **{"Saved official page" if v["basis"] == "official" else "Saved copy on another site"}** ({v["where"]}). {note}[{v["src"]}] |')
+            hom = v['home_en'][:1].upper() + v['home_en'][1:]; oth = v['other_en'][:1].upper() + v['other_en'][1:]
+            o.append(f'| {v["place"]}, {v["date"]} | {hom} | {oth} | ' + '; '.join(f'"{w}"' for w in v['words'])
+                     + f'. **{BASIS[v["basis"]]}** ({v["where"]}). {note}[{v["src"]}] |')
             o += [f'!! {sid} | {c}' for sid, c in v['checks']]
         return '\n'.join(o)
 
@@ -340,28 +383,37 @@ def main():
     cnt = {r['src']: (L.page(r['src']).count('约束性'), L.page(r['src']).count('预期性')) for r in share}
     js = cnt['cn-factions-jiangsu-plan']
     if js[0] != 1 or js[1] < 1: sys.exit(f'label scan: the control failed (Jiangsu: 约束性 {js[0]}, 预期性 {js[1]})')
-    stray = {k: v for k, v in cnt.items() if k != 'cn-factions-jiangsu-plan' and v != (0, 0)}
+    # core edit 8: Zhejiang's sector plan has a table of indicators too: 17 lines 预期性, 1 约束性 (its energy-efficiency line), none of them for home-made computing; its share stands outside the table
+    zj = cnt['cn-ga31-cndocs-52']; zp = L.page('cn-ga31-cndocs-52'); zi = zp.find('约束性')
+    if zj != (1, 17) or 'pue' not in zp[max(0, zi - 40):zi] or re.search('国产|自主', zp[max(0, zi - 40):zi]): sys.exit(f'label scan: Zhejiang\'s plan is not as read (约束性 {zj[0]}, 预期性 {zj[1]})')
+    za, zb = zp.find('序号指标名称'), zp.rfind('预期性')
+    if not (0 < za < zb) or re.search('国产|自主可控', zp[za:zb + 3]): sys.exit('label scan: Zhejiang\'s table of indicators is not as read')
+    stray = {k: v for k, v in cnt.items() if k not in ('cn-factions-jiangsu-plan', 'cn-ga31-cndocs-52') and v != (0, 0)}
     if stray: sys.exit(f'label scan: a label word stands in another page: {stray}; read it and change the label')
-    print(f'label scan: {len(cnt)} pages; 约束性 (binding) stands {sum(v[0] for v in cnt.values())} time, 预期性 (indicative) {sum(v[1] for v in cnt.values())} times, all in Jiangsu\'s plan; 0 and 0 in the other {len(cnt) - 1}')
+    print(f'label scan: {len(cnt)} pages; 约束性 (binding) stands {sum(v[0] for v in cnt.values())} times, 预期性 (indicative) {sum(v[1] for v in cnt.values())} times, all in the tables of indicators of Jiangsu\'s and Zhejiang\'s plans; 0 and 0 in the other {len(cnt) - 2}')
     # Sichuan: the plan's table of main targets holds no home-made row (control: it holds the intelligent-computing row)
     sc = page_text('cn-factions-sichuan50', single=True); i = sc.find('四川省算力基础设施发展主要目标'); j = sc.find('扫一扫', i)
     if i < 0 or j < 0 or '智能算力占比' not in sc[i:j] or '国产' in sc[i:j] or '自主' in sc[i:j]: sys.exit('Sichuan: the table of main targets is not as read')
 
     best = {u: min((r['basis'] for r in share if r['unit'] == u), key=RANK.index) for u in by['share']}
     by_basis = {k: [u for u in by['share'] if best[u] == k] for k in RANK}
-    print('the eight rest on: ' + '; '.join(f'{BASIS[k]}: {len(v)} ({", ".join(v)})' for k, v in by_basis.items() if v))
+    print('the nine rest on: ' + '; '.join(f'{BASIS[k]}: {len(v)} ({", ".join(v)})' for k, v in by_basis.items() if v))
     doc_basis = {k: sum(1 for r in docs if r['basis'] == k) for k in RANK}
     fill = {'TABLE_SHARE': table(('share',), True), 'TABLE_NONE': table(('none',)), 'TABLE_EDGE': table(('account', 'notfound')),
             'TABLE_OTHER': table(('other',)), 'TABLE_ALSO': table(('also',)),
-            'TABLE_V_TIER': vtable(tiered), 'TABLE_V_ONE': vtable(one), 'TABLE_V_ONLY': vtable(only),
+            'TABLE_V_TIER': vtable(tiered), 'TABLE_V_ONLY': vtable(only),
+            'LIST_V_ONE': '; '.join(f'{c["government"]} [{c["saved_id"]}]' for c in one),
+            'N_V_THIRD': len(third), 'N_V_TWO': len(two), 'N_V_NOT': R['not_counted'], 'N_V_ROWS': len(R['out']), 'N_V_OWN': len(R['own']), 'N_V_ELSE': len(R['elsewhere']),
+            'V_NOT_BY': '; '.join(f'{n} {w}' for n, w in not_by), 'N_V_OTHERNAME': len(R['other_name']),
+            **{f'N_ICT{i}': n for i, n in enumerate(icg.values(), 1)},
             'N_SHARE': len(by['share']), 'N_NONE': len(by['none']), 'U_SHARE': ', '.join(by['share']), 'U_NONE': ', '.join(by['none']),
             'N_NONE_COMP': n_comp, 'N_NONE_OTHERKIND': len(by['none']) - n_comp, 'U_NONE_COMP': ', '.join(kinds.get('computing', [])),
             'U_NONE_OTHERKIND': ', '.join(u for u in by['none'] if u not in kinds.get('computing', [])),
             'N_DOCS': len(docs), 'N_DOCS_NONE': sum(1 for r in docs if r['group'] == 'none'), 'N_DOCS_ALSO': sum(1 for r in docs if r['group'] == 'also'),
             'N_DOCS_SCANNED': sum(1 for r in docs if r['group'] in ('none', 'also', 'account', 'notfound')),
             'N_NEAR': n_near, 'HAS_LINE': has_line, 'DAM_LINE': dam_line,
-            'N_LABEL_PAGES': len(cnt), 'N_LABEL_OTHERS': len(cnt) - 1, 'N_JS_EXPECTED': js[1],
-            'N_V': len(vouchers), 'N_V_TIER': len(tiered), 'N_V_ONE': len(one), 'U_V_TIER': ', '.join(v['place'] for v in tiered),
+            'N_LABEL_PAGES': len(cnt), 'N_LABEL_OTHERS': len(cnt) - 2, 'N_JS_EXPECTED': js[1], 'N_ZJ_EXPECTED': zj[1],
+            'N_V': len(vcnt), 'N_V_TIER': len(tiered), 'N_V_ONE': len(one), 'U_V_TIER': ', '.join(v['place'] for v in tiered),
             'N_V_ONLY': len(only), 'U_V_ONLY': ', '.join(v['place'] for v in only),
             **{f'N8_{k.upper()}': len(v) for k, v in by_basis.items()}, **{f'W8_{k.upper()}': WORDS[len(v)] for k, v in by_basis.items()},
             **{f'U8_{k.upper()}': ', '.join(v) for k, v in by_basis.items()}, **{f'ND_{k.upper()}': v for k, v in doc_basis.items()},
@@ -384,7 +436,11 @@ def main():
         if r['basis'] == 'hand': x += '. A PDF of the official page saved by hand in a browser'
         lab.setdefault(r['src'], (kind, x))
     for v in vouchers:
-        lab.setdefault(v['src'], ('DOC', f'{v["place"]}. Local computing-voucher rule, {v["date"]}' + ('' if v['basis'] == 'official' else '; a copy on another site')))
+        lab.setdefault(v['src'], ('DOC', f'{v["place"]}. Local computing-voucher rule, {v["date"]}' + ({'official': '', 'copy': '; a copy on another site', 'capture': '; an Internet Archive capture of the official file'}[v['basis']])))
+    # round 9: the counted rules listed from the core table, labelled from the core's cells (document and issuing body)
+    for c in one:
+        r = _vr[c['row_id']]
+        lab.setdefault(c['saved_id'], ('DOC', f'{c["government"]}. {r["document"]}; {r["body"]}' + ('' if c['row_id'] in R['own'] else '; read in another copy than the issuer\'s own page')))
     lab.update({k: v for k, v in MORE_LABELS.items() if k not in lab})
     refs = ['# id <TAB> kind <TAB> label <TAB> address (empty = the address in the saved copy\'s record). Written by build.py.']
     missing = []

@@ -12,7 +12,12 @@ def text(sid):
     h = (d / 'body.html').read_text(encoding='utf-8', errors='replace')
     h = re.sub(r'(?is)<(script|style)\b.*?</\1>', ' ', h)
     return html.unescape(re.sub(r'(?s)<[^>]+>', ' ', h))
-WORDS = {'revenue (control)': r'\brevenue\b', 'untranslated passage marker': r'\[(?:Foreign language|Non-English content)\]', 'Nvidia': r'nvidia', 'H20': r'\bH20\b', 'H200': r'\bH[- ]?200\b', 'H800': r'\bH800\b', 'A100 or V100': r'\b[AV]100\b',
+# Round 9 (Nov 25, 2026): the mark of a passage not in English is matched also where a page's markup splits it ("[Non-English cont ent]")
+# or spaces it ("[ Foreign language]"); another reader's count over 61 calls missed two marks of that kind.
+def _sp(w): return r'\s*'.join(re.escape(ch) for ch in w)
+MARK = r'\[\s*(?:' + _sp('foreign') + r'\s+' + _sp('language') + '|' + _sp('non-english') + r'\s+' + _sp('content') + r')\s*\]'
+if not (re.search(MARK, 'Hey [Non-English cont ent] Thanks', re.I) and re.search(MARK, 'x, [ Foreign language].', re.I) and not re.search(MARK, 'foreign languages, non-English content', re.I)): sys.exit('control failed: the pattern for the marks')
+WORDS = {'revenue (control)': r'\brevenue\b', 'untranslated passage marker': MARK, 'Nvidia': r'nvidia', 'H20': r'\bH20\b', 'H200': r'\bH[- ]?200\b', 'H800': r'\bH800\b', 'A100 or V100': r'\b[AV]100\b',
          'Huawei': r'huawei', 'misspellings of Nvidia or Huawei': r'in[- ]?vidia|en[- ]?vidia|n[- ]vidia|nvdia|navidia|hua ?wei|wah ?way', 'Ascend': r'\bascend\b', 'Cyberspace Administration': r'cyberspace', 'customs': r'\bcustoms\b', 'Hong Kong (chips context not checked)': r'hong kong',
          'import/imported/imports (of chips or GPUs, same sentence)': r'[^.]*\b(?:chips?|GPUs?|semiconductor)[^.]*\bimport(?:s|ed|ing|ation)?\b[^.]*|[^.]*\bimport(?:s|ed|ing|ation)?\b[^.]*\b(?:chips?|GPUs?|semiconductor)[^.]*',
          'export control / export restriction': r'export[- ](?:control|restriction)|restrictions? on the chip export|chip export', 'BIS': r'\bBIS\b', 'domestic chip(s)': r'domestic(?:ally)?[- ](?:\w+[- ]){0,3}chips?', 'T-Head': r't-head', 'Kunlun': r'kunlun', 'ASIC': r'\bASICs?\b'}

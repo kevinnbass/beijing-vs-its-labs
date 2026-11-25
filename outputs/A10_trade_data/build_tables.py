@@ -151,7 +151,7 @@ def use(chk, *k):
     return val(*k)
 mil = lambda v: '' if v is None else f'{v / 1e6:.1f}'
 
-rows, summ = [], []
+rows, summ, RAW = [], [], {}     # RAW (round 9 of the outputs, Nov 25, 2026): each month's sums in dollars, before rounding; every sum of months is taken from these
 for per in MONTHS:
     tot3 = {'X': 0.0, 'RX': 0.0}
     for cmd in ('847150', '847180', '847330', '854231'):
@@ -164,8 +164,11 @@ for per in MONTHS:
     chip_rx = sum(val(842, per, 'RX', pc, '854231') or 0 for pc in (156, 344, 446))
     hk3 = sum(val(842, per, 'X', 344, c) or 0 for c in THREE)
     summ.append([per, mil(tot3['X']), mil(tot3['RX']), mil(hk3), mil(chip), mil(chip_rx)])
+    RAW[('us', per)] = [None, tot3['X'], tot3['RX'], hk3, chip, chip_rx]
 write(O34 / 'us_exports_monthly.tsv', ['month', 'heading', 'destination', 'exports_usd_million', 'of_which_re_exports_usd_million (goods of foreign origin)', 'saved_id'], rows)
-tot = lambda rs, i: f'{sum(float(r[i]) for r in rs):.1f}'
+# round 9 of the outputs: a sum of months was the sum of month values already rounded to 0.1 million (1688.6 for 1,688,747,607 dollars: atlas lead fa97:1,
+# FIXFIG_fg9_FOR_MAIN.txt); it is now the sum of the dollar values, rounded once, as the core's tables/trade_annual_summary.tsv sums them
+tot = lambda rs, i, kind='us': mil(sum(RAW[(kind, r[0])][i] for r in rs))
 s25, s26 = [r for r in summ if r[0] < '202601'], [r for r in summ if r[0] >= '202601']
 summ.append(['2025 January to December (ours: sum)'] + [tot(s25, i) for i in range(1, 6)])
 summ.append(['2026 January to August (ours: sum)'] + [tot(s26, i) for i in range(1, 6)])
@@ -185,15 +188,32 @@ for per in HKM:
     x3 = sum(val(344, per, 'X', 0, c) or 0 for c in THREE)
     hsum.append([per, mil(us3), mil(tw3), mil(w3), mil(x3), mil(w3 - x3), mil(val(344, per, 'M', 0, '854231')), mil(val(344, per, 'X', 0, '854231')),
                  mil((val(344, per, 'M', 0, '854231') or 0) - (val(344, per, 'X', 0, '854231') or 0))])
+    RAW[('hk', per)] = [None, us3, tw3, w3, x3, w3 - x3, val(344, per, 'M', 0, '854231') or 0, val(344, per, 'X', 0, '854231') or 0,
+                        (val(344, per, 'M', 0, '854231') or 0) - (val(344, per, 'X', 0, '854231') or 0)]
 write(O42 / 'hk_trade_monthly.tsv', ['month', 'heading', 'imports_all_origins_usd_million', 'imports_origin_united_states', 'imports_origin_other_asia_nes_code_490 (often read as Taiwan; it is not the same as Taiwan\'s own exports to Hong Kong: see the note)',
                                      'imports_origin_mainland_china', 'imports_origin_south_korea', 'total_exports_all_destinations_usd_million', 'total_exports_to_mainland_china', 'saved_id'], rows)
 h25, h26 = [r for r in hsum if r[0] < '202601'], [r for r in hsum if r[0] >= '202601']
-hsum.append(['2025 January to December (ours: sum)'] + [tot(h25, i) for i in range(1, 9)])
-hsum.append([f'2026 January to {HKM[-1][4:]} (ours: sum)'] + [tot(h26, i) for i in range(1, 9)])
+hsum.append(['2025 January to December (ours: sum)'] + [tot(h25, i, 'hk') for i in range(1, 9)])
+hsum.append([f'2026 January to {HKM[-1][4:]} (ours: sum)'] + [tot(h26, i, 'hk') for i in range(1, 9)])
 write(O42 / 'hk_trade_summary.tsv',
       ['month', 'three_named_headings_imports_origin_united_states_usd_million (ours: sum of 8471.50, 8471.80, 8473.30)', 'three_named_headings_imports_origin_other_asia_nes_code_490 (ours: sum)',
        'three_named_headings_imports_all_origins (ours: sum)', 'three_named_headings_total_exports (ours: sum)', 'imports_minus_exports_three_headings (ours)',
        'chips_8542.31_imports_all_origins', 'chips_8542.31_total_exports', 'chips_imports_minus_exports (ours)'], hsum)
+# round 9 of the outputs (Nov 25, 2026): Hong Kong's sums here must equal the core's tables/trade_annual_summary.tsv (the same UN Comtrade answers, summed by year
+# there); the core holds no series with the United States as reporter, so the US sums above are not compared with it
+ANN = {}
+for ln in (PROJ / 'tables' / 'trade_annual_summary.tsv').read_text(encoding='utf-8').splitlines():
+    c = ln.split('\t')
+    if len(c) == 7 and c[2] == 'US dollars' and c[3].isdigit(): ANN[(c[0], c[1], c[3])] = (int(c[4]), float(c[5]))
+n_ann = 0
+for yr, ms in (('2025', h25), ('2026', h26)):
+    for col, series, cmds in ((1, 'Comtrade Hong Kong M partner USA', THREE), (2, 'Comtrade Hong Kong M partner Other Asia, nes', THREE), (3, 'Comtrade Hong Kong M partner World', THREE),
+                              (4, 'Comtrade Hong Kong X partner World', THREE), (6, 'Comtrade Hong Kong M partner World', ('854231',)), (7, 'Comtrade Hong Kong X partner World', ('854231',))):
+        held = {ANN[(series, f'HS {c}', yr)][0] for c in cmds}
+        assert held == {len(ms)}, (series, yr, held, len(ms))
+        core_sum = sum(ANN[(series, f'HS {c}', yr)][1] for c in cmds); ours = sum(RAW[('hk', r[0])][col] for r in ms)
+        assert abs(core_sum - ours) < 1, (series, yr, core_sum, ours); n_ann += 1
+assert ANN[('Comtrade Hong Kong M partner USA', 'HS 847330', '2026')][1] != ANN[('Comtrade Hong Kong M partner USA', 'HS 847330', '2025')][1]      # control: the lookup tells two cells apart
 
 # ---------- F. Hong Kong government release for September 2026: two commodity divisions ----------
 sid = 'cn-o42-hk-trade-release-202609-tables'
@@ -257,8 +277,8 @@ d34 = [['price of one H200 used below, US dollars', PRICE, 'a press report citin
        ['Nvidia, quarter to Oct 25, 2026: sales of licensed Hopper products to China, billion US dollars', f'{NV_Q3_CN / 1e9:.1f}', 'read from its results call and its commentary'],
        ['days in that quarter (Jul 27 to Oct 25, 2026)', (Q3_LAST - Q3_FIRST).days + 1, 'count of days'],
        ['of which inside the months the US export figures cover (to Aug 31, 2026)', (DATA_LAST - Q3_FIRST).days + 1, 'count of days'],
-       ['US exports, three named headings, to the three places, July plus August 2026, million US dollars', f'{f(us["202607"][1]) + f(us["202608"][1]):.1f}', 'sum of the two months in us_exports_summary.tsv'],
-       ['that as a share of 2.4 billion, per cent', f'{(f(us["202607"][1]) + f(us["202608"][1])) * 1e6 / NV_Q3_CN * 100:.0f}', 'ratio; customs value against sales, so rough'],
+       ['US exports, three named headings, to the three places, July plus August 2026, million US dollars', f'{(RAW[("us", "202607")][1] + RAW[("us", "202608")][1]) / 1e6:.1f}', 'sum of the two months in us_exports_summary.tsv (of the dollar values)'],
+       ['that as a share of 2.4 billion, per cent', f'{(RAW[("us", "202607")][1] + RAW[("us", "202608")][1]) / NV_Q3_CN * 100:.0f}', 'ratio; customs value against sales, so rough'],
        ['US exports under all four headings to the three places, January to August 2026, million US dollars', f'{f(y26[1]) + f(y26[4]):.1f}', 'three named headings plus 8542.31'],
        ['that four-heading total as a number of chips at that price', f'{(f(y26[1]) + f(y26[4])) * 1e6 / PRICE:,.0f}', 'total / 27,000; an outer bound, since the chip heading holds every processor sent from the United States'],
        ['US exports of chips (8542.31) to the three places, January to August 2026, million US dollars', y26[4], 'sum of 8 months'],
@@ -364,7 +384,7 @@ M26H1 = [m for m in MONTHS if '202601' <= m <= '202606']
 M26 = [m for m in MONTHS if m >= '202601']
 us_sg3_h1 = sum(us_sg3[m] for m in M26H1) / len(M26H1)
 us_sg3_26 = sum(us_sg3[m] for m in M26)
-us3_h1 = sum(f(us[m][1]) for m in M26H1) / len(M26H1)
+us3_h1 = sum(RAW[('us', m)][1] for m in M26H1) / 1e6 / len(M26H1)      # round 9 of the outputs: of the dollar values
 with_sg_chips = (f(y26[1]) + us_sg3_26) * 1e6 / PRICE
 RAWSRC = 'raw answers of Singapore\'s statistics service, kept by L18 with their sha256; not in research/primary'
 d34 += [['Singapore, line 84718010 (control and adaptor units): re-exports to mainland China, all of 2025, thousand Singapore dollars', f'{cn25:,.0f}', RAWSRC],
@@ -386,7 +406,7 @@ d34 += [['Singapore, line 84718010 (control and adaptor units): re-exports to ma
         ['the same: average month of January to June 2026', f'{us_sg3_h1:.1f}', 'sum of 6 months / 6'],
         ['the same: all of January to August 2026', f'{us_sg3_26:,.1f}', 'sum of 8 months'],
         ['US exports to mainland China, Hong Kong and Macau under the three named headings: July and August 2026, then the average month of January to June 2026, million US dollars', f'{f(us["202607"][1]):.1f} and {f(us["202608"][1]):.1f}, then {us3_h1:.1f}', 'from us_exports_summary.tsv'],
-        ['January to August 2026: US exports under the three headings to the three places plus Singapore, as a number of chips at the press price', f'{with_sg_chips:,.0f}', '(1,688.6 + the Singapore total) million / 27,000; every kind of goods counted as if an H200'],
+        ['January to August 2026: US exports under the three headings to the three places plus Singapore, as a number of chips at the press price', f'{with_sg_chips:,.0f}', f'({f(y26[1]):,.1f} + the Singapore total) million / 27,000; every kind of goods counted as if an H200'],
         ['Singapore, line 84718010: re-exports to mainland China, average month of January to June 2026, thousand Singapore dollars', f'{cn1 / 6:,.0f}', 'six-month sum / 6'],
         ['Singapore raw files read, each matching its sha256 in the manifest', len(sg_files), f'fetched {min(sg_files.values())} to {max(sg_files.values())} by L18; repeated rows with one value, taken once: {sg_repeats}']]
 
@@ -516,7 +536,7 @@ for path, chk in ((O34 / 'numbers_check.tsv', check34), (O42 / 'numbers_check.ts
         print(r.stdout[-1500:]); sys.exit(1)
 # ---------- K. round 4: the figures the two notes state must equal this script's values ----------
 n0 = lambda x: f'{x:,.0f}'
-jul_aug_us = f(us['202607'][1]) + f(us['202608'][1])
+jul_aug_us = (RAW[('us', '202607')][1] + RAW[('us', '202608')][1]) / 1e6      # round 9 of the outputs: of the dollar values
 q1p, h1p, m9p = parts('202603')['cv'], parts('202606')['cv'], parts('202609')['cv']
 mon = lambda m: n0(sgv[(m, 'RE-EXPORTS', 'MAINLAND CHINA', LINE)])
 gacc_b = lambda per, name: f'{gacc[(per, name)]["cv"] / 1e6:.1f} billion'
@@ -552,6 +572,7 @@ NOTE34 = [f'the line was {gacc_b("202609", PARTS)} dollars, against {gacc_b("202
           f'{hkx25 / 1e9:.2f} billion dollars in January to July 2025 and {hkx26 / 1e9:.2f} billion in January to July 2026',
           f'were {tw_share:.2f}% of its exports of the group to the world',
           f'came to {f(y26[1]):,.1f} million dollars', f'(about {round(f(y26[1]) * 1e6 / PRICE, -2):,.0f})', f'never passed {int(f(mx[1])) + 1} million dollars',
+          f'| All of January to August 2026 | {f(y26[1]):,.1f} million dollars |', f'{f(y26[1]):,.1f} million dollars divided by 27,000 dollars is about {round(f(y26[1]) * 1e6 / PRICE, -2):,.0f} chips',      # round 9 of the outputs
           f'{p26["cv"] / p25["cv"]:.2f} times as much computer parts by value', f'Our script read {["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"][len(sg_files)]} of those files again']
 dvs = lambda flow, ms: [f'{dv(flow, 75, m, []):,}' for m in ms]
 JJAS = ('202606', '202607', '202608', '202609')
@@ -575,7 +596,8 @@ for lab, ms in (('2025', m25), ('2026', m26)):
 NOTE42 += [f'were {r_hk["2025"]:.2f} times Taiwan\'s own recorded exports of computer parts to Hong Kong in 2025, and {r_hk["2026"]:.2f} times in January to July 2026']
 NOTE42 += [f'{hkx["847330"][0] / 1e9:.2f} billion dollars in January to July 2025 and {hkx["847330"][1] / 1e9:.2f} billion in January to July 2026',
            f'under 8471.80 they were {hkx["847180"][0] / 1e9:.2f} and {hkx["847180"][1] / 1e9:.2f} billion, and under 8471.50, {hkx["847150"][0] / 1e9:.2f} and {hkx["847150"][1] / 1e9:.2f} billion',
-           f'{f(hk[k26][4]) / 1e3:.1f} billion dollars in January to July 2026, {hk_to_cn_26 / 1e9:.1f} billion went to the mainland']
+           f'{f(hk[k26][4]) / 1e3:.1f} billion dollars in January to July 2026, {hk_to_cn_26 / 1e9:.1f} billion went to the mainland',
+           f'came to {f(y26[3]):,.1f} million dollars over the eight months January to August 2026']      # round 9 of the outputs
 hk25 = hk['2025 January to December (ours: sum)']
 NOTE42 += [f'| {lab} | {f(hk25[i]):,.1f} million dollars | {f(hk[k26][i]):,.1f} million dollars |' for i, lab in
            ((1, 'Imports of United States origin'), (2, 'Imports under Other Asia, nes (code 490)'), (3, 'Imports, all origins'), (4, 'Total exports, all destinations'))]
@@ -593,3 +615,5 @@ print(f'classification decisions of 2025 read: {n_dec}; in headings 8471, 8473 o
 print(f'Hong Kong as a reporter: months {HKM[0]} to {HKM[-1]} ({len(HKM)} months)')
 print(f'Singapore raw files: {len(sg_files)} read, each matching its sha256 in L18\'s manifest; {sg_repeats} repeated rows with one value, taken once; our sums equal the core\'s tables/trade_derived_figures.tsv')
 print(f'Hong Kong division tables: months {DIVM[0]} to {DIVM[-1]} ({len(DIVM)} months); September 2026 equals the press release')
+print(f'Hong Kong sums (three headings and chips, 2025 and January to {HKM[-1][4:]} 2026): {n_ann} of {n_ann} equal the core\'s tables/trade_annual_summary.tsv, months held checked; '
+      'sums of months are now taken from the dollar values before rounding (round 9 of the outputs)')

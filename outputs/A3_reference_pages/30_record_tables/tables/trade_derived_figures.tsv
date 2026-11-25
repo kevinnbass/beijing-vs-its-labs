@@ -1,4 +1,4 @@
-# Every sum and ratio REPORT.md states, computed by build_l18.py from the tables in this folder.
+# Every sum and ratio that the project's trade-data report states (the report is a working file, not among these tables), computed by script from the report's monthly tables.
 figure	unit	value
 Singapore re-exports to MAINLAND CHINA, line 84718010, Jan-Jun 2026	thousand S$	17970.0
 Singapore re-exports to MAINLAND CHINA, line 84718010, Jul-Oct 2026	thousand S$	3036175.0

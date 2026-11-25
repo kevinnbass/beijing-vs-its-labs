@@ -9,7 +9,11 @@ Nothing is written unless cn_has.py exits 0 and the guard finds every quotation 
 in a date read from a page, or among the sums made here.
 Round 4 (Nov 23, 2026): the bars follow the core figure's. Five are press reports citing unnamed people; two are sums of
 one United States government table (status as of May 11, 2026). The old multiplied ceiling for Washington's step is gone.
-The bars are separate counts, not one tally; an application names a consignee and is not an order. Both are said on the figure.
+The bars are separate counts, not one tally; an application names a data-centre operator or ultimate consignee and is not
+an order. Both are said on the figure.
+Round 9b (Nov 25, 2026, core edit 8b): the five abroad are those whose ultimate location is outside China; 48.6% also needs
+the further application not returned without action; the 75,000 limit is Reuters's, by two people it did not name; the
+approval of Jan 28, 2026 is the one Reuters reported; no report here says how many H200 chips entered the mainland.
 Round 5 (Nov 24, 2026, core edits 5 and 6): the licence table is named by its own title and its release, not as the
 Commerce Department's; the committee's example of 445,000 chips for Tencent is not said to be the table's row of 75,000,
 and the share is given both ways (a4lib.house()).
@@ -109,9 +113,9 @@ def strip(rows):
     return '\n'.join(out)
 
 
-def joined(xs):
+def joined(xs, last='and'):
     xs = list(xs)
-    return xs[0] if len(xs) == 1 else ', '.join(xs[:-1]) + ' and ' + xs[-1]
+    return xs[0] if len(xs) == 1 else ', '.join(xs[:-1]) + f' {last} ' + xs[-1]
 
 
 def main():
@@ -129,7 +133,7 @@ def main():
     first, last = min(r['date'] for r in rows), max(r['date'] for r in rows)
     bydate = sorted(rows, key=lambda r: (r['date'], r['n']))
     f = lambda v: f'{v:,}'
-    places, names = joined(H['places']), joined(H['names'])
+    places, names = joined(H['places'], 'or'), joined(H['names'])     # "whose ultimate location is A, B or C" (the table's own column)
     cap = A.count(Q['cap'].split('up to ')[1].split(' chips')[0])           # the cap Reuters reported, read from its sentence
     assert cap == H['cap'], 'the largest approved application in the table is not the cap Reuters reported'
     assert H['tencent_status'] == 'Approved, not shipped'
@@ -139,7 +143,7 @@ def main():
         'ordered': f'{qm(Q["ordered"])}; the report gives this on the word of {qm("two of the people")} it spoke to.',
         'wapproved': (f'The committee’s summary: {qm(Q["wapproved"])}. The table marks each of the {H["appr"][1]} {qm(Q["table.marked"])}. Nvidia is the exporter in {H["appr_nv"][1]} of them, '
                       f'AMD in {H["appr_amd"][1]} ({f(H["appr_amd"][0])} chips, kept apart here). No approved application is for more than {f(H["cap"])} chips.'),
-        'wreturned': (f'The table marks these RWA, the export bureau’s short form: {qm(Q["table.rwa"])}. Among Nvidia’s {H["rwa_nv"][1]} are all {H["abroad"][1]} applications for consignees in {places} '
+        'wreturned': (f'The table marks these RWA, the export bureau’s short form: {qm(Q["table.rwa"])}. Among Nvidia’s {H["rwa_nv"][1]} are all {H["abroad"][1]} applications whose ultimate location is {places} '
                       f'({f(H["abroad"][0])} chips), named for {names}. With AMD’s {H["rwa_amd"][1]}, {f(H["rwa"][0])} of the table’s {f(H["all"][0])} chips: {H["share"]}% of the chips in the applications the summary records. '
                       f'The table gives no reasons, and the committee says some applications are {qm(Q["table.notfull"])}.'),
         'approved': f'{qm(Q["approved"])}. {qm(Q["approved.conditions"])}.',
@@ -173,7 +177,7 @@ def main():
   <header>
    <p class="eyebrow">China · Nvidia’s H200 chip · {A.MON[first.month - 1]} {first.year} to {A.MON[last.month - 1]} {last.year}</p>
    <h1>Reported ordered: more than 2 million H200 chips.<br> Reported delivered: about {per:,} each, to a few buyers.</h1>
-   <p class="deck">{NUM[len(press)].capitalize()} press reports citing unnamed people, and {NUM[len(docs)]} sums from one United States government table of licence applications. They are separate counts, not one tally: they do not add up, and they are listed in the order of a sale, not in the order of their dates. An application names a consignee; it is not an order. Bars are drawn to one scale.</p>
+   <p class="deck">{NUM[len(press)].capitalize()} press reports citing unnamed people, and {NUM[len(docs)]} sums from one United States government table of licence applications. They are separate counts, not one tally: they do not add up, and they are listed in the order of a sale, not in the order of their dates. An application names a data-centre operator or ultimate consignee; it is not an order. Bars are drawn to one scale.</p>
    <ul class="key">
     <li><i class="sw toward"></i><span><b>Toward Nvidia:</b> ordering it, letting it in</span></li>
     <li><i class="sw away"></i><span><b>Away from Nvidia:</b> holding it back</span></li>
@@ -207,15 +211,15 @@ def main():
   <ul>
    <li>The bars count different things at different dates, so no bar is a share of another. {NUM[len(press)].capitalize()} rest on unnamed people; {NUM[len(docs)]} are sums of a government table.</li>
    <li>Washington’s table, {qm(Q["wapproved.date"])}, gives the status of each licence application. The House Foreign Affairs Committee made it public on {released}; its summary cites {qm(Q["table.bis"])}. BIS is the Commerce Department’s Bureau of Industry and Security. The table covers {f(H["all"][0])} chips in {H["all"][1]} applications: {qm(Q["table.products"])}
-    It does not say which chip a row is; bars {docnums} count the rows with Nvidia as exporter. An application names a consignee; it is not an order. “Approved” in bar {R["wapproved"]["n"]} is Washington’s licence; bar {R["approved"]["n"]} is Beijing’s approval, by a press report.</li>
+    It does not say which chip a row is; bars {docnums} count the rows with Nvidia as exporter. An application names a data-centre operator or ultimate consignee; it is not an order. “Approved” in bar {R["wapproved"]["n"]} is Washington’s licence; bar {R["approved"]["n"]} is Beijing’s approval, by a press report.</li>
    <li>The sums are ours, of the table’s rows as the project read them from its page images; the totals equal the figures the committee’s summary prints. Nvidia’s chips and AMD’s are not added in the bars. With AMD’s, the approved count is {f(H["appr"][0])} in {H["appr"][1]} applications and the returned count {f(H["rwa"][0])} in {H["rwa"][1]}.</li>
-   <li>The {H["share"]}% is a share of the chips in the applications the summary records, not of everything applied for. The committee’s example: {qm(Q["table.tencent"])}. The table’s only Tencent row of that date is for {f(H["tencent_shown"])} chips, approved; neither document says whether it is that application. The share would be {H["share_full"]}% if it is, counted at {f(H["tencent_full"])}, and {H["share_further"]}% if the {f(H["tencent_full"])} is a further application (our arithmetic).</li>
-   <li>No approved application in the table is above {f(H["cap"])} chips, and all {NUM[H["over"]]} above it were returned. Reuters reported that cap on {fmt(d_cap)}: {qm(Q["cap"])}. It also wrote that {qm(Q["cap.nodelivery"])}, and that the {qm(Q["cap.tangle"])}.</li>
-   <li>Beijing’s approval of {fmt(R["approved"]["date"])} was not yet a purchase: a source said {qm(Q["approved.notconverting"])}.</li>
-   <li>The total under discussion in July was, in the report’s words, {qm(Q["discussed.half"])}.</li>
+   <li>The {H["share"]}% is a share of the chips in the applications the summary records, not of everything applied for. The committee’s example: {qm(Q["table.tencent"])}. The table’s only Tencent row of that date is for {f(H["tencent_shown"])} chips, approved; neither document says whether it is that application. The share would be {H["share_full"]}% if it is, counted at {f(H["tencent_full"])}, and {H["share_further"]}% if the {f(H["tencent_full"])} is a further application and was not returned without action (our arithmetic).</li>
+   <li>No approved application in the table is above {f(H["cap"])} chips, and all {NUM[H["over"]]} above that number were returned. On {fmt(d_cap)} Reuters, by two people it did not name, reported a limit for each approved buyer: {qm(Q["cap"])}. It also wrote that {qm(Q["cap.nodelivery"])}, and that the {qm(Q["cap.tangle"])}.</li>
+   <li>The approval Reuters reported on {fmt(R["approved"]["date"])} was not yet a purchase: a source said {qm(Q["approved.notconverting"])}.</li>
+   <li>The possible total of July ({esc(R["discussed"]["shown"][0])} {esc(R["discussed"]["shown"][1])}) was, in the report’s words, {qm(Q["discussed.half"])}.</li>
    <li>The first report of deliveries names two buyers; by November more are reported: {qm(Q["later.several"])} ({A.link(Q["later.several"].sid, f"Reuters, {fmt(last)}")}).</li>
    <li>Nvidia’s figures are sums of money, not counts of chips. Neither its call of {fmt(d_q3)} nor Reuters’s report of it says how many of those chips crossed into the mainland.</li>
-   <li>How many H200 chips have entered the mainland is not known. The Hong Kong report says small quantities were shipped by other routes, in its words, {qm(Q["waiting.howmany"].split("routes ")[1])}.</li>
+   <li>No report here says how many H200 chips have entered the mainland. The Hong Kong report says small quantities were shipped by other routes, in its words, {qm(Q["waiting.howmany"].split("routes ")[1])}.</li>
   </ul>
  </section>
 </div>
@@ -232,7 +236,12 @@ def main():
     # withdrawn by core edit 6 (atlas/core_edit/APPLIED_6.txt, part 05): the table is not called the Commerce Department's,
     # and the Tencent row of 75,000 is not called the application of 445,000
     for banned in ('750,000', 'cleared by Washington', 'Democrats', 'more than half', 'subsidiar', 'Commerce Department’s table', 'Commerce Department table',
-                   'Commerce Department’s, with', 'shows that application', 'an application the table shows', 'counted in full'):
+                   'Commerce Department’s, with', 'shows that application', 'an application the table shows', 'counted in full',
+                   # withdrawn by core edit 8b (Nov 25, 2026): the table's column names a data-centre operator or ultimate consignee and an ultimate
+                   # location; the 48.6% reading needs the further application not returned; the 75,000 limit is reported by two unnamed people;
+                   # Beijing's approval is a press report; the negative on the mainland is said of the reports here
+                   'names a consignee;', 'applications for consignees in', 'is a further application (our', 'reported that cap', 'Beijing’s approval of',
+                   'entered the mainland is not known'):
         assert banned not in page, f'the page still says "{banned}"'
     out = HERE / 'funnel.html'
     out.write_text(page, encoding='utf-8'); print('written', out, len(page), 'bytes')

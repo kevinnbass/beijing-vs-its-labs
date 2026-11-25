@@ -39,6 +39,7 @@ cn-policy-desktop-2023	乡镇以上党政机关，以及乡镇以上党委和政
 cn-policy-domestic-product-standard-2025	对本国产品的报价给予20%的价格扣除
 cn-policy-domestic-product-standard-2025	国务院办公厅 2025年9月28日
 cn-policy-domestic-product-standard-2025	产品应当在中国境内生产
+cn-policy-domestic-product-standard-2025	政府采购活动中既有本国产品又有非本国产品参与竞争的
 cn-le14-itsec-2026-2	附表一、人工智能训练推理芯片
 cn-le14-itsec-2026-2	中国信息安全测评中心国家保密科技测评中心2026年5月26日
 cn-le14-itsec-2026-2	PH100 摩尔线程智能科技（北京）股份有限公司 I级
@@ -108,6 +109,8 @@ ms-bj-20251105-statefunded-standard	The Chinese government has issued guidance r
 ms-bj-20251105-statefunded-standard	It is unclear whether the guidance applies nationwide or only to certain provinces, sources said
 ms-bj-20251105-statefunded-standard	PUBLISHED: 2025-11-05
 cn-acts-reuters-customs-20260114	explicitly instructed not to purchase the chips unless necessary
+cn-acts-reuters-customs-20260114	summoned domestic technology companies to meetings on Tuesday
+cn-acts-reuters-customs-20260114	Jan 14 (Reuters)
 cn-acts-reuters-customs-20260114	purchase the chips unless necessary, two of the people and a third source said
 cn-acts-reuters-us-approvals-20260514-wayback	Chinese firms pulled back after guidance from Beijing
 cn-acts-reuters-us-approvals-20260514-wayback	not a single delivery has been made so far
@@ -129,6 +132,7 @@ man-70f4668d5f56	did not know if the Chinese government had given final approval
 man-70f4668d5f56	Published Mar 17, 2026
 cn-acts-reuters-ti-cap-20260708-relay1	Chinese officials have told Alibaba, ByteDance and DeepSeek in recent weeks that they may soon receive permission to buy some H200 chips
 cn-acts-reuters-ti-cap-20260708-relay1	it could amount to fewer than 200,000 in total
+cn-acts-reuters-ti-cap-20260708-relay1	Chinese officials, keen to nurture domestic suppliers, have withheld approval so far
 cn-acts-reuters-ti-cap-20260708-relay1	PUBLISHED: 2026-07-08
 cn-tolerate-reutersaug26-relay1-wayback	have been allowed to enter mainland China
 cn-tolerate-reutersaug26-relay1-wayback	ByteDance and Tencent have each received about 10,000 H200 processors in recent weeks
@@ -154,3 +158,6 @@ cn-acts-mfa-20261109	约60万枚英伟达先进人工智能芯片存放在香港
 cn-acts-mfa-20261109	2026年11月9日外交部发言人郭嘉昆主持例行记者会
 cn-against2-mfa-h20-20250813	我不了解你提到的情况
 cn-against2-mfa-h20-20250813	2025年8月13日外交部发言人林剑答记者问
+cn-ga31-cndocs-52	到2030年，浙江信息通信行业算力规模达150EFLOPS，国产化算力占比超60%
+cn-ga31-cndocs-52	重点工程4:算力网络一体化提升工程
+cn-ga31-cndocs-52	省通信管理局省发展改革委关于印发《浙江省信息通信业发展“十五五”规划》的通知

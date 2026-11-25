@@ -18,7 +18,7 @@ Order: the claim, the declared line, what the companies bought, what Beijing did
 
 **2.** The declared line: use home-made chips. At its press conference of May 22, 2026, Li Chao of China's state planner (NDRC) said it was guiding home-made large models to do more to adapt to home-made computing chips. Source: the planner's own record. English ours. [3]
 
-**3.** What the companies bought: Nvidia. A Shanghai government body wrote (reply dated Apr 30, 2025; published Nov 10, 2025) that in the city internet firms' own clusters run mainly on Nvidia cards, while the three big telecoms mainly buy Huawei and other home-made ones. [4]
+**3.** What the companies bought: Nvidia. A Shanghai government body wrote (reply dated Apr 30, 2025; published Nov 10, 2025) that in the city internet firms' own clusters run mainly on Nvidia cards, while the three big telecoms mainly buy Huawei's and other home-made clusters. [4]
 
 **4.** What Beijing did. Alibaba's annual report to the SEC: "In September 2025, the Cyberspace Administration of China requested Chinese technology companies to halt purchases of certain chips." The sentence does not name Nvidia. This is a filing, not an unnamed source. [5]
 
@@ -36,8 +36,8 @@ Order: the claim, the declared line, what the companies bought, what Beijing did
 
 ## What the thread leaves out
 
-- It gives one source for each claim; posts 7 and 9 need more than one. The full argument has 21 points and 300 sources; it is in ARGUMENT_referenced.html in the project folder.
-- With five limits and ten posts, the numbers have no post of their own: they stand in limit 3 (post 7). That post carries four reported numbers from three Reuters reports, of Dec 31, 2025, Jan 28, 2026 and Nov 5, 2026. The copy held of the last is CNA's page, which is dated Nov 6, 2026.
+- It gives one source for each claim; posts 7 and 9 need more than one. The full argument has 21 points and 392 sources; it is in ARGUMENT_referenced.html in the project folder.
+- With five limits and ten posts, the numbers have no post of their own: they stand in limit 3 (post 7). That post carries four reported numbers from three Reuters reports, of Dec 31, 2025, Jan 28, 2026 and Nov 5, 2026. The copy the post cites for the last is CNA's page, which shows only its own date, Nov 6, 2026; Reuters's dateline of Nov 5 stands on Yahoo's copy of the same report, also saved.
 - Washington's side is left out for length: the conditions it set, and its own table of licence applications, which shows chips approved and not shipped and others returned without action. The argument sets them out under its fourth limit.
 - Post 6 names one press report. The public warnings in state media, and the dates they fall between, are in the argument's points 4 and 18.
 - Post 10 is a shorter form of the argument's last sentence. It drops the public warnings, the parts of the state that welcomed Nvidia and approved some purchases, and the companies' own turn to home-made chips; posts 5 to 8 carry them.

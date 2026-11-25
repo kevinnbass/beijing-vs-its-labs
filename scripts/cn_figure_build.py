@@ -11,8 +11,9 @@ must be found in its saved copy (sources/<id>), or nothing is written. Writes, i
 The page is a build product: a rebuild replaces it. Numbers on the page come from the data file, the project's tables
 and this script only. Tables read (research/cn_chip_policy_20261120/tables/): house_licence_table.tsv (the House
 committee's licence table), provinces_31.tsv (the 31 provincial-level governments), chip_evaluations.tsv (the state
-evaluation lists), state_media_items.tsv (the census of state and Party media items). The local-voucher rows are in
-vouchers() below, drawn from tables/local_vouchers.tsv and tables/local_vouchers_more.tsv (agent L28's table), every rate a "!" line.
+evaluation lists), state_media_items.tsv (the census of state and Party media items). The local-voucher rows are the counted
+rules of scripts/cn_voucher_classes.py (over tables/local_vouchers.tsv and tables/local_vouchers_more.tsv); vouchers() below holds
+only each row's label and note; every rate and date of a note is a "!" line.
 Notes in the template name records as %%REC:<saved id>%%; the build puts in the record's number.
 Records are numbered by date, Beijing's rows first, then the companies'; a block with an "N" line keeps the number given
 there (core edit 7, Nov 25, 2026: record 62, added after the figure was made public, so that no record changed its number).
@@ -212,7 +213,7 @@ def bars(evs):
          f'({f(h["appr_amd"][0])} in {h["appr_amd"][1]} applications) the count is {f(h["appr"][0])}. The table “H200 License and Equivalent Application Status as of May 11, 2026”, '
          'released by the House Foreign Affairs Committee, Nov 19, 2026; the sums are mine', []),
         ('Returned by Washington without action: Nvidia as exporter', f(h['rwa_nv'][0]), h['rwa_nv'][0], 'us',
-         f'in {h["rwa_nv"][1]} applications, among them all {h["abroad"][1]} for consignees in {places} ({f(h["abroad"][0])} chips), named for ByteDance, BytePlus, TikTok and Alibaba. '
+         f'in {h["rwa_nv"][1]} applications, among them all {h["abroad"][1]} that give {places} as the chips’ location ({f(h["abroad"][0])} chips), named for ByteDance, BytePlus, TikTok and Alibaba. '
          f'With AMD’s {h["rwa_amd"][1]}, {f(h["rwa"][0])} of the table’s {f(h["all"][0])} chips. The table gives no reasons. Same table', []),
         ('Approved by Beijing, with conditions', 'more than 400,000', 400_000, 'toward', 'for ByteDance, Alibaba and Tencent. Reuters, Jan 28, 2026', [by(evs, 'ms-bj-20260128-h200-nod-standard')]),
         ('Total Beijing was weighing by July', 'fewer than 200,000', 200_000, 'toward', 'The Information, through Reuters, Jul 8, 2026', [by(evs, 'cn-acts-reuters-ti-cap-20260708-relay1')]),
@@ -283,8 +284,9 @@ def revenue():
 def provinces():
     """The 31 provincial-level governments by what their published plans were found to set: counted here from
     tables/provinces_31.tsv (agent L16, with L25's changes; Chongqing's 2026 plan, cn-o39-chongqing-hub-plan-2026-wayback,
-    sets no share). The eight shares measure different things, so they are listed with what each counts, never drawn as
-    one series. Each share's words are a "!" line."""
+    sets no share). The nine shares measure different things, so they are listed with what each counts, never drawn as
+    one series. Each share's words are a "!" line. Core edit 8 (Nov 25, 2026): Zhejiang is a ninth, by the written rule
+    (a published plan that sets a share); its share is for one sector's computing and is a project target, said in its row."""
     pr = table('provinces_31.tsv')
     cnt = Counter(r['result'] for r in pr)
     assert len(pr) == 31 and sum(cnt.values()) == 31 and set(cnt) == {'share', 'plan_no_share', 'account_only', 'not_reached'}, cnt
@@ -298,6 +300,7 @@ def provinces():
         ('Guangdong', '70%', 'of newly added computing, by the end of 2025', 'strives for (力争); a plan of nine bodies', 'cn-o39b-guangdong-yuesuan-2024'),
         ('Tianjin', 'over 60%', 'of chips in the city’s computing centres, by 2026', '', 'cn-o39-tianjin-plan-2024'),
         ('Hebei', '60% or more', 'of newly added computing software and hardware, independently controllable (自主可控), by 2025', 'the province’s own page', 'cn-o39-hebei-opinion-2024-wayback'),
+        ('Zhejiang', 'over 60%', 'of the computing of one sector, the province’s information and communications industry, by 2030', 'a project target (工程目标) in that sector’s five-year plan, by the provincial communications administration and development and reform commission', 'cn-ga31-cndocs-52'),
         ('Shanghai', 'over 50%', 'of chips in new intelligent-computing centres, by 2025', 'a copy on another site', 'cn-policy-shanghai-domestic-target'),
         ('Sichuan', 'over 50%', 'of computing equipment', 'strives for (力争); a copy on another site', 'cn-factions-sichuan50'),
         ('Inner Mongolia', '50% or more', 'of computing, by 2025, among the goals for the region’s national computing hub', '', 'cn-o39-nmg-plan-pdf-wayback'),
@@ -345,76 +348,216 @@ def paper(evs):
 
 
 def vouchers():
-    """Local computing vouchers: the general rate a voucher or rental subsidy pays of the bill for rented computing (the rate
-    for an ordinary applicant; a higher rate for a named kind of firm, whatever the chip, is in the row's note), for home-made
-    computing against other computing, as each rule states it (one measure throughout). Rule for a row (agent F1,
-    applied row by row to tables/local_vouchers.tsv, agent L15, and tables/local_vouchers_more.tsv, agent L28): a local rule in force (not a draft, a plan or an application guide) whose official text or a full copy
-    is saved under research/primary, whose words the checker finds, and which states a share of the bill for rented
-    computing. One row per government: its latest such rule of general application; an earlier rule of the same
-    government, or a later one for one class of firm only (Wuhan's of Feb 2026, for one-person AI firms), goes in the row's
-    note. Every rate and date is a "!" line. Left out, and said so under the chart: a press account only (Chengdu),
-    application guides (Beijing city; Nanjing), rules no longer in force or without a share of the bill (Longgang district;
-    Guangzhou's Huangpu district; Hangzhou's rule of 2026, a share of R&D spending), a copy not yet saved (Xiamen), and drafts.
-    Since core edit 6 (Nov 24, 2026, at the owner's word) the list also holds the four rules found that day which the same
-    rule counts: Sichuan (a voucher for home-made computing only; its text held as a news site carries it), Wuhu, Suzhou and
-    Tianjin. A rule that pays for home-made computing only is drawn as one orange dot. The counts are asserted against
-    the count by script over both tables (atlas/core_edit/p6_work_4/vcount.py)."""
-    rows = [  # place, rule (month on its page), home-made %, other %, saved id, note
-        ('Hangzhou city', 'Jul 2024', 30, 20, 'cn-counter-b4-2', ''),
-        ('Zhejiang province', 'Apr 2025', 30, 10, 'cn-le25-zhejiang-ai-measures-2025-smartcity', 'guidance to places that issue vouchers; in force from May 31, 2025; a copy on another site'),
-        ('Wenzhou city', 'Aug 2025', 30, 10, 'cn-le15-zj-oss-web1825-e66330', ''),
-        ('Binjiang district, Hangzhou', 'Aug 2026', 60, 30, 'cn-le15-binjiang-2026-6-keceyun', 'a copy on a policy site'),
-        ('Beijing E-Town, a development zone', 'Nov 2024', 30, 30, 'cn-le28-etown-29hao-20241126', 'replaced a rule of Mar 2024 that paid 40% against 30%; servers with home-made chips get a separate purchase subsidy of up to 10%'),
-        ('Longhua district, Shenzhen', 'Nov 2024', 30, 30, 'cn-le28-sz-longhua-2024-20hao', ''),
-        ('Shanxi province', 'Jun 2024', 20, 20, 'cn-o39b-shanxi-measures-2024-jincheng', '30% for national projects and model makers; in force from Jul 2024'),
-        ('Shenzhen city', 'Dec 2024', 50, 50, 'cn-le28-sz-gxj-2024-13hao', '60% for start-ups; separate support for moving models to home-made chips'),
-        ('Wuhan city', 'Feb 2025', 50, 50, 'cn-le28-wuhan-2025-3hao', 'up to 200,000 yuan; the same rate for one-person AI firms in a rule of Feb 2026'),
-        ('Qingdao city', 'Mar 2026', 20, 20, 'cn-le28-qingdao-2026-9hao-smartcity', 'the same rate as its rule of Mar 2025; a copy on another site'),
-        ('Shanghai city', 'Jul 2025', 30, 30, 'cn-le15-sheitc-8cea38', 'up to 100% for a year at most, city and districts together, for early-stage and small firms; building support, up to 10%, for home-made computing only'),
-        ('Qiaokou district, Wuhan', 'Aug 2025', 50, 50, 'cn-le28-wuhan-qiaokou-2025-1hao', 'on top of the city’s'),
-        ('Hongshan district, Wuhan', 'Sept 2025', 20, 20, 'cn-le28-wuhan-hongshan-2025-2hao', 'for small and medium firms'),
-        ('Shandong province', 'May 2025', 5, 5, 'cn-le28-shandong-ai-measures-2025-smartcity', 'a copy on another site'),
-        ('Hunan province', 'Oct 2025', 30, 30, 'cn-le28-hunan-aiplus-smartcity', 'a copy on another site'),
-        ('Sichuan province', 'Aug 2026', 20, 0, 'cn-ga05-sichuan-compute-net-measures-jiemian', '30% for start-ups, 40% for one-person AI firms; the text as a news site, Jiemian, carries it, without number or date; the month is that of the reports'),
-        ('Wuhu city', 'Jul 2026', 25, 25, 'cn-ga04-wh-voucher-rule-2026-24hao', '45% for firms in future industries, 70% for small firms in incubators'),
-        ('Suzhou city', 'Jan 2026', 30, 30, 'cn-ga04-sz-suzhou-aiplus-2026-18hao', 'for technology R&D firms; in force from Jan 31, 2026, by the city’s own reading; its rule of Feb 2025 paid 20%'),
-        ('Tianjin city', 'May 2025', 10, 10, 'cn-ga04-tj-voucher-rule-sina-20250514', 'the text as a page on Sina carries it, dated May 14, 2025'),
-    ]
+    """Local computing vouchers and like subsidies: the general rate a local rule pays of a firm's bill for rented or bought
+    computing (the rate for an ordinary applicant; a higher rate for a named kind of firm, whatever the chip, is in the
+    rule's saved copy), for home-made computing against other computing, as each rule states it (one measure throughout).
+    WHICH rules are drawn, each rule's two rates and its class are not typed here: they are the counted rows of
+    scripts/cn_voucher_classes.py (compute(): the published counting rule over tables/local_vouchers.tsv and
+    tables/local_vouchers_more.tsv; its result is also tables/local_vouchers_classes.tsv). One row per government: its rule in
+    force whose official text or a full copy is saved, whose rate words the checker finds, and which states a share of the
+    bill. This function holds only what the page says of each row (SHOWN: the place, the month on its page, the saved copy
+    the row links, a note); a counted row without an entry stops the build, and so does an entry for a row not counted.
+    Every rate and date of a note is a "!" line of the data file.
+    Voucher round 3 (Nov 25, 2026): 38 rules where 21 were drawn; the third class is "state no higher rate for home-made
+    computing", and inside it Hangzhou's plan of 2025 (30% or 20% "by the type of computing facility", a type it does not
+    name) is drawn apart, with its own mark, never as a one-rate rule.
+    Voucher round 5 (Nov 25, 2026): 90 rules, the rules found by searches that went province by province and city by city.
+    The panel is redrawn for them: the rules that favour home-made computing (pay more for it, or pay for it only) and
+    Hangzhou's are full rows, each with its note; the rules of one rate are a compact list in columns, by kind of government
+    (province-level, city, district or zone) and by rate, each with its place, its month linking the saved copy, its one
+    rate as a dot on the same 0 to 60% scale and its number; a dagger marks a rule that gives the payment another name than
+    voucher; a letter marks a note, the notes standing under the list (the notes kept are those on home-made computing and
+    those the rulings ask for). The list takes more rules without redesign (its columns grow); the scale ends at 60% (a
+    higher general rate stops the build at the assert below)."""
+    import cn_voucher_classes as VC
+    R = VC.compute(); C = R['counted']
+    SHOWN = {  # row of the voucher tables: place, rule (month on its page), the saved copy the row links (a saved id of the row), note
+        'A3': ('Hangzhou city', 'Jun 2025', 'cn-ga31-voucherrulesmissing-40', '30% in general; for training and inference on computing facilities, 30% or 20% “by the type of computing facility” (按照算力设施的不同类型), and the plan does not say which type gets which; up to 50% for small firms; in force from Jul 15, 2025, when it repealed the rule of Jul 2024 that paid 30% for home-made and 20% for other facilities; the text on the city archives’ site'),
+        'A6': ('Binjiang district, Hangzhou', 'Aug 2026', 'cn-ga31-twelve-18', 'the text on the district consultative conference’s site'),
+        'A7': ('Wenzhou city', 'Aug 2025', 'cn-le15-zj-oss-web1825-e66330', ''),
+        'A12': ('Shanghai city', 'Jul 2025', 'cn-le15-sheitc-8cea38', 'building support, up to 10%, for home-made computing only'),
+        'A14': ('Chengdu city', 'Apr 2026', 'cn-ga31-vouchernamedrules-5', 'for 自主可控 (independently controllable) computing; small and medium firms’ rates each raised by 10%; in force from May 13, 2026; the rules on a consultancy’s page, compared by eye with the bureau’s signed file, a scan'),
+        'A18': ('Sichuan province', 'Aug 2026', 'cn-ga31-unsaved-sc-338hao-fgw-wayback', '30% for start-ups, 40% for one-person AI firms; the provincial development and reform commission’s measures (川发改数据〔2026〕338号), written Aug 11 and published Aug 13, 2026'),
+        'B1': ('Beijing E-Town, a development zone', 'Nov 2024', 'cn-le28-etown-29hao-20241126', 'replaced a rule of Mar 2024 that paid up to 40% and up to 30%; servers with home-made chips get a separate purchase subsidy of up to 10%'),
+        'B5': ('Shenzhen city', 'Dec 2024', 'cn-le28-sz-gxj-2024-13hao', 'separate support for moving models to home-made chips'),
+        'B8': ('Longhua district, Shenzhen', 'Nov 2024', 'cn-le28-sz-longhua-2024-20hao', ''),
+        'B10': ('Guangzhou Development Zone and Huangpu district', 'Jun 2025', 'cn-le28-gz-huangpu-2025-7hao', ''),
+        'B15': ('Hongshan district, Wuhan', 'Sept 2025', 'cn-le28-wuhan-hongshan-2025-2hao', ''),
+        'B17': ('Qingdao city', 'Mar 2026', 'cn-le28-qingdao-2026-9hao-smartcity', ''),
+        'B21': ('Zhejiang province', 'Apr 2025', 'cn-ga31-plantexts-1', 'guidance to places that issue vouchers; signed Apr 17, 2025 (浙政发〔2025〕10号), in force from May 31, 2025; the government’s own PDF'),
+        'B34': ('Hubei province', 'Sept 2026', 'cn-ga31-plantexts-12', 'up to 3 million yuan a unit a year; one-person firms 30% whatever the computing; the text with its notice on the Wuhan Data Bureau’s site'),
+        'B40': ('Wuhu city', 'Jul 2026', 'cn-ga04-wh-voucher-rule-2026-24hao', ''),
+        'B42': ('Suzhou city', 'Jan 2026', 'cn-ga04-sz-suzhou-aiplus-2026-18hao', ''),
+        'B44': ('Tianjin city', 'Apr 2025', 'cn-ga31-twelve-17', ''),
+        'B46': ('Xinjiang region', 'May 2026', 'cn-ga31-provtexts-9', ''),
+        'B47': ('Guizhou province', 'Jan 2026', 'cn-ga31-plantexts-13', 'a separate 30% for adapting to home-made computing'),
+        'B48': ('Wuhan city', 'Sept 2026', 'cn-ga31-sciowhole-115', 'the Data Bureau’s voucher measures, in force from Oct 29, 2026 for one year; the city’s measures of Feb 2025, still in force, pay 50% up to 200,000 yuan whatever the chip'),
+        'B49': ('Anhui province', 'Aug 2025', 'cn-ga31-voucherrulesmissing-37', ''),
+        'B50': ('Liaoning province', 'Oct 2026', 'cn-ga31-voucherrulesmissing-8', ''),
+        'B53': ('Hunan province', 'May 2026', 'cn-ga31-unsaved3-sciowhole114-gxt-gfxwj', 'the rules’ stated aim includes steering buyers to home-made computing first, at the same rate'),
+        'B55': ('Beijing city', 'Jun 2026', 'cn-ga31-voucherrulesmissing-4', 'a supplier must be able to serve on home-made chips with home-made software: a condition on the supplier, not a higher rate and not a rule that only such service is paid'),
+        'B59': ('Heilongjiang province', 'Apr 2026', 'cn-ga31-voucherrulesmissing-9', ''),
+        'B61': ('Jiangsu province', 'Sept 2026', 'cn-ga31-voucherrulesmissing-11', 'a ceiling for province and city together; each city divided into districts sets its own rate inside it'),
+        'B64': ('Fujian province', 'Feb 2026', 'cn-ga31-voucherrulesmissing-74', ''),
+        'B66': ('Jiangxi province', 'Aug 2026', 'cn-ga31-voucherrulesmissing-15', ''),
+        'B67': ('Shandong province', 'Jan 2026', 'cn-ga31-voucherrulesmissing-16', ''),
+        'B69': ('Henan province', 'Aug 2025', 'cn-ga31-voucherrulesmissing-17', ''),
+        'B76': ('Ningbo city', 'Mar 2026', 'cn-ga31-voucherrulesmissing-71', 'only contracts for home-made computing qualify; up to 1.5 million yuan a buyer a year; a yearly rule, its fourth voucher period ending Dec 31, 2026; read on a commercial policy platform’s page that carries the notice whole'),
+        'B80': ('Xiamen city', 'Oct 2026', 'cn-ga31-voucherrulesmissing-30', ''),
+        'B81': ('Tianfu New Area, Sichuan', 'Apr 2024', 'cn-ga31-voucherrulesmissing-34', ''),
+        'B84': ('Hebei province', 'Nov 2026', 'cn-ga31-voucherrulesmissing-36', ''),
+        'B91': ('Shanxi province', 'Sept 2026', 'cn-ga31-voucher2-shanxi-rules-yuncheng', ''),
+        'B93': ('Baiyun district, Guangzhou', 'Mar 2026', 'cn-ga31-voucherrulesmissing-54', ''),
+        'B96': ('Inner Mongolia region', 'Sept 2024', 'cn-ga31-voucherrulesmissing-59', ''),
+        'B97': ('Lingang Special Area, Shanghai', 'May 2025', 'cn-ga31-voucherrulesmissing-60', 'apart from rental, up to 10% of the purchase of equipment with independently controllable chips'),
+        'B100': ('Qinghai province', 'Mar 2024', 'cn-ga31-unsaved4copies-43', ''),
+        'B103': ('Shenyang city', 'Jan 2026', 'cn-ga31-vouchernamedrules-4', 'its province’s data bureau says in one reply that the vouchers go to users of local home-made computing; the city’s own text names no origin'),
+        'B105': ('Wuxi city', 'May 2025', 'cn-ga31-vcityeast-2', ''),
+        'B106': ('Changzhou city', 'Jan 2025', 'cn-ga31-vcityeast-83', ''),
+        'B109': ('Nantong city', 'Sept 2025', 'cn-ga31-vcityeast-46', ''),
+        'B114': ('Yancheng city', 'Oct 2026', 'cn-ga31-vcityeast-47', ''),
+        'B117': ('Lianyungang city', 'Nov 2026', 'cn-ga31-vcityeast-18', ''),
+        'B119': ('Suqian city', 'Feb 2026', 'cn-ga31-vcityeast-19', ''),
+        'B123': ('Jiaxing city', 'Oct 2024', 'cn-ga31-vcityeast-23', ''),
+        'B127': ('Jinhua city', 'Oct 2025', 'cn-ga31-vcityeast-61', ''),
+        'B129': ('Huangyan district, Taizhou', 'Jul 2025', 'cn-ga31-vcityeast-55', 'for 自主 (independent) intelligent computing bought for a firm’s own research; for spending from Jan 1, 2025 to Dec 31, 2027 (黄政发〔2025〕18号); no rate for other computing'),
+        'B130': ('Quzhou city', 'Mar 2026', 'cn-ga31-vcityeast-28', ''),
+        'B134': ('Qiantang district, Hangzhou', 'Dec 2025', 'cn-ga31-vcityeast-33', ''),
+        'B135': ('Xuhui district, Shanghai', 'Apr 2025', 'cn-ga31-vcityeast-34', ''),
+        'B139': ('Minhang district, Shanghai', 'Feb 2026', 'cn-ga31-vcityeast-35', ''),
+        'B142': ('Songjiang district, Shanghai', 'Nov 2025', 'cn-ga31-vcityeast-39', ''),
+        'B145': ('Qingpu district, Shanghai', 'Sept 2026', 'cn-ga31-vcityeast-41', ''),
+        'B146': ('Putuo district, Shanghai', 'Jan 2025', 'cn-ga31-vcityeast-42', ''),
+        'B151': ('Foshan city', 'Aug 2025', 'cn-ga31-vcitysouth-1', ''),
+        'B152': ('Dongguan city', 'Feb 2025', 'cn-ga31-vcitysouth-3', ''),
+        'B153': ('Binhaiwan New Area, Dongguan', 'May 2026', 'cn-ga31-vcitysouth-53', 'the same 50% pays for the New Area’s computing, for data, and for adapting to home-made operating systems and chips'),
+        'B154': ('Zhuhai city', 'Mar 2026', 'cn-ga31-vcitysouth-70', ''),
+        'B156': ('Zhongshan city', 'Jan 2026', 'cn-ga31-vcitysouth-14', ''),
+        'B158': ('Shaoguan city', 'Apr 2026', 'cn-ga31-vcitysouth-15', ''),
+        'B160': ('Guangming district, Shenzhen', 'Mar 2025', 'cn-ga31-vcitysouth-24', ''),
+        'B162': ('Nansha district, Guangzhou', 'Jul 2025', 'cn-ga31-vcitysouth-26', ''),
+        'B167': ('Fuzhou city', 'Mar 2024', 'cn-ga31-vcitysouth-41', ''),
+        'B168': ('Quanzhou city', 'Dec 2025', 'cn-ga31-vcitysouth-33', ''),
+        'B169': ('Zhangzhou city', 'Jul 2025', 'cn-ga31-vcitysouth-34', ''),
+        'B171': ('Nanning city', 'Apr 2025', 'cn-ga31-vcitysouth-39', ''),
+        'B172': ('Tianhe district, Guangzhou', 'Nov 2024', 'cn-ga31-vcitysouth-46', ''),
+        'B175': ('Chaoyang district, Beijing', 'May 2026', 'cn-ga31-vcitynorth-3', ''),
+        'B176': ('Shijingshan district, Beijing', 'Mar 2024', 'cn-ga31-vcitynorth-4', ''),
+        'B177': ('Fengtai district, Beijing', 'Oct 2025', 'cn-ga31-vcitynorth-8', ''),
+        'B178': ('Hebei district, Tianjin', 'Apr 2024', 'cn-ga31-vcitynorth-10', 'pays for computing bought from one named centre, the Tianjin AI Computing Center, which Tianjin Daily calls wholly home-made; in force for four years from its publication (article 14)'),
+        'B179': ('Langfang city', 'Feb 2025', 'cn-ga31-vcitynorth-29', ''),
+        'B180': ('Datong city', 'Aug 2025', 'cn-ga31-vcitynorth-15', ''),
+        'B181': ('Zhengzhou city', 'May 2024', 'cn-ga31-vcitynorth-20', ''),
+        'B182': ('Zhengzhou High-tech Zone', 'Jul 2025', 'cn-ga31-vcitynorth-56', ''),
+        'B183': ('Zhengzhou Airport Zone', 'Nov 2025', 'cn-ga31-vcitynorth-35', ''),
+        'B185': ('Haidian district, Beijing', 'Aug 2025', 'cn-ga31-voucher5-haidian-2025-measures', 'the rate sentence encourages large-model firms to use home-made computing, at the same rate; the district’s application guide pays that 50% on contracts for GPU computing'),
+        'B191': ('Huainan city', 'Nov 2026', 'cn-ga31-vcitywest-2', ''),
+        'B192': ('Changsha Economic and Technological Development Zone', 'Mar 2026', 'cn-ga31-vcitywest-6', 'for renting home-made intelligent computing for agent applications, up to 1 million yuan a year; the zone’s measures of Mar 23, 2026, on a provincial news site'),
+        'B193': ('Wuchang district, Wuhan', 'May 2026', 'cn-ga31-vcitywest-27', ''),
+        'B194': ('Chengdu High-tech Zone', 'Sept 2026', 'cn-ga31-vcitywest-12', ''),
+        'B196': ('Hefei High-tech Zone', 'Jan 2025', 'cn-ga31-vcitywest-50', ''),
+        'B197': ('Nanchang High-tech Zone', 'Apr 2026', 'cn-ga31-vcitywest-48', ''),
+        'B206': ('Longwan district and Wenzhou Bay New Area, Wenzhou', 'May 2026', 'cn-ga31-voucherearlierrules-48', 'the district and the new area carry out Wenzhou’s 30% and 10%, in force from Jun 21, 2026 to Dec 31, 2027; the rules on a media site'),
+        'B207': ('Lucheng district, Wenzhou', 'Oct 2023', 'cn-ga31-voucherearlierrules-35', ''),
+        'B209': ('Suzhou Industrial Park', 'Nov 2025', 'cn-ga31-voucher5-sip-2025-37hao', 'the park’s measures of Nov 12, 2025, which repeal its measures of 2023, read on the signed file as a commercial policy platform’s file store holds it'),
+        'B214': ('Zhongkai High-tech Zone, Huizhou', 'Apr 2026', 'cn-ga31-voucher5-zhongkai-plan-wayback', 'an action plan with a rate in force, from Apr 1, 2026 to Dec 31, 2027; read in an Internet Archive capture of the zone’s page'),
+        'B216': ('Futian district, Shenzhen', 'Nov 2024', 'cn-ga31-voucher5-futian-2024-wayback', ''),
+    }
+    assert set(SHOWN) == set(C), ('the panel’s rows are not the counted rules', sorted(set(SHOWN) ^ set(C)))
+    rows = {}
+    for k, (place, when, sid, note) in SHOWN.items():
+        ids = [x.strip() for x in R['ROWS'][k]['saved_id'].split(';')]
+        assert sid in ids and (sid == C[k]['sid'] or k == 'A18'), (k, 'the row links a copy that is not the one the count reads')      # Sichuan links the issuer's own page (an Archive capture); the count reads the news site's full text
+        rows[k] = (place, when, C[k]['h'], C[k]['o'], sid, note)
     mx = 60
-    assert max(max(hm, ot) for _, _, hm, ot, _, _ in rows) <= mx
-    only = [r for r in rows if r[3] == 0]                    # a rule that pays for home-made computing only
-    ti = [r for r in rows if r[2] != r[3] and r[3] > 0]; one = [r for r in rows if r[2] == r[3]]
-    # the count by script of the published rule over both voucher tables (atlas/core_edit/p6_work_4/vcount.py; Nov 24, 2026: 19 counted, 4 tiered, 1 home-made only, 14 one rate)
-    assert (len(rows), len(ti), len(only), len(one)) == (19, 4, 1, 14), (len(rows), len(ti), len(only), len(one))
-    assert all(hm > ot for _, _, hm, ot, _, _ in ti), 'a rule pays more for other computing'
-    key = lambda r: (int(r[1].split()[-1]), MON.index(r[1].split()[0]))
-    ti.sort(key=key); one.sort(key=key)
+    assert max(max(r[2], r[3]) for r in rows.values()) <= mx
+    key = lambda k: (int(rows[k][1].split()[-1]), MON.index(rows[k][1].split()[0]))
+    grp = lambda cls: sorted((k for k in C if C[k]['cls'] == cls), key=key)
+    ti, only, one, two = grp(VC.MORE), grp(VC.ONLY), grp(VC.ONE), grp(VC.TWO)
+    third = two + one
+    # the panel's counts are the classifier's, and the table it writes says the same
+    assert f'{len(rows)} / {len(ti)} / {len(only)} / {len(third)}' == R['line']
+    cls = [l.split('\t') for l in (TB / 'local_vouchers_classes.tsv').read_text(encoding='utf-8').split('\n') if l and not l.startswith('#')][1:]
+    assert {c[0]: c[2] for c in cls if c[2] != VC.NOT} == {k: C[k]['cls'] for k in C}, 'tables/local_vouchers_classes.tsv is not the classifier’s result: run scripts/cn_voucher_classes.py --write'
+    assert all(rows[k][2] > rows[k][3] > 0 for k in ti) and all(rows[k][3] == 0 for k in only) and all(rows[k][2] == rows[k][3] for k in third)
+    tiers = {k: sorted(int(x) for x in VC.BYTYPE.search(C[k]['sent']).groups()) for k in two}      # a rule of two rates by an unnamed type: its two rates, from its own sentence
+    assert all(len(set(v)) == 2 and max(v) <= mx for v in tiers.values())
 
-    def row(place, when, hm, ot, sid, note):
-        if ot == 0:
+    def row(k):
+        place, when, hm, ot, sid, note = rows[k]
+        if k in tiers:
+            lo, hi = tiers[k]
+            dots = (f'<i class="vl unk" style="--a:{lo / mx:.4f};--b:{hi / mx:.4f}"></i><i class="vd unk" style="--x:{lo / mx:.4f}"></i>'
+                    f'<i class="vd unk" style="--x:{hi / mx:.4f}"></i><b class="vn" style="--x:{lo / mx:.4f}">{lo}%</b><b class="vn" style="--x:{hi / mx:.4f}">{hi}%</b>')
+            lab = f'{hi}% or {lo}%, by a type of computing facility that the rule does not name'
+        elif ot == 0:
             x = hm / mx
-            dots = f'<i class="vd away" style="--x:{x:.4f}"></i><b class="vn side" style="left:calc({x * 100:.2f}% + 11px)">{hm}%, home-made computing only</b>'
-        elif hm == ot:
-            x = hm / mx
-            side = f'right:calc({(1 - x) * 100:.2f}% + 11px)' if x > 0.6 else f'left:calc({x * 100:.2f}% + 11px)'
-            dots = f'<i class="vd both" style="--x:{x:.4f}"></i><b class="vn side" style="{side}">{hm}% for all</b>'
+            side = f'right:calc({(1 - x) * 100:.2f}% + 11px)' if x >= 0.5 else f'left:calc({x * 100:.2f}% + 11px)'      # the words stay inside the row's own track
+            dots = f'<i class="vd away" style="--x:{x:.4f}"></i><b class="vn side" style="{side}">{hm}%, home-made only</b>'
+            lab = f'home-made {hm}%, no voucher for other computing'
         else:
             dots = (f'<i class="vl" style="--a:{ot / mx:.4f};--b:{hm / mx:.4f}"></i><i class="vd toward" style="--x:{ot / mx:.4f}"></i>'
                     f'<i class="vd away" style="--x:{hm / mx:.4f}"></i><b class="vn" style="--x:{ot / mx:.4f}">{ot}%</b><b class="vn" style="--x:{hm / mx:.4f}">{hm}%</b>')
-        lab = f'home-made {hm}%, no voucher for other computing' if ot == 0 else (f'home-made {hm}%, other {ot}%' if hm != ot else f'{hm}% for all computing')
-        return (f'<div class="vr"><div class="vlab">{esc(place)} <a class="srcn" href="{url(sid)}">{esc(when)}</a>{("<span class=vnote>" + esc(note) + "</span>") if note else ""}</div>'
-                f'<div class="vt" role="img" aria-label="{esc(place, quote=True)}: {lab}">{dots}</div></div>')
+            lab = f'home-made {hm}%, other {ot}%'
+        tag = '' if C[k]['voucher'] else ' <span class="vtag">not called a voucher</span>'
+        return (f'<div class="vr"><div class="vlab">{esc(place)} <a class="srcn" href="{url(sid)}">{esc(when)}</a>{tag}</div>'
+                f'<div class="vt" role="img" aria-label="{esc(place, quote=True)}: {lab}">{dots}</div>{("<div class=vnote>" + esc(note) + "</div>") if note else ""}</div>')
     axis = '<div class="vr axis"><div></div><div class="vt">' + ''.join(f'<span style="--x:{v / mx:.4f}">{v}%</span>' for v in (0, 20, 40, 60)) + '</div></div>'
-    out = ['<div class="vkey"><span><i class="sw away"></i>home-made computing</span><span><i class="sw toward"></i>other computing</span><span><i class="sw both"></i>one rate for all</span></div>',
+    place = lambda k: rows[k][0]
+    listed = lambda names: names[0] if len(names) == 1 else (('; ' if any(',' in n for n in names) else ', ').join(names[:-1]) + ('; and ' if any(',' in n for n in names) else ' and ') + names[-1])      # a place with a comma in it: the list takes semicolons
+    # the one-rate rules, compact: by kind of government, then by rate (highest first) and place
+    PROVINCE_LEVEL_CITIES = ('Beijing city', 'Shanghai', 'Tianjin', 'Chongqing')      # the four cities of province level
+    def kind(k):
+        lv = R['ROWS'][k]['level']
+        if 'province' in lv or C[k]['gov'] in PROVINCE_LEVEL_CITIES: return 0
+        return 1 if lv == 'city' else 2
+    KINDS = ('Province-level governments', 'Cities', 'Districts, zones and new areas')
+    by_kind = [sorted((k for k in one if kind(k) == i), key=lambda k: (-rows[k][2], place(k))) for i in range(3)]
+    assert sum(map(len, by_kind)) == len(one) and all(by_kind)
+    letters, foot = {}, []
+    for k in [k for g in by_kind for k in g]:
+        if rows[k][5]:
+            letters[k] = 'abcdefghijklmnopqrstuvwxyz'[len(letters)]; foot.append((letters[k], k))
+    assert len(letters) <= 26
+    def mini(k):
+        place_, when, hm, ot, sid, note = rows[k]
+        dag = '' if C[k]['voucher'] else '<span class="vdag" title="not called a voucher">†</span>'
+        fn = f'<sup class="vfl">{letters[k]}</sup>' if k in letters else ''
+        return (f'<div class="vm"><span class="vml">{esc(place_)} <a class="srcn" href="{url(sid)}">{esc(when)}</a>{dag}{fn}</span>'
+                f'<span class="vmt" role="img" aria-label="{esc(place_, quote=True)}: {hm}% for all computing"><i style="--x:{hm / mx:.4f}"></i></span><b class="vmp">{hm}%</b></div>')
+    minis = ''.join(f'<div class="vmh">{KINDS[i]}: {len(g)}</div>' + ''.join(mini(k) for k in g) for i, g in enumerate(by_kind))
+    notes = ''.join(f'<p><b>{l}</b> {esc(place(k))}: {esc(rows[k][5])}</p>' for l, k in foot)
+    (hz,) = two; lo, hi = tiers[hz]; (old,) = R['earlier'][hz]
+    old_h, old_o = VC.pct(R['ROWS'][old]['rate_home']), VC.pct(R['ROWS'][old]['rate_other']); old_year = R['ROWS'][old]['date'][:4]
+    assert old_year.isdigit() and old_h > old_o > 0
+    adapt = [k for k in one if k in getattr(VC, 'ADAPT', {})]
+    assert len(adapt) == 2 and all(k in letters for k in adapt), 'the two rules counted under the second named exception, each with its note'
+    nv = sum(not C[k]['voucher'] for k in one)
+    alt = R['alt']
+    out = ['<div class="vkey"><span><i class="sw away"></i>home-made computing</span><span><i class="sw toward"></i>other computing</span><span><i class="sw both"></i>one rate for all</span>'
+           '<span><i class="sw unk"></i>a rate by a type of facility the rule does not name</span></div>',
            '<div class="vgrid">',
-           f'<div class="vgrp va"><h3>Pay more for home-made computing: {len(ti)}</h3>' + ''.join(row(*r) for r in ti) + f'<h3>Pay for home-made computing only: {len(only)}</h3>' + ''.join(row(*r) for r in only) + axis + '</div>',
-           f'<div class="vgrp vb"><h3>One rate for all computing: {len(one)}</h3>' + ''.join(row(*r) for r in one) + axis + '</div>',
-           f'<p class="fine vf">{len(ti)} of the {len(rows)} local governments shown pay more for home-made computing and still pay for other computing; {len(only)}, Sichuan province, pays for home-made computing only (its measures are held as the news site Jiemian carries their text, without number or date); the other {len(one)} pay one rate for all. The rate shown is the one for an ordinary applicant. '
-           'One row per government: its latest general rule found that states a share of the bill (a later rule for one class of firm is in the row’s note); these are the rules found and read, not a census. '
-           'Left out: rules known only from the press (Chengdu, 50% against 30%), application guides (Beijing city; Nanjing), rules no longer in force or with no share of the bill (Longgang district, Shenzhen, among them), '
-           'not yet among the saved pages (Xiamen), and drafts. '
+           f'<div class="vgrp va"><h3>Pay more for home-made computing: {len(ti)}</h3>' + ''.join(row(k) for k in ti) + f'<h3>Pay for home-made computing only: {len(only)}</h3>' + ''.join(row(k) for k in only) + axis + '</div>',
+           f'<p class="fine vf">{len(ti)} of the {len(rows)} local governments shown pay more for home-made computing and still pay for other computing; {len(only)}, {listed([place(k) for k in only])}, pay for home-made computing only; '
+           f'the other {len(third)} state no higher rate for home-made computing: {len(one)} pay one rate for all, and {place(hz)} pays {hi}% or {lo}% “by the type of computing facility” (按照算力设施的不同类型), a type its plan does not name '
+           f'(its rule of {old_year}, since repealed, paid {old_h}% for home-made and {old_o}% for other facilities). The rate shown is the one for an ordinary applicant. '
+           f'What is counted is a rule that pays a share of a firm’s bill for rented or bought computing: most call the payment a computing voucher (算力券) or a like name; {len(R["other_name"])} give it another name, a subsidy, a reward or support, and are tagged or marked †. '
+           'One row per government (a province, a city, a district or a zone): its latest general rule found that is in force and states a share of the bill. '
+           'These are the rules found by searches that went province by province and city by city, saved and read, not a census of every local government: '
+           'the searches covered the 31 province-level governments, 24 named cities and new areas, and the cities, districts and zones on the lists of four searches that went city by city; other districts and counties only as they turned up. '
+           f'{len(R["own"])} of the {len(rows)} are read on an official page or file of the issuing government or body, and {len(R["elsewhere"])} in another copy (another body’s site, a news or commercial site, or an Internet Archive capture). '
+           'Left out: rules known only from the press or a summary (Yuhang district, Keqiao district and Jinan city among them), application guides (Beijing city’s economy bureau; Nanjing), plans with no date of effect (Nanjing’s Jiangbei New Area), '
+           'rules repealed, expired or with no share of the bill (Longgang district of Shenzhen, and Nanchang city’s top-up of a provincial award, among them), rules whose text was not reached or only as a scan (Chongqing; Xihu district of Hangzhou), and drafts. '
+           f'Counted other ways (rules / paying more / home-made only / no higher rate): with {place(hz)}’s two tiers read as home-made and other, as its repealed rule had them, {alt["hangzhou_more"]}; with {place(hz)} left out, {alt["hangzhou_out"]}. '
            'Support for building or buying with home-made chips only is separate: Beijing city’s plan for 2024 to 2027 supports, by a share of the investment, “采购自主可控GPU芯片开展智能算力服务的企业” (firms that buy independently controllable GPU chips to provide computing services). '
-           'The tiers are the rules’ own words: 国产 or 自主 (home-made, independent) against 非国产, 非自主 or 其他 (other).</p>', '</div>']
+           'The tiers are the rules’ own words: 国产 or 自主 (home-made, independent) against 非国产, 非自主 or 其他 (other).</p>',
+           f'<div class="vgrp vb"><div class="vbtop"><div><h3>State no higher rate for home-made computing: {len(third)}</h3>'
+           f'<h4>Two rates by a type of computing facility that the rule does not name: {len(two)}</h4>' + ''.join(row(k) for k in two) + axis + '</div>'
+           f'<div><h4>One rate for all computing: {len(one)}</h4><p class="vexpl">Each rule: its place, the month of the rule (a link to its saved copy), and its one rate, a dot on the same scale from 0 to 60%. '
+           f'† the rule calls the payment a subsidy, a reward or support, not a voucher ({nv} of the {len(one)}). A letter marks a note under the list. '
+           f'Two of these rules name home-made computing in the sentence that sets their rate, but only at that one rate: {listed([place(k) for k in sorted(adapt, key=place)])} (notes {", ".join(letters[k] for k in sorted(adapt, key=place))}). '
+           'Other support for home-made chips, apart from the rate, stands in the notes.</p></div></div>'
+           f'<div class="vmini">{minis}</div><div class="vfoot">{notes}</div></div>', '</div>']
     return '\n'.join(out), len(ti), len(rows)
 
 
@@ -438,8 +581,8 @@ def bodies(evs):
     col = lambda title, cls, rows: (f'<div class="bcol"><h4><i class="sw {cls}"></i>{title}</h4><ul>' + ''.join(f'<li><span>{esc(n)}</span><span class="pins">{p}</span></li>' for n, p in rows) + '</ul></div>')
     return ('<div class="bodies">' + col('Held Nvidia back, or steered buyers to home-made chips', 'away', held) + col('Let it in, or welcomed it', 'toward', let) + '</div>'
             '<div class="bodies one">' + col('Acted against Nvidia the company', 'away', firm) + '</div>'
-            '<p class="fine">The Financial Times (Nov 13, 2026, citing unnamed people): security-focused officials within the cyberspace regulator and the security ministry “viewed dependence on Nvidia as a strategic vulnerability”, '
-            'the commerce ministry “favoured imports”, and the 2025 push to restrict “was led by the National Development and Reform Commission”. '
+            '<p class="fine">The Financial Times (Nov 13, 2026): security-focused officials within the cyberspace regulator and the security ministry “viewed dependence on Nvidia as a strategic vulnerability”, '
+            'the commerce ministry “favoured imports”, and, by people the paper does not name, the 2025 push to restrict “was led by the National Development and Reform Commission”. '
             f'The US Trade Representative, Nov 20, 2026 (<a href="{url("cn-le01-greer-bbg-20261120-youtube")}">Bloomberg Television</a>; machine captions, not checked by ear, 01:06 to 01:35): it is “not as monolithic as people would have you believe”; '
             'in his “own analysis” there are some who think “we’d like to have access” and “others who think, well, we don’t want American chips anyway”. '
             'The two caption tracks break the sentence differently, so whether he puts the split inside the government is not settled.</p>'
@@ -460,7 +603,7 @@ def state_media():
     iso = sorted(date.fromisoformat(r['date']) for r in rows if re.fullmatch(r'\d{4}-\d\d-\d\d', r['date']))
     win = [d for d in warns if d <= date(2025, 9, 24)]; late = [r for r in rows if r['stance'] == 'warns' and date.fromisoformat(r['date']) > date(2025, 9, 24)]
     # the counts of atlas/core_edit/p6_work_5/count_census.py over the table (Nov 24, 2026), and what the template says of the later warnings
-    assert (len(rows), st['warns'], len(win), len(late)) == (75, 14, 11, 3) and all(r['outlet'].startswith('Global Times') and r['date'].startswith('2026') for r in late), (len(rows), st)
+    assert (len(rows), st['warns'], len(win), len(late)) == (75, 19, 16, 3) and all(r['outlet'].startswith('Global Times') and r['date'].startswith('2026') for r in late), (len(rows), st)
     return dict(SM_N=str(len(rows)), SM_W=str(len(warns)), SM_WIN=str(len(win)), SM_WLATE={3: 'three'}[len(late)], SM_W0=fmt(warns[0]), SM_W1=fmt(win[-1]), SM_MIX=str(st['mixed']),
                 SM_FROM=f'{MON[iso[0].month - 1]} {iso[0].year}', SM_TO=f'{MON[iso[-1].month - 1]} {iso[-1].year}')
 

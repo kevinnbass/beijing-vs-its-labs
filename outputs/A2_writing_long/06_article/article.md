@@ -4,17 +4,17 @@
 
 Draft by Claude, Anthropic's model. Written Nov 23, 2026 (UTC).
 
-How to read it. Words between quotation marks are a source's exact words, found in the saved copy by a script. A filled reference number is a document, a filing or a named person on the record. An open number is a press report citing unnamed people, a caption track or a machine transcript. Where a statement rests on a Chinese text, the English is our rendering, not an official translation.
+How to read it. Words between quotation marks are a source's exact words, found in the saved copy by a script. A filled reference number is a document, a filing, a named person on the record or a state-media item. An open number is a press report citing unnamed people, a caption track or a machine transcript. Where a statement rests on a Chinese text, the English is our rendering, not an official translation.
 
 The author's interest. Anthropic has argued in public for controls on chip exports to China (that is from the model's general knowledge; no saved page is cited for it), so judge this piece by its sources.
 
 ## The finding
 
-For two years the Chinese state pulled China's AI companies away from Nvidia's chips, and the companies kept reaching for them. That answers a question raised by a clip posted on Nov 19, 2026, in which Palmer Luckey said: "China doesn't want NVIDIA to sell GPUs to Chinese companies." [1] And next: "there are Chinese companies that want to buy Nvidia GPUs" [2]. The first sentence is from a machine transcript of the clip (0:11 to 0:16), the second from the text of the post that carries it. Nobody has checked either by ear. He is right on direction. Five limits follow at the end.
+For two years the Chinese state pressed China's AI companies to move away from Nvidia's chips, and the companies kept reaching for them. That answers a question raised by a clip posted on Nov 19, 2026, in which Palmer Luckey said: "China doesn't want NVIDIA to sell GPUs to Chinese companies." [1] And next: "there are Chinese companies that want to buy Nvidia GPUs" [2]. The first sentence is from a machine transcript of the clip (0:11 to 0:16), the second from the text of the post that carries it. Nobody has checked either by ear. He is right on direction. Five limits follow at the end.
 
 ## The declared line: use home-made chips
 
-Xi Jinping said in 2016 that having core technology controlled by others is China's greatest hidden danger [3]. Eight of China's 31 provincial-level governments were found to set a share for home-made computing hardware; Jiangsu marks its own, 70% or more of chips in new computing centres by 2030, as indicative, not binding [4]. In May 2026 the state planner (NDRC) said it was guiding home-made large models to do more to adapt to home-made chips [5].
+Xi Jinping said in 2016 that having core technology controlled by others is China's greatest hidden danger [3]. Nine of China's 31 provincial-level governments were found to set a share for home-made computing hardware, one of them, Zhejiang's, for the computing of one sector; Jiangsu marks its own, 70% or more of chips in new computing centres by 2030, as indicative, not binding [4]. In May 2026 the state planner (NDRC) said it was guiding home-made large models to do more to adapt to home-made chips [5].
 
 ## What the companies bought
 
@@ -46,7 +46,7 @@ For the H200, Nvidia's second most powerful AI chip, the counts are not one seri
 
 **1.** **Beijing was not one actor.** Vice Premier He Lifeng told Nvidia's chief executive in April 2025 that Nvidia was welcome [24]. The Financial Times, Nov 13, 2026: the commerce ministry "favoured imports", while security officials "viewed dependence on Nvidia as a strategic vulnerability" [25].
 
-**2.** **Public warnings and unpublished guidance, not a published ban.** No published order against buying Nvidia chips was found in the 82 policy pages read. Of 75 state-media items on Nvidia chips found, 11 of the 14 that only warn about them date from Jul 31 to Sept 24, 2025 [26] [27] [28]; the three found later are in Global Times in 2026, and the items after September 2025 are what two rounds of searches found, a sample and not a full count.
+**2.** **Public warnings and unpublished guidance, not a published ban.** No published order against buying Nvidia chips was found in the 82 policy pages read. Of 75 state-media items on Nvidia chips found from July 2025 to November 2026, 16 of the 19 that only warn about them date from Jul 31 to Sept 24, 2025 [26] [27] [28]; the three found later are in Global Times in 2026, and the items after September 2025 are what two rounds of searches found, a sample and not a full count.
 
 **3.** **Some chips came in.** See the approvals, deliveries and sales listed above.
 
@@ -56,7 +56,7 @@ For the H200, Nvidia's second most powerful AI chip, the counts are not one seri
 
 ### What survives
 
-From 2024 the security and planning side of the Chinese state pressed China's AI companies, through unpublished guidance that the press reported, to buy home-made chips rather than Nvidia's. The companies kept ordering Nvidia chips in the millions and, by the reports, had received a small part by late 2026. They were also turning to home-made chips, for their own reasons and under American curbs. Whether Beijing meant lasting policy or leverage is read both ways.
+From 2024 the security and planning side of the Chinese state pressed China's AI companies, through unpublished guidance that the press reported, to buy home-made chips rather than Nvidia's. The companies kept ordering Nvidia chips, in the millions by the press reports, and by those reports had received a small part by late 2026. They were also turning to home-made chips, for their own reasons and under American curbs. Whether Beijing meant lasting policy or leverage is read both ways.
 
 ## References
 
@@ -92,7 +92,7 @@ Each entry: its kind; what it is; the saved page's own title where the record ho
 
 [15] Official document, or an official on the record. House Foreign Affairs Committee, disclosure of Nov 19, 2026, made by the full committee (its chairman's release; approved by unanimous consent at a business meeting; the files are on the committee Democrats' site): the committee's summary, which cites a BIS summary dated May 11, 2026 (BIS: the Commerce Department's Bureau of Industry and Security). https://democrats-foreignaffairs.house.gov/wp-content/uploads/2026/11/11.19.26-ECRA-Information-Disclosure-HFAC-Summary.pdf Saved copy: cn-usdocs-hfac-summary-20261119
 
-[16] Official document, or an official on the record. House Foreign Affairs Committee, disclosure of Nov 19, 2026: the table of licence applications (the file's name: BIS License Decisions) for Nvidia's H200 and AMD's MI325X, with their status as of May 11, 2026 (its text layer is out of order; the rows were read from the page images). https://democrats-foreignaffairs.house.gov/wp-content/uploads/2026/11/11.19.26-ECRA-Information-Disclosure-of-BIS-License-Decisions.pdf Saved copy: cn-usdocs-hfac-decisions-20261119
+[16] Official document, or an official on the record. House Foreign Affairs Committee, disclosure of Nov 19, 2026: the table of licence applications (the file's name: 11.19.26-ECRA-Information-Disclosure-of-BIS-License-Decisions) for Nvidia's H200 and AMD's MI325X, with their status as of May 11, 2026 (its text layer is out of order; the rows were read from the page images). https://democrats-foreignaffairs.house.gov/wp-content/uploads/2026/11/11.19.26-ECRA-Information-Disclosure-of-BIS-License-Decisions.pdf Saved copy: cn-usdocs-hfac-decisions-20261119
 
 [17] Official document, or an official on the record. House Foreign Affairs Committee, chairman's press release of Nov 19, 2026 on making public the licence information for Nvidia's and AMD's chips to China. Page title: Chairman Brian Mast Exercises Legislative Authority to Publicly Release AI Chip License Information for China. https://foreignaffairs.house.gov/news/press-releases/chairman-brian-mast-exercises-legislative-authority-to-publicly-release-ai-chip-license-information-for-china Saved copy: cn-labs-us-chip-licences-20261119
 
@@ -104,13 +104,13 @@ Each entry: its kind; what it is; the saved page's own title where the record ho
 
 [21] Press report citing unnamed people. Reuters, datelined Nov 5, 2026, as carried by CNA (Singapore) on Nov 6, 2026. The CNA page shows only its own date; the Nov 5 dateline stands on the copy carried by Yahoo, which is also saved. Page title: Nvidia chips pile up in Hong Kong as China withholds import approval. https://www.channelnewsasia.com/east-asia/nvidia-chips-pile-up-hong-kong-china-withhold-import-approval-6527371 Saved copy: cn-clips-evidence-1
 
-[22] Company filing or statement. Nvidia, results call for the third quarter of its fiscal year 2027 (the quarter ended Oct 25, 2026): the transcript on Nvidia's investor site. https://s201.q4cdn.com/141608511/files/content_files/NVDA-3Q27-Earnings-Transcript.pdf Saved copy: cn-o38-nvda-q3fy27-call-transcript-pdf
+[22] Company filing or statement. Nvidia, results call for the third quarter of its fiscal year 2027 (the quarter ended Oct 25, 2026): the transcript on Nvidia's investor file host (s201.q4cdn.com). https://s201.q4cdn.com/141608511/files/content_files/NVDA-3Q27-Earnings-Transcript.pdf Saved copy: cn-o38-nvda-q3fy27-call-transcript-pdf
 
 [23] Press report of words spoken on the record. Reuters, Nov 18, 2026, as carried by AOL, reporting Nvidia's interim chief executive on its results call. Page title: Nvidia stops shipping US-approved AI chips to China - AOL. https://www.aol.com/articles/nvidia-stops-shipping-us-approved-091611000.html Saved copy: cn-acts-reuters-halt-20261118-relay2
 
 [24] Official document, or an official on the record. Xinhua's account of Vice Premier He Lifeng's meeting with Nvidia's chief executive on Apr 17, 2025, in People's Daily of Apr 18, 2025. Page title: 何立峰会见美国英伟达公司总裁兼首席执行官黄仁勋时指出 中国始终是外资企业投资和贸易的沃土 欢迎美资企业深化互利合作 --国际--人民网. https://world.people.com.cn/n1/2025/0418/c1002-40462541.html Saved copy: cn-policy-he-welcomes
 
-[25] Press report citing unnamed people. Financial Times, "Jensen Huang’s years-long effort to get close to China", Nov 13, 2026. Hand-saved from the publisher's site; the address printed on the copy is cut short and is not given. (No address given.) Saved copy: man-e2596eab15f4
+[25] Press report citing unnamed people. Financial Times, "Jensen Huang’s years-long effort to get close to China", Nov 13, 2026. Hand-saved from the publisher's site; the address printed on the copy is cut short (it begins https://www.ft.com/content/3efa9733-fbb4-47c2-83ba-b01e); the full address is the one The Next Web links for this article. https://www.ft.com/content/3efa9733-fbb4-47c2-83ba-b01e548ef277 Saved copy: man-e2596eab15f4
 
 [26] Published commentary or statement (state media, industry body). Global Times, Jul 31, 2025 (Ma Tong), news report of the summons quoting the telecom industry expert Xiang Ligang. Page title: China's cyberspace regulator summons Nvidia over potential security risks in H20 chips. https://www.globaltimes.cn/page/202507/1339752.shtml Saved copy: cn-ga02-gt-cac-summons-news-202507
 

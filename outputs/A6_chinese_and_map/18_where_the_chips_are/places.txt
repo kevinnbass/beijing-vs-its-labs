@@ -56,7 +56,7 @@ L 1 middle 0 -17 Southeast Asia
 @ 3 out press there toward 2025-12-20 man-cn-ft-202512-japan
 P Japan, outside Osaka
 W Reported Dec 20, 2025
-T The Financial Times reported that advanced Nvidia chips owned by Datasection, a Japanese firm, in a data centre "outside of Osaka" were "at the disposal of one customer: China's Tencent". The naming of Tencent rests on the paper's unnamed people: Datasection's chief executive "declined to confirm the Tencent deal". Tencent said its use of "cloud computing services is both transparent and legal". By the firm's own notice of May 2026 the centre's site was changed to Chiba: see the next record.
+T The Financial Times reported that advanced Nvidia chips owned by Datasection, a Japanese firm, in a data centre "outside of Osaka" were "at the disposal of one customer: China's Tencent". The naming of Tencent rests on the paper's unnamed people: Datasection's chief executive "declined to confirm the Tencent deal". Tencent said its use of "cloud computing services is both transparent and legal". The firm's own filings do not bear out the paper's present tense: its notice of May 7, 2026 says the centre's site was changed from Osaka to Chiba, and gives no date for the change (the next record); its release of Nov 7, 2025 had already announced an AI data centre in Inzai, Chiba, "新たな国内プロジェクトとして" (as a new domestic project).
 S Financial Times, Dec 20, 2025
 Q In a data centre outside of Osaka, Japan, Nvidia’s cutting-edge semiconductors are at the disposal of one customer: China’s Tencent.
 + The advanced B200 chips are owned by Datasection
@@ -64,13 +64,16 @@ Q In a data centre outside of Osaka, Japan, Nvidia’s cutting-edge semiconducto
 + Ishihara declined to confirm the Tencent deal
 + cloud computing services is both transparent and legal
 + a legal but geopolitically fraught strategy
++ @cn-le20-ds-20251107-inzai | 2025年11月７日付で
++ @cn-le20-ds-20251107-inzai | 新たな国内プロジェクトとして、千葉県印西市におけるAIデータセンターの開設準備が整いましたことをお知らせ致します
++ @cn-tolerate-datasectionfiling | 大阪府から千葉県印西市に変更いたしました。その後、同市のデータセンター向け施設内
 G iso:JP-27 |
 L 1 middle 0 27 Osaka
 
 @ 4 out paper plan toward 2026-05-07 cn-tolerate-datasectionfiling
 P Japan: Inzai, Chiba
 W Firm's notice of May 7, 2026
-T Datasection's own notice: at its customer's request it changed the site of its first AI data centre in Japan from Osaka to Inzai, in Chiba ("大阪府から千葉県印西市に変更いたしました"), and signed a contract to buy 635 servers with 5,080 Nvidia B300 chips for it, to start in stages from May to July 2026. The notice does not name the customer: it calls it one of the world's largest cloud service providers.
+T Datasection's own notice: at its customer's request it changed the site of its first AI data centre in Japan from Osaka to Inzai, in Chiba ("大阪府から千葉県印西市に変更いたしました"), and signed a contract to buy 635 servers with 5,080 Nvidia B300 chips for it, to start in stages from May to July 2026. The notice does not name the customer: it calls it one of the world's largest cloud service providers. Later, by the firm's own words: on Jul 17, 2026 it "has begun taking delivery of GPU servers equipped with NVIDIA’s latest B300 GPUs at its first AI data centre in Japan, which is currently being prepared for operation"; on Nov 16, 2026 it said that for one AI data-centre project in Japan and two abroad, expected to start in stages from July 2026, the expected start of full operation had slipped ("フル稼働の開始見込時期に遅れが生じておりました"); the filing does not name the sites.
 S Datasection (listed in Tokyo), notice of May 7, 2026, in Japanese, as mirrored by irbank.net
 Q 大阪府から千葉県印西市に変更いたしました
 + 千葉県印西市に開設予定の AI データセンター
@@ -79,19 +82,25 @@ Q 大阪府から千葉県印西市に変更いたしました
 + 世界最大規模のクラウドサービスプロバイダーである顧客
 + 搭載 GPU を NVIDIA 製 B200 から NVIDIA 製 B300 に変更いたしました
 + @cn-le20-ds-20250710-order | 本件顧客の企業情報は非開示とさせていただきます
++ @cn-ga12-ds-en-20260717-b300-delivery | has begun taking delivery of GPU servers equipped with NVIDIA’s latest B300 GPUs at its first AI data centre in Japan, which is currently being prepared for operation
++ @cn-ga12-ds-en-20260717-b300-delivery | 17 July 2026
++ @cn-le20-ds-20261116-forecast | 2026 年７月からの段階的な稼働を見込んでおりました国内１件及び海外２件の AI データセンター案件につきましても、フル稼働の開始見込時期に遅れが生じておりました
++ @cn-le20-ds-20261116-forecast | 2026 年 11 月 16 日
 G iso:JP-12 |
 L 1 end -15 5 Inzai, Chiba
 
 @ 5 out paper plan us 2026-05-11 cn-usdocs-hfac-decisions-20261119
 P Malaysia, Indonesia and Thailand
 W Table as of May 11, 2026
-T The licence table of May 11, 2026 from the US Commerce Department's Bureau of Industry and Security (BIS) lists five applications, with Nvidia as exporter, to ship 1,118,500 chips to consignees here, named for ByteDance, BytePlus, TikTok and Alibaba. All five are marked "RWA" (returned without action): none was approved, and the table gives no reasons. An application names a consignee; it is not an order. The sum is mine.
+T The licence table of May 11, 2026 from the US Commerce Department's Bureau of Industry and Security (BIS) lists five applications, with Nvidia as exporter, for 1,118,500 chips whose ultimate location the table gives as one of these three countries; the data-centre operators or ultimate consignees the five name carry the names ByteDance, BytePlus, TikTok and Alibaba. All five are marked "RWA" (returned without action): none was approved, and the table gives no reasons. An application names a data-centre operator or ultimate consignee; it is not an order. The sum is mine.
 S Licence table of BIS (H200 licence and application status as of May 11, 2026), released by the House Foreign Affairs Committee, Nov 19, 2026
 Q Bytedance System SDN 508,000 RWA Malaysia
 + PT Byteplus Technologies 203,000 RWA Indonesia
 + Alibaba Cloud 50,500 RWA Malaysia 203,000 RWA Malaysia
 + TikTok (System) Thailand 154,000 RWA Thailand
 + H200 License and Equivalent Application Status as of May 11, 2026
++ Data Center Operator or
++ Ultimate Consignee
 + @cn-le04-bis-ear-748 | Returned without action (RWA)
 + @cn-le04-bis-ear-748 | Bureau of Industry and Security, U.S. Department of Commerce
 + @cn-usdocs-hfac-summary-20261119 | According to a BIS summary provided to the House Foreign Affairs Committee dated May 11, 2026
@@ -139,7 +148,7 @@ L 1 start 15 5 Fujian
 @ 9 plan rec plan toward 2026-11-13 cn-tolerate-projects-relay1
 P Shaanxi
 W Reported Nov 13, 2026
-T Sinomach, a state-owned engineering group, said a subsidiary won a contract in a 3 billion yuan computing-centre project "specifying Nvidia H100 and H200 processors".
+T By Reuters's review, Sinomach, which Reuters calls a state-owned engineering group, said a subsidiary won a contract in a 3 billion yuan computing-centre project "specifying Nvidia H100 and H200 processors".
 S Reuters, Nov 13, 2026, on WSAU
 Q In northwestern Shaanxi province, state-owned engineering group Sinomach said a subsidiary won a contract as part of a project for a 3 billion yuan computing centre specifying Nvidia H100 and H200 processors.
 G iso:CN-SN | iso:CN-SN
@@ -166,7 +175,7 @@ L 1 middle 0 -18 Inner Mongolia
 @ 12 plan doc plan toward 2026-11-13 cn-tolerate-projects-relay1
 P Gansu
 W Reported Nov 13, 2026
-T A computing centre here "plans to install approximately 3,072 Nvidia processors", by tender documents that name H100 and H200 chips. A 1.16 billion yuan building contract was awarded in July. "The documents do not establish whether the processors have been delivered."
+T A computing centre here "plans to install approximately 3,072 Nvidia processors", by tender documents that Reuters says specify H100 and H200 hardware. A 1.16 billion yuan building contract was awarded in July. "The documents do not establish whether the processors have been delivered."
 S Reuters, Nov 13, 2026, on WSAU
 Q In northwestern Gansu province, a local company awarded a 1.16 billion yuan construction contract in July for a computing centre that plans to install approximately 3,072 Nvidia processors, according to tender documents specifying H100 and H200 hardware.
 + The documents do not establish whether the processors have been delivered.

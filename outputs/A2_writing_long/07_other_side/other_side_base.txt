@@ -9,7 +9,7 @@
 
 The claim under test: Beijing's chip policy pulled against China's own AI companies, which wanted Nvidia's chips. The strongest reply is that there was a preference, not a conflict, and that part of what stood between the companies and Nvidia's chips was American.
 
-1. **Ministers welcomed Nvidia, and ministries were reported to approve purchases.** Vice Premier He Lifeng told Nvidia's chief executive on Apr 17, 2025 that Nvidia was welcome [cn-policy-he-welcomes]. The commerce minister told him on Jul 17, 2025 that he hoped Nvidia would supply Chinese customers [cn-policy-wang-nvidia]. Reuters, Jan 30, 2026, from unnamed people, on the H200: "China's industry and commerce ministries have granted approvals for all four companies" (DeepSeek, ByteDance, Alibaba and Tencent) [cn-acts-reuters-deepseek-20260130].
+1. **A vice premier and a minister welcomed Nvidia, and ministries were reported to approve purchases.** Vice Premier He Lifeng told Nvidia's chief executive on Apr 17, 2025 that Nvidia was welcome [cn-policy-he-welcomes]. The commerce minister told him on Jul 17, 2025 that he hoped Nvidia would supply Chinese customers [cn-policy-wang-nvidia]. Reuters, Jan 30, 2026, from unnamed people, on the H200: "China's industry and commerce ministries have granted approvals for all four companies" (DeepSeek, ByteDance, Alibaba and Tencent) [cn-acts-reuters-deepseek-20260130].
 !! cn-acts-reuters-deepseek-20260130 | China has given its top AI startup DeepSeek approval to buy
 !! cn-acts-reuters-deepseek-20260130 | had been given permission to purchase more than 400,000 H200 chips in total
 !! cn-policy-he-welcomes | 新华社北京4月17日电
@@ -17,15 +17,17 @@ The claim under test: Beijing's chip policy pulled against China's own AI compan
 !! cn-policy-wang-nvidia | 7月17日,商务部部长王文涛会见美国英伟达公司总裁兼首席执行官黄仁勋
 !! cn-policy-wang-nvidia | 希望包括英伟达在内的跨国公司为中国客户提供优质可靠的产品和服务
 !! cn-acts-reuters-deepseek-20260130 | SINGAPORE, Jan 30 (Reuters)
-2. **No ban was published.** No published order against buying Nvidia chips was found in the 82 policy pages read. One of that kind was published in May 2023, when the cyberspace regulator's review office concluded that operators of critical information infrastructure should stop buying Micron's products [cn-policy-micron-decision].
+2. **No published ban was found.** No published order against buying Nvidia chips was found in the 82 policy pages read. One of that kind was published in May 2023, on the cyberspace regulator's site, when the Cybersecurity Review Office concluded that operators of critical information infrastructure shall stop buying Micron's products [cn-policy-micron-decision].
 !! cn-policy-micron-decision | 2023年05月21日
 !! cn-policy-micron-decision | 关键信息基础设施的运营者应停止采购美光公司产品
 !! cn-policy-micron-decision | 网络安全审查办公室依法作出不予通过网络安全审查的结论
-3. **The written rules stop at the state's own purchases.** The purchase notices of Dec 26, 2023 bind Party and government bodies and say that other units may leave the requirement out [cn-policy-desktop-2023]. No published national plan found sets a home-made share for computing centres: every such share found is a province's or a city's, and Jiangsu's plan marks its own as indicative, not binding [cn-factions-jiangsu-plan].
+!! cn-policy-micron-decision | 中华人民共和国国家互联网信息办公室 © 版权所有
+3. **The written rules stop at the state's own purchases.** The purchase notices of Dec 26, 2023 bind Party and government bodies at township level and above and two kinds of public institution tied to them, and say that other units may leave the requirement out [cn-policy-desktop-2023]. No published national plan found sets a home-made share for computing centres: every such share found is a province's or a city's, and Jiangsu's plan marks its own as indicative, not binding [cn-factions-jiangsu-plan].
 !! cn-factions-jiangsu-plan | 新建算力中心国产算力芯片使用占比(%) 50 70 预期性
 !! cn-factions-jiangsu-plan | 2025 年 2030 年 属性
 !! cn-policy-desktop-2023 | 发布日期:2023年12月26日
 !! cn-policy-desktop-2023 | 其他单位可不在采购需求中提出此项要求
+!! cn-policy-desktop-2023 | 乡镇以上党政机关，以及乡镇以上党委和政府直属事业单位及部门所属为机关提供支持保障的事业单位
 4. **Chips came in.** By the research firm IDC's count, "Nvidia shipped 678,000 AI accelerators in China from January through June" of 2026; the firm does not say which Nvidia products [cn-usside-044-relay1]. Tencent's chief strategy officer spoke on Mar 18, 2026 of buying "higher-end imported GPUs which are now becoming available again" [cn-o36-tencent-call-20260318-sa].
 !! cn-usside-044-relay1 | IDC did not specify which Nvidia products made up its 34% market share
 !! cn-usside-044-relay1 | in the first half of 2026
@@ -39,7 +41,7 @@ The claim under test: Beijing's chip policy pulled against China's own AI compan
 !! cn-usdocs-hfac-summary-20261119 | BIS received applications to sell 3,444,160 covered integrated circuits
 !! cn-usdocs-hfac-summary-20261119 | not fully reflected in the May 11, 2026, summary document
 !! cn-acts-reuters-us-approvals-20260514-wayback | Chinese firms pulled back after guidance from Beijing, one source said
-6. **Beijing may have wanted more chips, not fewer.** The Congressional Research Service, Sept 19, 2025: China "may use its purported security concerns about the H20 to press for technology disclosures and access to more advanced chips, such as Nvidia's B30 chip" [cn-usdocs-crs-r48642-20250919].
+6. **Beijing may have wanted more advanced chips, not fewer.** The Congressional Research Service, Sept 19, 2025: China "may use its purported security concerns about the H20 to press for technology disclosures and access to more advanced chips, such as Nvidia's B30 chip" [cn-usdocs-crs-r48642-20250919].
 !! cn-usdocs-crs-r48642-20250919 | September 19, 2025
 7. **The companies had a path of their own.** Alibaba says its chip unit "has brought proprietary GPUs into scaled production" [cn-policy-alibaba-own-gpu]. Zhipu said in January 2026 that its image model had completed "its full training cycle on Chinese-made chips" [cn-train-infoworld-zhipu-glm]. The President, asked on May 15, 2026 whether China had bought any H200s: "No, because they chose not to. They want to try and develop their own." [cn-usdocs-trump-20260515]
 !! cn-train-infoworld-zhipu-glm | PUBLISHED: January 14, 2026
@@ -57,4 +59,4 @@ The claim under test: Beijing's chip policy pulled against China's own AI compan
 !! cn-o38-nvda-q1fy27-call-transcript-pdf | Corrected Transcript 20-May-2026
 !! cn-o38-nvda-q1fy27-call-transcript-pdf | While the US government has approved licenses for H200 to be shipped to China-based customers
 
-Each part of that case is in the record, some as a reading or a company's own claim. Together they limit the claim: Beijing was not one actor, it warned and guided but published no ban, some chips came in, the companies had reasons of their own and American curbs pushed too, and what Beijing meant is not settled. They do not show that nothing stood between the companies and the chips they ordered.
+Each part of that case is in the record, some as a reading or a company's own claim. Together they limit the claim: Beijing was not one actor, it warned and guided and no published ban was found, some chips came in, the companies had reasons of their own and American curbs pushed too, and what Beijing meant is not settled. They do not show that nothing stood between the companies and the chips they ordered.

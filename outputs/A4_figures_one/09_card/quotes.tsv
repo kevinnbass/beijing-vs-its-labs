@@ -25,6 +25,9 @@ ms-bj-20260128-h200-nod-standard	four people familiar with the matter told Reute
 cn-acts-reuters-ti-cap-20260708-relay1	it could amount to fewer than 200,000 in total
 #@ discussed.date
 cn-acts-reuters-ti-cap-20260708-relay1	PUBLISHED: 2026-07-08
+# round 9b: the page's own words behind "Beijing was still determining how many chips to approve" (a statement made without quoting)
+#@ discussed.what
+cn-acts-reuters-ti-cap-20260708-relay1	Beijing is still determining the exact number of Nvidia chips to approve
 
 #@ delivered
 cn-tolerate-reutersaug26-relay1-wayback	ByteDance and Tencent have each received about 10,000 H200 processors in recent weeks
@@ -110,6 +113,9 @@ cn-factions-bloomberg-flexibility-202409-relay1	The policy has taken the form of
 cn-factions-bloomberg-flexibility-202409-relay1	2024-09-27T22:23:29.000Z
 #@ care.carried.date
 cn-factions-bloomberg-flexibility-202409-relay1	Published Sat, Sep 28, 2024
+# round 9b: the report rests on people it did not name (core edit 8b gives it so)
+#@ care.unnamed
+cn-factions-bloomberg-flexibility-202409-relay1	said the people, who asked not to be identified because the matter is private
 #@ care.discouraging
 cn-factions-bloomberg-flexibility-202409-relay1	Chinese regulators have been discouraging companies from purchasing Nvidia's H20 chips
 #@ care.notone

@@ -1,7 +1,7 @@
 where	English (the core figure)	Chinese
 record, block 1 of the data [BH cn-policy-micron-decision] T	The Cybersecurity Review Office's published review conclusion fails Micron's products; operators of critical information infrastructure are to stop buying them. Not about Nvidia	网络安全审查办公室公布审查结论：美光公司产品"不予通过网络安全审查"，关键信息基础设施的运营者"应停止采购美光公司产品"。对象不是英伟达
 record, block 1 of the data [BH cn-policy-micron-decision] S	Cybersecurity Review Office, on the Cyberspace Administration's site	网络安全审查办公室，发布于国家网信办网站
-record, block 1 of the data [BH cn-policy-micron-decision] E (the core's English, not shown) and Q (source, Chinese, shown)	operators of critical information infrastructure in China should stop buying Micron's products	我国内关键信息基础设施的运营者应停止采购美光公司产品
+record, block 1 of the data [BH cn-policy-micron-decision] E (the core's English, not shown) and Q (source, Chinese, shown)	operators of critical information infrastructure in China shall stop buying Micron's products	我国内关键信息基础设施的运营者应停止采购美光公司产品
 record, block 2 of the data [BH cn-policy-desktop-2023] T	Finance and industry ministries: Party and government bodies from township level up, and the public institutions attached to them, must require that the processor and operating system of the desktop computers they buy meet the security-and-reliability evaluation; other units need not	财政部、工业和信息化部：乡镇以上党政机关，以及乡镇以上党委和政府直属事业单位等，采购台式计算机时"应当将CPU、操作系统符合安全可靠测评要求纳入采购需求"；"其他单位可不在采购需求中提出此项要求"
 record, block 2 of the data [BH cn-policy-desktop-2023] S	Ministry of Finance and Ministry of Industry and Information Technology	财政部、工业和信息化部
 record, block 2 of the data [BH cn-policy-desktop-2023] E (the core's English, not shown) and Q (source, Chinese, shown)	shall include in the purchase requirement that the CPU and operating system meet the security-and-reliability evaluation	应当将CPU、操作系统符合安全可靠测评要求纳入采购需求
@@ -20,7 +20,7 @@ record, block 6 of the data [BH cn-acts-mss-xinhua-20250721] E (the core's Engli
 record, block 7 of the data [BH cn-policy-cac-h20-original] T	Cyberspace regulator summons Nvidia over the security risks of vulnerabilities and backdoors in its H20 chips	国家网信办就"H20算力芯片漏洞后门安全风险"约谈英伟达
 record, block 7 of the data [BH cn-policy-cac-h20-original] S	Cyberspace Administration of China	国家互联网信息办公室（国家网信办）
 record, block 7 of the data [BH cn-policy-cac-h20-original] E (the core's English, not shown) and Q (source, Chinese, shown)	summoned Nvidia and required it to explain the backdoor security risks of the H20 chips sold to China and to submit supporting material	约谈了英伟达公司,要求英伟达公司就对华销售的H20算力芯片漏洞后门安全风险问题进行说明并提交相关证明材料
-record, block 8 of the data [BH man-cn-factions-wsj-ding] date label	After summer 2025	2025年夏之后
+record, block 8 of the data [BH man-cn-factions-wsj-ding] date label	After a summer 2025 briefing	2025年夏之后
 record, block 8 of the data [BH man-cn-factions-wsj-ding] T	After a Huawei briefing in summer 2025, Vice Premier Ding Xuexiang warns the biggest AI users, by people familiar with the message: anyone resisting home-made chips is "a traitor". The report, of Jul 23, 2026, gives no date for the warning	据知情人士说，在2025年夏华为的一次汇报之后，国务院副总理丁薛祥警告最大的几家AI用户：谁抵制使用国产芯片，谁就是叛徒（原文："a traitor"）。这篇2026年7月23日的报道没有给出警告的日期
 record, block 8 of the data [BH man-cn-factions-wsj-ding] S	Wall Street Journal	《华尔街日报》
 record, block 8 of the data [BH man-cn-factions-wsj-ding] C (label on the strip)	"traitor" warning	叛徒警告
@@ -38,7 +38,7 @@ record, block 11 of the data [BH cn-policy-samr-further-original] E (the core's 
 record, block 12 of the data [BH man-cn-ft-20250917-6000d] T	Cyberspace regulator tells ByteDance and Alibaba to end testing and orders of the RTX Pro 6000D	国家网信办要求字节跳动和阿里巴巴停止测试和订购RTX Pro 6000D
 record, block 12 of the data [BH man-cn-ft-20250917-6000d] S	Financial Times	英国《金融时报》
 record, block 12 of the data [BH man-cn-ft-20250917-6000d] Q (source, English) and Z (my Chinese)	told companies, including ByteDance and Alibaba, this week to end their testing and orders of the RTX Pro 6000D	本周要求包括字节跳动和阿里巴巴在内的企业停止测试和订购RTX Pro 6000D
-record, block 13 of the data [BH man-cn-ft-20251009-customs] T	Customs teams sent to major ports to check chip shipments	海关人员被派往主要口岸，检查芯片货物
+record, block 13 of the data [BH man-cn-ft-20251009-customs] T	Customs teams sent to major ports to check chip shipments, at first so that companies stop ordering Nvidia's H20 and RTX Pro 6000D after regulators' guidance discouraging their purchase	海关人员被派往主要口岸，检查芯片货物；起初是为了确保企业在监管部门发出劝阻购买的指导之后，停止订购英伟达的H20和RTX Pro 6000D
 record, block 13 of the data [BH man-cn-ft-20251009-customs] S	Financial Times	英国《金融时报》
 record, block 13 of the data [BH man-cn-ft-20251009-customs] Q (source, English) and Z (my Chinese)	Teams of customs officers have been mobilised at major ports across the country in the past few weeks to carry out stringent checks on semiconductor shipments	过去几周，全国各主要口岸已调集多批海关人员，对半导体货物进行严格查验
 record, block 14 of the data [BH ms-bj-20251105-statefunded-standard] T	Reported: government guidance requires new data-centre projects that took any state funds to use only home-made AI chips; whether nationwide or only in some provinces is unclear	据报道：政府指导意见要求，凡获得过任何国家资金的新建数据中心项目只使用国产AI芯片；是全国适用还是只在部分省份适用，尚不清楚
@@ -64,7 +64,7 @@ record, block 20 of the data [BH man-ms-sec-10q-2026-07] T	Nvidia's quarterly fi
 record, block 20 of the data [BH man-ms-sec-10q-2026-07] S	Nvidia, Form 10-Q filed with the SEC	英伟达，向美国证券交易委员会提交的10-Q季度报告
 record, block 20 of the data [BH man-ms-sec-10q-2026-07] Q (source, English) and Z (my Chinese)	such sales were restricted by the PRC government	这类销售受到中国政府的限制
 record, block 21 of the data [BH cn-clips-evidence-1] T	About 600,000 Nvidia chips wait in Hong Kong "as Beijing withholds approval"	约60万枚英伟达芯片存放在香港待运，北京方面迟迟未批准大规模进口（原文："as Beijing withholds approval for large-scale imports"）
-record, block 21 of the data [BH cn-clips-evidence-1] S	Reuters (its dateline is Nov 5), on CNA, whose page is dated Nov 6	路透社（电头日期为11月5日），载于亚洲新闻台（CNA），其网页日期为11月6日
+record, block 21 of the data [BH cn-clips-evidence-1] S	Reuters, on CNA, whose page is dated Nov 6; Reuters's dateline of Nov 5 stands on Yahoo's copy	路透社，载于亚洲新闻台（CNA），其网页日期为11月6日；路透社11月5日的电头见雅虎转载的文本
 record, block 21 of the data [BH cn-clips-evidence-1] C (label on the strip)	600,000 wait in Hong Kong	60万枚在香港待运
 record, block 21 of the data [BH cn-clips-evidence-1] Q (source, English) and Z (my Chinese)	as Beijing withholds approval for large-scale imports despite demand from technology firms	尽管科技企业有需求，北京方面仍迟迟未批准大规模进口
 record, block 22 of the data [BL cn-policy-he-welcomes] T	Vice Premier He Lifeng to Jensen Huang: more American firms, Nvidia included, are welcome to put down deep roots in the Chinese market	国务院副总理何立峰会见黄仁勋："欢迎包括英伟达公司在内的更多美资企业深耕中国市场"
@@ -86,9 +86,9 @@ record, block 26 of the data [BL cn-acts-reuters-deepseek-20260130] Q (source, E
 record, block 27 of the data [BL man-70f4668d5f56] T	"Nvidia has won Beijing's approval" to sell the H200; a Chinese buyer is unsure the approval is final	英伟达已获北京方面批准销售H200（原文："Nvidia has won Beijing's approval"）；一家中国买方不确定这是不是最终批准
 record, block 27 of the data [BL man-70f4668d5f56] S	Reuters, on Investing.com	路透社，载于Investing.com
 record, block 27 of the data [BL man-70f4668d5f56] Q (source, English) and Z (my Chinese)	approval to sell its second-most powerful artificial intelligence chips to China	获准向中国销售其性能第二强的人工智能芯片
-record, block 28 of the data [BL cn-acts-reuters-ti-cap-20260708-relay1] T	Officials tell Alibaba, ByteDance and DeepSeek they may soon buy some H200s: fewer than 200,000 in all	官员告知阿里巴巴、字节跳动和DeepSeek，可能很快获准购买部分H200；总数或不到20万枚
-record, block 28 of the data [BL cn-acts-reuters-ti-cap-20260708-relay1] S	The Information, through Reuters on AOL	The Information，经路透社转述，载于AOL
-record, block 28 of the data [BL cn-acts-reuters-ti-cap-20260708-relay1] Q (source, English) and Z (my Chinese)	they may soon receive permission to buy some H200 chips	它们可能很快获准购买一些H200芯片
+record, block 28 of the data [BH cn-acts-reuters-ti-cap-20260708-relay1] T	By the report, officials "have withheld approval so far" and tell Alibaba, ByteDance and DeepSeek they may soon be permitted to buy some H200s: perhaps fewer than 200,000 in all	据报道，官员迄今未予批准（原文："have withheld approval so far"），并告知阿里巴巴、字节跳动和DeepSeek可能很快获准购买部分H200；总数或不到20万枚
+record, block 28 of the data [BH cn-acts-reuters-ti-cap-20260708-relay1] S	The Information, through Reuters on AOL	The Information，经路透社转述，载于AOL
+record, block 28 of the data [BH cn-acts-reuters-ti-cap-20260708-relay1] Q (source, English) and Z (my Chinese)	Chinese officials, keen to nurture domestic suppliers, have withheld approval so far	中国官员有意扶持本土供应商，迄今未予批准
 record, block 29 of the data [BL man-a7d2f1a9f963] T	US export chief to Congress: H200 shipments to China have begun, "very few"	美国出口管制主管官员在国会作证：H200已开始对华发货，数量极少（原文："very few"）
 record, block 29 of the data [BL man-a7d2f1a9f963] S	Jeffrey Kessler, House hearing, as reported by Reuters	杰弗里·凯斯勒（Jeffrey Kessler），众议院听证会，据路透社报道
 record, block 29 of the data [BL man-a7d2f1a9f963] Q (source, English) and Z (my Chinese)	There have been minimal exports of any H200s to China so far	迄今为止，H200对华出口数量极少
@@ -111,7 +111,7 @@ record, block 34 of the data [CN cn-counter-b11-5] E (the core's English, not sh
 record, block 35 of the data [CN man-cn-ft-20250821-regulators] T	Alibaba, ByteDance and others had argued that their AI development would be impaired without Nvidia's chips; by people close to them, they have since become more accepting of a switch	阿里巴巴、字节跳动等企业曾主张，没有英伟达芯片，其AI研发将受损；据接近这些企业的人士说，它们此后对转用其他芯片更能接受了（原文："more accepting of a switch"）
 record, block 35 of the data [CN man-cn-ft-20250821-regulators] S	Financial Times	英国《金融时报》
 record, block 35 of the data [CN man-cn-ft-20250821-regulators] Q (source, English) and Z (my Chinese)	tech giants from Alibaba to ByteDance argued that their AI development would be impaired without Nvidia's chips	从阿里巴巴到字节跳动的科技巨头主张，没有英伟达的芯片，它们的AI研发将受到损害
-record, block 36 of the data [CN cn-tolerate-ft-offshore] T	Alibaba and ByteDance train their newest models in data centres in Southeast Asia	阿里巴巴和字节跳动在东南亚的数据中心训练最新模型
+record, block 36 of the data [CN cn-tolerate-ft-offshore] T	Alibaba and ByteDance train their newest models in data centres in Southeast Asia, "to access Nvidia's chips"	阿里巴巴和字节跳动在东南亚的数据中心训练最新模型，以便使用英伟达的芯片（原文："to access Nvidia's chips"）
 record, block 36 of the data [CN cn-tolerate-ft-offshore] S	Financial Times, on The Irish Times	英国《金融时报》，载于《爱尔兰时报》
 record, block 36 of the data [CN cn-tolerate-ft-offshore] Q (source, English) and Z (my Chinese)	are among the tech groups training their latest large language models (LLMs) in data centres across Southeast Asia	属于在东南亚各地数据中心训练其最新大语言模型（LLM）的科技集团之列
 record, block 37 of the data [CN cn-labs-h200-demand-20251210-relay1] T	ByteDance and Alibaba keen on large H200 orders "should Beijing give them the green light"	字节跳动和阿里巴巴有意大量订购H200，前提是北京方面放行（原文："should Beijing give them the green light"）
@@ -133,7 +133,7 @@ record, block 41 of the data [CN cn-acts-mofcom-inquiry-20260819] E (the core's 
 record, block 42 of the data [CN cn-factions-rtx-orders-oct-wayback] T	ByteDance, Alibaba and Tencent order over 3 million of the weaker RTX PRO 5500, worth over $35 billion	字节跳动、阿里巴巴和腾讯订购超过300万块性能较弱的RTX PRO 5500，价值超过350亿美元
 record, block 42 of the data [CN cn-factions-rtx-orders-oct-wayback] S	Reuters, on Investing.com	路透社，载于Investing.com
 record, block 42 of the data [CN cn-factions-rtx-orders-oct-wayback] Q (source, English) and Z (my Chinese)	have ordered more than 3 million of	已订购超过300万块
-record, block 43 of the data [CH cn-labs-baidu-ascend-2023-relay1] T	Baidu ordered 1,600 Huawei chips in August 2023, ahead of new US curbs, "to prepare for a future" without Nvidia	百度在2023年8月、美国新一轮管制出台之前订购1600枚华为芯片，为买不到英伟达芯片的将来做准备（原文："to prepare for a future"）
+record, block 43 of the data [CH cn-labs-baidu-ascend-2023-relay1] T	By people Reuters does not name, Baidu ordered 1,600 Huawei chips in August 2023, ahead of new US curbs, "to prepare for a future" without Nvidia	据路透社未具名的消息人士，百度在2023年8月、美国新一轮管制出台之前订购1600枚华为芯片，为买不到英伟达芯片的将来做准备（原文："to prepare for a future"）
 record, block 43 of the data [CH cn-labs-baidu-ascend-2023-relay1] S	Reuters, on The Business Times	路透社，载于新加坡《商业时报》（The Business Times）
 record, block 43 of the data [CH cn-labs-baidu-ascend-2023-relay1] Q (source, English) and Z (my Chinese)	They were ordering 910B chips to prepare for a future where they may no longer be able to purchase from Nvidia	他们订购910B芯片，是为将来可能再也无法向英伟达采购做准备
 record, block 44 of the data [CH cn-policy-tencent-us-curbs-relay1] T	Tencent's president: US curbs will make it seek home-made AI chips	腾讯总裁：美国的管制将使公司寻求国产AI芯片
@@ -161,7 +161,7 @@ record, block 50 of the data [CH cn-labs-v4-training-reuters-relay1-wayback] Q (
 record, block 51 of the data [CH cn-labs-alibaba-nov-supply] T	Alibaba's chief executive expects that from 2027 most of its added AI chip supply will be its own T-Head chips, with other home-made chips bought too	阿里巴巴CEO吴泳铭判断：2027年及之后，"公司绝大部分新增AI芯片供给将以自研平头哥国产芯片为主"，"同时也会采购其他国产芯片"
 record, block 51 of the data [CH cn-labs-alibaba-nov-supply] S	Eddie Wu on a results call, reported by National Business Daily	吴泳铭在业绩电话会上的表态，据《每日经济新闻》报道
 record, block 51 of the data [CH cn-labs-alibaba-nov-supply] E (the core's English, not shown) and Q (source, Chinese, shown)	most of the company's added AI chip supply will be its own T-Head home-made chips	公司绝大部分新增AI芯片供给将以自研平头哥国产芯片为主
-record, block 52 of the data [CH cn-o36-tencent-call-20261118-sa] T	Tencent's chief strategy officer: its cloud business runs mainly inference, which "can be run very effectively on a surprisingly limited number of domestic chips"	腾讯首席战略官：其云业务目前主要运行推理，而推理用数量少得出人意料的国产芯片就能很有效地运行（原文："can be run very effectively on a surprisingly limited number of domestic chips"）
+record, block 52 of the data [CH cn-o36-tencent-call-20261118-sa] T	Tencent's chief strategy officer: its cloud business runs mainly inference, which "can be run very effectively on a surprisingly limited number of domestic chips", and Tencent now drives "a far higher volume of tokens, specifically on domestic chips"	腾讯首席战略官：腾讯的云业务主要运行推理任务，而用数量少得出乎意料的国产芯片就能高效运行这些任务（原文："can be run very effectively on a surprisingly limited number of domestic chips"）；具体说，在国产芯片上，腾讯现在处理的词元（token）数量要多得多（原文："a far higher volume of tokens, specifically on domestic chips"）
 record, block 52 of the data [CH cn-o36-tencent-call-20261118-sa] S	James Mitchell on Tencent's results call (transcript on a stock-data site)	詹姆斯·米切尔（James Mitchell）在腾讯业绩电话会上的发言（文字记录载于一家股票数据网站）
 record, block 52 of the data [CH cn-o36-tencent-call-20261118-sa] Q (source, English) and Z (my Chinese)	our cloud business today is primarily running inference	我们的云业务目前主要是在运行推理
 record, block 53 of the data [BH cn-le13-yuyuan-qq-20250810b] T	State broadcaster's account: the H20 is neither green, advanced nor safe, and as consumers we can of course choose not to buy it	中央广播电视总台旗下账号玉渊谭天称：H20既不环保，也不先进，也不安全，"作为消费者，我们当然可以选择，不买"
@@ -191,7 +191,7 @@ record, block 60 of the data [BL cn-acts-mofcom-20261117] E (the core's English,
 record, block 61 of the data [CN cn-le26-iflytek-ir-20260821] T	iFlytek's filed investor record: rival model makers commonly use Nvidia chips two generations ahead; it expects tighter US export controls to push the whole industry to home-made computing	科大讯飞披露的投资者关系活动记录："其他模型厂商普遍使用性能领先两代的英伟达芯片"；公司预计，"随着美国对顶尖芯片出口管制越来越严格"，"全行业都会被倒逼转向国产算力"
 record, block 61 of the data [CN cn-le26-iflytek-ir-20260821] S	iFlytek, record of its results meeting, filed on the Shenzhen exchange's site (cninfo)	科大讯飞业绩说明会记录，披露于巨潮资讯网（cninfo，深圳证券交易所的信息披露网站）
 record, block 61 of the data [CN cn-le26-iflytek-ir-20260821] E (the core's English, not shown) and Q (source, Chinese, shown)	other model makers commonly use Nvidia chips that are two generations ahead in performance	其他模型厂商普遍使用性能领先两代的英伟达芯片
-record, block 62 of the data [CN cn-o36-tencent-call-20261118-sa] T	Tencent's president on the new US curbs: "It sets everyone back in China", with less advanced computing for everyone "no matter when you actually started leasing or building capacities outside of China"	腾讯总裁谈美国的新管制：这让中国的每一家都倒退（原文："It sets everyone back in China"），不论何时开始在中国境外租用或自建算力，大家手里的先进算力都变少了（原文："no matter when you actually started leasing or building capacities outside of China"）
+record, block 62 of the data [CN cn-o36-tencent-call-20261118-sa] T	Tencent's president on the new US curbs: "It sets everyone back in China", with less advanced computing for everyone "no matter when you actually started leasing or building capacities outside of China"; on training, "it's going to be impacted"	腾讯总裁谈美国的新管制：这让中国各方都受挫（原文："It sets everyone back in China"），不论何时开始在中国境外租用或自建算力，各方可获得的先进算力都减少了（原文："no matter when you actually started leasing or building capacities outside of China"）；谈到训练，他说会受到影响（原文："it's going to be impacted"）
 record, block 62 of the data [CN cn-o36-tencent-call-20261118-sa] S	Martin Lau on Tencent's results call (transcript on a stock-data site)	刘炽平在腾讯业绩电话会上的发言（文字记录载于一家股票数据网站）
 record, block 62 of the data [CN cn-o36-tencent-call-20261118-sa] Q (source, English) and Z (my Chinese)	no matter when you actually started leasing or building capacities outside of China	不论你实际上何时开始在中国境外租用或建设算力
 page: page title 1	Beijing vs. Its Labs	北京与AI企业
@@ -209,7 +209,7 @@ page: panel title 3	Nvidia’s share of AI chips in China	英伟达在中国AI�
 page: panel title 4	Nvidia’s own figures: revenue from customers based in China	英伟达自己的数字：来自总部在中国的客户的收入
 page: panel title 5	The line on paper	成文政策
 page: panel title 6	Inside Beijing: not one actor	北京内部：并非铁板一块
-page: panel title 7	Local vouchers for rented computing	地方算力券：对租用算力的补贴
+page: panel title 7	Local vouchers and like subsidies for computing	地方算力券及同类补贴
 page: panel title 8	The records	记录明细
 page: panel title 9	Read with care	阅读须知
 page: panel subtitle 1	Each number is one record, listed under “The records” below. Point at a mark to read the source’s own words.	每个编号是一条记录，逐条列在下方的记录明细里。把鼠标指向圆点，可以看到来源的原话；点击圆点，可跳到下方对应的那条记录。
@@ -218,7 +218,7 @@ page: panel subtitle 3	Three reported readings. The first uses a different yards
 page: panel subtitle 4	Billions of dollars by quarter, from Nvidia’s reports to the SEC; Hong Kong included. Counted by where the direct customer has its head office, for every product. It is not a count of chips entering China. Nvidia’s note: “The end customer and shipping location may be different from our direct customers’ headquarters location.”	按季度列出，单位十亿美元，出自英伟达向美国证券交易委员会提交的报告；含香港。按直接客户总部所在地统计，涵盖所有产品。这不是进入中国的芯片数量。英伟达注明：最终客户和发货地点可能与直接客户的总部所在地不同（原文：“The end customer and shipping location may be different from our direct customers’ headquarters location.”）
 page: panel subtitle 5	From government documents. Shares for home-made computing are set by provinces and cities; no published national plan found sets one for computing centres. First, the 31 provincial-level governments by what their plans set.	出自政府文件。国产算力的占比由省、市制定；没有找到为算力中心设定这一占比的公开发布的全国性规划。先看31个省级政府的规划各定了什么。
 page: panel subtitle 6	Which bodies appear on which side, by record number. A report that names several bodies is listed under each. The antitrust case is listed apart: it is aimed at Nvidia the company.	哪些机构出现在哪一边，按记录编号列出。一篇报道点名多个机构的，分别列在各机构名下。反垄断案件单列：它针对的是英伟达公司本身。
-page: panel subtitle 7	The general rate a local rule pays of a firm’s bill for rented computing (the rate for an ordinary applicant), for home-made computing and for other computing, as each rule’s own text states it; a higher rate for a named kind of firm, whatever the chip, is in the row’s note. One measure throughout.	地方规定对企业租用算力的账单按一般比例（普通申请者适用的比例）补贴多少，国产算力和其他算力各是多少，均按各规定原文；对某类企业的更高比例（不论用什么芯片）见该行附注。全图用同一口径。
+page: panel subtitle 7	The general rate a local rule pays of a firm’s bill for rented or bought computing (the rate for an ordinary applicant), for home-made computing and for other computing, as each rule’s own text states it; a higher rate for a named kind of firm, whatever the chip, is in the rule’s saved copy. One measure throughout. The rules that favour home-made computing are drawn in full, with notes; the rules of one rate are listed by kind of government and by rate.	地方规定对企业租用或购买算力的账单按一般比例（普通申请者适用的比例）补贴多少，国产算力和其他算力各是多少，均按各规定原文；对某类企业的更高比例（不论用什么芯片）见各规定所存文本。全图用同一口径。对国产算力有利的规定逐行画出，附有说明；只有一个比例的规定按政府类别和比例列出。
 page: panel subtitle 8	Dates are of the act where it is known, otherwise of the report. Each line is my summary; the link goes to the page it rests on. A line beside an open mark is what unnamed people told the paper named; none is confirmed. Records are numbered in order of date, Beijing’s first; record 62 was added on Nov 25, 2026, after the figure was made public, and takes the next number so that no earlier record changes its number. It stands at its date in the list.	能确定行为发生日期的，用行为日期；否则用报道日期。每条文字是本页的概括；链接指向它所依据的网页。空心圆点旁的文字，是未具名人士对所列媒体的说法；没有一条得到证实。记录按日期顺序编号，北京方面的记录在前；第62条记录是在这张图的英文版公开之后、于2026年11月25日添加的，它取下一个编号，这样此前的记录都不改变编号。在列表中，它排在其日期的位置。
 page: hint	Swipe the chart sideways to see 2025 and 2026.	左右滑动图表，查看2025年和2026年。
 page: strip: title	Dated record, 2023 to November 2026	按日期排列的记录，2023年至2026年11月
@@ -261,7 +261,7 @@ page: H200 bars: value 6	about 10,000 each	各约1万枚
 page: H200 bars: value 7	about 600,000	约60万枚
 page: H200 bars: note 1	Reuters, Dec 31, 2025	路透社，2025年12月31日
 page: H200 bars: note 2	in 17 applications, each marked “Approved, not shipped” at May 11, 2026. With AMD’s comparable chip (300,000 in 4 applications) the count is 879,868. The table “H200 License and Equivalent Application Status as of May 11, 2026”, released by the House Foreign Affairs Committee, Nov 19, 2026; the sums are mine	共17份申请，截至2026年5月11日均标为“Approved, not shipped”（已批准、未发货）。加上AMD的同类芯片（300,000枚，4份申请），合计879,868枚。表格“H200 License and Equivalent Application Status as of May 11, 2026”（截至2026年5月11日的H200许可及同类申请状态），由众议院外交事务委员会于2026年11月19日公布；各项合计为本页所算
-page: H200 bars: note 3	in 7 applications, among them all 5 for consignees in Indonesia, Malaysia and Thailand (1,118,500 chips), named for ByteDance, BytePlus, TikTok and Alibaba. With AMD’s 2, 1,888,950 of the table’s 3,444,160 chips. The table gives no reasons. Same table	共7份申请，其中包括收货方在印度尼西亚、马来西亚和泰国的全部5份（1,118,500枚），收货方名称带有ByteDance、BytePlus、TikTok和Alibaba字样。加上AMD的2份，在表内3,444,160枚芯片中占1,888,950枚。表格没有说明原因。同一表格
+page: H200 bars: note 3	in 7 applications, among them all 5 that give Indonesia, Malaysia and Thailand as the chips’ location (1,118,500 chips), named for ByteDance, BytePlus, TikTok and Alibaba. With AMD’s 2, 1,888,950 of the table’s 3,444,160 chips. The table gives no reasons. Same table	共7份申请，其中包括收货方在印度尼西亚、马来西亚和泰国的全部5份（1,118,500枚），收货方名称带有ByteDance、BytePlus、TikTok和Alibaba字样。加上AMD的2份，在表内3,444,160枚芯片中占1,888,950枚。表格没有说明原因。同一表格
 page: H200 bars: note 4	for ByteDance, Alibaba and Tencent. Reuters, Jan 28, 2026	对象是字节跳动、阿里巴巴和腾讯。路透社，2026年1月28日
 page: H200 bars: note 5	The Information, through Reuters, Jul 8, 2026	The Information，经路透社转述，2026年7月8日
 page: H200 bars: note 6	ByteDance and Tencent (Financial Times, through Reuters, Aug 18, 2026); several firms by November (Reuters, Nov 5, 2026)	字节跳动和腾讯（英国《金融时报》，经路透社转述，2026年8月18日）；到11月已是数家企业（路透社，2026年11月5日）
@@ -301,83 +301,77 @@ page: revenue: month 8	Jul2026	7月2026
 page: revenue: month 9	Oct2026	10月2026
 page: revenue: note 1	Quarter ended in the month shown. * My subtraction: the year’s figure less its first nine months. Nvidia’s reports: quarter ended Oct 26, 2025, year ended Jan 25, 2026, quarter ended Apr 26, 2026, quarter ended Jul 26, 2026, results filed Nov 17, 2026.	图中月份是季度截止的月份。* 本页相减所得：全年数字减去前九个月。英伟达的报告：截至2025年10月26日的季度、截至2026年1月25日的财年、截至2026年4月26日的季度、截至2026年7月26日的季度、2026年11月17日提交的业绩文件。
 page: revenue: note 2	Of the latest quarter Nvidia said that “Q3 sales of licensed Hopper Data Center products to China was $2.4 billion” and that “we are no longer shipping licensed Hopper Data Center products to China” (results call, Nov 17, 2026). It did not say why.	关于最近一个季度，英伟达说，获许可的Hopper数据中心产品第三季度对华销售额为24亿美元（原文：“Q3 sales of licensed Hopper Data Center products to China was $2.4 billion”），并说公司已不再向中国发运这类产品（原文：“we are no longer shipping licensed Hopper Data Center products to China”）（业绩电话会，2026年11月17日）。它没有说明原因。
-page: 31 governments: bar read aloud	31 provincial-level governments: 8 set a share; 21 have a plan read, with no share; 1 known only from accounts of its plan (Tibet); 1 not reached (Xinjiang).	31个省级政府：8个定了占比；21个的规划已读，未定占比；1个的规划只见于有关报道（西藏）；1个未能查到（新疆）。
-page: 31 governments: key 1	8 set a share	8个定了占比
-page: 31 governments: key 2	21 have a plan read, with no share	21个的规划已读，未定占比
+page: 31 governments: bar read aloud	31 provincial-level governments: 9 set a share; 20 have a plan read, with no share; 1 known only from accounts of its plan (Tibet); 1 not reached (Xinjiang).	31个省级政府中，9个设定了占比；另有20个政府的规划已查阅，均未列明占比；1个仅见有关其规划的报道（西藏）；1个未能查阅其规划（新疆）。
+page: 31 governments: key 1	9 set a share	9个设定了占比
+page: 31 governments: key 2	20 have a plan read, with no share	已查阅20个政府的规划，均未列明占比
 page: 31 governments: key 3	1 known only from accounts of its plan (Tibet)	1个的规划只见于有关报道（西藏）
 page: 31 governments: key 4	1 not reached (Xinjiang)	1个未能查到（新疆）
 page: 31 governments: row 1	Jiangsu70% or moreof chips in new computing centres, by 2030 (50% for 2025); marked indicative (预期性) source	江苏70%以上新建算力中心的国产算力芯片使用占比，2030年（2025年为50%）；属“预期性”指标 来源
 page: 31 governments: row 2	Guangdong70%of newly added computing, by the end of 2025; strives for (力争); a plan of nine bodies source	广东70%新增算力中的国产化占比，到2025年底；用词是“力争”；九个部门的方案 来源
 page: 31 governments: row 3	Tianjinover 60%of chips in the city’s computing centres, by 2026 source	天津超过60%全市算力中心的国产算力芯片使用占比，到2026年 来源
 page: 31 governments: row 4	Hebei60% or moreof newly added computing software and hardware, independently controllable (自主可控), by 2025; the province’s own page source	河北60%以上新增算力基础软硬件设施的“自主可控”比例，到2025年；河北省政府自己的网页 来源
-page: 31 governments: row 5	Shanghaiover 50%of chips in new intelligent-computing centres, by 2025; a copy on another site source	上海超过50%新建智算中心的国产算力芯片使用占比，到2025年；转载于其他网站的文本 来源
-page: 31 governments: row 6	Sichuanover 50%of computing equipment; strives for (力争); a copy on another site source	四川超过50%国产化算力设备占比；用词是“力争”；转载于其他网站的文本 来源
-page: 31 governments: row 7	Inner Mongolia50% or moreof computing, by 2025, among the goals for the region’s national computing hub source	内蒙古50%以上国产化算力占比，到2025年，是该区国家算力枢纽的目标之一 来源
-page: 31 governments: row 8	Shandong90%of the province’s data-centre computing, by 2025; a newspaper’s account of the plan source	山东90%全省数据中心的国产化算力占比，到2025年；报纸对规划的报道 来源
+page: 31 governments: row 5	Zhejiangover 60%of the computing of one sector, the province’s information and communications industry, by 2030; a project target (工程目标) in that sector’s five-year plan, by the provincial communications administration and development and reform commission source	浙江超60%仅为一个行业（全省信息通信行业）的国产化算力占比，到2030年；是该行业五年规划中一项重点工程的“工程目标”；由省通信管理局、省发展改革委印发 来源
+page: 31 governments: row 6	Shanghaiover 50%of chips in new intelligent-computing centres, by 2025; a copy on another site source	上海超过50%新建智算中心的国产算力芯片使用占比，到2025年；转载于其他网站的文本 来源
+page: 31 governments: row 7	Sichuanover 50%of computing equipment; strives for (力争); a copy on another site source	四川超过50%国产化算力设备占比；用词是“力争”；转载于其他网站的文本 来源
+page: 31 governments: row 8	Inner Mongolia50% or moreof computing, by 2025, among the goals for the region’s national computing hub source	内蒙古50%以上国产化算力占比，到2025年，是该区国家算力枢纽的目标之一 来源
+page: 31 governments: row 9	Shandong90%of the province’s data-centre computing, by 2025; a newspaper’s account of the plan source	山东90%全省数据中心的国产化算力占比，到2025年；报纸对规划的报道 来源
 page: line on paper: row 1	20%price edge in government purchasing for goods that meet China’s home-made product standard; in force from Jan 1, 2026, and products of foreign-funded firms that meet the standard take part on equal terms State Council office, Sept 2025; finance ministry, Dec 2025	20%政府采购中，符合本国产品标准的货物享受的报价扣除；自2026年1月1日起施行，符合该标准的外资企业产品平等参与 国务院办公厅，2025年9月；财政部，2025年12月
 page: line on paper: row 2	11 of 11AI chips that have passed the state security-and-reliability evaluation come from makers registered in China, 8 of them (lists of May and Sept 2026). Only entities registered in China may apply; firms apply of their own accord, and buyers choose whether to use the results evaluation centre, Sept 2026	全部11款通过国家安全可靠测评的AI芯片，全部出自在中国境内注册的厂商，共8家（2026年5月和9月两批名单）。只有中国境内注册的实体可以送测；企业自愿申请，测评结果由企业和用户自主选择使用 测评中心，2026年9月
 page: line on paper: row 3	46US firms whose products government buyers may not buy (not counting US-owned firms in China). Nvidia, Intel, AMD, Micron and Qualcomm are not among them finance ministry, Jun 22, 2026	46家美国企业的产品，政府采购人不得采购（不包括在华美资企业）。英伟达、英特尔、AMD、美光和高通不在其列 财政部，2026年6月22日
 page: line on paper: row 4	None founda published national share for home-made AI chips, or a published order not to buy Nvidia’s, in the policy pages and the national document lists read. A draft national plan with at least 80% of its core technology home-made, AI chips included, was reported (Bloomberg, Jun 2026, through relays; unnamed people, who said details could change); asked about the report, the state planner gave no share and said “在具体建设过程中，市场力量将起决定性作用” (in the actual building, market forces will play the decisive role), and that it would strengthen coordination and policy guidance (press conference, Jun 18, 2026: the site’s text file). Every binding purchase rule found is addressed to Party and state bodies, public institutions or public money, or, in the Micron case of 2023 (the earliest record here), to operators of critical information infrastructure.	没有找到在所阅读的政策网页和全国性文件目录中，没有找到公开发布的全国性国产AI芯片占比，也没有找到公开发布的不准购买英伟达芯片的命令。有报道称，一份全国性规划草案要求至少80%的核心技术（包括AI芯片）为国产（彭博社，2026年6月，经其他媒体转述；消息来自未具名人士，他们说细节可能变化）；被问到这篇报道时，国家发展改革委没有给出占比，只说“在具体建设过程中，市场力量将起决定性作用”，并表示将“加强统筹协调和政策引导”（新闻发布会，2026年6月18日：网站的文本文件）。找到的每一条有约束力的采购规定，针对的都是党政机关、事业单位或财政资金；2023年的美光案（这里最早的一条记录）则针对关键信息基础设施的运营者。
 page: vouchers: key 1	home-made computing	国产算力
 page: vouchers: key 2	other computing	其他算力
-page: vouchers: key 3	one rate for all	各类算力一个比例
-page: vouchers: group 1	Pay more for home-made computing: 4	对国产算力补贴更多：4个
-page: vouchers: group 2	Pay for home-made computing only: 1	只补贴国产算力：1个
-page: vouchers: group 3	One rate for all computing: 14	各类算力一个比例：14个
-page: vouchers: row 1	Hangzhou city Jul 2024	杭州市 2024年7月
-page: vouchers: row 2	Zhejiang province Apr 2025guidance to places that issue vouchers; in force from May 31, 2025; a copy on another site	浙江省 2025年4月对发放算力券的地方的指导；自2025年5月31日起实施；转载于其他网站的文本
-page: vouchers: row 3	Wenzhou city Aug 2025	温州市 2025年8月
-page: vouchers: row 4	Binjiang district, Hangzhou Aug 2026a copy on a policy site	杭州市滨江区 2026年8月载于一家政策网站的文本
-page: vouchers: row 5	Sichuan province Aug 202630% for start-ups, 40% for one-person AI firms; the text as a news site, Jiemian, carries it, without number or date; the month is that of the reports	四川省 2026年8月成立3年内的初创企业30%，人工智能一人公司40%；文本为新闻网站界面新闻所载，无文号、无日期；月份为报道的月份
-page: vouchers: row 6	Shanxi province Jun 202430% for national projects and model makers; in force from Jul 2024	山西省 2024年6月国家级项目和大模型企业为30%；自2024年7月起施行
-page: vouchers: row 7	Beijing E-Town, a development zone Nov 2024replaced a rule of Mar 2024 that paid 40% against 30%; servers with home-made chips get a separate purchase subsidy of up to 10%	北京经济技术开发区（是开发区，不是北京市） 2024年11月取代了2024年3月按40%对30%支付的规定；装国产芯片的服务器另有最高10%的采购支持
-page: vouchers: row 8	Longhua district, Shenzhen Nov 2024	深圳市龙华区 2024年11月
-page: vouchers: row 9	Shenzhen city Dec 202460% for start-ups; separate support for moving models to home-made chips	深圳市 2024年12月初创企业为60%；把模型迁移到国产芯片另有支持
-page: vouchers: row 10	Wuhan city Feb 2025up to 200,000 yuan; the same rate for one-person AI firms in a rule of Feb 2026	武汉市 2025年2月最高20万元；2026年2月的一项规定对一人AI企业给同样的比例
-page: vouchers: row 11	Shandong province May 2025a copy on another site	山东省 2025年5月转载于其他网站的文本
-page: vouchers: row 12	Tianjin city May 2025the text as a page on Sina carries it, dated May 14, 2025	天津市 2025年5月文本为新浪网一个页面所载，日期为2025年5月14日
-page: vouchers: row 13	Shanghai city Jul 2025up to 100% for a year at most, city and districts together, for early-stage and small firms; building support, up to 10%, for home-made computing only	上海市 2025年7月按补早补小原则，对初创和小型企业市区协同给予最多1年、最高100%的租金补贴；建设支持最高10%，只给国产（自主）算力
-page: vouchers: row 14	Qiaokou district, Wuhan Aug 2025on top of the city’s	武汉市硚口区 2025年8月在市级支持的基础上
-page: vouchers: row 15	Hongshan district, Wuhan Sept 2025for small and medium firms	武汉市洪山区 2025年9月面向中小企业
-page: vouchers: row 16	Hunan province Oct 2025a copy on another site	湖南省 2025年10月转载于其他网站的文本
-page: vouchers: row 17	Suzhou city Jan 2026for technology R&D firms; in force from Jan 31, 2026, by the city’s own reading; its rule of Feb 2025 paid 20%	苏州市 2026年1月面向科技研发企业；按该市自己的解读，自2026年1月31日起施行；其2025年2月的规定为20%
-page: vouchers: row 18	Qingdao city Mar 2026the same rate as its rule of Mar 2025; a copy on another site	青岛市 2026年3月与其2025年3月的规定比例相同；转载于其他网站的文本
-page: vouchers: row 19	Wuhu city Jul 202645% for firms in future industries, 70% for small firms in incubators	芜湖市 2026年7月具身智能等未来产业领域企业45%，算力产业孵化载体内的中小微企业70%
-page: vouchers: row read aloud 1	Hangzhou city: home-made 30%, other 20%	杭州市：国产30%，其他20%
-page: vouchers: row read aloud 2	Zhejiang province: home-made 30%, other 10%	浙江省：国产30%，其他10%
-page: vouchers: row read aloud 3	Wenzhou city: home-made 30%, other 10%	温州市：国产30%，其他10%
-page: vouchers: row read aloud 4	Binjiang district, Hangzhou: home-made 60%, other 30%	杭州市滨江区：国产60%，其他30%
-page: vouchers: row read aloud 5	Sichuan province: home-made 20%, no voucher for other computing	四川省：国产20%，其他算力不补贴
-page: vouchers: row read aloud 6	Shanxi province: 20% for all computing	山西省：各类算力一律20%
-page: vouchers: row read aloud 7	Beijing E-Town, a development zone: 30% for all computing	北京经济技术开发区（是开发区，不是北京市）：各类算力一律30%
-page: vouchers: row read aloud 8	Longhua district, Shenzhen: 30% for all computing	深圳市龙华区：各类算力一律30%
-page: vouchers: row read aloud 9	Shenzhen city: 50% for all computing	深圳市：各类算力一律50%
-page: vouchers: row read aloud 10	Wuhan city: 50% for all computing	武汉市：各类算力一律50%
-page: vouchers: row read aloud 11	Shandong province: 5% for all computing	山东省：各类算力一律5%
-page: vouchers: row read aloud 12	Tianjin city: 10% for all computing	天津市：各类算力一律10%
-page: vouchers: row read aloud 13	Shanghai city: 30% for all computing	上海市：各类算力一律30%
-page: vouchers: row read aloud 14	Qiaokou district, Wuhan: 50% for all computing	武汉市硚口区：各类算力一律50%
-page: vouchers: row read aloud 15	Hongshan district, Wuhan: 20% for all computing	武汉市洪山区：各类算力一律20%
-page: vouchers: row read aloud 16	Hunan province: 30% for all computing	湖南省：各类算力一律30%
-page: vouchers: row read aloud 17	Suzhou city: 30% for all computing	苏州市：各类算力一律30%
-page: vouchers: row read aloud 18	Qingdao city: 20% for all computing	青岛市：各类算力一律20%
-page: vouchers: row read aloud 19	Wuhu city: 25% for all computing	芜湖市：各类算力一律25%
-page: vouchers: one-rate label 1	20%, home-made computing only	20%，只补贴国产算力
-page: vouchers: one-rate label 2	20% for all	一律20%
-page: vouchers: one-rate label 3	30% for all	一律30%
-page: vouchers: one-rate label 4	30% for all	一律30%
-page: vouchers: one-rate label 5	50% for all	一律50%
-page: vouchers: one-rate label 6	50% for all	一律50%
-page: vouchers: one-rate label 7	5% for all	一律5%
-page: vouchers: one-rate label 8	10% for all	一律10%
-page: vouchers: one-rate label 9	30% for all	一律30%
-page: vouchers: one-rate label 10	50% for all	一律50%
-page: vouchers: one-rate label 11	20% for all	一律20%
-page: vouchers: one-rate label 12	30% for all	一律30%
-page: vouchers: one-rate label 13	30% for all	一律30%
-page: vouchers: one-rate label 14	20% for all	一律20%
-page: vouchers: one-rate label 15	25% for all	一律25%
-page: vouchers: note	4 of the 19 local governments shown pay more for home-made computing and still pay for other computing; 1, Sichuan province, pays for home-made computing only (its measures are held as the news site Jiemian carries their text, without number or date); the other 14 pay one rate for all. The rate shown is the one for an ordinary applicant. One row per government: its latest general rule found that states a share of the bill (a later rule for one class of firm is in the row’s note); these are the rules found and read, not a census. Left out: rules known only from the press (Chengdu, 50% against 30%), application guides (Beijing city; Nanjing), rules no longer in force or with no share of the bill (Longgang district, Shenzhen, among them), not yet among the saved pages (Xiamen), and drafts. Support for building or buying with home-made chips only is separate: Beijing city’s plan for 2024 to 2027 supports, by a share of the investment, “采购自主可控GPU芯片开展智能算力服务的企业” (firms that buy independently controllable GPU chips to provide computing services). The tiers are the rules’ own words: 国产 or 自主 (home-made, independent) against 非国产, 非自主 or 其他 (other).	图中19个地方政府里，4个对国产算力补贴更多，同时仍补贴其他算力；1个，即四川省，只补贴国产算力（其措施按新闻网站界面新闻所载的文本保存，无文号、无日期）；其余14个各类算力一个比例。图中所示是普通申请者适用的比例。每个政府一行：取所找到的、写明账单补贴比例的最新一项普遍适用的规定（只针对某一类企业的更新规定见该行附注）；这些是找到并读过的规定，不是普查。没有列入的有：只见于媒体报道的规定（成都，50%对30%）、申报指南（北京市；南京市）、已不再有效或没有写明账单补贴比例的规定（其中包括深圳市龙岗区的规定）、尚未存入的规定（厦门）以及征求意见稿。只对用国产芯片建设或购置的支持另算：北京市2024年至2027年的方案，按投资额的一定比例支持“采购自主可控GPU芯片开展智能算力服务的企业”。分档用的是各规定自己的用词：“国产”或“自主”，对“非国产”“非自主”或“其他”。
+page: vouchers: key 3	one rate for all	各类算力适用同一比例
+page: vouchers: key 4	a rate by a type of facility the rule does not name	按算力设施的类型分档，规定没有写明类型
+page: vouchers: group 1	Pay more for home-made computing: 7	对国产算力补贴更多：7个
+page: vouchers: group 2	Pay for home-made computing only: 4	只补贴国产算力：4个
+page: vouchers: group 3	State no higher rate for home-made computing: 79	没有对国产算力规定更高的比例：79个
+page: vouchers: sub-group 1	Two rates by a type of computing facility that the rule does not name: 1	按算力设施的类型分两档，规定没有写明类型：1个
+page: vouchers: sub-group 2	One rate for all computing: 78	各类算力适用同一比例：78个
+page: vouchers: row 1	Zhejiang province Apr 2025	浙江省 2025年4月
+page: vouchers: row 2	Wenzhou city Aug 2025	温州市 2025年8月
+page: vouchers: row 3	Chengdu city Apr 2026	成都市 2026年4月
+page: vouchers: row 4	Longwan district and Wenzhou Bay New Area, Wenzhou May 2026	温州市龙湾区和温州湾新区 2026年5月
+page: vouchers: row 5	Binjiang district, Hangzhou Aug 2026	杭州市滨江区 2026年8月
+page: vouchers: row 6	Hubei province Sept 2026	湖北省 2026年9月
+page: vouchers: row 7	Wuhan city Sept 2026	武汉市 2026年9月
+page: vouchers: row 8	Huangyan district, Taizhou Jul 2025	台州市黄岩区 2025年7月
+page: vouchers: row 9	Ningbo city Mar 2026	宁波市 2026年3月
+page: vouchers: row 10	Changsha Economic and Technological Development Zone Mar 2026	长沙经济技术开发区 2026年3月
+page: vouchers: row 11	Sichuan province Aug 2026	四川省 2026年8月
+page: vouchers: row 12	Hangzhou city Jun 2025	杭州市 2025年6月
+page: vouchers: row note 1	guidance to places that issue vouchers; signed Apr 17, 2025 (浙政发〔2025〕10号), in force from May 31, 2025; the government’s own PDF	对发放算力券的地方的指导；落款日期为2025年4月17日（浙政发〔2025〕10号），自2025年5月31日起实施；省政府自己发布的PDF文件
+page: vouchers: row note 2	for 自主可控 (independently controllable) computing; small and medium firms’ rates each raised by 10%; in force from May 13, 2026; the rules on a consultancy’s page, compared by eye with the bureau’s signed file, a scan	补贴自主可控算力；中小企业两档抵扣比例分别增加10%；自2026年5月13日起生效；文本见一家咨询公司的网页，已与市经信局签发文件的扫描件人工核对
+page: vouchers: row note 3	the district and the new area carry out Wenzhou’s 30% and 10%, in force from Jun 21, 2026 to Dec 31, 2027; the rules on a media site	该区和温州湾新区执行温州市的30%和10%，自2026年6月21日起施行，有效期至2027年12月31日；文本见一家媒体网站
+page: vouchers: row note 4	the text on the district consultative conference’s site	文本见该区政协网站
+page: vouchers: row note 5	up to 3 million yuan a unit a year; one-person firms 30% whatever the computing; the text with its notice on the Wuhan Data Bureau’s site	同一主体每年最高300万元；一人公司（OPC）不论用哪类算力都按30%补贴；文本连同印发通知见武汉市数据局网站
+page: vouchers: row note 6	the Data Bureau’s voucher measures, in force from Oct 29, 2026 for one year; the city’s measures of Feb 2025, still in force, pay 50% up to 200,000 yuan whatever the chip	市数据局的算力券管理办法，自2026年10月29日起施行，有效期1年；该市2025年2月的政策措施仍然有效，不论用什么芯片都按50%补助，最高20万元
+page: vouchers: row note 7	for 自主 (independent) intelligent computing bought for a firm’s own research; for spending from Jan 1, 2025 to Dec 31, 2027 (黄政发〔2025〕18号); no rate for other computing	补贴企业为自身研发采购的自主智能算力服务；适用于2025年1月1日至2027年12月31日的支出（黄政发〔2025〕18号）；对其他算力没有规定比例
+page: vouchers: row note 8	only contracts for home-made computing qualify; up to 1.5 million yuan a buyer a year; a yearly rule, its fourth voucher period ending Dec 31, 2026; read on a commercial policy platform’s page that carries the notice whole	只有国产算力服务的合同可以申领；单个算力需求方每年最高150万元；按年度发放的规定，第四期算力券到2026年12月31日为止；文本见一家商业政策服务平台的页面，页面载有通知全文
+page: vouchers: row note 9	for renting home-made intelligent computing for agent applications, up to 1 million yuan a year; the zone’s measures of Mar 23, 2026, on a provincial news site	补贴为智能体应用租用国产智能算力的费用，每年最高100万元；开发区2026年3月23日的措施，文本见一个省级新闻网站
+page: vouchers: row note 10	30% for start-ups, 40% for one-person AI firms; the provincial development and reform commission’s measures (川发改数据〔2026〕338号), written Aug 11 and published Aug 13, 2026	成立3年内的初创企业30%，人工智能一人公司40%；省发展改革委的措施（川发改数据〔2026〕338号），2026年8月11日成文、8月13日发布
+page: vouchers: row note 11	30% in general; for training and inference on computing facilities, 30% or 20% “by the type of computing facility” (按照算力设施的不同类型), and the plan does not say which type gets which; up to 50% for small firms; in force from Jul 15, 2025, when it repealed the rule of Jul 2024 that paid 30% for home-made and 20% for other facilities; the text on the city archives’ site	一般为30%；使用算力设施开展模型训练、推理和应用的，“按照算力设施的不同类型给予30%或20%的分档补贴”，方案没有写明哪一类设施适用哪一档；中小企业最高50%；自2025年7月15日起施行，同时废止2024年7月的规定（国产算力设施30%、其他算力设施20%）；文本见杭州市档案馆网站
+page: vouchers: row read aloud 1	Zhejiang province: home-made 30%, other 10%	浙江省：国产30%，其他10%
+page: vouchers: row read aloud 2	Wenzhou city: home-made 30%, other 10%	温州市：国产30%，其他10%
+page: vouchers: row read aloud 3	Chengdu city: home-made 50%, other 30%	成都市：国产50%，其他30%
+page: vouchers: row read aloud 4	Longwan district and Wenzhou Bay New Area, Wenzhou: home-made 30%, other 10%	温州市龙湾区和温州湾新区：国产30%，其他10%
+page: vouchers: row read aloud 5	Binjiang district, Hangzhou: home-made 60%, other 30%	杭州市滨江区：国产60%，其他30%
+page: vouchers: row read aloud 6	Hubei province: home-made 30%, other 20%	湖北省：国产30%，其他20%
+page: vouchers: row read aloud 7	Wuhan city: home-made 30%, other 20%	武汉市：国产30%，其他20%
+page: vouchers: row read aloud 8	Huangyan district, Taizhou: home-made 50%, no voucher for other computing	台州市黄岩区：国产50%，其他算力不补贴
+page: vouchers: row read aloud 9	Ningbo city: home-made 50%, no voucher for other computing	宁波市：国产50%，其他算力不补贴
+page: vouchers: row read aloud 10	Changsha Economic and Technological Development Zone: home-made 10%, no voucher for other computing	长沙经济技术开发区：国产10%，其他算力不补贴
+page: vouchers: row read aloud 11	Sichuan province: home-made 20%, no voucher for other computing	四川省：国产20%，其他算力不补贴
+page: vouchers: row read aloud 12	Hangzhou city: 30% or 20%, by a type of computing facility that the rule does not name	杭州市：30%或20%，按算力设施的类型分档，规定没有写明类型
+page: vouchers: one-rate label 1	50%, home-made only	50%，只补贴国产算力
+page: vouchers: one-rate label 2	50%, home-made only	50%，只补贴国产算力
+page: vouchers: one-rate label 3	10%, home-made only	10%，只补贴国产算力
+page: vouchers: one-rate label 4	20%, home-made only	20%，只补贴国产算力
+page: vouchers: note	7 of the 90 local governments shown pay more for home-made computing and still pay for other computing; 4, Huangyan district, Taizhou; Ningbo city; Changsha Economic and Technological Development Zone; and Sichuan province, pay for home-made computing only; the other 79 state no higher rate for home-made computing: 78 pay one rate for all, and Hangzhou city pays 30% or 20% “by the type of computing facility” (按照算力设施的不同类型), a type its plan does not name (its rule of 2024, since repealed, paid 30% for home-made and 20% for other facilities). The rate shown is the one for an ordinary applicant. What is counted is a rule that pays a share of a firm’s bill for rented or bought computing: most call the payment a computing voucher (算力券) or a like name; 38 give it another name, a subsidy, a reward or support, and are tagged or marked †. One row per government (a province, a city, a district or a zone): its latest general rule found that is in force and states a share of the bill. These are the rules found by searches that went province by province and city by city, saved and read, not a census of every local government: the searches covered the 31 province-level governments, 24 named cities and new areas, and the cities, districts and zones on the lists of four searches that went city by city; other districts and counties only as they turned up. 50 of the 90 are read on an official page or file of the issuing government or body, and 40 in another copy (another body’s site, a news or commercial site, or an Internet Archive capture). Left out: rules known only from the press or a summary (Yuhang district, Keqiao district and Jinan city among them), application guides (Beijing city’s economy bureau; Nanjing), plans with no date of effect (Nanjing’s Jiangbei New Area), rules repealed, expired or with no share of the bill (Longgang district of Shenzhen, and Nanchang city’s top-up of a provincial award, among them), rules whose text was not reached or only as a scan (Chongqing; Xihu district of Hangzhou), and drafts. Counted other ways (rules / paying more / home-made only / no higher rate): with Hangzhou city’s two tiers read as home-made and other, as its repealed rule had them, 90 / 8 / 4 / 78; with Hangzhou city left out, 89 / 7 / 4 / 78. Support for building or buying with home-made chips only is separate: Beijing city’s plan for 2024 to 2027 supports, by a share of the investment, “采购自主可控GPU芯片开展智能算力服务的企业” (firms that buy independently controllable GPU chips to provide computing services). The tiers are the rules’ own words: 国产 or 自主 (home-made, independent) against 非国产, 非自主 or 其他 (other).	图中90个地方政府里，7个对国产算力补贴更多，同时仍补贴其他算力；4个，即台州市黄岩区、宁波市、长沙经济技术开发区和四川省，只补贴国产算力；其余79个没有对国产算力规定更高的比例：其中78个各类算力适用同一比例，杭州市的方案“按照算力设施的不同类型给予30%或20%的分档补贴”，没有写明类型（该市2024年的规定已废止，原按国产算力设施30%、其他算力设施20%补贴）。图中所示是普通申请者适用的比例。这里统计的是按比例补贴企业租用或购买算力费用的规定：多数称为算力券或类似名称；38个用的是别的名称（补贴、奖励或支持），图中以标签或†标出。每个政府（省、市、区或开发区）一行：取所找到的、现行有效并写明账单补贴比例的最新一项普遍适用的规定。这些是逐省、逐市检索找到、保存并读过的规定，不是对所有地方政府的普查：检索覆盖31个省级政府、24个点名的城市和新区，以及四次逐市检索名单上的城市、区和开发区；其他区县只收录检索中碰到的。90个里，50个读的是发文政府或机构的官方页面或文件，40个读的是其他文本（其他机构的网站、新闻或商业网站，或互联网档案馆的存档）。没有列入的有：只见于媒体报道或摘要的规定（其中有杭州市余杭区、绍兴市柯桥区和济南市）、申报指南（北京市经济和信息化局；南京市）、没有写明施行日期的方案（南京江北新区）、已废止、已到期或没有写明账单补贴比例的规定（其中有深圳市龙岗区，以及南昌市对省级奖励的配套）、未能读到文本或只有扫描件的规定（重庆市；杭州市西湖区）、以及征求意见稿。换一种算法（规定数／补贴更多／只补贴国产／没有更高比例）：把杭州市的两档读作国产和其他（已废止的规定就是这样分的），是90 / 8 / 4 / 78；不计杭州市，是89 / 7 / 4 / 78。只对用国产芯片建设或购置的支持另算：北京市2024年至2027年的方案，按投资额的一定比例支持“采购自主可控GPU芯片开展智能算力服务的企业”。分档用的是各规定自己的用词：“国产”或“自主”，对“非国产”“非自主”或“其他”。
+page: vouchers: one-rate list, explanation	Each rule: its place, the month of the rule (a link to its saved copy), and its one rate, a dot on the same scale from 0 to 60%. † the rule calls the payment a subsidy, a reward or support, not a voucher (38 of the 78). A letter marks a note under the list. Two of these rules name home-made computing in the sentence that sets their rate, but only at that one rate: Binhaiwan New Area, Dongguan; and Haidian district, Beijing (notes h, i). Other support for home-made chips, apart from the rate, stands in the notes.	每条规定：地点、规定的年月（链接到所存文本），以及它唯一的补贴比例，以同一条0至60%刻度上的圆点表示。†表示规定把这笔钱称为补贴、奖励或支持，而不称为券（78个中有38个）。字母表示列表下方的附注。其中两项规定在写明比例的句子里提到国产，但只有一个比例：东莞滨海湾新区和北京市海淀区（中关村科学城）（附注h、i）。比例之外对国产芯片的其他支持，见附注。
+page: vouchers: one-rate list, heading 1	Province-level governments: 18	省级政府：18个
+page: vouchers: one-rate list, heading 2	Cities: 28	城市：28个
+page: vouchers: one-rate list, heading 3	Districts, zones and new areas: 32	区、开发区和新区：32个
 page: inside Beijing: column 1	Held Nvidia back, or steered buyers to home-made chips	限制英伟达，或引导买方转向国产芯片
 page: inside Beijing: column 2	Let it in, or welcomed it	放行，或表示欢迎
 page: inside Beijing: column 3	Acted against Nvidia the company	对英伟达公司本身采取行动
@@ -395,20 +389,190 @@ page: inside Beijing: body 11	Vice Premier He Lifeng	国务院副总理何立峰
 page: inside Beijing: body 12	“Industry and commerce ministries”, as Reuters put it	路透社所说的工业和商务主管部门（原文：“industry and commerce ministries”）
 page: inside Beijing: body 13	Industry ministry, as The Information reported its intention	工业和信息化部（The Information所报道的意向）
 page: inside Beijing: body 14	Market regulator: an antitrust case against Nvidia the company	市场监管总局：针对英伟达公司本身的反垄断案件
-page: inside Beijing: note 1	The Financial Times (Nov 13, 2026, citing unnamed people): security-focused officials within the cyberspace regulator and the security ministry “viewed dependence on Nvidia as a strategic vulnerability”, the commerce ministry “favoured imports”, and the 2025 push to restrict “was led by the National Development and Reform Commission”. The US Trade Representative, Nov 20, 2026 (Bloomberg Television; machine captions, not checked by ear, 01:06 to 01:35): it is “not as monolithic as people would have you believe”; in his “own analysis” there are some who think “we’d like to have access” and “others who think, well, we don’t want American chips anyway”. The two caption tracks break the sentence differently, so whether he puts the split inside the government is not settled.	英国《金融时报》（2026年11月13日，援引未具名人士）报道：国家网信办和国家安全部内部侧重安全的官员把对英伟达的依赖看作战略弱点（原文：“viewed dependence on Nvidia as a strategic vulnerability”），商务部倾向于进口（原文：“favoured imports”），2025年的限制行动由国家发展改革委牵头（原文：“was led by the National Development and Reform Commission”）。美国贸易代表2026年11月20日说（彭博电视；机器字幕，未经人耳核对，01:06至01:35）：情况并不像人们让你以为的那样铁板一块（原文：“not as monolithic as people would have you believe”）；按他自己的分析（原文：“my own analysis”），有人认为希望能买到（原文：“we’d like to have access”），也有人认为反正不要美国芯片（原文：“others who think, well, we don’t want American chips anyway”）。两条字幕轨的断句不同，因此他是否把这一分歧放在政府内部，并无定论。
+page: inside Beijing: note 1	The Financial Times (Nov 13, 2026): security-focused officials within the cyberspace regulator and the security ministry “viewed dependence on Nvidia as a strategic vulnerability”, the commerce ministry “favoured imports”, and, by people the paper does not name, the 2025 push to restrict “was led by the National Development and Reform Commission”. The US Trade Representative, Nov 20, 2026 (Bloomberg Television; machine captions, not checked by ear, 01:06 to 01:35): it is “not as monolithic as people would have you believe”; in his “own analysis” there are some who think “we’d like to have access” and “others who think, well, we don’t want American chips anyway”. The two caption tracks break the sentence differently, so whether he puts the split inside the government is not settled.	英国《金融时报》（2026年11月13日，援引未具名人士）报道：国家网信办和国家安全部内部侧重安全的官员把对英伟达的依赖看作战略弱点（原文：“viewed dependence on Nvidia as a strategic vulnerability”），商务部倾向于进口（原文：“favoured imports”），2025年的限制行动由国家发展改革委牵头（原文：“was led by the National Development and Reform Commission”）。美国贸易代表2026年11月20日说（彭博电视；机器字幕，未经人耳核对，01:06至01:35）：情况并不像人们让你以为的那样铁板一块（原文：“not as monolithic as people would have you believe”）；按他自己的分析（原文：“my own analysis”），有人认为希望能买到（原文：“we’d like to have access”），也有人认为反正不要美国芯片（原文：“others who think, well, we don’t want American chips anyway”）。两条字幕轨的断句不同，因此他是否把这一分歧放在政府内部，并无定论。
 page: inside Beijing: note 2	The market regulator’s Party group lists the Nvidia case, with its cases on Qualcomm and DuPont China, under “坚决落实党中央重大决策部署” (carrying out the Party centre’s major decisions) and “敢于斗争” (daring to struggle) (Party members’ paper, Sept 24, 2026). Nvidia’s reports say the preliminary finding concerns the “degraded products” US export controls required it to offer the Chinese market. A standing rule cuts the other way: the regulator’s 2020 approval of Nvidia’s Mellanox purchase obliges Nvidia to keep supplying its accelerators to the Chinese market, unless lifted since (the parties may apply to lift the conditions six years after they took effect) (decision).	市场监管总局党组把英伟达案与高通公司、杜邦中国集团的案件一并列在“坚决落实党中央重大决策部署”和“敢于斗争”之下（共产党员手机报，2026年9月24日）。英伟达的报告说，初步调查结论涉及美国出口管制要求它向中国市场提供的降规产品（原文：“degraded products”）。有一项规定（如未解除）方向正相反：市场监管总局2020年附条件批准英伟达收购迈络思，条件之一是英伟达须“向中国市场继续供应英伟达GPU加速器”；交易双方可在条件生效6年后申请解除（公告全文）。
 page: records: column 1	Beijing	北京方面
 page: records: column 2	The companies	企业
 page: note 1	Open marks rest on unnamed people. In the answers found, no Chinese authority confirmed any of them: asked about such reports, the foreign ministry said it was not aware of the matter (Aug 13, 2025), that the question should go to the competent departments (Jan 29, 2026), and that its position on US chips was consistent (Nov 9, 2026).	空心圆点依据的是未具名人士的说法。在找到的答复中，没有中国主管部门证实其中任何一条：被问到这类报道时，外交部发言人先后表示“我不了解你提到的情况”（2025年8月13日）、“具体问题建议向中方主管部门进行询问”（2026年1月29日）、“中方在美国输华芯片问题上的立场是一贯的”（2026年11月9日）。
-page: note 2	No published Chinese order against buying Nvidia chips was found in the policy pages and national document lists read. The published acts against Nvidia that were found are a summons and an antitrust case. The public warnings found came mostly in one burst: of 75 state and Party media items on Nvidia chips found from Jul 2025 to Nov 2026, 11 of the 14 that only warn about Nvidia’s chips date from Jul 31, 2025 to Sept 24, 2025, and the three found later are in Global Times in 2026 (8 others mix a warning with a welcome; the items after September 2025 are what two rounds of searches found, a sample and not a full count), and none of them is an order. Earlier, on Dec 3, 2024, an industry body, the Internet Society of China, had called on companies to be careful in choosing to buy American chips, citing US export controls, and in the same sentence to use chips made in China by domestic and foreign-funded firms alike.	在所阅读的政策网页和全国性文件目录中，没有找到公开发布的、不准购买英伟达芯片的中国政府命令。找到的针对英伟达的公开举措，是一次约谈和一起反垄断案件。找到的公开警示大多集中在一段时间：在2025年7月至2026年11月间找到的75篇涉及英伟达芯片的官方媒体和党媒内容中，只对英伟达芯片提出警示的有14篇，其中11篇出自2025年7月31日至2025年9月24日，此后找到的3篇都是《环球时报》英文版2026年的内容（另有8篇既有警示也有欢迎；2025年9月以后的内容是两轮搜索所找到的，是样本，不是完整统计），其中没有一篇是命令。更早的2024年12月3日，行业组织中国互联网协会曾以美国出口管制为由，呼吁企业“审慎选择采购美国芯片”，并在同一句话里呼吁“积极使用内外资企业在华生产制造的芯片”。
+page: note 2	No published Chinese order against buying Nvidia chips was found in the policy pages and national document lists read. The published acts against Nvidia that were found are a summons and an antitrust case. The public warnings found came mostly in one burst: of 75 state and Party media items on Nvidia chips found from Jul 2025 to Nov 2026, 16 of the 19 that only warn about Nvidia’s chips date from Jul 31, 2025 to Sept 24, 2025, and the three found later are in Global Times in 2026 (7 others mix a warning with a welcome; the items after September 2025 are what two rounds of searches found, a sample and not a full count), and none of them is an order. Earlier, on Dec 3, 2024, an industry body, the Internet Society of China, had called on companies to be careful in choosing to buy American chips, citing US export controls, and in the same sentence to use chips made in China by domestic and foreign-funded firms alike.	在所阅读的政策网页和全国性文件目录中，没有找到公开发布的、不准购买英伟达芯片的中国政府命令。找到的针对英伟达的公开举措，是一次约谈和一起反垄断案件。找到的公开警示大多集中在一段时间：在2025年7月至2026年11月间找到的75篇涉及英伟达芯片的官方媒体和党媒内容中，只对英伟达芯片提出警示的有19篇，其中16篇出自2025年7月31日至2025年9月24日，此后找到的3篇都是《环球时报》英文版2026年的内容（另有7篇既有警示也有欢迎；2025年9月以后的内容是两轮搜索所找到的，是样本，不是完整统计），其中没有一篇是命令。更早的2024年12月3日，行业组织中国互联网协会曾以美国出口管制为由，呼吁企业“审慎选择采购美国芯片”，并在同一句话里呼吁“积极使用内外资企业在华生产制造的芯片”。
 page: note 3	Records 4 and 16 are an antitrust case against Nvidia the company. By Nvidia’s own reports the preliminary finding concerns the degraded products that US export controls required it to offer the Chinese market. They are drawn orange as pressure on Nvidia, not as a wish for fewer Nvidia chips. The White House said on Nov 1, 2025 that China would end its investigations of US firms in the chip supply chain, naming none; neither the regulator’s own news list (read to Nov 23, 2026) nor Nvidia’s reports say the Nvidia case has ended, and the regulator’s review of its 2025 work, posted Apr 10, 2026, lists the further investigation.	第4条和第16条记录是针对英伟达公司本身的反垄断案件。按英伟达自己的报告，初步调查结论涉及美国出口管制要求其向中国市场提供的降规产品。这两条画成橙色，表示对英伟达的压力，并不表示希望英伟达芯片减少。白宫2025年11月1日说，中国将终止对芯片供应链上美国企业的各项调查，但没有点名；市场监管总局自己的新闻列表（读至2026年11月23日）和英伟达的报告都没有说英伟达案已经结束，总局2026年4月10日发布的2025年工作回顾仍列有“对英伟达公司实施进一步调查”。
 page: note 4	What Beijing meant is not settled. American bodies read its antitrust moves as leverage or pressure: the US-China commission (2025), “exert leverage and ease pressure as a negotiating tactic”; the Congressional Research Service (Sept 2025), “to pressure Nvidia to provide its advanced chips to China”. Yet asked whether China would let its companies buy the H200, the Trade Representative said “that’s gonna be a sovereign decision for China” (May 15, 2026, Bloomberg Television; captions, not checked by ear, at 05:59). Either reading leaves the direction of the acts drawn here as it is.	北京方面的用意并无定论。美国的一些机构把它的反垄断举措看作筹码或施压：美中经济与安全审查委员会（2025年）认为，这显示中国愿意把施加影响和缓解压力都用作谈判手段（原文：“exert leverage and ease pressure as a negotiating tactic”）；国会研究服务处（2025年9月）认为，这是为了向英伟达施压，要它向中国提供先进芯片（原文：“to pressure Nvidia to provide its advanced chips to China”）。不过，被问到中国是否会让本国企业购买H200时，美国贸易代表说，那将是中国的主权决定（原文：“that’s gonna be a sovereign decision for China”；2026年5月15日，彭博电视；字幕，未经人耳核对，05:59处）。无论取哪一种解读，这里所画各项举措的方向都不变。
-page: note 5	The H200 also had to pass American conditions: testing in the United States, a cap at half of the shipments to American customers, and a 25% tariff (Commerce Department rule of Jan 15, 2026; Nvidia’s report for the quarter ended Jul 26, 2026). By May 11, 2026 Washington had returned without action 1,888,950 of the 3,444,160 chips in the applications listed, more than half of that list (the bars above). The committee that released the table says the summary does not show every application in full; its example is an Nvidia application of Dec 19, 2025 for 445,000 chips for Tencent; the table’s only Tencent row of that date is for 75,000, approved, and neither document says whether it is that application.	H200还须过美方的条件：在美国境内检测、数量不超过发往美国客户的一半、缴纳25%的关税（美国商务部2026年1月15日的规则；英伟达截至2026年7月26日季度的报告）。截至2026年5月11日，在表内所列申请的3,444,160枚芯片中，华盛顿未予处理即退回的有1,888,950枚，超过该表所列的一半（见上方条形图）。公布这份表格的委员会说，这份汇总没有完整反映每一份申请；它举的例子是英伟达2025年12月19日为腾讯申请44.5万枚的一份申请；表中这一日期英伟达为腾讯所列的只有一行，为7.5万枚、已批准，两份文件都没有说这一行是否就是那份44.5万枚的申请。
+page: note 5	The H200 also had to pass American conditions: testing in the United States, shipments to China and Macau of no more than half of the same product shipped for end use in the United States, and a 25% tariff (Commerce Department rule of Jan 15, 2026; Nvidia’s report for the quarter ended Jul 26, 2026). By May 11, 2026 Washington had returned without action 1,888,950 of the 3,444,160 chips in the applications listed, more than half of that list (the bars above). The committee that released the table says the summary does not show every application in full; its example is an Nvidia application of Dec 19, 2025 for 445,000 chips for Tencent; the table’s only Tencent row of that date is for 75,000, approved, and neither document says whether it is that application.	H200还须过美方的条件：在美国境内检测、数量不超过发往美国客户的一半、缴纳25%的关税（美国商务部2026年1月15日的规则；英伟达截至2026年7月26日季度的报告）。截至2026年5月11日，在表内所列申请的3,444,160枚芯片中，华盛顿未予处理即退回的有1,888,950枚，超过该表所列的一半（见上方条形图）。公布这份表格的委员会说，这份汇总没有完整反映每一份申请；它举的例子是英伟达2025年12月19日为腾讯申请44.5万枚的一份申请；表中这一日期英伟达为腾讯所列的只有一行，为7.5万枚、已批准，两份文件都没有说这一行是否就是那份44.5万枚的申请。
 page: note 6	The chip at issue changed over time: the H20 (2024 to 2025), the RTX Pro 6000D (2025), the H200 (from December 2025).	所涉芯片前后有变化：H20（2024年至2025年）、RTX Pro 6000D（2025年）、H200（2025年12月起）。
 page: note 7	The records are a selection made to show both sides, not a census. The count of marks in a row is not a measure.	这些记录是为呈现双方情况而作的选取，不是全面统计。某一行圆点的多少不代表分量。
 page: note 8	Records 1 and 2 are not about Nvidia. Record 1 is the 2023 review conclusion that failed Micron’s products, a published instruction to operators of critical information infrastructure to stop buying one foreign chip maker’s products; record 2 is a purchase rule for Party and state bodies’ desktop computers. They are drawn in orange as steps away from foreign chips. Record 30 is two universities’ own buying, in notices that hold suppliers to the government procurement law’s conditions; it is not an act of the central government. Records 35 and 37 do not name Nvidia; they are drawn blue because they back Chinese firms’ computing abroad, where by record 47 Nvidia chips are used. Records 42 and 55 are a city body’s and a Party journal’s documents about what the companies use; they are drawn in the companies’ row.	第1条和第2条记录与英伟达无关。第1条是2023年认定美光产品未通过审查的结论，是一项公开发布的、要求关键信息基础设施运营者停止采购一家外国芯片厂商产品的指示；第2条是针对党政机关台式计算机的采购规定。这两条画成橙色，表示远离外国芯片的举措。第30条是两所高校自己的采购，其公告要求供应商符合政府采购法规定的条件；这不是中央政府的举措。第35条和第37条没有提到英伟达；画成蓝色，是因为它们支持中国企业在境外使用算力，而按第47条记录，那里用的是英伟达芯片。第42条和第55条是一个市级部门和一份党刊关于企业用什么芯片的文件；它们画在企业一栏。
 page: note 9	English renderings of Chinese are mine, not official translations.	引号之内只放来源的原话：来源为中文的，照录中文原文；来源为英文的，保留英文原文，其中文译文为本页所译，不是官方译文，也不放在引号之内。本页中文由Claude（Anthropic的模型）译自英文版，尚未经中文母语读者审校。
 page: strip: scroll area read aloud	Dated strip; scroll sideways on a narrow screen	时间轴；窄屏上可左右滑动
+page: vouchers: one-rate rule 1 (paired by its linked copy)	Fujian province Feb 2026†	福建省 2026年2月†
+page: vouchers: one-rate rule 1 read aloud	Fujian province: 50% for all computing	福建省：各类算力一律50%
+page: vouchers: one-rate rule 2 (paired by its linked copy)	Jiangsu province Sept 2026a	江苏省 2026年9月a
+page: vouchers: one-rate rule 2 read aloud	Jiangsu province: 50% for all computing	江苏省：各类算力一律50%
+page: vouchers: one-rate rule 3 (paired by its linked copy)	Guizhou province Jan 2026b	贵州省 2026年1月d
+page: vouchers: one-rate rule 3 read aloud	Guizhou province: 30% for all computing	贵州省：各类算力一律30%
+page: vouchers: one-rate rule 4 (paired by its linked copy)	Hebei province Nov 2026†	河北省 2026年11月†
+page: vouchers: one-rate rule 4 read aloud	Hebei province: 30% for all computing	河北省：各类算力一律30%
+page: vouchers: one-rate rule 5 (paired by its linked copy)	Heilongjiang province Apr 2026	黑龙江省 2026年4月
+page: vouchers: one-rate rule 5 read aloud	Heilongjiang province: 30% for all computing	黑龙江省：各类算力一律30%
+page: vouchers: one-rate rule 6 (paired by its linked copy)	Hunan province May 2026c	湖南省 2026年5月c
+page: vouchers: one-rate rule 6 read aloud	Hunan province: 30% for all computing	湖南省：各类算力一律30%
+page: vouchers: one-rate rule 7 (paired by its linked copy)	Inner Mongolia region Sept 2024†	内蒙古自治区 2024年9月†
+page: vouchers: one-rate rule 7 read aloud	Inner Mongolia region: 30% for all computing	内蒙古自治区：各类算力一律30%
+page: vouchers: one-rate rule 8 (paired by its linked copy)	Liaoning province Oct 2026	辽宁省 2026年10月
+page: vouchers: one-rate rule 8 read aloud	Liaoning province: 30% for all computing	辽宁省：各类算力一律30%
+page: vouchers: one-rate rule 9 (paired by its linked copy)	Shanghai city Jul 2025d	上海市 2025年7月b
+page: vouchers: one-rate rule 9 read aloud	Shanghai city: 30% for all computing	上海市：各类算力一律30%
+page: vouchers: one-rate rule 10 (paired by its linked copy)	Beijing city Jun 2026e	北京市 2026年6月e
+page: vouchers: one-rate rule 10 read aloud	Beijing city: 25% for all computing	北京市：各类算力一律25%
+page: vouchers: one-rate rule 11 (paired by its linked copy)	Anhui province Aug 2025†	安徽省 2025年8月†
+page: vouchers: one-rate rule 11 read aloud	Anhui province: 20% for all computing	安徽省：各类算力一律20%
+page: vouchers: one-rate rule 12 (paired by its linked copy)	Henan province Aug 2025	河南省 2025年8月
+page: vouchers: one-rate rule 12 read aloud	Henan province: 20% for all computing	河南省：各类算力一律20%
+page: vouchers: one-rate rule 13 (paired by its linked copy)	Jiangxi province Aug 2026	江西省 2026年8月
+page: vouchers: one-rate rule 13 read aloud	Jiangxi province: 20% for all computing	江西省：各类算力一律20%
+page: vouchers: one-rate rule 14 (paired by its linked copy)	Qinghai province Mar 2024	青海省 2024年3月
+page: vouchers: one-rate rule 14 read aloud	Qinghai province: 20% for all computing	青海省：各类算力一律20%
+page: vouchers: one-rate rule 15 (paired by its linked copy)	Shanxi province Sept 2026	山西省 2026年9月
+page: vouchers: one-rate rule 15 read aloud	Shanxi province: 20% for all computing	山西省：各类算力一律20%
+page: vouchers: one-rate rule 16 (paired by its linked copy)	Xinjiang region May 2026†	新疆维吾尔自治区 2026年5月†
+page: vouchers: one-rate rule 16 read aloud	Xinjiang region: 20% for all computing	新疆维吾尔自治区：各类算力一律20%
+page: vouchers: one-rate rule 17 (paired by its linked copy)	Shandong province Jan 2026	山东省 2026年1月
+page: vouchers: one-rate rule 17 read aloud	Shandong province: 10% for all computing	山东省：各类算力一律10%
+page: vouchers: one-rate rule 18 (paired by its linked copy)	Tianjin city Apr 2025	天津市 2025年4月
+page: vouchers: one-rate rule 18 read aloud	Tianjin city: 10% for all computing	天津市：各类算力一律10%
+page: vouchers: one-rate rule 19 (paired by its linked copy)	Dongguan city Feb 2025	东莞市 2025年2月
+page: vouchers: one-rate rule 19 read aloud	Dongguan city: 50% for all computing	东莞市：各类算力一律50%
+page: vouchers: one-rate rule 20 (paired by its linked copy)	Fuzhou city Mar 2024†	福州市 2024年3月†
+page: vouchers: one-rate rule 20 read aloud	Fuzhou city: 50% for all computing	福州市：各类算力一律50%
+page: vouchers: one-rate rule 21 (paired by its linked copy)	Jiaxing city Oct 2024†	嘉兴市 2024年10月†
+page: vouchers: one-rate rule 21 read aloud	Jiaxing city: 50% for all computing	嘉兴市：各类算力一律50%
+page: vouchers: one-rate rule 22 (paired by its linked copy)	Langfang city Feb 2025†	廊坊市 2025年2月†
+page: vouchers: one-rate rule 22 read aloud	Langfang city: 50% for all computing	廊坊市：各类算力一律50%
+page: vouchers: one-rate rule 23 (paired by its linked copy)	Shenzhen city Dec 2024f	深圳市 2024年12月f
+page: vouchers: one-rate rule 23 read aloud	Shenzhen city: 50% for all computing	深圳市：各类算力一律50%
+page: vouchers: one-rate rule 24 (paired by its linked copy)	Xiamen city Oct 2026†	厦门市 2026年10月†
+page: vouchers: one-rate rule 24 read aloud	Xiamen city: 50% for all computing	厦门市：各类算力一律50%
+page: vouchers: one-rate rule 25 (paired by its linked copy)	Yancheng city Oct 2026	盐城市 2026年10月
+page: vouchers: one-rate rule 25 read aloud	Yancheng city: 50% for all computing	盐城市：各类算力一律50%
+page: vouchers: one-rate rule 26 (paired by its linked copy)	Zhangzhou city Jul 2025	漳州市 2025年7月
+page: vouchers: one-rate rule 26 read aloud	Zhangzhou city: 50% for all computing	漳州市：各类算力一律50%
+page: vouchers: one-rate rule 27 (paired by its linked copy)	Zhongshan city Jan 2026	中山市 2026年1月
+page: vouchers: one-rate rule 27 read aloud	Zhongshan city: 50% for all computing	中山市：各类算力一律50%
+page: vouchers: one-rate rule 28 (paired by its linked copy)	Zhuhai city Mar 2026	珠海市 2026年3月
+page: vouchers: one-rate rule 28 read aloud	Zhuhai city: 50% for all computing	珠海市：各类算力一律50%
+page: vouchers: one-rate rule 29 (paired by its linked copy)	Foshan city Aug 2025	佛山市 2025年8月
+page: vouchers: one-rate rule 29 read aloud	Foshan city: 30% for all computing	佛山市：各类算力一律30%
+page: vouchers: one-rate rule 30 (paired by its linked copy)	Jinhua city Oct 2025	金华市 2025年10月
+page: vouchers: one-rate rule 30 read aloud	Jinhua city: 30% for all computing	金华市：各类算力一律30%
+page: vouchers: one-rate rule 31 (paired by its linked copy)	Nanning city Apr 2025	南宁市 2025年4月
+page: vouchers: one-rate rule 31 read aloud	Nanning city: 30% for all computing	南宁市：各类算力一律30%
+page: vouchers: one-rate rule 32 (paired by its linked copy)	Quanzhou city Dec 2025†	泉州市 2025年12月†
+page: vouchers: one-rate rule 32 read aloud	Quanzhou city: 30% for all computing	泉州市：各类算力一律30%
+page: vouchers: one-rate rule 33 (paired by its linked copy)	Quzhou city Mar 2026†	衢州市 2026年3月†
+page: vouchers: one-rate rule 33 read aloud	Quzhou city: 30% for all computing	衢州市：各类算力一律30%
+page: vouchers: one-rate rule 34 (paired by its linked copy)	Shaoguan city Apr 2026†	韶关市 2026年4月†
+page: vouchers: one-rate rule 34 read aloud	Shaoguan city: 30% for all computing	韶关市：各类算力一律30%
+page: vouchers: one-rate rule 35 (paired by its linked copy)	Suqian city Feb 2026	宿迁市 2026年2月
+page: vouchers: one-rate rule 35 read aloud	Suqian city: 30% for all computing	宿迁市：各类算力一律30%
+page: vouchers: one-rate rule 36 (paired by its linked copy)	Suzhou city Jan 2026†	苏州市 2026年1月†
+page: vouchers: one-rate rule 36 read aloud	Suzhou city: 30% for all computing	苏州市：各类算力一律30%
+page: vouchers: one-rate rule 37 (paired by its linked copy)	Wuxi city May 2025	无锡市 2025年5月
+page: vouchers: one-rate rule 37 read aloud	Wuxi city: 30% for all computing	无锡市：各类算力一律30%
+page: vouchers: one-rate rule 38 (paired by its linked copy)	Lianyungang city Nov 2026	连云港市 2026年11月
+page: vouchers: one-rate rule 38 read aloud	Lianyungang city: 25% for all computing	连云港市：各类算力一律25%
+page: vouchers: one-rate rule 39 (paired by its linked copy)	Wuhu city Jul 2026	芜湖市 2026年7月
+page: vouchers: one-rate rule 39 read aloud	Wuhu city: 25% for all computing	芜湖市：各类算力一律25%
+page: vouchers: one-rate rule 40 (paired by its linked copy)	Changzhou city Jan 2025†	常州市 2025年1月†
+page: vouchers: one-rate rule 40 read aloud	Changzhou city: 20% for all computing	常州市：各类算力一律20%
+page: vouchers: one-rate rule 41 (paired by its linked copy)	Huainan city Nov 2026†	淮南市 2026年11月†
+page: vouchers: one-rate rule 41 read aloud	Huainan city: 20% for all computing	淮南市：各类算力一律20%
+page: vouchers: one-rate rule 42 (paired by its linked copy)	Nantong city Sept 2025	南通市 2025年9月
+page: vouchers: one-rate rule 42 read aloud	Nantong city: 20% for all computing	南通市：各类算力一律20%
+page: vouchers: one-rate rule 43 (paired by its linked copy)	Qingdao city Mar 2026	青岛市 2026年3月
+page: vouchers: one-rate rule 43 read aloud	Qingdao city: 20% for all computing	青岛市：各类算力一律20%
+page: vouchers: one-rate rule 44 (paired by its linked copy)	Shenyang city Jan 2026g	沈阳市 2026年1月g
+page: vouchers: one-rate rule 44 read aloud	Shenyang city: 20% for all computing	沈阳市：各类算力一律20%
+page: vouchers: one-rate rule 45 (paired by its linked copy)	Zhengzhou city May 2024	郑州市 2024年5月
+page: vouchers: one-rate rule 45 read aloud	Zhengzhou city: 20% for all computing	郑州市：各类算力一律20%
+page: vouchers: one-rate rule 46 (paired by its linked copy)	Datong city Aug 2025†	大同市 2025年8月†
+page: vouchers: one-rate rule 46 read aloud	Datong city: 10% for all computing	大同市：各类算力一律10%
+page: vouchers: one-rate rule 47 (paired by its linked copy)	Wuchang district, Wuhan May 2026†	武汉市武昌区 2026年5月†
+page: vouchers: one-rate rule 47 read aloud	Wuchang district, Wuhan: 60% for all computing	武汉市武昌区：各类算力一律60%
+page: vouchers: one-rate rule 48 (paired by its linked copy)	Binhaiwan New Area, Dongguan May 2026h	东莞滨海湾新区 2026年5月h
+page: vouchers: one-rate rule 48 read aloud	Binhaiwan New Area, Dongguan: 50% for all computing	东莞滨海湾新区：各类算力一律50%
+page: vouchers: one-rate rule 49 (paired by its linked copy)	Chaoyang district, Beijing May 2026†	北京市朝阳区 2026年5月†
+page: vouchers: one-rate rule 49 read aloud	Chaoyang district, Beijing: 50% for all computing	北京市朝阳区：各类算力一律50%
+page: vouchers: one-rate rule 50 (paired by its linked copy)	Chengdu High-tech Zone Sept 2026	成都高新区 2026年9月
+page: vouchers: one-rate rule 50 read aloud	Chengdu High-tech Zone: 50% for all computing	成都高新区：各类算力一律50%
+page: vouchers: one-rate rule 51 (paired by its linked copy)	Haidian district, Beijing Aug 2025†i	北京市海淀区（中关村科学城） 2025年8月†i
+page: vouchers: one-rate rule 51 read aloud	Haidian district, Beijing: 50% for all computing	北京市海淀区（中关村科学城）：各类算力一律50%
+page: vouchers: one-rate rule 52 (paired by its linked copy)	Hebei district, Tianjin Apr 2024j	天津市河北区 2024年4月j
+page: vouchers: one-rate rule 52 read aloud	Hebei district, Tianjin: 50% for all computing	天津市河北区：各类算力一律50%
+page: vouchers: one-rate rule 53 (paired by its linked copy)	Qiantang district, Hangzhou Dec 2025	杭州市钱塘区 2025年12月
+page: vouchers: one-rate rule 53 read aloud	Qiantang district, Hangzhou: 50% for all computing	杭州市钱塘区：各类算力一律50%
+page: vouchers: one-rate rule 54 (paired by its linked copy)	Tianhe district, Guangzhou Nov 2024†	广州市天河区 2024年11月†
+page: vouchers: one-rate rule 54 read aloud	Tianhe district, Guangzhou: 50% for all computing	广州市天河区：各类算力一律50%
+page: vouchers: one-rate rule 55 (paired by its linked copy)	Tianfu New Area, Sichuan Apr 2024†	四川天府新区 2024年4月†
+page: vouchers: one-rate rule 55 read aloud	Tianfu New Area, Sichuan: 40% for all computing	四川天府新区：各类算力一律40%
+page: vouchers: one-rate rule 56 (paired by its linked copy)	Beijing E-Town, a development zone Nov 2024k	北京经济技术开发区（是开发区，不是北京市） 2024年11月l
+page: vouchers: one-rate rule 56 read aloud	Beijing E-Town, a development zone: 30% for all computing	北京经济技术开发区（是开发区，不是北京市）：各类算力一律30%
+page: vouchers: one-rate rule 57 (paired by its linked copy)	Futian district, Shenzhen Nov 2024†	深圳市福田区 2024年11月†
+page: vouchers: one-rate rule 57 read aloud	Futian district, Shenzhen: 30% for all computing	深圳市福田区：各类算力一律30%
+page: vouchers: one-rate rule 58 (paired by its linked copy)	Guangming district, Shenzhen Mar 2025	深圳市光明区 2025年3月
+page: vouchers: one-rate rule 58 read aloud	Guangming district, Shenzhen: 30% for all computing	深圳市光明区：各类算力一律30%
+page: vouchers: one-rate rule 59 (paired by its linked copy)	Guangzhou Development Zone and Huangpu district Jun 2025†	广州开发区和黄埔区 2025年6月†
+page: vouchers: one-rate rule 59 read aloud	Guangzhou Development Zone and Huangpu district: 30% for all computing	广州开发区和黄埔区：各类算力一律30%
+page: vouchers: one-rate rule 60 (paired by its linked copy)	Lingang Special Area, Shanghai May 2025†l	上海临港新片区 2025年5月†k
+page: vouchers: one-rate rule 60 read aloud	Lingang Special Area, Shanghai: 30% for all computing	上海临港新片区：各类算力一律30%
+page: vouchers: one-rate rule 61 (paired by its linked copy)	Longhua district, Shenzhen Nov 2024	深圳市龙华区 2024年11月
+page: vouchers: one-rate rule 61 read aloud	Longhua district, Shenzhen: 30% for all computing	深圳市龙华区：各类算力一律30%
+page: vouchers: one-rate rule 62 (paired by its linked copy)	Lucheng district, Wenzhou Oct 2023†	温州市鹿城区 2023年10月†
+page: vouchers: one-rate rule 62 read aloud	Lucheng district, Wenzhou: 30% for all computing	温州市鹿城区：各类算力一律30%
+page: vouchers: one-rate rule 63 (paired by its linked copy)	Minhang district, Shanghai Feb 2026†	上海市闵行区 2026年2月†
+page: vouchers: one-rate rule 63 read aloud	Minhang district, Shanghai: 30% for all computing	上海市闵行区：各类算力一律30%
+page: vouchers: one-rate rule 64 (paired by its linked copy)	Nanchang High-tech Zone Apr 2026†	南昌高新区 2026年4月†
+page: vouchers: one-rate rule 64 read aloud	Nanchang High-tech Zone: 30% for all computing	南昌高新区：各类算力一律30%
+page: vouchers: one-rate rule 65 (paired by its linked copy)	Nansha district, Guangzhou Jul 2025†	广州市南沙区 2025年7月†
+page: vouchers: one-rate rule 65 read aloud	Nansha district, Guangzhou: 30% for all computing	广州市南沙区：各类算力一律30%
+page: vouchers: one-rate rule 66 (paired by its linked copy)	Putuo district, Shanghai Jan 2025†	上海市普陀区 2025年1月†
+page: vouchers: one-rate rule 66 read aloud	Putuo district, Shanghai: 30% for all computing	上海市普陀区：各类算力一律30%
+page: vouchers: one-rate rule 67 (paired by its linked copy)	Qingpu district, Shanghai Sept 2026	上海市青浦区 2026年9月
+page: vouchers: one-rate rule 67 read aloud	Qingpu district, Shanghai: 30% for all computing	上海市青浦区：各类算力一律30%
+page: vouchers: one-rate rule 68 (paired by its linked copy)	Shijingshan district, Beijing Mar 2024†	北京市石景山区 2024年3月†
+page: vouchers: one-rate rule 68 read aloud	Shijingshan district, Beijing: 30% for all computing	北京市石景山区：各类算力一律30%
+page: vouchers: one-rate rule 69 (paired by its linked copy)	Songjiang district, Shanghai Nov 2025†	上海市松江区 2025年11月†
+page: vouchers: one-rate rule 69 read aloud	Songjiang district, Shanghai: 30% for all computing	上海市松江区：各类算力一律30%
+page: vouchers: one-rate rule 70 (paired by its linked copy)	Xuhui district, Shanghai Apr 2025†	上海市徐汇区 2025年4月†
+page: vouchers: one-rate rule 70 read aloud	Xuhui district, Shanghai: 30% for all computing	上海市徐汇区：各类算力一律30%
+page: vouchers: one-rate rule 71 (paired by its linked copy)	Zhengzhou High-tech Zone Jul 2025†	郑州高新区 2025年7月†
+page: vouchers: one-rate rule 71 read aloud	Zhengzhou High-tech Zone: 30% for all computing	郑州高新区：各类算力一律30%
+page: vouchers: one-rate rule 72 (paired by its linked copy)	Fengtai district, Beijing Oct 2025†	北京市丰台区 2025年10月†
+page: vouchers: one-rate rule 72 read aloud	Fengtai district, Beijing: 20% for all computing	北京市丰台区：各类算力一律20%
+page: vouchers: one-rate rule 73 (paired by its linked copy)	Hefei High-tech Zone Jan 2025†	合肥高新区 2025年1月†
+page: vouchers: one-rate rule 73 read aloud	Hefei High-tech Zone: 20% for all computing	合肥高新区：各类算力一律20%
+page: vouchers: one-rate rule 74 (paired by its linked copy)	Hongshan district, Wuhan Sept 2025†	武汉市洪山区 2025年9月†
+page: vouchers: one-rate rule 74 read aloud	Hongshan district, Wuhan: 20% for all computing	武汉市洪山区：各类算力一律20%
+page: vouchers: one-rate rule 75 (paired by its linked copy)	Suzhou Industrial Park Nov 2025†m	苏州工业园区 2025年11月†m
+page: vouchers: one-rate rule 75 read aloud	Suzhou Industrial Park: 20% for all computing	苏州工业园区：各类算力一律20%
+page: vouchers: one-rate rule 76 (paired by its linked copy)	Zhengzhou Airport Zone Nov 2025†	郑州航空港区 2025年11月†
+page: vouchers: one-rate rule 76 read aloud	Zhengzhou Airport Zone: 20% for all computing	郑州航空港区：各类算力一律20%
+page: vouchers: one-rate rule 77 (paired by its linked copy)	Zhongkai High-tech Zone, Huizhou Apr 2026n	惠州仲恺高新区 2026年4月n
+page: vouchers: one-rate rule 77 read aloud	Zhongkai High-tech Zone, Huizhou: 15% for all computing	惠州仲恺高新区：各类算力一律15%
+page: vouchers: one-rate rule 78 (paired by its linked copy)	Baiyun district, Guangzhou Mar 2026	广州市白云区 2026年3月
+page: vouchers: one-rate rule 78 read aloud	Baiyun district, Guangzhou: 10% for all computing	广州市白云区：各类算力一律10%
+page: vouchers: lettered note a (Chinese page: a)	a Jiangsu province: a ceiling for province and city together; each city divided into districts sets its own rate inside it	a 江苏省：省市支持总额的上限；各设区市在上限范围内自行确定具体比例
+page: vouchers: lettered note b (Chinese page: d)	b Guizhou province: a separate 30% for adapting to home-made computing	d 贵州省：使用国产化算力开展适配另有30%的激励
+page: vouchers: lettered note c (Chinese page: c)	c Hunan province: the rules’ stated aim includes steering buyers to home-made computing first, at the same rate	c 湖南省：细则写明的目的包括“引导算力需求方优先使用国产算力资源”，补贴比例并无不同
+page: vouchers: lettered note d (Chinese page: b)	d Shanghai city: building support, up to 10%, for home-made computing only	b 上海市：建设支持最高10%，只给国产（自主）算力
+page: vouchers: lettered note e (Chinese page: e)	e Beijing city: a supplier must be able to serve on home-made chips with home-made software: a condition on the supplier, not a higher rate and not a rule that only such service is paid	e 北京市：算力开放单位须“可基于国产芯片并使用国产软件栈提供算力服务”：这是对供给方的条件，不是更高的补贴比例，也不是只补贴这类服务的规定
+page: vouchers: lettered note f (Chinese page: f)	f Shenzhen city: separate support for moving models to home-made chips	f 深圳市：把模型迁移到国产芯片另有支持
+page: vouchers: lettered note g (Chinese page: g)	g Shenyang city: its province’s data bureau says in one reply that the vouchers go to users of local home-made computing; the city’s own text names no origin	g 沈阳市：辽宁省数据和政务服务局在一份答复中称，两市算力券面向使用本地国产算力资源的用户；该市自己的政策文本未写明算力来源
+page: vouchers: lettered note h (Chinese page: h)	h Binhaiwan New Area, Dongguan: the same 50% pays for the New Area’s computing, for data, and for adapting to home-made operating systems and chips	h 东莞滨海湾新区：同一个50%的比例，补贴购买新区算力、数据以及国产操作系统适配、国产芯片适配等服务的费用
+page: vouchers: lettered note i (Chinese page: i)	i Haidian district, Beijing: the rate sentence encourages large-model firms to use home-made computing, at the same rate; the district’s application guide pays that 50% on contracts for GPU computing	i 北京市海淀区（中关村科学城）：补贴比例所在的句子“鼓励大模型企业使用国产算力”，比例并无不同；该区的申报指南对购买或租用GPU算力的合同按同一个50%补贴
+page: vouchers: lettered note j (Chinese page: j)	j Hebei district, Tianjin: pays for computing bought from one named centre, the Tianjin AI Computing Center, which Tianjin Daily calls wholly home-made; in force for four years from its publication (article 14)	j 天津市河北区：补贴购买一个点名的中心（天津人工智能计算中心）的算力服务，《天津日报》称该中心为纯国产化算力；自发布之日起生效，有效期四年（第十四条）
+page: vouchers: lettered note k (Chinese page: l)	k Beijing E-Town, a development zone: replaced a rule of Mar 2024 that paid up to 40% and up to 30%; servers with home-made chips get a separate purchase subsidy of up to 10%	l 北京经济技术开发区（是开发区，不是北京市）：取代了2024年3月最高按40%和最高按30%支付的规定；装国产芯片的服务器另有最高10%的采购支持
+page: vouchers: lettered note l (Chinese page: k)	l Lingang Special Area, Shanghai: apart from rental, up to 10% of the purchase of equipment with independently controllable chips	k 上海临港新片区：租赁之外，采购芯片关键核心技术自主可控的智算设备，最高补贴采购额的10%
+page: vouchers: lettered note m (Chinese page: m)	m Suzhou Industrial Park: the park’s measures of Nov 12, 2025, which repeal its measures of 2023, read on the signed file as a commercial policy platform’s file store holds it	m 苏州工业园区：园区2025年11月12日的措施，同时废止2023年的措施；读的是一家商业政策服务平台文件库所存的签发文件
+page: vouchers: lettered note n (Chinese page: n)	n Zhongkai High-tech Zone, Huizhou: an action plan with a rate in force, from Apr 1, 2026 to Dec 31, 2027; read in an Internet Archive capture of the zone’s page	n 惠州仲恺高新区：有现行补贴比例的行动方案，自2026年4月1日起实施，至2027年12月31日结束；读的是互联网档案馆对该区页面的存档
 page (Chinese page only): draft note under the key		草稿，由Anthropic的模型Claude制作。仅存于本机，未发布。中文为Claude所译，尚未经中文母语读者审校。Draft by Claude, Anthropic’s model.
 pop-up labels. Core page: its English for a Chinese source, no quote marks. Chinese page: my Chinese for an English source, no quote marks, then the source's own words in quote marks; a Chinese source shows its own words only	In our English: 	本页中文译文： (then 英文原文：“...”); a Chinese source: 原文：“...”
 pop-up and marks: fixed words	On the record	有公开记录

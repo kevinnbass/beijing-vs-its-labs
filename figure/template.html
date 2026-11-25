@@ -155,27 +155,50 @@ table.pv td.sh { font: 700 15px/1.2 var(--font-head); color: var(--ink); white-s
 
 /* local vouchers (fourth edit) */
 #vouchers { margin-top: 16px; }
-.vgrid { display: grid; grid-template-columns: 1fr; grid-template-areas: "a" "b" "f"; gap: 6px 40px; align-items: start; }
-@media (min-width: 1000px) { .vgrid { grid-template-columns: 1fr 1fr; grid-template-rows: auto 1fr; grid-template-areas: "a b" "f b"; } }
+.vgrid { display: grid; grid-template-columns: 1fr; grid-template-areas: "a" "f" "b"; gap: 6px 40px; align-items: start; }
+@media (min-width: 1000px) { .vgrid { grid-template-columns: 1fr 1fr; grid-template-areas: "a f" "b b"; } }      /* voucher round 5: the rules that favour home-made computing beside the note (a, f); the third class below, the width of the card (b) */
 .vlab a.srcn { white-space: nowrap; }
-.vgrid .va { grid-area: a; } .vgrid .vb { grid-area: b; } .vgrid .vf { grid-area: f; margin-top: 14px; }
+.vgrid .va { grid-area: a; } .vgrid .vb { grid-area: b; } .vgrid .vc { grid-area: c; } .vgrid .vf { grid-area: f; margin-top: 8px; }
+@media (min-width: 1000px) { .vgrid .vb, .vgrid .vc { margin-top: 14px; } .vgrid .vc h4:first-child { margin-top: 37px; } }
 .vgrp h3 { font: 700 14px/1.3 var(--font-text); margin: 8px 0 4px; }
+.vgrp h4 { font: 600 13px/1.3 var(--font-text); color: var(--ink2); margin: 10px 0 4px; }
 .vkey { display: flex; flex-wrap: wrap; gap: 4px 18px; font-size: 12.5px; color: var(--ink2); margin-bottom: 2px; }
 .vkey span { display: flex; align-items: center; gap: 6px; }
-i.sw.both { background: linear-gradient(90deg, var(--away) 50%, var(--toward) 50%); }
-.vr { display: grid; grid-template-columns: minmax(150px, 42%) 1fr; gap: 12px; align-items: center; padding: 5px 0; border-top: 1px solid var(--grid); }
+i.sw.both { background: linear-gradient(90deg, var(--away) 50%, var(--toward) 50%); } i.sw.unk { background: var(--surface); border: 2.5px solid var(--ink2); }
+.vr { display: grid; grid-template-columns: minmax(150px, 42%) 1fr; gap: 0 12px; align-items: center; padding: 5px 0; border-top: 1px solid var(--grid); }
 .vlab { font-size: 13.5px; line-height: 1.3; }
-.vnote { display: block; font-size: 12px; color: var(--muted); }
+.vnote { grid-column: 1 / -1; font-size: 12px; line-height: 1.35; color: var(--muted); margin-top: 1px; }      /* a row’s note runs under its label and its marks, the whole width of the column */
+.vtag { font-size: 11px; color: var(--muted); border: 1px solid var(--axis); border-radius: 8px; padding: 0 6px; white-space: nowrap; }
 .vt { position: relative; height: 30px; margin: 0 22px 0 8px; }
 .vt .vl { position: absolute; top: 19px; height: 2px; left: calc(var(--a) * 100%); width: calc((var(--b) - var(--a)) * 100%); background: var(--axis); }
 .vt .vd { position: absolute; top: 14px; width: 12px; height: 12px; margin-left: -6px; border-radius: 50%; left: calc(var(--x) * 100%); }
 .vt .vd.away { background: var(--away); } .vt .vd.toward { background: var(--toward); }
 .vt .vd.both { background: linear-gradient(90deg, var(--away) 50%, var(--toward) 50%); }
+.vt .vd.unk { background: var(--surface); border: 2.5px solid var(--ink2); } .vt .vl.unk { background: none; height: 0; top: 19px; border-top: 2px dashed var(--ink2); }      /* two rates by a type of facility the rule does not name: neither colour */
 .vt .vn { position: absolute; top: 0; transform: translateX(-50%); left: calc(var(--x) * 100%); font: 700 12px/1 var(--font-head); white-space: nowrap; }
 .vt .vn.side { top: 14px; transform: none; left: auto; }
 .vr.axis { padding-top: 0; border-top: 0; }
 .vr.axis .vt { height: 16px; border-top: 1px solid var(--axis); }
 .vr.axis .vt span { position: absolute; top: 3px; transform: translateX(-50%); left: calc(var(--x) * 100%); font-size: 11px; color: var(--muted); }
+/* voucher round 5: the third class, its one-rate rules as a compact list in columns (place, month, a dot on the same 0 to 60% scale, the rate) */
+.vbtop { display: grid; grid-template-columns: 1fr; gap: 0 40px; align-items: start; }
+@media (min-width: 1000px) { .vbtop { grid-template-columns: 1fr 1fr; } }
+.vexpl { font-size: 12.5px; line-height: 1.4; color: var(--ink2); margin: 0 0 6px; max-width: 72ch; }
+.vmini { columns: 1; column-gap: 28px; margin-top: 8px; }
+@media (min-width: 620px) { .vmini { columns: 2; } }
+@media (min-width: 1000px) { .vmini { columns: 4; } }
+.vmh { font: 600 12.5px/1.3 var(--font-text); color: var(--ink2); margin: 10px 0 2px; break-after: avoid; break-inside: avoid; }
+.vmini > .vmh:first-child { margin-top: 0; }
+.vm { display: grid; grid-template-columns: 1fr 56px 30px; gap: 0 6px; align-items: center; font-size: 12px; line-height: 1.3; padding: 2px 0; border-top: 1px solid var(--grid); break-inside: avoid; }
+.vml a.srcn { white-space: nowrap; }
+.vmt { position: relative; height: 12px; background: linear-gradient(var(--axis), var(--axis)) 0 50% / 100% 1px no-repeat; }
+.vmt i { position: absolute; top: 2px; width: 8px; height: 8px; margin-left: -4px; border-radius: 50%; left: calc(var(--x) * 100%); background: linear-gradient(90deg, var(--away) 50%, var(--toward) 50%); }
+.vmp { font: 700 12px/1 var(--font-head); text-align: right; }
+.vdag { color: var(--muted); margin-left: 2px; }
+.vfl { font-size: 10px; font-weight: 700; color: var(--ink2); margin-left: 2px; }
+.vfoot { columns: 1; column-gap: 28px; margin-top: 10px; font-size: 12px; line-height: 1.35; color: var(--muted); }
+@media (min-width: 1000px) { .vfoot { columns: 2; } }
+.vfoot p { margin: 0 0 4px; break-inside: avoid; } .vfoot b { color: var(--ink2); }
 @media (max-width: 620px) { .vr { grid-template-columns: 1fr; gap: 2px; } .vr.axis > div:first-child { display: none; } }
 
 /* the records */
@@ -255,8 +278,8 @@ li.ev.hl, li.ev:target { background: var(--wash); }
   </section>
  </div>
  <section class="card" id="vouchers">
-  <h2>Local vouchers for rented computing</h2>
-  <p class="sub">The general rate a local rule pays of a firm’s bill for rented computing (the rate for an ordinary applicant), for home-made computing and for other computing, as each rule’s own text states it; a higher rate for a named kind of firm, whatever the chip, is in the row’s note. One measure throughout.</p>
+  <h2>Local vouchers and like subsidies for computing</h2>
+  <p class="sub">The general rate a local rule pays of a firm’s bill for rented or bought computing (the rate for an ordinary applicant), for home-made computing and for other computing, as each rule’s own text states it; a higher rate for a named kind of firm, whatever the chip, is in the rule’s saved copy. One measure throughout. The rules that favour home-made computing are drawn in full, with notes; the rules of one rate are listed by kind of government and by rate.</p>
 %%VOUCHERS%%
  </section>
  <section class="card" id="records">
@@ -274,7 +297,7 @@ li.ev.hl, li.ev:target { background: var(--wash); }
    <li>No published Chinese order against buying Nvidia chips was found in the policy pages and national document lists read. The published acts against Nvidia that were found are a summons and an antitrust case. The public warnings found came mostly in one burst: of %%SM_N%% state and Party media items on Nvidia chips found from %%SM_FROM%% to %%SM_TO%%, %%SM_WIN%% of the %%SM_W%% that only warn about Nvidia’s chips date from %%SM_W0%% to %%SM_W1%%, and the %%SM_WLATE%% found later are in Global Times in 2026 (%%SM_MIX%% others mix a warning with a welcome; the items after September 2025 are what two rounds of searches found, a sample and not a full count), and none of them is an order. Earlier, on Dec 3, 2024, an industry body, the Internet Society of China, had called on companies to be careful in choosing to buy American chips, citing US export controls, and in the same sentence to use chips made in China by domestic and foreign-funded firms alike.</li>
    <li>Records %%REC:cn-policy-samr-open-original%% and %%REC:cn-policy-samr-further-original%% are an antitrust case against Nvidia the company. By Nvidia’s own reports the preliminary finding concerns the degraded products that US export controls required it to offer the Chinese market. They are drawn orange as pressure on Nvidia, not as a wish for fewer Nvidia chips. The White House said on Nov 1, 2025 that China would end its investigations of US firms in the chip supply chain, naming none; neither the regulator’s own news list (read to Nov 23, 2026) nor Nvidia’s reports say the Nvidia case has ended, and the regulator’s review of its 2025 work, posted Apr 10, 2026, lists the further investigation.</li>
    <li>What Beijing meant is not settled. American bodies read its antitrust moves as leverage or pressure: the US-China commission (2025), “exert leverage and ease pressure as a negotiating tactic”; the Congressional Research Service (Sept 2025), “to pressure Nvidia to provide its advanced chips to China”. Yet asked whether China would let its companies buy the H200, the Trade Representative said “that’s gonna be a sovereign decision for China” (May 15, 2026, Bloomberg Television; captions, not checked by ear, at 05:59). Either reading leaves the direction of the acts drawn here as it is.</li>
-   <li>The H200 also had to pass American conditions: testing in the United States, a cap at half of the shipments to American customers, and a 25% tariff (Commerce Department rule of Jan 15, 2026; Nvidia’s report for the quarter ended Jul 26, 2026). By May 11, 2026 Washington had returned without action %%HF_RWA%% of the %%HF_ALL%% chips in the applications listed, more than half of that list (the bars above). The committee that released the table says the summary does not show every application in full; its example is an Nvidia application of Dec 19, 2025 for 445,000 chips for Tencent; the table’s only Tencent row of that date is for 75,000, approved, and neither document says whether it is that application.</li>
+   <li>The H200 also had to pass American conditions: testing in the United States, shipments to China and Macau of no more than half of the same product shipped for end use in the United States, and a 25% tariff (Commerce Department rule of Jan 15, 2026; Nvidia’s report for the quarter ended Jul 26, 2026). By May 11, 2026 Washington had returned without action %%HF_RWA%% of the %%HF_ALL%% chips in the applications listed, more than half of that list (the bars above). The committee that released the table says the summary does not show every application in full; its example is an Nvidia application of Dec 19, 2025 for 445,000 chips for Tencent; the table’s only Tencent row of that date is for 75,000, approved, and neither document says whether it is that application.</li>
    <li>The chip at issue changed over time: the H20 (2024 to 2025), the RTX Pro 6000D (2025), the H200 (from December 2025).</li>
    <li>The records are a selection made to show both sides, not a census. The count of marks in a row is not a measure.</li>
    <li>Records %%REC:cn-policy-micron-decision%% and %%REC:cn-policy-desktop-2023%% are not about Nvidia. Record %%REC:cn-policy-micron-decision%% is the 2023 review conclusion that failed Micron’s products, a published instruction to operators of critical information infrastructure to stop buying one foreign chip maker’s products; record %%REC:cn-policy-desktop-2023%% is a purchase rule for Party and state bodies’ desktop computers. They are drawn in orange as steps away from foreign chips. Record %%REC:cn-le17-whuf-134391%% is two universities’ own buying, in notices that hold suppliers to the government procurement law’s conditions; it is not an act of the central government. Records %%REC:cn-tolerate-mof%% and %%REC:cn-acts-mofcom-20261117%% do not name Nvidia; they are drawn blue because they back Chinese firms’ computing abroad, where by record %%REC:cn-tolerate-ft-offshore%% Nvidia chips are used. Records %%REC:cn-counter-b11-5%% and %%REC:cn-policy-qiushi-cuda-gap%% are a city body’s and a Party journal’s documents about what the companies use; they are drawn in the companies’ row.</li>

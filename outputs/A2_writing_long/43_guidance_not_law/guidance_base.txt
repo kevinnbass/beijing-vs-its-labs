@@ -2,7 +2,7 @@
 @deck How Beijing steered China's AI companies away from Nvidia's chips without publishing an order, shown on this one case.
 
 @note Draft by Claude, Anthropic's model. Written Nov 23, 2026 (UTC).
-@note How to read it. Words between quotation marks are a source's exact words, found in the saved copy by a script. A filled reference number is a document, a filing or a named person on the record. An open number is a press report citing unnamed people. English in round brackets after Chinese is our rendering, not an official translation.
+@note How to read it. Words between quotation marks are a source's exact words, found in the saved copy by a script. A filled reference number is a document, a filing, a named person on the record or a state-media item. An open number is a press report citing unnamed people. English in round brackets after Chinese is our rendering, not an official translation.
 @note The author's interest. Anthropic has argued in public for controls on chip exports to China (that is from the model's general knowledge; no saved page is cited for it), so judge this piece by its sources.
 
 ## Pressure without a rule
@@ -28,7 +28,7 @@ Headlines do say ban. The same paper's "China bans tech companies from buying Nv
 
 **2. In public, state media warned, mostly from Jul 31 to Sept 24, 2025** (on the record)
 
-Of 75 state-media items on Nvidia chips found from July 2025 to November 2026, 11 of the 14 that only warn about them date from Jul 31 to Sept 24, 2025 [cn-ga02-gt-cac-summons-news-202507] [cn-acts-peoplesdaily-bjd-20250801] [cn-media-stdaily-security-forum]; the three found later are in Global Times in 2026 (the items after September 2025 are what two rounds of searches found, a sample and not a full count).
+Of 75 state-media items on Nvidia chips found from July 2025 to November 2026, 16 of the 19 that only warn about them date from Jul 31 to Sept 24, 2025 [cn-ga02-gt-cac-summons-news-202507] [cn-acts-peoplesdaily-bjd-20250801] [cn-media-stdaily-security-forum]; the three found later are in Global Times in 2026 (the items after September 2025 are what two rounds of searches found, a sample and not a full count).
 !! cn-acts-peoplesdaily-bjd-20250801 | 2025-08-01
 !! cn-acts-peoplesdaily-bjd-20250801 | 绝不能让“带病”的芯片上岗
 !! cn-media-stdaily-security-forum | 2025-09-24
@@ -54,16 +54,19 @@ For Nvidia the cyberspace regulator published a summons, on Jul 31, 2025, and no
 
 **4. The written rules cover only the state's own buying** (on the record)
 
-Notices published on Dec 26, 2023 require Party and government bodies to write into their purchases of computers and servers that the processor and operating system meet a security evaluation. The same sentence adds: "其他单位可不在采购需求中提出此项要求" (other units may leave this requirement out) [cn-policy-desktop-2023] [cn-policy-server-procurement-2023].
+Notices published on Dec 26, 2023 require Party and government bodies at township level and above, and two kinds of public institution tied to them, to write into their purchases of desktop computers and general-purpose servers that the processor and operating system meet a security evaluation. The same sentence adds: "其他单位可不在采购需求中提出此项要求" (other units may leave this requirement out) [cn-policy-desktop-2023] [cn-policy-server-procurement-2023].
 !! cn-policy-desktop-2023 | 发布日期:2023年12月26日
 !! cn-policy-desktop-2023 | 应当将CPU、操作系统符合安全可靠测评要求纳入采购需求，其他单位可不在采购需求中提出此项要求
+!! cn-policy-desktop-2023 | 乡镇以上党政机关，以及乡镇以上党委和政府直属事业单位及部门所属为机关提供支持保障的事业单位在采购台式计算机时
 !! cn-policy-server-procurement-2023 | 发布日期:2023年12月26日
+!! cn-policy-server-procurement-2023 | 乡镇以上党政机关，以及乡镇以上党委和政府直属事业单位及部门所属为机关提供支持保障的事业单位在采购通用服务器时
 !! cn-policy-server-procurement-2023 | 应当将CPU、操作系统符合安全可靠测评要求纳入采购需求
 !! cn-policy-server-procurement-2023 | 其他单位可不在采购需求中提出此项要求
 No published national plan found sets a home-made share for computing centres: every such share found is a province's or a city's, and the national computing-network opinions of December 2023 set none [cn-policy-computing-network-1779].
 !! cn-policy-computing-network-1779 | 算力网关键核心技术基本实现安全可靠
-Two national texts hold a home-made percentage of other kinds: the 20% price preference for home-made products in government purchasing [cn-policy-domestic-product-standard-2025], and an advisory committee's roadmap of October 2015, which expected home-made high-performance computers and servers to hold over 80% of the home market by 2025 [cn-policy-roadmap-original].
+Two national texts hold a home-made percentage of other kinds: the 20% price preference given to home-made products where they compete with others in a government purchase [cn-policy-domestic-product-standard-2025], and an advisory committee's roadmap of October 2015, which expected home-made high-performance computers and servers to exceed 80% of the home market by 2025 [cn-policy-roadmap-original].
 !! cn-policy-domestic-product-standard-2025 | 对本国产品的报价给予20%的价格扣除
+!! cn-policy-domestic-product-standard-2025 | 政府采购活动中既有本国产品又有非本国产品参与竞争的
 !! cn-policy-roadmap-original | 国家制造强国建设战略咨询委员会2015年10月
 !! cn-policy-roadmap-original | 2、2025年目标
 !! cn-policy-roadmap-original | 国产高性能计算机与服务器国际市场占有率预计达40%、国内市场占有率预计超80%

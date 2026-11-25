@@ -47,7 +47,7 @@ def rday(s):
     d = datetime.strptime(s, '%m/%d/%Y %H:%M:%S'); return f'{MON[d.month - 1]} {d.day}, {d.year}'
 FID = f['filings_feed_id']
 hidden = [f"!! {FID} | FETCHED: {f['filings_feed_fetched_utc']}", f'!! {FID} | {rec[0]}', f'!! {FID} | {rec[1]}', f'!! {FID} | 08/26/2026 00:00:00',
-          f"!! cn-o38-nvda-feed-secfilings-2026-b | FETCHED: {f['earlier_feed_fetched_utc']}"]
+          f"!! {f['earlier_feed_id']} | FETCHED: {f['earlier_feed_fetched_utc']}"]
 v = {'FILINGS_FETCHED': stamp(f['filings_feed_fetched_utc']), 'FILINGS_HEAD': head(f['filings_feed_fetched_utc']), 'EARLIER_FETCHED': stamp(f['earlier_feed_fetched_utc']),
      'EARLIER_SAME': 'was the same, byte for byte' if f['earlier_feed_same_bytes'] == 'True' else 'showed the same 10-Q rows',
      'NEWEST_SENTENCE': f'At that time the newest was a Form {new[0][0]} received on {rday(rec[0])}, and the one before it a Form {new[1][0]} received on {rday(rec[1])}.', 'FEED_HIDDEN': chr(10).join(hidden),
@@ -67,16 +67,18 @@ t = (HERE / 'nvidia_10q_base_src.txt').read_text(encoding='utf-8')
 for k, x in v.items(): t = t.replace('{' + k + '}', str(x))
 left = re.findall(r'\{[A-Z_0-9]+\}', t)
 if left: sys.exit(f'unfilled: {left}')
-if datetime.strptime(f['sec_record_fetched_utc'], '%Y-%m-%dT%H:%M:%SZ') <= datetime.strptime(f['filings_feed_fetched_utc'], '%Y-%m-%dT%H:%M:%SZ'): sys.exit('the SEC record is not the latest reading: fix the headline time')
+if f['earlier_feed_same_bytes'] != 'True' and f['earlier_feed_same_10Q_rows'] != 'True': sys.exit('the two readings of Nvidia\'s own list differ in their 10-Q rows: rewrite the sentence on the earlier reading')
+if datetime.strptime(f['sec_record_fetched_utc'], '%Y-%m-%dT%H:%M:%SZ') < datetime.strptime(f['filings_feed_fetched_utc'], '%Y-%m-%dT%H:%M:%SZ'): sys.exit(      # core edit 8: the two were fetched in the same second on Nov 25, 2026, so equal times pass
+    'the SEC record is not the latest reading: fix the headline time')
 (HERE / 'nvidia_10q_base.txt').write_text(t, encoding='utf-8')
 FEED = 'https://investor.nvidia.com/feed/SECFiling.svc/GetEdgarFilingList?apiKey=SITE_PUBLIC_KEY&exchange=CIK&symbol=0001045810&formGroupIdList=&excludeNoDocuments=true&pageSize=-1&pageNumber=0&tagList=&includeTags=true&year=2026&excludeSelection=1'
 REP = 'https://investor.nvidia.com/feed/FinancialReport.svc/GetFinancialReportList?apiKey=SITE_PUBLIC_KEY&reportTypes=First%20Quarter|Second%20Quarter|Third%20Quarter|Fourth%20Quarter&excludeReportTypes=&reportSubTypeList[]=&excludeSelection=1&year=2027'
-for sid, u in ((FID, FEED), ('cn-o38-nvda-feed-secfilings-2026-b', FEED), ('cn-o38-nvda-feed-finreports-fy2027', REP)):
+for sid, u in ((FID, FEED), (f['earlier_feed_id'], FEED), (f['reports_feed_id'], REP)):
     import json as _j
     if _j.loads((P / sid / 'meta.json').read_text())['url'] != u: sys.exit(f'{sid}: the saved address is not the one in the references')
-gen = [f"{FID}\tFIL\tNvidia investor site, its list of the company's SEC filings for 2026 (a data feed), as fetched a second time, at {stamp(f['filings_feed_fetched_utc'])}\t{FEED}",
-       f"cn-o38-nvda-feed-secfilings-2026-b\tFIL\tThe same list of the company's SEC filings for 2026, as first fetched, at {stamp(f['earlier_feed_fetched_utc'])}\t{FEED}",
-       f"cn-o38-nvda-feed-finreports-fy2027\tFIL\tNvidia investor site, its list of the documents posted for each quarter of fiscal 2027 (a data feed), as fetched at {stamp(f['reports_feed_fetched_utc'])}\t{REP}"]
+gen = [f"{FID}\tFIL\tNvidia investor site, its list of the company's SEC filings for 2026 (a data feed), as last fetched, at {stamp(f['filings_feed_fetched_utc'])}\t{FEED}",
+       f"{f['earlier_feed_id']}\tFIL\tThe same list of the company's SEC filings for 2026, as fetched earlier, at {stamp(f['earlier_feed_fetched_utc'])}\t{FEED}",
+       f"{f['reports_feed_id']}\tFIL\tNvidia investor site, its list of the documents posted for each quarter of fiscal 2027 (a data feed), as fetched at {stamp(f['reports_feed_fetched_utc'])}\t{REP}"]
 (HERE / 'extra_refs.tsv').write_text('\n'.join(gen) + '\n' + (HERE / 'refs_hand.tsv').read_text(encoding='utf-8'), encoding='utf-8')
 r = subprocess.run([sys.executable, '-I', 'scripts/cn_doc_build.py', str(HERE / 'nvidia_10q_base.txt'), '--refs', str(HERE / 'extra_refs.tsv'), '--title', 'Nvidia Report Not Filed', '--eyebrow', 'China chip policy: new research, idea 38'], capture_output=True, text=True)
 print(r.stdout[-3000:], r.stderr[-800:]); sys.exit(r.returncode)

@@ -1,5 +1,5 @@
 """Idea 36, second table: remarks of other companies, and other records of the three, taken by script from the project's
-two tables tables/labs_said.tsv (agent L09) and tables/labs_said_more.tsv (agent L26). Nothing is fetched.
+two tables tables/labs_said.tsv and tables/labs_said_more.tsv (each made by another reader of the project). Nothing is fetched.
 
 Run: python3 -I build_more.py   (in this folder; build.py runs it)
 Reads   more_chosen.tsv (which rows and passages to show, who, my label, my English for Chinese words)
@@ -76,9 +76,9 @@ def date_on_page(sid, d):
     return None
 
 LABEL = {   # for saved ids the argument's references do not hold; {date} is filled from the table's date column
- 'cn-le26-iflytek-ir-20250213': ('FIL', "iFlytek, record of investor-relations activity of {date} (an investor call), on the exchanges' disclosure site (cninfo). The record lists the company's board secretary as its only attendee"),
- 'cn-le26-iflytek-ir-20250422': ('FIL', "iFlytek, record of investor-relations activity: its results meeting of {date}, on the exchanges' disclosure site (cninfo). The record lists who attended for the company, not who gave each answer"),
- 'cn-le26-iflytek-2024-annual': ('FIL', "iFlytek, annual report for 2024, dated {date}, on the exchanges' disclosure site (cninfo)"),
+ 'cn-le26-iflytek-ir-20250213': ('FIL', "iFlytek, record of investor-relations activity of {date} (an investor call), on the disclosure site cninfo.com.cn. The record lists the company's board secretary as its only attendee"),
+ 'cn-le26-iflytek-ir-20250422': ('FIL', "iFlytek, record of investor-relations activity: its results meeting of {date}, on the disclosure site cninfo.com.cn. The record lists who attended for the company, not who gave each answer"),
+ 'cn-le26-iflytek-2024-annual': ('FIL', "iFlytek, annual report for 2024, dated {date}, on the disclosure site cninfo.com.cn"),
  'cn-le26-sensetime-2024-results-en': ('FIL', "SenseTime, annual results announcement for the year ended Dec 31, 2024, dated {date} (English), on the host its investor page uses"),
  'cn-le29-zhipu-results-20260331-en': ('FIL', "Zhipu (Z.AI), annual results announcement, dated {date}, as linked from its own investor site"),
  'cn-le09-hk01-tencent-tong-domestic-chips': ('REC', "HK01 (a Hong Kong news site), {date}, reporting Dowson Tong of Tencent at Tencent Cloud Day Hong Kong. Reported speech, not a quotation"),
@@ -93,6 +93,17 @@ LABEL_CHECK = {  # words on the page that bear out what a label or a 'who' says
  'cn-le09-hk01-tencent-tong-domestic-chips': ['集团高级执行副总裁、云与智慧产业事业群首席执行官汤道生', 'Tencent Cloud Day Hong Kong'],
  'cn-usside-070': ['tech.meituan.com'],
 }
+# Round 9 (Nov 25, 2026; the core now marks a Kingsoft Cloud answer as given through an interpreter): on these stock-data-site
+# pages the quoted English is a translation by the page's own marks or words. The note goes into the row's "who" cell; the build
+# stops unless the turn that holds the quotation begins with the page's mark of a passage not in English (where asked) and holds
+# the page's words (where given), and (where named) unless the turn before it is that speaker's and holds only the mark.
+# Columns: words the turn must hold, or None | the turn must begin with the mark | the speaker of a turn before it that holds only the mark, or None | the note.
+INTERP = {
+ 'cn-le09-kingsoftcloud-call-20260819-sa': ('Allow me to quickly translate', True, None, 'the English follows a passage the page leaves out as not in English and the words "Allow me to quickly translate"'),
+ 'cn-le09-kingsoftcloud-call-20250820-sa': (None, True, None, 'the English follows a passage the page leaves out as not in English'),
+ 'cn-le09-kingsoftcloud-call-20250528-sa': ("very quickly to translate from Mr. Zou's response", False, 'Zou Tao', 'the turn begins "very quickly to translate from Mr. Zou\'s response", after a turn of Zou Tao\'s that the page leaves out as not in English'),
+}
+MARK0 = re.compile(r'^\[(foreignlanguage|non-englishcontent)\]')
 
 sel = [l.split('\t') for l in (HERE / 'more_chosen.tsv').read_text(encoding='utf-8').splitlines() if l.strip() and not l.startswith('#')]
 bad, out, sa_cache = [], [], {}
@@ -129,6 +140,15 @@ for t, line, sid0, pidx, cut, who, about, gloss in sel:
         if name != c[3] or (not c[4].startswith('(') and title != c[4]): bad.append(f'{sid}: the page labels the speaker {name} | {title}; the table {c[3]} | {c[4]}'); continue
         if who != '@page': bad.append(f'{t}{line}: a stock-data-site row must take its speaker from the page'); continue
         who_txt = (f'{name}, {title}' if title else f'{name} (the page gives no name or title)') + '; results call, stock-data site'
+        if sid in INTERP:
+            must, mark0, prev, note = INTERP[sid]
+            ti_ = [k for k, (n, ti, body) in enumerate(turns) if all(sq(q) in body for q in quotes)]
+            if len(ti_) != 1: bad.append(f'{sid}: the quoted English is not in one turn'); continue
+            body0 = turns[ti_[0]][2]
+            if must and sq(must) not in body0: bad.append(f'{sid}: the turn does not hold: {must}'); continue
+            if mark0 and not MARK0.match(body0): bad.append(f'{sid}: the turn does not begin with the mark of a passage not in English'); continue
+            if prev and not (ti_[0] > 0 and turns[ti_[0] - 1][0] == prev and MARK0.match(turns[ti_[0] - 1][2]) and MARK0.sub('', turns[ti_[0] - 1][2]) == ''): bad.append(f'{sid}: the turn before is not {prev} with only the mark'); continue
+            who_txt += '; ' + note
         checks += [date_words, f'{name} {title}'.strip()]
         kind, label = 'REC', f"{company}, results call labelled {quarter} by the site, {nice(date)}. Transcript on the stock-data site stockanalysis.com. The text and speaker labels are the site's; nobody has checked them against the recording"
     else:
@@ -178,8 +198,27 @@ cen = {r[0]: r for r in cl[1:]}
 n61 = int(cen['revenue (control)'][2])
 if int(cen['revenue (control)'][1]) != n61: sys.exit('L09 census: the control word is not in every call')
 put('l9_calls', n61)
-for k, w in (('nvidia', 'Nvidia'), ('huawei', 'Huawei'), ('misspell', 'misspellings of Nvidia or Huawei'), ('cyberspace', 'Cyberspace Administration'), ('customs', 'customs'), ('h200', 'H200'), ('h20', 'H20'), ('untranslated', 'untranslated passage marker')):
+for k, w in (('nvidia', 'Nvidia'), ('huawei', 'Huawei'), ('misspell', 'misspellings of Nvidia or Huawei'), ('cyberspace', 'Cyberspace Administration'), ('customs', 'customs'), ('h200', 'H200'), ('h20', 'H20')):      # the marks of passages not in English are recounted below (round 9)
     put(f'l9_{k}', cen[w][1])
+# Round 9 (Nov 25, 2026): the reader's count of the marks of passages not in English missed marks that a page's markup splits
+# ("[Non-English cont ent]") or spaces ("[ Foreign language]"); the core's own count was corrected the same day for the same
+# kind of fault. Recount on the pages as a visitor sees them, over the reader's own list of calls. Controls: the strict pattern
+# must give the reader's figure (the same reading of the pages), and the loose one must find both planted forms and not plain prose.
+def _sp(w): return r'\s*'.join(re.escape(ch) for ch in w)
+MARK_STRICT = re.compile(r'\[(?:Foreign language|Non-English content)\]', re.I)
+MARK_LOOSE = re.compile(r'\[\s*(?:' + _sp('foreign') + r'\s+' + _sp('language') + '|' + _sp('non-english') + r'\s+' + _sp('content') + r')\s*\]', re.I)
+if not (MARK_LOOSE.search('Hey [Non-English cont ent] Thanks') and MARK_LOOSE.search('delivery, [ Foreign language].') and not MARK_LOOSE.search('in foreign languages and non-English content')): sys.exit('control failed: the loose pattern for the marks')
+def _vis(sid):
+    if sid.endswith('-own'): return (P / sid / 'text.txt').read_text(encoding='utf-8', errors='replace')
+    h = (P / sid / 'body.html').read_text(encoding='utf-8', errors='replace')
+    return html.unescape(re.sub(r'(?s)<[^>]+>', ' ', re.sub(r'(?is)<(script|style)\b.*?</\1>', ' ', h)))
+l9ids = [r['saved_id'] for r in csv.DictReader((l for l in (PROJ / 'loose_ends' / 'L09_labs_calls' / 'calls_read.tsv').read_text(encoding='utf-8').splitlines() if not l.startswith('#')), delimiter='\t')]
+if len(l9ids) != n61: sys.exit(f'L09 calls_read.tsv lists {len(l9ids)} calls, its census {n61}')
+vt = {s: _vis(s) for s in l9ids}
+n_strict, n_loose = sum(1 for s in l9ids if MARK_STRICT.search(vt[s])), sum(1 for s in l9ids if MARK_LOOSE.search(vt[s]))
+if n_strict != int(cen['untranslated passage marker'][1]): sys.exit(f'the strict recount ({n_strict}) is not the reader\'s count ({cen["untranslated passage marker"][1]}): reword the paragraph on the marks')
+if n_loose < n_strict: sys.exit('control failed: the loose recount is below the strict one')
+put('l9_untranslated', n_loose); put('l9_untranslated_reader', n_strict); put('l9_untranslated_missed', n_loose - n_strict)
 put('l9_h20_which', '; '.join(f"{' '.join(x.split()[:-1])} {nice(x.split()[-1])}" for x in cen['H20'][3].split('; ')))
 # my own count over the saved iFlytek texts (reports, investor records, exchange-platform answers), with a control page
 ids = sorted(p.name for p in P.glob('cn-le26-iflytek-*') if (p / 'text.txt').exists())

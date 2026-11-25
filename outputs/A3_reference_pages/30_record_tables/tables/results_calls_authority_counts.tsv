@@ -1,0 +1,50 @@
+# Counts from a search of 118 company texts for the names of Chinese authorities beside a chip word, run on Nov 25, 2026 over the texts as they are cited on that day: counts only, no sentence is copied. The texts, in three groups: A, 39 results-call transcripts of Tencent, Alibaba and Baidu (13 each, Nov 15, 2023 to Nov 19, 2026); B, 37 results-call transcripts of JD.com and Kuaishou (8 each) and Kingsoft Cloud, Meituan and Xiaomi (7 each), Mar 6, 2025 to Nov 19, 2026; C, 42 records of four smaller companies: iFlytek 19 (periodic reports, records of meetings with investors and answers on the exchange's platform), SenseTime 14, Zhipu 7 and MiniMax 2 (results announcements, annual and interim reports and prospectuses). 61 of the 76 transcripts are listed in tables/results_calls_read.tsv; the other 15 are earlier calls of Tencent, Alibaba and Baidu, Nov 15, 2023 to Nov 21, 2024. Three checks, each on the plain text of a saved page, the longest one where a page has more than one; for the 76 transcripts the pages as a visitor sees them give the same counts. (1) "same sentence": for each group and each of 14 words, the number of sentences that hold the word and, of those, the number that also hold a chip word (chip, GPU, semiconductor, compute, computing power, Nvidia, H20, H200, accelerator, 芯片, 算力, 英伟达, 半导体, 加速卡, 显卡, the Chinese words in both scripts). The 14 words, each with its full name and its traditional characters: 网信办 (the cyberspace regulator), 发改委 (the state planner), 工信部 (the industry ministry), 海关 (customs), 窗口指导 (window guidance), 商务部 (the commerce ministry) and 约谈 (a summons to talks); their English names CAC, customs, Ministry of Commerce or MOFCOM, MIIT and NDRC; and two general English words, guidance and regulator. (2) "within 200 characters": every match of an authority word of that list, the general word guidance left out, and of those the number with a chip word within 200 characters on either side (the same chip words without compute, computing power and 算力). (3) "government word": every match of a general word for the government or the authorities (Chinese government, central government, Beijing, the authorities, 中国政府, 当局, 监管部门 and others) and of those the number with both a chip word and a word of restriction within 200 characters. Columns: the check; the group; the word; the hits; the hits beside a chip word; the saved ids of those; what those are. Result: 299 sentences hold one of the 14 words and 3 of them also hold a chip word: the general word guidance twice, each time of a company's own spending, and MIIT once, in the ministry's certificate for SenseTime's cloud platform. The second check finds 3 among 232 matches: that certificate, and the United States Department of Commerce twice in one passage of MiniMax's prospectus. The third finds none among 726. So no named Chinese authority stands beside a chip word in the 118 texts but for an MIIT certificate (SenseTime), and the one other body is the US Commerce Department (MiniMax): the two exceptions of OFFICIAL_RECORD.md, section 8. Controls: the same patterns find 网信办 and 约谈 on a People's Daily commentary [cn-acts-peoplesdaily-bjd-20250801], the Cyberspace Administration in Alibaba's annual report [cn-clips-alibaba-20f] and on a press page [cn-le09-hwbusters-tencent-shrugs], and Beijing with chip and restriction words on a saved press report; the word revenue stands in all 76 transcripts. What the table is not: a count of words, not a reading; many of the transcripts mark passages as not translated (tables/results_calls_read.tsv counts the markers), and what was said only in Chinese there is not searched; a run of the same search on Nov 24, 2026 read 119 texts, two of them copies that are no longer cited (one has been replaced by another copy of the same report), so its counts for group C were different; and a word's absence from a text is not a statement by the company.
+check	group	word	hits	hits_beside_a_chip_word	saved_ids_of_those	what_those_are
+same sentence	A	网信办	0	0		
+same sentence	A	发改委	0	0		
+same sentence	A	工信部	0	0		
+same sentence	A	海关	0	0		
+same sentence	A	窗口指导	0	0		
+same sentence	A	商务部	0	0		
+same sentence	A	约谈	0	0		
+same sentence	A	guidance	16	1	cn-o36-tencent-call-20251113-sa	the company's own spending guidance: a line of the transcript site's own summary of Tencent's call of Nov 13, 2025, which says that capital-spending guidance was lowered for chip supply; no authority is named
+same sentence	A	regulator	4	0		
+same sentence	A	CAC	0	0		
+same sentence	A	customs	0	0		
+same sentence	A	Ministry of Commerce / MOFCOM	0	0		
+same sentence	A	MIIT	0	0		
+same sentence	A	NDRC	0	0		
+same sentence	B	网信办	0	0		
+same sentence	B	发改委	0	0		
+same sentence	B	工信部	0	0		
+same sentence	B	海关	0	0		
+same sentence	B	窗口指导	0	0		
+same sentence	B	商务部	0	0		
+same sentence	B	约谈	0	0		
+same sentence	B	guidance	33	1	cn-le09-kingsoftcloud-call-20260819-sa	the company's own spending guidance: an analyst's question in Kingsoft Cloud's call of Aug 19, 2026 on chip procurement and the year's capital-spending guidance; no authority is named
+same sentence	B	regulator	9	0		
+same sentence	B	CAC	0	0		
+same sentence	B	customs	0	0		
+same sentence	B	Ministry of Commerce / MOFCOM	0	0		
+same sentence	B	MIIT	0	0		
+same sentence	B	NDRC	0	0		
+same sentence	C	网信办	21	0		
+same sentence	C	发改委	19	0		
+same sentence	C	工信部	48	0		
+same sentence	C	海关	1	0		
+same sentence	C	窗口指导	0	0		
+same sentence	C	商务部	23	0		
+same sentence	C	约谈	0	0		
+same sentence	C	guidance	42	0		
+same sentence	C	regulator	7	0		
+same sentence	C	CAC	25	0		
+same sentence	C	customs	1	0		
+same sentence	C	Ministry of Commerce / MOFCOM	9	0		
+same sentence	C	MIIT	36	1	cn-le29-sensetime-2025-annual-en-tcurl	the ministry's certificate for SenseTime's AI cloud platform, in the company's 2025 annual report; the chip word of the sentence, Computing Power, stands in a heading of the next column that the page's text runs into
+same sentence	C	NDRC	5	0		
+within 200 characters	A	any authority word of the list (the general word guidance left out)	4	0		
+within 200 characters	B	any authority word of the list (the general word guidance left out)	9	0		
+within 200 characters	C	any authority word of the list (the general word guidance left out)	219	3	cn-le26-sensetime-2025-annual-em, cn-le29-minimax-prospectus-zh	one hit is the ministry's certificate for SenseTime's AI cloud platform (工業和信息化部), in its 2025 annual report; two are the United States Department of Commerce (美國商務部), in one passage of MiniMax's prospectus on American export controls
+government word	A	a general word for the government or the authorities, with a chip word and a word of restriction	4	0		
+government word	B	a general word for the government or the authorities, with a chip word and a word of restriction	19	0		
+government word	C	a general word for the government or the authorities, with a chip word and a word of restriction	703	0		

@@ -8,7 +8,7 @@ Run: python3 -I build.py
    space or the end. Inside a quotation only its last mark counts. Control: a four-sentence answer must count as 4.
 3. Counts the text shows, each taken from a file and compared with the words in the text (the run stops if they differ):
      the argument's points, sources and limits     argument/argument_base.txt, argument/argument_refs.tsv
-     state-media items, and those that only warn    tables/state_media_items.tsv (75; 14 only warn, 11 of them from Jul 31 to Sept 24, 2025 and 3 later)
+     state-media items, and those that only warn    tables/state_media_items.tsv (75; 19 only warn, 16 of them from Jul 31 to Sept 24, 2025 and 3 later)
      the share of chips returned without action     tables/house_licence_table.tsv (55% of the table's chips)
    and no id on the do-not-cite list (loose_ends/hkexnews_saved_ids.tsv) may be cited.
 Exit 1 if the build or any check fails.

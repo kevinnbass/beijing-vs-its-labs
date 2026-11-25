@@ -60,6 +60,9 @@ cn-policy-wang-nvidia	希望包括英伟达在内的跨国公司为中国客户�
 cn-policy-wang-nvidia	7月17日，商务部部长王文涛会见美国英伟达公司总裁兼首席执行官黄仁勋
 #@ mofcom.year
 cn-policy-wang-nvidia	2025-07-18 13:36
+# round 9b: the readout's own posting line (the meeting was the day before, 7月17日)
+#@ mofcom.pub.date
+cn-policy-wang-nvidia	2025-07-18 13:36
 
 #@ bloomberg
 cn-factions-bloomberg-flexibility-202409-relay1	guidance rather than an outright ban

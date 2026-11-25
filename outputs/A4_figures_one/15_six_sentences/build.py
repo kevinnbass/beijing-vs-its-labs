@@ -126,7 +126,8 @@ def main():
     # made from the project's table by a4lib.warnings()
     A.guard(page, Q, ours=['82', W['warn'], W['burst']], dates=[fmt(r['date']) for r in rows] + [fmt(r['pub']) for r in rows if r['pub']] + [fmt(d_lim), fmt(d_car), W['span'], W['later_months']])
     # withdrawn by core edit 6 (atlas/core_edit/APPLIED_6.txt, part 02 and B1): the warnings are not all of Aug 1 to Sept 24, 2025
-    for banned in ('four limits', 'spokesperson', 'Beijing pulled one way', 'all dated', 'Aug 1 to', 'none after', 'the seven', ' 42 ', 'not a census', 'found by searches and links'):     # the last two: touch-up 6b (Nov 24, 2026), item 21
+    for banned in ('four limits', 'spokesperson', 'Beijing pulled one way', 'all dated', 'Aug 1 to', 'none after', 'the seven', ' 42 ', 'not a census', 'found by searches and links',     # the last two: touch-up 6b (Nov 24, 2026), item 21
+                   'on the summer of 2025', 'which serve market demand'):     # withdrawn by core edit 8b (Nov 25, 2026): the Journal's "last year"; point 5's English
         assert banned not in page, f'the page still says "{banned}"'
     out = HERE / 'six_sentences.html'
     out.write_text(page, encoding='utf-8'); print('written', out, len(page), 'bytes')

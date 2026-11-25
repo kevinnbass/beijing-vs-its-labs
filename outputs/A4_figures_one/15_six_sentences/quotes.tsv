@@ -9,6 +9,9 @@ man-cn-factions-wsj-ding	Authorities privately told companies to halt their Nvid
 man-cn-factions-wsj-ding	July 23, 2026
 #@ b1.unnamed
 man-cn-factions-wsj-ding	people familiar with the matter said
+# round 9b: the article puts the turn "last year" (it is dated Jul 23, 2026), under the heading Turning point
+#@ b1.when
+man-cn-factions-wsj-ding	The turning point came last year
 
 #@ b2
 cn-clips-alibaba-20f	In September 2025, the Cyberspace Administration of China requested Chinese technology companies to halt purchases of certain chips.

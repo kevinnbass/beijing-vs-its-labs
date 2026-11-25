@@ -83,7 +83,14 @@ EN_FIX = {
             'We hope multinationals, Nvidia among them, will give Chinese customers high-quality, reliable products and services.')],
     '90': [('guiding home-made large models to step up adaptation to home-made computing chips',
             'guiding home-made large models to do more to adapt to home-made computing chips')],
+    # Round 9 (Nov 25, 2026): two renderings the official record corrected in core edit 8b (its rows Frr02-021 and Frr07-019), which the
+    # checked note still holds in their earlier words; the page takes the record's words
+    '85': [('the share of intelligent computing, the rate of home-made equipment and the regional concentration',
+            'the share of intelligent computing, the home-made rate and the regional concentration')],
+    '91': [('to build research, production and operating centres in China',
+            'to build research and development, production and operating centres in China')],
 }
+EN_SRC = {'74': 'argument', '58': 'argument', '11': 'argument', '90': 'argument', '85': 'record', '91': 'record'}   # round 9: whose corrected wording each line takes
 # Round 4: the commission's page names Li Chao and his office (李超 2026/05/22 政研室) and does not call him spokesperson
 # (loose_ends/L23_chinese_review, A12). Words of a note body or a table row replaced on this page; the build stops if
 # one is not met exactly once.
@@ -101,11 +108,16 @@ REPOINT = {'60': ('cn-le14-itsec-2026-2', 'http://www.itsec.gov.cn/aqkkcp/cpgg/2
 # Round 4 (outputs/ROUND4.md, section 3, item 3): a rule repealed by a later one is shown with that fact, checked in
 # the later rule's saved copy. (table, row) -> (saved id of the later rule, its words, the note shown).
 REPEALED = {('local_vouchers.tsv', 8): ('cn-le28-etown-29hao-20241126', '原政策(京技管发〔2024〕10号)同时废止',
-            "Repealed. The zone's rule of Nov 26, 2024 (京技管发〔2024〕29号) says the former policy, No. 10 of 2024, is repealed at the same time, and pays 30% of the bill whatever the chip. The 40% and 30% here are not the rule in force.")}
+            "Repealed. The zone's rule of Nov 26, 2024 (京技管发〔2024〕29号) says the former policy, No. 10 of 2024, is repealed at the same time, and pays 30% of the bill whatever the chip. The rates of up to 40% and up to 30% here are not the rule in force.")}
 # Core edit 7b (Nov 25, 2026): words of a note's check note that name the project's own working files, replaced on this
 # page by what they mean. List line -> [(the note's words, the page's words)]; the build stops if one is not met once.
 REMARK_FIX = {'55': [('on the new copy (loose_ends/GA21_replacements/quotes.tsv, cn_has.py exit 0).',
                       'Confirmed on the new copy: the script found its passages in the saved page.')]}
+# Core edit 8 (Nov 25, 2026): words of a table's cell that name the project's own working files, helpers or tools, replaced on this page by what
+# they mean (the tables' own cells are unchanged: they are the session's). (table, row) -> [(the cell's words, the page's words)]; the build stops
+# if one is not met exactly once, and stops if a line from the tables still shows such a word (WORKING below; control in local_lines()).
+COPY_FIX = {}      # Nov 25, 2026 (the session): the ten cells this map reworded now hold those plain words in the tables themselves, so the page and the tables say the same; a new working word in a printed cell still stops the build
+WORKING = re.compile(r"loose_ends|\bL\d\d\b|\bGA\d\d\b|this folder|WebFetch|cn_has|check_extracted|\bthe session\b|\.py\b")
 RESULT = {'share': 'sets a share for home-made computing hardware', 'plan_no_share': 'a plan that was read sets no such share',
           'account_only': "known only from accounts of it, its issuer's own among them", 'not_reached': 'no computing plan was found'}
 
@@ -123,7 +135,8 @@ def local_lines():
     local_vouchers_more.tsv, as lines of a sixth kind. A passage is shown only where cn_has.py can find it in a saved
     copy named on the row (Word and zip copies cannot be read by it); a voucher row with no such passage is left out and
     counted. A province row is always shown (its result is the point), with its passages where they are found."""
-    out, left = [], []
+    out, left, fixed_rows = [], [], set()
+    if not WORKING.search("text made in L15's folder") or WORKING.search('合肥市 (Hefei city), agent measures'): stop('WORKING: the control of the working-word screen fails')
     for name, wk, sk in (('provinces_31.tsv', 'exact_words', 'saved_ids'), ('local_vouchers.tsv', 'words', 'saved_id'),
                          ('local_vouchers_more.tsv', 'words', 'saved_id')):
         for i, r in enumerate(table_rows(name), 1):
@@ -154,29 +167,75 @@ def local_lines():
                 reading = f"home-made computing: {ns(r['rate_home'])}; other computing: {ns(r['rate_other'])}; kind: {ns(r['kind'])}"
                 desc = f"{r['document']}. Date as the table gives it: {r['date']}" if r['document'] else f"Date as the table gives it: {r['date']}"
                 extra = r['copy'].strip()
+            for old_, new_ in COPY_FIX.get((name, i), []):
+                if extra.count(old_) != 1: stop(f'COPY_FIX: tables/{name} row {i}: "{old_}" stands {extra.count(old_)} times in the cell, not once')
+                extra = extra.replace(old_, new_); fixed_rows.add((name, i))
+            for cell_ in (who, reading, desc, extra):
+                if WORKING.search(cell_): stop(f'tables/{name} row {i}: a cell this page prints holds a working word ("{WORKING.search(cell_).group(0)}"): add its plain words to COPY_FIX: {cell_[:160]}')
             out.append({'table': name, 'trow': i, 'prov': prov, 'result': r.get('result', ''), 'level': r.get('level', ''), 'iso': iso, 'who': who,
                         'reading': reading, 'desc': desc, 'extra': extra, 'quotes': qs, 'sids': sids or [x for x in re.split(r'[\s;,]+', r[sk]) if x]})
+    if fixed_rows != set(COPY_FIX): stop(f'COPY_FIX: rows not met: {sorted(set(COPY_FIX) - fixed_rows)}')
     return out, left
 
 
 def voucher_counts():
     """Round 5: the voucher counts the 'Read with care' box prints, taken from the argument's own sentence
-    (argument/argument_base.txt, point 3) and checked against the count script's output of core edit 6
-    (atlas/core_edit/edit6_parts/vcount_as_stands.out, rule R0), which also gives the names. Stops if they differ."""
+    (argument/argument_base.txt, point 3) and checked against a count by script, which also gives the names. Stops if
+    they differ. Core edit 8 (Nov 25, 2026): the count by script is the project's table of classes,
+    tables/local_vouchers_classes.tsv (made by scripts/cn_voucher_classes.py --write from the two voucher tables by the
+    published rule). Until then it was the output of core edit 6's count script
+    (atlas/core_edit/edit6_parts/vcount_as_stands.out), which is fixed at the tables' size of that day (two fewer rules) and
+    no longer describes them: two more rules are counted since (Xiamen's and Xinjiang's)."""
     arg = (PROJ / 'argument' / 'argument_base.txt').read_text(encoding='utf-8')
-    m = re.search(r'(\d+) of (\d+) pay more for home-made computing and still pay for other computing, (\d+), Sichuan\'s, pays for home-made computing only, and (\d+) pay one rate whatever the chip', arg)
+    # Round 9 (Nov 25, 2026; voucher rounds 3 to 6): the argument's sentence now names what the count is (rules found by searches that went province by
+    # province and city by city, not a census), four rules that pay for home-made computing only, and a third class of two kinds (one rate; Hangzhou's
+    # two rates by a type of facility it does not name). The page prints the argument's own numbers and names, each checked against the table of classes.
+    m = re.search(r'(\d+) of the (\d+) found by searches that went province by province and city by city, saved and read \(not a census of every local government\), '
+                  r'pay more for home-made computing and still pay for other computing, (\d+), those of ([^()]+?), pay for home-made computing only, and (\d+) state no higher rate '
+                  r'for home-made computing: (\d+) of them pay one rate whatever the chip, and one, (\w+)\'s, pays (\d+)% or (\d+)% by a type of computing facility that it does not name', arg)
     if not m: stop("the argument's voucher sentence (point 3) was not found in the words this builder expects")
-    t, n, h, o = map(int, m.groups())
-    out = (PROJ / 'atlas' / 'core_edit' / 'edit6_parts' / 'vcount_as_stands.out').read_text(encoding='utf-8')
-    m2 = re.search(r'^R0 .*?: (\d+) counted: tiered (\d+), home-made only (\d+), one rate (\d+)', out, re.M)
-    if not m2 or tuple(map(int, m2.groups())) != (n, t, h, o): stop(f'the argument says {t}/{h}/{o} of {n}; the count script says {m2.groups() if m2 else None}')
-    r0 = out.split('\nR1 ')[0]   # the R0 block: its rows run until the R1 line
-    names = lambda cls: [x.group(1) for x in re.finditer(r'^\s+\S+\s+(\S+)\s+' + re.escape(cls) + r'\s', r0, re.M)]
-    tn, hn = names('tiered'), names('home-made only')
-    if len(tn) != t or hn != ['Sichuan']: stop(f'names from the count script do not match: {tn} {hn}')
-    order = ['Hangzhou', 'Zhejiang', 'Wenzhou', 'Binjiang']   # the order the page has printed them in since round 4
-    tn = sorted(tn, key=lambda x: order.index(x) if x in order else 99)
-    return {'n': n, 'tiered': t, 'home': h, 'one': o, 'tiered_names': ', '.join(tn), 'home_names': hn[0]}
+    t, n, h = int(m.group(1)), int(m.group(2)), int(m.group(3)); home_arg = m.group(4); third, o = int(m.group(5)), int(m.group(6))
+    two_name, two_a, two_b = m.group(7), m.group(8), m.group(9)
+    cls = table_rows('local_vouchers_classes.tsv')
+    TI, HO, ONE, TWO, NOT = ('pays more for home-made and still pays for other computing', 'pays for home-made computing only', 'one rate',
+                             'two rates by a type of computing facility that the rule does not name', 'read and not counted')
+    cc = Counter(r['class'] for r in cls)
+    if set(cc) != {TI, HO, ONE, TWO, NOT}: stop(f'tables/local_vouchers_classes.tsv has a class this builder does not know: {sorted(cc)}')
+    n_rows = len(table_rows('local_vouchers.tsv')) + len(table_rows('local_vouchers_more.tsv'))
+    if len(cls) != n_rows: stop(f'tables/local_vouchers_classes.tsv has {len(cls)} rows; the two voucher tables have {n_rows}: run scripts/cn_voucher_classes.py --write')
+    got = (cc[TI] + cc[HO] + cc[ONE] + cc[TWO], cc[TI], cc[HO], cc[ONE] + cc[TWO], cc[ONE], cc[TWO])
+    if got != (n, t, h, third, o, 1): stop(f'the argument says {t}/{h}/{third} ({o} one rate, 1 two rates) of {n}; the table of classes says {got}')
+    tn = sorted(r['government'] for r in cls if r['class'] == TI); hn = sorted(r['government'] for r in cls if r['class'] == HO)
+    two = [r['government'] for r in cls if r['class'] == TWO]
+    if len(tn) != t or len(hn) != h or not all(x in home_arg for x in hn) or two != [two_name]:
+        stop(f'names from the table of classes do not match the argument: {tn} {hn} / "{home_arg}" {two} / {two_name}')
+    counted = [r['government'] for r in cls if r['class'] != NOT]
+    if len(set(counted)) != len(counted): stop('a government is counted twice in the table of classes')
+    return {'n': n, 'tiered': t, 'home': h, 'third': third, 'one': o, 'tiered_names': ', '.join(tn), 'home_arg': home_arg,
+            'two_name': two_name, 'two_a': two_a, 'two_b': two_b, 'not': cc[NOT]}
+
+
+def voucher_class_of():
+    """Round 9 (Nov 25, 2026): each voucher line says whether the published counting rule counts it, as the project's table of classes
+    gives it (row A<i> is row i of tables/local_vouchers.tsv, row B<i> row i of tables/local_vouchers_more.tsv). (table, row) -> words.
+    Stops unless every row of the two tables has its class row, in order, and the class row's saved id is one the voucher row names."""
+    cls = table_rows('local_vouchers_classes.tsv')
+    out = {}
+    for name, p in (('local_vouchers.tsv', 'A'), ('local_vouchers_more.tsv', 'B')):
+        for i, r in enumerate(table_rows(name), 1):
+            c = [x for x in cls if x['row_id'] == f'{p}{i}']
+            if len(c) != 1: stop(f'tables/local_vouchers_classes.tsv: {len(c)} rows for {p}{i}')
+            c = c[0]
+            if c['saved_id'] and c['saved_id'] not in re.split(r'[\s;,]+', r['saved_id']): stop(f'tables/local_vouchers_classes.tsv row {p}{i}: its copy {c["saved_id"]} is not named by tables/{name} row {i}')
+            if c['class'] == 'read and not counted':      # the table's row ids (A<i>, B<i>) in a reason are given as the rows of the two tables this page names
+                why = re.sub(r'\(row ([AB])(\d+)\)', lambda m_: f'(row {m_.group(2)} of tables/{"local_vouchers.tsv" if m_.group(1) == "A" else "local_vouchers_more.tsv"})', c['reason'])
+                if re.search(r'\b[AB]\d+\b', why): stop(f'a row id of the table of classes is left in a reason: {why}')
+                out[(name, i)] = f'No: {why}'
+            elif c['class'] in ('one rate', 'two rates by a type of computing facility that the rule does not name'):
+                out[(name, i)] = f'Yes; it states no higher rate for home-made computing ({c["class"]})'
+            else: out[(name, i)] = f'Yes; it {c["class"]}'
+    if len(out) != len(cls): stop('the table of classes has rows the two voucher tables do not')
+    return out
 
 
 def stop(msg):
@@ -533,6 +592,12 @@ def main():
             if r['remark'].count(old) != 1: stop(f'REMARK_FIX: line {r["row"]}: the note no longer has "{old[:40]}" once')
             r['remark'] = r['remark'].replace(old, new)
     if any(not any(r['row'] == k for r in rows) for k in REMARK_FIX): stop('REMARK_FIX: a line was not met')
+    if set(EN_SRC) != set(EN_FIX): stop('EN_SRC and EN_FIX name different lines')
+    _core = {'argument': (PROJ / 'argument' / 'argument_base.txt').read_text(encoding='utf-8'), 'record': (PROJ / 'OFFICIAL_RECORD.md').read_text(encoding='utf-8')}
+    for k_, pairs_ in EN_FIX.items():
+        for _, new_ in pairs_:
+            if new_ not in _core[EN_SRC[k_]] and EN_SRC[k_] == 'record':      # the argument's four were checked in round 4 against the argument as it then stood
+                stop(f'EN_FIX: line {k_}: the record does not hold the wording the page takes from it: {new_[:60]}')
     for r in rows:
         for old, new in EN_FIX.get(r['row'], []):
             hit = [q for q in r['quotes'] if old in (q['en'] or '')]
@@ -609,6 +674,7 @@ def main():
     if met != LANE_WORDS: stop(f'LANE_WORDS entries not met in the note: {sorted(LANE_WORDS - met)}')
 
     local, left_out = local_lines()
+    VCLASS = voucher_class_of()
     for r in local:
         for old, new in BODY_FIX:
             if old in r['who']: r['who'] = r['who'].replace(old, new); body_met.append(old)
@@ -634,6 +700,7 @@ def main():
         if not r['quotes']:
             x.append('<p class="m"><span class="lab">Passage</span>None shown: the project\'s table gives no words for this row that the checker finds in a saved copy.</p>')
         if r.get('repealed'): x.append(f'<p class="m"><span class="lab">In force?</span><b>{esc(r["repealed"])}</b></p>')
+        if not r['prov']: x.append(f'<p class="m"><span class="lab">Counted by the published rule?</span>{esc(VCLASS[(r["table"], r["trow"])])}. From the project\'s table of classes, tables/local_vouchers_classes.tsv.</p>')
         if r['reading']: x.append(f'<p class="m"><span class="lab">Our reading, in English</span>{esc(r["reading"])}. This is the project\'s table, not a translation.</p>')
         x.append(f'<p class="m"><span class="lab">The document</span>{esc(r["desc"])}</p>')
         if r['extra']: x.append(f'<p class="m"><span class="lab">The copy held</span>{esc(r["extra"])}</p>')
@@ -642,6 +709,9 @@ def main():
         x.append(f'<p class="m"><span class="lab">Saved copy</span>{", ".join("<code>" + esc(s_) + "</code>" for s_ in r["sids"])}. Row {r["trow"]} of tables/{esc(r["table"])}.</p>')
         t_html = f'<p class="t"{" lang=\"zh-Hans\"" if has_cjk(title) else ""}>{esc(title)}</p>' if title else '<p class="t no">No title is held for this copy.</p>'
         tag2 = 'Province' if r['prov'] else ('National statement' if r.get('level') == 'national' else ('Local rule, repealed' if r.get('repealed') else 'Local rule'))   # round 5: a national body's words get their own badge
+        if not r['prov'] and tag2 == 'Local rule':      # round 9: a row the table of classes calls a draft, an application guide or a notice of a list is not badged a rule
+            tag2 = {'No: a draft': 'Local draft', 'No: an application guide, not the rule': 'Application guide',
+                    'No: a public notice of a list, not the rule': 'Notice of a list'}.get(VCLASS[(r['table'], r['trow'])], tag2)
         summ = (f'<summary>{d_html}<div class="who"><p class="b">{esc(r["who"])}</p>{t_html}</div>'
                 f'<span class="tags"><span class="tag">{tag2}</span><span class="tag v">From the project\'s tables</span></span></summary>')
         inner = summ + '<div class="x">' + ''.join(x) + '</div>'
@@ -649,8 +719,31 @@ def main():
         r['kind'] = 'local'
         cards.append(f'<details class="r" open data-kind="local" data-part="0" data-s="{esc(r["search"])}">{inner}</details>')
     c_res = Counter(r['result'] for r in local if r['prov'])
+    # round 9: the care box names Tibet and Xinjiang; the build stops if the table no longer gives them those results
+    _p31 = table_rows('provinces_31.tsv')
+    if [r['government'] for r in _p31 if r['result'] == 'account_only'] != ['Tibet'] or [r['government'] for r in _p31 if r['result'] == 'not_reached'] != ['Xinjiang']:
+        stop('tables/provinces_31.tsv no longer gives Tibet and Xinjiang the results the care box names')
+    # core edit 8: the care box names Zhejiang's share with its scope; the words follow the table's row (a share, from the sector plan whose words the row quotes)
+    zj = [r for r in table_rows('provinces_31.tsv') if r['government'] == 'Zhejiang']
+    if not (len(zj) == 1 and zj[0]['result'] == 'share' and zj[0]['saved_ids'].split()[0] == 'cn-ga31-cndocs-52' and L.has('到2030年，浙江信息通信行业算力规模达150EFLOPS，国产化算力占比超60%', 'cn-ga31-cndocs-52')):
+        stop('Zhejiang is not the share the care box describes (tables/provinces_31.tsv)')
     VC = voucher_counts()
+    # core edit 8: the sentence on voucher rows left out follows the count (none is left out since the text of the Word and zip copies was put beside them
+    # as text.article.txt and Xiamen's official file was filed among the saved sources)
+    # round 9: the two rows left out since voucher round 5 are scans without a text layer (their copy cells say so); the sentence names what they are, by the cells
+    _left_copy = [table_rows(x.split(' row ')[0])[int(x.split(' row ')[1]) - 1]['copy'] for x in left_out]
+    _scan = all('text layer' in c for c in _left_copy)
+    left_s = ((f'{len(left_out)} voucher rows are left out because none of their words could be checked by script (' + '; '.join(x.replace('.tsv row', '.tsv, row') for x in left_out) +
+               (f'): {"both saved copies are files" if len(left_out) == 2 else "each saved copy is a file"} without a text layer, as the table says.' if _scan else
+                '): they are held only as files the checker cannot read (a scan without a text layer, or a Word or zip file), or have no saved copy.'))
+              if left_out else 'No voucher row is left out: each has words the checker finds in a saved copy (where the copy is a Word or zip file, in the text taken out of it and kept beside it).')
     n_vouch = sum(1 for r in local if not r['prov'])
+    # round 9: how many of the voucher lines shown are counted, and the commonest reasons of those that are not (computed from the table of classes)
+    _vs = [VCLASS[(r['table'], r['trow'])] for r in local if not r['prov']]
+    v_shown_yes = sum(1 for v in _vs if v.startswith('Yes')); v_shown_no = n_vouch - v_shown_yes
+    _whyc = Counter(re.sub(r' \(row \d+ of tables/[a-z_]+\.tsv\)$', '', v[4:]) for v in _vs if v.startswith('No: ')); _why = _whyc.most_common(3)
+    v_shown_why = 'by reason, the commonest: ' + '; '.join(f'{k}, {w}' for w, k in _why) + ('; and other reasons' if len(_whyc) > 3 else '')
+    if v_shown_yes != VC['n'] and not left_out: stop(f'{v_shown_yes} counted voucher lines shown, but the argument counts {VC["n"]} and no voucher row is left out')
     lines_q += keep
     seen, qlines = set(), []
     for sid, w in lines_q:
@@ -714,12 +807,12 @@ def main():
 <details class="card how" id="how" open><summary><h2>How to read a line</h2></summary><ul>
 <li><b>A line</b> is one entry of a list of policy leads that a search run (the note calls it a lane) wrote. The checked note then read each lead in the saved copy of its page.</li>
 <li><b>Confirmed</b> means the page carries what the lead said. <b>Confirmed in part</b> ({n_part} lines) means some part is not in the page; the check note says which.</li>
-<li><b>Words between quotation marks</b> are the page's own, cut from the saved copy. The <b>English under Chinese is ours</b>, not an official translation. On {len(EN_FIX)} lines it is the argument's wording as corrected after a second reading (lines {", ".join(sorted(EN_FIX, key=int))} of the list).</li>
+<li><b>Words between quotation marks</b> are the page's own, cut from the saved copy. The <b>English under Chinese is ours</b>, not an official translation. On {len(EN_FIX)} lines it is the core's wording as corrected after a second or later reading: the argument's (lines {", ".join(sorted((k for k in EN_FIX if EN_SRC[k] == 'argument'), key=int))} of the list) or the official record's (lines {", ".join(sorted((k for k in EN_FIX if EN_SRC[k] == 'record'), key=int))}).</li>
 <li><b>In a check note</b>, words in italics are the note's own English, the list's own wording, or a reading the script could not check.</li>
 <li><b>The date</b> is that of the document or act as the list gives it. A script looked for it in the saved copy: it found date words for {n_dfound} of the {n_dated} dated lines, and each line shows them.</li>
 </ul></details>
 <section class="card"><h2>Read with care</h2><ul>
-<li><b>Two sources.</b> {n103} lines come from the checked note of policy leads. {n_local} more come from the project's tables of local rules and provincial plans, marked <i>From the project's tables</i>: all 31 provincial-level governments ({c_res['share']} set a share for home-made computing hardware; {c_res['plan_no_share']} have a plan that was read and sets none; {c_res['account_only']}, Tibet, is known only from accounts of it, its issuer's own among them; for {c_res['not_reached']}, Xinjiang, no computing plan was found), and {n_vouch} rows of the project's tables of local voucher and subsidy rules whose words the checker finds in a saved copy (a few of those rows are plans, a company's list or a national statement, as each says). {len(left_out)} voucher rows are left out because none of their words could be checked by script: most are held only as Word or zip files, which the checker cannot read, and some have no saved copy. On those lines the English is the table's reading of the rule, not a translation. Counting one rule in force for each local government whose text is saved and which states a share of the bill, the argument finds {VC['n']}: {VC['tiered']} pay more for home-made computing and still pay for other computing ({VC['tiered_names']}), {VC['home']}, {VC['home_names']}'s, pays for home-made computing only, and {VC['one']} pay one rate whatever the chip; Beijing E-Town's tier was repealed on Nov 26, 2024.</li>
+<li><b>Two sources.</b> {n103} lines come from the checked note of policy leads. {n_local} more come from the project's tables of local rules and provincial plans, marked <i>From the project's tables</i>: all 31 provincial-level governments ({c_res['share']} set a share for home-made computing hardware, one of them, Zhejiang's, for the computing of one sector, its information and communications industry; {c_res['plan_no_share']} have a plan that was read and sets none; {c_res['account_only']}, Tibet, is known only from accounts of it, its issuer's own among them; for {c_res['not_reached']}, Xinjiang, no computing plan was found), and {n_vouch} rows of the project's tables of local voucher and subsidy rules whose words the checker finds in a saved copy: {v_shown_yes} of them are counted by the published counting rule and {v_shown_no} are not ({esc(v_shown_why)}), and each line says which, as the project's table of classes gives it. {left_s} On the lines from the tables the English is the table's reading of the rule, not a translation. Counting one rule in force for each local government whose text is saved and which states a share of the bill, the argument finds {VC['n']} among the rules found by searches that went province by province and city by city, saved and read (not a census of every local government): {VC['tiered']} pay more for home-made computing and still pay for other computing ({VC['tiered_names']}), {VC['home']}, those of {VC['home_arg']}, pay for home-made computing only, and {VC['third']} state no higher rate for home-made computing: {VC['one']} pay one rate whatever the chip, and one, {VC['two_name']}'s, pays {VC['two_a']}% or {VC['two_b']}% by a type of computing facility that it does not name. Beijing E-Town's tier was repealed on Nov 26, 2024.</li>
 <li><b>Not every line is a government text.</b> {c_kind['official']} are official texts, {c_kind['company']} are company filings or statements, {c_kind['press']} are press reports, and {c_kind['other']} are of other kinds ({esc(other_bits)}). Each line carries its kind.</li>
 <li><b>A press report is not published policy.</b> Beijing's instructions to companies are reported by the press from unnamed people; no line here is a published order of that kind.</li>
 <li><b>Found means said, not true.</b> A passage that is found shows what the page says.</li>
@@ -738,7 +831,7 @@ def main():
 <footer>
 <p>Build check: {esc(has_line)}. The passages are the same strings, row by row, as in the note's own table of quotations ({n_table} strings, plus the two of the line read in a second copy). A passage that is found shows what the page says, not that it is true.</p>
 {short_note}
-<p>Our English is the checked note's, shown without the quotation marks that note puts round a few terms: only a page's own words stand between quotation marks here. On {len(EN_FIX)} lines it is the argument's corrected wording instead (lines {", ".join(sorted(EN_FIX, key=int))} of the list).</p>
+<p>Our English is the checked note's, shown without the quotation marks that note puts round a few terms: only a page's own words stand between quotation marks here. On {len(EN_FIX)} lines it is the core's corrected wording instead: the argument's (lines {", ".join(sorted((k for k in EN_FIX if EN_SRC[k] == 'argument'), key=int))} of the list) or the official record's (lines {", ".join(sorted((k for k in EN_FIX if EN_SRC[k] == 'record'), key=int))}).</p>
 <p>The {n_local} lines marked <i>From the project's tables</i> come from tables/provinces_31.tsv, local_vouchers.tsv and local_vouchers_more.tsv: each passage shown was found by the same checker in a saved copy the row names; the English beside them is the table's reading, not a translation; the address is the one held with the saved copy.</p>
 <p>The descriptions of the issuing body and the check notes are the checked note's own words, carried over by the script, except that Li Chao is not called the planner's spokesperson: the commission's page names him and his office only. Page titles are those held with the saved copies. Addresses are those the note gives.</p>
 </footer>

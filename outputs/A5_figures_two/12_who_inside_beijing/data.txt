@@ -19,7 +19,7 @@ Q 约谈了英伟达公司,要求英伟达公司就对华销售的H20算力芯�
 E summoned Nvidia and required it to explain the security risks of vulnerabilities and backdoors in the H20 computing chips sold to China, and to submit supporting material
 D 国家互联网信息办公室于2025年7月31日约谈了英伟达公司
 
-@ three-dissuade press 2025-08-20 - man-cn-ft-20250821-regulators row=cac,ndrc,miit col=told dir=away
+@ three-dissuade press 2025-08-20 No_date_given man-cn-ft-20250821-regulators row=cac,ndrc,miit col=told dir=away
 T moves to dissuade H20 buying: one of three bodies named
 L The cyberspace regulator, the state planner and the industry ministry move to dissuade companies from buying Nvidia's H20, the Financial Times reports. By its account the cyberspace regulator gave an informal notice, "window guidance", "instructing them to halt new orders for Nvidia's H20 chips", about a week after Jul 15; the industry ministry spoke with executives to back that; and the state planner asked them to refrain from "purchasing all Nvidia chips, including the H20". The same article gives a second reason for held-off orders: some firms wanted to see whether a better Nvidia chip for China would come.
 S Financial Times, Aug 20, 2025
@@ -42,7 +42,7 @@ S Alibaba, annual report on Form 20-F for the year to Mar 31, 2026
 Q In September 2025, the Cyberspace Administration of China requested Chinese technology companies to halt purchases of certain chips.
 D In September 2025, the Cyberspace Administration of China requested
 
-@ cac-6000d press 2025-09-17 - man-cn-ft-20250917-6000d row=cac col=told dir=away
+@ cac-6000d press 2025-09-17 No_date_given man-cn-ft-20250917-6000d row=cac col=told dir=away
 T end RTX Pro 6000D testing and orders
 L The cyberspace regulator tells companies, ByteDance and Alibaba among them, to end their testing and orders of Nvidia's RTX Pro 6000D, the Financial Times reports, by three unnamed people.
 S Financial Times, Sept 17, 2025
@@ -67,7 +67,7 @@ Q Later in 2025, Chinese regulators moved to restrict the import and use of less
 D Published NOV 13 2026
 
 @ ndrc-guiding doc 2026-05-22 - cn-policy-ndrc-chip-adaptation-2026 row=ndrc col=rules dir=away
-T guides model makers to home-made chips
+T guides models to adapt more to home-made chips
 L Li Chao, of the state planner's policy research office, says at its press conference that it is guiding home-made large models to do more to adapt to home-made computing chips.
 S National Development and Reform Commission, press conference record
 Q 指导国产大模型加大力度适配国产算力芯片
@@ -75,7 +75,7 @@ E guiding home-made large models to step up their adaptation to home-made comput
 D 李超 2026/05/22 政研室
 
 # ---- customs, rule-setters and state media ----
-@ customs-ports press 2025-10-09 - man-cn-ft-20251009-customs row=customs col=told dir=away
+@ customs-ports press 2025-10-09 No_date_given man-cn-ft-20251009-customs row=customs col=told dir=away
 T teams at major ports check chip shipments
 L Teams of customs officers are sent to major ports to make stringent checks on chip shipments, the Financial Times reports, by three unnamed people.
 S Financial Times, Oct 9, 2025
@@ -83,7 +83,7 @@ Q Teams of customs officers have been mobilised at major ports across the countr
 D Published OCT 9 2025
 N according to three people with knowledge of the matter
 
-@ customs-h200 press 2026-01-14 - cn-acts-reuters-customs-20260114 row=customs col=told dir=away
+@ customs-h200 press 2026-01-14 No_date_given cn-acts-reuters-customs-20260114 row=customs col=told dir=away
 T H200 "not permitted to enter China"
 L Customs authorities tell customs agents that Nvidia's H200 chips "are not permitted to enter China", Reuters reports, by three people. Reuters wrote that it was unclear whether Beijing wanted a ban, was still weighing restrictions, or could use the measures as "a bargaining tactic in talks with Washington".
 S Reuters, Jan 14, 2026, on Yahoo Finance
@@ -105,12 +105,13 @@ N 乡镇以上党政机关，以及乡镇以上党委和政府直属事业单位
 
 @ sco-pref doc 2025-09-28 - cn-policy-domestic-product-standard-2025 row=rules col=rules dir=away
 T State Council's office: 20% price edge for home-made goods
-L The State Council's General Office gives home-made products a 20% price preference when the government buys. The test is where a product is made, not who owns its maker.
+L The State Council's General Office gives home-made products a 20% price preference where home-made and other products compete in one government purchase. The test is where a product is made, not who owns its maker.
 S General Office of the State Council, notice of Sept 28, 2025
 Q 对本国产品的报价给予20%的价格扣除
 E the bid price of home-made products is given a 20% deduction
 D 国务院办公厅 2025年9月28日
 N 产品应当在中国境内生产
+N 政府采购活动中既有本国产品又有非本国产品参与竞争的
 
 @ eval-list doc 2026-05-26 - cn-le14-itsec-2026-2 row=rules col=rules dir=away
 T evaluation centres: AI-chip list, all from makers registered in China
@@ -137,7 +138,7 @@ N 人民日报评论:英伟达,让我怎么相信你?
 N 公司最近被国家网信办约谈
 
 @ media-yuyuan pub 2025-08-10 - cn-le13-yuyuan-qq-20250810b row=media col=acted dir=away
-T state broadcaster's account: buyers can choose not to buy the H20
+T state broadcaster's account: consumers can choose not to buy the H20
 L Yuyuan Tantian, an account of the state broadcaster, writes that the H20 is neither green, nor advanced, nor safe, and that as consumers we can of course choose not to buy.
 S Yuyuan Tantian (China Media Group), on its own Tencent News channel
 Q 作为消费者,我们当然可以选择,不买
@@ -177,7 +178,7 @@ D 新华社北京4月17日电
 D 2025年04月18日
 
 # ---- on both sides ----
-@ miit-window press 2024-09-27 - cn-factions-bloomberg-flexibility-202409-relay1 row=miit col=told dir=away
+@ miit-window press 2024-09-27 No_date_given cn-factions-bloomberg-flexibility-202409-relay1 row=miit col=told dir=away
 T "window guidance" to use less Nvidia
 L Several regulators, the industry ministry among them, give companies "window guidance" to reduce their use of Nvidia chips, Bloomberg reports: "guidance rather than an outright ban". Bloomberg's report is of Sept 27; the copy used was carried on Sept 28, Singapore time.
 S Bloomberg, Sept 27, 2024, as carried by The Business Times (Singapore)
@@ -186,7 +187,7 @@ Q The policy has taken the form of guidance rather than an outright ban
 D on Friday (Sep 27)
 D Published Sat, Sep 28, 2024
 
-@ miit-justify press 2025-08-12 - cn-le11-ft-h20justify-aggregoctt row=miit col=told dir=away U=https://www.ft.com/content/a29bab5e-7c2f-4487-b0a5-d594d577c73a
+@ miit-justify press 2025-08-12 No_date_given cn-le11-ft-h20justify-aggregoctt row=miit col=told dir=away U=https://www.ft.com/content/a29bab5e-7c2f-4487-b0a5-d594d577c73a
 T asks firms why they need the H20
 L Regulators such as the industry ministry ask companies "to explain why they need to order Nvidia's H20 chips instead of using domestic alternatives", the Financial Times reports, by three people. A data-centre operator told it: "It's not banned but has kind of become a politically incorrect thing to do". The article is held as a syndicated copy, not from the paper's own site.
 S Financial Times, Aug 12, 2025 (full text in a syndicated copy)
@@ -195,7 +196,7 @@ Q It’s not banned but has kind of become a politically incorrect thing to do
 D PUBLISHED: 2025-08-12T13:30:05+00:00
 N said three people familiar with the situation
 
-@ two-approve press 2026-01-30 - cn-acts-reuters-deepseek-20260130 row=miit,mofcom col=approved dir=toward
+@ two-approve press 2026-01-30 No_date_given cn-acts-reuters-deepseek-20260130 row=miit,mofcom col=approved dir=toward
 T approves four firms' H200 purchases, with the other ministry
 L The industry and commerce ministries approve H200 purchases by four companies (DeepSeek, ByteDance, Alibaba and Tencent), Reuters reports, by two people; the conditions are being decided by the state planner.
 S Reuters, Jan 30, 2026, as carried by Tiger Brokers
@@ -237,7 +238,7 @@ D 2026年10月16日，商务部、科技部发布2026年第48号公告
 N 公开征求意见
 
 @ mofcom-remote doc 2026-11-17 - cn-acts-mofcom-20261117 row=mofcom col=welcomed dir=toward
-T protests US curbs on remote access to chips
+T protests US curbs on remote access to advanced chips
 L The commerce ministry's spokesperson says the new American curbs on remote access to advanced chips interfere in Chinese firms' normal trade with other countries' firms, and that China will take countermeasures if Washington persists.
 S Ministry of Commerce, spokesperson's answer
 Q 对中国企业与其他国家企业正常贸易合作横加干涉
@@ -247,7 +248,7 @@ N 若美方一意孤行，中方将采取反制措施
 
 # ---- set apart: the antitrust case against Nvidia the company ----
 @ samr-open doc 2024-12-09 - cn-policy-samr-open-original row=samr col=case dir=away
-T opens an antitrust case against Nvidia
+T announces an antitrust case against Nvidia
 L The market regulator announces that it has opened an antitrust case against Nvidia, under the antitrust law and its 2020 conditions on Nvidia's purchase of Mellanox.
 S State Administration for Market Regulation
 Q 市场监管总局依法对英伟达公司开展立案调查
@@ -266,7 +267,7 @@ E the regulator has decided to investigate it further under the law
 D 发布时间:2025-09-15
 
 # ---- no body named ----
-@ nb-first press 2025-08-12 - cn-le11-bbg-h20avoid-bt-20250812 row=nobody col=told dir=away
+@ nb-first press 2025-08-12 No_date_given cn-le11-bbg-h20avoid-bt-20250812 row=nobody col=told dir=away
 T notices to firms "discouraging use" of the H20
 L Bloomberg, by people it did not name: "Over the past few weeks, Chinese authorities have sent notices to a range of firms discouraging use of the less-advanced semiconductors". In Bloomberg's own words, "Beijing has stopped short of outright banning the hardware".
 S Bloomberg, Aug 12, 2025, as carried by The Business Times (Singapore)
@@ -282,23 +283,25 @@ Q Authorities privately told companies to halt their Nvidia purchases, while off
 D July 23, 2026
 D The turning point came last year.
 
-@ nb-statefunded press 2025-11-05 - ms-bj-20251105-statefunded-standard row=nobody col=told dir=away
-T state-funded data centres: home-made AI chips only
+@ nb-statefunded press 2025-11-05 No_date_given ms-bj-20251105-statefunded-standard row=nobody col=told dir=away
+T new state-funded data centres: home-made AI chips only
 L "The Chinese government" issues guidance that new data-centre projects which took any state money use only home-made AI chips, Reuters reports. It adds: "It is unclear whether the guidance applies nationwide or only to certain provinces".
 S Reuters, Nov 5, 2025, on The Standard (Hong Kong)
 Q The Chinese government has issued guidance requiring new data centre projects that have received any state funds to only use domestically-made artificial intelligence chips
 Q It is unclear whether the guidance applies nationwide or only to certain provinces, sources said
 D PUBLISHED: 2025-11-05
 
-@ nb-unless press 2026-01-14 - cn-acts-reuters-customs-20260114 row=nobody col=told dir=away
+@ nb-unless press 2026-01-13 - cn-acts-reuters-customs-20260114 row=nobody col=told dir=away
 T do not buy the H200 "unless necessary"
 L Government officials call technology companies to meetings and tell them not to buy the H200 "unless necessary", Reuters reports.
 S Reuters, Jan 14, 2026, on Yahoo Finance
 Q explicitly instructed not to purchase the chips unless necessary
 D PUBLISHED: 2026-01-14
+D summoned domestic technology companies to meetings on Tuesday
+D Jan 14 (Reuters)
 N purchase the chips unless necessary, two of the people and a third source said
 
-@ nb-pulled press 2026-05-14 - cn-acts-reuters-us-approvals-20260514-wayback row=nobody col=told dir=away
+@ nb-pulled press 2026-05-14 No_date_given cn-acts-reuters-us-approvals-20260514-wayback row=nobody col=told dir=away
 T firms "pulled back after guidance from Beijing"
 L Washington has cleared about ten firms, but "not a single delivery has been made so far", Reuters reports; by one person, "Chinese firms pulled back after guidance from Beijing". The same person said the shift "was partly triggered by changes on the U.S. side".
 S Reuters, May 14, 2026, as carried by MarketScreener
@@ -310,7 +313,7 @@ D Published on 05/14/2026
 N The U.S. has cleared around 10 Chinese firms
 N pulled back after guidance from Beijing, one source said
 
-@ nb-withholds press 2026-11-05 - cn-clips-evidence-1 row=nobody col=told dir=away
+@ nb-withholds press 2026-11-05 No_date_given cn-clips-evidence-1 row=nobody col=told dir=away
 T "withholds approval" for large imports
 L About 600,000 Nvidia chips wait in Hong Kong "as Beijing withholds approval for large-scale imports despite demand from technology firms", Reuters reports. Reuters's dateline is Nov 5; the copy used, CNA's, is dated Nov 6.
 S Reuters (dateline Nov 5, 2026), as carried by CNA (Singapore)
@@ -319,7 +322,7 @@ Q About 600,000 of Nvidia's advanced artificial intelligence chips are stored in
 D cn-clips-reuters-hongkong-yahoo | Nov 5 () - About 600,000 of Nvidia's advanced
 D PUBLISHED: 2026-11-06
 
-@ nb-nod press 2026-01-28 - ms-bj-20260128-h200-nod-standard row=nobody col=approved dir=toward
+@ nb-nod press 2026-01-28 No_date_given ms-bj-20260128-h200-nod-standard row=nobody col=approved dir=toward
 T green light for three firms
 L "China has given the green light" to ByteDance, Alibaba and Tencent to buy more than 400,000 H200 chips in total, Reuters reports, with conditions still being decided.
 S Reuters, Jan 28, 2026, on The Standard (Hong Kong)
@@ -328,7 +331,7 @@ Q have been approved to purchase more than 400,000 H200 chips in total
 Q The Chinese government is only granting approvals with conditions
 D PUBLISHED: 2026-01-28
 
-@ nb-mar17 press 2026-03-17 - man-70f4668d5f56 row=nobody col=approved dir=toward
+@ nb-mar17 press 2026-03-17 No_date_given man-70f4668d5f56 row=nobody col=approved dir=toward
 T "Beijing's approval" for the H200
 L "Nvidia has won Beijing's approval to sell its second-most powerful artificial intelligence chips to China", Reuters reports. A Chinese company source "did not know if the Chinese government had given final approval".
 S Reuters, Mar 17, 2026, as carried by Investing.com
@@ -336,15 +339,16 @@ Q Nvidia has won Beijing's approval to sell its second-most powerful artificial 
 Q did not know if the Chinese government had given final approval
 D Published Mar 17, 2026
 
-@ nb-jul8 press 2026-07-08 - cn-acts-reuters-ti-cap-20260708-relay1 row=nobody col=approved dir=toward
-T permission for some H200s may come soon
-L "Chinese officials" tell Alibaba, ByteDance and DeepSeek that they may soon be allowed to buy some H200 chips, fewer than 200,000 in total, The Information reports.
+@ nb-jul8 press 2026-07-08 No_date_given cn-acts-reuters-ti-cap-20260708-relay1 row=nobody col=told dir=away
+T approval withheld so far; told permission for some H200s may come
+L "Chinese officials" have told Alibaba, ByteDance and DeepSeek in recent weeks that they may soon be allowed to buy some H200 chips, perhaps fewer than 200,000 in total, The Information reports; Reuters, relaying it, adds that Chinese officials "have withheld approval so far".
 S The Information, as relayed by Reuters on AOL, Jul 8, 2026
 Q Chinese officials have told Alibaba, ByteDance and DeepSeek in recent weeks that they may soon receive permission to buy some H200 chips
 Q it could amount to fewer than 200,000 in total
+Q Chinese officials, keen to nurture domestic suppliers, have withheld approval so far
 D PUBLISHED: 2026-07-08
 
-@ nb-aug18 press 2026-08-18 - cn-tolerate-reutersaug26-relay1-wayback row=nobody col=approved dir=toward
+@ nb-aug18 press 2026-08-18 No_date_given cn-tolerate-reutersaug26-relay1-wayback row=nobody col=approved dir=toward
 T small batches let into the mainland
 L Small batches of H200 chips "have been allowed to enter mainland China": about 10,000 each for ByteDance and Tencent, while "Beijing wants them to keep the hardware outside mainland China", the Financial Times reports. Regulators told companies they could ship the chips to Hong Kong and use them there.
 S Financial Times, as relayed by Reuters on Investing.com, Aug 18, 2026

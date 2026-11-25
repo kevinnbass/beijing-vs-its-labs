@@ -22,7 +22,7 @@ Each entry: its kind; what it is; the saved page's own title where the record ho
 
 [7] Press report citing unnamed people. Reuters, Jan 30, 2026, as carried by Tiger Brokers. Page title: China Conditionally Approves DeepSeek To Buy Nvidia's H200 Chips - Sources. https://www.itiger.com/hans/news/2607233096 Saved copy: cn-acts-reuters-deepseek-20260130
 
-[8] Company filing or statement. Nvidia, results call for the third quarter of its fiscal year 2027 (the quarter ended Oct 25, 2026): the transcript on Nvidia's investor site. https://s201.q4cdn.com/141608511/files/content_files/NVDA-3Q27-Earnings-Transcript.pdf Saved copy: cn-o38-nvda-q3fy27-call-transcript-pdf
+[8] Company filing or statement. Nvidia, results call for the third quarter of its fiscal year 2027 (the quarter ended Oct 25, 2026): the transcript on Nvidia's investor file host (s201.q4cdn.com). https://s201.q4cdn.com/141608511/files/content_files/NVDA-3Q27-Earnings-Transcript.pdf Saved copy: cn-o38-nvda-q3fy27-call-transcript-pdf
 
 [9] Official document, or an official on the record. US-China Economic and Security Review Commission, 2025 report to Congress, November 2025: the whole report, whose chapter 1 is also listed on its own (the passage cited is in chapter 1 and rests on Reuters and the Financial Times). https://www.uscc.gov/sites/default/files/2025-11/2025_Annual_Report_to_Congress.pdf Saved copy: cn-le03-uscc-2025-full
 

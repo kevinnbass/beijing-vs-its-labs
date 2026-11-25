@@ -1,0 +1,83 @@
+# Result notices (成交结果公告) of purchases by filed bidding (备案竞价) that Wuhan University's procurement centre published on its own site (zb.whu.edu.cn), page dates Jun 27, 2025 to Nov 23, 2026: 81 notices, one row each. How made: the notices were picked from the site's own list of such notices by the words of their titles (graphics cards, GPUs, servers and AI computing), saved on Nov 23, 2026, and each row was read from the saved page by one script; on Nov 25, 2026 all 81 pages were read again the same way and gave the same rows. Columns: the saved id; the page's date (发布日期); the project name; the price of the award (成交金额, in yuan as printed; the notice of Apr 17, 2026, cn-le17-whu-124551, prints 38.6 on a form headed in yuan, with 万 as the unit of its goods line: kept as printed); every word found on the page from a list of Nvidia words (the maker's name as NVIDIA, Nvidia, nvidia, NVDIA, NVidia or 英伟达; card and chip names such as A100, 4090, 5090, 6000D and RTX PRO 6000; the architecture name Blackwell); every word found from a list for home-made hardware and imports (国产, 昇腾, 海光 and others, and three phrases the first list missed: 国内自主品牌, 国内一线品牌 and 非正规渠道进口产品); and up to 200 characters of the page around the first Nvidia word in its list of goods. The count in OFFICIAL_RECORD.md, section 5: 72 of the 81 rows are dated Sept 1, 2025 to Nov 23, 2026, and 23 of those 72 hold the maker's name in the fifth column; 6 more of the 72 hold only a card or architecture word there, 43 hold nothing. The sixth column is filled in 7 of the 72: 2 hold a home-made chip word or 国产; 4 more hold a clause asking for a home brand of server platform (国内自主品牌 or 国内一线品牌), each beside Nvidia words in the fifth column; 1 holds a clause refusing goods imported outside regular channels (非正规渠道进口产品), not imports as such. What the table is not: not a census of the university's purchases (the notices were picked by their titles, and a notice with another title is not here); a result notice records the award of a purchase, not a delivery and not an import; and a word on a page is not a statement of what was bought. Where the 200 characters of the last column run past the notice's own text they take in what follows the words 相关材料 (related materials): the names of its attached files, which the page shows, and the page's links to other news of the university, which stand in its code inside a comment that a browser does not show. Two cells keep a tail, an attached file's name each; eight are cut where the shown text of the notice ends, at 相关材料 or after the file's name. 11 of the 81 notices are also cited in tables/procurement_records.tsv.
+saved_id	page_date	project_name	amount_yuan	nvidia_words	home_made_or_import_words	text_around_first_nvidia_word
+cn-le17-whu-100871	2025-07-15	GPU 服务器	294500			
+cn-le17-whu-100881	2025-07-15	GPU高性能显卡	224800			
+cn-le17-whu-101891	2025-07-23	身份认证与访问控制专用GPU服务器	381800			
+cn-le17-whu-101911	2025-07-23	高性能服务器显卡采购	141000	A100,A800,Nvidia		
+cn-le17-whu-102151	2025-07-24	深度学习GPU计算服务器	276170			
+cn-le17-whu-102571	2025-07-29	深度学习攻防对抗专用服务器	270000			
+cn-le17-whu-103491	2025-08-18	显卡： GPU 显卡公版双宽	480000	NVIDIA		 Tensorlow.Theano,Torch，配套安装CUDA驱动，cUDA工具包，cUDA SDK。 - 驱动版本：NVIDIA Data Center GPU Driver ≥515.xx，支持硬件级安全启动（Secure Boot）、可信执行环境（TEE），要求全新原厂正品、有现货，合同签订后立即供货。保质期三年，24小时响应，含硬件更换与驱动更新 相关材料 显卡招标参数--25.08.07.docx
+cn-le17-whu-104261	2025-09-03	显卡	150000	NVIDIA		 Tensorlow.Theano,Torch，配套安装CUDA驱动，cUDA工具包，cUDA SDK。 - 驱动版本：NVIDIA Data Center GPU Driver ≥515.xx，支持硬件级安全启动（Secure Boot）、可信执行环境（TEE），要求全新原厂正品、有现货，合同签订后立即供货。保质期三年，24小时响应，含硬件更换与驱动更新。
+cn-le17-whu-104671	2025-09-08	GPU服务器节点	238500			
+cn-le17-whu-105441	2025-09-16	GPU服务器	175650	NVIDIA		 25)支持用户校园网内部远程任务配置与执行。 (3) 深度学习应用软件。 1)深度学习框架TensorFlow。 2)NVIDIA GPU虚拟化。 3)NVIDIA Virtual GPU软件。 4)NVIDIA Docker。 5)提供高度优化GPU的代码、调优和测试。 6)提供并行编译环境：GNU C/C++编译器；Python；Java等。 7)提供高性能计算函数库：ACML LAPACK；Blacs
+cn-le17-whu-105741	2025-09-18	GPU计算显卡	216500			
+cn-le17-whu-108171	2025-10-16	深度学习攻防对抗专用服务器	395000			
+cn-le17-whu-114131	2025-11-17	深度学习攻防对抗专用服务器	306000			
+cn-le17-whu-115951	2025-12-02	深度学习攻防对抗专用服务器	349200			
+cn-le17-whu-116521	2025-12-05	GPU计算卡	299200			
+cn-le17-whu-119251	2026-01-04	分子动力学算力硬件	298000	NVIDIA		据盘：单盘容量不低于3.84T NVME 企业级固态硬盘，读取速度不低于6000M/S 4、显卡：单卡显存≥32 GB，NVIDIA CUDA® Cores≥21700个，Power consumption≥560W，双宽主动散热，显卡数量不低于8张（需提供详细测试报告：gpu-burn满载温度与功耗，Torch 训练单张8192x8192矩阵与8张对比测试，GPU满载带宽测试，Ollama+deepseek
+cn-le17-whu-119861	2026-01-12	GPU服务器	185300	Blackwell,NVDIA,NVIDIA	国内自主品牌	960GB,读取速度不低于550M/S 企业级数据中心服务器SSD，两块组成互为备份的阵列。 5.GPU计算卡要求：采用Blackwell架构，显存‌不低于32GB GDDR7，512bit位宽，频率‌不低于2400MHz（核心），NVIDIA CUDA核心21760个，Tensor Core的AI算力性能≥3352 TOPS。本次采购不低于4片，后续满足整机8片的扩容。(需提供详细测试:gpu-burn满载温度与
+cn-le17-whu-120151	2026-01-15	高性能GPU运算单元	476400	NVIDIA		 Tensorlow.Theano,Torch，配套安装CUDA驱动，cUDA工具包，cUDA SDK。 - 驱动版本：NVIDIA Data Center GPU Driver ≥515.xx，支持硬件级安全启动（Secure Boot）、可信执行环境（TEE）；配套软件安装支持分区中创建项目，项目可设置数据卷和资源配额，添加和移除项目成员；单独用户组支持整合大数据人工智能平台的基础能力和数据深度挖掘能力，
+cn-le17-whu-120751	2026-01-26	实验用高性能算力模块	273600			
+cn-le17-whu-122321	2026-03-18	GPU机架式服务器	497000			
+cn-le17-whu-122341	2026-03-18	图形工作站显卡采购	68790	Blackwell,NVIDIA,RTX PRO 6000		 序号 货物（服务）名称 数量 计量单位 预算单价 1 高性能图形工作站显卡 1 台 75000 技术参数 1、GPU：NVIDIA RTX PRO 6000 Blackwell，显存 ≥96 GB，双风扇散热版本； 2、质保期：设备提供不少于三年原厂质保，含三年上门服务； 3、服务响应：提供 7×24 小时技术支持，故障响应时间 ≤4 小时。 技术要求： 1、提供NVIDIA RTX PRO 6000 Bl
+cn-le17-whu-98571	2025-06-27	GPU服务器	295000	NVIDIA,NVidia		-E4.0 X16单宽插槽。 7) ★网卡：≥2个1G网络接口。≥1个管理局域网接口。 8) ★提供GPU卡片≥1片， NVidia 具有763亿个晶体管、6912 个CUDA核心和80GB HBM2e显存，具备72MB二级缓存，GPU 显存带宽:2039GB;单精度19.5TFlops、双精度9.7TFlops，INT8推理1248Tops理论算力1177 TOPS（NV）（支持官网查询，非拆机组装显卡，否
+cn-le17-whu-99861	2025-07-08	GPU显卡(三次)	185000	4090		购货物信息列表 序号 货物（服务）名称 数量 计量单位 预算单价 1 GPU显卡 10 块 20000 技术参数 显卡：4090 24GB CUDA 核心数：16,384 个 显存：24GB GDDR6X 显存位宽：384-bit 显存带宽：约 1,008 GB/s 核心频率：基础频率：2.23 GHz、加速频率：2.52 GHz 散热方案：单风扇，适合4U机架服务器多张显卡并联 尺寸：标准双槽设计（尺寸
+cn-le17-whu-123581	2026-04-07	深度学习攻防对抗专用服务器	366260			
+cn-le17-whu-123731	2026-04-08	低空智能计算GPU服务器	385000			
+cn-le17-whu-124141	2026-04-13	图形工作站显卡采购	68790	Blackwell		预算单价 1 图形工作站显卡采购 1 个 75000 技术参数 一、技术要求： 1、 基于Ampere 、Hopper或Blackwell架构。显存颗粒≥GDDR6,带宽 ≥1.8TB/S，单精度 ≥90TFLOPS，效能≥350 TFLOPS，算力 ≥3600TOPS，显存 ≥96 GB，功率 ≥300W，CUDA在10752以上,双宽规格，支持ECC纠错，GPU卡主动散热，架构的主动专业图形工作站显卡，显卡为原
+cn-le17-whu-124551	2026-04-17	高性能GPU运算单元采购	38.6	NVIDIA		 Tensorlow.Theano,Torch，配套安装CUDA驱动，cUDA工具包，cUDA SDK。 - 驱动版本：NVIDIA Data Center GPU Driver ≥515.xx，支持硬件级安全启动（Secure Boot）、可信执行环境（TEE）；  要求全新原厂正品、有现货，合同签订后立即供货。  保质期三年，24小时响应，提供服务器生产商的只换不修承诺函,含硬件更换与驱动更新。  
+cn-le17-whu-124631	2026-04-20	GPU计算显卡	263800			
+cn-le17-whu-124671	2026-04-20	5090人工智能服务器集群	389000	5090,Blackwell,NVDIA,NVIDIA	国内自主品牌	写入寿命不低于6.5 PBW（PB写入）企业级数据中心服务器SSD，两块组成互为备份的阵列。 5.GPU计算卡要求：采用Blackwell架构，显存不低于32GB GDDR7，512bit位宽，频率不低于2400MHz（核心），NVIDIACUDA8Coresz21760个，本次采购不低于4片，后续满足整机8片的扩容。(需提供详细测试:gpu-burn满载温度与功耗， GPU满载带宽测试等) 6.网络：本次需提供I
+cn-le17-whu-125291	2026-04-27	人工智能计算服务器	98000			
+cn-le17-whu-125301	2026-04-27	GPU机架式服务器	460000			
+cn-le17-whu-125311	2026-04-27	GPU机架式服务器	318000			
+cn-le17-whu-126011	2026-05-06	AI智算平台模块采购项目	62000			
+cn-le17-whu-127881	2026-05-21	高性能GPU运算单元采购	386000	NVIDIA		 Tensorlow.Theano,Torch，配套安装CUDA驱动，cUDA工具包，cUDA SDK。 - 驱动版本：NVIDIA Data Center GPU Driver ≥515.xx，支持硬件级安全启动（Secure Boot）、可信执行环境（TEE）；  要求全新原厂正品、有现货，合同签订后立即供货。  保质期三年，24小时响应，提供服务器生产商的只换不修承诺函,含硬件更换与驱动更新。  
+cn-le17-whu-127921	2026-05-22	显卡	192000	NVIDIA		 Tensorlow.Theano,Torch，配套安装CUDA驱动，cUDA工具包，cUDA SDK。 - 驱动版本：NVIDIA Data Center GPU Driver ≥515.xx，支持硬件级安全启动（Secure Boot）、可信执行环境（TEE），要求全新原厂正品、有现货，合同签订后立即供货。保质期三年，24小时响应，含硬件更换与驱动更新。
+cn-le17-whu-128321	2026-05-27	高性能GPU计算节点扩展	389200	NVIDIA		a，表面电阻率为7.0E+11ohms。(2)硬盘： ≥3.84T 企业级U.2 SSD*3。(3)GPU卡片≥8片， NVIDIA GPU计算卡48G显存全高双宽（NV），单GPU卡TDP≥450W，单GPU卡FP32算力≥82.5TFLOPS。(4)GPU集群管理套件，支持license注册信息，兼容现有集群实现统一纳管。1)支持任务重启功能，任务重启过程中，任务中的所有数据不丢失， 容器ID保持不变。 
+cn-le17-whu-128621	2026-05-30	高性能GPU计算服务器(三次)	388000	NVIDIA,nvidia		MM 内存，频率≥4800MT/s，配置总容量≥128GB，支持最大可拓展内存容量≥2TB: GPU：平台支持安装≥8块NVIDIA数据中心级GPU加速卡。NVIDIA 数据中心级 Hopper 或更新代际 GPU,单卡显存 ≥80GB,FP8 Tensor Core 密集算力 ≥296 TFLOPS,支持 NVLink、Transformer Engine、FP8 精度，支持NvLink。配置要求： (a)
+cn-le17-whu-129281	2026-06-04	卫星数据深度学习服务器	299800			
+cn-le17-whu-129441	2026-06-05	高性能GPU服务器(二次)	172000		国产	
+cn-le17-whu-129691	2026-06-08	高性能GPU计算服务器(四次)	385800			
+cn-le17-whu-130271	2026-06-10	新闻与传播学院实验室算力服务器	94300	NVIDIA	昇腾,海光	单、测试截图、测试结果。 14. 平台管理软件部署 需提供算力平台管理软件，软件支持跨品牌、跨架构GPU统一调度，需兼容NVIDIA、AMD、昇腾、海光等至少4种厂商的加速器。平台需支持Kubernetes、私有物理机及云主机的多集群统一管理，并具备动态扩缩容能力，必须具备Graphic-to-Everything能力。统一API网关需同时支持LLM对话接口，需内置vLLM、SGLang、TensorRT-L
+cn-le17-whu-130661	2026-06-12	人工智能学院采购显卡	373520	Blackwell		序号 货物（服务）名称 数量 计量单位 预算单价 1 显卡 7 张 55000 技术参数 一：基础架构与工艺 核心架构：Blackwell 2.0 GPU 核心：GB202 二：核心配置： CUDA 核心：19968 Tensor Core ：624 RT Core ：156 显存容量：84 GB GDDR7 (含ECC) 显存位宽：448-bit 显存带宽：1,568 GB/s
+cn-le17-whu-130741	2026-06-15	遥感卫星影像数据深度学习服务器	299000			
+cn-le17-whu-131281	2026-08-13	nvidia6000D	54000	6000D,Nvidia,nvidia		金额 54000 成交理由 符合需求，价格最低 采购货物信息列表 序号 货物（服务）名称 数量 计量单位 预算单价 1 nvidia6000D 1 1 58000 技术参数 Nvidia 6000D 84GB显存
+cn-le17-whu-131361	2026-06-18	高性能GPU计算节点拓展	388000			
+cn-le17-whu-131651	2026-06-18	高性能GPU加速卡	264500			
+cn-le17-whu-131661	2026-06-18	高性能GPU计算节点采购	268000			
+cn-le17-whu-131781	2026-06-22	高性能GPU	202000			
+cn-le17-whu-132621	2026-08-13	nvidia409048G	24700	4090,NVIDIA,nvidia		金额 24700 成交理由 符合需求，价格最低 采购货物信息列表 序号 货物（服务）名称 数量 计量单位 预算单价 1 4090NVIDIA48G 1 块 28000 技术参数 NVIDIA4090计算卡，48G显存
+cn-le17-whu-132631	2026-08-13	NVIDIA6000promaxq	67000	NVIDIA,Nvidia		金额 67000 成交理由 符合需求，价格最低 采购货物信息列表 序号 货物（服务）名称 数量 计量单位 预算单价 1 NVIDIA6000proMAX-Q 1 块 69000 技术参数 Nvidia6000pro工作站max-q
+cn-le17-whu-133391	2026-07-01	GPU显卡	150000	Blackwell,NVIDIA		服务的人工+备件免费白金质保服务，投标公司本地需要维修网点。 显卡： GPU 显卡公版双宽数量：2个 参数： ★ 架构：Blackwell，GB202，5nm ★ CUDA 核心：≥24,064 ★ 显存：96GB GDDR7，带 ECC ★ 位宽：512bit ★ 带宽：≥1,792GB/s ★ 总线：PCIe 5.0 x16 ★ 功耗：≤600W ★ 质保：免费提供GPU显卡与现有服务器2个月GPU压力测试服务
+cn-le17-whu-133401	2026-07-01	GPU计算服务器	150000			
+cn-le17-whu-133471	2026-07-02	GPU服务器	149000	Blackwell,NVDIA,NVIDIA	国内一线品牌	，写入寿命不低于10.7 PBW‌ (总写入字节数)（PB写入）企业级数据中心服务器SSD。 5.GPU计算卡要求：采用Blackwell架构，显存‌不低于32GB GDDR7，512bit位宽，频率‌不低于2400MHz（核心），NVIDIACUDA8Coresz21760个，本次采购不低于1片，后续满足整机8片的扩容。(需提供详细测试:gpu-burn满载温度与功耗， GPU满载带宽测试等) 6.网络：本次需提
+cn-le17-whu-133481	2026-07-02	GPU服务器	308000	Blackwell,NVDIA,NVIDIA	国内一线品牌	于1400 MB/s ，写入寿命不低于6.5 PBW（PB写入）企业级数据中心服务器SSD。 5.GPU计算卡要求：采用Blackwell架构，显存‌不低于32GB GDDR7，512bit位宽，频率‌不低于2400MHz（核心），NVIDIACUDA8Coresz21760个，本次采购不低于6片，后续满足整机8片的扩容。(需提供详细测试:gpu-burn满载温度与功耗， GPU满载带宽测试等) 6.网络：本次需提
+cn-le17-whu-134591	2026-07-07	AI服务器及内部即时通讯平台采购项目	391500	A100,NVIDIA		硬件配置 1.整机AI服务器（4U8卡）1台 2.CPU AMD EPYC 9124 16核32线程 2颗 3.GPU NVIDIA A100 PCIe 80G 2块 4.内存 64G DDR5 RECC 4条 5.系统硬盘 960G（读取560MB/s，写入530MB/s）1块 6.数据硬盘 20T SATA 7200 RPM 1块 7.电源 2000W冗余服务器电源 4个 8.操作系统 Ubuntu Se
+cn-le17-whu-135161	2026-07-10	GPU服务器	450000			
+cn-le17-whu-136221	2026-07-24	能力通关实验室算力建设	193950			
+cn-le17-whu-136581	2026-07-20	双精度科学计算GPU	154730			
+cn-le17-whu-136591	2026-07-20	高显存单精度GPU	106000	Blackwell		款，任意一条不满足直接按无效投标处理。 六、评标参考要点 1.设备国行合规性、序列号可溯源、正品保障能力（高权重） 2.Blackwell架构、MIG功能、FP32科学计算、ECC显存等核心参数完整性 3.质保年限、售后响应速度、现场技术服务能力 4.报价合理合规性、整体性价比 相关材料 高显存单精度GPU(2).docx
+cn-le17-whu-136641	2026-07-20	高性能GPU(二次)	202000			
+cn-le17-whu-136771	2026-07-21	数智影视AIGC工作站(三次)	197620			
+cn-le17-whu-137111	2026-07-24	高性能GPU(二次)	202000			
+cn-le17-whu-137341	2026-07-28	高性能GPU	131400	NVIDIA		 Tensorlow.Theano,Torch，配套安装CUDA驱动，cUDA工具包，cUDA SDK。 - 驱动版本：NVIDIA Data Center GPU Driver ≥515.xx，支持硬件级安全启动（Secure Boot）、可信执行环境（TEE），要求全新原厂正品、有现货，合同签订后立即供货。保质期三年，24小时响应，含硬件更换与驱动更新。。 *中标单位2天交付。
+cn-le17-whu-138131	2026-08-07	能力通关实验室算力建设(二次)	193950			
+cn-le17-whu-138191	2026-08-08	显卡采购（计算生物 AI 分子模拟科研使用）(二次)	70000			
+cn-le17-whu-138581	2026-08-14	双精度科学计算GPU算力卡	184020			
+cn-le17-whu-140451	2026-09-07	大模型科研专用GPU服务器	282000			
+cn-le17-whu-140461	2026-09-07	AI服务器及内部即时通讯平台采购项目(二次)	391500	A100		 技术参数 一、 AI服务器硬件配置 1.整机AI服务器（4U8卡）1台 2.CPU 16核32线程 2颗 3.GPU A100 PCIe 80G 2块 4.内存 64G DDR5 RECC 4条 5.系统硬盘 960G（读取560MB/s，写入530MB/s）1块 6.数据硬盘 20T SATA 7200 RPM 1块 7.电源 2000W冗余服务器电源 4个 8.操作系统 类linux版本 1套 二、
+cn-le17-whu-140951	2026-09-09	高性能GPU运算单元	303800			
+cn-le17-whu-141031	2026-09-10	高性能GPU采购	170000			
+cn-le17-whu-143001	2026-09-23	图形卡等配件采购	178000	Blackwell		 1 图形卡 4 片 45000 技术参数 1.本次采购主要是对原有集群内计算卡进行升级扩容，GPU计算卡参数要求：采用Blackwell 2nd-gen架构，GB202核心，显存‌不低于32GB GDDR7，512bit位宽，频率‌不低于2400MHz，CUDA核心‌：‌21760个：核心频率不低于：2407MHz，最高动态加速可达2655MHz；接口标准‌：PCIe 5.0 x16，长度不超342mm，宽度不超
+cn-le17-whu-143601	2026-09-28	双精度GPU计算服务器	262320			
+cn-le17-whu-143931	2026-10-07	高性能GPU计算卡	107600			
+cn-le17-whu-143971	2026-10-08	GPU计算卡	299740			
+cn-le17-whu-144871	2026-10-14	高性能GPU运算单元采购	392000			
+cn-le17-whu-145781	2026-10-21	高性能人工智能计算工作站	324600	NVIDIA,RTX 5090		计算任务 主板平台 专业工作站主板 支持多GPU扩展，具备充足PCIe扩展能力，支持ECC内存 图形计算单元（GPU） NVIDIA RTX 5090 32G×4 配置4块高性能GPU，满足深度学习模型训练及并行计算需求 内存 DDR5 ECC RDIMM 容量256GB，配置8×32GB，支持稳定高负载计算 系统存储 NVMe SSD 容量≥4TB，用于操作系统及软件环境部署 数据存储 NVMe SSD 容
+cn-le17-whu-146261	2026-10-26	科研用4U机架式AI计算服务器	265600			
+cn-le17-whu-147491	2026-11-04	高性能GPU显卡	68000			
+cn-le17-whu-147561	2026-11-04	激光点云深度学习服务器（三次）	348500		非正规渠道进口产品	
+cn-le17-whu-148021	2026-11-10	水文气象数值模拟与人工智能计算工作站采购项目	169800	NVIDIA,RTX 5090		AID级别，缓存不少于8GB；配置不少于2端口32G以太网卡，配套提供主机端和交换机端多模32Gb光模块及连接线缆；配置NVIDIA RTX 5090独立GPU显卡，显存不少于32GB，原生支持CUDA并行计算架构；配置输出功率不低于1400W电源；配置远程管理模块和独立远程管理网口，支持通过HTML5访问带外管理界面并提供基于HTML5的KVM虚拟控制台，可收集查看硬件资产信息、系统日志和诊断信息，监控系统
+cn-le17-whu-149011	2026-11-23	图形卡等配件采购(二次)	225600	Blackwell		22000 技术参数 一．技术要求： 本次采购主要是对原有集群内计算卡进行升级扩容，GPU计算卡参数要求 架构与核心‌：Blackwell 架构，24,064 个 CUDA 核心，第五代 Tensor Core，第四代 RT Core。 ‌显存配置‌：96GB GDDR7 支持 ECC 纠错，512-bit 位宽，带宽 1792 GB/s。 ‌性能表现‌：算力 3511 TOPS，RT 核心性能 333 TFLOP

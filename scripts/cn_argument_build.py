@@ -39,10 +39,10 @@ CITE = re.compile(r'\[((?:cn|ms|man|cnpol|clip)-[A-Za-z0-9-]+)\]')
 QUOTE = re.compile(r'"([^"]+)"')
 KIND = {'DOC': 'Chinese state document', 'OFF': 'Official document, or an official on the record', 'FIL': 'Company filing or statement',
         'REC': 'Press report of words spoken on the record', 'PRESS': 'Press report citing unnamed people',
-        'COUNT': "Research firm's count, through the press", 'CLIP': 'Caption track or machine transcript, not checked by ear',
+        'COUNT': "Research firm's or broker's count", 'CLIP': 'Caption track or machine transcript, not checked by ear',
         'PUB': 'Published commentary or statement (state media, industry body)',
         'NAMED': 'Named person on the record',      # added Nov 23, 2026 for a named analyst's written testimony
-        'ACCT': "A named news outlet's account of a state document",
+        'ACCT': "A named outlet's account of a document, filing or official act",
         'NOTICE': "An institution's own published notice"}      # a university's purchase notice (no saved page calls the two universities state bodies)
 SOLID = {'DOC', 'OFF', 'FIL', 'REC', 'PUB', 'NAMED', 'ACCT', 'NOTICE'}
 

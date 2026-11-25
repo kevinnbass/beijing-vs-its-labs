@@ -45,6 +45,12 @@ cn-o39-shandong-network-2022	高性能算力占比将达40%，国产化算力将
 cn-o39-shandong-network-2022	时间：2022-08-01
 cn-o39-shandong-network-2022	来源：大众日报
 cn-o39-shandong-network-2022	《山东一体化算力网络建设行动方案（2022－2025年）》
+cn-ga31-cndocs-52	到2030年，浙江信息通信行业算力规模达150EFLOPS，国产化算力占比超60%
+cn-ga31-cndocs-52	省通信管理局省发展改革委关于印发《浙江省信息通信业发展“十五五”规划》的通知
+cn-ga31-cndocs-52	重点工程4:算力网络一体化提升工程
+cn-ga31-cndocs-52	发布时间：2026-07-29
+cn-ga31-cndocs-52	智能算力规模(EFLOPS) 150 450 预期性
+cn-ga31-cndocs-52	新建大型超大型数据中心运行电能利用效率(PUE)
 cn-factions-beijing-plan-20240424	坚定算力自主可控路线
 cn-factions-beijing-plan-20240424	具备100%自主可控智算中心建设能力
 cn-factions-beijing-plan-20240424	京经信发〔2024〕25号
@@ -116,7 +122,7 @@ man-cn-o39-qinghai-compute-15fyp-2026	7 数据要素 特色应用场景数量 �
 cn-le16-shaanxi-ai-plus-2025-sohu	深度融入全国一体化算力网，充分利用国家超算西安中心、西安雁塔人工智能创新发展中心等既有算力资源，按需建设算力基础设施
 cn-le16-shaanxi-ai-plus-2025-sohu	陕发改高技〔2025〕1665号
 cn-le16-shaanxi-ai-plus-2025-sohu	陕西省发展和改革委员会 2025年11月14日
-cn-le16-hainan-ai-plus-2026-smartcity	以基础要素突破为支撑点， 构建自主可控算力底座，建设高质量行业数据集
+cn-le16-hainan-ai-plus-2026-smartcity	以基础要素突破为支撑点，构建自主可控算力底座，建设高质量行业数据集
 cn-le16-hainan-ai-plus-2026-smartcity	琼府办〔2026〕6号
 cn-le16-hainan-ai-plus-2026-smartcity	2026年2月，海南省人民政府办公厅正式印发了
 cn-le16-hainan-ai-plus-2026-smartcity	海南省推动“人工智能+”行动方案（2026—2028年）
@@ -125,6 +131,7 @@ cn-o39-chongqing-hub-plan-2026-wayback	确保新建数据中心绿电占比超�
 cn-o39-chongqing-hub-plan-2026-wayback	重庆市建设新型能源算力枢纽实施方案
 cn-o39-chongqing-hub-plan-2026-wayback	渝府办发〔2026〕26号
 cn-o39-chongqing-hub-plan-2026-wayback	2026年6月15日
+cn-o39-chongqing-hub-plan-2026-wayback	新一代智能终端、智能体等普及率
 cn-le25-zhejiang-ai-measures-2025-smartcity	倡导政府部门、算力中心、经营主体采购或应用国产软硬件
 cn-le25-zhejiang-ai-measures-2025-smartcity	浙江省人民政府 2025年4月17日
 cn-le25-zhejiang-ai-measures-2025-smartcity	本措施自2025年5月31日起实施，有效期至2027年12月31日
@@ -142,6 +149,8 @@ cn-o39-ningxia-reply-2023	对基础软硬件实现国产化率90%以上的数据
 cn-o39-ningxia-reply-2023	《关于促进全国一体化算力网络国家枢纽节点宁夏枢纽建设若干政策的意见》
 cn-o39-ningxia-reply-2023	自治区工业和信息化厅关于自治区十三届人大一次会议第220号建议答复的函
 cn-o39-ningxia-reply-2023	发布日期：2025-05-12
+cn-ga31-ningxiarepeal-2	宁政规发〔2025〕5号
+cn-ga31-ningxiarepeal-2	枢纽节点宁夏枢纽建设若干政策的意见
 cn-o35-jilin-songyuan-project	含 3600P 英伟达 H100 稀疏算力与 2400P 国产算力
 cn-o35-jilin-songyuan-project	时间：2026-04-27
 cn-o35-jilin-songyuan-project	松原市国信智能智算数据中心项目
@@ -156,73 +165,56 @@ cn-o39-guangdong-agi-opinion-2023	2023年11月3日
 cn-o39-guangdong-ai-measures-2024	围绕国产主流人工智能开发框架，研发专业算法产品和工具
 cn-o39-guangdong-ai-measures-2024	粤办函〔2024〕88号
 cn-o39-guangdong-ai-measures-2024	2024年5月26日
-cn-counter-b4-2	使用国产算力设施开展模型训练、推理和应用的企业补贴比例不超过算力合同费用的30%，使用其他算力设施的企业补贴比例不超过算力合同费用的20%
-cn-counter-b4-2	杭政办函〔2024〕40号
-cn-counter-b4-2	杭州市人民政府办公厅2024年7月18日
-cn-le25-zhejiang-ai-measures-2025-smartcity	使用自主算力服务的，可 按照不高于合同实际执行金额的30%给予补助
-cn-le25-zhejiang-ai-measures-2025-smartcity	采用非自主算力服务的，可按照不高于合同实际执行金额的10%，给予最高800万元补助
-cn-le25-zhejiang-ai-measures-2025-smartcity	支持有条件的地方发放算力券
-cn-le25-zhejiang-ai-measures-2025-smartcity	浙江省人民政府 2025年4月17日
-cn-le25-zhejiang-ai-measures-2025-smartcity	本措施自2025年5月31日起实施
+cn-ga31-twelve-18	按不超过实际租用算力结算费用的30%（非自主人工智能算力）或60%（自主人工智能算力），给予单家企业最高2000万元支持
+cn-ga31-twelve-18	2026年8月10日
+cn-ga31-twelve-18	2026年9月11日
+cn-le15-binjiang-2026-6-keceyun	杭高新〔2026〕6号
 cn-le15-zj-oss-web1825-e66330	对采购自主智能算力服务的企业、高校、科研机构等主体，各区一般按照不高于合同实际执行金额的30%给予补贴
 cn-le15-zj-oss-web1825-e66330	采购非自主智能算力服务的，一般按照不高于合同实际执行金额的10%给予补贴
 cn-le15-zj-oss-web1825-e66330	温州市人民政府办公室2025年8月29日
-cn-le15-binjiang-2026-6-keceyun	按不超过实际租用算力结算费用的30%（非自主人工智能算力）或60%（自主人工智能算力）
-cn-le15-binjiang-2026-6-keceyun	杭高新〔2026〕6号
-cn-le15-binjiang-2026-6-keceyun	2026年8月10日
-cn-le28-etown-29hao-20241126	按照实际使用算力结算费用的30%
-cn-le28-etown-29hao-20241126	京技管发〔2024〕29号
-cn-le28-etown-29hao-20241126	原政策（京技管发〔2024〕10号）同时废止
-cn-le28-etown-29hao-20241126	实施日期]2024-11-26
-cn-le28-etown-29hao-20241126	给予购买合同中的实际采购国产智算芯片服务器部分金额最高10%的支持
-cn-factions-etwon-vouchers	每次抵扣费用最高为结算费用的30%（非国产人工智能算力）或40%（国产人工智能算力）
-cn-factions-etwon-vouchers	京技管发〔2024〕10号
-cn-le28-sz-longhua-2024-20hao	通过发放算力券为企业提供补贴，补贴额度不超过企业采购金额的30%
-cn-le28-sz-longhua-2024-20hao	深圳市龙华区人民政府办公室2024年11月27日
-cn-o39b-shanxi-measures-2024-jincheng	按照算力服务合同金额的20%，给予总额不超过100万元的“算力券”奖励
-cn-o39b-shanxi-measures-2024-jincheng	按照算力服务合同金额的30%，给予总额不超过200万元的“算力券”奖励
-cn-o39b-shanxi-measures-2024-jincheng	山西省人民政府办公厅2024年6月25日
-cn-o39b-shanxi-measures-2024-jincheng	本措施自2024年7月1日起施行
-cn-le28-sz-gxj-2024-13hao	对租用智能算力开展大模型训练的企业、高等院校和科研机构，按不超过服务合同金额的50%
-cn-le28-sz-gxj-2024-13hao	深工信规〔2024〕13号
-cn-le28-sz-gxj-2024-13hao	本措施自2024年12月18日起施行
-cn-le28-sz-gxj-2024-13hao	对初创企业提高资助比例至60%
-cn-le28-wuhan-2025-3hao	对企业使用算力服务费用给予50％最高20万元补助
-cn-le28-wuhan-2025-3hao	武政规〔2025〕3号
-cn-le28-wuhan-2025-3hao	2025年2月18日，经武政规〔2025〕3号公布
-cn-le28-qingdao-2026-9hao-smartcity	按照实际支付算力费用不超过20%的比例，给予企业最高100万元补贴
-cn-le28-qingdao-2026-9hao-smartcity	青工信字〔2026〕9号
-cn-le28-qingdao-2026-9hao-smartcity	青岛市工业和信息化局2026年3月5日
-cn-le15-sheitc-8cea38	对租用智能算力的主体，市级给予最高30%租金补贴
-cn-le15-sheitc-8cea38	上海市经济和信息化委员会2025年7月28日
-cn-le15-sheitc-8cea38	对自主智能算力设施部署项目，给予最高10%建设支持
-cn-le15-sheitc-8cea38	市区协同给予最多1年、最高100%的租金补贴
-cn-le28-wuhan-qiaokou-2025-1hao	在市级支持基础上，按算力服务费的50%最高给予20万元资金支持
-cn-le28-wuhan-qiaokou-2025-1hao	硚政规〔2025〕1号
-cn-le28-wuhan-qiaokou-2025-1hao	发布日期:2025年08月05日
-cn-le28-wuhan-hongshan-2025-2hao	对购买算力服务的中小企业，按照购买算力服务费用给予最高不超过20%的补贴
-cn-le28-wuhan-hongshan-2025-2hao	洪政规〔2025〕2号
-cn-le28-wuhan-hongshan-2025-2hao	发布日期:2025年09月12日
-cn-le28-shandong-ai-measures-2025-smartcity	按规定给予不超过算力交易金额的5%奖补支持，每个企业奖补总额最高500万元
-cn-le28-shandong-ai-measures-2025-smartcity	2025年5月12日，山东省政府新闻办举行省政府政策例行吹风会
-cn-le28-hunan-aiplus-smartcity	对购买算力服务的企业，按不超过年度算力总支出的30%给予补贴，最高不超过1000万元
-cn-le28-hunan-aiplus-smartcity	湘政发〔2025〕7号
-cn-le28-hunan-aiplus-smartcity	2025年10月30日，湖南发布
+cn-le15-zj-oss-web1825-e66330	温政办〔2025〕45号
+cn-le15-zj-oss-web1825-e66330	2025年10月1日
+cn-ga31-plantexts-1	使用自主算力服务的，可 按照不高于合同实际执行金额的30%给予补助
+cn-ga31-plantexts-1	采用非自主算力服务的，可按照不高于合同实际执行金额的10%，给予最高800万元补助
+cn-ga31-plantexts-1	浙政发〔2025〕10号
+cn-ga31-plantexts-1	2025年4月17日
+cn-ga31-plantexts-1	本措施自2025年5月31日起实施
+cn-ga31-plantexts-1	支持有条件的地方发放算力券
+cn-ga31-vouchernamedrules-5	自主可控智能算力不超过服务费用的50%、非自主可控智能算力不超过服务费用的30%
+cn-ga31-vouchernamedrules-5	其中，中小企业抵扣比例分别增加10%
+cn-ga31-vouchernamedrules-5	本办法自2026年5月13日生效
+cn-ga31-vouchernamedrules-5	已于2026年2月9日失效
+cn-ga31-plantexts-12	企事业单位按实际发生费用的20％予以补贴，其中购买自主可控算力服务的，按实际发生费用的30％予以补贴
+cn-ga31-plantexts-12	湖北省算力券实施方案
+cn-ga31-plantexts-12	2026年9月30日
+cn-ga31-sciowhole-115	非自主可控算力服务、国产人工智能大模型词元（Token）服务，按服务实际发生金额（不含税费，下同）的20%补贴；自主可控算力服务，按服务实际发生金额的30%补贴
+cn-ga31-sciowhole-115	武汉市算力券管理办法
+cn-ga31-sciowhole-115	自2026年10月29日起施行，有效期1年
+cn-ga31-sciowhole-115	同一主体年度补贴总额最高300万元
+cn-ga31-voucherearlierrules-48	企业、高校、科研机构等申报主体对采购自主智能算力服务的，按照不高于合同实际执行金额的30%给予补贴
+cn-ga31-voucherearlierrules-48	采购非自主智能算力服务的，一般按照不高于合同实际执行金额的10%给予补贴
+cn-ga31-voucherearlierrules-48	本细则自2026年6月21日起施行，有效期至2027年12月31日
+cn-ga31-voucherearlierrules-48	2026年5月21日
 cn-ga05-sichuan-compute-net-measures-jiemian	设立“算力券”，对企业购买国产算力费用给予支持，一般企业支持比例不超过20%，成立3年内的初创企业可提高至30%、人工智能一人公司（OPC）可提高至40%，每家单位每年支持最高不超过100万元
 cn-ga05-sichuan-compute-net-measures-jiemian	本办法自印发之日起实施
+cn-ga31-unsaved-sc-338hao-fgw-wayback	川发改数据〔2026〕338号
+cn-ga31-unsaved-sc-338hao-fgw-wayback	对企业购买国产算力费用给予支持
+cn-ga31-unsaved-sc-338hao-fgw-wayback	2026-08-11
+cn-ga31-unsaved-sc-338hao-fgw-wayback	2026-08-13
 cn-ga05-sichuan-compute-net-measures-cls-20260813	财联社8月13日电，《四川省推进算力网建设的若干政策措施（试行）》发布
 cn-ga05-sichuan-compute-net-measures-zqrb-20260813	对企业购买国产算力费用给予支持
-cn-ga04-wh-voucher-rule-2026-24hao	算力使用方按照智算服务合同实际发生费用的 25 ％兑付
-cn-ga04-wh-voucher-rule-2026-24hao	芜数资〔2026〕24号
-cn-ga04-wh-voucher-rule-2026-24hao	芜湖市数据资源管理局 2026 年 7 月 15 日
-cn-ga04-wh-voucher-rule-2026-24hao	具身智能等未来产业领域企业，经有关部门会商认定后，兑付比例提升至 45 ％
-cn-ga04-wh-voucher-rule-2026-24hao	兑付比例提升至 70 ％，单个企业每年最高兑付不超过 10 万元
-cn-ga04-sz-suzhou-aiplus-2026-18hao	对符合条件的科技研发企业，按实际支付智能算力租用费用的 30%，给予每年最高200万元补贴
-cn-ga04-sz-suzhou-aiplus-2026-jiedu	本《若干措施》自2026年1月31日起施行，有效期至2027年1月30日
-cn-ga04-sz-suzhou-aiplus-2025-5hao	按实际支付人工智能算力费用 20% 给予每年最高 200 万元补贴
-cn-ga04-sz-suzhou-aiplus-2025-5hao	2025年2月13日苏州市人民政府苏府规字〔2025〕5号文发布
-cn-ga04-tj-voucher-rule-sina-20250514	按照算力服务合同的10%申请算力券，同一企业每年度累计兑现算力券金额不超过200万元
-cn-ga04-tj-voucher-rule-sina-20250514	2025年05月14日 15:33 看点资讯
-cn-ga04-tj-voucher-rule-sina-20250514	天津市数据局、财政局联合印发了《天津市算力券实施方案（试行）》
+cn-ga31-voucherrulesmissing-71	单期补贴额度最高不超过当期对应算力服务费用的50%
+cn-ga31-voucherrulesmissing-71	合同服务内容需明确为国产算力服务
+cn-ga31-voucherrulesmissing-71	宁波市数据局2026年3月16日
+cn-ga31-voucherrulesmissing-71	第四期:2026年10月1日至2026年12月31日
+cn-ga31-voucherrulesmissing-71	单个算力需求方年度累计申领算力券额度最高不超过150万元
+cn-ga31-voucherrulesmissing-28	具有国产算力使用需求
+cn-ga31-vcityeast-55	企业采购自主智能算力服务的，其研发投入（委外除外）中的算力成本部分，按照智算服务实际采购金额的50%给予算力补贴
+cn-ga31-vcityeast-55	黄政发〔2025〕18号
+cn-ga31-vcityeast-55	实施时间为2025年1月1日起，有效期至2027年12月31日止
+cn-ga31-vcityeast-55	对评为省级、市级重点平台企业，再上浮5%
+cn-ga31-vcitywest-6	对租用国产智能算力
+cn-ga31-vcitywest-6	按年度实际发生金额的10%，给予最高100万元补助
+cn-ga31-vcitywest-6	长沙经济技术开发区管理委员会2026年3月23日
 cn-o39-hebei-opinion-2024-sjz	新增算力基础软硬件设施自主可控比例60%以上
 cn-o39-hebei-opinion-2024-sjz	河北省人民政府办公厅 2024年5月8日

@@ -73,7 +73,7 @@ def read_core():
             cur = dict(lane=lane, kind=kind, date=d, dl=dl, sid=sid); items.append(('block', cur))
         elif cur is not None and ln[:2] in ('T ', 'S ', 'Q ', 'E ', 'U ', 'C ', 'N '): cur[ln[0]] = ln[2:].strip()
         else:
-            if ln.strip(): cur = None if (ln.startswith('#') or ln.startswith('!')) else cur
+            if ln.strip(): cur = None if ln.startswith('#') else cur      # a "!" check line inside a block (the core has two since Nov 25, 2026) does not end it
             items.append(('raw', ln))
     return items
 

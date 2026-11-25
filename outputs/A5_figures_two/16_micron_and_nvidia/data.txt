@@ -20,8 +20,8 @@ N cn-policy-review-measures | 网络安全审查办公室设在国家互联网�
 
 # ---- Nvidia, 2024 to 2026: published ----
 @ nv-case doc 2024-12-09 - cn-policy-samr-open-original case=nvidia row=published dir=away
-T market regulator opens an antitrust case
-L The market regulator opens an antitrust investigation of Nvidia. The notice is about Nvidia; it tells no buyer anything.
+T market regulator announces an antitrust case
+L The market regulator announces that it has opened an antitrust investigation of Nvidia. The notice is about Nvidia; it tells no buyer anything.
 S State Administration for Market Regulation
 Q 市场监管总局依法对英伟达公司开展立案调查
 E the regulator has opened an investigation of Nvidia under the law
@@ -90,20 +90,22 @@ D Published SEP 17 2025
 N according to three people with knowledge of the matter
 
 @ nv-statefunded press 2025-11-05 - ms-bj-20251105-statefunded-standard case=nvidia row=unpublished dir=away
-T state-funded data centres told to use only home-made AI chips
+T new state-funded data centres told to use only home-made AI chips
 L Guidance requires new data centre projects that took state money to use only home-made AI chips, Reuters reports. It adds: "It is unclear whether the guidance applies nationwide or only to certain provinces".
 S Reuters, Nov 5, 2025, on The Standard (Hong Kong)
 Q The Chinese government has issued guidance requiring new data centre projects that have received any state funds to only use domestically-made artificial intelligence chips
 Q It is unclear whether the guidance applies nationwide or only to certain provinces, sources said
 D PUBLISHED: 2025-11-05
 
-@ nv-unless press 2026-01-14 - cn-acts-reuters-customs-20260114 case=nvidia row=unpublished dir=away
+@ nv-unless press 2026-01-13 - cn-acts-reuters-customs-20260114 case=nvidia row=unpublished dir=away
 T firms told not to buy the H200 "unless necessary"
-L Officials tell technology companies not to buy the H200 "unless necessary", and customs agents are told the chips "are not permitted to enter China", Reuters reports, by three people. Reuters wrote that it was unclear whether Beijing wanted a ban, was still weighing restrictions, or could use the measures as "a bargaining tactic in talks with Washington".
+L At meetings on Tuesday, Jan 13, officials tell technology companies not to buy the H200 "unless necessary", Reuters reports on Jan 14, by three people; customs agents, it says, were told that week that the chips "are not permitted to enter China". Reuters wrote that it was unclear whether Beijing wanted a ban, was still weighing restrictions, or could use the measures as "a bargaining tactic in talks with Washington".
 S Reuters, Jan 14, 2026, on Yahoo Finance
 Q explicitly instructed not to purchase the chips unless necessary
 Q Chinese customs authorities told customs agents this week that Nvidia's H200 artificial intelligence chips are not permitted to enter China
 D PUBLISHED: 2026-01-14
+D summoned domestic technology companies to meetings on Tuesday
+D Jan 14 (Reuters)
 N are not permitted to enter China, according to three people briefed on the matter
 N or whether these measures could be used as a bargaining tactic in talks with Washington
 
@@ -123,7 +125,8 @@ N already effectively foreclosed from the China market by U.S. export controls
 ! cn-acts-mfa-20251210 | 2025年12月10日外交部发言人郭嘉昆主持例行记者会
 # The Micron text's welcome clause (record line)
 ! cn-policy-micron-decision | 欢迎各国企业、各类平台产品服务进入中国市场
-# The finance ministry's purchase bar by name, Jun 22, 2026 (cell "None found"): its list of 46 firms names no chip maker
+! cn-policy-micron-decision | 只要遵守中国法律法规要求
+# The finance ministry's purchase bar by name, issued Jun 22, 2026 (cell "None found"): its list of 46 firms names none of the chip makers searched for
 # (checked by build.py: no maker's name in the list's saved text, while a defence firm's name is found)
 ! cn-le14-mof-us-firms-measures-20260622 | 不得采购46家美国企业（不包括在华美资企业）生产的产品
 ! cn-le14-mof-us-firms-measures-20260622 | 财政部 2026年6月22日

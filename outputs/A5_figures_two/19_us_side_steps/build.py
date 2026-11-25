@@ -126,6 +126,7 @@ def main():
     abroad = [r for r in lt if r['location'] != 'China']
     assert all(r['status'] == 'RWA' for r in abroad) and all(r['status'] == 'RWA' for r in lt if cnt(r) > 75_000)
     n_abroad = sum(cnt(r) for r in abroad); n_big = sum(cnt(r) > 75_000 for r in lt)
+    assert {r['location'] for r in abroad} == {'Malaysia', 'Indonesia', 'Thailand'}, {r['location'] for r in abroad}      # round 9: the table's ultimate location, as the core now words it
     t_row = [r for r in lt if r['date_submitted'] == '12/19/2025' and 'Tencent' in r['consignee']]
     assert len(t_row) == 1 and t_row[0]['status'] == 'Approved, not shipped'
     tencent = said(r'to export ([\d,]+) H200s to Tencent')
@@ -191,8 +192,8 @@ def main():
     <h3>Step {by['committee']['n']}: Washington’s table by status, May 11, 2026</h3>
     <table><thead><tr><th>Status</th><th>Chips</th><th>Applications</th></tr></thead><tbody>{trs}</tbody></table>
     <p>Our sums of the table’s {len(lt)} rows; they match the committee’s own totals. Nvidia’s and AMD’s chips are added together, as in the table; a third exporter, Semsotai USA, has {n(sum(cnt(r) for r in third))} chips in {len(third)} applications, all still submitted.
-    Returned without action is {rwa_pct:.0f}% of the chips in the applications the summary records, among them every application above 75,000 chips ({C.WORDS[n_big]}) and every one for a consignee in Malaysia, Indonesia or Thailand ({n(n_abroad)} chips). The table gives no reasons.
-    The committee says the summary does not show every application in full; for example, Nvidia applied on Dec 19, 2025 “to export 445,000 H200s to Tencent”. The table’s only Tencent row of that date is for {n(cnt(t_row[0]))}, approved, and neither document says whether it is that application. If it is, counted at 445,000, the share returned would be {full_pct:.1f}%; if the 445,000 is a further application, {more_pct:.1f}% (our arithmetic).</p>
+    Returned without action is {rwa_pct:.0f}% of the chips in the applications the summary records, among them every application above 75,000 chips ({C.WORDS[n_big]}) and every one whose ultimate location is Malaysia, Indonesia or Thailand ({n(n_abroad)} chips). The table gives no reasons.
+    The committee says the summary does not show every application in full; for example, Nvidia applied on Dec 19, 2025 “to export 445,000 H200s to Tencent”. The table’s only Tencent row of that date is for {n(cnt(t_row[0]))}, approved, and neither document says whether it is that application. If it is, counted at 445,000, the share returned would be {full_pct:.1f}%; if the 445,000 is a further application and was not returned without action, {more_pct:.1f}% (our arithmetic).</p>
    </div>""")
 
     figure = f"""
@@ -215,7 +216,7 @@ def main():
    <h2>Read with care</h2>
    <ul>
     <li><b>Sold or shipped “to China” is not the same as arrived in the mainland.</b> The August report says small batches “have been allowed to enter mainland China” and also that “Beijing wants them to keep the hardware outside mainland China”. Where the chips sold later are now is not known.</li>
-    <li><b>The licence table is Washington’s own record, looking back.</b> It gives each application’s status on May 11, 2026, and was made public on Nov 19, 2026 by the House Foreign Affairs Committee, by unanimous consent. An application names a consignee; it is not an order, and an approval there is Washington’s licence, not Beijing’s.</li>
+    <li><b>The licence table is Washington’s own record, looking back.</b> It gives each application’s status on May 11, 2026, and was made public on Nov 19, 2026 by the House Foreign Affairs Committee, by unanimous consent. An application names a data-centre operator or ultimate consignee; it is not an order, and an approval there is Washington’s licence, not Beijing’s.</li>
     <li><b>This is the American side only.</b> Why so little went out is a separate question: Nvidia’s filing says such sales “were restricted by the PRC government”, and the Commerce Secretary said the Chinese central government had not let the companies buy.</li>
     <li><b>The last quarter’s filing is not out.</b> Nvidia’s quarterly report (Form 10-Q) for the quarter ended Oct 25, 2026 was not yet filed when looked for on Nov 23, 2026. Its commentary on the quarter says: “We plan to file our 10-Q in the coming weeks.” The $2.4 billion is from its results call and that commentary.</li>
     <li>Open marks rest on unnamed people. The two ceilings ({n(v["cleared"]["each"])} and {n(v["ft"]["each"])} a firm) come from two different reports. Washington’s table states no ceiling; no approved application in it is above {n(v["cleared"]["each"])}.</li>

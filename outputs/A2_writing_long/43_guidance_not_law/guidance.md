@@ -4,7 +4,7 @@
 
 Draft by Claude, Anthropic's model. Written Nov 23, 2026 (UTC).
 
-How to read it. Words between quotation marks are a source's exact words, found in the saved copy by a script. A filled reference number is a document, a filing or a named person on the record. An open number is a press report citing unnamed people. English in round brackets after Chinese is our rendering, not an official translation.
+How to read it. Words between quotation marks are a source's exact words, found in the saved copy by a script. A filled reference number is a document, a filing, a named person on the record or a state-media item. An open number is a press report citing unnamed people. English in round brackets after Chinese is our rendering, not an official translation.
 
 The author's interest. Anthropic has argued in public for controls on chip exports to China (that is from the model's general knowledge; no saved page is cited for it), so judge this piece by its sources.
 
@@ -18,7 +18,7 @@ Bloomberg, Sept 27, 2024: regulators were discouraging purchases of Nvidia's H20
 
 **2. In public, state media warned, mostly from Jul 31 to Sept 24, 2025** (on the record)
 
-Of 75 state-media items on Nvidia chips found from July 2025 to November 2026, 11 of the 14 that only warn about them date from Jul 31 to Sept 24, 2025 [5] [6] [7]; the three found later are in Global Times in 2026 (the items after September 2025 are what two rounds of searches found, a sample and not a full count). One, from an account of the state broadcaster on Aug 10, said of the H20: "作为消费者，我们当然可以选择，不买" (as consumers we can of course choose not to buy) [8] [9]. They warn and urge. None forbids.
+Of 75 state-media items on Nvidia chips found from July 2025 to November 2026, 16 of the 19 that only warn about them date from Jul 31 to Sept 24, 2025 [5] [6] [7]; the three found later are in Global Times in 2026 (the items after September 2025 are what two rounds of searches found, a sample and not a full count). One, from an account of the state broadcaster on Aug 10, said of the H20: "作为消费者，我们当然可以选择，不买" (as consumers we can of course choose not to buy) [8] [9]. They warn and urge. None forbids.
 
 **3. Two published texts tell buyers to stop; neither is about Nvidia** (on the record)
 
@@ -26,7 +26,7 @@ On May 21, 2023 the cyberspace regulator's review office published its conclusio
 
 **4. The written rules cover only the state's own buying** (on the record)
 
-Notices published on Dec 26, 2023 require Party and government bodies to write into their purchases of computers and servers that the processor and operating system meet a security evaluation. The same sentence adds: "其他单位可不在采购需求中提出此项要求" (other units may leave this requirement out) [15] [16]. No published national plan found sets a home-made share for computing centres: every such share found is a province's or a city's, and the national computing-network opinions of December 2023 set none [17]. Two national texts hold a home-made percentage of other kinds: the 20% price preference for home-made products in government purchasing [18], and an advisory committee's roadmap of October 2015, which expected home-made high-performance computers and servers to hold over 80% of the home market by 2025 [19].
+Notices published on Dec 26, 2023 require Party and government bodies at township level and above, and two kinds of public institution tied to them, to write into their purchases of desktop computers and general-purpose servers that the processor and operating system meet a security evaluation. The same sentence adds: "其他单位可不在采购需求中提出此项要求" (other units may leave this requirement out) [15] [16]. No published national plan found sets a home-made share for computing centres: every such share found is a province's or a city's, and the national computing-network opinions of December 2023 set none [17]. Two national texts hold a home-made percentage of other kinds: the 20% price preference given to home-made products where they compete with others in a government purchase [18], and an advisory committee's roadmap of October 2015, which expected home-made high-performance computers and servers to exceed 80% of the home market by 2025 [19].
 
 **5. Asked in public, officials did not say** (on the record)
 
@@ -58,7 +58,7 @@ Each entry: its kind; what it is; the saved page's own title where the record ho
 
 [9] Published commentary or statement (state media, industry body). Xinhua, list of the works that won the 36th China Journalism Award, Nov 8, 2026 (it gives China Media Group, the state broadcaster, as the unit behind the account Yuyuan Tantian). Page title: 第36届中国新闻奖获奖作品目录-新华网. https://www.xinhuanet.com/politics/20261108/ca5f8dca73b04699b6d0f6aa476192a7/c.html Saved copy: cn-le13-cja36-winners-xinhuanet-20261108
 
-[10] Chinese state document. Cybersecurity Review Office (which sits in the Cyberspace Administration of China), conclusion of its review of Micron's products, published on the Administration's site on May 21, 2023. Page title: 美光公司在华销售的产品未通过网络安全审查_中央网络安全和信息化委员会办公室. https://www.cac.gov.cn/2023-05/21/c_1686348043518073.htm Saved copy: cn-policy-micron-decision
+[10] Chinese state document. Cybersecurity Review Office, conclusion of its review of Micron's products, published on the site of the Cyberspace Administration of China on May 21, 2023. Page title: 美光公司在华销售的产品未通过网络安全审查_中央网络安全和信息化委员会办公室. https://www.cac.gov.cn/2023-05/21/c_1686348043518073.htm Saved copy: cn-policy-micron-decision
 
 [11] Chinese state document. Cybersecurity Review Measures, published on the Cyberspace Administration's site on Jan 4, 2022, in force from Feb 15, 2022. Article 4 places the Cybersecurity Review Office in the Cyberspace Administration. Page title: 网络安全审查办法_中央网络安全和信息化委员会办公室. https://www.cac.gov.cn/2022-01/04/c_1642894602182845.htm Saved copy: cn-policy-review-measures
 
@@ -76,7 +76,7 @@ Each entry: its kind; what it is; the saved page's own title where the record ho
 
 [18] Chinese state document. General Office of the State Council, notice on a home-made product standard in government purchasing, dated Sept 28, 2025. Text on the finance ministry's site. Page title: 国务院办公厅关于在政府采购中实施本国产品标准及相关政策的通知. https://www.mof.gov.cn/zhengwuxinxi/caizhengxinwen/202509/t20250930_3973725.htm Saved copy: cn-policy-domestic-product-standard-2025
 
-[19] Chinese state document. National Advisory Committee on Building a Manufacturing Power, technology roadmap for the key fields of Made in China 2025, October 2015 (a copy hosted by The Wire China). https://www.thewirechina.com/wp-content/uploads/2025/04/mic2025-green-book.pdf Saved copy: cn-policy-roadmap-original
+[19] Chinese state document. National Strategic Advisory Committee on Building a Manufacturing Power, technology roadmap for the key fields of Made in China 2025, October 2015 (a copy hosted by The Wire China). https://www.thewirechina.com/wp-content/uploads/2025/04/mic2025-green-book.pdf Saved copy: cn-policy-roadmap-original
 
 [20] Official document, or an official on the record. Ministry of Foreign Affairs, regular press conference of Aug 22, 2025 (spokesperson Mao Ning). The ministry's own record. Page title: 2025年8月22日外交部发言人毛宁主持例行记者会_中华人民共和国外交部. https://www.mfa.gov.cn/wjdt_674879/fyrbt_674889/202508/t20250822_11694496.shtml Saved copy: cn-counter-b3-2
 
@@ -92,4 +92,4 @@ Each entry: its kind; what it is; the saved page's own title where the record ho
 
 [26] Company filing or statement. Nvidia, quarterly report on Form 10-Q for the quarter ended Oct 26, 2025, filed with the US Securities and Exchange Commission; signed Nov 19, 2025. https://www.sec.gov/Archives/edgar/data/1045810/000104581025000230/nvda-20251026.htm Saved copy: man-ms-sec-10q-2025-10
 
-Build check: 11 quotations and 47 further statements were looked for in the saved copies of 26 sources and all were found; a planted false quotation was rejected. 20 sources are documents, filings or named people on the record; 6 are press reports citing unnamed people, counts or machine transcripts. A quotation that is found shows what the source says, not that it is true.
+Build check: 11 quotations and 50 further statements were looked for in the saved copies of 26 sources and all were found; a planted false quotation was rejected. 20 sources are documents, filings or named people on the record; 6 are press reports citing unnamed people, counts or machine transcripts. A quotation that is found shows what the source says, not that it is true.

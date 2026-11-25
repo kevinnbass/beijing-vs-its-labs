@@ -15,7 +15,7 @@ D 在网络安全和信息化工作座谈会上的讲话 (2016年4月19日)
 
 @ ex-samr doc 2024-12-09 - cn-policy-samr-open-original rung=1 dir=neutral
 T the market regulator
-L The market regulator opens an antitrust investigation of Nvidia.
+L The market regulator announces that it has opened an antitrust investigation of Nvidia.
 S State Administration for Market Regulation
 Q 市场监管总局依法对英伟达公司开展立案调查
 E the regulator has opened an investigation of Nvidia under the law
@@ -72,12 +72,13 @@ D cn-o37-senate-hearing-page-b | Date: Wednesday, April 22, 2026
 D cn-us-lutnick-0422-coons-letter | on April 22, 2026
 
 @ ex-ndrc doc 2026-05-22 - cn-policy-ndrc-chip-adaptation-2026 rung=3 dir=neutral
-T the state planner's spokesperson
-L The spokesperson of the state planner (NDRC), at its press conference.
+T Li Chao, of the state planner's policy research office
+L Li Chao, of the policy research office of the state planner (NDRC), at the commission's press conference. The page does not call him spokesperson.
 S National Development and Reform Commission, press conference record
 Q 指导国产大模型加大力度适配国产算力芯片
 E guiding domestic large models to step up adaptation to domestic computing chips
 D 李超 2026/05/22
+N 政研室谢谢您的提问
 
 # ---- rung 4: reports of named people's words or of a state document (a newspaper, a post, a transcript site) ----
 @ ex-bessent rec 2026-11-20 - cn-against2-bessent-orders-20261120 rung=4 dir=neutral
@@ -132,3 +133,12 @@ D PUBLISHED: 2026-04-01
 ! man-a7d2f1a9f963 | There have been minimal exports of any H200s to China so far
 # rung 2: Alibaba's own chips
 ! cn-policy-alibaba-own-gpu | chip design subsidiary T-Head has brought proprietary GPUs into scaled production
+# rung 2 (round 9): the universities' notices, from the fewest cards to the most servers; the award of April 2025 and its tender
+! cn-ga13-nwpu-som-88690-wayback | NVIDIA H200 141G PCIe显卡2片
+! cn-ga31-unsaved3-noticecopies4-www | 6~8 台英伟达 H20 八卡 GPU 服务器
+! cn-ga31-h20notices-7 | 1*NVIDIA HGX H20 8-GPU SXM 96GB 500W GPUs模组
+! cn-ga31-h20notices-7 | 中央国家机关政府采购中心
+! cn-ga31-h20notices-19 | 是否允许进口产品
+! cn-ga31-carrierown-14 | 包括NV RTX 3090 GPU*1
+! cn-ga31-carrierown-14 | 包括NV RTX 4090 GPU*1
+! cn-ga31-carrierown-14 | 包括NV Tesla A100 GPU*1

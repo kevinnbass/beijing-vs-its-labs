@@ -94,8 +94,12 @@ def table_numbers():
     nv = [r for r in rows if r['exporter'] == 'Nvidia' and r['status'] == 'Approved, not shipped']
     if any(r['status'] != 'Approved, not shipped' for r in rows if r['status'].startswith('Approved')): sys.exit('STOPPED: an approved application is not marked "Approved, not shipped"')
     rwa = sum(n(r) for r in rows if r['status'] == 'RWA')
+    # round 9 (core edit 8b): the column is the chips' ultimate location, and marks.txt says "applications to ship Nvidia chips" there
+    # and that every approved application has China as its ultimate location
+    if any(r['location'] != 'China' for r in rows if r['status'].startswith('Approved')): sys.exit('STOPPED: an approved application has an ultimate location other than China')
     sea = [r for r in rows if r['location'] in ('Malaysia', 'Indonesia', 'Thailand')]
     if not sea or any(r['status'] != 'RWA' for r in sea): sys.exit('STOPPED: an application for Malaysia, Indonesia or Thailand is not marked RWA')
+    if any(r['exporter'] != 'Nvidia' for r in sea): sys.exit('STOPPED: an application for Malaysia, Indonesia or Thailand is not Nvidia\'s')
     return {'NV_APPROVED': f'{sum(n(r) for r in nv):,}', 'NV_APPS': str(len(nv)), 'RWA_CHIPS': f'{rwa:,}', 'RWA_PCT': str(round(100 * rwa / tot)),
             'SEA_CHIPS': f'{sum(n(r) for r in sea):,}', 'SEA_APPS': NUM[len(sea)]}
 
@@ -147,7 +151,14 @@ def main():
          f'The speech program punctuated the clips into {ns_l} and {ns_p} sentences. Long sentences are cut into parts so that each part gets one verdict: {nu_l} parts and {nu_p} parts.',
          '']
     # a list, not a table: at phone width the page drops a table's header row, and the two columns of numbers lose their names
-    for code in ORDER: o.append(f"- **{LABEL[code]}:** {count(L, code)} of the {nu_l} parts of Luckey's clip, {count(P, code)} of the {nu_p} parts of Pottinger's.")
+    # round 9 (the session's ruling on note fg4): a part of verdict A whose qualifier names a press report is counted with A, and the line says how many
+    press_only = lambda c: sum(1 for u in c['units'] if u['in_transcript'] and marks[u['id']]['code'] == 'A' and 'press report' in marks[u['id']]['qual'])
+    pl, pp = press_only(L), press_only(P)
+    for code in ORDER:
+        tail = ''
+        if code == 'A' and (pl or pp):
+            tail = f" Of these, {NUM[pl]} of Luckey's and {NUM[pp]} of Pottinger's rest on one press report alone, as {'its line says' if pl + pp == 1 else 'their lines say'}."
+        o.append(f"- **{LABEL[code]}:** {count(L, code)} of the {nu_l} parts of Luckey's clip, {count(P, code)} of the {nu_p} parts of Pottinger's.{tail}")
     if count(L, LEFT_CODE) or count(P, LEFT_CODE):         # round 7 (OB10): counted apart, not as a verdict
         o.append(f"- **Left out of this project, with no verdict:** {count(L, LEFT_CODE)} of the {nu_l} parts of Luckey's clip, {count(P, LEFT_CODE)} of the {nu_p} parts of Pottinger's.")
     for c, n in ((L, nu_l), (P, nu_p)):
@@ -170,7 +181,7 @@ def main():
           ''] + body_p + [
           '## How the two clips fit together',
           '',
-          "Pottinger blames Jensen Huang for China's AI models. Luckey says Beijing kept Nvidia's chips out. Both can hold, for different chips and years. Chinese companies did train models on Nvidia chips (sentences P4 and P12). By Washington's own table, none of the Nvidia chips it had approved by May 11, 2026 had shipped (sentence P12). On the H200 chips at issue in 2026, Nvidia's report for the quarter to Jul 26, 2026 says shipments under the H200 licences \"account for less than 1% of Data Center revenue in our most recent quarter\" [man-ms-sec-10q-2026-07]. On its results call for the quarter ended Oct 25, 2026 it said: \"Q3 sales of licensed Hopper Data Center products to China was $2.4 billion\", and then \"we are no longer shipping licensed Hopper Data Center products to China\" [cn-o38-nvda-q3fy27-call-transcript-pdf]. It gave no reason, and it did not say how many of those chips crossed into mainland China.",
+          "Pottinger blames Jensen Huang for China's AI models. Luckey says Beijing kept Nvidia's chips out. Both can hold, for different chips and years. Chinese companies trained models on Nvidia chips: DeepSeek by its own technical report (sentence P4), Alibaba and ByteDance abroad by one press report (sentence P12). By Washington's own table, none of the Nvidia chips it had approved by May 11, 2026 had shipped (sentence P12). On the H200 chips at issue in 2026, Nvidia's report for the quarter to Jul 26, 2026 says shipments under the H200 licences \"account for less than 1% of Data Center revenue in our most recent quarter\" [man-ms-sec-10q-2026-07]. On its results call for the quarter ended Oct 25, 2026 it said: \"Q3 sales of licensed Hopper Data Center products to China was $2.4 billion\", and then \"we are no longer shipping licensed Hopper Data Center products to China\" [cn-o38-nvda-q3fy27-call-transcript-pdf]. It gave no reason, and it did not say how many of those chips crossed into mainland China.",
           '!! man-ms-sec-10q-2026-07 | For the quarterly period ended July 26, 2026',
           '!! cn-o38-nvda-q3fy27-call-transcript-pdf | Q3 2027 Earnings Call',
           '',

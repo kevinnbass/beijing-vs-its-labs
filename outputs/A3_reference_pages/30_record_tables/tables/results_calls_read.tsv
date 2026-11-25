@@ -1,0 +1,63 @@
+# The 61 results-call transcripts that tables/results_calls_word_census.tsv counts words in, one row per call: the calls that eight Chinese companies held from Feb 18, 2025 to Nov 19, 2026 (Alibaba, Baidu, JD.com, Kuaishou and Tencent, 8 calls each; Kingsoft Cloud, Meituan and Xiaomi, 7 each). The list was made on Nov 23, 2026; every row was checked against its saved page by script on Nov 25, 2026. Columns: the company; the call as the page labels it (the transcript site labels a call by the company's own fiscal quarter, so Alibaba's call of Nov 19, 2026 is Q2 2027; Alibaba's own transcripts name the quarter by its last month); the date of the call; the saved id; the site that carries the transcript (stockanalysis.com for 54 calls; Alibaba's own investor site, data.alibabagroup.com, for 7, each a PDF); where the page says the transcript is from (each of the 54 pages names Quartr as its source, in the words "Earnings call transcripts are provided by Quartr and are published within hours after each earnings call."; the 7 are the company's own transcripts); whether the page marks any part of the transcript as made, translated or arranged by a model or a machine; and the number of markers of a passage that is not translated, [Foreign language] or [Non-English content] in any spacing or spelling, within its two square brackets, in the transcript as the page shows it; two markers whose opening bracket is missing or misprinted are not counted ("Non-English content]" with no opening bracket, in Kuaishou's call of May 27, 2026, and "Foreign language]" opened by a curly brace, in Meituan's of May 26, 2025). On a model or a machine: no for all 61. None of the 61 saved pages carries such a note, in its markup or in its plain text (for the 7 PDFs, in their text), and the 54 pages do not say how Quartr makes its transcripts; controls: the same test finds the note on a saved Chinese machine translation of one of these calls, whose page says so [cn-ga31-callszh-9], and in two planted sentences, and does not take a speaker's words on code written by AI for one. On passages not translated: 27 of the 61 transcripts hold at least one marker (Kuaishou 8, JD.com 7, Kingsoft Cloud 6, Meituan 5, Alibaba 1; 574 markers in all, from 1 to 38 in a transcript). The word census counts 25 of the 27, because its row looks for the two usual spellings and so passes over JD.com's call of Aug 13, 2026 ("[Non-English cont ent]") and Meituan's of Nov 28, 2025 ("[ Foreign language]"). What the table is not: the transcripts were not checked against the recordings, so a word, a figure or a speaker's label in them may be wrong (in 20 of the 54 some turns are headed only Speaker and a number); the absence of a note about a model does not show that none was used; and the list is of the calls read for the word census, not of every call these companies held.
+company	call	call_date	saved_id	transcript_site	transcript_from	marked_as_made_by_a_model_or_machine	markers_of_passages_not_translated
+Alibaba	December Quarter 2024	2025-02-20	cn-o36-alibaba-call-20250220-own	data.alibabagroup.com	the company's own transcript	no	0
+Alibaba	March Quarter 2025 and Full Fiscal Year 2025	2025-05-15	cn-o36-alibaba-call-20250515-own	data.alibabagroup.com	the company's own transcript	no	0
+Alibaba	June Quarter 2025	2025-08-29	cn-o36-alibaba-call-20250829-own	data.alibabagroup.com	the company's own transcript	no	0
+Alibaba	September Quarter 2025	2025-11-25	cn-o36-alibaba-call-20251125-own	data.alibabagroup.com	the company's own transcript	no	0
+Alibaba	December Quarter 2025	2026-03-19	cn-o36-alibaba-call-20260319-own	data.alibabagroup.com	the company's own transcript	no	0
+Alibaba	March Quarter 2026 and Full Fiscal Year 2026	2026-05-13	cn-o36-alibaba-call-20260513-own	data.alibabagroup.com	the company's own transcript	no	0
+Alibaba	June Quarter 2026	2026-08-20	cn-o36-alibaba-call-20260820-own	data.alibabagroup.com	the company's own transcript	no	0
+Alibaba	Q2 2027	2026-11-19	cn-o36-alibaba-call-20261119-sa	stockanalysis.com	Quartr, as the page says	no	26
+Baidu	Q4 2024	2025-02-18	cn-o36-baidu-call-20250218-sa	stockanalysis.com	Quartr, as the page says	no	0
+Baidu	Q1 2025	2025-05-21	cn-o36-baidu-call-20250521-sa	stockanalysis.com	Quartr, as the page says	no	0
+Baidu	Q2 2025	2025-08-20	cn-o36-baidu-call-20250820-sa	stockanalysis.com	Quartr, as the page says	no	0
+Baidu	Q3 2025	2025-11-18	cn-o36-baidu-call-20251118-sa	stockanalysis.com	Quartr, as the page says	no	0
+Baidu	Q4 2025	2026-02-26	cn-o36-baidu-call-20260226-sa	stockanalysis.com	Quartr, as the page says	no	0
+Baidu	Q1 2026	2026-05-18	cn-o36-baidu-call-20260518-sa	stockanalysis.com	Quartr, as the page says	no	0
+Baidu	Q2 2026	2026-08-18	cn-o36-baidu-call-20260818-sa	stockanalysis.com	Quartr, as the page says	no	0
+Baidu	Q3 2026	2026-11-16	cn-o36-baidu-call-20261116-sa	stockanalysis.com	Quartr, as the page says	no	0
+JD.com	Q4 2024	2025-03-06	cn-le09-jd-call-20250306-sa	stockanalysis.com	Quartr, as the page says	no	0
+JD.com	Q1 2025	2025-05-13	cn-le09-jd-call-20250513-sa	stockanalysis.com	Quartr, as the page says	no	38
+JD.com	Q2 2025	2025-08-14	cn-le09-jd-call-20250814-sa	stockanalysis.com	Quartr, as the page says	no	21
+JD.com	Q3 2025	2025-11-13	cn-le09-jd-call-20251113-sa	stockanalysis.com	Quartr, as the page says	no	25
+JD.com	Q4 2025	2026-03-05	cn-le09-jd-call-20260305-sa	stockanalysis.com	Quartr, as the page says	no	12
+JD.com	Q1 2026	2026-05-12	cn-le09-jd-call-20260512-sa	stockanalysis.com	Quartr, as the page says	no	27
+JD.com	Q2 2026	2026-08-13	cn-le09-jd-call-20260813-sa	stockanalysis.com	Quartr, as the page says	no	24
+JD.com	Q3 2026	2026-11-17	cn-le09-jd-call-20261117-sa	stockanalysis.com	Quartr, as the page says	no	34
+Kingsoft Cloud	Q4 2024	2025-03-19	cn-le09-kingsoftcloud-call-20250319-sa	stockanalysis.com	Quartr, as the page says	no	0
+Kingsoft Cloud	Q1 2025	2025-05-28	cn-le09-kingsoftcloud-call-20250528-sa	stockanalysis.com	Quartr, as the page says	no	14
+Kingsoft Cloud	Q2 2025	2025-08-20	cn-le09-kingsoftcloud-call-20250820-sa	stockanalysis.com	Quartr, as the page says	no	13
+Kingsoft Cloud	Q3 2025	2025-11-19	cn-le09-kingsoftcloud-call-20251119-sa	stockanalysis.com	Quartr, as the page says	no	13
+Kingsoft Cloud	Q4 2025	2026-03-25	cn-le09-kingsoftcloud-call-20260325-sa	stockanalysis.com	Quartr, as the page says	no	11
+Kingsoft Cloud	Q1 2026	2026-05-27	cn-le09-kingsoftcloud-call-20260527-sa	stockanalysis.com	Quartr, as the page says	no	18
+Kingsoft Cloud	Q2 2026	2026-08-19	cn-le09-kingsoftcloud-call-20260819-sa	stockanalysis.com	Quartr, as the page says	no	17
+Kuaishou	Q4 2024	2025-03-25	cn-le09-kuaishou-call-20250325-sa	stockanalysis.com	Quartr, as the page says	no	24
+Kuaishou	Q1 2025	2025-05-27	cn-le09-kuaishou-call-20250527-sa	stockanalysis.com	Quartr, as the page says	no	30
+Kuaishou	Q2 2025	2025-08-21	cn-le09-kuaishou-call-20250821-sa	stockanalysis.com	Quartr, as the page says	no	31
+Kuaishou	Q3 2025	2025-11-19	cn-le09-kuaishou-call-20251119-sa	stockanalysis.com	Quartr, as the page says	no	29
+Kuaishou	Q4 2025	2026-03-25	cn-le09-kuaishou-call-20260325-sa	stockanalysis.com	Quartr, as the page says	no	38
+Kuaishou	Q1 2026	2026-05-27	cn-le09-kuaishou-call-20260527-sa	stockanalysis.com	Quartr, as the page says	no	26
+Kuaishou	Q2 2026	2026-08-19	cn-le09-kuaishou-call-20260819-sa	stockanalysis.com	Quartr, as the page says	no	32
+Kuaishou	Q3 2026	2026-11-19	cn-le09-kuaishou-call-20261119-sa	stockanalysis.com	Quartr, as the page says	no	35
+Meituan	Q4 2024	2025-03-21	cn-le09-meituan-call-20250321-sa	stockanalysis.com	Quartr, as the page says	no	0
+Meituan	Q1 2025	2025-05-26	cn-le09-meituan-call-20250526-sa	stockanalysis.com	Quartr, as the page says	no	23
+Meituan	Q2 2025	2025-08-27	cn-le09-meituan-call-20250827-sa	stockanalysis.com	Quartr, as the page says	no	1
+Meituan	Q3 2025	2025-11-28	cn-le09-meituan-call-20251128-sa	stockanalysis.com	Quartr, as the page says	no	4
+Meituan	Q4 2025	2026-03-26	cn-le09-meituan-call-20260326-sa	stockanalysis.com	Quartr, as the page says	no	1
+Meituan	Q1 2026	2026-06-01	cn-le09-meituan-call-20260601-sa	stockanalysis.com	Quartr, as the page says	no	7
+Meituan	Q2 2026	2026-08-28	cn-le09-meituan-call-20260828-sa	stockanalysis.com	Quartr, as the page says	no	0
+Tencent	Q4 2024	2025-03-19	cn-o36-tencent-call-20250319-sa	stockanalysis.com	Quartr, as the page says	no	0
+Tencent	Q1 2025	2025-05-14	cn-o36-tencent-call-20250514-sa	stockanalysis.com	Quartr, as the page says	no	0
+Tencent	Q2 2025	2025-08-13	cn-labs-tencent-q2-call-20250813-relay1	stockanalysis.com	Quartr, as the page says	no	0
+Tencent	Q3 2025	2025-11-13	cn-o36-tencent-call-20251113-sa	stockanalysis.com	Quartr, as the page says	no	0
+Tencent	Q4 2025	2026-03-18	cn-o36-tencent-call-20260318-sa	stockanalysis.com	Quartr, as the page says	no	0
+Tencent	Q1 2026	2026-05-13	cn-o36-tencent-call-20260513-sa	stockanalysis.com	Quartr, as the page says	no	0
+Tencent	Q2 2026	2026-08-12	cn-o36-tencent-call-20260812-sa	stockanalysis.com	Quartr, as the page says	no	0
+Tencent	Q3 2026	2026-11-18	cn-o36-tencent-call-20261118-sa	stockanalysis.com	Quartr, as the page says	no	0
+Xiaomi	Q4 2024	2025-03-18	cn-le09-xiaomi-call-20250318-sa	stockanalysis.com	Quartr, as the page says	no	0
+Xiaomi	Q1 2025	2025-05-27	cn-le09-xiaomi-call-20250527-sa	stockanalysis.com	Quartr, as the page says	no	0
+Xiaomi	Q2 2025	2025-08-19	cn-le09-xiaomi-call-20250819-sa	stockanalysis.com	Quartr, as the page says	no	0
+Xiaomi	Q3 2025	2025-11-18	cn-le09-xiaomi-call-20251118-sa	stockanalysis.com	Quartr, as the page says	no	0
+Xiaomi	Q4 2025	2026-03-24	cn-le09-xiaomi-call-20260324-sa	stockanalysis.com	Quartr, as the page says	no	0
+Xiaomi	Q1 2026	2026-05-26	cn-le09-xiaomi-call-20260526-sa	stockanalysis.com	Quartr, as the page says	no	0
+Xiaomi	Q2 2026	2026-08-18	cn-le09-xiaomi-call-20260818-sa	stockanalysis.com	Quartr, as the page says	no	0

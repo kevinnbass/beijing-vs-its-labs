@@ -1,14 +1,14 @@
 # Written by build.py.
 what	count	which
-result share	1	Guangdong
+result share	2	Guangdong, Zhejiang
 result reward	2	Shanxi, Ningxia
-result other	9	Anhui, Jilin, Guangxi, Jiangxi, Qinghai, Chongqing, Zhejiang, Shaanxi, Hainan
+result other	8	Anhui, Jilin, Guangxi, Jiangxi, Qinghai, Chongqing, Shaanxi, Hainan
 result earlier	2	Heilongjiang, Yunnan
 result account	1	Tibet
 result notfound	1	Xinjiang
 result extra	2	Gansu, Hunan
-all 31, session table: share	8	
-all 31, session table: plan_no_share	21	
+all 31, session table: share	9	
+all 31, session table: plan_no_share	20	
 all 31, session table: account_only	1	
 all 31, session table: not_reached	1	
 round-1 requests: web searches	44	
@@ -18,4 +18,4 @@ round-1 requests: all	84
 round-4 requests	0	
 pages_for_browser.tsv lines	2	Shaanxi, Chongqing
 pages_left_off.tsv lines	13	
-pages scanned for a home-made word near a percent sign	21	cn-o39b-guangdong-yuesuan-2024 2; cn-o39b-shanxi-measures-2024-jincheng 1; cn-o39-guangxi-digital-plan-2024-wayback 1; cn-o39-qinghai-green-compute-2024-wayback 1; cn-o39-hunan-green-compute-plan-2025-wayback 1
+pages scanned for a home-made word near a percent sign	29	cn-o39b-guangdong-yuesuan-2024 2; cn-o39b-shanxi-measures-2024-jincheng 1; cn-o39-guangxi-digital-plan-2024-wayback 1; cn-o39-qinghai-green-compute-2024-wayback 1; cn-ga31-cndocs-52 1; cn-o39-hunan-green-compute-plan-2025-wayback 1
