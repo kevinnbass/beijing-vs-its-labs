@@ -53,7 +53,7 @@ doc: Measures on advanced computing and artificial intelligence (number 晋政�
 share:
 words: The page says: "对基础软硬件实现国产化90%以上的新建、改建数据中心，给予最高不超过500万元的一次性奖励"
 english: (a newly built or rebuilt data centre whose basic software and hardware are 90% or more home-made gets a one-time reward of up to 5 million yuan). A reward, not a target.
-limits: Shanxi's computing plan proper (山西省算力基础设施高质量发展实施方案), which a 2024 report's table lists under January 2024 [cn-o39b-broker-table-202410], was not read.
+limits: Shanxi's computing plan proper (山西省算力基础设施高质量发展实施方案), which a report's table of national and provincial computing plans lists under January 2024 [cn-o39b-broker-table-202410] (the saved copy of the report gives no date of its own), was not read.
 official: Not found, for the measures or for the plan.
 ids: cn-o39b-shanxi-measures-2024-jincheng cn-o39b-broker-table-202410
 check: cn-o39b-shanxi-measures-2024-jincheng | 晋政办发〔2024〕35号
@@ -285,7 +285,7 @@ doc: Action plan for computing, 2024 to 2026 (“算力珠峰”高质量发展�
 share:
 words: The administration's item says: "到2026年，算力规模达到100PFLOPS，智算算力占比达到60%"
 english: (by 2026, computing reaches 100 PFLOPS and the share of intelligent computing reaches 60%). None of the home-made words, and not the word 芯片 (chip), is in either account. They are accounts, not the plan.
-limits: The plan's text was not found in {{S_Tibet}} searches, one of them limited to government sites, nor, by the project's table of all 31 governments, among the entries of the administration's own list of documents.
+limits: The plan's text was not found in {{S_Tibet}} searches for Tibet alone, one of them limited to government sites, nor in one search limited to the industry ministry's provincial offices' sites, Tibet's among them, nor, by the project's table of all 31 governments, among the entries of the administration's own list of documents.
 official: Not found: the plan's own text is not held.
 ids: cn-ga05-tibet-xzca-compute-everest-plan-20240625 cn-o39b-tibet-compute-plan-2024-wxb
 check: cn-ga05-tibet-xzca-compute-everest-plan-20240625 | 西藏自治区通信管理局会同区发展和改革委员会、经济和信息化厅等六部门联合印发了
@@ -302,7 +302,7 @@ doc: No regional computing plan and no regional AI plan text was found. Read ins
 share:
 words: The economic plan says: "统筹推进电力与算力协同发展，支持面向人工智能模型训练的智算中心和面向视频渲染的融合算力中心建设，培育发展绿色算力产业" The reply of 2025 says: "推动哈密建成自治区首张基于自主可控非IP协议的城市算力网" The services measures set, among their computing items, "智能算力规模超20万PFLOPS" and a subsidy for users of the region's intelligent computing, "按不超过实际结算金额的20%补贴，最高不超过50万元"
 english: (advance power and computing together under one plan, support the building of intelligent computing centres for training AI models and of converged computing centres for video rendering, and grow a green computing industry; the region pushed Hami to complete its first city computing network based on an independently controllable non-IP protocol). The reply of Sept 5, 2025 uses independently controllable once, about a network protocol, not chips. (Services measures: intelligent computing over 200,000 PFLOPS by the end of 2028; a subsidy of up to 20% of the amount settled, at most 500,000 yuan.) Neither 国产 (home-made), 自主可控 nor 芯片 (chip) is in the measures, which mark themselves abridged, "（本文有删减）" (this text has cuts).
-limits: {{ALL_Xinjiang_cap}} searches naming Xinjiang, {{XJ_SITE}} of them limited to the regional government's site, found no computing plan. The planner's reply of Jul 24, 2026 names two regional computing plans, a plan for a green, low-carbon computing network for 2025 to 2027, "绿色低碳的算力网建设实施方案（2025—2027年）", and "《自治区绿色算力中心布局方案》" (the region's layout plan for green computing centres) [cn-ga31-cndocs-15]; their texts were not reached. Its one home-made word, 安全可控 (secure and controllable), stands in a sentence it gives as Xi Jinping's, on information infrastructure in general.
+limits: {{ALL_Xinjiang_cap}} searches naming Xinjiang, {{XJ_SITE}} of them limited to the regional government's site, found no computing plan. The planner's reply of Jul 24, 2026 says two regional computing plans were issued, a plan for a green, low-carbon computing network for 2025 to 2027, "绿色低碳的算力网建设实施方案（2025—2027年）", and "《自治区绿色算力中心布局方案》" (the region's layout plan for green computing centres) [cn-ga31-cndocs-15]; their texts were not reached. Of the words this note counts as home-made words (listed under Method), the reply has only 安全可控 (secure and controllable), in a sentence it gives as Xi Jinping's, on information infrastructure in general.
 official: None for a computing plan, as none was found; the pages read are on the region's own sites, with their addresses in the references.
 ids: cn-le16-xinjiang-plan-2024-indicators cn-le16-xinjiang-drc-cppcc-197-reply-202510 cn-ga31-cndocs-1 cn-ga31-provtexts-9 cn-ga31-cndocs-15
 check: cn-le16-xinjiang-drc-cppcc-197-reply-202510 | 发布时间：2025-09-05
@@ -310,9 +310,11 @@ check: cn-ga31-cndocs-1 | 新政办发〔2026〕22号
 check: cn-ga31-cndocs-1 | 2026年5月28日
 check: cn-ga31-cndocs-15 | 发布时间：2026-07-24
 check: cn-ga31-cndocs-15 | 关于自治区十四届人大四次会议第168号建议的答复
+check: cn-ga31-cndocs-15 | 印发《绿色低碳的算力网建设实施方案（2025—2027年）》《自治区绿色算力中心布局方案》
+check: cn-ga31-cndocs-15 | 绿色低碳、安全可控的智能化综合性数字信息基础设施
 absent: cn-ga31-cndocs-1 | 智能算力 | 国产, 自主可控, 芯片
 absent: cn-ga31-provtexts-9 | 智能算力 | 国产, 自主可控, 芯片
-absent: cn-ga31-cndocs-15 | 算力 | 国产, 自主可控, 芯片
+absent: cn-ga31-cndocs-15 | 算力 | 国产, 自主可控, 安全可靠, 自主化, 信创, 芯片
 
 gov: Gansu
 table: 2

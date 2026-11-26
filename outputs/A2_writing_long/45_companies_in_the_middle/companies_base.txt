@@ -1,5 +1,5 @@
 # The companies in the middle
-@deck 2025 and 2026 from the buyers' side. China's AI companies used Nvidia chips and were reported to order more, said why, pushed back, were reported to train abroad, and built chips of their own.
+@deck 2025 and 2026 from the buyers' side. China's AI companies used Nvidia chips and were reported to order more, said why, were reported to push back, were reported to train abroad, and built chips of their own.
 
 @note Draft by Claude, Anthropic's model. Written Nov 23, 2026 (UTC); revised Nov 26, 2026.
 @note How to read it. Words between quotation marks are a source's exact words, found in the saved copy by a script. A filled reference number is a document, a filing, a named person on the record, or a published commentary of state media or an industry body. An open number is a press report citing unnamed people, a research firm's count, or captions and machine transcripts nobody has checked by ear. English in round brackets after Chinese is our rendering, not an official translation.
@@ -30,12 +30,14 @@ Tencent's president, Mar 18, 2026, naming no maker: "you actually want to have a
 !! cn-o36-tencent-call-20260318-sa | Earnings Call: Q4 2025 Mar 18, 2026
 A Baidu executive vice president, of its AI cloud group, May 18, 2026: "Domestic chips are still catching up with the most advanced global products in certain frontier training scenarios. Inference is an area where domestic chips can be highly relevant and competitive." [cn-o36-baidu-call-20260518-sa]
 !! cn-o36-baidu-call-20260518-sa | Earnings Call: Q1 2026 May 18, 2026
-Another model maker, iFlytek, told investors on Aug 21, 2026 what the others used: "其他模型厂商普遍使用性能领先两代的英伟达芯片" (other model makers commonly use Nvidia chips two generations ahead in performance) [cn-le26-iflytek-ir-20260821]. iFlytek itself is on the US Entity List, and the same record says that this makes a secure supply of home-made chips all the more necessary for it [cn-le26-iflytek-ir-20260821].
+Another model maker, iFlytek, told investors on Aug 21, 2026, in an answer on how far home-made chips lag behind Nvidia's, what the others used: "其他模型厂商普遍使用性能领先两代的英伟达芯片" (other model makers commonly use Nvidia chips two generations ahead in performance) [cn-le26-iflytek-ir-20260821]. iFlytek itself is on the US Entity List, and the same record says: "尤其是在讯飞被列入美国实体清单的背景下，更需要在全栈自主可控的国产芯片及配套硬件元器件供应上做好保障" (especially as iFlytek has been put on the US Entity List, it is all the more necessary to secure the supply of home-made chips and matching hardware components, independently controllable across the whole stack) [cn-le26-iflytek-ir-20260821].
 !! cn-le26-iflytek-ir-20260821 | 更需要在全栈自主可控的国产芯片及配套硬件元器件供应上做好保障
 !! cn-le26-iflytek-ir-20260821 | 时间2026.08.21
 !! cn-le26-iflytek-ir-20260821 | 尤其是在讯飞被列入美国实体清单的背景下
+!! cn-le26-iflytek-ir-20260821 | 目前国产算力差距客观存在
+!! cn-le26-iflytek-ir-20260821 | 与H200相比确实存在约五倍的差距
 
-**3. They pushed back, and asked**
+**3. They were reported to push back, and one asked in public**
 
 The Financial Times, Aug 20, 2025: "tech giants from Alibaba to ByteDance argued that their AI development would be impaired without Nvidia's chips", though by some close to them "they have become more accepting of a switch" [man-cn-ft-20250821-regulators].
 !! man-cn-ft-20250821-regulators | Published AUG 20 2025
@@ -68,7 +70,7 @@ The same paper, Aug 13, 2025, by three unnamed people: DeepSeek "was encouraged 
 
 Baidu's chief executive said in April 2025, in Reuters' words, that it had switched on a cluster "comprising 30,000 of its self-developed, third generation P800 Kunlun chips" [man-cn-labs-baidu-30k-reuters-alt1].
 !! man-cn-labs-baidu-30k-reuters-alt1 | means switching the cluster on
-Alibaba's chief executive, May 13, 2026, gave a commercial reason for its own chips: "gross margins on mainstream foreign AI chips are very high, basically in the 60% to 80% range" [cn-o36-alibaba-call-20260513-own].
+Alibaba's chief executive, May 13, 2026, gave a commercial reason for its own chips: "gross margins on mainstream foreign AI chips are very high, basically in the 60% to 80% range", and "the high margins on advanced foreign chips leave domestic chips with enormous headroom for cost-performance gains" [cn-o36-alibaba-call-20260513-own].
 !! cn-o36-alibaba-call-20260513-own | Wednesday, 13 May 2026
 Tencent's chief strategy officer, Nov 18, 2026: "that inference can be run very effectively on a surprisingly limited number of domestic chips" [cn-o36-tencent-call-20261118-sa].
 !! cn-o36-tencent-call-20261118-sa | Earnings Call: Q3 2026 Nov 18, 2026

@@ -36,7 +36,7 @@ Each step is marked on the record or reported (a press report citing unnamed peo
 
 ## Beijing's steps
 
-- **Jan 14, 2026. Reported.** Customs agents were told the chips "are not permitted to enter China". Companies were "explicitly instructed not to purchase the chips unless necessary" [cn-acts-reuters-customs-20260114].
+- **Jan 14, 2026. Reported.** Reuters: customs agents were told the chips "are not permitted to enter China". Companies were "explicitly instructed not to purchase the chips unless necessary" [cn-acts-reuters-customs-20260114].
 !! cn-acts-reuters-customs-20260114 | PUBLISHED: 2026-01-14
 !! cn-acts-reuters-customs-20260114 | according to three people briefed on the matter
 - **Jan 28 and 30, 2026. Reported.** ByteDance, Alibaba and Tencent "have been approved to purchase more than 400,000 H200 chips in total", then DeepSeek too (Reuters; the second report on Yahoo Finance); the conditions, left to the state planner (NDRC), were still being set [ms-bj-20260128-h200-nod-standard] [cn-ga31-sv1-reuters-deepseek-yahoo]. Nvidia's chief executive said on Jan 29, at Taipei's airport, as Voice of America's Chinese service renders him: "我认为中国政府仍在决策中，我们尚未收到采购订单，我们也没有收到新闻报道所说的相关信息" (I think the Chinese government is still deciding; we have not yet received purchase orders, and we have not received the information the news reports speak of) [cn-ga31-counter-40].
@@ -48,13 +48,15 @@ Each step is marked on the record or reported (a press report citing unnamed peo
 !! cn-ga31-sv1-reuters-deepseek-yahoo | China has given its top AI startup DeepSeek approval to buy
 !! cn-ga31-sv1-reuters-deepseek-yahoo | These conditions are being decided by China's state planner
 !! cn-ga31-sv1-reuters-deepseek-yahoo | Reuters reported on Wednesday, citing sources, that ByteDance, Alibaba and Tencent
-- **Mar 17, 2026. Reported.** "Nvidia has won Beijing's approval to sell" the chip, though a Chinese company source "did not know if the Chinese government had given final approval" [man-70f4668d5f56].
+- **Mar 17, 2026. Reported.** Reuters: "Nvidia has won Beijing's approval to sell" the chip, though a Chinese company source "did not know if the Chinese government had given final approval" [man-70f4668d5f56].
 !! man-70f4668d5f56 | Published Mar 17, 2026
-- **May 14, 2026. Reported.** "not a single delivery has been made so far". By one person, "Chinese firms pulled back after guidance from Beijing", a shift that "was partly triggered by changes on the U.S. side" [cn-acts-reuters-us-approvals-20260514-wayback].
+- **May 14, 2026. Reported.** Reuters: "not a single delivery has been made so far". By one person, "Chinese firms pulled back after guidance from Beijing", a shift that "was partly triggered by changes on the U.S. side" [cn-acts-reuters-us-approvals-20260514-wayback].
 !! cn-acts-reuters-us-approvals-20260514-wayback | Chinese firms pulled back after guidance from Beijing, one source said
-- **Aug 18, 2026. Reported.** "ByteDance and Tencent have each received about 10,000 H200 processors in recent weeks", while "Beijing wants them to keep the hardware outside mainland China" [cn-tolerate-reutersaug26-relay1-wayback].
+- **Aug 18, 2026. Reported.** The Financial Times, through Reuters: "ByteDance and Tencent have each received about 10,000 H200 processors in recent weeks"; the paper's own text, dated Aug 19, adds, by one of its people, that "Beijing wants them to keep most of these chips outside the mainland" [cn-tolerate-reutersaug26-relay1-wayback] [cn-tolerate-ftaug26].
 !! cn-tolerate-reutersaug26-relay1-wayback | Aug 18 (Reuters)
-- **Nov 5, 2026. Reported.** "About 600,000 of Nvidia's advanced artificial intelligence chips are stored in Hong Kong awaiting shipment to China", "as Beijing withholds approval for large-scale imports despite demand from technology firms" [cn-clips-evidence-1].
+!! cn-tolerate-ftaug26 | 2026-08-19
+!! cn-tolerate-ftaug26 | one of the people said
+- **Nov 5, 2026. Reported.** Reuters: "About 600,000 of Nvidia's advanced artificial intelligence chips are stored in Hong Kong awaiting shipment to China", "as Beijing withholds approval for large-scale imports despite demand from technology firms" [cn-clips-evidence-1].
 !! cn-clips-evidence-1 | About 600,000 of Nvidia's advanced artificial intelligence chips are stored in Hong Kong awaiting shipment to China
 !! cn-clips-evidence-1 | The size of the stockpile of H200 chips
 - **Nov 9, 2026. On the record.** Asked about that report, the foreign ministry's spokesperson said to ask the competent departments [cn-acts-mfa-20261109].
@@ -66,7 +68,7 @@ Each step is marked on the record or reported (a press report citing unnamed peo
 
 - **Apr 22, 2026.** The US Commerce Secretary, to a Senate subcommittee: the "Chinese central government has not let them as of yet buy the chips" [cn-us-lutnick-0422-rev-transcript-b]. He called it his understanding.
 !! cn-us-lutnick-0422-rev-transcript-b | So that's my understanding of what's happening
-- **May 20, 2026.** Nvidia, on its results call: "we have yet to generate any revenue, and we are uncertain whether any imports will be allowed into the country" [cn-o38-nvda-q1fy27-call-transcript-pdf].
+- **May 20, 2026.** Nvidia, on its results call, of the H200 licences Washington had approved: "we have yet to generate any revenue, and we are uncertain whether any imports will be allowed into the country" [cn-o38-nvda-q1fy27-call-transcript-pdf].
 !! cn-o38-nvda-q1fy27-call-transcript-pdf | Corrected Transcript 20-May-2026
 !! cn-o38-nvda-q1fy27-call-transcript-pdf | While the US government has approved licenses for H200 to be shipped to China-based customers
 - **Aug 26, 2026.** Nvidia's quarterly filing: the licensed sales "were restricted by the PRC government" [man-ms-sec-10q-2026-07].
@@ -79,6 +81,6 @@ Each step is marked on the record or reported (a press report citing unnamed peo
 
 ## What the two lists show
 
-Neither yes was whole. Washington's came with testing, a cap and a tariff, and its table shows more chips in returned applications than in licensed ones. Beijing's is known almost wholly from unnamed people: a hold, a conditional yes, small deliveries, and the 600,000 chips Reuters reported in Hong Kong in November.
+Neither yes was whole. Washington's came with testing, a cap and a tariff, and its table shows more chips in returned applications than in licensed ones. Beijing's is known almost wholly from unnamed people: a hold, a conditional yes, the small deliveries the Financial Times reported in August, and the 600,000 chips Reuters reported in Hong Kong in November.
 What Beijing meant by it is not settled. Reuters wrote in January 2026 that it was unclear whether Beijing wanted an outright ban, "is still chewing over restrictions, or whether these measures could be used as a bargaining tactic in talks with Washington" [cn-acts-reuters-customs-20260114]. The US Trade Representative, May 15, 2026: whether Chinese companies may buy is "a sovereign decision for China" (captions, not checked by ear, at 5:59) [cn-le01-greer-bbg-20260515-subs-ttml]. Either way, by the reports, the companies had received a small part of the chips they sought by November 2026; none of the sources here says how many crossed into the mainland.
 !! cn-le01-greer-bbg-20260515-subs-ttml | Will China allow their companies to buy them?

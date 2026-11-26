@@ -91,7 +91,13 @@ RETIRED_WORDS = ['four limits', 'four cautions', '20 points', '750,000', 'more t
                  # argument gives it; Greer's question; working words on the public pages
                  '395 sources', 'what the companies bought', 'obtained by several firms', 'is read two ways', 'the security and planning side',
                  'is the local file', 'no new image was made', 'made by make_thread_plain', 'brought into line with the argument', 'called buying the h200',
-                 "read the regulator's nvidia move", 'says what luckey says', 'held most of them back', 'the ministries that approved']
+                 "read the regulator's nvidia move", 'says what luckey says', 'held most of them back', 'the ministries that approved',
+                 # round 12 (Nov 26, 2026): wordings the two machine readers of the seventh public version found unclear or saying more than the argument
+                 "fair competition for the market regulator's case [", 'none would turn the direction round', 'settle the open points', 'saved by hand and read whole',
+                 'each reaching two companies', 'the same companies were also turning', 'whether about 600,000 chips are in hong kong',
+                 'about 10,000 each to bytedance and tencent', 'four reported numbers', "each post is followed by its source's address",
+                 'august 2026: the licensed sales', "says internet companies' clusters in the city",
+                 'hongkong_stockpile']      # round 12: output 42's page was renamed (outputs/STATUS.tsv, 05:40 UTC, Nov 26, 2026)
 RETIRED_IDS = {ln.split('\t')[0] for ln in (PROJ / 'loose_ends' / 'hkexnews_saved_ids.tsv').read_text(encoding='utf-8').splitlines() if ln.strip()}
 if len(RETIRED_IDS) < 10: fail('control: the do-not-cite list is shorter than expected')
 RETIRED_IDS |= {'cn-le08-moore-final-prospectus', 'cn-le29-sensetime-2025-annual-en', 'cn-media-yuyuan-thepaper', 'cn-factions-tencent-reuters-20261120-relay1',
@@ -128,10 +134,16 @@ seen10 = [w for w in R10 if w in old10]
 print(f'control: {len(seen10)} of the {len(R10)} phrases retired in round 10 are found in the before-copies of round 10')
 if len(seen10) != len(R10): fail(f'control: round 10 phrases not found in the before-copies: {[w for w in R10 if w not in seen10]}')
 # round 10b control: the before-copies of round 10b (base texts, and the plain thread as it was built) hold every phrase round 10b retired
-R10B = RETIRED_WORDS[RETIRED_WORDS.index('395 sources'):]
+R10B = RETIRED_WORDS[RETIRED_WORDS.index('395 sources'):RETIRED_WORDS.index("fair competition for the market regulator's case [")]      # round 12 phrases have their own control below
 old10b = ' '.join(p.read_text(encoding='utf-8').lower() for p in list(HERE.glob('*/*.before-round10b-20261125.txt')) + [HERE / 'scratch_round10b' / 'before' / '03_thread_thread_plain.txt'] if p.is_file())
 seen10b = [w for w in R10B if w in old10b]
 print(f'control: {len(seen10b)} of the {len(R10B)} phrases retired in round 10b are found in the before-copies of round 10b')
 if len(seen10b) != len(R10B): fail(f'control: round 10b phrases not found in the before-copies: {[w for w in R10B if w not in seen10b]}')
+# round 12 control: the before-copies of round 12 (scratch_round12/before: base texts and the plain thread as round 11 built it) hold every phrase round 12 retired
+R12 = RETIRED_WORDS[RETIRED_WORDS.index("fair competition for the market regulator's case ["):]
+old12 = ' '.join(p.read_text(encoding='utf-8').lower() for p in list((HERE / 'scratch_round12' / 'before').glob('*/*_base.txt')) + [HERE / 'scratch_round12' / 'before' / '03_thread' / 'thread_plain.txt'] if p.is_file())
+seen12 = [w for w in R12 if w in old12]
+print(f'control: {len(seen12)} of the {len(R12)} phrases retired in round 12 are found in the before-copies of round 12')
+if len(seen12) != len(R12): fail(f'control: round 12 phrases not found in the before-copies: {[w for w in R12 if w not in seen12]}')
 print('result: the folder agrees with the core in what it copies, and the retired wording is gone' if ok else 'result: FAILED')
 sys.exit(0 if ok else 1)

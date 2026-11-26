@@ -29,10 +29,10 @@ The video is explainer.mp4 in this folder. Each caption stays on screen while th
 
 **5.** **The numbers.** Nvidia's H200 chip in numbers: four separate counts at four dates, not one tally. Washington's is from a government table; the other three are press reports citing unnamed people.
 
-- Reported as ordered by Chinese companies for 2026: "more than 2 million H200 chips". Reuters, Dec 31, 2025 [4]
+- Reported: ordered by Chinese companies for 2026: "more than 2 million H200 chips". Reuters, Dec 31, 2025 [4]
 - Licensed by Washington for Nvidia: 579,868 chips, each application "Approved, not shipped". Licence table released by a House committee, status at May 11, 2026; our sum [9]
-- Reported as approved by Beijing, with conditions: "more than 400,000 H200 chips in total". Reuters, Jan 28, 2026 [10]
-- Reported as stored in Hong Kong: "About 600,000". Reuters, Nov 5, 2026 [11]
+- Reported: approved by Beijing, with conditions: "more than 400,000 H200 chips in total". Reuters, Jan 28, 2026 [10]
+- Reported: stored in Hong Kong, November 2026: "About 600,000". Reuters, Nov 5, 2026 [11]
 
 **6.** **Limit 1 of 5.** Beijing was not one actor. The commerce minister told Nvidia's chief executive he hoped multinationals, Nvidia among them, would give Chinese customers high-quality, reliable products and services [12]. Reported: the commerce ministry "favoured imports" [13].
 
@@ -50,7 +50,7 @@ The video is explainer.mp4 in this folder. Each caption stays on screen while th
 - Reported, from unnamed people: Financial Times, through Reuters, Aug 18, 2026 [21]
 - On the record: Jeffrey Kessler, under secretary of commerce, to a House committee on Jul 14, 2026, as Reuters reported [22]
 
-**9.** **Limit 4 of 5.** The companies had reasons of their own, and American curbs and conditions pushed too. Alibaba says its chip unit "has brought proprietary GPUs into scaled production" [23]. Nvidia: "we are already effectively foreclosed from the China market by U.S. export controls" [24]. Washington returned without action 55% of the chips in the applications its summary of May 11, 2026 records; its table gives no reason [9].
+**9.** **Limit 4 of 5.** The companies had reasons of their own, and American curbs and conditions pushed too. Alibaba says its chip unit "has brought proprietary GPUs into scaled production" [23]. Nvidia: "we are already effectively foreclosed from the China market by U.S. export controls" [24]. Washington returned without action the applications for 55% of the chips its summary of May 11, 2026 records; its table gives no reason [9].
 
 - On the record: Alibaba, results release, Mar 19, 2026 [23]; Nvidia, Form 10-Q signed Nov 19, 2025 [24]
 - On the record: the table of licence applications from the Commerce Department's Bureau of Industry and Security (BIS), made public by the House Foreign Affairs Committee on Nov 19, 2026; our sum; the committee says BIS's summary does not show every application in full [25]
@@ -86,7 +86,7 @@ Each entry: its kind; what it is; the saved page's own title where the record ho
 
 [7] Company filing or statement. Nvidia, quarterly report on Form 10-Q for the quarter to Jul 26, 2026, filed with the US Securities and Exchange Commission on Aug 26, 2026. https://www.sec.gov/Archives/edgar/data/1045810/000104581026000075/nvda-20260726.htm Saved copy: man-ms-sec-10q-2026-07
 
-[8] Press report citing unnamed people. Wall Street Journal, Jul 23, 2026. Hand-saved from the Journal's site; read whole. Page title: Inside China’s All-Out Push to Catch Up With American AI Chips. https://www.wsj.com/world/china/china-ai-chips-race-949050d0 Saved copy: man-cn-factions-wsj-ding
+[8] Press report citing unnamed people. Wall Street Journal, Jul 23, 2026. Hand-saved from the Journal's site. Page title: Inside China’s All-Out Push to Catch Up With American AI Chips. https://www.wsj.com/world/china/china-ai-chips-race-949050d0 Saved copy: man-cn-factions-wsj-ding
 
 [9] Official document, or an official on the record. House Foreign Affairs Committee, disclosure of Nov 19, 2026: a table of licence applications for the H200 and equivalent chips, with their status as of May 11, 2026, headed "H200 License and Equivalent Application Status as of May 11, 2026" (its text layer is out of order; the rows were read from the page images). https://democrats-foreignaffairs.house.gov/wp-content/uploads/2026/11/11.19.26-ECRA-Information-Disclosure-of-BIS-License-Decisions.pdf Saved copy: cn-usdocs-hfac-decisions-20261119
 

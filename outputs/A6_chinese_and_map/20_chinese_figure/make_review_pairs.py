@@ -9,6 +9,7 @@ Round 4: the pairs come from the files and the two built pages themselves, so th
            The script stops if a kind has a different number of elements on the two pages.
   pop-up   the labels of the pop-up, listed by hand and checked to stand in the two templates.
 Lines that exist only on the Chinese page are listed with an empty English cell.
+Round 14 (Nov 26, 2026): a record mark inside an element is written " [record mark N] ", apart from the words (GRAB).
 """
 import re, sys
 from pathlib import Path
@@ -64,22 +65,36 @@ KINDS = [  # name, CSS selector, what to take ('text' or an attribute)
     ('inside Beijing: column', '.bcol h4', 'text'), ('inside Beijing: body', '.bcol li > span:first-child', 'text'), ('inside Beijing: note', '.row.b .card:nth-child(2) > .fine', 'text'),
     ('records: column', '.lcol h3', 'text'), ('note', '.notes li', 'text'), ('strip: scroll area read aloud', '.scroll', 'aria-label'),
 ]
-GRAB = """(kinds) => kinds.map(([name, sel, what]) => [...document.querySelectorAll(sel)].map(el =>
-  (what === 'text' ? (el.textContent || '') : (el.getAttribute(what) || '')).replace(/\\s+/g, ' ').trim()))"""
+# round 14 (Nov 26, 2026): a record mark inside an element (a.p, the circled record number, as beside each H200 bar label) is
+# written as " [record mark N] ", never run into the words before it: a reader took the bar label's "by July" and its mark 31
+# for "by July 31". GRAB_PLAIN is the old reading, kept only for the control below.
+GRAB = """(kinds) => kinds.map(([name, sel, what]) => [...document.querySelectorAll(sel)].map(el => {
+  if (what !== 'text') return (el.getAttribute(what) || '').replace(/\\s+/g, ' ').trim();
+  const c = el.cloneNode(true); c.querySelectorAll('a.p[data-n]').forEach(a => a.replaceWith(' [record mark ' + a.dataset.n + '] '));
+  return (c.textContent || '').replace(/\\s+/g, ' ').trim(); }))"""
+GRAB_PLAIN = """(sel) => [...document.querySelectorAll(sel)].map(el => (el.textContent || '').replace(/\\s+/g, ' ').trim())"""
 GRAB_VM = """() => [[...document.querySelectorAll('.vm')].map(vm => {
     const a = vm.querySelector('.vml .srcn'), f = vm.querySelector('.vml .vfl'), t = vm.querySelector('.vmt'), l = vm.querySelector('.vml');
     return {href: a ? a.getAttribute('href') : '', letter: f ? f.textContent.trim() : '', aria: t ? (t.getAttribute('aria-label') || '') : '',
             lab: l ? l.textContent.replace(/\\s+/g, ' ').trim() : '', place: l && l.firstChild ? l.firstChild.textContent.trim() : ''}; }),
   [...document.querySelectorAll('.vfoot p')].map(p => { const b = p.querySelector('b');
     return {letter: b ? b.textContent.trim() : '', text: p.textContent.replace(/\\s+/g, ' ').trim()}; })]"""
-vm = []
+vm, plain = [], []
 with sync_playwright() as p:
     br = p.chromium.launch(); got = []
     for page in (CORE_PAGE, ZH_PAGE):
         pg = br.new_context(viewport={'width': 1280, 'height': 900}).new_page(); pg.goto(page.as_uri()); pg.wait_for_timeout(400)
         got.append(pg.evaluate(GRAB, [list(k) for k in KINDS]))
         vm.append(pg.evaluate(GRAB_VM))
+        plain.append(pg.evaluate(GRAB_PLAIN, '.bar-lab'))
     br.close()
+# round 14: no record number runs into a bar label's words, on either page; control: the old reading of the same labels does run
+# them together ("by July 31"), so the check can fail
+_bars = [got[i][[k[0] for k in KINDS].index('H200 bars: label')] for i in (0, 1)]
+for labs, old in zip(_bars, plain):
+    assert len(labs) == len(old) and all(re.search(r'\[record mark \d+\]$', x) for x, y in zip(labs, old) if x != y), 'a bar label\'s record mark is not set apart'
+assert any(re.search(r'July \d+$', y) for y in plain[0]) and not any(re.search(r'July \d+$', x) for x in _bars[0]), 'control: the old reading did not join a mark to "July", or the new one still does'
+n_marks = sum(len(re.findall(r'\[record mark \d+\]', x)) for page in got for kind in page for x in kind)
 for (name, sel, what), a, b in zip(KINDS, *got):
     a, b = [x for x in a if x], [x for x in b if x]
     assert a and len(a) == len(b), f'{name} ({sel}): {len(a)} on the core page, {len(b)} on the Chinese page'
@@ -127,4 +142,4 @@ for u, v in (('On the record', '有公开记录'), ('Press report, unnamed sourc
 with open(F / 'pairs_for_review.tsv', 'w', encoding='utf-8') as fh:
     fh.write('where\tEnglish (the core figure)\tChinese\n')
     for w, x, y in rows: fh.write('\t'.join(s.replace('\t', ' ').replace('\n', ' ') for s in (w, x, y)) + '\n')
-print(f'{len(rows)} pairs written to {F / "pairs_for_review.tsv"}: {n_rec} from the records, {n_page} from the two pages ({len(KINDS)} kinds of element, equal counts on both), {len(rows) - n_rec - n_page} others')
+print(f'{len(rows)} pairs written to {F / "pairs_for_review.tsv"}: {n_rec} from the records, {n_page} from the two pages ({len(KINDS)} kinds of element, equal counts on both), {len(rows) - n_rec - n_page} others; record marks set apart as [record mark N]: {n_marks} on the two pages')

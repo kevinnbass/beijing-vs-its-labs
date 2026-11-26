@@ -51,10 +51,10 @@
 !! cn-clips-evidence-1 | stored in Hong Kong awaiting shipment to China
 !! cn-clips-reuters-hongkong-yahoo | Nov 5 (Reuters) - About 600,000
 !! cn-clips-reuters-hongkong-yahoo | 2026-11-06
-- Reported as ordered by Chinese companies for 2026: "more than 2 million H200 chips". Reuters, Dec 31, 2025 [cn-labs-h200-two-million-202512-relay1-wayback]
+- Reported: ordered by Chinese companies for 2026: "more than 2 million H200 chips". Reuters, Dec 31, 2025 [cn-labs-h200-two-million-202512-relay1-wayback]
 - Licensed by Washington for Nvidia: 579,868 chips, each application "Approved, not shipped". Licence table released by a House committee, status at May 11, 2026; our sum [cn-usdocs-hfac-decisions-20261119]
-- Reported as approved by Beijing, with conditions: "more than 400,000 H200 chips in total". Reuters, Jan 28, 2026 [ms-bj-20260128-h200-nod-standard]
-- Reported as stored in Hong Kong: "About 600,000". Reuters, Nov 5, 2026 [cn-clips-evidence-1]
+- Reported: approved by Beijing, with conditions: "more than 400,000 H200 chips in total". Reuters, Jan 28, 2026 [ms-bj-20260128-h200-nod-standard]
+- Reported: stored in Hong Kong, November 2026: "About 600,000". Reuters, Nov 5, 2026 [cn-clips-evidence-1]
 
 6. **Limit 1 of 5.** Beijing was not one actor. The commerce minister told Nvidia's chief executive he hoped multinationals, Nvidia among them, would give Chinese customers high-quality, reliable products and services [cn-policy-wang-nvidia]. Reported: the commerce ministry "favoured imports" [man-e2596eab15f4].
 !! cn-policy-wang-nvidia | 希望包括英伟达在内的跨国公司为中国客户提供优质可靠的产品和服务
@@ -89,7 +89,7 @@
 - Reported, from unnamed people: Financial Times, through Reuters, Aug 18, 2026 [cn-tolerate-reutersaug26-relay1-wayback]
 - On the record: Jeffrey Kessler, under secretary of commerce, to a House committee on Jul 14, 2026, as Reuters reported [man-a7d2f1a9f963]
 
-9. **Limit 4 of 5.** The companies had reasons of their own, and American curbs and conditions pushed too. Alibaba says its chip unit "has brought proprietary GPUs into scaled production" [cn-policy-alibaba-own-gpu]. Nvidia: "we are already effectively foreclosed from the China market by U.S. export controls" [man-ms-sec-10q-2025-10]. Washington returned without action 55% of the chips in the applications its summary of May 11, 2026 records; its table gives no reason [cn-usdocs-hfac-decisions-20261119].
+9. **Limit 4 of 5.** The companies had reasons of their own, and American curbs and conditions pushed too. Alibaba says its chip unit "has brought proprietary GPUs into scaled production" [cn-policy-alibaba-own-gpu]. Nvidia: "we are already effectively foreclosed from the China market by U.S. export controls" [man-ms-sec-10q-2025-10]. Washington returned without action the applications for 55% of the chips its summary of May 11, 2026 records; its table gives no reason [cn-usdocs-hfac-decisions-20261119].
 !! cn-policy-alibaba-own-gpu | March 19, 2026
 !! man-ms-sec-10q-2025-10 | November 19, 2025
 !! cn-usdocs-hfac-decisions-20261119 | H200 License and Equivalent Application Status as of May 11, 2026

@@ -45,7 +45,7 @@ N 广东省通信管理局等九部门关于印发
 
 @ tianjin doc 2024-07-18 - cn-o39-tianjin-plan-2024 side=paper dir=away place=Tianjin tier=city term=home-made
 T by 2026
-L Tianjin's plan for the computing industry, 2024 to 2026: by 2026, home-made chips are to be over 60% of the chips in use in the city's computing centres. It covers all the city's centres, not only new ones. The plan was written Jul 1, 2024 and issued Jul 18, 2024.
+L Tianjin's plan for the computing industry, 2024 to 2026: by 2026, home-made chips are to be over 60% of the chips in use in the city's computing centres. It covers all the city's centres, not only new ones. The plan was signed Jul 1, 2024 and issued Jul 18, 2024.
 S Tianjin, plan for the computing industry, 2024 to 2026, issued by the city government's general office
 Q 全市算力中心国产算力芯片使用占比超过 60%
 E home-made computing chips are over 60% of use in the city's computing centres
@@ -89,13 +89,15 @@ N 内蒙古自治区人民政府办公厅 关于印发自治区推动数字经�
 
 @ shanghai-target doc 2024-03-22 - cn-policy-shanghai-domestic-target side=paper dir=away place=Shanghai tier=city term=home-made
 T by 2025
-L Shanghai's plan for 2024 and 2025: by 2025, home-made chips are to be over 50% of the chips in use in the city's newly built intelligent computing centres.
+L Shanghai's plan for 2024 and 2025: by 2025, home-made chips are to be over 50% of the chips in use in the city's newly built intelligent computing centres. The date is the copy's: Yicai carried the plan on Mar 22, 2024, with that day's announcement by the city's communications administration, one of the eleven bodies that drew it up.
 S Shanghai's plan, as carried by the business daily Yicai
 Q 到2025年,本市新建智算中心国产算力芯片使用占比超过50%
 E by 2025, home-made computing chips are over 50% of use in the city's newly built intelligent computing centres
 D 上海市通信管理局 2024-03-22
 V target=50 | 国产算力芯片使用占比超过50%
 N 上海市智能算力基础设施高质量发展“算力浦江”智算行动实施方案(2024-2025年)
+N 3月22日,上海市通信管理局消息
+N 市通信管理局会同市委网信办、市发展改革委、市数据局等十一部门研究制定了
 
 @ sichuan doc 2024-11-15 - cn-factions-sichuan50 side=paper dir=away place=Sichuan tier=province term=home-made
 T plan for 2024 to 2027

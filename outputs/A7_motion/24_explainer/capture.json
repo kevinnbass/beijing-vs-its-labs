@@ -1,7 +1,7 @@
 {
  "page": "explainer.html",
  "fps": 25,
- "frames": 7228,
+ "frames": 7218,
  "mp4": "explainer.mp4",
  "master": null,
  "crf": 16,
@@ -30,35 +30,35 @@
   ],
   [
    "05_the_numbers",
-   2344
+   2334
   ],
   [
    "06_limit_1_of_5",
-   2707
+   2697
   ],
   [
    "07_limit_2_of_5",
-   3782
+   3772
   ],
   [
    "08_limit_3_of_5",
-   4239
+   4229
   ],
   [
    "09_limit_4_of_5",
-   5033
+   5023
   ],
   [
    "10_limit_5_of_5",
-   5693
+   5683
   ],
   [
    "11_the_sentence_that_survives_1_of_2",
-   6443
+   6433
   ],
   [
    "12_the_sentence_that_survives_2_of_2",
-   7227
+   7217
   ]
  ],
  "expect": [
@@ -100,19 +100,19 @@
    ]
   },
   {
-   "frame": 2344,
+   "frame": 2334,
    "k": 5,
    "title": "The numbers.",
    "text": "Nvidia's H200 chip in numbers: four separate counts at four dates, not one tally. Washington's is from a government table; the other three are press reports citing unnamed people.",
    "items": [
-    "Reported as ordered by Chinese companies for 2026: \"more than 2 million H200 chips\". Reuters, Dec 31, 2025 [4]",
+    "Reported: ordered by Chinese companies for 2026: \"more than 2 million H200 chips\". Reuters, Dec 31, 2025 [4]",
     "Licensed by Washington for Nvidia: 579,868 chips, each application \"Approved, not shipped\". Licence table released by a House committee, status at May 11, 2026; our sum [9]",
-    "Reported as approved by Beijing, with conditions: \"more than 400,000 H200 chips in total\". Reuters, Jan 28, 2026 [10]",
-    "Reported as stored in Hong Kong: \"About 600,000\". Reuters, Nov 5, 2026 [11]"
+    "Reported: approved by Beijing, with conditions: \"more than 400,000 H200 chips in total\". Reuters, Jan 28, 2026 [10]",
+    "Reported: stored in Hong Kong, November 2026: \"About 600,000\". Reuters, Nov 5, 2026 [11]"
    ]
   },
   {
-   "frame": 2707,
+   "frame": 2697,
    "k": 6,
    "title": "Limit 1 of 5.",
    "text": "Beijing was not one actor. The commerce minister told Nvidia's chief executive he hoped multinationals, Nvidia among them, would give Chinese customers high-quality, reliable products and services [12]. Reported: the commerce ministry \"favoured imports\" [13].",
@@ -122,7 +122,7 @@
    ]
   },
   {
-   "frame": 3782,
+   "frame": 3772,
    "k": 7,
    "title": "Limit 2 of 5.",
    "text": "Public warnings and unpublished guidance, not a published ban. No published order against buying Nvidia chips was found in the 82 policy pages read. Of the 19 state-media items found that only warn about Nvidia's chips, 16 date from Jul 31 to Sept 24, 2025; the three found later are Global Times items of 2026.",
@@ -133,7 +133,7 @@
    ]
   },
   {
-   "frame": 4239,
+   "frame": 4229,
    "k": 8,
    "title": "Limit 3 of 5.",
    "text": "Some purchases were approved and some chips came in. Reported: ByteDance and Tencent \"have each received about 10,000 H200 processors in recent weeks\" [21]. A US official told Congress: \"There have been minimal exports of any H200s to China so far\" [22].",
@@ -143,17 +143,17 @@
    ]
   },
   {
-   "frame": 5033,
+   "frame": 5023,
    "k": 9,
    "title": "Limit 4 of 5.",
-   "text": "The companies had reasons of their own, and American curbs and conditions pushed too. Alibaba says its chip unit \"has brought proprietary GPUs into scaled production\" [23]. Nvidia: \"we are already effectively foreclosed from the China market by U.S. export controls\" [24]. Washington returned without action 55% of the chips in the applications its summary of May 11, 2026 records; its table gives no reason [9].",
+   "text": "The companies had reasons of their own, and American curbs and conditions pushed too. Alibaba says its chip unit \"has brought proprietary GPUs into scaled production\" [23]. Nvidia: \"we are already effectively foreclosed from the China market by U.S. export controls\" [24]. Washington returned without action the applications for 55% of the chips its summary of May 11, 2026 records; its table gives no reason [9].",
    "items": [
     "On the record: Alibaba, results release, Mar 19, 2026 [23]; Nvidia, Form 10-Q signed Nov 19, 2025 [24]",
     "On the record: the table of licence applications from the Commerce Department's Bureau of Industry and Security (BIS), made public by the House Foreign Affairs Committee on Nov 19, 2026; our sum; the committee says BIS's summary does not show every application in full [25]"
    ]
   },
   {
-   "frame": 5693,
+   "frame": 5683,
    "k": 10,
    "title": "Limit 5 of 5.",
    "text": "What Beijing meant by it is not settled. A US commission saw in the antitrust move against Nvidia \"China's willingness to both exert leverage and ease pressure as a negotiating tactic\" [26]. Asked whether China would let its companies buy the H200, the US Trade Representative called it \"a sovereign decision for China\" [27]. The direction stands under either reading of what Beijing meant by it.",
@@ -163,7 +163,7 @@
    ]
   },
   {
-   "frame": 6443,
+   "frame": 6433,
    "k": 11,
    "title": "The sentence that survives (1 of 2).",
    "text": "From 2024 the planning side of the Chinese state and the industry ministry, and from 2025 its security side, pressed China's AI companies, through unpublished guidance that the press reported, to buy home-made chips rather than Nvidia's, and from the summer of 2025 to stop ordering them, while the security ministry warned in public of backdoors in chips made abroad and state media warned about Nvidia's chips, most of all in August and September 2025;",
@@ -172,7 +172,7 @@
    ]
   },
   {
-   "frame": 7227,
+   "frame": 7217,
    "k": 12,
    "title": "The sentence that survives (2 of 2).",
    "text": "other parts of the state welcomed Nvidia and, by the reports, approved some purchases; the companies went on ordering Nvidia chips, in the millions by the press reports, and by those reports had received a small part of them by late 2026; they were also turning to home-made chips, for reasons of their own and under American curbs; and whether Beijing meant its acts as lasting policy or as leverage in trade talks is read both ways.",
@@ -187,20 +187,20 @@
   "y": 144
  },
  "made_from": {
-  "../../../figure/figure_data.txt": "4ca8f93f3c6b57d51df2d752d5c2e5811b18eed7be0088ceb0e49b7ec2e1c553",
-  "../../../figure/figure_events.tsv": "0b25c9fa9aa67e3617c2a76537c7854fc5cb3495c8895533506d1376d92ddf62",
-  "../../../figure/beijing_vs_labs.html": "3dc6ba0bfe7057d870422cd36532ae77c601217476ee584e893f2281c56a837e",
-  "../../../figure/template.html": "0abf4d62c88027f080f9d29229cd6afb1727a4e95149558fc68d39e04ce070b6",
-  "../../../ARGUMENT_referenced.md": "e037491bab89fc40b6e9e6e821bd4a87b30d72796dc7c38942b4ef8b6a90eb1f",
+  "../../../figure/figure_data.txt": "acc8509faaa469a42c1476a740f9468ac012c71930c6e52305711bb50668e44e",
+  "../../../figure/figure_events.tsv": "7b230a83b8304247b6cbf2aff7624d79b248947dddb8869716fe750824d7179c",
+  "../../../figure/beijing_vs_labs.html": "8fe8beb6411725cae6f8c1a9800fe606e63454d415f4f428b0b4799355100643",
+  "../../../figure/template.html": "b1909a3d683f8ef5436e273316a80e6e3e4c7521dfff2533bf5fb9b733e0ca0d",
+  "../../../ARGUMENT_referenced.md": "c9eeda20f7c463bfe9ebe3db5576e1c622ab9989918b7d9310b09968a9e7fc18",
   "../../../tables/house_licence_table.tsv": "bd06920e873e9cf93a82190ee40374c699ced2cde9a2cf6c927ac0c59813f78b",
-  "../../../tables/state_media_items.tsv": "b20530d8be9f07cc01be7bc496a707888815b7a610cb7c8838e4d90f467e159e",
+  "../../../tables/state_media_items.tsv": "38a52f5854e001b3ab075c51a3d2091c88aaf25c00f6116b47091ec8a5b75a3e",
   "../a7lib.py": "3747aa7e7059fc1a6ab67650abf70aa81210a042ddd0817961e5afbb4eeaac0a",
-  "build.py": "46dbfdcf0047df8f568c0e418f8191b9eb20efae758f06179eb12ced1cadc60b",
-  "captions_base.txt": "f71e4c37ceba1b55c7833b9379b67cf3ce0686319a3d352bec9304ad34827e98",
+  "build.py": "cb706ed057b49c883347e3f085cf3befd1957aa3af3e4e74434aee6eefd89566",
+  "captions_base.txt": "9156025d5e0e72ade943c360fc02f1aa3198c5c559051f418b2bd669e6b927fb",
   "extra_refs.tsv": "e18e34821716c7412a2cea37a7e078aa947332630f697403f45065dce9634ac2",
-  "captions.md": "b232c0b8dba485749ead4427cb2dfd75e269afaa0a45c6f9828253736f9db752",
-  "chapters.tsv": "f65c782f94f882ab2f58a99249b5b915acce5108b4cbdd35b50a1ee50d88d0ab",
+  "captions.md": "d3b2bd9e9287036a685d80b68f29012e025fed72816a0dea82e5099761eb3c22",
+  "chapters.tsv": "d09acb28dd085fe6d3218147b8eb1e95d863df09dd39e150c5aff2c5024677b5",
   "quotes.tsv": "a8a0f38023e575ab62168e91a23837bae6c436c1c9365a0b86215ec9e772a70d",
-  "explainer.html": "70a1d7731c8c0cb464938bd1bc4bd3e7852aa0085841deb07d1537b3fecc50ca"
+  "explainer.html": "b52a3e19230e8b8070c1a1e7182e88570adbe826b42b4d0bf273a3cd7c541472"
  }
 }

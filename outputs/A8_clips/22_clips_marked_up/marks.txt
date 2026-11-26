@@ -22,6 +22,9 @@
 # Round 11 (outputs/ROUND11.md, thing 2): two sentences in the page's own voice (L5c, chips "held back"; P12a, H200 chips
 # that "had not arrived") now give their report in the sentence; rulings in round11_work/A8_clips_rulings.tsv. Verdict codes
 # and qualifiers unchanged. The text before: scratch_r11_before/marks.txt.
+# Round 12 (outputs/ROUND12.md): the readers' leads on the public page, ruled in round12_work/A8_clips_rulings.tsv: L4's
+# last sentence no longer says "the same companies"; P4c and P5 keep apart what open weight means, that safeguards can be
+# removed, and what the US test measured. Verdict codes and qualifiers unchanged. The text before: scratch_r12_before/marks.txt.
 
 @ L1 | D
 He is repeating what his critics say to him. It is not a claim of his own.
@@ -45,7 +48,7 @@ This is the claim the project tested. On direction the record bears it out. Nvid
 
 @ L4 | A
 = "there are Chinese companies that want to buy Nvidia GPUs" [cnpol-x-overton-2123392702821580811]
-These words are quoted from the text of the post that carries the clip, not from the speech program. The post begins the sentence with the word Like, and so does a second speech pass; the first speech pass has no such word. Nobody has checked either by ear. On the substance, the Commerce Secretary, Howard Lutnick, told a Senate subcommittee on Apr 22, 2026: "my understanding is their cloud companies want to buy these chips" [cn-us-lutnick-0422-rev-transcript-b]. A Shanghai government body wrote, in a reply dated Apr 30, 2025 (published Nov 10, 2025), that in the city the computing clusters that internet companies build themselves, to meet market-oriented firms' demand, run mainly on Nvidia high-performance cards: "互联网企业自建算力集群，满足市场化企业需求，主要以英伟达高性能卡为主" [cn-counter-b11-5]. Reuters reported on Dec 31, 2025, by two unnamed people, that Chinese technology companies "have placed orders for more than 2 million H200 chips for 2026" [cn-labs-h200-two-million-202512-relay1-wayback]. The same companies were also turning to home-made chips (the argument, point 20).
+These words are quoted from the text of the post that carries the clip, not from the speech program. The post begins the sentence with the word Like, and so does a second speech pass; the first speech pass has no such word. Nobody has checked either by ear. On the substance, the Commerce Secretary, Howard Lutnick, told a Senate subcommittee on Apr 22, 2026: "my understanding is their cloud companies want to buy these chips" [cn-us-lutnick-0422-rev-transcript-b]. A Shanghai government body wrote, in a reply dated Apr 30, 2025 (published Nov 10, 2025), that in the city the computing clusters that internet companies build themselves, to meet market-oriented firms' demand, run mainly on Nvidia high-performance cards: "互联网企业自建算力集群，满足市场化企业需求，主要以英伟达高性能卡为主" [cn-counter-b11-5]. Reuters reported on Dec 31, 2025, by two unnamed people, that Chinese technology companies "have placed orders for more than 2 million H200 chips for 2026" [cn-labs-h200-two-million-202512-relay1-wayback]. Some Chinese companies were at the same time turning to home-made chips (the argument, point 20).
 !! cnpol-x-overton-2123392702821580811 | Like there are Chinese companies that want to buy Nvidia GPUs.
 !! cn-us-lutnick-0422-rev-transcript-b | Secretary Lutnick
 !! cn-counter-b11-5 | 发布日期:2025-11-10
@@ -101,11 +104,11 @@ An opinion and a forecast.
 DeepSeek's own technical report says: "DeepSeek-V3 is trained on a cluster equipped with 2048 NVIDIA H800 GPUs." [cn-clips-technical-1] That is one company's account of one model. This note goes no further than that.
 
 @ P4c | B
-Open weight means that anyone can download the model's parameters. It does not mean that a model has no guardrails. It means they can be taken off. The UK's AI Security Institute: "Safeguards designed to prevent harmful behaviours can also be quickly and cheaply removed from open-weight models." [cn-clips-technical-2]
+Open weight means that anyone can download the model's parameters. That is not the same as having no guardrails. Guardrails can, though, be removed from such a model, as sentence P5 says. The UK's AI Security Institute: "Safeguards designed to prevent harmful behaviours can also be quickly and cheaply removed from open-weight models." [cn-clips-technical-2]
 !! cn-clips-technical-2 | all have their parameters openly available for download on the internet
 
 @ P5 | A
-The UK institute says the same (sentence P4). The US standards agency (NIST) tested DeepSeek's models in September 2025 and found that the most secure of them "complied with 94% of overtly malicious requests that used common jailbreaking techniques, compared to 8% of requests for U.S. reference models" [cn-clips-primary-7].
+The UK institute says the same: safeguards can be removed from open-weight models (sentence P4). The US standards agency (NIST) tested a different thing, getting round the guardrails rather than removing them. It tested DeepSeek's models in September 2025 and found that the most secure of them "complied with 94% of overtly malicious requests that used common jailbreaking techniques, compared to 8% of requests for U.S. reference models" [cn-clips-primary-7].
 !! cn-clips-primary-7 | in September 2025 CAISI conducted a technical evaluation
 
 @ P6a | A

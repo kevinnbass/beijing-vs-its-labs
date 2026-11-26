@@ -334,6 +334,11 @@ def main():
     tried = {l.split('\t')[0] for l in (PROJ / 'hand_tried_20261123.tsv').read_text(encoding='utf-8').splitlines()[2:] if l.strip()}
     for b in br:
         if re.search(r'bloomberg|theinformation|scmp\.com', b[2], re.I): stop('pages_for_browser.tsv lists a page of an outlet that must not be listed')
+    # round 12 (Nov 26, 2026): the template names the pages of pages_left_off.tsv that are not held, one by one; a page is held when its reason says "now held"
+    is_held = lambda reason: 'now held' in reason.lower()      # noqa: E731
+    if not is_held('timed out in a browser. Now held as a copy') or is_held('Not held: no capture'): stop('control: the held test misreads a reason')
+    notheld = [x[0] for x in left if not is_held(x[3])]
+    if notheld != ['Chongqing', 'Zhejiang', 'Jiangxi']: stop(f'pages_left_off.tsv: the pages not held are now those of {notheld}; the template names Chongqing\'s reply, Quzhou\'s news page (Zhejiang) and Jiangxi\'s press page: reword it')
     n_acct = len({i for r in rows for i in r.get('ids', '').split() if REFS.get(i, ('',))[0] == 'ACCT'})
     st = [v[0] for v in arch.values()]
     gov_form = [f[0] for f in logl if f[1] == 'search' and f[2] == 'gov.cn' and '算力基础设施 OR 智能算力 OR 算力产业' in f[3]]     # one form of words, limited to government sites
@@ -343,7 +348,7 @@ def main():
     n_read = len(by['reward']) + len(by['other']) + len(by['earlier'])
     for k, v in ictg.items(): fill[f'ICT_{k}'] = num(len(v)); fill[f'ICT_{k}_U'] = ', '.join(v)
     fill.update({'N_GOVFORM': num(len(gov_form)), 'GOVFORM_REQS': ', '.join(gov_form), 'N_READ': num(n_read), 'N_other': num(len(by['other'])),
-                 'N_ARCH_WD_cap': num(st.count('withdrawn'), True), 'N_LEFT_cap': num(len(left), True)})
+                 'N_ARCH_WD_cap': num(st.count('withdrawn'), True), 'N_LEFT_cap': num(len(left), True), 'N_NOTHELD_cap': num(len(notheld), True)})
     fill.update({'N31_share': num(c31['share']), 'N31_share_cap': num(c31['share'], True), 'N31_plan': c31['plan_no_share'], 'N31_account': num(c31['account_only']),
                  'N31_notfound': num(c31['not_reached']), 'N_other_cap': num(len(by['other']), True), 'U_other': ', '.join(by['other']),
                  'N_REQ': len(logl), 'N_SEARCH': n_search, 'N_SAVE': n_save, 'N_ARCH': n_arch, 'N_ARCH_ASK': num(n_ask), 'N_ARCH_GET': num(n_get), 'N_ARCH_NONE': num(st.count('none')), 'N_ARCH_CAP': num(st.count('capture')),
@@ -400,7 +405,7 @@ def main():
     print('cn_has.py:', (p.stdout.strip().splitlines() or ['(no output)'])[-1], '| exit', p.returncode)
     if p.returncode != 0: print(p.stdout[-1500:]); stop('cn_has.py failed')
     p = subprocess.run([sys.executable, '-I', str(ROOT / 'scripts' / 'cn_doc_build.py'), str(HERE / 'unreached_note_base.txt'), '--refs', str(HERE / 'extra_refs.tsv'),
-                        '--title', 'Sixteen Provincial Plans', '--eyebrow', 'China chip policy: provincial computing plans'], capture_output=True, text=True)      # round 10: no idea number or pass label on the public page
+                        '--title', 'Sixteen Provincial-Level Governments: Shares for Home-Made Computing', '--eyebrow', 'China chip policy: provincial computing plans'], capture_output=True, text=True)      # round 10: no idea number or pass label on the public page
     print(p.stdout.strip()[-2500:]); print(p.stderr.strip()[-1200:])
     if p.returncode != 0: stop('cn_doc_build.py did not write the note')
 

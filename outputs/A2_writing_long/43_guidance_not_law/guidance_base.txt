@@ -5,7 +5,7 @@
 @note How to read it. Words between quotation marks are a source's exact words, found in the saved copy by a script. A filled reference number is a document, a filing, a named person on the record, or a published commentary of state media or an industry body. An open number is a press report citing unnamed people, a research firm's count, or captions and machine transcripts nobody has checked by ear. English in round brackets after Chinese is our rendering, not an official translation.
 @note The author's interest. Anthropic has argued in public for controls on chip exports to China (that is from the model's general knowledge; no saved page is cited for it), so judge this piece by its sources.
 
-## Pressure without a rule
+## Pressure, and no published rule found
 
 From 2024 the planning side of the Chinese state and the industry ministry, and from 2025 its security side, pressed China's AI companies, through unpublished guidance that the press reported, to buy home-made chips rather than Nvidia's. In public, state media warned about Nvidia's chips, most of the warnings found dating from Jul 31 to Sept 24, 2025; nothing read ties those texts to the guidance. No published order was found in the 82 policy pages read. Five things in the record show how that works.
 
@@ -33,7 +33,7 @@ Of 75 state-media items on Nvidia chips found from July 2025 to November 2026, 1
 !! cn-acts-peoplesdaily-bjd-20250801 | 2025-08-01
 !! cn-acts-peoplesdaily-bjd-20250801 | 绝不能让“带病”的芯片上岗
 !! cn-media-stdaily-security-forum | 2025-09-24
-One, from an account of the state broadcaster on Aug 10, said of the H20: "作为消费者，我们当然可以选择，不买" (as consumers we can of course choose not to buy) [cn-le13-yuyuan-qq-20250810b] [cn-le13-cja36-winners-xinhuanet-20261108].
+One of the 2025 items, posted on Aug 10, 2025 by an account of the state broadcaster, said of the H20: "作为消费者，我们当然可以选择，不买" (as consumers we can of course choose not to buy) [cn-le13-yuyuan-qq-20250810b] [cn-le13-cja36-winners-xinhuanet-20261108].
 !! cn-le13-yuyuan-qq-20250810b | 2025-08-10T11:47:34+08:00
 !! cn-le13-yuyuan-qq-20250810b | 既不环保，也不先进，更不安全
 !! cn-le13-cja36-winners-xinhuanet-20261108 | 发布端/账号/媒体名称：玉渊谭天Bilibili账号 原创单位：中央广播电视总台
@@ -65,8 +65,8 @@ Notices published on Dec 26, 2023 require Party and government bodies at townshi
 !! cn-policy-server-procurement-2023 | 其他单位可不在采购需求中提出此项要求
 No published national plan found sets a home-made share for computing centres: every such share found is a province's or a city's, and the national computing-network opinions of December 2023 set none [cn-policy-computing-network-1779].
 !! cn-policy-computing-network-1779 | 算力网关键核心技术基本实现安全可靠
-Two national texts hold a home-made percentage of other kinds: the 20% price preference given to home-made products where they compete with others in a government purchase [cn-policy-domestic-product-standard-2025], and an advisory committee's roadmap of October 2015, which expected home-made high-performance computers and servers to exceed 80% of the home market by 2025 [cn-policy-roadmap-original].
-!! cn-policy-domestic-product-standard-2025 | 对本国产品的报价给予20%的价格扣除
+Two national texts hold a home-made percentage of other kinds: the 20% taken off the bid price of home-made products, for comparing bids, in a government purchase where home-made and other products compete [cn-policy-domestic-product-standard-2025], and an advisory committee's roadmap of October 2015, which expected home-made high-performance computers and servers to exceed 80% of the home market by 2025 [cn-policy-roadmap-original].
+!! cn-policy-domestic-product-standard-2025 | 对本国产品的报价给予20%的价格扣除，用扣除后的价格参与评审
 !! cn-policy-domestic-product-standard-2025 | 政府采购活动中既有本国产品又有非本国产品参与竞争的
 !! cn-policy-roadmap-original | 国家制造强国建设战略咨询委员会2015年10月
 !! cn-policy-roadmap-original | 2、2025年目标
@@ -87,7 +87,7 @@ On Nov 9, 2026: "具体情况建议向中方主管部门询问" (for specifics, 
 
 ## What guidance did here
 
-No published rule for it was found, and what the reports said of it changed within two weeks. An unnamed person told Reuters on Jan 14, 2026 that officials' wording "is basically a ban for now, though this might change in the future should things evolve" [cn-acts-reuters-customs-20260114]. On Jan 28 Reuters reported approvals "with conditions" for three companies [ms-bj-20260128-h200-nod-standard]. Nvidia's chief executive said on Jan 29, at Taipei's airport, as Voice of America's Chinese service renders him: "我认为中国政府仍在决策中，我们尚未收到采购订单，我们也没有收到新闻报道所说的相关信息" (I think the Chinese government is still deciding; we have not yet received purchase orders, and we have not received the information the news reports speak of) [cn-ga31-counter-40].
+No published rule on buying Nvidia's H200 chip was found, and what the reports said of buying it changed within two weeks, from a hold to approvals with conditions. An unnamed person told Reuters on Jan 14, 2026 that officials' wording "is basically a ban for now, though this might change in the future should things evolve" [cn-acts-reuters-customs-20260114]. On Jan 28 Reuters reported approvals "with conditions" for three companies [ms-bj-20260128-h200-nod-standard]. Nvidia's chief executive said on Jan 29, at Taipei's airport, as Voice of America's Chinese service renders him: "我认为中国政府仍在决策中，我们尚未收到采购订单，我们也没有收到新闻报道所说的相关信息" (I think the Chinese government is still deciding; we have not yet received purchase orders, and we have not received the information the news reports speak of) [cn-ga31-counter-40].
 !! cn-ga31-counter-40 | 星期四(1月29日)
 !! cn-ga31-counter-40 | 在机场接受媒体访问时作出上述表述的
 !! cn-acts-reuters-customs-20260114 | PUBLISHED: 2026-01-14

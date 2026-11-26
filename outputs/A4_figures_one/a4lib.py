@@ -27,7 +27,7 @@ import cn_argument_build as B                # noqa: E402  (import only: load_re
 
 esc = html.escape
 CREDIT = 'Draft by Claude, Anthropic’s model.'          # the credit an image carries in its pixels: true of a public copy (session ruling, Nov 25, 2026, round 10)
-NOTE = CREDIT + ''              # page text only: the release's PUBLIC_WORDS rewrite takes the second sentence out
+NOTE = CREDIT                                         # round 12 (ROUND11.md's first ruling, ROUND12.md): the page's top line is the credit alone; the words that called a copy local are gone at the source
 MON = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec']
 _MNAME = {n: i // 2 + 1 for i, n in enumerate(['jan', 'january', 'feb', 'february', 'mar', 'march', 'apr', 'april', 'may', 'may', 'jun', 'june',
                                                'jul', 'july', 'aug', 'august', 'sep', 'september', 'oct', 'october', 'nov', 'november', 'dec', 'december'])}
@@ -207,14 +207,33 @@ def house(Q):
     return t
 
 
+def steps():
+    """The step cells of the argument's table of numbers (section 4) that carry a press report: the cells that begin
+    "Reported: ". Round 12: the H200 rows' labels are kept level with them (funnel() stops if a press row's label differs)."""
+    t = (PROJ / 'argument' / 'argument_base.txt').read_text(encoding='utf-8')
+    s = [m.group(1).strip() for m in re.finditer(r'(?m)^\| (Reported: [^|]+)\|', t)]
+    assert len(s) == len(set(s)) and len(s) >= 5, f'the argument\'s table of numbers: {len(s)} press steps read'
+    assert 'Reported: delivered' not in s and not any(x.startswith(('Ordered by', 'Waiting in')) for x in s), 'control: an old step label is not among the argument\'s'
+    return s
+
+
 def funnel(Q, card=False):
     """The rows of h200_funnel.tsv. A press row is tied to its sentence and date in the builder's quotes.tsv; a table row
-    takes its count from house(). card=True leaves out the rows the file marks card=no. Counts and sums are made here."""
+    takes its count from house(). card=True leaves out the rows the file marks card=no. Counts and sums are made here.
+    r['step'] is the row's step as the argument's table of numbers words it: for a press row the label, or the label and
+    the words under it, must be one of the argument's "Reported: " cells, and every such cell must be one row's (round 12)."""
     lines = [ln for ln in (HERE / 'h200_funnel.tsv').read_text(encoding='utf-8').splitlines() if ln.strip() and not ln.startswith('#')]
     hdr, rows, H = lines[0].split('\t'), [], house(Q)
+    S, seen = steps(), []
     for ln in lines[1:]:
         r = dict(zip(hdr, ln.split('\t')))
         assert r['tier'] in ('open', 'solid') and r['card'] in ('yes', 'no') and r['dir'] in ('toward', 'away', 'us'), r
+        if r['tier'] == 'open':
+            r['step'] = r['label'] if r['label'] in S else f"{r['label']} {r['what']}"
+            assert r['step'] in S, f"{r['key']}: its label is not level with the argument's step cells: {r['label']!r} (the argument: {S})"
+            seen.append(r['step'])
+        else:
+            r['step'] = r['label']
         if card and r['card'] == 'no': continue
         w = Q[r['key']]
         if r['times'].startswith('table:'):              # a sum of Washington's table: on the record
@@ -231,6 +250,7 @@ def funnel(Q, card=False):
         r['date'], r['sid'], r['words'] = day(Q, r['key']), w.sid, w
         assert (ref(w.sid)['tier'] == 'solid') == (r['tier'] == 'solid'), f"{r['key']}: its tier differs from the argument's reference list"
         rows.append(r)
+    assert sorted(seen) == sorted(S), f'the press rows and the argument\'s "Reported: " steps are not one to one: rows {seen}, argument {S}'
     want = ['ordered', 'wapproved', 'wreturned', 'approved', 'discussed', 'delivered', 'waiting']
     assert [r['key'] for r in rows] == [k for k in want if not (card and k == 'discussed')], 'the rows, in the order of the core figure\'s bars'
     assert not any('750' in str(r['shown']) for r in rows), 'the old multiplication is back'
@@ -265,8 +285,12 @@ def warnings():
     if len(yrs) == 1: months = ' and '.join(MONTH[b - 1] for _, b in mo) + f' {yrs[0]}' if len(mo) <= 2 else None
     else: months = None
     assert later == [] or months, 'the later warnings span more than two months or more than one year: the wording that names their months must change'
+    # round 12: the months the table's items were found in, from its own date cells ("July 2025 to November 2026"), as the
+    # argument's point 18 gives the period; the six sentences (round 11) and the brief print it
+    ds = sorted(date.fromisoformat(r['date']) for r in rows)
+    found = f'{MONTH[ds[0].month - 1]} {ds[0].year} to {MONTH[ds[-1].month - 1]} {ds[-1].year}'
     return {'items': len(rows), 'warn': len(warns), 'burst': len(burst), 'span': span, 'later': len(later),
-            'later_outlet': next(iter(outlets)) if outlets else '', 'later_months': months or ''}
+            'later_outlet': next(iter(outlets)) if outlets else '', 'later_months': months or '', 'found': found}
 
 
 def caption_time(sid, words):
@@ -345,7 +369,7 @@ table.tv td b { color: var(--ink); }
 
 
 FIG_EXPORT = '.wrap { max-width: none; width: 1256px; margin: 0; padding: 0; } #fig { padding: 28px; background: var(--page); } .imgnote { display: block; }'
-IMGNOTE = f'<p class="imgnote">{CREDIT}</p>'    # goes last inside #fig: the image carries the credit in its footer, never "" (no release script reaches pixels)
+IMGNOTE = f'<p class="imgnote">{CREDIT}</p>'    # goes last inside #fig: the image carries the credit in its footer, and nothing that calls a copy local (no release script reaches pixels)
 
 
 def head(title, css='', theme=None):

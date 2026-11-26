@@ -455,6 +455,11 @@ same_as_core('Comtrade Hong Kong exports to mainland China, HS 847330, Jan-Jul 2
 d34.append(['Hong Kong total exports of computer parts (8473.30) to mainland China, by Hong Kong\'s own figures: January to July 2025, then January to July 2026, billion US dollars', f'{hkx25 / 1e9:.2f} then {hkx26 / 1e9:.2f}', 'sums of 7 months each (UN Comtrade, saved)'])
 d34.append(['Taiwan (finance ministry groups): exports of computers, all of heading 8471, to mainland China plus Hong Kong as a share of its exports to the world, January to October 2026, per cent', f'{tw_share:.2f}', 'L18\'s table of the saved ministry page; its 30 cells re-checked here'])
 d34.append([f'Taiwan: months from {TW_ALL[0]} to {TW_ALL[-1]} in which the group for computers (exports to the world) equals the sum of the {len(TW_CODES)} six-digit codes that begin 8471, in thousand US dollars', f'{tw_eq} of {len(TW_ALL)}', f'the two saved ministry pages, {len(TW_ALL) * (len(TW_CODES) + 1)} cells re-checked here; control: without 8471.50 no month is equal'])
+# round 12 of the outputs (Nov 26, 2026): the highest month of US exports of processor chips (8542.31) to the three places, for the customs note's point 21
+MONTH_NAMES = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+CHIP_MAX = max(MONTHS, key=lambda m: RAW[('us', m)][4])
+assert RAW[('us', CHIP_MAX)][4] < 1e9 and RAW[('us', CHIP_MAX)][4] == max(RAW[('us', m)][4] for m in MONTHS), 'control: the highest month of chips is under a billion dollars'
+d34.append([f'US exports of chips (8542.31) to the three places: the highest month of the {len(MONTHS)}, million US dollars', f'{MONTH_NAMES[int(CHIP_MAX[4:]) - 1]} {CHIP_MAX[:4]}: {RAW[("us", CHIP_MAX)][4] / 1e6:,.1f}', 'largest monthly sum of the three places'])
 write(O34 / 'derived_figures.tsv', ['figure', 'value', 'how (all arithmetic is ours)'], d34)
 hk = {r[0]: r for r in hsum}
 k26 = next(k for k in hk if k.startswith('2026 January to'))
@@ -488,10 +493,12 @@ d42 = [['600,000 chips at 27,000 US dollars each, billion US dollars', f'{600000
 # Hong Kong imports under the three named headings by origin: the average month of 2025 against the average month of 2026 so far
 def hk3(per, pc): return sum(val(344, per, 'M', pc, c) or 0 for c in THREE)
 m25, m26 = [m for m in HKM if m < '202601'], [m for m in HKM if m >= '202601']
+AVG = {}      # round 12 of the outputs: the averages, unrounded, for the note's point 7 (checked below)
 for lab, pcs in (('all origins', (0,)), ('mainland China origin', (156,)), ('South Korea origin', (410,)), ('origin Other Asia, nes (code 490)', (490,)), ('United States origin', (842,))):
     a = sum(hk3(m, pc) for m in m25 for pc in pcs) / len(m25) / 1e6
     b = sum(hk3(m, pc) for m in m26 for pc in pcs) / len(m26) / 1e6
     d42.append([f'Hong Kong imports, three named headings, {lab}: average month of 2025, then of January to July 2026, million US dollars', f'{a:.0f} then {b:.0f}', f'sums divided by {len(m25)} and by {len(m26)}'])
+    AVG[lab] = (a / 1e3, b / 1e3)
 xa = sum(sum(val(344, m, 'X', 0, c) or 0 for c in THREE) for m in m25) / len(m25) / 1e6
 xb = sum(sum(val(344, m, 'X', 0, c) or 0 for c in THREE) for m in m26) / len(m26) / 1e6
 d42.append(['Hong Kong total exports, three named headings: average month of 2025, then of January to July 2026, million US dollars', f'{xa:.0f} then {xb:.0f}', 'sums divided by 12 and by 7'])
@@ -601,6 +608,7 @@ NOTE34 = [f'the line was {gacc_b("202609", PARTS)} dollars, against {gacc_b("202
           f'{p26["cv"] / p25["cv"]:.2f} times as much computer parts by value', f'{NUMW[len(sg_files)].capitalize()} of those answers were read again for this note',      # round 10: reworded
           f'{270e6 / (q3_parts * 1e3) * 100:.1f}% of the parts line in the third quarter of 2026 ({q3_parts / 1e6:.1f} billion dollars), or {270e6 / (ics("202609")["mv"] * 1e3) * 100:.2f}% of China\'s imports of integrated circuits in September 2026 alone ({ics("202609")["mv"] / 1e6:.1f} billion dollars)',
           f'the sum of the {NUMW[len(TW_CODES)]} codes that begin 8471, in thousands of US dollars, in every month (our comparison)']
+NOTE34 += [f'its highest month of the {len(MONTHS)} was {MONTH_NAMES[int(CHIP_MAX[4:]) - 1]} {CHIP_MAX[:4]}, at {RAW[("us", CHIP_MAX)][4] / 1e6:,.1f} million dollars']      # round 12
 dvs = lambda flow, ms: [f'{dv(flow, 75, m, []):,}' for m in ms]
 JJAS = ('202606', '202607', '202608', '202609')
 im, ex = dvs('imports', JJAS), dvs('total exports', JJAS)
@@ -625,11 +633,14 @@ NOTE42 += [f'{hkx["847330"][0] / 1e9:.2f} billion dollars in January to July 202
            f'under 8471.80 they were {hkx["847180"][0] / 1e9:.2f} and {hkx["847180"][1] / 1e9:.2f} billion, and under 8471.50, {hkx["847150"][0] / 1e9:.2f} and {hkx["847150"][1] / 1e9:.2f} billion',
            f'{f(hk[k26][4]) / 1e3:.1f} billion dollars in January to July 2026, {hk_to_cn_26 / 1e9:.1f} billion went to the mainland',
            f'came to {f(y26[3]):,.1f} million dollars over the eight months January to August 2026']      # round 9 of the outputs
+A0, A1, A2, A3, A4 = (AVG[k] for k in ('all origins', 'mainland China origin', 'South Korea origin', 'United States origin', 'origin Other Asia, nes (code 490)'))
+NOTE42 += [f'The average month was {A0[0]:.1f} billion dollars in 2025 and {A0[1]:.1f} billion in January to July 2026. By origin, the average month went from {A1[0]:.1f} to {A1[1]:.1f} billion '
+           f'for mainland China, from {A2[0]:.2f} to {A2[1]:.1f} billion for South Korea and from {A3[0]:.2f} to {A3[1]:.2f} billion for the United States, and fell from {A4[0]:.2f} to {A4[1]:.2f} billion under Other Asia, nes']      # round 12: point 7, rounded once
 hk25 = hk['2025 January to December (ours: sum)']
 NOTE42 += [f'| {lab} | {f(hk25[i]):,.1f} million dollars | {f(hk[k26][i]):,.1f} million dollars |' for i, lab in
            ((1, 'Imports of United States origin'), (2, 'Imports under Other Asia, nes (code 490)'), (3, 'Imports, all origins'), (4, 'Total exports, all destinations'))]
 note_ok = 0
-for path, phrases, control in ((O34 / 'customs_figures_base.txt', NOTE34, f'the line was {p26["cv"] / 1e6 + 1:.1f} billion dollars'), (O42 / 'hongkong_stockpile_base.txt', NOTE42, f'by {gap["202608"] + 1:,} million Hong Kong dollars')):
+for path, phrases, control in ((O34 / 'customs_figures_base.txt', NOTE34, f'the line was {p26["cv"] / 1e6 + 1:.1f} billion dollars'), (O42 / 'reuters_hongkong_report_base.txt', NOTE42, f'by {gap["202608"] + 1:,} million Hong Kong dollars')):
     text = path.read_text(encoding='utf-8')
     missing = [ph for ph in phrases if ph not in text]
     if missing or control in text:

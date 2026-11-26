@@ -1,4 +1,5 @@
-"""Build the map page "Places Reports Name" (China chip-policy project, output idea 18).
+"""Build the map page "Places the sources name for Nvidia chips" (China chip-policy project, output idea 18).
+(Round 12, Nov 26, 2026: folder and files renamed from the output's old title; the old folder is kept, unchanged.)
 
 Run: python3 -I build.py                                      checks every quotation, writes the page
      python3 -I build.py --png    the same, then exports PNG images of it
@@ -15,8 +16,8 @@ Nothing is written unless:
   3. scripts/cn_has.py passes on quotes.tsv (written here; a line that spans an invisible character in the saved copy
      is written in the pieces cn_has.py can find, and build.py itself has checked the whole line in one piece);
   4. the counts the template's sentences rest on hold (the build stops if a record is added that breaks them).
-Writes: where_the_chips_are.html, quotes.tsv, places_drawn.tsv and, with --png, where_the_chips_are_full.png and
-where_the_chips_are_map.png. The map is projected here (Lambert azimuthal equal-area) to inline SVG: no outside
+Writes: places_the_sources_name.html, quotes.tsv, places_drawn.tsv and, with --png, places_the_sources_name_full.png and
+places_the_sources_name_map.png. The map is projected here (Lambert azimuthal equal-area) to inline SVG: no outside
 library is needed to build or to view it. Before the page is called done: scripts/render_and_look.py.
 """
 import hashlib, html, json, math, re, subprocess, sys, unicodedata
@@ -31,7 +32,7 @@ import cn_srclib as L   # noqa: E402
 
 MAP = F / 'mapdata' / 'ne_10m_admin_1_states_provinces.geojson'
 MAP_SHA = '22d0e3ad85eb3e27f17cabf8ba2d50e554fbc27a87796ff891d958185da62fb5'
-OUT = 'where_the_chips_are'
+OUT = 'places_the_sources_name'
 MON = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec']
 WORDS = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten', 'eleven', 'twelve']
 GROUPS = {'out': 'Outside mainland China', 'there': 'On the mainland: chips reported or said to be there',
@@ -360,7 +361,7 @@ def build_map(recs):
     out = [f'<svg viewBox="0 0 {W} {H}" role="img" aria-labelledby="map-t map-d"><title id="map-t">Map of East and Southeast Asia with the places that saved reports name</title>'
            f'<desc id="map-d">Mainland China is drawn darker than its neighbours. Provinces and countries that a source names are shaded blue. Each numbered mark is one record, listed below the map: '
            'circles where chips are reported or said to be, diamonds for plans, tenders and contracts; filled marks are on the record, open marks rest on unnamed people. '
-           'Under the map, each number is given with its place, its source and the date. '
+           'Under the map, each number is given with the place or places its source names, the source and the date. '
            'The map shows places that reports name, not where chips are.</desc>']
     out.append(f'<defs><clipPath id="frame"><rect x="0" y="0" width="{W}" height="{H}" rx="8"/></clipPath>')
     out.append('<g id="g-land">' + ''.join(f'<path id="{f["id"]}" d="{f["d"]}"/>' for f in land) + '</g>')

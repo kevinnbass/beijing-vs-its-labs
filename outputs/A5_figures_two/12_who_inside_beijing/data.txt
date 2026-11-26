@@ -36,15 +36,15 @@ N Lutnick told CNBC on July 15
 N Some Chinese tech companies have held off H20 orders because they want to see if the China-specific Blackwell chip
 
 @ cac-alibaba rec 2025-09-10 Sept_2025 cn-clips-alibaba-20f row=cac col=told dir=away
-T asks firms to halt buying "certain chips" (Alibaba's filing; Nvidia not named)
+T Alibaba's filing: asks firms to halt buying "certain chips"; Nvidia not named
 L Alibaba's annual report to the US securities regulator: the cyberspace regulator "requested Chinese technology companies to halt purchases of certain chips". The sentence does not name Nvidia; it stands in a passage on American export controls.
 S Alibaba, annual report on Form 20-F for the year to Mar 31, 2026
 Q In September 2025, the Cyberspace Administration of China requested Chinese technology companies to halt purchases of certain chips.
 D In September 2025, the Cyberspace Administration of China requested
 
 @ cac-6000d press 2025-09-17 No_date_given man-cn-ft-20250917-6000d row=cac col=told dir=away
-T reported to tell firms to end RTX Pro 6000D testing and orders
-L The cyberspace regulator tells companies, ByteDance and Alibaba among them, to end their testing and orders of Nvidia's RTX Pro 6000D, the Financial Times reports, by three unnamed people.
+T reported to tell firms to end RTX PRO 6000D testing and orders
+L The cyberspace regulator tells companies, ByteDance and Alibaba among them, to end their testing and orders of Nvidia's RTX PRO 6000D, the Financial Times reports, by three unnamed people.
 S Financial Times, Sept 17, 2025
 Q told companies, including ByteDance and Alibaba, this week to end their testing and orders of the RTX Pro 6000D
 D Published SEP 17 2025
@@ -105,11 +105,13 @@ N 乡镇以上党政机关，以及乡镇以上党委和政府直属事业单位
 N 及部门所属为机关提供支持保障的事业单位
 
 @ sco-pref doc 2025-09-28 - cn-policy-domestic-product-standard-2025 row=rules col=rules dir=away
-T State Council's office: 20% price edge for home-made goods
-L The State Council's General Office gives home-made products a 20% price preference where home-made and other products compete in one government purchase. The test is where a product is made, not who owns its maker.
+T State Council's office: 20% price edge for home-made bids
+L The State Council's General Office gives home-made products a 20% price preference where home-made and other products compete in one government purchase: a home-made product's bid price is reduced by 20%, and the reduced price is used in the evaluation. The test is where a product is made, not who owns its maker.
 S General Office of the State Council, notice of Sept 28, 2025
 Q 对本国产品的报价给予20%的价格扣除
 E the bid price of home-made products is given a 20% deduction
+Q 用扣除后的价格参与评审
+E the price after the deduction is used in the evaluation
 D 国务院办公厅 2025年9月28日
 N 产品应当在中国境内生产
 N 政府采购活动中既有本国产品又有非本国产品参与竞争的
@@ -229,7 +231,7 @@ D 2025-07-18 13:43
 
 @ mofcom-abroad doc 2026-10-16 - cn-tolerate-mof row=mofcom col=welcomed dir=toward
 T proposes automatic licences for tech exports to centres Chinese firms build and run abroad
-L Presenting a draft list put out for comment, the commerce ministry's spokesperson says exports of technology to computing centres that Chinese companies build and run abroad would get automatic licences and other facilitation.
+L Presenting a draft list put out for comment, the commerce ministry's spokesperson says exports of technology to computing centres that Chinese companies build and run abroad would get automatic licences and other facilitation. The same draft adds 23 key technologies of large AI models, agents, computing clusters and information processing to the catalogue of technologies whose export is prohibited or restricted. The answers do not name Nvidia.
 S Ministry of Commerce, spokesperson's answers on the draft of the commerce and science ministries
 Q 中国企业在境外自建自营算力中心
 E computing centres that Chinese companies build and run abroad
@@ -237,6 +239,8 @@ Q 适用自动许可等便利措施
 E automatic licences and other facilitation apply
 D 2026年10月16日，商务部、科技部发布2026年第48号公告
 N 公开征求意见
+N 人工智能大模型、智能体、算力集群、信息处理相关23项关键技术
+N 中国禁止出口限制出口技术目录
 
 @ mofcom-remote doc 2026-11-17 - cn-acts-mofcom-20261117 row=mofcom col=welcomed dir=toward
 T protests US curbs on remote access to advanced chips
@@ -244,8 +248,9 @@ L The commerce ministry's spokesperson says the new American curbs on remote acc
 S Ministry of Commerce, spokesperson's answer
 Q 对中国企业与其他国家企业正常贸易合作横加干涉
 E interferes in the normal trade cooperation between Chinese firms and other countries' firms
+Q 若美方一意孤行，中方将采取反制措施
+E if the American side persists in its course, China will take countermeasures
 D 2026-11-17 20:20
-N 若美方一意孤行，中方将采取反制措施
 
 # ---- set apart: the antitrust case against Nvidia the company ----
 @ samr-open doc 2024-12-09 - cn-policy-samr-open-original row=samr col=case dir=away
@@ -278,7 +283,7 @@ D PUBLISHED: 2025-08-12T06:13:35.000Z
 
 @ nb-halt press 2025-08-13 2025 man-cn-factions-wsj-ding row=nobody col=told dir=away
 T reported to tell firms to halt Nvidia purchases
-L "Authorities privately told companies to halt their Nvidia purchases, while officials publicly raised cybersecurity concerns about the U.S. company's products", the Wall Street Journal reports of 2025.
+L The Wall Street Journal, in its report of Jul 23, 2026, on 2025 ("last year"): "Authorities privately told companies to halt their Nvidia purchases, while officials publicly raised cybersecurity concerns about the U.S. company's products".
 S Wall Street Journal, Jul 23, 2026
 Q Authorities privately told companies to halt their Nvidia purchases, while officials publicly raised cybersecurity concerns about the U.S. company's products.
 D July 23, 2026
@@ -352,16 +357,19 @@ D PUBLISHED: 2026-07-08
 
 @ nb-aug18 press 2026-08-18 No_date_given cn-tolerate-reutersaug26-relay1-wayback row=nobody col=approved dir=toward
 T reported to let small batches into the mainland
-L Small batches of H200 chips "have been allowed to enter mainland China", the Financial Times reports. Separately, it reports that ByteDance and Tencent "have each received about 10,000 H200 processors in recent weeks", while "Beijing wants them to keep the hardware outside mainland China". By the same report, regulators told companies they could ship the chips to Hong Kong and use them there.
-S Financial Times, as relayed by Reuters on Investing.com, Aug 18, 2026
+L Small batches of H200 chips "have been allowed to enter mainland China", the Financial Times reports. Separately, it reports that ByteDance and Tencent "have each received about 10,000 H200 processors in recent weeks", and, by one of the people, that "Beijing wants them to keep most of these chips outside the mainland". By the same report, regulators told companies they could ship the chips to Hong Kong and use them there.
+S Financial Times, as relayed by Reuters on Investing.com, Aug 18, 2026, and the paper's own text on Yahoo Finance
 Q have been allowed to enter mainland China
 Q ByteDance and Tencent have each received about 10,000 H200 processors in recent weeks
-Q Beijing wants them to keep the hardware outside mainland China
 D Published Aug 18, 2026
 N Chinese regulators have told companies they can ship the processors to Hong Kong
 N The report added that
 
 # ---- checked phrases outside the records ----
+# Record nb-aug18: the paper's own text, which the record line quotes (Reuters's relay writes "the hardware"); a second copy of that report in
+# atlas figure 11 too, so its "!" lines add no source of their own there
+! cn-tolerate-ftaug26 | Beijing wants them to keep most of these chips outside the mainland
+! cn-tolerate-ftaug26 | one of the people said
 # The Financial Times's description of the split, shown under the grid
 ! man-e2596eab15f4 | favoured imports
 ! man-e2596eab15f4 | the national security-focused officials within

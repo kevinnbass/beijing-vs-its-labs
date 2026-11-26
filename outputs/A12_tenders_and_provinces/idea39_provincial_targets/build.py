@@ -253,6 +253,7 @@ def main():
             '# 安全可靠 or 自主化 stands within 60 characters of a percent sign. Written by build.py. Each place was read by a person;',
             '# none sets a share of home-made hardware (round 4 reading, after the list: see the end of this file).']
     n_near = 0
+    near_docs = []      # round 12: (unit, places) for each document with a place, so the note can say how the places fall
     for r in docs:
         if r['group'] not in ('none', 'also', 'account', 'notfound'): continue
         t = page_text(r['src'], single=True)
@@ -262,6 +263,10 @@ def main():
             if '%' in seg or '％' in seg: hits.append(seg)
         near.append(f'\n== {r["unit"]} | {r["src"]} | home-made words: {len(HOME.findall(t))}; percent signs: {t.count("%") + t.count("％")}; near each other: {len(hits)}')
         near += ['   …' + h + '…' for h in hits]; n_near += len(hits)
+        if hits: near_docs.append((r['unit'], len(hits)))
+    # the note names the places by these six units (Beijing's ability to build, Shanxi's reward, Henan's and Fujian's rack use,
+    # Guangxi's public data, Hunan's equipment): stop if the documents holding the places change
+    if sorted(u for u, _ in near_docs) != sorted(['Beijing', 'Henan', 'Fujian', 'Hunan', 'Shanxi', 'Guangxi']): sys.exit(f'near_percent: the places now stand in {near_docs}: change the note')
     reading = (HERE / 'near_percent_reading.txt')
     if reading.exists(): near += ['', '# ---- the reading ----'] + reading.read_text(encoding='utf-8').splitlines()
     (HERE / 'near_percent.txt').write_text('\n'.join(near) + '\n', encoding='utf-8')
@@ -271,6 +276,10 @@ def main():
     kinds = {}
     for u in by['none']: kinds.setdefault(core[u]['kind_of_document'], []).append(u)
     n_comp = len(kinds.get('computing', []))
+    # round 12: the note says Gansu's document read is its AI plan, while its older computing measures of 2022 stand in table 2 too
+    _gs = [r for r in docs if r['unit'] == 'Gansu' and r['group'] == 'none']
+    if 'Gansu' in kinds.get('computing', []) or [r['src'] for r in _gs] != ['man-cn-o39-gansu-ai-plus-2026', 'cn-o39-gansu-hub-measures-2022']:
+        sys.exit('Gansu: its kind of document or its two rows in table 2 are not as the note words them')
     (HERE / 'counts.tsv').write_text('group\tgovernments\tnames\n' + '\n'.join(f'{g}\t{len(by[g])}\t{", ".join(by[g])}' for g in EXPECT) + '\nall\t31\t\n'
                                      + '\n'.join(f'none, document read: {k}\t{len(v)}\t{", ".join(v)}' for k, v in sorted(kinds.items())) + '\n', encoding='utf-8')
     for g in EXPECT: print(f'{g}: {len(by[g])}: {", ".join(by[g])}')
@@ -349,6 +358,11 @@ def main():
     _vid = {}
     for r_ in _vrows: _vid.setdefault((r_['row_id'], r_['kind']), r_['saved_id'])
     def _vlist(kd): return ', '.join(f'{_vcnt[k]["government"]} [{_vid[(k, kd)]}]' for k in _p3[kd])
+    # round 12: the provisions counted, and the rule that gives more than one (a reader added 6 + 3 + 1 and found 10, not 9)
+    _vkinds = [k for kd in ('BUILD', 'ADAPT', 'PREFER') for k in _p3[kd]]
+    _vprov = len(_vkinds); _vtwice = sorted({_vcnt[k]['government'] for k in _vkinds if _vkinds.count(k) > 1})
+    if any(_p3[kd] for kd in _p3 if kd not in ('BUILD', 'ADAPT', 'PREFER')) or _vprov - len(_a3) != len(_vtwice) or _vtwice != ['Hebei District (Tianjin)']:
+        sys.exit(f'other provisions: {_vprov} provisions in {len(_a3)} rules, more than one in {_vtwice}: change the note')
     print(f'other provisions (cn_voucher_other.py, controls behave): of the {len(_r3)} with no higher rate, {len(_a3)} (BUILD {len(_p3["BUILD"])}, ADAPT {len(_p3["ADAPT"])}, PREFER {len(_p3["PREFER"])}); narrow {len(_vn[0][3])}; of the {len(tiered)} and the {len(only)}: 0')
     # the plans of the kind that holds Zhejiang's share, searched as a class (core table): groups counted, and no share in any text read
     ict = _tab('provincial_ict_plans.tsv')
@@ -433,6 +447,8 @@ def main():
             'N_DOCS': len(docs), 'N_DOCS_NONE': sum(1 for r in docs if r['group'] == 'none'), 'N_DOCS_ALSO': sum(1 for r in docs if r['group'] == 'also'),
             'N_DOCS_SCANNED': sum(1 for r in docs if r['group'] in ('none', 'also', 'account', 'notfound')),
             'N_NEAR': n_near, 'HAS_LINE': has_line, 'DAM_LINE': dam_line,
+            'N_NEAR_DOCS': len(near_docs), 'NEAR_BY_DOC': ', '.join(f'{u} {n}' for u, n in near_docs),
+            'N_VO_PROV': _vprov, 'U_VO_TWICE': ' and '.join(_vtwice),
             'N_LABEL_PAGES': len(cnt), 'N_LABEL_OTHERS': len(cnt) - 2, 'N_JS_EXPECTED': js[1], 'N_ZJ_EXPECTED': zj[1],
             'N_V': len(vcnt), 'N_V_TIER': len(tiered), 'N_V_ONE': len(one), 'U_V_TIER': ', '.join(v['place'] for v in tiered),
             'N_V_ONLY': len(only), 'U_V_ONLY': ', '.join(v['place'] for v in only),
@@ -452,7 +468,7 @@ def main():
     lab = {}
     for r in docs:
         kind = 'ACCT' if r['basis'] == 'news' else 'DOC'
-        x = f'{r["unit"]}. {r["doc"]}'.rstrip('.')
+        x = re.sub(r'\s*\[(?:cn|ms|man)-[A-Za-z0-9-]+\]', '', f'{r["unit"]}. {r["doc"]}').rstrip('.')      # round 12: a saved id cited inside the document field is not printed in a label
         if r['basis'] == 'capture': x += f'. Internet Archive capture of {r["cap_date"]}'
         if r['basis'] == 'hand': x += '. A PDF of the official page saved by hand in a browser'
         lab.setdefault(r['src'], (kind, x))
@@ -463,7 +479,8 @@ def main():
         r = _vr[c['row_id']]
         # round 10: a copy that is an Internet Archive capture says so (readers took "another copy" for a third party's)
         _m = json.loads((PRIMARY / c['saved_id'] / 'meta.json').read_text()); _cap = 'web.archive.org' in str(_m.get('route', '')) + str(_m.get('url', '')) or c['saved_id'].endswith('-wayback')
-        lab.setdefault(c['saved_id'], ('DOC', f'{c["government"]}. {r["document"]}; {r["body"]}' + ('' if c['row_id'] in R['own'] else ('; read in an Internet Archive capture' if _cap else '; read in another copy than the issuer\'s own page'))))
+        # round 12: a copy on another site says which (the core's cell "copy"), for readers who asked whose copy it is
+        lab.setdefault(c['saved_id'], ('DOC', f'{c["government"]}. {r["document"]}; {r["body"]}' + ('' if c['row_id'] in R['own'] else ('; read in an Internet Archive capture' if _cap else '; read in another copy than the issuer\'s own page: ' + r['copy'].rstrip('.')))))
     lab.update({k: v for k, v in MORE_LABELS.items() if k not in lab})
     refs = ['# id <TAB> kind <TAB> label <TAB> address (empty = the address in the saved copy\'s record). Written by build.py.']
     missing = []
@@ -474,7 +491,7 @@ def main():
     (HERE / 'extra_refs.tsv').write_text('\n'.join(refs) + '\n', encoding='utf-8')
 
     p = subprocess.run([sys.executable, '-I', str(ROOT / 'scripts/cn_doc_build.py'), str(HERE / 'provinces_note_base.txt'), '--refs', str(HERE / 'extra_refs.tsv'),
-                        '--title', 'Provincial Chip Targets', '--eyebrow', 'China chip policy: provincial targets'], capture_output=True, text=True)
+                        '--title', 'Home-Made Computing Targets', '--eyebrow', 'China chip policy: provincial targets'], capture_output=True, text=True)
     print(p.stdout.strip()); print(p.stderr.strip())
     sys.exit(p.returncode)
 

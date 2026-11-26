@@ -67,7 +67,7 @@ For the H200, which Reuters called Nvidia's second most powerful AI chip in May 
 !! cn-acts-reuters-us-approvals-20260514-wayback | Published on 05/14/2026
 Washington's and Nvidia's are on the record; the rest come from unnamed people.
 
-- Reported as ordered for 2026 (Reuters, Dec 31, 2025): "more than 2 million H200 chips" [cn-labs-h200-two-million-202512-relay1-wayback].
+- Reported: ordered by Chinese companies for 2026 (Reuters, Dec 31, 2025): "more than 2 million H200 chips" [cn-labs-h200-two-million-202512-relay1-wayback].
 !! cn-labs-h200-two-million-202512-relay1-wayback | Dec 31 (Reuters)
 - Applied for in Washington by May 11, 2026: 3,444,160 chips, Nvidia's H200 and AMD's MI325X together, in the table of licence applications from the Commerce Department's Bureau of Industry and Security (BIS) that the House Foreign Affairs Committee made public on Nov 19, 2026. An application is not an order [cn-usdocs-hfac-summary-20261119] [cn-usdocs-hfac-decisions-20261119] [cn-labs-us-chip-licences-20261119] [cn-le04-bis-ear-748].
 !! cn-usdocs-hfac-summary-20261119 | BIS received applications to sell 3,444,160 covered integrated circuits
@@ -82,11 +82,14 @@ Washington's and Nvidia's are on the record; the rest come from unnamed people.
 !! cn-usdocs-hfac-summary-20261119 | not fully reflected in the May 11, 2026, summary document
 !! cn-usdocs-hfac-decisions-20261119 | Approved, not shipped
 !! cn-usdocs-hfac-decisions-20261119 | Bytedance System SDN 508,000 RWA Malaysia
-- Reported as approved by Beijing, with conditions (Reuters, Jan 28, 2026): "more than 400,000 H200 chips in total" [ms-bj-20260128-h200-nod-standard].
+- Reported: approved by Beijing, with conditions (Reuters, Jan 28, 2026): "more than 400,000 H200 chips in total" [ms-bj-20260128-h200-nod-standard].
 !! ms-bj-20260128-h200-nod-standard | The Chinese government is only granting approvals with conditions
-- Reported as delivered by August 2026 (Financial Times, through Reuters, Aug 18, 2026): "about 10,000 H200 processors" each for ByteDance and Tencent [cn-tolerate-reutersaug26-relay1-wayback].
+- Reported: under discussion in July 2026 (The Information, through Reuters, Jul 8, 2026): "Beijing is still determining the exact number of Nvidia chips to approve, and it could amount to fewer than 200,000 in total" [cn-acts-reuters-ti-cap-20260708-relay1].
+!! cn-acts-reuters-ti-cap-20260708-relay1 | July 8 (Reuters)
+!! cn-acts-reuters-ti-cap-20260708-relay1 | The Information said
+- Reported: delivered by August 2026 (Financial Times, through Reuters, Aug 18, 2026): "about 10,000 H200 processors" each for ByteDance and Tencent [cn-tolerate-reutersaug26-relay1-wayback].
 !! cn-tolerate-reutersaug26-relay1-wayback | Aug 18 (Reuters)
-- Reported by Reuters, Nov 5, 2026, as "stored in Hong Kong awaiting shipment to China": about 600,000 [cn-clips-evidence-1].
+- Reported: stored in Hong Kong, November 2026 (Reuters, Nov 5, 2026): about 600,000 [cn-clips-evidence-1].
 !! cn-clips-evidence-1 | About 600,000 of Nvidia's advanced artificial intelligence chips are stored in Hong Kong awaiting shipment to China
 - Nvidia, Nov 17, 2026, on the quarter to Oct 25: "Q3 sales of licensed Hopper Data Center products to China was $2.4 billion" (the Hopper family includes the H200). It said it had stopped shipping them and gave no reason [cn-o38-nvda-q3fy27-call-transcript-pdf] [cn-acts-reuters-halt-20261118-relay2].
 !! cn-o38-nvda-q3fy27-call-transcript-pdf | we are no longer shipping licensed Hopper Data Center products to China
@@ -105,7 +108,7 @@ Washington's and Nvidia's are on the record; the rest come from unnamed people.
 !! cn-acts-peoplesdaily-bjd-20250801 | 2025-08-01
 !! cn-acts-peoplesdaily-bjd-20250801 | 绝不能让“带病”的芯片上岗
 !! cn-media-stdaily-security-forum | 2025-09-24
-3. **Some purchases were approved, and some chips came in.** Washington's approvals and Beijing's, as reported, are listed above, and so are the reported deliveries and Nvidia's licensed sales to China; none of these says how many chips crossed into the mainland.
+3. **Some purchases were approved, and some chips came in.** Washington's approvals, on the record, and Beijing's, as reported, are listed above, and so are the reported deliveries and Nvidia's licensed sales to China; none of these says how many chips crossed into the mainland.
 4. **The companies had reasons of their own, and American curbs and conditions pushed too.** Alibaba says its chip unit "has brought proprietary GPUs into scaled production" [cn-policy-alibaba-own-gpu]. Nvidia's reports since November 2025 say: "we are already effectively foreclosed from the China market by U.S. export controls" [man-ms-sec-10q-2025-10].
 !! man-ms-sec-10k-fy2026 | we are already effectively foreclosed from the China market by U.S. export controls
 !! man-ms-sec-10q-2026-07 | already effectively foreclosed from the China market by U.S. export controls

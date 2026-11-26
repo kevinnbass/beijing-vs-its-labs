@@ -122,6 +122,10 @@ def main():
         'N_UNIV': n(lambda r: 'university' in r['body'] or 'college' in r['body']),
         'N_INST': n(lambda r: 'institute' in r['body']), 'N_GOV': n(lambda r: 'agency' in r['body']),
         'HAS_LINE': has_line,
+        # round 12: the one award or result notice of a proposed award, the table 3 rows found by a chip's letters in a server model's
+        # name, and the one table 2 tender that asks only that its platform support home-made chips (each named in the note)
+        'N_PROPOSED': n(lambda r: 'proposed award' in r['kind']),
+        'N_S_MODELNAME': n(lambda r: r['cls'] == 'S' and 'whose name holds' in r['hw_note']),
         'N_TRIED': len(tried), 'N_SAVED': len(saved), 'N_FAILED': len(failed), 'N_LEFT': len(left), 'N_SEARCHES': sum(1 for l in (HERE / 'search_log.txt').read_text(encoding='utf-8').splitlines() if l.strip() and not l.startswith('#')),
         'L_NOTAI': cats['not-ai'], 'L_BEFORE': cats['before-2024'], 'L_NOACC': cats['no-accelerator'], 'L_NOCONTENT': cats['no-content'], 'L_ELSE': cats['used-elsewhere'],
         'N_404': sum(1 for _, s in failed if s == 404), 'N_NOCONN': sum(1 for _, s in failed if s != 404),
@@ -147,11 +151,15 @@ def main():
     if (len(win), len(nvw)) != (72, 23): sys.exit(f'WHU recount: {len(win)} and {len(nvw)}, not 72 and 23 as L17 wrote: read and change the note')
     print(f'WHU recount (L17 tables): {len(win)} result notices dated 2025-09-01 to 2026-11-23; {len(nvw)} name Nvidia in the notice; each of the {len(nvw)} saved pages holds the word')
     fill['N_WHU_L17'] = len(win); fill['N_WHU_L17_NV'] = len(nvw)
+    if [r['buyer'] for r in rows if 'proposed award' in r['kind']] != ['Shenzhen University, College of Computer Science and Software Engineering'] or not all(award(r) for r in rows if 'proposed award' in r['kind']):
+        sys.exit('the result notice of a proposed award is no longer Shenzhen University\'s alone: change the count paragraph')
+    if [r['id'] for r in H if '平台支持' in ' '.join(r['hw'])] != ['cn-o35-ccgp-lnust-202511'] or fill['N_S_MODELNAME'] != 2:
+        sys.exit('table 2\'s one platform-support tender or table 3\'s two server-model rows are not as the deck and the count words them')
     # round 5: the core's table of purchase records, counted here (each row must have the header's number of cells)
     pr = [l.rstrip('\n').split('\t') for l in (ROOT / 'research/cn_chip_policy_20261120/tables/procurement_records.tsv').read_text(encoding='utf-8').splitlines() if l.strip() and not l.startswith('#')]
     if any(len(x) != len(pr[0]) for x in pr[1:]): sys.exit('procurement_records.tsv: a row without the header\'s number of cells')
     fill['N_PROC'] = len(pr) - 1
-    if fill['N_PROC'] != 53: sys.exit(f'procurement_records.tsv now has {fill["N_PROC"]} rows, not 53: read the new rows and change the later records')      # 52 since core edit 8 (Nov 25, 2026): row 52 is the award of Apr 24, 2025 that names the H20, described under "What was not found"; 53 since core edit 8b (round 9 of the outputs): row 53 is Beihang's School of AI result of Jul 10, 2026 (four RTX 6000D cards), described under the later records
+    if fill['N_PROC'] != 53: sys.exit(f'procurement_records.tsv now has {fill["N_PROC"]} rows, not 53: read the new rows and change the later records')      # 52 since core edit 8 (Nov 25, 2026): row 52 is the award of Apr 24, 2025 that names the H20, described under "What was not found"; 53 since core edit 8b (round 9 of the outputs): row 53 is Beihang's School of AI result of Jul 10, 2026 (four cards the page calls RTX 6000D), described under the later records
     if not any(x[pr[0].index('saved_id')] == 'cn-ga31-counter-8' for x in pr[1:]): sys.exit('procurement_records.tsv: row 53 (cn-ga31-counter-8) is gone: read the table and change the later records')
     print(f'core table of purchase records: {fill["N_PROC"]} rows')
     # round 9: the core's table of the carriers' own notices and others' accounts (tables/carriers_own_notices.tsv), counted here:
@@ -220,7 +228,7 @@ def main():
     # 4. references: one line per notice, plus the hand-written ones
     refs = ['# id <TAB> kind <TAB> label <TAB> address (empty = the address in the saved copy\'s record). Written by build.py.']
     for r in rows:
-        refs.append(f'{r["id"]}\tNOTICE\t{r["buyer"]}: {r["kind"]}, {r["date_en"]}. A purchase notice on the buyer\'s own site or on a government purchasing site\t')
+        refs.append(f'{r["id"]}\tNOTICE\t{r["buyer"]}: {r["kind"]}, {r["date_en"]}. Published on the buyer\'s own site or on a government purchasing site\t')
     refs += [ln for ln in (HERE / 'refs_manual.tsv').read_text(encoding='utf-8').splitlines() if ln.strip() and not ln.startswith('#')]
     (HERE / 'extra_refs.tsv').write_text('\n'.join(refs) + '\n', encoding='utf-8')
 

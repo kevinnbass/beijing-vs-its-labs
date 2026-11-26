@@ -14,6 +14,10 @@ Round 10 (Nov 25, 2026, core batch 12 and two readers of the public page): the h
 the argument's new estimate (Bernstein, about 40% in 2025, by the Associated Press's report of Jun 29, 2026) is given in the
 notes and not drawn (another measure); the 95% is Reuters's description with no date or count given; the five named Chinese
 makers' rounded shares add to about 47%; the chief executive's "effectively fallen to zero" is given with no period or count.
+Round 12 (Nov 26, 2026, readers of the seventh version): the eyebrow says "shares of the market" (not "who sold them": the IDC
+figures count chips shipped, and TrendForce's include chips firms develop for their own use); the chart's note names each IDC
+column's own measure (AI accelerator cards shipped in 2025; the market for data-centre AI chips in January to June 2026).
+The page's top line is the credit alone (a4lib.NOTE).
 Before the page or image is called done or shown: scripts/render_and_look.py on share.html and share.png.
 """
 import re, sys
@@ -236,7 +240,7 @@ def main():
  <p class="draft">{A.NOTE}</p>
  <div id="fig">
   <header>
-   <p class="eyebrow">China · AI chips · who sold them</p>
+   <p class="eyebrow">China · AI chips · shares of the market</p>
    <h1>By IDC’s counts of AI chips shipped in China, Nvidia’s share fell from {nv25}% to {nv26}%.<br> Huawei reached {hw}%.</h1>
    <p class="deck">Counts of AI chips shipped in China in 2025 and in January to June 2026, by the research firm IDC, as reported by Reuters. The {b95}% at left is Reuters’s own description of an earlier time. It is not from the same series, so it stands apart. A second research firm, TrendForce, counts differently; its figures have a panel of their own. These are different measures, not one series.</p>
    <ul class="key">
@@ -250,7 +254,7 @@ def main():
   </header>
   <section class="card plot">
    <h2>Nvidia from the bottom, Chinese makers from the top</h2>
-   <p class="sub">Each column is the whole market at one reading. Nvidia’s share is joined across the two IDC columns; the first column stands apart.</p>
+   <p class="sub">Each column is 100%, the whole market as one report gives it: in 2025 AI accelerator cards shipped, in January to June 2026 the market for data-centre AI chips. Nvidia’s share is joined across the two IDC columns; the first column stands apart.</p>
 {chart(D, cap)}
 {chart(D, cap, narrow=True)}
    <p class="fine"><b>Read with care.</b> The {b95}% is Reuters’s own description, and the report gives no date for it and no count behind it; the {nv25}% and {nv26}% are counts of chips shipped. A full year stands beside a half year.
@@ -309,7 +313,10 @@ def main():
     # ours: the rest of 100 and the sum of the named Chinese makers (both made above); 0 to 100 are the axis
     A.guard(page, Q, ours=[rest, named_sum, 0, 25, 50, 75, 100], dates=[fmt(d0), fmt(d1), fmt(d2), fmt(d_enf), tf_when, fmt(d_bern)])
     # round 10 (readers' leads on the public page): wordings replaced
-    for banned in ('is a description, with no date', 'is the least the Chinese makers held', 'The 2025 share has two sources', 'has put it lower. Reuters'):
+    # round 12 (readers of the seventh version): the shares are not all of chips sold; each IDC column's own measure is named
+    assert 'AI accelerator cards' in Q['y2025.total'] and 'market for data-centre AI chips' in Q['h2026.nvidia'], 'control: the two reports name their measures so'
+    for banned in ('is a description, with no date', 'is the least the Chinese makers held', 'The 2025 share has two sources', 'has put it lower. Reuters',
+                   'who sold them', 'at one reading', 'not published'):
         assert banned not in page, f'the page still says "{banned}"'
     assert 'Nothing here is on the record' not in page and 'one series' in page
     out = HERE / 'share.html'

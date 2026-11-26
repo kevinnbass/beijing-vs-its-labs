@@ -2,7 +2,7 @@ Thread: did Beijing pull against its own AI companies?
 
 Draft by Claude, Anthropic's model. Nothing here has been posted.
 10 posts. Every quotation was found in the saved copy of its source before this text was written.
-Each post is followed by its source's address on its own line. The address is not part of the post.
+Each post that cites a source is followed by its address on its own line; the last post sums up and has none. The address is not part of the post.
 Words between quotation marks are a source's exact words. English given for a Chinese source is ours, not an official translation.
 Post 1 quotes the clip twice: the first sentence from a machine transcript (at 0:11), the second from the text of the post that carries the clip. Post 9 quotes a video's caption track (at 5:59). Nobody has checked any of them by ear.
 
@@ -24,7 +24,7 @@ https://www.mofcom.gov.cn/syxwfb/art/2025/art_a2f759e1140f459e9694f85164c4197c.h
 6/10 Limit 2: warnings and guidance, not a published ban. Bloomberg, Sept 27, 2024, citing unnamed people: "The policy has taken the form of guidance rather than an outright ban". In 82 Chinese policy pages read, no published order against buying Nvidia chips was found.
 https://www.businesstimes.com.sg/companies-markets/china-urges-local-companies-stay-away-nvidias-chips
 
-7/10 Limit 3: some were approved, some came in. Press reports from unnamed people: over 2 million H200s ordered for 2026, over 400,000 approved by Beijing with conditions, about 600,000 stored in Hong Kong (Reuters); about 10,000 each to ByteDance and Tencent (FT, via Reuters).
+7/10 Limit 3: some were approved, some came in. Press reports from unnamed people: over 2 million H200s ordered for 2026, over 400,000 approved by Beijing with conditions, about 600,000 stored in Hong Kong (Reuters); small batches let into the mainland (FT, via Reuters).
 https://web.archive.org/web/20260101170120/https://www.investing.com/news/stock-market-news/exclusivenvidia-sounds-out-tsmc-on-new-h200-chip-order-as-china-demand-jumps-sources-say-4426223
 https://www.thestandard.com.hk/innovation/article/322910/China-gives-nod-to-ByteDance-Alibaba-and-Tencent-to-buy-Nvidias-H200-chips-says-sources
 https://www.channelnewsasia.com/east-asia/nvidia-chips-pile-up-hong-kong-china-withhold-import-approval-6527371
@@ -58,7 +58,7 @@ post | characters | X weighted count | room left
 4/10 | 269 | 269 | 11
 5/10 | 277 | 277 | 3
 6/10 | 270 | 270 | 10
-7/10 | 278 | 278 | 2
+7/10 | 271 | 271 | 9
 8/10 | 266 | 266 | 14
 9/10 | 279 | 279 | 1
 10/10 | 277 | 277 | 3

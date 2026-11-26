@@ -275,12 +275,12 @@ def bars(evs):
          f'（{f(h["appr_amd"][0])}枚，{h["appr_amd"][1]}份申请），合计{f(h["appr"][0])}枚。表格“H200 License and Equivalent Application Status as of May 11, 2026”（截至2026年5月11日的H200许可及同类申请状态），'
          '由众议院外交事务委员会于2026年11月19日公布；各项合计为本页所算', []),   # touch-up 6b sync (Nov 24, 2026): the table by its title, as the English builder now names it
         ('华盛顿未予处理即退回：以英伟达为出口商的申请', f(h['rwa_nv'][0]) + '枚', h['rwa_nv'][0], 'us',
-         f'共{h["rwa_nv"][1]}份申请，其中包括表中芯片所在地为{places}的全部{h["abroad"][1]}份（{f(h["abroad"][0])}枚），所列名称带有ByteDance、BytePlus、TikTok和Alibaba字样。'
+         f'共{h["rwa_nv"][1]}份申请，其中包括表中所列最终所在地为{places}的全部{h["abroad"][1]}份（{f(h["abroad"][0])}枚），所列名称带有ByteDance、BytePlus、TikTok和Alibaba字样。'
          f'加上AMD的{h["rwa_amd"][1]}份，在表内{f(h["all"][0])}枚芯片中占{f(h["rwa"][0])}枚。表格没有说明原因。同一表格', []),
         ('据报道，北京方面有条件批准', '超过40万枚', 400_000, 'toward', '对象是字节跳动、阿里巴巴和腾讯。路透社，2026年1月28日', [by(evs, 'ms-bj-20260128-h200-nod-standard')]),
         ('据报道，到7月，北京方面考虑放行的总量', '不到20万枚', 200_000, 'toward', 'The Information，经路透社转述，2026年7月8日', [by(evs, 'cn-acts-reuters-ti-cap-20260708-relay1')]),
-        ('据报道，已到报道点名的两家买方手中', '各约1万枚', 20_000, 'toward', '字节跳动和腾讯（英国《金融时报》，经路透社转述，2026年8月18日）；到11月已是数家企业（路透社，2026年11月5日）', [by(evs, 'cn-tolerate-reutersaug26-relay1-wayback')]),
-        ('据报道，存放在香港，等待运往中国', '约60万枚', 600_000, 'away', '北京方面迟迟未批准大规模进口（原文：“withholds approval for large-scale imports”）。路透社，2026年11月5日', [by(evs, 'cn-clips-evidence-1')]),
+        ('据报道，已到两家具名买方手中', '各约1万枚', 20_000, 'toward', '字节跳动和腾讯（英国《金融时报》，经路透社转述，2026年8月18日）；到11月已是数家企业（路透社，2026年11月5日）', [by(evs, 'cn-tolerate-reutersaug26-relay1-wayback')]),
+        ('据报道，存放在香港，等待运往中国内地', '约60万枚', 600_000, 'away', '北京方面迟迟未批准大规模进口（原文：“withholds approval for large-scale imports”）。路透社，2026年11月5日', [by(evs, 'cn-clips-evidence-1')]),
     ]
     out = ['<div class="bars">']
     for lab, val, n, cls, note, es in rows:
@@ -442,7 +442,7 @@ def vouchers():
         'A12': ('上海市', (2025, 7), 'cn-le15-sheitc-8cea38', '对自主智能算力设施部署项目，给予最高10%建设支持'),
         'A14': ('成都市', (2026, 4), 'cn-ga31-vouchernamedrules-5', '补贴自主可控算力；中小企业两档抵扣比例分别增加10%；自2026年5月13日起生效；文本见一家咨询公司的网页，已与市经信局签发文件的扫描件人工核对'),
         'A18': ('四川省', (2026, 8), 'cn-ga31-unsaved-sc-338hao-fgw-wayback', '成立3年内的初创企业30%，人工智能一人公司40%；省发展改革委的措施（川发改数据〔2026〕338号），2026年8月11日成文、8月13日发布'),
-        'B1': ('北京经济技术开发区', (2024, 11), 'cn-le28-etown-29hao-20241126', '取代了2024年3月最高按40%和最高按30%支付的规定；云服务企业采购装国产芯片的服务器，另有最高10%的支持'),
+        'B1': ('北京经济技术开发区', (2024, 11), 'cn-le28-etown-29hao-20241126', '取代了2024年3月最高按40%和最高按30%支付的规定；云服务企业采购装国产芯片的服务器、并在经开区算力调度平台上架对外提供服务的，另按这部分服务器的采购金额给予最高10%的支持'),
         'B5': ('深圳市', (2024, 12), 'cn-le28-sz-gxj-2024-13hao', '把模型迁移到国产芯片另有支持'),
         'B8': ('深圳市龙华区', (2024, 11), 'cn-le28-sz-longhua-2024-20hao', ''),
         'B10': ('广州开发区和黄埔区', (2025, 6), 'cn-le28-gz-huangpu-2025-7hao', ''),
@@ -623,7 +623,7 @@ def vouchers():
            f'<div><h4>各类算力适用同一比例：{len(one)}个</h4><p class="vexpl">每条规定：地点、规定的年月（链接到所存文本），以及它唯一的补贴比例，以同一条0至60%刻度上的圆点表示。'
            f'†表示规定把这笔钱称为补贴、奖励或支持，而不称为券（{len(one)}个中有{nv}个）。字母表示列表下方的附注。'
            f'其中两项规定在写明比例的句子里提到国产，但只有一个比例：{listed([place(k) for k in sorted(adapt)])}（附注{"、".join(letters[k] for k in sorted(adapt))}）。'
-           '比例之外对国产芯片的其他支持，见附注。</p></div></div>'
+           '有些规定在比例之外还对国产芯片给予其他支持：附注列出了其中大部分，上海市松江区、福州市和天津市河北区也有一些。</p></div></div>'
            f'<div class="vmini">{minis}</div><div class="vfoot">{notes}</div></div>', '</div>']
     return '\n'.join(out), len(ti), len(rows)
 
@@ -638,7 +638,7 @@ def bodies(evs):
             ('国家安全部', P('cn-acts-mss-xinhua-20250721')),
             ('官方媒体（玉渊谭天账号）', P('cn-le13-yuyuan-qq-20250810b')),
             ('海关', P('man-cn-ft-20251009-customs', 'cn-acts-reuters-customs-20260114')),
-            ('财政部、工业和信息化部（只针对党政机关及相关事业单位的台式计算机采购）', P('cn-policy-desktop-2023'))]
+            ('财政部、工业和信息化部（党政机关及相关事业单位台式计算机的采购规定）', P('cn-policy-desktop-2023'))]
     let = [('商务部', P('cn-policy-wang-nvidia', 'cn-policy-h20-mofcom', 'cn-tolerate-mof', 'cn-acts-mofcom-20261117')),
            ('国务院总理李强', P('cn-xi-round-f-6')),
            ('国务院副总理何立峰', P('cn-policy-he-welcomes')),
@@ -649,7 +649,7 @@ def bodies(evs):
     return ('<div class="bodies">' + col('限制英伟达，或引导买方转向国产芯片', 'away', held) + col('放行，或表示欢迎', 'toward', let) + '</div>'
             '<div class="bodies one">' + col('对英伟达公司本身采取行动', 'away', firm) + '</div>'
             '<p class="fine">英国《金融时报》（2026年11月13日）报道：国家网信办和国家安全部内部侧重安全的官员把对英伟达的依赖看作战略弱点（原文：“viewed dependence on Nvidia as a strategic vulnerability”），'
-            '商务部倾向于进口（原文：“favoured imports”），据该报未具名的知情人士，2025年的限制行动由国家发展改革委牵头（原文：“was led by the National Development and Reform Commission”）。'
+            '商务部倾向于进口（原文：“favoured imports”），据该报援引的未具名知情人士称，2025年晚些时候限制进口和使用性能较低的英伟达芯片的行动由国家发展改革委牵头（原文：“was led by the National Development and Reform Commission”）。'
             f'美国贸易代表2026年11月20日说（<a href="{url("cn-le01-greer-bbg-20261120-youtube")}">彭博电视</a>；机器字幕，未经人耳核对，01:06至01:35）：'
             '情况并不像人们让你以为的那样铁板一块（原文：“not as monolithic as people would have you believe”）；'
             '按他自己的分析（原文：“my own analysis”），有人认为希望能获得美国芯片（原文：“we’d like to have access”），也有人认为反正不要美国芯片（原文：“others who think, well, we don’t want American chips anyway”）。'
@@ -719,8 +719,8 @@ def main():
     page = re.sub(r'%%REC:([a-z0-9-]+)%%', lambda m: str(by(evs, m.group(1))['n']), page)   # record numbers in the notes
     assert '%%' not in page, page[page.index('%%'):][:40]
     for e in evs:                                         # the records note types each fixed number (round 8): it must be the data's
-        if e['N']: assert f'第{e["n"]}条记录是在这张图的英文版公开之后' in page, f'the records note does not name the fixed record number {e["n"]} ({e["sid"]})'
-    assert '第61条记录是在这张图的英文版公开之后' not in page, 'control: a record number that is not fixed is named as fixed'
+        if e['N']: assert f'第{e["n"]}条记录是在这张图公开之后' in page, f'the records note does not name the fixed record number {e["n"]} ({e["sid"]})'
+    assert '第61条记录是在这张图公开之后' not in page, 'control: a record number that is not fixed is named as fixed'
     assert 'href=""' not in page, 'an empty link'
     segs, loose = page_quotes_ok(page, evs, checks)
     if loose:

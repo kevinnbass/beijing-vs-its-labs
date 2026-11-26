@@ -46,7 +46,7 @@ sys.path.insert(0, str(L.SCRIPTS))
 import cn_argument_build as B   # noqa: E402  (importing it builds nothing: its main() is guarded)
 
 FPS, RATE, BOX_RATE, DIM = 25, 2.5, 4.0, 0.28    # the most words a second: of the caption (RATE), of everything in the caption box (BOX_RATE)
-ROWS = r'(.+?:) (.+?\.) (.+)'                    # a line of the numbers chapter: what is counted, its value (the source's words where quoted), the source
+ROWS = r'((?:Reported: )?.+?:) (.+?\.) (.+)'      # a line of the numbers chapter: what is counted (a press count begins "Reported: ", as the argument's table of numbers labels it since core batch 14), its value (the source's words where quoted), the source
 DOC_TITLE, DOC_EYEBROW = 'Twelve Checked Captions', 'China chip policy · captions of the explainer video'
 KINDS = ('On the record', 'Reported', 'Captions, not checked by ear', 'Our own reading', 'Our own count', "From the project's")   # how a source line may begin
 GONE = ('750,000', 'four limits', 'more than half of the chips applied for', 'Democrats', 'more exact', 'at a lower rate',
@@ -252,9 +252,16 @@ def check_substance(caps):
     cell = [i for c in caps for i in c['items'] if i.startswith('Licensed by Washington for Nvidia')]
     want = f'{t["appr_nv"]:,} chips, each application "Approved, not shipped".'
     if len(cell) != 1 or want not in cell[0]: sys.exit(f'the cell for Washington\'s licences must read: {want}')
-    share = f'Washington returned without action {t["rwa_pct"]}% of the chips in the applications its summary of May 11, 2026 records'
+    # round 12 (Nov 26, 2026): Washington returned the APPLICATIONS, not chips (the figure's note since core batch 14, row ZH5-C06; the
+    # argument's answer: "... 1,888,950 (55%; the sum is mine) were in applications it returned without action"); the old caption's words are refused
+    share = f'Washington returned without action the applications for {t["rwa_pct"]}% of the chips its summary of May 11, 2026 records'
+    old_share = f'Washington returned without action {t["rwa_pct"]}% of the chips in the applications'
     if sum(share in c['text'] for c in caps) != 1: sys.exit(f'one caption must read: {share}')
-    if not all(x in arg for x in (f'{t["appr_nv"]:,} in Nvidia\'s {t["n_appr_nv"]}', f'{t["rwa"]:,} of the {t["all"]:,} chips in it, {t["rwa_pct"]}%', share)): sys.exit('the argument no longer gives these sums of the House table')
+    if any(old_share in everything(c) for c in caps): sys.exit(f'a caption still says Washington returned chips: {old_share}')
+    assert old_share in f'{old_share} its summary', 'control: the old words must be seen where they stand'
+    answer = f'of the {t["all"]:,} chips in the licence applications that Washington\'s summary of May 11, 2026 records, {t["rwa"]:,} ({t["rwa_pct"]}%; the sum is mine) were in applications it returned without action'
+    if not all(x in arg for x in (f'{t["appr_nv"]:,} in Nvidia\'s {t["n_appr_nv"]}', f'{t["rwa"]:,} of the {t["all"]:,} chips in it, {t["rwa_pct"]}%', answer)): sys.exit('the argument no longer gives these sums of the House table')
+    assert answer.replace(f'{t["rwa"]:,}', f'{t["rwa"] + 1:,}') not in arg, 'control: a wrong sum must not be found in the argument'
     assert f'{t["appr"]:,} chips, each application' not in cell[0], 'control: the sum of both makers must not pass for Nvidia\'s'
     out.append(f'House table: Nvidia approved and not shipped {t["appr_nv"]:,} in {t["n_appr_nv"]} applications; returned without action {t["rwa"]:,} of {t["all"]:,} = {t["rwa_pct"]}% (summed here, equal to the captions and to the argument)')
     # the state-media items (since core edit 6: a census of 42 and further items found by searches and links)

@@ -8,7 +8,7 @@ How to read it. Words between quotation marks are a source's exact words, found 
 
 The author's interest. Anthropic has argued in public for controls on chip exports to China (that is from the model's general knowledge; no saved page is cited for it), so judge this piece by its sources.
 
-## Pressure without a rule
+## Pressure, and no published rule found
 
 From 2024 the planning side of the Chinese state and the industry ministry, and from 2025 its security side, pressed China's AI companies, through unpublished guidance that the press reported, to buy home-made chips rather than Nvidia's. In public, state media warned about Nvidia's chips, most of the warnings found dating from Jul 31 to Sept 24, 2025; nothing read ties those texts to the guidance. No published order was found in the 82 policy pages read. Five things in the record show how that works.
 
@@ -18,7 +18,7 @@ Bloomberg, Sept 27, 2024 (carried by The Business Times on Sept 28, Singapore ti
 
 **2. In public, state media warned, mostly from Jul 31 to Sept 24, 2025** (on the record)
 
-Of 75 state-media items on Nvidia chips found from July 2025 to November 2026, 16 of the 19 that only warn about them date from Jul 31 to Sept 24, 2025 [5] [6] [7]; the three found later are in Global Times in 2026 (the items after September 2025 are what two rounds of searches found, a sample and not a full count). One, from an account of the state broadcaster on Aug 10, said of the H20: "作为消费者，我们当然可以选择，不买" (as consumers we can of course choose not to buy) [8] [9]. They warn and urge. None forbids.
+Of 75 state-media items on Nvidia chips found from July 2025 to November 2026, 16 of the 19 that only warn about them date from Jul 31 to Sept 24, 2025 [5] [6] [7]; the three found later are in Global Times in 2026 (the items after September 2025 are what two rounds of searches found, a sample and not a full count). One of the 2025 items, posted on Aug 10, 2025 by an account of the state broadcaster, said of the H20: "作为消费者，我们当然可以选择，不买" (as consumers we can of course choose not to buy) [8] [9]. They warn and urge. None forbids.
 
 **3. Two published texts tell buyers to stop; neither is about Nvidia** (on the record)
 
@@ -26,7 +26,7 @@ On May 21, 2023 the cyberspace regulator's review office published its conclusio
 
 **4. The national purchase rules found bind only the state's own buying** (on the record)
 
-Notices published on Dec 26, 2023 require Party and government bodies at township level and above, and two kinds of public institution tied to them, to write into their purchases of desktop computers and general-purpose servers that the processor and operating system meet a security evaluation. The same sentence adds: "其他单位可不在采购需求中提出此项要求" (other units may leave this requirement out) [15] [16]. No published national plan found sets a home-made share for computing centres: every such share found is a province's or a city's, and the national computing-network opinions of December 2023 set none [17]. Two national texts hold a home-made percentage of other kinds: the 20% price preference given to home-made products where they compete with others in a government purchase [18], and an advisory committee's roadmap of October 2015, which expected home-made high-performance computers and servers to exceed 80% of the home market by 2025 [19].
+Notices published on Dec 26, 2023 require Party and government bodies at township level and above, and two kinds of public institution tied to them, to write into their purchases of desktop computers and general-purpose servers that the processor and operating system meet a security evaluation. The same sentence adds: "其他单位可不在采购需求中提出此项要求" (other units may leave this requirement out) [15] [16]. No published national plan found sets a home-made share for computing centres: every such share found is a province's or a city's, and the national computing-network opinions of December 2023 set none [17]. Two national texts hold a home-made percentage of other kinds: the 20% taken off the bid price of home-made products, for comparing bids, in a government purchase where home-made and other products compete [18], and an advisory committee's roadmap of October 2015, which expected home-made high-performance computers and servers to exceed 80% of the home market by 2025 [19].
 
 **5. Asked in public, officials did not say** (on the record)
 
@@ -34,7 +34,7 @@ Asked what Beijing was doing about Nvidia's chips, the foreign ministry's spokes
 
 ## What guidance did here
 
-No published rule for it was found, and what the reports said of it changed within two weeks. An unnamed person told Reuters on Jan 14, 2026 that officials' wording "is basically a ban for now, though this might change in the future should things evolve" [24]. On Jan 28 Reuters reported approvals "with conditions" for three companies [25]. Nvidia's chief executive said on Jan 29, at Taipei's airport, as Voice of America's Chinese service renders him: "我认为中国政府仍在决策中，我们尚未收到采购订单，我们也没有收到新闻报道所说的相关信息" (I think the Chinese government is still deciding; we have not yet received purchase orders, and we have not received the information the news reports speak of) [26]. So the record does not support the word ban: no published ban was found, and what the reports describe was told to companies, not published. Nor does it support the word nothing: Nvidia told the US securities regulator on Nov 19, 2025 that the Chinese government "restricted customers from purchasing, importing, or using our data center products" [27].
+No published rule on buying Nvidia's H200 chip was found, and what the reports said of buying it changed within two weeks, from a hold to approvals with conditions. An unnamed person told Reuters on Jan 14, 2026 that officials' wording "is basically a ban for now, though this might change in the future should things evolve" [24]. On Jan 28 Reuters reported approvals "with conditions" for three companies [25]. Nvidia's chief executive said on Jan 29, at Taipei's airport, as Voice of America's Chinese service renders him: "我认为中国政府仍在决策中，我们尚未收到采购订单，我们也没有收到新闻报道所说的相关信息" (I think the Chinese government is still deciding; we have not yet received purchase orders, and we have not received the information the news reports speak of) [26]. So the record does not support the word ban: no published ban was found, and what the reports describe was told to companies, not published. Nor does it support the word nothing: Nvidia told the US securities regulator on Nov 19, 2025 that the Chinese government "restricted customers from purchasing, importing, or using our data center products" [27].
 
 ## References
 
@@ -42,9 +42,9 @@ Each entry: its kind; what it is; the saved page's own title where the record ho
 
 [1] Press report citing unnamed people. Bloomberg, as carried by The Business Times (Singapore), Sept 28, 2024. Page title: China urges local companies to stay away from Nvidia’s chips. https://www.businesstimes.com.sg/companies-markets/china-urges-local-companies-stay-away-nvidias-chips Saved copy: cn-factions-bloomberg-flexibility-202409-relay1
 
-[2] Press report citing unnamed people. Financial Times, "China turns against Nvidia’s AI chip after ‘insulting’ Howard Lutnick remarks", Aug 20, 2025 by the date on the copy (saved in a browser some hours behind London; another site's summary of it is dated Aug 21). Hand-saved from the paper's site; read whole. https://www.ft.com/content/b8e30c54-b71c-4113-8b3e-8f54bc36587d Saved copy: man-cn-ft-20250821-regulators
+[2] Press report citing unnamed people. Financial Times, "China turns against Nvidia’s AI chip after ‘insulting’ Howard Lutnick remarks", Aug 20, 2025 by the date on the copy (saved in a browser some hours behind London; another site's summary of it is dated Aug 21). Hand-saved from the paper's site. https://www.ft.com/content/b8e30c54-b71c-4113-8b3e-8f54bc36587d Saved copy: man-cn-ft-20250821-regulators
 
-[3] Press report citing unnamed people. Financial Times, Sept 17, 2025: report, from three people it does not name, that the cyberspace regulator told companies, ByteDance and Alibaba among them, to end their testing and orders of the RTX Pro 6000D. Hand-saved from the paper's site; read whole. https://www.ft.com/content/12adf92d-3e34-428a-8d61-c9169511915c Saved copy: man-cn-ft-20250917-6000d
+[3] Press report citing unnamed people. Financial Times, Sept 17, 2025: report, from three people it does not name, that the cyberspace regulator told companies, ByteDance and Alibaba among them, to end their testing and orders of the RTX PRO 6000D. Hand-saved from the paper's site. https://www.ft.com/content/12adf92d-3e34-428a-8d61-c9169511915c Saved copy: man-cn-ft-20250917-6000d
 
 [4] Press report citing unnamed people. Reuters, Nov 5, 2025, as carried by The Standard (Hong Kong): a report, from two unnamed people, on guidance about foreign AI chips in state-funded data centres. https://www.thestandard.com.hk/china/article/316018/China-bans-foreign-AI-chips-from-state-funded-data-centres-sources-say Saved copy: ms-bj-20251105-statefunded-standard
 

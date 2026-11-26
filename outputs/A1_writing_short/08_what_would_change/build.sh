@@ -6,4 +6,4 @@ cd "$(dirname "$0")"
 python3 -I check_filing_feed.py
 # the page's numbers, ids and note names against the project's tables and folders
 python3 -I check_numbers.py
-python3 -I scripts/cn_doc_build.py what_would_change_base.txt --refs extra_refs.tsv --title "What Would Change" --eyebrow "China chip policy · the documents that would settle it"
+python3 -I scripts/cn_doc_build.py what_would_change_base.txt --refs extra_refs.tsv --title "What Would Change" --eyebrow "China chip policy · the documents that would test it"

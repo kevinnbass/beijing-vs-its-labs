@@ -383,10 +383,10 @@ def vouchers():
         'A3': ('Hangzhou city', 'Jun 2025', 'cn-ga31-voucherrulesmissing-40', '30% in general; for training, inference and applications on computing facilities, 30% or 20% “by the type of computing facility” (按照算力设施的不同类型), and the plan does not say which type gets which; up to 50% for small and medium firms whose intelligent-computing contracts come to 500,000 yuan a year or less; in force from Jul 15, 2025, when it repealed the rule of Jul 2024 that paid 30% for home-made and 20% for other facilities; the text on the city archives’ site'),
         'A6': ('Binjiang district, Hangzhou', 'Aug 2026', 'cn-ga31-twelve-18', 'the text on the district consultative conference’s site'),
         'A7': ('Wenzhou city', 'Aug 2025', 'cn-le15-zj-oss-web1825-e66330', ''),
-        'A12': ('Shanghai city', 'Jul 2025', 'cn-le15-sheitc-8cea38', 'building support, up to 10%, for home-made computing only'),
+        'A12': ('Shanghai city', 'Jul 2025', 'cn-le15-sheitc-8cea38', 'building support, up to 10%, for projects that deploy 自主 (independent) intelligent-computing facilities'),
         'A14': ('Chengdu city', 'Apr 2026', 'cn-ga31-vouchernamedrules-5', 'for 自主可控 (independently controllable) computing; small and medium firms’ rates each raised by 10%; in force from May 13, 2026; the rules on a consultancy’s page, compared by eye with the bureau’s signed file, a scan'),
         'A18': ('Sichuan province', 'Aug 2026', 'cn-ga31-unsaved-sc-338hao-fgw-wayback', '30% for start-ups under three years old, 40% for one-person AI firms; the provincial development and reform commission’s measures (川发改数据〔2026〕338号), written Aug 11 and published Aug 13, 2026'),
-        'B1': ('Beijing E-Town, a development zone', 'Nov 2024', 'cn-le28-etown-29hao-20241126', 'replaced a rule of Mar 2024 that paid up to 40% and up to 30%; cloud firms buying servers with home-made chips get a separate subsidy of up to 10%'),
+        'B1': ('Beijing E-Town, a development zone', 'Nov 2024', 'cn-le28-etown-29hao-20241126', 'replaced a rule of Mar 2024 that paid up to 40% and up to 30%; cloud firms that buy servers with home-made chips and offer them as a service on the zone’s computing platform get separate support of up to 10% of what those servers cost'),
         'B5': ('Shenzhen city', 'Dec 2024', 'cn-le28-sz-gxj-2024-13hao', 'separate support for moving models to home-made chips'),
         'B8': ('Longhua district, Shenzhen', 'Nov 2024', 'cn-le28-sz-longhua-2024-20hao', ''),
         'B10': ('Guangzhou Development Zone and Huangpu district', 'Jun 2025', 'cn-le28-gz-huangpu-2025-7hao', ''),
@@ -565,7 +565,7 @@ def vouchers():
            f'<div><h4>One rate for all computing: {len(one)}</h4><p class="vexpl">Each rule: its place, the month of the rule (a link to its saved copy), and its one rate, a dot on the same scale from 0 to 60%. '
            f'† the rule calls the payment a subsidy, a reward or support, not a voucher ({nv} of the {len(one)}). A letter marks a note under the list. '
            f'Two of these rules name home-made computing in the sentence that sets their rate, but only at that one rate: {listed([place(k) for k in sorted(adapt, key=place)])} (notes {", ".join(letters[k] for k in sorted(adapt, key=place))}). '
-           'Other support for home-made chips, apart from the rate, stands in the notes.</p></div></div>'
+           'Some of these rules give home-made chips other support, apart from the rate: the notes give most of it, and Songjiang district, Shanghai, Fuzhou city and Hebei district, Tianjin give some too.</p></div></div>'
            f'<div class="vmini">{minis}</div><div class="vfoot">{notes}</div></div>', '</div>']
     return '\n'.join(out), len(ti), len(rows)
 
@@ -591,7 +591,7 @@ def bodies(evs):
     return ('<div class="bodies">' + col('Held Nvidia back, or steered buyers to home-made chips', 'away', held) + col('Let it in, or welcomed it', 'toward', let) + '</div>'
             '<div class="bodies one">' + col('Acted against Nvidia the company', 'away', firm) + '</div>'
             '<p class="fine">The Financial Times (Nov 13, 2026): security-focused officials within the cyberspace regulator and the security ministry “viewed dependence on Nvidia as a strategic vulnerability”, '
-            'the commerce ministry “favoured imports”, and, by people the paper does not name, the 2025 push to restrict “was led by the National Development and Reform Commission”. '
+            'the commerce ministry “favoured imports”, and, by people the paper does not name, the push later in 2025 to restrict the import and use of less advanced Nvidia chips “was led by the National Development and Reform Commission”. '
             f'The US Trade Representative, Nov 20, 2026 (<a href="{url("cn-le01-greer-bbg-20261120-youtube")}">Bloomberg Television</a>; machine captions, not checked by ear, 01:06 to 01:35): it is “not as monolithic as people would have you believe”; '
             'in his “own analysis” there are some who think “we’d like to have access” and “others who think, well, we don’t want American chips anyway”. '
             'The two caption tracks break the sentence differently, so whether he puts the split inside the government is not settled.</p>'

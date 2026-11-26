@@ -14,6 +14,10 @@ counts them (a4lib.warnings(): those of the first year and the later ones), with
 Round 11 (Nov 26, 2026; a reader of the sixth version: the 19 stood beside the argument's 20 with no period): the sentence gives
 the months the table's items were found in, read from the table's own dates, as the argument's point 18 does ("found from July
 2025 to November 2026"); the argument's 20 counts from January 2024, with the earlier search.
+Round 12 (Nov 26, 2026; both readers of the seventh version: the deck said all three sentences show the state pulling away
+from Nvidia, while two of them do not name it, as the argument says of Alibaba's): the deck says that only one names Nvidia
+and what the other two speak of. The months come from a4lib.warnings() too (checked against this builder's own reading).
+The page's top line is the credit alone (a4lib.NOTE).
 """
 import re, sys
 from pathlib import Path
@@ -97,6 +101,12 @@ def main():
     di = sm[0].index('date'); ds = sorted(A.date.fromisoformat(r[di]) for r in sm[1:])
     assert len(ds) == W['items'], 'control: the table read here is the one a4lib.warnings() counts'
     found = f'{A.MONTH[ds[0].month - 1]} {ds[0].year} to {A.MONTH[ds[-1].month - 1]} {ds[-1].year}'
+    assert found == W['found'], 'the months read here differ from a4lib.warnings()'
+    # round 12: the deck's claim that only the first sentence of the away side names Nvidia, tested on the words themselves
+    away = [r for r in rows if r['side'] == 'away']
+    assert ['nvidia' in str(r['words']).lower() or '英伟达' in str(r['words']) for r in away] == [True, False, False], 'the deck says only the first of the three names Nvidia'
+    assert 'certain chips' in str(away[1]['words']) and '国产算力芯片' in str(away[2]['words']), 'the deck says the other two speak of certain chips and of home-made ones'
+    assert all(r['note'] == 'The sentence does not name Nvidia.' for r in away[1:]), 'control: the notes under the two say they do not name Nvidia'
     cols = ''
     for side in ('away', 'toward'):
         cols += f'<h2 class="colh {side}"><i class="sw {side}"></i>{SIDE[side]}</h2>\n' + '\n'.join(cardhtml(r) for r in rows if r['side'] == side) + '\n'
@@ -108,7 +118,7 @@ def main():
   <header>
    <p class="eyebrow">China · Nvidia chips · six sentences from the record</p>
    <h1>Beijing mostly pulled one way on Nvidia chips. Its AI companies pulled the other.</h1>
-   <p class="deck">Three sentences show the Chinese state pulling away from Nvidia. Three show China’s AI companies pulling toward it. {num[n_solid]} are on the record; {num[n_open].lower()} are press reports citing unnamed people.</p>
+   <p class="deck">Three sentences show the Chinese state pulling one way; only the first names Nvidia, the other two speak of certain chips and of home-made ones. Three show China’s AI companies pulling toward Nvidia. {num[n_solid]} are on the record; {num[n_open].lower()} are press reports citing unnamed people.</p>
    <ul class="key">
     <li><i class="mk solid"></i><span><b>Filled mark:</b> on the record (a government document, a filing, a named official)</span></li>
     <li><i class="mk open"></i><span><b>Open mark:</b> a press report citing unnamed people</span></li>
@@ -135,7 +145,8 @@ def main():
     A.guard(page, Q, ours=['82', W['warn'], W['burst']], dates=[fmt(r['date']) for r in rows] + [fmt(r['pub']) for r in rows if r['pub']] + [fmt(d_lim), fmt(d_car), W['span'], W['later_months'], found])
     # withdrawn by core edit 6 (atlas/core_edit/APPLIED_6.txt, part 02 and B1): the warnings are not all of Aug 1 to Sept 24, 2025
     for banned in ('four limits', 'spokesperson', 'Beijing pulled one way', 'all dated', 'Aug 1 to', 'none after', 'the seven', ' 42 ', 'not a census', 'found by searches and links',     # the last two: touch-up 6b (Nov 24, 2026), item 21
-                   'on the summer of 2025', 'which serve market demand'):     # withdrawn by core edit 8b (Nov 25, 2026): the Journal's "last year"; point 5's English
+                   'on the summer of 2025', 'which serve market demand',
+                   'Three sentences show the Chinese state pulling away from Nvidia', 'not published'):     # round 12     # withdrawn by core edit 8b (Nov 25, 2026): the Journal's "last year"; point 5's English
         assert banned not in page, f'the page still says "{banned}"'
     out = HERE / 'six_sentences.html'
     out.write_text(page, encoding='utf-8'); print('written', out, len(page), 'bytes')

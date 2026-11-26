@@ -15,6 +15,9 @@ Nothing is written unless cn_has.py exits 0, every quotation in the text is cite
 number on the page in quotes.tsv. A PDF is refused if the sheet overflows, runs to a second page, or draws the figure too small
 or out of proportion.
 To look at a PDF: scripts/render_and_look.py on its PNG. Before the page is called done: render_and_look.py on brief.html too.
+Round 12 (Nov 26, 2026, outputs/ROUND12.md): the Hong Kong sentence says "Reuters reported that ..." in itself; limit (2) gives the
+months the state-media items were found in ({sm:found}, from a4lib.warnings()). Built after the main figure's final export of
+round 14 (atlas/core_edit/hand_out/R14_MAINFIG_FINAL.txt); the build line prints the image's sha256.
 """
 import hashlib, re, subprocess, sys
 from pathlib import Path
@@ -133,7 +136,7 @@ def main():
             if kind == 'q': return qm(Q[k])
             if kind == 'h': ours.append(Hs[k]); return str(Hs[k])
             if kind == 'sm':
-                if k == 'span': dates.append(Wm['span']); return Wm['span']
+                if k in ('span', 'found'): dates.append(Wm[k]); return Wm[k]          # round 12: found = the months the items were found in
                 if Wm[k] not in NUMW: ours.append(Wm[k])
                 return NUMW.get(Wm[k], str(Wm[k]))
             if kind == 't':
@@ -207,7 +210,9 @@ def main():
                    # withdrawn by core edit 8b (Nov 25, 2026): the planner's 加大力度; the Shanghai clusters in the city; the readout's own date
                    'models to adapt to', 'the city’s internet companies run', 'meeting with Nvidia’s chief executive, Jul',
                    # round 10c (the session's ruling): the sheets are PDFs no release script rewrites; they carry the credit only
-                   'not published', 'Local;'):
+                   'not published', 'Local;',
+                   # round 12: the Hong Kong sentence names its report; limit (2) gives its period
+                   '. In November 2026, about', 'items found that only warn'):
         if banned in page: sys.exit(f'the page still says "{banned}"')
     words = re.sub(r'<a class="c[^>]*>\d+</a>', ' ', cols)
     words = sum(1 for w in re.sub(r'<[^>]+>', ' ', f'{title} {answer} {words}').split() if re.search(r'\w', w))   # a stray full stop is not a word

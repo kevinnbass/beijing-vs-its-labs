@@ -120,7 +120,7 @@ def main():
      <p><b>State media warned in public.</b> Of {len(sm)} state and Party media items on Nvidia chips found ({C.fmt(sm_d[0])} to {C.fmt(sm_d[-1])}), {len(warns)} only warn about them: {len(win)} dated {C.fmt(win[0])} to {C.fmt(win[-1])}, and {words[len(late)]} later ones in Global Times in 2026 (the items after September 2025 are what two rounds of searches found, a sample and not a full count). They warn and urge; none forbids buying. They are not drawn here.</p>
     </div>
 
-    <div class="q"><b>Where is an instruction not to buy reported, without being published?</b><span>press reports citing unnamed people, and what companies told the US securities regulator</span></div>
+    <div class="q"><b>Where are instructions not to buy, or restrictions, reported without being published?</b><span>press reports citing unnamed people, and what companies told the US securities regulator</span></div>
     <div class="cell"><div class="cl">Micron · 2023</div>
      <p class="quiet">Not searched for in this project. The words were in the published conclusion.</p>
     </div>
@@ -133,7 +133,7 @@ def main():
   <section class="care">
    <h2>Read with care</h2>
    <ul>
-    <li><b>Two findings hold together.</b> Beijing can publish such a text, and for Nvidia none was found. Press reports citing unnamed people describe guidance it did not publish, and company filings speak of a request to halt purchases of “certain chips” and of restrictions. What the missing text means, the figure cannot say.</li>
+    <li><b>Two findings hold together.</b> Beijing can publish such a text, and for Nvidia none was found. Press reports citing unnamed people describe instructions of which no published text was found, and company filings speak of a request to halt purchases of “certain chips” and of restrictions. What the missing text means, the figure cannot say.</li>
     <li><b>None found is a statement about what was read:</b> the 82 policy pages read for this project. It is not a claim that no such text exists.</li>
     <li>The Micron conclusion came from the Cybersecurity Review Office, which sits in the cyberspace regulator: “网络安全审查办公室设在国家互联网信息办公室” (the office is set up in the Cyberspace Administration). It speaks to operators of critical information infrastructure, not to every buyer, and it is not about Nvidia.</li>
     <li>Alibaba’s filing does not name Nvidia: it says “certain chips”. Nvidia’s own reports changed their words over time: from Nov 19, 2025 the Chinese government “restricted customers from purchasing, importing, or using our data center products”; from Feb 25, 2026, “discouraged customers from purchasing, importing, or using our data center products”. From November 2025 the same reports also say Nvidia is “already effectively foreclosed from the China market by U.S. export controls”.</li>
@@ -145,7 +145,7 @@ def main():
     key = f"""   <ul class="key">
     <li><i class="p solid away" aria-hidden="true">1</i><span><b>Filled:</b> on the record (a government document or a company filing). {n_solid} records</span></li>
     <li><i class="p hollow away" aria-hidden="true">1</i><span><b>Open:</b> a press report citing unnamed people. {n_open} records</span></li>
-    <li><span>All marks are orange: each is an act, published or reported, against the company of its column or against buying its products (Alibaba’s filing speaks of “certain chips” and names no maker). The antitrust case is against the company; by Nvidia’s own account it faults the degraded products it offered, not its selling in China.</span></li>
+    <li><span>All marks are orange: each is an act, published or reported, against the company of its column or against buying its products, but one: Alibaba’s filing speaks of a request to halt purchases of “certain chips” and names no maker. The antitrust case is against the company; by Nvidia’s own account it faults the degraded products it offered, not its selling in China.</span></li>
    </ul>"""
 
     below = C.records_block(recs, 'One line for each numbered mark: the date of the act where the page gives it, otherwise the date of the report; our summary; '

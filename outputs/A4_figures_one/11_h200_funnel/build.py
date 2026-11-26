@@ -22,6 +22,9 @@ Round 11 (Nov 26, 2026, outputs/ROUND11.md thing 2): every drawn label of a pres
 labels begin "Reported:" (../h200_funnel.tsv), and each press mark of the dated strip reads "reported <date>" under a noun
 for what was reported (the strip's labels were "ordered", "Beijing approved", "delivered", "stored": flat statements);
 Nvidia's figures are said to be a share of revenue and a sum of sales (a reader: the 10-Q's is a share, not a sum).
+Round 12 (Nov 26, 2026, outputs/ROUND12.md; core batch 14): the press bars' labels, with the words under the first, are the
+step cells of the argument's table of numbers (a4lib.funnel() stops if one is not); the Hong Kong bar's second line names what
+is counted, "Nvidia's advanced AI chips" (the report's words in short), not "to China". The page's top line is the credit alone.
 Round 5 (Nov 24, 2026, core edits 5 and 6): the licence table is named by its own title and its release, not as the
 Commerce Department's; the committee's example of 445,000 chips for Tencent is not said to be the table's row of 75,000,
 and the share is given both ways (a4lib.house()).
@@ -267,6 +270,10 @@ def main():
     for banned in ('>Delivered<', '>Stored in Hong Kong', '>Ordered by', '>Approved by Beijing', '>Under discussion', 'a stockpile of H200', '>stored<', '>delivered<',
                    '>ordered<', '>Beijing approved<', '>discussed<', 'sums of money, not counts'):
         assert banned not in page, f'round 11: the page still says "{banned}"'
+    # round 12: the steps as the argument now words them (control: each press bar's step stands on the page in its two parts)
+    assert all(f'<b>{esc(r["label"])}</b><span>{esc(r["what"])}</span>' in page and (r['step'] == r['label'] or r['step'] == r['label'] + ' ' + r['what']) for r in press), 'a press bar does not show its step'
+    for banned in ('>Reported: delivered<', '>Reported: under discussion in Beijing<', 'awaiting shipment</b>', '<span>to China</span>', 'Local; not published', 'not published'):
+        assert banned not in page, f'round 12: the page still says "{banned}"'
     for banned in ('750,000', 'cleared by Washington', 'Democrats', 'more than half', 'subsidiar', 'Commerce Department’s table', 'Commerce Department table',
                    'Commerce Department’s, with', 'shows that application', 'an application the table shows', 'counted in full',
                    # withdrawn by core edit 8b (Nov 25, 2026): the table's column names a data-centre operator or ultimate consignee and an ultimate

@@ -1,6 +1,6 @@
 # The Apr 22, 2026 hearing: what the committee's own record holds
 
-*The committee has posted the video and the Secretary's prepared remarks, and no transcript. No printed record of the hearing was found. By a speech program's timing, the Secretary's answer begins at about 1 hour 17 minutes 20 seconds into the committee's video. He gave his answer as his understanding. Two other hearings of 2026 hold no answer on Beijing's part.*
+*The committee has posted the video and the Secretary's prepared remarks, and no transcript. No printed record of the hearing was found. By a speech program's timing, the Secretary's answer begins at about 1 hour 17 minutes 20 seconds into the committee's video. He gave his answer as his understanding. At two other hearings of 2026 a search found no official's answer on what Beijing did about H200 purchases.*
 
 Draft by Claude, Anthropic's model.
 
@@ -14,15 +14,15 @@ The committee's own page for the hearing at which the Commerce Secretary said th
 
 **1.** **The committee's page.** The Senate Committee on Appropriations lists the hearing as "A Review of the President’s Fiscal Year 2027 Budget Request for the Department of Commerce", "Date: Wednesday, April 22, 2026", "Presiding: Chair Jerry Moran", with one witness, "The Honorable Howard Lutnick" [1]. The project saved this page on Nov 20, 2026 [2]; a new copy of Nov 23, 2026 carries the same links (a script compared them). The page offers a video and one document, "Download Testimony" [1]. It offers no transcript.
 
-**2.** **The video.** The page plays the hearing in the Senate's own player [3]. The video is 2 hours 6 minutes 2 seconds long: 631 pieces, each 12 seconds but the last. That is counted from the video stream's own list of pieces, which is kept in the folder captions beside this note. The saved stream list names that video stream and an English caption track [4]. To watch: open the committee's page (the first reference below) and play. To start a few seconds before the exchange, take the player's address (given in the references under the player) and put 1:17:14 straight after stt= in it: the player's script reads a start time from there. I did not test this in a browser.
+**2.** **The video.** The page plays the hearing in the Senate's own player [3]. The video is 2 hours 6 minutes 2 seconds long: 631 pieces, each 12 seconds but the last. That is counted from the video stream's own list of pieces, read for this note. The saved stream list names that video stream and an English caption track [4]. To watch: open the committee's page (the first reference below) and play. To start a few seconds before the exchange, take the player's address (given in the references under the player) and put 1:17:14 straight after stt= in it: the player's script reads a start time from there. I did not test this in a browser.
 
-**3.** **The prepared remarks.** The download is a Word file of the Secretary's remarks as prepared [5]. Its text is kept beside this note, in the file lutnick_testimony_fy27_docx_text.txt. It does not hold the exchange, which came in the questions: a script finds none of the words China, Nvidia, H200 and chip in it (the control word semiconductor is found).
+**3.** **The prepared remarks.** The download is a Word file of the Secretary's remarks as prepared [5]. It does not hold the exchange, which came in the questions: a script finds none of the words China, Nvidia, H200 and chip in it (the control word semiconductor is found).
 
 **4.** **No official transcript and no printed record were found.** The committee's page links none. Four web searches, two of them limited to govinfo.gov (the Government Publishing Office's site) and congress.gov, found no print of this hearing and no volume of the subcommittee's hearings for fiscal year 2027. Such searches could have found one: they found the same subcommittee's volume for fiscal year 2025, "S. Hrg. 118-638" [6], and the print of another hearing with the same witness, his nomination hearing of 2025, "S. Hrg. 119-207" [7]. The fiscal 2025 volume shows how long a print can take: its hearings were held from April to June 2024 and its imprint is "WASHINGTON : 2025" [6].
 
-**5.** **Congress.gov.** The search tool's summary of congress.gov says the site lists the meeting, as hearings to examine proposed budget estimates for fiscal year 2027 for the Department of Commerce, on Apr 22, 2026. That is a search tool's summary, not a page I read or saved: the site's robots file does not allow this kind of reader, so the page was not opened. Whether it links a transcript was not seen.
+**5.** **Congress.gov.** The search tool's summary of congress.gov says the site lists the meeting, as hearings to examine proposed budget estimates for fiscal year 2027 for the Department of Commerce, on Apr 22, 2026. That is a search tool's summary, not a page I read or saved: the site's robots file (the file in which a site says what automated readers may fetch) does not allow the project's automated reader, so the page was not opened, and whether it links a transcript was not seen.
 
-**6.** **A Senator's own account, and the date.** Senator Chris Coons, who asked the question, wrote to the Secretary on May 5, 2026: "you responded in the negative, noting that while your department has licensed the export of these semiconductors to China, the PRC government has not allowed the sale" [8]. His letter gives the day too: "your testimony before the Senate Appropriations Subcommittee on Commerce, Justice, Science, and Related Agencies on April 22, 2026" [8]. So the date stands on two official pages, the committee's and the Senator's. The letter asks: "Please reply within one week to clarify the facts." [8] Another of the project's readers looked for a reply and found none on the Senator's list of releases to Nov 19, 2026; the Commerce Department's own site could not be read.
+**6.** **A Senator's own account, and the date.** Senator Chris Coons, who asked the question, wrote to the Secretary on May 5, 2026: "you responded in the negative, noting that while your department has licensed the export of these semiconductors to China, the PRC government has not allowed the sale" [8]. His letter gives the day too: "your testimony before the Senate Appropriations Subcommittee on Commerce, Justice, Science, and Related Agencies on April 22, 2026" [8]. So the date stands on two official pages, the committee's and the Senator's. The letter asks: "Please reply within one week to clarify the facts." [8] A search of the Senator's list of releases to Nov 19, 2026 found no reply; the Commerce Department's own site could not be read.
 
 ## When the exchange falls in the committee's video
 
@@ -41,11 +41,11 @@ The whole video was not downloaded. Two small parts were: 17 of the video's capt
 
 The commercial transcript: "And central government has not let them, Chinese central government has not let them as of yet buy the chips because they're trying to keep their investment focused on their own domestic industry." [9]
 
-The speech program, on the committee's own sound, heard this (a machine's hearing, not checked by ear; the sound excerpt it heard is kept with the project's working files and is not published with this note):
+The speech program, on the committee's own sound, heard this (a machine's hearing, not checked by ear; the sound excerpt it heard is not published with this note):
 
 - Their cloud companies, my understanding is their cloud companies want to buy these chips. Of course they do. And central government has not let them. Chinese central government has not let them as of yet buy the chips because they're trying to keep their investment focused on their own domestic industry. So that's my understanding of what's happening. So we have not sold them chips as of yet.
 
-The video's own captions read (captions are rough; the caption files are in the folder captions beside this note):
+The video's own captions read (captions are rough):
 
 - SEC. LUTNICK: MY UNDERSTANDING IS THERE CLOUD COMPANIES WANT TO BUY THESE CHIPS -- SEN. COONS: OF COURSE THEY DO. SEC. LUTNICK: AUNT CHINESE -- AUNT CHINESE CENTRAL GOVERNMENT HAS NOT LET THEM OF YET BUY THE CHIPS BECAUSE THEY ARE TRYING TO KEEP THEM FOCUSED ON THEIR OWN DOMESTIC INDUSTRY. THAT'S MY UNDERSTANDING OF WHAT'S HAPPENING. SO WE HAVE NOT SOLD THEM CHIPS OF YET.
 
@@ -57,15 +57,15 @@ The commercial transcript's page and the captions give the interjection to the S
 
 ## What else was said: the same day, and at two other hearings
 
-Another of the project's readers went through the whole caption track of this hearing and through two House hearings of 2026, with search words and controls. I checked that the words quoted below stand in the saved transcripts; I did not read those hearings whole.
+For the project the whole caption track of this hearing and two House hearings of 2026 were searched, with search words and controls. The words quoted below were checked against the saved transcripts; this note does not rest on a reading of those hearings whole.
 
-**1.** **Apr 22, 2026, the same hearing, earlier.** To Senator Shaheen the Secretary said: "I want to be crystal clear, we are not selling our best chips to China under any circumstance." And of China and the chips: "I would tell you they have not bought any as of today." [9] He gave no reason in that answer. By that reader's listing of the committee's captions it comes at about 0:52:30, some 25 minutes before the exchange with Senator Coons. Only the answer to Senator Coons gives a reason, and he gave it as his understanding: "So that's my understanding of what's happening." [9]
+**1.** **Apr 22, 2026, the same hearing, earlier.** To Senator Shaheen the Secretary said: "I want to be crystal clear, we are not selling our best chips to China under any circumstance." And of China and the chips: "I would tell you they have not bought any as of today." [9] He gave no reason in that answer. By the project's listing of the committee's captions it comes at about 0:52:30, some 25 minutes before the exchange with Senator Coons. Only the answer to Senator Coons gives a reason, and he gave it as his understanding: "So that's my understanding of what's happening." [9]
 
 **2.** **Feb 24, 2026, a House Foreign Affairs subcommittee** ("Strengthening Export Control Enforcement", "Tuesday, February 24, 2026" [10]). A member asked David Peters, the Commerce Department's assistant secretary for export enforcement: "Do you know how many H200s have been sold to Chinese end users so far?" He answered: "Uh my understanding is that so far none" [11]. He gave no reason.
 
 **3.** **Jul 14, 2026, the House Foreign Affairs Committee** ("FY27 BIS Budget: the AI Arms Race and the ICTS Office", "Tuesday, July 14, 2026" [12]). Asked whether H200 shipments had begun, Jeffrey Kessler, the under secretary of commerce for industry and security, said: "To my knowledge, uh, yes, but very few." And later: "there have been minimal, um, exports of any H two hundreds to China so far" [13]. He named no cause, Chinese or American.
 
-**4.** **No answer at either House hearing speaks of Beijing's part.** That reader searched YouTube's automatic captions of each committee's video and the saved commercial transcript for words such as Chinese government, central government, Beijing, allow, approve, block, refuse, customs and import. It found no answer by either official that says the Chinese government approved, blocked, discouraged or held up H200 purchases. The search could have found one. The same words are found where members used them on other matters: "the Chinese government released new standards" on Jul 14 [13], and "PRC government's approval" on Feb 24 [11].
+**4.** **No answer at either House hearing speaks of Beijing's part.** The search went through YouTube's automatic captions of each committee's video and the saved commercial transcript for words such as Chinese government, central government, Beijing, allow, approve, block, refuse, customs and import. It found no answer by either official that says the Chinese government approved, blocked, discouraged or held up H200 purchases. The search could have found one. The same words are found where members used them on other matters: "the Chinese government released new standards" on Jul 14 [13], and "PRC government's approval" on Feb 24 [11].
 
 **5.** **Neither House hearing's page links a print or a transcript.** The House's page for each lists under its hearing record only the members who attended: "Hearing Record Member Attendance" [14] [15]. The two transcripts quoted here are commercial ones, with the sites' own speaker labels.
 
@@ -74,10 +74,10 @@ So of the three hearings, only the answer to Senator Coons on Apr 22, 2026 says 
 ## Where the argument stands on this hearing
 
 - **The source of the words, and the date.** The argument's point 12 cites the committee's page for the hearing and its date, and takes the Secretary's words from the commercial transcript, since the committee has posted no transcript of the exchange.
-- **The captions.** The argument's list of open points says that a search found the same sentence in the committee video's own captions, at 1:17:28 to 1:17:47, a reading with no saved copy. The 17 caption files kept beside this note put the start of the answer at 1:17:28, the key sentence at 1:17:39 and the end of the answer at 1:17:52.
+- **The captions.** The argument's list of open points says that a search found the same sentence in the committee video's own captions, at 1:17:28 to 1:17:47, a reading with no saved copy. The committee's English caption track, in the 17 caption files read for this note, puts the start of the answer at 1:17:28, the key sentence at 1:17:39 and the end of the answer at 1:17:52.
 - **The quoted words stand.** Both sentences the argument quotes are in the speech program's hearing of the official sound (checked by script).
 - **Quote the commercial transcript from its saved page, not from its text file.** The text file has lost the Senator's name, as set out above; the saved page keeps the speaker labels.
-- **No print yet.** No print was found in the places looked. The fiscal 2025 volume's hearings were held from April to June 2024, and the volume was printed in 2025; that gives no date for a print of this hearing. The official record for now is the video.
+- **No print yet.** No print was found in the places looked. The fiscal 2025 volume's hearings were held from April to June 2024, and the volume was printed in 2025; that gives no date for a print of this hearing. For now the official record of the spoken exchange is the committee's video; the prepared remarks the committee posted do not hold it.
 - **The other hearings add no second voice.** The officials at the hearings of Feb 24 and Jul 14, 2026 said how few H200s had been sold or shipped, and nothing about why. They neither bear out the Secretary's account nor contradict it.
 - **His own understanding.** The Secretary gave his statement as his own understanding, as he says more than once.
 
@@ -85,9 +85,9 @@ So of the three hearings, only the answer to Senator Coons on Apr 22, 2026 says 
 
 - Nobody has listened to the video. The speech program's times rest on 84 seconds of sound, and the caption times are the captions' own.
 - The direct address with a start time was not tested in a browser.
-- The two House hearings and the whole caption track of this one were read by another of the project's readers, not by me. By that reader's account the House videos' captions are YouTube's automatic ones, and this hearing's caption track carries a credit to the National Captioning Institute. None of the three was checked by ear.
+- The two House hearings and the whole caption track of this one were searched for the project with search words; this note does not rest on a reading of them whole. By that search the House videos' captions are YouTube's automatic ones, and this hearing's caption track carries a credit to the National Captioning Institute. None of the three was checked by ear.
 - The Government Publishing Office's own search box and congress.gov were not used. A print could exist that four web searches did not find.
-- The Commerce Department's site, which a search result shows carries a copy of the prepared remarks, answers 403 to a request for its robots file and was not fetched.
+- The Commerce Department's site, which a search result shows carries a copy of the prepared remarks, refused a request for its robots file, so no page of it was fetched or searched.
 
 ## References
 

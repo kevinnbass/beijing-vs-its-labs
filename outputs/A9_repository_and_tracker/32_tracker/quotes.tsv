@@ -33,7 +33,6 @@ cn-le14-itsec-2026-2	人工智能训练推理芯片
 man-ms-sec-10q-2026-07	such sales were restricted by the PRC government
 man-ms-sec-10q-2026-07	were restricted by the PRC government
 cn-clips-evidence-1	as Beijing withholds approval for large-scale imports despite demand from technology firms
-cn-clips-evidence-1	as Beijing withholds approval
 cn-clips-evidence-1	600,000
 cn-policy-he-welcomes	欢迎包括英伟达公司在内的更多美资企业深耕中国市场
 cn-policy-wang-nvidia	希望包括英伟达在内的跨国公司为中国客户提供优质可靠的产品和服务
@@ -85,7 +84,7 @@ cn-labs-v4-training-reuters-relay1-wayback	Huawei said its chips were used in so
 cn-labs-alibaba-nov-supply	公司绝大部分新增AI芯片供给将以自研平头哥国产芯片为主
 cn-o36-tencent-call-20261118-sa	our cloud business today is primarily running inference
 cn-o36-tencent-call-20261118-sa	can be run very effectively on a surprisingly limited number of domestic chips
-cn-o36-tencent-call-20261118-sa	a far higher volume of tokens, specifically on domestic chips
+cn-o36-tencent-call-20261118-sa	able to drive a far higher volume of tokens, specifically on domestic chips, than we would have imagined a year ago
 cn-le13-yuyuan-qq-20250810b	作为消费者,我们当然可以选择,不买
 man-ms-sec-10q-2025-10	The Chinese government has encouraged customers to purchase from our China-based competitors and restricted customers from purchasing, importing, or using our data center products
 man-ms-sec-10q-2025-10	restricted customers from purchasing, importing, or using our data center products
@@ -130,7 +129,7 @@ man-e2596eab15f4	was led by the National Development and Reform Commission
 cn-policy-mellanox-conditions	向中国市场继续供应英伟达GPU加速器
 cn-acts-reuters-us-approvals-20260514-wayback	Chinese firms pulled back after guidance from Beijing
 man-70f4668d5f56	did not know if the Chinese government had given final approval
-cn-tolerate-reutersaug26-relay1-wayback	Beijing wants them to keep the hardware outside mainland China
+cn-tolerate-ftaug26	Beijing wants them to keep most of these chips outside the mainland
 cn-clips-trump-may15-wayback	No, because they chose not to. They want to try and develop their own.
 cn-clips-followup-3-relay1	the United States will allow NVIDIA to ship its H200 products to approved customers in China
 cn-acts-reuters-halt-20261118-relay2	we are no longer shipping licenced Hopper data centre products to China
@@ -565,6 +564,9 @@ cn-le04-standard-900000-20261120	PUBLISHED: 2026-11-20T04:57:40.000+0800
 cn-le04-dailycaller-20261120	PUBLISHED: 2026-11-20T20:29:43.000Z
 cn-acts-reuters-ti-cap-20260708-relay1	receive permission to buy some H200 chips
 cn-acts-reuters-ti-cap-20260708-relay1	July 8 (Reuters)
+cn-tolerate-ft-offshore	according to two people with direct knowledge of the matter
+cn-tolerate-ft-offshore	Copyright The Financial Times Limited 2025
+cn-tolerate-ft-offshore	PUBLISHED: 2025-11-27
 cn-le04-dailycaller-20261120	©2026 The Daily Caller, Inc.
 cn-le04-dailycaller-20261120	a company spokesperson told the Daily Caller News Foundation
 cn-usdocs-hfac-decisions-20261119	Data Center Operator or
@@ -580,6 +582,13 @@ cn-le13-yuyuan-qq-20250810b	AUTHOR: 玉渊谭天
 cn-le13-cja36-winners-xinhuanet-20261108	原创单位：中央广播电视总台
 cn-clips-evidence-1	are stored in Hong Kong awaiting shipment to China
 cn-clips-evidence-1	two people familiar with the matter
+cn-clips-evidence-1	for large-scale imports despite demand from technology firms
+cn-tolerate-ftaug26	one of the people said
+cn-tolerate-ftaug26	URL: https://ca.finance.yahoo.com/
+cn-o36-tencent-call-20261118-sa	than we would have imagined a year ago
+cn-acts-mfa-20261118	郭嘉昆：中方此前已经多次阐明在美国输华芯片问题上的原则立场
+cn-usdocs-hfac-decisions-20261119	Semsotai USA
+man-a7d2f1a9f963	under secretary of commerce for industry and security
 cn-le05-sec-submissions-20261123	2026-07-26
 cn-le05-sec-submissions-20261123	FETCHED: 2026-11-23
 cn-ga06-sec-submissions-20261124	2026-07-26
@@ -600,6 +609,7 @@ cn-le04-meeks-remarks-20261119	unanimous consent
 cn-labs-us-chip-licences-20261119	Chairman Brian Mast exercised his authorities under the Export Control Reform Act
 cn-usdocs-hfac-summary-20261119	Covered integrated circuits are the following products: NVIDIA's H200 and AMD's MI325X.
 cn-usdocs-hfac-summary-20261119	BIS received applications to sell 3,444,160 covered
+cn-usdocs-hfac-decisions-20261119	Sharetronic Data Technology
 cn-le01-greer-bbg-20261120-autocaps-ttml	not as monolithic as people would have you believe
 cn-le01-greer-bbg-20261120-autocaps-ttml	quite eager to get the most advanced chips they can
 cn-le01-greer-bbg-20261120-autocaps-ttml	own analysis
@@ -620,10 +630,14 @@ cn-ga01-bnn-turnaround-20261123	a graphics card designed for professional comput
 cn-ga01-bnn-turnaround-20261123	Large purchases of this new Nvidia chip by internet companies such as ByteDance and Alibaba could require Chinese government approval, according to two people familiar with the matter
 cn-ga01-bnn-turnaround-20261123	industry regulator did not respond to comment requests
 cn-acts-mfa-20261112	你提到的具体情况我不了解。中方在美国输华芯片问题上的立场是一贯的。
+cn-acts-mfa-20261118	中方此前已经多次阐明在美国输华芯片问题上的原则立场。
 cn-acts-mfa-20261112	2026年11月12日外交部发言人毛宁主持例行记者会
 cn-acts-mfa-20261112	法新社记者：位于西安的中国西北工业大学的采购记录显示，该校购买了英伟达H200芯片，而该芯片受到美国的出口管制
 cn-acts-mfa-20261112	毛宁：你提到的具体情况我不了解
 cn-acts-mfa-20261112	我们坚决反对美方泛化国家安全概念
+cn-acts-mfa-20261118	2026年11月18日外交部发言人郭嘉昆主持例行记者会
+cn-acts-mfa-20261118	法新社记者：英伟达临时首席执行官昨日向股东表示，将不再向中国提供Hopper数据中心产品
+cn-acts-mfa-20261118	H200芯片将不再发货
 cn-ga15-mfa-20261123	2026年11月23日外交部发言人郭嘉昆主持例行记者会
 cn-ga15-mfa-20261123	路透社记者：美国总统特朗普称只愿向中国出售旧款芯片，正就此与中方进行沟通
 cn-ga15-mfa-20261123	是否正与美方进行谈判

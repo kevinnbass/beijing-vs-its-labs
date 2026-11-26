@@ -121,7 +121,8 @@ N cn-le04-bis-ear-748 | If your original application was returned without action
 
 # ---- checked phrases outside the records ----
 # where the chips went (note under the figure)
-! cn-tolerate-reutersaug26-relay1-wayback | Beijing wants them to keep the hardware outside mainland China
+! cn-tolerate-ftaug26 | Beijing wants them to keep most of these chips outside the mainland
+! cn-tolerate-ftaug26 | one of the people said
 ! cn-tolerate-reutersaug26-relay1-wayback | have been allowed to enter mainland China
 # the question the Commerce Secretary was asked
 ! cn-us-lutnick-0422-rev-transcript-b | Can you tell us how many H200s have been licensed for export

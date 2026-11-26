@@ -19,7 +19,7 @@ for pair in "12_who_inside_beijing who_inside_beijing" "13_paper_against_practic
     who_inside_beijing) extra="$TB/state_media_items.tsv $TB/provinces_31.tsv $TB/chip_evaluations.tsv" ;;
     paper_against_practice) extra="$TB/provinces_31.tsv" ;;
     micron_and_nvidia) extra="$TB/state_media_items.tsv" ;;
-    ladder_of_evidence) extra="$ARG/argument_refs.tsv $ARG/argument_base.txt $TB/state_media_items.tsv" ;;
+    ladder_of_evidence) extra="$ARG/argument_refs.tsv $ARG/argument_base.txt $TB/state_media_items.tsv $TB/carriers_own_notices.tsv" ;;   # round 12: its build reads the carriers' table too
     us_side_steps) extra="$TB/house_licence_table.tsv" ;;
   esac
   out=$($PY $R --check $d/$n.html --with $d/data.txt $d/build.py $A5/common.py $d/quotes.tsv $extra); rc=$?; echo "look --check $n.html: ${out%% |*} | exit $rc"; [ $rc -ne 0 ] && fail=1

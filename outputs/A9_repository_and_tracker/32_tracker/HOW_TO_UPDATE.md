@@ -39,7 +39,7 @@ python3 -I add_record.py --date 2026-12-01 --row BH --kind press --id <saved id>
   `CH` the companies turn to home-made chips.
 - `--kind`: `doc` a government document, an official or published state media, on the record (filled mark), `rec` a company, or a named person outside
   government, on the record (filled mark), `press` a press report citing unnamed people (open mark).
-- `--date`: the date of the act where the page states it, otherwise the date of the report. Read it in the page.
+- `--date`: the day of the act where the page states that day, otherwise the day of the report. Read it in the page.
 - Optional: `--english '<our English for Chinese words>'` (no quote marks in it), `--address '<address>'` where the
   saved copy's own address is missing or cut short, `--label 'Summer 2025'` to show words instead of the day.
 

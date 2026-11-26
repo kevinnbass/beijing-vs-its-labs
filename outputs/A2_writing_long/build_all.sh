@@ -6,7 +6,7 @@ cd "$(dirname "$(readlink -f "$0")")" || exit 2
 B=scripts/cn_doc_build.py
 rc=0
 one() { ( cd "$1" && python3 -I "$B" "$2"_base.txt --refs ../extra_refs.tsv --title "$3" --eyebrow "$4" ) || rc=1; }
-one 06_article article "Chip Policy Article" "China chip policy · the argument as an article"
+one 06_article article "Chip Policy Article" "China chip policy · the project's argument, as an article"
 one 07_other_side other_side "The Other Side" "China chip policy · the best case against the claim"
 one 43_guidance_not_law guidance "Guidance, Not Law" "China chip policy · how the pressure was applied"
 one 44_two_governments two_governments "Two Governments, One Chip" "China chip policy · the H200, step by step"

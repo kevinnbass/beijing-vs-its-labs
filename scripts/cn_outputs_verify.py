@@ -13,7 +13,7 @@ For each builder's folder it reports:
   base files     every *_base.txt checked again as scripts/cn_doc_build.py checks it (quotations in the saved copies),
                  with the references file plus any *refs*.tsv beside the base file; nothing is rebuilt
   quotes.tsv     every such file checked again as scripts/cn_has.py checks it
-  looks          for every .html, .png, .jpg, .webp and .svg that is not inside a folder named frames*, stills* or tmp*:
+  looks          for every .html, .png, .jpg, .webp and .svg that is not inside a folder named frames*, stills*, tmp*, scratch* or archive*:
                  whether scripts/render_and_look.py holds a recorded look at exactly the present bytes
                  (LOOKED), only at other bytes (STALE), or none (NONE)
 Exit 0 only if every folder asked for has DONE.md, no failing base file and no failing quotes file, AND (since Nov 25,
@@ -35,7 +35,12 @@ L = B.L
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / 'research' / 'cn_chip_policy_20261120' / 'outputs'
 LOOKS = ROOT / 'research' / 'looks'
-SKIP_DIR = re.compile(r'^(frames|stills|tmp|scratch|node_modules|__pycache__)', re.I)
+SKIP_DIR = re.compile(r'^(frames|stills|tmp|scratch|archive|node_modules|__pycache__)', re.I)
+# (Nov 26, 2026, key rel14) and archive folders (archive/, archive_round2_inputs, ...), which the release holds back as it does
+# (cn_public_release.SKIP_DIR, ^archive): round 12 MOVES the old item 18 folder (18_where_the_chips_are) and item 42's old page
+# (hongkong_stockpile.*) into their builders' archive/ folders; their pages' looks were recorded at the old paths, and an old base
+# file there is no output. Before rel14 the archives read here were the staged repository's earlier builds (A9 item 31: listed,
+# not counted) and two old pages of A5 (archive_before_public_20261123).
 STAGED = ('A9_repository_and_tracker', '31_source_repository')      # rewritten at every assembly (make_repo.py): its stale looks and failing base files are listed, not counted
 RAL = str(Path.home() / '.venvs' / 'memes' / 'bin' / 'python') + ' ' + str(ROOT / 'scripts' / 'render_and_look.py')      # no local path typed: make_repo.py refuses a script copy that holds one
 

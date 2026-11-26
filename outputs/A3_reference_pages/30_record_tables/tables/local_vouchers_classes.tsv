@@ -19,7 +19,7 @@ A16	Ningxia	read and not counted	a repealed or expired rule	每年总计发放�
 A17	Ningxia	read and not counted	not a computing voucher rule	对基础软硬件实现国产化率90%以上的数据中心，给予企业最高不超过1000万元奖励	cn-o39-ningxia-reply-2023
 A18	Sichuan	pays for home-made computing only		设立“算力券”，对企业购买国产算力费用给予支持，一般企业支持比例不超过20%，成立3年内的初创企业可提高至30%、人工智能一人公司（OPC）可提高至40%，每家单位每年支持最高不超过100万元	cn-ga05-sichuan-compute-net-measures-jiemian
 A19	Longgang	read and not counted	a draft	鼓励使用本区算力和国产算力，通过算力券的形式按照上年度实际支付算力服务费用划分不同梯度比例给予补贴	cn-ga04-lg-ai-draft-2024-docx
-A20	Shanghai	read and not counted	not a computing voucher rule	上海《智算中心建设导则（2025版）》对液冷占比、芯片国产化率、PUE/WUE设阶梯准入	cn-le14-huabenlihe-policy-list
+A20	Shanghai	read and not counted	not a computing voucher rule	宜采用自主可控的 AI 训练及推理加速卡、AI 服务器、高性能存储和智算网络等相关设备 / 智算设备宜自主可控，鼓励使用国产算力芯片及国产存储	cn-ga31-replies-22
 B1	E-Town	one rate		每年发放1亿元的“算力券”，支持企业购买算力服务，按照实际使用算力结算费用的30%，经评审认定，给予最高2000万元支持。	cn-le28-etown-29hao-20241126
 B2	E-Town	read and not counted	an application guide, not the rule	支持企业2024年1月1日至2024年12月31日期间实际发生并使用算力的结算费用，给予最高30%的补贴	cn-le28-etown-voucher2024-guide-docx
 B3	E-Town	read and not counted	an application guide, not the rule	算力支持范围为用于人工智能大模型训练与推理的GPU，非智能算力资源不予支持	cn-le28-etown-voucher2025h1-guide-docx
@@ -70,7 +70,7 @@ B47	Guizhou	one rate		对购买算力服务的，智能算力可按合同有效�
 B48	Wuhan	pays more for home-made and still pays for other computing		非自主可控算力服务、国产人工智能大模型词元（Token）服务，按服务实际发生金额（不含税费，下同）的20%补贴；自主可控算力服务，按服务实际发生金额的30%补贴 / 同一主体年度补贴总额最高300万元 / 自2026年10月29日起施行，有效期1年	cn-ga31-sciowhole-115
 B49	Anhui	one rate		对企业、高校院所等算力使用方（自建自用除外）给予不超过算力总支出20%的支持	cn-ga31-voucherrulesmissing-37
 B50	Liaoning	one rate		算力券按照符合支持内容和支持时段内的算力合同实际发生金额给予不超过30%的补贴，同一单位年度补贴额度不超过200万元	cn-ga31-voucherrulesmissing-8
-B51	Shenyang and Dalian	read and not counted	no checkable text of the rule is saved	沈阳、大连两市分别出台算力券政策，按照实际购买算力服务金额的20%、30%给予补贴，重点支持使用本省国产算力资源开展模型训练、推理及场景应用 / 大连市2025年出台总规模2000万元算力券政策 / 支持辖区内各类主体依规使用省内智能算力资源	cn-ga31-sciowhole-132
+B51	Shenyang and Dalian	read and not counted	another body's account of two cities' rules, each of which is a row of its own (Shenyang's counted, Dalian's a repealed or expired rule)	沈阳、大连两市分别出台算力券政策，按照实际购买算力服务金额的20%、30%给予补贴，重点支持使用本省国产算力资源开展模型训练、推理及场景应用 / 大连市2025年出台总规模2000万元算力券政策 / 支持辖区内各类主体依规使用省内智能算力资源	cn-ga31-sciowhole-132
 B52	Zhejiang	read and not counted	an application guide, not the rule	智算算力服务支持比例按照10%或30%比例分档补助 / 浙江省的国家人工智能券（算力券）管理服务机构为杭州市人工智能产业创新中心有限公司	cn-ga31-cndocs-70
 B53	Hunan	one rate		按不超过算力需求方购买算力实际结算金额的30%补贴，最高不超过1000万元	cn-ga31-unsaved3-sciowhole114-gxt-gfxwj
 B54	Hangzhou	read and not counted	an application guide, not the rule	申报主体为获得2025年国家人工智能券补助的企业	cn-ga31-nameddocs-3

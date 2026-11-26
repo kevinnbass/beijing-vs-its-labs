@@ -238,12 +238,12 @@ def main():
     </div>
     <div class="pr">
      <h3>Shipped in all of China, by a research firm’s count</h3>
-     <p class="lede">AI accelerator cards shipped in China, by maker. Counts by the research firm IDC, as reported by Reuters.</p>
+     <p class="lede">Shipments in China, by maker. Counts by the research firm IDC, as reported by Reuters, which words the two counts differently.</p>
      <ul class="legend"><li><i class="toward"></i>Nvidia</li><li><i class="away"></i>Chinese makers</li><li><i class="other"></i>AMD</li><li><i class="rest"></i>not broken down in the report</li></ul>
-     <div class="sh"><div class="sh-lab">2025 {pinlink(a)}<span>about 4 million cards</span></div>
+     <div class="sh"><div class="sh-lab">2025 {pinlink(a)}<span>about 4 million AI accelerator cards shipped</span></div>
 {bar(seg25, f'Nvidia {va["nvidia"]}%, AMD {va["amd"]}%, Chinese makers {va["chinese"]}%')}
       <div class="sh-cap">Nvidia {va["nvidia"]}%, AMD {va["amd"]}%, Chinese makers together {va["chinese"]}%. <span class="tg-src">Source: IDC, reported by Reuters, Apr 1, 2026.</span></div></div>
-     <div class="sh"><div class="sh-lab">January to June 2026 {pinlink(b)}<span>2.008 million cards</span></div>
+     <div class="sh"><div class="sh-lab">January to June 2026 {pinlink(b)}<span>2.008 million AI accelerators shipped; Reuters gives the shares as of the market for data-centre AI chips</span></div>
 {bar26}
       <div class="sh-cap">Nvidia {vb["nvidia"]}%, Huawei {vb["huawei"]}%; then T-Head {vb["thead"]}%, Cambricon {vb["cambricon"]}%, Kunlunxin {vb["kunlunxin"]}%, Hygon {vb["hygon"]}%. The six named makers leave {rest}% (our subtraction).
       The five Chinese makers named add up to {named_cn}% (our sum); the report gives no total for Chinese makers and does not mention AMD. <span class="tg-src">Source: IDC, reported by Reuters, Oct 13, 2026.</span></div></div>
@@ -287,7 +287,7 @@ def main():
     page = C.page(
         title='Paper Against Practice',
         eyebrow=f'China · home-made chip targets and what was in use · {first_year} to 2026',
-        h1=f'On paper, targets of half or more home‑made, or in {C.WORDS[n_ctrl]} case independently controllable. In practice, Nvidia was still the biggest single supplier.',
+        h1=f'On paper, targets of half or more home‑made, or in {C.WORDS[n_ctrl]} case independently controllable. In practice, in the research firm IDC’s counts, Nvidia was still the biggest single supplier.',
         deck=f'Targets that {who_set} set for computing ({C.WORDS[n_home]} for home-made chips, equipment or computing, {C.WORDS[n_ctrl]} for what it calls independently controllable), '
              'beside what a Shanghai government body wrote and what a research firm counted. '
              f'The two sides do not measure the same thing, so each has its own panel and its own scale. In both of the research firm’s counts Nvidia was the largest maker: {va["nvidia"]}% of AI accelerator cards shipped in 2025, and {vb["nvidia"]}% of what Reuters words as the market for data-centre AI chips in January to June 2026. The two are worded differently and are not one series.',

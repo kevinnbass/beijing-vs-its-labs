@@ -33,30 +33,30 @@ B = C.B
 NAME = 'ladder_of_evidence'
 RUNG_OF = {'DOC': 1, 'PUB': 1, 'FIL': 2, 'NOTICE': 2, 'OFF': 3, 'NAMED': 3, 'REC': 4, 'ACCT': 4, 'PRESS': 5, 'COUNT': 5, 'CLIP': 5}
 RUNGS = {  # name, what sits on it, what it shows about this claim, what it does not show ({SM} is filled in from tables/state_media_items.tsv)
-    1: ('Chinese state documents and state media', 'texts of the Chinese party-state and its bodies; what state media and an industry body published: commentary, reports, statements',
+    1: ('Chinese state documents and state media', 'texts of the Chinese party-state and its bodies; what state media, industry bodies and two research institutes (China Telecom’s AI institute, the Shenzhen Loop Area Institute) published: commentary, reports, statements, technical reports',
         'The declared line: end dependence on foreign core technology and use home-made chips. The purchase rules for government buying, the provincial targets, '
         'the antitrust case and the summons. A Shanghai government body’s own statement that internet companies’ own clusters in the city run mainly on Nvidia. '
         'And the public warnings: state media warned about Nvidia’s chips ({SM}); a Party paper also printed a scholar’s advice to stock imported chips.',
         'Any order telling companies not to buy Nvidia chips. None was found in the 82 policy pages read. The commentaries warn and urge; none forbids.'),
     2: ('Company filings and own notices', 'what companies told securities regulators, exchanges and investors: filings, results releases, the company’s own transcript of a results call; and buyers’ own purchase notices (universities, a centre of the drug regulator, the purchasing centre for central state bodies, the state telecom carriers, most of whose notices are held as tender sites carry them, and three other buyers)',
-        'Alibaba told the US securities regulator that the cyberspace regulator asked Chinese technology companies to halt purchases of certain chips. Nvidia told it that the Chinese government restricted, and later discouraged, customers’ purchases, '
+        'Alibaba told the US securities regulator that the cyberspace regulator asked Chinese technology companies to halt purchases of certain chips. Nvidia told it that the Chinese government restricted customers’ purchases, a word its later reports changed to discouraged, '
         'and that its licensed sales were restricted; the same reports say it is effectively foreclosed from the China market by US export controls. On its own results calls Nvidia said in May 2026 '
-        'that it had no revenue yet from the licensed chips, and in November 2026 that it had sold $2.4 billion of licensed Hopper products to China in a quarter and was no longer shipping. '
+        'that it had no revenue yet from the licensed H200 chips, and in November 2026 that it had sold $2.4 billion of licensed Hopper products to China in a quarter and was no longer shipping. '
         'Alibaba also says its own chips are in scaled production. Listed Chinese firms told the Shenzhen exchange of purchases of cards named PRO 5500. '
-        'Universities’ own notices of 2026 seek, buy or rent Nvidia cards, from two cards to six to eight eight-card servers; some central buyers’ notices of November 2026 ask for home-made computing. An award of April 2025 by the purchasing centre for central state bodies, for a university’s IT centre, names Nvidia H20 modules under a tender that allowed no imported products. {CARRIERS} Three other buyers’ notices of 2026 ask that AI chips meet the security-and-reliability evaluation: China Post’s Shandong branch (once results for such cards are out), Shanghai Pudong Development Bank, and a unit of China Southern Power Grid (for one lot).',
+        'Universities’ own notices of 2026 seek, buy or rent Nvidia cards, from two cards to six to eight eight-card servers; some central buyers’ notices of November 2026 ask for home-made computing. An award of April 2025 by the purchasing centre for central state bodies, for a university’s IT centre, names Nvidia H20 modules under a tender that allowed no imported products. {CARRIERS} Three other buyers’ notices of 2026 make the security-and-reliability evaluation a condition for AI chips, each in its own terms: China Post’s Shandong branch asks that the accelerator cards pass it, if results for such cards are published before the bids close; Shanghai Pudong Development Bank asks for GPU chips that meet the requirements of its category for AI training and inference chips; and a unit of China Southern Power Grid asks the AI card modules of one lot to meet the requirements of its guide.',
         'Who gave an instruction about Nvidia chips, or how it was given. Alibaba’s sentence names the cyberspace regulator but not Nvidia, and does not say how the request was made. Nvidia gave no reason for stopping. A notice to buy is not a purchase made, and a contract is not a delivery.'),
-    3: ('Officials and official records', 'named officials, in their own body’s account or a transcript; official records, most of them American (hearings, reports, rules, the licence table); one analyst’s written testimony. Executives’ words reach us through rungs 2 and 4',
+    3: ('Officials and official records', 'named officials, in their own body’s account, a state news agency’s, or a transcript of the hearing or event (the body’s or the host’s own, or a transcript service’s, such as Rev’s or Factba.se’s); official records, most of them American (hearings, reports, rules, the licence table); one analyst’s written testimony. Executives’ words reach us through rungs 2 and 4',
         'American officials state the conflict in their own names, as their understanding; American bodies read Beijing’s acts as leverage in trade talks, or as a push for more advanced chips. Washington’s own licence table, giving the status of applications as of May 11, 2026, marks every approved application not shipped. '
         'Chinese officials stand on both sides in public: the state planner says it is guiding home-made models to do more to adapt to home-made chips; a vice premier and the commerce minister welcome Nvidia, and the premier tells American firms, Nvidia’s among them, that an open policy is a lasting commitment; asked about the reports, spokespeople confirm nothing.',
         'Any Chinese official saying that purchases were stopped.'),
-    4: ('Press reports of on-the-record words and acts', 'a named person’s words at a hearing, on a results call, on television or in a post, a company’s statement, or a named news outlet’s account of a document, a filing or an official act, as a news outlet, a post or a transcript site gives them',
+    4: ('Press reports of on-the-record words and acts', 'a named person’s words at a hearing, on a results call, on television or in a post, a company’s statement, or a named news outlet’s account of a document, a filing or an official act, as a news outlet (its own transcripts included, such as CNBC’s), a post or a transcript site gives them',
         'The Treasury Secretary’s view that Chinese orders were few. A Tencent executive’s answer that put a shortage of chips partly down to policy restrictions on certain foreign-designed GPUs being brought into China; he does not say whose policy, and the transcripts differ on which executive spoke. '
         'And the companies’ own turn to home-made chips, in their executives’ words.',
         'A first-hand record. Each of these passes through a reporter, a post or a transcript site; the speaker labels of the Tencent transcripts are the site’s and are unchecked.'),
-    5: ('Unnamed sources, research firms’ counts, unchecked transcripts', 'press reports citing unnamed people; research firms’ counts, as the press reports them; caption tracks or machine transcripts that nobody has checked by ear',
+    5: ('Unnamed sources, research firms’ counts, captions and machine transcripts', 'press reports citing unnamed people; research firms’ counts, as the press reports them; caption tracks or machine transcripts that nobody has checked by ear',
         'Who told whom, and when: the guidance not to buy, the warning about traitors, the customs checks, the split inside Beijing. Every count of the chips reported ordered across China’s companies, approved by Beijing, delivered or waiting; '
         'the counts single buyers give of their own purchases are on rung 2. The research firms’ counts of Nvidia’s market share, and of the foreign suppliers’ share. The clip that raised the question, and the Trade Representative’s words on Bloomberg Television and a Bloomberg podcast and the Treasury Secretary’s on two Bloomberg programmes, in caption tracks or transcripts.',
-        'Confirmation. In the answers found, Beijing’s spokespeople confirmed none of these reports.'),
+        'Confirmation by Beijing. In the answers found, Beijing’s spokespeople confirmed none of these reports.'),
 }
 GROUPS = [  # label, the points in it (the argument's own sections; "T" is its table of numbers)
     ('The declared line', [1, 2, 3, 4]), ('What the companies used and wanted', [5, 6, 7, 8, 9]), ('What Beijing did: on the record', [10, 11, 12]),
@@ -181,6 +181,9 @@ def main():
     assert all(refs.get(s, {}).get('kind') == 'FIL' for s in ('cn-filings-tianyang-20261013-contract', 'cn-le08-youzu-contract-20261104', 'cn-ga01-hzyl-contract-20261112'))   # listed firms' notices of PRO 5500 purchases: rung 2
     assert all(refs.get(s, {}).get('kind') == 'NOTICE' for s in ('cn-ga13-nwpu-som-88690-wayback', 'cn-ga13-ccgp-nmpa-cmde-ai-rental-27742397', 'cn-ga13-ccgp-pku-inference-card-27734000'))
     assert kinds['NAMED'] == 1 and kinds['ACCT'] >= 2
+    # round 12 (work list 27): rung 1's words name two research institutes; their three sources are PUB, and so are three industry bodies' (plural in the words)
+    assert all(refs.get(s, {}).get('kind') == 'PUB' for s in ('cn-ga31-counter-13', 'cn-ga08-gh-teleai-telechat2-page', 'cn-ga08-arxiv-telechat2-report-pdf'))
+    assert sum(bool(re.search(r'Association|Internet Society', l)) for l in lab_of('PUB')) >= 2, lab_of('PUB')
     sm = C.table('state_media_items.tsv'); warns = sorted(C.date.fromisoformat(r['date']) for r in sm if r['stance'] == 'warns')
     win = [d for d in warns if d <= C.date(2025, 9, 24)]
     sm_d = sorted(C.date.fromisoformat(r['date']) for r in sm)          # round 11 (work list B 51): the span of the items found, as items 12 and 16 print it
@@ -214,7 +217,7 @@ def main():
     m_least = re.findall(r'At least (\d+) of the (\d+) ask for nothing of the kind', B.BASE.read_text(encoding='utf-8'))
     assert len(m_least) == 1 and int(m_least[0][1]) == len(pages) - len(named), (m_least, len(pages) - len(named))
     least = int(m_least[0][0])
-    RUNGS[2] = RUNGS[2][:2] + (RUNGS[2][2].replace('{CARRIERS}', f'None of the {len(pages) - len(named)} pages of the carriers’ own read (notices, one filing and one news page) names Nvidia or an Nvidia model. Some ask for home-made chips by maker or by origin, or label their lots by software ecosystem; at least {least} of the {len(pages) - len(named)} ask for nothing of the kind. One other notice held names Nvidia cards, a small one of 2024: a Jiangsu company that bears China Unicom’s name and publishes its tender on China Unicom’s procurement site (the notice names no owner) asks for cards it writes as NV RTX 3090, NV RTX 4090 and NV Tesla A100.'),) + RUNGS[2][3:]
+    RUNGS[2] = RUNGS[2][:2] + (RUNGS[2][2].replace('{CARRIERS}', f'None of the {len(pages) - len(named)} pages of the carriers’ own read (notices, one filing and one news page) names Nvidia or an Nvidia model. Some ask for home-made chips by maker or by origin, or label their lots by software ecosystem; at least {least} of the {len(pages) - len(named)} ask for nothing of the kind. One other notice held names Nvidia cards, a small one of 2024: a Jiangsu company that bears China Unicom’s name and publishes its tender on China Unicom’s procurement site (the notice names no owner) asks to rent computing on cards it writes as NV RTX 3090, NV RTX 4090 and NV Tesla A100.'),) + RUNGS[2][3:]
     assert '{' not in RUNGS[2][2]
     cols = [p for _, ps in GROUPS for p in ps]
     cellc = {(p, k): sum(rung[i] == k for i in pts[p]) for p in cols for k in range(1, 6)}
@@ -250,7 +253,7 @@ def main():
     for k in range(1, 6):
         name, of, shows, nots = RUNGS[k]
         extra_count = ''
-        if k == 5: extra_count = f'<span>sources: {kinds["PRESS"]} press reports, {kinds["COUNT"]} counts, {kinds["CLIP"]} caption tracks or transcripts</span>'
+        if k == 5: extra_count = f'<span>sources: {kinds["PRESS"]} press reports, {kinds["COUNT"]} counts, {kinds["CLIP"]} caption tracks or machine transcripts</span>'
         if k == 5:
             lad.append(f'<div class="line"><span>Above this line, on the record: {on} sources · below it: {off}</span></div>')
         lad.append(f"""<div class="rung{' open last' if k == 5 else ''}">
@@ -323,7 +326,7 @@ def main():
    <h2>Read with care</h2>
    <ul>
     <li><b>A rung says how a statement reached us, not whether it is true.</b> A document can be wrong and an unnamed person right. A quotation that was found in a saved copy shows what the source says.</li>
-    <li><b>The rungs follow the argument’s own labels</b> for its {total} sources; the same source sits on one rung only. The argument has {C.WORDS[len(kinds)]} kinds of source; this figure puts its state documents and what state media and an industry body published on rung 1, filings and buyers’ own purchase notices on rung 2, officials, official records and {C.WORDS[kinds['NAMED']]} analyst’s testimony on rung 3, and reports of named people’s words or companies’ statements, and news outlets’ accounts of documents, filings or official acts, on rung 4. Rungs 1 to 4 hold exactly the kinds the argument counts as on the record. A named person’s words on rung 4 still pass through a reporter, a post or a transcript site.</li>
+    <li><b>The rungs follow the argument’s own labels</b> for its {total} sources; the same source sits on one rung only. The argument has {C.WORDS[len(kinds)]} kinds of source; this figure puts its state documents and what state media, industry bodies and two research institutes published on rung 1, filings and buyers’ own purchase notices on rung 2, officials, official records and {C.WORDS[kinds['NAMED']]} analyst’s testimony on rung 3, and reports of named people’s words or companies’ statements, and news outlets’ accounts of documents, filings or official acts, on rung 4. Rungs 1 to 4 hold exactly the kinds the argument counts as on the record. A named person’s words on rung 4 still pass through a reporter, a post or a transcript site.</li>
     <li>What the count cannot weigh: one company filing may carry more than several press reports. The count of squares is not a score.</li>
     <li>English renderings of Chinese are ours, not official translations.</li>
    </ul>
@@ -364,7 +367,7 @@ def main():
     page = C.page(
         title='Ladder Of Evidence',
         eyebrow=f'China · Nvidia chips · how firm each source is · {total} sources of the referenced argument',
-        h1='The direction rests on documents and filings. The unpublished guidance rests mostly on unnamed people.',
+        h1='The direction of Beijing’s policy, toward home-made chips, rests on documents and filings. The unpublished guidance rests mostly on unnamed people.',
         deck=f'The {total} sources behind the argument, sorted onto five rungs by how each statement reached us. {on} are documents, filings or named people on the record (with state media, buyers’ notices and news outlets’ accounts of documents or official acts). '
              f'{off} are press reports citing unnamed people, research firms’ counts, or caption tracks and machine transcripts: they carry who told whom, and {t5} of the {t_all} sources behind the numbers.',
         key=key, figure=figure, below=below, css=CSS, tipjson=json.dumps(tip, ensure_ascii=False).replace('</', '<\\/'))

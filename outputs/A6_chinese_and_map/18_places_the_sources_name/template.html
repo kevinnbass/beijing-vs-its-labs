@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Places Reports Name</title>
+<title>Places the sources name for Nvidia chips</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap">
 <style>
 /* Colour and type tokens are those of ../../../figure/template.html. Layout: headline; the map beside its key; the numbered records; notes. */
@@ -122,18 +122,18 @@ li.ev.hl, li.ev:target { background: var(--wash); }
  <header>
   <p class="eyebrow">China · Nvidia chips · places named in saved sources, %%SPAN%%</p>
   <h1>%%N_REC%% records in %%N_SRC%% saved sources name a place for Nvidia chips; %%N_OUT_OR_PLAN%% concern a place outside mainland China or a plan on paper</h1>
-  <p class="deck">Each record is what one source says, with its date, about the place or places it names. %%N_OUT_PRESS%% press reports, each citing people the outlet does not name, say chips were waiting in Hong Kong (Reuters, Nov 5, 2026) or in use in data centres across Southeast Asia and outside Osaka (Financial Times, Nov 27 and Dec 20, 2025). %%N_OUT_PAPER%% documents name places outside the mainland: a Japanese firm’s notice of May 7, 2026 that it had changed the site of its first data centre in Japan from Osaka to Chiba, and a US licence table, as of May 11, 2026, of applications for chips whose ultimate location it gives as Malaysia, Indonesia or Thailand, all returned without action. %%N_PLAN%% are plans, tenders and contracts on the mainland that name Nvidia chips, as Reuters and Bloomberg report them. %%N_THERE%%, in Reuters’s report of Nov 13, 2026, is a city government’s statement of March 2025 that a cluster using Nvidia chips had entered operation. The page reports what the sources say; it does not show where any chip is.</p>
+  <p class="deck">Each record is what one source says, with its date, about the place or places it names. %%N_OUT_PRESS%% press reports, each citing people the outlet does not name, say chips were stored in Hong Kong (Reuters, Nov 5, 2026) or in use in data centres across Southeast Asia and outside Osaka (Financial Times, Nov 27 and Dec 20, 2025). %%N_OUT_PAPER%% documents name places outside the mainland: a Japanese firm’s notice of May 7, 2026 that it had changed the site of its first data centre in Japan from Osaka to Chiba, and a US licence table, as of May 11, 2026, of applications for chips whose ultimate location it gives as Malaysia, Indonesia or Thailand, all returned without action. %%N_PLAN%% are plans, tenders and contracts on the mainland that name Nvidia chips, as Reuters and Bloomberg report them. %%N_THERE%%, in Reuters’s report of Nov 13, 2026, is a city government’s statement of March 2025 that a cluster using Nvidia chips had entered operation. The page reports what the sources say; it does not show where any chip is.</p>
   <p class="draft">Draft by Claude, Anthropic’s model.</p>
  </header>
  <div class="row top">
   <section class="card" id="mapcard">
    <h2>Places the sources name</h2>
-   <p class="sub"><b>This map shows places that reports and records name. It does not show where chips are.</b> Each number is one record; the list under the map gives its place, its source and the date. A mark sits on the area its source names, not on a site. Point at a mark to read the source’s own words.</p>
+   <p class="sub"><b>This map shows places that reports and records name. It does not show where chips are.</b> Each number is one record; the list under the map gives the place or places it names, its source and the date. A mark sits on the area its source names, not on a site. Point at a mark to read the source’s own words.</p>
    <p class="hint">Swipe the map sideways to see all of it.</p>
    <div class="scroll" tabindex="0" role="group" aria-label="Map; scroll sideways on a narrow screen">
 %%MAP%%
    </div>
-   <p class="msrc-h">Each number: a place, as one dated report or document names it</p>
+   <p class="msrc-h">Each number: the place or places that one dated report or document names</p>
    <ol class="msrc">
 %%MAPSRC%%
    </ol>
@@ -142,7 +142,7 @@ li.ev.hl, li.ev:target { background: var(--wash); }
   <section class="card" id="keycard">
    <h2>How to read the marks</h2>
    <ul class="key">
-    <li><i class="sw away"></i><span><b>Away from Nvidia (orange):</b> Reuters’s report of Nov 5, 2026, by two people it did not name, that chips were waiting for Beijing’s approval. %%N_AWAY%% record</span></li>
+    <li><i class="sw away"></i><span><b>Away from Nvidia (orange):</b> Reuters’s report of Nov 5, 2026, by two people it did not name, that chips “are stored in Hong Kong awaiting shipment to China”. %%N_AWAY%% record</span></li>
     <li><i class="sw toward"></i><span><b>Toward Nvidia (blue):</b> a source’s account of Nvidia chips used, rented or planned for, by Chinese companies or in projects in China, or, in record %%REC_DS%% (a Japanese firm’s own notice), for a customer the notice does not name. %%N_TOWARD%% records</span></li>
     <li><i class="sw us"></i><span><b>Grey:</b> the United States government’s own table of licence applications, returned without action. %%N_US%% record</span></li>
     <li><a class="p hollow toward" aria-hidden="true" tabindex="-1"><span>1</span></a><span><b>Circle:</b> chips reported or said to be at the place. %%N_CIRCLE%% records</span></li>
@@ -168,9 +168,9 @@ li.ev.hl, li.ev:target { background: var(--wash); }
    <li>Open marks rest on unnamed people. Filled marks rest on documents or on a named company or government body, as the outlet cited reports them. The tender and investment papers themselves were not read for this map. %%N_PAPER_CAP%% filled marks rest on documents that are themselves saved: Datasection’s notice and the licence table that the House Foreign Affairs Committee released.</li>
    <li>A diamond is a plan, a tender, a contract or a licence application. It shows that a paper names Nvidia chips, not that chips arrived. Of the Gansu centre Reuters writes: “The documents do not establish whether the processors have been delivered.” The licence applications drawn in grey were returned without action: no licence was given.</li>
    <li>Not on the map, because the report names no province, city or site for them: Reuters, Nov 5, 2026, by three people it did not name, “China has allowed some of the chips to enter the country in recent months”, and, by one of them, “Several major Chinese internet companies have each obtained about 10,000 H200 chips in the past few months”.</li>
-   <li>The sources name different chips. Hong Kong: H200. Japan: B200 in the Financial Times’s report, B300 in the firm’s notice. The licence table covers Nvidia’s H200 and AMD’s MI325X; the applications drawn name Nvidia as exporter. Plans and tenders: H100 and H200. The Jiangsu cluster: H800.</li>
+   <li>The sources name different chips. Reuters’s report on Hong Kong names the H200. On Japan, the Financial Times’s report names the B200 and the firm’s notice the B300. The licence table covers Nvidia’s H200 and AMD’s MI325X; the applications drawn name Nvidia as exporter. On the plans and tenders, Reuters’s report of Nov 13, 2026 names the H100 and the H200, and Bloomberg’s review, as Tom’s Hardware summarises it, “Nvidia Hopper GPUs”. Reuters’s report on Jiangsu names the H800.</li>
    <li>Both reports of capacity rented abroad say it was within the rules at the time: leasing data centres abroad is “compliant with US export controls” (Financial Times, Nov 27, 2025); the paper calls the arrangement in Japan “a legal but geopolitically fraught strategy” (Dec 20, 2025). Later, on Nov 16, 2026, the US Commerce Department released a rule “to address remote access to advanced super intelligence (SI) chips and servers”, aimed at “remote computing arrangements involving data centers in third countries”.</li>
-   <li>Not drawn, from the Reuters review of Nov 13, 2026: a cluster in Fujian. Reuters lists it with facilities “already using restricted Nvidia hardware”, but says only that a Shanghai-listed company’s venture “had built an H800 cluster” and that its services contract “ended early”. It does not say plainly that the cluster runs. Also not drawn: two small university purchases (three H100 processors and two H200 chips).</li>
+   <li>Not drawn, from the Reuters review of Nov 13, 2026: a cluster in Fujian. Reuters lists it with facilities “already using restricted Nvidia hardware”, but says only that a Shanghai-listed company’s venture “had built an H800 cluster” and that its services contract “ended early”. It does not say plainly that the cluster runs. Also not drawn, from the same review, two small university purchases: “Shenzhen University awarded a contract for three H100 processors in September”, and Northwestern Polytechnical University “bought two H200 chips the following month”.</li>
    <li>These are places named in %%N_SRC%% saved sources, not a survey. Dates are of the report or document unless the page gives the date of the act. English for Japanese words is mine.</li>
   </ul>
  </section>

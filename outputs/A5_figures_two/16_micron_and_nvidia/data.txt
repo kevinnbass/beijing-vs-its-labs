@@ -83,8 +83,8 @@ Q In September 2025, the Cyberspace Administration of China requested Chinese te
 D In September 2025, the Cyberspace Administration of China requested
 
 @ nv-6000d press 2025-09-17 - man-cn-ft-20250917-6000d case=nvidia row=unpublished dir=away
-T Reported: firms told to end testing and orders of the RTX Pro 6000D
-L The cyberspace regulator tells companies, ByteDance and Alibaba among them, to end their testing and orders of Nvidia's RTX Pro 6000D, the Financial Times reports, by three unnamed people. The paper calls it a ban: "The ban goes beyond earlier guidance from regulators". It reports an order told to companies, not a published rule.
+T Reported: firms told to end testing and orders of the RTX PRO 6000D
+L The cyberspace regulator tells companies, ByteDance and Alibaba among them, to end their testing and orders of Nvidia's RTX PRO 6000D, the Financial Times reports, by three unnamed people. The paper calls it a ban: "The ban goes beyond earlier guidance from regulators". It reports an order told to companies, not a published rule.
 S Financial Times, Sept 17, 2025
 Q told companies, including ByteDance and Alibaba, this week to end their testing and orders of the RTX Pro 6000D
 Q The ban goes beyond earlier guidance from regulators

@@ -33,19 +33,22 @@ Nvidia, in its reports since November 2025: "we are already effectively foreclos
 !! man-ms-sec-10k-fy2026 | we are already effectively foreclosed from the China market by U.S. export controls
 !! man-ms-sec-10q-2026-07 | already effectively foreclosed from the China market by U.S. export controls
 Alibaba's annual report: "We and our technology partners are forced to develop equivalent technologies or components, or obtain equivalent technologies or components from sources outside the United States." [cn-clips-alibaba-20f]
-iFlytek, a model maker on the US Entity List, which it says makes a secure supply of home-made chips all the more necessary for it, told investors on Aug 21, 2026 that as American controls tighten "全行业都会被倒逼转向国产算力" (the whole industry will be forced to turn to home-made computing) [cn-le26-iflytek-ir-20260821].
+iFlytek, a model maker on the US Entity List, told investors on Aug 21, 2026 that as American controls tighten "全行业都会被倒逼转向国产算力" (the whole industry will be forced to turn to home-made computing), and of itself: "尤其是在讯飞被列入美国实体清单的背景下，更需要在全栈自主可控的国产芯片及配套硬件元器件供应上做好保障" (especially as iFlytek has been put on the US Entity List, it is all the more necessary to secure the supply of home-made chips and matching hardware components, independently controllable across the whole stack) [cn-le26-iflytek-ir-20260821].
 !! cn-le26-iflytek-ir-20260821 | 时间2026.08.21
 !! cn-le26-iflytek-ir-20260821 | 尤其是在讯飞被列入美国实体清单的背景下
 !! cn-le26-iflytek-ir-20260821 | 随着美国对顶尖芯片出口管制越来越严格
 !! cn-le26-iflytek-ir-20260821 | 更需要在全栈自主可控的国产芯片及配套硬件元器件供应上做好保障
-Tencent's president, Nov 18, 2026, asked about new US restrictions: "over the longer run, we believe all Chinese players would actually have to rely on domestic supply chains and domestic chips" (a stock-data site's transcript) [cn-o36-tencent-call-20261118-sa].
+Tencent's president, Nov 18, 2026, asked how tighter US restrictions bear on its deals for computing capacity, said they left everyone in China with less advanced compute, "no matter when you actually started leasing or building capacities outside of China", and: "over the longer run, we believe all Chinese players would actually have to rely on domestic supply chains and domestic chips" (a stock-data site's transcript) [cn-o36-tencent-call-20261118-sa].
 !! cn-o36-tencent-call-20261118-sa | Earnings Call: Q3 2026 Nov 18, 2026
 !! cn-o36-tencent-call-20261118-sa | how do increased U.S. restrictions impact both existing and future deals with compute
 !! cn-o36-tencent-call-20261118-sa | in relation to the latest tighter restrictions
 
 **2026: Washington and the H200**
 
-Washington's rule of Jan 15, 2026 moved licence applications for Nvidia's H200 chip from a presumption of denial to case-by-case review, on conditions that include "independent, third-party testing in the United States" [man-ms-admin-bis-jan2026-rule-8ec187].
+Washington's rule of Jan 15, 2026 moved licence applications for Nvidia's H200 chip to China and Macau from a presumption of denial to case-by-case review, on conditions that include "independent, third-party testing in the United States", and kept a presumption of denial where the buyer, or its parent company, is headquartered in China and the chips are for use outside China, Macau and the other countries of the same US country group [man-ms-admin-bis-jan2026-rule-8ec187]. The director of the White House Office of Science and Technology Policy, Michael Kratsios, told a House subcommittee the day before: "if you're a large Chinese tech company and you want to build a data center in Malaysia, you cannot buy H200s to do that" [cn-usdocs-house-kratsios-20260114].
+!! man-ms-admin-bis-jan2026-rule-8ec187 | including end-users located outside of destinations in Country Group D:5 or Macau
+!! man-ms-admin-bis-jan2026-rule-8ec187 | headquartered or have a parent company headquartered in Macau or a destination in Country Group D:5
+!! cn-usdocs-house-kratsios-20260114 | January 14, 2026
 !! man-ms-admin-bis-jan2026-rule-8ec187 | changing it from a presumption of denial to a case-by-case review
 !! man-ms-admin-bis-jan2026-rule-8ec187 | The semiconductors covered by this rule are the Nvidia H200 and its equivalents
 Nvidia says the licences it was granted from February 2026 require an inspection in the United States before shipment, and that chips shipped under them "are subject to a 25% tariff upon importation into the United States" [man-ms-sec-10q-2026-07].
@@ -53,12 +56,13 @@ Nvidia says the licences it was granted from February 2026 require an inspection
 !! man-ms-admin-bis-jan2026-rule-8ec187 | The effective date of this rule is January 15, 2026
 !! man-ms-sec-10q-2026-07 | As a result, any H200s shipped under the new licensing program are subject to a 25% tariff
 !! man-ms-sec-10q-2026-07 | The licenses require that the H200s go through an inspection process in the United States prior to any shipment to the customer
-Washington's own table shows that by May 11, 2026 it had returned without action the applications holding 55% of the chips its summary records. The table marks those applications returned, a status apart from the one it marks rejected, and gives no reason; the House committee that released it says the summary does not show every application in full [cn-usdocs-hfac-decisions-20261119] [cn-usdocs-hfac-summary-20261119].
+Washington's own table shows that by May 11, 2026 it had returned without action the applications holding 55% of the chips its summary records (Nvidia's H200 and AMD's comparable MI325X together). The table marks those applications returned, a status apart from the one it marks rejected, and gives no reason; the House committee that released it says the summary does not show every application in full [cn-usdocs-hfac-decisions-20261119] [cn-usdocs-hfac-summary-20261119].
 !! cn-usdocs-hfac-decisions-20261119 | Rejected
 !! cn-usdocs-hfac-decisions-20261119 | H200 License and Equivalent Application Status as of May 11, 2026
 !! cn-usdocs-hfac-decisions-20261119 | Bytedance System SDN 508,000 RWA Malaysia
 !! cn-usdocs-hfac-summary-20261119 | BIS received applications to sell 3,444,160 covered integrated circuits
 !! cn-usdocs-hfac-summary-20261119 | not fully reflected in the May 11, 2026, summary document
+!! cn-usdocs-hfac-summary-20261119 | Covered integrated circuits are the following products: NVIDIA's H200 and AMD's MI325X.
 One person told Reuters that Chinese firms pulled back after Beijing's guidance, and that the shift "was partly triggered by changes on the U.S. side" [cn-acts-reuters-us-approvals-20260514-wayback].
 !! cn-acts-reuters-us-approvals-20260514-wayback | Chinese firms pulled back after guidance from Beijing, one source said
 

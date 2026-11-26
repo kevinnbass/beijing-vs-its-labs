@@ -172,13 +172,18 @@ def main():
     notes = [
         "Draft by Claude, Anthropic's model.",      # round 11 (Nov 26, 2026): the session's ruling, no ""
         f'Drawn word for word from the table of records of the project\'s main figure (figure/figure_events.tsv): {len(rows)} records, in date order, from {first} to {last}.',   # round 10b: no script name
-        'Each line: date | row | what | source | address. The second field is the row of the main figure the record sits in: which side it is about and which way it points. It does not name the speaker; the source field does.',
+        'Each line: date | row | what | source | address. The second field is the row of the main figure the record sits in: which side it is about and which way it points. '
+        'A row\'s name gives that direction only: a row holds statements, filings, notices and press reports alike, and not every record in it is itself an act of holding back or letting in. '
+        'It does not name the speaker; the source field does.',      # round 12 (Nov 26, 2026): what a row name says, and what it does not
+        'For a press report the date is the report\'s day; what it reports can be earlier (the record of Nov 7, 2023 reports an order of August 2023).',      # round 12: checked below
         f'Two tiers, marked at the end of each source: {on_record} records are on the record ({count["doc"]} published documents or officials, {count["rec"]} companies or named people outside government); {count["press"]} are press reports citing unnamed people.',
         'By row: ' + '; '.join(f'{v}, {n}' for v, n in lanes.items()) + '.',
         f'Words between quotation marks are the source\'s own: all {n_kept} such phrases were found in the saved copy of the record\'s source.'
         + (f' In {len(off_n)} records the figure\'s line put marks round words that are not in the saved copy (our English for a Chinese word, or a summary); the marks are taken off here.' if off else ''),
         'English given for Chinese sources is ours, not an official translation.',
     ] + ([f'{len(loose)} records have no exact day, and their date field carries the figure\'s own words: {loose_txt}. Each stands in the list where the figure places it; that place is not a date.'] if loose else [])
+    ex = [r for r in rows if r['shown_as'] == 'Nov 7, 2023' and r['kind'] == 'press' and 'in August 2023' in r['text']]      # round 12: the note's example
+    if len(ex) != 1: sys.exit('the note\'s example (a press record of Nov 7, 2023 reporting an order of August 2023) is not in the table')
     # the notes hold no straight double quotes: the builder would read them as quotations
     if any('"' in n for n in notes): sys.exit('a note holds a straight double quote')
     base_notes = notes

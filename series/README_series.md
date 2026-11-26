@@ -16,7 +16,7 @@ The whole story in one image: of the 62 dated records in the figure that goes wi
 
 - [Figure 00 · The board](https://kevinnbass.github.io/beijing-vs-its-labs/series/03_figure-00_the-board.html): Who acts on whom: two governments, Nvidia, China’s AI companies and China’s chip makers, with the strongest record on every link.
 - [Figure 01 · The pull](https://kevinnbass.github.io/beijing-vs-its-labs/series/04_figure-01_the-pull.html): Every dated record by which way each act pulled, round what Washington allowed and what Nvidia sold.
-- [Figure 02 · Four chips](https://kevinnbass.github.io/beijing-vs-its-labs/series/05_figure-02_four-chips.html): The H20, the RTX Pro 6000D, the H200 and the RTX PRO 5500: what was allowed, what was ordered, what Beijing did about each, and what was delivered.
+- [Figure 02 · Four chips](https://kevinnbass.github.io/beijing-vs-its-labs/series/05_figure-02_four-chips.html): The H20, the RTX PRO 6000D, the H200 and the RTX PRO 5500: what was allowed, what was ordered, what Beijing did about each, and what was delivered.
 
 ### II. The state’s declared line
 
@@ -34,7 +34,7 @@ In public the Chinese state says use home-made chips: the leader calls dependenc
 
 <a href="https://kevinnbass.github.io/beijing-vs-its-labs/series/12_chapter-III_the-companies.html"><img src="series/thumbs/12_chapter-III_the-companies.jpg" width="320" alt="The map of chapter III"></a>
 
-The companies ran on Nvidia’s chips and kept reaching for them: a Shanghai government body wrote that their clusters in the city run mainly on Nvidia cards, and they were reported to have ordered “more than 2 million H200 chips for 2026”.
+The companies ran on Nvidia’s chips and kept reaching for them: a Shanghai government body wrote in 2025 that the city’s internet companies run their own clusters mainly on Nvidia cards, and they were reported to have ordered “more than 2 million H200 chips for 2026”.
 
 - [Figure 08 · In their own words](https://kevinnbass.github.io/beijing-vs-its-labs/series/13_figure-08_in-their-own-words.html): What the companies said about chips on results calls and in investor records.
 - [Figure 09 · Who trained on what](https://kevinnbass.github.io/beijing-vs-its-labs/series/14_figure-09_who-trained-on-what.html): Training claims model by model, who makes each, and why the companies stayed with Nvidia.
@@ -61,14 +61,14 @@ The numbers count different things: “more than 2 million H200 chips” reporte
 - [Figure 16 · Washington’s table](https://kevinnbass.github.io/beijing-vs-its-labs/series/23_figure-16_washingtons-table.html): Washington’s table of licence applications, one by one.
 - [Figure 17 · Two gates](https://kevinnbass.github.io/beijing-vs-its-labs/series/24_figure-17_two-gates.html): The H200’s separate counts (orders, applications, approvals, deliveries) in the order of a sale, through two governments: not one tally, and they cannot be added.
 - [Figure 18 · Share and rise](https://kevinnbass.github.io/beijing-vs-its-labs/series/25_figure-18_share-and-rise.html): Nvidia’s reported share in China and Chinese chip makers’ revenue.
-- [Figure 19 · The customs lines](https://kevinnbass.github.io/beijing-vs-its-labs/series/26_figure-19_customs.html): What trade figures can and cannot show; the Hong Kong finding.
+- [Figure 19 · The customs lines](https://kevinnbass.github.io/beijing-vs-its-labs/series/26_figure-19_customs.html): What trade figures can and cannot show, set beside the 600,000 chips Reuters reported in Hong Kong.
 - [Figure 20 · Purchase notices](https://kevinnbass.github.io/beijing-vs-its-labs/series/27_figure-20_tenders.html): A sample of public purchase notices.
 
 ### VI. How it is read, and how far the evidence goes
 
 <a href="https://kevinnbass.github.io/beijing-vs-its-labs/series/28_chapter-VI_how-it-is-read.html"><img src="series/thumbs/28_chapter-VI_how-it-is-read.jpg" width="320" alt="The map of chapter VI"></a>
 
-Five limits on the claim: Beijing was not one actor; it warned and guided, and no published ban was found; some purchases were approved and some chips came in; the companies had reasons of their own, and American curbs and conditions pushed too; what Beijing meant is not settled. One sentence survives all five.
+Five limits on the claim: Beijing was not one actor; it warned in public and, by press reports, guided in private; no published ban was found; some purchases were approved and some chips came in; the companies had reasons of their own, and American curbs and conditions pushed too; what Beijing meant is not settled. One sentence survives all five.
 
 - [Figure 21 · Washington reads Beijing](https://kevinnbass.github.io/beijing-vs-its-labs/series/29_figure-21_washington-reads-beijing.html): American officials and bodies, statement by statement.
 - [Figure 22 · Two pushes](https://kevinnbass.github.io/beijing-vs-its-labs/series/30_figure-22_two-pushes.html): Washington’s curbs and Beijing’s guidance on the same companies, and what their filings blame.

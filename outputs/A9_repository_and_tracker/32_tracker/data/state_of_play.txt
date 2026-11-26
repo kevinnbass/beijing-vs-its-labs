@@ -1,4 +1,4 @@
-# The tracker's state of play (build.py reads this file). Written Nov 23, 2026; dated Nov 24, 2026 in round 5 and Nov 25, 2026 in round 8; brought to core edits 8 and 8b in round 9, Nov 25, 2026, and to the core's batch of 22:33 UTC in round 10 (the 10-Q's last look, 22:16 UTC); dated Nov 26, 2026 in round 11, when a log line of that day was added (the argument's text that the items use did not change) (see the log). Markup, one thing per line:
+# The tracker's state of play (build.py reads this file). Written Nov 23, 2026; dated Nov 24, 2026 in round 5 and Nov 25, 2026 in round 8; brought to core edits 8 and 8b in round 9, Nov 25, 2026, and to the core's batch of 22:33 UTC in round 10 (the 10-Q's last look, 22:16 UTC); dated Nov 26, 2026 in round 11, when a log line of that day was added (the argument's text that the items use did not change); in round 12 (Nov 26, 2026, the argument's first note "Revised Nov 26, 2026.") the foreign ministry's answer of Nov 18, 2026, as the argument's point 18 gives it, and the licence table's third exporter were added (see the log). Markup, one thing per line:
 #   @title words                  the section's heading
 #   @sub words                    the line under it
 #   @src id | label | address     the link text for a saved id cited in [square brackets]; the address is optional
@@ -38,6 +38,7 @@
 @src cn-le25-samr-news-list-p01-20261123 | the same list, newest page
 @src cn-ga01-bnn-turnaround-20261123 | Reuters, as carried by BNN Bloomberg
 @src cn-acts-mfa-20261112 | the foreign ministry's press conference of Nov 12
+@src cn-acts-mfa-20261118 | the foreign ministry's press conference of Nov 18
 @src cn-ga15-mfa-20261123 | the foreign ministry's press conference of Nov 23
 @src cn-ga06-nvda-8k-20261123-pdf | Nvidia's Form 8-K, Nov 23, 2026
 @src cn-le04-standard-900000-20261120 | The Standard (Hong Kong)
@@ -79,11 +80,14 @@
 !! cn-usdocs-hfac-summary-20261119 | Covered integrated circuits are the following products: NVIDIA's H200 and AMD's MI325X.
 !! cn-usdocs-hfac-summary-20261119 | According to a BIS summary provided to the House Foreign Affairs Committee dated May 11, 2026
 !! cn-le04-bis-ear-748 | Bureau of Industry and Security, U.S. Department of Commerce
-- The counts, by a script over the table's {{ALL_N}} rows: {{ALL}} chips in all. Returned without action: {{RWA}} in {{RWA_N}} applications, among them every application whose ultimate location is Malaysia, Indonesia or Thailand ({{SEA}} chips) and every one above {{CAP}} chips. Approved, not shipped: {{APPR}} in {{APPR_N}} ({{APPR_NV}} in Nvidia's {{APPR_NV_N}}, {{APPR_AMD}} in AMD's {{APPR_AMD_N}}). Still submitted: {{SUB}} in {{SUB_N}}. Rejected: {{REJ}} in {{REJ_N}}. The summary gives the same total and the same approved count [cn-usdocs-hfac-summary-20261119]. The figures add Nvidia's and AMD's chips together. The table gives no reasons. Each row names a data-centre operator or ultimate consignee: an application is not an order, and an approval there is Washington's licence, not Beijing's [cn-usdocs-hfac-decisions-20261119].
+- The counts, by a script over the table's {{ALL_N}} rows, which come from three exporters, Nvidia, AMD and Semsotai USA: {{ALL}} chips in all. Returned without action: {{RWA}} in {{RWA_N}} applications, among them every application whose ultimate location is Malaysia, Indonesia or Thailand ({{SEA}} chips) and every one above {{CAP}} chips. Approved, not shipped: {{APPR}} in {{APPR_N}} applications ({{APPR_NV}} in Nvidia's {{APPR_NV_N}}, {{APPR_AMD}} in AMD's {{APPR_AMD_N}}). Still marked submitted on May 11, 2026: {{SUB}} in {{SUB_N}} applications, among them all {{SEMS_N}} of Semsotai USA's ({{SEMS}} chips, all for Sharetronic Data Technology). Rejected: {{REJ}} in {{REJ_N}}. The summary gives the same total and the same approved count [cn-usdocs-hfac-summary-20261119]. The figures add Nvidia's and AMD's chips together. The table gives no reasons. Each row names a data-centre operator or ultimate consignee: an application is not an order, and an approval there is Washington's licence, not Beijing's [cn-usdocs-hfac-decisions-20261119].
 !! cn-usdocs-hfac-summary-20261119 | BIS received applications to sell {{ALL}} covered
 !! cn-usdocs-hfac-summary-20261119 | {{APPR}} covered integrated circuits to PRC companies across {{APPR_N}} license applications
 !! cn-usdocs-hfac-decisions-20261119 | Data Center Operator or
 !! cn-usdocs-hfac-decisions-20261119 | Ultimate Consignee
+!! cn-usdocs-hfac-decisions-20261119 | Semsotai USA
+!! cn-usdocs-hfac-decisions-20261119 | Sharetronic Data Technology
+!! cn-usdocs-hfac-decisions-20261119 | H200 License and Equivalent Application Status as of May 11, 2026
 - The US Trade Representative, Jamieson Greer, in a Bloomberg interview posted on Nov 20, 2026 (machine captions, not checked by ear; 1:06 to 1:35), said the Chinese side is "not as monolithic as people would have you believe": the private sector is "quite eager to get the most advanced chips they can"; by his "own analysis" some "think, well, we'd like to have access", others "we don't want American chips anyway" and "We want to see the ascend chips expand their market" [cn-le01-greer-bbg-20261120-autocaps-ttml]. The video's two caption tracks differ on one word, "We want Huawei chips" in one [cn-le01-greer-bbg-20261120-autocaps-ttml] and "We want war chips" in the other [cn-le01-greer-bbg-20261120-subs-ttml], and on where a sentence breaks, so whether he puts the split inside the government needs a listen. Asked whether Xi raised chips on the President's trip, he said (0:28 to 0:34): "But the Chinese side did not raise this issue with us." [cn-le01-greer-bbg-20261120-autocaps-ttml]
 !RAW cn-le01-greer-bbg-20261120-youtube | "uploadDate":"2026-11-20
 !RAW cn-le01-greer-bbg-20261120-youtube | "ownerChannelName":"Bloomberg Television"
@@ -95,11 +99,15 @@
 !! cn-ga01-bnn-turnaround-20261123 | a graphics card designed for professional computers that can also run AI models
 !! cn-ga01-bnn-turnaround-20261123 | Large purchases of this new Nvidia chip by internet companies such as ByteDance and Alibaba could require Chinese government approval, according to two people familiar with the matter
 !! cn-ga01-bnn-turnaround-20261123 | industry regulator did not respond to comment requests
-- The foreign ministry answered two more questions on chips in November 2026. On Nov 12, a reporter of Agence France-Presse said that procurement records of Northwestern Polytechnical University, in Xi'an, show that it bought Nvidia H200 chips, which are under US export controls, and asked for more information; the spokesperson, Mao Ning, said: "你提到的具体情况我不了解。中方在美国输华芯片问题上的立场是一贯的。" (I am not aware of the specific situation you mention. China's position on US chip exports to China is consistent), and that China firmly opposes the American side's stretching of the concept of national security [cn-acts-mfa-20261112]. On Nov 23, a reporter of Reuters asked about the President's saying he would sell China only older chips, and whether China was negotiating with Washington; the spokesperson, Guo Jiakun, said: "关于美国出口管制措施，中方此前已表明立场" (China has already stated its position on US export-control measures) [cn-ga15-mfa-20261123].
+- The foreign ministry answered three more questions on chips in November 2026. On Nov 12, a reporter of Agence France-Presse said that procurement records of Northwestern Polytechnical University, in Xi'an, show that it bought Nvidia H200 chips, which are under US export controls, and asked for more information; the spokesperson, Mao Ning, said: "你提到的具体情况我不了解。中方在美国输华芯片问题上的立场是一贯的。" (I am not aware of the specific situation you mention. China's position on US chip exports to China is consistent), and that China firmly opposes the American side's stretching of the concept of national security [cn-acts-mfa-20261112]. On Nov 18, a reporter of Agence France-Presse asked about Nvidia's saying, the day before, that it would no longer supply Hopper data-centre products, the H200 among them, to China; the spokesperson, Guo Jiakun, said only: "中方此前已经多次阐明在美国输华芯片问题上的原则立场。" (China has already stated many times its principled position on US chip exports to China) [cn-acts-mfa-20261118]. On Nov 23, a reporter of Reuters asked about the President's saying he would sell China only older chips, and whether China was negotiating with Washington; the spokesperson, Guo Jiakun, said: "关于美国出口管制措施，中方此前已表明立场" (China has already stated its position on US export-control measures) [cn-ga15-mfa-20261123].
 !! cn-acts-mfa-20261112 | 2026年11月12日外交部发言人毛宁主持例行记者会
 !! cn-acts-mfa-20261112 | 法新社记者：位于西安的中国西北工业大学的采购记录显示，该校购买了英伟达H200芯片，而该芯片受到美国的出口管制
 !! cn-acts-mfa-20261112 | 毛宁：你提到的具体情况我不了解
 !! cn-acts-mfa-20261112 | 我们坚决反对美方泛化国家安全概念
+!! cn-acts-mfa-20261118 | 2026年11月18日外交部发言人郭嘉昆主持例行记者会
+!! cn-acts-mfa-20261118 | 法新社记者：英伟达临时首席执行官昨日向股东表示，将不再向中国提供Hopper数据中心产品
+!! cn-acts-mfa-20261118 | H200芯片将不再发货
+!! cn-acts-mfa-20261118 | 郭嘉昆：中方此前已经多次阐明在美国输华芯片问题上的原则立场
 !! cn-ga15-mfa-20261123 | 2026年11月23日外交部发言人郭嘉昆主持例行记者会
 !! cn-ga15-mfa-20261123 | 路透社记者：美国总统特朗普称只愿向中国出售旧款芯片，正就此与中方进行沟通
 !! cn-ga15-mfa-20261123 | 是否正与美方进行谈判

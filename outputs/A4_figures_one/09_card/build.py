@@ -19,6 +19,10 @@ argument's two later accounts that say otherwise of the orders.
 Round 10b (the session's ruling): the card's footer carries only the credit, not "" (untrue of a public copy).
 Round 11 (Nov 26, 2026, outputs/ROUND11.md thing 2): the press rows' labels begin "Reported:" (../h200_funnel.tsv), drawn in the
 image too; the page's notes speak of the chips reported delivered and of the reported orders.
+Round 12 (Nov 26, 2026, outputs/ROUND12.md; core batch 14): each press row shows its step as the argument's table of numbers
+words it (r['step'] from a4lib.funnel(), which stops if a label is not level with the argument's "Reported: " cells): "Reported:
+ordered by Chinese companies for 2026", "Reported: delivered by August 2026", "Reported: stored in Hong Kong, November 2026".
+The page's top line is the credit alone (a4lib.NOTE).
 Before the card is called done or shown: scripts/render_and_look.py on card.html and on card.png.
 """
 import re, sys
@@ -61,9 +65,9 @@ CARD_CSS = px('''
 #card .fk span { display: inline-flex; align-items: center; gap: 6px; }
 #card .rows { margin-top: 9px; display: grid; flex: 1; grid-auto-rows: 1fr; min-height: 0; }
 #card .r { border-top: 1PX solid var(--grid); display: flex; flex-direction: column; justify-content: center; min-height: 0; }
-#card .lab { display: flex; align-items: baseline; gap: 10px; white-space: nowrap; }
-#card .lab b { font-weight: 600; font-size: 17.5px; }     /* round 11: 17.5px (was 18.5): the labels now begin "Reported: " */
-#card .lab span { font-size: 12px; color: var(--muted); }
+#card .lab { display: flex; align-items: baseline; gap: 8px; white-space: nowrap; }     /* round 12: 8px (was 10) */
+#card .lab b { font-weight: 600; font-size: 17px; }     /* round 11: 17.5px (was 18.5): the labels now begin "Reported: "; round 12: 17px, the argument's longer steps */
+#card .lab span { font-size: 11.3px; color: var(--muted); }     /* round 12: 11.3px (was 12), the footer's size: "Reported: delivered by August 2026" and its source ran 17 px out */
 #card .bar { display: flex; align-items: center; gap: 10px; margin-top: 1px; height: 31px; }
 #card .bar i { display: block; flex: none; height: 17px; border-radius: 0 4px 4px 0; }
 #card .bar i.toward { background: var(--toward); } #card .bar i.away { background: var(--away); } #card .bar i.us { background: var(--us); }
@@ -124,7 +128,7 @@ def main():
             note = f'<span class="nt">Nvidia’s chips,<br>in {r["apps"]} applications</span>'
         if r['key'] == 'delivered': note = f'<span class="nt">to {r["buyers"][0]} and to {r["buyers"][1]}</span>'
         qual = f'<small>{esc(r["shown"][0])}</small>' if r['shown'][0] else ''
-        rr.append(f'<div class="r"><p class="lab"><b>{esc(r["label"])}</b><span>{src}</span></p>'
+        rr.append(f'<div class="r"><p class="lab"><b>{esc(r["step"])}</b><span>{src}</span></p>'
                   f'<div class="bar"><i class="{r["dir"]}" style="width:{w / 12:.4f}cqw"></i><em>{qual}{esc(r["shown"][1])}</em>{note}</div></div>')
     reut_txt = '; '.join(fmt(d) for d in sorted(r['date'] for r in press if r['by'] == 'Reuters'))
     relays = [f'{"the " if r["by"].startswith("Financial") else ""}{r["by"]} ({fmt(r["date"])})' for r in press if r['by'] != 'Reuters']
@@ -176,7 +180,7 @@ def main():
             kind = '<i class="mk solid us"></i> on the record: a United States government table'
         else:
             src = A.link(r['sid'], f'{r["by"]}, {fmt(r["date"])}'); kind = f'<i class="mk open {r["dir"]}"></i> press report citing unnamed people'
-        trs.append(f'<tr><td><b>{esc(r["label"])}</b><br>{esc(shown)}</td><td>{words}</td><td>{src}</td><td>{kind}</td></tr>')
+        trs.append(f'<tr><td><b>{esc(r["step"])}</b><br>{esc(shown)}</td><td>{words}</td><td>{src}</td><td>{kind}</td></tr>')
     trs.append(f'<tr><td><b>Beijing holds Nvidia back</b><br>one line</td><td>{qm(Q["away"])}</td><td>{A.link(Q["away"].sid, f"Nvidia, Form 10-Q, {fmt(d_away)}")}</td>'
                f'<td><i class="mk solid away"></i> on the record: a company filing</td></tr>')
     trs.append(f'<tr><td><b>The companies reach for Nvidia</b><br>one line</td><td>{qm(Q["toward"])}</td><td>{A.link(Q["toward"].sid, f"Reuters, {fmt(d_toward)}")}</td>'
@@ -231,6 +235,10 @@ def main():
     assert all(r['label'].startswith('Reported: ') == (r['tier'] == 'open') for r in rows), 'a press row\'s label does not begin "Reported: "'
     for banned in ('>Delivered<', '>Stored in Hong Kong', '>Ordered by', '>Approved by Beijing', 'chips delivered is', 'say otherwise of the orders.'):
         assert banned not in page, f'round 11: the page still says "{banned}"'
+    # round 12: the steps as the argument now words them; the old labels and the words that called a copy local are gone
+    assert sum(f'<b>{esc(r["step"])}</b>' in page for r in press) == len(press), 'control: every press step stands on the page as the argument words it'
+    for banned in ('>Reported: delivered<', 'awaiting shipment</b>', '>Reported: ordered by Chinese companies<', 'Local; not published', 'not published'):
+        assert banned not in page, f'round 12: the page still says "{banned}"'
     for banned in ('750,000', 'four limits', 'Democrats', 'more than half', 'Commerce Department’s table', 'Commerce Department table',
                    'Commerce Department’s, with', 'shows that application', 'an application the table shows', 'counted in full',
                    # withdrawn by core edit 8b (Nov 25, 2026): the table's column names a data-centre operator or ultimate consignee and an ultimate

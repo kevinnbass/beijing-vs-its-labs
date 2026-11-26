@@ -58,21 +58,21 @@ ABOUT = {
     # Round 9 (Nov 25, 2026, after voucher rounds 3 to 6): five classes now; the counts and the verbs are computed (v_only_verb, v_two_verb)
     'local_vouchers_classes.tsv': "The class of every local voucher rule of the two voucher tables by the published counting rule: {v_counted} counted, of the rules found by searches that went province by province and city by city, saved and read (not a census of every local government): {v_more} pay more for home-made computing and still pay for other computing, {v_only} {v_only_verb} for home-made computing only, {v_one} pay one rate whatever the chip and {v_two} {v_two_verb} two rates by a type of computing facility that the rule does not name; {v_not} read and not counted, each with its reason. The class looks at the counted payment only: other provisions of a counted rule that give home-made computing something more are in local_vouchers_other_provisions.tsv",
     'market_numbers.tsv': "Published market numbers (shares, shipments, market sizes), one row per number. The column family names the measure; rows of different families are different measures",
-    'nvidia_china_revenue.tsv': "Nvidia's revenue from customers in China, Hong Kong included, period by period, from its own filings: by the customer's billing location until its quarterly report of October 2025, and by the direct customer's headquarters from that report on, with earlier periods recast (column basis); not a count of chips that entered China",   # round 10b: the readers' lead L455
+    'nvidia_china_revenue.tsv': "Nvidia's revenue from customers in China, Hong Kong included, period by period, from its own filings: by the customer's billing location until its quarterly report for the quarter that ended Oct 26, 2025, and by the direct customer's headquarters from that report on, with earlier periods recast (column basis); not a count of chips that entered China",   # round 10b: the readers' lead L455; round 12 (C185): the quarter's end date, checked against the table in copy_tables()
     'nvidia_wording_by_filing.tsv': "Nvidia's own words on China, from its filings and results calls, and its executives' words and its statements as others carried them",
-    'press_originals.tsv': "For each press report the argument cited at an earlier build: whether the copy held is the publisher's own page or another outlet's",
+    'press_originals.tsv': "For each press report that an earlier version of the argument cited: whether the copy held is the publisher's own page or another outlet's",   # round 12 (C193)
     'procurement_records.tsv': "Purchase records: the telecom carriers' central purchases, awards that name Nvidia cards, and tenders that require home-made chips",
-    'provinces_31.tsv': "The 31 provincial-level governments: whether a published plan sets a share for home-made computing, each by its plan's own measure (chips, equipment, hardware and software, or computing capacity), with the document's own words where its text was read. Some rows rest on accounts of a plan rather than its text, and for one government, Xinjiang, no computing plan's text was found, though its development and reform commission, in a reply posted Jul 24, 2026, says two were issued: column result gives the finding, column rests_on what it rests on, and column l16_change what a later reading changed",   # round 10b: L452, L466
+    'provinces_31.tsv': "The 31 provincial-level governments: whether a published plan sets a share for home-made computing, each by its plan's own measure (chips, equipment, hardware and software, or computing capacity), with the document's own words where its text was read. Some rows rest on accounts of a plan rather than its text, and for one government, Xinjiang, no computing plan's text was found, though its development and reform commission, in a reply posted Jul 24, 2026, says two were issued: column result gives the finding, column rests_on what it rests on, and column l16_change, whose name is only the project's working label, what a later reading changed",   # round 10b: L452, L466; round 12 (C186)
     'replaced_copies.tsv': "The {all} saved pages that are no longer cited, and the copy that replaces each where one is needed: {hk} taken from the Hong Kong exchange's site and, since Nov 25, 2026, {terms} taken from idc.com and trendforce.com, whose terms bar copies made by script, so the project stopped citing them",   # round 10b: L468
-    'rtx5500_notices.tsv': "Notices on the exchanges' disclosure site, Sept 14 to Nov 24, 2026, whose titles name a contract, a purchase or computing: 333 notices, 3 of which name the RTX PRO 5500",
+    'rtx5500_notices.tsv': "Notices on the exchanges' disclosure site, Sept 14 to Nov 24, 2026, whose titles name a contract, a purchase or computing: {rtx_all} notices, {rtx_card} of which name a card PRO 5500, two of them as Nvidia's RTX PRO 5500",   # round 12 (C189): counted in copy_tables(); Youzu's notice names no maker (the argument, point 7)
     'state_media_items.tsv': "State and Party media items on Nvidia and its chips, July 2025 to November 2026, each with its stance",
     'talks_and_acts.tsv': "US-China trade meetings, May 2025 to November 2026, with what each side's readout says on chips, or that no written readout of that side was found, beside Beijing's dated acts and words on Nvidia chips",   # round 10b: L454
-    'trade_annual_summary.tsv': "Yearly sums of monthly customs figures, series by series. No customs line counts Nvidia chips",
+    'trade_annual_summary.tsv': "Yearly sums of monthly customs figures, series by series; column months_held gives how many months of the year each sum covers ({part_years}). No customs line counts Nvidia chips",   # round 12 (C194): part years counted in copy_tables()
     'trade_derived_figures.tsv': "The sums and ratios worked out from the trade tables",
     'us_officials_statements.tsv': "Named American officials' words on China buying, blocking or bargaining over Nvidia chips. Words from caption tracks are machine-made and not checked by ear",
     'xi_searches.tsv': "The searches made of Xi Jinping's published speeches and activities, with the number of results each returned and the controls",
     # Added Nov 25, 2026 (core edit 8): eleven tables of the gap sweep, copied into tables/ under plain names.
-    'rtx5500_buyers_later_notices.tsv': "Every notice of the three listed buyers of Nvidia's RTX PRO 5500 cards on the exchanges' disclosure site from Oct 1 to Nov 25, 2026 that the census of notices does not hold, with the Shenzhen exchange's letter to one of them: 26 rows, the letter among them, each with what it says on the cards",
+    'rtx5500_buyers_later_notices.tsv': "Every notice of the three listed buyers of cards named PRO 5500 (the purchase notices of two of them name Nvidia as the maker; Youzu's names none) on the exchanges' disclosure site from Oct 1 to Nov 25, 2026 that the census of notices does not hold, with the Shenzhen exchange's letter to one of them: 26 rows, the letter among them, each with what it says on the cards",
     'procurement_notices_sweep.tsv': "Sixty-one more purchase notices and filings on AI servers and cards, 2024 to November 2026, found by later searches and kept apart from the purchase records: how each names Nvidia, what it says on imports, and whether it requires or refuses Nvidia hardware by name",
     'other_listed_buyers.tsv': "Other listed companies that in 2026 disclosed, or put out a tender for, a purchase or lease of servers with Nvidia chips, or a purchase of computing servers that was not completed",
     'purchase_notices_2024_2025.tsv': "Purchase notices of January 2024 to June 2025, the window a search of Nov 25, 2026 covered, that name the H20, H800, A800, L20 or Nvidia; one row is a company's filing and one a scanned page read by eye",
@@ -89,7 +89,7 @@ ABOUT = {
     'state_media_baseline_outside_scope.tsv': "Items that the searches for that baseline found and left out of it, each with the reason",
     'reported_claims_outlets.tsv': "For nine claims the argument gives as reported by unnamed people: the first report, second reports with their own sources, relays, and any denial",
     'numbers_first_reports.tsv': "The numbers in the story: who first reported each among the saved pages, and how later reports changed it. In a column's name, the ledger is the project's ledger of numbers (the numbers ledger among the project's outputs)",   # round 10b: L458
-    'carriers_own_notices.tsv': "What the state telecom carriers' own notices, and others' accounts of the same purchases, say about the chips in the carriers' purchases of AI computing, 2023 to November 2026: each page classed by who states it, with counts of chip words on the page",
+    'carriers_own_notices.tsv': "What the state telecom carriers' own notices, and others' accounts of the same purchases, say about the chips in the carriers' purchases of AI computing, 2023 to November 2026: each page classed by who states it, with counts of chip words on the page. Column first_reading_verdict gives a first reading's verdict on each finding, supported or partly, and the last column, claim_as_read, the finding as read, with that reading's correction where the verdict is partly",   # round 12 (C184), in the words of the table's first line
     # Added Nov 25, 2026 (round 9 of the outputs): four tables of core edit 8b, in the words of the table helper's note (hand_out/TAB10_FOR_MAIN.txt item 3)
     'miit_texts_word_counts.tsv': "Counts of eighteen words (home-made, chip, Nvidia, three share words and others) in 54 texts that the Ministry of Industry and Information Technology published on computing, AI, electronics and telecom, 2023 to 2026, one row per saved text",
     'procurement_notices_oct_nov_2026.tsv': "Twenty-seven purchase notices for AI computing of Oct 13 to Nov 24, 2026, a reading sample: the chip words each prints, whether it names Nvidia, what it says on home-made products and imports, and whether it attaches a declaration on the home-made product standard",
@@ -220,6 +220,21 @@ def copy_tables(num):
     if f'China City News: {_bg} rows), so a comparison with that table counts the other {len(brows) - _bg}' not in _bhead:
         stop(f'state_media_baseline_2024_2025h1.tsv: {_bg} GROUP-PAPER rows of {len(brows)} by its note column, which its own first lines do not give')
     n_listed.update(bl_group=_bg, bl_other=len(brows) - _bg)
+    # round 12 (Nov 26, 2026; the readers' leads C185, C189, C194): what three one-line descriptions say, counted or checked here
+    _, rh, rrows = data_lines((src / 'rtx5500_notices.tsv').read_text(encoding='utf-8'))
+    n_listed.update(rtx_all=len(rrows), rtx_card=sum(1 for r in rrows if r[rh.index('names_card')] == 'yes'))
+    if n_listed['rtx_card'] != 3: stop(f'rtx5500_notices.tsv: {n_listed["rtx_card"]} notices name the card; the line on it says two of them name Nvidia (the argument\'s three buyers): reword it')
+    _, th, trows = data_lines((src / 'trade_annual_summary.tsv').read_text(encoding='utf-8'))
+    _part = [r for r in trows if int(r[th.index('months_held')]) < 12]
+    _yrs = sorted({r[th.index('year')] for r in trows})
+    _all_part = [y for y in _yrs if all(int(r[th.index('months_held')]) < 12 for r in trows if r[th.index('year')] == y)]
+    n_listed['part_years'] = (f'{len(_part)} of its {len(trows)} rows cover fewer than 12 months' +
+                              (f', every row of {" and ".join(_all_part)} among them' if _all_part else '') if _part else 'every row covers 12 months')
+    _, nh_, nrows = data_lines((src / 'nvidia_china_revenue.tsv').read_text(encoding='utf-8'))
+    _bill = [r[nh_.index('period_end')] for r in nrows if r[nh_.index('basis')] == 'billing']
+    _q = [r for r in nrows if r[nh_.index('period_end')] == '2025-10-26' and r[nh_.index('basis')] == 'headquarters' and r[0].startswith('Q3')]
+    if not _bill or max(_bill) >= '2025-10-26' or not _q:
+        stop('nvidia_china_revenue.tsv: the change of basis is not at the quarter that ended Oct 26, 2025, as its line in ABOUT says')
     for o, n in RETIRED_MORE.items(): retired.setdefault(o, n)
     if len(retired) != len(listed | set(RETIRED_MORE)): stop('the ids no longer cited do not add up')
     for n in set(retired.values()) - {''}:
@@ -265,7 +280,8 @@ def copy_tables(num):
         if f.name not in ABOUT: stop(f'{f.name}: no plain line for this table in ABOUT')
         raws[f.name] = raw
         out.append({'name': f.name, 'rows': len(rows), 'cols': head, 'notes': notes, 'about': ABOUT[f.name].format(**n_listed),
-                    'sha': hashlib.sha256(raw).hexdigest()})
+                    'sha': hashlib.sha256(raw).hexdigest(),
+                    'refcol': f.name in ('press_originals.tsv', 'us_officials_statements.tsv')})   # round 12 (C183): tables with a column of the argument's reference numbers
     stale = sorted(x.name for x in dst.glob('*') if x.name not in raws)
     if stale: stop(f'tables/ here holds files the project\'s tables folder does not: {stale} (move them aside by hand)')
     for name, raw in raws.items(): (dst / name).write_bytes(raw)
@@ -366,11 +382,20 @@ def main():
     for t in tabs:
         tab_lines.append(f'  tables/{t["name"]}   {t["rows"]} rows, {len(t["cols"])} columns')
         tab_lines.append(f'      What it is: {t["about"]}.')
-        tab_lines.append(f'      Columns: {", ".join(t["cols"])}')
+        if any(re.search(r'[,;]', c) for c in t['cols']):   # round 12 (C187): a column name holding a comma would read as two columns
+            tab_lines.append(f'      Columns (one to a line, since some names hold commas):')
+            tab_lines.extend(f'        - {c}' for c in t['cols'])
+        else:
+            tab_lines.append(f'      Columns: {", ".join(t["cols"])}')
         tab_lines.append(f'      Copy: byte for byte the project\'s table (sha256 {t["sha"]}).')
         for nt in t['notes']: tab_lines.append(f'      Read with care: {nt}.')
     tab_block = '\n'.join(tab_lines)
     n_tab_noted = sum(1 for t in tabs if t['notes'])
+    # round 12 (C182, C183): the intro says what the "Read with care" lines are, from the lines themselves
+    n_refcol = sum(1 for t in tabs if t['refcol'])
+    refcol_now = all(any(('gives the present reference numbers' in nt) or ('recomputed against the present argument' in nt) for nt in t['notes'])
+                     for t in tabs if t['refcol'])   # the words copy_tables() writes only when the column is current
+    if n_refcol != 2: stop(f'{n_refcol} tables with a column of reference numbers; the README\'s intro is written for two')
     c_who = Counter((r['who'], r['direction']) for r in rows); c_kind = Counter(r['kind'] for r in rows)
     c_ref = Counter(r['kind'] for r in ref_rows)
     n_cn = sum(1 for r in rows if r['our_english']); n_approx = sum(1 for r in rows if r['date_exact'] == 'no')
@@ -453,8 +478,9 @@ CHECKS THE SCRIPT MADE BEFORE WRITING
 
 READ WITH CARE
   A quotation that is found shows what the source says, not that it is true.
-  The two tiers are not the same kind of evidence. A press record (kind press) rests on unnamed people. Beijing's
-  instructions to companies, the customs checks and most of the numbers are of that kind: reported, not published policy.
+  The two tiers are not the same kind of evidence. A press record (kind press) rests on unnamed people. The instructions
+  that press reports say Beijing gave companies, the customs checks they report and most of the numbers are of that
+  kind: reported, not published policy.
   One company's annual report says on the record that the cyberspace regulator asked Chinese technology companies in
   September 2025 to halt purchases of certain chips; it does not name Nvidia (the argument, point 11).
   A record in a Beijing row can be the words of someone else about Beijing (a company's filing, a US official).
@@ -464,17 +490,18 @@ READ WITH CARE
   figure/figure_data.txt, on the lines that begin with "!"), and the reference lists of the two tier files.
 
 PLAIN TABLES (tables/)
-  These {len(tabs)} tables were made from Nov 23 to Nov 25, 2026 by the project's research agents, each from saved pages, and are
-  the project's own (the folder tables/ beside the argument). They are copied here so that the record can be read in
-  a spreadsheet. All {len(tabs)} are byte for byte the project's tables (build.py compares each copy's sha256 with the
-  project's after writing; each is given below). Nothing in them is changed here. Their quotations were checked by the
-  agents who made them, not again here.
-  The tables were made before the argument's last rebuild: a table can cite a saved copy the argument has since
-  replaced with a better one (the argument's reference list is the later word). Under {n_tab_noted} of the tables a
-  "Read with care" line says which rows cite a saved copy the project no longer cites, and which column describes an
-  earlier build of the argument; all such lines are computed by build.py. Rows of different tables count
-  different things. Do not join them into one series. Each table begins with its makers' own notes, on lines that
-  start with "#"; a program reading a table should skip those lines.
+  These {len(tabs)} tables were made from Nov 23 to Nov 25, 2026 by the AI agents that did the project's research, each from
+  saved pages, and are the project's own (the folder tables/ beside the argument). They are copied here so that the
+  record can be read in a spreadsheet. All {len(tabs)} are byte for byte the project's tables (build.py compares each copy's
+  sha256 with the project's after writing; each is given below). Nothing in them is changed here. Their quotations were
+  checked by the agents who made them, not again here.
+  The tables were made before the present version of the argument: a table can cite a saved copy that the project, or
+  its figure, has since replaced with a better one (the argument's reference list is the later word). Under {n_tab_noted} of
+  the tables a "Read with care" line, computed by build.py, says which rows cite such a copy (and whether the argument
+  itself still cites it), and, for the {n_refcol} tables with a column of the argument's reference numbers,
+  {"that those numbers are the present ones" if refcol_now else "whether those numbers are the present ones"}. Rows of different tables count different things. Do not join them
+  into one series. Each table begins with its makers' own notes, on lines that start with "#"; a program reading a
+  table should skip those lines.
 
 {tab_block}
 """

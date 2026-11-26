@@ -35,6 +35,10 @@ key does; "Who is who" says what the four rows hold and what the records call ho
 Round 11 (Nov 26, 2026): the line under the headline gives the exceptions in the argument's own words (point 19: "by these
 reports and records, taken together, some purchases were approved and some chips came in"); the credit line keeps "Draft by
 Claude, Anthropic's model." and no longer says the page is local (the session's ruling for the seventh public version).
+Round 12 (Nov 26, 2026): the state of play's counts name the licence table's third exporter, Semsotai USA ({{SEMS}}, {{SEMS_N}};
+house() checks that its applications are all still submitted, for Sharetronic Data Technology); the date note says where the dates
+it does not find stand (WHERE_DATE, each backed by a check of that page); Who is who gives Jeffrey Kessler's title and spells the
+RTX PRO 6000D as the project now does; the line over the records says the date is the day of the act where the page states that day.
 """
 import html, re, subprocess, sys
 from datetime import date
@@ -62,6 +66,10 @@ QUOTE = re.compile(r'"([^"]+)"')
 NUM = re.compile(r'(?<![A-Za-z0-9-])\$?\d[\d,]*(?:\.\d+)?(?:\s(?:million|billion))?%?(?![A-Za-z0-9]|-[A-Za-z])')
 CHIPNAME = re.compile(r'(?:RTX|PRO|Pro)\s$')
 CONTROL = ('Beijing has published a ban on the purchase of Nvidia chips', 'cn-clips-evidence-1')
+# Round 12: where the dates stand that the date screen does not find in the pages cited (the log's note of Nov 23, 2026 says so too).
+# record's saved id: (words for the note, saved id of the page that holds the date, words of that page that hold it)
+WHERE_DATE = {'cn-clips-evidence-1': ("in Reuters's dateline, Nov 5, on Yahoo's copy of the same report", 'cn-clips-reuters-hongkong-yahoo', "Nov 5 (Reuters) - About 600,000 of Nvidia's"),
+              'cn-us-lutnick-0422-rev-transcript-b': ("on the hearing's own page of the Senate Committee on Appropriations", 'cn-o37-senate-hearing-page-b', 'Date: Wednesday, April 22, 2026')}
 esc = html.escape
 
 
@@ -243,7 +251,13 @@ def house(f):
     if len(ten_any) != 1: bad.append(f'house table: {len(ten_any)} Tencent rows of Dec 19, 2025 from any exporter (the state of play says the table has only one)')
     if not L.has(f'export {TENCENT_FULL:,} H200s to Tencent', SUMMARY): bad.append('the summary does not give the Tencent application at the figure used here')
     tch = ten[0]['n'] if ten else 0
-    v = dict(ALL=f'{allc:,}', ALL_N=str(len(rows)), RWA=f'{rwa:,}', RWA_N=str(len(st('RWA'))), RWA_PCT=f'{round(100 * rwa / allc)}%',
+    # the table's third exporter (round 12): the state of play says its applications are all still submitted, all for Sharetronic
+    if {r['exporter'] for r in rows} != {'Nvidia', 'AMD', 'Semsotai USA'}: bad.append(f'house table: exporters are {sorted({r["exporter"] for r in rows})}, not the three the state of play names')
+    sem = [r for r in rows if r['exporter'] == 'Semsotai USA']
+    if not sem or any(r['status'] != 'Submitted' or not r['consignee'].startswith('Sharetronic Data Technology') for r in sem):
+        bad.append('house table: Semsotai USA\'s applications are not all submitted applications for Sharetronic Data Technology')
+    v = dict(SEMS=S(sem), SEMS_N=str(len(sem)),
+ALL=f'{allc:,}', ALL_N=str(len(rows)), RWA=f'{rwa:,}', RWA_N=str(len(st('RWA'))), RWA_PCT=f'{round(100 * rwa / allc)}%',
              APPR=S(appr), APPR_N=str(len(appr)), APPR_NV=S([r for r in appr if r['exporter'] == 'Nvidia']), APPR_NV_N=str(sum(r['exporter'] == 'Nvidia' for r in appr)),
              APPR_AMD=S([r for r in appr if r['exporter'] == 'AMD']), APPR_AMD_N=str(sum(r['exporter'] == 'AMD' for r in appr)),
              SUB=S(st('Submitted')), SUB_N=str(len(st('Submitted'))), REJ=S(st('Rejected')), REJ_N=str(len(st('Rejected'))),
@@ -438,14 +452,14 @@ PAGE = """<!doctype html>
  <ul class="who">
   <li><b>Beijing</b> stands for the leaders and bodies of the Chinese state named in the records: Xi Jinping, Premier Li Qiang, Vice Premiers He Lifeng and Ding Xuexiang; the cyberspace regulator (Cyberspace Administration of China) and its review office; the state planner (National Development and Reform Commission, NDRC); the market regulator (State Administration for Market Regulation); the commerce, finance, industry and security ministries; customs; and the state’s evaluation centre for information security. State media and the journal Qiushi speak in some records too. Two universities’ notices to buy Nvidia cards stand in the row of Beijing letting Nvidia in: they are the universities’ own buying, in notices that hold suppliers to the government procurement law’s conditions, not an act of the central government.</li>
   <li><b>The companies</b> are the Chinese AI companies named in the records: Alibaba, Baidu, ByteDance, Tencent, DeepSeek, Zhipu, iFlytek and 360. A Shanghai government body’s account of what the city’s internet companies use stands in their row.</li>
-  <li><b>American officials</b> appear where they speak of Beijing: the Commerce Secretary, Howard Lutnick, at a Senate hearing, and Jeffrey Kessler at a House hearing.</li>
-  <li><b>The chips</b> are Nvidia’s. The models named in the records include the H20, the RTX Pro 6000D and the H200. Home-made chips, in the records, are chips of Chinese makers, among them Huawei, Alibaba’s T-Head unit and Baidu; China’s rules for government purchases judge a product by where it is made, not by who owns its maker.</li>
+  <li><b>American officials</b> appear where they speak of Beijing: the Commerce Secretary, Howard Lutnick, at a Senate hearing, and Jeffrey Kessler, under secretary of commerce for industry and security, at a House hearing.</li>
+  <li><b>The chips</b> are Nvidia’s. The models named in the records include the H20, the RTX PRO 6000D and the H200. Home-made chips, in the records, are chips of Chinese makers, among them Huawei, Alibaba’s T-Head unit and Baidu; China’s rules for government purchases judge a product by where it is made, not by who owns its maker.</li>
   <li><b>The four rows</b> are the figure’s: Beijing holds Nvidia back, Beijing lets Nvidia in, the companies reach for Nvidia, the companies turn to home-made chips. A row says which way a record points, not that a chip was kept out or let in; the line in larger type says what the record is. In the row of Beijing letting Nvidia in stand welcomes from leaders and ministers, the commerce ministry’s statements on American curbs, a draft rule on technology exports, approvals, an intention to approve and deliveries that the press reported, an American official’s account that shipments had begun, and two universities’ notices to buy Nvidia cards. In the row of Beijing holding Nvidia back stand acts that name no Nvidia chip too, among them the rules for what government bodies buy, Xi Jinping’s call to conquer high-end chips, the security ministry’s warning about chips made abroad and Alibaba’s filing on a halt to purchases of chips it does not name. The 2023 conclusion on Micron’s products is not about Nvidia at all: it shows what a published order to stop buying looks like, and no such order against Nvidia’s chips was found in the policy pages read.</li>
  </ul>
 </section>
 <section class="card" id="records">
  <h2>The record, newest first</h2>
- <p class="sub">The date is the date of the act where the saved page states it, otherwise the date of the report. Each line in larger type is our summary. Under it stand the source’s own words, found in the saved copy by a script, and a link to the page.</p>
+ <p class="sub">The date is the day of the act where the saved page states that day, otherwise the day of the report. Each line in larger type is our summary. Under it stand the source’s own words, found in the saved copy by a script, and a link to the page.</p>
 %%RECORDS%%
 </section>
 <section class="card notes">
@@ -455,7 +469,7 @@ PAGE = """<!doctype html>
   <li>No published Chinese order against buying Nvidia chips was found in the 82 policy pages read. The published acts against Nvidia that were found are a summons and an antitrust case.</li>
   <li>The records are a selection made to show both sides, not a census. The number of records on a side is not a measure.</li>
   <li>A quotation that is found shows what the source says, not that it is true.</li>
-  <li>The state of play is written on its date from the saved sources; it does not update itself. Its counts of the licence table that the House Foreign Affairs Committee made public are a script’s sums of the table’s rows, and they add Nvidia’s and AMD’s chips together.</li>
+  <li>The state of play is written on its date from the saved sources; it does not update itself. Its counts of the licence table that the House Foreign Affairs Committee made public are a script’s sums of the table’s rows, from all three exporters in it, and they add Nvidia’s and AMD’s chips together.</li>
   <li>Caption tracks and machine transcripts have not been checked by ear; where one is quoted, the time in the recording is given.</li>
   <li>English in round brackets after Chinese is our rendering, not an official translation.</li>
   <li>%%DATENOTE%%</li>
@@ -497,6 +511,9 @@ def build(folder, quiet=False):
     st = load_state(folder / 'data' / 'state_of_play.txt')
     sb, sp = verify_state(st, vals)
     bad += hb + sb; pairs += sp
+    for k, (words, sid, check) in WHERE_DATE.items():       # the date note says where these dates stand: the page must hold them
+        if not (L.P / sid).is_dir() or not L.has(check, sid): bad.append(f'date note: {sid} does not hold "{check}", which places the date of {k}')
+        else: pairs.append((sid, check))
     out = []
     if bad: return False, bad + [f'NOT WRITTEN: {len(bad)} problem(s)']
     seen, lines = set(), ['# Every quotation, number and hidden check the tracker page rests on. Written by build.py; do not edit.',
@@ -530,8 +547,14 @@ def build(folder, quiet=False):
     plural = lambda n, w: f'{n} {w}' + ('' if n == 1 else 's')
     datenote = (f'A script looked for each record’s date in the readable text of its saved page. It found {n_full} in full and {len(partly)} by month and day, with the year elsewhere in the page. '
                 f'{plural(len(labelled), "record")} {"carries" if len(labelled) == 1 else "carry"} a label instead of a day. ')
-    missing = [f'<a href="#{esc(key_of(e), quote=True)}">{esc(fmt(e["date"]))}</a> ({esc(smart(e["S"]))})' for e, r in screen if not e['dl'] and r is None]
-    datenote += ('It did not find ' + '; '.join(missing) + '. Check such a date against the page before quoting it.') if missing else 'None was missing.'
+    missing, unplaced = [], 0
+    for e, r in screen:
+        if e['dl'] or r is not None: continue
+        s = f'<a href="#{esc(key_of(e), quote=True)}">{esc(fmt(e["date"]))}</a> ({esc(smart(e["S"]))})'
+        if e['sid'] in WHERE_DATE: s += f', whose date stands {esc(smart(WHERE_DATE[e["sid"]][0]))}'      # checked in build() before quotes.tsv
+        else: unplaced += 1
+        missing.append(s)
+    datenote += ('It did not find ' + '; '.join(missing) + '.' + (' Check such a date against the page before quoting it.' if unplaced else '')) if missing else 'None was missing.'
     n_solid = sum(e['kind'] != 'press' for e in evs)
     n_away = sum(LANES[e['lane']][2] == 'away' for e in evs)
     parts = {'CSS': CSS, 'N': str(len(evs)), 'LAST': fmt(log[-1]['date']), 'N_SOLID': str(n_solid), 'N_OPEN': str(len(evs) - n_solid),

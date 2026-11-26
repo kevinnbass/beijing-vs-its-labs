@@ -1,7 +1,7 @@
 {
  "series": "Beijing against its own AI companies",
  "subtitle": "Nvidia’s chips in China, 2023 to November 2026",
- "made_utc": "2026-11-26T03:17:11Z",
+ "made_utc": "2026-11-26T06:26:58Z",
  "site": "https://kevinnbass.github.io/beijing-vs-its-labs/series/",
  "repository": "https://github.com/kevinnbass/beijing-vs-its-labs",
  "kinds": {
@@ -5552,7 +5552,7 @@
      "no_address": null
     },
     "man-cn-ft-20250917-6000d": {
-     "name": "Financial Times, Sept 17, 2025: a report, from three unnamed people, that the cyberspace regulator told companies to end their testing and orders of the RTX Pro 6000D",
+     "name": "Financial Times, Sept 17, 2025: a report, from three unnamed people, that the cyberspace regulator told companies to end their testing and orders of the RTX PRO 6000D",
      "kind": "PRESS",
      "kind_words": "Press report citing unnamed people",
      "on_record": false,
@@ -5592,7 +5592,7 @@
      "no_address": null
     },
     "cn-ga31-counter-40": {
-     "name": "Voice of America’s Chinese service, Jan 30, 2026: report of what Nvidia’s chief executive told reporters at Taipei’s airport on Jan 29, in Chinese",
+     "name": "Voice of America’s Chinese service, Jan 29, 2026: report of what Nvidia’s chief executive told reporters at Taipei’s airport on Jan 29, in Chinese",
      "kind": "REC",
      "kind_words": "Press report of words spoken on the record",
      "on_record": true,
@@ -6522,7 +6522,7 @@
      "no_address": null
     },
     "cn-policy-xi-coretech-2016": {
-     "name": "Xi Jinping, speech of Apr 19, 2016 at the symposium on cybersecurity and informatization, full text on the Cyberspace Administration’s site",
+     "name": "Xi Jinping, speech of Apr 19, 2016 at the forum on cybersecurity and informatization, full text on the Cyberspace Administration’s site",
      "kind": "DOC",
      "kind_words": "Chinese state document",
      "on_record": true,
@@ -6682,7 +6682,7 @@
      "no_address": null
     },
     "cn-le14-mof-domestic-standard-impl-20251215": {
-     "name": "Finance Ministry and Ministry of Industry and Information Technology, opinions on carrying out the State Council General Office’s notice on domestic-product standards in government procurement (财库〔2025〕30号), dated Dec 15, 2025, posted Dec 19, 2025; its text saved",
+     "name": "Finance Ministry and Ministry of Industry and Information Technology, opinions on carrying out the State Council General Office’s notice on domestic-product standards in government procurement (财库〔2025〕30号), dated Dec 15, 2025, posted Dec 19, 2025",
      "kind": "DOC",
      "kind_words": "Chinese state document",
      "on_record": true,
@@ -8432,7 +8432,7 @@
      "no_address": null
     },
     "cn-labs-rtx5500-demand-20261104": {
-     "name": "Bloomberg News in Japanese, on TBS CROSS DIG with Bloomberg, Nov 4, 2026: “中国AI各社、エヌビディア製チップ不足で開発に制約－受領は発注の1%”, from unnamed people, on Chinese firms’ RTX Pro 5500 orders",
+     "name": "Bloomberg News in Japanese, on TBS CROSS DIG with Bloomberg, Nov 4, 2026: “中国AI各社、エヌビディア製チップ不足で開発に制約－受領は発注の1%”, from unnamed people, on Chinese firms’ RTX PRO 5500 orders",
      "kind": "PRESS",
      "kind_words": "Press report citing unnamed people",
      "on_record": false,
@@ -9052,7 +9052,7 @@
      "no_address": null
     },
     "cn-ga31-twelve-2": {
-     "name": "Bloomberg News, Sept 17, 2025, as carried by Bloomberg Law: a report, from unnamed people, on what the cyberspace regulator told companies about the RTX Pro 6000D",
+     "name": "Bloomberg News, Sept 17, 2025, as carried by Bloomberg Law: a report, from unnamed people, on what the cyberspace regulator told companies about the RTX PRO 6000D",
      "kind": "PRESS",
      "kind_words": "Press report citing unnamed people",
      "on_record": false,
@@ -9222,7 +9222,7 @@
      "no_address": null
     },
     "cn-against2-techweb-no-bulk-20260717": {
-     "name": "TechWeb, as carried by Sina Finance, Jul 17, 2026: report of the commerce ministry’s answer on the H200 and of unnamed insiders’ word that Chinese AI firms had placed almost no bulk orders",
+     "name": "TechWeb, as carried by Sina Tech (新浪科技), Jul 17, 2026: report of the commerce ministry’s answer on the H200 and of unnamed insiders’ word that Chinese AI firms had placed almost no bulk orders",
      "kind": "PRESS",
      "kind_words": "Press report citing unnamed people",
      "on_record": false,
@@ -10726,7 +10726,7 @@
      "no_address": null
     },
     "man-cn-ft-20250917-6000d": {
-     "name": "Financial Times, Sept 17, 2025: a report, from three unnamed people, that the cyberspace regulator told companies to end their testing and orders of the RTX Pro 6000D",
+     "name": "Financial Times, Sept 17, 2025: a report, from three unnamed people, that the cyberspace regulator told companies to end their testing and orders of the RTX PRO 6000D",
      "kind": "PRESS",
      "kind_words": "Press report citing unnamed people",
      "on_record": false,
@@ -12459,7 +12459,7 @@
     },
     {
      "key": "wash_nv-0",
-     "label": "Licences, in the table of their status on May 11, 2026: 579,868 Nvidia chips approved in 17 applications, every one marked “Approved, not shipped”; 1,738,950 …",
+     "label": "Licences, in the table of their status on May 11, 2026: 579,868 Nvidia chips approved in 17 applications, every one marked “Approved, not shipped”; seven more …",
      "documents": [
       {
        "id": "cn-usdocs-hfac-summary-20261119",
@@ -14378,7 +14378,7 @@
      "no_address": null
     },
     "man-cn-ft-20250917-6000d": {
-     "name": "Financial Times, Sept 17, 2025: a report, from three unnamed people, that the cyberspace regulator told companies to end their testing and orders of the RTX Pro 6000D",
+     "name": "Financial Times, Sept 17, 2025: a report, from three unnamed people, that the cyberspace regulator told companies to end their testing and orders of the RTX PRO 6000D",
      "kind": "PRESS",
      "kind_words": "Press report citing unnamed people",
      "on_record": false,
@@ -15998,7 +15998,7 @@
      "no_address": null
     },
     "cn-policy-xi-coretech-2016": {
-     "name": "Xi Jinping, speech of Apr 19, 2016 at the symposium on cybersecurity and informatization, full text on the Cyberspace Administration’s site",
+     "name": "Xi Jinping, speech of Apr 19, 2016 at the forum on cybersecurity and informatization, full text on the Cyberspace Administration’s site",
      "kind": "DOC",
      "kind_words": "Chinese state document",
      "on_record": true,
@@ -17854,7 +17854,7 @@
     },
     {
      "key": "r17",
-     "label": "Record 17, Sept 17, 2025, reported: told to end RTX Pro 6000D testing and orders",
+     "label": "Record 17, Sept 17, 2025, reported: told to end RTX PRO 6000D testing and orders",
      "documents": [
       {
        "id": "man-cn-ft-20250917-6000d",
@@ -17966,7 +17966,7 @@
     },
     {
      "key": "r36",
-     "label": "Record 36, Nov 5, 2026, a press report: Reuters: about 600,000 chips wait in Hong Kong",
+     "label": "Record 36, Nov 5, 2026, a press report: Reuters: about 600,000 chips stored in Hong Kong",
      "documents": [
       {
        "id": "cn-clips-evidence-1",
@@ -18152,7 +18152,7 @@
     },
     {
      "key": "r46",
-     "label": "Record 46, Sept 16, 2025, reported: RTX Pro 6000D “expensive for what it does”",
+     "label": "Record 46, Sept 16, 2025, reported: RTX PRO 6000D “expensive for what it does”",
      "documents": [
       {
        "id": "cn-labs-rtx6000d-demand-20250916-relay1",
@@ -18724,7 +18724,7 @@
     },
     {
      "key": "chip-1",
-     "label": "The RTX Pro 6000D: named by 4 records (46, 17, 18, 30), Sept 16, 2025 to Jul 7, 2026",
+     "label": "The RTX PRO 6000D: named by 4 records (46, 17, 18, 30), Sept 16, 2025 to Jul 7, 2026",
      "documents": [
       {
        "id": "cn-labs-rtx6000d-demand-20250916-relay1",
@@ -19129,7 +19129,7 @@
      "no_address": null
     },
     "man-cn-ft-20250917-6000d": {
-     "name": "Financial Times, Sept 17, 2025: a report, from three unnamed people, that the cyberspace regulator told companies to end their testing and orders of the RTX Pro 6000D",
+     "name": "Financial Times, Sept 17, 2025: a report, from three unnamed people, that the cyberspace regulator told companies to end their testing and orders of the RTX PRO 6000D",
      "kind": "PRESS",
      "kind_words": "Press report citing unnamed people",
      "on_record": false,
@@ -19647,13 +19647,13 @@
    "kind": "figure",
    "tag": "02",
    "name": "Four chips",
-   "what": "The H20, the RTX Pro 6000D, the H200 and the RTX PRO 5500: what was allowed, what was ordered, what Beijing did about each, and what was delivered.",
+   "what": "The H20, the RTX PRO 6000D, the H200 and the RTX PRO 5500: what was allowed, what was ordered, what Beijing did about each, and what was delivered.",
    "chapter": "I",
    "title": "Chinese companies were reported to order at least $16 billion of Nvidia’s H20s, more than 2 million H200s and more than 3 million RTX PRO 5500s. Beijing summoned Nvidia over the H20; on the H200, five of nine accounts have it letting the chip in, four holding it back",
    "image": "img/05_figure-02_four-chips.jpg",
    "full_image": "full/05_figure-02_four-chips.jpg",
    "width": 2200,
-   "height": 4072,
+   "height": 4095,
    "parts": [
     {
      "key": "ev-0-9",
@@ -19766,7 +19766,7 @@
     },
     {
      "key": "ev-1-1",
-     "label": "RTX Pro 6000D, the buyers, Sept 16, 2025: reported: “only lukewarm demand”; firms await word on H20 orders, hope for the B30A (unnamed people)",
+     "label": "RTX PRO 6000D, the buyers, Sept 16, 2025: reported: “only lukewarm demand”; firms await word on H20 orders, hope for the B30A (unnamed people)",
      "documents": [
       {
        "id": "cn-labs-rtx6000d-demand-20250916-relay1",
@@ -20003,7 +20003,7 @@
     },
     {
      "key": "chip-1",
-     "label": "RTX Pro 6000D: introduced in July 2025, \"tailored for the Chinese market\"",
+     "label": "RTX PRO 6000D: introduced in July 2025, \"tailored for the Chinese market\"",
      "documents": [
       {
        "id": "man-cn-ft-20250917-6000d",
@@ -20019,7 +20019,7 @@
     },
     {
      "key": "ev-1-0",
-     "label": "RTX Pro 6000D, Beijing, Sept 17, 2025: reported: regulator tells firms “to end their testing and orders” (unnamed people)",
+     "label": "RTX PRO 6000D, Beijing, Sept 17, 2025: reported: regulator tells firms “to end their testing and orders” (unnamed people)",
      "documents": [
       {
        "id": "man-cn-ft-20250917-6000d",
@@ -20033,7 +20033,7 @@
     },
     {
      "key": "ev-1-2",
-     "label": "RTX Pro 6000D, the buyers, Sept 17, 2025: reported: firms “would order tens of thousands” (unnamed people)",
+     "label": "RTX PRO 6000D, the buyers, Sept 17, 2025: reported: firms “would order tens of thousands” (unnamed people)",
      "documents": [
       {
        "id": "man-cn-ft-20250917-6000d",
@@ -20047,7 +20047,7 @@
     },
     {
      "key": "ev-1-3",
-     "label": "RTX Pro 6000D, the buyers, Jul 7 and 11, 2026: two universities post notices to buy the card (on the record)",
+     "label": "RTX PRO 6000D, the buyers, Jul 7 and 11, 2026: two universities post notices to buy the card (on the record)",
      "documents": [
       {
        "id": "cn-le17-whuf-134391",
@@ -20061,7 +20061,7 @@
     },
     {
      "key": "ev-1-4",
-     "label": "RTX Pro 6000D, the buyers, Oct 13, 2026: reported, from a person close to iSoftStone: 8,000 cards have arrived (unnamed people)",
+     "label": "RTX PRO 6000D, the buyers, Oct 13, 2026: reported, from a person close to iSoftStone: 8,000 cards have arrived (unnamed people)",
      "documents": [
       {
        "id": "cn-cnpress-nbd-isoftstone-6000d-20261013",
@@ -20071,7 +20071,7 @@
     },
     {
      "key": "w-6000d",
-     "label": "RTX Pro 6000D, Washington’s status: a reduced product designed to meet US export restrictions (Reuters, Oct 20, 2026), introduced in July 2025",
+     "label": "RTX PRO 6000D, Washington’s status: a reduced product designed to meet US export restrictions (Reuters, Oct 20, 2026), introduced in July 2025",
      "documents": [
       {
        "id": "cn-factions-rtx-orders-oct-wayback",
@@ -20098,7 +20098,7 @@
     },
     {
      "key": "w-6000d-end",
-     "label": "RTX Pro 6000D: reported discontinued (Reuters, Oct 20, 2026, one unnamed person)",
+     "label": "RTX PRO 6000D: reported discontinued (Reuters, Oct 20, 2026, one unnamed person)",
      "documents": [
       {
        "id": "cn-factions-rtx-orders-oct-wayback",
@@ -20110,7 +20110,7 @@
     },
     {
      "key": "w-6000d-intro",
-     "label": "RTX Pro 6000D: introduced in July 2025; shipping began in mid-September 2025, by one unnamed person",
+     "label": "RTX PRO 6000D: introduced in July 2025; shipping began in mid-September 2025, by one unnamed person",
      "documents": [
       {
        "id": "man-cn-ft-20250917-6000d",
@@ -20124,7 +20124,7 @@
     },
     {
      "key": "out-1",
-     "label": "What came of the RTX Pro 6000D: 8,000 cards reported arrived at iSoftStone (a person close to it, Oct 13, 2026); reported discontinued (Reuters, one unnamed person)",
+     "label": "What came of the RTX PRO 6000D: 8,000 cards reported arrived at iSoftStone (a person close to it, Oct 13, 2026); reported discontinued (Reuters, one unnamed person)",
      "documents": [
       {
        "id": "cn-cnpress-nbd-isoftstone-6000d-20261013",
@@ -20279,7 +20279,7 @@
     },
     {
      "key": "ev-2-8",
-     "label": "H200, Beijing, Nov 5, 2026: Reuters: about 600,000 chips wait in Hong Kong as Beijing withholds approval for large imports (reported, unnamed people)",
+     "label": "H200, Beijing, Nov 5, 2026: Reuters: about 600,000 chips stored in Hong Kong as Beijing withholds approval for large imports (reported, unnamed people)",
      "documents": [
       {
        "id": "cn-clips-evidence-1",
@@ -20585,7 +20585,7 @@
     },
     {
      "key": "ev-3-5",
-     "label": "RTX PRO 5500, the buyers, Nov 23, 2026: orders cancelled, the card may not be let into China; whether the US or China, Reuters could not say (reported, unnamed people)",
+     "label": "RTX PRO 5500, the buyers, Nov 23, 2026: reported: orders cancelled, the card may not be let into China; whether the US or China, Reuters could not say (unnamed people)",
      "documents": [
       {
        "id": "cn-ga01-bnn-turnaround-20261123",
@@ -20660,6 +20660,19 @@
       {
        "id": "cn-ga01-bnn-turnaround-20261123",
        "quoted_on_image": []
+      }
+     ]
+    },
+    {
+     "key": "jul8-both",
+     "label": "The report of Jul 8, 2026: approval withheld so far, and firms told they may soon receive permission to buy some; drawn for the chip here, as holding back in figure 01",
+     "documents": [
+      {
+       "id": "cn-acts-reuters-ti-cap-20260708-relay1",
+       "quoted_on_image": [
+        "have withheld approval so far",
+        "may soon receive permission to buy some H200 chips"
+       ]
       }
      ]
     },
@@ -20834,7 +20847,7 @@
      "no_address": null
     },
     "man-cn-ft-20250917-6000d": {
-     "name": "Financial Times, Sept 17, 2025: a report, from three unnamed people, that the cyberspace regulator told companies to end their testing and orders of the RTX Pro 6000D",
+     "name": "Financial Times, Sept 17, 2025: a report, from three unnamed people, that the cyberspace regulator told companies to end their testing and orders of the RTX PRO 6000D",
      "kind": "PRESS",
      "kind_words": "Press report citing unnamed people",
      "on_record": false,
@@ -21154,7 +21167,7 @@
      "no_address": null
     },
     "cn-labs-rtx5500-demand-20261104": {
-     "name": "Bloomberg News in Japanese, on TBS CROSS DIG with Bloomberg, Nov 4, 2026: “中国AI各社、エヌビディア製チップ不足で開発に制約－受領は発注の1%”, from unnamed people, on Chinese firms’ RTX Pro 5500 orders",
+     "name": "Bloomberg News in Japanese, on TBS CROSS DIG with Bloomberg, Nov 4, 2026: “中国AI各社、エヌビディア製チップ不足で開発に制約－受領は発注の1%”, from unnamed people, on Chinese firms’ RTX PRO 5500 orders",
      "kind": "PRESS",
      "kind_words": "Press report citing unnamed people",
      "on_record": false,
@@ -23693,7 +23706,7 @@
      "no_address": null
     },
     "cn-policy-xi-coretech-2016": {
-     "name": "Xi Jinping, speech of Apr 19, 2016 at the symposium on cybersecurity and informatization, full text on the Cyberspace Administration’s site",
+     "name": "Xi Jinping, speech of Apr 19, 2016 at the forum on cybersecurity and informatization, full text on the Cyberspace Administration’s site",
      "kind": "DOC",
      "kind_words": "Chinese state document",
      "on_record": true,
@@ -23883,7 +23896,7 @@
      "no_address": null
     },
     "cn-le14-mof-domestic-standard-impl-20251215": {
-     "name": "Finance Ministry and Ministry of Industry and Information Technology, opinions on carrying out the State Council General Office’s notice on domestic-product standards in government procurement (财库〔2025〕30号), dated Dec 15, 2025, posted Dec 19, 2025; its text saved",
+     "name": "Finance Ministry and Ministry of Industry and Information Technology, opinions on carrying out the State Council General Office’s notice on domestic-product standards in government procurement (财库〔2025〕30号), dated Dec 15, 2025, posted Dec 19, 2025",
      "kind": "DOC",
      "kind_words": "Chinese state document",
      "on_record": true,
@@ -30173,7 +30186,7 @@
      "no_address": null
     },
     "cn-policy-xi-coretech-2016": {
-     "name": "Xi Jinping, speech of Apr 19, 2016 at the symposium on cybersecurity and informatization, full text on the Cyberspace Administration’s site",
+     "name": "Xi Jinping, speech of Apr 19, 2016 at the forum on cybersecurity and informatization, full text on the Cyberspace Administration’s site",
      "kind": "DOC",
      "kind_words": "Chinese state document",
      "on_record": true,
@@ -35950,7 +35963,7 @@
      "no_address": null
     },
     "cn-policy-xi-coretech-2016": {
-     "name": "Xi Jinping, speech of Apr 19, 2016 at the symposium on cybersecurity and informatization, full text on the Cyberspace Administration’s site",
+     "name": "Xi Jinping, speech of Apr 19, 2016 at the forum on cybersecurity and informatization, full text on the Cyberspace Administration’s site",
      "kind": "DOC",
      "kind_words": "Chinese state document",
      "on_record": true,
@@ -39787,7 +39800,7 @@
      "no_address": null
     },
     "cn-policy-xi-coretech-2016": {
-     "name": "Xi Jinping, speech of Apr 19, 2016 at the symposium on cybersecurity and informatization, full text on the Cyberspace Administration’s site",
+     "name": "Xi Jinping, speech of Apr 19, 2016 at the forum on cybersecurity and informatization, full text on the Cyberspace Administration’s site",
      "kind": "DOC",
      "kind_words": "Chinese state document",
      "on_record": true,
@@ -40411,7 +40424,7 @@
    "image": "img/10_figure-06_vouchers.jpg",
    "full_image": "full/10_figure-06_vouchers.jpg",
    "width": 2200,
-   "height": 5011,
+   "height": 5042,
    "parts": [
     {
      "key": "k-flat",
@@ -43704,12 +43717,13 @@
     },
     {
      "key": "note-B1",
-     "label": "Note s, E-Town, Beijing: replaced a rule that paid up to 40% and up to 30%; cloud firms buying servers with home-made chips get a separate subsidy of up to 10%",
+     "label": "Note s, E-Town, Beijing: replaced a rule that paid up to 40% and up to 30%; cloud firms that buy servers with home-made chips and offer them as a service on the zone’s",
      "documents": [
       {
        "id": "cn-le28-etown-29hao-20241126",
        "quoted_on_image": [
-        "实际采购国产智算芯片服务器部分金额最高10%的支持"
+        "实际采购国产智算芯片服务器部分金额最高10%的支持",
+        "并在经开区算力调度平台上架对外提供服务的"
        ]
       },
       {
@@ -43844,7 +43858,8 @@
        "quoted_on_image": [
         "按照实际使用算力结算费用的30%",
         "原政策（京技管发〔2024〕10号）同时废止",
-        "实际采购国产智算芯片服务器部分金额最高10%的支持"
+        "实际采购国产智算芯片服务器部分金额最高10%的支持",
+        "并在经开区算力调度平台上架对外提供服务的"
        ]
       }
      ]
@@ -44003,12 +44018,12 @@
     },
     {
      "key": "only-E-Town",
-     "label": "E-Town, Beijing, beside the voucher: up to 10% of what a cloud firm pays for servers with home-made AI chips",
+     "label": "E-Town, Beijing, beside the voucher: up to 10% of what a cloud firm pays for servers with home-made AI chips that it offers as a service on the zone’s computing platform",
      "documents": [
       {
        "id": "cn-le28-etown-29hao-20241126",
        "quoted_on_image": [
-        "实际采购国产智算芯片服务器部分金额最高10%的支持"
+        "并在经开区算力调度平台上架对外提供服务的，给予购买合同中的实际采购国产智算芯片服务器部分金额最高10%的支持"
        ]
       }
      ]
@@ -44081,20 +44096,8 @@
     },
     {
      "key": "rule-notdrawn",
-     "label": "Eighteen rows with no checkable text of the rule, not drawn; the pages saved for them",
+     "label": "Seventeen rows with no checkable text of the rule, not drawn; the pages saved for them",
      "documents": [
-      {
-       "id": "cn-ga31-sciowhole-132",
-       "quoted_on_image": []
-      },
-      {
-       "id": "cn-ga31-vouchernamedrules-23",
-       "quoted_on_image": []
-      },
-      {
-       "id": "cn-ga31-dcstateeast-36",
-       "quoted_on_image": []
-      },
       {
        "id": "cn-ga31-voucherrulesmissing-44",
        "quoted_on_image": []
@@ -44398,6 +44401,14 @@
        "quoted_on_image": []
       },
       {
+       "id": "cn-ga31-replies-22",
+       "quoted_on_image": []
+      },
+      {
+       "id": "cn-ga31-replies-17",
+       "quoted_on_image": []
+      },
+      {
        "id": "cn-le14-huabenlihe-policy-list",
        "quoted_on_image": []
       },
@@ -44608,23 +44619,11 @@
      ]
     },
     {
-     "key": "strip-no19",
-     "label": "A count: 19 of the 237 read, no checkable text of the rule: press or officials’ accounts, a notice alone, a scan; the pages saved for them, opened at the rate words",
+     "key": "strip-no18",
+     "label": "A count: 18 of the 237 read, no checkable text of the rule: press or officials’ accounts, a notice alone, a scan; the pages saved for them, opened at the rate words",
      "documents": [
       {
        "id": "cn-ga04-qy-36kr-tzj-20250924",
-       "quoted_on_image": []
-      },
-      {
-       "id": "cn-ga31-sciowhole-132",
-       "quoted_on_image": []
-      },
-      {
-       "id": "cn-ga31-vouchernamedrules-23",
-       "quoted_on_image": []
-      },
-      {
-       "id": "cn-ga31-dcstateeast-36",
        "quoted_on_image": []
       },
       {
@@ -45067,6 +45066,24 @@
      "documents": [
       {
        "id": "cn-ga31-vcityeast-36",
+       "quoted_on_image": []
+      }
+     ]
+    },
+    {
+     "key": "strip-another1",
+     "label": "A count: 1 of the 237 read, another body’s account of two cities’ rules, each read on its own row; the pages saved for them, opened at the rate words where a script",
+     "documents": [
+      {
+       "id": "cn-ga31-sciowhole-132",
+       "quoted_on_image": []
+      },
+      {
+       "id": "cn-ga31-vouchernamedrules-23",
+       "quoted_on_image": []
+      },
+      {
+       "id": "cn-ga31-dcstateeast-36",
        "quoted_on_image": []
       }
      ]
@@ -47611,6 +47628,26 @@
      "date": "",
      "site": "nx.gov.cn",
      "address": "https://www.nx.gov.cn/zwgk/zfgb_75479/2025/d9q_75637/pdf_75638/202603/P020260325346163623416.pdf",
+     "no_address": null
+    },
+    "cn-ga31-replies-22": {
+     "name": "Shanghai guide for building intelligent-computing centres, 2025 edition (上海市智算中心建设导则), January 2025, compiled under the city’s economy commission, a PDF on investsh.org.cn",
+     "kind": "DOC",
+     "kind_words": "Chinese state document",
+     "on_record": true,
+     "date": "",
+     "site": "investsh.org.cn",
+     "address": "https://www.investsh.org.cn/upload/article/file/2025-01-15/1180fd75-dd13-4e48-ad9b-77fcf0b91164.pdf",
+     "no_address": null
+    },
+    "cn-ga31-replies-17": {
+     "name": "Shanghai Human Resources and Social Security Bureau, reply to proposal no. 1172 (third session of the 14th municipal consultative conference) on training digital-skills workers, Jul 8, 2025",
+     "kind": "DOC",
+     "kind_words": "Chinese state document",
+     "on_record": true,
+     "date": "",
+     "site": "rsj.sh.gov.cn",
+     "address": "https://rsj.sh.gov.cn/tzxgzbldfqk_17405/20251011/t0035_1436031.html",
      "no_address": null
     },
     "cn-le14-huabenlihe-policy-list": {
@@ -50645,7 +50682,7 @@
     },
     {
      "key": "i56",
-     "label": "Item 56. Sept 16, 2025. CGTN, carrying Reuters’s two unnamed people: lukewarm demand for the RTX Pro 6000D (added Nov 24, 2026; news; classed neutral)",
+     "label": "Item 56. Sept 16, 2025. CGTN, carrying Reuters’s two unnamed people: lukewarm demand for the RTX PRO 6000D (added Nov 24, 2026; news; classed neutral)",
      "documents": [
       {
        "id": "cn-ga02-cgtn-rtx6000d-little-favor-20250916",
@@ -50894,7 +50931,7 @@
     },
     {
      "key": "e-2025-09-17",
-     "label": "Sept 17, 2025. Financial Times, from three unnamed people: firms told to end testing and orders of the RTX Pro 6000D. A press report, not state media.",
+     "label": "Sept 17, 2025. Financial Times, from three unnamed people: firms told to end testing and orders of the RTX PRO 6000D. A press report, not state media.",
      "documents": [
       {
        "id": "man-cn-ft-20250917-6000d",
@@ -51771,7 +51808,7 @@
      "no_address": null
     },
     "man-cn-ft-20250917-6000d": {
-     "name": "Financial Times, Sept 17, 2025: a report, from three unnamed people, that the cyberspace regulator told companies to end their testing and orders of the RTX Pro 6000D",
+     "name": "Financial Times, Sept 17, 2025: a report, from three unnamed people, that the cyberspace regulator told companies to end their testing and orders of the RTX PRO 6000D",
      "kind": "PRESS",
      "kind_words": "Press report citing unnamed people",
      "on_record": false,
@@ -52061,11 +52098,11 @@
    "name": "What the companies used, wanted and said",
    "what": "Nvidia’s chips in the companies’ clusters, their orders, their words, and where they went for computing.",
    "chapter": "III",
-   "title": "The companies ran on Nvidia’s chips and kept reaching for them: a Shanghai government body wrote that their clusters in the city run mainly on Nvidia cards, and they were reported to have ordered “more than 2 million H200 chips for 2026”",
+   "title": "The companies ran on Nvidia’s chips and kept reaching for them: a Shanghai government body wrote in 2025 that the city’s internet companies run their own clusters mainly on Nvidia cards, and they were reported to have ordered “more than 2 million H200 chips for 2026”",
    "image": "img/12_chapter-III_the-companies.jpg",
    "full_image": "full/12_chapter-III_the-companies.jpg",
    "width": 2200,
-   "height": 3156,
+   "height": 3211,
    "parts": [
     {
      "key": "chIII-n",
@@ -53952,7 +53989,7 @@
      "no_address": null
     },
     "cn-labs-rtx5500-demand-20261104": {
-     "name": "Bloomberg News in Japanese, on TBS CROSS DIG with Bloomberg, Nov 4, 2026: “中国AI各社、エヌビディア製チップ不足で開発に制約－受領は発注の1%”, from unnamed people, on Chinese firms’ RTX Pro 5500 orders",
+     "name": "Bloomberg News in Japanese, on TBS CROSS DIG with Bloomberg, Nov 4, 2026: “中国AI各社、エヌビディア製チップ不足で開発に制約－受領は発注の1%”, from unnamed people, on Chinese firms’ RTX PRO 5500 orders",
      "kind": "PRESS",
      "kind_words": "Press report citing unnamed people",
      "on_record": false,
@@ -61150,7 +61187,7 @@
    "name": "Outside the mainland",
    "what": "A map of what applications, filings and reports say about Nvidia chips outside the mainland.",
    "chapter": "III",
-   "title": "Washington returned all five applications to ship 1,118,500 Nvidia chips to Malaysia, Indonesia and Thailand, for operators or consignees named for ByteDance, BytePlus, TikTok and Alibaba, and about 600,000 chips are reported waiting in Hong Kong",
+   "title": "Washington returned all five applications to ship 1,118,500 Nvidia chips to Malaysia, Indonesia and Thailand, for operators or consignees named for ByteDance, BytePlus, TikTok and Alibaba, and about 600,000 chips are reported stored in Hong Kong",
    "image": "img/15_figure-10_offshore.jpg",
    "full_image": "full/15_figure-10_offshore.jpg",
    "width": 2200,
@@ -61206,12 +61243,12 @@
     },
     {
      "key": "hkstock",
-     "label": "Nov 5, 2026, Reuters, two unnamed people: about 600,000 Nvidia chips stored in Hong Kong awaiting shipment to China, as Beijing withholds approval for large-scale imports",
+     "label": "Nov 5, 2026, Reuters, two unnamed people: about 600,000 chips stored in Hong Kong awaiting shipment to China “as Beijing withholds approval for large-scale imports”",
      "documents": [
       {
        "id": "cn-clips-evidence-1",
        "quoted_on_image": [
-        "as Beijing withholds approval for large-scale imports"
+        "as Beijing withholds approval for large-scale imports despite demand from technology firms"
        ]
       },
       {
@@ -61378,9 +61415,7 @@
      "documents": [
       {
        "id": "cn-tolerate-reutersaug26-relay1-wayback",
-       "quoted_on_image": [
-        "keep the hardware outside mainland China"
-       ]
+       "quoted_on_image": []
       },
       {
        "id": "cn-ga12-reutersaug26-wtaq-20260818",
@@ -61392,7 +61427,10 @@
       },
       {
        "id": "cn-tolerate-ftaug26",
-       "quoted_on_image": []
+       "quoted_on_image": [
+        "most of these chips outside the mainland",
+        "can ship such processors to Hong Kong"
+       ]
       },
       {
        "id": "cn-cnpress-hkej-h200-ndrc-20260819",
@@ -62332,6 +62370,16 @@
      "address": "https://malaysia.news.yahoo.com/exclusive-nvidia-chips-pile-hong-112651215.html",
      "no_address": null
     },
+    "cn-tolerate-ftaug26": {
+     "name": "Financial Times, Aug 19, 2026, as carried by Yahoo Finance (Canada): “China eases limits on Nvidia H200 chips as AI race escalates” (a free preview)",
+     "kind": "PRESS",
+     "kind_words": "Press report citing unnamed people",
+     "on_record": false,
+     "date": "",
+     "site": "ca.finance.yahoo.com",
+     "address": "https://ca.finance.yahoo.com/news/china-eases-limits-on-nvidia-h200-chips-as-ai-race-escalates-020939892.html",
+     "no_address": null
+    },
     "cn-tolerate-reutersaug26-relay1-wayback": {
      "name": "Reuters, relaying the Financial Times, Aug 18, 2026, as carried by Investing.com",
      "kind": "PRESS",
@@ -62600,16 +62648,6 @@
      "date": "",
      "site": "deccanchronicle.com",
      "address": "https://www.deccanchronicle.com/technology/nvidia-h200-chips-reach-china-in-small-shipments-report-1980424",
-     "no_address": null
-    },
-    "cn-tolerate-ftaug26": {
-     "name": "Financial Times, Aug 19, 2026, as carried by Yahoo Finance (Canada): “China eases limits on Nvidia H200 chips as AI race escalates” (a free preview)",
-     "kind": "PRESS",
-     "kind_words": "Press report citing unnamed people",
-     "on_record": false,
-     "date": "",
-     "site": "ca.finance.yahoo.com",
-     "address": "https://ca.finance.yahoo.com/news/china-eases-limits-on-nvidia-h200-chips-as-ai-race-escalates-020939892.html",
      "no_address": null
     },
     "cn-cnpress-hkej-h200-ndrc-20260819": {
@@ -66232,7 +66270,7 @@
      "no_address": null
     },
     "man-cn-ft-20250917-6000d": {
-     "name": "Financial Times, Sept 17, 2025: a report, from three unnamed people, that the cyberspace regulator told companies to end their testing and orders of the RTX Pro 6000D",
+     "name": "Financial Times, Sept 17, 2025: a report, from three unnamed people, that the cyberspace regulator told companies to end their testing and orders of the RTX PRO 6000D",
      "kind": "PRESS",
      "kind_words": "Press report citing unnamed people",
      "on_record": false,
@@ -66242,7 +66280,7 @@
      "no_address": null
     },
     "cn-ga31-twelve-2": {
-     "name": "Bloomberg News, Sept 17, 2025, as carried by Bloomberg Law: a report, from unnamed people, on what the cyberspace regulator told companies about the RTX Pro 6000D",
+     "name": "Bloomberg News, Sept 17, 2025, as carried by Bloomberg Law: a report, from unnamed people, on what the cyberspace regulator told companies about the RTX PRO 6000D",
      "kind": "PRESS",
      "kind_words": "Press report citing unnamed people",
      "on_record": false,
@@ -66830,7 +66868,7 @@
     },
     {
      "key": "act-cac-6000d",
-     "label": "no date given; reported Sept 17, 2025 · Cyberspace regulator · reported to tell firms to end RTX Pro 6000D testing and orders",
+     "label": "no date given; reported Sept 17, 2025 · Cyberspace regulator · reported to tell firms to end RTX PRO 6000D testing and orders",
      "documents": [
       {
        "id": "man-cn-ft-20250917-6000d",
@@ -67004,7 +67042,7 @@
     },
     {
      "key": "act-sco-pref",
-     "label": "Sept 28, 2025 · Purchase-rule and evaluation bodies · State Council’s office: 20% price edge for home-made goods",
+     "label": "Sept 28, 2025 · Purchase-rule and evaluation bodies · State Council’s office: 20% price edge for home-made bids",
      "documents": [
       {
        "id": "cn-policy-domestic-product-standard-2025",
@@ -67256,7 +67294,9 @@
      "documents": [
       {
        "id": "cn-tolerate-mof",
-       "quoted_on_image": []
+       "quoted_on_image": [
+        "人工智能大模型、智能体、算力集群、信息处理相关23项关键技术"
+       ]
       }
      ]
     },
@@ -67788,7 +67828,7 @@
      "no_address": null
     },
     "man-cn-ft-20250917-6000d": {
-     "name": "Financial Times, Sept 17, 2025: a report, from three unnamed people, that the cyberspace regulator told companies to end their testing and orders of the RTX Pro 6000D",
+     "name": "Financial Times, Sept 17, 2025: a report, from three unnamed people, that the cyberspace regulator told companies to end their testing and orders of the RTX PRO 6000D",
      "kind": "PRESS",
      "kind_words": "Press report citing unnamed people",
      "on_record": false,
@@ -68137,6 +68177,16 @@
      "address": "https://web.archive.org/web/20260908131431/https://www.investing.com/news/stock-market-news/nvidia-h200-chips-reach-china-in-small-shipments-ft-reports-4866385",
      "no_address": null
     },
+    "cn-tolerate-ftaug26": {
+     "name": "Financial Times, Aug 19, 2026, as carried by Yahoo Finance (Canada): “China eases limits on Nvidia H200 chips as AI race escalates” (a free preview)",
+     "kind": "PRESS",
+     "kind_words": "Press report citing unnamed people",
+     "on_record": false,
+     "date": "",
+     "site": "ca.finance.yahoo.com",
+     "address": "https://ca.finance.yahoo.com/news/china-eases-limits-on-nvidia-h200-chips-as-ai-race-escalates-020939892.html",
+     "no_address": null
+    },
     "cn-le01-greer-bbg-20261120-autocaps-ttml": {
      "name": "US Trade Representative Jamieson Greer on Bloomberg Surveillance, video uploaded Nov 20, 2026 by Bloomberg Television: YouTube’s automatic caption track, not checked by ear",
      "kind": "CLIP",
@@ -68405,16 +68455,6 @@
      "date": "",
      "site": "finance.yahoo.com",
      "address": "https://finance.yahoo.com/news/exclusive-china-gives-green-light-034839096.html",
-     "no_address": null
-    },
-    "cn-tolerate-ftaug26": {
-     "name": "Financial Times, Aug 19, 2026, as carried by Yahoo Finance (Canada): “China eases limits on Nvidia H200 chips as AI race escalates” (a free preview)",
-     "kind": "PRESS",
-     "kind_words": "Press report citing unnamed people",
-     "on_record": false,
-     "date": "",
-     "site": "ca.finance.yahoo.com",
-     "address": "https://ca.finance.yahoo.com/news/china-eases-limits-on-nvidia-h200-chips-as-ai-race-escalates-020939892.html",
      "no_address": null
     },
     "cn-cnpress-hkej-h200-ndrc-20260819": {
@@ -70044,7 +70084,7 @@
     },
     {
      "key": "l33",
-     "label": "Aug 18, 2026. A press report of a let-in, or of one to come, from unnamed people: Financial Times, through Reuters on Investing.com.",
+     "label": "Aug 18, 2026. A press report of a let-in, or of one to come, from unnamed people: Financial Times, through Reuters on Investing.com, and the paper’s own text on Yahoo Finance.",
      "documents": [
       {
        "id": "cn-tolerate-reutersaug26-relay1-wayback",
@@ -70080,7 +70120,7 @@
     },
     {
      "key": "a-2025-09-18",
-     "label": "Sept 18, 2025. The foreign ministry’s spokesperson, asked to confirm the Financial Times’s report on the RTX Pro 6000D. The answer confirmed nothing.",
+     "label": "Sept 18, 2025. The foreign ministry’s spokesperson, asked to confirm the Financial Times’s report on the RTX PRO 6000D. The answer confirmed nothing.",
      "documents": [
       {
        "id": "cn-media-mfa-rtx-transcript",
@@ -70243,7 +70283,7 @@
      "no_address": null
     },
     "man-cn-ft-20250917-6000d": {
-     "name": "Financial Times, Sept 17, 2025: a report, from three unnamed people, that the cyberspace regulator told companies to end their testing and orders of the RTX Pro 6000D",
+     "name": "Financial Times, Sept 17, 2025: a report, from three unnamed people, that the cyberspace regulator told companies to end their testing and orders of the RTX PRO 6000D",
      "kind": "PRESS",
      "kind_words": "Press report citing unnamed people",
      "on_record": false,
@@ -70703,7 +70743,7 @@
      "no_address": null
     },
     "cn-policy-xi-coretech-2016": {
-     "name": "Xi Jinping, speech of Apr 19, 2016 at the symposium on cybersecurity and informatization, full text on the Cyberspace Administration’s site",
+     "name": "Xi Jinping, speech of Apr 19, 2016 at the forum on cybersecurity and informatization, full text on the Cyberspace Administration’s site",
      "kind": "DOC",
      "kind_words": "Chinese state document",
      "on_record": true,
@@ -75156,7 +75196,7 @@
    "image": "img/21_figure-15_talks-and-acts.jpg",
    "full_image": "full/21_figure-15_talks-and-acts.jpg",
    "width": 2200,
-   "height": 5320,
+   "height": 5344,
    "parts": [
     {
      "key": "count-res",
@@ -75922,7 +75962,7 @@
     },
     {
      "key": "act-2025-09-17-CN_RESTRICT",
-     "label": "Sept 17, 2025 · Beijing, restrictive · reported: firms told to end RTX Pro 6000D testing and orders (2 days after Madrid); press report, unnamed people",
+     "label": "Sept 17, 2025 · Beijing, restrictive · reported: firms told to end RTX PRO 6000D testing and orders (2 days after Madrid); press report, unnamed people",
      "documents": [
       {
        "id": "man-cn-ft-20250917-6000d",
@@ -76018,7 +76058,7 @@
     },
     {
      "key": "act-2026-11-05-CN_RESTRICT",
-     "label": "Nov 5, 2026 · Beijing, restrictive · Reuters: about 600,000 chips wait in Hong Kong; press report, unnamed people",
+     "label": "Nov 5, 2026 · Beijing, restrictive · Reuters: about 600,000 chips stored in Hong Kong; press report, unnamed people",
      "documents": [
       {
        "id": "cn-clips-evidence-1",
@@ -77718,7 +77758,7 @@
      "no_address": null
     },
     "man-cn-ft-20250917-6000d": {
-     "name": "Financial Times, Sept 17, 2025: a report, from three unnamed people, that the cyberspace regulator told companies to end their testing and orders of the RTX Pro 6000D",
+     "name": "Financial Times, Sept 17, 2025: a report, from three unnamed people, that the cyberspace regulator told companies to end their testing and orders of the RTX PRO 6000D",
      "kind": "PRESS",
      "kind_words": "Press report citing unnamed people",
      "on_record": false,
@@ -79312,7 +79352,7 @@
    "image": "img/22_chapter-V_the-numbers.jpg",
    "full_image": "full/22_chapter-V_the-numbers.jpg",
    "width": 2200,
-   "height": 3629,
+   "height": 3648,
    "parts": [
     {
      "key": "chV-nv",
@@ -79905,7 +79945,7 @@
    ],
    "documents": {
     "cn-ga31-counter-40": {
-     "name": "Voice of America’s Chinese service, Jan 30, 2026: report of what Nvidia’s chief executive told reporters at Taipei’s airport on Jan 29, in Chinese",
+     "name": "Voice of America’s Chinese service, Jan 29, 2026: report of what Nvidia’s chief executive told reporters at Taipei’s airport on Jan 29, in Chinese",
      "kind": "REC",
      "kind_words": "Press report of words spoken on the record",
      "on_record": true,
@@ -79975,7 +80015,7 @@
      "no_address": null
     },
     "cn-against2-techweb-no-bulk-20260717": {
-     "name": "TechWeb, as carried by Sina Finance, Jul 17, 2026: report of the commerce ministry’s answer on the H200 and of unnamed insiders’ word that Chinese AI firms had placed almost no bulk orders",
+     "name": "TechWeb, as carried by Sina Tech (新浪科技), Jul 17, 2026: report of the commerce ministry’s answer on the H200 and of unnamed insiders’ word that Chinese AI firms had placed almost no bulk orders",
      "kind": "PRESS",
      "kind_words": "Press report citing unnamed people",
      "on_record": false,
@@ -80285,7 +80325,7 @@
    "name": "Washington’s table",
    "what": "Washington’s table of licence applications, one by one.",
    "chapter": "V",
-   "title": "Washington’s own table: of 3,444,160 Nvidia and AMD chips applied for, 1,888,950 came back without action, among them all five applications above 75,000 chips and all five for Malaysia, Indonesia or Thailand; 879,868 were approved, none shipped by May 11, 2026",
+   "title": "Washington’s own table: of 3,444,160 Nvidia and AMD chips applied for, 1,888,950 were in applications returned without action, among them all five above 75,000 chips and all five for Malaysia, Indonesia or Thailand; 879,868 were approved, none shipped by May 11, 2026",
    "image": "img/23_figure-16_washingtons-table.jpg",
    "full_image": "full/23_figure-16_washingtons-table.jpg",
    "width": 2200,
@@ -81537,7 +81577,7 @@
    "name": "Two gates",
    "what": "The H200’s separate counts (orders, applications, approvals, deliveries) in the order of a sale, through two governments: not one tally, and they cannot be added.",
    "chapter": "V",
-   "title": "Washington’s own table shows 579,868 of Nvidia’s H200s licensed and 1,738,950 returned without action. The rest is reported: over 2 million ordered, over 400,000 approved by Beijing with conditions, about 10,000 each delivered to a few buyers",
+   "title": "Washington’s own table shows 579,868 of Nvidia’s H200s licensed and 1,738,950 in applications returned without action. The rest is reported: over 2 million ordered, over 400,000 approved by Beijing with conditions, about 10,000 each delivered to a few buyers",
    "image": "img/24_figure-17_two-gates.jpg",
    "full_image": "full/24_figure-17_two-gates.jpg",
    "width": 2200,
@@ -81573,7 +81613,7 @@
     },
     {
      "key": "k-nvidia",
-     "label": "Sums of the licence table the House committee released, Nvidia as exporter, May 11, 2026: 579,868 chips approved and not shipped; 1,738,950 returned without action",
+     "label": "Sums of the licence table the House committee released, Nvidia as exporter, May 11, 2026: 579,868 chips approved and not shipped; 1,738,950 in returned applications",
      "documents": [
       {
        "id": "cn-usdocs-hfac-decisions-20261119",
@@ -81878,7 +81918,7 @@
     },
     {
      "key": "gate-beijing",
-     "label": "Beijing’s gate: the approval the reports describe (customs told the chips are not permitted; approvals only with conditions); Nvidia: sales were restricted",
+     "label": "Beijing’s gate, as Reuters reported it from unnamed people: customs told the chips are not permitted, approvals only with conditions; Nvidia: sales were restricted",
      "documents": [
       {
        "id": "ms-bj-20260114-customs-h200-standard",
@@ -82127,7 +82167,7 @@
     },
     {
      "key": "b-aug",
-     "label": "Reported, Aug 18, 2026: Beijing wants the hardware kept outside mainland China; reported, Nov 5: the chips wait as Beijing withholds approval for large-scale imports",
+     "label": "Reported by Reuters, relaying the FT, Aug 18, 2026: Beijing wants the hardware kept outside mainland China; Nov 5: chips stored in Hong Kong as Beijing withholds approval",
      "documents": [
       {
        "id": "cn-tolerate-reutersaug26-relay1-wayback",
@@ -82848,7 +82888,7 @@
      "no_address": null
     },
     "cn-ga31-counter-40": {
-     "name": "Voice of America’s Chinese service, Jan 30, 2026: report of what Nvidia’s chief executive told reporters at Taipei’s airport on Jan 29, in Chinese",
+     "name": "Voice of America’s Chinese service, Jan 29, 2026: report of what Nvidia’s chief executive told reporters at Taipei’s airport on Jan 29, in Chinese",
      "kind": "REC",
      "kind_words": "Press report of words spoken on the record",
      "on_record": true,
@@ -82858,7 +82898,7 @@
      "no_address": null
     },
     "cn-against2-techweb-no-bulk-20260717": {
-     "name": "TechWeb, as carried by Sina Finance, Jul 17, 2026: report of the commerce ministry’s answer on the H200 and of unnamed insiders’ word that Chinese AI firms had placed almost no bulk orders",
+     "name": "TechWeb, as carried by Sina Tech (新浪科技), Jul 17, 2026: report of the commerce ministry’s answer on the H200 and of unnamed insiders’ word that Chinese AI firms had placed almost no bulk orders",
      "kind": "PRESS",
      "kind_words": "Press report citing unnamed people",
      "on_record": false,
@@ -85068,7 +85108,7 @@
    "kind": "figure",
    "tag": "19",
    "name": "The customs lines",
-   "what": "What trade figures can and cannot show; the Hong Kong finding.",
+   "what": "What trade figures can and cannot show, set beside the 600,000 chips Reuters reported in Hong Kong.",
    "chapter": "V",
    "title": "China’s imports under one customs line rose over fourfold to $82.2 billion in nine months, and Singapore’s re-exports to the mainland under another went from S$18 million in six months to S$3.0 billion in the next four: no trade table read here can count Nvidia chips",
    "image": "img/26_figure-19_customs.jpg",
@@ -91541,7 +91581,7 @@
     },
     {
      "key": "later-44",
-     "label": "Nov 9, 2026: Fudan University buys four Nvidia RTX Pro6000 cards",
+     "label": "Nov 9, 2026: Fudan University buys four Nvidia RTX PRO 6000 cards",
      "documents": [
       {
        "id": "cn-ga13-fudan-798838",
@@ -94820,7 +94860,7 @@
    "name": "How it is read, and how far the evidence goes",
    "what": "The five limits, the American readings, the case against, and what the sources can carry.",
    "chapter": "VI",
-   "title": "Five limits on the claim: Beijing was not one actor; it warned and guided, and no published ban was found; some purchases were approved and some chips came in; the companies had reasons of their own, and American curbs and conditions pushed too; what Beijing meant is not settled. One sentence survives all five",
+   "title": "Five limits on the claim: Beijing was not one actor; it warned in public and, by press reports, guided in private; no published ban was found; some purchases were approved and some chips came in; the companies had reasons of their own, and American curbs and conditions pushed too; what Beijing meant is not settled. One sentence survives all five",
    "image": "img/28_chapter-VI_how-it-is-read.jpg",
    "full_image": "full/28_chapter-VI_how-it-is-read.jpg",
    "width": 2200,
@@ -98541,7 +98581,7 @@
      "no_address": null
     },
     "man-cn-ft-20250917-6000d": {
-     "name": "Financial Times, Sept 17, 2025: a report, from three unnamed people, that the cyberspace regulator told companies to end their testing and orders of the RTX Pro 6000D",
+     "name": "Financial Times, Sept 17, 2025: a report, from three unnamed people, that the cyberspace regulator told companies to end their testing and orders of the RTX PRO 6000D",
      "kind": "PRESS",
      "kind_words": "Press report citing unnamed people",
      "on_record": false,
@@ -98591,7 +98631,7 @@
      "no_address": null
     },
     "cn-ga31-counter-40": {
-     "name": "Voice of America’s Chinese service, Jan 30, 2026: report of what Nvidia’s chief executive told reporters at Taipei’s airport on Jan 29, in Chinese",
+     "name": "Voice of America’s Chinese service, Jan 29, 2026: report of what Nvidia’s chief executive told reporters at Taipei’s airport on Jan 29, in Chinese",
      "kind": "REC",
      "kind_words": "Press report of words spoken on the record",
      "on_record": true,
@@ -100739,7 +100779,7 @@
     },
     {
      "key": "sel-both",
-     "label": "House Select Committee on China: two reports seven months apart, approved (Apr 16, 2026) then refused (Nov 13, 2026), each citing a news report",
+     "label": "House Select Committee on China: two reports seven months apart, which wrote “approved” (Apr 16, 2026), then “refused” (Nov 13, 2026), each citing a news report",
      "documents": [
       {
        "id": "cn-le03-govinfo-buywhat-pdf",
@@ -103159,7 +103199,7 @@
      "no_address": null
     },
     "man-cn-ft-20250917-6000d": {
-     "name": "Financial Times, Sept 17, 2025: a report, from three unnamed people, that the cyberspace regulator told companies to end their testing and orders of the RTX Pro 6000D",
+     "name": "Financial Times, Sept 17, 2025: a report, from three unnamed people, that the cyberspace regulator told companies to end their testing and orders of the RTX PRO 6000D",
      "kind": "PRESS",
      "kind_words": "Press report citing unnamed people",
      "on_record": false,
@@ -104293,7 +104333,7 @@
     },
     {
      "key": "card-spokes",
-     "label": "Asked about the reports, Beijing’s spokespeople confirmed nothing: the eight answers the argument cites, each at its non-answer (two ministries, Aug 2025 to Nov 2026).",
+     "label": "Asked about the reports, Beijing’s spokespeople confirmed nothing: the eight answers the argument cites (two ministries, Aug 2025 to Nov 2026), one held in two copies.",
      "documents": [
       {
        "id": "cn-against2-mfa-h20-20250813",
@@ -105357,7 +105397,7 @@
     },
     {
      "key": "p42",
-     "label": "State Administration for Market Regulation, headquarters news list, page 1 of the 14 read (newest… One of the argument’s 460 sources; cited at point 10.",
+     "label": "State Administration for Market Regulation, headquarters news list, page 1 of the 14 read… One of the argument’s 460 sources; cited at point 10.",
      "documents": [
       {
        "id": "cn-le25-samr-news-list-p01-20261123",
@@ -105407,7 +105447,7 @@
     },
     {
      "key": "p47",
-     "label": "The same notice's attachment, the list of 46 American firms (PDF on the ministry's treasury department… One of the argument’s 460 sources; cited at point 18.",
+     "label": "The same notice's attachment, the list of 46 American firms… One of the argument’s 460 sources; cited at point 18.",
      "documents": [
       {
        "id": "cn-le14-mof-us-firms-list-20260622",
@@ -105537,7 +105577,7 @@
     },
     {
      "key": "p60",
-     "label": "The same, attachment 14 to the 2026 guide, note on applying for computing vouchers (a Word file; its… One of the argument’s 460 sources; cited at point 3.",
+     "label": "The same, attachment 14 to the 2026 guide, note on applying for computing vouchers… One of the argument’s 460 sources; cited at point 3.",
      "documents": [
       {
        "id": "cn-ga04-bj-jxj-voucher-note2026-docx",
@@ -106007,7 +106047,7 @@
     },
     {
      "key": "p107",
-     "label": "Shandong’s implementing rules for provincial awards for data infrastructure (revised, in force from Jan… One of the argument’s 460 sources; cited at point 3.",
+     "label": "Shandong’s implementing rules for provincial awards for data infrastructure… One of the argument’s 460 sources; cited at point 3.",
      "documents": [
       {
        "id": "cn-ga31-voucherrulesmissing-16",
@@ -106147,7 +106187,7 @@
     },
     {
      "key": "p121",
-     "label": "Shanghai Communications Administration with other bodies in Shanghai (eleven in all, by the page's… One of the argument’s 460 sources; cited at point 3.",
+     "label": "Shanghai Communications Administration with other bodies in Shanghai… One of the argument’s 460 sources; cited at point 3.",
      "documents": [
       {
        "id": "cn-ga31-unsaved3-plantexts6-http",
@@ -106257,7 +106297,7 @@
     },
     {
      "key": "p132",
-     "label": "Chengdu economy and information technology bureau (by its signed file; the page names it with the city's… One of the argument’s 460 sources; cited at point 3.",
+     "label": "Chengdu economy and information technology bureau… One of the argument’s 460 sources; cited at point 3.",
      "documents": [
       {
        "id": "cn-ga31-vouchernamedrules-5",
@@ -106347,7 +106387,7 @@
     },
     {
      "key": "p141",
-     "label": "Greater Bay Area meteorological monitoring, warning and forecasting centre (Shenzhen Meteorological… One of the argument’s 460 sources; cited at point 17.",
+     "label": "Greater Bay Area meteorological monitoring, warning and forecasting centre… One of the argument’s 460 sources; cited at point 17.",
      "documents": [
       {
        "id": "cn-ga31-cndocs-36",
@@ -106639,7 +106679,7 @@
     },
     {
      "key": "p163",
-     "label": "Unsigned article on the State Administration for Market Regulation's Party group, \"市场监管总局：坚持党建引领… One of the argument’s 460 sources; cited at points 10 and 21.",
+     "label": "Unsigned article on the State Administration for Market Regulation's Party group… One of the argument’s 460 sources; cited at points 10 and 21.",
      "documents": [
       {
        "id": "cn-media-party-samr-september",
@@ -106659,7 +106699,7 @@
     },
     {
      "key": "p165",
-     "label": "Xinhua, list of the works that won the 36th China Journalism Award, Nov 8, 2026 (it gives China Media… One of the argument’s 460 sources; cited at point 4.",
+     "label": "Xinhua, list of the works that won the 36th China Journalism Award, Nov 8, 2026… One of the argument’s 460 sources; cited at point 4.",
      "documents": [
       {
        "id": "cn-le13-cja36-winners-xinhuanet-20261108",
@@ -106699,7 +106739,7 @@
     },
     {
      "key": "p169",
-     "label": "Global Times, Viewpoint (unsigned commentary), Nov 6, 2026: \"China 'isn't buying' Nvidia chips. Why are… One of the argument’s 460 sources; cited at point 4.",
+     "label": "Global Times, Viewpoint (unsigned commentary), Nov 6, 2026… One of the argument’s 460 sources; cited at point 4.",
      "documents": [
       {
        "id": "cn-ga02-gt-isnt-buying-opinion-202611",
@@ -106729,7 +106769,7 @@
     },
     {
      "key": "p172",
-     "label": "Shenzhen Loop Area Institute (SLAI, 深圳河套学院), English announcement dated May 28, 2026, \"Global Premiere |… One of the argument’s 460 sources; cited at point 9.",
+     "label": "Shenzhen Loop Area Institute (SLAI, 深圳河套学院), English announcement dated May 28, 2026… One of the argument’s 460 sources; cited at point 9.",
      "documents": [
       {
        "id": "cn-ga31-counter-13",
@@ -107413,7 +107453,7 @@
     },
     {
      "key": "p214",
-     "label": "US-China Economic and Security Review Commission, 2026 annual report, chapter 8 (Silicon to… One of the argument’s 460 sources; cited at points 5 and 20.",
+     "label": "US-China Economic and Security Review Commission, 2026 annual report, chapter 8… One of the argument’s 460 sources; cited at points 5 and 20.",
      "documents": [
       {
        "id": "cn-usdocs-uscc-2026-ch8",
@@ -107463,7 +107503,7 @@
     },
     {
      "key": "p219",
-     "label": "National Development and Reform Commission, its own text of the press conference of Jun 18, 2026 (the… One of the argument’s 460 sources; cited at point 18.",
+     "label": "National Development and Reform Commission, its own text of the press conference of Jun 18, 2026… One of the argument’s 460 sources; cited at point 18.",
      "documents": [
       {
        "id": "cn-le27-ndrc-presser-20260618-json",
@@ -107473,7 +107513,7 @@
     },
     {
      "key": "p220",
-     "label": "US Securities and Exchange Commission, its record of Nvidia's filings (the company's… One of the argument’s 460 sources; cited in the closing sections only.",
+     "label": "US Securities and Exchange Commission, its record of Nvidia's filings… One of the argument’s 460 sources; cited in the closing sections only.",
      "documents": [
       {
        "id": "cn-le05-sec-submissions-20261123",
@@ -107503,7 +107543,7 @@
     },
     {
      "key": "p223",
-     "label": "US Securities and Exchange Commission, its record of Nvidia's filings (the company's… One of the argument’s 460 sources; cited in the closing sections only.",
+     "label": "US Securities and Exchange Commission, its record of Nvidia's filings… One of the argument’s 460 sources; cited in the closing sections only.",
      "documents": [
       {
        "id": "cn-ga06-sec-submissions-20261124",
@@ -107533,7 +107573,7 @@
     },
     {
      "key": "p226",
-     "label": "US Commerce Department, Bureau of Industry and Security, interim final rule \"Addressing Remote Access to… One of the argument’s 460 sources; cited at point 9.",
+     "label": "US Commerce Department, Bureau of Industry and Security, interim final rule… One of the argument’s 460 sources; cited at point 9.",
      "documents": [
       {
        "id": "cn-usdocs-fr-remote-20261119",
@@ -107573,7 +107613,7 @@
     },
     {
      "key": "p230",
-     "label": "Ministry of Commerce, regular press conference of Mar 19, 2026, the ministry's own transcript (the… One of the argument’s 460 sources; cited at point 18.",
+     "label": "Ministry of Commerce, regular press conference of Mar 19, 2026, the ministry's own transcript… One of the argument’s 460 sources; cited at point 18.",
      "documents": [
       {
        "id": "cn-ga15-mofcom-presser-20260319",
@@ -107603,7 +107643,7 @@
     },
     {
      "key": "p233",
-     "label": "Malaysia's Investment, Trade and Industry Minister Johari Abdul Ghani, as reported by Bernama (Malaysia's… One of the argument’s 460 sources; cited at point 9.",
+     "label": "Malaysia's Investment, Trade and Industry Minister Johari Abdul Ghani, as reported by Bernama… One of the argument’s 460 sources; cited at point 9.",
      "documents": [
       {
        "id": "cn-ga12-my-johari-clarify-bernama-20261118",
@@ -107653,7 +107693,7 @@
     },
     {
      "key": "p238",
-     "label": "US Securities and Exchange Commission, its record of Nvidia's filings (the company's… One of the argument’s 460 sources; cited in the closing sections only.",
+     "label": "US Securities and Exchange Commission, its record of Nvidia's filings… One of the argument’s 460 sources; cited in the closing sections only.",
      "documents": [
       {
        "id": "cn-ga31-official-sec-submissions-20261125-c",
@@ -108151,7 +108191,7 @@
     },
     {
      "key": "p249",
-     "label": "Nvidia, results call for the third quarter of its fiscal year 2027 (the quarter ended… One of the argument’s 460 sources; cited at point 19; in the numbers.",
+     "label": "Nvidia, results call for the third quarter of its fiscal year 2027… One of the argument’s 460 sources; cited at point 19; in the numbers.",
      "documents": [
       {
        "id": "cn-o38-nvda-q3fy27-call-transcript-pdf",
@@ -108631,7 +108671,7 @@
     },
     {
      "key": "p297",
-     "label": "Zhipu (Z.ai), research page on GLM-Image, on its own site, dated Jan 13, 2026 (2026/01/13 16:00 on the… One of the argument’s 460 sources; cited at point 9.",
+     "label": "Zhipu (Z.ai), research page on GLM-Image, on its own site, dated Jan 13, 2026… One of the argument’s 460 sources; cited at point 9.",
      "documents": [
       {
        "id": "cn-labs-zhipu-glm-image-202601",
@@ -108861,7 +108901,7 @@
     },
     {
      "key": "p320",
-     "label": "Meituan's technical team, post on its own blog on the open-sourcing of its model LongCat-2.5 (address… One of the argument’s 460 sources; cited at point 9.",
+     "label": "Meituan's technical team, post on its own blog on the open-sourcing of its model LongCat-2.5… One of the argument’s 460 sources; cited at point 9.",
      "documents": [
       {
        "id": "cn-ga31-companies-21",
@@ -108871,7 +108911,7 @@
     },
     {
      "key": "p321",
-     "label": "OpenBMB's blog, post dated 2026-05-25 on the page, titled \"面壁智能联合清华正式开源中国首个基于昇腾训练的 1.58-bit 端侧大模型… One of the argument’s 460 sources; cited at point 9.",
+     "label": "OpenBMB's blog, post dated 2026-05-25 on the page… One of the argument’s 460 sources; cited at point 9.",
      "documents": [
       {
        "id": "cn-ga31-smalllabs-17",
@@ -108951,7 +108991,7 @@
     },
     {
      "key": "p329",
-     "label": "Shanghai Jiao Tong University, government-procurement intention for July 2026 (renting six to eight… One of the argument’s 460 sources; cited at point 19.",
+     "label": "Shanghai Jiao Tong University, government-procurement intention for July 2026… One of the argument’s 460 sources; cited at point 19.",
      "documents": [
       {
        "id": "cn-ga31-unsaved3-noticecopies4-www",
@@ -109519,7 +109559,7 @@
     },
     {
      "key": "p368",
-     "label": "Reuters, Nov 13, 2026, factbox on Chinese computing-centre projects naming Nvidia chips, on WSAU (a… One of the argument’s 460 sources; cited at point 17.",
+     "label": "Reuters, Nov 13, 2026, factbox on Chinese computing-centre projects naming Nvidia chips, on WSAU… One of the argument’s 460 sources; cited at point 17.",
      "documents": [
       {
        "id": "cn-tolerate-projects-relay1",
@@ -109559,7 +109599,7 @@
     },
     {
      "key": "p372",
-     "label": "The Standard (Hong Kong), page stamped Nov 20, 2026, 04:57 Hong Kong time, \"US signed off on sales of… One of the argument’s 460 sources; cited at point 19.",
+     "label": "The Standard (Hong Kong), page stamped Nov 20, 2026, 04:57 Hong Kong time… One of the argument’s 460 sources; cited at point 19.",
      "documents": [
       {
        "id": "cn-le04-standard-900000-20261120",
@@ -109589,7 +109629,7 @@
     },
     {
      "key": "p375",
-     "label": "People's Daily Overseas Edition, Oct 27, 2026, page 5, \"国产大模型用上全国产算力\" (home-made large models run on… One of the argument’s 460 sources; cited at point 9.",
+     "label": "People's Daily Overseas Edition, Oct 27, 2026, page 5, \"国产大模型用上全国产算力\"… One of the argument’s 460 sources; cited at point 9.",
      "documents": [
       {
        "id": "cn-ga31-companies-14",
@@ -109619,7 +109659,7 @@
     },
     {
      "key": "p378",
-     "label": "Voice of America's Chinese service, Jan 29, 2026 (17:35 UTC by its page data; the page… One of the argument’s 460 sources; cited at point 19; in the numbers.",
+     "label": "Voice of America's Chinese service, Jan 29, 2026: report of the Nvidia chief's words. One of the argument’s 460 sources; cited at point 19; in the numbers.",
      "documents": [
       {
        "id": "cn-ga31-counter-40",
@@ -110071,7 +110111,7 @@
     },
     {
      "key": "p398",
-     "label": "Financial Times, Sept 17, 2025: report, from three people it does not name, that the… One of the argument’s 460 sources; cited at points 15, 18 and 20.",
+     "label": "Financial Times, Sept 17, 2025: report of an instruction on the RTX PRO 6000D. One of the argument’s 460 sources; cited at points 15, 18 and 20.",
      "documents": [
       {
        "id": "man-cn-ft-20250917-6000d",
@@ -110291,7 +110331,7 @@
     },
     {
      "key": "p420",
-     "label": "Reuters, relaying the Financial Times, Feb 3, 2026 (the copy's dateline; Feb 4 is the carrying page's… One of the argument’s 460 sources; cited at point 20.",
+     "label": "Reuters, relaying the Financial Times, Feb 3, 2026… One of the argument’s 460 sources; cited at point 20.",
      "documents": [
       {
        "id": "cn-against2-ft-us-review-20260203",
@@ -110381,7 +110421,7 @@
     },
     {
      "key": "p429",
-     "label": "Institute for Progress (Washington), paper by Tim Fist, Georgia Adamson and Konstantin Pilz, \"How to… One of the argument’s 460 sources; cited at point 19.",
+     "label": "Institute for Progress (Washington), paper by Tim Fist, Georgia Adamson and Konstantin Pilz… One of the argument’s 460 sources; cited at point 19.",
      "documents": [
       {
        "id": "cn-tolerate-ifp",
@@ -110561,7 +110601,7 @@
     },
     {
      "key": "p447",
-     "label": "The Wall Street Journal, Aug 23, 2025, as carried by Mint: \"Nvidia's roller coaster for… One of the argument’s 460 sources; cited at points 14, 17 and 21.",
+     "label": "The Wall Street Journal, Aug 23, 2025, as carried by Mint… One of the argument’s 460 sources; cited at points 14, 17 and 21.",
      "documents": [
       {
        "id": "cn-counter-b5-1",
@@ -110571,7 +110611,7 @@
     },
     {
      "key": "p448",
-     "label": "Reuters (Claire Fu, Eduardo Baptista and Laurie Chen), Oct 28, 2026 by its dateline, \"China's new export… One of the argument’s 460 sources; cited at point 9.",
+     "label": "Reuters (Claire Fu, Eduardo Baptista and Laurie Chen), Oct 28, 2026 by its dateline… One of the argument’s 460 sources; cited at point 9.",
      "documents": [
       {
        "id": "cn-tolerate-draft",
@@ -110581,7 +110621,7 @@
     },
     {
      "key": "p449",
-     "label": "Reuters (Yelin Mo and Brenda Goh), Feb 1, 2024, \"Exclusive-Nvidia's new China-focused AI chip set to be… One of the argument’s 460 sources; cited at point 20.",
+     "label": "Reuters (Yelin Mo and Brenda Goh), Feb 1, 2024… One of the argument’s 460 sources; cited at point 20.",
      "documents": [
       {
        "id": "cn-le10-h20-price-20240201-yahoofin",
@@ -110601,7 +110641,7 @@
     },
     {
      "key": "p451",
-     "label": "The Wall Street Journal, Nov 4, 2025, as carried by Mint: \"Trump officials torpedoed Nvidia's push to… One of the argument’s 460 sources; cited at point 21.",
+     "label": "The Wall Street Journal, Nov 4, 2025, as carried by Mint… One of the argument’s 460 sources; cited at point 21.",
      "documents": [
       {
        "id": "cn-usside-048",
@@ -110611,7 +110651,7 @@
     },
     {
      "key": "p452",
-     "label": "Trivium China, a newsletter, Jul 9, 2026 by its address: \"Beijing rations Nvidia H200 chips to its top… One of the argument’s 460 sources; cited at point 19.",
+     "label": "Trivium China, a newsletter, Jul 9, 2026 by its address… One of the argument’s 460 sources; cited at point 19.",
      "documents": [
       {
        "id": "cn-ga31-carriers2-37",
@@ -110867,7 +110907,7 @@
     },
     {
      "key": "p470",
-     "label": "House Foreign Affairs Committee, disclosure of Nov 19, 2026, made by the full committee (its chairman's release; approved by… Cited where the claim is tested.",
+     "label": "House Foreign Affairs Committee, disclosure of Nov 19, 2026, made by the full committee… Cited where the claim is tested.",
      "documents": [
       {
        "id": "cn-usdocs-hfac-summary-20261119",
@@ -110877,7 +110917,7 @@
     },
     {
      "key": "p471",
-     "label": "US-China Economic and Security Review Commission, 2025 annual report to Congress, chapter 1 (US-China economic and trade… Cited where the claim is tested.",
+     "label": "US-China Economic and Security Review Commission, 2025 annual report to Congress, chapter 1… Cited where the claim is tested.",
      "documents": [
       {
        "id": "cn-usdocs-uscc-2025-ch1",
@@ -110927,7 +110967,7 @@
     },
     {
      "key": "p476",
-     "label": "US Trade Representative Jamieson Greer, interview on Bloomberg Television posted May 15, 2026 (\"Greer: US, China Willing to… Cited where the claim is tested.",
+     "label": "US Trade Representative Jamieson Greer, interview on Bloomberg Television posted May 15, 2026… Cited where the claim is tested.",
      "documents": [
       {
        "id": "cn-le01-greer-bbg-20260515-subs-ttml",
@@ -111215,7 +111255,7 @@
     },
     {
      "key": "p494",
-     "label": "China Information Technology Security Evaluation Center, page on the scope of the security-and-reliability evaluation (guide… Cited at point 2, “The rules”.",
+     "label": "China Information Technology Security Evaluation Center, page on the scope of the security-and-reliability evaluation… Cited at point 2, “The rules”.",
      "documents": [
       {
        "id": "cn-le14-itsec-scope-20230727",
@@ -111265,7 +111305,7 @@
     },
     {
      "key": "p499",
-     "label": "Xi Jinping, speech at his meeting with representatives of international business, Beijing, Mar 28, 2025 (People's Daily, Mar… Cited at point 2, “The rules”.",
+     "label": "Xi Jinping, speech at his meeting with representatives of international business, Beijing, Mar 28, 2025… Cited at point 2, “The rules”.",
      "documents": [
       {
        "id": "cn-ga03-jhsjk-xi-intl-business-20250328",
@@ -112035,7 +112075,7 @@
     },
     {
      "key": "p542",
-     "label": "Chengdu economy and information technology bureau (by its signed file; the page names it with the city's… Cited at point 3, “The targets, and the money”.",
+     "label": "Chengdu economy and information technology bureau… Cited at point 3, “The targets, and the money”.",
      "documents": [
       {
        "id": "cn-ga31-vouchernamedrules-5",
@@ -112255,7 +112295,7 @@
     },
     {
      "key": "p564",
-     "label": "Shandong’s implementing rules for provincial awards for data infrastructure (revised, in force from Jan 30… Cited at point 3, “The targets, and the money”.",
+     "label": "Shandong’s implementing rules for provincial awards for data infrastructure… Cited at point 3, “The targets, and the money”.",
      "documents": [
       {
        "id": "cn-ga31-voucherrulesmissing-16",
@@ -112325,7 +112365,7 @@
     },
     {
      "key": "p571",
-     "label": "The same, attachment 14 to the 2026 guide, note on applying for computing vouchers (a Word file; its words are… Cited at point 3, “The targets, and the money”.",
+     "label": "The same, attachment 14 to the 2026 guide, note on applying for computing vouchers… Cited at point 3, “The targets, and the money”.",
      "documents": [
       {
        "id": "cn-ga04-bj-jxj-voucher-note2026-docx",
@@ -112759,7 +112799,7 @@
     },
     {
      "key": "p600",
-     "label": "Xinhua, list of the works that won the 36th China Journalism Award, Nov 8, 2026 (it gives… Cited at point 4, “The agencies and the state’s media, in public”.",
+     "label": "Xinhua, list of the works that won the 36th China Journalism Award, Nov 8, 2026… Cited at point 4, “The agencies and the state’s media, in public”.",
      "documents": [
       {
        "id": "cn-le13-cja36-winners-xinhuanet-20261108",
@@ -112819,7 +112859,7 @@
     },
     {
      "key": "p606",
-     "label": "Global Times, Viewpoint (unsigned commentary), Nov 6, 2026: \"China 'isn't buying' Nvidia… Cited at point 4, “The agencies and the state’s media, in public”.",
+     "label": "Global Times, Viewpoint (unsigned commentary), Nov 6, 2026… Cited at point 4, “The agencies and the state’s media, in public”.",
      "documents": [
       {
        "id": "cn-ga02-gt-isnt-buying-opinion-202611",
@@ -113023,7 +113063,7 @@
     },
     {
      "key": "p618",
-     "label": "US-China Economic and Security Review Commission, 2026 annual report, chapter 8 (Silicon to… Cited at point 5, “A Shanghai government body says so”.",
+     "label": "US-China Economic and Security Review Commission, 2026 annual report, chapter 8… Cited at point 5, “A Shanghai government body says so”.",
      "documents": [
       {
        "id": "cn-usdocs-uscc-2026-ch8",
@@ -113885,7 +113925,7 @@
     },
     {
      "key": "p679",
-     "label": "Kimi Team, technical report \"Kimi K2.5: Visual Agentic… Cited at point 9, “They reportedly went abroad for Nvidia chips, and one lab was reported to go back to…”.",
+     "label": "Kimi Team, technical report… Cited at point 9, “They reportedly went abroad for Nvidia chips, and one lab was reported to go back to…”.",
      "documents": [
       {
        "id": "cn-usside-071",
@@ -113975,7 +114015,7 @@
     },
     {
      "key": "p688",
-     "label": "Xingchen AGI Lab, China Telecom, technical report \"TeleChat… Cited at point 9, “They reportedly went abroad for Nvidia chips, and one lab was reported to go back to…”.",
+     "label": "Xingchen AGI Lab, China Telecom, technical report… Cited at point 9, “They reportedly went abroad for Nvidia chips, and one lab was reported to go back to…”.",
      "documents": [
       {
        "id": "cn-ga08-arxiv-telechat-xing4-pdf",
@@ -113995,7 +114035,7 @@
     },
     {
      "key": "p690",
-     "label": "OpenBMB's blog, post dated 2026-05-25 on the page, titled… Cited at point 9, “They reportedly went abroad for Nvidia chips, and one lab was reported to go back to…”.",
+     "label": "OpenBMB's blog, post dated 2026-05-25 on the page… Cited at point 9, “They reportedly went abroad for Nvidia chips, and one lab was reported to go back to…”.",
      "documents": [
       {
        "id": "cn-ga31-smalllabs-17",
@@ -114329,7 +114369,7 @@
     },
     {
      "key": "p713",
-     "label": "Unsigned article on the State Administration for Market Regulation's Party group, \"市场监管总局：坚持党建引领… Cited at point 10, “Regulators acted against Nvidia by name”.",
+     "label": "Unsigned article on the State Administration for Market Regulation's Party group… Cited at point 10, “Regulators acted against Nvidia by name”.",
      "documents": [
       {
        "id": "cn-media-party-samr-september",
@@ -114605,7 +114645,7 @@
     },
     {
      "key": "p725",
-     "label": "Nvidia, results call of Aug 27, 2025 (second quarter of its… Cited at point 11, “Companies told securities regulators that the state restricted purchases”.",
+     "label": "Nvidia, results call of Aug 27, 2025… Cited at point 11, “Companies told securities regulators that the state restricted purchases”.",
      "documents": [
       {
        "id": "ms-sgp-nvda-q2fy26-call-transcript-pdf",
@@ -114615,7 +114655,7 @@
     },
     {
      "key": "p726",
-     "label": "Nvidia, results call of May 20, 2026 (first quarter of its… Cited at point 11, “Companies told securities regulators that the state restricted purchases”.",
+     "label": "Nvidia, results call of May 20, 2026… Cited at point 11, “Companies told securities regulators that the state restricted purchases”.",
      "documents": [
       {
        "id": "cn-o38-nvda-q1fy27-call-transcript-pdf",
@@ -114625,7 +114665,7 @@
     },
     {
      "key": "p727",
-     "label": "Nvidia, results call of Aug 26, 2026 (second quarter of its… Cited at point 11, “Companies told securities regulators that the state restricted purchases”.",
+     "label": "Nvidia, results call of Aug 26, 2026… Cited at point 11, “Companies told securities regulators that the state restricted purchases”.",
      "documents": [
       {
        "id": "cn-o38-nvda-q2fy27-call-transcript-pdf",
@@ -115529,7 +115569,7 @@
     },
     {
      "key": "p773",
-     "label": "The Wall Street Journal, Aug 23, 2025, as carried by Mint: \"Nvidia's roller coaster for China AI chips takes a new… Cited at point 14, “The summer of 2025”.",
+     "label": "The Wall Street Journal, Aug 23, 2025, as carried by Mint… Cited at point 14, “The summer of 2025”.",
      "documents": [
       {
        "id": "cn-counter-b5-1",
@@ -116029,7 +116069,7 @@
     },
     {
      "key": "p785",
-     "label": "Financial Times, Sept 17, 2025: report, from three people it does not name, that the cyberspace… Cited at point 15, “Orders, customs and data centres”.",
+     "label": "Financial Times, Sept 17, 2025: report of the cyberspace regulator’s instruction on the RTX PRO 6000D. Cited at point 15, “Orders, customs and data centres”.",
      "documents": [
       {
        "id": "man-cn-ft-20250917-6000d",
@@ -116525,7 +116565,7 @@
     },
     {
      "key": "p797",
-     "label": "House Foreign Affairs Committee, disclosure of Nov 19, 2026, made by the full committee (its chairman's release; approved by… Cited at point 16, “The result”.",
+     "label": "House Foreign Affairs Committee, disclosure of Nov 19, 2026, made by the full committee… Cited at point 16, “The result”.",
      "documents": [
       {
        "id": "cn-usdocs-hfac-summary-20261119",
@@ -117187,7 +117227,7 @@
     },
     {
      "key": "p805",
-     "label": "House Foreign Affairs Committee, disclosure of Nov 19, 2026, made by the full committee (its chairman's release… Cited in the argument’s section of numbers.",
+     "label": "House Foreign Affairs Committee, disclosure of Nov 19, 2026, made by the full committee… Cited in the argument’s section of numbers.",
      "documents": [
       {
        "id": "cn-usdocs-hfac-summary-20261119",
@@ -117347,7 +117387,7 @@
     },
     {
      "key": "p821",
-     "label": "Nvidia, current report on Form 8-K for the US Securities and Exchange Commission, signed Nov 23, 2026 (date of the… Cited in the argument’s section of numbers.",
+     "label": "Nvidia, current report on Form 8-K for the US Securities and Exchange Commission, signed Nov 23, 2026… Cited in the argument’s section of numbers.",
      "documents": [
       {
        "id": "cn-ga06-nvda-8k-20261123-pdf",
@@ -117367,7 +117407,7 @@
     },
     {
      "key": "p823",
-     "label": "Voice of America's Chinese service, Jan 29, 2026 (17:35 UTC by its page data; the page shows 2026年1月30日 01:35)… Cited in the argument’s section of numbers.",
+     "label": "Voice of America's Chinese service, Jan 29, 2026: report of what Nvidia's chief executive told reporters. Cited in the argument’s section of numbers.",
      "documents": [
       {
        "id": "cn-ga31-counter-40",
@@ -117903,7 +117943,7 @@
     },
     {
      "key": "p850",
-     "label": "Greater Bay Area meteorological monitoring, warning and forecasting centre (Shenzhen Meteorological Innovation… Cited at point 17, “Beijing was not one actor”.",
+     "label": "Greater Bay Area meteorological monitoring, warning and forecasting centre… Cited at point 17, “Beijing was not one actor”.",
      "documents": [
       {
        "id": "cn-ga31-cndocs-36",
@@ -118003,7 +118043,7 @@
     },
     {
      "key": "p860",
-     "label": "Reuters, Nov 13, 2026, factbox on Chinese computing-centre projects naming Nvidia chips, on WSAU (a radio… Cited at point 17, “Beijing was not one actor”.",
+     "label": "Reuters, Nov 13, 2026, factbox on Chinese computing-centre projects naming Nvidia chips, on WSAU… Cited at point 17, “Beijing was not one actor”.",
      "documents": [
       {
        "id": "cn-tolerate-projects-relay1",
@@ -118013,7 +118053,7 @@
     },
     {
      "key": "p861",
-     "label": "The Wall Street Journal, Aug 23, 2025, as carried by Mint: \"Nvidia's roller coaster for China AI chips takes a… Cited at point 17, “Beijing was not one actor”.",
+     "label": "The Wall Street Journal, Aug 23, 2025, as carried by Mint… Cited at point 17, “Beijing was not one actor”.",
      "documents": [
       {
        "id": "cn-counter-b5-1",
@@ -118307,7 +118347,7 @@
     },
     {
      "key": "p870",
-     "label": "The same notice's attachment, the list of 46 American firms (PDF on the ministry's… Cited at point 18, “Guidance and public warnings, not a published ban”.",
+     "label": "The same notice's attachment, the list of 46 American firms… Cited at point 18, “Guidance and public warnings, not a published ban”.",
      "documents": [
       {
        "id": "cn-le14-mof-us-firms-list-20260622",
@@ -118317,7 +118357,7 @@
     },
     {
      "key": "p871",
-     "label": "Ministry of Commerce and General Administration of Customs (their announcement 2025… Cited at point 18, “Guidance and public warnings, not a published ban”.",
+     "label": "Ministry of Commerce and General Administration of Customs… Cited at point 18, “Guidance and public warnings, not a published ban”.",
      "documents": [
       {
        "id": "cn-ga31-twelve-1",
@@ -118327,7 +118367,7 @@
     },
     {
      "key": "p872",
-     "label": "Ministry of Commerce and General Administration of Customs (their announcement 2025… Cited at point 18, “Guidance and public warnings, not a published ban”.",
+     "label": "Ministry of Commerce and General Administration of Customs… Cited at point 18, “Guidance and public warnings, not a published ban”.",
      "documents": [
       {
        "id": "cn-ga31-importcat-2",
@@ -118587,7 +118627,7 @@
     },
     {
      "key": "p898",
-     "label": "Ministry of Foreign Affairs, regular press conference of Jan 29, 2026 (spokesperson… Cited at point 18, “Guidance and public warnings, not a published ban”.",
+     "label": "Ministry of Foreign Affairs, regular press conference of Jan 29, 2026… Cited at point 18, “Guidance and public warnings, not a published ban”.",
      "documents": [
       {
        "id": "cn-acts-mfa-20260129",
@@ -118597,7 +118637,7 @@
     },
     {
      "key": "p899",
-     "label": "Ministry of Foreign Affairs, regular press conference of Nov 9, 2026 (spokesperson Guo… Cited at point 18, “Guidance and public warnings, not a published ban”.",
+     "label": "Ministry of Foreign Affairs, regular press conference of Nov 9, 2026… Cited at point 18, “Guidance and public warnings, not a published ban”.",
      "documents": [
       {
        "id": "cn-acts-mfa-20261109",
@@ -118617,7 +118657,7 @@
     },
     {
      "key": "p901",
-     "label": "Ministry of Foreign Affairs, regular press conference of Nov 18, 2026 (spokesperson… Cited at point 18, “Guidance and public warnings, not a published ban”.",
+     "label": "Ministry of Foreign Affairs, regular press conference of Nov 18, 2026… Cited at point 18, “Guidance and public warnings, not a published ban”.",
      "documents": [
       {
        "id": "cn-acts-mfa-20261118",
@@ -118627,7 +118667,7 @@
     },
     {
      "key": "p902",
-     "label": "Ministry of Foreign Affairs, regular press conference of Nov 23, 2026 (spokesperson… Cited at point 18, “Guidance and public warnings, not a published ban”.",
+     "label": "Ministry of Foreign Affairs, regular press conference of Nov 23, 2026… Cited at point 18, “Guidance and public warnings, not a published ban”.",
      "documents": [
       {
        "id": "cn-ga15-mfa-20261123",
@@ -118717,7 +118757,7 @@
     },
     {
      "key": "p911",
-     "label": "Financial Times, Sept 17, 2025: report, from three people it does not name, that the… Cited at point 18, “Guidance and public warnings, not a published ban”.",
+     "label": "Financial Times, Sept 17, 2025: report of an instruction on the RTX PRO 6000D. Cited at point 18, “Guidance and public warnings, not a published ban”.",
      "documents": [
       {
        "id": "man-cn-ft-20250917-6000d",
@@ -119301,7 +119341,7 @@
     },
     {
      "key": "p919",
-     "label": "Nvidia, results call for the third quarter of its fiscal year 2027 (the quarter… Cited at point 19, “Some purchases were approved, and some chips came in”.",
+     "label": "Nvidia, results call for the third quarter of its fiscal year 2027… Cited at point 19, “Some purchases were approved, and some chips came in”.",
      "documents": [
       {
        "id": "cn-o38-nvda-q3fy27-call-transcript-pdf",
@@ -119421,7 +119461,7 @@
     },
     {
      "key": "p931",
-     "label": "Voice of America's Chinese service, Jan 29, 2026 (17:35 UTC by its page data; the… Cited at point 19, “Some purchases were approved, and some chips came in”.",
+     "label": "Voice of America's Chinese service, Jan 29, 2026: report of the Nvidia chief's words. Cited at point 19, “Some purchases were approved, and some chips came in”.",
      "documents": [
       {
        "id": "cn-ga31-counter-40",
@@ -119491,7 +119531,7 @@
     },
     {
      "key": "p938",
-     "label": "The Standard (Hong Kong), page stamped Nov 20, 2026, 04:57 Hong Kong time, \"US… Cited at point 19, “Some purchases were approved, and some chips came in”.",
+     "label": "The Standard (Hong Kong), page stamped Nov 20, 2026, 04:57 Hong Kong time… Cited at point 19, “Some purchases were approved, and some chips came in”.",
      "documents": [
       {
        "id": "cn-le04-standard-900000-20261120",
@@ -119581,7 +119621,7 @@
     },
     {
      "key": "p947",
-     "label": "Trivium China, a newsletter, Jul 9, 2026 by its address: \"Beijing rations Nvidia… Cited at point 19, “Some purchases were approved, and some chips came in”.",
+     "label": "Trivium China, a newsletter, Jul 9, 2026 by its address… Cited at point 19, “Some purchases were approved, and some chips came in”.",
      "documents": [
       {
        "id": "cn-ga31-carriers2-37",
@@ -119611,7 +119651,7 @@
     },
     {
      "key": "p950",
-     "label": "Financial Times (Zijing Wu), Aug 19, 2026, \"China eases limits on Nvidia H200 chips… Cited at point 19, “Some purchases were approved, and some chips came in”.",
+     "label": "Financial Times (Zijing Wu), Aug 19, 2026… Cited at point 19, “Some purchases were approved, and some chips came in”.",
      "documents": [
       {
        "id": "cn-tolerate-ftaug26",
@@ -120061,7 +120101,7 @@
     },
     {
      "key": "p981",
-     "label": "Reuters, February 2026, as carried by The Standard (Hong… Cited at point 20, “The companies had reasons of their own, and American curbs and conditions pushed too”.",
+     "label": "Reuters, February 2026, as carried by The Standard… Cited at point 20, “The companies had reasons of their own, and American curbs and conditions pushed too”.",
      "documents": [
       {
        "id": "cn-le10-bytedance-terms-20260204-standard",
@@ -120071,7 +120111,7 @@
     },
     {
      "key": "p982",
-     "label": "China Daily, Aug 12, 2025 (Ma Si), \"Demand for Nvidia's H20… Cited at point 20, “The companies had reasons of their own, and American curbs and conditions pushed too”.",
+     "label": "China Daily, Aug 12, 2025 (Ma Si)… Cited at point 20, “The companies had reasons of their own, and American curbs and conditions pushed too”.",
      "documents": [
       {
        "id": "cn-ga02-cd-h20-lackluster-20250812",
@@ -120101,7 +120141,7 @@
     },
     {
      "key": "p985",
-     "label": "Financial Times, Sept 17, 2025: report, from three people… Cited at point 20, “The companies had reasons of their own, and American curbs and conditions pushed too”.",
+     "label": "Financial Times, Sept 17, 2025: report on the RTX PRO 6000D. Cited at point 20, “The companies had reasons of their own, and American curbs and conditions pushed too”.",
      "documents": [
       {
        "id": "man-cn-ft-20250917-6000d",
@@ -120141,7 +120181,7 @@
     },
     {
      "key": "p989",
-     "label": "Reuters, relaying the Financial Times, Feb 3, 2026 (the… Cited at point 20, “The companies had reasons of their own, and American curbs and conditions pushed too”.",
+     "label": "Reuters, relaying the Financial Times, Feb 3, 2026… Cited at point 20, “The companies had reasons of their own, and American curbs and conditions pushed too”.",
      "documents": [
       {
        "id": "cn-against2-ft-us-review-20260203",
@@ -120323,7 +120363,7 @@
     },
     {
      "key": "p996",
-     "label": "Unsigned article on the State Administration for Market Regulation's Party group, \"市场监管总局：坚持党建引领… Cited at point 21, “What Beijing meant by it is not settled”.",
+     "label": "Unsigned article on the State Administration for Market Regulation's Party group… Cited at point 21, “What Beijing meant by it is not settled”.",
      "documents": [
       {
        "id": "cn-media-party-samr-september",
@@ -120483,7 +120523,7 @@
     },
     {
      "key": "p1012",
-     "label": "The Wall Street Journal, Aug 23, 2025, as carried by Mint: \"Nvidia's roller coaster for China AI… Cited at point 21, “What Beijing meant by it is not settled”.",
+     "label": "The Wall Street Journal, Aug 23, 2025, as carried by Mint… Cited at point 21, “What Beijing meant by it is not settled”.",
      "documents": [
       {
        "id": "cn-counter-b5-1",
@@ -120493,7 +120533,7 @@
     },
     {
      "key": "p1013",
-     "label": "The Wall Street Journal, Nov 4, 2025, as carried by Mint: \"Trump officials torpedoed Nvidia's… Cited at point 21, “What Beijing meant by it is not settled”.",
+     "label": "The Wall Street Journal, Nov 4, 2025, as carried by Mint… Cited at point 21, “What Beijing meant by it is not settled”.",
      "documents": [
       {
        "id": "cn-usside-048",
@@ -120796,7 +120836,7 @@
      "no_address": null
     },
     "man-cn-ft-20250917-6000d": {
-     "name": "Financial Times, Sept 17, 2025: a report, from three unnamed people, that the cyberspace regulator told companies to end their testing and orders of the RTX Pro 6000D",
+     "name": "Financial Times, Sept 17, 2025: a report, from three unnamed people, that the cyberspace regulator told companies to end their testing and orders of the RTX PRO 6000D",
      "kind": "PRESS",
      "kind_words": "Press report citing unnamed people",
      "on_record": false,
@@ -121076,7 +121116,7 @@
      "no_address": null
     },
     "cn-policy-xi-coretech-2016": {
-     "name": "Xi Jinping, speech of Apr 19, 2016 at the symposium on cybersecurity and informatization, full text on the Cyberspace Administration’s site",
+     "name": "Xi Jinping, speech of Apr 19, 2016 at the forum on cybersecurity and informatization, full text on the Cyberspace Administration’s site",
      "kind": "DOC",
      "kind_words": "Chinese state document",
      "on_record": true,
@@ -122966,7 +123006,7 @@
      "no_address": null
     },
     "cn-labs-rtx5500-demand-20261104": {
-     "name": "Bloomberg News in Japanese, on TBS CROSS DIG with Bloomberg, Nov 4, 2026: “中国AI各社、エヌビディア製チップ不足で開発に制約－受領は発注の1%”, from unnamed people, on Chinese firms’ RTX Pro 5500 orders",
+     "name": "Bloomberg News in Japanese, on TBS CROSS DIG with Bloomberg, Nov 4, 2026: “中国AI各社、エヌビディア製チップ不足で開発に制約－受領は発注の1%”, from unnamed people, on Chinese firms’ RTX PRO 5500 orders",
      "kind": "PRESS",
      "kind_words": "Press report citing unnamed people",
      "on_record": false,
@@ -124076,7 +124116,7 @@
      "no_address": null
     },
     "cn-ga31-twelve-2": {
-     "name": "Bloomberg News, Sept 17, 2025, as carried by Bloomberg Law: a report, from unnamed people, on what the cyberspace regulator told companies about the RTX Pro 6000D",
+     "name": "Bloomberg News, Sept 17, 2025, as carried by Bloomberg Law: a report, from unnamed people, on what the cyberspace regulator told companies about the RTX PRO 6000D",
      "kind": "PRESS",
      "kind_words": "Press report citing unnamed people",
      "on_record": false,
@@ -124226,7 +124266,7 @@
      "no_address": null
     },
     "cn-ga31-counter-40": {
-     "name": "Voice of America’s Chinese service, Jan 30, 2026: report of what Nvidia’s chief executive told reporters at Taipei’s airport on Jan 29, in Chinese",
+     "name": "Voice of America’s Chinese service, Jan 29, 2026: report of what Nvidia’s chief executive told reporters at Taipei’s airport on Jan 29, in Chinese",
      "kind": "REC",
      "kind_words": "Press report of words spoken on the record",
      "on_record": true,
@@ -125136,7 +125176,7 @@
      "no_address": null
     },
     "cn-le14-mof-domestic-standard-impl-20251215": {
-     "name": "Finance Ministry and Ministry of Industry and Information Technology, opinions on carrying out the State Council General Office’s notice on domestic-product standards in government procurement (财库〔2025〕30号), dated Dec 15, 2025, posted Dec 19, 2025; its text saved",
+     "name": "Finance Ministry and Ministry of Industry and Information Technology, opinions on carrying out the State Council General Office’s notice on domestic-product standards in government procurement (财库〔2025〕30号), dated Dec 15, 2025, posted Dec 19, 2025",
      "kind": "DOC",
      "kind_words": "Chinese state document",
      "on_record": true,
@@ -125196,7 +125236,7 @@
      "no_address": null
     },
     "cn-against2-techweb-no-bulk-20260717": {
-     "name": "TechWeb, as carried by Sina Finance, Jul 17, 2026: report of the commerce ministry’s answer on the H200 and of unnamed insiders’ word that Chinese AI firms had placed almost no bulk orders",
+     "name": "TechWeb, as carried by Sina Tech (新浪科技), Jul 17, 2026: report of the commerce ministry’s answer on the H200 and of unnamed insiders’ word that Chinese AI firms had placed almost no bulk orders",
      "kind": "PRESS",
      "kind_words": "Press report citing unnamed people",
      "on_record": false,
@@ -130661,7 +130701,7 @@
      "no_address": null
     },
     "cn-policy-xi-coretech-2016": {
-     "name": "Xi Jinping, speech of Apr 19, 2016 at the symposium on cybersecurity and informatization, full text on the Cyberspace Administration’s site",
+     "name": "Xi Jinping, speech of Apr 19, 2016 at the forum on cybersecurity and informatization, full text on the Cyberspace Administration’s site",
      "kind": "DOC",
      "kind_words": "Chinese state document",
      "on_record": true,
@@ -132492,8 +132532,8 @@
     },
     "cn-clips-evidence-3": {
      "name": "Cloud Security Alliance (an industry group), research note “The November Outage Cluster: Correlated Fragility and Attribution”, Nov 18, 2026",
-     "kind": "FIL",
-     "kind_words": "Company filing or statement",
+     "kind": "PUB",
+     "kind_words": "Published commentary or statement (state media, industry body)",
      "on_record": true,
      "date": "",
      "site": "labs.cloudsecurityalliance.org",
@@ -136373,7 +136413,7 @@
      "no_address": null
     },
     "man-cn-ft-20250917-6000d": {
-     "name": "Financial Times, Sept 17, 2025: a report, from three unnamed people, that the cyberspace regulator told companies to end their testing and orders of the RTX Pro 6000D",
+     "name": "Financial Times, Sept 17, 2025: a report, from three unnamed people, that the cyberspace regulator told companies to end their testing and orders of the RTX PRO 6000D",
      "kind": "PRESS",
      "kind_words": "Press report citing unnamed people",
      "on_record": false,
@@ -136383,7 +136423,7 @@
      "no_address": null
     },
     "cn-ga31-twelve-2": {
-     "name": "Bloomberg News, Sept 17, 2025, as carried by Bloomberg Law: a report, from unnamed people, on what the cyberspace regulator told companies about the RTX Pro 6000D",
+     "name": "Bloomberg News, Sept 17, 2025, as carried by Bloomberg Law: a report, from unnamed people, on what the cyberspace regulator told companies about the RTX PRO 6000D",
      "kind": "PRESS",
      "kind_words": "Press report citing unnamed people",
      "on_record": false,
@@ -137313,7 +137353,7 @@
      "no_address": null
     },
     "cn-ga31-counter-40": {
-     "name": "Voice of America’s Chinese service, Jan 30, 2026: report of what Nvidia’s chief executive told reporters at Taipei’s airport on Jan 29, in Chinese",
+     "name": "Voice of America’s Chinese service, Jan 29, 2026: report of what Nvidia’s chief executive told reporters at Taipei’s airport on Jan 29, in Chinese",
      "kind": "REC",
      "kind_words": "Press report of words spoken on the record",
      "on_record": true,
@@ -137613,7 +137653,7 @@
      "no_address": null
     },
     "cn-labs-rtx5500-demand-20261104": {
-     "name": "Bloomberg News in Japanese, on TBS CROSS DIG with Bloomberg, Nov 4, 2026: “中国AI各社、エヌビディア製チップ不足で開発に制約－受領は発注の1%”, from unnamed people, on Chinese firms’ RTX Pro 5500 orders",
+     "name": "Bloomberg News in Japanese, on TBS CROSS DIG with Bloomberg, Nov 4, 2026: “中国AI各社、エヌビディア製チップ不足で開発に制約－受領は発注の1%”, from unnamed people, on Chinese firms’ RTX PRO 5500 orders",
      "kind": "PRESS",
      "kind_words": "Press report citing unnamed people",
      "on_record": false,
@@ -138163,7 +138203,7 @@
      "no_address": null
     },
     "cn-policy-xi-coretech-2016": {
-     "name": "Xi Jinping, speech of Apr 19, 2016 at the symposium on cybersecurity and informatization, full text on the Cyberspace Administration’s site",
+     "name": "Xi Jinping, speech of Apr 19, 2016 at the forum on cybersecurity and informatization, full text on the Cyberspace Administration’s site",
      "kind": "DOC",
      "kind_words": "Chinese state document",
      "on_record": true,
@@ -138813,11 +138853,11 @@
    "name": "The case against",
    "what": "The best honest case that there was no real conflict, in seven parts, and the three things it cannot explain.",
    "chapter": "VI",
-   "title": "The best case that Beijing and its AI companies were not in conflict has seven parts, each in the record; three things pass through all seven: two filings; orders of which only a small part arrived (reported, from unnamed people); and licences that had brought no sales by May 2026 and sales that had stopped by that November",
+   "title": "The best case that Beijing and its AI companies were not in conflict has seven parts, each in the record; three things pass through all seven: two filings; orders of which, by reports of Reuters and the Financial Times citing unnamed people, only a small part arrived; and licences that had brought no sales by May 2026 and shipments that had stopped by that November",
    "image": "img/34_figure-26_the-case-against.jpg",
    "full_image": "full/34_figure-26_the-case-against.jpg",
    "width": 2200,
-   "height": 3349,
+   "height": 3493,
    "parts": [
     {
      "key": "n-parts",
@@ -139686,7 +139726,7 @@
     },
     {
      "key": "n-sources",
-     "label": "All 23 sources behind this figure: the 17 on the record first, then the 6 press reports or counts",
+     "label": "All 24 sources behind this figure: the 18 on the record first, then the 6 press reports or counts",
      "documents": [
       {
        "id": "cn-policy-he-welcomes",
@@ -140170,7 +140210,7 @@
     },
     {
      "key": "cannot-2",
-     "label": "What the case cannot explain, 2 of 3: Orders of which only a small part arrived (reported, from unnamed people) (3 sources)",
+     "label": "What the case cannot explain, 2 of 3: Orders of which, by reports of Reuters and the Financial Times citing unnamed people, only a small part arrived (3 sources)",
      "documents": [
       {
        "id": "cn-labs-h200-two-million-202512-relay1-wayback",
@@ -140194,7 +140234,7 @@
     },
     {
      "key": "cannot-3",
-     "label": "What the case cannot explain, 3 of 3: Licences, and sales that stopped (3 sources)",
+     "label": "What the case cannot explain, 3 of 3: Licences, and shipments that stopped (3 sources)",
      "documents": [
       {
        "id": "cn-o38-nvda-q1fy27-call-transcript-pdf",
@@ -140631,10 +140671,14 @@
     },
     {
      "key": "gate-3",
-     "label": "Part 3 of the case against, The national purchase rules stop at the state’s own buying: 2 sources; it yields limit 2: It warned in public and, by the press …",
+     "label": "Part 3 of the case against, The national purchase rules stop at the state’s own buying: 3 sources; it yields limit 2: It warned in public and, by the press …",
      "documents": [
       {
        "id": "cn-policy-desktop-2023",
+       "quoted_on_image": []
+      },
+      {
+       "id": "cn-policy-server-procurement-2023",
        "quoted_on_image": []
       },
       {
@@ -140767,10 +140811,6 @@
       },
       {
        "id": "cn-policy-laptop-procurement-2023",
-       "quoted_on_image": []
-      },
-      {
-       "id": "cn-policy-server-procurement-2023",
        "quoted_on_image": []
       },
       {
@@ -140983,6 +141023,16 @@
     },
     {
      "key": "gate-3-src2",
+     "label": "A source of part 3: Ministry of Finance and Ministry of Industry and Information Technology, notice on the government purchasing standard for general-purpose …",
+     "documents": [
+      {
+       "id": "cn-policy-server-procurement-2023",
+       "quoted_on_image": []
+      }
+     ]
+    },
+    {
+     "key": "gate-3-src3",
      "label": "A source of part 3: Jiangsu province, plan for computing infrastructure issued by four provincial bodies, with targets for 2025 and 2030. PDF on the provincial …",
      "documents": [
       {
@@ -140993,7 +141043,7 @@
     },
     {
      "key": "gate-4",
-     "label": "Part 4 of the case against, Nvidia chips were still sold in China: 2 sources; it yields limit 3: Some chips came in",
+     "label": "Part 4 of the case against, Nvidia still shipped AI accelerators in China, by IDC’s count: 2 sources; it yields limit 3: Some chips came in",
      "documents": [
       {
        "id": "cn-o36-tencent-call-20260318-sa",
@@ -141350,6 +141400,16 @@
      "address": "https://www.mof.gov.cn/jrttts/202312/t20231226_3924133.htm",
      "no_address": null
     },
+    "cn-policy-server-procurement-2023": {
+     "name": "Ministry of Finance and industry ministry (MIIT), notice issuing the government-procurement standard for general-purpose servers, 2023 edition, Dec 16, 2023, on the Finance Ministry’s site",
+     "kind": "DOC",
+     "kind_words": "Chinese state document",
+     "on_record": true,
+     "date": "",
+     "site": "mof.gov.cn",
+     "address": "https://www.mof.gov.cn/jrttts/202312/t20231226_3924137.htm",
+     "no_address": null
+    },
     "cn-usside-044-relay1": {
      "name": "Reuters, as carried by Mint (India), Oct 13, 2026, reporting counts by the research firm IDC",
      "kind": "COUNT",
@@ -141651,7 +141711,7 @@
      "no_address": null
     },
     "cn-policy-xi-coretech-2016": {
-     "name": "Xi Jinping, speech of Apr 19, 2016 at the symposium on cybersecurity and informatization, full text on the Cyberspace Administration’s site",
+     "name": "Xi Jinping, speech of Apr 19, 2016 at the forum on cybersecurity and informatization, full text on the Cyberspace Administration’s site",
      "kind": "DOC",
      "kind_words": "Chinese state document",
      "on_record": true,
@@ -141838,16 +141898,6 @@
      "date": "",
      "site": "mof.gov.cn",
      "address": "https://www.mof.gov.cn/jrttts/202312/t20231226_3924134.htm",
-     "no_address": null
-    },
-    "cn-policy-server-procurement-2023": {
-     "name": "Ministry of Finance and industry ministry (MIIT), notice issuing the government-procurement standard for general-purpose servers, 2023 edition, Dec 16, 2023, on the Finance Ministry’s site",
-     "kind": "DOC",
-     "kind_words": "Chinese state document",
-     "on_record": true,
-     "date": "",
-     "site": "mof.gov.cn",
-     "address": "https://www.mof.gov.cn/jrttts/202312/t20231226_3924137.htm",
      "no_address": null
     },
     "cn-policy-computing-network-1779": {

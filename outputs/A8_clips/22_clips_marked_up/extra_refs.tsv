@@ -1,7 +1,8 @@
 # References used by the marked-up clips that are not in argument/argument_refs.tsv (scripts/cn_doc_build.py --refs).
 # Columns, tab-separated: saved id | kind | label | address (empty = the address in the saved copy's record)
-# Kinds are the build script's fixed set: DOC OFF FIL REC PRESS COUNT CLIP. For a government body outside China the
-# nearest kind is OFF (on the record); for an organisation's own published paper or note it is FIL.
+# Kinds are those of the build script (scripts/cn_argument_build.py, KIND), among them DOC OFF FIL REC PUB PRESS COUNT CLIP.
+# For a government body outside China the nearest kind is OFF (on the record); for a company's own published paper or
+# note it is FIL; for an industry body's published note it is PUB (on the record too).
 # Round 4: two ids left this file because the argument's own list now holds them (cn-clips-singju-luckey, cn-labs-us-chip-licences-20261119).
 cn-acts-lutnick-july15-bloomberg	REC	Bloomberg Law, Jul 15, 2025, reporting what Commerce Secretary Howard Lutnick said on CNBC. Opening lines only; the rest is behind a login
 cn-clips-technical-1	FIL	DeepSeek, "DeepSeek-V3 Technical Report", on arXiv (version 2)
@@ -11,7 +12,7 @@ cn-clips-whitehouse-outages	OFF	The White House, release of Nov 18, 2026 giving 
 cn-clips-evidence-2	OFF	Federal Aviation Administration, "Nationwide Ground Stop: Questions and Answers", on the ground stop of November 13. The saved copy shows no date of its own
 cn-clips-ms-pir-report	REC	BleepingComputer, Nov 16, 2026, reporting Microsoft's preliminary report on its outage of November 12
 cn-clips-senate-cyber-letter	OFF	Senators Maria Cantwell and M. Michael Rounds, letter to the Director of National Intelligence, Nov 17, 2026. The Senate commerce committee's copy
-cn-clips-evidence-3	FIL	Cloud Security Alliance (an industry group), research note "The November Outage Cluster: Correlated Fragility and Attribution", Nov 18, 2026
+cn-clips-evidence-3	PUB	Cloud Security Alliance (an industry group), research note "The November Outage Cluster: Correlated Fragility and Attribution", Nov 18, 2026
 cn-clips-technical-4	OFF	Federal Bureau of Investigation, notice FLASH-20261113-001 on an attack tool, Nov 13, 2026
 cn-clips-technical-3	FIL	Anthropic, "Disrupting an AI-orchestrated cyber espionage campaign", Nov 13, 2025
 cn-clips-corroboration-1	OFF	Bureau of Industry and Security, US Commerce Department, press release of Nov 16, 2026
