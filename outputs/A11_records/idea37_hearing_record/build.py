@@ -37,10 +37,19 @@ n_html = len(re.findall(r'Sen\. Coons', (REV / 'body.html').read_text(encoding='
 n_text = len(re.findall(r'Sen\. Coons', (REV / 'text.txt').read_text(encoding='utf-8', errors='replace')))
 if n_html < 5 or n_text != 0 or 'Senator Fischer (' not in (REV / 'text.txt').read_text(encoding='utf-8', errors='replace'): sys.exit(f'the count of the label Sen. Coons changed: page {n_html}, text {n_text}')
 v['N_COONS_HTML'] = str(n_html); v['N_COONS_TEXT'] = {0: 'not once'}[n_text]
+# round 10 (Nov 25, 2026): the argument's point number and the caption times its open list gives are read by script, never typed
+sys.path.insert(0, str(HERE.parent / 'tools'))
+import arg_points as AP
+P12 = AP.one('cn-o37-senate-hearing-page-b')
+if P12 not in AP.points('cn-us-lutnick-0422-rev-transcript-b'): sys.exit(f'the argument\'s point {P12} no longer takes the words from the commercial transcript: rewrite')
+mc = re.findall(r"committee video's own captions \((\d:\d\d:\d\d) to (\d:\d\d:\d\d); a reading, with no saved copy\)", AP.open_list())
+if len(mc) != 1: sys.exit(f'the argument\'s open list gives the caption times {mc}: rewrite the bullet on the captions')
+if mc[0][0] != f['captions_answer_begins']: sys.exit('the open list and the caption files kept here no longer agree on the start of the answer: rewrite')
+v.update({'P12': P12, 'ARG_CAP_FROM': mc[0][0], 'ARG_CAP_TO': mc[0][1]})
 t = (HERE / 'hearing_record_base_src.txt').read_text(encoding='utf-8')
 for k, x in v.items(): t = t.replace('{' + k + '}', str(x))
 left = re.findall(r'\{[A-Z_0-9]+\}', t)
 if left: sys.exit(f'unfilled: {left}')
 (HERE / 'hearing_record_base.txt').write_text(t, encoding='utf-8')
-r = subprocess.run([sys.executable, '-I', 'scripts/cn_doc_build.py', str(HERE / 'hearing_record_base.txt'), '--refs', str(HERE / 'extra_refs.tsv'), '--title', 'Hearing Record Found', '--eyebrow', 'China chip policy: new research, idea 37'], capture_output=True, text=True)
+r = subprocess.run([sys.executable, '-I', 'scripts/cn_doc_build.py', str(HERE / 'hearing_record_base.txt'), '--refs', str(HERE / 'extra_refs.tsv'), '--title', 'What The Committee Posted', '--eyebrow', 'China chip policy: the Senate hearing of Apr 22, 2026'], capture_output=True, text=True)
 print(r.stdout[-3000:], r.stderr[-800:]); sys.exit(r.returncode)

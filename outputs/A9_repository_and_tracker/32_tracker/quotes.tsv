@@ -40,8 +40,8 @@ cn-policy-wang-nvidia	希望包括英伟达在内的跨国公司为中国客户�
 cn-policy-h20-mofcom	继续取消一系列不合理的对华经贸限制措施
 ms-bj-20260128-h200-nod-standard	have been approved to purchase more than 400,000 H200 chips in total
 ms-bj-20260128-h200-nod-standard	400,000
-cn-acts-reuters-deepseek-20260130	China's industry and commerce ministries have granted approvals for all four companies
-cn-acts-reuters-deepseek-20260130	are being decided
+cn-ga31-sv1-reuters-deepseek-yahoo	China's industry and commerce ministries have granted approvals for all four companies
+cn-ga31-sv1-reuters-deepseek-yahoo	are being decided
 man-70f4668d5f56	approval to sell its second-most powerful artificial intelligence chips to China
 man-70f4668d5f56	Nvidia has won Beijing's approval
 cn-acts-reuters-ti-cap-20260708-relay1	Chinese officials, keen to nurture domestic suppliers, have withheld approval so far
@@ -188,7 +188,7 @@ cn-le14-itsec-scope-20230727	测评结果由企业和用户自主选择使用
 cn-xi-round-f-6	苹果公司、英伟达公司、Meta公司
 cn-le17-buaa-61901-6000d	品牌 NVIDIA 规格型号 RTX PRO 6000D
 cn-le17-whu-131281	Nvidia 6000D 84GB显存
-cn-acts-reuters-deepseek-20260130	These conditions are being decided by China's state planner
+cn-ga31-sv1-reuters-deepseek-yahoo	These conditions are being decided by China's state planner
 cn-tolerate-reutersaug26-relay1-wayback	Chinese regulators have told companies they can ship the processors to Hong Kong
 cn-tolerate-mof	公开征求意见
 cn-tolerate-mof	适用自动许可等便利措施
@@ -258,7 +258,7 @@ man-cn-factions-wsj-ding	according to people familiar with the message
 cn-acts-reuters-us-approvals-20260514-wayback	pulled back after guidance from Beijing, one source said
 cn-le25-zhejiang-ai-measures-2025-smartcity	2025年4月17日
 cn-against2-isc-supply-risk-20241203	并积极使用内外资企业在华生产制造的芯片
-cn-acts-reuters-deepseek-20260130	China has given its top AI startup DeepSeek approval to buy
+cn-ga31-sv1-reuters-deepseek-yahoo	China has given its top AI startup DeepSeek approval to buy
 cn-le08-enflame-final-prospectus	2025年中国AI加速卡整体出货规模约400万张,其中英伟达以约220万张出货量占据约55%的市场份额
 cn-le08-enflame-final-prospectus	根据IDC数据和发行人销售量情况
 cn-o38-nvda-q3fy27-call-transcript-pdf	Q3 sales of licensed Hopper Data Center products to China was $2.4 billion.
@@ -537,6 +537,8 @@ cn-acts-reuters-us-approvals-20260514-wayback	each approved customer can purchas
 cn-acts-reuters-us-approvals-20260514-wayback	has approved around 10 Chinese companies
 cn-acts-reuters-us-approvals-20260514-wayback	Published on 05/14/2026
 cn-usside-044-relay1	from January through June
+cn-usside-044-relay1	according to an IDC report seen by Reuters
+cn-usside-044-relay1	share of China's market for data-centre AI chips
 cn-factions-jiangsu-plan	集群内数据中心平均 PUE ≤1.25 <1.25 约束性
 man-cn-ft-20251009-customs	Teams of customs officers have been mobilised
 cn-usdocs-hfac-decisions-20261119	H200 License and Equivalent Application Status as of May 11, 2026
@@ -569,11 +571,17 @@ cn-usdocs-hfac-decisions-20261119	Ultimate Consignee
 cn-acts-mofcom-inquiry-20260819	两用物项出口管制清单
 cn-ga31-official-sec-submissions-20261125	FETCHED: 2026-11-25T06:49:19Z
 cn-ga31-official-sec-submissions-20261125	2026-07-26
+cn-ga31-official-sec-submissions-20261125-c	FETCHED: 2026-11-25T22:16:36Z
+cn-ga31-official-sec-submissions-20261125-c	2026-07-26
+cn-ga31-official-sec-submissions-20261125-c	"filingDate":["2026-11-23"
+cn-ga31-sv1-reuters-deepseek-yahoo	URL: https://finance.yahoo.com/
+cn-acts-reuters-deepseek-20260130	URL: https://www.itiger.com/
+cn-le13-yuyuan-qq-20250810b	AUTHOR: 玉渊谭天
+cn-le13-cja36-winners-xinhuanet-20261108	原创单位：中央广播电视总台
 cn-le05-sec-submissions-20261123	2026-07-26
 cn-le05-sec-submissions-20261123	FETCHED: 2026-11-23
 cn-ga06-sec-submissions-20261124	2026-07-26
 cn-ga06-sec-submissions-20261124	"filingDate":["2026-11-23"
-cn-ga31-official-sec-submissions-20261125	"filingDate":["2026-11-23"
 cn-counter-b17-1	CFO Commentary on Third Quarter Fiscal 2027 Results
 cn-counter-b17-1	October 25, 2026
 cn-o38-nvda-q3fy27-call-transcript-pdf	Q3 sales of licensed Hopper Data Center products to China was $2.4 billion

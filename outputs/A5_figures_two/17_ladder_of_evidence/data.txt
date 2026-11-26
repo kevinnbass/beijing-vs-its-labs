@@ -41,8 +41,8 @@ N 公司最近被国家网信办约谈
 
 # ---- rung 2: company filings and statements; institutions' own notices ----
 @ ex-alibaba rec 2025-09-10 Sept_2025 cn-clips-alibaba-20f rung=2 dir=neutral
-T Alibaba's annual report
-L Alibaba's annual report to the US securities regulator. The sentence does not name Nvidia.
+T Alibaba's annual report (year to Mar 31, 2026), on the regulator's request
+L Alibaba's annual report to the US securities regulator, for the year to Mar 31, 2026, on a request of September 2025. The sentence does not name Nvidia.
 S Alibaba, annual report on Form 20-F for the year to Mar 31, 2026
 Q In September 2025, the Cyberspace Administration of China requested Chinese technology companies to halt purchases of certain chips.
 D In September 2025, the Cyberspace Administration of China requested
@@ -89,8 +89,8 @@ Q I think what we have seen is a paucity of orders from the Chinese on the H200s
 D Friday, November 20, 2026
 
 @ ex-tencent rec 2026-05-13 - cn-o36-tencent-call-20260513-sa rung=4 dir=neutral
-T Tencent's chief strategy officer, on a results call; he does not say whose policy
-L Tencent's chief strategy officer on a results call, in a stock-data site's transcript whose speaker labels nobody has checked. He does not say whose policy.
+T a Tencent executive on a results call (the transcripts differ on which); he does not say whose policy
+L A Tencent executive on a results call. The stock-data site Stock Analysis labels him the chief strategy officer; another transcript, on Xueqiu, puts the answer under the chief financial officer, so who spoke is not settled. He does not say whose policy.
 S Tencent, results call of May 13, 2026 (transcript on the stock-data site Stock Analysis)
 Q a combination of policy restrictions on certain, you know, foreign design GPUs being brought into China
 D Earnings Call: Q1 2026 May 13, 2026
@@ -109,7 +109,7 @@ T Reuters, from two unnamed people
 L Reuters, from two unnamed people, on chips waiting in Hong Kong.
 S Reuters, as carried by CNA (Singapore)
 Q About 600,000 of Nvidia's advanced artificial intelligence chips are stored in Hong Kong awaiting shipment to China
-D cn-clips-reuters-hongkong-yahoo | Nov 5 () - About 600,000 of Nvidia's advanced
+D cn-clips-reuters-hongkong-yahoo | Nov 5 (Reuters) - About 600,000 of Nvidia's
 D cn-clips-reuters-hongkong-yahoo | two people familiar with the matter said
 
 @ ex-idc count 2026-04-01 reported_Apr_1,_2026 man-cn-usside-012 rung=5 dir=neutral
@@ -124,6 +124,8 @@ D PUBLISHED: 2026-04-01
 # rungs 3 and 4: the two officials' names, as the argument's point 12 gives them since the core's batch of 20:58 UTC, Nov 25, 2026 (round 10)
 ! cn-o37-senate-hearing-page-b | Howard Lutnick
 ! cn-against2-bessent-orders-20261120 | Treasury Secretary Scott Bessent
+# rung 3 (round 10): the date of the status in Washington's licence table
+! cn-usdocs-hfac-decisions-20261119 | Application Status as of May 11, 2026
 # a title that stands inside one source's label in the list of sources
 ! man-e2596eab15f4 | Jensen Huang's years-long effort to get close to China
 # rung 2: Nvidia gave no reason for the stop (its own call says none; Reuters says so in terms)

@@ -60,7 +60,7 @@ The video is explainer.mp4 in this folder. Each caption stays on screen while th
 - On the record: US-China Economic and Security Review Commission, 2025 annual report [26]
 - Captions, not checked by ear: the Trade Representative on Bloomberg Television, May 15, 2026, at 5:59 [27]
 
-**11.** **The sentence that survives (1 of 2).** From 2024 the security and planning side of the Chinese state pressed China's AI companies, through unpublished guidance that the press reported, to buy home-made chips rather than Nvidia's, and from the summer of 2025 to stop ordering them, while the security ministry warned in public of backdoors in chips made abroad and state media warned about Nvidia's chips, most of all in August and September 2025;
+**11.** **The sentence that survives (1 of 2).** From 2024 the planning side of the Chinese state and the industry ministry, and from 2025 its security side, pressed China's AI companies, through unpublished guidance that the press reported, to buy home-made chips rather than Nvidia's, and from the summer of 2025 to stop ordering them, while the security ministry warned in public of backdoors in chips made abroad and state media warned about Nvidia's chips, most of all in August and September 2025;
 
 - From the project's referenced argument, section 6: its one sentence, shown here in two parts. The guidance is reported, from unnamed people; the warnings were public.
 
@@ -70,7 +70,7 @@ The video is explainer.mp4 in this folder. Each caption stays on screen while th
 
 ## References
 
-Each entry: its kind; what it is; the saved page's own title where the record holds one; the address; the saved copy (research/primary/<id>).
+Each entry: its kind; what it is; the saved page's own title where the record holds one; the address; the id of the saved copy.
 
 [1] Chinese state document. Xinhua's account of the Politburo's study session on artificial intelligence, Apr 25, 2025, on the Party members' site. Page title: 习近平在中共中央政治局第二十次集体学习时强调 坚持自立自强 突出应用导向 推动人工智能健康有序发展_共产党员网. https://www.12371.cn/2025/04/26/ARTI1745635107727513.shtml Saved copy: cn-xi-round-j-6
 
@@ -88,7 +88,7 @@ Each entry: its kind; what it is; the saved page's own title where the record ho
 
 [8] Press report citing unnamed people. Wall Street Journal, Jul 23, 2026. Hand-saved from the Journal's site; read whole. Page title: Inside China’s All-Out Push to Catch Up With American AI Chips. https://www.wsj.com/world/china/china-ai-chips-race-949050d0 Saved copy: man-cn-factions-wsj-ding
 
-[9] Official document, or an official on the record. House Foreign Affairs Committee, disclosure of Nov 19, 2026: the table of licence applications (the file's name: 11.19.26-ECRA-Information-Disclosure-of-BIS-License-Decisions) for Nvidia's H200 and AMD's MI325X, with their status as of May 11, 2026 (its text layer is out of order; the rows were read from the page images). https://democrats-foreignaffairs.house.gov/wp-content/uploads/2026/11/11.19.26-ECRA-Information-Disclosure-of-BIS-License-Decisions.pdf Saved copy: cn-usdocs-hfac-decisions-20261119
+[9] Official document, or an official on the record. House Foreign Affairs Committee, disclosure of Nov 19, 2026: a table of licence applications for the H200 and equivalent chips, with their status as of May 11, 2026, headed "H200 License and Equivalent Application Status as of May 11, 2026" (its text layer is out of order; the rows were read from the page images). https://democrats-foreignaffairs.house.gov/wp-content/uploads/2026/11/11.19.26-ECRA-Information-Disclosure-of-BIS-License-Decisions.pdf Saved copy: cn-usdocs-hfac-decisions-20261119
 
 [10] Press report citing unnamed people. Reuters, Jan 28, 2026, as carried by The Standard (Hong Kong). Page title: China gives nod to ByteDance, Alibaba and Tencent to buy Nvidia's H200 chips, says sources. https://www.thestandard.com.hk/innovation/article/322910/China-gives-nod-to-ByteDance-Alibaba-and-Tencent-to-buy-Nvidias-H200-chips-says-sources Saved copy: ms-bj-20260128-h200-nod-standard
 

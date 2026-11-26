@@ -3,7 +3,7 @@
 2. fills the counts in results_calls_head.txt and results_calls_tail.txt from the data files (no count is typed)
 3. writes results_calls_base.txt and extra_refs.tsv, then runs scripts/cn_doc_build.py, which checks every quotation.
 Stops at the first failure."""
-import csv, subprocess, sys
+import csv, re, subprocess, sys
 from datetime import datetime
 from pathlib import Path
 HERE = Path(__file__).resolve().parent
@@ -62,6 +62,30 @@ v.update({'M_ROWS': mc['more_rows'], 'M_SA_ROWS': mc['more_sa_rows'], 'M_ZH_ROWS
           'L9_UNTRANS_READER': mc['l9_untranslated_reader'], 'L9_UNTRANS_MISSED_W': {0: 'no', 1: 'one', 2: 'two'}[int(mc['l9_untranslated_missed'])],
           'N_UNTRANS': {1: 'one'}[int(un['calls_with_it'])], 'UNTRANS_WHICH': '; '.join(f"{x.split()[0]}, {nice(x.split()[1])}" for x in un['which'].split('; ')),
           'IFLY_TEXTS': mc['ifly_texts'], 'IFLY_REPORTS': mc['ifly_reports'], 'IFLY_RECORDS': mc['ifly_records'], 'IFLY_ANSWERS': mc['ifly_answers'], 'IFLY_WXB': {2: 'twice'}[int(mc['ifly_网信办'])], 'C_YUETAN': {2: 'twice'}[int(mc['control_约谈'])]})
+# round 10 (Nov 25, 2026): the period of the wider count, the argument's count of Chinese records for the calls with marks, and
+# the argument's point numbers are read by script (tables/results_calls_read.tsv; argument/argument_base.txt), never typed
+PROJ = HERE.parents[2]
+rr = list(csv.DictReader((l for l in (PROJ / 'tables' / 'results_calls_read.tsv').read_text(encoding='utf-8').splitlines() if not l.startswith('#')), delimiter='\t'))
+if len(rr) != int(mc['l9_calls']): sys.exit(f"tables/results_calls_read.tsv lists {len(rr)} calls, the wider count {mc['l9_calls']}: rewrite the paragraph")
+l9ids = [r['saved_id'] for r in csv.DictReader((l for l in (PROJ / 'loose_ends' / 'L09_labs_calls' / 'calls_read.tsv').read_text(encoding='utf-8').splitlines() if not l.startswith('#')), delimiter='\t')]
+if sorted(r['saved_id'] for r in rr) != sorted(l9ids): sys.exit('tables/results_calls_read.tsv is not the list of calls the wider count read: rewrite the pointer')
+ds = sorted(r['call_date'] for r in rr)
+sys.path.insert(0, str(HERE.parent / 'tools'))
+import arg_points as AP
+P_ZH = AP.one('in Chinese records of')
+mz = re.findall(r'in Chinese records of (\d+) of those (\d+) calls', AP._P[P_ZH])
+if len(mz) != 1 or mz[0][1] != mc['l9_untranslated']: sys.exit(f"the argument's count of Chinese records {mz} is not for the {mc['l9_untranslated']} calls with marks: rewrite")
+P_IFLY = AP.one('其他模型厂商普遍使用性能领先两代的英伟达芯片')
+if P_IFLY not in AP.points('对比英伟达中端芯片H200尚存在明显差距'): sys.exit('the argument no longer gives both iFlytek lines in one point: rewrite')
+P_ABROAD = AP.one('no matter when you actually started leasing or building capacities outside of China')
+for w_ in ('cn-usside-070', 'DS V4', 'cn-le26-iflytek-ir-20260429'):
+    if P_ABROAD not in AP.points(w_): sys.exit(f'the argument\'s point {P_ABROAD} no longer holds {w_}: rewrite')
+S2 = [l for l in AP._L if l.startswith('## ') and 'What the companies used and wanted' in l]
+if len(S2) != 1: sys.exit('the argument\'s section on what the companies wanted has moved: rewrite')
+m2 = re.match(r'## (\d+)\. (.+)$', S2[0])
+v.update({'L9_FIRST': nice(ds[0]), 'L9_LAST': nice(ds[-1]), 'ZH_N': mz[0][0], 'P_ZH': P_ZH, 'P_IFLY': P_IFLY, 'P_ABROAD': P_ABROAD,
+          'P_POLICY': AP.one('policy restrictions on certain'), 'P_BUYER': AP.one('higher-end imported GPUs'), 'P_2023': AP.one('look for domestic source for these training chips'),
+          'S_WANTED': m2.group(1), 'S_WANTED_TITLE': m2.group(2)})
 lines = []
 for w in show:
     r = cen[w]; n = int(r['calls_with_it'])
@@ -80,6 +104,6 @@ left = re.findall(r'\{[A-Z_0-9]+\}', base)
 if left: sys.exit(f'unfilled placeholders: {left}')
 (HERE / 'results_calls_base.txt').write_text(base, encoding='utf-8')
 (HERE / 'extra_refs.tsv').write_text((HERE / 'table_refs.tsv').read_text(encoding='utf-8') + (HERE / 'more_refs.tsv').read_text(encoding='utf-8') + (HERE / 'refs_hand.tsv').read_text(encoding='utf-8'), encoding='utf-8')
-r = subprocess.run(PY + ['scripts/cn_doc_build.py', str(HERE / 'results_calls_base.txt'), '--refs', str(HERE / 'extra_refs.tsv'), '--title', 'Results Calls On Chips', '--eyebrow', 'China chip policy: new research, idea 36'], capture_output=True, text=True)
+r = subprocess.run(PY + ['scripts/cn_doc_build.py', str(HERE / 'results_calls_base.txt'), '--refs', str(HERE / 'extra_refs.tsv'), '--title', 'Results Calls On Chips', '--eyebrow', 'China chip policy: what the companies told investors'], capture_output=True, text=True)
 print(r.stdout[-3000:], r.stderr[-800:])
 sys.exit(r.returncode)

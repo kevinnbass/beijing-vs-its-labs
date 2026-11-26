@@ -15,7 +15,7 @@ D Truth Social Posts of December 8, 2025
 
 @ licences rec 2026-02-01 From_Feb_2026 man-ms-sec-10q-2026-07 lane=allowed dir=neutral
 T Nvidia's quarterly report, looking back
-L Nvidia's later quarterly report says the US government began granting licences in February 2026, for what it calls "small amounts" of H200 products to named customers in China.
+L Nvidia's later quarterly report says the US government began granting licences in February 2026, for what it calls "small amounts" of H200 products to "specific China-based customers", whom it does not name.
 S Nvidia, quarterly report on Form 10-Q for the quarter to Jul 26, 2026
 Q Beginning in February 2026, the USG granted licenses that would allow us to ship small amounts of H200 products to specific China-based customers
 D Beginning in February 2026, the USG granted licenses

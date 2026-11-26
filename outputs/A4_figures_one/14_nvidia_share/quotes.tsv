@@ -9,6 +9,9 @@ cn-acts-reuters-us-approvals-20260514-wayback	Before U.S. export curbs tightened
 cn-acts-reuters-us-approvals-20260514-wayback	Published on 05/14/2026
 #@ before.zero
 cn-acts-reuters-us-approvals-20260514-wayback	saying its share of AI accelerators in China has effectively fallen to zero
+# round 10: the report does not say when he said it, nor on what count; what it gives before the words
+#@ before.warned
+cn-acts-reuters-us-approvals-20260514-wayback	has warned that U.S. export controls are eroding the company's foothold in the market
 
 # --- 2025: IDC's counts, reported by Reuters on Apr 1, 2026 (hand-saved from MarketScreener) ---
 #@ y2025.nvidia
@@ -69,3 +72,12 @@ cn-le19-tf2026-silicon	Application-specific chips (ASICs) being developed by tec
 cn-le19-tf2026-silicon	according to Taipei-based TrendForce
 #@ tf.date
 cn-le19-tf2026-silicon	PUBLISHED: 2026-06-29
+
+# --- round 10 (Nov 25, 2026, core batch 12): the argument's section on the share now gives Bernstein's estimate for 2025, by
+# --- the Associated Press's report of Jun 29, 2026 (its reference 310), "where IDC's data give 55%". Not drawn: another measure.
+#@ bernstein
+cn-le19-ap-202606-wtop	estimated that Nvidia had about a 40% market share in China's AI chips market in 2025, roughly matched by Huawei
+#@ bernstein.who
+cn-le19-ap-202606-wtop	A report by Bernstein, a global equity research and brokerage firm
+#@ bernstein.date
+cn-le19-ap-202606-wtop	PUBLISHED: 2026-06-29T00:39:01-04:00

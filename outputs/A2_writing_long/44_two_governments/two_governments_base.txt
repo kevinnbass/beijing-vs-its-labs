@@ -1,27 +1,30 @@
 # Two governments, one chip
-@deck Nvidia's H200 needed a yes from Washington and a yes from Beijing. A dated account of each side's steps, from December 2025 to November 2026.
+@deck Nvidia's H200 needed a licence from Washington and, by the press reports, a yes from Beijing. A dated account of each side's steps, from December 2025 to November 2026.
 
-@note Draft by Claude, Anthropic's model. Written Nov 23, 2026 (UTC).
-@note How to read it. Words between quotation marks are a source's exact words, found in the saved copy by a script. A filled reference number is a document, a filing or a named person on the record. An open number is a press report citing unnamed people or a caption track. Where a statement rests on a Chinese text, the English is our rendering, not an official translation.
+@note Draft by Claude, Anthropic's model. Written Nov 23, 2026 (UTC); revised Nov 25, 2026.
+@note How to read it. Words between quotation marks are a source's exact words, found in the saved copy by a script. A filled reference number is a document, a filing, a named person on the record, or a published commentary of state media or an industry body. An open number is a press report citing unnamed people, a research firm's count, or captions and machine transcripts nobody has checked by ear. Where a statement rests on a Chinese text, the English is our rendering, not an official translation.
 @note The author's interest. Anthropic has argued in public for controls on chip exports to China (that is from the model's general knowledge; no saved page is cited for it), so judge this piece by its sources.
 
 ## Two permissions
 
-The H200 is Nvidia's second most powerful AI chip [cn-acts-reuters-us-approvals-20260514-wayback].
+Reuters called the H200 Nvidia's second most powerful AI chip in May 2026 [cn-acts-reuters-us-approvals-20260514-wayback].
 !! cn-acts-reuters-us-approvals-20260514-wayback | Nvidia's second-most powerful AI chip, the H200
-To reach a Chinese company it needed an export licence from Washington and leave to import from Beijing.
+!! cn-acts-reuters-us-approvals-20260514-wayback | Published on 05/14/2026
+To reach a Chinese company it needed an export licence from Washington and, by the press reports, Beijing's leave to import; no published Chinese permit rule for these chips was found.
 Each step is marked on the record or reported (a press report citing unnamed people).
 
 ## Washington's steps
 
 - **Dec 8, 2025. On the record.** The President posted that he had told Xi Jinping "the United States will allow NVIDIA to ship its H200 products to approved customers in China", and added: "President Xi responded positively!" [cn-clips-followup-3-relay1] That is the President's account, not Xi's words.
 !! cn-clips-followup-3-relay1 | Truth Social Posts of December 8, 2025
-- **Jan 15, 2026. On the record.** The Commerce Department's rule took effect. It requires "independent, third-party testing in the United States", and that shipments to China and Macau be at most half of the same product shipped for end use in the United States [man-ms-admin-bis-jan2026-rule-8ec187].
+- **Jan 15, 2026. On the record.** The Commerce Department's rule took effect. It moved licence applications for the H200 to China and Macau from a presumption of denial to case-by-case review, on conditions that include "independent, third-party testing in the United States" and shipments to China and Macau of at most half of the same product shipped for end use in the United States [man-ms-admin-bis-jan2026-rule-8ec187].
+!! man-ms-admin-bis-jan2026-rule-8ec187 | changing it from a presumption of denial to a case-by-case review
+!! man-ms-admin-bis-jan2026-rule-8ec187 | The semiconductors covered by this rule are the Nvidia H200 and its equivalents
 !! man-ms-admin-bis-jan2026-rule-8ec187 | The effective date of this rule is January 15, 2026
 !! man-ms-admin-bis-jan2026-rule-8ec187 | will be no more than 50% of the total product shipped to customers for end use in the United States of that product
 - **February 2026. On the record.** Nvidia's filing: from that month the US government "granted licenses that would allow us to ship small amounts of H200 products to specific China-based customers", with "a 25% tariff upon importation into the United States" [man-ms-sec-10q-2026-07].
 !! man-ms-sec-10q-2026-07 | Beginning in February 2026, the USG granted licenses
-- **May 11, 2026. On the record.** The table of licence applications for the H200 and AMD's comparable chip, from the Commerce Department's Bureau of Industry and Security, made public by the House Foreign Affairs Committee on Nov 19, 2026: 879,868 chips licensed (Nvidia's: 579,868), each marked "Approved, not shipped"; 1,888,950 returned without action, 55% of the chips in the applications the summary records. No reason is given. The sums are ours [cn-usdocs-hfac-decisions-20261119] [cn-usdocs-hfac-summary-20261119] [cn-labs-us-chip-licences-20261119].
+- **May 11, 2026. On the record.** The table of licence applications for the H200 and AMD's comparable chip, from the Commerce Department's Bureau of Industry and Security, made public by the House Foreign Affairs Committee on Nov 19, 2026: 879,868 chips licensed (Nvidia's: 579,868), each marked "Approved, not shipped"; 1,888,950 in applications returned without action, 55% of the chips in the applications the summary records. No reason is given. The sums are ours [cn-usdocs-hfac-decisions-20261119] [cn-usdocs-hfac-summary-20261119] [cn-labs-us-chip-licences-20261119].
 !! cn-usdocs-hfac-decisions-20261119 | H200 License and Equivalent Application Status as of May 11, 2026
 !! cn-usdocs-hfac-decisions-20261119 | Bytedance System SDN 508,000 RWA Malaysia
 !! cn-usdocs-hfac-summary-20261119 | 879,868 covered integrated circuits to PRC companies across 21 license applications
@@ -36,12 +39,15 @@ Each step is marked on the record or reported (a press report citing unnamed peo
 - **Jan 14, 2026. Reported.** Customs agents were told the chips "are not permitted to enter China". Companies were "explicitly instructed not to purchase the chips unless necessary" [cn-acts-reuters-customs-20260114].
 !! cn-acts-reuters-customs-20260114 | PUBLISHED: 2026-01-14
 !! cn-acts-reuters-customs-20260114 | according to three people briefed on the matter
-- **Jan 28 and 30, 2026. Reported.** ByteDance, Alibaba and Tencent "have been approved to purchase more than 400,000 H200 chips in total", then DeepSeek too; the conditions, left to the state planner (NDRC), were still being set [ms-bj-20260128-h200-nod-standard] [cn-acts-reuters-deepseek-20260130].
+- **Jan 28 and 30, 2026. Reported.** ByteDance, Alibaba and Tencent "have been approved to purchase more than 400,000 H200 chips in total", then DeepSeek too (Reuters; the second report on Yahoo Finance); the conditions, left to the state planner (NDRC), were still being set. Nvidia's chief executive told reporters the day after the first report that his company had not received such information, and that he believed China was still finalising the licence [ms-bj-20260128-h200-nod-standard] [cn-ga31-sv1-reuters-deepseek-yahoo].
+!! cn-ga31-sv1-reuters-deepseek-yahoo | He added that he believed that China was still finalising the licence
 !! ms-bj-20260128-h200-nod-standard | PUBLISHED: 2026-01-28
 !! ms-bj-20260128-h200-nod-standard | The Chinese government is only granting approvals with conditions, and the sources said they were still being decided upon
-!! cn-acts-reuters-deepseek-20260130 | SINGAPORE, Jan 30 (Reuters)
-!! cn-acts-reuters-deepseek-20260130 | China has given its top AI startup DeepSeek approval to buy
-!! cn-acts-reuters-deepseek-20260130 | These conditions are being decided by China's state planner
+!! cn-ga31-sv1-reuters-deepseek-yahoo | SINGAPORE, Jan 30 (Reuters)
+!! cn-ga31-sv1-reuters-deepseek-yahoo | China has given its top AI startup DeepSeek approval to buy
+!! cn-ga31-sv1-reuters-deepseek-yahoo | These conditions are being decided by China's state planner
+!! cn-ga31-sv1-reuters-deepseek-yahoo | Reuters reported on Wednesday, citing sources, that ByteDance, Alibaba and Tencent
+!! cn-ga31-sv1-reuters-deepseek-yahoo | told reporters in Taipei on Thursday that his company had not received such information
 - **Mar 17, 2026. Reported.** "Nvidia has won Beijing's approval to sell" the chip, though a Chinese company source "did not know if the Chinese government had given final approval" [man-70f4668d5f56].
 !! man-70f4668d5f56 | Published Mar 17, 2026
 - **May 14, 2026. Reported.** "not a single delivery has been made so far". By one person, "Chinese firms pulled back after guidance from Beijing", a shift that "was partly triggered by changes on the U.S. side" [cn-acts-reuters-us-approvals-20260514-wayback].
@@ -74,5 +80,5 @@ Each step is marked on the record or reported (a press report citing unnamed peo
 ## What the two lists show
 
 Neither yes was whole. Washington's came with testing, a cap and a tariff, and its table shows more chips in returned applications than in licensed ones. Beijing's is known almost wholly from unnamed people: a hold, a conditional yes, small deliveries, and about 600,000 chips still waiting in November.
-What Beijing meant by it is not settled. Reuters wrote in January 2026 that it was unclear whether Beijing wanted an outright ban, "is still chewing over restrictions, or whether these measures could be used as a bargaining tactic in talks with Washington" [cn-acts-reuters-customs-20260114]. The US Trade Representative, May 15, 2026: whether Chinese companies may buy is "a sovereign decision for China" (captions, not checked by ear, at 5:59) [cn-le01-greer-bbg-20260515-subs-ttml]. Either way, by the reports, few of the chips had arrived by November 2026.
+What Beijing meant by it is not settled. Reuters wrote in January 2026 that it was unclear whether Beijing wanted an outright ban, "is still chewing over restrictions, or whether these measures could be used as a bargaining tactic in talks with Washington" [cn-acts-reuters-customs-20260114]. The US Trade Representative, May 15, 2026: whether Chinese companies may buy is "a sovereign decision for China" (captions, not checked by ear, at 5:59) [cn-le01-greer-bbg-20260515-subs-ttml]. Either way, by the reports, the companies had received a small part of the chips they sought by November 2026; none of the sources here says how many crossed into the mainland.
 !! cn-le01-greer-bbg-20260515-subs-ttml | Will China allow their companies to buy them?

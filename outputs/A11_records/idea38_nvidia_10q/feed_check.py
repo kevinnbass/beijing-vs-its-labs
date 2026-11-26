@@ -1,9 +1,11 @@
-"""Idea 38: read the two saved Nvidia investor-site feeds, the SEC's own record of Nvidia's filings (two readings saved by
-other agents: cn-le05-sec-submissions-20261123 and, newest, cn-ga06-sec-submissions-20261124), the saved call transcript,
-six saved reports and two project tables, and write the facts the note states.
+"""Idea 38: read the saved Nvidia investor-site feeds, the SEC's own record of Nvidia's filings (two readings, the first and the
+newest: cn-le05-sec-submissions-20261123 and cn-ga31-official-sec-submissions-20261125-c), the saved call transcripts, the
+saved reports and two project tables, and write the facts the note states. Nothing is fetched: every reading is a saved copy
+under research/primary (round 10, Nov 25, 2026: the readings of 22:16 UTC that day, saved by the gap sweep's official-pages agent).
 Run: python3 -I feed_check.py   -> feed_check.tsv (key <TAB> value) and prints it.
-Feeds: cn-o38-nvda-feed-secfilings-2026-c (every SEC filing of 2026 the site lists; -b is the first reading of the same feed) and cn-o38-nvda-feed-finreports-fy2027
-(the documents listed for each quarter of fiscal 2027). Control: the filings feed must list the 10-Q of Aug 26, 2026."""
+Feeds: cn-ga31-official-nvda-feed-secfilings-2026-c (every SEC filing of 2026 the site lists; cn-o38-nvda-feed-secfilings-2026-c is
+the reading of Nov 23) and cn-ga31-official-nvda-feed-finreports-fy2027-b (the documents listed for each quarter of fiscal 2027).
+Control: the filings feed must list the 10-Q of Aug 26, 2026."""
 import json, re, sys
 from datetime import datetime
 from pathlib import Path
@@ -11,7 +13,7 @@ P = Path('research/primary')
 HERE = Path(__file__).resolve().parent
 out = []
 def put(k, v): out.append((k, str(v)))
-a = 'cn-ga31-official-nvda-feed-secfilings-2026'      # the newest reading (core edit 8, Nov 25, 2026: saved 06:49 UTC that day by the sweep's official-pages agent)
+a = 'cn-ga31-official-nvda-feed-secfilings-2026-c'      # the newest reading (round 10, Nov 25, 2026: saved 22:16 UTC that day by the sweep's official-pages agent; the readings of 06:49 and 10:45 UTC, ids without -c and -b, have the same bytes)
 EARLIER = 'cn-o38-nvda-feed-secfilings-2026-c'      # the reading before it (Nov 23, 2026, 06:41 UTC); the very first reading, -b, is no longer named in the note
 m = json.loads((P / a / 'meta.json').read_text()); put('filings_feed_fetched_utc', m['fetched_utc']); put('filings_feed_sha256', m['sha256'])
 rows = json.loads((P / a / 'body.json').read_text())['GetEdgarFilingListResult']
@@ -29,7 +31,7 @@ put('10Q_rows_2026', '; '.join(f"{d(r['FilingDate']):%Y-%m-%d}" for r in tq))
 if not any(d(r['FilingDate']).strftime('%Y-%m-%d') == '2026-08-26' for r in tq): sys.exit('control failed: the feed does not list the 10-Q of Aug 26, 2026')
 put('10Q_filed_after_2026-10-25', sum(1 for r in tq if d(r['FilingDate']) > datetime(2026, 10, 25)))
 put('NT_10Q_rows_2026', sum(1 for r in rows if r['FilingTypeMnemonic'].upper().startswith('NT')))
-b = 'cn-ga31-official-nvda-feed-finreports-fy2027'      # core edit 8: the reading of Nov 25, 2026 (the first, cn-o38-nvda-feed-finreports-fy2027, was of Nov 23)
+b = 'cn-ga31-official-nvda-feed-finreports-fy2027-b'      # round 10: the reading of 22:16 UTC Nov 25, 2026 (the one of 06:49 UTC, without -b, has the same bytes; the first, cn-o38-nvda-feed-finreports-fy2027, was of Nov 23)
 put('reports_feed_id', b)
 m = json.loads((P / b / 'meta.json').read_text()); put('reports_feed_fetched_utc', m['fetched_utc'])
 for r in json.loads((P / b / 'body.json').read_text())['GetFinancialReportListResult']:
@@ -53,7 +55,7 @@ for dcall, sid in CALLS:
     put(f'call_{dcall}_names_chinese_authority', len(re.findall(AUTH, bt))); put(f'call_{dcall}_says_China', len(re.findall(r'\bChina\b', bt)))
 put('calls_counted', len(CALLS))
 # --- the SEC's own record of the company's filings (data.sec.gov submissions file): two readings, both saved in research/primary.
-# sec_*  : the newest reading, cn-ga06-sec-submissions-20261124 (saved Nov 24, 2026 by gap agent GA06; the argument's open list cites it)
+# sec_*  : the newest reading, cn-ga31-official-sec-submissions-20261125-c (saved 22:16 UTC Nov 25, 2026 by the sweep's official-pages agent; the argument's open list cites it)
 # sec0_* : the first reading, cn-le05-sec-submissions-20261123 (saved Nov 23, 2026 by agent L05)
 # Entries are ordered by filing date and then by the record's own acceptance time (acceptanceDateTime), newest first; a sort on
 # the form's name would put an 8-K before a Form 4 of the same day whatever their times (round 8, core edit 7).
@@ -71,7 +73,7 @@ def sec(S, pre):
     put(f'{pre}_10Q_for_period_2026-10-25', sum(1 for x in srows if x[1].startswith('10-Q') and x[2] == '2026-10-25'))
     put(f'{pre}_10Q_filed_after_2026-10-25', sum(1 for x in srows if x[1].startswith('10-Q') and x[0] > '2026-10-25'))
     put(f'{pre}_NT_filings_2026', sum(1 for x in srows if x[1].startswith('NT') and x[0] >= '2026-01-01'))
-sec('cn-ga31-official-sec-submissions-20261125', 'sec')      # core edit 8: the newest reading (Nov 25, 2026, 06:49 UTC); the reading of Nov 24 (cn-ga06-sec-submissions-20261124) showed the same newest entries
+sec('cn-ga31-official-sec-submissions-20261125-c', 'sec')      # round 10: the newest reading (Nov 25, 2026, 22:16 UTC; the argument's open list cites it); the readings of 06:49 and 10:45 UTC that day have the same bytes, and the one of Nov 24 (cn-ga06-sec-submissions-20261124) showed the same newest entries
 sec('cn-le05-sec-submissions-20261123', 'sec0')
 # --- the project's table of Nvidia's wording, filing by filing (tables/nvidia_wording_by_filing.tsv)
 T = HERE.parents[2] / 'tables'

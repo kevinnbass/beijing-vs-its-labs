@@ -145,15 +145,15 @@ def main():
 
     # what each step shows, lane by lane: (big words, yardstick, note)
     show = {
-        ('post', 'allowed'): ('H200 sales allowed', 'a decision · no number of chips', 'to “approved customers in China”, in the President’s words.'),
-        ('licences', 'allowed'): ('Licences granted', 'licences · H200 · no number given', 'for what Nvidia’s filing calls “small amounts of H200 products”.'),
+        ('post', 'allowed'): ('H200 sales to be allowed', 'an announcement · no number of chips', 'to “approved customers in China”, in the President’s words. The licences came later (step 2).'),
+        ('licences', 'allowed'): ('Licences granted', 'licences · H200 · no number given', 'for what Nvidia’s filing calls “small amounts of H200 products” to “specific China-based customers”, whom it does not name.'),
         ('lutnick', 'out'): ('None sold yet', 'H200 chips sold', '“So we have not sold them chips as of yet.” He calls it his understanding.'),
         ('cleared', 'allowed'): (f'about {v["cleared"]["firms"]} firms, up to {n(v["cleared"]["each"])} each', 'firms, and a ceiling per firm · H200',
                                  f'By this report of May 14, 2026, from unnamed people. In Washington’s own table (step {by["committee"]["n"]}) no approved application is above {n(v["cleared"]["each"])}.'),
         ('cleared', 'out'): ('No delivery', 'H200 deliveries', '“not a single delivery has been made so far”'),
         ('call1', 'out'): ('No revenue yet', 'US dollars · licensed H200 sales', '“we have yet to generate any revenue, and we are uncertain whether any imports will be allowed into the country”'),
         ('kessler', 'out'): ('Shipments have begun', 'H200 shipments · no number given', '“minimal exports of any H200s to China so far”; the number was “very few”.'),
-        ('ft', 'allowed'): (f'up to {n(v["ft"]["each"])} each', 'a ceiling per firm · H200', f'A higher ceiling than the {n(v["cleared"]["each"])} reported in May. The two come from different reports.'),
+        ('ft', 'allowed'): (f'up to {n(v["ft"]["each"])} each, for ByteDance and Tencent', 'a ceiling per firm · H200', f'A higher ceiling than the {n(v["cleared"]["each"])} reported in May. The two come from different reports.'),
         ('ft', 'out'): (f'about {n(v["ft"]["got"])} each, to two buyers', 'chips received · H200 · ByteDance and Tencent', 'received “in recent weeks”, the report says.'),
         ('tenq', 'out'): (f'less than {v["tenq"]["pct"]}% of Data Center revenue', 'a share of Nvidia’s revenue · H200 shipments under the licences',
                           f'Data Center revenue that quarter was ${v["tenq"]["dc"]} billion, so less than ${under:.2f} billion (our multiplication). Nvidia: “a fraction of the allowed shipments”.'),
@@ -192,7 +192,7 @@ def main():
     <h3>Step {by['committee']['n']}: Washington’s table by status, May 11, 2026</h3>
     <table><thead><tr><th>Status</th><th>Chips</th><th>Applications</th></tr></thead><tbody>{trs}</tbody></table>
     <p>Our sums of the table’s {len(lt)} rows; they match the committee’s own totals. Nvidia’s and AMD’s chips are added together, as in the table; a third exporter, Semsotai USA, has {n(sum(cnt(r) for r in third))} chips in {len(third)} applications, all still submitted.
-    Returned without action is {rwa_pct:.0f}% of the chips in the applications the summary records, among them every application above 75,000 chips ({C.WORDS[n_big]}) and every one whose ultimate location is Malaysia, Indonesia or Thailand ({n(n_abroad)} chips). The table gives no reasons.
+    Applications returned without action hold {rwa_pct:.0f}% of the chips in the applications the summary records; they include every application above 75,000 chips ({C.WORDS[n_big]}) and every one whose ultimate location is Malaysia, Indonesia or Thailand ({n(n_abroad)} chips). The table gives no reasons.
     The committee says the summary does not show every application in full; for example, Nvidia applied on Dec 19, 2025 “to export 445,000 H200s to Tencent”. The table’s only Tencent row of that date is for {n(cnt(t_row[0]))}, approved, and neither document says whether it is that application. If it is, counted at 445,000, the share returned would be {full_pct:.1f}%; if the 445,000 is a further application and was not returned without action, {more_pct:.1f}% (our arithmetic).</p>
    </div>""")
 
@@ -217,7 +217,7 @@ def main():
    <ul>
     <li><b>Sold or shipped “to China” is not the same as arrived in the mainland.</b> The August report says small batches “have been allowed to enter mainland China” and also that “Beijing wants them to keep the hardware outside mainland China”. Where the chips sold later are now is not known.</li>
     <li><b>The licence table is Washington’s own record, looking back.</b> It gives each application’s status on May 11, 2026, and was made public on Nov 19, 2026 by the House Foreign Affairs Committee, by unanimous consent. An application names a data-centre operator or ultimate consignee; it is not an order, and an approval there is Washington’s licence, not Beijing’s.</li>
-    <li><b>This is the American side only.</b> Why so little went out is a separate question: Nvidia’s filing says such sales “were restricted by the PRC government”, and the Commerce Secretary said the Chinese central government had not let the companies buy.</li>
+    <li><b>This is the American side only.</b> Why so little went out is a separate question: Nvidia’s filing says such sales “were restricted by the PRC government”, and the Commerce Secretary said, as his understanding, that the Chinese central government had not let the companies buy.</li>
     <li><b>The last quarter’s filing is not out.</b> Nvidia’s quarterly report (Form 10-Q) for the quarter ended Oct 25, 2026 was not yet filed when looked for on Nov 23, 2026. Its commentary on the quarter says: “We plan to file our 10-Q in the coming weeks.” The $2.4 billion is from its results call and that commentary.</li>
     <li>Open marks rest on unnamed people. The two ceilings ({n(v["cleared"]["each"])} and {n(v["ft"]["each"])} a firm) come from two different reports. Washington’s table states no ceiling; no approved application in it is above {n(v["cleared"]["each"])}.</li>
     <li>The H200 is, in Reuters’s words, “Nvidia’s second-most powerful AI chip”. Hopper is the chip family it belongs to. BIS is the Commerce Department’s Bureau of Industry and Security; by the committee’s summary the approvals were BIS’s.</li>
@@ -234,10 +234,10 @@ def main():
     page = C.page(
         title='US Licences And Shipments',
         eyebrow='United States · licensed Nvidia chip sales to China · December 2025 to November 2026',
-        h1='Washington said yes in December 2025. Shipments began in mid‑2026. In November Nvidia said they had stopped.',
+        h1='Washington announced H200 sales in December 2025 and licensed some from February 2026. By July an official said shipments had begun. In November Nvidia said they had stopped.',
         deck=f'{len(recs)} dated steps on the American side: what Washington allowed, and what officials, Nvidia and the press say went out. '
-             'In April and May 2026 nothing had been sold or delivered. By July an official called exports minimal. In November Nvidia gave its sales for the quarter and said it was no longer shipping. It gave no reason. '
-             f'Washington’s own table, made public in November, shows {n(st["Approved, not shipped"][0])} of Nvidia’s and AMD’s chips approved by May 11, 2026, each approved application marked not shipped, and {rwa_pct:.0f}% of the chips in the applications its summary records returned without action.',
+             'In April 2026 the Commerce Secretary said, as his understanding, that none had been sold; in May Reuters reported, from unnamed people, that no delivery had been made. By July an official called exports minimal. In November Nvidia gave its sales to China of licensed Hopper products for the quarter and said it was no longer shipping them. It gave no reason. '
+             f'Washington’s own table, made public in November, shows {n(st["Approved, not shipped"][0])} of Nvidia’s and AMD’s chips approved by May 11, 2026, each approved application marked not shipped, and applications holding {rwa_pct:.0f}% of the chips in the applications its summary records returned without action.',
         key=key, figure=figure, below=below, css=CSS,
         tipjson=C.tips(recs, lambda r: ' and '.join(LANES[x][0].lower() for x in r['lanes'])))
     out = C.finish(HERE, NAME, page, lines)

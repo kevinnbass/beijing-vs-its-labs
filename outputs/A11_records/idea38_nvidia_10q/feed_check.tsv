@@ -1,11 +1,11 @@
 key	value
-filings_feed_fetched_utc	2026-11-25T06:49:19Z
+filings_feed_fetched_utc	2026-11-25T22:16:36Z
 filings_feed_sha256	2098cbae7dafb9dc211f94f2b0e8268a4de12ef64a28c6a1950d88b96f5c6ed7
 filings_listed_2026	125
 earlier_feed_id	cn-o38-nvda-feed-secfilings-2026-c
 earlier_feed_same_10Q_rows	True
 earlier_feed_filings_listed	123
-filings_feed_id	cn-ga31-official-nvda-feed-secfilings-2026
+filings_feed_id	cn-ga31-official-nvda-feed-secfilings-2026-c
 earlier_feed_fetched_utc	2026-11-23T06:41:25Z
 earlier_feed_same_bytes	False
 newest_1	4 | filed 2026-11-23 | received 11/23/2026 15:54:48 | Statement of Changes in Beneficial Ownership
@@ -15,8 +15,8 @@ newest_4	8-K | filed 2026-11-17 | received 11/17/2026 15:21:23 | Current report 
 10Q_rows_2026	2026-08-26; 2026-05-20
 10Q_filed_after_2026-10-25	0
 NT_10Q_rows_2026	0
-reports_feed_id	cn-ga31-official-nvda-feed-finreports-fy2027
-reports_feed_fetched_utc	2026-11-25T06:49:19Z
+reports_feed_id	cn-ga31-official-nvda-feed-finreports-fy2027-b
+reports_feed_fetched_utc	2026-11-25T22:16:36Z
 documents_listed_Third_Quarter_2027	Press Release; Webcast; Transcript; CFO Commentary; NVIDIA Quarterly Revenue Trend; Presentation; Supplemental Financial Information
 has_10Q_Third_Quarter_2027	False
 documents_listed_Second_Quarter_2027	Press Release; Webcast; Transcript; CFO Commentary; NVIDIA Quarterly Revenue Trend; 10-Q; Presentation
@@ -40,8 +40,8 @@ call_2026-08-26_says_China	2
 call_2026-11-17_names_chinese_authority	0
 call_2026-11-17_says_China	2
 calls_counted	4
-sec_record_id	cn-ga31-official-sec-submissions-20261125
-sec_record_fetched_utc	2026-11-25T06:49:19Z
+sec_record_id	cn-ga31-official-sec-submissions-20261125-c
+sec_record_fetched_utc	2026-11-25T22:16:36Z
 sec_record_url	https://data.sec.gov/submissions/CIK0001045810.json
 sec_record_entries	1005
 sec_newest_entry	4 | 2026-11-23

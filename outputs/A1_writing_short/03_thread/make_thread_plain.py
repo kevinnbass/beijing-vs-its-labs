@@ -26,7 +26,15 @@ BASE = HERE / 'thread_base.txt'
 LIMIT = 280
 IMAGES = {1: PROJ / 'figure' / 'beijing_vs_labs_top.png', 5: PROJ / 'figure' / 'beijing_vs_labs_strip.png'}   # post 5 is limit 1 (not one actor)
 N_REC = sum(1 for ln in (PROJ / 'figure' / 'figure_events.tsv').read_text(encoding='utf-8').splitlines()[1:] if ln.strip())   # counted, not typed
-N_SRC = sum(1 for ln in (PROJ / 'argument' / 'argument_refs.tsv').read_text(encoding='utf-8').splitlines() if ln.strip() and not ln.startswith('#'))
+# Round 10b (Nov 25, 2026): the count of sources is the argument's own last build line (atlas/core_edit/hand_out/ARGUMENT_FINAL.txt, the last
+# line beginning 'argument:'), as outputs/ROUND10.md asks; argument_refs.tsv alone no longer gives it (the argument also cites a row of
+# argument_refs_more.tsv). Control: the built argument page must list the same number of references.
+_fin = [ln for ln in (PROJ / 'atlas' / 'core_edit' / 'hand_out' / 'ARGUMENT_FINAL.txt').read_text(encoding='utf-8').splitlines() if ln.startswith('argument: ')]
+if not _fin: sys.exit('ARGUMENT_FINAL.txt holds no line beginning "argument: "')
+N_SRC = int(re.match(r'argument: (\d+) sources', _fin[-1]).group(1))
+N_LISTED = len(re.findall(r'<li id="ref-\d+"', (PROJ / 'ARGUMENT_referenced.html').read_text(encoding='utf-8')))
+if N_LISTED != N_SRC: sys.exit(f'the argument\'s last build line says {N_SRC} sources but ARGUMENT_referenced.html lists {N_LISTED}')
+N_REFS_TSV = sum(1 for ln in (PROJ / 'argument' / 'argument_refs.tsv').read_text(encoding='utf-8').splitlines() if ln.strip() and not ln.startswith('#'))
 N_PTS = sum(1 for ln in (PROJ / 'argument' / 'argument_base.txt').read_text(encoding='utf-8').splitlines() if re.match(r'\d+\. ', ln))
 _arg = (PROJ / 'argument' / 'argument_base.txt').read_text(encoding='utf-8')
 _m = re.search(r'(?ms)^## 5\. (\w+) limits on the claim$(.*?)^## ', _arg)          # the argument's own section of limits
@@ -83,7 +91,7 @@ def main():
 
     out = ['Thread: did Beijing pull against its own AI companies?', '',
            "Draft by Claude, Anthropic's model. Nothing here has been posted.",
-           f'Made by make_thread_plain.py from thread_base.txt, the text whose quotations the build script checked. {n} posts.',
+           f'{n} posts. Every quotation was found in the saved copy of its source before this text was written.',
            'Each post is followed by its source\'s address on its own line. The address is not part of the post.',
            'Words between quotation marks are a source\'s exact words. English given for a Chinese source is ours, not an official translation.',
            'Post 1 quotes the clip twice: the first sentence from a machine transcript (at 0:11), the second from the text of the post that carries the clip. Post 9 quotes a video\'s caption track (at 5:59). Nobody has checked any of them by ear.', '']
@@ -98,13 +106,13 @@ def main():
         addrs = [B.address(i, refs[i]) for i in ids]
         if any(not a for a in addrs): sys.exit(f'post {k}: a source has no address')
         addrs = list(dict.fromkeys(addrs))                      # the clip and the post that carries it have one address
-        out += addrs if addrs else [f'(No address: this post sums up the posts before it. The full argument, with {N_SRC} sources, is the local file ARGUMENT_referenced.html.)']
+        out += addrs if addrs else [f'(No address: this post sums up the posts before it. The full argument, with {N_SRC} sources, is the project\'s argument page, ARGUMENT_referenced.html.)']
         out.append('')
     out += ['Which image goes with which post', '',
-            'Only two images exist for this thread. No new image was made.']
+            'Two images go with this thread.']
     for k, img in sorted(IMAGES.items()):
         w, h = png_size(img)
-        out.append(f'Post {k}/{n}: {img} ({w} by {h} pixels). Why: {WHY[k]}.')
+        out.append(f'Post {k}/{n}: {img.relative_to(PROJ)} in the project\'s files ({w} by {h} pixels). Why: {WHY[k]}.')
     rest = ', '.join(str(k) for k in range(1, n + 1) if k not in IMAGES)
     out += [f'Posts {rest}: no image.',
             'The first image is taller than it is wide, so a preview may show only part of it until it is opened. The mark numbers in both images are the figure\'s own, not the post numbers.', '',
@@ -112,7 +120,7 @@ def main():
             f'Each post was counted with its number in front (for example "1/{n} "), as it would be pasted. The limit is {LIMIT}.',
             'post | characters | X weighted count | room left']
     out += [f'{k}/{n} | {c} | {x} | {room}' for k, _, c, x, room in counts]
-    print(f'argument, counted by script: {N_PTS} points, {N_SRC} sources, {N_LIM} limits; figure: {N_REC} records')
+    print(f'argument, counted by script: {N_PTS} points, {N_SRC} sources (its last build line; {N_LISTED} references on its page; {N_REFS_TSV} rows in argument_refs.tsv), {N_LIM} limits; figure: {N_REC} records')
     print(f'thread: {n} posts; characters with the number in front (plain / X weighted):')
     for k, _, c, x, room in counts: print(f'  {k}/{n}: {c} / {x}  (room left {room})')
     print(f'longest post: {max(c for _, _, c, _, _ in counts)} characters; limit {LIMIT}')

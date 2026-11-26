@@ -4,13 +4,13 @@
 
 Draft by Claude, Anthropic's model.
 
-Written Nov 23, 2026 (UTC). Nothing here has been posted. The same posts as plain text, each with its source's address, the character counts and a note on images, are in thread_plain.txt beside this file.
+Written Nov 23, 2026; revised Nov 25, 2026 (UTC). Nothing here has been posted. The same posts as plain text, each with its source's address, the character counts and a note on images, are in thread_plain.txt beside this file.
 
-Words between quotation marks are a source's exact words, found in its saved copy by a script. Where a post gives a Chinese source in English without quotation marks, the English is ours, not an official translation. A filled number is a document, a filing or a named person on the record. An open number is a press report citing unnamed people, or a caption track or machine transcript.
+Words between quotation marks are a source's exact words, found in its saved copy by a script. Where a post gives a Chinese source in English without quotation marks, the English is ours, not an official translation. The key under this header says what a filled and an open reference number mean.
 
 Post 1 quotes Palmer Luckey from two places. The first sentence is from a machine transcript of the clip, at 0:11. The second is from the text of the post that carries the clip; that text begins the sentence with the word Like, and so does a second machine transcript. Nobody has checked either by ear. Post 9 quotes the US Trade Representative from a video's caption track, at 5:59; nobody has checked that by ear either.
 
-Order: the claim, the declared line, what the companies bought, what Beijing did, the five limits, the sentence that survives. The numbers stand in limit 3 (post 7), which is a limit about numbers.
+Order: the claim, the declared line, what the companies used, what Beijing did, the five limits, the sentence that survives. The numbers stand in limit 3 (post 7), which is a limit about numbers.
 
 ## The posts
 
@@ -18,7 +18,7 @@ Order: the claim, the declared line, what the companies bought, what Beijing did
 
 **2.** The declared line: use home-made chips. At its press conference of May 22, 2026, Li Chao of China's state planner (NDRC) said it was guiding home-made large models to do more to adapt to home-made computing chips. Source: the planner's own record. English ours. [3]
 
-**3.** What the companies bought: Nvidia. A Shanghai government body wrote (reply dated Apr 30, 2025; published Nov 10, 2025) that in the city internet firms' own clusters run mainly on Nvidia cards, while the three big telecoms mainly buy Huawei's and other home-made clusters. [4]
+**3.** What the companies used: Nvidia. A Shanghai government body wrote (reply dated Apr 30, 2025; published Nov 10, 2025) that in the city internet firms' own clusters run mainly on Nvidia cards, while the three big telecoms mainly buy Huawei's and other home-made clusters. [4]
 
 **4.** What Beijing did. Alibaba's annual report to the SEC: "In September 2025, the Cyberspace Administration of China requested Chinese technology companies to halt purchases of certain chips." The sentence does not name Nvidia. This is a filing, not an unnamed source. [5]
 
@@ -26,21 +26,21 @@ Order: the claim, the declared line, what the companies bought, what Beijing did
 
 **6.** Limit 2: warnings and guidance, not a published ban. Bloomberg, Sept 27, 2024, citing unnamed people: "The policy has taken the form of guidance rather than an outright ban". In 82 Chinese policy pages read, no published order against buying Nvidia chips was found. [7]
 
-**7.** Limit 3, in numbers: some were approved, some came in. Reuters, from unnamed people: over 2 million H200s ordered for 2026; over 400,000 approved by Beijing with conditions; about 10,000 each obtained by several firms; about 600,000 stored in Hong Kong awaiting shipment. [8] [9] [10]
+**7.** Limit 3: some were approved, some came in. Press reports from unnamed people: over 2 million H200s ordered for 2026, over 400,000 approved by Beijing with conditions, about 600,000 stored in Hong Kong (Reuters); about 10,000 each to ByteDance and Tencent (FT, via Reuters). [8] [9] [10] [11]
 
-**8.** Limit 4: the companies had reasons of their own, and US export curbs pushed too. Tencent's president, on a results call in November 2023, after new US curbs: "we will also try to look for domestic source for these training chips" (as Reuters reported the call). [11]
+**8.** Limit 4: the companies had reasons of their own, and US export curbs pushed too. Tencent's president, on a results call in November 2023, after new US curbs: "we will also try to look for domestic source for these training chips" (as Reuters reported the call). [12]
 
-**9.** Limit 5: what Beijing meant is not settled. A US commission's 2025 report to Congress read the regulator's Nvidia move "as a negotiating tactic". The US Trade Representative, May 15, 2026: buying is "a sovereign decision for China" (captions at 5:59, not checked by ear). [12] [13]
+**9.** Limit 5: what Beijing meant is unsettled. A US commission's report to Congress read the market regulator's Nvidia move "as a negotiating tactic". The US Trade Representative, asked May 15, 2026 if China would let firms buy H200s: "a sovereign decision for China" (captions). [13] [14]
 
-**10.** What survives all five: from 2024 the security and planning side of the Chinese state pressed its AI companies, mostly by unpublished guidance, off Nvidia chips. The companies kept ordering them and, by the reports, got a small part. What Beijing meant is read two ways.
+**10.** What survives: from 2024 China's planning side and industry ministry, and from 2025 its security side, pressed its AI firms off Nvidia chips, by guidance the press reported. The firms kept ordering and, by the reports, got a small part. What Beijing meant is not settled.
 
 ## What the thread leaves out
 
-- It gives one source for each claim; posts 7 and 9 need more than one. The full argument has 21 points and 395 sources; it is in ARGUMENT_referenced.html in the project folder.
-- With five limits and ten posts, the numbers have no post of their own: they stand in limit 3 (post 7). That post carries four reported numbers from three Reuters reports, of Dec 31, 2025, Jan 28, 2026 and Nov 5, 2026. The copy the post cites for the last is CNA's page, which shows only its own date, Nov 6, 2026; Reuters's dateline of Nov 5 stands on Yahoo's copy of the same report, also saved.
+- It gives one source for each claim; posts 7 and 9 need more than one. The full argument has 21 points and 460 sources; it is the project's argument page, ARGUMENT_referenced.html.
+- With five limits and ten posts, the numbers have no post of their own: they stand in limit 3 (post 7). That post carries four reported numbers: three from Reuters reports of Dec 31, 2025, Jan 28, 2026 and Nov 5, 2026, and one from the Financial Times as Reuters relayed it on Aug 18, 2026. The copy the post cites for the report of Nov 5 is CNA's page, which shows only its own date, Nov 6, 2026; Reuters's dateline of Nov 5 stands on Yahoo's copy of the same report, also saved.
 - Washington's side is left out for length: the conditions it set, and its own table of licence applications, which shows chips approved and not shipped and others returned without action. The argument sets them out under its fourth limit.
 - Post 6 names one press report. The public warnings in state media, and the dates they fall between, are in the argument's points 4 and 18.
-- Post 10 is a shorter form of the argument's last sentence. It drops the public warnings, the parts of the state that welcomed Nvidia and approved some purchases, and the companies' own turn to home-made chips; posts 5 to 8 carry them.
+- Post 10 is a shorter form of the argument's last sentence; its last words are limit 5's. It drops the public warnings, the parts of the state that welcomed Nvidia and approved some purchases, and the companies' own turn to home-made chips; posts 5 to 8 carry them.
 - No recording has been checked by ear: not the clip in post 1, and not the interview in post 9.
 
 ## References
@@ -67,10 +67,12 @@ Each entry: its kind; what it is; the saved page's own title where the record ho
 
 [10] Press report citing unnamed people. Reuters, datelined Nov 5, 2026, as carried by CNA (Singapore) on Nov 6, 2026. The CNA page shows only its own date; the Nov 5 dateline stands on the copy carried by Yahoo, which is also saved. Page title: Nvidia chips pile up in Hong Kong as China withholds import approval. https://www.channelnewsasia.com/east-asia/nvidia-chips-pile-up-hong-kong-china-withhold-import-approval-6527371 Saved copy: cn-clips-evidence-1
 
-[11] Press report of words spoken on the record. Reuters, Nov 15, 2023, as carried by the radio station WTAQ, reporting Tencent's president on its results call. Page title: Tencent to seek domestic AI training chip supplies after latest US curbs. https://wtaq.com/2023/11/15/tencent-to-seek-domestic-ai-training-chip-supplies-after-latest-us-curbs/ Saved copy: cn-policy-tencent-us-curbs-relay1
+[11] Press report citing unnamed people. Reuters, relaying the Financial Times, Aug 18, 2026, as carried by Investing.com. Internet Archive capture of Sept 8, 2026. https://web.archive.org/web/20260908131431/https://www.investing.com/news/stock-market-news/nvidia-h200-chips-reach-china-in-small-shipments-ft-reports-4866385 Saved copy: cn-tolerate-reutersaug26-relay1-wayback
 
-[12] Official document, or an official on the record. US-China Economic and Security Review Commission, 2025 annual report to Congress, chapter 1 (US-China economic and trade relations: year in review), on the commission's site. https://www.uscc.gov/sites/default/files/2025-11/Chapter_1--U.S.-China_Economics_and_Trade_Relations_Year_in_Review.pdf Saved copy: cn-usdocs-uscc-2025-ch1
+[12] Press report of words spoken on the record. Reuters, Nov 15, 2023, as carried by the radio station WTAQ, reporting Tencent's president on its results call. Page title: Tencent to seek domestic AI training chip supplies after latest US curbs. https://wtaq.com/2023/11/15/tencent-to-seek-domestic-ai-training-chip-supplies-after-latest-us-curbs/ Saved copy: cn-policy-tencent-us-curbs-relay1
 
-[13] Caption track or machine transcript, not checked by ear. US Trade Representative Jamieson Greer, interview on Bloomberg Television posted May 15, 2026 ("Greer: US, China Willing to Continue Trade Truce"): the video's English caption track (its maker is not stated; it is not YouTube's automatic track), not checked by ear; the words quoted are at 5:59. https://www.youtube.com/watch?v=ckzJQyMyCoE Saved copy: cn-le01-greer-bbg-20260515-subs-ttml
+[13] Official document, or an official on the record. US-China Economic and Security Review Commission, 2025 annual report to Congress, chapter 1 (US-China economic and trade relations: year in review), on the commission's site. https://www.uscc.gov/sites/default/files/2025-11/Chapter_1--U.S.-China_Economics_and_Trade_Relations_Year_in_Review.pdf Saved copy: cn-usdocs-uscc-2025-ch1
 
-Build check: 7 quotations and 27 further statements were looked for in the saved copies of 13 sources and all were found; a planted false quotation was rejected. 7 sources are documents, filings or named people on the record; 6 are press reports citing unnamed people, counts or machine transcripts. A quotation that is found shows what the source says, not that it is true.
+[14] Caption track or machine transcript, not checked by ear. US Trade Representative Jamieson Greer, interview on Bloomberg Television posted May 15, 2026 ("Greer: US, China Willing to Continue Trade Truce"): the video's English caption track (its maker is not stated; it is not YouTube's automatic track), not checked by ear; the words quoted are at 5:59. https://www.youtube.com/watch?v=ckzJQyMyCoE Saved copy: cn-le01-greer-bbg-20260515-subs-ttml
+
+Build check: 7 quotations and 30 further statements were looked for in the saved copies of 14 sources and all were found; a planted false quotation was rejected. 7 sources are documents, filings or named people on the record; 7 are press reports citing unnamed people, counts or machine transcripts. A quotation that is found shows what the source says, not that it is true.

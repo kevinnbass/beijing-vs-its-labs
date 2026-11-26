@@ -38,7 +38,7 @@ EXPECT = {'share': ['Guangdong', 'Zhejiang'], 'reward': ['Shanxi', 'Ningxia'],  
           'earlier': ['Heilongjiang', 'Yunnan'], 'account': ['Tibet'], 'notfound': ['Xinjiang'], 'extra': ['Gansu', 'Hunan']}   # what the template's prose names
 BASIS = {'official': 'Saved official page', 'wayback': 'Saved Archive capture of the official page', 'copy': 'Saved copy on another site',
          'account': 'A press account saved from another site', 'capture': 'Archive capture kept in this folder: read, not saved',
-         'hand': "Saved official page, saved by hand in the owner's browser"}
+         'hand': 'Saved official PDF'}      # round 10: the label no longer says who saved it or how (a public page's working words)
 DAMAGED = {'man-cn-o39-qinghai-green-compute-2024', 'man-cn-o39-qinghai-compute-15fyp-2026', 'man-cn-o39-hunan-green-compute-plan-2025'}   # PDF text layer damaged: never quoted
 NEAR_EXPECT = {'cn-ga31-cndocs-52': 1,      # round 9: Zhejiang's share sentence, the one place in its sector plan
                'cn-o39b-guangdong-yuesuan-2024': 2, 'cn-o39b-shanxi-measures-2024-jincheng': 1, 'cn-o39-guangxi-digital-plan-2024-wayback': 1,
@@ -47,7 +47,7 @@ GROUP_SEARCHES = {'11', '12', '13'}
 WORDS = ['no', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten', 'eleven', 'twelve', 'thirteen']
 HOME = re.compile(r'国产|自主可控|安全可控|安全可靠|自主化|信创')
 QUOTE = re.compile(r'"([^"]+)"')
-HANDNOTE = "Saved by hand in the owner's browser as a PDF; its text layer is damaged and is not quoted: the words cited from it were read from the page images and typed into transcription.txt beside the saved copy"
+HANDNOTE = "A PDF of the same page; its text layer is damaged and is not quoted: the words cited from it were read from the page images and typed, with page numbers, beside the saved copy"
 REFS = {   # id: (kind, label). Ids that the argument's own references file already holds keep the core's label and are not written to extra_refs.tsv.
     'cn-o39b-broker-table-202410': ('PUB', 'A report on AI computing by a server maker (Inspur) and a state research institute (the China Academy of Information and Communications Technology), with a table of national and provincial computing plans. No date was read in the saved copy'),
     'cn-o39-ningxia-ai-measures-2023': ('DOC', "General Office of the Ningxia Hui Autonomous Region People's Government, measures to promote artificial intelligence (宁政办规发〔2023〕8号), Aug 13, 2023 (read by the first note); the government's page now marks them repealed"),
@@ -68,16 +68,20 @@ REFS = {   # id: (kind, label). Ids that the argument's own references file alre
     'cn-o39-heilongjiang-ai-plus-2026': ('DOC', "Heilongjiang Provincial People's Government, AI Plus implementation plan, written Feb 14, 2026 (read by the first note)"),
     'cn-o39-yunnan-digital-channel-2026': ('DOC', "General Office of the Yunnan Provincial People's Government, plan for a digital information corridor and the digital industry, May 15, 2026. A copy on another provincial body's site (read by the first note)"),
     'cn-o39b-tibet-compute-plan-2024-wxb': ('ACCT', "Tibet's action plan for computing, 2024 to 2026, as reported by the trade newspaper People's Posts and Telecommunications News on the regional cyberspace office's site, Jun 27, 2024. A newspaper's account, not the plan's text"),
-    'cn-le16-xinjiang-plan-2024-indicators': ('DOC', "Xinjiang Uygur Autonomous Region, the region's plan for economic and social development for 2024, on the regional government's site (saved by agent L16)"),
-    'cn-le16-xinjiang-drc-cppcc-197-reply-202510': ('DOC', "Xinjiang Development and Reform Commission, reply to a proposal on computing, posted Sept 5, 2025, on the commission's site (saved by agent L16)"),
+    'cn-le16-xinjiang-plan-2024-indicators': ('DOC', "Xinjiang Uygur Autonomous Region, the region's plan for economic and social development for 2024, on the regional government's site"),
+    'cn-le16-xinjiang-drc-cppcc-197-reply-202510': ('DOC', "Xinjiang Development and Reform Commission, reply to a proposal on computing, posted Sept 5, 2025, on the commission's site"),
     # round 9 of the outputs (Nov 25, 2026): pages the project saved on Nov 25, 2026 that the core cites and its references file does not hold
     'cn-ga31-unsaved-jiangxi-measures-2025-jdz-wayback': ('DOC', "Jiangxi Development and Reform Commission (the provincial data bureau) and seven other provincial bodies, measures on joining the national integrated computing network, Dec 30, 2025, as the Jingdezhen city government's site carries them (posted Jan 8, 2026). Internet Archive capture of Jun 10, 2026"),
-    'cn-ga31-unsaved-shaanxi-aiplus-cpem': ('DOC', "Shaanxi Development and Reform Commission, AI Plus action plan, 2025 to 2027 (陕发改高技〔2025〕1665号), Nov 14, 2025. A full copy on another site (cpem.cn)"),
-    'cn-ga31-unsaved-shaanxi-aiplus-yanqitong': ('DOC', "Shaanxi Development and Reform Commission, AI Plus action plan, 2025 to 2027, Nov 14, 2025. A full copy on another site (yanqitong.cn), without the document number"),
+    # round 10: what each page shows (both are now cited by atlas figures 04 and 05 through this file): the commission's notice and the plan's whole text, carried by
+    # (cpem) an industry-news item (行业资讯) of 2025-11-19 on the site of a power-industry AI conference, crediting the commission (来源：陕西省发展和改革委员会), and
+    # (yanqitong) Yan'an's public service platform for small and medium-sized firms, run by a company (运营单位：延安卓天云集团有限公司), with the number and the date
+    # 2025-11-18 (the old label said "without the document number": wrong, the number stands in the page's body). Kind DOC: each page carries the state document whole.
+    'cn-ga31-unsaved-shaanxi-aiplus-cpem': ('DOC', "Shaanxi Development and Reform Commission, notice issuing the AI Plus action plan, 2025 to 2027 (陕发改高技〔2025〕1665号), with the plan's whole text, in an industry-news item of Nov 19, 2025 on the site of a power-industry AI conference (cpem.cn), which names the commission as its source"),
+    'cn-ga31-unsaved-shaanxi-aiplus-yanqitong': ('DOC', "Shaanxi Development and Reform Commission, notice issuing the AI Plus action plan, 2025 to 2027 (陕发改高技〔2025〕1665号), with the plan's whole text, as carried on Nov 18, 2025 by Yan'an's public service platform for small and medium-sized firms (yanqitong.cn), a site that a company runs"),
     'cn-ga31-cndocs-15': ('DOC', "Xinjiang Development and Reform Commission, reply to suggestion No. 168 of the fourth session of the 14th regional people's congress, posted Jul 24, 2026, on the commission's site"),
     'cn-ga31-cndocs-1': ('DOC', "General Office of the Xinjiang Uygur Autonomous Region People's Government, measures to speed up the region's profit-oriented service industries, 2026 to 2028 (新政办发〔2026〕22号), May 28, 2026, published abridged; on the regional government's site"),
     'cn-ga31-provtexts-9': ('DOC', "General Office of the Xinjiang Uygur Autonomous Region People's Government, notice issuing the measures for the region's profit-oriented service industries, 2026 to 2028 (新政办发〔2026〕22号), on the regional government's file list"),
-    'man-cn-o39-gansu-ai-plus-2026': ('DOC', "Gansu Provincial People's Government, AI Plus action plan (甘政发〔2026〕1号), Jan 6, 2026. Saved by hand in the owner's browser as a PDF; its text layer is sound"),
+    'man-cn-o39-gansu-ai-plus-2026': ('DOC', "Gansu Provincial People's Government, AI Plus action plan (甘政发〔2026〕1号), Jan 6, 2026. A PDF on a Gansu government site (swt.gansu.gov.cn); its text layer is sound"),
     'cn-o39-hunan-green-compute-plan-2025-wayback': ('DOC', "Hunan Department of Industry and Information Technology, plan for the green intelligent computing industry, 2025 to 2030 (湘工信信软〔2025〕53号), Feb 23, 2025. Internet Archive capture of the department's page"),
     'man-cn-o39-hunan-green-compute-plan-2025': ('DOC', 'Hunan Department of Industry and Information Technology, plan for the green intelligent computing industry, 2025 to 2030, Feb 23, 2025. ' + HANDNOTE),
 }
@@ -183,8 +187,12 @@ def main():
         fill[f'S_{g}'] = num(s); fill[f'S_{g}_cap'] = num(s, True); fill[f'E_{g}'] = num(e); fill[f'T_{g}'] = num(s + e)
     l16 = [l.split('\t') for l in (PROJ / 'loose_ends' / 'L16_provinces' / 'searches.tsv').read_text(encoding='utf-8').splitlines() if l.strip() and not l.startswith('#')]
     l16 = [f for f in l16 if len(f) >= 3 and f[1] == 'search' and 'not run' not in ' '.join(f[2:])]      # agent L16's searches that ran (one of its lines lacks a tab, so the whole line is tested)
-    for g in ('Xinjiang', 'Shaanxi', 'Hainan'): fill[f'L16_{g}'] = num(sum(1 for f in l16 if SIXTEEN[g] in f[2]))
+    for g in ('Xinjiang', 'Shaanxi', 'Hainan'):
+        n16 = sum(1 for f in l16 if SIXTEEN[g] in f[2]); fill[f'L16_{g}'] = num(n16)
+        tot = WORDS.index(fill[f'T_{g}']) + n16; fill[f'ALL_{g}'] = num(tot); fill[f'ALL_{g}_cap'] = num(tot, True)
     fill['L16_Xinjiang_site'] = num(sum(1 for f in l16 if '[xinjiang.gov.cn]' in f[2]))
+    fill['XJ_SITE'] = num(sum(1 for f in l16 if '[xinjiang.gov.cn]' in f[2]) + sum(1 for f in a12 if len(f) >= 3 and f[1].strip() == 'xinjiang.gov.cn'))      # round 10: the further search's and the first note's, each limited to the regional government's site
+    if WORDS.index(fill['ALL_Xinjiang']) != 8 or WORDS.index(fill['XJ_SITE']) != 3: stop(f"Xinjiang: the template's section on searches was worded for 8 searches, 3 limited to the region's site; now {fill['ALL_Xinjiang']}, {fill['XJ_SITE']}")
     arch = archive_state()
     MON = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec']
     for k, v in arch.items():
@@ -280,7 +288,8 @@ def main():
 
     # ---- home-made words near a percent sign, in the pages read in this pass or saved since (not the first note's pages, not the damaged PDFs)
     scan = list(dict.fromkeys(i for r in rows for i in r.get('ids', '').split()
-                              if (i.startswith(('cn-o39b-', 'cn-le16-', 'cn-le25-', 'cn-ga31-')) or i.endswith('-wayback')) and i != 'cn-o39b-broker-table-202410'))      # round 9: cn-ga31- (Zhejiang's sector plan, saved Nov 25, 2026)
+                              if not i.startswith('man-') and i != 'cn-o39b-broker-table-202410' and not (i.startswith('cn-o39-') and not i.endswith('-wayback'))))      # round 10: every page cited except the first note's own pages, a research firm's report and the PDFs (read as images), as the template says
+    if 'cn-ga05-tibet-xzca-compute-everest-plan-20240625' not in scan or 'cn-o39-ningxia-reply-2023' in scan: stop('control: the scan set is not what the template says')
     near, got = ['# saved id @@ the place. Written by build.py; every line was read.'], {}
     for sid in scan:
         t = single(sid); seen = []
@@ -305,6 +314,18 @@ def main():
     kinds = [f[1] for f in logl]
     n_search, n_save, n_arch = kinds.count('search'), kinds.count('save'), kinds.count('Archive')
     if n_search + n_save + n_arch != len(logl): stop('request_log.txt has a line of an unknown kind')
+    # round 10: the Archive calls are of two sorts, said apart on the page (a reader took the six for the four addresses asked plus the two withdrawn)
+    n_ask = sum(1 for f in logl if f[1] == 'Archive' and f[3].startswith('availability of '))
+    n_get = sum(1 for f in logl if f[1] == 'Archive' and f[3].startswith('the capture of '))
+    if n_ask + n_get != n_arch or n_ask != sum(1 for v in arch.values() if v[0] in ('none', 'capture')) or n_get != sum(1 for v in arch.values() if v[0] == 'capture'):
+        stop(f'Archive calls: {n_ask} asks and {n_get} fetches do not match {n_arch} calls and the answers in archive/')
+    # round 10: the counts of all 31 must be the argument's point 3 as it stands (nine set a share; of the other 22, 20 have a plan read that sets none)
+    argt = re.sub(r'\s+', ' ', (PROJ / 'ARGUMENT_referenced.md').read_text(encoding='utf-8'))
+    c31w = {k: num(v, True) for k, v in c31.items()}
+    want = [f"{c31w['share']} of China's 31 provincial-level governments were found to set a share", f"Of the other {31 - c31['share']}, {c31['plan_no_share']} have a plan that was read and sets no share"]
+    miss = [w for w in want if w not in argt]
+    if miss: stop(f"the argument's point 3 does not give the project table's counts: {miss}")
+    if f"Of the other {31 - c31['share']}, {c31['plan_no_share'] + 1} have a plan" in argt: stop('control: a wrong count was found in the argument')
     def tsv_rows(name):
         return [l.split('\t') for l in (HERE / name).read_text(encoding='utf-8').splitlines() if l.strip() and not l.startswith('#')][1:]
     br, left = tsv_rows('pages_for_browser.tsv'), tsv_rows('pages_left_off.tsv')
@@ -324,7 +345,7 @@ def main():
                  'N_ARCH_WD_cap': num(st.count('withdrawn'), True), 'N_LEFT_cap': num(len(left), True)})
     fill.update({'N31_share': num(c31['share']), 'N31_share_cap': num(c31['share'], True), 'N31_plan': c31['plan_no_share'], 'N31_account': num(c31['account_only']),
                  'N31_notfound': num(c31['not_reached']), 'N_other_cap': num(len(by['other']), True), 'U_other': ', '.join(by['other']),
-                 'N_REQ': len(logl), 'N_SEARCH': n_search, 'N_SAVE': n_save, 'N_ARCH': n_arch, 'N_ARCH_NONE': num(st.count('none')), 'N_ARCH_CAP': num(st.count('capture')),
+                 'N_REQ': len(logl), 'N_SEARCH': n_search, 'N_SAVE': n_save, 'N_ARCH': n_arch, 'N_ARCH_ASK': num(n_ask), 'N_ARCH_GET': num(n_get), 'N_ARCH_NONE': num(st.count('none')), 'N_ARCH_CAP': num(st.count('capture')),
                  'N_ARCH_WD': num(st.count('withdrawn')), 'N_BROWSER': num(len(br)), 'N_LEFT': num(len(left)), 'N_TRIED': len(tried),
                  'N_NEAR_SEEN_cap': num(sum(got.values()) - 4, True),      # round 9: the places that are a share or a reward (the template names them); the other four are named one by one
                  'N_NEAR': num(sum(got.values())), 'N_NEAR_PAGES': num(len(got)), 'N_SCAN': len(scan), 'N_ABSENT': num(n_ab), 'N_ACCT_cap': num(n_acct, True)})
@@ -342,7 +363,7 @@ def main():
         share = f'The page says: "{r["share"]}"' if r.get('share') else ''
         said = ' '.join(x for x in (share, r['words'], r['plain']) if x)
         if r['result'] != 'share':
-            said += ('. ' if r['plain'] and not r['words'] else ' ') + {'account': 'No share in either account.', 'notfound': 'No share in the pages cited.'}.get(r['result'], 'No share in the page read.')
+            said += ('. ' if r['plain'] and not r['words'] else ' ') + {'account': 'No target share for home-made hardware in either account.', 'notfound': 'No target share for home-made hardware in the pages cited.'}.get(r['result'], 'No target share for home-made hardware in the page read.')      # round 10: says which share
         m = re.match(r'(https?://\S+)\s*(.*)', r['official'])
         if m and r['basis'] == 'wayback': off = 'Official address: given in table.tsv.'
         elif m and r['basis'] in ('official', 'hand'): off = 'Official address: in the references, with the saved copy.'
@@ -354,13 +375,13 @@ def main():
         if re.search(r'https?://', line): stop(f"{r['gov']}: an address inside a table cell; it cannot wrap there")
         tgt = trow2 if r.get('table') == '2' else trow
         tgt.append(line); tgt.extend(f'!! {c[0]} | {c[1]}' for c in r['check'])
-        tsv.append('\t'.join([r.get('table', '1'), r['gov'], r['result'], r['doc'], r.get('share') or {'account': 'no share in either account', 'notfound': 'no computing plan found; no share in the pages cited'}.get(r['result'], 'no share in the page read'), ' '.join(x for x in (r['words'], r['plain']) if x),
+        tsv.append('\t'.join([r.get('table', '1'), r['gov'], r['result'], r['doc'], r.get('share') or {'account': 'no target share for home-made hardware in either account', 'notfound': 'no computing plan found; no target share for home-made hardware in the pages cited'}.get(r['result'], 'no target share for home-made hardware in the page read'), ' '.join(x for x in (r['words'], r['plain']) if x),
                               ' '.join(x for x in (r['english'], r['limits']) if x), BASIS[r['basis']], r['official'], ' '.join(ids)]))
     (HERE / 'table.tsv').write_text('\n'.join(tsv) + '\n', encoding='utf-8')
     fill['TABLE'] = '\n'.join(trow); fill['TABLE2'] = '\n'.join(trow2)
     fill['CHECK_LINE'] = (f'Saved pages: {len(quotes)} strings checked, {len(quotes)} found, 0 not found ({n_dam} of them against our typed reading of page images); two planted false strings were rejected. '
-                          f'Words not in a page: {n_ab} checks, each with a control word found. Archive capture kept here: {len(cap_q)} strings checked, all found; a planted false string was rejected. '
-                          f'Home-made words near a percent sign: {sum(got.values())} places in {len(got)} of {len(scan)} pages scanned, each read. All 31, from the session\'s table: '
+                          f'Words not in a page: {n_ab} checks, each with a control word found. Second copy of Jiangxi\'s capture: {len(cap_q)} strings checked, all found; a planted false string was rejected. '
+                          f'Home-made words near a percent sign: {sum(got.values())} places in {len(got)} of {len(scan)} pages scanned, each read. All 31, from the project\'s table: '
                           f'{c31["share"]} share, {c31["plan_no_share"]} plan read without a share, {c31["account_only"]} account only, {c31["not_reached"]} no plan found.')
     cited = list(dict.fromkeys(i for r in rows for i in r.get('ids', '').split()))
     (HERE / 'extra_refs.tsv').write_text('# id <TAB> kind <TAB> label <TAB> address (empty = the address in the saved copy\'s record). Written by build.py. Ids the argument\'s references file holds keep its label and are not here.\n' +
@@ -375,7 +396,7 @@ def main():
     print('cn_has.py:', (p.stdout.strip().splitlines() or ['(no output)'])[-1], '| exit', p.returncode)
     if p.returncode != 0: print(p.stdout[-1500:]); stop('cn_has.py failed')
     p = subprocess.run([sys.executable, '-I', str(ROOT / 'scripts' / 'cn_doc_build.py'), str(HERE / 'unreached_note_base.txt'), '--refs', str(HERE / 'extra_refs.tsv'),
-                        '--title', 'Sixteen Provincial Plans', '--eyebrow', 'China chip policy: idea 39, second pass'], capture_output=True, text=True)
+                        '--title', 'Sixteen Provincial Plans', '--eyebrow', 'China chip policy: provincial computing plans'], capture_output=True, text=True)      # round 10: no idea number or pass label on the public page
     print(p.stdout.strip()[-2500:]); print(p.stderr.strip()[-1200:])
     if p.returncode != 0: stop('cn_doc_build.py did not write the note')
 

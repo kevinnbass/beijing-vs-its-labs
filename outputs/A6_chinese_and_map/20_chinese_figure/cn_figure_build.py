@@ -205,7 +205,7 @@ def strip(evs):
     out.append(f'<text class="eranote" x="{GL + 6}" y="{bottom + 37}">2023年和2024年画得较窄</text>')
     # The third flag: Nvidia, Nov 17, 2026: "we are no longer shipping licensed Hopper Data Center products to China";
     # Reuters: "The Hopper family includes the H200" (both "!" lines). Why it stopped is not said here.
-    for d, lab, anchor in ((date(2025, 7, 15), '2025年7月 · 美国重新批准H20对华销售', 'end'), (date(2025, 12, 8), '2025年12月8日 · 美国允许对华销售H200', 'start'), (date(2026, 11, 17), '2026年11月17日 · 英伟达停止H200发货', 'end')):
+    for d, lab, anchor in ((date(2025, 7, 15), '2025年7月 · 美国重新批准H20对华销售', 'end'), (date(2025, 12, 8), '2025年12月8日 · 美国表示将允许H200', 'start'), (date(2026, 11, 17), '2026年11月17日 · 英伟达停止H200发货', 'end')):
         x = X(d); dx = -7 if anchor == 'end' else 7
         out.append(f'<line class="flag" x1="{x:.1f}" y1="14" x2="{x:.1f}" y2="{bottom}"/><text class="flagt" x="{x + dx:.1f}" y="26" text-anchor="{anchor}">{esc(lab)}</text>')
     for k in ORDER:
@@ -427,7 +427,10 @@ def vouchers():
     province and city by city. The rules that favour home-made computing and Hangzhou's are full rows with notes; the
     rules of one rate are a compact list in columns, by kind of government and by rate (place, month linking the saved
     copy, a dot on the same 0 to 60% scale, the rate); a dagger marks a rule that gives the payment another name than
-    voucher, a letter a note under the list (only notes on home-made computing and those the rulings ask for)."""
+    voucher, a letter a note under the list (only notes on home-made computing and those the rulings ask for).
+    Voucher round 8 (Nov 25, 2026), as the core's builder: 91 rules; Shantou's implementing rules counted (its month is the
+    page's posting date), Langfang read on the city's disclosure platform, the Zhengzhou Airport Zone in a capture of the
+    zone's own page (signed Aug 2025)."""
     import cn_voucher_classes as VC
     R = VC.compute(); C = R['counted']
     SHOWN = {  # row of the voucher tables: place, rule (year and month on its page), the saved copy the row links (a saved id of the row), note
@@ -437,7 +440,7 @@ def vouchers():
         'A12': ('上海市', (2025, 7), 'cn-le15-sheitc-8cea38', '建设支持最高10%，只给国产（自主）算力'),
         'A14': ('成都市', (2026, 4), 'cn-ga31-vouchernamedrules-5', '补贴自主可控算力；中小企业两档抵扣比例分别增加10%；自2026年5月13日起生效；文本见一家咨询公司的网页，已与市经信局签发文件的扫描件人工核对'),
         'A18': ('四川省', (2026, 8), 'cn-ga31-unsaved-sc-338hao-fgw-wayback', '成立3年内的初创企业30%，人工智能一人公司40%；省发展改革委的措施（川发改数据〔2026〕338号），2026年8月11日成文、8月13日发布'),
-        'B1': ('北京经济技术开发区（是开发区，不是北京市）', (2024, 11), 'cn-le28-etown-29hao-20241126', '取代了2024年3月最高按40%和最高按30%支付的规定；装国产芯片的服务器另有最高10%的采购支持'),
+        'B1': ('北京经济技术开发区（是开发区，不是北京市）', (2024, 11), 'cn-le28-etown-29hao-20241126', '取代了2024年3月最高按40%和最高按30%支付的规定；云服务企业采购装国产芯片的服务器，另有最高10%的支持'),
         'B5': ('深圳市', (2024, 12), 'cn-le28-sz-gxj-2024-13hao', '把模型迁移到国产芯片另有支持'),
         'B8': ('深圳市龙华区', (2024, 11), 'cn-le28-sz-longhua-2024-20hao', ''),
         'B10': ('广州开发区和黄埔区', (2025, 6), 'cn-le28-gz-huangpu-2025-7hao', ''),
@@ -470,7 +473,7 @@ def vouchers():
         'B96': ('内蒙古自治区', (2024, 9), 'cn-ga31-voucherrulesmissing-59', ''),
         'B97': ('上海临港新片区', (2025, 5), 'cn-ga31-voucherrulesmissing-60', '租赁之外，采购芯片关键核心技术自主可控的智算设备，最高补贴采购额的10%'),
         'B100': ('青海省', (2024, 3), 'cn-ga31-unsaved4copies-43', ''),
-        'B103': ('沈阳市', (2026, 1), 'cn-ga31-vouchernamedrules-4', '辽宁省数据和政务服务局在一份答复中称，两市算力券面向使用本地国产算力资源的用户；该市自己的政策文本未写明算力来源'),
+        'B103': ('沈阳市', (2026, 1), 'cn-ga31-vouchernamedrules-4', '辽宁省数据和政务服务局在一份答复中称，沈阳、大连两市的算力券面向使用本地国产算力资源的用户；该市自己的政策文本未写明算力来源'),
         'B105': ('无锡市', (2025, 5), 'cn-ga31-vcityeast-2', ''),
         'B106': ('常州市', (2025, 1), 'cn-ga31-vcityeast-83', ''),
         'B109': ('南通市', (2025, 9), 'cn-ga31-vcityeast-46', ''),
@@ -491,6 +494,7 @@ def vouchers():
         'B152': ('东莞市', (2025, 2), 'cn-ga31-vcitysouth-3', ''),
         'B153': ('东莞滨海湾新区', (2026, 5), 'cn-ga31-vcitysouth-53', '同一个50%的比例，补贴购买新区算力、数据以及国产操作系统适配、国产芯片适配等服务的费用'),
         'B154': ('珠海市', (2026, 3), 'cn-ga31-vcitysouth-70', ''),
+        'B155': ('汕头市', (2026, 11), 'cn-ga31-vcitysouth-9', ''),
         'B156': ('中山市', (2026, 1), 'cn-ga31-vcitysouth-14', ''),
         'B158': ('韶关市', (2026, 4), 'cn-ga31-vcitysouth-15', ''),
         'B160': ('深圳市光明区', (2025, 3), 'cn-ga31-vcitysouth-24', ''),
@@ -504,11 +508,11 @@ def vouchers():
         'B176': ('北京市石景山区', (2024, 3), 'cn-ga31-vcitynorth-4', ''),
         'B177': ('北京市丰台区', (2025, 10), 'cn-ga31-vcitynorth-8', ''),
         'B178': ('天津市河北区', (2024, 4), 'cn-ga31-vcitynorth-10', '补贴购买一个点名的中心（天津人工智能计算中心）的算力服务，《天津日报》称该中心为纯国产化算力；自发布之日起生效，有效期四年（第十四条）'),
-        'B179': ('廊坊市', (2025, 2), 'cn-ga31-vcitynorth-29', ''),
+        'B179': ('廊坊市', (2025, 2), 'cn-ga31-voucher8-langfang-2025-zfxxgk', ''),
         'B180': ('大同市', (2025, 8), 'cn-ga31-vcitynorth-15', ''),
         'B181': ('郑州市', (2024, 5), 'cn-ga31-vcitynorth-20', ''),
         'B182': ('郑州高新区', (2025, 7), 'cn-ga31-vcitynorth-56', ''),
-        'B183': ('郑州航空港区', (2025, 11), 'cn-ga31-vcitynorth-35', ''),
+        'B183': ('郑州航空港区', (2025, 8), 'cn-ga31-voucher8-airport-2025-www-wayback', ''),
         'B185': ('北京市海淀区（中关村科学城）', (2025, 8), 'cn-ga31-voucher5-haidian-2025-measures', '补贴比例所在的句子“鼓励大模型企业使用国产算力”，比例并无不同；该区的申报指南对购买或租用GPU算力的合同按同一个50%补贴'),
         'B191': ('淮南市', (2026, 11), 'cn-ga31-vcitywest-2', ''),
         'B192': ('长沙经济技术开发区', (2026, 3), 'cn-ga31-vcitywest-6', '补贴为智能体应用租用国产智能算力的费用，每年最高100万元；开发区2026年3月23日的措施，文本见一个省级新闻网站'),
@@ -630,13 +634,13 @@ def bodies(evs):
             ('工业和信息化部', P('cn-factions-bloomberg-flexibility-202409-relay1', 'cn-le11-ft-h20justify-aggregoctt', ('man-cn-ft-20250821-regulators', 'BH'))),
             ('《华尔街日报》所说的丁薛祥牵头的芯片委员会', P('man-cn-factions-wsj-ding')),
             ('国家安全部', P('cn-acts-mss-xinhua-20250721')),
-            ('官方媒体（中央广播电视总台旗下账号）', P('cn-le13-yuyuan-qq-20250810b')),
+            ('官方媒体（玉渊谭天账号）', P('cn-le13-yuyuan-qq-20250810b')),
             ('海关', P('man-cn-ft-20251009-customs', 'cn-acts-reuters-customs-20260114')),
             ('财政部、工业和信息化部（只针对党政机关及相关事业单位的台式计算机采购）', P('cn-policy-desktop-2023'))]
     let = [('商务部', P('cn-policy-wang-nvidia', 'cn-policy-h20-mofcom', 'cn-tolerate-mof', 'cn-acts-mofcom-20261117')),
            ('国务院总理李强', P('cn-xi-round-f-6')),
            ('国务院副总理何立峰', P('cn-policy-he-welcomes')),
-           ('路透社所说的工业和商务主管部门（原文：“industry and commerce ministries”）', P('cn-acts-reuters-deepseek-20260130')),
+           ('路透社所说的工业和商务主管部门（原文：“industry and commerce ministries”）', P('cn-ga31-sv1-reuters-deepseek-yahoo')),      # record 23 (the open copy since core batch 12, Nov 25, 2026)
            ('工业和信息化部（The Information所报道的意向）', P('cn-acts-reuters-rtx5500-20260927'))]      # record 62 (core edit 7; the core's row of 03:00 UTC, Nov 25, 2026)
     firm = [('市场监管总局：针对英伟达公司本身的反垄断案件', P('cn-policy-samr-open-original', 'cn-policy-samr-further-original'))]
     col = lambda title, cls, rows: (f'<div class="bcol"><h4><i class="sw {cls}"></i>{title}</h4><ul>' + ''.join(f'<li><span>{esc(n)}</span><span class="pins">{p}</span></li>' for n, p in rows) + '</ul></div>')

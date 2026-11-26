@@ -1,8 +1,8 @@
 # China's chip policy pulled against its own AI companies
 @deck From 2024 to 2026 the Chinese state pressed its AI companies to move off Nvidia's chips, and the companies kept ordering them. That holds on direction, with five limits.
 
-@note Draft by Claude, Anthropic's model. Written Nov 23, 2026 (UTC).
-@note How to read it. Words between quotation marks are a source's exact words, found in the saved copy by a script. A filled reference number is a document, a filing, a named person on the record or a state-media item. An open number is a press report citing unnamed people, a caption track or a machine transcript. Where a statement rests on a Chinese text, the English is our rendering, not an official translation.
+@note Draft by Claude, Anthropic's model. Written Nov 23, 2026 (UTC); revised Nov 25, 2026.
+@note How to read it. Words between quotation marks are a source's exact words, found in the saved copy by a script. A filled reference number is a document, a filing, a named person on the record, or a published commentary of state media or an industry body. An open number is a press report citing unnamed people, a research firm's count, or captions and machine transcripts nobody has checked by ear. Where a statement rests on a Chinese text, the English is our rendering, not an official translation.
 @note The author's interest. Anthropic has argued in public for controls on chip exports to China (that is from the model's general knowledge; no saved page is cited for it), so judge this piece by its sources.
 
 ## The finding
@@ -26,7 +26,7 @@ In May 2026 the state planner (NDRC) said it was guiding home-made large models 
 !! cn-policy-ndrc-chip-adaptation-2026 | 指导国产大模型加大力度适配国产算力芯片
 !! cn-policy-ndrc-chip-adaptation-2026 | 李超 2026/05/22
 
-## What the companies bought
+## What the companies used and ordered
 
 A Shanghai government body wrote, in a reply dated Apr 30, 2025 (published Nov 10, 2025), that in the city the internet companies' own computing clusters run mainly on Nvidia cards [cn-counter-b11-5].
 !! cn-counter-b11-5 | 发布日期:2025-11-10
@@ -62,8 +62,9 @@ Reuters, Jan 14, 2026: customs agents were told that H200 chips "are not permitt
 
 ## The numbers
 
-For the H200, Nvidia's second most powerful AI chip, the counts are not one series [cn-acts-reuters-us-approvals-20260514-wayback].
+For the H200, which Reuters called Nvidia's second most powerful AI chip in May 2026, the counts are not one series [cn-acts-reuters-us-approvals-20260514-wayback].
 !! cn-acts-reuters-us-approvals-20260514-wayback | Nvidia's second-most powerful AI chip, the H200
+!! cn-acts-reuters-us-approvals-20260514-wayback | Published on 05/14/2026
 Washington's and Nvidia's are on the record; the rest come from unnamed people.
 
 - Ordered for 2026: "more than 2 million H200 chips" (Reuters, Dec 31, 2025) [cn-labs-h200-two-million-202512-relay1-wayback].
@@ -104,15 +105,15 @@ Washington's and Nvidia's are on the record; the rest come from unnamed people.
 !! cn-acts-peoplesdaily-bjd-20250801 | 2025-08-01
 !! cn-acts-peoplesdaily-bjd-20250801 | 绝不能让“带病”的芯片上岗
 !! cn-media-stdaily-security-forum | 2025-09-24
-3. **Some chips came in.** See the approvals, deliveries and sales listed above.
+3. **Some purchases were approved, and some chips came in.** The approvals are listed above, and so are the reported deliveries and Nvidia's licensed sales to China; none of these says how many chips crossed into the mainland.
 4. **The companies had reasons of their own, and American curbs and conditions pushed too.** Alibaba says its chip unit "has brought proprietary GPUs into scaled production" [cn-policy-alibaba-own-gpu]. Nvidia's reports since November 2025 say: "we are already effectively foreclosed from the China market by U.S. export controls" [man-ms-sec-10q-2025-10].
 !! man-ms-sec-10k-fy2026 | we are already effectively foreclosed from the China market by U.S. export controls
 !! man-ms-sec-10q-2026-07 | already effectively foreclosed from the China market by U.S. export controls
-5. **What Beijing meant by it is not settled.** The US-China commission, November 2025, read an antitrust move against Nvidia, made as the regulator dropped a probe into Google, as "signaling China's willingness to both exert leverage and ease pressure as a negotiating tactic" [cn-le03-uscc-2025-full]. The US Trade Representative called the choice to buy "a sovereign decision for China" (captions, not checked by ear, at 5:59) [cn-le01-greer-bbg-20260515-subs-ttml]. The direction stands under either reading of what Beijing meant by it.
+5. **What Beijing meant by it is not settled.** The US-China commission, November 2025, read an antitrust move against Nvidia, made as the regulator dropped a probe into Google, as "signaling China's willingness to both exert leverage and ease pressure as a negotiating tactic" [cn-le03-uscc-2025-full]. The US Trade Representative, asked whether China would let its companies buy the H200, said it was "gonna be a sovereign decision for China" (captions, not checked by ear, at 5:59) [cn-le01-greer-bbg-20260515-subs-ttml]. The direction stands under either reading of what Beijing meant by it.
 !! cn-le03-uscc-2025-full | NOVEMBER 2025
 !! cn-le03-uscc-2025-full | The move coincided with SAMR dropping its anti-trust probe into Google
 !! cn-le01-greer-bbg-20260515-subs-ttml | Will China allow their companies to buy them?
 
 **What survives**
 
-From 2024 the security and planning side of the Chinese state pressed China's AI companies, through unpublished guidance that the press reported, to buy home-made chips rather than Nvidia's. The companies kept ordering Nvidia chips, in the millions by the press reports, and by those reports had received a small part by late 2026. They were also turning to home-made chips, for their own reasons and under American curbs. Whether Beijing meant lasting policy or leverage is read both ways.
+From 2024 the planning side of the Chinese state and the industry ministry, and from 2025 its security side, pressed China's AI companies, through unpublished guidance that the press reported, to buy home-made chips rather than Nvidia's. The companies kept ordering Nvidia chips, in the millions by the press reports, and by those reports had received a small part by late 2026. They were also turning to home-made chips, for their own reasons and under American curbs. Whether Beijing meant lasting policy or leverage is read both ways.

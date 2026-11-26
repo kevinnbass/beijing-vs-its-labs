@@ -68,7 +68,7 @@ CITE = re.compile(r'\[((?:cn|ms|man)-[A-Za-z0-9-]+)\]')
 MORE_LABELS = {
     'cn-o39-hebei-opinion-2024-xiongan': ("DOC", "Hebei. Opinions on the layout of computing and the AI industry, General Office of the Hebei Provincial People's Government, May 8, 2024: a copy on the Xiong'an New Area's site"),
     'cn-o39-hebei-opinion-2024-sjz': ("DOC", "Hebei. The same opinions: a copy on a city data bureau's site"),
-    'man-cn-o39-qinghai-compute-15fyp-2026': ("DOC", "Qinghai. Plan for the green computing industry in the 15th five-year period, Qinghai Provincial People's Government, Aug 25, 2026: a PDF of the government's page saved by hand. Its text layer is damaged; read only from the page images (transcription.txt in the saved copy)"),
+    'man-cn-o39-qinghai-compute-15fyp-2026': ("DOC", "Qinghai. Plan for the green computing industry in the 15th five-year period, Qinghai Provincial People's Government, Aug 25, 2026: a PDF of the government's page saved by hand. Its text layer is damaged; read only from the page images, through a transcription kept with the saved copy"),
     'cn-ga04-sz-suzhou-aiplus-2026-jiedu': ("DOC", "Suzhou city. The city government's reading of its measures for an AI+ city, 2026 edition"),
     'cn-ga04-sz-suzhou-aiplus-2025-5hao': ("DOC", "Suzhou city. Measures for building its pilot zone for AI+ innovation and development at a high level, 苏府规字〔2025〕5号, Feb 13, 2025"),
     'cn-factions-etwon-vouchers': ("DOC", "Beijing E-Town (a development zone, not the city). Policies to build an AI-native industry, 京技管发〔2024〕10号, Mar 28, 2024; repealed by 京技管发〔2024〕29号 of Nov 26, 2024"),
@@ -331,6 +331,25 @@ def main():
                    json.loads((PRIMARY / v['src'] / 'meta.json').read_text())['url']]) for v in vouchers) + '\n', encoding='utf-8')
     print(f'vouchers: {len(vcnt)} counted; {len(tiered)} pay more for home-made computing ({", ".join(v["place"] for v in tiered)}); {len(only)} pay for home-made computing only ({", ".join(v["place"] for v in only)}); '
           f'{len(third)} state no higher rate ({len(one)} one rate, {len(two)} two rates by a type it does not name: {two[0]["government"]}); {R["not_counted"]} read and not counted')
+    # round 10: the second fact about the same rules, scripts/cn_voucher_other.py: how many counted rules also give home-made computing
+    # something by ANOTHER provision (the class is decided by the counted payment alone). The script is run (its controls must behave)
+    # and its printed line must equal the line made here from its own functions; the note words the kinds as the script names them.
+    import cn_voucher_other as VO
+    po = subprocess.run([sys.executable, '-I', str(ROOT / 'scripts/cn_voucher_other.py')], capture_output=True, text=True)
+    if po.returncode != 0: sys.exit('cn_voucher_other.py failed: ' + (po.stderr or po.stdout)[-400:])
+    _vcls, _vcnt = VO.classes(); _vrows = VO.read_tsv(VO.TABLE)
+    if VO.problems(_vrows, _vcls, _vcnt): sys.exit('cn_voucher_other.py: rows refused')
+    _vt = VO.tally(_vrows, _vcnt); _vn = VO.tally(_vrows, _vcnt, skip=VO.NARROW)
+    if VO.line(_vt, _vcnt, 'voucher other provisions') not in po.stdout: sys.exit('cn_voucher_other.py: its printed line is not the line made here')
+    (_n3, _r3, _p3, _a3), (_nm, _rm, _pm, _am), (_no, _ro, _po, _ao) = _vt
+    if (len(_r3), len(_rm), len(_ro)) != (len(third), len(tiered), len(only)): sys.exit('cn_voucher_other.py: its groups are not the classes counted here')
+    if _am or _ao: sys.exit('a rule that pays more, or pays for home-made only, now has another provision: change the note')
+    if _p3['USE2'] or [_vcnt[k]['government'] for k in _p3['PREFER']] != ['Beijing city']: sys.exit('other provisions: USE2 or PREFER is not as the note words it')
+    if sorted((_vcnt[k]['government'], kd) for k, kd in VO.NARROW) != [('Beijing city', 'PREFER'), ('Hebei District (Tianjin)', 'ADAPT')]: sys.exit('other provisions: the narrow way is not as the note words it')
+    _vid = {}
+    for r_ in _vrows: _vid.setdefault((r_['row_id'], r_['kind']), r_['saved_id'])
+    def _vlist(kd): return ', '.join(f'{_vcnt[k]["government"]} [{_vid[(k, kd)]}]' for k in _p3[kd])
+    print(f'other provisions (cn_voucher_other.py, controls behave): of the {len(_r3)} with no higher rate, {len(_a3)} (BUILD {len(_p3["BUILD"])}, ADAPT {len(_p3["ADAPT"])}, PREFER {len(_p3["PREFER"])}); narrow {len(_vn[0][3])}; of the {len(tiered)} and the {len(only)}: 0')
     # the plans of the kind that holds Zhejiang's share, searched as a class (core table): groups counted, and no share in any text read
     ict = _tab('provincial_ict_plans.tsv')
     if {r['unit'] for r in ict} != set(ALL_UNITS) - {'Zhejiang'}: sys.exit('provincial_ict_plans.tsv: not the 30 other units')
@@ -405,6 +424,8 @@ def main():
             'LIST_V_ONE': '; '.join(f'{c["government"]} [{c["saved_id"]}]' for c in one),
             'N_V_THIRD': len(third), 'N_V_TWO': len(two), 'N_V_NOT': R['not_counted'], 'N_V_ROWS': len(R['out']), 'N_V_OWN': len(R['own']), 'N_V_ELSE': len(R['elsewhere']),
             'V_NOT_BY': '; '.join(f'{n} {w}' for n, w in not_by), 'N_V_OTHERNAME': len(R['other_name']),
+            'N_VO_ANY': len(_a3), 'N_VO_BUILD': len(_p3['BUILD']), 'N_VO_ADAPT': len(_p3['ADAPT']), 'N_VO_PREFER': len(_p3['PREFER']), 'N_VO_NARROW': len(_vn[0][3]),
+            'U_VO_BUILD': _vlist('BUILD'), 'U_VO_ADAPT': _vlist('ADAPT'), 'U_VO_PREFER': _vlist('PREFER'),
             **{f'N_ICT{i}': n for i, n in enumerate(icg.values(), 1)},
             'N_SHARE': len(by['share']), 'N_NONE': len(by['none']), 'U_SHARE': ', '.join(by['share']), 'U_NONE': ', '.join(by['none']),
             'N_NONE_COMP': n_comp, 'N_NONE_OTHERKIND': len(by['none']) - n_comp, 'U_NONE_COMP': ', '.join(kinds.get('computing', [])),
@@ -440,7 +461,9 @@ def main():
     # round 9: the counted rules listed from the core table, labelled from the core's cells (document and issuing body)
     for c in one:
         r = _vr[c['row_id']]
-        lab.setdefault(c['saved_id'], ('DOC', f'{c["government"]}. {r["document"]}; {r["body"]}' + ('' if c['row_id'] in R['own'] else '; read in another copy than the issuer\'s own page')))
+        # round 10: a copy that is an Internet Archive capture says so (readers took "another copy" for a third party's)
+        _m = json.loads((PRIMARY / c['saved_id'] / 'meta.json').read_text()); _cap = 'web.archive.org' in str(_m.get('route', '')) + str(_m.get('url', '')) or c['saved_id'].endswith('-wayback')
+        lab.setdefault(c['saved_id'], ('DOC', f'{c["government"]}. {r["document"]}; {r["body"]}' + ('' if c['row_id'] in R['own'] else ('; read in an Internet Archive capture' if _cap else '; read in another copy than the issuer\'s own page'))))
     lab.update({k: v for k, v in MORE_LABELS.items() if k not in lab})
     refs = ['# id <TAB> kind <TAB> label <TAB> address (empty = the address in the saved copy\'s record). Written by build.py.']
     missing = []
@@ -451,7 +474,7 @@ def main():
     (HERE / 'extra_refs.tsv').write_text('\n'.join(refs) + '\n', encoding='utf-8')
 
     p = subprocess.run([sys.executable, '-I', str(ROOT / 'scripts/cn_doc_build.py'), str(HERE / 'provinces_note_base.txt'), '--refs', str(HERE / 'extra_refs.tsv'),
-                        '--title', 'Provincial Chip Targets', '--eyebrow', 'China chip policy: idea 39, provincial targets'], capture_output=True, text=True)
+                        '--title', 'Provincial Chip Targets', '--eyebrow', 'China chip policy: provincial targets'], capture_output=True, text=True)
     print(p.stdout.strip()); print(p.stderr.strip())
     sys.exit(p.returncode)
 

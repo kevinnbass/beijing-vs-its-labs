@@ -3,7 +3,8 @@
 unless the base file carries each one exactly. Run before cn_doc_build.py:
     python3 -I counts_check.py && python3 -I scripts/cn_doc_build.py numbers_ledger_base.txt ...
 Reads ../../../tables/house_licence_table.tsv, nvidia_china_revenue.tsv, provinces_31.tsv, market_numbers.tsv,
-rtx5500_notices.tsv (the last two since round 5, Nov 24, 2026) and local_vouchers_classes.tsv (core edit 8, Nov 25, 2026); writes nothing.
+rtx5500_notices.tsv (the last two since round 5, Nov 24, 2026) and local_vouchers_classes.tsv (core edit 8, Nov 25, 2026); since round 10
+(Nov 25, 2026) also the other provisions of the counted voucher rules, by scripts/cn_voucher_other.py's own functions; writes nothing.
 A control: the same comparison run on a copy of the base file with one number changed must fail.
 """
 import sys
@@ -48,16 +49,17 @@ def expected():
     groups = sorted({g.strip() for r in sea for g in r['group'].split('(')[0].replace(' and ', ',').split(',') if g.strip()})
     want += [
         f'| Returned without action (RWA) | {fmt(rwa[1])} | {rwa[0]} | {share}% of the chips in the applications the summary records. Among them every application for more than 75,000 chips ({["zero","one","two","three","four","five","six"][len(over)]})',
-        f'all {fmt(sum(map(num, sea)))} chips for consignees in Malaysia, Indonesia and Thailand',
+        f'all {fmt(sum(map(num, sea)))} chips in applications whose ultimate location is Malaysia, Indonesia or Thailand',
         f'Nvidia {fmt(ex[("Nvidia","RWA")][1])} in {ex[("Nvidia","RWA")][0]}; AMD {fmt(ex[("AMD","RWA")][1])} in {ex[("AMD","RWA")][0]} |',
         f'| Approved, not shipped | {fmt(st["Approved, not shipped"][1])} | {st["Approved, not shipped"][0]} | Nvidia {fmt(ex[("Nvidia","Approved, not shipped")][1])} in {ex[("Nvidia","Approved, not shipped")][0]}; AMD {fmt(ex[("AMD","Approved, not shipped")][1])} in {ex[("AMD","Approved, not shipped")][0]};',
         f'| Submitted | {fmt(st["Submitted"][1])} | {st["Submitted"][0]} | Nvidia {fmt(ex[("Nvidia","Submitted")][1])} in {ex[("Nvidia","Submitted")][0]}; AMD {fmt(ex[("AMD","Submitted")][1])} in {ex[("AMD","Submitted")][0]}; Semsotai USA {fmt(ex[("Semsotai USA","Submitted")][1])} in {ex[("Semsotai USA","Submitted")][0]} |',
         f'| Rejected | {fmt(st["Rejected"][1])} | {st["Rejected"][0]} | one {rej[0]["exporter"]} application, for {rej[0]["consignee"].split()[0]} |',
         f'| All | {fmt(total)} | {len(H)} | Nvidia {fmt(ex_all["Nvidia"][1])} in {ex_all["Nvidia"][0]}; AMD {fmt(ex_all["AMD"][1])} in {ex_all["AMD"][0]}; Semsotai USA {fmt(ex_all["Semsotai USA"][1])} in {ex_all["Semsotai USA"][0]} |',
-        f'the returned share would be {alt}% if that row is the application, counted at 445,000, and {alt2}% if the 445,000 is a further application (ours)',
-        f'among them **{share}%**; **{alt}%** or **{alt2}%** with the application of Dec 19, 2025 counted at 445,000 (as the table\'s row of that date, or as a further application); and **{fmt(sum(map(num, sea)))}**',
+        f'the returned share would be {alt}% if that row is the application, counted at 445,000, and {alt2}% if the 445,000 is a further application and was not returned without action (ours)',
+        f'among them **{share}%**; **{alt}%** or **{alt2}%** with the application of Dec 19, 2025 counted at 445,000 (as the table\'s row of that date, or as a further application not returned without action); and **{fmt(sum(map(num, sea)))}**',
     ]
     if len(rej) != 1: sys.exit('not one rejected application')
+    if sorted({r['location'] for r in sea}) != ['Indonesia', 'Malaysia', 'Thailand']: sys.exit(f'the returned applications outside China are not for Malaysia, Indonesia and Thailand: {sorted({r["location"] for r in sea})}')
     print(f'licence table: {len(H)} applications, {fmt(total)} chips; RWA {fmt(rwa[1])} in {rwa[0]} ({100*rwa[1]/total:.1f}%); '
           f'approved {fmt(st["Approved, not shipped"][1])}; submitted {fmt(st["Submitted"][1])}; rejected {fmt(st["Rejected"][1])}; '
           f'outside China {fmt(sum(map(num, sea)))} in {len(sea)} ({", ".join(groups)}); over 75,000: {len(over)}; with Dec 19 at 445,000: {alt}% (as that row) or {alt2}% (as a further application)')
@@ -80,7 +82,8 @@ def expected():
     P = Counter(r['result'] for r in rows('provinces_31.tsv'))
     if sum(P.values()) != 31: sys.exit('not 31 provinces')
     want.append(f'{P["share"]} set a share; {P["plan_no_share"]} have a plan that was read and sets none')
-    want.append(f'**{P["share"]} of 31** provincial-level governments set a share')
+    want.append(f'**{P["share"]} of 31** provincial-level governments were found to set a share')
+    if [r['result'] for r in rows('provinces_31.tsv') if r['government'] == 'Shandong'] != ['share']: sys.exit('Shandong is not one of those that set a share')
     if P['account_only'] != 1 or P['not_reached'] != 1: sys.exit('Tibet and Xinjiang are not one each')
     print(f'provinces: {dict(P)}')
     # core edit 8 (Nov 25, 2026): the voucher count the ledger prints, from the core's table of classes
@@ -100,7 +103,24 @@ def expected():
     want.append(f'The {words[more]}, as shares of the bill')
     want += [f'{g} ' for g in gov(MORE) if g not in ('Wuhan', 'Longwan and Wenzhou Bay New Area')] + ['Wuhan\'s Data Bureau', 'Longwan district and Wenzhou Bay New Area']
     want.append(f'The {words[only]} that pay for home-made computing only: ' + ', '.join(sorted(gov(ONLY), key=lambda g: ('Sichuan', 'Ningbo', 'Huangyan').index(g) if g in ('Sichuan', 'Ningbo', 'Huangyan') else 9)[:-1]) + ' and the ' + sorted(gov(ONLY), key=lambda g: ('Sichuan', 'Ningbo', 'Huangyan').index(g) if g in ('Sichuan', 'Ningbo', 'Huangyan') else 9)[-1])
-    want.append(f'**{more} of {counted}** voucher rules')
+    # round 10 (Nov 25, 2026): the other provisions of the same rules, by scripts/cn_voucher_other.py's own functions
+    sys.path.insert(0, 'scripts')
+    import cn_voucher_other as VO
+    cls, cnt = VO.classes(); prov = VO.read_tsv(VO.TABLE)
+    bad = VO.problems(prov, cls, cnt)
+    if bad: sys.exit('the table of other provisions is refused: ' + bad[0])
+    tal = {name: (rules, per, anyk) for name, rules, per, anyk in VO.tally(prov, cnt)}
+    rules3, per3, any3 = tal['state no higher rate for home-made computing']
+    if len(rules3) != one + two: sys.exit('the other provisions script and the classes table differ on the third class')
+    if tal['pay more for home-made and still pay for other computing'][2] or tal['pay for home-made computing only'][2]: sys.exit('a rule of the first two classes now gives something by another provision: reword the row')
+    if per3['USE2']: sys.exit('a rule of the third class now has a higher rate in another provision: reword the row')
+    if [cnt[k]['government'] for k in per3['PREFER']] != ['Beijing city']: sys.exit('the condition on suppliers is not Beijing city\'s alone')
+    both = sorted(set(per3['BUILD']) & set(per3['ADAPT'])) + sorted(set(per3['BUILD']) & set(per3['PREFER'])) + sorted(set(per3['ADAPT']) & set(per3['PREFER']))
+    if [cnt[k]['government'] for k in both] != ['Hebei District (Tianjin)']: sys.exit(f'the rule that gives two kinds is not Hebei district of Tianjin\'s alone: {both}')
+    W = ['no', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine']
+    want.append(f'by another provision of the same rule, {len(any3)} of the {one + two} give home-made computing something ({len(per3["BUILD"])} money to build, buy or run home-made computing facilities or equipment, {len(per3["ADAPT"])} an award for adapting to, or building on, home-made chips or computing, and {len(per3["PREFER"])}, Beijing city\'s, a condition on its suppliers; Hebei district of Tianjin\'s rule gives two of these), and none of the {more} or the {only} gives anything by another provision')
+    want.append(f'**{more} of {counted}** voucher rules, with **{len(any3)} of the {one + two}**')
+    print(f'other provisions: {len(any3)} of the {one + two} (BUILD {len(per3["BUILD"])}, ADAPT {len(per3["ADAPT"])}, PREFER {len(per3["PREFER"])}); none of the {more} or the {only}')
     print(f'vouchers: counted {counted} ({more} pay more, {only} home-made only, {one} one rate, {two} two rates by an unnamed type); read and not counted {V[NOT]}')
 
     M = rows('market_numbers.tsv')

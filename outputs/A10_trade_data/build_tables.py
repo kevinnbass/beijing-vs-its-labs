@@ -386,6 +386,7 @@ us_sg3_h1 = sum(us_sg3[m] for m in M26H1) / len(M26H1)
 us_sg3_26 = sum(us_sg3[m] for m in M26)
 us3_h1 = sum(RAW[('us', m)][1] for m in M26H1) / 1e6 / len(M26H1)      # round 9 of the outputs: of the dollar values
 with_sg_chips = (f(y26[1]) + us_sg3_26) * 1e6 / PRICE
+us_sg3_plus = f(y26[1]) + us_sg3_26      # round 10 of the outputs: the sum the note now prints before the division
 RAWSRC = 'raw answers of Singapore\'s statistics service, kept by L18 with their sha256; not in research/primary'
 d34 += [['Singapore, line 84718010 (control and adaptor units): re-exports to mainland China, all of 2025, thousand Singapore dollars', f'{cn25:,.0f}', RAWSRC],
         ['the same: January to June 2026 (units in brackets)', f'{cn1:,.0f} ({u1:,.0f})', RAWSRC],
@@ -406,6 +407,7 @@ d34 += [['Singapore, line 84718010 (control and adaptor units): re-exports to ma
         ['the same: average month of January to June 2026', f'{us_sg3_h1:.1f}', 'sum of 6 months / 6'],
         ['the same: all of January to August 2026', f'{us_sg3_26:,.1f}', 'sum of 8 months'],
         ['US exports to mainland China, Hong Kong and Macau under the three named headings: July and August 2026, then the average month of January to June 2026, million US dollars', f'{f(us["202607"][1]):.1f} and {f(us["202608"][1]):.1f}, then {us3_h1:.1f}', 'from us_exports_summary.tsv'],
+        ['January to August 2026: US exports under the three headings to the three places plus those to Singapore, million US dollars', f'{us_sg3_plus:,.1f}', f'{f(y26[1]):,.1f} + {us_sg3_26:,.1f}'],
         ['January to August 2026: US exports under the three headings to the three places plus Singapore, as a number of chips at the press price', f'{with_sg_chips:,.0f}', f'({f(y26[1]):,.1f} + the Singapore total) million / 27,000; every kind of goods counted as if an H200'],
         ['Singapore, line 84718010: re-exports to mainland China, average month of January to June 2026, thousand Singapore dollars', f'{cn1 / 6:,.0f}', 'six-month sum / 6'],
         ['Singapore raw files read, each matching its sha256 in the manifest', len(sg_files), f'fetched {min(sg_files.values())} to {max(sg_files.values())} by L18; repeated rows with one value, taken once: {sg_repeats}']]
@@ -425,11 +427,34 @@ TW26 = [f'2026{m:02d}' for m in range(1, 11)]
 ADP, PARTS_TW = '自動資料處理機及其附屬單元', '電腦之零附件'
 tw_share = (tw_sum('中國大陸', ADP, TW26, check34) + tw_sum('香港', ADP, TW26, check34)) / tw_sum('全球', ADP, TW26, check34) * 100
 same_as_core('Taiwan exports of ADP machines (all 8471) to mainland China plus Hong Kong as a share of exports to the world, Jan-Oct 2026', round(tw_share, 2))
+# round 10 of the outputs: the note says the group holds all of heading 8471. Test it here, every month, against Taiwan's own table by
+# six-digit code (L18's taiwan_hs6_monthly.tsv of the saved page cn-le18-tw-mof-exp-hs6-all8471-8542), each cell re-checked in the saved page.
+TW6 = 'cn-le18-tw-mof-exp-hs6-all8471-8542'
+tw6, tw6frag = {}, {}
+for ln in (L18 / 'taiwan_hs6_monthly.tsv').read_text(encoding='utf-8').splitlines():
+    c = ln.split('\t')
+    if len(c) == 4 and c[0].isdigit() and c[1].startswith('8471'): tw6[(c[0], c[1])] = f(c[2]); assert c[3] == TW6
+for ln in (L18 / 'numbers_check.tsv').read_text(encoding='utf-8').splitlines():
+    c = ln.split('\t')
+    if len(c) == 4 and c[0] == TW6: tw6frag[(c[2], c[3])] = c[1]
+TW_ALL = sorted({m for (m, d, g) in tw if d == '全球' and g == ADP})
+TW_CODES = sorted({k for (m, k) in tw6})
+tw_eq = 0
+for m in TW_ALL:
+    s = 0.0
+    for k in TW_CODES:
+        check34.append((TW6, tw6frag[(m, f'world {k}')])); s += tw6[(m, k)]
+    check34.append(('cn-le18-tw-mof-exp-cnhk-groups', twfrag[(m, f'全球 {ADP}')]))
+    tw_eq += abs(s - tw[(m, '全球', ADP)]) < 0.5
+assert len(TW_CODES) == 8 and tw_eq == len(TW_ALL) and TW_ALL[0] == '202301' and TW_ALL[-1] == '202610', (TW_CODES, tw_eq, len(TW_ALL))
+assert sum(abs(sum(tw6[(m, k)] for k in TW_CODES if k != '847150') - tw[(m, '全球', ADP)]) < 0.5 for m in TW_ALL) == 0      # control: without one code no month is equal
+NUMW = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine']
 hkx25 = sum(use(check34, 344, m, 'X', 156, '847330') for m in HKM if m <= '202507')
 hkx26 = sum(use(check34, 344, m, 'X', 156, '847330') for m in HKM if '202601' <= m <= '202607')
 same_as_core('Comtrade Hong Kong exports to mainland China, HS 847330, Jan-Jul 2025', hkx25); same_as_core('Comtrade Hong Kong exports to mainland China, HS 847330, Jan-Jul 2026', hkx26)
 d34.append(['Hong Kong total exports of computer parts (8473.30) to mainland China, by Hong Kong\'s own figures: January to July 2025, then January to July 2026, billion US dollars', f'{hkx25 / 1e9:.2f} then {hkx26 / 1e9:.2f}', 'sums of 7 months each (UN Comtrade, saved)'])
 d34.append(['Taiwan (finance ministry groups): exports of computers, all of heading 8471, to mainland China plus Hong Kong as a share of its exports to the world, January to October 2026, per cent', f'{tw_share:.2f}', 'L18\'s table of the saved ministry page; its 30 cells re-checked here'])
+d34.append([f'Taiwan: months from {TW_ALL[0]} to {TW_ALL[-1]} in which the group for computers (exports to the world) equals the sum of the {len(TW_CODES)} six-digit codes that begin 8471, in thousand US dollars', f'{tw_eq} of {len(TW_ALL)}', f'the two saved ministry pages, {len(TW_ALL) * (len(TW_CODES) + 1)} cells re-checked here; control: without 8471.50 no month is equal'])
 write(O34 / 'derived_figures.tsv', ['figure', 'value', 'how (all arithmetic is ours)'], d34)
 hk = {r[0]: r for r in hsum}
 k26 = next(k for k in hk if k.startswith('2026 January to'))
@@ -568,12 +593,14 @@ NOTE34 = [f'the line was {gacc_b("202609", PARTS)} dollars, against {gacc_b("202
           f'were {f(us["202607"][1]):.1f} and {f(us["202608"][1]):.1f} million dollars, against {us3_h1:.1f} million in an average month of January to June',
           f'about {cn1 / 6 / 1e3:.1f} million Singapore dollars',
           f'together carried {jul_aug_us:.1f} million dollars to the three places',
-          f'{us_sg3_26:,.1f} million dollars in the eight months, the same division gives about {round(with_sg_chips, -2):,.0f} chips',
-          f'{hkx25 / 1e9:.2f} billion dollars in January to July 2025 and {hkx26 / 1e9:.2f} billion in January to July 2026',
+          f'{us_sg3_26:,.1f} million dollars in the eight months; added to the {f(y26[1]):,.1f} million, they make {us_sg3_plus:,.1f} million dollars, and the same division gives about {round(with_sg_chips, -2):,.0f} chips',      # round 10
+          f'{hkx25 / 1e9:.2f} billion US dollars in January to July 2025 and {hkx26 / 1e9:.2f} billion in January to July 2026',      # round 10: US added
           f'were {tw_share:.2f}% of its exports of the group to the world',
           f'came to {f(y26[1]):,.1f} million dollars', f'(about {round(f(y26[1]) * 1e6 / PRICE, -2):,.0f})', f'never passed {int(f(mx[1])) + 1} million dollars',
           f'| All of January to August 2026 | {f(y26[1]):,.1f} million dollars |', f'{f(y26[1]):,.1f} million dollars divided by 27,000 dollars is about {round(f(y26[1]) * 1e6 / PRICE, -2):,.0f} chips',      # round 9 of the outputs
-          f'{p26["cv"] / p25["cv"]:.2f} times as much computer parts by value', f'Our script read {["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"][len(sg_files)]} of those files again']
+          f'{p26["cv"] / p25["cv"]:.2f} times as much computer parts by value', f'{NUMW[len(sg_files)].capitalize()} of those answers were read again for this note',      # round 10: reworded
+          f'{270e6 / (q3_parts * 1e3) * 100:.1f}% of the parts line in the third quarter of 2026 ({q3_parts / 1e6:.1f} billion dollars), or {270e6 / (ics("202609")["mv"] * 1e3) * 100:.2f}% of China\'s imports of integrated circuits in September 2026 alone ({ics("202609")["mv"] / 1e6:.1f} billion dollars)',
+          f'the sum of the {NUMW[len(TW_CODES)]} codes that begin 8471, in thousands of US dollars, in every month (our comparison)']
 dvs = lambda flow, ms: [f'{dv(flow, 75, m, []):,}' for m in ms]
 JJAS = ('202606', '202607', '202608', '202609')
 im, ex = dvs('imports', JJAS), dvs('total exports', JJAS)

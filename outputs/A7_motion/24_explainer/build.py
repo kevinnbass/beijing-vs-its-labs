@@ -378,7 +378,14 @@ def main():
 </div>
 <p class="draft" id="draft">Small numbers: the references of the captions document. English renderings of Chinese are ours, not official translations. Draft by Claude, Anthropic’s model.</p>
 <div id="bar"></div>"""
-    below = f"""  <p>A silent explainer of {int(TOTAL // 60)} minutes {round(TOTAL % 60)} seconds: the dated strip in {len(caps)} chapters. Each caption stays on screen while the marks it speaks of appear in date order. This page draws any moment of it; the video beside it was captured from this page frame by frame.</p>
+    # round 10 (the session's ruling, Nov 25, 2026): the frame carries the credit only; words saying the copy is local or
+    # unpublished are untrue of a public copy, and a release cannot reach pixels. They must never be drawn into the frame.
+    def frame_says_local(st):                     # the credit line names no local or unpublished state; nothing in the frame says "not published" or "Local;"
+        draft = re.search(r'<p class="draft" id="draft">(.*?)</p>', st, re.S).group(1).lower()
+        return [w for w in ('local', 'publish') if w in draft] + [w for w in ('local; not published', 'not published.', 'local;') if w in st.lower()]   # caption 4 says "not published policy": that stays
+    if frame_says_local(stage): sys.exit(f'the frame says {frame_says_local(stage)}: it carries the credit only')
+    assert frame_says_local(stage.replace('model.</p>', 'model.</p>')), 'control: the old credit line must be refused'
+    below = f"""  <p>A silent explainer of {int(TOTAL // 60)} minutes {round(TOTAL % 60)} seconds: the dated strip in {len(caps)} chapters. Each caption stays on screen while the marks it speaks of appear in date order. This page draws any moment of it; the video beside it was captured from this page frame by frame. No one has yet watched the video play through: it was checked by script and as still frames.</p>
   <p>The video file, <code>explainer.mp4</code> (1280 by 720, no sound, no voice):</p>
   <video data-src="explainer.mp4" controls muted playsinline preload="metadata" width="1280" height="720"></video>
   <p>The captions as a checked text, with the list of sources: <a href="captions.html">captions.html</a>.</p>

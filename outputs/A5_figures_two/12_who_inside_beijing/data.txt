@@ -36,7 +36,7 @@ N Lutnick told CNBC on July 15
 N Some Chinese tech companies have held off H20 orders because they want to see if the China-specific Blackwell chip
 
 @ cac-alibaba rec 2025-09-10 Sept_2025 cn-clips-alibaba-20f row=cac col=told dir=away
-T asks firms to halt buying "certain chips", Alibaba's filing says
+T asks firms to halt buying "certain chips" (Alibaba's filing; Nvidia not named)
 L Alibaba's annual report to the US securities regulator: the cyberspace regulator "requested Chinese technology companies to halt purchases of certain chips". The sentence does not name Nvidia; it stands in a passage on American export controls.
 S Alibaba, annual report on Form 20-F for the year to Mar 31, 2026
 Q In September 2025, the Cyberspace Administration of China requested Chinese technology companies to halt purchases of certain chips.
@@ -51,7 +51,7 @@ D Published SEP 17 2025
 N according to three people with knowledge of the matter
 
 @ mss-warning doc 2025-07-21 - cn-acts-mss-xinhua-20250721 row=mss col=acted dir=away
-T warns of backdoors in chips made abroad; names no maker
+T warns that some chips made abroad may carry planted backdoors; names no maker
 L The security ministry warns in public that some chips, smart devices and software made abroad may have had backdoors planted on purpose when they were designed and made. The article names no maker.
 S Ministry of State Security (its WeChat account), carried by Xinhua
 Q 一些境外生产的芯片、智能设备或者软件可能在设计制造阶段就被故意预埋了“后门”
@@ -94,7 +94,7 @@ N or whether these measures could be used as a bargaining tactic in talks with W
 
 @ mof-rule doc 2023-12-16 - cn-policy-desktop-2023 row=rules,miit col=rules dir=away
 T finance and industry ministries: purchase rule for state bodies
-L The finance ministry and the industry ministry require Party and government bodies from township level up, and the public institutions attached to them, to write into their purchases of desktop computers that the processor and the operating system meet the security-and-reliability evaluation. The same sentence says other units may leave the requirement out.
+L The finance ministry and the industry ministry require Party and government bodies from township level up, the public institutions directly under Party committees and governments at those levels, and the departments' public institutions that provide support to those bodies, to write into their purchases of desktop computers that the processor and the operating system meet the security-and-reliability evaluation. The same sentence says other units may leave the requirement out.
 S Ministry of Finance and Ministry of Industry and Information Technology, notice signed Dec 16, 2023
 Q 应当将CPU、操作系统符合安全可靠测评要求纳入采购需求
 E shall write into the purchase requirement that the CPU and the operating system meet the security-and-reliability evaluation
@@ -102,6 +102,7 @@ Q 其他单位可不在采购需求中提出此项要求
 E other units may leave this requirement out
 D 财政部 工业和信息化部 2023年12月16日
 N 乡镇以上党政机关，以及乡镇以上党委和政府直属事业单位
+N 及部门所属为机关提供支持保障的事业单位
 
 @ sco-pref doc 2025-09-28 - cn-policy-domestic-product-standard-2025 row=rules col=rules dir=away
 T State Council's office: 20% price edge for home-made goods
@@ -140,7 +141,7 @@ N 公司最近被国家网信办约谈
 @ media-yuyuan pub 2025-08-10 - cn-le13-yuyuan-qq-20250810b row=media col=acted dir=away
 T state broadcaster's account: consumers can choose not to buy the H20
 L Yuyuan Tantian, an account of the state broadcaster, writes that the H20 is neither green, nor advanced, nor safe, and that as consumers we can of course choose not to buy.
-S Yuyuan Tantian (China Media Group), on its own Tencent News channel
+S Yuyuan Tantian (玉渊谭天), on its own Tencent News channel
 Q 作为消费者,我们当然可以选择,不买
 E as consumers we can of course choose not to buy
 D 2025-08-10T11:47:34+08:00
@@ -149,7 +150,7 @@ N cn-le13-cja36-winners-xinhuanet-20261108 | 发布端/账号/媒体名称：玉
 
 # ---- premier and vice premiers ----
 @ ding-traitor press 2026-07-23 No_date_given man-cn-factions-wsj-ding row=ding col=told dir=away
-T after a Huawei briefing in summer 2025: the "traitor" warning to the largest AI users
+T the "traitor" warning to the largest AI users, after a Huawei briefing in summer 2025, the Wall Street Journal reports
 L Vice Premier Ding Xuexiang warns China's largest AI users, by people familiar with the message: "Anyone who resisted employing domestic chips was a traitor." The Wall Street Journal reported it on Jul 23, 2026 and gives no date for the warning; it places it after a briefing by Huawei that it dates "Last summer", and calls him the head of the chip committee.
 S Wall Street Journal, Jul 23, 2026
 Q Anyone who resisted employing domestic chips was a traitor.
@@ -196,14 +197,14 @@ Q It’s not banned but has kind of become a politically incorrect thing to do
 D PUBLISHED: 2025-08-12T13:30:05+00:00
 N said three people familiar with the situation
 
-@ two-approve press 2026-01-30 No_date_given cn-acts-reuters-deepseek-20260130 row=miit,mofcom col=approved dir=toward
+@ two-approve press 2026-01-30 No_date_given cn-ga31-sv1-reuters-deepseek-yahoo row=miit,mofcom col=approved dir=toward
 T approves four firms' H200 purchases, with the other ministry
 L The industry and commerce ministries approve H200 purchases by four companies (DeepSeek, ByteDance, Alibaba and Tencent), Reuters reports, by two people; the conditions are being decided by the state planner.
-S Reuters, Jan 30, 2026, as carried by Tiger Brokers
+S Reuters, Jan 30, 2026, on Yahoo Finance
 Q China's industry and commerce ministries have granted approvals for all four companies
 Q These conditions are being decided by China's state planner
 D SINGAPORE, Jan 30 (Reuters)
-D 2026-01-30 14:58
+D January 30, 2026
 N China has given its top AI startup DeepSeek approval to buy
 
 # ---- commerce ----
@@ -227,7 +228,7 @@ E go on removing a series of unreasonable economic and trade restrictions on Chi
 D 2025-07-18 13:43
 
 @ mofcom-abroad doc 2026-10-16 - cn-tolerate-mof row=mofcom col=welcomed dir=toward
-T proposes automatic licences for Chinese firms' computing centres abroad
+T proposes automatic licences for tech exports to centres Chinese firms build and run abroad
 L Presenting a draft list put out for comment, the commerce ministry's spokesperson says exports of technology to computing centres that Chinese companies build and run abroad would get automatic licences and other facilitation.
 S Ministry of Commerce, spokesperson's answers on the draft of the commerce and science ministries
 Q 中国企业在境外自建自营算力中心
@@ -260,10 +261,10 @@ N 市场监管总局公告〔2020〕第16号
 T preliminary finding; further investigation
 L The market regulator announces, after a preliminary investigation, a further investigation of Nvidia. The one-sentence notice gives no facts.
 S State Administration for Market Regulation
-Q 经初步调查,英伟达公司违反《中华人民共和国反垄断法》
-E after a preliminary investigation, Nvidia violated the Anti-Monopoly Law
 Q 市场监管总局依法决定对其实施进一步调查
 E the regulator has decided to investigate it further under the law
+Q 经初步调查,英伟达公司违反《中华人民共和国反垄断法》
+E after a preliminary investigation, Nvidia violated the Anti-Monopoly Law
 D 发布时间:2025-09-15
 
 # ---- no body named ----
@@ -319,7 +320,7 @@ L About 600,000 Nvidia chips wait in Hong Kong "as Beijing withholds approval fo
 S Reuters (dateline Nov 5, 2026), as carried by CNA (Singapore)
 Q as Beijing withholds approval for large-scale imports despite demand from technology firms
 Q About 600,000 of Nvidia's advanced artificial intelligence chips are stored in Hong Kong awaiting shipment to China
-D cn-clips-reuters-hongkong-yahoo | Nov 5 () - About 600,000 of Nvidia's advanced
+D cn-clips-reuters-hongkong-yahoo | Nov 5 (Reuters) - About 600,000 of Nvidia's
 D PUBLISHED: 2026-11-06
 
 @ nb-nod press 2026-01-28 No_date_given ms-bj-20260128-h200-nod-standard row=nobody col=approved dir=toward
@@ -350,7 +351,7 @@ D PUBLISHED: 2026-07-08
 
 @ nb-aug18 press 2026-08-18 No_date_given cn-tolerate-reutersaug26-relay1-wayback row=nobody col=approved dir=toward
 T small batches let into the mainland
-L Small batches of H200 chips "have been allowed to enter mainland China": about 10,000 each for ByteDance and Tencent, while "Beijing wants them to keep the hardware outside mainland China", the Financial Times reports. Regulators told companies they could ship the chips to Hong Kong and use them there.
+L Small batches of H200 chips "have been allowed to enter mainland China", the Financial Times reports. Separately, it reports that ByteDance and Tencent "have each received about 10,000 H200 processors in recent weeks", while "Beijing wants them to keep the hardware outside mainland China". Regulators told companies they could ship the chips to Hong Kong and use them there.
 S Financial Times, as relayed by Reuters on Investing.com, Aug 18, 2026
 Q have been allowed to enter mainland China
 Q ByteDance and Tencent have each received about 10,000 H200 processors in recent weeks

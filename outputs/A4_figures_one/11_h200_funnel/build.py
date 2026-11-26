@@ -14,6 +14,10 @@ an order. Both are said on the figure.
 Round 9b (Nov 25, 2026, core edit 8b): the five abroad are those whose ultimate location is outside China; 48.6% also needs
 the further application not returned without action; the 75,000 limit is Reuters's, by two people it did not name; the
 approval of Jan 28, 2026 is the one Reuters reported; no report here says how many H200 chips entered the mainland.
+Round 10 (Nov 25, 2026, core batch 12 and two readers of the public page): the bars are set side by side by what they count,
+not as stages of a sale (title, deck, heading); a press row's date is its report's day of publication; the report of
+Aug 18, 2026 names two buyers and the Hong Kong report speaks of several; the argument's two later accounts that say
+otherwise of the orders (Voice of America's Chinese service, Jan 29, 2026; TechWeb as Sina carries it, Jul 17, 2026).
 Round 5 (Nov 24, 2026, core edits 5 and 6): the licence table is named by its own title and its release, not as the
 Commerce Department's; the committee's example of 445,000 chips for Tencent is not said to be the table's row of 75,000,
 and the share is given both ways (a4lib.house()).
@@ -30,8 +34,9 @@ import a4lib as A   # noqa: E402
 esc, qm, fmt = A.esc, A.qm, A.fmt
 STRIP = {'ordered': 'ordered', 'wapproved': 'Washington’s table', 'wreturned': 'Washington’s table', 'approved': 'Beijing approved',
          'discussed': 'discussed', 'delivered': 'delivered', 'waiting': 'stored'}
-LIST = {'ordered': 'ordered', 'wapproved': 'approved by Washington (status date)', 'wreturned': 'returned by Washington (status date)',
-        'approved': 'approved by Beijing', 'discussed': 'under discussion', 'delivered': 'delivered', 'waiting': 'stored in Hong Kong'}
+# round 10: a press row's date is the day its report was published, not the day of what it reports (the readers' leads 7 to 9)
+LIST = {'ordered': 'orders reported', 'wapproved': 'approved by Washington (status date)', 'wreturned': 'returned by Washington (status date)',
+        'approved': 'Beijing’s approval reported', 'discussed': 'discussion reported', 'delivered': 'deliveries reported', 'waiting': 'stock in Hong Kong reported'}
 NUM = {2: 'two', 3: 'three', 4: 'four', 5: 'five', 6: 'six', 7: 'seven'}
 
 CSS = '''
@@ -89,7 +94,7 @@ def strip(rows):
     last = max(r['date'] for r in rows)
     b = date(last.year + (last.month == 12), last.month % 12 + 1, 1)
     X = lambda d: GL + (d - a).days / (b - a).days * (W - GL - GR)
-    out = [f'<svg viewBox="0 0 {W} {H}" role="img" aria-labelledby="st-t st-d"><title id="st-t">The date of each count</title>'
+    out = [f'<svg viewBox="0 0 {W} {H}" role="img" aria-labelledby="st-t st-d"><title id="st-t">When each count was reported</title>'
            f'<desc id="st-d">{esc("; ".join(str(r["n"]) + " " + LIST[r["key"]] + ", " + fmt(r["date"]) for r in sorted(rows, key=lambda r: (r["date"], r["n"]))))}</desc>',
            f'<line class="ax" x1="{GL}" y1="{AY}" x2="{W - GR}" y2="{AY}"/>']
     d = a
@@ -138,6 +143,10 @@ def main():
     assert cap == H['cap'], 'the largest approved application in the table is not the cap Reuters reported'
     assert H['tencent_status'] == 'Approved, not shipped'
     status, released = fmt(H['status']), fmt(H['released'])
+    # round 10: the two later accounts on the orders (the argument, section 4's opening); the chief executive spoke the day after Reuters's report of the approvals
+    d_ceo, d_tw = A.day(Q, 'orders.ceo'), A.day(Q, 'orders.techweb')
+    assert (d_ceo - R['approved']['date']).days == 1, 'the chief executive\'s words are not of the day after the report of the approvals'
+    assert Q['later.several'].sid == R['waiting']['sid'], 'the report of several buyers is not the Hong Kong report'
 
     under = {
         'ordered': f'{qm(Q["ordered"])}; the report gives this on the word of {qm("two of the people")} it spoke to.',
@@ -149,7 +158,7 @@ def main():
         'approved': f'{qm(Q["approved"])}. {qm(Q["approved.conditions"])}.',
         'discussed': f'{qm(Q["discussed.what"])}; {qm(Q["discussed"])}.',
         'delivered': f'{qm(Q["delivered"])}; {qm(Q["delivered.outside"])}.',
-        'waiting': f'{qm(Q["waiting"])}, {qm(Q["waiting.withholds"])}.',
+        'waiting': f'{qm(Q["waiting"])}, {qm(Q["waiting.withholds"])}. The report calls them {qm(Q["waiting.h200"].split("size of ")[1])}.',
     }
     srclink = {
         'wapproved': lambda r: A.link(r['sid'], f'House Foreign Affairs Committee, summary made public {released}'),
@@ -170,14 +179,15 @@ def main():
     order = ''.join(f'<li><span class="pin {r["dir"]}{" solid" if r["tier"] == "solid" else ""}" aria-hidden="true">{r["n"]}</span><b>{LIST[r["key"]]}</b><span>{fmt(r["date"])}</span></li>' for r in bydate)
     docnums = joined(str(r['n']) for r in docs)
 
-    page = A.head('H200 Funnel', CSS) + f'''<body>
+    # round 10: the title is not "Funnel" (the bars are not stages of one sale)
+    page = A.head(f'H200 In {NUM[len(rows)].capitalize()} Counts', CSS) + f'''<body>
 <div class="wrap">
  <p class="draft">{A.NOTE}</p>
  <div id="fig">
   <header>
    <p class="eyebrow">China · Nvidia’s H200 chip · {A.MON[first.month - 1]} {first.year} to {A.MON[last.month - 1]} {last.year}</p>
    <h1>Reported ordered: more than 2 million H200 chips.<br> Reported delivered: about {per:,} each, to a few buyers.</h1>
-   <p class="deck">{NUM[len(press)].capitalize()} press reports citing unnamed people, and {NUM[len(docs)]} sums from one United States government table of licence applications. They are separate counts, not one tally: they do not add up, and they are listed in the order of a sale, not in the order of their dates. An application names a data-centre operator or ultimate consignee; it is not an order. Bars are drawn to one scale.</p>
+   <p class="deck">{NUM[len(press)].capitalize()} press reports citing unnamed people, and {NUM[len(docs)]} sums from one United States government table of licence applications. They are separate counts, not one tally: they do not add up, and they are not stages of one sale. They are set side by side by what they count, not in date order. An application names a data-centre operator or ultimate consignee; it is not an order. Bars are drawn to one scale.</p>
    <ul class="key">
     <li><i class="sw toward"></i><span><b>Toward Nvidia:</b> ordering it, letting it in</span></li>
     <li><i class="sw away"></i><span><b>Away from Nvidia:</b> holding it back</span></li>
@@ -187,7 +197,7 @@ def main():
    </ul>
   </header>
   <section class="card">
-   <h2>The H200, step by step, in numbers</h2>
+   <h2>The H200 in {NUM[len(rows)]} separate counts</h2>
    <p class="sub">The H200 is the Nvidia chip the United States allowed for sale to approved customers in China. Under each bar: the source’s own words, and how a sum was made.</p>
 {chr(10).join(rr)}
    <div class="onrec"><i class="mk solid"></i><div><p><b>On the record: Nvidia’s own account, in money, not in chips.</b></p>
@@ -199,8 +209,8 @@ def main():
     </ul></div></div>
   </section>
   <section class="card when">
-   <h2>The date of each count</h2>
-   <p class="sub">In date order: {", ".join(str(r["n"]) for r in bydate)}. A later count does not update an earlier one; each counts a different thing. Bars {docnums} give the table’s status on {status}; the table was made public on {released}.</p>
+   <h2>When each count was reported</h2>
+   <p class="sub">In date order: {", ".join(str(r["n"]) for r in bydate)}. Each press report stands at the day it was published, which can be after what it reports: the report of {fmt(delivered["date"])} says the chips were received {qm(Q["delivered"].split("processors ")[1])}. A later count does not update an earlier one; each counts a different thing. Bars {docnums} give the table’s status on {status}; the table was made public on {released}.</p>
 {strip(rows)}
    <ol class="order">{order}</ol>
   </section>
@@ -217,7 +227,9 @@ def main():
    <li>No approved application in the table is above {f(H["cap"])} chips, and all {NUM[H["over"]]} above that number were returned. On {fmt(d_cap)} Reuters, by two people it did not name, reported a limit for each approved buyer: {qm(Q["cap"])}. It also wrote that {qm(Q["cap.nodelivery"])}, and that the {qm(Q["cap.tangle"])}.</li>
    <li>The approval Reuters reported on {fmt(R["approved"]["date"])} was not yet a purchase: a source said {qm(Q["approved.notconverting"])}.</li>
    <li>The possible total of July ({esc(R["discussed"]["shown"][0])} {esc(R["discussed"]["shown"][1])}) was, in the report’s words, {qm(Q["discussed.half"])}.</li>
-   <li>The first report of deliveries names two buyers; by November more are reported: {qm(Q["later.several"])} ({A.link(Q["later.several"].sid, f"Reuters, {fmt(last)}")}).</li>
+   <li>The report of {fmt(delivered["date"])} names two buyers. A later report speaks of several: {qm(Q["later.several"])} ({A.link(Q["later.several"].sid, f"Reuters, {fmt(R['waiting']['date'])}")}).</li>
+   <li>Two later accounts say otherwise of the orders in bar {R["ordered"]["n"]}. Nvidia’s chief executive, the day after the report of Beijing’s approvals, said <span lang="zh-Hans">{qm(Q["orders.ceo"])}</span> (I think the Chinese government is still deciding; we have not yet received purchase orders), as {A.link(Q["orders.ceo"].sid, f"Voice of America’s Chinese service, {fmt(d_ceo)}")}, renders him.
+    TechWeb, as {A.link(Q["orders.techweb"].sid, "Sina carries it")}, reported on {fmt(d_tw)}, from industry insiders it did not name, that <span lang="zh-Hans">{qm(Q["orders.techweb"])}</span> (China’s AI firms had placed almost no bulk purchase orders for Nvidia’s H200). English in round brackets is ours, not an official translation.</li>
    <li>Nvidia’s figures are sums of money, not counts of chips. Neither its call of {fmt(d_q3)} nor Reuters’s report of it says how many of those chips crossed into the mainland.</li>
    <li>No report here says how many H200 chips have entered the mainland. The Hong Kong report says small quantities were shipped by other routes, in its words, {qm(Q["waiting.howmany"].split("routes ")[1])}.</li>
   </ul>
@@ -226,7 +238,7 @@ def main():
 </body>
 </html>
 '''
-    dates = ([fmt(r['date']) for r in rows] + [fmt(d_rec), period, fmt(d_q1), fmt(d_q3), fmt(d_q3end), fmt(d_cap), status, released]
+    dates = ([fmt(r['date']) for r in rows] + [fmt(d_rec), period, fmt(d_q1), fmt(d_q3), fmt(d_q3end), fmt(d_cap), status, released, fmt(d_ceo), fmt(d_tw)]
              + [f'{A.MON[r["date"].month - 1]} {r["date"].day}' for r in rows])
     # ours: the sums of Washington's table and the shares made from them (a4lib.house); the numbers 1 to 7 on the marks;
     # "2 x" for the two buyers named in the sentence; 10: the filing's name, Form 10-Q
@@ -241,7 +253,9 @@ def main():
                    # location; the 48.6% reading needs the further application not returned; the 75,000 limit is reported by two unnamed people;
                    # Beijing's approval is a press report; the negative on the mainland is said of the reports here
                    'names a consignee;', 'applications for consignees in', 'is a further application (our', 'reported that cap', 'Beijing’s approval of',
-                   'entered the mainland is not known'):
+                   'entered the mainland is not known',
+                   # round 10 (readers' leads on the public page): the bars are not stages of a sale; "first" report not tested
+                   'in the order of a sale', 'step by step', 'The first report of deliveries', 'H200 Funnel'):
         assert banned not in page, f'the page still says "{banned}"'
     out = HERE / 'funnel.html'
     out.write_text(page, encoding='utf-8'); print('written', out, len(page), 'bytes')

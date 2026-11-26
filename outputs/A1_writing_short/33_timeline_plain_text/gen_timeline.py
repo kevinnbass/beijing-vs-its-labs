@@ -12,7 +12,7 @@ Writes  timeline_base.txt        the list in the project's small markup, with on
         timeline.txt             the same records as plain lines: date | who | what | source | address
         quote_marks_report.tsv   every quoted phrase in the table: kept (found in the saved copy) or marks taken off
 
-Columns: date = the table's shown_as; who = the table's lane (the row of the figure the record sits in);
+Columns: date = the table's shown_as; row (called who until round 10b) = the table's lane (the row of the figure the record sits in);
 what = the table's text; source = the table's source, then its tier (from the table's kind); address = the table's address.
 Order: the table's date column, then its record number. A record with no exact day (its shown_as holds words, such
 as the warning about traitors) stands where the figure places it, and a note names every such record.
@@ -26,6 +26,8 @@ Quotation marks: the table's text puts curly marks round some words. A phrase ke
 the saved copy of that record's source (scripts/cn_srclib.py: has). Where it does not (English put for Chinese
 words, or a paraphrase), the marks are taken off and the phrase is listed in quote_marks_report.tsv.
 timeline.txt is written only after cn_doc_build.py has passed (exit 0), and that build re-checks every kept phrase.
+Round 10b (Nov 25, 2026): the header names no script and says the list is drawn word for word from the figure's table; the second
+field is called row (it was who); rebuilt from figure_data.txt as builder r12e left it (main figure built 22:41 and 22:44 UTC).
 """
 import re, subprocess, sys
 from pathlib import Path
@@ -169,11 +171,11 @@ def main():
     loose_txt = '; '.join(f'{r["shown_as"]} ({r["source"]})' for r in loose)
     notes = [
         "Draft by Claude, Anthropic's model.",
-        f'Made by a script (gen_timeline.py) from the figure\'s table of records, figure/figure_events.tsv. Nothing was retyped. {len(rows)} records, in date order, from {first} to {last}.',
-        'Each line: date | who | what | source | address. The second field, who, is the row of the figure the record sits in: which side it is about and which way it points. It is not always the speaker.',
+        f'Drawn word for word from the table of records of the project\'s main figure (figure/figure_events.tsv): {len(rows)} records, in date order, from {first} to {last}.',   # round 10b: no script name
+        'Each line: date | row | what | source | address. The second field is the row of the main figure the record sits in: which side it is about and which way it points. It does not name the speaker; the source field does.',
         f'Two tiers, marked at the end of each source: {on_record} records are on the record ({count["doc"]} published documents or officials, {count["rec"]} companies or named people outside government); {count["press"]} are press reports citing unnamed people.',
         'By row: ' + '; '.join(f'{v}, {n}' for v, n in lanes.items()) + '.',
-        f'Words between quotation marks are the source\'s own: all {n_kept} such phrases were found in the saved copy of the record\'s source by the script.'
+        f'Words between quotation marks are the source\'s own: all {n_kept} such phrases were found in the saved copy of the record\'s source.'
         + (f' In {len(off_n)} records the figure\'s line put marks round words that are not in the saved copy (our English for a Chinese word, or a summary); the marks are taken off here.' if off else ''),
         'English given for Chinese sources is ours, not an official translation.',
     ] + ([f'{len(loose)} records have no exact day, and their date field carries the figure\'s own words: {loose_txt}. Each stands in the list where the figure places it; that place is not a date.'] if loose else [])
@@ -181,7 +183,7 @@ def main():
     if any('"' in n for n in notes): sys.exit('a note holds a straight double quote')
     base_notes = notes
     base = ['# The record as a dated list', f'@deck {len(rows)} dated records of what Chinese authorities did about Nvidia chips and what China\'s AI companies did, as plain lines for pasting.', '']
-    base += [f'@note {n}' for n in base_notes] + ['', '| date | who | what | source | address |']
+    base += [f'@note {n}' for n in base_notes] + ['', '| date | row | what | source | address |']
     for r in rows:
         base += [f'!! {r["saved_id"]} | {q}' for q in hidden[r['n']]]      # a record's check lines stand above its own row, never beside the next record's date
         base.append(f'| {r["shown_as"]} | {r["lane"]} | {r["what"]} | {r["src"]} | {r["address"]} |')
@@ -195,7 +197,7 @@ def main():
     if p.returncode != 0:
         print(p.stderr.strip()); sys.exit('cn_doc_build.py did not pass: timeline.txt NOT written')
 
-    txt = [f'The record as a dated list: {len(rows)} records, {first} to {last}', ''] + notes + ['', 'date | who | what | source | address']
+    txt = [f'The record as a dated list: {len(rows)} records, {first} to {last}', ''] + notes + ['', 'date | row | what | source | address']
     txt += [' | '.join((r['shown_as'], r['lane'], r['what'], r['src'], r['address'])) for r in rows]
     (HERE / 'timeline.txt').write_text('\n'.join(txt) + '\n', encoding='utf-8')
 

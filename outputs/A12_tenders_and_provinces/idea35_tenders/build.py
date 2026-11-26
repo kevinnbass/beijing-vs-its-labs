@@ -22,7 +22,7 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 ROOT = Path('.')
 PRIMARY = ROOT / 'research' / 'primary'
-CLASSES = OrderedDict([('N', 'names Nvidia hardware'), ('H', 'names home-made accelerator hardware'), ('S', 'names no accelerator by maker or model')])
+CLASSES = OrderedDict([('N', 'names Nvidia hardware'), ('H', 'names or asks for home-made accelerator hardware'), ('S', 'names no accelerator by maker or model')])
 
 
 def load():
@@ -170,6 +170,16 @@ def main():
     if with_nv != ['cn-ga31-carrierown-14']: sys.exit(f'carriers_own_notices.tsv: pages with Nvidia words are {with_nv}, not the one the note names: read them and change the note')
     if not any(not own_cls(x['who_states']) and x['nvidia_words_on_page'].strip() not in ('none', '') for x in cr): sys.exit('carriers_own_notices.tsv: control: no relay page holds Nvidia words')
     fill['N_CARR_PAGES'] = len(pages); fill['N_CARR_PAGES_NONE'] = len(pages) - len(with_nv)
+    # round 10: the pages the rows of own notices rest on (several rows share a page), so the note can say how 34 rows relate to 33 pages
+    fill['N_CARR_OWN_PAGES'] = len({x['saved_id'].split(';')[0].strip() for x in cr if x['who_states'].startswith("carrier's own notice")})
+    print(f'carriers\' own notices: {fill["N_CARR_OWN"]} rows on {fill["N_CARR_OWN_PAGES"]} pages')
+    # round 10: negatives the note states, each with a control that the same search can find a hit
+    def _none(sid, words, ctl_sid, ctl_word):
+        pg = L.page(sid).lower(); hits = [w for w in words if w.lower() in pg]
+        if hits or ctl_word.lower() not in L.page(ctl_sid).lower(): sys.exit(f'negative on {sid}: {hits} / control {ctl_word} in {ctl_sid}: {ctl_word.lower() in L.page(ctl_sid).lower()}')
+        print(f'{sid}: none of {", ".join(words)}; control {ctl_word} found in {ctl_sid}')
+    _none('cn-le17-c114-w118-1321457', ['昇腾', '英伟达', 'NVIDIA', 'CANN', 'CUDA', '鲲鹏', '芯片', '寒武纪', '海光', '昆仑'], 'cn-le17-c114-w3542-1307004', 'CANN')
+    _none('cn-policy-server-procurement-2023', ['加速', 'GPU', '显卡', 'NPU', '人工智能'], 'cn-o35-ccgp-lnust-202511', 'GPU')
     print(f'carriers\' own notices (core table): {fill["N_CARR_OWN"]} rows; {fill["N_CARR_PAGES_NONE"]} of {fill["N_CARR_PAGES"]} pages of own notices, filing, news page and sites\' records with no Nvidia word; the other {with_nv[0]}; control: a relay page holds them')
     for y in years:
         for k in CLASSES: fill[f'C_{y}_{k}'] = c[(y, k)]
@@ -197,9 +207,9 @@ def main():
     fill['TABLE_H'] = table(H)
     fill['TABLE_S'] = table(S)
     # each cell carries its own label: at phone width the page hides the header row and stacks the cells
-    ct = ['| Year | Names Nvidia hardware | Names home-made accelerator hardware | Names no accelerator | All |']
-    for y in years: ct.append(f'| {y} | Nvidia: {c[(y, "N")]} | Home-made: {c[(y, "H")]} | No accelerator: {c[(y, "S")]} | All: {fill[f"C_{y}_ALL"]} |')
-    ct.append(f'| All three years | Nvidia: {len(N)} | Home-made: {len(H)} | No accelerator: {len(S)} | All: {len(rows)} |')
+    ct = ['| Year | Names Nvidia hardware | Names or asks for home-made accelerator hardware | Names no accelerator maker or model | All |']      # round 10: the classes' words as the note's method gives them
+    for y in years: ct.append(f'| {y} | Nvidia: {c[(y, "N")]} | Home-made: {c[(y, "H")]} | No maker or model: {c[(y, "S")]} | All: {fill[f"C_{y}_ALL"]} |')
+    ct.append(f'| All three years | Nvidia: {len(N)} | Home-made: {len(H)} | No maker or model: {len(S)} | All: {len(rows)} |')
     fill['TABLE_COUNT'] = '\n'.join(ct)
 
     t = (HERE / 'note_template.txt').read_text(encoding='utf-8')
@@ -215,7 +225,7 @@ def main():
     (HERE / 'extra_refs.tsv').write_text('\n'.join(refs) + '\n', encoding='utf-8')
 
     p = subprocess.run([sys.executable, '-I', str(ROOT / 'scripts/cn_doc_build.py'), str(HERE / 'tenders_note_base.txt'), '--refs', str(HERE / 'extra_refs.tsv'),
-                        '--title', 'Purchase Notices Sample', '--eyebrow', 'China chip policy: idea 35, purchase notices'], capture_output=True, text=True)
+                        '--title', 'Purchase Notices Sample', '--eyebrow', 'China chip policy: purchase notices'], capture_output=True, text=True)
     print(p.stdout.strip()); print(p.stderr.strip())
     sys.exit(p.returncode)
 

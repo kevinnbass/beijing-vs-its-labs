@@ -89,7 +89,7 @@ def number(evs):
 W, GL, GR = 1400, 216, 26
 A, BK, C = date(2023, 1, 1), date(2025, 1, 1), date(2026, 12, 1)
 FRAC, R, PITCH = 0.15, 10, 23
-FLAGS = ((date(2025, 7, 15), 'Jul 2025 · US clears H20 sales again', 'end'), (date(2025, 12, 8), 'Dec 8, 2025 · US allows the H200', 'start'),
+FLAGS = ((date(2025, 7, 15), 'Jul 2025 · US clears H20 sales again', 'end'), (date(2025, 12, 8), 'Dec 8, 2025 · US says it will allow H200', 'start'),   # round 10: the core's label since 22:44 UTC, Nov 25, 2026 (r12e)
          (date(2026, 11, 17), 'Nov 17, 2026 · H200 shipments stop', 'end'))
 VX, VY = GL - 12, 8                                # the video crops the figure's left gutter and a little of its top margin: the view starts here
 
@@ -202,11 +202,11 @@ def geom_json():
 
 # ---------- quotations behind what the strip shows ----------
 EXTRA = (  # words on the strip that a record's own "Q" line does not carry: (saved id, the page's words, what they back)
-    ('cn-acts-reuters-deepseek-20260130', "These conditions are being decided by China's state planner", 'the label "conditional approval"'),
+    ('cn-ga31-sv1-reuters-deepseek-yahoo', "These conditions are being decided by China's state planner", 'the label "conditional approval" (Reuters, Jan 30, 2026, on Yahoo Finance; the core cites this open copy since CORE BATCH 12)'),
     ('cn-policy-tencent-us-curbs-relay1', 'following new moves by the United States to restrict chip supplies to China', 'the label "after US curbs"'),
     ('man-cn-factions-wsj-ding', 'Last summer, top Chinese chip developer Huawei Technologies held a closed-door', 'the "traitor" mark stands after a briefing of summer 2025; the report gives no date for the warning'),
     ('man-cn-factions-wsj-ding', 'according to people familiar with the message', 'the same mark: an open mark'),
-    ('cn-clips-followup-3-relay1', 'December 8, 2025', 'the dashed line "Dec 8, 2025 · US allows the H200": its date'),
+    ('cn-clips-followup-3-relay1', 'December 8, 2025', 'the dashed line "Dec 8, 2025 · US says it will allow H200": its date'),
     ('cn-acts-reuters-halt-20261118-relay2', 'Nov 18 (Reuters)', 'the dashed line "Nov 17, 2026 · H200 shipments stop": the report is of Wednesday Nov 18'),
     ('cn-acts-reuters-halt-20261118-relay2', 'said during an earnings call on Tuesday', 'the same line: the call was the day before, Nov 17'),
     ('cn-o38-nvda-q3fy27-call-transcript-pdf', 'we are no longer shipping licensed Hopper Data Center products to China', "the same line, in Nvidia's own transcript of the call (no reason is given there: none is shown)"),
@@ -387,7 +387,10 @@ body { margin:0; background:var(--page); color:var(--ink); font-family:var(--fon
 .stage #count, .stage #tally { color:var(--ink2); font-weight:500; font-variant-numeric:tabular-nums; }
 .stage .card { position:absolute; background:var(--surface); border:1px solid var(--border); border-radius:12px; }
 .stage .card svg { position:absolute; display:block; }
-.stage svg text { font-family:var(--font-text); }
+.stage svg text { font-family:var(--font-text); text-rendering:geometricPrecision; }
+/* round 10: geometricPrecision keeps the strip's words in proportion when the page scales the 1280 frame down (phone
+   view, scale about 0.28): without it the browser rounds each small glyph's width up, and the Dec 8 label ran 2 px into
+   the Nov 17 label at 390 px (scratch_r10/test_gp.py). */
 .era { fill:var(--wash); }
 .grid { stroke:var(--grid); stroke-width:1; } .grid.yr { stroke:var(--axis); }
 .tick { font-size:12px; font-weight:500; fill:var(--muted); } .tick.yr { fill:var(--ink2); font-weight:600; }

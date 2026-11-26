@@ -2,10 +2,10 @@
 @deck Ten posts for X. Each is one claim with its source named in words, and each fits in 280 characters.
 
 @note Draft by Claude, Anthropic's model.
-@note Written Nov 23, 2026 (UTC). Nothing here has been posted. The same posts as plain text, each with its source's address, the character counts and a note on images, are in thread_plain.txt beside this file.
-@note Words between quotation marks are a source's exact words, found in its saved copy by a script. Where a post gives a Chinese source in English without quotation marks, the English is ours, not an official translation. A filled number is a document, a filing or a named person on the record. An open number is a press report citing unnamed people, or a caption track or machine transcript.
+@note Written Nov 23, 2026; revised Nov 25, 2026 (UTC). Nothing here has been posted. The same posts as plain text, each with its source's address, the character counts and a note on images, are in thread_plain.txt beside this file.
+@note Words between quotation marks are a source's exact words, found in its saved copy by a script. Where a post gives a Chinese source in English without quotation marks, the English is ours, not an official translation. The key under this header says what a filled and an open reference number mean.
 @note Post 1 quotes Palmer Luckey from two places. The first sentence is from a machine transcript of the clip, at 0:11. The second is from the text of the post that carries the clip; that text begins the sentence with the word Like, and so does a second machine transcript. Nobody has checked either by ear. Post 9 quotes the US Trade Representative from a video's caption track, at 5:59; nobody has checked that by ear either.
-@note Order: the claim, the declared line, what the companies bought, what Beijing did, the five limits, the sentence that survives. The numbers stand in limit 3 (post 7), which is a limit about numbers.
+@note Order: the claim, the declared line, what the companies used, what Beijing did, the five limits, the sentence that survives. The numbers stand in limit 3 (post 7), which is a limit about numbers.
 
 ## The posts
 
@@ -19,7 +19,7 @@
 !! cn-policy-ndrc-chip-adaptation-2026 | 李超 2026/05/22 政研室
 !! cn-policy-ndrc-chip-adaptation-2026 | 国家发展改革委5月份新闻发布会
 
-3. What the companies bought: Nvidia. A Shanghai government body wrote (reply dated Apr 30, 2025; published Nov 10, 2025) that in the city internet firms' own clusters run mainly on Nvidia cards, while the three big telecoms mainly buy Huawei's and other home-made clusters. [cn-counter-b11-5]
+3. What the companies used: Nvidia. A Shanghai government body wrote (reply dated Apr 30, 2025; published Nov 10, 2025) that in the city internet firms' own clusters run mainly on Nvidia cards, while the three big telecoms mainly buy Huawei's and other home-made clusters. [cn-counter-b11-5]
 !! cn-counter-b11-5 | 互联网企业自建算力集群
 !! cn-counter-b11-5 | 主要以英伟达高性能卡为主
 !! cn-counter-b11-5 | 三大运营商主要购置华为等国产化智算集群
@@ -35,32 +35,35 @@
 
 6. Limit 2: warnings and guidance, not a published ban. Bloomberg, Sept 27, 2024, citing unnamed people: "The policy has taken the form of guidance rather than an outright ban". In 82 Chinese policy pages read, no published order against buying Nvidia chips was found. [cn-factions-bloomberg-flexibility-202409-relay1]
 
-7. Limit 3, in numbers: some were approved, some came in. Reuters, from unnamed people: over 2 million H200s ordered for 2026; over 400,000 approved by Beijing with conditions; about 10,000 each obtained by several firms; about 600,000 stored in Hong Kong awaiting shipment. [cn-labs-h200-two-million-202512-relay1-wayback] [ms-bj-20260128-h200-nod-standard] [cn-clips-evidence-1]
+7. Limit 3: some were approved, some came in. Press reports from unnamed people: over 2 million H200s ordered for 2026, over 400,000 approved by Beijing with conditions, about 600,000 stored in Hong Kong (Reuters); about 10,000 each to ByteDance and Tencent (FT, via Reuters). [cn-labs-h200-two-million-202512-relay1-wayback] [ms-bj-20260128-h200-nod-standard] [cn-clips-evidence-1] [cn-tolerate-reutersaug26-relay1-wayback]
 !! cn-labs-h200-two-million-202512-relay1-wayback | have placed orders for more than 2 million H200 chips for 2026
 !! ms-bj-20260128-h200-nod-standard | have been approved to purchase more than 400,000 H200 chips in total
 !! ms-bj-20260128-h200-nod-standard | The Chinese government is only granting approvals with conditions
 !! cn-clips-evidence-1 | About 600,000 of Nvidia's advanced artificial intelligence chips are stored in Hong Kong awaiting shipment to China
-!! cn-clips-evidence-1 | Several major Chinese internet companies have each obtained about 10,000 H200 chips in the past few months
 !! cn-clips-evidence-1 | two people familiar with the matter said
+!! cn-tolerate-reutersaug26-relay1-wayback | ByteDance and Tencent have each received about 10,000 H200 processors in recent weeks
+!! cn-tolerate-reutersaug26-relay1-wayback | the Financial Times reported on Tuesday, citing two people with knowledge of the matter
 
 8. Limit 4: the companies had reasons of their own, and US export curbs pushed too. Tencent's president, on a results call in November 2023, after new US curbs: "we will also try to look for domestic source for these training chips" (as Reuters reported the call). [cn-policy-tencent-us-curbs-relay1]
 !! cn-policy-tencent-us-curbs-relay1 | Tencent president Martin Lau said on a call with analysts
 !! cn-policy-tencent-us-curbs-relay1 | following new moves by the United States to restrict chip supplies to China
 
-9. Limit 5: what Beijing meant is not settled. A US commission's 2025 report to Congress read the regulator's Nvidia move "as a negotiating tactic". The US Trade Representative, May 15, 2026: buying is "a sovereign decision for China" (captions at 5:59, not checked by ear). [cn-usdocs-uscc-2025-ch1] [cn-le01-greer-bbg-20260515-subs-ttml]
+9. Limit 5: what Beijing meant is unsettled. A US commission's report to Congress read the market regulator's Nvidia move "as a negotiating tactic". The US Trade Representative, asked May 15, 2026 if China would let firms buy H200s: "a sovereign decision for China" (captions). [cn-usdocs-uscc-2025-ch1] [cn-le01-greer-bbg-20260515-subs-ttml]
 !! cn-usdocs-uscc-2025-ch1 | signaling China's willingness to both exert leverage and ease pressure as a negotiating tactic
 !! cn-usdocs-uscc-2025-ch1 | The move coincided with SAMR dropping its anti-trust probe into Google
+!! cn-usdocs-uscc-2025-ch1 | U.S.-China Economic and Security Review Commission
+!! cn-usdocs-uscc-2025-ch1 | State Administration for Market Regulation
 !! cn-le01-greer-bbg-20260515-subs-ttml | Will China allow their companies to buy them?
 !! cn-le01-greer-bbg-20260515-subs-ttml | gonna be a sovereign decision for China
 
-10. What survives all five: from 2024 the security and planning side of the Chinese state pressed its AI companies, mostly by unpublished guidance, off Nvidia chips. The companies kept ordering them and, by the reports, got a small part. What Beijing meant is read two ways.
+10. What survives: from 2024 China's planning side and industry ministry, and from 2025 its security side, pressed its AI firms off Nvidia chips, by guidance the press reported. The firms kept ordering and, by the reports, got a small part. What Beijing meant is not settled.
 
 ## What the thread leaves out
 
-- It gives one source for each claim; posts 7 and 9 need more than one. The full argument has 21 points and 395 sources; it is in ARGUMENT_referenced.html in the project folder.
-- With five limits and ten posts, the numbers have no post of their own: they stand in limit 3 (post 7). That post carries four reported numbers from three Reuters reports, of Dec 31, 2025, Jan 28, 2026 and Nov 5, 2026. The copy the post cites for the last is CNA's page, which shows only its own date, Nov 6, 2026; Reuters's dateline of Nov 5 stands on Yahoo's copy of the same report, also saved.
+- It gives one source for each claim; posts 7 and 9 need more than one. The full argument has 21 points and 460 sources; it is the project's argument page, ARGUMENT_referenced.html.
+- With five limits and ten posts, the numbers have no post of their own: they stand in limit 3 (post 7). That post carries four reported numbers: three from Reuters reports of Dec 31, 2025, Jan 28, 2026 and Nov 5, 2026, and one from the Financial Times as Reuters relayed it on Aug 18, 2026. The copy the post cites for the report of Nov 5 is CNA's page, which shows only its own date, Nov 6, 2026; Reuters's dateline of Nov 5 stands on Yahoo's copy of the same report, also saved.
 - Washington's side is left out for length: the conditions it set, and its own table of licence applications, which shows chips approved and not shipped and others returned without action. The argument sets them out under its fourth limit.
 - Post 6 names one press report. The public warnings in state media, and the dates they fall between, are in the argument's points 4 and 18.
-- Post 10 is a shorter form of the argument's last sentence. It drops the public warnings, the parts of the state that welcomed Nvidia and approved some purchases, and the companies' own turn to home-made chips; posts 5 to 8 carry them.
+- Post 10 is a shorter form of the argument's last sentence; its last words are limit 5's. It drops the public warnings, the parts of the state that welcomed Nvidia and approved some purchases, and the companies' own turn to home-made chips; posts 5 to 8 carry them.
 - No recording has been checked by ear: not the clip in post 1, and not the interview in post 9.
 !! cn-clips-evidence-1 | 06 Nov 2026 11:47AM

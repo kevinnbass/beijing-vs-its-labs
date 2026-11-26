@@ -1,7 +1,7 @@
 # Data for the tracker page (build.py in the folder above reads this file; add_record.py appends to it).
-# A copy of the data file of the figure "Beijing vs. its labs", taken again on Nov 25, 2026 after core edits 8 and 8b
-# (the copy as taken: data/archive/figure_data.as_copied_20261125_edit8.txt; no script reads data/archive/). The copy
-# before this one is data/figure_data.before-edit8-20261125.txt. Every change is a line of tracker_log.tsv.
+# A copy of the data file of the figure "Beijing vs. its labs", taken again on Nov 25, 2026 after the core's batch of 22:33 UTC
+# (the copy as taken: data/archive/figure_data.as_copied_20261125_r10.txt; no script reads data/archive/). The copy
+# before this one is data/figure_data.before-r10-20261125.txt. Every change is a line of tracker_log.tsv.
 # One block per dated event:
 #   @ LANE KIND DATE DATELABEL SAVED-ID
 #   T  the line shown in the figure (my words)
@@ -160,9 +160,9 @@ T Conditional approval for ByteDance, Alibaba and Tencent to buy more than 400,0
 S Reuters, on The Standard (Hong Kong)
 Q have been approved to purchase more than 400,000 H200 chips in total
 
-@ BL press 2026-01-30 - cn-acts-reuters-deepseek-20260130
+@ BL press 2026-01-30 - cn-ga31-sv1-reuters-deepseek-yahoo
 T Industry and commerce ministries have approved DeepSeek, ByteDance, Alibaba and Tencent; the conditions "are being decided" by the state planner
-S Reuters, on Tiger Brokers
+S Reuters, on Yahoo Finance
 Q China's industry and commerce ministries have granted approvals for all four companies
 C start 14 4 conditional approval
 
@@ -254,7 +254,7 @@ E migration is costly and adaptation slow
 
 
 @ CN doc 2026-07-30 - cn-acts-mofcom-inquiry-20260819
-T A company asks the commerce ministry, on its public message board, how to import H200s lawfully; the reply speaks only of exports
+T A company asks the commerce ministry, on its public message board, how to import H200s lawfully; the reply speaks only of exporters
 S Ministry of Commerce message board (reply of Aug 19, 2026)
 Q 我司计划合规进口H200数据中心GPU
 E our company plans to import H200 data-centre GPUs in compliance
@@ -361,8 +361,8 @@ Q our cloud business today is primarily running inference
 
 
 @ BH doc 2025-08-10 - cn-le13-yuyuan-qq-20250810b
-T State broadcaster's account: the H20 is neither green, advanced nor safe, and as consumers we can of course choose not to buy it
-S Yuyuan Tantian (China Media Group), on its own Tencent News channel
+T Yuyuan Tantian (玉渊谭天): the H20 is neither green, advanced nor safe, and as consumers we can of course choose not to buy it
+S Yuyuan Tantian (玉渊谭天), on its own Tencent News channel
 Q 作为消费者,我们当然可以选择,不买
 E as consumers we can of course choose not to buy
 
@@ -466,7 +466,7 @@ Q no matter when you actually started leasing or building capacities outside of 
 ! cn-xi-round-f-6 | 苹果公司、英伟达公司、Meta公司
 ! cn-le17-buaa-61901-6000d | 品牌 NVIDIA 规格型号 RTX PRO 6000D
 ! cn-le17-whu-131281 | Nvidia 6000D 84GB显存
-! cn-acts-reuters-deepseek-20260130 | These conditions are being decided by China's state planner
+! cn-ga31-sv1-reuters-deepseek-yahoo | These conditions are being decided by China's state planner
 ! cn-tolerate-reutersaug26-relay1-wayback | Chinese regulators have told companies they can ship the processors to Hong Kong
 ! cn-tolerate-mof | 公开征求意见
 ! cn-tolerate-mof | 适用自动许可等便利措施
@@ -541,7 +541,7 @@ Q no matter when you actually started leasing or building capacities outside of 
 ! cn-le25-zhejiang-ai-measures-2025-smartcity | 2025年4月17日
 ! cn-against2-isc-supply-risk-20241203 | 并积极使用内外资企业在华生产制造的芯片
 ! cn-le14-itsec-scope-20230727 | 送测单位应为中国境内注册的实体
-! cn-acts-reuters-deepseek-20260130 | China has given its top AI startup DeepSeek approval to buy
+! cn-ga31-sv1-reuters-deepseek-yahoo | China has given its top AI startup DeepSeek approval to buy
 # Panels: share, revenue, inside Beijing, notes
 ! cn-le08-enflame-final-prospectus | 2025年中国AI加速卡整体出货规模约400万张,其中英伟达以约220万张出货量占据约55%的市场份额
 ! cn-le08-enflame-final-prospectus | 根据IDC数据和发行人销售量情况

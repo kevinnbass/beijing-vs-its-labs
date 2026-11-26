@@ -175,9 +175,9 @@ S 路透社，载于香港《英文虎报》（The Standard）
 Q have been approved to purchase more than 400,000 H200 chips in total
 Z 已获准购买合计超过40万枚H200芯片
 
-@ BL press 2026-01-30 - cn-acts-reuters-deepseek-20260130
+@ BL press 2026-01-30 - cn-ga31-sv1-reuters-deepseek-yahoo
 T 工业和商务两个主管部门已批准DeepSeek、字节跳动、阿里巴巴和腾讯四家企业；条件正由国家发展改革委确定（原文："are being decided"）
-S 路透社，载于老虎证券（Tiger Brokers）
+S 路透社，载于雅虎财经（Yahoo Finance）
 Q China's industry and commerce ministries have granted approvals for all four companies
 Z 中国的工业和商务主管部门已批准全部四家企业
 C start 14 4 有条件批准
@@ -507,7 +507,7 @@ Z 不论你实际上何时开始在中国境外租用或建设算力
 ! cn-xi-round-f-6 | 苹果公司、英伟达公司、Meta公司
 ! cn-le17-buaa-61901-6000d | 品牌 NVIDIA 规格型号 RTX PRO 6000D
 ! cn-le17-whu-131281 | Nvidia 6000D 84GB显存
-! cn-acts-reuters-deepseek-20260130 | These conditions are being decided by China's state planner
+! cn-ga31-sv1-reuters-deepseek-yahoo | These conditions are being decided by China's state planner
 ! cn-tolerate-reutersaug26-relay1-wayback | Chinese regulators have told companies they can ship the processors to Hong Kong
 ! cn-tolerate-mof | 公开征求意见
 ! cn-tolerate-mof | 适用自动许可等便利措施
@@ -582,7 +582,7 @@ Z 不论你实际上何时开始在中国境外租用或建设算力
 ! cn-le25-zhejiang-ai-measures-2025-smartcity | 2025年4月17日
 ! cn-against2-isc-supply-risk-20241203 | 并积极使用内外资企业在华生产制造的芯片
 ! cn-le14-itsec-scope-20230727 | 送测单位应为中国境内注册的实体
-! cn-acts-reuters-deepseek-20260130 | China has given its top AI startup DeepSeek approval to buy
+! cn-ga31-sv1-reuters-deepseek-yahoo | China has given its top AI startup DeepSeek approval to buy
 # Panels: share, revenue, inside Beijing, notes
 ! cn-le08-enflame-final-prospectus | 2025年中国AI加速卡整体出货规模约400万张,其中英伟达以约220万张出货量占据约55%的市场份额
 ! cn-le08-enflame-final-prospectus | 根据IDC数据和发行人销售量情况

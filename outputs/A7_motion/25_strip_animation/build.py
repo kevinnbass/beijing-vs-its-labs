@@ -17,7 +17,7 @@ Counts and mark numbers shown (records, filled, open, the marks named in the not
 file, not typed. Layout since round 4 (61 records): the key stands in a column at the right of the strip, inside its
 card, and the strip is drawn at about 0.9 of the figure's size (see ../a7lib.py, card_layout).
 """
-import json, sys
+import json, re, sys
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
@@ -92,7 +92,14 @@ def main():
 <div class="foot" id="foot"><p><b>Read with care.</b> Open marks rest on unnamed people; in the answers found, no Chinese authority confirmed any of them. No published Chinese order against buying Nvidia chips was found in the policy pages and national document lists read. Marks {not_nv[0]} and {not_nv[1]} are not about Nvidia; marks {case[0]} and {case[1]} are an antitrust case against Nvidia the company. The records are a selection made to show both sides, not a census: the count of marks in a row is not a measure. The exceptions on each side are drawn too: Beijing sometimes let chips in, and the companies also turned to home-made ones.</p>
 <p><b>Source.</b> One mark for each of {total} dated records, 2023 to November 2026. A script found each record’s own words in a saved copy of its source. The numbers on the marks are those of the figure “Beijing vs. its labs”, which lists every record.</p></div>
 <p class="draft" id="draft">Draft by Claude, Anthropic’s model.</p>"""
-    below = f"""  <p>The dated strip as a short silent animation: the {total} marks appear in date order while the date runs at the top right. This page draws any moment of it; the video files beside it were captured from this page frame by frame.</p>
+    # round 10 (the session's ruling, Nov 25, 2026): the frame carries the credit only; words saying the copy is local or
+    # unpublished are untrue of a public copy, and a release cannot reach pixels. They must never be drawn into the frame.
+    def frame_says_local(st):                     # the credit line names no local or unpublished state; nothing in the frame says "not published" or "Local;"
+        draft = re.search(r'<p class="draft" id="draft">(.*?)</p>', st, re.S).group(1).lower()
+        return [w for w in ('local', 'publish') if w in draft] + [w for w in ('local; not published', 'not published.', 'local;') if w in st.lower()]   # caption 4 says "not published policy": that stays
+    if frame_says_local(stage): sys.exit(f'the frame says {frame_says_local(stage)}: it carries the credit only')
+    assert frame_says_local(stage.replace('model.</p>', 'model.</p>')), 'control: the old credit line must be refused'
+    below = f"""  <p>The dated strip as a short silent animation: the {total} marks appear in date order while the date runs at the top right. This page draws any moment of it; the video files beside it were captured from this page frame by frame. No one has yet watched them play through: they were checked by script and as still frames.</p>
   <p>The video file, <code>strip_animation.mp4</code> (1280 by 720, no sound):</p>
   <video data-src="strip_animation.mp4" controls muted playsinline preload="metadata" width="1280" height="720"></video>
   <p>For a post: <code>strip_animation.gif</code> or <code>strip_animation.webp</code> (both 1280 by 720).</p>

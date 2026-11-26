@@ -458,6 +458,21 @@ def main():
     r5 = next(r for r in recs if r['dir'] == 'us')
     assert f'{sum_ab:,}' in r5['T'] and f' {WORDS[n_ab]} applications' in r5['T'] and f'All {WORDS[n_ab]} ' in r5['T'] and r5['P'] == 'Malaysia, Indonesia and Thailand', (n_ab, sum_ab)
     assert all(r['group'] == 'out' and not r['solid'] for r in recs if r['dir'] == 'away'), 'the key describes the orange record as chips waiting'
+    # round 10 (Nov 25, 2026): the headline, deck and key name outlets, dates and record numbers; each is checked here against the records
+    press_out = [(r['sid'], r['date'].isoformat(), r['S'].split(',')[0]) for r in recs if r['group'] == 'out' and r['status'] == 'there']
+    assert press_out == [('cn-clips-evidence-1', '2026-11-05', 'Reuters'), ('cn-tolerate-ft-offshore', '2025-11-27', 'Financial Times'),
+                         ('man-cn-ft-202512-japan', '2025-12-20', 'Financial Times')], f'the deck names these three reports, their outlets and dates: {press_out}'
+    paper = [r for r in recs if r['kind'] == 'paper']
+    assert [(r['date'].isoformat(), r['dir']) for r in paper] == [('2026-05-07', 'toward'), ('2026-05-11', 'us')], 'the deck dates the firm\'s notice and the licence table'
+    ds = [r for r in recs if r['kind'] == 'paper' and r['dir'] == 'toward']
+    assert len(ds) == 1 and 'does not name the customer' in ds[0]['T'] and '大阪府から千葉県' in ds[0]['Q'], 'the deck and the blue key describe this one notice'
+    assert all(r['S'].split(',')[0].split(' ')[0] in ('Reuters', 'Bloomberg') for r in recs if r['group'] == 'plan'), 'the deck says the plans are as Reuters and Bloomberg report them'
+    th = next(r for r in recs if r['group'] == 'there')
+    assert th['sid'] == 'cn-tolerate-projects-relay1' and th['date'].isoformat() == '2026-11-13' and 'municipal government said in March 2025' in th['Q'], 'the deck names this report, its date and the city government'
+    aw = [r for r in recs if r['dir'] == 'away']
+    assert [(r['sid'], r['S'].split(',')[0]) for r in aw] == [('cn-clips-evidence-1', 'Reuters')] and 'two people' in aw[0]['Q'], 'the orange key names Reuters and two unnamed people'
+    nums = [str(r['n']) for r in paper]
+    c.update(out_or_plan=c['out'] + c['plan'], solid_rep=c['solid'] - c['paper'])
     assert max(c.values()) < len(WORDS)
     lo, hi = min(r['date'] for r in recs), max(r['date'] for r in recs)
     svg, st = build_map(recs)
@@ -470,7 +485,9 @@ def main():
              'N_REC': WORDS[c['rec']].capitalize(), 'N_SRC': WORDS[c['src']], 'N_OUT_PRESS': WORDS[c['out_press']].capitalize(), 'N_OUT_PAPER': WORDS[c['out_paper']].capitalize(),
              'N_PLAN': WORDS[c['plan']].capitalize(), 'N_THERE': WORDS[c['there']].capitalize(), 'N_US': str(c['us']), 'N_PAPER': WORDS[c['paper']], 'N_PAPER_CAP': WORDS[c['paper']].capitalize(),
              'N_AWAY': str(c['away']), 'N_TOWARD': str(c['toward']), 'N_CIRCLE': str(c['circle']), 'N_DIAMOND': str(c['diamond']),
-             'N_SOLID': str(c['solid']), 'N_HOLLOW': str(c['hollow'])}
+             'N_SOLID': str(c['solid']), 'N_HOLLOW': str(c['hollow']),
+             'N_OUT_OR_PLAN': WORDS[c['out_or_plan']], 'N_SOLID_REP': WORDS[c['solid_rep']], 'REC_DS': str(ds[0]['n']),
+             'PAPER_NUMS': ', '.join(nums[:-1]) + ' and ' + nums[-1]}
     for k, v in sorted(parts.items(), key=lambda kv: -len(kv[0])):          # longer names first: N_PAPER_CAP before N_PAPER
         assert f'%%{k}%%' in page, k
         page = page.replace(f'%%{k}%%', v)

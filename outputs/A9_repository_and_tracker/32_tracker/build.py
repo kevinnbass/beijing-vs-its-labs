@@ -30,6 +30,8 @@ Round 8 (core edit 7, Nov 25, 2026): a record of the figure's data file may carr
 figure (record 62 keeps 62 though it stands at its date among the others). This page shows no record numbers, so the
 line is read (as scripts/cn_figure_build.py reads it) and checked only to be a whole number given to one record;
 a record added here with add_record.py takes no "N" line.
+Round 10 (Nov 25, 2026): the label of a "doc" record and the key's filled mark name published state media, as the figure's
+key does; "Who is who" says what the four rows hold and what the records call home-made chips (readers' leads, round10_work).
 """
 import html, re, subprocess, sys
 from datetime import date
@@ -45,7 +47,7 @@ MON = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sept', 'Oct', 'N
 MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
 LANES = {'BH': ('Beijing', 'holds Nvidia back', 'away'), 'BL': ('Beijing', 'lets Nvidia in', 'toward'),
          'CN': ('The companies', 'reach for Nvidia', 'toward'), 'CH': ('The companies', 'turn to home-made chips', 'away')}
-KINDS = {'doc': 'On the record: a government document or an official', 'rec': 'On the record: a company or a named person outside government',
+KINDS = {'doc': 'On the record: a government document, an official or published state media', 'rec': 'On the record: a company or a named person outside government',
          'press': 'Press report citing unnamed people'}
 CITE = re.compile(r'\[((?:cn|ms|man|cnpol)-[A-Za-z0-9-]+)\]')
 CITES = re.compile(r'\[(?:cn|ms|man|cnpol)-[A-Za-z0-9-]+\](?:\s*\[(?:cn|ms|man|cnpol)-[A-Za-z0-9-]+\])*')
@@ -414,7 +416,7 @@ PAGE = """<!doctype html>
  <ul class="key">
   <li><i class="m away solid"></i><span><b>Orange, away from Nvidia:</b> holding it back, or choosing home-made chips. %%N_AWAY%% records</span></li>
   <li><i class="m toward solid"></i><span><b>Blue, toward Nvidia:</b> buying it, using it, letting it in. %%N_TOWARD%% records</span></li>
-  <li><i class="m toward solid"></i><i class="m away solid"></i><span><b>Filled:</b> on the record (a government document, a filing, a named person). %%N_SOLID%% records</span></li>
+  <li><i class="m toward solid"></i><i class="m away solid"></i><span><b>Filled:</b> on the record (a government document, published state media, a filing, a named person). %%N_SOLID%% records</span></li>
   <li><i class="m toward open"></i><i class="m away open"></i><span><b>Open:</b> a press report citing unnamed people. %%N_OPEN%% records</span></li>
  </ul>
 </header>
@@ -434,7 +436,8 @@ PAGE = """<!doctype html>
   <li><b>Beijing</b> stands for the leaders and bodies of the Chinese state named in the records: Xi Jinping, Premier Li Qiang, Vice Premiers He Lifeng and Ding Xuexiang; the cyberspace regulator (Cyberspace Administration of China) and its review office; the state planner (National Development and Reform Commission, NDRC); the market regulator (State Administration for Market Regulation); the commerce, finance, industry and security ministries; customs; and the state’s evaluation centre for information security. State media and the journal Qiushi speak in some records too. Two universities’ notices to buy Nvidia cards stand in the row of Beijing letting Nvidia in: they are the universities’ own buying, in notices that hold suppliers to the government procurement law’s conditions, not an act of the central government.</li>
   <li><b>The companies</b> are the Chinese AI companies named in the records: Alibaba, Baidu, ByteDance, Tencent, DeepSeek, Zhipu, iFlytek and 360. A Shanghai government body’s account of what the city’s internet companies use stands in their row.</li>
   <li><b>American officials</b> appear where they speak of Beijing: the Commerce Secretary, Howard Lutnick, at a Senate hearing, and Jeffrey Kessler at a House hearing.</li>
-  <li><b>The chips</b> are Nvidia’s. The models named in the records include the H20, the RTX Pro 6000D and the H200. Home-made chips are those of Chinese makers, among them Huawei, Alibaba’s T-Head unit and Baidu.</li>
+  <li><b>The chips</b> are Nvidia’s. The models named in the records include the H20, the RTX Pro 6000D and the H200. Home-made chips, in the records, are chips of Chinese makers, among them Huawei, Alibaba’s T-Head unit and Baidu; China’s rules for government purchases judge a product by where it is made, not by who owns its maker.</li>
+  <li><b>The four rows</b> are the figure’s: Beijing holds Nvidia back, Beijing lets Nvidia in, the companies reach for Nvidia, the companies turn to home-made chips. A row says which way a record points, not that a chip was kept out or let in; the line in larger type says what the record is. In the row of Beijing letting Nvidia in stand welcomes from leaders and ministers, the commerce ministry’s statements on American curbs, a draft rule on technology exports, approvals, an intention to approve and deliveries that the press reported, an American official’s account that shipments had begun, and two universities’ notices to buy Nvidia cards. In the row of Beijing holding Nvidia back stand acts that name no Nvidia chip too, among them the rules for what government bodies buy, Xi Jinping’s call to conquer high-end chips, the security ministry’s warning about chips made abroad and Alibaba’s filing on a halt to purchases of chips it does not name. The 2023 conclusion on Micron’s products is not about Nvidia at all: it shows what a published order to stop buying looks like, and no such order against Nvidia’s chips was found in the policy pages read.</li>
  </ul>
 </section>
 <section class="card" id="records">

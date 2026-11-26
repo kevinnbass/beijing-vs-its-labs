@@ -24,6 +24,8 @@
 # An entry with nothing after "|" and no text shows nothing. The text before is in tmp_work/ob10_superseded/bands.txt.
 # OB10, consistency ruling: the sentence of 0:46 to 0:49 (L7) is left out too, as in the atlas figure; its band is gone, so
 # the empty band of L6b runs from 0:44 to the next sentence. The text before is in tmp_work/ob10_superseded_3/bands.txt.
+# Round 10 (Nov 25, 2026): Reuters of Jan 30, 2026 (band L8) is quoted from the open copy on Yahoo Finance, not the
+# broker's page (the session's ruling in ../../ROUND10.md). The text before is in tmp_work/r10_before/bands.txt.
 
 @ L1 | HIS CRITICS' WORDS · NOTHING TO CHECK YET
 The claim comes next. The project's answer to it: yes on direction, with five limits. Beijing was not one actor. Guidance and public warnings, not a published ban. Some purchases were approved and some chips came in. The companies had reasons of their own, and US curbs pushed too. What Beijing meant by it is not settled.
@@ -64,6 +66,6 @@ No permit rule for these chips was found in the {POLICY_PAGES} policy pages read
 @ L6b |
 
 @ L8 | BORNE OUT ON DIRECTION · TOO FLAT AS WORDED
-Fair on the import question. Too flat on the government, which was not one actor. [open toward] Reuters, Jan 30, 2026: "China's industry and commerce ministries have granted approvals for all four companies"
-!! cn-acts-reuters-deepseek-20260130 | China's industry and commerce ministries have granted approvals for all four companies
-!! cn-acts-reuters-deepseek-20260130 | 2026-01-30
+Fair on the import question. Too flat on the government, which was not one actor. [open toward] Reuters, Jan 30, 2026, on Yahoo Finance: "China's industry and commerce ministries have granted approvals for all four companies"
+!! cn-ga31-sv1-reuters-deepseek-yahoo | China's industry and commerce ministries have granted approvals for all four companies
+!! cn-ga31-sv1-reuters-deepseek-yahoo | SINGAPORE, Jan 30 (Reuters)

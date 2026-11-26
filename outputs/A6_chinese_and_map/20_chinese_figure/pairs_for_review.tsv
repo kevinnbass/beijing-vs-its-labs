@@ -79,10 +79,10 @@ record, block 24 of the data [BL cn-policy-h20-mofcom] E (the core's English, no
 record, block 25 of the data [BL ms-bj-20260128-h200-nod-standard] T	Conditional approval for ByteDance, Alibaba and Tencent to buy more than 400,000 H200s	字节跳动、阿里巴巴和腾讯获有条件批准，可购买合计超过40万枚H200
 record, block 25 of the data [BL ms-bj-20260128-h200-nod-standard] S	Reuters, on The Standard (Hong Kong)	路透社，载于香港《英文虎报》（The Standard）
 record, block 25 of the data [BL ms-bj-20260128-h200-nod-standard] Q (source, English) and Z (my Chinese)	have been approved to purchase more than 400,000 H200 chips in total	已获准购买合计超过40万枚H200芯片
-record, block 26 of the data [BL cn-acts-reuters-deepseek-20260130] T	Industry and commerce ministries have approved DeepSeek, ByteDance, Alibaba and Tencent; the conditions "are being decided" by the state planner	工业和商务两个主管部门已批准DeepSeek、字节跳动、阿里巴巴和腾讯四家企业；条件正由国家发展改革委确定（原文："are being decided"）
-record, block 26 of the data [BL cn-acts-reuters-deepseek-20260130] S	Reuters, on Tiger Brokers	路透社，载于老虎证券（Tiger Brokers）
-record, block 26 of the data [BL cn-acts-reuters-deepseek-20260130] C (label on the strip)	conditional approval	有条件批准
-record, block 26 of the data [BL cn-acts-reuters-deepseek-20260130] Q (source, English) and Z (my Chinese)	China's industry and commerce ministries have granted approvals for all four companies	中国的工业和商务主管部门已批准全部四家企业
+record, block 26 of the data [BL cn-ga31-sv1-reuters-deepseek-yahoo] T	Industry and commerce ministries have approved DeepSeek, ByteDance, Alibaba and Tencent; the conditions "are being decided" by the state planner	工业和商务两个主管部门已批准DeepSeek、字节跳动、阿里巴巴和腾讯四家企业；条件正由国家发展改革委确定（原文："are being decided"）
+record, block 26 of the data [BL cn-ga31-sv1-reuters-deepseek-yahoo] S	Reuters, on Yahoo Finance	路透社，载于雅虎财经（Yahoo Finance）
+record, block 26 of the data [BL cn-ga31-sv1-reuters-deepseek-yahoo] C (label on the strip)	conditional approval	有条件批准
+record, block 26 of the data [BL cn-ga31-sv1-reuters-deepseek-yahoo] Q (source, English) and Z (my Chinese)	China's industry and commerce ministries have granted approvals for all four companies	中国的工业和商务主管部门已批准全部四家企业
 record, block 27 of the data [BL man-70f4668d5f56] T	"Nvidia has won Beijing's approval" to sell the H200; a Chinese buyer is unsure the approval is final	英伟达已获北京方面批准销售H200（原文："Nvidia has won Beijing's approval"）；一家中国买方不确定这是不是最终批准
 record, block 27 of the data [BL man-70f4668d5f56] S	Reuters, on Investing.com	路透社，载于Investing.com
 record, block 27 of the data [BL man-70f4668d5f56] Q (source, English) and Z (my Chinese)	approval to sell its second-most powerful artificial intelligence chips to China	获准向中国销售其性能第二强的人工智能芯片
@@ -243,7 +243,7 @@ page: strip: tick 9	Jul	7月
 page: strip: tick 10	Oct	10月
 page: strip: note	2023 and 2024 are drawn narrower	2023年和2024年画得较窄
 page: strip: flag 1	Jul 2025 · US clears H20 sales again	2025年7月 · 美国重新批准H20对华销售
-page: strip: flag 2	Dec 8, 2025 · US allows the H200	2025年12月8日 · 美国允许对华销售H200
+page: strip: flag 2	Dec 8, 2025 · US says it will allow H200	2025年12月8日 · 美国表示将允许H200
 page: strip: flag 3	Nov 17, 2026 · H200 shipments stop	2026年11月17日 · 英伟达停止H200发货
 page: H200 bars: label 1	Ordered by Chinese companies for 2026 50	中国企业为2026年订购 50
 page: H200 bars: label 2	Approved by Washington: Nvidia as exporter	华盛顿已批准：以英伟达为出口商的申请
@@ -325,9 +325,9 @@ page: vouchers: key 3	one rate for all	各类算力适用同一比例
 page: vouchers: key 4	a rate by a type of facility the rule does not name	按算力设施的类型分档，规定没有写明类型
 page: vouchers: group 1	Pay more for home-made computing: 7	对国产算力补贴更多：7个
 page: vouchers: group 2	Pay for home-made computing only: 4	只补贴国产算力：4个
-page: vouchers: group 3	State no higher rate for home-made computing: 79	没有对国产算力规定更高的比例：79个
+page: vouchers: group 3	State no higher rate for home-made computing: 80	没有对国产算力规定更高的比例：80个
 page: vouchers: sub-group 1	Two rates by a type of computing facility that the rule does not name: 1	按算力设施的类型分两档，规定没有写明类型：1个
-page: vouchers: sub-group 2	One rate for all computing: 78	各类算力适用同一比例：78个
+page: vouchers: sub-group 2	One rate for all computing: 79	各类算力适用同一比例：79个
 page: vouchers: row 1	Zhejiang province Apr 2025	浙江省 2025年4月
 page: vouchers: row 2	Wenzhou city Aug 2025	温州市 2025年8月
 page: vouchers: row 3	Chengdu city Apr 2026	成都市 2026年4月
@@ -367,10 +367,10 @@ page: vouchers: one-rate label 1	50%, home-made only	50%，只补贴国产算力
 page: vouchers: one-rate label 2	50%, home-made only	50%，只补贴国产算力
 page: vouchers: one-rate label 3	10%, home-made only	10%，只补贴国产算力
 page: vouchers: one-rate label 4	20%, home-made only	20%，只补贴国产算力
-page: vouchers: note	7 of the 90 local governments shown pay more for home-made computing and still pay for other computing; 4, Huangyan district, Taizhou; Ningbo city; Changsha Economic and Technological Development Zone; and Sichuan province, pay for home-made computing only; the other 79 state no higher rate for home-made computing: 78 pay one rate for all, and Hangzhou city pays 30% or 20% “by the type of computing facility” (按照算力设施的不同类型), a type its plan does not name (its rule of 2024, since repealed, paid 30% for home-made and 20% for other facilities). The rate shown is the one for an ordinary applicant. What is counted is a rule that pays a share of a firm’s bill for rented or bought computing: most call the payment a computing voucher (算力券) or a like name; 38 give it another name, a subsidy, a reward or support, and are tagged or marked †. One row per government (a province, a city, a district or a zone): its latest general rule found that is in force and states a share of the bill. These are the rules found by searches that went province by province and city by city, saved and read, not a census of every local government: the searches covered the 31 province-level governments, 24 named cities and new areas, and the cities, districts and zones on the lists of four searches that went city by city; other districts and counties only as they turned up. 50 of the 90 are read on an official page or file of the issuing government or body, and 40 in another copy (another body’s site, a news or commercial site, or an Internet Archive capture). Left out: rules known only from the press or a summary (Yuhang district, Keqiao district and Jinan city among them), application guides (Beijing city’s economy bureau; Nanjing), plans with no date of effect (Nanjing’s Jiangbei New Area), rules repealed, expired or with no share of the bill (Longgang district of Shenzhen, and Nanchang city’s top-up of a provincial award, among them), rules whose text was not reached or only as a scan (Chongqing; Xihu district of Hangzhou), and drafts. Counted other ways (rules / paying more / home-made only / no higher rate): with Hangzhou city’s two tiers read as home-made and other, as its repealed rule had them, 90 / 8 / 4 / 78; with Hangzhou city left out, 89 / 7 / 4 / 78. Support for building or buying with home-made chips only is separate: Beijing city’s plan for 2024 to 2027 supports, by a share of the investment, “采购自主可控GPU芯片开展智能算力服务的企业” (firms that buy independently controllable GPU chips to provide computing services). The tiers are the rules’ own words: 国产 or 自主 (home-made, independent) against 非国产, 非自主 or 其他 (other).	图中90个地方政府里，7个对国产算力补贴更多，同时仍补贴其他算力；4个，即台州市黄岩区、宁波市、长沙经济技术开发区和四川省，只补贴国产算力；其余79个没有对国产算力规定更高的比例：其中78个各类算力适用同一比例，杭州市的方案“按照算力设施的不同类型给予30%或20%的分档补贴”，没有写明类型（该市2024年的规定已废止，原按国产算力设施30%、其他算力设施20%补贴）。图中所示是普通申请者适用的比例。这里统计的是按比例补贴企业租用或购买算力费用的规定：多数称为算力券或类似名称；38个用的是别的名称（补贴、奖励或支持），图中以标签或†标出。每个政府（省、市、区或开发区）一行：取所找到的、现行有效并写明账单补贴比例的最新一项普遍适用的规定。这些是逐省、逐市检索找到、保存并读过的规定，不是对所有地方政府的普查：检索覆盖31个省级政府、24个点名的城市和新区，以及四次逐市检索名单上的城市、区和开发区；其他区县只收录检索中碰到的。90个里，50个读的是发文政府或机构的官方页面或文件，40个读的是其他文本（其他机构的网站、新闻或商业网站，或互联网档案馆的存档）。没有列入的有：只见于媒体报道或摘要的规定（其中有杭州市余杭区、绍兴市柯桥区和济南市）、申报指南（北京市经济和信息化局；南京市）、没有写明施行日期的方案（南京江北新区）、已废止、已到期或没有写明账单补贴比例的规定（其中有深圳市龙岗区，以及南昌市对省级奖励的配套）、未能读到文本或只有扫描件的规定（重庆市；杭州市西湖区）、以及征求意见稿。换一种算法（规定数／补贴更多／只补贴国产／没有更高比例）：把杭州市的两档读作国产和其他（已废止的规定就是这样分的），是90 / 8 / 4 / 78；不计杭州市，是89 / 7 / 4 / 78。只对用国产芯片建设或购置的支持另算：北京市2024年至2027年的方案，按投资额的一定比例支持“采购自主可控GPU芯片开展智能算力服务的企业”。分档用的是各规定自己的用词：“国产”或“自主”，对“非国产”“非自主”或“其他”。
-page: vouchers: one-rate list, explanation	Each rule: its place, the month of the rule (a link to its saved copy), and its one rate, a dot on the same scale from 0 to 60%. † the rule calls the payment a subsidy, a reward or support, not a voucher (38 of the 78). A letter marks a note under the list. Two of these rules name home-made computing in the sentence that sets their rate, but only at that one rate: Binhaiwan New Area, Dongguan; and Haidian district, Beijing (notes h, i). Other support for home-made chips, apart from the rate, stands in the notes.	每条规定：地点、规定的年月（链接到所存文本），以及它唯一的补贴比例，以同一条0至60%刻度上的圆点表示。†表示规定把这笔钱称为补贴、奖励或支持，而不称为券（78个中有38个）。字母表示列表下方的附注。其中两项规定在写明比例的句子里提到国产，但只有一个比例：东莞滨海湾新区和北京市海淀区（中关村科学城）（附注h、i）。比例之外对国产芯片的其他支持，见附注。
+page: vouchers: note	7 of the 91 local governments shown pay more for home-made computing and still pay for other computing; 4, Huangyan district, Taizhou; Ningbo city; Changsha Economic and Technological Development Zone; and Sichuan province, pay for home-made computing only; the other 80 state no higher rate for home-made computing: 79 pay one rate for all, and Hangzhou city pays 30% or 20% “by the type of computing facility” (按照算力设施的不同类型), a type its plan does not name (its rule of 2024, since repealed, paid 30% for home-made and 20% for other facilities). The rate shown is the one for an ordinary applicant. What is counted is a rule that pays a share of a firm’s bill for rented or bought computing: most call the payment a computing voucher (算力券) or a like name; 38 give it another name, a subsidy, a reward or support, and are tagged or marked †. One row per government (a province, a city, a district or a zone): its latest general rule found that is in force and states a share of the bill. These are the rules found by searches that went province by province and city by city, saved and read, not a census of every local government: the searches covered the 31 province-level governments, 24 named cities and new areas, and the cities, districts and zones on the lists of four searches that went city by city; other districts and counties only as they turned up. 52 of the 91 are read on an official page or file of the issuing government or body, and 39 in another copy (another body’s site, a news or commercial site, or an Internet Archive capture). Left out: rules known only from the press or a summary (Yuhang district, Keqiao district and Jinan city among them), application guides (Beijing city’s economy bureau; Nanjing), plans with no date of effect (Nanjing’s Jiangbei New Area), rules repealed, expired or with no share of the bill (Longgang district of Shenzhen, and Nanchang city’s top-up of a provincial award, among them), rules whose text was not reached or only as a scan (Chongqing; Xihu district of Hangzhou), and drafts. Counted other ways (rules / paying more / home-made only / no higher rate): with Hangzhou city’s two tiers read as home-made and other, as its repealed rule had them, 91 / 8 / 4 / 79; with Hangzhou city left out, 90 / 7 / 4 / 79. Support for building or buying with home-made chips only is separate: Beijing city’s plan for 2024 to 2027 supports, by a share of the investment, “采购自主可控GPU芯片开展智能算力服务的企业” (firms that buy independently controllable GPU chips to provide computing services). The tiers are the rules’ own words: 国产 or 自主 (home-made, independent) against 非国产, 非自主 or 其他 (other).	图中91个地方政府里，7个对国产算力补贴更多，同时仍补贴其他算力；4个，即台州市黄岩区、宁波市、长沙经济技术开发区和四川省，只补贴国产算力；其余80个没有对国产算力规定更高的比例：其中79个各类算力适用同一比例，杭州市的方案“按照算力设施的不同类型给予30%或20%的分档补贴”，没有写明类型（该市2024年的规定已废止，原按国产算力设施30%、其他算力设施20%补贴）。图中所示是普通申请者适用的比例。这里统计的是按比例补贴企业租用或购买算力费用的规定：多数称为算力券或类似名称；38个用的是别的名称（补贴、奖励或支持），图中以标签或†标出。每个政府（省、市、区或开发区）一行：取所找到的、现行有效并写明账单补贴比例的最新一项普遍适用的规定。这些是逐省、逐市检索找到、保存并读过的规定，不是对所有地方政府的普查：检索覆盖31个省级政府、24个点名的城市和新区，以及四次逐市检索名单上的城市、区和开发区；其他区县只收录检索中碰到的。91个里，52个读的是发文政府或机构的官方页面或文件，39个读的是其他文本（其他机构的网站、新闻或商业网站，或互联网档案馆的存档）。没有列入的有：只见于媒体报道或摘要的规定（其中有杭州市余杭区、绍兴市柯桥区和济南市）、申报指南（北京市经济和信息化局；南京市）、没有写明施行日期的方案（南京江北新区）、已废止、已到期或没有写明账单补贴比例的规定（其中有深圳市龙岗区，以及南昌市对省级奖励的配套）、未能读到文本或只有扫描件的规定（重庆市；杭州市西湖区）、以及征求意见稿。换一种算法（规定数／补贴更多／只补贴国产／没有更高比例）：把杭州市的两档读作国产和其他（已废止的规定就是这样分的），是91 / 8 / 4 / 79；不计杭州市，是90 / 7 / 4 / 79。只对用国产芯片建设或购置的支持另算：北京市2024年至2027年的方案，按投资额的一定比例支持“采购自主可控GPU芯片开展智能算力服务的企业”。分档用的是各规定自己的用词：“国产”或“自主”，对“非国产”“非自主”或“其他”。
+page: vouchers: one-rate list, explanation	Each rule: its place, the month of the rule (a link to its saved copy), and its one rate, a dot on the same scale from 0 to 60%. † the rule calls the payment a subsidy, a reward or support, not a voucher (38 of the 79). A letter marks a note under the list. Two of these rules name home-made computing in the sentence that sets their rate, but only at that one rate: Binhaiwan New Area, Dongguan; and Haidian district, Beijing (notes h, i). Other support for home-made chips, apart from the rate, stands in the notes.	每条规定：地点、规定的年月（链接到所存文本），以及它唯一的补贴比例，以同一条0至60%刻度上的圆点表示。†表示规定把这笔钱称为补贴、奖励或支持，而不称为券（79个中有38个）。字母表示列表下方的附注。其中两项规定在写明比例的句子里提到国产，但只有一个比例：东莞滨海湾新区和北京市海淀区（中关村科学城）（附注h、i）。比例之外对国产芯片的其他支持，见附注。
 page: vouchers: one-rate list, heading 1	Province-level governments: 18	省级政府：18个
-page: vouchers: one-rate list, heading 2	Cities: 28	城市：28个
+page: vouchers: one-rate list, heading 2	Cities: 29	城市：29个
 page: vouchers: one-rate list, heading 3	Districts, zones and new areas: 32	区、开发区和新区：32个
 page: inside Beijing: column 1	Held Nvidia back, or steered buyers to home-made chips	限制英伟达，或引导买方转向国产芯片
 page: inside Beijing: column 2	Let it in, or welcomed it	放行，或表示欢迎
@@ -380,7 +380,7 @@ page: inside Beijing: body 2	State planner (NDRC)	国家发展改革委
 page: inside Beijing: body 3	Industry ministry	工业和信息化部
 page: inside Beijing: body 4	Vice Premier Ding Xuexiang’s chip committee, as the Journal describes it	《华尔街日报》所说的丁薛祥牵头的芯片委员会
 page: inside Beijing: body 5	Security ministry	国家安全部
-page: inside Beijing: body 6	State media (the state broadcaster’s account)	官方媒体（中央广播电视总台旗下账号）
+page: inside Beijing: body 6	State media (the Yuyuan Tantian account)	官方媒体（玉渊谭天账号）
 page: inside Beijing: body 7	Customs	海关
 page: inside Beijing: body 8	Finance and industry ministries (a purchase rule for Party and state bodies’ desktop computers)	财政部、工业和信息化部（只针对党政机关及相关事业单位的台式计算机采购）
 page: inside Beijing: body 9	Commerce ministry	商务部
@@ -459,121 +459,123 @@ page: vouchers: one-rate rule 27 (paired by its linked copy)	Zhongshan city Jan 
 page: vouchers: one-rate rule 27 read aloud	Zhongshan city: 50% for all computing	中山市：各类算力一律50%
 page: vouchers: one-rate rule 28 (paired by its linked copy)	Zhuhai city Mar 2026	珠海市 2026年3月
 page: vouchers: one-rate rule 28 read aloud	Zhuhai city: 50% for all computing	珠海市：各类算力一律50%
-page: vouchers: one-rate rule 29 (paired by its linked copy)	Foshan city Aug 2025	佛山市 2025年8月
-page: vouchers: one-rate rule 29 read aloud	Foshan city: 30% for all computing	佛山市：各类算力一律30%
-page: vouchers: one-rate rule 30 (paired by its linked copy)	Jinhua city Oct 2025	金华市 2025年10月
-page: vouchers: one-rate rule 30 read aloud	Jinhua city: 30% for all computing	金华市：各类算力一律30%
-page: vouchers: one-rate rule 31 (paired by its linked copy)	Nanning city Apr 2025	南宁市 2025年4月
-page: vouchers: one-rate rule 31 read aloud	Nanning city: 30% for all computing	南宁市：各类算力一律30%
-page: vouchers: one-rate rule 32 (paired by its linked copy)	Quanzhou city Dec 2025†	泉州市 2025年12月†
-page: vouchers: one-rate rule 32 read aloud	Quanzhou city: 30% for all computing	泉州市：各类算力一律30%
-page: vouchers: one-rate rule 33 (paired by its linked copy)	Quzhou city Mar 2026†	衢州市 2026年3月†
-page: vouchers: one-rate rule 33 read aloud	Quzhou city: 30% for all computing	衢州市：各类算力一律30%
-page: vouchers: one-rate rule 34 (paired by its linked copy)	Shaoguan city Apr 2026†	韶关市 2026年4月†
-page: vouchers: one-rate rule 34 read aloud	Shaoguan city: 30% for all computing	韶关市：各类算力一律30%
-page: vouchers: one-rate rule 35 (paired by its linked copy)	Suqian city Feb 2026	宿迁市 2026年2月
-page: vouchers: one-rate rule 35 read aloud	Suqian city: 30% for all computing	宿迁市：各类算力一律30%
-page: vouchers: one-rate rule 36 (paired by its linked copy)	Suzhou city Jan 2026†	苏州市 2026年1月†
-page: vouchers: one-rate rule 36 read aloud	Suzhou city: 30% for all computing	苏州市：各类算力一律30%
-page: vouchers: one-rate rule 37 (paired by its linked copy)	Wuxi city May 2025	无锡市 2025年5月
-page: vouchers: one-rate rule 37 read aloud	Wuxi city: 30% for all computing	无锡市：各类算力一律30%
-page: vouchers: one-rate rule 38 (paired by its linked copy)	Lianyungang city Nov 2026	连云港市 2026年11月
-page: vouchers: one-rate rule 38 read aloud	Lianyungang city: 25% for all computing	连云港市：各类算力一律25%
-page: vouchers: one-rate rule 39 (paired by its linked copy)	Wuhu city Jul 2026	芜湖市 2026年7月
-page: vouchers: one-rate rule 39 read aloud	Wuhu city: 25% for all computing	芜湖市：各类算力一律25%
-page: vouchers: one-rate rule 40 (paired by its linked copy)	Changzhou city Jan 2025†	常州市 2025年1月†
-page: vouchers: one-rate rule 40 read aloud	Changzhou city: 20% for all computing	常州市：各类算力一律20%
-page: vouchers: one-rate rule 41 (paired by its linked copy)	Huainan city Nov 2026†	淮南市 2026年11月†
-page: vouchers: one-rate rule 41 read aloud	Huainan city: 20% for all computing	淮南市：各类算力一律20%
-page: vouchers: one-rate rule 42 (paired by its linked copy)	Nantong city Sept 2025	南通市 2025年9月
-page: vouchers: one-rate rule 42 read aloud	Nantong city: 20% for all computing	南通市：各类算力一律20%
-page: vouchers: one-rate rule 43 (paired by its linked copy)	Qingdao city Mar 2026	青岛市 2026年3月
-page: vouchers: one-rate rule 43 read aloud	Qingdao city: 20% for all computing	青岛市：各类算力一律20%
-page: vouchers: one-rate rule 44 (paired by its linked copy)	Shenyang city Jan 2026g	沈阳市 2026年1月g
-page: vouchers: one-rate rule 44 read aloud	Shenyang city: 20% for all computing	沈阳市：各类算力一律20%
-page: vouchers: one-rate rule 45 (paired by its linked copy)	Zhengzhou city May 2024	郑州市 2024年5月
-page: vouchers: one-rate rule 45 read aloud	Zhengzhou city: 20% for all computing	郑州市：各类算力一律20%
-page: vouchers: one-rate rule 46 (paired by its linked copy)	Datong city Aug 2025†	大同市 2025年8月†
-page: vouchers: one-rate rule 46 read aloud	Datong city: 10% for all computing	大同市：各类算力一律10%
-page: vouchers: one-rate rule 47 (paired by its linked copy)	Wuchang district, Wuhan May 2026†	武汉市武昌区 2026年5月†
-page: vouchers: one-rate rule 47 read aloud	Wuchang district, Wuhan: 60% for all computing	武汉市武昌区：各类算力一律60%
-page: vouchers: one-rate rule 48 (paired by its linked copy)	Binhaiwan New Area, Dongguan May 2026h	东莞滨海湾新区 2026年5月h
-page: vouchers: one-rate rule 48 read aloud	Binhaiwan New Area, Dongguan: 50% for all computing	东莞滨海湾新区：各类算力一律50%
-page: vouchers: one-rate rule 49 (paired by its linked copy)	Chaoyang district, Beijing May 2026†	北京市朝阳区 2026年5月†
-page: vouchers: one-rate rule 49 read aloud	Chaoyang district, Beijing: 50% for all computing	北京市朝阳区：各类算力一律50%
-page: vouchers: one-rate rule 50 (paired by its linked copy)	Chengdu High-tech Zone Sept 2026	成都高新区 2026年9月
-page: vouchers: one-rate rule 50 read aloud	Chengdu High-tech Zone: 50% for all computing	成都高新区：各类算力一律50%
-page: vouchers: one-rate rule 51 (paired by its linked copy)	Haidian district, Beijing Aug 2025†i	北京市海淀区（中关村科学城） 2025年8月†i
-page: vouchers: one-rate rule 51 read aloud	Haidian district, Beijing: 50% for all computing	北京市海淀区（中关村科学城）：各类算力一律50%
-page: vouchers: one-rate rule 52 (paired by its linked copy)	Hebei district, Tianjin Apr 2024j	天津市河北区 2024年4月j
-page: vouchers: one-rate rule 52 read aloud	Hebei district, Tianjin: 50% for all computing	天津市河北区：各类算力一律50%
-page: vouchers: one-rate rule 53 (paired by its linked copy)	Qiantang district, Hangzhou Dec 2025	杭州市钱塘区 2025年12月
-page: vouchers: one-rate rule 53 read aloud	Qiantang district, Hangzhou: 50% for all computing	杭州市钱塘区：各类算力一律50%
-page: vouchers: one-rate rule 54 (paired by its linked copy)	Tianhe district, Guangzhou Nov 2024†	广州市天河区 2024年11月†
-page: vouchers: one-rate rule 54 read aloud	Tianhe district, Guangzhou: 50% for all computing	广州市天河区：各类算力一律50%
-page: vouchers: one-rate rule 55 (paired by its linked copy)	Tianfu New Area, Sichuan Apr 2024†	四川天府新区 2024年4月†
-page: vouchers: one-rate rule 55 read aloud	Tianfu New Area, Sichuan: 40% for all computing	四川天府新区：各类算力一律40%
-page: vouchers: one-rate rule 56 (paired by its linked copy)	Beijing E-Town, a development zone Nov 2024k	北京经济技术开发区（是开发区，不是北京市） 2024年11月l
-page: vouchers: one-rate rule 56 read aloud	Beijing E-Town, a development zone: 30% for all computing	北京经济技术开发区（是开发区，不是北京市）：各类算力一律30%
-page: vouchers: one-rate rule 57 (paired by its linked copy)	Futian district, Shenzhen Nov 2024†	深圳市福田区 2024年11月†
-page: vouchers: one-rate rule 57 read aloud	Futian district, Shenzhen: 30% for all computing	深圳市福田区：各类算力一律30%
-page: vouchers: one-rate rule 58 (paired by its linked copy)	Guangming district, Shenzhen Mar 2025	深圳市光明区 2025年3月
-page: vouchers: one-rate rule 58 read aloud	Guangming district, Shenzhen: 30% for all computing	深圳市光明区：各类算力一律30%
-page: vouchers: one-rate rule 59 (paired by its linked copy)	Guangzhou Development Zone and Huangpu district Jun 2025†	广州开发区和黄埔区 2025年6月†
-page: vouchers: one-rate rule 59 read aloud	Guangzhou Development Zone and Huangpu district: 30% for all computing	广州开发区和黄埔区：各类算力一律30%
-page: vouchers: one-rate rule 60 (paired by its linked copy)	Lingang Special Area, Shanghai May 2025†l	上海临港新片区 2025年5月†k
-page: vouchers: one-rate rule 60 read aloud	Lingang Special Area, Shanghai: 30% for all computing	上海临港新片区：各类算力一律30%
-page: vouchers: one-rate rule 61 (paired by its linked copy)	Longhua district, Shenzhen Nov 2024	深圳市龙华区 2024年11月
-page: vouchers: one-rate rule 61 read aloud	Longhua district, Shenzhen: 30% for all computing	深圳市龙华区：各类算力一律30%
-page: vouchers: one-rate rule 62 (paired by its linked copy)	Lucheng district, Wenzhou Oct 2023†	温州市鹿城区 2023年10月†
-page: vouchers: one-rate rule 62 read aloud	Lucheng district, Wenzhou: 30% for all computing	温州市鹿城区：各类算力一律30%
-page: vouchers: one-rate rule 63 (paired by its linked copy)	Minhang district, Shanghai Feb 2026†	上海市闵行区 2026年2月†
-page: vouchers: one-rate rule 63 read aloud	Minhang district, Shanghai: 30% for all computing	上海市闵行区：各类算力一律30%
-page: vouchers: one-rate rule 64 (paired by its linked copy)	Nanchang High-tech Zone Apr 2026†	南昌高新区 2026年4月†
-page: vouchers: one-rate rule 64 read aloud	Nanchang High-tech Zone: 30% for all computing	南昌高新区：各类算力一律30%
-page: vouchers: one-rate rule 65 (paired by its linked copy)	Nansha district, Guangzhou Jul 2025†	广州市南沙区 2025年7月†
-page: vouchers: one-rate rule 65 read aloud	Nansha district, Guangzhou: 30% for all computing	广州市南沙区：各类算力一律30%
-page: vouchers: one-rate rule 66 (paired by its linked copy)	Putuo district, Shanghai Jan 2025†	上海市普陀区 2025年1月†
-page: vouchers: one-rate rule 66 read aloud	Putuo district, Shanghai: 30% for all computing	上海市普陀区：各类算力一律30%
-page: vouchers: one-rate rule 67 (paired by its linked copy)	Qingpu district, Shanghai Sept 2026	上海市青浦区 2026年9月
-page: vouchers: one-rate rule 67 read aloud	Qingpu district, Shanghai: 30% for all computing	上海市青浦区：各类算力一律30%
-page: vouchers: one-rate rule 68 (paired by its linked copy)	Shijingshan district, Beijing Mar 2024†	北京市石景山区 2024年3月†
-page: vouchers: one-rate rule 68 read aloud	Shijingshan district, Beijing: 30% for all computing	北京市石景山区：各类算力一律30%
-page: vouchers: one-rate rule 69 (paired by its linked copy)	Songjiang district, Shanghai Nov 2025†	上海市松江区 2025年11月†
-page: vouchers: one-rate rule 69 read aloud	Songjiang district, Shanghai: 30% for all computing	上海市松江区：各类算力一律30%
-page: vouchers: one-rate rule 70 (paired by its linked copy)	Xuhui district, Shanghai Apr 2025†	上海市徐汇区 2025年4月†
-page: vouchers: one-rate rule 70 read aloud	Xuhui district, Shanghai: 30% for all computing	上海市徐汇区：各类算力一律30%
-page: vouchers: one-rate rule 71 (paired by its linked copy)	Zhengzhou High-tech Zone Jul 2025†	郑州高新区 2025年7月†
-page: vouchers: one-rate rule 71 read aloud	Zhengzhou High-tech Zone: 30% for all computing	郑州高新区：各类算力一律30%
-page: vouchers: one-rate rule 72 (paired by its linked copy)	Fengtai district, Beijing Oct 2025†	北京市丰台区 2025年10月†
-page: vouchers: one-rate rule 72 read aloud	Fengtai district, Beijing: 20% for all computing	北京市丰台区：各类算力一律20%
-page: vouchers: one-rate rule 73 (paired by its linked copy)	Hefei High-tech Zone Jan 2025†	合肥高新区 2025年1月†
-page: vouchers: one-rate rule 73 read aloud	Hefei High-tech Zone: 20% for all computing	合肥高新区：各类算力一律20%
-page: vouchers: one-rate rule 74 (paired by its linked copy)	Hongshan district, Wuhan Sept 2025†	武汉市洪山区 2025年9月†
-page: vouchers: one-rate rule 74 read aloud	Hongshan district, Wuhan: 20% for all computing	武汉市洪山区：各类算力一律20%
-page: vouchers: one-rate rule 75 (paired by its linked copy)	Suzhou Industrial Park Nov 2025†m	苏州工业园区 2025年11月†m
-page: vouchers: one-rate rule 75 read aloud	Suzhou Industrial Park: 20% for all computing	苏州工业园区：各类算力一律20%
-page: vouchers: one-rate rule 76 (paired by its linked copy)	Zhengzhou Airport Zone Nov 2025†	郑州航空港区 2025年11月†
-page: vouchers: one-rate rule 76 read aloud	Zhengzhou Airport Zone: 20% for all computing	郑州航空港区：各类算力一律20%
-page: vouchers: one-rate rule 77 (paired by its linked copy)	Zhongkai High-tech Zone, Huizhou Apr 2026n	惠州仲恺高新区 2026年4月n
-page: vouchers: one-rate rule 77 read aloud	Zhongkai High-tech Zone, Huizhou: 15% for all computing	惠州仲恺高新区：各类算力一律15%
-page: vouchers: one-rate rule 78 (paired by its linked copy)	Baiyun district, Guangzhou Mar 2026	广州市白云区 2026年3月
-page: vouchers: one-rate rule 78 read aloud	Baiyun district, Guangzhou: 10% for all computing	广州市白云区：各类算力一律10%
+page: vouchers: one-rate rule 29 (paired by its linked copy)	Shantou city Nov 2026	汕头市 2026年11月
+page: vouchers: one-rate rule 29 read aloud	Shantou city: 40% for all computing	汕头市：各类算力一律40%
+page: vouchers: one-rate rule 30 (paired by its linked copy)	Foshan city Aug 2025	佛山市 2025年8月
+page: vouchers: one-rate rule 30 read aloud	Foshan city: 30% for all computing	佛山市：各类算力一律30%
+page: vouchers: one-rate rule 31 (paired by its linked copy)	Jinhua city Oct 2025	金华市 2025年10月
+page: vouchers: one-rate rule 31 read aloud	Jinhua city: 30% for all computing	金华市：各类算力一律30%
+page: vouchers: one-rate rule 32 (paired by its linked copy)	Nanning city Apr 2025	南宁市 2025年4月
+page: vouchers: one-rate rule 32 read aloud	Nanning city: 30% for all computing	南宁市：各类算力一律30%
+page: vouchers: one-rate rule 33 (paired by its linked copy)	Quanzhou city Dec 2025†	泉州市 2025年12月†
+page: vouchers: one-rate rule 33 read aloud	Quanzhou city: 30% for all computing	泉州市：各类算力一律30%
+page: vouchers: one-rate rule 34 (paired by its linked copy)	Quzhou city Mar 2026†	衢州市 2026年3月†
+page: vouchers: one-rate rule 34 read aloud	Quzhou city: 30% for all computing	衢州市：各类算力一律30%
+page: vouchers: one-rate rule 35 (paired by its linked copy)	Shaoguan city Apr 2026†	韶关市 2026年4月†
+page: vouchers: one-rate rule 35 read aloud	Shaoguan city: 30% for all computing	韶关市：各类算力一律30%
+page: vouchers: one-rate rule 36 (paired by its linked copy)	Suqian city Feb 2026	宿迁市 2026年2月
+page: vouchers: one-rate rule 36 read aloud	Suqian city: 30% for all computing	宿迁市：各类算力一律30%
+page: vouchers: one-rate rule 37 (paired by its linked copy)	Suzhou city Jan 2026†	苏州市 2026年1月†
+page: vouchers: one-rate rule 37 read aloud	Suzhou city: 30% for all computing	苏州市：各类算力一律30%
+page: vouchers: one-rate rule 38 (paired by its linked copy)	Wuxi city May 2025	无锡市 2025年5月
+page: vouchers: one-rate rule 38 read aloud	Wuxi city: 30% for all computing	无锡市：各类算力一律30%
+page: vouchers: one-rate rule 39 (paired by its linked copy)	Lianyungang city Nov 2026	连云港市 2026年11月
+page: vouchers: one-rate rule 39 read aloud	Lianyungang city: 25% for all computing	连云港市：各类算力一律25%
+page: vouchers: one-rate rule 40 (paired by its linked copy)	Wuhu city Jul 2026	芜湖市 2026年7月
+page: vouchers: one-rate rule 40 read aloud	Wuhu city: 25% for all computing	芜湖市：各类算力一律25%
+page: vouchers: one-rate rule 41 (paired by its linked copy)	Changzhou city Jan 2025†	常州市 2025年1月†
+page: vouchers: one-rate rule 41 read aloud	Changzhou city: 20% for all computing	常州市：各类算力一律20%
+page: vouchers: one-rate rule 42 (paired by its linked copy)	Huainan city Nov 2026†	淮南市 2026年11月†
+page: vouchers: one-rate rule 42 read aloud	Huainan city: 20% for all computing	淮南市：各类算力一律20%
+page: vouchers: one-rate rule 43 (paired by its linked copy)	Nantong city Sept 2025	南通市 2025年9月
+page: vouchers: one-rate rule 43 read aloud	Nantong city: 20% for all computing	南通市：各类算力一律20%
+page: vouchers: one-rate rule 44 (paired by its linked copy)	Qingdao city Mar 2026	青岛市 2026年3月
+page: vouchers: one-rate rule 44 read aloud	Qingdao city: 20% for all computing	青岛市：各类算力一律20%
+page: vouchers: one-rate rule 45 (paired by its linked copy)	Shenyang city Jan 2026g	沈阳市 2026年1月g
+page: vouchers: one-rate rule 45 read aloud	Shenyang city: 20% for all computing	沈阳市：各类算力一律20%
+page: vouchers: one-rate rule 46 (paired by its linked copy)	Zhengzhou city May 2024	郑州市 2024年5月
+page: vouchers: one-rate rule 46 read aloud	Zhengzhou city: 20% for all computing	郑州市：各类算力一律20%
+page: vouchers: one-rate rule 47 (paired by its linked copy)	Datong city Aug 2025†	大同市 2025年8月†
+page: vouchers: one-rate rule 47 read aloud	Datong city: 10% for all computing	大同市：各类算力一律10%
+page: vouchers: one-rate rule 48 (paired by its linked copy)	Wuchang district, Wuhan May 2026†	武汉市武昌区 2026年5月†
+page: vouchers: one-rate rule 48 read aloud	Wuchang district, Wuhan: 60% for all computing	武汉市武昌区：各类算力一律60%
+page: vouchers: one-rate rule 49 (paired by its linked copy)	Binhaiwan New Area, Dongguan May 2026h	东莞滨海湾新区 2026年5月h
+page: vouchers: one-rate rule 49 read aloud	Binhaiwan New Area, Dongguan: 50% for all computing	东莞滨海湾新区：各类算力一律50%
+page: vouchers: one-rate rule 50 (paired by its linked copy)	Chaoyang district, Beijing May 2026†	北京市朝阳区 2026年5月†
+page: vouchers: one-rate rule 50 read aloud	Chaoyang district, Beijing: 50% for all computing	北京市朝阳区：各类算力一律50%
+page: vouchers: one-rate rule 51 (paired by its linked copy)	Chengdu High-tech Zone Sept 2026	成都高新区 2026年9月
+page: vouchers: one-rate rule 51 read aloud	Chengdu High-tech Zone: 50% for all computing	成都高新区：各类算力一律50%
+page: vouchers: one-rate rule 52 (paired by its linked copy)	Haidian district, Beijing Aug 2025†i	北京市海淀区（中关村科学城） 2025年8月†i
+page: vouchers: one-rate rule 52 read aloud	Haidian district, Beijing: 50% for all computing	北京市海淀区（中关村科学城）：各类算力一律50%
+page: vouchers: one-rate rule 53 (paired by its linked copy)	Hebei district, Tianjin Apr 2024j	天津市河北区 2024年4月j
+page: vouchers: one-rate rule 53 read aloud	Hebei district, Tianjin: 50% for all computing	天津市河北区：各类算力一律50%
+page: vouchers: one-rate rule 54 (paired by its linked copy)	Qiantang district, Hangzhou Dec 2025	杭州市钱塘区 2025年12月
+page: vouchers: one-rate rule 54 read aloud	Qiantang district, Hangzhou: 50% for all computing	杭州市钱塘区：各类算力一律50%
+page: vouchers: one-rate rule 55 (paired by its linked copy)	Tianhe district, Guangzhou Nov 2024†	广州市天河区 2024年11月†
+page: vouchers: one-rate rule 55 read aloud	Tianhe district, Guangzhou: 50% for all computing	广州市天河区：各类算力一律50%
+page: vouchers: one-rate rule 56 (paired by its linked copy)	Tianfu New Area, Sichuan Apr 2024†	四川天府新区 2024年4月†
+page: vouchers: one-rate rule 56 read aloud	Tianfu New Area, Sichuan: 40% for all computing	四川天府新区：各类算力一律40%
+page: vouchers: one-rate rule 57 (paired by its linked copy)	Beijing E-Town, a development zone Nov 2024k	北京经济技术开发区（是开发区，不是北京市） 2024年11月l
+page: vouchers: one-rate rule 57 read aloud	Beijing E-Town, a development zone: 30% for all computing	北京经济技术开发区（是开发区，不是北京市）：各类算力一律30%
+page: vouchers: one-rate rule 58 (paired by its linked copy)	Futian district, Shenzhen Nov 2024†	深圳市福田区 2024年11月†
+page: vouchers: one-rate rule 58 read aloud	Futian district, Shenzhen: 30% for all computing	深圳市福田区：各类算力一律30%
+page: vouchers: one-rate rule 59 (paired by its linked copy)	Guangming district, Shenzhen Mar 2025	深圳市光明区 2025年3月
+page: vouchers: one-rate rule 59 read aloud	Guangming district, Shenzhen: 30% for all computing	深圳市光明区：各类算力一律30%
+page: vouchers: one-rate rule 60 (paired by its linked copy)	Guangzhou Development Zone and Huangpu district Jun 2025†	广州开发区和黄埔区 2025年6月†
+page: vouchers: one-rate rule 60 read aloud	Guangzhou Development Zone and Huangpu district: 30% for all computing	广州开发区和黄埔区：各类算力一律30%
+page: vouchers: one-rate rule 61 (paired by its linked copy)	Lingang Special Area, Shanghai May 2025†l	上海临港新片区 2025年5月†k
+page: vouchers: one-rate rule 61 read aloud	Lingang Special Area, Shanghai: 30% for all computing	上海临港新片区：各类算力一律30%
+page: vouchers: one-rate rule 62 (paired by its linked copy)	Longhua district, Shenzhen Nov 2024	深圳市龙华区 2024年11月
+page: vouchers: one-rate rule 62 read aloud	Longhua district, Shenzhen: 30% for all computing	深圳市龙华区：各类算力一律30%
+page: vouchers: one-rate rule 63 (paired by its linked copy)	Lucheng district, Wenzhou Oct 2023†	温州市鹿城区 2023年10月†
+page: vouchers: one-rate rule 63 read aloud	Lucheng district, Wenzhou: 30% for all computing	温州市鹿城区：各类算力一律30%
+page: vouchers: one-rate rule 64 (paired by its linked copy)	Minhang district, Shanghai Feb 2026†	上海市闵行区 2026年2月†
+page: vouchers: one-rate rule 64 read aloud	Minhang district, Shanghai: 30% for all computing	上海市闵行区：各类算力一律30%
+page: vouchers: one-rate rule 65 (paired by its linked copy)	Nanchang High-tech Zone Apr 2026†	南昌高新区 2026年4月†
+page: vouchers: one-rate rule 65 read aloud	Nanchang High-tech Zone: 30% for all computing	南昌高新区：各类算力一律30%
+page: vouchers: one-rate rule 66 (paired by its linked copy)	Nansha district, Guangzhou Jul 2025†	广州市南沙区 2025年7月†
+page: vouchers: one-rate rule 66 read aloud	Nansha district, Guangzhou: 30% for all computing	广州市南沙区：各类算力一律30%
+page: vouchers: one-rate rule 67 (paired by its linked copy)	Putuo district, Shanghai Jan 2025†	上海市普陀区 2025年1月†
+page: vouchers: one-rate rule 67 read aloud	Putuo district, Shanghai: 30% for all computing	上海市普陀区：各类算力一律30%
+page: vouchers: one-rate rule 68 (paired by its linked copy)	Qingpu district, Shanghai Sept 2026	上海市青浦区 2026年9月
+page: vouchers: one-rate rule 68 read aloud	Qingpu district, Shanghai: 30% for all computing	上海市青浦区：各类算力一律30%
+page: vouchers: one-rate rule 69 (paired by its linked copy)	Shijingshan district, Beijing Mar 2024†	北京市石景山区 2024年3月†
+page: vouchers: one-rate rule 69 read aloud	Shijingshan district, Beijing: 30% for all computing	北京市石景山区：各类算力一律30%
+page: vouchers: one-rate rule 70 (paired by its linked copy)	Songjiang district, Shanghai Nov 2025†	上海市松江区 2025年11月†
+page: vouchers: one-rate rule 70 read aloud	Songjiang district, Shanghai: 30% for all computing	上海市松江区：各类算力一律30%
+page: vouchers: one-rate rule 71 (paired by its linked copy)	Xuhui district, Shanghai Apr 2025†	上海市徐汇区 2025年4月†
+page: vouchers: one-rate rule 71 read aloud	Xuhui district, Shanghai: 30% for all computing	上海市徐汇区：各类算力一律30%
+page: vouchers: one-rate rule 72 (paired by its linked copy)	Zhengzhou High-tech Zone Jul 2025†	郑州高新区 2025年7月†
+page: vouchers: one-rate rule 72 read aloud	Zhengzhou High-tech Zone: 30% for all computing	郑州高新区：各类算力一律30%
+page: vouchers: one-rate rule 73 (paired by its linked copy)	Fengtai district, Beijing Oct 2025†	北京市丰台区 2025年10月†
+page: vouchers: one-rate rule 73 read aloud	Fengtai district, Beijing: 20% for all computing	北京市丰台区：各类算力一律20%
+page: vouchers: one-rate rule 74 (paired by its linked copy)	Hefei High-tech Zone Jan 2025†	合肥高新区 2025年1月†
+page: vouchers: one-rate rule 74 read aloud	Hefei High-tech Zone: 20% for all computing	合肥高新区：各类算力一律20%
+page: vouchers: one-rate rule 75 (paired by its linked copy)	Hongshan district, Wuhan Sept 2025†	武汉市洪山区 2025年9月†
+page: vouchers: one-rate rule 75 read aloud	Hongshan district, Wuhan: 20% for all computing	武汉市洪山区：各类算力一律20%
+page: vouchers: one-rate rule 76 (paired by its linked copy)	Suzhou Industrial Park Nov 2025†m	苏州工业园区 2025年11月†m
+page: vouchers: one-rate rule 76 read aloud	Suzhou Industrial Park: 20% for all computing	苏州工业园区：各类算力一律20%
+page: vouchers: one-rate rule 77 (paired by its linked copy)	Zhengzhou Airport Zone Aug 2025†	郑州航空港区 2025年8月†
+page: vouchers: one-rate rule 77 read aloud	Zhengzhou Airport Zone: 20% for all computing	郑州航空港区：各类算力一律20%
+page: vouchers: one-rate rule 78 (paired by its linked copy)	Zhongkai High-tech Zone, Huizhou Apr 2026n	惠州仲恺高新区 2026年4月n
+page: vouchers: one-rate rule 78 read aloud	Zhongkai High-tech Zone, Huizhou: 15% for all computing	惠州仲恺高新区：各类算力一律15%
+page: vouchers: one-rate rule 79 (paired by its linked copy)	Baiyun district, Guangzhou Mar 2026	广州市白云区 2026年3月
+page: vouchers: one-rate rule 79 read aloud	Baiyun district, Guangzhou: 10% for all computing	广州市白云区：各类算力一律10%
 page: vouchers: lettered note a (Chinese page: a)	a Jiangsu province: a ceiling for province and city together; each city divided into districts sets its own rate inside it	a 江苏省：省市支持总额的上限；各设区市在上限范围内自行确定具体比例
 page: vouchers: lettered note b (Chinese page: d)	b Guizhou province: a separate 30% for adapting to home-made computing	d 贵州省：使用国产化算力开展适配另有30%的激励
 page: vouchers: lettered note c (Chinese page: c)	c Hunan province: the rules’ stated aim includes steering buyers to home-made computing first, at the same rate	c 湖南省：细则写明的目的包括“引导算力需求方优先使用国产算力资源”，补贴比例并无不同
 page: vouchers: lettered note d (Chinese page: b)	d Shanghai city: building support, up to 10%, for home-made computing only	b 上海市：建设支持最高10%，只给国产（自主）算力
 page: vouchers: lettered note e (Chinese page: e)	e Beijing city: a supplier must be able to serve on home-made chips with home-made software: a condition on the supplier, not a higher rate and not a rule that only such service is paid	e 北京市：算力开放单位须“可基于国产芯片并使用国产软件栈提供算力服务”：这是对供给方的条件，不是更高的补贴比例，也不是只补贴这类服务的规定
 page: vouchers: lettered note f (Chinese page: f)	f Shenzhen city: separate support for moving models to home-made chips	f 深圳市：把模型迁移到国产芯片另有支持
-page: vouchers: lettered note g (Chinese page: g)	g Shenyang city: its province’s data bureau says in one reply that the vouchers go to users of local home-made computing; the city’s own text names no origin	g 沈阳市：辽宁省数据和政务服务局在一份答复中称，两市算力券面向使用本地国产算力资源的用户；该市自己的政策文本未写明算力来源
+page: vouchers: lettered note g (Chinese page: g)	g Shenyang city: its province’s data bureau says in one reply that the vouchers go to users of local home-made computing; the city’s own text names no origin	g 沈阳市：辽宁省数据和政务服务局在一份答复中称，沈阳、大连两市的算力券面向使用本地国产算力资源的用户；该市自己的政策文本未写明算力来源
 page: vouchers: lettered note h (Chinese page: h)	h Binhaiwan New Area, Dongguan: the same 50% pays for the New Area’s computing, for data, and for adapting to home-made operating systems and chips	h 东莞滨海湾新区：同一个50%的比例，补贴购买新区算力、数据以及国产操作系统适配、国产芯片适配等服务的费用
 page: vouchers: lettered note i (Chinese page: i)	i Haidian district, Beijing: the rate sentence encourages large-model firms to use home-made computing, at the same rate; the district’s application guide pays that 50% on contracts for GPU computing	i 北京市海淀区（中关村科学城）：补贴比例所在的句子“鼓励大模型企业使用国产算力”，比例并无不同；该区的申报指南对购买或租用GPU算力的合同按同一个50%补贴
 page: vouchers: lettered note j (Chinese page: j)	j Hebei district, Tianjin: pays for computing bought from one named centre, the Tianjin AI Computing Center, which Tianjin Daily calls wholly home-made; in force for four years from its publication (article 14)	j 天津市河北区：补贴购买一个点名的中心（天津人工智能计算中心）的算力服务，《天津日报》称该中心为纯国产化算力；自发布之日起生效，有效期四年（第十四条）
-page: vouchers: lettered note k (Chinese page: l)	k Beijing E-Town, a development zone: replaced a rule of Mar 2024 that paid up to 40% and up to 30%; servers with home-made chips get a separate purchase subsidy of up to 10%	l 北京经济技术开发区（是开发区，不是北京市）：取代了2024年3月最高按40%和最高按30%支付的规定；装国产芯片的服务器另有最高10%的采购支持
+page: vouchers: lettered note k (Chinese page: l)	k Beijing E-Town, a development zone: replaced a rule of Mar 2024 that paid up to 40% and up to 30%; cloud firms buying servers with home-made chips get a separate subsidy of up to 10%	l 北京经济技术开发区（是开发区，不是北京市）：取代了2024年3月最高按40%和最高按30%支付的规定；云服务企业采购装国产芯片的服务器，另有最高10%的支持
 page: vouchers: lettered note l (Chinese page: k)	l Lingang Special Area, Shanghai: apart from rental, up to 10% of the purchase of equipment with independently controllable chips	k 上海临港新片区：租赁之外，采购芯片关键核心技术自主可控的智算设备，最高补贴采购额的10%
 page: vouchers: lettered note m (Chinese page: m)	m Suzhou Industrial Park: the park’s measures of Nov 12, 2025, which repeal its measures of 2023, read on the signed file as a commercial policy platform’s file store holds it	m 苏州工业园区：园区2025年11月12日的措施，同时废止2023年的措施；读的是一家商业政策服务平台文件库所存的签发文件
 page: vouchers: lettered note n (Chinese page: n)	n Zhongkai High-tech Zone, Huizhou: an action plan with a rate in force, from Apr 1, 2026 to Dec 31, 2027; read in an Internet Archive capture of the zone’s page	n 惠州仲恺高新区：有现行补贴比例的行动方案，自2026年4月1日起实施，至2027年12月31日结束；读的是互联网档案馆对该区页面的存档
-page (Chinese page only): draft note under the key		草稿，由Anthropic的模型Claude制作。仅存于本机，未发布。中文为Claude所译，尚未经中文母语读者审校。Draft by Claude, Anthropic’s model.
+page (Chinese page only): draft note under the key		草稿，由Anthropic的模型Claude制作。中文为Claude所译，尚未经中文母语读者审校。Draft by Claude, Anthropic’s model.
 pop-up labels. Core page: its English for a Chinese source, no quote marks. Chinese page: my Chinese for an English source, no quote marks, then the source's own words in quote marks; a Chinese source shows its own words only	In our English: 	本页中文译文： (then 英文原文：“...”); a Chinese source: 原文：“...”
 pop-up and marks: fixed words	On the record	有公开记录
 pop-up and marks: fixed words	Press report, unnamed sources	媒体报道，未具名消息人士

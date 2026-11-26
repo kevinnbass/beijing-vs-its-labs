@@ -1,14 +1,14 @@
 # What US curbs did
 @deck American export controls also pushed China's AI companies toward home-made chips. What the saved sources say about that, and what they do not say.
 
-@note Draft by Claude, Anthropic's model. Written Nov 23, 2026 (UTC).
-@note How to read it. Words between quotation marks are a source's exact words, found in the saved copy by a script. A filled reference number is a document, a filing or a named person on the record. An open number is a press report citing unnamed people. English in round brackets after Chinese is our rendering, not an official translation.
+@note Draft by Claude, Anthropic's model. Written Nov 23, 2026 (UTC); revised Nov 25, 2026.
+@note How to read it. Words between quotation marks are a source's exact words, found in the saved copy by a script. A filled reference number is a document, a filing, a named person on the record, or a published commentary of state media or an industry body. An open number is a press report citing unnamed people, a research firm's count, or captions and machine transcripts nobody has checked by ear. English in round brackets after Chinese is our rendering, not an official translation.
 @note The author's interest. Anthropic has argued in public for controls on chip exports to China (that is from the model's general knowledge; no saved page is cited for it), so judge this piece by its sources.
 
 ## Two capitals
 
 The push on China's AI companies to move off Nvidia came from two capitals.
-From 2024 the security and planning side of the Chinese state pressed them to use home-made chips.
+From 2024 the planning side of the Chinese state and the industry ministry, and from 2025 its security side, pressed them, through unpublished guidance that the press reported, to use home-made chips.
 And since 2022 Washington has restricted which Nvidia chips may be exported to China at all [cn-clips-alibaba-20f].
 !! cn-clips-alibaba-20f | since 2022, the U.S. government has implemented a series of measures restricting the export to China of advanced computing chips
 This piece sets out what the sources say the second did.
@@ -33,10 +33,11 @@ Nvidia, in its reports since November 2025: "we are already effectively foreclos
 !! man-ms-sec-10k-fy2026 | we are already effectively foreclosed from the China market by U.S. export controls
 !! man-ms-sec-10q-2026-07 | already effectively foreclosed from the China market by U.S. export controls
 Alibaba's annual report: "We and our technology partners are forced to develop equivalent technologies or components, or obtain equivalent technologies or components from sources outside the United States." [cn-clips-alibaba-20f]
-iFlytek, a model maker on the US Entity List, told investors on Aug 21, 2026 that as American controls tighten "全行业都会被倒逼转向国产算力" (the whole industry will be forced to turn to home-made computing) [cn-le26-iflytek-ir-20260821].
+iFlytek, a model maker on the US Entity List, which it says makes a secure supply of home-made chips all the more necessary for it, told investors on Aug 21, 2026 that as American controls tighten "全行业都会被倒逼转向国产算力" (the whole industry will be forced to turn to home-made computing) [cn-le26-iflytek-ir-20260821].
 !! cn-le26-iflytek-ir-20260821 | 时间2026.08.21
 !! cn-le26-iflytek-ir-20260821 | 尤其是在讯飞被列入美国实体清单的背景下
 !! cn-le26-iflytek-ir-20260821 | 随着美国对顶尖芯片出口管制越来越严格
+!! cn-le26-iflytek-ir-20260821 | 更需要在全栈自主可控的国产芯片及配套硬件元器件供应上做好保障
 Tencent's president, Nov 18, 2026, asked about new US restrictions: "over the longer run, we believe all Chinese players would actually have to rely on domestic supply chains and domestic chips" (a stock-data site's transcript) [cn-o36-tencent-call-20261118-sa].
 !! cn-o36-tencent-call-20261118-sa | Earnings Call: Q3 2026 Nov 18, 2026
 !! cn-o36-tencent-call-20261118-sa | how do increased U.S. restrictions impact both existing and future deals with compute
@@ -44,11 +45,16 @@ Tencent's president, Nov 18, 2026, asked about new US restrictions: "over the lo
 
 **2026: Washington and the H200**
 
-Washington licensed Nvidia's H200 chip on condition of "independent, third-party testing in the United States", which brings "a 25% tariff upon importation into the United States" [man-ms-admin-bis-jan2026-rule-8ec187] [man-ms-sec-10q-2026-07].
+Washington's rule of Jan 15, 2026 moved licence applications for Nvidia's H200 chip from a presumption of denial to case-by-case review, on conditions that include "independent, third-party testing in the United States" [man-ms-admin-bis-jan2026-rule-8ec187].
+!! man-ms-admin-bis-jan2026-rule-8ec187 | changing it from a presumption of denial to a case-by-case review
+!! man-ms-admin-bis-jan2026-rule-8ec187 | The semiconductors covered by this rule are the Nvidia H200 and its equivalents
+Nvidia says the licences it was granted from February 2026 require an inspection in the United States before shipment, and that chips shipped under them "are subject to a 25% tariff upon importation into the United States" [man-ms-sec-10q-2026-07].
+!! man-ms-sec-10q-2026-07 | Beginning in February 2026, the USG granted licenses
 !! man-ms-admin-bis-jan2026-rule-8ec187 | The effective date of this rule is January 15, 2026
 !! man-ms-sec-10q-2026-07 | As a result, any H200s shipped under the new licensing program are subject to a 25% tariff
 !! man-ms-sec-10q-2026-07 | The licenses require that the H200s go through an inspection process in the United States prior to any shipment to the customer
-Washington's own table shows that by May 11, 2026 it had returned without action 55% of the chips in the licence applications its summary records. It gives no reason, and the House committee that released it says the summary does not show every application in full [cn-usdocs-hfac-decisions-20261119] [cn-usdocs-hfac-summary-20261119].
+Washington's own table shows that by May 11, 2026 it had returned without action the applications holding 55% of the chips its summary records. The table marks those applications returned, a status apart from the one it marks rejected, and gives no reason; the House committee that released it says the summary does not show every application in full [cn-usdocs-hfac-decisions-20261119] [cn-usdocs-hfac-summary-20261119].
+!! cn-usdocs-hfac-decisions-20261119 | Rejected
 !! cn-usdocs-hfac-decisions-20261119 | H200 License and Equivalent Application Status as of May 11, 2026
 !! cn-usdocs-hfac-decisions-20261119 | Bytedance System SDN 508,000 RWA Malaysia
 !! cn-usdocs-hfac-summary-20261119 | BIS received applications to sell 3,444,160 covered integrated circuits
@@ -65,4 +71,4 @@ The Congressional Research Service, Sept 19, 2025, read Beijing's pressure over 
 Under the curbs some labs now claim to train on home-made chips. Zhipu said in January 2026 that its image model had completed "its full training cycle on Chinese-made chips"; it "did not say how many processors or how long it took to train its model" [cn-train-infoworld-zhipu-glm].
 !! cn-train-infoworld-zhipu-glm | PUBLISHED: January 14, 2026
 
-American curbs gave the companies a reason of their own to line up home-made supply, and Alibaba, Tencent and iFlytek have said so on the record. None of the sources cited here says the curbs alone did it; the commission says they added urgency to an effort Beijing already had.
+American curbs gave the companies a reason of their own to line up home-made supply, and Tencent and iFlytek have said so on the record; Alibaba's report speaks of developing equivalent technology or getting it from sources outside the United States. None of the sources cited here says the curbs alone did it; the commission says they added urgency to an effort Beijing already had.

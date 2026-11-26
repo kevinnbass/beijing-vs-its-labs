@@ -19,9 +19,9 @@ V target=90 | 国产化算力将达90%
 N 到2025年，全省数据中心总算力超过12EFLOPS
 N 《山东一体化算力网络建设行动方案（2022－2025年）》
 
-@ jiangsu doc 2030-12-31 Undated_plan;_targets_for_2025_and_2030 cn-factions-jiangsu-plan side=paper dir=away place=Jiangsu tier=province term=home-made status=expected midyear=2025 year=2030
+@ jiangsu doc 2030-12-31 Signed_Apr_22,_2024;_targets_for_2025_and_2030 cn-factions-jiangsu-plan side=paper dir=away place=Jiangsu tier=province term=home-made status=expected midyear=2025 year=2030
 T by 2030; 50% by 2025
-L Jiangsu's plan for computing infrastructure: home-made chips are to be 70% or more of the chips in use in newly built computing centres by 2030, and 50% by 2025. The plan's own table of indicators gives the line the values 50 for 2025 and 70 for 2030 and marks it "预期性" (expected, that is, indicative), not binding. The only line of that table marked "约束性" (binding) is the one on energy efficiency. The saved PDF carries no date of issue.
+L Jiangsu's plan for computing infrastructure: home-made chips are to be 70% or more of the chips in use in newly built computing centres by 2030, and 50% by 2025. The plan's own table of indicators gives the line the values 50 for 2025 and 70 for 2030 and marks it "预期性" (expected, that is, indicative), not binding. The only line of that table marked "约束性" (binding) is the one on energy efficiency. The saved PDF carries no date of issue; the four bodies' issuing notice, which the PDF does not carry, is signed Apr 22, 2024 (苏通联〔2024〕7号).
 S Jiangsu province, plan for computing infrastructure issued by four provincial bodies (the saved PDF carries no date of issue)
 Q 新建算力中心国产算力芯片使用占比达 70%以上
 E home-made computing chips reach 70% or more of use in newly built computing centres
@@ -30,6 +30,8 @@ V mid=50 | 新建算力中心国产算力芯片使用占比(%) 50 70 预期性
 V target=70 | 新建算力中心国产算力芯片使用占比(%) 50 70 预期性
 N 集群内数据中心平均 PUE ≤1.25 <1.25 约束性
 N 基础软硬件 和云操作系统实现自主可控,新建算力中心国产算力芯片使 用占比达 70%以上
+N cn-ga31-inth2-js-compute-plan-notice-2024 | 苏通联〔2024〕7号
+N cn-ga31-inth2-js-compute-plan-notice-2024 | 2024年4月22日
 
 @ guangdong doc 2024-03-07 - cn-o39b-guangdong-yuesuan-2024 side=paper dir=away place=Guangdong tier=province term=home-made
 T by the end of 2025
@@ -129,7 +131,7 @@ N cn-policy-roadmap-status | 工业和信息化部辛国斌副部长出席会议
 # ---- in practice ----
 @ shanghai-reply doc 2025-04-30 - cn-counter-b11-5 side=practice dir=toward
 T a Shanghai government body, in its own words
-L Shanghai's Commission of Economy and Informatization, in a written reply: internet companies' own computing clusters run mainly on Nvidia cards, and the three state telecom operators mainly buy Huawei's and other home-made intelligent-computing clusters. The reply gives no percentage.
+L Shanghai's Commission of Economy and Informatization, in a written reply: internet companies' own computing clusters run mainly on Nvidia cards, and the three big telecom operators mainly buy Huawei's and other home-made intelligent-computing clusters. The reply gives no percentage.
 S Shanghai Municipal Commission of Economy and Informatization, written reply dated Apr 30, 2025 (published Nov 10, 2025)
 Q 互联网企业自建算力集群,满足市场化企业需求,主要以英伟达高性能卡为主
 E internet companies build their own computing clusters to meet the needs of market-oriented enterprises, mainly with Nvidia high-performance cards

@@ -296,6 +296,7 @@ cn-policy-huawei-roadmap-2026	To date, over 1,000 Atlas 900 A3 SuperPoDs have be
 cn-policy-telecom-2027-wayback	Earlier this year China’s Ministry of Industry and Information Technology told state-owned mobile operators that foreign processors, such as those from Intel and AMD, should be phased out of their networks by 2027, according to the WSJ report, citing people familiar with the matter.
 cn-policy-telecom-2027-wayback	draft timelines to replace them, say the unnamed sources.
 cn-le28-etown-29hao-20241126	原政策(京技管发〔2024〕10号)同时废止
+cn-le28-gz-huangpu-2025-7hao	加快推进中小企业数字化转型发展若干措施》（穗埔工信规字〔2024〕2号）和
 cn-o39-shandong-network-2022	国产化算力将达90%
 cn-o39-ningxia-reply-2023	对基础软硬件实现国产化率90%以上的数据中心，给予企业最高不超过1000万元奖励
 cn-o39-nmg-plan-pdf-wayback	国产化算力占比达50%以上
@@ -348,6 +349,10 @@ cn-ga31-vcitynorth-4	按照不超过当年实际发生金额30％比例，给予
 cn-ga31-vcitynorth-4	本办法由中关村科技园区石景山园管理委员会负责解释，自印发之日起施行
 cn-ga31-vcitysouth-41	按照当年实际服务费第一年50%、第二年40%、第三年30%予以补助
 cn-ga31-vcitysouth-41	本行动方案自印发之日起施行，有效期至2026年12月31日
+cn-ga31-vcitysouth-41	支持物理空间和实体均在我市辖区内建设、算力标称值达100P以上
+cn-ga31-vcitysouth-41	基于自主芯片的算力标称值占比不低于80%的人工智能算力基础设施项目申报列入省重点技改项目库或市级数字经济重点库，争取省级相关补助
+cn-ga31-vcitysouth-41	按照实际销售和运营使用的算力规模
+cn-ga31-vcitysouth-41	每P算力每年给予5万元运营补贴，市级每年累计算力运营补贴总额最高不超过1000万元
 cn-ga31-unsaved4copies-43	支持企业和单位租用我省数据中心服务和绿色算力，给予不超过租用费20%的算力券激励
 cn-ga31-unsaved4copies-43	本《若干措施》自2024年4月1日起施行，有效期至2029年3月31日
 cn-ga31-vcityeast-31	按照最高不超过智算服务金额的30%发放算力券补贴
@@ -355,6 +360,9 @@ cn-ga31-vcitywest-31	每年发放不超过2000万元“贵阳贵安智算券
 cn-factions-etwon-vouchers	每次抵扣费用最高为结算费用的30%（非国产人工智能算力）或40%（国产人工智能算力），每家企业每年累计抵扣费用最高不超过2000万元
 cn-factions-etwon-vouchers	给予购买合同中的实际采购国产智算芯片服务器部分金额最高10%的补贴，每个项目累计不超过1000万元
 cn-ga31-vcitynorth-10	最高按照其实际购买金额的50%给予算力“服务券
+cn-ga31-vcitynorth-10	第五条支持关键技术创新。支持企业及各类组织围绕人工智能重点领域基于昇腾等自主可控技术路线开展科研攻关
+cn-ga31-vcitynorth-10	对在河北区落地转化产生效益的，最高按照其实际研发费用的20%给予不超过500万元的奖励
+cn-ga31-vcitynorth-10	第九条支持建设共性技术研发平台。鼓励企业及各类组织依托天津人工智能计算中心联合建设自主可控的共性技术研发平台，最高按照平台建设新购置研发设备总价的50%给予不超过1000万元的资金支持
 cn-factions-beijing-plan-20240424	对采购自主可控GPU芯片开展智能算力服务的企业，按照投资额的一定比例给予支持
 cn-ga31-voucherrulesmissing-34	对购买智算中心算力服务的，年度实际支付算力服务费用低于100万元（含）部分按照40%比例年度最高给予不超过20万元补贴
 cn-ga31-voucherrulesmissing-34	超过200万元部分按照25%比例年度最高给予不超过40万元补贴
@@ -387,21 +395,24 @@ cn-ga31-vcitysouth-46	本措施自公布之日起30日后施行，有效期三�
 cn-ga31-voucherrulesmissing-48	需求方购买贵州算力服务或数据交易产品的，可按合同成交金额的3%给予现金券的激励
 cn-ga31-voucherrulesmissing-48	对使用本地国产化算力开展适配的，可按适配服务金额的30%给予现金券的激励
 cn-ga31-voucherrulesmissing-48	本办法自发布之日起施行，2024年2月19日印发的《贵州算力券管理办法（试行）》同时废止
-cn-ga31-vcitywest-56	向其发放算力券用于抵扣算力服务费，每年发放总额不超过1000万元
 cn-le28-etown-29hao-20241126	每年发放1亿元的“算力券”，支持企业购买算力服务，按照实际使用算力结算费用的30%，经评审认定，给予最高2000万元支持。
 cn-le28-etown-29hao-20241126	给予购买合同中的实际采购国产智算芯片服务器部分金额最高10%的支持，每个项目累计不超过1000万元。
+cn-le28-etown-29hao-20241126	对于云服务企业采购国产算力芯片企业相关产品，并在经开区算力调度平台上架对外提供服务的，给予购买合同中的实际采购国产智算芯片服务器部分金额最高10%的支持，每个项目累计不超过1000万元
 cn-le28-sz-longhua-2024-20hao	通过发放算力券为企业提供补贴，补贴额度不超过企业采购金额的30%，上限不超过300万元。
 cn-le28-sz-gxj-2024-13hao	对租用智能算力开展大模型训练的企业、高等院校和科研机构，按不超过服务合同金额的50%，给予最高1000万元资助，对初创企业提高资助比例至60%。
 cn-le28-sz-gxj-2024-13hao	市、区联合给予不超过50%、单家企业最高300万元资助。
+cn-le28-sz-gxj-2024-13hao	基于国产人工智能根技术和工具链，为企业提供模型应用迁移和适配服务
+cn-le28-sz-gxj-2024-13hao	对符合条件的创新中心为企业实施模型应用迁移和适配服务所产生的费用中企业所承担的部分，市、区联合给予不超过50%、单家企业最高300万元资助
 cn-le28-etown-voucher2024-guide-docx	支持企业2024年1月1日至2024年12月31日期间实际发生并使用算力的结算费用，给予最高30%的补贴
 cn-ga04-lg-ai-measures-2024-docx	对购买算力的企业，按最高不超过算力服务费用的30%予以支持，最高不超过600万元
+cn-le14-huabenlihe-policy-list	上海《智算中心建设导则（2025版）》对液冷占比、芯片国产化率、PUE/WUE设阶梯准入
 cn-ga31-provtexts-20	供需双方单边奖补上限不超过合同实际执行金额的5%
 cn-ga31-provtexts-20	同等条件下，对使用国产算力的企业优先予以支持
 cn-ga31-provtexts-20	本细则自发布之日起施行
 cn-ga31-vcitysouth-34	按不超过合同金额的50%，给予最高200万元支持
 cn-ga31-vcitysouth-34	有效期至2027年12月31日
 cn-ga31-vcitywest-50	按照不超过上一年度实际租用算力结算费用的20%，给予每家企业最高1000万元补助
-cn-ga31-vcitywest-50	产业扶持政策自2025年1月1日起施行，有效期三年
+cn-ga31-vcitywest-50	本政策自2025年1月1日起施行，有效期三年
 cn-ga31-vcitywest-1	对购买平台算力服务的企业，按照不超过购买服务费的30%给予最高1000万元补贴
 cn-ga31-vcityeast-42	可按实际发生费用的30%以内比例，给予最高不超过500万元的资助
 cn-ga31-vcityeast-42	本意见自2025年1月1日起施行，有效期至2026年12月31日
@@ -409,10 +420,12 @@ cn-ga31-vcityeast-83	按不超过实际支付人工智能算力费用的20%，�
 cn-ga31-vcityeast-83	本政策自2025年2月1日起施行，有效期3年
 cn-ga31-vcitysouth-3	按不超过实际服务额50%给予每年最高100万元资助
 cn-ga31-vcitysouth-3	本措施自印发之日起实施，有效期3年
-cn-ga31-vcitynorth-29	给予大模型建设方使用算力资源费用50%的补助
-cn-ga31-vcitynorth-29	本措施自印发之日起施行
+cn-ga31-voucher8-langfang-2025-zfxxgk	对企业、创客、科研机构、高校开展的一般性算力应用，按照使用算力资源费用的50%予以奖励
+cn-ga31-voucher8-langfang-2025-zfxxgk	给予大模型建设方使用算力资源费用50%的补助
+cn-ga31-voucher8-langfang-2025-zfxxgk	本措施自印发之日起施行
 cn-le28-wuhan-2025-3hao	对企业使用算力服务费用给予50％最高20万元补助，补助期限不超过三年。
 cn-ga04-sz-suzhou-aiplus-2025-5hao	按实际支付人工智能算力费用 20% 给予每年最高 200 万元补贴
+cn-ga31-vcitywest-56	向其发放算力券用于抵扣算力服务费，每年发放总额不超过1000万元
 cn-ga31-vcitynorth-17	每年设立总额不超过5000万元的“算力券
 cn-ga31-vcitysouth-24	按年度实际采购费用的30%，最高600万元向采购企业提供算力券补贴，连续资助3年
 cn-ga31-vcitysouth-24	本措施自2025年3月31日起施行，有效期三年
@@ -457,6 +470,8 @@ cn-ga31-voucherrulesmissing-60	对使用算力资源的企业或机构，按其�
 cn-ga31-voucherrulesmissing-60	最高按照合同总金额80%的比例予以核定
 cn-ga31-voucherrulesmissing-60	按照采购额最高10%给予补贴，总金额不超过1000万元
 cn-ga31-voucherrulesmissing-60	本政策自发布之日起实施，有效期至2027年12月31日
+cn-ga31-voucherrulesmissing-60	鼓励企业或机构采购并部署智算设备，其智算芯片的关键
+cn-ga31-voucherrulesmissing-60	核心技术自主可控，并在功能、性能、功耗指标上与国际同类产品基本相当，或部分指标达到国际领先水平
 cn-ga04-lg-ai-shixi-2025-20250529	按申报指南发布前一周期年度内实际发生的算力服务费用的30%予以支持，每家企业每年最高不超过600万元
 cn-le28-sz-fgw-aivoucher-2025	按照国家发展改革委人工智能券（算力券）工作有关要求和我市人工智能券（算力券）相关规定
 cn-le28-sz-fgw-aivoucher-2025	拟上报核算后算力服务总额11.68亿元，算力服务申请补助总额1.29亿元
@@ -496,9 +511,11 @@ cn-le28-sz-longgang-2025-att-1759340	按申报指南发布前一周期年度内�
 cn-ga31-voucher2-chongqing-notice-wayback	现将《重庆市算力券管理办法（试行）》印发给你们，请照此执行
 cn-le28-etown-voucher2025h1-guide-docx	算力支持范围为用于人工智能大模型训练与推理的GPU，非智能算力资源不予支持
 cn-ga31-vcitynorth-15	按实际消费金额的10%给予补贴
-cn-ga31-vcitynorth-15	本措施自2025年9月18日
+cn-ga31-vcitynorth-15	本措施自2025年9月18日起施行，有效期3年
 cn-ga31-vcitysouth-1	按不超过服务合同金额的30%申请训力券额度
 cn-ga31-vcitysouth-1	本措施有效期至2027年12月31日
+cn-ga31-voucher8-airport-2025-www-wayback	民营企业以算力券使用超算中心、人工智能算力中心及大型数据中心资源的，按其费用的20%予以奖励
+cn-ga31-voucher8-airport-2025-www-wayback	本措施自发布之日起施行，有效期3年
 cn-ga31-vcitywest-14	按照算力结算费用的50%（国产人工智能算力）、30%（非国产人工智能算力）
 cn-le15-zj-oss-web1825-e66330	对采购自主智能算力服务的企业、高校、科研机构等主体，各区一般按照不高于合同实际执行金额的30%给予补贴；采购非自主智能算力服务的，一般按照不高于合同实际执行金额的10%给予补贴
 cn-ga31-voucher5-haidian-2025-measures	鼓励大模型企业使用国产算力，按照实际结算额给予最高50%的补贴，每年最高补贴2000万元
@@ -524,8 +541,7 @@ cn-ga31-voucher5-sip-2025-37hao	本措施自印发之日起施行，有效期三
 cn-ga31-voucher5-sip-2025-37hao	《苏州工业园区关于培优育强的实施细则》（苏园管〔2025〕9号）同时废止
 cn-ga31-vcityeast-39	按不超过合同额的30%、最高500万元给予用户单位补贴
 cn-ga31-vcityeast-39	本措施自2026年1月1日起施行，有效期至2027年12月31日
-cn-ga31-vcitynorth-35	民营企业以算力券使用超算中心、人工智能算力中心及大型数据中心资源的，按其费用的20%予以奖励
-cn-ga31-vcitynorth-35	本措施自发布之日起施行，有效期3年
+cn-ga31-vcityeast-39	鼓励自主智能算力设施部署，对获得市级资金支持的自主智能算力设施部署项目，按不超过实际到账资助经费的30%、最高1000万元给予配套
 cn-ga31-vcityeast-52	按照实际支付算力费用的20%给予每年最高200万元支持
 cn-ga31-vcityeast-33	经评审，按照不超过智算服务金额的50%给予分档补贴
 cn-ga31-vcityeast-33	本政策实行预算管理和总额控制，自2025年12月31日起施行
@@ -534,6 +550,9 @@ cn-le28-hz-gb-2025-65hao	通过智能券、算力券等形式，对采购智能�
 cn-ga31-vcityeast-57	对符合条件的超级创业者，给予最高100%支持的100万元算力券
 cn-ga31-vcitysouth-33	按照实际发生费用（以发票金额为准）的30%给予使用企业补助
 cn-ga31-vcitysouth-33	本措施自2026年2月1日起施行，有效期至2026年12月31日
+cn-le28-hefei-agent-measures-smartcity	将Token调用及智能体服务纳入算力券使用范围
+cn-le28-chongqing-ai155-smartcity	加大市级算力券支持力度，积极争取国家人工智能券（算力券）支持
+cn-ga31-vcitysouth-60	使用国产算力设施开展细分场景模型训练和推理的企业，按算力合同费用的40%给予补贴
 cn-ga31-vcitysouth-14	补贴比例最高不超过50%，具体比例由市工业和信息化局或市政务服务和数据管理局根据年度预算、申报情况、产业导向等要素在申报通知中明确
 cn-ga31-vcitysouth-14	第十八条 本细则自发布之日起施行，有效期至2027年12月31日
 cn-ga31-vouchernamedrules-4	对单一合同实际购买算力服务金额超过25万元的企业，按照实际购买金额的20%发放补贴，同一企业每年累计补贴金额上限100万元
@@ -542,6 +561,9 @@ cn-ga31-vcityeast-22	补贴最高不超过智能算力合同结算额的30%，�
 cn-ga31-plantexts-13	对购买算力服务的，智能算力可按合同有效金额的30%给予激励，通用算力、超级算力可按合同有效金额的5%给予激励
 cn-ga31-plantexts-13	对使用国产化算力开展适配的，可按合同有效金额的30%给予激励，同一需求主体年度累计激励额度不超过150万元
 cn-ga31-plantexts-13	本办法自2026年4月1日起施行
+cn-ga31-plantexts-13	第十一条 对使用国产化算力开展适配的，可按合同有效金额的30%给予激励，同一需求主体年度累计激励额度不超过150万元
+cn-ga31-plantexts-13	国产化算力是指由中国本土企业或机构自主研发和生产的计算硬件设备、芯片和系统
+cn-ga31-plantexts-13	补贴范围限于合同中不超过3个月的适配服务费用
 cn-ga31-voucherrulesmissing-16	供需双方单边奖补上限不超过合同实际执行金额的10%
 cn-ga31-voucherrulesmissing-16	对单家企业的年度累计奖补总额不超过500万元
 cn-ga31-voucherrulesmissing-16	本细则自2026年1月30日起施行，有效期至2028年12月31日止
@@ -611,6 +633,8 @@ cn-ga31-vcitywest-27	按照当年购买算力服务费用给予不超过60%的�
 cn-ga31-vcitywest-27	本措施自2026年6月7日起施行，有效期两年
 cn-ga31-vcitysouth-53	最高按实际支付购买新区算力、数据、国产操作系统适配、国产芯片适配等服务费用的50%给予补贴
 cn-ga31-vcitysouth-53	本措施自发布之日起施行，有效期三年
+cn-ga31-vcitynorth-3	按照算力或词元实际使用金额的50%给予资金支持，每年最高50万元
+cn-ga31-vcitynorth-3	本措施自发布之日起施行，有效期3年
 cn-ga31-voucherearlierrules-48	企业、高校、科研机构等申报主体对采购自主智能算力服务的，按照不高于合同实际执行金额的30%给予补贴；采购非自主智能算力服务的，一般按照不高于合同实际执行金额的10%给予补贴
 cn-ga31-voucherearlierrules-48	本细则自2026年6月21日起施行，有效期至2027年12月31日
 cn-le28-govcn-ndrc-briefing-20260522	指导国产大模型加大力度适配国产算力芯片，在保持快速发展的同时，确保自主可控、向善发展、行稳致远
@@ -630,6 +654,8 @@ cn-ga31-vcitysouth-28	按照50%的比例核定补助额度
 cn-ga31-voucherrulesmissing-4	算力创新券支付金额最高不超过同一服务合同实际发生额的25%
 cn-ga31-voucherrulesmissing-4	可基于国产芯片并使用国产软件栈提供算力服务
 cn-ga31-voucherrulesmissing-4	本办法自发布之日起施行
+cn-ga31-voucherrulesmissing-4	租用开放单位的算力设备
+cn-ga31-voucherrulesmissing-4	第十七条 符合条件的算力设备拥有单位，经申请、审核、公示后成为算力开放单位，鼓励其为使用算力创新券的企业提供优惠，须同时满足以下条件
 cn-ga31-vcitynorth-39	单个企业模型券、算力券每年最高给予50万元支持
 cn-ga31-vcityeast-16	按照智算购买费用给予不低于30%的“算力券”补贴
 cn-ga31-voucher5-nanchang-2026-hongfa8	对已申领省算力券补贴的企业，给予省级补贴金额50%的配套奖补
@@ -641,6 +667,7 @@ cn-ga04-wh-voucher-rule-2026-24hao	算力使用方按照智算服务合同实际
 cn-ga31-vcityeast-36	由集聚区运营主体给予最多3年、最高30%算力折扣，每家企业每年不超过100万元
 cn-ga31-vcityeast-36	本措施自印发之日起开始施行，有效期三年
 cn-ga31-vcityeast-77	Token券按照实际发生相关费用的一定比例给予支持
+cn-ga31-vcityeast-24	对使用自主算力服务的项目，按实际采购金额的30%予以补助。
 cn-ga31-voucherrulesmissing-15	对租用先进算力资源的，根据支持时段内实际发生金额按比例给予支持，支持比例最高不超过20%
 cn-ga31-voucherrulesmissing-15	同一算力需求方当年累计兑现金额不超过100万元
 cn-ga31-voucherrulesmissing-15	本办法自2026年8月6日起施行
@@ -702,13 +729,6 @@ cn-ga31-voucherrulesmissing-12	纳入补助资金分配对象的卡型包括所�
 cn-ga31-vcitysouth-9	按不超过实际算力成本的40%发放“词元券”，同一企业年度最高给予100万元词元券
 cn-ga31-voucherrulesmissing-70	6个月免费算力和词元、每家OPC每年100万元额度的算力券
 cn-ga31-vouchernamedrules-25	依据雄安算力券实施细则（雄安工科数字〔2025〕11 号）执行
-cn-le14-huabenlihe-policy-list	上海《智算中心建设导则（2025版）》对液冷占比、芯片国产化率、PUE/WUE设阶梯准入
-cn-le28-hefei-agent-measures-smartcity	将Token调用及智能体服务纳入算力券使用范围
-cn-le28-chongqing-ai155-smartcity	加大市级算力券支持力度，积极争取国家人工智能券（算力券）支持
-cn-ga31-vcityeast-24	对使用自主算力服务的项目，按实际采购金额的30%予以补助。
-cn-ga31-vcitysouth-60	使用国产算力设施开展细分场景模型训练和推理的企业，按算力合同费用的40%给予补贴
-cn-ga31-vcitynorth-3	按照算力或词元实际使用金额的50%给予资金支持，每年最高50万元
-cn-ga31-vcitynorth-3	本措施自发布之日起施行，有效期3年
 cn-policy-2014-outline	到2015年
 cn-policy-2014-outline	到2020年
 cn-policy-computing-network-1779	到2025年底

@@ -24,7 +24,7 @@ BANDS = [  # band title, [(row key, name, what it is)]; ordered so that the bodi
                                ('mss', 'Security ministry', 'Ministry of State Security'),
                                ('ndrc', 'State planner', 'National Development and Reform Commission (NDRC)')]),
     ('Customs, rule-setters and state media', [('customs', 'Customs', 'customs authorities and their officers at the ports'),
-                                               ('rules', 'Bodies that set purchasing rules', 'finance and industry ministries, State Council’s office, evaluation centres; the purchase rules apply to government purchasing only'),
+                                               ('rules', 'Purchase-rule and evaluation bodies', 'finance and industry ministries, State Council’s office, evaluation centres; the purchase rules apply to government purchasing only'),
                                                ('media', 'State media', 'People’s Daily’s commentary account; an account of the state broadcaster')]),
     ('Premier and vice premiers', [('ding', 'Vice Premier Ding Xuexiang', 'heads the chip committee, as the Wall Street Journal describes it'),
                                    ('li', 'Premier Li Qiang', 'received American business leaders in May 2026'),
@@ -37,11 +37,11 @@ APART = ('samr', 'Market regulator', 'State Administration for Market Regulation
 COLS = [  # key, direction, title, what it covers
     ('acted', 'away', 'Summoned Nvidia, or warned in public', 'acts and texts it published itself'),
     ('told', 'away', 'Told companies not to buy', 'or to use home-made chips; or held chips at the border'),
-    ('rules', 'away', 'Set rules favouring home-made chips', 'purchase rules, a list, guidance'),
+    ('rules', 'away', 'Rules or guidance favouring home-made chips', 'purchase rules, a list, guidance'),
     ('welcomed', 'toward', 'Welcomed Nvidia, or spoke for access', 'in public: welcomes, protests at US curbs, help for computing abroad'),
-    ('approved', 'toward', 'Approved purchases', 'with conditions'),
+    ('approved', 'toward', 'Approved purchases', 'with conditions; or let chips in'),
 ]
-PHONE_LABEL = {'told': 'Told companies not to buy, or held chips at the border'}     # on a phone the column's second line is not shown
+PHONE_LABEL = {'told': 'Told companies not to buy, or held chips at the border', 'approved': 'Approved purchases, or let chips in'}     # on a phone the column's second line is not shown
 ROWKEYS = [k for _, rows in BANDS for k, _, _ in rows]
 ROWNAME = {k: n for _, rows in BANDS for k, n, _ in rows}
 ROWNAME[APART[0]] = APART[1]
@@ -198,9 +198,9 @@ def main():
    <h2>Read with care</h2>
    <ul>
     <li><b>Open marks rest on unnamed people.</b> In the answers found, Beijing’s spokespeople confirmed none of them: “我不了解你提到的情况” (I am not aware of what you mention), said the foreign ministry on Aug 13, 2025; asked on Nov 9, 2026 about the chips stored in Hong Kong, it said “具体情况建议向中方主管部门询问” (for the details, ask the competent Chinese departments).</li>
-    <li><b>The marks are a selection, not a count.</b> An act by several bodies is drawn once in each body’s row, with the same number. The grouping of the rows is ours. {C.WORDS[len(away_rows)].capitalize()} named bodies and people have a mark on the side that points away from Nvidia and {C.WORDS[len(toward_rows)]} on the side that points toward it; the industry ministry is on both.</li>
-    <li><b>The state-media marks are warnings, not orders.</b> Of {len(sm)} state and Party media items on Nvidia chips found from {C.MON[iso[0].month - 1]} {iso[0].year} to {C.MON[iso[-1].month - 1]} {iso[-1].year}, {len(win)} of the {len(warns)} that only warn about them date from {C.fmt(win[0])} to {C.fmt(win[-1])}, and the {C.WORDS[len(late)]} found later are in Global Times in 2026; {C.WORDS[st['mixed']]} others mix a warning with a welcome. The items after September 2025 are what two rounds of searches found, a sample and not a full count. The security ministry’s article names no maker.</li>
-    <li><b>No published order against buying Nvidia chips was found</b> in the 82 policy pages read. The 2023 purchase rules bind Party and government bodies from township level up and the institutions attached to them; other units may leave their requirement out. No published national plan found sets a home-made share for computing centres: every such share found is a province’s or a city’s ({pr['share']} of 31 provincial-level governments were found to set one for home-made computing; one of them, Zhejiang’s, is for the computing of one sector, the province’s information and communications industry, by 2030, as a project’s target), and the national computing-network opinions of December 2023 set none. These shares are not drawn.</li>
+    <li><b>The marks are a selection, not a count.</b> An act by several bodies is drawn once in each body’s row, with the same number. The grouping of the rows is ours. {C.WORDS[len(away_rows)].capitalize()} of the named rows (each a body, a group of bodies or a person) have a mark on the side that points away from Nvidia and {C.WORDS[len(toward_rows)]} on the side that points toward it; the industry ministry is on both.</li>
+    <li><b>The state-media marks are warnings, not orders.</b> Of {len(sm)} state and Party media items on Nvidia chips found from {C.MON[iso[0].month - 1]} {iso[0].year} to {C.MON[iso[-1].month - 1]} {iso[-1].year}, {len(win)} of the {len(warns)} that only warn about them date from {C.fmt(win[0])} to {C.fmt(win[-1])}, and the {C.WORDS[len(late)]} found later are in Global Times in 2026; {C.WORDS[st['mixed']]} of the {len(sm)} mix a warning with a welcome. The items after September 2025 are what two rounds of searches found, a sample and not a full count. The security ministry’s article names no maker.</li>
+    <li><b>No published order against buying Nvidia chips was found</b> in the 82 policy pages read. The 2023 purchase rules bind Party and government bodies from township level up, the public institutions directly under Party committees and governments at those levels, and the departments’ public institutions that provide support to those bodies; other units may leave their requirement out. No published national plan found sets a home-made share for computing centres: every such share found is a province’s or a city’s ({pr['share']} of 31 provincial-level governments were found to set one for home-made computing; one of them, Zhejiang’s, is for the computing of one sector, the province’s information and communications industry, by 2030, as a project’s target), and the national computing-network opinions of December 2023 set none. These shares are not drawn.</li>
     <li>The chip at issue in these marks changed: the H20 (2024 to 2025), the RTX Pro 6000D (2025), the H200 (from December 2025). English renderings of Chinese are ours, not official translations.</li>
    </ul>
   </section>"""
@@ -212,8 +212,25 @@ def main():
     <li><i class="p hollow away" aria-hidden="true">1</i><span><b>Open:</b> a press report citing unnamed people. {n_open} records</span></li>
    </ul>"""
 
+    # Round 10 (ROUND10.md, second ruling): the Tencent News copy of Yuyuan Tantian's post does not say whose account it is. The record line
+    # that ties the account to the state broadcaster also opens the award list that states it, as the argument's point 4 cites it.
+    # The words quoted are data.txt's N line for that record (checked by cn_has.py with the rest).
+    AWARD = 'cn-le13-cja36-winners-xinhuanet-20261108'
+    yy = [r for r in recs if r['sid'] == 'cn-le13-yuyuan-qq-20250810b']
+    assert len(yy) == 1 and 'state broadcaster' in yy[0]['L'] and (AWARD, '发布端/账号/媒体名称：玉渊谭天Bilibili账号 原创单位：中央广播电视总台') in yy[0]['N'], yy
+    award_url = C.B.address(AWARD, C.B.load_refs().get(AWARD, {'addr': ''}))
+    assert award_url.startswith('https://www.xinhuanet.com/'), award_url
+
+    def li(r):
+        out = C.record_li(r)
+        if r is not yy[0]: return out
+        add = (f' · whose account: the list of the 36th China Journalism Award gives, for its Bilibili account, “原创单位：中央广播电视总台” (originating unit: China Media Group, the state broadcaster), '
+               f'<a href="{C.esc(award_url, quote=True)}">the list on Xinhua’s site</a> · saved copy {AWARD}')
+        assert out.count('</span></div></li>') == 1
+        return out.replace('</span></div></li>', add + '</span></div></li>')
+
     below = C.records_block(recs, 'One line for each numbered mark, in the order of the grid: the date of the act, as far as the page gives it (where it gives none, the line says so and gives the date of the report); '
-                            'our summary; the page\'s own words; the source. Point at a mark in the grid to read the words there.')
+                            'our summary; the page\'s own words; the source. Point at a mark in the grid to read the words there.', li=li)
 
     page = C.page(
         title='Who Inside Beijing',

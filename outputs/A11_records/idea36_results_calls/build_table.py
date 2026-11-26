@@ -69,6 +69,28 @@ def pdf_page(sid):
     intro = re.sub(r'\s+', ' ', t[:6000])
     return d, m.group(0), turns, (q.group(1) if q else ''), intro
 
+# Round 10 (Nov 25, 2026; atlas/core_edit/hand_out/SF1_FOR_MAIN.txt section 6, code change 5, and core rows SF1-037 and 038 of
+# tables/labs_said.tsv): on a stock-data-site page an English turn labelled only "Speaker N" can render a named speaker's turn
+# that the page leaves out as not in English. named_before() walks back from such a turn over unnamed "Speaker N" turns that
+# hold only the page's mark (on Alibaba's call of Nov 19, 2026, "Speaker 7" puts analysts' questions into Chinese, and once
+# stands between the chief executive's turn and the English); the first other turn must be named, carry a title, and hold
+# only the mark. The row keeps the page's label in the speaker column; the title column gives the named turn in the core
+# table's words. Every quotation of a row must give the same named turn, and the page must announce interpretation.
+SPK = re.compile(r'^Speaker \d+$')
+MARK_ONLY = re.compile(r'^(\[(?:non-englishcontent|foreignlanguage)\])+$')
+INTERP_WORDS = ('will provide consecutive interpretation', 'There will be consecutive interpretation')
+def named_before(turns, k):
+    j = k - 1
+    while j >= 0 and SPK.match(turns[j][0]) and not turns[j][1] and MARK_ONLY.match(turns[j][2]): j -= 1
+    if j >= 0 and turns[j][0] and turns[j][1] and not SPK.match(turns[j][0]) and MARK_ONLY.match(turns[j][2]): return (turns[j][0], turns[j][1], j)
+    return None
+_m = sq('[Non-English content]')
+_ctl = [('Eddie Wu', 'CEO', _m), ('Speaker 7', '', _m), ('Speaker 4', '', sq('Thank you for the question.'))]
+assert named_before(_ctl, 2)[:2] == ('Eddie Wu', 'CEO'), 'control: the named turn two back, over a mark-only Speaker turn'
+assert named_before([('Eddie Wu', 'CEO', sq('Hello, in English.')), ('Speaker 4', '', sq('Thanks.'))], 1) is None, 'control: a named turn in English names nobody'
+assert named_before([('Speaker 18', '', _m), ('Speaker 10', '', sq('Thanks.'))], 1) is None, 'control: a Chinese turn the page does not name names nobody'
+assert named_before([('Eddie Wu', 'CEO', _m), ('Speaker 7', '', sq('A question in English.')), ('Speaker 4', '', sq('Thanks.'))], 2) is None, 'control: an English turn between'
+
 rows_in = []
 for ln in (HERE / 'rows_chosen.txt').read_text(encoding='utf-8').splitlines():
     if not ln.strip() or ln.startswith('#'): continue
@@ -89,6 +111,14 @@ for sid, about, quotes in rows_in:
         who.update(hit)
     if len(who) != 1: bad.append(f'{sid}: {about}: speakers {sorted(who)}'); continue
     name, title = who.pop()
+    named = None
+    if not own and SPK.match(name) and not title:
+        ks = {k for q in quotes for k, (n, ti, body) in enumerate(turns) if sq(q) in body}
+        nb = {named_before(turns, k)[:2] if named_before(turns, k) else None for k in ks}
+        if len(nb) == 1 and None not in nb:
+            if not any(L.has(w, sid) for w in INTERP_WORDS): bad.append(f'{sid}: {about}: a named turn before the English, but the page does not announce interpretation'); continue
+            nn, nt = nb.pop(); named = (nn, nt, len(ks) > 1, next(w for w in INTERP_WORDS if L.has(w, sid)))
+            title = f"(no title for {name}: the English rendering of {'turns' if len(ks) > 1 else 'the turn'} the page labels {nn}, {nt})"
     checks = [date_words]
     if own:
         m = re.search(re.escape(name) + r', ([A-Z][A-Za-z ,&\-]+?)(?:;|\.| and )', pg[4])
@@ -96,15 +126,26 @@ for sid, about, quotes in rows_in:
         title = m.group(1).strip(); checks += [f'{name}, {title}', f'{name}:' if L.has(f'{name}:', sid) else name]
     else:
         if not name: bad.append(f'{sid}: {about}: no speaker label'); continue
-        checks.append(f'{name} {title}'.strip())
+        checks.append(f'{name} {title}'.strip() if not named else name)
+        if named: checks += [f'{named[0]} {named[1]}', named[3]]
     for c in checks:
         if not L.has(c, sid): bad.append(f'{sid}: check words not on the page: {c}')
-    out.append({'date': d, 'company': calls[sid]['company'], 'speaker': name, 'title': title, 'about': about, 'quotes': quotes, 'sid': sid, 'checks': checks, 'url': calls[sid]['address'], 'quarter': pg[3]})
+    out.append({'date': d, 'company': calls[sid]['company'], 'speaker': name, 'title': title, 'about': about, 'quotes': quotes, 'sid': sid, 'checks': checks, 'url': calls[sid]['address'], 'quarter': pg[3], 'named': named})
+_kq = 'The computing power required for inference computing is sufficiently supplied in the market.'
+_kt = sa_page('cn-le09-kuaishou-call-20250325-sa')[2]
+_kk = [k for k, (n, ti, body) in enumerate(_kt) if sq(_kq) in body]
+if len(_kk) != 1 or not SPK.match(_kt[_kk[0]][0]) or named_before(_kt, _kk[0]) is not None: bad.append('control failed: Kuaishou, Mar 25, 2025 (its Chinese turn is labelled Speaker 18) must stay unnamed')
+_named = [r for r in out if r['named']]
+print(f"named turns given for {len(_named)} rows: " + '; '.join(f"{r['date']:%Y-%m-%d} {r['company']} {r['about']} -> {r['named'][0]}" for r in _named))
 if bad: print('\n'.join(bad)); sys.exit(f'NOT WRITTEN: {len(bad)} problem(s)')
 out.sort(key=lambda r: (r['date'], r['company']))
 frag = ['| Date of the call | Company | Speaker, as the page gives it | About | Exact words |']
 for r in out:
-    sp = r['speaker'] + (f", {r['title']}" if r['title'] else ' (the page gives no name or title)')
+    if r['named']:
+        nn, nt, many, _ = r['named']
+        sp = f"{r['speaker']}, the English rendering of {'turns' if many else 'the turn'} the page labels {nn}, {nt} (read as the interpreter's)"
+    else:
+        sp = r['speaker'] + (f", {r['title']}" if r['title'] else ' (the page gives no name or title)')
     frag.append(f"| {nice(r['date'])} | {r['company']} | {sp} | {r['about']} | " + '; '.join(f'"{q}"' for q in r['quotes']) + f" [{r['sid']}] |")
 seen = set()
 for r in out:

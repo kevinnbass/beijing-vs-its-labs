@@ -47,7 +47,7 @@ The companies ran on Nvidia’s chips and kept reaching for them: a Shanghai gov
 What Beijing did rests on two kinds of evidence. On the record: an antitrust case against Nvidia, a summons, and Nvidia’s word to the SEC that the Chinese government “restricted customers”, from February 2026 “discouraged customers”. From unnamed people: the instructions to stop buying.
 
 - [Figure 11 · Who inside Beijing](https://kevinnbass.github.io/beijing-vs-its-labs/series/17_figure-11_who-inside-beijing.html): A lane per state body: who held Nvidia back, who let it in.
-- [Figure 12 · How strong](https://kevinnbass.github.io/beijing-vs-its-labs/series/18_figure-12_how-strong.html): The reported instructions on a ladder of six rungs, from urging to approval withheld; no published order.
+- [Figure 12 · How strong](https://kevinnbass.github.io/beijing-vs-its-labs/series/18_figure-12_how-strong.html): The reported instructions on a ladder of six rungs, from urging to approval withheld; no published order found.
 - [Figure 13 · Nvidia in its own words](https://kevinnbass.github.io/beijing-vs-its-labs/series/19_figure-13_nvidia-in-its-own-words.html): Nvidia’s sentence on the Chinese government, filing by filing, beside what it says of Washington.
 - [Figure 14 · Nvidia’s China revenue](https://kevinnbass.github.io/beijing-vs-its-labs/series/20_figure-14_china-revenue.html): Nvidia’s revenue from customers based in China, quarter by quarter, and what the line is not.
 - [Figure 15 · Talks and acts](https://kevinnbass.github.io/beijing-vs-its-labs/series/21_figure-15_talks-and-acts.html): Trade talks against Beijing’s acts, the antitrust case, and the readings of what Beijing meant.
@@ -59,7 +59,7 @@ What Beijing did rests on two kinds of evidence. On the record: an antitrust cas
 The numbers count different things: “more than 2 million H200 chips” reported ordered; 579,868 of Nvidia’s approved by Washington, none shipped by May 11, 2026; “about 10,000 H200 processors” each reported delivered to two buyers; Nvidia’s own $2.4 billion of licensed Hopper sales to China in one quarter.
 
 - [Figure 16 · Washington’s table](https://kevinnbass.github.io/beijing-vs-its-labs/series/23_figure-16_washingtons-table.html): Washington’s table of licence applications, one by one.
-- [Figure 17 · Two gates](https://kevinnbass.github.io/beijing-vs-its-labs/series/24_figure-17_two-gates.html): The H200’s counts in the order of a sale, through two governments.
+- [Figure 17 · Two gates](https://kevinnbass.github.io/beijing-vs-its-labs/series/24_figure-17_two-gates.html): The H200’s separate counts (orders, applications, approvals, deliveries) in the order of a sale, through two governments; they do not count the same chips.
 - [Figure 18 · Share and rise](https://kevinnbass.github.io/beijing-vs-its-labs/series/25_figure-18_share-and-rise.html): Nvidia’s reported share in China and Chinese chip makers’ revenue.
 - [Figure 19 · The customs lines](https://kevinnbass.github.io/beijing-vs-its-labs/series/26_figure-19_customs.html): What trade figures can and cannot show; the Hong Kong finding.
 - [Figure 20 · Purchase notices](https://kevinnbass.github.io/beijing-vs-its-labs/series/27_figure-20_tenders.html): A sample of public purchase notices.

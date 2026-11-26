@@ -86,12 +86,18 @@ RETIRED_WORDS = ['four limits', 'four cautions', '20 points', '750,000', 'more t
                  "chengdu's and qingyang's only through press", 'that could be read (all but one', 'which is of the rules found, not a census',
                  "the cyberspace regulator's review office", 'other home-made ones',
                  # withdrawn by the core's batch of 20:58 UTC and voucher round 7 (Nov 25, 2026; round 10): 395 sources; added in round 10
-                 '392 sources', 'an application names a consignee', "saw in the market regulator's move", 'at 06:49 utc', 'the president, may 15']
+                 '392 sources', 'an application names a consignee', "saw in the market regulator's move", 'at 06:49 utc', 'the president, may 15',
+                 # withdrawn by core batch 12 and the readers' leads (Nov 25, 2026; round 10b): 460 sources; the thread's delivery figure as the
+                 # argument gives it; Greer's question; working words on the public pages
+                 '395 sources', 'what the companies bought', 'obtained by several firms', 'is read two ways', 'the security and planning side',
+                 'is the local file', 'no new image was made', 'made by make_thread_plain', 'brought into line with the argument', 'called buying the h200',
+                 "read the regulator's nvidia move", 'says what luckey says', 'held most of them back', 'the ministries that approved']
 RETIRED_IDS = {ln.split('\t')[0] for ln in (PROJ / 'loose_ends' / 'hkexnews_saved_ids.tsv').read_text(encoding='utf-8').splitlines() if ln.strip()}
 if len(RETIRED_IDS) < 10: fail('control: the do-not-cite list is shorter than expected')
 RETIRED_IDS |= {'cn-le08-moore-final-prospectus', 'cn-le29-sensetime-2025-annual-en', 'cn-media-yuyuan-thepaper', 'cn-factions-tencent-reuters-20261120-relay1',
                 'cn-policy-ai-chip-evaluation', 'cn-clips-mfa-new-1', 'cn-us-lutnick-0422-coons-letter', 'cn-clips-trump-may15-wayback',
-                'cn-acts-ft-lutnick-20250821-wayback', 'ms-bj-20250917-cac-6000d-engadget', 'cn-tolerate-customs-relay1'}
+                'cn-acts-ft-lutnick-20250821-wayback', 'ms-bj-20250917-cac-6000d-engadget', 'cn-tolerate-customs-relay1',
+                'cn-acts-reuters-deepseek-20260130'}      # round 10b (core batch 12): Reuters of Jan 30, 2026 is cited from its open copy on Yahoo Finance
 # round 8 (core edit 7b, Nov 25, 2026; ruling R5): the copies saved from idc.com and trendforce.com, replaced today, read from their list
 TERMS_IDS = {ln.split('\t')[0].strip() for ln in (PROJ / 'loose_ends' / 'terms_saved_ids.tsv').read_text(encoding='utf-8').splitlines() if ln.strip() and not ln.startswith('#')}
 if len(TERMS_IDS) < 19: fail(f'control: the list of copies saved against a site\'s terms holds {len(TERMS_IDS)} ids, fewer than the 19 it had when added')
@@ -116,10 +122,16 @@ seen9 = [w for w in R9 if w in old9]
 print(f'control: {len(seen9)} of the {len(R9)} phrases retired in round 9 are found in the before-copies of round 9 (300 and 345 sources were retired before them)')
 if len(seen9) < len(R9) - 2: fail(f'control: round 9 phrases not found in the before-copies: {[w for w in R9 if w not in seen9]}')
 # round 10 control: the before-copies of round 10 hold every phrase round 10 retired
-R10 = RETIRED_WORDS[RETIRED_WORDS.index('392 sources'):]
+R10 = RETIRED_WORDS[RETIRED_WORDS.index('392 sources'):RETIRED_WORDS.index('395 sources')]      # round 10b phrases have their own control below
 old10 = ' '.join(p.read_text(encoding='utf-8').lower() for p in HERE.glob('*/*.before-round10-20261125.txt'))
 seen10 = [w for w in R10 if w in old10]
 print(f'control: {len(seen10)} of the {len(R10)} phrases retired in round 10 are found in the before-copies of round 10')
 if len(seen10) != len(R10): fail(f'control: round 10 phrases not found in the before-copies: {[w for w in R10 if w not in seen10]}')
+# round 10b control: the before-copies of round 10b (base texts, and the plain thread as it was built) hold every phrase round 10b retired
+R10B = RETIRED_WORDS[RETIRED_WORDS.index('395 sources'):]
+old10b = ' '.join(p.read_text(encoding='utf-8').lower() for p in list(HERE.glob('*/*.before-round10b-20261125.txt')) + [HERE / 'scratch_round10b' / 'before' / '03_thread_thread_plain.txt'] if p.is_file())
+seen10b = [w for w in R10B if w in old10b]
+print(f'control: {len(seen10b)} of the {len(R10B)} phrases retired in round 10b are found in the before-copies of round 10b')
+if len(seen10b) != len(R10B): fail(f'control: round 10b phrases not found in the before-copies: {[w for w in R10B if w not in seen10b]}')
 print('result: the folder agrees with the core in what it copies, and the retired wording is gone' if ok else 'result: FAILED')
 sys.exit(0 if ok else 1)

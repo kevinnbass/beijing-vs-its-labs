@@ -2,7 +2,12 @@
 # Repository copy. Unchanged from the working copy but for this line. It reads a working folder that is not part of this repository (README.md).
 """Verify what the builders left under research/cn_chip_policy_20261120/outputs/ (reads only; writes VERIFY.tsv there).
 
-Run: python3 -I scripts/cn_outputs_verify.py [folder-name ...]        (no names: every folder in STATUS.tsv)
+Run: python3 -I scripts/cn_outputs_verify.py [folder-name ...] [--root DIR] [--commands]
+     no names: every builder folder that holds a file of the outputs' table (scripts/cn_outputs_index.py T; since rel12,
+     Nov 25, 2026: A13 too, whose page item 39 opens; until then the folders of STATUS.tsv, which missed it).
+     --root DIR: verify the folders under DIR instead of outputs/ (a scratch copy, for the controls); a look recorded for
+     outputs/<path> counts for DIR/<path>; nothing is written. --commands: after each STALE look, the command that renders
+     the page again with the same --with list as its newest recorded look.
 For each builder's folder it reports:
   DONE.md        present or not
   base files     every *_base.txt checked again as scripts/cn_doc_build.py checks it (quotations in the saved copies),
@@ -11,7 +16,12 @@ For each builder's folder it reports:
   looks          for every .html, .png, .jpg, .webp and .svg that is not inside a folder named frames*, stills* or tmp*:
                  whether scripts/render_and_look.py holds a recorded look at exactly the present bytes
                  (LOOKED), only at other bytes (STALE), or none (NONE)
-Exit 0 only if every folder asked for has DONE.md, no failing base file and no failing quotes file.
+Exit 0 only if every folder asked for has DONE.md, no failing base file and no failing quotes file, AND (since Nov 25,
+2026, key rel12: the fifth version went out with 24 stale looks that this script printed and did not count) no STALE look
+outside outputs/A9_repository_and_tracker/31_source_repository (the staged repository, rewritten at every assembly by
+make_repo.py: its stale looks, and its base files such as readme_build/README_base.txt that the next make_repo.py run
+writes again from the core, are listed, not counted). The last line names that number. A stale look is made fresh by rendering the file
+again with the same --with list as its last look, opening every screenshot, and recording --looked (see --commands).
 A missing look is listed, not counted as a failure: some files are parts of a page that was looked at whole.
 """
 import hashlib, json, re, sys
@@ -19,12 +29,15 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import cn_argument_build as B
+import cn_outputs_index as I
 
 L = B.L
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / 'research' / 'cn_chip_policy_20261120' / 'outputs'
 LOOKS = ROOT / 'research' / 'looks'
 SKIP_DIR = re.compile(r'^(frames|stills|tmp|scratch|node_modules|__pycache__)', re.I)
+STAGED = ('A9_repository_and_tracker', '31_source_repository')      # rewritten at every assembly (make_repo.py): its stale looks and failing base files are listed, not counted
+RAL = str(Path.home() / '.venvs' / 'memes' / 'bin' / 'python') + ' ' + str(ROOT / 'scripts' / 'render_and_look.py')      # no local path typed: make_repo.py refuses a script copy that holds one
 
 
 def sha(p):
@@ -35,21 +48,28 @@ def sha(p):
 
 
 def look_index():
-    """file path -> list of (key recorded, deps, looked?) from every LOOK.json."""
+    """file path -> list of (key recorded, deps, looked?, rendered_utc, widths) from every LOOK.json."""
     idx = {}
     for lj in LOOKS.glob('*/run-*/LOOK.json'):
         try: r = json.loads(lj.read_text())
         except Exception: continue
         if str(OUT) not in str(r.get('file', '')): continue
-        idx.setdefault(r['file'], []).append((r.get('key_sha256'), r.get('with', []), bool(r.get('looked'))))
+        idx.setdefault(r['file'], []).append((r.get('key_sha256'), r.get('with', []), bool(r.get('looked')), str(r.get('rendered_utc', '')), r.get('widths')))
     return idx
 
 
-def look_state(f, idx):
-    recs = idx.get(str(f))
+def newest_with(f, idx):
+    """(--with list, widths) of the newest recorded look (looked) of f, or of its newest render if none was looked at."""
+    recs = sorted(idx.get(str(f), []), key=lambda r: (r[2], r[3]))
+    return (recs[-1][1], recs[-1][4]) if recs else ([], None)
+
+
+def look_state(f, idx, as_file=None):
+    """as_file: the path under outputs/ whose looks count for f (--root); f's own bytes are hashed."""
+    recs = idx.get(str(as_file or f))
     if not recs: return 'NONE'
     fs = sha(f)
-    for key, deps, looked in recs:
+    for key, deps, looked, *_ in recs:
         if not looked: continue
         h = hashlib.sha256(); h.update(bytes.fromhex(fs)); ok = True
         for d in deps:
@@ -83,43 +103,60 @@ def check_quotes(q):
 def main():
     B.load_clip()
     if not B.controls(): sys.exit('controls failed: the checker cannot be trusted')
-    rows = [ln.split('\t') for ln in (OUT / 'STATUS.tsv').read_text(encoding='utf-8').splitlines()[1:] if ln.strip()]
-    folders = sorted({r[2] for r in rows if not r[2].startswith('(')})
-    want = [a for a in sys.argv[1:] if not a.startswith('--')] or folders
+    av = sys.argv[1:]; root = OUT
+    if '--root' in av:
+        i = av.index('--root')
+        if i + 1 >= len(av): sys.exit('--root needs a folder')
+        root = Path(av[i + 1]).absolute(); av = av[:i] + av[i + 2:]
+    commands = '--commands' in av
+    folders = sorted({m.group(1) for r in I.T for f in r[3].split('|') if (m := re.match(r'outputs/(A\d+_[A-Za-z_]+)/', f))})
+    want = [a for a in av if not a.startswith('--')] or folders
     idx = look_index()
+    n_stale = n_staged = 0
     out, fail = ['folder\tDONE.md\tbase files (ok/all)\tquotations in base files\tquotes.tsv files (ok/all)\tquotations in quotes.tsv\tpages and images LOOKED\tSTALE\tNONE'], 0
     for name in want:
-        d = OUT / name
+        d = root / name
         if not d.is_dir():
-            print(f'{name}: NO FOLDER'); fail += 1; out.append(f'{name}\tno folder'); continue
+            print(f'{name}: NO FOLDER (under {root})'); fail += 1; out.append(f'{name}\tno folder'); continue
         done = (d / 'DONE.md').is_file()
         bases = [p for p in sorted(d.rglob('*_base.txt')) if not any(SKIP_DIR.match(x) for x in p.relative_to(d).parts[:-1])]
-        b_ok = b_q = 0; problems = []
+        b_ok = b_q = 0; problems = []; staged_bad = 0
+        stg = lambda x: x.relative_to(root).parts[:2] == STAGED      # noqa: E731
         for b in bases:
             bad, order, nq, nh = B.check(b.read_text(encoding='utf-8').splitlines(), refs_for(b), need_all=False)
             b_q += nq + nh
-            if bad: problems.append(f'  base FAILS {b.relative_to(OUT)}: {len(bad)} problem(s), first: {bad[0][:150]}')
+            if bad and stg(b): problems.append(f'  base FAILS {b.relative_to(root)} (the staged repository, rebuilt at assembly: not counted): {len(bad)} problem(s), first: {bad[0][:150]}'); staged_bad += 1
+            elif bad: problems.append(f'  base FAILS {b.relative_to(root)}: {len(bad)} problem(s), first: {bad[0][:150]}')
             else: b_ok += 1
         qs = [p for p in sorted(d.rglob('quotes*.tsv')) if not any(SKIP_DIR.match(x) for x in p.relative_to(d).parts[:-1])]
         q_ok = q_n = 0
         for q in qs:
             n, miss = check_quotes(q); q_n += n
-            if miss or n == 0: problems.append(f'  quotes FAIL {q.relative_to(OUT)}: {miss} of {n} not found' if n else f'  quotes EMPTY {q.relative_to(OUT)}')
+            if (miss or n == 0) and stg(q): problems.append(f'  quotes FAIL {q.relative_to(root)} (the staged repository: not counted): {miss} of {n} not found'); staged_bad += 1
+            elif miss or n == 0: problems.append(f'  quotes FAIL {q.relative_to(root)}: {miss} of {n} not found' if n else f'  quotes EMPTY {q.relative_to(root)}')
             else: q_ok += 1
         st = {'LOOKED': [], 'STALE': [], 'NONE': []}
         for f in sorted(d.rglob('*')):
             if f.is_file() and f.suffix.lower() in ('.html', '.png', '.jpg', '.jpeg', '.webp', '.svg') and not any(SKIP_DIR.match(x) for x in f.relative_to(d).parts[:-1]):
-                st[look_state(f, idx)].append(f)
-        bad_here = (not done) or b_ok != len(bases) or q_ok != len(qs)
+                st[look_state(f, idx, OUT / f.relative_to(root))].append(f)
+        bad_here = (not done) or b_ok + q_ok + staged_bad != len(bases) + len(qs)      # (rel12) a failure inside the staged repository is listed, not counted
         fail += bad_here
         print(f'{name}: DONE.md {"yes" if done else "MISSING"} | base files {b_ok}/{len(bases)} ok ({b_q} quotations and statements) | quotes.tsv {q_ok}/{len(qs)} ok ({q_n} quotations) | looks: {len(st["LOOKED"])} looked, {len(st["STALE"])} stale, {len(st["NONE"])} none')
         for p in problems: print(p)
-        for f in st['STALE']: print(f'  STALE look: {f.relative_to(OUT)}')
-        for f in st['NONE']: print(f'  no look:    {f.relative_to(OUT)}')
+        for f in st['STALE']:
+            staged = f.relative_to(root).parts[:2] == STAGED
+            n_staged += staged; n_stale += not staged
+            print(f'  STALE look: {f.relative_to(root)}' + (' (the staged repository: not counted)' if staged else ''))
+            if commands and not staged:
+                w, wd = newest_with(OUT / f.relative_to(root), idx)
+                print(f'    again: {RAL} {OUT / f.relative_to(root)}' + (' --with ' + ' '.join(w) if w else '') + (f' --widths {wd}' if wd else '')
+                      + '; open every screenshot; then the same file and --with list with --looked --saw N --note "..."')
+        for f in st['NONE']: print(f'  no look:    {f.relative_to(root)}')
         out.append(f'{name}\t{"yes" if done else "MISSING"}\t{b_ok}/{len(bases)}\t{b_q}\t{q_ok}/{len(qs)}\t{q_n}\t{len(st["LOOKED"])}\t{len(st["STALE"])}\t{len(st["NONE"])}')
-    (OUT / 'VERIFY.tsv').write_text('\n'.join(out) + '\n', encoding='utf-8')
-    print(f'\n{len(want)} folder(s) checked; {fail} with something missing or failing')
-    sys.exit(1 if fail else 0)
+    if root == OUT: (OUT / 'VERIFY.tsv').write_text('\n'.join(out) + '\n', encoding='utf-8')
+    print(f'\n{len(want)} folder(s) checked; {fail} with something missing or failing; {n_stale} STALE look(s) outside outputs/{"/".join(STAGED)}'
+          + (f' ({n_staged} in it, not counted)' if n_staged else '') + ('' if root == OUT else f' (root {root})'))
+    sys.exit(1 if fail or n_stale else 0)
 
 
 if __name__ == '__main__':

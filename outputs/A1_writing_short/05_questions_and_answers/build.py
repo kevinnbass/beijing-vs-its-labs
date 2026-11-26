@@ -7,7 +7,8 @@ Run: python3 -I build.py
    Sentences are counted on the answer text with reference marks removed: a sentence ends at . ! or ? followed by a
    space or the end. Inside a quotation only its last mark counts. Control: a four-sentence answer must count as 4.
 3. Counts the text shows, each taken from a file and compared with the words in the text (the run stops if they differ):
-     the argument's points, sources and limits     argument/argument_base.txt, argument/argument_refs.tsv
+     the argument's points, sources and limits     argument/argument_base.txt; the sources from the argument's last build line
+                                                   (atlas/core_edit/hand_out/ARGUMENT_FINAL.txt), checked against ARGUMENT_referenced.html
      state-media items, and those that only warn    tables/state_media_items.tsv (75; 19 only warn, 16 of them from Jul 31 to Sept 24, 2025 and 3 later)
      the share of chips returned without action     tables/house_licence_table.tsv (55% of the table's chips)
    and no id on the do-not-cite list (loose_ends/hkexnews_saved_ids.tsv) may be cited.
@@ -63,7 +64,13 @@ def main():
 
     # the argument's own counts
     arg = (PROJ / 'argument' / 'argument_base.txt').read_text(encoding='utf-8')
-    n_src = sum(1 for ln in (PROJ / 'argument' / 'argument_refs.tsv').read_text(encoding='utf-8').splitlines() if ln.strip() and not ln.startswith('#'))
+    # round 10b (Nov 25, 2026): the sources are counted by the argument's own last build line (atlas/core_edit/hand_out/ARGUMENT_FINAL.txt),
+    # as outputs/ROUND10.md asks (argument_refs.tsv alone gives one fewer: the argument also cites a row of argument_refs_more.tsv);
+    # control: the built argument page lists the same number of references
+    fin = [ln for ln in (PROJ / 'atlas' / 'core_edit' / 'hand_out' / 'ARGUMENT_FINAL.txt').read_text(encoding='utf-8').splitlines() if ln.startswith('argument: ')]
+    n_src = int(re.match(r'argument: (\d+) sources', fin[-1]).group(1)) if fin else -1
+    n_listed = len(re.findall(r'<li id="ref-\d+"', (PROJ / 'ARGUMENT_referenced.html').read_text(encoding='utf-8')))
+    if n_listed != n_src: bad.append(f'the argument\'s last build line says {n_src} sources, its page lists {n_listed}')
     n_pts = sum(1 for ln in arg.splitlines() if re.match(r'\d+\. ', ln))
     sec = re.search(r'(?ms)^## 5\. (\w+) limits on the claim$(.*?)^## ', arg)
     n_lim = len(re.findall(r'(?m)^\d+\. ', sec.group(2))) if sec else 0
@@ -79,7 +86,10 @@ def main():
     win = [d for d in warn if d <= '2025-09-24']; late = [d for d in warn if d > '2025-09-24']      # the burst after the summons, and the warnings found later (core edit 6)
     span = f'{day(win[0])} to {day(win[-1])}, {win[-1][:4]}'
     print(f'state media, from tables/state_media_items.tsv: {len(sm)} items; {len(warn)} only warn, dated {warn[0]} to {warn[-1]} ("{span}")')
-    for said in (f'the {len(sm)} state and Party media items found', f'{len(win)} of the {len(warn)} that only warn', span, f'the {dict([(3, "three")]).get(len(late), len(late))} found later'):
+    months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+    alld = sorted(r['date'] for r in sm); window = f'from {months[int(alld[0][5:7]) - 1]} {alld[0][:4]} to {months[int(alld[-1][5:7]) - 1]} {alld[-1][:4]}'   # round 10b: the table's own span
+    print(f'state media: the table\'s items are dated {alld[0]} to {alld[-1]} ("{window}")')
+    for said in (f'the {len(sm)} state and Party media items on Nvidia chips found {window}', f'{len(win)} of the {len(warn)} that only warn', span, f'the {dict([(3, "three")]).get(len(late), len(late))} found later'):
         if said not in text: bad.append(f'the text does not say "{said}"')
     if 'warn against' in text: bad.append('the text says "warn against": two of the seven items do not speak of buying')
 

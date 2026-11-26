@@ -19,6 +19,9 @@ Round 10 (Nov 25, 2026, the core's batch of 20:58 UTC and voucher round 7) moves
 (the argument's new id), adds the phrases the page now copies (the commission and the market regulator named in full, the Trade
 Representative named, the operator or consignee an application names) and withdraws the four wordings they replace; a control finds
 each of the four in the page's before-copy of round 10.
+Round 10b (Nov 25, 2026, core batch 12 and the readers' leads of round 10): the SEC record of 22:16 UTC; Greer's words and the 445,000
+both ways as the argument gives them; the notes named by number and title from outputs/STATUS.tsv; twelve wordings withdrawn, each
+found in the before-copy of round 10b.
 Controls: a number changed by one, a share changed by 0.1 and a count changed in a copied phrase must not be found.
 """
 import csv, re, sys
@@ -36,7 +39,7 @@ total = sum(chips(r) for r in hl); rwa = sum(chips(r) for r in hl if r['status']
 appr = sum(chips(r) for r in hl if r['status'] == 'Approved, not shipped'); pct = round(100 * rwa / total)
 print(f'licence table: {len(hl)} rows, {total:,} chips; RWA {rwa:,} ({100 * rwa / total:.2f}%, shown as {pct}%); "Approved, not shipped" {appr:,}; plain "Approved" rows: {sum(1 for r in hl if r["status"] == "Approved")}')
 for said in (f'{total:,} chips', f'{rwa:,} are in applications marked RWA', f'{pct}% of the chips in the applications the summary records', f'Another {appr:,} are in applications marked',
-             f"the table's {len(hl)} rows", f'approved {appr:,} of', f'returned {rwa:,} without action'):
+             f"the table's {len(hl)} rows", f'approved applications for {appr:,} of', f'returned applications for {rwa:,} more without action'):   # round 10b: "applications for"
     if said not in text: bad.append(f'the page does not say "{said}"')
 if f'{rwa + 1:,}' in text: bad.append('control: a changed number was found in the page')
 
@@ -49,7 +52,7 @@ else:
     same, further = 100 * rwa / (total - 75000 + 445000), 100 * rwa / (total + 445000)
     print(f'with the 445,000: {same:.2f}% if the Tencent row of Dec 19, 2025 is that application, {further:.2f}% if it is a further one')
     for said in ('The table\'s only Tencent row of that date is an Nvidia application for 75,000 chips, approved',
-                 f'it would be {same:.1f}% if that row is the application and {further:.1f}% if the 445,000 is a further one'):
+                 f'it would be {same:.1f}% if that row is the application, counted at 445,000, and {further:.1f}% if the 445,000 is a further application and was not returned without action'):   # round 10b: the argument's words
         if said not in text: bad.append(f'the page does not say "{said}"')
     if f'{same + 0.1:.1f}%' in text: bad.append('control: a changed share was found in the page')
 
@@ -73,7 +76,7 @@ COPIED = ['the latest annual reports of fifteen US-listed Chinese companies',
           'not a census of every numbered announcement',
           'speaks only of exporters and export controls; it does not answer the question about imports',                               # round 9 (core edit 8b, Fra01-021)
           'three Chinese catalogues, of technologies banned or restricted from import, of goods under import licence, and of dual-use items and technologies under import and export licence',
-          'or on Nov 25, 2026 at 10:45 UTC [cn-ga31-official-sec-submissions-20261125-b]',     # round 10 (AP10-28): the reading of 10:45 UTC
+          'or on Nov 25, 2026 at 22:16 UTC [cn-ga31-official-sec-submissions-20261125-c]',     # round 10b (core batch 12): the reading of 22:16 UTC
           '409 Senate hearing prints of the 119th Congress issued or changed since Apr 22, 2026 holds none of this hearing',
           'Tianjin\'s rule names as its basis the national computing-network opinions of December 2023, which say "鼓励面向中小企业发放算力券、运力券"',
           'no saved page says under which line an importer in China or Hong Kong declares the chips',
@@ -88,7 +91,10 @@ COPIED = ['the latest annual reports of fifteen US-listed Chinese companies',
           # round 10 (the core's batch of 20:58 UTC, Nov 25, 2026: AP10-C04, AP10-C05, AP10-21)
           "saw in the move against Nvidia of China's market regulator, the State Administration for Market Regulation,",
           'the US Trade Representative, Jamieson Greer,',
-          'names a data-centre operator or ultimate consignee; it is not an order']   # round 8 after core edit 7c (R3a): The Standard's words, as point 19 quotes them
+          'names a data-centre operator or ultimate consignee; it is not an order',
+          # round 10b (core batch 12, Nov 25, 2026): Greer's words as the argument gives them, the 445,000 both ways
+          'asked whether China would let its companies buy the H200, said it was "gonna be a sovereign decision for China"',
+          'and 48.6% if the 445,000 is a further application and was not returned without action']   # round 8 after core edit 7c (R3a): The Standard's words, as point 19 quotes them
 low_arg = ARG.lower()
 miss_arg = [c for c in COPIED if c.lower() not in low_arg]
 miss_page = [c for c in COPIED if c.lower() not in text.lower()]
@@ -130,6 +136,20 @@ if before10.is_file():
     print(f'control: {len(seen10)} of the {len(WITHDRAWN10)} wordings withdrawn in round 10 are found in the before-copy of round 10')
     if len(seen10) != len(WITHDRAWN10): bad.append(f'control: round 10 wordings not found in the before-copy: {[w for w in WITHDRAWN10 if w not in seen10]}')
 
+# round 10b (core batch 12 and the readers' leads, Nov 25, 2026): wordings replaced; none may stand in the page, each in the before-copy
+WITHDRAWN10B = ['at 10:45 utc', 'cn-acts-reuters-deepseek-20260130', 'if the 445,000 is a further one (', 'called buying the h200', 'it would move the first and third limits',
+                'another note of this project (idea', 'another part of this project (idea', 'named here as folder / folder / file', 'brought into line with the argument',
+                'and returned 1,888,950 without action', 'at the level of single tariff lines', "in hong kong's published trade statistics, or in a warehouse"]
+hits10b = [w for w in WITHDRAWN10B if w in text.lower()]
+print(f'withdrawn in round 10b: {len(WITHDRAWN10B)} searched; found: {len(hits10b)}')
+if hits10b: bad.append(f'withdrawn wordings stand in the page: {hits10b}')
+before10b = HERE / 'what_would_change_base.before-round10b-20261125.txt'
+if before10b.is_file():
+    old10b = before10b.read_text(encoding='utf-8').lower(); seen10b = [w for w in WITHDRAWN10B if w in old10b]
+    print(f'control: {len(seen10b)} of the {len(WITHDRAWN10B)} wordings withdrawn in round 10b are found in the before-copy of round 10b')
+    if len(seen10b) != len(WITHDRAWN10B): bad.append(f'control: round 10b wordings not found in the before-copy: {[w for w in WITHDRAWN10B if w not in seen10b]}')
+else: bad.append('control: the before-copy of round 10b is missing')
+
 line = next((ln for ln in (PROJ / 'tables' / 'trade_derived_figures.tsv').read_text(encoding='utf-8').splitlines()
              if ln.startswith('China customs table 14, Parts and accessories of automatic data processing machines: Jan-Sep 2025 and Jan-Sep 2026 as printed')), None)
 if not line: bad.append('the customs line is not in tables/trade_derived_figures.tsv')
@@ -146,12 +166,34 @@ print(f'ids cited: {len(cited)}; on the do-not-cite list of {len(retired)}: {len
 if len(retired) < 10: bad.append('control: the do-not-cite list is shorter than expected')
 if hit: bad.append(f'cites ids that may no longer be cited: {hit}')
 
-notes = [ln.split(': ', 1)[1] for ln in text.splitlines() if ln.startswith('- Idea ')]
-missing = [n for n in notes if not (PROJ / 'outputs' / Path(*[p.strip() for p in n.split(' / ')])).is_file()]
-print(f'notes named: {len(notes)}; missing: {len(missing)}')
+# round 10b (Nov 25, 2026): the notes are named by their number and title in the outputs' list (outputs/STATUS.tsv) and by the page to
+# open, no longer by folder; each line must agree with STATUS.tsv, and the page must exist where STATUS.tsv puts it
+st = {}
+for ln in (PROJ / 'outputs' / 'STATUS.tsv').read_text(encoding='utf-8').splitlines()[1:]:
+    c = ln.split('\t')
+    if len(c) >= 6 and c[0].isdigit(): st[int(c[0])] = (c[1], c[5])
+def note_faults(lines):
+    out = []
+    for ln in lines:
+        m = re.match(r'- Output (\d+), (.+?): (\S+)', ln)
+        if not m: out.append(f'a line that does not read "- Output N, title: page": {ln[:60]}'); continue
+        n, title, page = int(m.group(1)), m.group(2), m.group(3)
+        if n not in st: out.append(f'output {n} is not in STATUS.tsv'); continue
+        want_title, want_file = st[n]
+        if title != want_title: out.append(f'output {n}: the page says "{title}", STATUS.tsv "{want_title}"')
+        if Path(want_file).name != page: out.append(f'output {n}: the page names {page}, STATUS.tsv {want_file}')
+        if not (PROJ / want_file).is_file(): out.append(f'output {n}: {want_file} does not exist')
+    return out
+note_lines = [ln for ln in text.splitlines() if ln.startswith('- Output ')]
+notes = note_lines
+missing = note_faults(note_lines)
+if not note_faults(['- Output 34, Chinese customs figure: customs_figures.html']) or not note_faults(['- Output 34, Chinese customs figures: customs.html']):
+    bad.append('control: a changed title or page name was not caught')
+print(f'notes named: {len(notes)}; disagreeing with STATUS.tsv or missing: {len(missing)}')
 if len(notes) != 5: bad.append(f'{len(notes)} notes named, expected 5')
-if missing: bad.append(f'notes named but not found: {missing}')
+if missing: bad.append(f'notes: {missing}')
 if (PROJ / 'outputs' / 'A10_trade_data' / 'no_such_note.html').is_file(): bad.append('control: a missing file was reported as present')
+if re.search(r'(?m)^- Idea \d+', text) or ' / idea' in text: bad.append('the page still names a note by its folder (round 10b withdrew that)')
 
 items = re.findall(r'(?m)^\*\*(\d+)\. ', text)
 print(f'documents listed: {len(items)}')

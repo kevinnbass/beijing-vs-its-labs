@@ -187,13 +187,13 @@ Z 已获准购买合计超过40万枚H200芯片
 ET Conditional approval for ByteDance, Alibaba and Tencent to buy more than 400,000 H200s
 ES Reuters, on The Standard (Hong Kong)
 
-@ BL cn-acts-reuters-deepseek-20260130
+@ BL cn-ga31-sv1-reuters-deepseek-yahoo
 T 工业和商务两个主管部门已批准DeepSeek、字节跳动、阿里巴巴和腾讯四家企业；条件正由国家发展改革委确定（原文："are being decided"）
-S 路透社，载于老虎证券（Tiger Brokers）
+S 路透社，载于雅虎财经（Yahoo Finance）
 Z 中国的工业和商务主管部门已批准全部四家企业
 C 有条件批准
 ET Industry and commerce ministries have approved DeepSeek, ByteDance, Alibaba and Tencent; the conditions "are being decided" by the state planner
-ES Reuters, on Tiger Brokers
+ES Reuters, on Yahoo Finance
 
 @ BL man-70f4668d5f56
 T 英伟达已获北京方面批准销售H200（原文："Nvidia has won Beijing's approval"）；一家中国买方不确定这是不是最终批准

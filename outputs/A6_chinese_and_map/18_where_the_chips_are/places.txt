@@ -31,7 +31,7 @@
 @ 1 out press there away 2026-11-05 cn-clips-evidence-1
 P Hong Kong
 W Reported Nov 5, 2026
-T About 600,000 Nvidia H200 chips are reported to be stored here, waiting to be shipped into China "as Beijing withholds approval for large-scale imports". The report rests on two unnamed people.
+T Reuters reported, by two people it did not name, that about 600,000 Nvidia H200 chips were stored in Hong Kong awaiting shipment to China, "as Beijing withholds approval for large-scale imports".
 S Reuters, Nov 5, 2026, as carried by CNA (its page is dated Nov 6, 2026)
 Q About 600,000 of Nvidia's advanced artificial intelligence chips are stored in Hong Kong awaiting shipment to China, two people familiar with the matter said
 + as Beijing withholds approval for large-scale imports despite demand from technology firms
@@ -43,7 +43,7 @@ L 1 start 15 5 Hong Kong
 @ 2 out press there toward 2025-11-27 cn-tolerate-ft-offshore
 P Southeast Asia
 W Reported Nov 27, 2025
-T Alibaba and ByteDance are reported to train their newest AI models in data centres "across Southeast Asia", on the word of two unnamed people. The report names no site. It says Chinese companies "typically sign a lease agreement" for data centres abroad, that clusters "have boomed in Singapore and Malaysia", and that many are "equipped with high-end Nvidia products".
+T The Financial Times reported, by two people it did not name, that Alibaba and ByteDance were training their latest AI models in data centres "across Southeast Asia". The report names no site. It says Chinese companies "typically sign a lease agreement" for data centres abroad, that clusters "have boomed in Singapore and Malaysia", and that many are "equipped with high-end Nvidia products".
 S Financial Times, Nov 27, 2025, as carried by The Irish Times
 Q Alibaba and ByteDance are among the tech groups training their latest large language models (LLMs) in data centres across Southeast Asia, according to two people with direct knowledge of the matter
 + Data centre clusters have boomed in Singapore and Malaysia, fuelled by Chinese demand
@@ -56,7 +56,7 @@ L 1 middle 0 -17 Southeast Asia
 @ 3 out press there toward 2025-12-20 man-cn-ft-202512-japan
 P Japan, outside Osaka
 W Reported Dec 20, 2025
-T The Financial Times reported that advanced Nvidia chips owned by Datasection, a Japanese firm, in a data centre "outside of Osaka" were "at the disposal of one customer: China's Tencent". The naming of Tencent rests on the paper's unnamed people: Datasection's chief executive "declined to confirm the Tencent deal". Tencent said its use of "cloud computing services is both transparent and legal". The firm's own filings do not bear out the paper's present tense: its notice of May 7, 2026 says the centre's site was changed from Osaka to Chiba, and gives no date for the change (the next record); its release of Nov 7, 2025 had already announced an AI data centre in Inzai, Chiba, "新たな国内プロジェクトとして" (as a new domestic project).
+T The Financial Times reported that advanced Nvidia chips owned by Datasection, a Japanese firm, in a data centre "outside of Osaka" were "at the disposal of one customer: China's Tencent". The naming of Tencent rests on the paper's unnamed people: Datasection's chief executive "declined to confirm the Tencent deal". Tencent said its use of "cloud computing services is both transparent and legal". Datasection's own notices, which do not name their customer, run as follows. Jul 10, 2025: a contract with the customer for an AI data centre to be opened in Osaka prefecture. Nov 7, 2025, a release: a site secured for an AI data centre in Inzai, Chiba, "新たな国内プロジェクトとして" (as a new domestic project). Jan 6, 2026: the start of that service at its first centre in Japan put back to March 2026; since September 2025 the customer had been served on a partner's GPU servers, and the notice names neither the partner nor where its servers are. May 7, 2026: the first centre's site changed from Osaka to Inzai, with no date given for the change (the next record). None of the four says where the customer was served in December 2025.
 S Financial Times, Dec 20, 2025
 Q In a data centre outside of Osaka, Japan, Nvidia’s cutting-edge semiconductors are at the disposal of one customer: China’s Tencent.
 + The advanced B200 chips are owned by Datasection
@@ -64,8 +64,18 @@ Q In a data centre outside of Osaka, Japan, Nvidia’s cutting-edge semiconducto
 + Ishihara declined to confirm the Tencent deal
 + cloud computing services is both transparent and legal
 + a legal but geopolitically fraught strategy
++ @cn-le20-ds-20250710-order | 2025 年７月 10 日
++ @cn-le20-ds-20250710-order | 大阪府内に開設予定の AI データセンター
++ @cn-le20-ds-20250710-order | 世界最大規模のクラウドサービスプロバイダーである顧客
 + @cn-le20-ds-20251107-inzai | 2025年11月７日付で
++ @cn-le20-ds-20251107-inzai | 千葉県印西市でのAIデータセンター向け拠点確保のお知らせ
 + @cn-le20-ds-20251107-inzai | 新たな国内プロジェクトとして、千葉県印西市におけるAIデータセンターの開設準備が整いましたことをお知らせ致します
++ @cn-le20-ds-20260106-order | 2026 年１月６日
++ @cn-le20-ds-20260106-order | 当初大口受注によるサービス提供の開始時期を 2025 年 12 月から 2026 年３月に再度変更することとなりました
++ @cn-le20-ds-20260106-order | の GPU サーバー等の AI インフラを活用することで、2025 年９月 16 日付で当初大口受注と同様に NNJ 社を通じて本件顧客からの追加の大口受注
++ @cn-le20-ds-20260106-order | 受注金額には 2025 年 10 月度から 12 月度までの実績を記載しており
++ @cn-le20-ds-20260106-order | 本件パートナーの意向かつ守秘義務により、本件パートナーの企業情報は非開示とさせていただきます
++ @cn-le20-ds-20260106-order | 本件顧客の意向かつ守秘義務により、本件顧客の企業情報は非開示とさせていただきます
 + @cn-tolerate-datasectionfiling | 大阪府から千葉県印西市に変更いたしました。その後、同市のデータセンター向け施設内
 G iso:JP-27 |
 L 1 middle 0 27 Osaka
@@ -73,9 +83,10 @@ L 1 middle 0 27 Osaka
 @ 4 out paper plan toward 2026-05-07 cn-tolerate-datasectionfiling
 P Japan: Inzai, Chiba
 W Firm's notice of May 7, 2026
-T Datasection's own notice: at its customer's request it changed the site of its first AI data centre in Japan from Osaka to Inzai, in Chiba ("大阪府から千葉県印西市に変更いたしました"), and signed a contract to buy 635 servers with 5,080 Nvidia B300 chips for it, to start in stages from May to July 2026. The notice does not name the customer: it calls it one of the world's largest cloud service providers. Later, by the firm's own words: on Jul 17, 2026 it "has begun taking delivery of GPU servers equipped with NVIDIA’s latest B300 GPUs at its first AI data centre in Japan, which is currently being prepared for operation"; on Nov 16, 2026 it said that for one AI data-centre project in Japan and two abroad, expected to start in stages from July 2026, the expected start of full operation had slipped ("フル稼働の開始見込時期に遅れが生じておりました"); the filing does not name the sites.
+T Datasection's own notice: at its customer's request for shorter latency it changed the site of its first AI data centre in Japan from Osaka to Inzai, in Chiba ("大阪府から千葉県印西市に変更いたしました"), and signed a contract to buy 635 servers with 5,080 Nvidia B300 chips for it, to start in stages from May to July 2026. The notice does not name the customer: it calls it one of the world's largest cloud service providers. Later, by the firm's own words: on Jul 17, 2026 it "has begun taking delivery of GPU servers equipped with NVIDIA’s latest B300 GPUs at its first AI data centre in Japan, which is currently being prepared for operation"; on Nov 16, 2026 it said that for one AI data-centre project in Japan and two abroad, expected to start in stages from July 2026, the expected start of full operation had slipped ("フル稼働の開始見込時期に遅れが生じておりました"); the filing does not name the sites.
 S Datasection (listed in Tokyo), notice of May 7, 2026, in Japanese, as mirrored by irbank.net
 Q 大阪府から千葉県印西市に変更いたしました
++ からのレイテンシー（データ送信から応答までの時間）の短縮要望を受け、大阪府から千葉県印西市に変更いたしました
 + 千葉県印西市に開設予定の AI データセンター
 + NVIDIA 製 B300（5,080 個）を搭載した GPU サーバー（635 台）
 + 2026 年５月から７月にかけて段階的な稼働を予定しております

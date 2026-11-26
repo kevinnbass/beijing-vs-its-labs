@@ -50,8 +50,8 @@ table.tv td b { color: var(--ink); }
 #card .l { display: flex; flex-direction: column; min-height: 0; }
 #card .eb { font: 700 1.0417cqw/1.2 var(--font-text); letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
 #card .hl { font: 700 3.1667cqw/1.08 var(--font-head); letter-spacing: -0.015em; margin-top: 1.0000cqw; text-wrap: nowrap; }
-#card .dk { font-size: 1.2917cqw; line-height: 1.4; color: var(--ink2); margin-top: 1.0000cqw; text-wrap: pretty; }
-#card .says { margin-top: auto; padding-top: 1.5000cqw; display: grid; gap: 1.1667cqw; }
+#card .dk { font-size: 1.2917cqw; line-height: 1.4; color: var(--ink2); margin-top: 0.8333cqw; text-wrap: pretty; }     /* round 10: 0.8333cqw (was 12): the core's deck runs a line longer */
+#card .says { margin-top: auto; padding-top: 1.0000cqw; display: grid; gap: 1.0000cqw; }     /* round 10: 1.0000cqw and 1.0000cqw (were 18 and 14), for the same line */
 #card .say { border-left: 0.2500cqw solid; padding: 0.0833cqw 0 0.1667cqw 1.3333cqw; }
 #card .say.away { border-color: var(--away); } #card .say.toward { border-color: var(--toward); }
 #card .who { font: 700 1.0000cqw/1.3 var(--font-text); letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink2); display: flex; align-items: center; gap: 0.6667cqw; }
@@ -92,7 +92,7 @@ table.tv td b { color: var(--ink); }
  <div class="l">
   <p class="eb">China · Nvidia chips · Sept 2024 to Nov 2026</p>
   <h1 class="hl">Beijing mostly pulled<br>one way on Nvidia chips.<br>Its AI companies<br>pulled the other.</h1>
-  <p class="dk">From 2024 Beijing’s security and planning side pressed AI companies, through unpublished guidance the press reported, to buy home-made chips. They kept ordering Nvidia’s.</p>
+  <p class="dk">From 2024 Beijing’s planner and industry ministry, and from 2025 its security side, pressed AI companies, through unpublished guidance the press reported, to buy home-made chips. They kept ordering Nvidia’s.</p>
   <div class="says">
    <div class="say away"><p class="who"><i class="mk solid away"></i>Beijing holds Nvidia back</p>
     <p class="q">“but such sales were restricted by the PRC government”</p>
@@ -148,11 +148,13 @@ table.tv td b { color: var(--ink); }
     <li>The sums are ours, of the table’s rows. The card’s bars count Nvidia’s chips only; its footer gives the returned count with AMD’s, and says so. With AMD’s the approved count is 879,868 and the returned count 1,888,950, which is 55% of the chips in the applications the summary records.
      All 5 applications whose ultimate location is Indonesia, Malaysia or Thailand (1,118,500 chips) are among those returned. The committee says some applications are “not fully reflected in the May 11, 2026, summary document”: “For example, NVIDIA applied on December 19, 2025, to export 445,000 H200s to Tencent”. The table’s only Tencent row of that date is for 75,000 chips, approved;
      neither document says whether it is that application. The share would be 49.5% if it is, counted at 445,000, and 48.6% if the 445,000 is a further application and was not returned without action (our arithmetic).</li>
-    <li>The card leaves out one reported number that the funnel page carries: Beijing was still determining how many chips to approve, and the total could be fewer than 200,000 (The Information, through Reuters, Jul 8, 2026).</li>
+    <li>The card leaves out one reported number that the page of seven H200 counts carries: Beijing was still determining how many chips to approve, and the total could be fewer than 200,000 (The Information, through Reuters, Jul 8, 2026).</li>
     <li>The bar for the chips delivered is drawn for both named buyers together (20,000); the report gives about 10,000 each.</li>
+    <li>Two later accounts say otherwise of the orders. Nvidia’s chief executive, the day after the report of Beijing’s approvals, said <span lang="zh-Hans">“我认为中国政府仍在决策中，我们尚未收到采购订单”</span> (I think the Chinese government is still deciding; we have not yet received purchase orders), as <a href="https://www.voachinese.com/a/nvidia-ceo-says-china-has-not-approved-h200-imports-20260129/8108022.html">Voice of America’s Chinese service, Jan 29, 2026</a>, renders him.
+     TechWeb, as <a href="https://finance.sina.com.cn/tech/roll/2026-07-17/doc-iniianxk1326540.shtml">Sina carries it</a>, reported on Jul 17, 2026, from industry insiders it did not name, that <span lang="zh-Hans">“国内AI厂商几乎未对英伟达H200芯片下达批量采购订单”</span> (China’s AI firms had placed almost no bulk purchase orders for Nvidia’s H200). English in round brackets is ours, not an official translation.</li>
     <li>On the record, in money and not in chips: on its results call of Nov 17, 2026, for the quarter ended Oct 25, 2026, Nvidia said “Q3 sales of licensed Hopper Data Center products to China was $2.4 billion”. The Hopper family includes the H200. Neither the call nor Reuters’s report of it says how many of those chips crossed into the mainland.</li>
     <li>The Reuters headline is from Sept 4, 2025, when the chip at issue was the H20. The United States allowed H200 sales to China only later.</li>
-    <li>The sentence under the headline rests on the argument this card goes with. Bloomberg’s report of Sept 27, 2024 (carried by The Business Times on Sept 28, 2024), by people it did not name: “The policy has taken the form of guidance rather than an outright ban”.</li>
+    <li>The sentence under the headline rests on the argument this card goes with. Bloomberg’s report of Sept 27, 2024 (carried by The Business Times on Sept 28, 2024), by people it did not name: “several Chinese regulators, including the powerful Ministry of Industry and Information Technology, issued so-called window guidance”, and “The policy has taken the form of guidance rather than an outright ban”.</li>
     <li>The five limits, in the argument’s words: Beijing was not one actor; the pressure came as public warnings and unpublished guidance, not as a published ban (no published Chinese order against buying Nvidia chips was found in the 82 policy pages read);
      some purchases were approved and some chips came in; the companies had reasons of their own, and American curbs and conditions pushed too; and what Beijing meant by it is not settled.</li>
    </ul>

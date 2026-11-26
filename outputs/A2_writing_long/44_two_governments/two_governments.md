@@ -1,28 +1,28 @@
 # Two governments, one chip
 
-*Nvidia's H200 needed a yes from Washington and a yes from Beijing. A dated account of each side's steps, from December 2025 to November 2026.*
+*Nvidia's H200 needed a licence from Washington and, by the press reports, a yes from Beijing. A dated account of each side's steps, from December 2025 to November 2026.*
 
-Draft by Claude, Anthropic's model. Written Nov 23, 2026 (UTC).
+Draft by Claude, Anthropic's model. Written Nov 23, 2026 (UTC); revised Nov 25, 2026.
 
-How to read it. Words between quotation marks are a source's exact words, found in the saved copy by a script. A filled reference number is a document, a filing or a named person on the record. An open number is a press report citing unnamed people or a caption track. Where a statement rests on a Chinese text, the English is our rendering, not an official translation.
+How to read it. Words between quotation marks are a source's exact words, found in the saved copy by a script. A filled reference number is a document, a filing, a named person on the record, or a published commentary of state media or an industry body. An open number is a press report citing unnamed people, a research firm's count, or captions and machine transcripts nobody has checked by ear. Where a statement rests on a Chinese text, the English is our rendering, not an official translation.
 
 The author's interest. Anthropic has argued in public for controls on chip exports to China (that is from the model's general knowledge; no saved page is cited for it), so judge this piece by its sources.
 
 ## Two permissions
 
-The H200 is Nvidia's second most powerful AI chip [1]. To reach a Chinese company it needed an export licence from Washington and leave to import from Beijing. Each step is marked on the record or reported (a press report citing unnamed people).
+Reuters called the H200 Nvidia's second most powerful AI chip in May 2026 [1]. To reach a Chinese company it needed an export licence from Washington and, by the press reports, Beijing's leave to import; no published Chinese permit rule for these chips was found. Each step is marked on the record or reported (a press report citing unnamed people).
 
 ## Washington's steps
 
 - **Dec 8, 2025. On the record.** The President posted that he had told Xi Jinping "the United States will allow NVIDIA to ship its H200 products to approved customers in China", and added: "President Xi responded positively!" [2] That is the President's account, not Xi's words.
-- **Jan 15, 2026. On the record.** The Commerce Department's rule took effect. It requires "independent, third-party testing in the United States", and that shipments to China and Macau be at most half of the same product shipped for end use in the United States [3].
+- **Jan 15, 2026. On the record.** The Commerce Department's rule took effect. It moved licence applications for the H200 to China and Macau from a presumption of denial to case-by-case review, on conditions that include "independent, third-party testing in the United States" and shipments to China and Macau of at most half of the same product shipped for end use in the United States [3].
 - **February 2026. On the record.** Nvidia's filing: from that month the US government "granted licenses that would allow us to ship small amounts of H200 products to specific China-based customers", with "a 25% tariff upon importation into the United States" [4].
-- **May 11, 2026. On the record.** The table of licence applications for the H200 and AMD's comparable chip, from the Commerce Department's Bureau of Industry and Security, made public by the House Foreign Affairs Committee on Nov 19, 2026: 879,868 chips licensed (Nvidia's: 579,868), each marked "Approved, not shipped"; 1,888,950 returned without action, 55% of the chips in the applications the summary records. No reason is given. The sums are ours [5] [6] [7].
+- **May 11, 2026. On the record.** The table of licence applications for the H200 and AMD's comparable chip, from the Commerce Department's Bureau of Industry and Security, made public by the House Foreign Affairs Committee on Nov 19, 2026: 879,868 chips licensed (Nvidia's: 579,868), each marked "Approved, not shipped"; 1,888,950 in applications returned without action, 55% of the chips in the applications the summary records. No reason is given. The sums are ours [5] [6] [7].
 
 ## Beijing's steps
 
 - **Jan 14, 2026. Reported.** Customs agents were told the chips "are not permitted to enter China". Companies were "explicitly instructed not to purchase the chips unless necessary" [8].
-- **Jan 28 and 30, 2026. Reported.** ByteDance, Alibaba and Tencent "have been approved to purchase more than 400,000 H200 chips in total", then DeepSeek too; the conditions, left to the state planner (NDRC), were still being set [9] [10].
+- **Jan 28 and 30, 2026. Reported.** ByteDance, Alibaba and Tencent "have been approved to purchase more than 400,000 H200 chips in total", then DeepSeek too (Reuters; the second report on Yahoo Finance); the conditions, left to the state planner (NDRC), were still being set. Nvidia's chief executive told reporters the day after the first report that his company had not received such information, and that he believed China was still finalising the licence [9] [10].
 - **Mar 17, 2026. Reported.** "Nvidia has won Beijing's approval to sell" the chip, though a Chinese company source "did not know if the Chinese government had given final approval" [11].
 - **May 14, 2026. Reported.** "not a single delivery has been made so far". By one person, "Chinese firms pulled back after guidance from Beijing", a shift that "was partly triggered by changes on the U.S. side" [1].
 - **Aug 18, 2026. Reported.** "ByteDance and Tencent have each received about 10,000 H200 processors in recent weeks", while "Beijing wants them to keep the hardware outside mainland China" [12].
@@ -38,11 +38,11 @@ The H200 is Nvidia's second most powerful AI chip [1]. To reach a Chinese compan
 
 ## What the two lists show
 
-Neither yes was whole. Washington's came with testing, a cap and a tariff, and its table shows more chips in returned applications than in licensed ones. Beijing's is known almost wholly from unnamed people: a hold, a conditional yes, small deliveries, and about 600,000 chips still waiting in November. What Beijing meant by it is not settled. Reuters wrote in January 2026 that it was unclear whether Beijing wanted an outright ban, "is still chewing over restrictions, or whether these measures could be used as a bargaining tactic in talks with Washington" [8]. The US Trade Representative, May 15, 2026: whether Chinese companies may buy is "a sovereign decision for China" (captions, not checked by ear, at 5:59) [19]. Either way, by the reports, few of the chips had arrived by November 2026.
+Neither yes was whole. Washington's came with testing, a cap and a tariff, and its table shows more chips in returned applications than in licensed ones. Beijing's is known almost wholly from unnamed people: a hold, a conditional yes, small deliveries, and about 600,000 chips still waiting in November. What Beijing meant by it is not settled. Reuters wrote in January 2026 that it was unclear whether Beijing wanted an outright ban, "is still chewing over restrictions, or whether these measures could be used as a bargaining tactic in talks with Washington" [8]. The US Trade Representative, May 15, 2026: whether Chinese companies may buy is "a sovereign decision for China" (captions, not checked by ear, at 5:59) [19]. Either way, by the reports, the companies had received a small part of the chips they sought by November 2026; none of the sources here says how many crossed into the mainland.
 
 ## References
 
-Each entry: its kind; what it is; the saved page's own title where the record holds one; the address; the saved copy (research/primary/<id>).
+Each entry: its kind; what it is; the saved page's own title where the record holds one; the address; the id of the saved copy.
 
 [1] Press report citing unnamed people. Reuters, May 14, 2026, as carried by MarketScreener. Internet Archive capture of Jun 16, 2026. https://web.archive.org/web/20260616124310/https://www.marketscreener.com/news/us-clears-h200-chip-sales-to-10-china-firms-as-nvidia-ceo-looks-for-breakthrough-ce7f5bddd98df020 Saved copy: cn-acts-reuters-us-approvals-20260514-wayback
 
@@ -52,17 +52,17 @@ Each entry: its kind; what it is; the saved page's own title where the record ho
 
 [4] Company filing or statement. Nvidia, quarterly report on Form 10-Q for the quarter to Jul 26, 2026, filed with the US Securities and Exchange Commission on Aug 26, 2026. https://www.sec.gov/Archives/edgar/data/1045810/000104581026000075/nvda-20260726.htm Saved copy: man-ms-sec-10q-2026-07
 
-[5] Official document, or an official on the record. House Foreign Affairs Committee, disclosure of Nov 19, 2026: the table of licence applications (the file's name: 11.19.26-ECRA-Information-Disclosure-of-BIS-License-Decisions) for Nvidia's H200 and AMD's MI325X, with their status as of May 11, 2026 (its text layer is out of order; the rows were read from the page images). https://democrats-foreignaffairs.house.gov/wp-content/uploads/2026/11/11.19.26-ECRA-Information-Disclosure-of-BIS-License-Decisions.pdf Saved copy: cn-usdocs-hfac-decisions-20261119
+[5] Official document, or an official on the record. House Foreign Affairs Committee, disclosure of Nov 19, 2026: a table of licence applications for the H200 and equivalent chips, with their status as of May 11, 2026, headed "H200 License and Equivalent Application Status as of May 11, 2026" (its text layer is out of order; the rows were read from the page images). https://democrats-foreignaffairs.house.gov/wp-content/uploads/2026/11/11.19.26-ECRA-Information-Disclosure-of-BIS-License-Decisions.pdf Saved copy: cn-usdocs-hfac-decisions-20261119
 
 [6] Official document, or an official on the record. House Foreign Affairs Committee, disclosure of Nov 19, 2026, made by the full committee (its chairman's release; approved by unanimous consent at a business meeting; the files are on the committee Democrats' site): the committee's summary, which cites a BIS summary dated May 11, 2026 (BIS: the Commerce Department's Bureau of Industry and Security). https://democrats-foreignaffairs.house.gov/wp-content/uploads/2026/11/11.19.26-ECRA-Information-Disclosure-HFAC-Summary.pdf Saved copy: cn-usdocs-hfac-summary-20261119
 
 [7] Official document, or an official on the record. House Foreign Affairs Committee, chairman's press release of Nov 19, 2026 on making public the licence information for Nvidia's and AMD's chips to China. Page title: Chairman Brian Mast Exercises Legislative Authority to Publicly Release AI Chip License Information for China. https://foreignaffairs.house.gov/news/press-releases/chairman-brian-mast-exercises-legislative-authority-to-publicly-release-ai-chip-license-information-for-china Saved copy: cn-labs-us-chip-licences-20261119
 
-[8] Press report citing unnamed people. Reuters, Jan 14, 2026, as carried by Yahoo Finance (the copy the figure now cites for this report). Page title: Exclusive-China's customs agents told Nvidia's H200 chips are not permitted, sources say. https://finance.yahoo.com/news/chinas-customs-agents-told-nvidias-065002091.html/ Saved copy: cn-acts-reuters-customs-20260114
+[8] Press report citing unnamed people. Reuters, Jan 14, 2026, as carried by Yahoo Finance. Page title: Exclusive-China's customs agents told Nvidia's H200 chips are not permitted, sources say. https://finance.yahoo.com/news/chinas-customs-agents-told-nvidias-065002091.html/ Saved copy: cn-acts-reuters-customs-20260114
 
 [9] Press report citing unnamed people. Reuters, Jan 28, 2026, as carried by The Standard (Hong Kong). Page title: China gives nod to ByteDance, Alibaba and Tencent to buy Nvidia's H200 chips, says sources. https://www.thestandard.com.hk/innovation/article/322910/China-gives-nod-to-ByteDance-Alibaba-and-Tencent-to-buy-Nvidias-H200-chips-says-sources Saved copy: ms-bj-20260128-h200-nod-standard
 
-[10] Press report citing unnamed people. Reuters, Jan 30, 2026, as carried by Tiger Brokers. Page title: China Conditionally Approves DeepSeek To Buy Nvidia's H200 Chips - Sources. https://www.itiger.com/hans/news/2607233096 Saved copy: cn-acts-reuters-deepseek-20260130
+[10] Press report citing unnamed people. Reuters, Jan 30, 2026, as carried by Yahoo Finance. Page title: Exclusive-China conditionally approves DeepSeek to buy Nvidia's H200 chips - sources. https://finance.yahoo.com/news/exclusive-china-conditionally-approves-deepseek-065114115.html Saved copy: cn-ga31-sv1-reuters-deepseek-yahoo
 
 [11] Press report citing unnamed people. Reuters, Mar 17, 2026, as carried by Investing.com. Hand-saved. https://www.investing.com/news/stock-market-news/chinese-authorities-approve-nvidias-h200-ai-chip-sales-source-says-4567348 Saved copy: man-70f4668d5f56
 
@@ -78,8 +78,8 @@ Each entry: its kind; what it is; the saved page's own title where the record ho
 
 [17] Company filing or statement. Nvidia, results call for the third quarter of its fiscal year 2027 (the quarter ended Oct 25, 2026): the transcript on Nvidia's investor file host (s201.q4cdn.com). https://s201.q4cdn.com/141608511/files/content_files/NVDA-3Q27-Earnings-Transcript.pdf Saved copy: cn-o38-nvda-q3fy27-call-transcript-pdf
 
-[18] Press report of words spoken on the record. Reuters, Nov 18, 2026, as carried by AOL, reporting Nvidia's interim chief executive on its results call. Page title: Nvidia stops shipping US-approved AI chips to China - AOL. https://www.aol.com/articles/nvidia-stops-shipping-us-approved-091611000.html Saved copy: cn-acts-reuters-halt-20261118-relay2
+[18] Press report of words spoken on the record. Reuters, Nov 18, 2026, as carried by AOL, reporting Nvidia's then interim chief executive on its results call. Page title: Nvidia stops shipping US-approved AI chips to China - AOL. https://www.aol.com/articles/nvidia-stops-shipping-us-approved-091611000.html Saved copy: cn-acts-reuters-halt-20261118-relay2
 
 [19] Caption track or machine transcript, not checked by ear. US Trade Representative Jamieson Greer, interview on Bloomberg Television posted May 15, 2026 ("Greer: US, China Willing to Continue Trade Truce"): the video's English caption track (its maker is not stated; it is not YouTube's automatic track), not checked by ear; the words quoted are at 5:59. https://www.youtube.com/watch?v=ckzJQyMyCoE Saved copy: cn-le01-greer-bbg-20260515-subs-ttml
 
-Build check: 24 quotations and 37 further statements were looked for in the saved copies of 19 sources and all were found; a planted false quotation was rejected. 11 sources are documents, filings or named people on the record; 8 are press reports citing unnamed people, counts or machine transcripts. A quotation that is found shows what the source says, not that it is true.
+Build check: 24 quotations and 43 further statements were looked for in the saved copies of 19 sources and all were found; a planted false quotation was rejected. 11 sources are documents, filings or named people on the record; 8 are press reports citing unnamed people, counts or machine transcripts. A quotation that is found shows what the source says, not that it is true.

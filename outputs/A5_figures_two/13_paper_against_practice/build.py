@@ -180,7 +180,7 @@ def main():
    <section class="card paper">
     <p class="tagline">On paper</p>
     <h2>Targets that provincial-level governments set</h2>
-    <p class="sub">Goals of {who_set}, the ones found to set a share. They do not all count the same thing: each track says what its plan counts. The hatched zone is the share asked for: the line and above.</p>
+    <p class="sub">Goals of {who_set}, the ones found to set a share. They do not all count the same thing: each track says what its plan counts. The hatched zone is the share asked for, from the line up; where a target is worded as over a share, the line itself falls short of it.</p>
 {target('shandong', P['shandong'], 'by 2025', 'Home-made computing in the province. Known from the provincial daily’s account of the plan; the plan’s own text is not held.')}
 {target('jiangsu', P['jiangsu'], f'by {by["jiangsu"]["year"]} ({j["mid"]}% by {by["jiangsu"]["midyear"]})', f'Home-made chips in use in newly built computing centres. The plan’s own table gives {j["mid"]} for {by["jiangsu"]["midyear"]} and {j["target"]} for {by["jiangsu"]["year"]}, and marks the line “预期性” (expected), not “约束性” (binding).')}
 {target('guangdong', P['guangdong'], 'by the end of 2025', 'Home-made computing in what is newly added, not chips alone. The wording is “力争” (strive for).')}
@@ -191,7 +191,7 @@ def main():
 {target('shanghai-target', P['shanghai-target'], 'by 2025', 'Home-made chips in use in the city’s newly built intelligent computing centres.')}
 {target('sichuan', P['sichuan'], 'plan for 2024 to 2027', 'Home-made computing equipment, not chips alone. The wording is “力争” (strive for).')}
 {target('national', 'no percentage', 'national opinions, Dec 25, 2023', 'No published national plan found in the 82 policy pages read sets a home-made share for computing centres. Two national texts among them hold a home-made percentage of other kinds: a 20% price preference for home-made goods where they compete with others in a government purchase, and an advisory committee’s roadmap of October 2015 that expected home-made products in several fields to reach stated shares of the home market by 2025, among them high-performance computers and servers at over 80% and mobile-terminal chips at 40% (guidance, not an instruction, in the words of the industry ministry’s vice minister at its launch). Bloomberg reported in June 2026, from unnamed people, a draft national plan with “at least 80 per cent of the core technology, AI chips included” from local suppliers; no such plan was found published.')}
-    <p class="axisnote">Scale of the {C.WORDS[len(order)]} tracks: a share in that place, as its plan defines it. A goal, not a count. Of the other {31 - len(share_set)} provincial-level governments, {res['plan_no_share']} have a plan that was read and sets no share, {C.WORDS[res['account_only']]} is known only from accounts of its plan (its issuer’s own among them), and for {C.WORDS[res['not_reached']]} no computing plan was found (tables/provinces_31.tsv).</p>
+    <p class="axisnote">Scale of the {C.WORDS[len(order) - 1]} tracks of governments that set a share: a share in that place, as its plan defines it. A goal, not a count. The national track has none. Of the other {31 - len(share_set)} provincial-level governments, {res['plan_no_share']} have a plan that was read and sets no share, {C.WORDS[res['account_only']]} is known only from accounts of its plan (its issuer’s own among them), and for {C.WORDS[res['not_reached']]} no computing plan was found (tables/provinces_31.tsv).</p>
    </section>"""
 
     # ---- in practice ----
@@ -228,7 +228,7 @@ def main():
      <div class="use">
       <div class="toward"><div class="who"><i class="sw toward"></i>Internet companies’ own clusters</div><div class="what">mainly Nvidia</div>
        <div class="zh">“主要以英伟达高性能卡为主” (mainly Nvidia high-performance cards)</div></div>
-      <div class="away"><div class="who"><i class="sw away"></i>The three state telecom operators</div><div class="what">mainly Huawei and other home-made</div>
+      <div class="away"><div class="who"><i class="sw away"></i>The three big telecom operators</div><div class="what">mainly Huawei and other home-made</div>
        <div class="zh">“三大运营商主要购置华为等国产化智算集群” (the three operators mainly buy Huawei and other home-made intelligent-computing clusters)</div></div>
      </div>
     </div>
@@ -260,7 +260,7 @@ def main():
     <thead><tr><th></th><th>Who says it</th><th>What it measures</th><th>Where and when</th></tr></thead>
     <tbody>
      <tr><td>The targets</td><td data-h="Who says it">a provincial-level government, in a plan</td><td data-h="What it measures">a goal: a share of the chips, equipment or computing in that place. Three count home-made chips (Jiangsu and Shanghai in new centres, Tianjin in all); Guangdong, Inner Mongolia and Shandong home-made computing (Guangdong in what is newly added); Zhejiang home-made computing in one sector, its information and communications industry; Sichuan home-made equipment; Hebei software and hardware called independently controllable. Jiangsu’s plan marks its own target as expected, not binding; Shandong’s is known from a newspaper’s account</td><td data-h="Where and when">one government each; goals for 2025, 2026 and 2030, and a plan that runs to 2027</td></tr>
-     <tr><td>The Shanghai reply</td><td data-h="Who says it">a city government body</td><td data-h="What it measures">no number: which cards the clusters of each kind of owner mainly run on</td><td data-h="Where and when">Shanghai; dated Apr 30, 2025 (published Nov 10, 2025)</td></tr>
+     <tr><td>The Shanghai reply</td><td data-h="Who says it">a city government body</td><td data-h="What it measures">no number: what internet companies’ own clusters mainly run on, and what the three big telecom operators mainly buy</td><td data-h="Where and when">Shanghai; dated Apr 30, 2025 (published Nov 10, 2025)</td></tr>
      <tr><td>The research firm’s counts</td><td data-h="Who says it">IDC, as reported by Reuters</td><td data-h="What it measures">cards shipped in a period, by maker. Reuters words the first as AI accelerator cards and the second as the market for data-centre AI chips, so the two bars are not shown as one series</td><td data-h="Where and when">all of China; 2025, and January to June 2026</td></tr>
     </tbody>
    </table>
@@ -276,13 +276,17 @@ def main():
    </ul>"""
 
     below = C.records_block(recs, 'One line for each numbered source: its date, our summary, the page\'s own words, and the source. Point at a number in the figure to read the words there.')
+    # round 10 (readers' leads): the earliest plan drawn is Shandong's of 2022 (Jiangsu's date field is a place in the order, its plan signed 2024);
+    # every share drawn is half or more, as the headline says
+    first_year = min(r['date'].year for r in recs if r['side'] == 'paper' and r['key'] != 'jiangsu' and r['V'].get('target') is not None)
+    assert first_year == 2022 and min(by[k]['V']['target'] for k in order if 'target' in by[k]['V']) >= 50, first_year
     page = C.page(
         title='Paper Against Practice',
-        eyebrow='China · home-made chip targets and what was in use · 2023 to 2026',
-        h1='On paper, half or more home‑made. In practice, Nvidia was still the biggest single supplier.',
+        eyebrow=f'China · home-made chip targets and what was in use · {first_year} to 2026',
+        h1=f'On paper, targets of half or more home‑made, or in {C.WORDS[n_ctrl]} case independently controllable. In practice, Nvidia was still the biggest single supplier.',
         deck=f'Targets that {who_set} set for computing ({C.WORDS[n_home]} for home-made chips, equipment or computing, {C.WORDS[n_ctrl]} for what it calls independently controllable), '
              'beside what a Shanghai government body wrote and what a research firm counted. '
-             'The two sides do not measure the same thing, so each has its own panel and its own scale. By the counts, Nvidia stayed the largest maker while its share fell.',
+             f'The two sides do not measure the same thing, so each has its own panel and its own scale. In both of the research firm’s counts Nvidia was the largest maker: {va["nvidia"]}% of AI accelerator cards shipped in 2025, and {vb["nvidia"]}% of what Reuters words as the market for data-centre AI chips in January to June 2026. The two are worded differently and are not one series.',
         key=key, figure=figure, below=below, css=CSS,
         tipjson=C.tips(recs, lambda r: 'On paper' if r['side'] == 'paper' else 'In practice'))
     out = C.finish(HERE, NAME, page, lines)

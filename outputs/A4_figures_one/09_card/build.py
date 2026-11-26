@@ -13,6 +13,10 @@ and the share is given both ways (a4lib.house()).
 Round 9b (Nov 25, 2026, core edit 8b): an application names a data-centre operator or ultimate consignee; the five abroad
 are those whose ultimate location is outside China; 48.6% also needs the further application not returned without action;
 the July total is one that could be under 200,000; Bloomberg's report rests on people it did not name.
+Round 10 (Nov 25, 2026, core batch 12): the deck sentence is the core's (row SF1-O21: the planner and the industry ministry
+from 2024, the security side from 2025); the page quotes Bloomberg's naming of the industry ministry, and gives the
+argument's two later accounts that say otherwise of the orders.
+Round 10b (the session's ruling): the card's footer carries only the credit, not "" (untrue of a public copy).
 Before the card is called done or shown: scripts/render_and_look.py on card.html and on card.png.
 """
 import re, sys
@@ -39,8 +43,8 @@ CARD_CSS = px('''
 #card .l { display: flex; flex-direction: column; min-height: 0; }
 #card .eb { font: 700 12.5px/1.2 var(--font-text); letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
 #card .hl { font: 700 38px/1.08 var(--font-head); letter-spacing: -0.015em; margin-top: 12px; text-wrap: nowrap; }
-#card .dk { font-size: 15.5px; line-height: 1.4; color: var(--ink2); margin-top: 12px; text-wrap: pretty; }
-#card .says { margin-top: auto; padding-top: 18px; display: grid; gap: 14px; }
+#card .dk { font-size: 15.5px; line-height: 1.4; color: var(--ink2); margin-top: 10px; text-wrap: pretty; }     /* round 10: 10px (was 12): the core's deck runs a line longer */
+#card .says { margin-top: auto; padding-top: 12px; display: grid; gap: 12px; }     /* round 10: 12px and 12px (were 18 and 14), for the same line */
 #card .say { border-left: 3px solid; padding: 1px 0 2px 16px; }
 #card .say.away { border-color: var(--away); } #card .say.toward { border-color: var(--toward); }
 #card .who { font: 700 12px/1.3 var(--font-text); letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink2); display: flex; align-items: center; gap: 8px; }
@@ -98,6 +102,9 @@ def main():
     alld = [r['date'] for r in rows] + [d_away, d_toward, d_first]
     span = f'{A.MON[min(alld).month - 1]} {min(alld).year} to {A.MON[max(alld).month - 1]} {max(alld).year}'
     delivered = next(r for r in rows if r['key'] == 'delivered'); both = delivered['chips']
+    approved = next(r for r in rows if r['key'] == 'approved')
+    d_ceo, d_tw = A.day(Q, 'orders.ceo'), A.day(Q, 'orders.techweb')          # round 10: the two later accounts on the orders
+    assert (d_ceo - approved['date']).days == 1, 'the chief executive\'s words are not of the day after the report of the approvals'
     f = lambda v: f'{v:,}'
     places = ', '.join(H['places'][:-1]) + ' or ' + H['places'][-1]      # "whose ultimate location is A, B or C" (the table's own column)
     HEAD = 'Beijing mostly pulled one way on Nvidia chips. Its AI companies pulled the other.'     # the core figure's headline
@@ -123,7 +130,7 @@ def main():
  <div class="l">
   <p class="eb">China · Nvidia chips · {span}</p>
   <h1 class="hl">Beijing mostly pulled<br>one way on Nvidia chips.<br>Its AI companies<br>pulled the other.</h1>
-  <p class="dk">From {d_first.year} Beijing’s security and planning side pressed AI companies, through unpublished guidance the press reported, to buy home-made chips. They kept ordering Nvidia’s.</p>
+  <p class="dk">From {d_first.year} Beijing’s planner and industry ministry, and from 2025 its security side, pressed AI companies, through unpublished guidance the press reported, to buy home-made chips. They kept ordering Nvidia’s.</p>
   <div class="says">
    <div class="say away"><p class="who"><i class="mk solid away"></i>Beijing holds Nvidia back</p>
     <p class="q">{qm(Q["away"])}</p>
@@ -147,7 +154,7 @@ def main():
   <p><b>Read with care: five limits.</b> Beijing was not one actor; the pressure came as reported guidance and public warnings, not a published ban; some purchases were approved and some chips came in;
    the companies had reasons of their own, and American curbs pushed too; what Beijing meant by it is read both ways. <b>Washington’s table:</b> with AMD’s chips, {f(H["rwa"][0])} were returned without action,
    {H["share"]}% of the chips in the applications its summary records; it gives no reasons, and “approved” there is Washington’s licence, not Beijing’s.</p>
-  <p class="last"><span><i class="mk solid"></i> <b>Filled mark:</b> on the record (a filing, a document, a named person). <i class="mk open"></i> <b>Open mark:</b> a press report citing unnamed people.</span><span>{A.NOTE}</span></p>
+  <p class="last"><span><i class="mk solid"></i> <b>Filled mark:</b> on the record (a filing, a document, a named person). <i class="mk open"></i> <b>Open mark:</b> a press report citing unnamed people.</span><span>{A.CREDIT}</span></p>
  </div>
 </div></div>"""
 
@@ -194,11 +201,13 @@ def main():
     <li>The sums are ours, of the table’s rows. The card’s bars count Nvidia’s chips only; its footer gives the returned count with AMD’s, and says so. With AMD’s the approved count is {f(H["appr"][0])} and the returned count {f(H["rwa"][0])}, which is {H["share"]}% of the chips in the applications the summary records.
      All {H["abroad"][1]} applications whose ultimate location is {places} ({f(H["abroad"][0])} chips) are among those returned. The committee says some applications are {qm(Q["table.notfull"])}: {qm(Q["table.tencent"])}. The table’s only Tencent row of that date is for {f(H["tencent_shown"])} chips, approved;
      neither document says whether it is that application. The share would be {H["share_full"]}% if it is, counted at {f(H["tencent_full"])}, and {H["share_further"]}% if the {f(H["tencent_full"])} is a further application and was not returned without action (our arithmetic).</li>
-    <li>The card leaves out one reported number that the funnel page carries: Beijing was still determining how many chips to approve, and the total could be {esc(lo["shown"][0])} {esc(lo["shown"][1])} ({esc(lo["by"])}, {fmt(lo["date"])}).</li>
+    <li>The card leaves out one reported number that the page of seven H200 counts carries: Beijing was still determining how many chips to approve, and the total could be {esc(lo["shown"][0])} {esc(lo["shown"][1])} ({esc(lo["by"])}, {fmt(lo["date"])}).</li>
     <li>The bar for the chips delivered is drawn for both named buyers together ({both:,}); the report gives about {A.count(delivered["number"]):,} each.</li>
+    <li>Two later accounts say otherwise of the orders. Nvidia’s chief executive, the day after the report of Beijing’s approvals, said <span lang="zh-Hans">{qm(Q["orders.ceo"])}</span> (I think the Chinese government is still deciding; we have not yet received purchase orders), as {A.link(Q["orders.ceo"].sid, f"Voice of America’s Chinese service, {fmt(d_ceo)}")}, renders him.
+     TechWeb, as {A.link(Q["orders.techweb"].sid, "Sina carries it")}, reported on {fmt(d_tw)}, from industry insiders it did not name, that <span lang="zh-Hans">{qm(Q["orders.techweb"])}</span> (China’s AI firms had placed almost no bulk purchase orders for Nvidia’s H200). English in round brackets is ours, not an official translation.</li>
     <li>On the record, in money and not in chips: on its results call of {fmt(d_call)}, for the quarter ended {fmt(d_q3)}, Nvidia said {qm(Q["nvq3"])}. The Hopper family includes the H200. Neither the call nor Reuters’s report of it says how many of those chips crossed into the mainland.</li>
     <li>The Reuters headline is from {fmt(d_toward)}, when the chip at issue was the H20. The United States allowed H200 sales to China only later.</li>
-    <li>The sentence under the headline rests on the argument this card goes with. Bloomberg’s report of {fmt(d_first)} (carried by The Business Times on {fmt(d_carried)}), by people it did not name: {qm(Q["care.guidance"])}.</li>
+    <li>The sentence under the headline rests on the argument this card goes with. Bloomberg’s report of {fmt(d_first)} (carried by The Business Times on {fmt(d_carried)}), by people it did not name: {qm(Q["care.miit"])}, and {qm(Q["care.guidance"])}.</li>
     <li>The five limits, in the argument’s words: Beijing was not one actor; the pressure came as public warnings and unpublished guidance, not as a published ban (no published Chinese order against buying Nvidia chips was found in the 82 policy pages read);
      some purchases were approved and some chips came in; the companies had reasons of their own, and American curbs and conditions pushed too; and what Beijing meant by it is not settled.</li>
    </ul>
@@ -208,7 +217,7 @@ def main():
 </body>
 </html>
 """
-    dates = [fmt(d) for d in alld] + [period, span, fmt(d_call), fmt(d_q3), fmt(d_carried), fmt(H['status']), fmt(H['released']), fmt(lo['date'])]
+    dates = [fmt(d) for d in alld] + [period, span, fmt(d_call), fmt(d_q3), fmt(d_carried), fmt(H['status']), fmt(H['released']), fmt(lo['date']), fmt(d_ceo), fmt(d_tw)]
     # ours: sums of Washington's table and the shares made from them (a4lib.house); 2 x 10,000; 82 = the project's count of policy pages read
     ours = [H[k][0] for k in ('all', 'appr', 'appr_nv', 'appr_amd', 'rwa', 'rwa_nv', 'rwa_amd', 'abroad')] + [H[k][1] for k in ('all', 'appr_nv', 'appr_amd', 'rwa_nv', 'rwa_amd', 'abroad')]
     ours += [H['share'], H['share_full'], H['share_further'], H['tencent_shown'], both, '82', '10']          # 10: the filing's name, Form 10-Q
@@ -220,7 +229,9 @@ def main():
                    'Commerce Department’s, with', 'shows that application', 'an application the table shows', 'counted in full',
                    # withdrawn by core edit 8b (Nov 25, 2026): the table's column names a data-centre operator or ultimate consignee and an ultimate
                    # location; the 48.6% reading needs the further application not returned; the July total is one that could be under 200,000
-                   'names a consignee;', 'applications for consignees in', 'is a further application (our', 'chips under discussion in Beijing'):
+                   'names a consignee;', 'applications for consignees in', 'is a further application (our', 'chips under discussion in Beijing',
+                   # replaced by core batch 12 (row SF1-O21): the 2024 reports name the planner's branches and the industry ministry, no security body
+                   'security and planning side pressed', 'the funnel page'):
         assert banned not in page, f'the page still says "{banned}"'
     out = HERE / 'card.html'
     out.write_text(page, encoding='utf-8'); print('written', out, len(page), 'bytes')

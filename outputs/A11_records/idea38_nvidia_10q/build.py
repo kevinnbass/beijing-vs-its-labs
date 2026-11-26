@@ -63,6 +63,19 @@ v = {'FILINGS_FETCHED': stamp(f['filings_feed_fetched_utc']), 'FILINGS_HEAD': he
                                + [f"!! {f['sec0_record_id']} | FETCHED: {f['sec0_record_fetched_utc']}", f"!! {f['sec0_record_id']} | {s10[2]}"]),
      'N_WORDING_ROWS': f['wording_table_rows'], 'REV_SEQ': f['rev_hq_values'].replace('; ', ', '), 'REV_FIRST': nice(f['rev_hq_first_period_end']),
      'REV_N': {9: 'nine'}[int(f['rev_hq_quarters'])], 'REV_DERIVED': {2: 'Two'}[int(f['rev_hq_derived'])]}
+# round 10 (Nov 25, 2026): the ids of the newest readings, and the argument's point numbers, are filled by script, never typed
+v.update({'FID': FID, 'REPORTS_ID': f['reports_feed_id'], 'REPORTS_FETCHED_RAW': f['reports_feed_fetched_utc'], 'SEC_ID': f['sec_record_id']})
+sys.path.insert(0, str(HERE.parent / 'tools'))
+import arg_points as AP
+P11 = AP.one('We have not included H20 in our Q3 outlook')
+for w_ in ('we are uncertain whether any imports will be allowed into the country', 'ongoing geopolitical uncertainty', 'were restricted by the PRC government', 'man-ms-sec-10q-2025-10'):
+    if P11 not in AP.points(w_): sys.exit(f'the argument\'s point {P11} no longer holds: {w_}: rewrite the section on the argument')
+P19 = AP.one('we are no longer shipping licensed Hopper Data Center products to China')
+if AP.one('It gave no reason') != P19 or P19 not in AP.points('cn-acts-reuters-halt-20261118-relay2'): sys.exit('the argument no longer says, beside the stop, that Nvidia gave no reason: rewrite')
+s4 = AP.section(4)
+if not ("Nvidia's own account, quarter to Jul 26, 2026" in s4 and "Nvidia's own account, quarter to Oct 25, 2026" in s4 and 'Q3 sales of licensed Hopper Data Center products to China was $2.4 billion' in s4): sys.exit('the argument\'s numbers table no longer gives Nvidia\'s account of the two quarters: rewrite')
+if f['sec_record_id'] not in AP.open_list(): sys.exit(f"the argument's open list does not cite {f['sec_record_id']}: the note says it does")
+v.update({'P11': P11, 'P19': P19})
 t = (HERE / 'nvidia_10q_base_src.txt').read_text(encoding='utf-8')
 for k, x in v.items(): t = t.replace('{' + k + '}', str(x))
 left = re.findall(r'\{[A-Z_0-9]+\}', t)
@@ -80,5 +93,5 @@ gen = [f"{FID}\tFIL\tNvidia investor site, its list of the company's SEC filings
        f"{f['earlier_feed_id']}\tFIL\tThe same list of the company's SEC filings for 2026, as fetched earlier, at {stamp(f['earlier_feed_fetched_utc'])}\t{FEED}",
        f"{f['reports_feed_id']}\tFIL\tNvidia investor site, its list of the documents posted for each quarter of fiscal 2027 (a data feed), as fetched at {stamp(f['reports_feed_fetched_utc'])}\t{REP}"]
 (HERE / 'extra_refs.tsv').write_text('\n'.join(gen) + '\n' + (HERE / 'refs_hand.tsv').read_text(encoding='utf-8'), encoding='utf-8')
-r = subprocess.run([sys.executable, '-I', 'scripts/cn_doc_build.py', str(HERE / 'nvidia_10q_base.txt'), '--refs', str(HERE / 'extra_refs.tsv'), '--title', 'Nvidia Report Not Filed', '--eyebrow', 'China chip policy: new research, idea 38'], capture_output=True, text=True)
+r = subprocess.run([sys.executable, '-I', 'scripts/cn_doc_build.py', str(HERE / 'nvidia_10q_base.txt'), '--refs', str(HERE / 'extra_refs.tsv'), '--title', 'Nvidia Report Not Filed', '--eyebrow', 'China chip policy: Nvidia\'s own filings and calls'], capture_output=True, text=True)
 print(r.stdout[-3000:], r.stderr[-800:]); sys.exit(r.returncode)

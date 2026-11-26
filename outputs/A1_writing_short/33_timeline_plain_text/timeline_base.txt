@@ -2,15 +2,15 @@
 @deck 62 dated records of what Chinese authorities did about Nvidia chips and what China's AI companies did, as plain lines for pasting.
 
 @note Draft by Claude, Anthropic's model.
-@note Made by a script (gen_timeline.py) from the figure's table of records, figure/figure_events.tsv. Nothing was retyped. 62 records, in date order, from May 21, 2023 to Nov 19, 2026.
-@note Each line: date | who | what | source | address. The second field, who, is the row of the figure the record sits in: which side it is about and which way it points. It is not always the speaker.
+@note Drawn word for word from the table of records of the project's main figure (figure/figure_events.tsv): 62 records, in date order, from May 21, 2023 to Nov 19, 2026.
+@note Each line: date | row | what | source | address. The second field is the row of the main figure the record sits in: which side it is about and which way it points. It does not name the speaker; the source field does.
 @note Two tiers, marked at the end of each source: 36 records are on the record (22 published documents or officials, 14 companies or named people outside government); 26 are press reports citing unnamed people.
 @note By row: Beijing holds Nvidia back, 25; Beijing lets Nvidia in, 13; The companies reach for Nvidia, 14; The companies turn to home-made chips, 10.
-@note Words between quotation marks are the source's own: all 34 such phrases were found in the saved copy of the record's source by the script.
+@note Words between quotation marks are the source's own: all 34 such phrases were found in the saved copy of the record's source.
 @note English given for Chinese sources is ours, not an official translation.
 @note 2 records have no exact day, and their date field carries the figure's own words: After a summer 2025 briefing (Wall Street Journal); Sept 2025 (Alibaba, Form 20-F filed with the SEC). Each stands in the list where the figure places it; that place is not a date.
 
-| date | who | what | source | address |
+| date | row | what | source | address |
 | May 21, 2023 | Beijing holds Nvidia back | The Cybersecurity Review Office’s published review conclusion fails Micron’s products; operators of critical information infrastructure are to stop buying them. Not about Nvidia | Cybersecurity Review Office, on the Cyberspace Administration’s site; on the record: a published document or an official | https://www.cac.gov.cn/2023-05/21/c_1686348043518073.htm |
 !! cn-labs-baidu-ascend-2023-relay1 | to prepare for a future
 | Nov 7, 2023 | The companies turn to home-made chips | By people Reuters does not name, Baidu ordered 1,600 Huawei chips in August 2023, ahead of new US curbs, “to prepare for a future” without Nvidia | Reuters, on The Business Times; press report citing unnamed people | https://www.businesstimes.com.sg/companies-markets/telcos-media-tech/baidu-placed-ai-chip-order-huawei-shift-away-nvidia-sources |
@@ -31,7 +31,7 @@
 | Jul 31, 2025 | Beijing holds Nvidia back | Cyberspace regulator summons Nvidia over the security risks of vulnerabilities and backdoors in its H20 chips | Cyberspace Administration of China; on the record: a published document or an official | https://www.cac.gov.cn/2025-07/31/c_1755675743897163.htm |
 !! man-cn-factions-wsj-ding | a traitor
 | After a summer 2025 briefing | Beijing holds Nvidia back | After a Huawei briefing in summer 2025, Vice Premier Ding Xuexiang warns the biggest AI users, by people familiar with the message: anyone resisting home-made chips is “a traitor”. The report, of Jul 23, 2026, gives no date for the warning | Wall Street Journal; press report citing unnamed people | https://www.wsj.com/world/china/china-ai-chips-race-949050d0 |
-| Aug 10, 2025 | Beijing holds Nvidia back | State broadcaster’s account: the H20 is neither green, advanced nor safe, and as consumers we can of course choose not to buy it | Yuyuan Tantian (China Media Group), on its own Tencent News channel; on the record: a published document or an official | https://news.qq.com/rain/a/20250810A0338800 |
+| Aug 10, 2025 | Beijing holds Nvidia back | Yuyuan Tantian (玉渊谭天): the H20 is neither green, advanced nor safe, and as consumers we can of course choose not to buy it | Yuyuan Tantian (玉渊谭天), on its own Tencent News channel; on the record: a published document or an official | https://news.qq.com/rain/a/20250810A0338800 |
 !! cn-le11-ft-h20justify-aggregoctt | It’s not banned but has kind of become a politically incorrect thing to do
 | Aug 12, 2025 | Beijing holds Nvidia back | Regulators such as the industry ministry ask Alibaba, ByteDance and others to explain why they need the H20 instead of home-made chips; a data-centre operator: “It’s not banned but has kind of become a politically incorrect thing to do” | Financial Times (full text in a syndicated copy); press report citing unnamed people | https://www.ft.com/content/a29bab5e-7c2f-4487-b0a5-d594d577c73a |
 !! man-cn-ft-202508-deepseek | Nvidia chips for training and Huawei’s for inference
@@ -62,8 +62,8 @@
 !! cn-acts-reuters-customs-20260114 | a bargaining tactic in talks with Washington
 | Jan 14, 2026 | Beijing holds Nvidia back | Customs agents told the H200 is “not permitted”; companies told not to buy it “unless necessary”. Reuters: it is unclear whether Beijing wants a ban, is still weighing restrictions, or could use the measures as “a bargaining tactic in talks with Washington” | Reuters, on Yahoo Finance; press report citing unnamed people | https://finance.yahoo.com/news/chinas-customs-agents-told-nvidias-065002091.html/ |
 | Jan 28, 2026 | Beijing lets Nvidia in | Conditional approval for ByteDance, Alibaba and Tencent to buy more than 400,000 H200s | Reuters, on The Standard (Hong Kong); press report citing unnamed people | https://www.thestandard.com.hk/innovation/article/322910/China-gives-nod-to-ByteDance-Alibaba-and-Tencent-to-buy-Nvidias-H200-chips-says-sources |
-!! cn-acts-reuters-deepseek-20260130 | are being decided
-| Jan 30, 2026 | Beijing lets Nvidia in | Industry and commerce ministries have approved DeepSeek, ByteDance, Alibaba and Tencent; the conditions “are being decided” by the state planner | Reuters, on Tiger Brokers; press report citing unnamed people | https://www.itiger.com/hans/news/2607233096 |
+!! cn-ga31-sv1-reuters-deepseek-yahoo | are being decided
+| Jan 30, 2026 | Beijing lets Nvidia in | Industry and commerce ministries have approved DeepSeek, ByteDance, Alibaba and Tencent; the conditions “are being decided” by the state planner | Reuters, on Yahoo Finance; press report citing unnamed people | https://finance.yahoo.com/news/exclusive-china-conditionally-approves-deepseek-065114115.html |
 !! man-70f4668d5f56 | Nvidia has won Beijing’s approval
 | Mar 17, 2026 | Beijing lets Nvidia in | “Nvidia has won Beijing’s approval” to sell the H200; a Chinese buyer is unsure the approval is final | Reuters, on Investing.com; press report citing unnamed people | https://www.investing.com/news/stock-market-news/chinese-authorities-approve-nvidias-h200-ai-chip-sales-source-says-4567348 |
 !! cn-policy-alibaba-own-gpu | has brought proprietary GPUs into scaled production
@@ -88,7 +88,7 @@
 | Jul 8, 2026 | Beijing holds Nvidia back | By the report, officials “have withheld approval so far” and tell Alibaba, ByteDance and DeepSeek they may soon be permitted to buy some H200s: perhaps fewer than 200,000 in all | The Information, through Reuters on AOL; press report citing unnamed people | https://www.aol.ca/articles/china-plans-let-top-ai-150506000.html |
 !! man-a7d2f1a9f963 | very few
 | Jul 14, 2026 | Beijing lets Nvidia in | US export chief to Congress: H200 shipments to China have begun, “very few” | Jeffrey Kessler, House hearing, as reported by Reuters; on the record: a published document or an official | https://www.investing.com/news/stock-market-news/us-official-says-shipments-of-h200-chips-to-china-have-begun-4791235 |
-| Jul 30, 2026 | The companies reach for Nvidia | A company asks the commerce ministry, on its public message board, how to import H200s lawfully; the reply speaks only of exports | Ministry of Commerce message board (reply of Aug 19, 2026); on the record: a published document or an official | https://gzly.mofcom.gov.cn/info/detail?id=ff8080819f15f506019fb0ea383b0d2d&replayId=ff8080819f15f506019fb0ea38930d2e |
+| Jul 30, 2026 | The companies reach for Nvidia | A company asks the commerce ministry, on its public message board, how to import H200s lawfully; the reply speaks only of exporters | Ministry of Commerce message board (reply of Aug 19, 2026); on the record: a published document or an official | https://gzly.mofcom.gov.cn/info/detail?id=ff8080819f15f506019fb0ea383b0d2d&replayId=ff8080819f15f506019fb0ea38930d2e |
 | Aug 18, 2026 | Beijing lets Nvidia in | ByteDance and Tencent each receive about 10,000 H200s; Beijing wants them to keep the hardware outside mainland China, and regulators told companies they may ship it to Hong Kong and use it there | Financial Times, through Reuters on Investing.com; press report citing unnamed people | https://www.investing.com/news/stock-market-news/nvidia-h200-chips-reach-china-in-small-shipments-ft-reports-4866385 |
 | Aug 21, 2026 | The companies reach for Nvidia | iFlytek’s filed investor record: rival model makers commonly use Nvidia chips two generations ahead; it expects tighter US export controls to push the whole industry to home-made computing | iFlytek, record of its results meeting, filed on the Shenzhen exchange’s site (cninfo); on the record: a company or a named person outside government | https://static.cninfo.com.cn/finalpage/2026-08-23/1225493949.PDF |
 !! man-ms-sec-10q-2026-07 | were restricted by the PRC government

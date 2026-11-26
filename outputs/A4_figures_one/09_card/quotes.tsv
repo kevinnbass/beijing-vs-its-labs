@@ -118,6 +118,9 @@ cn-factions-bloomberg-flexibility-202409-relay1	Published Sat, Sep 28, 2024
 cn-factions-bloomberg-flexibility-202409-relay1	said the people, who asked not to be identified because the matter is private
 #@ care.discouraging
 cn-factions-bloomberg-flexibility-202409-relay1	Chinese regulators have been discouraging companies from purchasing Nvidia's H20 chips
+# round 10 (core batch 12, SF1-O21): the deck now names the industry ministry for 2024; Bloomberg's report names it among the regulators
+#@ care.miit
+cn-factions-bloomberg-flexibility-202409-relay1	several Chinese regulators, including the powerful Ministry of Industry and Information Technology, issued so-called window guidance
 #@ care.notone
 cn-policy-wang-nvidia	希望包括英伟达在内的跨国公司为中国客户提供优质可靠的产品和服务
 #@ care.camein
@@ -145,3 +148,18 @@ cn-acts-reuters-halt-20261118-relay2	in the quarter ended October 25
 cn-acts-reuters-halt-20261118-relay2	PUBLISHED: 2026-11-18
 #@ nvq3.hopper
 cn-acts-reuters-halt-20261118-relay2	The Hopper family includes the H200
+
+# --- round 10 (Nov 25, 2026, core batch 12): the argument's section 4 now sets the orders beside two later accounts that say
+# --- otherwise (its references 298 and 299); the page's notes carry both, as the funnel page does
+#@ orders.ceo
+cn-ga31-counter-40	我认为中国政府仍在决策中，我们尚未收到采购订单
+#@ orders.ceo.date
+cn-ga31-counter-40	PUBLISHED: 2026-01-29 17:35:37Z
+#@ orders.ceo.who
+cn-ga31-counter-40	英伟达首席执行官黄仁勋
+#@ orders.techweb
+cn-against2-techweb-no-bulk-20260717	国内AI厂商几乎未对英伟达H200芯片下达批量采购订单
+#@ orders.techweb.unnamed
+cn-against2-techweb-no-bulk-20260717	多位行业内部人士透露
+#@ orders.techweb.date
+cn-against2-techweb-no-bulk-20260717	PUBLISHED: 2026-07-17T09:48:10+08:00

@@ -2,15 +2,15 @@
 
 *American export controls also pushed China's AI companies toward home-made chips. What the saved sources say about that, and what they do not say.*
 
-Draft by Claude, Anthropic's model. Written Nov 23, 2026 (UTC).
+Draft by Claude, Anthropic's model. Written Nov 23, 2026 (UTC); revised Nov 25, 2026.
 
-How to read it. Words between quotation marks are a source's exact words, found in the saved copy by a script. A filled reference number is a document, a filing or a named person on the record. An open number is a press report citing unnamed people. English in round brackets after Chinese is our rendering, not an official translation.
+How to read it. Words between quotation marks are a source's exact words, found in the saved copy by a script. A filled reference number is a document, a filing, a named person on the record, or a published commentary of state media or an industry body. An open number is a press report citing unnamed people, a research firm's count, or captions and machine transcripts nobody has checked by ear. English in round brackets after Chinese is our rendering, not an official translation.
 
 The author's interest. Anthropic has argued in public for controls on chip exports to China (that is from the model's general knowledge; no saved page is cited for it), so judge this piece by its sources.
 
 ## Two capitals
 
-The push on China's AI companies to move off Nvidia came from two capitals. From 2024 the security and planning side of the Chinese state pressed them to use home-made chips. And since 2022 Washington has restricted which Nvidia chips may be exported to China at all [1]. This piece sets out what the sources say the second did.
+The push on China's AI companies to move off Nvidia came from two capitals. From 2024 the planning side of the Chinese state and the industry ministry, and from 2025 its security side, pressed them, through unpublished guidance that the press reported, to use home-made chips. And since 2022 Washington has restricted which Nvidia chips may be exported to China at all [1]. This piece sets out what the sources say the second did.
 
 ### 2023: two early turns
 
@@ -18,21 +18,21 @@ Reuters reported on Nov 7, 2023, by people it did not name, that Baidu had order
 
 ### What the seller and the buyers have said on the record
 
-Nvidia, in its reports since November 2025: "we are already effectively foreclosed from the China market by U.S. export controls" [4]. Alibaba's annual report: "We and our technology partners are forced to develop equivalent technologies or components, or obtain equivalent technologies or components from sources outside the United States." [1] iFlytek, a model maker on the US Entity List, told investors on Aug 21, 2026 that as American controls tighten "全行业都会被倒逼转向国产算力" (the whole industry will be forced to turn to home-made computing) [5]. Tencent's president, Nov 18, 2026, asked about new US restrictions: "over the longer run, we believe all Chinese players would actually have to rely on domestic supply chains and domestic chips" (a stock-data site's transcript) [6].
+Nvidia, in its reports since November 2025: "we are already effectively foreclosed from the China market by U.S. export controls" [4]. Alibaba's annual report: "We and our technology partners are forced to develop equivalent technologies or components, or obtain equivalent technologies or components from sources outside the United States." [1] iFlytek, a model maker on the US Entity List, which it says makes a secure supply of home-made chips all the more necessary for it, told investors on Aug 21, 2026 that as American controls tighten "全行业都会被倒逼转向国产算力" (the whole industry will be forced to turn to home-made computing) [5]. Tencent's president, Nov 18, 2026, asked about new US restrictions: "over the longer run, we believe all Chinese players would actually have to rely on domestic supply chains and domestic chips" (a stock-data site's transcript) [6].
 
 ### 2026: Washington and the H200
 
-Washington licensed Nvidia's H200 chip on condition of "independent, third-party testing in the United States", which brings "a 25% tariff upon importation into the United States" [7] [8]. Washington's own table shows that by May 11, 2026 it had returned without action 55% of the chips in the licence applications its summary records. It gives no reason, and the House committee that released it says the summary does not show every application in full [9] [10]. One person told Reuters that Chinese firms pulled back after Beijing's guidance, and that the shift "was partly triggered by changes on the U.S. side" [11].
+Washington's rule of Jan 15, 2026 moved licence applications for Nvidia's H200 chip from a presumption of denial to case-by-case review, on conditions that include "independent, third-party testing in the United States" [7]. Nvidia says the licences it was granted from February 2026 require an inspection in the United States before shipment, and that chips shipped under them "are subject to a 25% tariff upon importation into the United States" [8]. Washington's own table shows that by May 11, 2026 it had returned without action the applications holding 55% of the chips its summary records. The table marks those applications returned, a status apart from the one it marks rejected, and gives no reason; the House committee that released it says the summary does not show every application in full [9] [10]. One person told Reuters that Chinese firms pulled back after Beijing's guidance, and that the shift "was partly triggered by changes on the U.S. side" [11].
 
 ## What the sources do and do not say
 
 One official American body weighs the two. The US-China commission's 2026 report says of the Chinese state: "U.S. and allied controls did not drive China's indigenization efforts, but they have added urgency in recent years." [12] The Congressional Research Service, Sept 19, 2025, read Beijing's pressure over Nvidia's weaker H20 chip as a push for better ones: China "may use its purported security concerns about the H20 to press for technology disclosures and access to more advanced chips, such as Nvidia's B30 chip" [13]. Under the curbs some labs now claim to train on home-made chips. Zhipu said in January 2026 that its image model had completed "its full training cycle on Chinese-made chips"; it "did not say how many processors or how long it took to train its model" [14].
 
-American curbs gave the companies a reason of their own to line up home-made supply, and Alibaba, Tencent and iFlytek have said so on the record. None of the sources cited here says the curbs alone did it; the commission says they added urgency to an effort Beijing already had.
+American curbs gave the companies a reason of their own to line up home-made supply, and Tencent and iFlytek have said so on the record; Alibaba's report speaks of developing equivalent technology or getting it from sources outside the United States. None of the sources cited here says the curbs alone did it; the commission says they added urgency to an effort Beijing already had.
 
 ## References
 
-Each entry: its kind; what it is; the saved page's own title where the record holds one; the address; the saved copy (research/primary/<id>).
+Each entry: its kind; what it is; the saved page's own title where the record holds one; the address; the id of the saved copy.
 
 [1] Company filing or statement. Alibaba Group, annual report on Form 20-F for the year to Mar 31, 2026, filed with the US Securities and Exchange Commission. Copy on Alibaba's investor site. https://data.alibabagroup.com/ir_filings/SEC/BABA/000119312526231755/baba-20260331.htm Saved copy: cn-clips-alibaba-20f
 
@@ -50,7 +50,7 @@ Each entry: its kind; what it is; the saved page's own title where the record ho
 
 [8] Company filing or statement. Nvidia, quarterly report on Form 10-Q for the quarter to Jul 26, 2026, filed with the US Securities and Exchange Commission on Aug 26, 2026. https://www.sec.gov/Archives/edgar/data/1045810/000104581026000075/nvda-20260726.htm Saved copy: man-ms-sec-10q-2026-07
 
-[9] Official document, or an official on the record. House Foreign Affairs Committee, disclosure of Nov 19, 2026: the table of licence applications (the file's name: 11.19.26-ECRA-Information-Disclosure-of-BIS-License-Decisions) for Nvidia's H200 and AMD's MI325X, with their status as of May 11, 2026 (its text layer is out of order; the rows were read from the page images). https://democrats-foreignaffairs.house.gov/wp-content/uploads/2026/11/11.19.26-ECRA-Information-Disclosure-of-BIS-License-Decisions.pdf Saved copy: cn-usdocs-hfac-decisions-20261119
+[9] Official document, or an official on the record. House Foreign Affairs Committee, disclosure of Nov 19, 2026: a table of licence applications for the H200 and equivalent chips, with their status as of May 11, 2026, headed "H200 License and Equivalent Application Status as of May 11, 2026" (its text layer is out of order; the rows were read from the page images). https://democrats-foreignaffairs.house.gov/wp-content/uploads/2026/11/11.19.26-ECRA-Information-Disclosure-of-BIS-License-Decisions.pdf Saved copy: cn-usdocs-hfac-decisions-20261119
 
 [10] Official document, or an official on the record. House Foreign Affairs Committee, disclosure of Nov 19, 2026, made by the full committee (its chairman's release; approved by unanimous consent at a business meeting; the files are on the committee Democrats' site): the committee's summary, which cites a BIS summary dated May 11, 2026 (BIS: the Commerce Department's Bureau of Industry and Security). https://democrats-foreignaffairs.house.gov/wp-content/uploads/2026/11/11.19.26-ECRA-Information-Disclosure-HFAC-Summary.pdf Saved copy: cn-usdocs-hfac-summary-20261119
 
@@ -62,4 +62,4 @@ Each entry: its kind; what it is; the saved page's own title where the record ho
 
 [14] Press report of words spoken on the record. InfoWorld, Jan 14, 2026, reporting Zhipu's statement on its image model GLM-Image. A company's own claim. Page title: Chinese AI firm trains state-of-the-art model entirely on Huawei chips. https://www.infoworld.com/article/4116787/chinese-ai-firm-trains-state-of-the-art-model-entirely-on-huawei-chips.html Saved copy: cn-train-infoworld-zhipu-glm
 
-Build check: 14 quotations and 27 further statements were looked for in the saved copies of 14 sources and all were found; a planted false quotation was rejected. 12 sources are documents, filings or named people on the record; 2 are press reports citing unnamed people, counts or machine transcripts. A quotation that is found shows what the source says, not that it is true.
+Build check: 14 quotations and 32 further statements were looked for in the saved copies of 14 sources and all were found; a planted false quotation was rejected. 12 sources are documents, filings or named people on the record; 2 are press reports citing unnamed people, counts or machine transcripts. A quotation that is found shows what the source says, not that it is true.

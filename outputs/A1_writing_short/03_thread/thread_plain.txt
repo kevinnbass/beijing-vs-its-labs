@@ -1,7 +1,7 @@
 Thread: did Beijing pull against its own AI companies?
 
 Draft by Claude, Anthropic's model. Nothing here has been posted.
-Made by make_thread_plain.py from thread_base.txt, the text whose quotations the build script checked. 10 posts.
+10 posts. Every quotation was found in the saved copy of its source before this text was written.
 Each post is followed by its source's address on its own line. The address is not part of the post.
 Words between quotation marks are a source's exact words. English given for a Chinese source is ours, not an official translation.
 Post 1 quotes the clip twice: the first sentence from a machine transcript (at 0:11), the second from the text of the post that carries the clip. Post 9 quotes a video's caption track (at 5:59). Nobody has checked any of them by ear.
@@ -12,7 +12,7 @@ https://x.com/overton_news/status/2123392702821580811
 2/10 The declared line: use home-made chips. At its press conference of May 22, 2026, Li Chao of China's state planner (NDRC) said it was guiding home-made large models to do more to adapt to home-made computing chips. Source: the planner's own record. English ours.
 https://www.ndrc.gov.cn/xwdt/wszb/202605xwfbh/wzsl/202605/t20260522_1405394_ext.html
 
-3/10 What the companies bought: Nvidia. A Shanghai government body wrote (reply dated Apr 30, 2025; published Nov 10, 2025) that in the city internet firms' own clusters run mainly on Nvidia cards, while the three big telecoms mainly buy Huawei's and other home-made clusters.
+3/10 What the companies used: Nvidia. A Shanghai government body wrote (reply dated Apr 30, 2025; published Nov 10, 2025) that in the city internet firms' own clusters run mainly on Nvidia cards, while the three big telecoms mainly buy Huawei's and other home-made clusters.
 https://www.sheitc.sh.gov.cn/rddbta/20251110/e6cfe3270ca5483e93cbc55701492e6d.html
 
 4/10 What Beijing did. Alibaba's annual report to the SEC: "In September 2025, the Cyberspace Administration of China requested Chinese technology companies to halt purchases of certain chips." The sentence does not name Nvidia. This is a filing, not an unnamed source.
@@ -24,26 +24,27 @@ https://www.mofcom.gov.cn/syxwfb/art/2025/art_a2f759e1140f459e9694f85164c4197c.h
 6/10 Limit 2: warnings and guidance, not a published ban. Bloomberg, Sept 27, 2024, citing unnamed people: "The policy has taken the form of guidance rather than an outright ban". In 82 Chinese policy pages read, no published order against buying Nvidia chips was found.
 https://www.businesstimes.com.sg/companies-markets/china-urges-local-companies-stay-away-nvidias-chips
 
-7/10 Limit 3, in numbers: some were approved, some came in. Reuters, from unnamed people: over 2 million H200s ordered for 2026; over 400,000 approved by Beijing with conditions; about 10,000 each obtained by several firms; about 600,000 stored in Hong Kong awaiting shipment.
+7/10 Limit 3: some were approved, some came in. Press reports from unnamed people: over 2 million H200s ordered for 2026, over 400,000 approved by Beijing with conditions, about 600,000 stored in Hong Kong (Reuters); about 10,000 each to ByteDance and Tencent (FT, via Reuters).
 https://web.archive.org/web/20260101170120/https://www.investing.com/news/stock-market-news/exclusivenvidia-sounds-out-tsmc-on-new-h200-chip-order-as-china-demand-jumps-sources-say-4426223
 https://www.thestandard.com.hk/innovation/article/322910/China-gives-nod-to-ByteDance-Alibaba-and-Tencent-to-buy-Nvidias-H200-chips-says-sources
 https://www.channelnewsasia.com/east-asia/nvidia-chips-pile-up-hong-kong-china-withhold-import-approval-6527371
+https://web.archive.org/web/20260908131431/https://www.investing.com/news/stock-market-news/nvidia-h200-chips-reach-china-in-small-shipments-ft-reports-4866385
 
 8/10 Limit 4: the companies had reasons of their own, and US export curbs pushed too. Tencent's president, on a results call in November 2023, after new US curbs: "we will also try to look for domestic source for these training chips" (as Reuters reported the call).
 https://wtaq.com/2023/11/15/tencent-to-seek-domestic-ai-training-chip-supplies-after-latest-us-curbs/
 
-9/10 Limit 5: what Beijing meant is not settled. A US commission's 2025 report to Congress read the regulator's Nvidia move "as a negotiating tactic". The US Trade Representative, May 15, 2026: buying is "a sovereign decision for China" (captions at 5:59, not checked by ear).
+9/10 Limit 5: what Beijing meant is unsettled. A US commission's report to Congress read the market regulator's Nvidia move "as a negotiating tactic". The US Trade Representative, asked May 15, 2026 if China would let firms buy H200s: "a sovereign decision for China" (captions).
 https://www.uscc.gov/sites/default/files/2025-11/Chapter_1--U.S.-China_Economics_and_Trade_Relations_Year_in_Review.pdf
 https://www.youtube.com/watch?v=ckzJQyMyCoE
 
-10/10 What survives all five: from 2024 the security and planning side of the Chinese state pressed its AI companies, mostly by unpublished guidance, off Nvidia chips. The companies kept ordering them and, by the reports, got a small part. What Beijing meant is read two ways.
-(No address: this post sums up the posts before it. The full argument, with 395 sources, is the local file ARGUMENT_referenced.html.)
+10/10 What survives: from 2024 China's planning side and industry ministry, and from 2025 its security side, pressed its AI firms off Nvidia chips, by guidance the press reported. The firms kept ordering and, by the reports, got a small part. What Beijing meant is not settled.
+(No address: this post sums up the posts before it. The full argument, with 460 sources, is the project's argument page, ARGUMENT_referenced.html.)
 
 Which image goes with which post
 
-Only two images exist for this thread. No new image was made.
-Post 1/10: figure/beijing_vs_labs_top.png (2896 by 4178 pixels). Why: the whole picture at a glance: the headline, the dated strip of 62 records in four rows, the H200 in reported numbers, Nvidia's share, and Nvidia's own revenue from customers based in China.
-Post 5/10: figure/beijing_vs_labs_strip.png (2896 by 1152 pixels). Why: the dated strip alone: its two top rows show Beijing holding Nvidia back and Beijing letting Nvidia in, which is the point of this post.
+Two images go with this thread.
+Post 1/10: figure/beijing_vs_labs_top.png in the project's files (2896 by 4178 pixels). Why: the whole picture at a glance: the headline, the dated strip of 62 records in four rows, the H200 in reported numbers, Nvidia's share, and Nvidia's own revenue from customers based in China.
+Post 5/10: figure/beijing_vs_labs_strip.png in the project's files (2896 by 1152 pixels). Why: the dated strip alone: its two top rows show Beijing holding Nvidia back and Beijing letting Nvidia in, which is the point of this post.
 Posts 2, 3, 4, 6, 7, 8, 9, 10: no image.
 The first image is taller than it is wide, so a preview may show only part of it until it is opened. The mark numbers in both images are the figure's own, not the post numbers.
 
@@ -53,11 +54,11 @@ Each post was counted with its number in front (for example "1/10 "), as it woul
 post | characters | X weighted count | room left
 1/10 | 275 | 275 | 5
 2/10 | 266 | 266 | 14
-3/10 | 276 | 276 | 4
+3/10 | 274 | 274 | 6
 4/10 | 269 | 269 | 11
 5/10 | 277 | 277 | 3
 6/10 | 270 | 270 | 10
-7/10 | 276 | 276 | 4
+7/10 | 278 | 278 | 2
 8/10 | 266 | 266 | 14
-9/10 | 276 | 276 | 4
-10/10 | 276 | 276 | 4
+9/10 | 279 | 279 | 1
+10/10 | 277 | 277 | 3

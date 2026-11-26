@@ -36,14 +36,16 @@ E summoned Nvidia and required it to explain the backdoor security risks of the 
 D 国家互联网信息办公室于2025年7月31日约谈了英伟达公司
 
 @ nv-finding doc 2025-09-15 - cn-policy-samr-further-original case=nvidia row=published dir=away
-T preliminary finding that Nvidia broke the antitrust law
-L The market regulator announces a preliminary finding that Nvidia broke the antitrust law, and a further investigation. The notice gives no facts. By Nvidia's own account the finding concerns the "degraded products" that American export controls required it to offer the Chinese market. No page read says the case has ended: the regulator's review of its 2025 work, posted Apr 10, 2026, still lists the further investigation.
+T preliminary finding against Nvidia, and a further investigation
+L The market regulator announces a preliminary finding against Nvidia, and a further investigation, under the antitrust law and its 2020 conditions on Nvidia's purchase of Mellanox. The one-sentence notice gives no facts. By Nvidia's own account the finding concerns the "degraded products" that American export controls required it to offer the Chinese market. No page read says the case has ended: the regulator's review of its 2025 work, posted Apr 10, 2026, still lists the further investigation.
 S State Administration for Market Regulation
-Q 经初步调查,英伟达公司违反《中华人民共和国反垄断法》
-E after a preliminary investigation, Nvidia violated the Anti-Monopoly Law
 Q 市场监管总局依法决定对其实施进一步调查
 E the regulator has decided to investigate it further under the law
+Q 经初步调查,英伟达公司违反《中华人民共和国反垄断法》
+E after a preliminary investigation, Nvidia violated the Anti-Monopoly Law
 D 发布时间:2025-09-15
+N 市场监管总局关于附加限制性条件批准英伟达公司收购迈络思科技有限公司股权案反垄断审查决定的公告
+N cn-policy-samr-open-original | 市场监管总局公告〔2020〕第16号
 N man-ms-sec-10q-2026-07 | which required us to offer degraded products to the Chinese market
 N cn-le25-samr-2025-merger-review-20260410 | 对英伟达公司实施进一步调查
 N cn-le25-samr-2025-merger-review-20260410 | 发布时间：2026-04-10

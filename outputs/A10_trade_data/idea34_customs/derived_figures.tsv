@@ -66,8 +66,10 @@ US exports to Singapore under the three named headings, July and August 2026, mi
 the same: average month of January to June 2026	314.0	sum of 6 months / 6
 the same: all of January to August 2026	2,558.6	sum of 8 months
 US exports to mainland China, Hong Kong and Macau under the three named headings: July and August 2026, then the average month of January to June 2026, million US dollars	205.2 and 187.4, then 216.0	from us_exports_summary.tsv
+January to August 2026: US exports under the three headings to the three places plus those to Singapore, million US dollars	4,247.3	1,688.7 + 2,558.6
 January to August 2026: US exports under the three headings to the three places plus Singapore, as a number of chips at the press price	157,308	(1,688.7 + the Singapore total) million / 27,000; every kind of goods counted as if an H200
 Singapore, line 84718010: re-exports to mainland China, average month of January to June 2026, thousand Singapore dollars	2,995	six-month sum / 6
 Singapore raw files read, each matching its sha256 in the manifest	7	fetched 2026-11-23T09:06:21Z to 2026-11-23T09:20:25Z by L18; repeated rows with one value, taken once: 6
 Hong Kong total exports of computer parts (8473.30) to mainland China, by Hong Kong's own figures: January to July 2025, then January to July 2026, billion US dollars	16.46 then 36.90	sums of 7 months each (UN Comtrade, saved)
 Taiwan (finance ministry groups): exports of computers, all of heading 8471, to mainland China plus Hong Kong as a share of its exports to the world, January to October 2026, per cent	0.77	L18's table of the saved ministry page; its 30 cells re-checked here
+Taiwan: months from 202301 to 202610 in which the group for computers (exports to the world) equals the sum of the 8 six-digit codes that begin 8471, in thousand US dollars	46 of 46	the two saved ministry pages, 414 cells re-checked here; control: without 8471.50 no month is equal

@@ -26,7 +26,8 @@ import cn_srclib as L                        # noqa: E402
 import cn_argument_build as B                # noqa: E402  (import only: load_refs, address, KIND, SOLID)
 
 esc = html.escape
-NOTE = 'Draft by Claude, Anthropic’s model.'
+CREDIT = 'Draft by Claude, Anthropic’s model.'          # the credit an image carries in its pixels: true of a public copy (session ruling, Nov 25, 2026, round 10)
+NOTE = CREDIT + ''              # page text only: the release's PUBLIC_WORDS rewrite takes the second sentence out
 MON = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec']
 _MNAME = {n: i // 2 + 1 for i, n in enumerate(['jan', 'january', 'feb', 'february', 'mar', 'march', 'apr', 'april', 'may', 'may', 'jun', 'june',
                                                'jul', 'july', 'aug', 'august', 'sep', 'september', 'oct', 'october', 'nov', 'november', 'dec', 'december'])}
@@ -344,7 +345,7 @@ table.tv td b { color: var(--ink); }
 
 
 FIG_EXPORT = '.wrap { max-width: none; width: 1256px; margin: 0; padding: 0; } #fig { padding: 28px; background: var(--page); } .imgnote { display: block; }'
-IMGNOTE = f'<p class="imgnote">{NOTE}</p>'      # goes last inside #fig: the image then carries the draft note in its footer
+IMGNOTE = f'<p class="imgnote">{CREDIT}</p>'    # goes last inside #fig: the image carries the credit in its footer, never "" (no release script reaches pixels)
 
 
 def head(title, css='', theme=None):
@@ -396,6 +397,10 @@ def png(page, shots, width=1280, height=900, scheme='light', css=None, fits=()):
             assert len(ctl) == 1, 'the fit check let a planted overflow through'
             print(f'fit check: nothing runs out of its box ({len(fits)} rules); a planted overflow was caught')
         for sel, out in shots:
+            # what the image will show: the credit, and nothing that calls a public copy local or unpublished (control: the credit is found)
+            shown = pg.locator(sel).inner_text()
+            assert CREDIT in shown, f'control: the credit is not in the text of {sel}, so the check below could not see the footer'
+            assert 'not published' not in shown.lower() and 'local;' not in shown.lower(), f'{sel}: the image would say the copy is local or not published'
             pg.locator(sel).screenshot(path=str(out))
             from PIL import Image
             with Image.open(out) as im: print('image', out, f'{im.size[0]} x {im.size[1]}')

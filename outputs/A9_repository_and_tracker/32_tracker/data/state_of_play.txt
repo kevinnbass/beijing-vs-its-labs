@@ -1,4 +1,4 @@
-# The tracker's state of play (build.py reads this file). Written Nov 23, 2026; dated Nov 24, 2026 in round 5 and Nov 25, 2026 in round 8; brought to core edits 8 and 8b in round 9, Nov 25, 2026 (see the log). Markup, one thing per line:
+# The tracker's state of play (build.py reads this file). Written Nov 23, 2026; dated Nov 24, 2026 in round 5 and Nov 25, 2026 in round 8; brought to core edits 8 and 8b in round 9, Nov 25, 2026, and to the core's batch of 22:33 UTC in round 10 (the 10-Q's last look, 22:16 UTC) (see the log). Markup, one thing per line:
 #   @title words                  the section's heading
 #   @sub words                    the line under it
 #   @src id | label | address     the link text for a saved id cited in [square brackets]; the address is optional
@@ -20,7 +20,7 @@
 
 @src cn-le05-sec-submissions-20261123 | the commission's record of Nvidia's filings
 @src cn-ga06-sec-submissions-20261124 | the same record, fetched Nov 24
-@src cn-ga31-official-sec-submissions-20261125 | the same record, fetched Nov 25
+@src cn-ga31-official-sec-submissions-20261125-c | the same record, fetched Nov 25
 @src cn-counter-b17-1 | Nvidia's CFO commentary
 @src cn-o38-nvda-q3fy27-call-transcript-pdf | Nvidia's results call
 @src cn-acts-reuters-halt-20261118-relay2 | Reuters
@@ -47,7 +47,7 @@
 - Yes on direction, with five limits. From 2024 to 2026 the Chinese state's declared policy, and what its regulators did, pressed China's AI companies to move away from Nvidia chips; the companies went on using those chips, ordering them and asking for them. The limits: Beijing was not one actor; the pressure came as public warnings and unpublished guidance, not as a published ban; some purchases were approved and some chips came in; the companies had reasons of their own, and American curbs and conditions pushed too; and what Beijing meant by it is not settled. That is the project's argument as revised on Nov 25, 2026, in short; the records below are its dated evidence.
 
 ## The newest facts
-- Nvidia's report to the Securities and Exchange Commission for the quarter ended Oct 25, 2026 (its 10-Q) was not yet filed when looked for on Nov 23, 2026: the commission's record of the company's filings, fetched that day, lists none for that quarter; the latest quarterly report it lists is for the quarter ended Jul 26, 2026 [cn-le05-sec-submissions-20261123]. The same record, fetched again on Nov 24, 2026, lists filings up to Nov 23 and still none for that quarter [cn-ga06-sec-submissions-20261124], nor does it when fetched on Nov 25, 2026 at 06:49 UTC [cn-ga31-official-sec-submissions-20261125]. Nvidia's chief financial officer's commentary on the quarter says: "We plan to file our 10-Q in the coming weeks." [cn-counter-b17-1]
+- Nvidia's report to the Securities and Exchange Commission for the quarter ended Oct 25, 2026 (its 10-Q) was not yet filed when looked for on Nov 23, 2026: the commission's record of the company's filings, fetched that day, lists none for that quarter; the latest quarterly report it lists is for the quarter ended Jul 26, 2026 [cn-le05-sec-submissions-20261123]. The same record, fetched again on Nov 24, 2026, lists filings up to Nov 23 and still none for that quarter [cn-ga06-sec-submissions-20261124], nor does it when fetched on Nov 25, 2026 at 22:16 UTC, when its newest entries are of Nov 23 [cn-ga31-official-sec-submissions-20261125-c]. Nvidia's chief financial officer's commentary on the quarter says: "We plan to file our 10-Q in the coming weeks." [cn-counter-b17-1]
 !NOT cn-le05-sec-submissions-20261123 | 2026-10-25
 !! cn-le05-sec-submissions-20261123 | 2026-07-26
 !! cn-le05-sec-submissions-20261123 | FETCHED: 2026-11-23
@@ -55,10 +55,10 @@
 !! cn-ga06-sec-submissions-20261124 | 2026-07-26
 !! cn-ga06-sec-submissions-20261124 | FETCHED: 2026-11-24
 !! cn-ga06-sec-submissions-20261124 | "filingDate":["2026-11-23"
-!NOT cn-ga31-official-sec-submissions-20261125 | 2026-10-25
-!! cn-ga31-official-sec-submissions-20261125 | 2026-07-26
-!! cn-ga31-official-sec-submissions-20261125 | FETCHED: 2026-11-25T06:49:19Z
-!! cn-ga31-official-sec-submissions-20261125 | "filingDate":["2026-11-23"
+!NOT cn-ga31-official-sec-submissions-20261125-c | 2026-10-25
+!! cn-ga31-official-sec-submissions-20261125-c | 2026-07-26
+!! cn-ga31-official-sec-submissions-20261125-c | FETCHED: 2026-11-25T22:16:36Z
+!! cn-ga31-official-sec-submissions-20261125-c | "filingDate":["2026-11-23"
 !! cn-counter-b17-1 | CFO Commentary on Third Quarter Fiscal 2027 Results
 !! cn-counter-b17-1 | October 25, 2026
 - On its results call of Nov 17, 2026, Nvidia said: "Q3 sales of licensed Hopper Data Center products to China was $2.4 billion", and: "we are no longer shipping licensed Hopper Data Center products to China" [cn-o38-nvda-q3fy27-call-transcript-pdf]. Reuters: "The Hopper family includes the H200". Nvidia gave no reason; Reuters wrote that its then interim chief executive "did not explain why Nvidia had stopped shipping the processors or whether the halt would be permanent" [cn-acts-reuters-halt-20261118-relay2]; Nvidia's Board reinstated the chief executive on Nov 22, 2026 [cn-ga06-nvda-8k-20261123-pdf]. Two saved news pages carry a statement of Nvidia's in their reports of the licence table below. The Standard of Hong Kong, in a page stamped Nov 20, 2026, 04:57 Hong Kong time, has Nvidia say "in a statement" that the approvals were "subject to strict conditions and limited volumes" and that "despite receiving some licenses, we have since stopped shipping H200s to China" [cn-le04-standard-900000-20261120]. The Daily Caller, in a page stamped Nov 20, 2026, 20:29 UTC, about a day later, quotes at more length what an Nvidia spokesperson told the Daily Caller News Foundation: "The review and licensing process spanned more than half a year, with approvals subject to strict conditions and limited volumes." and "Despite receiving some licenses, we have already stopped shipping H200s to China." [cn-le04-dailycaller-20261120] Neither page says on which day the statement was made, and it gives no reason for the stop either. None of these says how many of those chips crossed into the mainland.

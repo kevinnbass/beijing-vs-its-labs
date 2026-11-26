@@ -89,8 +89,30 @@ EN_FIX = {
             'the share of intelligent computing, the home-made rate and the regional concentration')],
     '91': [('to build research, production and operating centres in China',
             'to build research and development, production and operating centres in China')],
+    # Round 10 (Nov 25-26, 2026): the readers' leads. Lines 8, 63, 66: the buyers the rule binds, in the argument's words (the notices' same
+    # sentence names them: 乡镇以上党政机关... in all three copies); line 25: the market regulator's notice of Sept 15, 2025 in the argument's words
+    # (a preliminary finding against Nvidia, and a further investigation; the session's ruling for round 10). Lines 16, 47, 49, 50, 73, 101: a few
+    # words of ours that make a term or a target clear.
+    '8': [('Party and government organs at township level and above, and the public institutions directly under such Party committees and governments or serving those organs, shall',
+           "Party and government bodies at township level and above, the public institutions directly under Party committees and governments at those levels, and the departments' public institutions that provide support to those bodies, shall")],
+    '63': [('[such bodies,] when buying portable computers', "[Party and government bodies at township level and above, the public institutions directly under Party committees and governments at those levels, and the departments' public institutions that provide support to those bodies,] when buying portable computers")],
+    '66': [('[such bodies,] when buying general-purpose servers', "[Party and government bodies at township level and above, the public institutions directly under Party committees and governments at those levels, and the departments' public institutions that provide support to those bodies,] when buying general-purpose servers")],
+    '25': [('Recently, after a preliminary investigation, Nvidia violated the Anti-Monopoly Law and the regulator\'s announcement approving its purchase of Mellanox with restrictive conditions;',
+            'Recently, a preliminary investigation made a preliminary finding against Nvidia under the Anti-Monopoly Law and under the regulator\'s announcement approving, with restrictive conditions, its purchase of Mellanox;')],
+    '16': [('total capacity above 300 EFLOPS, intelligent computing reaching a 35% share', 'total computing capacity above 300 EFLOPS (a measure of computing power), with intelligent computing reaching 35% of it')],
+    '47': [('home-made computing chips make up over 50% of use', 'home-made computing chips are to make up over 50% of those in use')],
+    '49': [('deeply tied to the CUDA ecosystem;', "deeply tied to the CUDA ecosystem (Nvidia's software platform for its chips);")],
+    '50': [('the strategic value of Xinchuang as a core support', 'the strategic value of Xinchuang (信创: replacing foreign information technology with home-made products) as a core support')],
+    '73': [('where a concentration is carried out unlawfully', 'where a concentration (a merger, or one business taking control of another) is carried out unlawfully')],
+    '101': [('carry out home-made Xinchuang substitution fully', 'carry out home-made Xinchuang (信创: replacing foreign information technology with home-made products) substitution fully')],
 }
-EN_SRC = {'74': 'argument', '58': 'argument', '11': 'argument', '90': 'argument', '85': 'record', '91': 'record'}   # round 9: whose corrected wording each line takes
+EN_SRC = {'74': 'argument', '58': 'argument', '11': 'argument', '90': 'argument', '85': 'record', '91': 'record',   # round 9: whose corrected wording each line takes
+          '8': 'argument', '63': 'argument', '66': 'argument', '25': 'argument', '16': 'page', '47': 'page', '49': 'page', '50': 'page', '73': 'page', '101': 'page'}
+# round 10: words the argument must still hold for the lines that take its wording in this round (the build stops if it no longer does)
+EN_CHECK = {'8': "the public institutions directly under Party committees and governments at those levels, and the departments' public institutions that provide support to those bodies",
+            '63': "the public institutions directly under Party committees and governments at those levels, and the departments' public institutions that provide support to those bodies",
+            '66': "the public institutions directly under Party committees and governments at those levels, and the departments' public institutions that provide support to those bodies",
+            '25': 'a preliminary finding against Nvidia, and a further investigation'}
 # Round 4: the commission's page names Li Chao and his office (李超 2026/05/22 政研室) and does not call him spokesperson
 # (loose_ends/L23_chinese_review, A12). Words of a note body or a table row replaced on this page; the build stops if
 # one is not met exactly once.
@@ -99,7 +121,10 @@ BODY_FIX = [('State planner (NDRC), Li Chao of its policy research office (政�
             ('国家发展改革委 (NDRC), spokesman Li Chao, as reported by Xinhua on gov.cn',
              '国家发展改革委 (NDRC), Li Chao of its policy research office, as reported by Xinhua on gov.cn'),
             ("as reproduced by ChinaStor, a trade site; the centres' own page is not saved.",
-             "on the first centre's own site (the note read a trade site's reproduction; the centres' own page was saved later).")]
+             "on the first centre's own site."),      # round 10: no history of copies on the page (readers' leads)
+            ('Shanghai Municipal Commission of Economy and Informatization (a 2017 city policy).',      # round 10: the page's signature line is the city government's (上海市人民政府 2017年4月17日)
+             "Shanghai Municipal People's Government (a 2017 city policy, on the site of the Shanghai Municipal Commission of Economy and Informatization)."),
+            ('Shanghai Communications Administration and ten other city bodies', 'Shanghai Communications Administration and ten other bodies in Shanghai')]   # round 10: the core's names table (SF1-003)
 # Round 4 (outputs/ROUND4.md, section 2): a note line whose saved copy the project no longer cites is shown as read in
 # the replacement copy, after the cross-check with the note's table (which stays as the note wrote it). Every passage and
 # date word of the line must stand in the replacement, or the build stops. List line -> (new id, address, words shown).
@@ -108,7 +133,10 @@ REPOINT = {'60': ('cn-le14-itsec-2026-2', 'http://www.itsec.gov.cn/aqkkcp/cpgg/2
 # Round 4 (outputs/ROUND4.md, section 3, item 3): a rule repealed by a later one is shown with that fact, checked in
 # the later rule's saved copy. (table, row) -> (saved id of the later rule, its words, the note shown).
 REPEALED = {('local_vouchers.tsv', 8): ('cn-le28-etown-29hao-20241126', '原政策(京技管发〔2024〕10号)同时废止',
-            "Repealed. The zone's rule of Nov 26, 2024 (京技管发〔2024〕29号) says the former policy, No. 10 of 2024, is repealed at the same time, and pays 30% of the bill whatever the chip. The rates of up to 40% and up to 30% here are not the rule in force.")}
+            "Repealed. The zone's rule of Nov 26, 2024 (京技管发〔2024〕29号) says the former policy, No. 10 of 2024, is repealed at the same time, and pays 30% of the bill whatever the chip. The rates of up to 40% and up to 30% here are not the rule in force."),
+            # round 10 (readers' lead): the repeal of Huangpu's measures of 2024, read in the measures of 2025 that repeal them
+            ('local_vouchers_more.tsv', 173): ('cn-le28-gz-huangpu-2025-7hao', '加快推进中小企业数字化转型发展若干措施》（穗埔工信规字〔2024〕2号）和',
+            'Repealed. The district\'s measures of Jun 27, 2025 (穗开经信规字〔2025〕7号, row 10 of tables/local_vouchers_more.tsv) repeal these measures of 2024 (穗埔工信规字〔2024〕2号) with their implementing rules.')}
 # Core edit 7b (Nov 25, 2026): words of a note's check note that name the project's own working files, replaced on this
 # page by what they mean. List line -> [(the note's words, the page's words)]; the build stops if one is not met once.
 REMARK_FIX = {'55': [('on the new copy (loose_ends/GA21_replacements/quotes.tsv, cn_has.py exit 0).',
@@ -117,9 +145,125 @@ REMARK_FIX = {'55': [('on the new copy (loose_ends/GA21_replacements/quotes.tsv,
 # they mean (the tables' own cells are unchanged: they are the session's). (table, row) -> [(the cell's words, the page's words)]; the build stops
 # if one is not met exactly once, and stops if a line from the tables still shows such a word (WORKING below; control in local_lines()).
 COPY_FIX = {}      # Nov 25, 2026 (the session): the ten cells this map reworded now hold those plain words in the tables themselves, so the page and the tables say the same; a new working word in a printed cell still stops the build
-WORKING = re.compile(r"loose_ends|\bL\d\d\b|\bGA\d\d\b|this folder|WebFetch|cn_has|check_extracted|\bthe session\b|\.py\b")
+WORKING = re.compile(r"loose_ends|\bL\d\d\b|\bGA\d\d\b|this folder|WebFetch|cn_has|check_extracted|\bthe session\b|\.py\b|page saver|pdftotext|\bLEAD\b|words cell|\bthe checker\b|\bfetcher\b|by the search|the search's|owner's|\brow [AB]\d+\b|by script")   # round 10: more working words the readers found
 RESULT = {'share': 'sets a share for home-made computing hardware', 'plan_no_share': 'a plan that was read sets no such share',
           'account_only': "known only from accounts of it, its issuer's own among them", 'not_reached': 'no computing plan was found'}
+
+# Round 10 (Nov 25-26, 2026; builder o10-A3b of the session): two readers read this page against the argument, and a helper looked at every
+# screenshot of it (LOOK28_FULL.txt). What they found in the words of the project's tables and of the checked note is shown here in plain words
+# or in the argument's words. The tables and the note themselves are the session's and are not changed here: each entry below is also a row
+# for the session to apply to the table or the note (exact old words, exact new words), after which the entry stops the build and is taken out,
+# as COPY_FIX was in core edit 8. Every entry must be met exactly once, or the build stops.
+# (table, row) -> [(column, the cell's words, the page's words)]
+CELL_FIX = {
+    ('provinces_31.tsv', 28): [('binding_or_expected', 'a green-power share only', 'shares only for green power and for the uptake of new smart terminals and agents')],   # the argument, point 3
+    ('provinces_31.tsv', 29): [('binding_or_expected', 'not a share: the targets named are', 'by the accounts of it, no share for home-made hardware: the targets they name are')],
+    ('provinces_31.tsv', 2): [('rests_on', 'saved official page (70% of 自主可控 computing)',
+                               'saved official page (the opinions of Mar 24, 2025 on the intelligent-computing cloud: by 2027 the city strives for 200 EFLOPS of intelligent computing, over 70% of it 自主可控, independently controllable)')],
+    ('provinces_31.tsv', 31): [('documents_issuers_dates', 'with 国产 and 自主可控 0 times', 'with 国产 (home-made) and 自主可控 (independently controllable) 0 times')],
+    ('local_vouchers.tsv', 5): [('rate_home', '60% (国产人工智能算力)', 'up to 60% (国产人工智能算力)'), ('rate_other', '30% (非国产人工智能算力)', 'up to 30% (非国产人工智能算力)')],   # the rule's 按不超过 (ceilings)
+    ('local_vouchers.tsv', 6): [('rate_home', '60% (自主人工智能算力)', 'up to 60% (自主人工智能算力)'), ('rate_other', '30% (非自主人工智能算力)', 'up to 30% (非自主人工智能算力)')],   # the argument's table: up to 60% / up to 30%
+    ('local_vouchers.tsv', 9): [('body', '北京经济技术开发区 application guides (经开区信息技术产业局)',
+                                 '北京经济技术开发区 (Beijing E-Town, an economic and technological development zone) application guides (经开区信息技术产业局, its IT industry bureau)')],
+    ('local_vouchers.tsv', 10): [('copy', 'whose text the checker reads (first words); the two notes are official Word files (their text taken out and kept beside the saved files)',
+                                  'whose text was searched (the first passage above); the two notes are official Word files, whose text was taken out and searched (the other passages)')],
+    ('local_vouchers.tsv', 13): [('body', '上海市经济和信息化委员会', '上海市经济和信息化委员会 (Shanghai Commission of Economy and Informatization)')],
+    ('local_vouchers.tsv', 14): [('document', 'the copies read by script carry no number', 'the other copies carry no number')],
+    ('local_vouchers.tsv', 17): [('body', '宁夏回族自治区工业和信息化厅 reply, describing the 宁夏枢纽 policy opinions',
+                                  '宁夏回族自治区工业和信息化厅 (Ningxia industry and IT department) reply, describing the 宁夏枢纽 (Ningxia computing hub) policy opinions')],
+    ('local_vouchers.tsv', 19): [('copy', 'the words are found in the text taken out of the Word file and kept beside it', 'the words are found in the text of the official Word file')],
+    # round 10 (look fault 8): saved ids inside a cell's prose ("unsaved" in an id reads as "not saved"); the ids stay in the Saved copy line
+    ('local_vouchers.tsv', 18): [('date', "(the issuer's own page, cn-ga31-unsaved-sc-338hao-fgw-wayback)", "(the issuer's own page, in an Internet Archive capture)"),
+                                 ('document', "on the issuer's own page in an Archive capture, cn-ga31-unsaved-sc-338hao-fgw-wayback;", "on the issuer's own page in an Internet Archive capture, which is saved;"),
+                                 ('copy', '(cn-ga31-unsaved-sc-338hao-fgw-wayback: the number', '(the number'),
+                                 ('copy', 'for projects on home-made chips (cn-le14-huabenlihe-policy-list) is this', 'for projects on home-made chips is this')],
+    ('local_vouchers_more.tsv', 30): [('copy', '(tj.gov.cn; the copy saved as cn-le28-tj-compute-plan-2024-18hao is byte for byte the same)', '(tj.gov.cn; a second saved copy is byte for byte the same)')],
+    ('provinces_31.tsv', 24): [('rests_on', 'of the Jingdezhen city copy (cn-ga31-unsaved-jiangxi-measures-2025-jdz-wayback)', 'of the Jingdezhen city copy')],
+    ('local_vouchers.tsv', 20): [('rate_other', 'same', 'not stated'),
+                                 ('copy', "a company's policy list (LEAD; official text not found", "a company's policy list (a lead only: the official text was not found")],
+    ('local_vouchers_more.tsv', 2): [('body', '北京经济技术开发区信息技术产业局,', '北京经济技术开发区信息技术产业局 (Beijing E-Town IT industry bureau),')],
+    ('local_vouchers_more.tsv', 3): [('body', '北京经济技术开发区信息技术产业局,', '北京经济技术开发区信息技术产业局 (Beijing E-Town IT industry bureau),'),
+                                     ('document', '(citing 29号)', '(citing 京技管发〔2024〕29号)')],
+    ('local_vouchers_more.tsv', 4): [('body', '北京经济技术开发区信息技术产业局,', '北京经济技术开发区信息技术产业局 (Beijing E-Town IT industry bureau),'),
+                                     ('document', '(citing 29号, article 2)', '(citing 京技管发〔2024〕29号, article 2)')],
+    ('local_vouchers_more.tsv', 6): [('body', '深圳市工业和信息化局, operating rules', '深圳市工业和信息化局 (Shenzhen industry and IT bureau), operating rules')],
+    ('local_vouchers_more.tsv', 7): [('body', '深圳市发展和改革委员会, national AI voucher', '深圳市发展和改革委员会 (Shenzhen development and reform commission), national AI voucher')],
+    ('local_vouchers_more.tsv', 11): [('copy', '(its extracted text is empty; the words were checked against the page body)', "(the words were found in the page's markup; its plain text came out empty)")],
+    ('local_vouchers_more.tsv', 13): [('body', '武汉市人民政府, OPC measures', '武汉市人民政府 (Wuhan city government), OPC (one-person company) measures')],
+    ('local_vouchers_more.tsv', 14): [('rate_home', 'up to 50% of the computing service fee, up to 200,000 yuan, on top of the city', '50% of the computing service fee, at most 200,000 yuan, on top of the city'),
+                                      ('rate_other', 'up to 50%', '50%')],      # 按算力服务费的50%最高给予20万元
+    ('local_vouchers_more.tsv', 17): [('body', '青岛市工业和信息化局, revised voucher rules', '青岛市工业和信息化局 (Qingdao industry and IT bureau), revised voucher rules')],
+    ('local_vouchers_more.tsv', 19): [('body', '杭州市人民政府办公厅, 新势力 measures', '杭州市人民政府办公厅 (Hangzhou city government general office), 新势力 (new forces) measures')],
+    ('local_vouchers_more.tsv', 20): [('body', '杭州市人民政府办公厅, AI+OPC measures', '杭州市人民政府办公厅 (Hangzhou city government general office), AI+OPC (one-person company) measures')],
+    ('local_vouchers_more.tsv', 25): [('copy', 'the first quotation of the words cell is from', 'the first quotation above is from')],
+    ('local_vouchers_more.tsv', 32): [('body', '深圳市工业和信息化局, payout of the home-made migration subsidy',
+                                       '深圳市工业和信息化局 (Shenzhen industry and IT bureau): a centre recognised, and a planned payout of the home-made migration subsidy'),
+                                      ('copy', '(its cells were read by hand, not by the checker)', '(its cells were read by eye)')],
+    ('local_vouchers_more.tsv', 33): [('rate_home', '(100 million to 1 billion, cap 5 million)', '(from 100 million to under 1 billion, cap 5 million)'),   # 1亿元（含）—10亿元
+                                      ('copy', 'with its text taken out by pdftotext (xm.gov.cn gives no answer); the text layer passes the 算力 control', 'whose text could be searched (xm.gov.cn gives no answer)')],
+    ('local_vouchers_more.tsv', 35): [('body', '北京市经济和信息化局 北京市财政局', '北京市经济和信息化局 北京市财政局 (Beijing economy and IT bureau; finance bureau)'),
+                                      ('kind', 'exclusion of flagged devices', 'no support for computing equipment that national departments have declared a security hazard or advised against using (the Word note: 国家有关部门明确声明存在安全隐患或不建议使用的算力设备)')],
+    ('local_vouchers_more.tsv', 40): [('copy', '(the PDF answered 403 to the fetcher)', "(the PDF refused the project's request, error 403)")],
+    ('local_vouchers_more.tsv', 45): [('rate_other', 'same (the condition is location, not chip)', "same, by the press article (its condition is location, not chip; the plan's text is not held)")],
+    ('local_vouchers_more.tsv', 47): [('kind', 'separate incentives for home-made adaptation services, model services, data products and corpora',
+                                       'separate incentives for adapting on home-made computing (30% of the contract), and for model services, data products and corpora')],   # the argument, point 17
+    ('local_vouchers_more.tsv', 48): [('rate_other', '20% (computing services that are not 自主可控, and home-made large AI model token services)',
+                                       '20% (computing services that are not 自主可控); home-made large AI model token services are paid 20% too')],
+    ('local_vouchers_more.tsv', 51): [('document', "the two cities' voucher policies (算力券政策), not named in the reply; neither text is saved",
+                                       "Shenyang's and Dalian's voucher policies (算力券政策), which the replies do not name; Shenyang's policy text has been saved since Nov 25, 2026 (row 103 of tables/local_vouchers_more.tsv), and Dalian's measures of 2025 are row 82 of that table"),
+                                      ('copy', "says the two cities' vouchers support", 'says the vouchers of Shenyang and Dalian support'),
+                                      ('copy', "(row 103 of this table); Dalian's measures of 2025 are row 82", "(row 103 of tables/local_vouchers_more.tsv); Dalian's measures of 2025 are row 82 of that table")],
+    ('local_vouchers_more.tsv', 52): [('rate_other', 'same', 'not stated (the notice does not say whether the chip sets the tier)')],
+    ('local_vouchers_more.tsv', 63): [('rate_other', 'same', 'not stated (the notice does not say whether the chip sets the tier)')],
+    ('local_vouchers_more.tsv', 66): [('rate_home', 'paid from 10,000 yuan up', "paid only once a user's total for the year reaches 10,000 yuan (起付标准)")],
+    ('local_vouchers_more.tsv', 69): [('rate_home', 'AI computing centres of 100 PFLOPS or more', 'AI computing centres of 100 PFLOPS (a measure of computing power) or more')],
+    ('local_vouchers_more.tsv', 82): [('rate_other', "describe the two cities' vouchers in words that do not agree (row 103)",
+                                       'describe the vouchers of Shenyang and Dalian in words that do not agree (row 103 of tables/local_vouchers_more.tsv)'),
+                                      ('copy', "which speaks of the two cities' vouchers", 'which speaks of the vouchers of Shenyang and Dalian')],
+    ('local_vouchers_more.tsv', 101): [('rate_home', "not read (by the search's account of the PDF: ", 'not read: the measures themselves were not reached (a search result described the PDF as paying '),
+                                       ('rate_home', '2025-09-01 to 2028-08-31)', '2025-09-01 to 2028-08-31; no saved page shows it)'),
+                                       ('rate_other', 'not read (the same account names one rate)', 'not read (that search result names one rate)')],
+    ('local_vouchers_more.tsv', 103): [('rate_other', "Liaoning's data bureau describes the two cities' vouchers", "Liaoning's data bureau describes the vouchers of Shenyang and Dalian")],
+    ('local_vouchers_more.tsv', 106): [('rate_home', "the city's 1028 industry system", "the city's “1028” industry system (the city's own name for a set of industries)")],
+    ('local_vouchers_more.tsv', 113): [('rate_home', "the district adds 15% to the city's 30%",
+                                        "the district adds a further 15% on top of the city's 30% subsidy (the summary does not say whether the 15% is of the bill or of the city's subsidy)")],
+    ('local_vouchers_more.tsv', 114): [('date', 'in force on issue to 2027-06-30', 'in force from publication (自发布之日起) to 2027-06-30')],
+    ('local_vouchers_more.tsv', 117): [('date', 'a trial in force on issue to 2026-12-20', 'a trial in force from publication (自发布之日起试行) to 2026-12-20')],
+    ('local_vouchers_more.tsv', 126): [('document', '(by the search, 绍柯政办发〔2026〕4号; the measures are not saved)', '(绍柯政办发〔2026〕4号, the number a search result gave; the measures are not saved)')],
+    ('local_vouchers_more.tsv', 128): [('date', 'signed 2024-07-17 (by the search)', "signed 2024-07-17 (the bureau's date on the file)")],   # 金华市数据局 2024年7月17日 in cn-ga31-vcityeast-25
+    ('local_vouchers_more.tsv', 161): [('rate_home', 'up to 5 million yuan (by the search)', 'up to 5 million yuan a firm'),                  # 每家企业最高500万元 in cn-ga31-vcitysouth-74
+                                       ('document', '(under 深福科工规〔2024〕7号, whose page gave no answer)', "(a guide to the district's measures of 2024, whose number no saved page shows)")],
+    ('local_vouchers_more.tsv', 163): [('date', "in force to 2025-12-31; replaced on 2025-07-01 (the district's account)", "set to run to 2025-12-31, and replaced on 2025-07-01 by the district's account")],
+    ('local_vouchers_more.tsv', 173): [('date', "(the search's reading of that rule)", '(that rule says so: row 10 of tables/local_vouchers_more.tsv)')],
+    ('local_vouchers_more.tsv', 178): [('rate_other', 'same (no word for home-made computing in the clause) (a named centre)',
+                                        "none: only computing bought from the named centre is paid, and the clause names no chip (Tianjin Daily, on the city government's site, says the centre runs 300P of purely home-made computing on Huawei's Ascend architecture)")],
+    ('local_vouchers_more.tsv', 203): [('body', '贵阳市大数据发展管理局 and three other', '贵阳市大数据发展管理局 (Guiyang big data development administration) and three other')],
+    ('local_vouchers_more.tsv', 207): [('rate_other', 'same (no word for home-made computing in the clause) (a named centre)', "none: only the named centre's services are paid, and the clause names no chip")],
+    ('local_vouchers_more.tsv', 216): [('document', '(深福科工规〔2024〕7号 by the search; the page shows no number)', '(the page shows no document number; a search result gave 深福科工规〔2024〕7号, which no saved page shows)')],
+}
+# (table, row) -> [(words of the cell, the words shown)]: a passage cut before its verb is shown to the end of its clause (found by the checker in the copy)
+WORDS_FIX = {('local_vouchers_more.tsv', 180): [('本措施自2025年9月18日', '本措施自2025年9月18日起施行，有效期3年')]}
+# Words of the tables that recur on many lines: (pattern, the page's words). Each must be met at least once.
+TERM_FIX = [(r"the owner's hand-saved PDFs", 'PDFs saved by hand'), (r"the owner's hand-saved PDF", 'a PDF saved by hand'), (r"owner's hand-saved PDF", 'a PDF saved by hand'),
+            (r'gave no answer to the page saver', 'did not answer when the project tried to save it'),
+            (r'\bDRC\b', 'development and reform commission'),
+            (r'\brow B(\d+)\b', r'row \1 of tables/local_vouchers_more.tsv'),
+            (r'PUE binding', "PUE (power usage effectiveness: a data centre's total power use over its computing equipment's) binding"),
+            (r'; in the plan: no label\b', '; in the plan: not marked binding (约束性) or indicative (预期性)')]   # round 10: readers' leads L302, L304, L305
+# A province line's heading and reading gain these words (the line's own document cell says why)
+PROV_NOTE = {'Hainan': ('in its published text, which is marked abridged', True), 'Xinjiang': ('the date is that of a reply naming two plans whose texts were not found', False)}
+# Words of the checked note's descriptions and check notes. The note calls the list of leads "the lane"; the page calls it the list.
+NOTE_TERMS = [(r"\bthe lane's\b", "the list's"), (r'\bThe lane\b', 'The list'), (r'\bthe lane\b', 'the list'),
+              (r'\(row (\d+)\)', r'(line \1 of this list)')]
+# List line -> [(body or remark, the note's words, the page's words)]
+NOTE_FIX = {
+    '100': [('remark', 'I rendered that page and read it by eye:', 'That page was rendered and read by eye:'),
+            ('remark', 'The text layer has only the list below.', 'The text layer has only the list quoted above.')],
+    '16': [('remark', 'I searched for 180号, 工信部联通信 and 10月8日: none. Those three facts rest on the list.', 'A search of the PDF for 180号, 工信部联通信 and 10月8日 found none of them. Those three facts rest on the list alone.')],
+    '8': [('remark', 'not in the text I read.', 'not in the text that was read.')],
+    '46': [('remark', 'I read the whole processor table: 18 entries (counted by script, 18 "I级" marks', 'The whole processor table was read: 18 entries (counted by script: 18 "I级" (grade I) marks')],
+    '64': [('remark', 'the CSET translation (line 45 of this list)', 'the CSET translation of the notice of that title (line 45 of this list)')],
+}
 
 
 def table_rows(name):
@@ -136,10 +280,18 @@ def local_lines():
     copy named on the row (Word and zip copies cannot be read by it); a voucher row with no such passage is left out and
     counted. A province row is always shown (its result is the point), with its passages where they are found."""
     out, left, fixed_rows = [], [], set()
+    cell_met, words_met, term_hits = set(), set(), Counter()
     if not WORKING.search("text made in L15's folder") or WORKING.search('合肥市 (Hefei city), agent measures'): stop('WORKING: the control of the working-word screen fails')
     for name, wk, sk in (('provinces_31.tsv', 'exact_words', 'saved_ids'), ('local_vouchers.tsv', 'words', 'saved_id'),
                          ('local_vouchers_more.tsv', 'words', 'saved_id')):
         for i, r in enumerate(table_rows(name), 1):
+            r = dict(r)
+            for col_, old_, new_ in CELL_FIX.get((name, i), []):      # round 10: the cell's words shown as CELL_FIX gives them (each met once)
+                if r[col_].count(old_) != 1: stop(f'CELL_FIX: tables/{name} row {i}, column {col_}: "{old_[:60]}" stands {r[col_].count(old_)} times, not once')
+                r[col_] = r[col_].replace(old_, new_); cell_met.add((name, i, col_, old_))
+            for old_, new_ in WORDS_FIX.get((name, i), []):
+                if r[wk].count(old_) != 1: stop(f'WORDS_FIX: tables/{name} row {i}: "{old_}" stands {r[wk].count(old_)} times')
+                r[wk] = r[wk].replace(old_, new_); words_met.add((name, i, old_))
             sids = [x for x in re.split(r'[\s;,]+', r[sk]) if x and (L.P / x).is_dir()]
             qs = []
             for part in re.split(r'\s*\|\|\s*|\s+/\s+', r[wk]):
@@ -151,30 +303,52 @@ def local_lines():
             if not qs and not prov:
                 left.append(f'{name} row {i}'); continue
             when = r['documents_issuers_dates'] if prov else r['date']
-            m = re.search(r'(20\d\d)-(\d\d)-(\d\d)', when)
-            iso = m.group(0) if m else ''
-            if not iso:
-                m = re.search(r'\b(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sept?|Oct|Nov|Dec)[a-z]*\.? (\d{1,2}), (20\d\d)', when)
-                if m: iso = f'{m.group(3)}-{[x[:3] for x in MON].index(m.group(1)[:3]) + 1:02d}-{int(m.group(2)):02d}'
+            # round 10: the first full date the cell gives, in either form (before, a later date written 2026-12-31 won over "Feb 13, 2025"
+            # written first: Karamay's line showed its end date); checked on the three tables: that line is the only one this changes
+            cands_ = [(m_.start(), m_.group(0)) for m_ in re.finditer(r'(20\d\d)-(\d\d)-(\d\d)', when)]
+            cands_ += [(m_.start(), f'{m_.group(3)}-{[x[:3] for x in MON].index(m_.group(1)[:3]) + 1:02d}-{int(m_.group(2)):02d}')
+                       for m_ in re.finditer(r'\b(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sept?|Oct|Nov|Dec)[a-z]*\.? (\d{1,2}), (20\d\d)', when)]
+            iso = min(cands_)[1] if cands_ else ''
+            if not iso:      # round 10 (look fault 5): a cell that gives only a month or a year is dated by the first one it gives
+                ms = [m_ for m_ in (re.search(r'\b(January|February|March|April|May|June|July|August|September|October|November|December) (20\d\d)\b', when),
+                                    re.search(r'\b(20\d\d)\b', when)) if m_]
+                if ms:
+                    m = min(ms, key=lambda m_: m_.start())
+                    iso = f'{m.group(2)}-{MONTH.index(m.group(1)) + 1:02d}' if m.lastindex == 2 else m.group(1)
             ns = lambda v: 'not stated' if v.strip() in ('', '-') else v.strip()
             if prov:
-                who = f"{r['government']}: {RESULT[r['result']]}"
-                reading = f"{RESULT[r['result']]}" + (f"; in the plan: {r['binding_or_expected']}" if r['binding_or_expected'].strip() else '')
+                pn = PROV_NOTE.get(r['government'])
+                who = f"{r['government']}: {RESULT[r['result']]}" + (f' ({pn[0]})' if pn else '')
+                reading = f"{RESULT[r['result']]}" + (f' ({pn[0]})' if pn and pn[1] else '') + (f"; in the plan: {r['binding_or_expected']}" if r['binding_or_expected'].strip() else '')
                 desc = r['documents_issuers_dates']
                 extra = r['rests_on']
             else:
                 who = r['body']
                 reading = f"home-made computing: {ns(r['rate_home'])}; other computing: {ns(r['rate_other'])}; kind: {ns(r['kind'])}"
+                if r['rate_home'].strip().lower().startswith('no share') and ns(r['rate_other']) == 'not stated':   # round 10: a payment with no share is not shown under home-made computing
+                    reading = f"{r['rate_home'].strip()} (the table gives no rate for home-made or for other computing apart); kind: {ns(r['kind'])}"
                 desc = f"{r['document']}. Date as the table gives it: {r['date']}" if r['document'] else f"Date as the table gives it: {r['date']}"
                 extra = r['copy'].strip()
             for old_, new_ in COPY_FIX.get((name, i), []):
                 if extra.count(old_) != 1: stop(f'COPY_FIX: tables/{name} row {i}: "{old_}" stands {extra.count(old_)} times in the cell, not once')
                 extra = extra.replace(old_, new_); fixed_rows.add((name, i))
+            fields_ = [who, reading, desc, extra]
+            for pat_, rep_ in TERM_FIX:
+                for j_ in range(4):
+                    fields_[j_], k_ = re.subn(pat_, rep_, fields_[j_]); term_hits[pat_] += k_
+            who, reading, desc, extra = fields_
+            for cell_ in (who, reading, desc, extra):      # round 10: no saved id inside the prose of a printed cell
+                if re.search(r'\b(?:cn|ms|man)-[a-z0-9]+-[a-z0-9-]{3,}', cell_): stop(f'tables/{name} row {i}: a saved id stands in the prose of a printed cell: {cell_[:160]}')
             for cell_ in (who, reading, desc, extra):
                 if WORKING.search(cell_): stop(f'tables/{name} row {i}: a cell this page prints holds a working word ("{WORKING.search(cell_).group(0)}"): add its plain words to COPY_FIX: {cell_[:160]}')
-            out.append({'table': name, 'trow': i, 'prov': prov, 'result': r.get('result', ''), 'level': r.get('level', ''), 'iso': iso, 'who': who,
+            out.append({'table': name, 'trow': i, 'prov': prov, 'result': r.get('result', ''), 'level': r.get('level', ''), 'iso': iso, 'who': who, 'kind_cell': '' if prov else r['kind'].strip(),
                         'reading': reading, 'desc': desc, 'extra': extra, 'quotes': qs, 'sids': sids or [x for x in re.split(r'[\s;,]+', r[sk]) if x]})
     if fixed_rows != set(COPY_FIX): stop(f'COPY_FIX: rows not met: {sorted(set(COPY_FIX) - fixed_rows)}')
+    want_ = {(t_, i_, c_, o_) for (t_, i_), v_ in CELL_FIX.items() for c_, o_, _ in v_}
+    if cell_met != want_: stop(f'CELL_FIX: entries not met: {sorted(want_ - cell_met)[:3]}')
+    if words_met != {(t_, i_, o_) for (t_, i_), v_ in WORDS_FIX.items() for o_, _ in v_}: stop('WORDS_FIX: an entry was not met')
+    if any(term_hits[p_] == 0 for p_, _ in TERM_FIX): stop(f'TERM_FIX: patterns met nowhere: {[p_ for p_, _ in TERM_FIX if not term_hits[p_]]}')
+    if {g_ for g_ in PROV_NOTE} - {o_['who'].split(':')[0] for o_ in out if o_['prov']}: stop('PROV_NOTE: a government not met')
     return out, left
 
 
@@ -231,7 +405,9 @@ def voucher_class_of():
                 why = re.sub(r'\(row ([AB])(\d+)\)', lambda m_: f'(row {m_.group(2)} of tables/{"local_vouchers.tsv" if m_.group(1) == "A" else "local_vouchers_more.tsv"})', c['reason'])
                 if re.search(r'\b[AB]\d+\b', why): stop(f'a row id of the table of classes is left in a reason: {why}')
                 out[(name, i)] = f'No: {why}'
-            elif c['class'] in ('one rate', 'two rates by a type of computing facility that the rule does not name'):
+            elif c['class'] == 'one rate':      # round 10: the class "one rate" said as what it means (readers: rates that change by year or bracket are still one rate whatever the chip)
+                out[(name, i)] = 'Yes; it states no higher rate for home-made computing (the same rate whatever the chip)'
+            elif c['class'] == 'two rates by a type of computing facility that the rule does not name':
                 out[(name, i)] = f'Yes; it states no higher rate for home-made computing ({c["class"]})'
             else: out[(name, i)] = f'Yes; it {c["class"]}'
     if len(out) != len(cls): stop('the table of classes has rows the two voucher tables do not')
@@ -309,7 +485,7 @@ def parse_note():
                 # reference to the project's own files, and the build stops if the sentence does not read as expected
                 c = re.fullmatch(r'- (The copy first read for this row, .*?, is no longer cited) \(ROUND8 R5; tables/replaced_copies\.tsv\)\.', ln)
                 if not c: stop(f'row {r["row"]}: a "copy first read" line this script cannot read')
-                r['first_copy'] = c.group(1) + '. The line was checked again in the copy named below: its passages and date words are that page\'s.'
+                r['first_copy'] = 'Read in the copy named below: its passages and date words are that page\'s.'      # round 10: the copy first read is not recounted (readers' lead)
             elif ln.startswith('- Verdict: '):
                 v = re.fullmatch(r'\*\*([A-Z ]+)\*\*\.?\s*(.*)', ln[11:].strip())
                 if not v: stop(f'row {r["row"]}: a verdict this script cannot read')
@@ -446,7 +622,8 @@ a { color:var(--link); }
 h1 { font-family:var(--font-head); font-size:clamp(27px,3.6vw,42px); line-height:1.08; letter-spacing:-0.015em; margin:0 0 12px; max-width:26ch; text-wrap:balance; }
 .deck { margin:0 0 14px; color:var(--ink2); font-size:18px; line-height:1.45; max-width:74ch; }
 .note { margin:0 0 4px; color:var(--muted); font-size:13.5px; line-height:1.45; max-width:92ch; }
-.cols { display:grid; gap:14px; grid-template-columns:1fr; margin:20px 0 6px; }
+.cols { display:grid; gap:14px; grid-template-columns:1fr; margin:20px 0 6px; align-items:start; }   /* a card ends with its text */
+h2.sep { font:700 12.5px/1.3 var(--font-text); letter-spacing:0.07em; text-transform:uppercase; color:var(--ink2); margin:26px 0 4px; padding:0 0 6px; border-bottom:1.5px solid var(--ink2); }
 @media (min-width: 900px) { .cols { grid-template-columns:1fr 1fr; } }
 .card { background:var(--surface); border:1px solid var(--border); border-radius:14px; padding:16px 18px; min-width:0; }
 .card h2 { font:700 12px/1.2 var(--font-text); letter-spacing:0.09em; text-transform:uppercase; color:var(--ink2); margin:0 0 8px; }
@@ -511,6 +688,7 @@ footer p { margin:0 0 6px; }
 JS = r"""
 (function () {
   var rows = Array.prototype.slice.call(document.querySelectorAll('details.r'));
+  var seps = Array.prototype.slice.call(document.querySelectorAll('h2.sep'));
   var hay = rows.map(function (r) { return r.getAttribute('data-s'); });
   var tight = hay.map(function (h) { return h.replace(/\s+/g, ''); });
   var input = document.getElementById('q'), count = document.getElementById('count'), none = document.getElementById('none');
@@ -531,6 +709,7 @@ JS = r"""
       if (ok) { shown += 1; r.open = terms.length ? view !== 'closed' : openAll; }
     });
     count.textContent = shown === rows.length ? 'All ' + rows.length + ' lines' : shown + ' of ' + rows.length + ' lines';
+    seps.forEach(function (h) { var g = h.getAttribute('data-g'); h.hidden = !rows.some(function (r) { return !r.hidden && r.getAttribute('data-g') === g; }); });
     none.hidden = shown !== 0;
     kindButtons.forEach(function (b) { b.setAttribute('aria-pressed', b.getAttribute('data-kind') === kind ? 'true' : 'false'); });
     partButton.setAttribute('aria-pressed', part ? 'true' : 'false');
@@ -578,7 +757,7 @@ def main():
             new, addr, why = REPOINT[r['row']]
             old = r['read_sid']; r['sid'] = new; r['read_sid'] = new; r['read_note'] = ''
             r['addr2'] = r['addr']; r['addr'] = addr
-            r['repoint_note'] = f'Shown as read in {why}. The passages and date words below were checked in that page.'
+            r['repoint_note'] = "Read in the evaluation centres' own page: its passages and date words are that page's."      # round 10: no history of copies
             for q in r['quotes']:
                 if len(L.squash(q['words'])) >= 6 and not L.has(q['words'], new): stop(f'REPOINT: line {r["row"]}: a passage is not in {new}')
     if sorted(r['row'] for r in rows if r.get('repoint_note')) != sorted(REPOINT): stop('REPOINT: a line was not met')
@@ -592,12 +771,28 @@ def main():
             if r['remark'].count(old) != 1: stop(f'REMARK_FIX: line {r["row"]}: the note no longer has "{old[:40]}" once')
             r['remark'] = r['remark'].replace(old, new)
     if any(not any(r['row'] == k for r in rows) for k in REMARK_FIX): stop('REMARK_FIX: a line was not met')
+    note_hits = Counter()
+    for r in rows:          # round 10: the note's "lane" is this page's list; its "(row N)" is a line of the list
+        for k_ in ('body', 'remark'):
+            for pat_, rep_ in NOTE_TERMS:
+                r[k_], n_ = re.subn(pat_, rep_, r[k_]); note_hits[pat_] += n_
+    if any(note_hits[p_] == 0 for p_, _ in NOTE_TERMS): stop(f'NOTE_TERMS: patterns met nowhere: {[p_ for p_, _ in NOTE_TERMS if not note_hits[p_]]}')
+    for r in rows:
+        for k_, old, new in NOTE_FIX.get(r['row'], []):
+            if r[k_].count(old) != 1: stop(f'NOTE_FIX: line {r["row"]}: "{old[:50]}" stands {r[k_].count(old)} times in its {k_}')
+            r[k_] = r[k_].replace(old, new)
+    if set(NOTE_FIX) - {r['row'] for r in rows}: stop('NOTE_FIX: a line was not met')
+    for r in rows:
+        for k_ in ('body', 'remark'):
+            if re.search(r"\blane\b|\bI (read|rendered|searched)\b|\(row \d+\)", r[k_]): stop(f'line {r["row"]}: its {k_} still holds a working word: {r[k_][:120]}')
     if set(EN_SRC) != set(EN_FIX): stop('EN_SRC and EN_FIX name different lines')
     _core = {'argument': (PROJ / 'argument' / 'argument_base.txt').read_text(encoding='utf-8'), 'record': (PROJ / 'OFFICIAL_RECORD.md').read_text(encoding='utf-8')}
     for k_, pairs_ in EN_FIX.items():
         for _, new_ in pairs_:
-            if new_ not in _core[EN_SRC[k_]] and EN_SRC[k_] == 'record':      # the argument's four were checked in round 4 against the argument as it then stood
+            if EN_SRC[k_] == 'record' and new_ not in _core['record']:      # the argument's four were checked in round 4 against the argument as it then stood
                 stop(f'EN_FIX: line {k_}: the record does not hold the wording the page takes from it: {new_[:60]}')
+    for k_, w_ in EN_CHECK.items():
+        if w_ not in _core['argument']: stop(f'EN_CHECK: line {k_}: the argument no longer holds "{w_[:60]}"')
     for r in rows:
         for old, new in EN_FIX.get(r['row'], []):
             hit = [q for q in r['quotes'] if old in (q['en'] or '')]
@@ -630,8 +825,8 @@ def main():
         if r['verdict'] not in ('CONFIRMED', 'CONFIRMED IN PART'): stop(f'row {r["row"]}: verdict {r["verdict"]} has no label')
         if r['iso']:
             d_html = f'<span class="d">{esc(show_date(r["iso"]))}</span>'
-            if r['date_from'] == 'page': d_note = 'The list gave no date; this is the date the checked note found in the page.'
-            elif r['date_from'] == 'here': d_note = 'The list gave no date and the checked note found none; this is the signing date read in the page for this list.'
+            if r['date_from'] == 'page': d_note = 'The date is the one the page gives (the list of leads gave none).'      # round 10: readers' leads
+            elif r['date_from'] == 'here': d_note = 'The date is the signing date in the page (the list of leads gave none).'
             else: d_note = ''
             if r['date_words']:
                 d_note += (' ' if d_note else '') + 'Date words found in the saved copy: ' + '; '.join('“' + esc(w) + '”' for w in r['date_words']) + '.'
@@ -659,7 +854,7 @@ def main():
         if r.get('first_copy'): x.append(f'<p class="m"><span class="lab">Copy</span>{esc(r["first_copy"])}</p>')
         x.append(f'<p class="m"><span class="lab">Date</span>{d_note}</p>')
         addr = f'<a href="{esc(r["addr"])}" rel="noopener">{esc(r["addr"])}</a>'
-        if r.get('addr2'): addr += (f'. The copy the note read: ' if r.get('repoint_note') else '. Second copy: ') + f'<a href="{esc(r["addr2"])}" rel="noopener">{esc(r["addr2"])}</a>'
+        if r.get('addr2') and not r.get('repoint_note'): addr += '. Second copy: ' + f'<a href="{esc(r["addr2"])}" rel="noopener">{esc(r["addr2"])}</a>'
         x.append(f'<p class="m"><span class="lab">Address</span>{addr}</p>')
         ids = f'<code>{esc(r["sid"])}</code>'
         if r['read_sid'] != r['sid']: ids += f'. Read in {esc(r["read_note"])}, saved as <code>{esc(r["read_sid"])}</code>'
@@ -669,10 +864,12 @@ def main():
                 f'<span class="tags"><span class="tag">{esc(kind_label)}</span><span class="tag v{" part" if r["verdict"] == "CONFIRMED IN PART" else ""}">{esc(v_label)}</span></span></summary>')
         inner = summ + '<div class="x">' + ''.join(x) + '</div>'
         r['search'] = search_norm(' '.join([r['iso'], text_only(inner)]))
-        cards.append(f'<details class="r" open data-kind="{GROUP[r["kind"]]}" data-part="{1 if r["verdict"] == "CONFIRMED IN PART" else 0}" data-s="{esc(r["search"])}">{inner}</details>')
+        if not cards: cards.append(f'<h2 class="sep" data-g="note">From the checked note: policy lines, by date</h2>')      # round 10 (look fault 2)
+        cards.append(f'<details class="r" open data-kind="{GROUP[r["kind"]]}" data-g="note" data-part="{1 if r["verdict"] == "CONFIRMED IN PART" else 0}" data-s="{esc(r["search"])}">{inner}</details>')
 
     if met != LANE_WORDS: stop(f'LANE_WORDS entries not met in the note: {sorted(LANE_WORDS - met)}')
 
+    n_note_q = len(lines_q)        # round 10: lines_q holds the note lines' strings up to here; the tables' lines' strings follow, then the check notes' quoted strings
     local, left_out = local_lines()
     VCLASS = voucher_class_of()
     for r in local:
@@ -688,6 +885,14 @@ def main():
             r['repealed'] = note_; rep_met.append(k); lines_q.append((sid_, words_))
     if sorted(rep_met) != sorted(REPEALED): stop(f'REPEALED: rows not met: {sorted(set(REPEALED) - set(rep_met))}')
     local.sort(key=lambda r: (0 if r['prov'] else 1, (0, r['iso']) if r['iso'] else (1, '')))
+    # round 10: other provisions of counted rules (tables/local_vouchers_other_provisions.tsv), each shown on its rule's line; every row must be met
+    OTHERP, op_met, badge_hits, seps_done = {}, set(), Counter(), set()
+    for k_, op_ in enumerate(table_rows('local_vouchers_other_provisions.tsv')):
+        t_ = 'local_vouchers.tsv' if op_['row_id'][0] == 'A' else 'local_vouchers_more.tsv'
+        if VCLASS.get((t_, int(op_['row_id'][1:])), 'No').startswith('No'): stop(f'other provisions: row {op_["row_id"]} is not a counted rule')
+        op_['parts'] = [w_.strip() for w_ in op_['words'].split(' / ') if w_.strip()]; op_['key'] = k_
+        if not all(L.has(w_, op_['saved_id']) for w_ in op_['parts']): stop(f'other provisions: words of row {op_["row_id"]} not found in {op_["saved_id"]}')
+        OTHERP.setdefault((t_, int(op_['row_id'][1:])), []).append(op_)
     for r in local:
         for q in r['quotes']: lines_q.append((q['sid'], q['words']))
         sid0 = r['quotes'][0]['sid'] if r['quotes'] else (r['sids'][0] if r['sids'] and (L.P / r['sids'][0]).is_dir() else '')
@@ -696,11 +901,18 @@ def main():
         x = []
         for j, q in enumerate(r['quotes']):
             cj = has_cjk(q['words'])
-            x.append(f'<div class="q"><p class="w{"" if cj else " en0"}"{" lang=\"zh-Hans\"" if cj else ""}>“{esc(q["words"])}”</p></div>')
+            other_ = q['sid'] != r['quotes'][0]['sid']     # round 10: a passage found in another saved copy of the line (a later rule that repeals it, a note, a report) says which
+            x.append(f'<div class="q"><p class="w{"" if cj else " en0"}"{" lang=\"zh-Hans\"" if cj else ""}>“{esc(q["words"])}”'
+                     + (f' <span class="lab">in the saved copy {esc(q["sid"])}</span>' if other_ else '') + '</p></div>')
         if not r['quotes']:
             x.append('<p class="m"><span class="lab">Passage</span>None shown: the project\'s table gives no words for this row that the checker finds in a saved copy.</p>')
         if r.get('repealed'): x.append(f'<p class="m"><span class="lab">In force?</span><b>{esc(r["repealed"])}</b></p>')
-        if not r['prov']: x.append(f'<p class="m"><span class="lab">Counted by the published rule?</span>{esc(VCLASS[(r["table"], r["trow"])])}. From the project\'s table of classes, tables/local_vouchers_classes.tsv.</p>')
+        if not r['prov']: x.append(f'<p class="m"><span class="lab">In the project\'s count?</span>{esc(VCLASS[(r["table"], r["trow"])])}. From the project\'s table of classes, tables/local_vouchers_classes.tsv, by its counting rule (one rule in force for each local government, whose text is saved and states a share of the bill).</p>')
+        for op_ in OTHERP.get((r['table'], r['trow']), []):     # round 10: other provisions of a counted rule for home-made computing (tables/local_vouchers_other_provisions.tsv)
+            x.append(f'<p class="m"><span class="lab">Another provision for home-made computing</span>{esc(op_["what_it_gives"])} ({esc(op_["article"])}). Its words: '
+                     + '; '.join('“' + esc(w_) + '”' for w_ in op_['parts']) + '. From tables/local_vouchers_other_provisions.tsv; the count above looks at the counted payment only.</p>')
+            for w_ in op_['parts']: lines_q.append((op_['saved_id'], w_))
+            op_met.add(op_['key'])
         if r['reading']: x.append(f'<p class="m"><span class="lab">Our reading, in English</span>{esc(r["reading"])}. This is the project\'s table, not a translation.</p>')
         x.append(f'<p class="m"><span class="lab">The document</span>{esc(r["desc"])}</p>')
         if r['extra']: x.append(f'<p class="m"><span class="lab">The copy held</span>{esc(r["extra"])}</p>')
@@ -712,12 +924,23 @@ def main():
         if not r['prov'] and tag2 == 'Local rule':      # round 9: a row the table of classes calls a draft, an application guide or a notice of a list is not badged a rule
             tag2 = {'No: a draft': 'Local draft', 'No: an application guide, not the rule': 'Application guide',
                     'No: a public notice of a list, not the rule': 'Notice of a list'}.get(VCLASS[(r['table'], r['trow'])], tag2)
+        if not r['prov'] and tag2 == 'Local rule':      # round 10 (readers' leads): a payout, a notice of results or an application guide by its own title is not badged a rule
+            if r['kind_cell'].startswith('payout'): tag2 = 'Payout notice'
+            elif '公示' in r['desc'] and '结果' in r['desc']: tag2 = 'Notice of results'
+            elif re.search(r'办事指南|申请指南|申报指南', r['desc']): tag2 = 'Application guide'
+            if tag2 != 'Local rule': badge_hits[tag2] += 1
         summ = (f'<summary>{d_html}<div class="who"><p class="b">{esc(r["who"])}</p>{t_html}</div>'
                 f'<span class="tags"><span class="tag">{tag2}</span><span class="tag v">From the project\'s tables</span></span></summary>')
         inner = summ + '<div class="x">' + ''.join(x) + '</div>'
         r['search'] = search_norm(' '.join([r['iso'], text_only(inner)]))
         r['kind'] = 'local'
-        cards.append(f'<details class="r" open data-kind="local" data-part="0" data-s="{esc(r["search"])}">{inner}</details>')
+        g_ = 'prov' if r['prov'] else 'vouch'
+        if g_ not in seps_done:       # round 10 (look fault 2): a heading where the lines from the tables begin, and where the voucher lines begin
+            seps_done.add(g_)
+            cards.append(f'<h2 class="sep" data-g="{g_}">' + ("From the project's tables: the 31 provincial-level governments, by the date of the plan read"
+                         if g_ == 'prov' else "From the project's tables: local voucher and subsidy rules and documents read about them, by date") + '</h2>')
+        cards.append(f'<details class="r" open data-kind="local" data-g="{g_}" data-part="0" data-s="{esc(r["search"])}">{inner}</details>')
+    if op_met != set(range(len(table_rows('local_vouchers_other_provisions.tsv')))): stop('other provisions: a row was not shown on its rule\'s line')
     c_res = Counter(r['result'] for r in local if r['prov'])
     # round 9: the care box names Tibet and Xinjiang; the build stops if the table no longer gives them those results
     _p31 = table_rows('provinces_31.tsv')
@@ -744,10 +967,13 @@ def main():
     _whyc = Counter(re.sub(r' \(row \d+ of tables/[a-z_]+\.tsv\)$', '', v[4:]) for v in _vs if v.startswith('No: ')); _why = _whyc.most_common(3)
     v_shown_why = 'by reason, the commonest: ' + '; '.join(f'{k}, {w}' for w, k in _why) + ('; and other reasons' if len(_whyc) > 3 else '')
     if v_shown_yes != VC['n'] and not left_out: stop(f'{v_shown_yes} counted voucher lines shown, but the argument counts {VC["n"]} and no voucher row is left out')
+    n_local_q = len(lines_q) - n_note_q
     lines_q += keep
-    seen, qlines = set(), []
-    for sid, w in lines_q:
-        if (sid, w) not in seen: seen.add((sid, w)); qlines.append(f'{sid}\t{w}')
+    seen, qlines, qlines_src = set(), [], []
+    for j_, (sid, w) in enumerate(lines_q):
+        if (sid, w) not in seen:
+            seen.add((sid, w)); qlines.append(f'{sid}\t{w}')
+            qlines_src.append((sid, w, 'local' if n_note_q <= j_ < n_note_q + n_local_q else 'note'))      # round 10: the footer counts them by source
     for sid, w in seen:
         if '\t' in w or '\n' in w: stop('a tab or line break inside a quotation')
     (HERE / 'quotes.tsv').write_text('# saved id <TAB> exact words from that saved copy. Written by build.py: every passage the page shows, every date word it shows,\n'
@@ -782,7 +1008,13 @@ def main():
         if expected['queries'][q] == 0: stop(f'the example search "{q}" finds nothing')
     (HERE / 'expected.json').write_text(json.dumps(expected, ensure_ascii=False, indent=1) + '\n', encoding='utf-8')
 
-    short_note = (f'<p>Left out: {len(short)} passage{"s" if len(short) != 1 else ""} of the note under six characters long (line {", ".join(short)} of the list), which the checker will not test.</p>' if short else '')
+    short_note = (f'<p>Left out: {len(short)} passage{"s" if len(short) != 1 else ""} of the note under six characters long (line {", ".join(short)} of the list), which the script that checks quotations does not test.</p>' if short else '')
+    # round 10: whose wording our English takes on the lines EN_FIX names (the argument's, the official record's, or a few words of ours)
+    _ln = lambda src: ', '.join(sorted((k for k in EN_FIX if EN_SRC[k] == src), key=int))
+    en_src_words = (f'On {sum(1 for k in EN_FIX if EN_SRC[k] != "page")} lines it is the project\'s corrected wording: the argument\'s (lines {_ln("argument")} of the list) '
+                    f'or the official record\'s (lines {_ln("record")}); on {sum(1 for k in EN_FIX if EN_SRC[k] == "page")} lines (lines {_ln("page")}) a few words of ours make a term or a target clear.')
+    q_note = len({x for x in qlines_src if x[2] == 'note'}); q_local = len({x for x in qlines_src if x[2] == 'local'})
+    if q_note + q_local != len(qlines): stop(f'the quotation counts by source do not add up: {q_note} + {q_local} against {len(qlines)}')
     kind_buttons = ''.join(f'<button type="button" data-kind="{k}" aria-pressed="{"true" if k == "all" else "false"}">{esc(v)}<span class="n">{n if k == "all" else c_kind[k]}</span></button>' for k, v in GROUP_LABEL.items())
     try_buttons = ''.join(f'<button type="button" data-try="{esc(q)}">{esc(q)}</button>' for q in TRY)
     page = f"""<!doctype html>
@@ -799,21 +1031,21 @@ def main():
 <header>
 <p class="eyebrow">China chip policy · the policy documents</p>
 <h1>The policy documents: {n103} policy lines and {n_local} local rules and provincial plans</h1>
-<p class="deck">Most are texts the Chinese state published. No published order against buying Nvidia chips was found among them. The review office's 2023 conclusion on Micron, which says operators of critical infrastructure should stop buying its products, is in the list. So such a text could have been found.</p>
+<p class="deck">Most are texts the Chinese state published. No published order against buying Nvidia chips was found among them. The review office's 2023 conclusion on Micron, which says operators of critical information infrastructure should stop buying its products, is in the list. So such a text could have been found.</p>
 <p class="note">Draft by Claude, Anthropic's model.</p>
-<p class="note">Made by a script (build.py, beside this file) from the project's checked note, NOTE_policies_checked.md, and its table of quotations, and from three of the project's tables (tables/provinces_31.tsv, local_vouchers.tsv, local_vouchers_more.tsv). {n103} lines of a list of policy leads; {n_copies} saved pages; {n_pass} passages in the pages' own words, {n_cn} of them Chinese.</p>
+<p class="note">Made from the project's checked note of policy documents (NOTE_policies_checked.md) with its table of quotations, and from the project's tables of provincial plans and local voucher rules (tables/provinces_31.tsv, local_vouchers.tsv, local_vouchers_more.tsv, with local_vouchers_classes.tsv and local_vouchers_other_provisions.tsv). {n103} lines of a list of policy leads; {n_copies} saved pages; {n_pass} passages in the pages' own words, {n_cn} of them Chinese.</p>
 </header>
 <div class="cols">
 <details class="card how" id="how" open><summary><h2>How to read a line</h2></summary><ul>
-<li><b>A line</b> is one entry of a list of policy leads that a search run (the note calls it a lane) wrote. The checked note then read each lead in the saved copy of its page.</li>
+<li><b>A line</b> of the first {n103} is one entry of a list of policy leads that an earlier search made. The project's checked note then read each lead in the saved copy of its page, and its check note says what it found; where a check note speaks of the list, it means that list of leads.</li>
 <li><b>Confirmed</b> means the page carries what the lead said. <b>Confirmed in part</b> ({n_part} lines) means some part is not in the page; the check note says which.</li>
-<li><b>Words between quotation marks</b> are the page's own, cut from the saved copy. The <b>English under Chinese is ours</b>, not an official translation. On {len(EN_FIX)} lines it is the core's wording as corrected after a second or later reading: the argument's (lines {", ".join(sorted((k for k in EN_FIX if EN_SRC[k] == 'argument'), key=int))} of the list) or the official record's (lines {", ".join(sorted((k for k in EN_FIX if EN_SRC[k] == 'record'), key=int))}).</li>
+<li><b>Words between quotation marks</b> are the page's own, cut from the saved copy. The <b>English under Chinese is ours</b>, not an official translation. {en_src_words}</li>
 <li><b>In a check note</b>, words in italics are the note's own English, the list's own wording, or a reading the script could not check.</li>
-<li><b>The date</b> is that of the document or act as the list gives it. A script looked for it in the saved copy: it found date words for {n_dfound} of the {n_dated} dated lines, and each line shows them.</li>
+<li><b>The date</b> is that of the document or act as the list gives it; where the list gave none, the date the page gives (each such line says so). A script looked for it in the saved copy: it found date words for {n_dfound} of the {n_dated} dated lines, and each line shows them.</li>
 </ul></details>
 <section class="card"><h2>Read with care</h2><ul>
-<li><b>Two sources.</b> {n103} lines come from the checked note of policy leads. {n_local} more come from the project's tables of local rules and provincial plans, marked <i>From the project's tables</i>: all 31 provincial-level governments ({c_res['share']} set a share for home-made computing hardware, one of them, Zhejiang's, for the computing of one sector, its information and communications industry; {c_res['plan_no_share']} have a plan that was read and sets none; {c_res['account_only']}, Tibet, is known only from accounts of it, its issuer's own among them; for {c_res['not_reached']}, Xinjiang, no computing plan was found), and {n_vouch} rows of the project's tables of local voucher and subsidy rules whose words the checker finds in a saved copy: {v_shown_yes} of them are counted by the published counting rule and {v_shown_no} are not ({esc(v_shown_why)}), and each line says which, as the project's table of classes gives it. {left_s} On the lines from the tables the English is the table's reading of the rule, not a translation. Counting one rule in force for each local government whose text is saved and which states a share of the bill, the argument finds {VC['n']} among the rules found by searches that went province by province and city by city, saved and read (not a census of every local government): {VC['tiered']} pay more for home-made computing and still pay for other computing ({VC['tiered_names']}), {VC['home']}, those of {VC['home_arg']}, pay for home-made computing only, and {VC['third']} state no higher rate for home-made computing: {VC['one']} pay one rate whatever the chip, and one, {VC['two_name']}'s, pays {VC['two_a']}% or {VC['two_b']}% by a type of computing facility that it does not name. Beijing E-Town's tier was repealed on Nov 26, 2024.</li>
-<li><b>Not every line is a government text.</b> {c_kind['official']} are official texts, {c_kind['company']} are company filings or statements, {c_kind['press']} are press reports, and {c_kind['other']} are of other kinds ({esc(other_bits)}). Each line carries its kind.</li>
+<li><b>Two sources.</b> {n103} lines come from the checked note of policy leads. {n_local} more come from the project's tables of local rules and provincial plans, marked <i>From the project's tables</i>: all 31 provincial-level governments ({c_res['share']} were found to set a share for home-made computing hardware, one of them, Zhejiang's, for the computing of one sector, its information and communications industry; {c_res['plan_no_share']} have a plan that was read and sets none; {c_res['account_only']}, Tibet, is known only from accounts of it, its issuer's own among them; for {c_res['not_reached']}, Xinjiang, no computing plan was found), and {n_vouch} rows of the project's tables of local voucher and subsidy rules whose words a script finds in a saved copy: {v_shown_yes} of them are in the project's count and {v_shown_no} are not ({esc(v_shown_why)}), and each line says which, as the project's table of classes gives it. {left_s} On the lines from the tables the English is the table's reading of the rule, not a translation. Counting one rule in force for each local government whose text is saved in a form that could be checked by script and which states a share of the bill, the argument finds {VC['n']} among the rules found by searches that went province by province and city by city, saved and read (not a census of every local government): {VC['tiered']} pay more for home-made computing and still pay for other computing ({VC['tiered_names']}), {VC['home']}, those of {VC['home_arg']}, pay for home-made computing only, and {VC['third']} state no higher rate for home-made computing: {VC['one']} pay one rate whatever the chip, and one, {VC['two_name']}'s, pays {VC['two_a']}% or {VC['two_b']}% by a type of computing facility that it does not name. Beijing E-Town's tier was repealed on Nov 26, 2024.</li>
+<li><b>Not every line is a government text.</b> Of the {n103} lines of the checked note, {c_kind['official']} are official texts, {c_kind['company']} are company filings or statements, {c_kind['press']} are press reports, and {c_kind['other']} are of other kinds ({esc(other_bits)}). Each line carries its kind.</li>
 <li><b>A press report is not published policy.</b> Beijing's instructions to companies are reported by the press from unnamed people; no line here is a published order of that kind.</li>
 <li><b>Found means said, not true.</b> A passage that is found shows what the page says.</li>
 <li><b>“Not found” is about these {n} lines only.</b> Nothing here shows what was never published, or what was published and not gathered.</li>
@@ -826,14 +1058,14 @@ def main():
 <p class="try"><span>Try:</span>{try_buttons}<span>Two words find lines that hold both.</span></p>
 <main id="list">
 {chr(10).join(cards)}
-<p id="none" hidden>No line holds those words. The search reads the date, the body, the title, the passages, our English, the check note, the address and the saved id.</p>
+<p id="none" hidden>No line holds those words. The search reads the date, the issuing body, the title, the passages, our English, the check note, the address and the saved id.</p>
 </main>
 <footer>
-<p>Build check: {esc(has_line)}. The passages are the same strings, row by row, as in the note's own table of quotations ({n_table} strings, plus the two of the line read in a second copy). A passage that is found shows what the page says, not that it is true.</p>
+<p>Every quotation on this page was looked for in its saved copy by a script, which found all of them: {esc(has_line)}. Of them, {q_note} are on the {n103} lines of the checked note (their passages, the same strings, row by row, as in the note's own table of quotations, {n_table} strings plus the two of the line read in a second copy; their date words; and the words their check notes quote) and {q_local} on the {n_local} lines from the tables. A passage that is found shows what the page says, not that it is true.</p>
 {short_note}
-<p>Our English is the checked note's, shown without the quotation marks that note puts round a few terms: only a page's own words stand between quotation marks here. On {len(EN_FIX)} lines it is the core's corrected wording instead: the argument's (lines {", ".join(sorted((k for k in EN_FIX if EN_SRC[k] == 'argument'), key=int))} of the list) or the official record's (lines {", ".join(sorted((k for k in EN_FIX if EN_SRC[k] == 'record'), key=int))}).</p>
-<p>The {n_local} lines marked <i>From the project's tables</i> come from tables/provinces_31.tsv, local_vouchers.tsv and local_vouchers_more.tsv: each passage shown was found by the same checker in a saved copy the row names; the English beside them is the table's reading, not a translation; the address is the one held with the saved copy.</p>
-<p>The descriptions of the issuing body and the check notes are the checked note's own words, carried over by the script, except that Li Chao is not called the planner's spokesperson: the commission's page names him and his office only. Page titles are those held with the saved copies. Addresses are those the note gives.</p>
+<p>Our English is the checked note's, shown without the quotation marks that note puts round a few terms: only a page's own words stand between quotation marks here. {en_src_words}</p>
+<p>The {n_local} lines marked <i>From the project's tables</i> come from tables/provinces_31.tsv, local_vouchers.tsv and local_vouchers_more.tsv: each passage shown was found by the same script in a saved copy the row names; the English beside them is the table's reading, not a translation, here and there in plainer words than the table's; the address is the one held with the saved copy.</p>
+<p>The descriptions of the issuing body and the check notes are the checked note's own words, carried over by the script, except in a few places where this page puts them plainly: the note's name for the list of leads (a lane) is given as the list; the note's first person is left out; Li Chao is not called the planner's spokesperson (the commission's page names him and his office only); two issuers are named as the pages and the project's table of names name them; and no line recounts which copy was read first. Page titles are those held with the saved copies. Addresses are those the note gives.</p>
 </footer>
 </div>
 <script>{JS}</script>

@@ -51,7 +51,10 @@ body { margin:0; background:var(--page); color:var(--ink); font-family:var(--fon
 .stage #count, .stage #tally { color:var(--ink2); font-weight:500; font-variant-numeric:tabular-nums; }
 .stage .card { position:absolute; background:var(--surface); border:1px solid var(--border); border-radius:12px; }
 .stage .card svg { position:absolute; display:block; }
-.stage svg text { font-family:var(--font-text); }
+.stage svg text { font-family:var(--font-text); text-rendering:geometricPrecision; }
+/* round 10: geometricPrecision keeps the strip's words in proportion when the page scales the 1280 frame down (phone
+   view, scale about 0.28): without it the browser rounds each small glyph's width up, and the Dec 8 label ran 2 px into
+   the Nov 17 label at 390 px (scratch_r10/test_gp.py). */
 .era { fill:var(--wash); }
 .grid { stroke:var(--grid); stroke-width:1; } .grid.yr { stroke:var(--axis); }
 .tick { font-size:12px; font-weight:500; fill:var(--muted); } .tick.yr { fill:var(--ink2); font-weight:600; }
@@ -114,7 +117,7 @@ circle.sw.toward { fill:var(--toward); } circle.sw.away { fill:var(--away); }
 <line class="grid" x1="1288.1" y1="50" x2="1288.1" y2="412"/><text class="tick" x="1292.1" y="428">Oct</text>
 <text class="eranote" x="221" y="43">2023 and 2024 are drawn narrower</text>
 <g id="flag0"><line class="flag" x1="664.3" y1="14" x2="664.3" y2="406"/><text class="flagt" x="657.3" y="26" text-anchor="end">Jul 2025 · US clears H20 sales again</text></g>
-<g id="flag1"><line class="flag" x1="869.9" y1="14" x2="869.9" y2="406"/><text class="flagt" x="876.9" y="26" text-anchor="start">Dec 8, 2025 · US allows the H200</text></g>
+<g id="flag1"><line class="flag" x1="869.9" y1="14" x2="869.9" y2="406"/><text class="flagt" x="876.9" y="26" text-anchor="start">Dec 8, 2025 · US says it will allow H200</text></g>
 <g id="flag2"><line class="flag" x1="1354.3" y1="14" x2="1354.3" y2="406"/><text class="flagt" x="1347.3" y="26" text-anchor="end">Nov 17, 2026 · H200 shipments stop</text></g>
 <line class="lane" x1="0" y1="158" x2="1400" y2="158"/>
 <g class="rowtag"><rect x="221" y="54" width="200" height="21" rx="10.5"/><circle class="sw away" cx="233" cy="64.5" r="5"/><text x="244" y="69.3"><tspan class="who">Beijing</tspan> <tspan class="what">holds Nvidia back</tspan></text></g>
@@ -204,7 +207,7 @@ circle.sw.toward { fill:var(--toward); } circle.sw.away { fill:var(--away); }
  </div></div>
  <div class="below">
   <div class="ctl"><button id="play" type="button">Play</button><input id="seek" type="range" min="0" max="764" step="1" value="764" aria-label="Position in the animation"><span id="clock"></span></div>
-  <p>The dated strip as a short silent animation: the 62 marks appear in date order while the date runs at the top right. This page draws any moment of it; the video files beside it were captured from this page frame by frame.</p>
+  <p>The dated strip as a short silent animation: the 62 marks appear in date order while the date runs at the top right. This page draws any moment of it; the video files beside it were captured from this page frame by frame. No one has yet watched them play through: they were checked by script and as still frames.</p>
   <p>The video file, <code>strip_animation.mp4</code> (1280 by 720, no sound):</p>
   <video data-src="strip_animation.mp4" controls muted playsinline preload="metadata" width="1280" height="720"></video>
   <p>For a post: <code>strip_animation.gif</code> or <code>strip_animation.webp</code> (both 1280 by 720).</p>

@@ -144,7 +144,9 @@ def strip(evs):
     out.append(f'<text class="eranote" x="{GL + 6}" y="{bottom + 37}">2023 and 2024 are drawn narrower</text>')
     # The third flag: Nvidia, Nov 17, 2026: "we are no longer shipping licensed Hopper Data Center products to China";
     # Reuters: "The Hopper family includes the H200" (both "!" lines). Why it stopped is not said here.
-    for d, lab, anchor in ((date(2025, 7, 15), 'Jul 2025 · US clears H20 sales again', 'end'), (date(2025, 12, 8), 'Dec 8, 2025 · US allows the H200', 'start'), (date(2026, 11, 17), 'Nov 17, 2026 · H200 shipments stop', 'end')):
+    # The second flag says what the post of Dec 8, 2025 says: the United States "will allow" the H200 ("!" line on
+    # cn-clips-followup-3-relay1); round 12, by the session's ruling for every figure (atlas/ROUND10_BRIEF.txt).
+    for d, lab, anchor in ((date(2025, 7, 15), 'Jul 2025 · US clears H20 sales again', 'end'), (date(2025, 12, 8), 'Dec 8, 2025 · US says it will allow H200', 'start'), (date(2026, 11, 17), 'Nov 17, 2026 · H200 shipments stop', 'end')):
         x = X(d); dx = -7 if anchor == 'end' else 7
         out.append(f'<line class="flag" x1="{x:.1f}" y1="14" x2="{x:.1f}" y2="{bottom}"/><text class="flagt" x="{x + dx:.1f}" y="26" text-anchor="{anchor}">{esc(lab)}</text>')
     for k in ORDER:
@@ -368,7 +370,11 @@ def vouchers():
     rate as a dot on the same 0 to 60% scale and its number; a dagger marks a rule that gives the payment another name than
     voucher; a letter marks a note, the notes standing under the list (the notes kept are those on home-made computing and
     those the rulings ask for). The list takes more rules without redesign (its columns grow); the scale ends at 60% (a
-    higher general rate stops the build at the assert below)."""
+    higher general rate stops the build at the assert below).
+    Voucher round 8 (Nov 25, 2026): 91 rules. Shantou's implementing rules are counted (its month is the page's posting
+    date: the page gives no date of signature); Langfang is read on the city's disclosure platform and the Zhengzhou
+    Airport Zone in a capture of the zone's own page, whose signature is of Aug 2025 (the month shown until then was a
+    commercial copy's)."""
     import cn_voucher_classes as VC
     R = VC.compute(); C = R['counted']
     SHOWN = {  # row of the voucher tables: place, rule (month on its page), the saved copy the row links (a saved id of the row), note
@@ -378,7 +384,7 @@ def vouchers():
         'A12': ('Shanghai city', 'Jul 2025', 'cn-le15-sheitc-8cea38', 'building support, up to 10%, for home-made computing only'),
         'A14': ('Chengdu city', 'Apr 2026', 'cn-ga31-vouchernamedrules-5', 'for 自主可控 (independently controllable) computing; small and medium firms’ rates each raised by 10%; in force from May 13, 2026; the rules on a consultancy’s page, compared by eye with the bureau’s signed file, a scan'),
         'A18': ('Sichuan province', 'Aug 2026', 'cn-ga31-unsaved-sc-338hao-fgw-wayback', '30% for start-ups, 40% for one-person AI firms; the provincial development and reform commission’s measures (川发改数据〔2026〕338号), written Aug 11 and published Aug 13, 2026'),
-        'B1': ('Beijing E-Town, a development zone', 'Nov 2024', 'cn-le28-etown-29hao-20241126', 'replaced a rule of Mar 2024 that paid up to 40% and up to 30%; servers with home-made chips get a separate purchase subsidy of up to 10%'),
+        'B1': ('Beijing E-Town, a development zone', 'Nov 2024', 'cn-le28-etown-29hao-20241126', 'replaced a rule of Mar 2024 that paid up to 40% and up to 30%; cloud firms buying servers with home-made chips get a separate subsidy of up to 10%'),
         'B5': ('Shenzhen city', 'Dec 2024', 'cn-le28-sz-gxj-2024-13hao', 'separate support for moving models to home-made chips'),
         'B8': ('Longhua district, Shenzhen', 'Nov 2024', 'cn-le28-sz-longhua-2024-20hao', ''),
         'B10': ('Guangzhou Development Zone and Huangpu district', 'Jun 2025', 'cn-le28-gz-huangpu-2025-7hao', ''),
@@ -432,6 +438,7 @@ def vouchers():
         'B152': ('Dongguan city', 'Feb 2025', 'cn-ga31-vcitysouth-3', ''),
         'B153': ('Binhaiwan New Area, Dongguan', 'May 2026', 'cn-ga31-vcitysouth-53', 'the same 50% pays for the New Area’s computing, for data, and for adapting to home-made operating systems and chips'),
         'B154': ('Zhuhai city', 'Mar 2026', 'cn-ga31-vcitysouth-70', ''),
+        'B155': ('Shantou city', 'Nov 2026', 'cn-ga31-vcitysouth-9', ''),
         'B156': ('Zhongshan city', 'Jan 2026', 'cn-ga31-vcitysouth-14', ''),
         'B158': ('Shaoguan city', 'Apr 2026', 'cn-ga31-vcitysouth-15', ''),
         'B160': ('Guangming district, Shenzhen', 'Mar 2025', 'cn-ga31-vcitysouth-24', ''),
@@ -445,11 +452,11 @@ def vouchers():
         'B176': ('Shijingshan district, Beijing', 'Mar 2024', 'cn-ga31-vcitynorth-4', ''),
         'B177': ('Fengtai district, Beijing', 'Oct 2025', 'cn-ga31-vcitynorth-8', ''),
         'B178': ('Hebei district, Tianjin', 'Apr 2024', 'cn-ga31-vcitynorth-10', 'pays for computing bought from one named centre, the Tianjin AI Computing Center, which Tianjin Daily calls wholly home-made; in force for four years from its publication (article 14)'),
-        'B179': ('Langfang city', 'Feb 2025', 'cn-ga31-vcitynorth-29', ''),
+        'B179': ('Langfang city', 'Feb 2025', 'cn-ga31-voucher8-langfang-2025-zfxxgk', ''),
         'B180': ('Datong city', 'Aug 2025', 'cn-ga31-vcitynorth-15', ''),
         'B181': ('Zhengzhou city', 'May 2024', 'cn-ga31-vcitynorth-20', ''),
         'B182': ('Zhengzhou High-tech Zone', 'Jul 2025', 'cn-ga31-vcitynorth-56', ''),
-        'B183': ('Zhengzhou Airport Zone', 'Nov 2025', 'cn-ga31-vcitynorth-35', ''),
+        'B183': ('Zhengzhou Airport Zone', 'Aug 2025', 'cn-ga31-voucher8-airport-2025-www-wayback', ''),
         'B185': ('Haidian district, Beijing', 'Aug 2025', 'cn-ga31-voucher5-haidian-2025-measures', 'the rate sentence encourages large-model firms to use home-made computing, at the same rate; the district’s application guide pays that 50% on contracts for GPU computing'),
         'B191': ('Huainan city', 'Nov 2026', 'cn-ga31-vcitywest-2', ''),
         'B192': ('Changsha Economic and Technological Development Zone', 'Mar 2026', 'cn-ga31-vcitywest-6', 'for renting home-made intelligent computing for agent applications, up to 1 million yuan a year; the zone’s measures of Mar 23, 2026, on a provincial news site'),
@@ -569,13 +576,13 @@ def bodies(evs):
             ('Industry ministry', P('cn-factions-bloomberg-flexibility-202409-relay1', 'cn-le11-ft-h20justify-aggregoctt', ('man-cn-ft-20250821-regulators', 'BH'))),
             ('Vice Premier Ding Xuexiang’s chip committee, as the Journal describes it', P('man-cn-factions-wsj-ding')),
             ('Security ministry', P('cn-acts-mss-xinhua-20250721')),
-            ('State media (the state broadcaster’s account)', P('cn-le13-yuyuan-qq-20250810b')),
+            ('State media (the Yuyuan Tantian account)', P('cn-le13-yuyuan-qq-20250810b')),
             ('Customs', P('man-cn-ft-20251009-customs', 'cn-acts-reuters-customs-20260114')),
             ('Finance and industry ministries (a purchase rule for Party and state bodies’ desktop computers)', P('cn-policy-desktop-2023'))]
     let = [('Commerce ministry', P('cn-policy-wang-nvidia', 'cn-policy-h20-mofcom', 'cn-tolerate-mof', 'cn-acts-mofcom-20261117')),
            ('Premier Li Qiang', P('cn-xi-round-f-6')),
            ('Vice Premier He Lifeng', P('cn-policy-he-welcomes')),
-           ('“Industry and commerce ministries”, as Reuters put it', P('cn-acts-reuters-deepseek-20260130')),
+           ('“Industry and commerce ministries”, as Reuters put it', P('cn-ga31-sv1-reuters-deepseek-yahoo')),      # record 23 (the open copy since core batch 12, Nov 25, 2026)
            ('Industry ministry, as The Information reported its intention', P('cn-acts-reuters-rtx5500-20260927'))]      # record 62 (core edit 7, Nov 25, 2026)
     firm = [('Market regulator: an antitrust case against Nvidia the company', P('cn-policy-samr-open-original', 'cn-policy-samr-further-original'))]
     col = lambda title, cls, rows: (f'<div class="bcol"><h4><i class="sw {cls}"></i>{title}</h4><ul>' + ''.join(f'<li><span>{esc(n)}</span><span class="pins">{p}</span></li>' for n, p in rows) + '</ul></div>')

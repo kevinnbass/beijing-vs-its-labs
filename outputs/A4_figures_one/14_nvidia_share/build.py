@@ -10,6 +10,10 @@ Nothing is written unless cn_has.py exits 0, every share in share.tsv stands in 
 quotation and number on the page in quotes.tsv.
 The "about 95%" is Reuters's own description; the 55% and 34% are a research firm's (IDC) counts. They are not one series:
 the chart puts the 95% in a field of its own, on a grid of its own, and joins only the two IDC columns.
+Round 10 (Nov 25, 2026, core batch 12 and two readers of the public page): the headline names IDC's counts of chips shipped;
+the argument's new estimate (Bernstein, about 40% in 2025, by the Associated Press's report of Jun 29, 2026) is given in the
+notes and not drawn (another measure); the 95% is Reuters's description with no date or count given; the five named Chinese
+makers' rounded shares add to about 47%; the chief executive's "effectively fallen to zero" is given with no period or count.
 Before the page or image is called done or shown: scripts/render_and_look.py on share.html and share.png.
 """
 import re, sys
@@ -203,6 +207,8 @@ def main():
     assert 'amd' not in page26, 'the 2026 page mentions AMD after all: the figure and its notes must change'
     d0, d1, d2 = A.day(Q, 'before'), A.day(Q, 'y2025'), A.day(Q, 'h2026')
     T = trendforce(Q); d_tf, d_enf = A.day(Q, 'tf'), A.day(Q, 'enflame')
+    d_bern = A.day(Q, 'bernstein')                                     # round 10: the Associated Press's report of Bernstein's estimate
+    assert A.ref(Q['bernstein'].sid)['tier'] == 'open' and 'Bernstein' in Q['bernstein.who']
     tf_when = f'{MONTH[d_tf.month - 1]} {d_tf.year}'                    # the page carries two stamps of the same month; the month is what is shown
     tf25 = next(r for r in T['2025'] if r['who'] == 'foreign')['share']; tf26 = next(r for r in T['2026'] if r['who'] == 'foreign')['share']
     tf_words = Q['tf.foreign'][Q['tf.foreign'].index('is expected'):]
@@ -231,7 +237,7 @@ def main():
  <div id="fig">
   <header>
    <p class="eyebrow">China · AI chips · who sold them</p>
-   <h1>Nvidia’s share of China’s AI chips fell from {nv25}% to {nv26}%.<br> Huawei reached {hw}%.</h1>
+   <h1>By IDC’s counts of AI chips shipped in China, Nvidia’s share fell from {nv25}% to {nv26}%.<br> Huawei reached {hw}%.</h1>
    <p class="deck">Counts of AI chips shipped in China in 2025 and in January to June 2026, by the research firm IDC, as reported by Reuters. The {b95}% at left is Reuters’s own description of an earlier time. It is not from the same series, so it stands apart. A second research firm, TrendForce, counts differently; its figures have a panel of their own. These are different measures, not one series.</p>
    <ul class="key">
     <li><i class="sw toward"></i><span><b>Nvidia</b></span></li>
@@ -247,7 +253,7 @@ def main():
    <p class="sub">Each column is the whole market at one reading. Nvidia’s share is joined across the two IDC columns; the first column stands apart.</p>
 {chart(D, cap)}
 {chart(D, cap, narrow=True)}
-   <p class="fine"><b>Read with care.</b> The {b95}% is a description, with no date and no count behind it; the {nv25}% and {nv26}% are counts of chips shipped. A full year stands beside a half year.
+   <p class="fine"><b>Read with care.</b> The {b95}% is Reuters’s own description, and the report gives no date for it and no count behind it; the {nv25}% and {nv26}% are counts of chips shipped. A full year stands beside a half year.
     For 2025 the report gives Chinese makers together. For 2026 it names {words[len(named)]} of them and leaves {rest}% not broken down (our subtraction); it does not mention AMD.
     <i class="mk solid"></i> For 2025 a Chinese chip maker gives the same share on the record: by IDC’s data and its own sales, Enflame’s prospectus of {fmt(d_enf)} puts Nvidia at about 2.2 million of about 4 million cards shipped, about {nv25}%.</p>
   </section>
@@ -283,13 +289,14 @@ def main():
   <section class="card notes">
    <h2>Read with care</h2>
    <ul>
-    <li>Not one series. The {b95}% is Reuters’s own sentence, with no date, no count and no source named. The {nv25}% and {nv26}% are IDC’s counts. The chart does not join the first to the others.</li>
+    <li>Not one series. The {b95}% is Reuters’s own sentence; it gives no date, no count and no source. The {nv25}% and {nv26}% are IDC’s counts. The chart does not join the first to the others.</li>
     <li>TrendForce’s figures are a third measure. For 2025 it gives all foreign suppliers together {tf25}%, where IDC’s count, as Reuters reported it, gives Nvidia {nv25}% and AMD {amd}%. The two firms do not measure the same thing, so neither is drawn on the other’s chart. TrendForce’s 2026 figures are a forecast made in {tf_when}.</li>
-    <li>The 2025 share has two sources. Reuters reported IDC’s count. Enflame, a Chinese maker of AI chips, gives the same {nv25}% in its prospectus, from IDC’s data and its own sales. English in round brackets is ours, not an official translation.</li>
-    <li>Not like for like on the Chinese side. For 2025 the report gives all Chinese makers together ({cn25}%). For 2026 it names {words[len(named)]}, which add up to {named_sum}% (our addition), and leaves {rest}% not broken down (our subtraction). The report says: {qm(Q["h2026.tracked"])}. So {named_sum}% is the least the Chinese makers held, not the whole.</li>
+    <li>The {nv25}% for 2025 has two sources. Reuters reported IDC’s count. Enflame, a Chinese maker of AI chips, gives the same {nv25}% in its prospectus, from IDC’s data and its own sales. English in round brackets is ours, not an official translation.</li>
+    <li>Not every estimate is drawn. Bernstein, a research and brokerage firm, by {L("bernstein", f"the Associated Press’s report of {fmt(d_bern)}")}, {qm(Q["bernstein"])}, where IDC’s data give {nv25}%. It is another measure, so it is not drawn.</li>
+    <li>Not like for like on the Chinese side. For 2025 the report gives all Chinese makers together ({cn25}%). For 2026 it names {words[len(named)]}, whose shares, each rounded, add up to about {named_sum}% (our addition), and leaves {rest}% not broken down (our subtraction). The report says: {qm(Q["h2026.tracked"])}, and gives no share for the others. So the Chinese makers’ whole share in 2026 is not given.</li>
     <li>Huawei’s share in 2025 is not given as a percentage. The report says it led the Chinese makers, {qm(Q["y2025.huawei"])}.</li>
     <li>What the {nv26}% counts is not fully known: {qm(Q["h2026.notspecified"])}.</li>
-    <li>Nvidia’s chief executive has put it lower. Reuters, {fmt(d0)}, reports him {qm(Q["before.zero"])}.</li>
+    <li>Nvidia’s chief executive has put it lower, with no period or count given. Reuters, {fmt(d0)}, writes that he {qm(Q["before.warned"])}, {qm(Q["before.zero"])}; it does not say when he said it.</li>
     <li>AMD appears in the 2025 count only ({amd}%). The 2026 report does not mention AMD, so nothing is drawn for it there.</li>
     <li>A share of chips shipped in a period is not a share of chips in use.</li>
    </ul>
@@ -300,7 +307,10 @@ def main():
 </html>
 '''
     # ours: the rest of 100 and the sum of the named Chinese makers (both made above); 0 to 100 are the axis
-    A.guard(page, Q, ours=[rest, named_sum, 0, 25, 50, 75, 100], dates=[fmt(d0), fmt(d1), fmt(d2), fmt(d_enf), tf_when])
+    A.guard(page, Q, ours=[rest, named_sum, 0, 25, 50, 75, 100], dates=[fmt(d0), fmt(d1), fmt(d2), fmt(d_enf), tf_when, fmt(d_bern)])
+    # round 10 (readers' leads on the public page): wordings replaced
+    for banned in ('is a description, with no date', 'is the least the Chinese makers held', 'The 2025 share has two sources', 'has put it lower. Reuters'):
+        assert banned not in page, f'the page still says "{banned}"'
     assert 'Nothing here is on the record' not in page and 'one series' in page
     out = HERE / 'share.html'
     out.write_text(page, encoding='utf-8'); print('written', out, len(page), 'bytes')

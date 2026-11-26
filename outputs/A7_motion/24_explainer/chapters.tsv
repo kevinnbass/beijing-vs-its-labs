@@ -35,17 +35,19 @@
 6	new	BL	cn-policy-he-welcomes
 6	new	BL	cn-policy-wang-nvidia
 6	new	BL	cn-policy-h20-mofcom
-6	new	BL	cn-acts-reuters-deepseek-20260130
+6	new	BL	cn-ga31-sv1-reuters-deepseek-yahoo
 6	new	BL	cn-xi-round-f-6
 6	new	BL	cn-tolerate-mof
 6	new	BL	cn-acts-mofcom-20261117
 
-# 7. Limit 2, warnings and guidance, not a published ban: the 2023 review conclusion on Micron (a published one), the state
-#    broadcaster's account (a public warning), the security ministry's warning, and the 2024 report of "guidance"
+# 7. Limit 2, warnings and guidance, not a published ban: the 2023 review conclusion on Micron (a published one), Yuyuan
+#    Tantian's post as Tencent News carries it (a public warning; the page does not say whose account it is), the security ministry's warning, and the 2024 report of "guidance"
 7	new	BH	cn-policy-micron-decision
 7	new	BH	cn-le13-yuyuan-qq-20250810b
 7	again	BH	cn-acts-mss-xinhua-20250721
 7	again	BH	cn-factions-bloomberg-flexibility-202409-relay1
+
+# Round 10 (Nov 25, 2026): record 23 (Reuters, Jan 30, 2026) is cited from its open copy on Yahoo Finance, as the core now cites it.
 
 # 8. Limit 3, approvals and arrivals: the rest of the row "Beijing lets Nvidia in"
 #    Since core edit 7 (Nov 25, 2026) the "*" line below also brings on record 62 (the press report of Sept 27, 2026 on the RTX PRO 5500)

@@ -1,3 +1,0 @@
-A1_writing_short: DONE.md yes | base files 5/5 ok (196 quotations and statements) | quotes.tsv 0/0 ok (0 quotations) | looks: 4 looked, 0 stale, 0 none
-
-1 folder(s) checked; 0 with something missing or failing

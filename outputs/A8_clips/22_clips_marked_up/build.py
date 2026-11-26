@@ -132,8 +132,10 @@ def main():
     o = ['# The two clips, sentence by sentence',
          f"@deck Every sentence of Palmer Luckey's {length_words(L['duration'])} and of Matt Pottinger's {length_words(P['duration'])} with Christiane Amanpour, each with a verdict and its sources.",
          '',
-         f'@note Draft by Claude, Anthropic\'s model. Built {today.strftime("%b")} {today.day}, {today.year} (UTC).',
-         "@note The words of both clips are a speech program's transcripts [clip-luckey] [clip-pottinger], but for one sentence of Luckey's (L4), which is quoted from the text of the post that carries the clip. Nobody has checked any of them by ear. Times are minutes and seconds into each clip. A page for checking them by ear is held back (see HELD_BACK.md).",
+         # round 10: "Built" read as a working word to two readers of the public page; the byline stays the project's own
+         f'@note Draft by Claude, Anthropic\'s model. This version: {today.strftime("%b")} {today.day}, {today.year} (UTC).',
+         # round 10: the pointer to the listening sheet (held back from the public copy) is gone from the page
+         "@note The words of both clips are a speech program's transcripts [clip-luckey] [clip-pottinger], but for one sentence of Luckey's (L4), which is quoted from the text of the post that carries the clip. Nobody has checked any of them by ear. Times are minutes and seconds into each clip.",
          f"@note {NUM[n_left].capitalize()} parts are shown only as {LEFT}: this project leaves their words out, and they carry no verdict." if n_left else '',
          "@note Anthropic has argued in public for controls on chip exports to China (that is from the model's general knowledge; no saved page is cited for it), so judge this note by its sources.",
          '',
@@ -154,10 +156,16 @@ def main():
     # round 9 (the session's ruling on note fg4): a part of verdict A whose qualifier names a press report is counted with A, and the line says how many
     press_only = lambda c: sum(1 for u in c['units'] if u['in_transcript'] and marks[u['id']]['code'] == 'A' and 'press report' in marks[u['id']]['qual'])
     pl, pp = press_only(L), press_only(P)
+    # round 10 (a reader of the public page): the count of A also holds parts borne out only in part; the line says how many
+    in_part = lambda c: sum(1 for u in c['units'] if u['in_transcript'] and marks[u['id']]['code'] == 'A' and marks[u['id']]['qual'] == 'in part')
+    il, ip = in_part(L), in_part(P)
     for code in ORDER:
         tail = ''
         if code == 'A' and (pl or pp):
             tail = f" Of these, {NUM[pl]} of Luckey's and {NUM[pp]} of Pottinger's rest on one press report alone, as {'its line says' if pl + pp == 1 else 'their lines say'}."
+        if code == 'A' and (il or ip):
+            who = ' and '.join(f"{NUM[n]} of {name}'s" for n, name in ((il, 'Luckey'), (ip, 'Pottinger')) if n)
+            tail += f" {who[0].upper() + who[1:]} {'is' if il + ip == 1 else 'are'} borne out only in part."
         o.append(f"- **{LABEL[code]}:** {count(L, code)} of the {nu_l} parts of Luckey's clip, {count(P, code)} of the {nu_p} parts of Pottinger's.{tail}")
     if count(L, LEFT_CODE) or count(P, LEFT_CODE):         # round 7 (OB10): counted apart, not as a verdict
         o.append(f"- **Left out of this project, with no verdict:** {count(L, LEFT_CODE)} of the {nu_l} parts of Luckey's clip, {count(P, LEFT_CODE)} of the {nu_p} parts of Pottinger's.")
@@ -168,8 +176,9 @@ def main():
           '',
           f"## 1. Palmer Luckey ({length_words(L['duration'])})",
           '',
-          f"Posted on X by @overton_news on Nov 19, 2026 [clip-luckey]. The clip is part of a talk with Andrew Ross Sorkin at the DealBook Summit 2026; the saved transcript gives no day for the talk. That transcript, published by The Singju Post, holds the clip's passage with {NUM[d_l]} small differences of wording [cn-clips-singju-luckey]. One of them lies between his two main sentences. There the transcript has \"Chinese companies like this\", and the text of the post has \"Like there are Chinese companies\" [cnpol-x-overton-2123392702821580811]. A second speech pass has the word Like there too; the first speech pass has no word there. So the second of the two sentences (L4) is quoted below from the text of the post.",
+          f"Posted on X by @overton_news on Nov 19, 2026 [clip-luckey]. The clip is part of a talk with Andrew Ross Sorkin at the DealBook Summit 2026; the saved transcript gives no day for the talk. That transcript, published by The Singju Post, holds the clip's passage with {NUM[d_l]} small differences of wording [cn-clips-singju-luckey]. One of them lies between his two main sentences. There the transcript has \"Chinese companies like this\", and the text of the post has \"Like there are Chinese companies\" [cnpol-x-overton-2123392702821580811]. A second speech pass has the word Like there too; the first speech pass has no word there. So the second of the two sentences (L4) is quoted below from the text of the post. The GPUs he speaks of are graphics processing units, the chips this note is about.",
           '!! cn-clips-singju-luckey | Palmer Luckey joined Andrew Ross Sorkin at the DealBook Summit 2026',
+          '!! cn-usdocs-uscc-2025-ch1 | advanced graphics processing units (GPUs)',          # round 10: GPU spelled out for a stranger
           f'!! {W2_AT}',
           ''] + body_l + [
           '**What the clip leaves out**', '',
@@ -181,14 +190,16 @@ def main():
           ''] + body_p + [
           '## How the two clips fit together',
           '',
-          "Pottinger blames Jensen Huang for China's AI models. Luckey says Beijing kept Nvidia's chips out. Both can hold, for different chips and years. Chinese companies trained models on Nvidia chips: DeepSeek by its own technical report (sentence P4), Alibaba and ByteDance abroad by one press report (sentence P12). By Washington's own table, none of the Nvidia chips it had approved by May 11, 2026 had shipped (sentence P12). On the H200 chips at issue in 2026, Nvidia's report for the quarter to Jul 26, 2026 says shipments under the H200 licences \"account for less than 1% of Data Center revenue in our most recent quarter\" [man-ms-sec-10q-2026-07]. On its results call for the quarter ended Oct 25, 2026 it said: \"Q3 sales of licensed Hopper Data Center products to China was $2.4 billion\", and then \"we are no longer shipping licensed Hopper Data Center products to China\" [cn-o38-nvda-q3fy27-call-transcript-pdf]. It gave no reason, and it did not say how many of those chips crossed into mainland China.",
+          # round 10 (two readers of the public page): the two claims need not clash, and the record bears out only a narrower part of each
+          "Pottinger blames Jensen Huang for China's AI models. Luckey says Beijing kept Nvidia's chips out. The two need not clash, for they are about different chips and years, and the record bears out only a narrower part of each: that Chinese companies used Nvidia chips, not who is to blame for their models; and that from 2024 Beijing pressed its companies to move away from Nvidia chips, not that it kept them all out. Chinese companies trained models on Nvidia chips: DeepSeek by its own technical report (sentence P4), Alibaba and ByteDance abroad by one press report (sentence P12). By Washington's own table, none of the Nvidia chips it had approved by May 11, 2026 had shipped (sentence P12). On the H200 chips at issue in 2026, Nvidia's report for the quarter to Jul 26, 2026 says shipments under the H200 licences \"account for less than 1% of Data Center revenue in our most recent quarter\" [man-ms-sec-10q-2026-07]. On its results call for the quarter ended Oct 25, 2026 it said: \"Q3 sales of licensed Hopper Data Center products to China was $2.4 billion\", and then \"we are no longer shipping licensed Hopper Data Center products to China\" [cn-o38-nvda-q3fy27-call-transcript-pdf]. It gave no reason, and it did not say how many of those chips crossed into mainland China.",
           '!! man-ms-sec-10q-2026-07 | For the quarterly period ended July 26, 2026',
           '!! cn-o38-nvda-q3fy27-call-transcript-pdf | Q3 2027 Earnings Call',
           '',
           '## What this note does not show',
           '',
           '- Neither clip has been checked by ear. If a word changes, the verdict on its sentence may need another look.',
-          f'- Other machine readings and published texts of the two clips have other words in {n_other} places; the listening sheet in the folder 40_checked_by_ear lists them. Each was read against its verdict here, and none changes one.',
+          # round 10: no pointer to the listening sheet, which the public copy holds back
+          f'- Other machine readings and published texts of the two clips have other words in {n_other} places; nobody has listened to settle which is right. Each was read against its verdict here, and none changes one.',
           '- The pages on the outages and on attacks (sentences P6 to P11) were saved on Nov 20, 2026, days after the events. Later accounts may differ.',
           '- It says nothing on whether any law was broken.',
           '!! cn-clips-whitehouse-outages | FETCHED: 2026-11-20',
