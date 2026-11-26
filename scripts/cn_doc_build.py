@@ -42,9 +42,10 @@ def main():
     base = Path(args[0]).resolve()
     stem = re.sub(r'(_base)?\.txt$', '', base.name)
     B.LINK_FILES = False
+    B.SAVED_NOTE = False      # (b15, item 1d) a note's ids are not all in the public sources.csv: its header says only 'the id of the saved copy'
     B.load_clip()
     refs = B.load_refs()
-    refs.setdefault('clip-pottinger', {'kind': 'CLIP', 'label': 'Matt Pottinger with Christiane Amanpour, in a clip of 2 minutes 22 seconds posted on X by @amanpour, Nov 18, 2026. Words from a speech program\'s transcript of the clip (the project’s transcript file, held back: see HELD_BACK.md); nobody has checked them by ear', 'addr': 'https://x.com/amanpour/status/2123118808290189692'})
+    refs.setdefault('clip-pottinger', {'kind': 'CLIP', 'label': 'Matt Pottinger with Christiane Amanpour, in a clip of 2 minutes 22 seconds posted on X by @amanpour, Nov 18, 2026. Words from a speech program\'s transcript of the clip; nobody has checked them by ear', 'addr': 'https://x.com/amanpour/status/2123118808290189692'})
     if '--refs' in opt:
         for ln in Path(opt['--refs']).read_text(encoding='utf-8').splitlines():
             if not ln.strip() or ln.startswith('#'): continue
@@ -60,8 +61,8 @@ def main():
         print('\n'.join(bad)); print(f'\nNOT WRITTEN: {len(bad)} problem(s)'); sys.exit(1)
     num = {sid: n for n, sid in enumerate(order, 1)}
     solid = sum(1 for sid in order if refs[sid]['kind'] in B.SOLID)
-    tail = (f'Build check: {nq} quotations and {nh} further statements were looked for in the saved copies of {len(order)} sources and all were found; '
-            f'a planted false quotation was rejected. {solid} sources are documents, filings or named people on the record; {len(order) - solid} are press reports citing unnamed people, counts or machine transcripts. '
+    tail = (f'Build check: {nq} quotations, and {nh} passages that back statements made without quoting, were looked for in the saved copies of {len(order)} sources and all were found; '
+            f"a made-up quotation, put in as a test, was not found. {solid} sources are documents, filings or named people on the record, or published commentaries, reports or statements of state media, industry bodies or research institutes, institutions' own notices and named outlets' accounts of documents; {('1 is a press report citing unnamed people, a count or a machine transcript' if len(order) - solid == 1 else str(len(order) - solid) + ' are press reports citing unnamed people, counts or machine transcripts')}. "
             'A quotation that is found shows what the source says, not that it is true.') if order else ''
     bl = B.blocks(lines)
     use_refs = refs if order else None

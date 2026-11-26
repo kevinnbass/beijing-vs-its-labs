@@ -97,7 +97,13 @@ RETIRED_WORDS = ['four limits', 'four cautions', '20 points', '750,000', 'more t
                  'each reaching two companies', 'the same companies were also turning', 'whether about 600,000 chips are in hong kong',
                  'about 10,000 each to bytedance and tencent', 'four reported numbers', "each post is followed by its source's address",
                  'august 2026: the licensed sales', "says internet companies' clusters in the city",
-                 'hongkong_stockpile']      # round 12: output 42's page was renamed (outputs/STATUS.tsv, 05:40 UTC, Nov 26, 2026)
+                 'hongkong_stockpile',      # round 12: output 42's page was renamed (outputs/STATUS.tsv, 05:40 UTC, Nov 26, 2026)
+                 # round 13 (Nov 26, 2026, core batch 15: 461 sources; Washington returned the applications, not the chips; Tianjin "as Sina
+                 # carries it"; the tier words of the figure's kind doc), and wordings the readers of the eighth public version found unclear
+                 '460 sources', 'chips approved and not shipped and others returned', '55% of the chips in the applications the summary records were',
+                 'held as a page on sina', 'nothing here has been posted', 'before this text was written', 'annual report to the sec:',
+                 'no published instruction from beijing to the companies was found', 'the short answer: yes,', 'all three are press reports from unnamed people',
+                 "nvidia chips, 0:00 to 0:51, set against", 'published documents or officials']
 RETIRED_IDS = {ln.split('\t')[0] for ln in (PROJ / 'loose_ends' / 'hkexnews_saved_ids.tsv').read_text(encoding='utf-8').splitlines() if ln.strip()}
 if len(RETIRED_IDS) < 10: fail('control: the do-not-cite list is shorter than expected')
 RETIRED_IDS |= {'cn-le08-moore-final-prospectus', 'cn-le29-sensetime-2025-annual-en', 'cn-media-yuyuan-thepaper', 'cn-factions-tencent-reuters-20261120-relay1',
@@ -140,10 +146,18 @@ seen10b = [w for w in R10B if w in old10b]
 print(f'control: {len(seen10b)} of the {len(R10B)} phrases retired in round 10b are found in the before-copies of round 10b')
 if len(seen10b) != len(R10B): fail(f'control: round 10b phrases not found in the before-copies: {[w for w in R10B if w not in seen10b]}')
 # round 12 control: the before-copies of round 12 (scratch_round12/before: base texts and the plain thread as round 11 built it) hold every phrase round 12 retired
-R12 = RETIRED_WORDS[RETIRED_WORDS.index("fair competition for the market regulator's case ["):]
+R12 = RETIRED_WORDS[RETIRED_WORDS.index("fair competition for the market regulator's case ["):RETIRED_WORDS.index('460 sources')]      # round 13 phrases have their own control below
 old12 = ' '.join(p.read_text(encoding='utf-8').lower() for p in list((HERE / 'scratch_round12' / 'before').glob('*/*_base.txt')) + [HERE / 'scratch_round12' / 'before' / '03_thread' / 'thread_plain.txt'] if p.is_file())
 seen12 = [w for w in R12 if w in old12]
 print(f'control: {len(seen12)} of the {len(R12)} phrases retired in round 12 are found in the before-copies of round 12')
 if len(seen12) != len(R12): fail(f'control: round 12 phrases not found in the before-copies: {[w for w in R12 if w not in seen12]}')
+# round 13 control: the before-copies of round 13 (scratch_round13/before: base texts, the plain thread and the plain timeline as round 12 built them)
+R13 = RETIRED_WORDS[RETIRED_WORDS.index('460 sources'):]
+R12 = RETIRED_WORDS[RETIRED_WORDS.index("fair competition for the market regulator's case ["):RETIRED_WORDS.index('460 sources')]
+old13 = ' '.join(p.read_text(encoding='utf-8').lower() for p in list((HERE / 'scratch_round13' / 'before').glob('*/*_base.txt'))
+                 + [HERE / 'scratch_round13' / 'before' / '03_thread' / 'thread_plain.txt', HERE / 'scratch_round13' / 'before' / '33_timeline_plain_text' / 'timeline.txt'] if p.is_file())
+seen13 = [w for w in R13 if w in old13]
+print(f'control: {len(seen13)} of the {len(R13)} phrases retired in round 13 are found in the before-copies of round 13')
+if len(seen13) != len(R13): fail(f'control: round 13 phrases not found in the before-copies: {[w for w in R13 if w not in seen13]}')
 print('result: the folder agrees with the core in what it copies, and the retired wording is gone' if ok else 'result: FAILED')
 sys.exit(0 if ok else 1)

@@ -25,10 +25,13 @@
 # "Reported: stored in Hong Kong, November 2026"; the first row's label and the words under it make the argument's cell);
 # a4lib.funnel() stops if a press row's label is not one of those cells. The Hong Kong row's second line names what is
 # counted (the report's "Nvidia's advanced artificial intelligence chips"), no longer where they were bound ("to China").
+# Round 13 (Nov 26, 2026, outputs/ROUND13.md; core batch 15, rows B15-056 to -058): Washington returned without action the
+# APPLICATIONS, never the chips; the second table row's label says so ("Applications returned by Washington without action";
+# was "Returned by Washington without action", which read as chips returned). The count shown is the chips in those applications.
 key	dir	tier	card	label	qual	number	times	by	what
 ordered	toward	open	yes	Reported: ordered by Chinese companies	more than	2 million	1	Reuters	for 2026
 wapproved	us	solid	yes	Approved by Washington, not shipped	-	-	table:appr_nv	licence table released by the House Foreign Affairs Committee	Nvidia as exporter
-wreturned	us	solid	yes	Returned by Washington without action	-	-	table:rwa_nv	licence table released by the House Foreign Affairs Committee	Nvidia as exporter
+wreturned	us	solid	yes	Applications returned by Washington without action	-	-	table:rwa_nv	licence table released by the House Foreign Affairs Committee	Nvidia as exporter
 approved	toward	open	yes	Reported: approved by Beijing, with conditions	more than	400,000	1	Reuters	for ByteDance, Alibaba and Tencent
 discussed	toward	open	no	Reported: under discussion in July 2026	fewer than	200,000	1	The Information, through Reuters	the total Beijing might approve
 delivered	toward	open	yes	Reported: delivered by August 2026	about	10,000	each2	Financial Times, through Reuters	to ByteDance and to Tencent

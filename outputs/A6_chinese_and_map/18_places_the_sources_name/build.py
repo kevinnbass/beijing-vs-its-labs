@@ -1,11 +1,12 @@
 """Build the map page "Places the sources name for Nvidia chips" (China chip-policy project, output idea 18).
-(Round 12, Nov 26, 2026: folder and files renamed from the output's old title; the old folder is kept, unchanged.)
+(Round 12, Nov 26, 2026: folder and files renamed from the output's old title; the old folder is kept, unchanged.
+ Round 13: the first note says which records have a mark on each place they name, from the G lines.)
 
 Run: python3 -I build.py                                      checks every quotation, writes the page
      python3 -I build.py --png    the same, then exports PNG images of it
 The map shows places that saved reports name. It does not show where chips are; the page and the map say so.
 Reads, in this folder:
-  places.txt      the records (its header explains the format): each is one thing a saved page says about a named place
+  places.txt      the records (its header explains the format): each is what one saved page says about the place or places it names
   template.html   the page around the map
   mapdata/ne_10m_admin_1_states_provinces.geojson   Natural Earth 1:10m states and provinces, version 5.1.2, public domain
                   (https://raw.githubusercontent.com/nvkelso/natural-earth-vector/v5.1.2/geojson/ne_10m_admin_1_states_provinces.geojson);
@@ -475,7 +476,7 @@ def main():
     assert all(re.search(r'bytedance|byteplus|tiktok|alibaba', x['consignee'], re.I) for x in abroad)
     r5 = next(r for r in recs if r['dir'] == 'us')
     assert f'{sum_ab:,}' in r5['T'] and f' {WORDS[n_ab]} applications' in r5['T'] and f'All {WORDS[n_ab]} ' in r5['T'] and r5['P'] == 'Malaysia, Indonesia and Thailand', (n_ab, sum_ab)
-    assert all(r['group'] == 'out' and not r['solid'] for r in recs if r['dir'] == 'away'), 'the key describes the orange record as chips waiting'
+    assert all(r['group'] == 'out' and not r['solid'] for r in recs if r['dir'] == 'away'), "the key describes the orange record as Reuters's report, by unnamed people, of chips stored in Hong Kong"
     # round 10 (Nov 25, 2026): the headline, deck and key name outlets, dates and record numbers; each is checked here against the records
     press_out = [(r['sid'], r['date'].isoformat(), r['S'].split(',')[0]) for r in recs if r['group'] == 'out' and r['status'] == 'there']
     assert press_out == [('cn-clips-evidence-1', '2026-11-05', 'Reuters'), ('cn-tolerate-ft-offshore', '2025-11-27', 'Financial Times'),
@@ -494,6 +495,14 @@ def main():
     assert max(c.values()) < len(WORDS)
     lo, hi = min(r['date'] for r in recs), max(r['date'] for r in recs)
     svg, st = build_map(recs)
+    # round 13 (Nov 26, 2026): the first note says which records have more than one mark and which has one mark for several places
+    multi = [r for r in recs if len(r['anch']) > 1]
+    for r in multi:
+        assert len(re.split(r', | and ', r['P'])) == len(r['anch']) and not any(t == 'centre' for t, _ in r['anch']), f"record {r['n']}: one mark per place it names"
+    cen = [r for r in recs if any(t == 'centre' for t, _ in r['anch'])]
+    assert len(multi) >= 2 and len(cen) == 1 and len(cen[0]['anch']) == 1 and cen[0]['P'] == 'Southeast Asia' and sorted({f['admin'] for f in cen[0]['areas']}) == ['Malaysia', 'Singapore'] \
+        and 'Singapore and Malaysia' in cen[0]['T'], 'the first note names the records with a mark on each place and the one mark for Southeast Asia, Malaysia and Singapore shaded'
+    mnums = [str(r['n']) for r in multi]
     tip = {r['n']: dict(p=r['P'], w=r['W'], t=r['T'], q=r['Q'], s=r['S'],
                         k=('The document itself, saved' if r['kind'] == 'paper' else 'On the record, as reported' if r['solid'] else 'Press report, unnamed sources') + ' · ' + ('a plan, tender or application, not a delivery' if r['status'] == 'plan' else 'chips reported or said to be here'))
            for r in recs}
@@ -506,7 +515,8 @@ def main():
              'N_SOLID': str(c['solid']), 'N_HOLLOW': str(c['hollow']),
              'MAPSRC': '\n'.join(f'    <li>{pin(r)}<span><b>{esc(r["P"])}</b>, {esc(r["K"])}</span></li>' for r in recs),
              'N_OUT_OR_PLAN': WORDS[c['out_or_plan']], 'N_SOLID_REP': WORDS[c['solid_rep']], 'REC_DS': str(ds[0]['n']),
-             'PAPER_NUMS': ', '.join(nums[:-1]) + ' and ' + nums[-1]}
+             'PAPER_NUMS': ', '.join(nums[:-1]) + ' and ' + nums[-1],
+             'MULTI_NUMS': ', '.join(mnums[:-1]) + ' and ' + mnums[-1], 'CENTRE_NUM': str(cen[0]['n'])}
     for k, v in sorted(parts.items(), key=lambda kv: -len(kv[0])):          # longer names first: N_PAPER_CAP before N_PAPER
         assert f'%%{k}%%' in page, k
         page = page.replace(f'%%{k}%%', v)

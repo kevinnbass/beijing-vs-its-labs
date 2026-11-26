@@ -10,7 +10,7 @@ Run: python3 -I build.py
      the argument's points, sources and limits     argument/argument_base.txt; the sources from the argument's last build line
                                                    (atlas/core_edit/hand_out/ARGUMENT_FINAL.txt), checked against ARGUMENT_referenced.html
      state-media items, and those that only warn    tables/state_media_items.tsv (75; 19 only warn, 16 of them from Jul 31 to Sept 24, 2025 and 3 later)
-     the share of chips returned without action     tables/house_licence_table.tsv (55% of the table's chips)
+     the applications returned without action        tables/house_licence_table.tsv (those for 55% of the table's chips)
    and no id on the do-not-cite list (loose_ends/hkexnews_saved_ids.tsv) may be cited.
 Exit 1 if the build or any check fails.
 """
@@ -102,7 +102,11 @@ def main():
     print(f'licence table, from tables/house_licence_table.tsv: {len(hl)} applications, {total:,} chips; returned without action {rwa:,} ({100 * rwa / total:.2f}%, shown as {pct}%); '
           f'approved {sum(chips(r) for r in appr):,} in {len(appr)}, every one marked "Approved, not shipped": {all(r["status"] == "Approved, not shipped" for r in appr)}; statuses {statuses}')
     if not appr or not all(r['status'] == 'Approved, not shipped' for r in appr): bad.append('not every approval in the table is marked "Approved, not shipped"')
-    if f'{pct}% of the chips in the applications the summary records' not in text: bad.append(f'the text does not say "{pct}% of the chips in the applications the summary records"')
+    # round 13 (Nov 26, 2026, core batch 15, rows B15-056 to -058): Washington returned the APPLICATIONS, never the chips, as the argument now says
+    said = f'returned without action the applications for {pct}% of the chips'
+    if said not in text: bad.append(f'the text does not say "{said}"')
+    if f'{pct}% of the chips in the applications the summary records were in applications returned' in text: bad.append('the text keeps the wording core batch 15 replaced')
+    if f'returned without action the applications for {pct + 1}% of the chips' in text: bad.append('control: a changed share was found')
     if f'{total:,}' not in text: bad.append(f'the hidden check line with the table\'s total, {total:,}, is missing')
     if 'more than half' in text: bad.append('the text says "more than half"')
 

@@ -9,7 +9,8 @@ Used by 24_explainer/build.py and 25_strip_animation/build.py. Nothing in this f
                              Sept 27, 2026, between records 34 and 35), as the core's builder now reads it.
   check_against_figure(evs)  stops unless numbers, dates and saved ids equal figure/figure_events.tsv, every mark
                              stands where figure/beijing_vs_labs.html draws its circle, and the three dashed lines and
-                             the labels beside marks carry the figure page's own words (so the copy cannot drift)
+                             the labels beside marks carry the figure page's own words at its own places (x, y and
+                             anchor; so the copy cannot drift)
   strip_svg(evs, G)          the strip as SVG for a 1280 px video frame: the same geometry and callouts, the left
                              gutter cropped away, each row's name set inside the row as a small tag, and the note
                              "2023 and 2024 are drawn narrower" moved from under the dates to above its band
@@ -155,8 +156,26 @@ def check_against_figure(evs):
     calls = sorted(re.findall(r'<text class="call"[^>]*>([^<]*)</text>', page_))
     mine_c = sorted(f'{e["n"]} · {esc(e["C"].split(" ", 3)[3])}' for e in evs if e['C'])
     if calls != mine_c: sys.exit(f'the labels beside marks differ from the figure page: here {mine_c}, there {calls}')
+    # round 13 (Nov 26, 2026): each label also stands at the figure page's own x, y and anchor. Until round 12 only the words were
+    # compared here; the places were compared outside the build (scratch_r12/label_places.py), so a label the figure moved without
+    # rewording would have passed this check.
+    there = {}
+    for m in re.finditer(r'<text class="call"([^>]*)>([^<]*)</text>', page_):
+        a = dict(re.findall(r'([\w-]+)="([^"]*)"', m.group(1)))
+        there[m.group(2)] = (float(a['x']), float(a['y']), a['text-anchor'])
+    here = {}
+    for e in evs:
+        if e['C']:
+            anchor, dx, dy, words = e['C'].split(' ', 3)
+            here[f'{e["n"]} · {esc(words)}'] = (e['x'] + float(dx), e['cy'] + float(dy), anchor)
+    same = lambda a, b: abs(a[0] - b[0]) <= 0.06 and abs(a[1] - b[1]) <= 0.06 and a[2] == b[2]
+    off = [(k, here[k], there.get(k)) for k in here if k not in there or not same(here[k], there[k])]
+    if off: sys.exit(f'labels beside marks stand elsewhere than in the figure page (here, there): {off}')
+    k0 = sorted(here)[0]
+    assert not same((here[k0][0], here[k0][1] + 1, here[k0][2]), there[k0]), 'control: a label moved by one unit must be noticed'
+    assert not same((here[k0][0], here[k0][1], 'middle'), there[k0]), 'control: a label with another anchor must be noticed'
     return (f'{len(evs)} records equal figure_events.tsv (number, date, row, kind, saved id); {len(drawn)} mark positions, {len(flags)} dashed lines '
-            f'and {len(calls)} labels equal the figure page')
+            f'and {len(calls)} labels (words, x, y and anchor) equal the figure page')
 
 
 # ---------- the strip as SVG for the video ----------

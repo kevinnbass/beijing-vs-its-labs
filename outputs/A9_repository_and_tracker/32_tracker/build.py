@@ -39,6 +39,9 @@ Round 12 (Nov 26, 2026): the state of play's counts name the licence table's thi
 house() checks that its applications are all still submitted, for Sharetronic Data Technology); the date note says where the dates
 it does not find stand (WHERE_DATE, each backed by a check of that page); Who is who gives Jeffrey Kessler's title and spells the
 RTX PRO 6000D as the project now does; the line over the records says the date is the day of the act where the page states that day.
+Round 13 (Nov 26, 2026): the date note no longer repeats the Hong Kong record's own source line, which already says where its
+dateline stands (WHERE_DATE's fourth field: the words that line must hold for the note to leave the place to it). Two lines of
+the core's now draw on a further saved page (ALSO): a number of such a line may stand in a "!" line of that page instead of its own.
 """
 import html, re, subprocess, sys
 from datetime import date
@@ -67,9 +70,18 @@ NUM = re.compile(r'(?<![A-Za-z0-9-])\$?\d[\d,]*(?:\.\d+)?(?:\s(?:million|billion
 CHIPNAME = re.compile(r'(?:RTX|PRO|Pro)\s$')
 CONTROL = ('Beijing has published a ban on the purchase of Nvidia chips', 'cn-clips-evidence-1')
 # Round 12: where the dates stand that the date screen does not find in the pages cited (the log's note of Nov 23, 2026 says so too).
-# record's saved id: (words for the note, saved id of the page that holds the date, words of that page that hold it)
-WHERE_DATE = {'cn-clips-evidence-1': ("in Reuters's dateline, Nov 5, on Yahoo's copy of the same report", 'cn-clips-reuters-hongkong-yahoo', "Nov 5 (Reuters) - About 600,000 of Nvidia's"),
-              'cn-us-lutnick-0422-rev-transcript-b': ("on the hearing's own page of the Senate Committee on Appropriations", 'cn-o37-senate-hearing-page-b', 'Date: Wednesday, April 22, 2026')}
+# record's saved id: (words for the note, saved id of the page that holds the date, words of that page that hold it,
+#                     words the record's own source line must hold when the note's words are empty)
+# Round 13: the Hong Kong record's source line already says where its dateline stands, so the note leaves that to the line
+# (the note had repeated it) and the build checks that the line still says so.
+WHERE_DATE = {'cn-clips-evidence-1': ('', 'cn-clips-reuters-hongkong-yahoo', "Nov 5 (Reuters) - About 600,000 of Nvidia's", "Reuters's dateline of Nov 5 stands on Yahoo's copy"),
+              'cn-us-lutnick-0422-rev-transcript-b': ("on the hearing's own page of the Senate Committee on Appropriations", 'cn-o37-senate-hearing-page-b', 'Date: Wednesday, April 22, 2026', '')}
+# Round 13: further saved pages a record's own line draws on, besides its own (core batch 15 put facts of these pages into two
+# lines). A number of the line that its own page does not hold, or holds only as a short number, may instead stand in a "!" check
+# line of the data file for one of these pages (verify() proves each "!" line against its page).
+# record's saved id: ((further saved id, why the line draws on it), ...)
+ALSO = {'cn-tolerate-mof': (('cn-le20-mofcom-48-annex1', "the draft list's annex, which gives the scope of its items on computing clusters"),),
+        'cn-le17-whuf-134391': (('cn-le17-buaa-61901-6000d', "Beihang's own notice, whose date the line gives"),)}
 esc = html.escape
 
 
@@ -190,10 +202,13 @@ def check_record(e, extra_ids=()):
         if not L.has(q, e['sid']): bad.append(f'{where}: words between quote marks in our line were NOT FOUND in the saved copy: {q[:80]}')
         pairs.append((e['sid'], q))
     for q in QUOTE.findall(e['S'] + ' ' + e['E']): bad.append(f'{where}: quote marks in the source line or the English rendering (only a source\'s exact words go between them): {q[:60]}')
+    also = {a for a, _ in ALSO.get(e['sid'], ())}
+    by_check = lambda v, ids: any(sid in ids and L.squash(v) in L.squash(w) for sid, w in extra_ids)      # noqa: E731
     for v in numbers(e['T']):
-        if not in_page(v, e['sid']): bad.append(f'{where}: the number {v} in our line was NOT FOUND in the saved copy')
+        if not in_page(v, e['sid']):
+            if not by_check(v, also): bad.append(f'{where}: the number {v} in our line was NOT FOUND in the saved copy' + (f' nor in a "!" line of {", ".join(sorted(also))}' if also else ''))
         elif len(L.squash(v)) >= 6: pairs.append((e['sid'], v))
-        elif not any(sid == e['sid'] and L.squash(v) in L.squash(w) for sid, w in extra_ids): bad.append(f'{where}: the number {v} is too short for the checker; add a line "! {e["sid"]} | <words of the page that hold it>"')
+        elif not by_check(v, {e['sid']} | also): bad.append(f'{where}: the number {v} is too short for the checker; add a line "! {e["sid"]} | <words of the page that hold it>"')
     return bad, pairs
 
 
@@ -511,9 +526,11 @@ def build(folder, quiet=False):
     st = load_state(folder / 'data' / 'state_of_play.txt')
     sb, sp = verify_state(st, vals)
     bad += hb + sb; pairs += sp
-    for k, (words, sid, check) in WHERE_DATE.items():       # the date note says where these dates stand: the page must hold them
+    for k, (words, sid, check, in_src) in WHERE_DATE.items():       # the date note says where these dates stand: the page must hold them
         if not (L.P / sid).is_dir() or not L.has(check, sid): bad.append(f'date note: {sid} does not hold "{check}", which places the date of {k}')
         else: pairs.append((sid, check))
+        if not words and not any(e['sid'] == k and in_src and in_src in e['S'] for e in evs):     # the note leaves the place to the record's source line
+            bad.append(f'date note: the source line of {k} does not say "{in_src}", and the note leaves the place of its date to that line')
     out = []
     if bad: return False, bad + [f'NOT WRITTEN: {len(bad)} problem(s)']
     seen, lines = set(), ['# Every quotation, number and hidden check the tracker page rests on. Written by build.py; do not edit.',
@@ -551,7 +568,8 @@ def build(folder, quiet=False):
     for e, r in screen:
         if e['dl'] or r is not None: continue
         s = f'<a href="#{esc(key_of(e), quote=True)}">{esc(fmt(e["date"]))}</a> ({esc(smart(e["S"]))})'
-        if e['sid'] in WHERE_DATE: s += f', whose date stands {esc(smart(WHERE_DATE[e["sid"]][0]))}'      # checked in build() before quotes.tsv
+        if e['sid'] in WHERE_DATE:                                            # checked in build() before quotes.tsv
+            if WHERE_DATE[e['sid']][0]: s += f', whose date stands {esc(smart(WHERE_DATE[e["sid"]][0]))}'
         else: unplaced += 1
         missing.append(s)
     datenote += ('It did not find ' + '; '.join(missing) + '.' + (' Check such a date against the page before quoting it.' if unplaced else '')) if missing else 'None was missing.'

@@ -1,7 +1,7 @@
 Thread: did Beijing pull against its own AI companies?
 
-Draft by Claude, Anthropic's model. Nothing here has been posted.
-10 posts. Every quotation was found in the saved copy of its source before this text was written.
+Draft by Claude, Anthropic's model.
+10 posts. Every quotation was found in the saved copy of its source.
 Each post that cites a source is followed by its address on its own line; the last post sums up and has none. The address is not part of the post.
 Words between quotation marks are a source's exact words. English given for a Chinese source is ours, not an official translation.
 Post 1 quotes the clip twice: the first sentence from a machine transcript (at 0:11), the second from the text of the post that carries the clip. Post 9 quotes a video's caption track (at 5:59). Nobody has checked any of them by ear.
@@ -15,7 +15,7 @@ https://www.ndrc.gov.cn/xwdt/wszb/202605xwfbh/wzsl/202605/t20260522_1405394_ext.
 3/10 What the companies used: Nvidia. A Shanghai government body wrote (reply dated Apr 30, 2025; published Nov 10, 2025) that in the city internet firms' own clusters run mainly on Nvidia cards, while the three big telecoms mainly buy Huawei's and other home-made clusters.
 https://www.sheitc.sh.gov.cn/rddbta/20251110/e6cfe3270ca5483e93cbc55701492e6d.html
 
-4/10 What Beijing did. Alibaba's annual report to the SEC: "In September 2025, the Cyberspace Administration of China requested Chinese technology companies to halt purchases of certain chips." The sentence does not name Nvidia. This is a filing, not an unnamed source.
+4/10 What Beijing did. Alibaba's annual report to the US SEC: "In September 2025, the Cyberspace Administration of China requested Chinese technology companies to halt purchases of certain chips." The sentence does not name Nvidia. This is a filing, not an unnamed source.
 https://data.alibabagroup.com/ir_filings/SEC/BABA/000119312526231755/baba-20260331.htm
 
 5/10 Limit 1: Beijing was not one actor. On Jul 17, 2025 China's commerce minister told Nvidia's chief executive he hoped multinationals, Nvidia among them, would give Chinese customers high-quality, reliable products and services. Source: the ministry's account; English ours.
@@ -38,12 +38,12 @@ https://www.uscc.gov/sites/default/files/2025-11/Chapter_1--U.S.-China_Economics
 https://www.youtube.com/watch?v=ckzJQyMyCoE
 
 10/10 What survives: from 2024 China's planning side and industry ministry, and from 2025 its security side, pressed its AI firms off Nvidia chips, by guidance the press reported. The firms kept ordering and, by the reports, got a small part. What Beijing meant is not settled.
-(No address: this post sums up the posts before it. The full argument, with 460 sources, is the project's argument page, ARGUMENT_referenced.html.)
+(No address: this post sums up the posts before it. The full argument, with 461 sources, is the project's argument page, ARGUMENT_referenced.html.)
 
 Which image goes with which post
 
 Two images go with this thread.
-Post 1/10: figure/beijing_vs_labs_top.png in the project's files (2896 by 4240 pixels). Why: the whole picture at a glance: the headline, the dated strip of 62 records in four rows, the H200 in reported numbers, Nvidia's share, and Nvidia's own revenue from customers based in China.
+Post 1/10: figure/beijing_vs_labs_top.png in the project's files (2896 by 4210 pixels). Why: the whole picture at a glance: the headline, the dated strip of 62 records in four rows, the H200 in reported numbers, Nvidia's share, and Nvidia's own revenue from customers based in China.
 Post 5/10: figure/beijing_vs_labs_strip.png in the project's files (2896 by 1152 pixels). Why: the dated strip alone: its two top rows show Beijing holding Nvidia back and Beijing letting Nvidia in, which is the point of this post.
 Posts 2, 3, 4, 6, 7, 8, 9, 10: no image.
 The first image is taller than it is wide, so a preview may show only part of it until it is opened. The mark numbers in both images are the figure's own, not the post numbers.
@@ -55,7 +55,7 @@ post | characters | X weighted count | room left
 1/10 | 275 | 275 | 5
 2/10 | 266 | 266 | 14
 3/10 | 274 | 274 | 6
-4/10 | 269 | 269 | 11
+4/10 | 272 | 272 | 8
 5/10 | 277 | 277 | 3
 6/10 | 270 | 270 | 10
 7/10 | 271 | 271 | 9

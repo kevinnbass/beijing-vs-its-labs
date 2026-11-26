@@ -1,5 +1,5 @@
 
 ## The second table: other companies, and other records
 
-These {M_ROWS} rows are of three kinds: {M_SA_ROWS} from {M_SA_CALLS} results calls of other companies, as the same stock-data site transcribes them; {M_OWN_ROWS} from the companies' own filings, investor records and one company blog; and {M_PRESS_ROWS} from a press report of a Tencent executive. {M_ZH_ROWS} of the {M_ROWS} are in Chinese. iFlytek's investor records list who attended for the company, not who gave each answer, so no speaker is named for them. Each row says what kind of record it is.
+These {M_ROWS} rows are of three kinds: {M_SA_ROWS} from {M_SA_CALLS} results calls of other companies, as the same stock-data site transcribes them; {M_OWN_ROWS} from the companies' own filings, investor records and one company blog; and {M_PRESS_ROWS} from a press report of a Tencent executive. {M_ZH_ROWS} of the {M_ROWS} are in Chinese. iFlytek's investor records list who attended for the company, not who gave each answer, so no speaker is named for them. Each row says what kind of record it is. The row from iFlytek's annual report for 2024 names the US Entity List: a list of foreign parties that are, in the Commerce Department's words, "subject to specific license requirements for the export, reexport, and transfer (in-country) of specified items" [ms-g17-x2-bis-d38864].
 

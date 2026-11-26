@@ -68,7 +68,7 @@ CITE = re.compile(r'\[((?:cn|ms|man)-[A-Za-z0-9-]+)\]')
 MORE_LABELS = {
     'cn-o39-hebei-opinion-2024-xiongan': ("DOC", "Hebei. Opinions on the layout of computing and the AI industry, General Office of the Hebei Provincial People's Government, May 8, 2024: a copy on the Xiong'an New Area's site"),
     'cn-o39-hebei-opinion-2024-sjz': ("DOC", "Hebei. The same opinions: a copy on a city data bureau's site"),
-    'man-cn-o39-qinghai-compute-15fyp-2026': ("DOC", "Qinghai. Plan for the green computing industry in the 15th five-year period, Qinghai Provincial People's Government, Aug 25, 2026: a PDF of the government's page saved by hand. Its text layer is damaged; read only from the page images, through a transcription kept with the saved copy"),
+    'man-cn-o39-qinghai-compute-15fyp-2026': ("DOC", "Qinghai. Plan for the green computing industry in the 15th five-year period, Qinghai Provincial People's Government, Aug 25, 2026: a PDF of the government's page. Its text layer is damaged; read only from the page images, through a transcription kept with the saved copy"),
     'cn-ga04-sz-suzhou-aiplus-2026-jiedu': ("DOC", "Suzhou city. The city government's reading of its measures for an AI+ city, 2026 edition"),
     'cn-ga04-sz-suzhou-aiplus-2025-5hao': ("DOC", "Suzhou city. Measures for building its pilot zone for AI+ innovation and development at a high level, 苏府规字〔2025〕5号, Feb 13, 2025"),
     'cn-factions-etwon-vouchers': ("DOC", "Beijing E-Town (a development zone, not the city). Policies to build an AI-native industry, 京技管发〔2024〕10号, Mar 28, 2024; repealed by 京技管发〔2024〕29号 of Nov 26, 2024"),
@@ -76,6 +76,9 @@ MORE_LABELS = {
     'cn-policy-computing-network-1779': ("DOC", "National. Opinions on the national integrated computing network, December 2023"),
     # core edit 8
     'cn-ga31-cndocs-1': ("DOC", "Xinjiang Uygur Autonomous Region. Measures to speed the high-quality development of profit-oriented services, 2026 to 2028, General Office of the regional government, 新政办发〔2026〕22号: the copy in the government's gazette list"),
+    # round 13: the two further press accounts of Shandong's plan (tables/provinces_31.tsv holds them since Nov 25, 2026), labelled as the project's names table names them
+    'cn-ga31-provtexts-12': ("ACCT", "Xinhuanet (新华网), Jul 31, 2022, on the release of Shandong's action plan for an integrated computing network, 2022 to 2025, with the provincial communications administration director's account of its targets"),
+    'cn-ga31-provtexts-4': ("ACCT", "People's Daily Online, Jul 31, 2022, on the release of Shandong's action plan for an integrated computing network, 2022 to 2025, with the provincial communications administration director's account of its targets"),
     'cn-ga31-unsaved-sc-338hao-fgw-wayback': ("DOC", "Sichuan province. Notice issuing the measures for building the computing network (trial), 川发改数据〔2026〕338号, written Aug 11 and published Aug 13, 2026: the provincial development and reform commission's own page, as the Internet Archive captured it"),
 }
 
@@ -470,7 +473,7 @@ def main():
         kind = 'ACCT' if r['basis'] == 'news' else 'DOC'
         x = re.sub(r'\s*\[(?:cn|ms|man)-[A-Za-z0-9-]+\]', '', f'{r["unit"]}. {r["doc"]}').rstrip('.')      # round 12: a saved id cited inside the document field is not printed in a label
         if r['basis'] == 'capture': x += f'. Internet Archive capture of {r["cap_date"]}'
-        if r['basis'] == 'hand': x += '. A PDF of the official page saved by hand in a browser'
+        if r['basis'] == 'hand': x += '. A PDF of the official page'      # round 13: how the copy was come by is not said in a label (the session's ruling on label words, B15_BRIEF item 2)
         lab.setdefault(r['src'], (kind, x))
     for v in vouchers:
         lab.setdefault(v['src'], ('DOC', f'{v["place"]}. Local computing-voucher rule, {v["date"]}' + ({'official': '', 'copy': '; a copy on another site', 'capture': '; an Internet Archive capture of the official file'}[v['basis']])))

@@ -15,7 +15,7 @@
 #   N  the record's fixed number (core edit 7, Nov 25, 2026): a record added after the figure was made public takes the next
 #      free number, so that no earlier record changes its number; records without N are numbered by date as before
 # LANE: BH Beijing holds Nvidia back | BL Beijing lets Nvidia in | CN companies reach for Nvidia | CH companies turn to home-made chips
-# KIND: doc  a government document or an official on the record
+# KIND: doc  a government document, an official on the record, or published state media (the legend's "on the record")
 #       rec  a company, or a named person outside government, on the record (filing, results, a named executive or analyst)
 #       press a press report citing unnamed people
 # DATELABEL: "-" prints the date; otherwise the words given (use _ for a space).
@@ -28,7 +28,7 @@ Q 我国内关键信息基础设施的运营者应停止采购美光公司产品
 E operators of critical information infrastructure in China shall stop buying Micron's products
 
 @ BH doc 2023-12-16 - cn-policy-desktop-2023
-T 财政部、工业和信息化部：乡镇以上党政机关，以及乡镇以上党委和政府直属事业单位等，采购台式计算机时"应当将CPU、操作系统符合安全可靠测评要求纳入采购需求"；"其他单位可不在采购需求中提出此项要求"
+T 财政部、工业和信息化部：乡镇以上党政机关，以及乡镇以上党委和政府直属事业单位及部门所属为机关提供支持保障的事业单位，采购台式计算机时"应当将CPU、操作系统符合安全可靠测评要求纳入采购需求"；"其他单位可不在采购需求中提出此项要求"
 S 财政部、工业和信息化部
 Q 应当将CPU、操作系统符合安全可靠测评要求纳入采购需求
 E shall include in the purchase requirement that the CPU and operating system meet the security-and-reliability evaluation
@@ -77,7 +77,7 @@ Q A group of Chinese regulators have mobilised in an effort to dissuade domestic
 Z 中国多家监管部门已行动起来，力图劝阻国内科技企业购入H20
 
 @ BH rec 2025-09-10 2025年9月 cn-clips-alibaba-20f
-T 阿里巴巴年报：国家网信办要求中国科技公司停止采购某些芯片（原文："requested Chinese technology companies to halt purchases of certain chips"）
+T 阿里巴巴年报：国家网信办要求中国科技公司停止采购某些芯片（原文："requested Chinese technology companies to halt purchases of certain chips"）；这句话没有点名任何芯片厂商
 S 阿里巴巴，向美国证券交易委员会提交的20-F年度报告
 Q In September 2025, the Cyberspace Administration of China requested Chinese technology companies to halt purchases of certain chips.
 Z 2025年9月，中国国家互联网信息办公室要求中国科技公司停止采购某些芯片。
@@ -224,7 +224,7 @@ Z 该部告知一些中国企业，政府打算批准这些采购
 ! cn-acts-reuters-rtx5500-20260927 | Sept 27 (Reuters)
 
 @ BL doc 2026-10-16 - cn-tolerate-mof
-T 商务部、科技部在公开征求意见的目录修订稿中提出：对"中国企业在境外自建自营算力中心"等情形的技术出口，"适用自动许可等便利措施"
+T 商务部、科技部在公开征求意见的目录修订稿中提出：对"中国企业在境外自建自营算力中心"等情形的技术出口，"适用自动许可等便利措施"；修订稿中关于算力集群的条目，针对的是人工智能加速卡总数超过一万张的集群
 S 商务部新闻发言人，就商务部、科技部的修订稿答记者问
 Q 中国企业在境外自建自营算力中心
 E computing centres that Chinese companies build and run abroad
@@ -466,7 +466,7 @@ Q 一个稳定开放的政策环境是中国政府长期不变的承诺
 E a stable and open policy environment is the Chinese government's long-standing, unchanging commitment
 
 @ BL doc 2026-07-07 - cn-le17-whuf-134391
-T 武汉大学和北京航空航天大学发布采购英伟达RTX PRO 6000D的公告（分别为2张和4张），供应商须符合政府采购法规定的条件；武汉大学要求"国行合规RTX PRO 6000D型号"
+T 武汉大学发布采购两张英伟达RTX PRO 6000D的公告，北京航空航天大学7月11日发布采购四张的公告，供应商须符合政府采购法规定的条件；武汉大学要求"国行合规RTX PRO 6000D型号"
 S 武汉大学采购公告（另有北航7月11日的公告，以及武汉大学2026年8月13日公布的一张卡的成交结果）
 Q 国行合规RTX PRO 6000D型号，非消费级游戏卡、非改装卡、非海外版受限型号
 E the compliant China-market RTX PRO 6000D model, not a consumer gaming card, not a modified card, not a restricted overseas version
@@ -491,7 +491,7 @@ Z 不论你实际上何时开始在中国境外租用或建设算力
 
 # Fourth edit (Nov 23, 2026, draft D4): checks for the records and panels it changes.
 ! cn-policy-desktop-2023 | 财政部、工业和信息化部制定了《台式计算机政府采购需求标准（2023年版）》
-! cn-policy-desktop-2023 | 乡镇以上党政机关，以及乡镇以上党委和政府直属事业单位
+! cn-policy-desktop-2023 | 乡镇以上党政机关，以及乡镇以上党委和政府直属事业单位及部门所属为机关提供支持保障的事业单位
 ! cn-policy-desktop-2023 | 其他单位可不在采购需求中提出此项要求
 ! cn-policy-samr-open-original | 市场监管总局公告〔2020〕第16号
 ! cn-acts-mss-xinhua-20250721 | 来源：国家安全部微信公众号
@@ -511,6 +511,7 @@ Z 不论你实际上何时开始在中国境外租用或建设算力
 ! cn-tolerate-reutersaug26-relay1-wayback | Chinese regulators have told companies they can ship the processors to Hong Kong
 ! cn-tolerate-mof | 公开征求意见
 ! cn-tolerate-mof | 适用自动许可等便利措施
+! cn-le20-mofcom-48-annex1 | 人工智能加速卡总数超过10,000张
 ! cn-acts-mofcom-20261117 | 若美方一意孤行，中方将采取反制措施
 ! cn-counter-b11-5 | 三大运营商主要购置华为等国产化智算集群
 ! cn-labs-h200-lobby | said Nori Chiou, investment director at White Oak Capital Partners

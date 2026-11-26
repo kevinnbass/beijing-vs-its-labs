@@ -25,6 +25,13 @@ Nvidia's figures are said to be a share of revenue and a sum of sales (a reader:
 Round 12 (Nov 26, 2026, outputs/ROUND12.md; core batch 14): the press bars' labels, with the words under the first, are the
 step cells of the argument's table of numbers (a4lib.funnel() stops if one is not); the Hong Kong bar's second line names what
 is counted, "Nvidia's advanced AI chips" (the report's words in short), not "to China". The page's top line is the credit alone.
+Round 13 (Nov 26, 2026, outputs/ROUND13.md; core batch 15, rows B15-056 to -058): Washington returned without action the
+APPLICATIONS for 55% of the chips the summary records, for 1,888,950, never the chips: bar 3's label (../h200_funnel.tsv), its
+line in the dated list, the words under it and the notes say so. The summary's own definition of "PRC companies" is quoted
+under bar 2 (a reader of the eighth). The headline keeps "to a few buyers": the report of Aug 18, 2026 names two, and the Hong
+Kong report of Nov 5, 2026 says "Several major Chinese internet companies have each obtained about 10,000" (tried and undone).
+The chief executive spoke the day after Reuters reported that Beijing had approved purchases (was "the report of Beijing's
+approvals", which a core label of the Hong Kong report had used for another report).
 Round 5 (Nov 24, 2026, core edits 5 and 6): the licence table is named by its own title and its release, not as the
 Commerce Department's; the committee's example of 445,000 chips for Tencent is not said to be the table's row of 75,000,
 and the share is given both ways (a4lib.house()).
@@ -43,7 +50,7 @@ esc, qm, fmt = A.esc, A.qm, A.fmt
 STRIP = {'ordered': 'orders', 'wapproved': 'Washington’s table', 'wreturned': 'Washington’s table', 'approved': 'Beijing’s approval',
          'discussed': 'possible total', 'delivered': 'deliveries', 'waiting': 'chips in Hong Kong'}
 # round 10: a press row's date is the day its report was published, not the day of what it reports (the readers' leads 7 to 9)
-LIST = {'ordered': 'orders reported', 'wapproved': 'approved by Washington (status date)', 'wreturned': 'returned by Washington (status date)',
+LIST = {'ordered': 'orders reported', 'wapproved': 'approved by Washington (status date)', 'wreturned': 'applications returned by Washington (status date)',
         'approved': 'Beijing’s approval reported', 'discussed': 'discussion reported', 'delivered': 'deliveries reported', 'waiting': 'chips in Hong Kong reported'}
 NUM = {2: 'two', 3: 'three', 4: 'four', 5: 'five', 6: 'six', 7: 'seven'}
 
@@ -168,10 +175,10 @@ def main():
 
     under = {
         'ordered': f'{qm(Q["ordered"])}; the report gives this on the word of {qm("two of the people")} it spoke to.',
-        'wapproved': (f'The committee’s summary: {qm(Q["wapproved"])}. The table marks each of the {H["appr"][1]} {qm(Q["table.marked"])}. Nvidia is the exporter in {H["appr_nv"][1]} of them, '
+        'wapproved': (f'The committee’s summary: {qm(Q["wapproved"])}. By its definition, “PRC companies” are {qm(Q["table.prc"])}. The table marks each of the {H["appr"][1]} {qm(Q["table.marked"])}. Nvidia is the exporter in {H["appr_nv"][1]} of them, '
                       f'AMD in {H["appr_amd"][1]} ({f(H["appr_amd"][0])} chips, kept apart here). No approved application is for more than {f(H["cap"])} chips.'),
         'wreturned': (f'The table marks these RWA, the export bureau’s short form: {qm(Q["table.rwa"])}. Among Nvidia’s {H["rwa_nv"][1]} are all {H["abroad"][1]} applications whose ultimate location is {places} '
-                      f'({f(H["abroad"][0])} chips), named for {names}. With AMD’s {H["rwa_amd"][1]}, {f(H["rwa"][0])} of the table’s {f(H["all"][0])} chips: {H["share"]}% of the chips in the applications the summary records. '
+                      f'({f(H["abroad"][0])} chips), named for {names}. With AMD’s {H["rwa_amd"][1]}, the applications returned are for {f(H["rwa"][0])} of the table’s {f(H["all"][0])} chips, {H["share"]}% of the chips the summary records. '
                       f'The table gives no reasons, and the committee says some applications are {qm(Q["table.notfull"])}.'),
         'approved': f'{qm(Q["approved"])}. {qm(Q["approved.conditions"])}.',
         'discussed': f'{qm(Q["discussed.what"])}; {qm(Q["discussed"])}.',
@@ -240,13 +247,13 @@ def main():
    <li>The bars count different things at different dates, so no bar is a share of another. {NUM[len(press)].capitalize()} rest on unnamed people; {NUM[len(docs)]} are sums of a government table.</li>
    <li>Washington’s table, {qm(Q["wapproved.date"])}, gives the status of each licence application. The House Foreign Affairs Committee made it public on {released}; its summary cites {qm(Q["table.bis"])}. BIS is the Commerce Department’s Bureau of Industry and Security. The table covers {f(H["all"][0])} chips in {H["all"][1]} applications: {qm(Q["table.products"])}
     It does not say which chip a row is; bars {docnums} count the rows with Nvidia as exporter. An application names a data-centre operator or ultimate consignee; it is not an order. “Approved” in bar {R["wapproved"]["n"]} is Washington’s licence; bar {R["approved"]["n"]} is Beijing’s approval, by a press report.</li>
-   <li>The sums are ours, of the table’s rows as the project read them from its page images; the totals equal the figures the committee’s summary prints. Nvidia’s chips and AMD’s are not added in the bars. With AMD’s, the approved count is {f(H["appr"][0])} in {H["appr"][1]} applications and the returned count {f(H["rwa"][0])} in {H["rwa"][1]}.</li>
-   <li>The {H["share"]}% is a share of the chips in the applications the summary records, not of everything applied for. The committee’s example: {qm(Q["table.tencent"])}. The table’s only Tencent row of that date is for {f(H["tencent_shown"])} chips, approved; neither document says whether it is that application. The share would be {H["share_full"]}% if it is, counted at {f(H["tencent_full"])}, and {H["share_further"]}% if the {f(H["tencent_full"])} is a further application and was not returned without action (our arithmetic).</li>
+   <li>The sums are ours, of the table’s rows as the project read them from its page images; the totals equal the figures the committee’s summary prints. Nvidia’s chips and AMD’s are not added in the bars. With AMD’s, the approved count is {f(H["appr"][0])} chips in {H["appr"][1]} applications, and the {H["rwa"][1]} applications returned without action are for {f(H["rwa"][0])} chips.</li>
+   <li>The {H["share"]}% counts the chips in the returned applications as a share of the chips in the applications the summary records, not of everything applied for. The committee’s example: {qm(Q["table.tencent"])}. The table’s only Tencent row of that date is for {f(H["tencent_shown"])} chips, approved; neither document says whether it is that application. The share would be {H["share_full"]}% if it is, counted at {f(H["tencent_full"])}, and {H["share_further"]}% if the {f(H["tencent_full"])} is a further application and was not returned without action (our arithmetic).</li>
    <li>No approved application in the table is above {f(H["cap"])} chips, and all {NUM[H["over"]]} above that number were returned. On {fmt(d_cap)} Reuters, by two people it did not name, reported a limit for each approved buyer: {qm(Q["cap"])}. It also wrote that {qm(Q["cap.nodelivery"])}, and that the {qm(Q["cap.tangle"])}.</li>
    <li>The approval Reuters reported on {fmt(R["approved"]["date"])} was not yet a purchase: a source said {qm(Q["approved.notconverting"])}.</li>
    <li>The possible total of July ({esc(R["discussed"]["shown"][0])} {esc(R["discussed"]["shown"][1])}) was, in the report’s words, {qm(Q["discussed.half"])}.</li>
    <li>The report of {fmt(delivered["date"])} names two buyers. A later report speaks of several: {qm(Q["later.several"])} ({A.link(Q["later.several"].sid, f"Reuters, {fmt(R['waiting']['date'])}")}).</li>
-   <li>Two later accounts say otherwise of the orders reported in bar {R["ordered"]["n"]}. Nvidia’s chief executive, the day after the report of Beijing’s approvals, said <span lang="zh-Hans">{qm(Q["orders.ceo"])}</span> (I think the Chinese government is still deciding; we have not yet received purchase orders), as {A.link(Q["orders.ceo"].sid, f"Voice of America’s Chinese service, {fmt(d_ceo)}")}, renders him.
+   <li>Two later accounts say otherwise of the orders reported in bar {R["ordered"]["n"]}. Nvidia’s chief executive, the day after Reuters reported that Beijing had approved purchases, said <span lang="zh-Hans">{qm(Q["orders.ceo"])}</span> (I think the Chinese government is still deciding; we have not yet received purchase orders), as {A.link(Q["orders.ceo"].sid, f"Voice of America’s Chinese service, {fmt(d_ceo)}")}, renders him.
     TechWeb, as {A.link(Q["orders.techweb"].sid, "Sina carries it")}, reported on {fmt(d_tw)}, from industry insiders it did not name, that <span lang="zh-Hans">{qm(Q["orders.techweb"])}</span> (China’s AI firms had placed almost no bulk purchase orders for Nvidia’s H200). English in round brackets is ours, not an official translation.</li>
    <li>Nvidia’s figures are in money, not in chips: a share of its revenue in the quarterly report, a sum of its sales on the call. Neither its call of {fmt(d_q3)} nor Reuters’s report of it says how many of those chips crossed into the mainland.</li>
    <li>No report here says how many H200 chips have entered the mainland. The Hong Kong report says small quantities were shipped by other routes, in its words, {qm(Q["waiting.howmany"].split("routes ")[1])}.</li>
@@ -274,6 +281,11 @@ def main():
     assert all(f'<b>{esc(r["label"])}</b><span>{esc(r["what"])}</span>' in page and (r['step'] == r['label'] or r['step'] == r['label'] + ' ' + r['what']) for r in press), 'a press bar does not show its step'
     for banned in ('>Reported: delivered<', '>Reported: under discussion in Beijing<', 'awaiting shipment</b>', '<span>to China</span>', 'Local; not published', 'not published'):
         assert banned not in page, f'round 12: the page still says "{banned}"'
+    # round 13 (core batch 15, rows B15-056 to -058): applications were returned, not chips; the headline names the two buyers
+    assert '<b>Applications returned by Washington without action</b>' in page and 'applications returned by Washington (status date)' in page, 'control: bar 3 says applications'
+    for banned in ('>Returned by Washington', '>returned by Washington (status date)', 'the returned count', 'of the chips in the applications the summary records. ',
+                   'report of Beijing’s approvals'):
+        assert banned not in page, f'round 13: the page still says "{banned}"'
     for banned in ('750,000', 'cleared by Washington', 'Democrats', 'more than half', 'subsidiar', 'Commerce Department’s table', 'Commerce Department table',
                    'Commerce Department’s, with', 'shows that application', 'an application the table shows', 'counted in full',
                    # withdrawn by core edit 8b (Nov 25, 2026): the table's column names a data-centre operator or ultimate consignee and an ultimate

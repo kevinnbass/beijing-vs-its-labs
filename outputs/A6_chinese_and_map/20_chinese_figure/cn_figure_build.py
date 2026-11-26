@@ -278,9 +278,9 @@ def bars(evs):
          f'共{h["rwa_nv"][1]}份申请，其中包括表中所列最终所在地为{places}的全部{h["abroad"][1]}份（{f(h["abroad"][0])}枚），所列名称带有ByteDance、BytePlus、TikTok和Alibaba字样。'
          f'加上AMD的{h["rwa_amd"][1]}份，在表内{f(h["all"][0])}枚芯片中占{f(h["rwa"][0])}枚。表格没有说明原因。同一表格', []),
         ('据报道，北京方面有条件批准', '超过40万枚', 400_000, 'toward', '对象是字节跳动、阿里巴巴和腾讯。路透社，2026年1月28日', [by(evs, 'ms-bj-20260128-h200-nod-standard')]),
-        ('据报道，到7月，北京方面考虑放行的总量', '不到20万枚', 200_000, 'toward', 'The Information，经路透社转述，2026年7月8日', [by(evs, 'cn-acts-reuters-ti-cap-20260708-relay1')]),
+        ('据报道，截至7月，北京方面考虑放行的总量', '不到20万枚', 200_000, 'toward', 'The Information，经路透社转述，2026年7月8日', [by(evs, 'cn-acts-reuters-ti-cap-20260708-relay1')]),
         ('据报道，已到两家具名买方手中', '各约1万枚', 20_000, 'toward', '字节跳动和腾讯（英国《金融时报》，经路透社转述，2026年8月18日）；到11月已是数家企业（路透社，2026年11月5日）', [by(evs, 'cn-tolerate-reutersaug26-relay1-wayback')]),
-        ('据报道，存放在香港，等待运往中国内地', '约60万枚', 600_000, 'away', '北京方面迟迟未批准大规模进口（原文：“withholds approval for large-scale imports”）。路透社，2026年11月5日', [by(evs, 'cn-clips-evidence-1')]),
+        ('据报道，存放在香港', '约60万枚', 600_000, 'away', '北京方面迟迟未批准大规模进口（原文：“withholds approval for large-scale imports”）。路透社，2026年11月5日', [by(evs, 'cn-clips-evidence-1')]),
     ]
     out = ['<div class="bars">']
     for lab, val, n, cls, note, es in rows:
@@ -652,7 +652,7 @@ def bodies(evs):
             '商务部倾向于进口（原文：“favoured imports”），据该报援引的未具名知情人士称，2025年晚些时候限制进口和使用性能较低的英伟达芯片的行动由国家发展改革委牵头（原文：“was led by the National Development and Reform Commission”）。'
             f'美国贸易代表2026年11月20日说（<a href="{url("cn-le01-greer-bbg-20261120-youtube")}">彭博电视</a>；机器字幕，未经人耳核对，01:06至01:35）：'
             '情况并不像人们让你以为的那样铁板一块（原文：“not as monolithic as people would have you believe”）；'
-            '按他自己的分析（原文：“my own analysis”），有人认为希望能获得美国芯片（原文：“we’d like to have access”），也有人认为反正不要美国芯片（原文：“others who think, well, we don’t want American chips anyway”）。'
+            '按他自己的分析（原文：“my own analysis”），有人想要获得美国芯片（原文：“we’d like to have access”），也有人认为反正不要美国芯片（原文：“others who think, well, we don’t want American chips anyway”）。'
             '两条字幕轨的断句不同，因此他是否把这一分歧放在政府内部，并无定论。</p>'
             '<p class="fine">一篇介绍市场监管总局党组工作的未署名文章把英伟达案与高通公司、杜邦中国集团的案件一并列在“坚决落实党中央重大决策部署”和“敢于斗争”之下'
             f'（<a href="{url("cn-media-party-samr-september")}">共产党员手机报，2026年9月24日</a>）。英伟达的报告说，初步调查结论涉及美国出口管制要求它向中国市场提供的降规产品（原文：“degraded products”）。'

@@ -1,7 +1,7 @@
 # Sources this page cites that are not in the argument's references file. Columns: saved id <TAB> kind <TAB> label <TAB> address (optional).
 # The references file has no kind for a news agency's reading of public records. Those are entered as PRESS and their label says what was read.
 # Round 4: rows the argument's references files now hold were taken out, so the argument's own labels are used.
-cn-clips-reuters-hongkong-yahoo	PRESS	Reuters, Nov 5, 2026, as carried by Yahoo: the report, from two people it does not name, that about 600,000 Nvidia chips are stored in Hong Kong. A second copy, which carries Reuters's date line
+cn-clips-reuters-hongkong-yahoo	PRESS	Reuters, Nov 5, 2026, as carried by Yahoo: the report, from two people it does not name, that about 600,000 of Nvidia's H200 chips were stored in Hong Kong. A second copy, which carries Reuters's date line
 cn-labs-bytedance-huawei-denial-202409-relay1	PRESS	Reuters, Sept 30, 2024, as carried by the radio station WSAU. An early version of the article
 cn-labs-bytedance-ascend-budget-2026	PRESS	TechNode, Dec 29, 2025, on ByteDance's reported plan to buy Huawei chips
 cn-labs-deepseek-160k-relay1-wayback	PRESS	Huawei Central (a fan site), Sept 4, 2026, retelling a Bloomberg report. Internet Archive capture of Sept 23, 2026. Bloomberg's own article is not held

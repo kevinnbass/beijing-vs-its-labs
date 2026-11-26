@@ -2,7 +2,7 @@
 @deck From 2024 to 2026 the Chinese state pressed its AI companies to move off Nvidia's chips, and, by the press reports, the companies kept ordering them. That holds on direction, with five limits.
 
 @note Draft by Claude, Anthropic's model. Written Nov 23, 2026 (UTC); revised Nov 26, 2026.
-@note How to read it. Words between quotation marks are a source's exact words, found in the saved copy by a script. A filled reference number is a document, a filing, a named person on the record, or a published commentary of state media or an industry body. An open number is a press report citing unnamed people, a research firm's count, or captions and machine transcripts nobody has checked by ear. Where a statement rests on a Chinese text, the English is our rendering, not an official translation.
+@note How to read it. Words between quotation marks are a source's exact words, found in the saved copy by a script. A filled reference number is a document, a filing, a named person on the record, a published commentary, report or statement of state media, an industry body or a research institute, an institution's own notice, or a named outlet's account of a document. An open number is a press report citing unnamed people, a research firm's or research group's count, or captions and machine transcripts nobody has checked by ear. Where a statement rests on a Chinese text, the English is our rendering, not an official translation.
 @note The author's interest. Anthropic has argued in public for controls on chip exports to China (that is from the model's general knowledge; no saved page is cited for it), so judge this piece by its sources.
 
 ## The finding
@@ -77,13 +77,14 @@ Washington's and Nvidia's are on the record; the rest come from unnamed people.
 !! cn-usdocs-hfac-decisions-20261119 | H200 License and Equivalent Application Status as of May 11, 2026
 !! cn-labs-us-chip-licences-20261119 | PUBLISHED: 2026-11-19
 !! cn-labs-us-chip-licences-20261119 | Chairman Brian Mast exercised his authorities under the Export Control Reform Act
-- Of those, licensed by Washington and not yet shipped: 879,868 (Nvidia's: 579,868). Returned without action: 1,888,950, or 55% of the chips in the applications BIS's summary records; no reason is given. The sums are ours [cn-usdocs-hfac-summary-20261119] [cn-usdocs-hfac-decisions-20261119].
+- Of those, licensed by Washington and not yet shipped: 879,868 (Nvidia's: 579,868). In applications returned without action: 1,888,950, or 55% of the chips BIS's summary records; no reason is given. The sums are ours [cn-usdocs-hfac-summary-20261119] [cn-usdocs-hfac-decisions-20261119].
 !! cn-usdocs-hfac-summary-20261119 | 879,868 covered integrated circuits to PRC companies across 21 license applications
 !! cn-usdocs-hfac-summary-20261119 | not fully reflected in the May 11, 2026, summary document
 !! cn-usdocs-hfac-decisions-20261119 | Approved, not shipped
 !! cn-usdocs-hfac-decisions-20261119 | Bytedance System SDN 508,000 RWA Malaysia
-- Reported: approved by Beijing, with conditions (Reuters, Jan 28, 2026): "more than 400,000 H200 chips in total" [ms-bj-20260128-h200-nod-standard].
+- Reported: approved by Beijing, with conditions (Reuters, Jan 28, 2026): "more than 400,000 H200 chips in total" for ByteDance, Alibaba and Tencent [ms-bj-20260128-h200-nod-standard].
 !! ms-bj-20260128-h200-nod-standard | The Chinese government is only granting approvals with conditions
+!! ms-bj-20260128-h200-nod-standard | ByteDance, Alibaba and Tencent
 - Reported: under discussion in July 2026 (The Information, through Reuters, Jul 8, 2026): "Beijing is still determining the exact number of Nvidia chips to approve, and it could amount to fewer than 200,000 in total" [cn-acts-reuters-ti-cap-20260708-relay1].
 !! cn-acts-reuters-ti-cap-20260708-relay1 | July 8 (Reuters)
 !! cn-acts-reuters-ti-cap-20260708-relay1 | The Information said

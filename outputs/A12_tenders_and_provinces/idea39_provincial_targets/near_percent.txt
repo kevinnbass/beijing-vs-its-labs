@@ -55,7 +55,7 @@
 
 == Shaanxi | cn-le16-shaanxi-ai-plus-2025-sohu | home-made words: 0; percent signs: 1; near each other: 0
 
-== Hainan | cn-le16-hainan-ai-plus-2026-smartcity | home-made words: 3; percent signs: 1; near each other: 0
+== Hainan | cn-ga31-provtexts-21 | home-made words: 2; percent signs: 8; near each other: 0
 
 == Chongqing | cn-o39-chongqing-hub-plan-2026-wayback | home-made words: 5; percent signs: 3; near each other: 0
 

@@ -217,15 +217,16 @@ def bars(evs):
          f'({f(h["appr_amd"][0])} in {h["appr_amd"][1]} applications) the count is {f(h["appr"][0])}. The table “H200 License and Equivalent Application Status as of May 11, 2026”, '
          'released by the House Foreign Affairs Committee, Nov 19, 2026; the sums are mine', []),
         ('Returned by Washington without action: Nvidia as exporter', f(h['rwa_nv'][0]), h['rwa_nv'][0], 'us',
-         f'in {h["rwa_nv"][1]} applications, among them all {h["abroad"][1]} that give {places} as the chips’ location ({f(h["abroad"][0])} chips), named for ByteDance, BytePlus, TikTok and Alibaba. '
+         f'in {h["rwa_nv"][1]} applications, among them all {h["abroad"][1]} that give {places} as the chips’ ultimate location ({f(h["abroad"][0])} chips), named for ByteDance, BytePlus, TikTok and Alibaba. '
          f'With AMD’s {h["rwa_amd"][1]}, {f(h["rwa"][0])} of the table’s {f(h["all"][0])} chips. The table gives no reasons. Same table', []),
         ('Reported: approved by Beijing, with conditions', 'more than 400,000', 400_000, 'toward', 'for ByteDance, Alibaba and Tencent. Reuters, Jan 28, 2026', [by(evs, 'ms-bj-20260128-h200-nod-standard')]),
-        ('Reported: total Beijing was weighing by July', 'fewer than 200,000', 200_000, 'toward', 'The Information, through Reuters, Jul 8, 2026', [by(evs, 'cn-acts-reuters-ti-cap-20260708-relay1')]),
+        ('Reported: total Beijing might approve, as of July', 'fewer than 200,000', 200_000, 'toward', 'The Information, through Reuters, Jul 8, 2026', [by(evs, 'cn-acts-reuters-ti-cap-20260708-relay1')]),
         ('Reported: reached the two buyers named', 'about 10,000 each', 20_000, 'toward', 'ByteDance and Tencent (Financial Times, through Reuters, Aug 18, 2026); several firms by November (Reuters, Nov 5, 2026)', [by(evs, 'cn-tolerate-reutersaug26-relay1-wayback')]),
-        ('Reported: stored in Hong Kong, awaiting shipment to China', 'about 600,000', 600_000, 'away', 'as Beijing “withholds approval for large-scale imports”. Reuters, Nov 5, 2026', [by(evs, 'cn-clips-evidence-1')]),
+        ('Reported: stored in Hong Kong', 'about 600,000', 600_000, 'away', 'as Beijing “withholds approval for large-scale imports”. Reuters, Nov 5, 2026', [by(evs, 'cn-clips-evidence-1')]),
     ]
     out = ['<div class="bars">']
     for lab, val, n, cls, note, es in rows:
+        lab = lab.replace('Hong Kong', 'Hong\u00a0Kong')   # round 15 (r15e): a place name never splits at a line end (bar 7 read "Hong / Kong" at 1280)
         head, _, last = lab.rpartition(' ')        # the last word and the marks stay on one line (LOOK_REPORT_3 fault 17)
         lab_h = f'{esc(head)} <span class="nw">{esc(last)}{chr(160)}{"".join(pin(e) for e in es)}</span>' if es else esc(lab)
         out.append(f'<div class="bar-row"><div class="bar-lab">{lab_h}</div>'
@@ -580,7 +581,7 @@ def bodies(evs):
             ('Security ministry', P('cn-acts-mss-xinhua-20250721')),
             ('State media (the Yuyuan Tantian account)', P('cn-le13-yuyuan-qq-20250810b')),
             ('Customs', P('man-cn-ft-20251009-customs', 'cn-acts-reuters-customs-20260114')),
-            ('Finance and industry ministries (a purchase rule for Party and state bodies’ desktop computers)', P('cn-policy-desktop-2023'))]
+            ('Finance and industry ministries (a purchase rule for the desktop computers of Party and state bodies and of the institutions directly under them or supporting them)', P('cn-policy-desktop-2023'))]
     let = [('Commerce ministry', P('cn-policy-wang-nvidia', 'cn-policy-h20-mofcom', 'cn-tolerate-mof', 'cn-acts-mofcom-20261117')),
            ('Premier Li Qiang', P('cn-xi-round-f-6')),
            ('Vice Premier He Lifeng', P('cn-policy-he-welcomes')),

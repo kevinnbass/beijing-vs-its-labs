@@ -26,9 +26,9 @@ ET The Cybersecurity Review Office's published review conclusion fails Micron's 
 ES Cybersecurity Review Office, on the Cyberspace Administration's site
 
 @ BH cn-policy-desktop-2023
-T 财政部、工业和信息化部：乡镇以上党政机关，以及乡镇以上党委和政府直属事业单位等，采购台式计算机时"应当将CPU、操作系统符合安全可靠测评要求纳入采购需求"；"其他单位可不在采购需求中提出此项要求"
+T 财政部、工业和信息化部：乡镇以上党政机关，以及乡镇以上党委和政府直属事业单位及部门所属为机关提供支持保障的事业单位，采购台式计算机时"应当将CPU、操作系统符合安全可靠测评要求纳入采购需求"；"其他单位可不在采购需求中提出此项要求"
 S 财政部、工业和信息化部
-ET Finance and industry ministries: Party and government bodies from township level up, and the public institutions attached to them, must require that the processor and operating system of the desktop computers they buy meet the security-and-reliability evaluation; other units need not
+ET Finance and industry ministries: Party and government bodies from township level up, the public institutions directly under the Party committees and governments at that level, and the departments' public institutions that support those bodies' work, must require that the processor and operating system of the desktop computers they buy meet the security-and-reliability evaluation; other units need not
 ES Ministry of Finance and Ministry of Industry and Information Technology
 
 @ BH cn-factions-bloomberg-flexibility-202409-relay1
@@ -80,10 +80,10 @@ ES Financial Times
 
 @ BH cn-clips-alibaba-20f
 D 2025年9月
-T 阿里巴巴年报：国家网信办要求中国科技公司停止采购某些芯片（原文："requested Chinese technology companies to halt purchases of certain chips"）
+T 阿里巴巴年报：国家网信办要求中国科技公司停止采购某些芯片（原文："requested Chinese technology companies to halt purchases of certain chips"）；这句话没有点名任何芯片厂商
 S 阿里巴巴，向美国证券交易委员会提交的20-F年度报告
 Z 2025年9月，中国国家互联网信息办公室要求中国科技公司停止采购某些芯片。
-ET Alibaba's annual report: the cyberspace regulator "requested Chinese technology companies to halt purchases of certain chips"
+ET Alibaba's annual report: the cyberspace regulator "requested Chinese technology companies to halt purchases of certain chips"; the sentence names no chip maker
 ES Alibaba, Form 20-F filed with the SEC
 
 @ BH cn-policy-samr-further-original
@@ -232,9 +232,9 @@ ET Reported, by two people: the industry ministry asks companies including ByteD
 ES The Information, through Reuters on AOL
 
 @ BL cn-tolerate-mof
-T 商务部、科技部在公开征求意见的目录修订稿中提出：对"中国企业在境外自建自营算力中心"等情形的技术出口，"适用自动许可等便利措施"
+T 商务部、科技部在公开征求意见的目录修订稿中提出：对"中国企业在境外自建自营算力中心"等情形的技术出口，"适用自动许可等便利措施"；修订稿中关于算力集群的条目，针对的是人工智能加速卡总数超过一万张的集群
 S 商务部新闻发言人，就商务部、科技部的修订稿答记者问
-ET In a draft list put out for comment, the commerce and science ministries propose automatic licences for technology exports to computing centres that Chinese companies build and run abroad
+ET In a draft list put out for comment, the commerce and science ministries propose automatic licences for technology exports to computing centres that Chinese companies build and run abroad; the draft's items on computing clusters are for clusters of more than 10,000 AI accelerator cards in all
 ES Ministry of Commerce spokesperson, on the draft of the commerce and science ministries
 
 @ CN cn-labs-h20-orders-20250402-relay1
@@ -392,7 +392,7 @@ ES Nvidia, Form 10-Q filed with the SEC
 T 据报道，DeepSeek在有关部门鼓励下采用华为芯片，但未能用它们训练出下一款模型，这促使它用英伟达芯片训练、用华为芯片推理（原文："Nvidia chips for training and Huawei's for inference"）
 S 英国《金融时报》
 Z 促使它用英伟达芯片做训练、用华为芯片做推理
-ET Reported: DeepSeek, encouraged by authorities to use Huawei chips, fails to train its next model on them and uses "Nvidia chips for training and Huawei's for inference"
+ET Reported: DeepSeek, encouraged by authorities to use Huawei chips, fails to train its next model on them and is prompted to use "Nvidia chips for training and Huawei's for inference"
 ES Financial Times
 
 @ CH cn-cnpress-yicai-zhou-360-20250723
@@ -415,9 +415,9 @@ ET Premier Li Qiang to US business leaders, Nvidia's among them: a stable, open 
 ES Xinhua
 
 @ BL cn-le17-whuf-134391
-T 武汉大学和北京航空航天大学发布采购英伟达RTX PRO 6000D的公告（分别为2张和4张），供应商须符合政府采购法规定的条件；武汉大学要求"国行合规RTX PRO 6000D型号"
+T 武汉大学发布采购两张英伟达RTX PRO 6000D的公告，北京航空航天大学7月11日发布采购四张的公告，供应商须符合政府采购法规定的条件；武汉大学要求"国行合规RTX PRO 6000D型号"
 S 武汉大学采购公告（另有北航7月11日的公告，以及武汉大学2026年8月13日公布的一张卡的成交结果）
-ET Wuhan University and Beihang publish notices to buy Nvidia's RTX PRO 6000D (2 and 4 cards), with suppliers held to the government procurement law's rules; Wuhan asks for the compliant China-market model
+ET Wuhan University publishes a notice to buy two of Nvidia's RTX PRO 6000D cards, and Beihang one for four on Jul 11, with suppliers held to the government procurement law's rules; Wuhan asks for the compliant China-market model
 ES Wuhan University purchase filing (also Beihang's notice of Jul 11 and a Wuhan award of one card, published Aug 13, 2026)
 
 @ BL cn-acts-mofcom-20261117

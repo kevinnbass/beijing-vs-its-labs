@@ -22,6 +22,9 @@ each of the four in the page's before-copy of round 10.
 Round 10b (Nov 25, 2026, core batch 12 and the readers' leads of round 10): the SEC record of 22:16 UTC; Greer's words and the 445,000
 both ways as the argument gives them; the notes named by number and title from outputs/STATUS.tsv; twelve wordings withdrawn, each
 found in the before-copy of round 10b.
+Round 13 (Nov 26, 2026, core batch 15): Washington returned without action the APPLICATIONS for 55% of the chips (for 1,888,950), never
+  the chips (rows B15-056 to -058); Tianjin's rule "held as Sina carries it" (B15-066); the next quarter's outlook as the argument quotes it.
+  The share and the count are pinned in the argument's new words; four wordings withdrawn, each found in the before-copy of round 13.
 Controls: a number changed by one, a share changed by 0.1 and a count changed in a copied phrase must not be found.
 """
 import csv, re, sys
@@ -38,8 +41,9 @@ chips = lambda r: int(r['chip_count'].replace(',', ''))
 total = sum(chips(r) for r in hl); rwa = sum(chips(r) for r in hl if r['status'] == 'RWA')
 appr = sum(chips(r) for r in hl if r['status'] == 'Approved, not shipped'); pct = round(100 * rwa / total)
 print(f'licence table: {len(hl)} rows, {total:,} chips; RWA {rwa:,} ({100 * rwa / total:.2f}%, shown as {pct}%); "Approved, not shipped" {appr:,}; plain "Approved" rows: {sum(1 for r in hl if r["status"] == "Approved")}')
-for said in (f'{total:,} chips', f'{rwa:,} are in applications marked RWA', f'{pct}% of the chips in the applications the summary records', f'Another {appr:,} are in applications marked',
-             f"the table's {len(hl)} rows", f'approved applications for {appr:,} of', f'returned applications for {rwa:,} more without action'):   # round 10b: "applications for"
+for said in (f'{total:,} chips', f'{rwa:,} are in applications marked RWA', f'returned without action the applications for {pct}% of the chips its summary of May 11, 2026 records',
+             f'Another {appr:,} are in applications marked', f"the table's {len(hl)} rows", f'approved applications for {appr:,} of',
+             f'returned without action the applications for {rwa:,} more'):   # round 10b: "applications for"; round 13: the argument's words (B15-056 to -058)
     if said not in text: bad.append(f'the page does not say "{said}"')
 if f'{rwa + 1:,}' in text: bad.append('control: a changed number was found in the page')
 
@@ -94,7 +98,12 @@ COPIED = ['the latest annual reports of fifteen US-listed Chinese companies',
           'names a data-centre operator or ultimate consignee; it is not an order',
           # round 10b (core batch 12, Nov 25, 2026): Greer's words as the argument gives them, the 445,000 both ways
           'asked whether China would let its companies buy the H200, said it was "gonna be a sovereign decision for China"',
-          'and 48.6% if the 445,000 is a further application and was not returned without action']   # round 8 after core edit 7c (R3a): The Standard's words, as point 19 quotes them
+          'and 48.6% if the 445,000 is a further application and was not returned without action',   # round 8 after core edit 7c (R3a): The Standard's words, as point 19 quotes them
+          # round 13 (core batch 15, Nov 26, 2026): rows B15-056 to -058 and B15-066; the outlook the argument quotes from the 8-K
+          'returned without action the applications for 55% of the chips its summary of May 11, 2026 records',
+          'returned without action the applications for 1,888,950',
+          "Tianjin's voucher rule is held as Sina carries it [cn-ga04-tj-voucher-rule-sina-20250514]",
+          'We are not assuming any Data Center compute revenue from China in our outlook.']
 low_arg = ARG.lower()
 miss_arg = [c for c in COPIED if c.lower() not in low_arg]
 miss_page = [c for c in COPIED if c.lower() not in text.lower()]
@@ -149,6 +158,20 @@ if before10b.is_file():
     print(f'control: {len(seen10b)} of the {len(WITHDRAWN10B)} wordings withdrawn in round 10b are found in the before-copy of round 10b')
     if len(seen10b) != len(WITHDRAWN10B): bad.append(f'control: round 10b wordings not found in the before-copy: {[w for w in WITHDRAWN10B if w not in seen10b]}')
 else: bad.append('control: the before-copy of round 10b is missing')
+
+# round 13 (core batch 15, Nov 26, 2026): the wordings rows B15-056 to -058 and B15-066 replaced, and the page's own clause on the filing;
+# none may stand in the page, and each must stand in the before-copy of round 13 (scratch_round13/before)
+WITHDRAWN13 = ['55% of the chips in the applications the summary records', 'returned applications for 1,888,950 more without action',
+               'held as a page on sina carries it', 'from one sentence in a company filing.']
+hits13 = [w for w in WITHDRAWN13 if w in text.lower()]
+print(f'withdrawn in round 13: {len(WITHDRAWN13)} searched; found: {len(hits13)}')
+if hits13: bad.append(f'withdrawn wordings stand in the page: {hits13}')
+before13 = HERE.parent / 'scratch_round13' / 'before' / '08_what_would_change' / 'what_would_change_base.txt'
+if before13.is_file():
+    old13 = before13.read_text(encoding='utf-8').lower(); seen13 = [w for w in WITHDRAWN13 if w in old13]
+    print(f'control: {len(seen13)} of the {len(WITHDRAWN13)} wordings withdrawn in round 13 are found in the before-copy of round 13')
+    if len(seen13) != len(WITHDRAWN13): bad.append(f'control: round 13 wordings not found in the before-copy: {[w for w in WITHDRAWN13 if w not in seen13]}')
+else: bad.append('control: the before-copy of round 13 is missing')
 
 line = next((ln for ln in (PROJ / 'tables' / 'trade_derived_figures.tsv').read_text(encoding='utf-8').splitlines()
              if ln.startswith('China customs table 14, Parts and accessories of automatic data processing machines: Jan-Sep 2025 and Jan-Sep 2026 as printed')), None)

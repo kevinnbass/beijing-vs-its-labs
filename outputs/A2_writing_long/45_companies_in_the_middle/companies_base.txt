@@ -1,8 +1,8 @@
 # The companies in the middle
-@deck 2025 and 2026 from the buyers' side. China's AI companies used Nvidia chips and were reported to order more, said why, were reported to push back, were reported to train abroad, and built chips of their own.
+@deck 2025 and 2026 from the buyers' side. China's AI companies used Nvidia chips and were reported to order more, spoke of the most advanced chips and of home-made ones, were reported to push back, were reported to train abroad, and some built chips of their own.
 
 @note Draft by Claude, Anthropic's model. Written Nov 23, 2026 (UTC); revised Nov 26, 2026.
-@note How to read it. Words between quotation marks are a source's exact words, found in the saved copy by a script. A filled reference number is a document, a filing, a named person on the record, or a published commentary of state media or an industry body. An open number is a press report citing unnamed people, a research firm's count, or captions and machine transcripts nobody has checked by ear. English in round brackets after Chinese is our rendering, not an official translation.
+@note How to read it. Words between quotation marks are a source's exact words, found in the saved copy by a script. A filled reference number is a document, a filing, a named person on the record, a published commentary, report or statement of state media, an industry body or a research institute, an institution's own notice, or a named outlet's account of a document. An open number is a press report citing unnamed people, a research firm's or research group's count, or captions and machine transcripts nobody has checked by ear. English in round brackets after Chinese is our rendering, not an official translation.
 @note The author's interest. Anthropic has argued in public for controls on chip exports to China (that is from the model's general knowledge; no saved page is cited for it), so judge this piece by its sources.
 
 ## Between two governments
@@ -24,20 +24,20 @@ The orders are reported from unnamed people. In the first three months of 2025 C
 Reuters reported on Dec 31, 2025 that Chinese companies "have placed orders for more than 2 million H200 chips for 2026" [cn-labs-h200-two-million-202512-relay1-wayback].
 !! cn-labs-h200-two-million-202512-relay1-wayback | Dec 31 (Reuters)
 
-**2. They said why**
+**2. They spoke of the most advanced chips and of home-made ones**
 
 Tencent's president, Mar 18, 2026, naming no maker: "you actually want to have access to the most state-of-the-art, you know, training chips to the extent possible" [cn-o36-tencent-call-20260318-sa].
 !! cn-o36-tencent-call-20260318-sa | Earnings Call: Q4 2025 Mar 18, 2026
 A Baidu executive vice president, of its AI cloud group, May 18, 2026: "Domestic chips are still catching up with the most advanced global products in certain frontier training scenarios. Inference is an area where domestic chips can be highly relevant and competitive." [cn-o36-baidu-call-20260518-sa]
 !! cn-o36-baidu-call-20260518-sa | Earnings Call: Q1 2026 May 18, 2026
-Another model maker, iFlytek, told investors on Aug 21, 2026, in an answer on how far home-made chips lag behind Nvidia's, what the others used: "其他模型厂商普遍使用性能领先两代的英伟达芯片" (other model makers commonly use Nvidia chips two generations ahead in performance) [cn-le26-iflytek-ir-20260821]. iFlytek itself is on the US Entity List, and the same record says: "尤其是在讯飞被列入美国实体清单的背景下，更需要在全栈自主可控的国产芯片及配套硬件元器件供应上做好保障" (especially as iFlytek has been put on the US Entity List, it is all the more necessary to secure the supply of home-made chips and matching hardware components, independently controllable across the whole stack) [cn-le26-iflytek-ir-20260821].
+Another model maker, iFlytek, told investors on Aug 21, 2026, in an answer on how far home-made chips lag behind Nvidia's, what the others used: "其他模型厂商普遍使用性能领先两代的英伟达芯片" (other model makers commonly use Nvidia chips two generations ahead in performance) [cn-le26-iflytek-ir-20260821]. iFlytek itself is on the US Entity List, a list of foreign parties that are, in the Commerce Department's words, "subject to specific license requirements for the export, reexport, and transfer (in-country) of specified items" [ms-g17-x2-bis-d38864]; iFlytek's record says: "尤其是在讯飞被列入美国实体清单的背景下，更需要在全栈自主可控的国产芯片及配套硬件元器件供应上做好保障" (especially as iFlytek has been put on the US Entity List, it is all the more necessary to secure the supply of home-made chips and matching hardware components, independently controllable across the whole stack) [cn-le26-iflytek-ir-20260821].
 !! cn-le26-iflytek-ir-20260821 | 更需要在全栈自主可控的国产芯片及配套硬件元器件供应上做好保障
 !! cn-le26-iflytek-ir-20260821 | 时间2026.08.21
 !! cn-le26-iflytek-ir-20260821 | 尤其是在讯飞被列入美国实体清单的背景下
 !! cn-le26-iflytek-ir-20260821 | 目前国产算力差距客观存在
 !! cn-le26-iflytek-ir-20260821 | 与H200相比确实存在约五倍的差距
 
-**3. They were reported to push back, and one asked in public**
+**3. They were reported to push back, and an unnamed company asked in public**
 
 The Financial Times, Aug 20, 2025: "tech giants from Alibaba to ByteDance argued that their AI development would be impaired without Nvidia's chips", though by some close to them "they have become more accepting of a switch" [man-cn-ft-20250821-regulators].
 !! man-cn-ft-20250821-regulators | Published AUG 20 2025
@@ -66,7 +66,7 @@ The same paper, Aug 13, 2025, by three unnamed people: DeepSeek "was encouraged 
 !! man-cn-ft-202508-deepseek | according to three people familiar with the matter
 !! man-cn-ft-202508-deepseek | prompting it to use Nvidia chips for training
 
-**5. They built chips of their own and turned to other home-made chips**
+**5. Baidu and Alibaba built chips of their own; Tencent and DeepSeek spoke of home-made ones**
 
 Baidu's chief executive said in April 2025, in Reuters' words, that it had switched on a cluster "comprising 30,000 of its self-developed, third generation P800 Kunlun chips" [man-cn-labs-baidu-30k-reuters-alt1].
 !! man-cn-labs-baidu-30k-reuters-alt1 | means switching the cluster on
@@ -86,6 +86,6 @@ Of DeepSeek's later model, V4, Reuters wrote in April 2026: "Huawei said its chi
 ## What the five steps add up to
 
 The companies were neither simply held back by their state nor simply in step with it.
-The Financial Times put it in its own words in November 2025: training "requires a huge amount of computing power to process massive data sets, leading most Chinese groups to prefer Nvidia's advanced products for the task", while for inference, the everyday work of running a trained model, these companies were "increasingly turning to locally made Chinese chips" [cn-tolerate-ft-offshore]. Some of those chips are their own (step 5).
+The Financial Times put it in its own words in November 2025: training "requires a huge amount of computing power to process massive data sets, leading most Chinese groups to prefer Nvidia's advanced products for the task", while for inference, the everyday work of running a trained model, these companies were "increasingly turning to locally made Chinese chips" [cn-tolerate-ft-offshore]. Two of the companies, Baidu and Alibaba, also build chips of their own (step 5).
 !! cn-tolerate-ft-offshore | PUBLISHED: 2025-11-27
-Both are in the record at once.
+The pull to Nvidia's chips for training and the turn to home-made chips for inference are in the record at once.

@@ -4,7 +4,7 @@
 
 Draft by Claude, Anthropic's model.
 
-Written Nov 23, 2026; revised Nov 26, 2026 (UTC). Nothing here has been posted. The same posts as plain text, each with its source's address, the character counts and a note on images, are in thread_plain.txt beside this file.
+Written Nov 23, 2026; revised Nov 26, 2026 (UTC). The same posts as plain text, each with its source's address, the character counts and a note on images, are in thread_plain.txt beside this file.
 
 Words between quotation marks are a source's exact words, found in its saved copy by a script. Where a post gives a Chinese source in English without quotation marks, the English is ours, not an official translation. The key under this header says what a filled and an open reference number mean.
 
@@ -20,7 +20,7 @@ Order: the claim, the declared line, what the companies used, what Beijing did, 
 
 **3.** What the companies used: Nvidia. A Shanghai government body wrote (reply dated Apr 30, 2025; published Nov 10, 2025) that in the city internet firms' own clusters run mainly on Nvidia cards, while the three big telecoms mainly buy Huawei's and other home-made clusters. [4]
 
-**4.** What Beijing did. Alibaba's annual report to the SEC: "In September 2025, the Cyberspace Administration of China requested Chinese technology companies to halt purchases of certain chips." The sentence does not name Nvidia. This is a filing, not an unnamed source. [5]
+**4.** What Beijing did. Alibaba's annual report to the US SEC: "In September 2025, the Cyberspace Administration of China requested Chinese technology companies to halt purchases of certain chips." The sentence does not name Nvidia. This is a filing, not an unnamed source. [5]
 
 **5.** Limit 1: Beijing was not one actor. On Jul 17, 2025 China's commerce minister told Nvidia's chief executive he hoped multinationals, Nvidia among them, would give Chinese customers high-quality, reliable products and services. Source: the ministry's account; English ours. [6]
 
@@ -36,9 +36,9 @@ Order: the claim, the declared line, what the companies used, what Beijing did, 
 
 ## What the thread leaves out
 
-- It gives one source for each claim; posts 7 and 9 need more than one. The full argument has 21 points and 460 sources; it is the project's argument page, ARGUMENT_referenced.html.
+- It gives one source for each claim; posts 7 and 9 need more than one. The full argument has 21 points and 461 sources; it is the project's argument page, ARGUMENT_referenced.html.
 - With five limits and ten posts, the numbers have no post of their own: they stand in limit 3 (post 7). That post carries three reported numbers, from Reuters reports of Dec 31, 2025, Jan 28, 2026 and Nov 5, 2026, and the Financial Times's report, as Reuters relayed it on Aug 18, 2026, that small batches were let into the mainland. The same report has ByteDance and Tencent each receiving about 10,000 H200s; the post leaves that number out because the paper's own text says Beijing wants the companies to keep most of these chips outside the mainland [15], so it is not a count of chips that came in. The copy the post cites for the report of Nov 5 is CNA's page, which shows only its own date, Nov 6, 2026; Reuters's dateline of Nov 5 stands on Yahoo's copy of the same report, also saved.
-- Washington's side is left out for length: the conditions it set, and its own table of licence applications, which shows chips approved and not shipped and others returned without action. The argument sets them out under its fourth limit.
+- Washington's side is left out for length: the conditions it set, and its own table of licence applications, which shows some applications approved, their chips not shipped, and others returned without action. The argument sets them out under its fourth limit.
 - Post 6 names one press report. The public warnings in state media, and the dates they fall between, are in the argument's points 4 and 18.
 - Post 10 is a shorter form of the argument's last sentence; its last words are limit 5's. It drops the public warnings, the parts of the state that welcomed Nvidia and, by the reports, approved some purchases, and the companies' own turn to home-made chips; posts 5 to 8 carry them.
 - No recording has been checked by ear: not the clip in post 1, and not the interview in post 9.
@@ -47,7 +47,7 @@ Order: the claim, the declared line, what the companies used, what Beijing did, 
 
 Each entry: its kind; what it is; the saved page's own title where the record holds one; the address; the id of the saved copy.
 
-[1] Caption track or machine transcript, not checked by ear. Palmer Luckey, in a clip of 56 seconds posted on X by @overton_news, Nov 19, 2026. Words from a machine transcript of the clip (the transcript file is held back: see HELD_BACK.md); nobody has checked them by ear. https://x.com/overton_news/status/2123392702821580811
+[1] Caption track or machine transcript, not checked by ear. Palmer Luckey, in a clip of 56 seconds posted on X by @overton_news, Nov 19, 2026. Words from a machine transcript of the clip; nobody has checked them by ear. https://x.com/overton_news/status/2123392702821580811
 
 [2] Press report of words spoken on the record. Post on X by @overton_news, Nov 19, 2026, which carries the clip of Palmer Luckey and gives his words as text. The post does not name the programme. https://x.com/overton_news/status/2123392702821580811 Saved copy: cnpol-x-overton-2123392702821580811
 
@@ -59,15 +59,15 @@ Each entry: its kind; what it is; the saved page's own title where the record ho
 
 [6] Official document, or an official on the record. Ministry of Commerce, account of Minister Wang Wentao's meeting with Nvidia's chief executive on Jul 17, 2025. Page title: 王文涛部长会见美国英伟达公司总裁兼首席执行官黄仁勋. https://www.mofcom.gov.cn/syxwfb/art/2025/art_a2f759e1140f459e9694f85164c4197c.html Saved copy: cn-policy-wang-nvidia
 
-[7] Press report citing unnamed people. Bloomberg, as carried by The Business Times (Singapore), Sept 28, 2024. Page title: China urges local companies to stay away from Nvidia’s chips. https://www.businesstimes.com.sg/companies-markets/china-urges-local-companies-stay-away-nvidias-chips Saved copy: cn-factions-bloomberg-flexibility-202409-relay1
+[7] Press report citing unnamed people. Bloomberg, as carried by The Business Times (Singapore), Sept 28, 2024: report, from people it does not name, that Chinese regulators were discouraging companies from buying Nvidia's H20 chips. Page title: China urges local companies to stay away from Nvidia’s chips. https://www.businesstimes.com.sg/companies-markets/china-urges-local-companies-stay-away-nvidias-chips Saved copy: cn-factions-bloomberg-flexibility-202409-relay1
 
 [8] Press report citing unnamed people. Reuters, Dec 31, 2025, as carried by Investing.com. Internet Archive capture of Jan 1, 2026. https://web.archive.org/web/20260101170120/https://www.investing.com/news/stock-market-news/exclusivenvidia-sounds-out-tsmc-on-new-h200-chip-order-as-china-demand-jumps-sources-say-4426223 Saved copy: cn-labs-h200-two-million-202512-relay1-wayback
 
-[9] Press report citing unnamed people. Reuters, Jan 28, 2026, as carried by The Standard (Hong Kong). Page title: China gives nod to ByteDance, Alibaba and Tencent to buy Nvidia's H200 chips, says sources. https://www.thestandard.com.hk/innovation/article/322910/China-gives-nod-to-ByteDance-Alibaba-and-Tencent-to-buy-Nvidias-H200-chips-says-sources Saved copy: ms-bj-20260128-h200-nod-standard
+[9] Press report citing unnamed people. Reuters, Jan 28, 2026, as carried by The Standard (Hong Kong): report, from four people it does not name, that Beijing had approved ByteDance, Alibaba and Tencent to buy Nvidia's H200 chips. Page title: China gives nod to ByteDance, Alibaba and Tencent to buy Nvidia's H200 chips, says sources. https://www.thestandard.com.hk/innovation/article/322910/China-gives-nod-to-ByteDance-Alibaba-and-Tencent-to-buy-Nvidias-H200-chips-says-sources Saved copy: ms-bj-20260128-h200-nod-standard
 
-[10] Press report citing unnamed people. Reuters, datelined Nov 5, 2026, as carried by CNA (Singapore) on Nov 6, 2026: a report, from unnamed people, on Beijing's approvals for imports of Nvidia's H200 chips. The CNA page shows only its own date; the Nov 5 dateline stands on the copy carried by Yahoo, which is also saved. https://www.channelnewsasia.com/east-asia/nvidia-chips-pile-up-hong-kong-china-withhold-import-approval-6527371 Saved copy: cn-clips-evidence-1
+[10] Press report citing unnamed people. Reuters, datelined Nov 5, 2026, as carried by CNA (Singapore) on Nov 6, 2026: a report, from unnamed people, that about 600,000 of Nvidia's H200 chips were stored in Hong Kong. The CNA page shows only its own date; the Nov 5 dateline stands on the copy carried by Yahoo, which is also saved. https://www.channelnewsasia.com/east-asia/nvidia-chips-pile-up-hong-kong-china-withhold-import-approval-6527371 Saved copy: cn-clips-evidence-1
 
-[11] Press report citing unnamed people. Reuters, relaying the Financial Times, Aug 18, 2026, as carried by Investing.com. Internet Archive capture of Sept 8, 2026. https://web.archive.org/web/20260908131431/https://www.investing.com/news/stock-market-news/nvidia-h200-chips-reach-china-in-small-shipments-ft-reports-4866385 Saved copy: cn-tolerate-reutersaug26-relay1-wayback
+[11] Press report citing unnamed people. Reuters, relaying the Financial Times, Aug 18, 2026, as carried by Investing.com: report, from two people the paper does not name, that some H200 chips had been allowed into mainland China and that ByteDance and Tencent had each received about 10,000. Internet Archive capture of Sept 8, 2026. https://web.archive.org/web/20260908131431/https://www.investing.com/news/stock-market-news/nvidia-h200-chips-reach-china-in-small-shipments-ft-reports-4866385 Saved copy: cn-tolerate-reutersaug26-relay1-wayback
 
 [12] Press report of words spoken on the record. Reuters, Nov 15, 2023, as carried by the radio station WTAQ, reporting Tencent's president on its results call. Page title: Tencent to seek domestic AI training chip supplies after latest US curbs. https://wtaq.com/2023/11/15/tencent-to-seek-domestic-ai-training-chip-supplies-after-latest-us-curbs/ Saved copy: cn-policy-tencent-us-curbs-relay1
 
@@ -77,4 +77,4 @@ Each entry: its kind; what it is; the saved page's own title where the record ho
 
 [15] Press report citing unnamed people. Financial Times (Zijing Wu), Aug 19, 2026, "China eases limits on Nvidia H200 chips as AI race escalates", as Yahoo Finance Canada carries it; it cites unnamed people. Page title: China eases limits on Nvidia H200 chips as AI race escalates. https://ca.finance.yahoo.com/news/china-eases-limits-on-nvidia-h200-chips-as-ai-race-escalates-020939892.html Saved copy: cn-tolerate-ftaug26
 
-Build check: 7 quotations and 32 further statements were looked for in the saved copies of 15 sources and all were found; a planted false quotation was rejected. 7 sources are documents, filings or named people on the record; 8 are press reports citing unnamed people, counts or machine transcripts. A quotation that is found shows what the source says, not that it is true.
+Build check: 7 quotations, and 32 passages that back statements made without quoting, were looked for in the saved copies of 15 sources and all were found; a made-up quotation, put in as a test, was not found. 7 sources are documents, filings or named people on the record, or published commentaries, reports or statements of state media, industry bodies or research institutes, institutions' own notices and named outlets' accounts of documents; 8 are press reports citing unnamed people, counts or machine transcripts. A quotation that is found shows what the source says, not that it is true.

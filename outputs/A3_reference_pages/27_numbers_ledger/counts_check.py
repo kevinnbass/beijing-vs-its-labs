@@ -52,13 +52,16 @@ def expected():
         f'all {fmt(sum(map(num, sea)))} chips in applications whose ultimate location is Malaysia, Indonesia or Thailand',
         f'Nvidia {fmt(ex[("Nvidia","RWA")][1])} in {ex[("Nvidia","RWA")][0]}; AMD {fmt(ex[("AMD","RWA")][1])} in {ex[("AMD","RWA")][0]} |',
         f'| Approved, not shipped | {fmt(st["Approved, not shipped"][1])} | {st["Approved, not shipped"][0]} | Nvidia {fmt(ex[("Nvidia","Approved, not shipped")][1])} in {ex[("Nvidia","Approved, not shipped")][0]}; AMD {fmt(ex[("AMD","Approved, not shipped")][1])} in {ex[("AMD","Approved, not shipped")][0]};',
-        f'| Submitted | {fmt(st["Submitted"][1])} | {st["Submitted"][0]} | Nvidia {fmt(ex[("Nvidia","Submitted")][1])} in {ex[("Nvidia","Submitted")][0]}; AMD {fmt(ex[("AMD","Submitted")][1])} in {ex[("AMD","Submitted")][0]}; Semsotai USA {fmt(ex[("Semsotai USA","Submitted")][1])} in {ex[("Semsotai USA","Submitted")][0]} |',
+        # round 13 (Nov 26, 2026): the third exporter named as such, with its one consignee (the argument's section 4 words); checked below
+        f'| Submitted | {fmt(st["Submitted"][1])} | {st["Submitted"][0]} | Nvidia {fmt(ex[("Nvidia","Submitted")][1])} in {ex[("Nvidia","Submitted")][0]}; AMD {fmt(ex[("AMD","Submitted")][1])} in {ex[("AMD","Submitted")][0]}; Semsotai USA, a third exporter in the table, {fmt(ex[("Semsotai USA","Submitted")][1])} in {ex[("Semsotai USA","Submitted")][0]}, all for Sharetronic Data Technology |',
         f'| Rejected | {fmt(st["Rejected"][1])} | {st["Rejected"][0]} | one {rej[0]["exporter"]} application, for {rej[0]["consignee"].split()[0]} |',
         f'| All | {fmt(total)} | {len(H)} | Nvidia {fmt(ex_all["Nvidia"][1])} in {ex_all["Nvidia"][0]}; AMD {fmt(ex_all["AMD"][1])} in {ex_all["AMD"][0]}; Semsotai USA {fmt(ex_all["Semsotai USA"][1])} in {ex_all["Semsotai USA"][0]} |',
         f'the returned share would be {alt}% if that row is the application, counted at 445,000, and {alt2}% if the 445,000 is a further application and was not returned without action (ours)',
         f'among them **{share}%**; **{alt}%** or **{alt2}%** with the application of Dec 19, 2025 counted at 445,000 (as the table\'s row of that date, or as a further application not returned without action); and **{fmt(sum(map(num, sea)))}**',
     ]
     if len(rej) != 1: sys.exit('not one rejected application')
+    sems = [r for r in H if r['exporter'] == 'Semsotai USA']
+    if not sems or any(r['status'] != 'Submitted' or not r['consignee'].startswith('Sharetronic Data Technology') for r in sems): sys.exit('Semsotai USA\'s rows are not all submitted and all for Sharetronic: reword the Submitted row')
     # round 11 (Nov 26, 2026): the 3.4 million row says every application for a location outside China is among those returned
     if any(r['location'] != 'China' and r['status'] != 'RWA' for r in H): sys.exit('an application for a location outside China is not RWA: reword the 3.4 million row')
     want.append('in it every application whose ultimate location is outside China (Malaysia, Indonesia or Thailand) is among those returned without action')
@@ -122,7 +125,7 @@ def expected():
     both = sorted(set(per3['BUILD']) & set(per3['ADAPT'])) + sorted(set(per3['BUILD']) & set(per3['PREFER'])) + sorted(set(per3['ADAPT']) & set(per3['PREFER']))
     if [cnt[k]['government'] for k in both] != ['Hebei District (Tianjin)']: sys.exit(f'the rule that gives two kinds is not Hebei district of Tianjin\'s alone: {both}')
     W = ['no', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine']
-    want.append(f'by another provision of the same rule, {len(any3)} of the {one + two} give home-made computing something ({len(per3["BUILD"])} money to build, buy or run home-made computing facilities or equipment, {len(per3["ADAPT"])} an award for adapting to, or building on, home-made chips or computing, and {len(per3["PREFER"])}, Beijing city\'s, a condition on its suppliers; Hebei district of Tianjin\'s rule gives two of these), and none of the {more} or the {only} gives anything by another provision')
+    want.append(f'by another provision of the same rule, {len(any3)} of the {one + two} give home-made computing something ({len(per3["BUILD"])} money to build, buy or run home-made computing facilities or equipment, {len(per3["ADAPT"])} an award for adapting to, or building on, home-made chips or computing, and {len(per3["PREFER"])}, Beijing city\'s, a condition on its suppliers; Hebei district of Tianjin\'s rule gives two of these), and none of the {more} or the {only} gives home-made computing anything by another provision')   # round 13 (Nov 26, 2026): the argument's words since core batch 15, row B15-060
     want.append(f'**{more} of {counted}** voucher rules, with **{len(any3)} of the {one + two}**')
     print(f'other provisions: {len(any3)} of the {one + two} (BUILD {len(per3["BUILD"])}, ADAPT {len(per3["ADAPT"])}, PREFER {len(per3["PREFER"])}); none of the {more} or the {only}')
     print(f'vouchers: counted {counted} ({more} pay more, {only} home-made only, {one} one rate, {two} two rates by an unnamed type); read and not counted {V[NOT]}')

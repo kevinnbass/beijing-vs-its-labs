@@ -36,13 +36,14 @@ BANDS = [  # band title, [(row key, name, what it is)]; ordered so that the bodi
 APART = ('samr', 'Market regulator', 'State Administration for Market Regulation')       # the antitrust case: against Nvidia the company, drawn apart
 COLS = [  # key, direction, title, what it covers
     ('acted', 'away', 'Summoned Nvidia, or warned in public', 'acts and texts it published itself'),
-    ('told', 'away', 'Reported: told companies not to buy', 'or to use home-made chips; or held chips at the border'),
+    ('told', 'away', 'Reported: told companies not to buy', 'or to use home-made chips; or held chips at the border; one mark is a company’s filing'),
     ('rules', 'away', 'Rules or guidance favouring home-made chips', 'purchase rules, a list, guidance'),
     ('welcomed', 'toward', 'Welcomed Nvidia, or spoke for access', 'in public: welcomes, protests at US curbs, help for computing abroad'),
     ('approved', 'toward', 'Reported: approved purchases', 'with conditions; or let chips in'),
 ]
 # Round 11 (ROUND11.md, thing 2): the two columns hold press reports (and, in 'told', one company's filing): their heads carry the report.
-PHONE_LABEL = {'told': 'Reported: told companies not to buy, or held chips at the border', 'approved': 'Reported: approved purchases, or let chips in'}     # on a phone the column's second line is not shown
+# Round 13 (work list C 9): the head of 'told' also says that one of its marks is a company's filing (Alibaba's), not a report.
+PHONE_LABEL = {'told': 'Reported, or in a company’s filing: told companies not to buy, or held chips at the border', 'approved': 'Reported: approved purchases, or let chips in'}     # on a phone the column's second line is not shown
 ROWKEYS = [k for _, rows in BANDS for k, _, _ in rows]
 ROWNAME = {k: n for _, rows in BANDS for k, n, _ in rows}
 ROWNAME[APART[0]] = APART[1]
@@ -227,8 +228,23 @@ def main():
     award_url = C.B.address(AWARD, C.B.load_refs().get(AWARD, {'addr': ''}))
     assert award_url.startswith('https://www.xinhuanet.com/'), award_url
 
+    # Round 13 (the gathered list, A5 line 1): a record whose source line names a second copy (field also=<saved id>: the record of
+    # Aug 18, 2026, Reuters's relay and the paper's own text) links both copies, each with its saved id.
+    also = [r for r in recs if r.get('also')]
+    assert [r['key'] for r in also] == ['nb-aug18'] and all(', and ' in r['S'] for r in also), [r['key'] for r in also]
+    refs = C.B.load_refs()
+
     def li(r):
         out = C.record_li(r)
+        if r.get('also'):
+            first, second = r['S'].split(', and ', 1)
+            url2 = C.B.address(r['also'], refs.get(r['also'], {'addr': ''}))
+            assert url2.startswith('https://') and r['url'], (r['key'], url2)
+            old = f'<a href="{C.esc(r["url"], quote=True)}">{C.T(r["S"])}</a> · saved copy {C.esc(r["sid"])}'
+            new = (f'<a href="{C.esc(r["url"], quote=True)}">{C.T(first)}</a> · saved copy {C.esc(r["sid"])}; and '
+                   f'<a href="{C.esc(url2, quote=True)}">{C.T(second)}</a> · saved copy {C.esc(r["also"])}')
+            assert out.count(old) == 1, r['key']
+            return out.replace(old, new)
         if r is not yy[0]: return out
         add = (f' · whose account: the list of the 36th China Journalism Award gives, for its Bilibili account, “原创单位：中央广播电视总台” (originating unit: China Media Group, the state broadcaster), '
                f'<a href="{C.esc(award_url, quote=True)}">the list on Xinhua’s site</a> · saved copy {AWARD}')

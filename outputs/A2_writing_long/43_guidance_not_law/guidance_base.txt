@@ -2,7 +2,7 @@
 @deck How Beijing pressed China's AI companies away from Nvidia's chips, though no published order was found, shown on this one case.
 
 @note Draft by Claude, Anthropic's model. Written Nov 23, 2026 (UTC); revised Nov 26, 2026.
-@note How to read it. Words between quotation marks are a source's exact words, found in the saved copy by a script. A filled reference number is a document, a filing, a named person on the record, or a published commentary of state media or an industry body. An open number is a press report citing unnamed people, a research firm's count, or captions and machine transcripts nobody has checked by ear. English in round brackets after Chinese is our rendering, not an official translation.
+@note How to read it. Words between quotation marks are a source's exact words, found in the saved copy by a script. A filled reference number is a document, a filing, a named person on the record, a published commentary, report or statement of state media, an industry body or a research institute, an institution's own notice, or a named outlet's account of a document. An open number is a press report citing unnamed people, a research firm's or research group's count, or captions and machine transcripts nobody has checked by ear. English in round brackets after Chinese is our rendering, not an official translation.
 @note The author's interest. Anthropic has argued in public for controls on chip exports to China (that is from the model's general knowledge; no saved page is cited for it), so judge this piece by its sources.
 
 ## Pressure, and no published rule found
@@ -20,7 +20,7 @@ The Financial Times, Aug 20, 2025: in July the cyberspace regulator sent compani
 !! man-cn-ft-20250821-regulators | according to people with knowledge of the regulator's effort
 !! man-cn-ft-20250821-regulators | Lutnick told CNBC on July 15
 !! man-cn-ft-20250821-regulators | A week after his comments
-Headlines do say ban. The same paper's "China bans tech companies from buying Nvidia's AI chips", Sept 17, 2025, describes an order told to companies, by three unnamed people, not a published rule [man-cn-ft-20250917-6000d]. Reuters's "China bans foreign AI chips from state-funded data centres, sources say", Nov 5, 2025, describes guidance to new data-centre projects that took state money, by two unnamed people, not a published rule; by its sources, it was unclear whether that guidance applied nationwide or only in certain provinces [ms-bj-20251105-statefunded-standard].
+Headlines do say ban. The same paper's "China bans tech companies from buying Nvidia's AI chips", Sept 17, 2025, describes an order told to companies, by three unnamed people, not a published rule [man-cn-ft-20250917-6000d]. Its text says which chip: the cyberspace regulator "told companies, including ByteDance and Alibaba, this week to end their testing and orders of the RTX Pro 6000D" [man-cn-ft-20250917-6000d]. Reuters's "China bans foreign AI chips from state-funded data centres, sources say", Nov 5, 2025, describes guidance to new data-centre projects that took state money, by two unnamed people, not a published rule; by its sources, it was unclear whether that guidance applied nationwide or only in certain provinces [ms-bj-20251105-statefunded-standard].
 !! ms-bj-20251105-statefunded-standard | It is unclear whether the guidance applies nationwide or only to certain provinces
 !! ms-bj-20251105-statefunded-standard | 2025-11-05T16:36:20
 !! ms-bj-20251105-statefunded-standard | two sources familiar with the matter told Reuters
@@ -65,9 +65,10 @@ Notices published on Dec 26, 2023 require Party and government bodies at townshi
 !! cn-policy-server-procurement-2023 | 其他单位可不在采购需求中提出此项要求
 No published national plan found sets a home-made share for computing centres: every such share found is a province's or a city's, and the national computing-network opinions of December 2023 set none [cn-policy-computing-network-1779].
 !! cn-policy-computing-network-1779 | 算力网关键核心技术基本实现安全可靠
-Two national texts hold a home-made percentage of other kinds: the 20% taken off the bid price of home-made products, for comparing bids, in a government purchase where home-made and other products compete [cn-policy-domestic-product-standard-2025], and an advisory committee's roadmap of October 2015, which expected home-made high-performance computers and servers to exceed 80% of the home market by 2025 [cn-policy-roadmap-original].
+Two national texts hold a home-made percentage of other kinds: the 20% taken off the bid price of home-made products, for comparing bids, in a government purchase where home-made and other products compete, a product counting as home-made by where it is made, not by who owns its maker, so that state, private and foreign-funded firms "平等享受对本国产品的政府采购支持政策" (enjoy the purchasing support for home-made products equally) [cn-policy-domestic-product-standard-2025], and an advisory committee's roadmap of October 2015, which expected home-made high-performance computers and servers to exceed 80% of the home market by 2025 [cn-policy-roadmap-original].
 !! cn-policy-domestic-product-standard-2025 | 对本国产品的报价给予20%的价格扣除，用扣除后的价格参与评审
 !! cn-policy-domestic-product-standard-2025 | 政府采购活动中既有本国产品又有非本国产品参与竞争的
+!! cn-policy-domestic-product-standard-2025 | 产品应当在中国境内生产
 !! cn-policy-roadmap-original | 国家制造强国建设战略咨询委员会2015年10月
 !! cn-policy-roadmap-original | 2、2025年目标
 !! cn-policy-roadmap-original | 国产高性能计算机与服务器国际市场占有率预计达40%、国内市场占有率预计超80%

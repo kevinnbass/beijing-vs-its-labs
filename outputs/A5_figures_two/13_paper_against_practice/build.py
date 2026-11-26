@@ -134,6 +134,10 @@ def main():
     assert len(nr) == 1 and nr[0]['government'] == 'Xinjiang' and 'texts not found' in nr[0]['documents_issuers_dates'] and 'cn-ga31-cndocs-15' in nr[0]['saved_ids'].split(), nr
     assert ('cn-ga31-cndocs-15', '印发《绿色低碳的算力网建设实施方案（2025—2027年）》《自治区绿色算力中心布局方案》') in extra
     assert len(acc) == 1 and "the issuer's own account" in acc[0]['rests_on'] and 'press account' in acc[0]['rests_on'], acc
+    # round 13 (core batch 15, row B15-N12): Shandong's plan is known only from press accounts (the argument's point 3): the table's row gives
+    # the provincial daily's account and two more, Xinhua's and People's Daily Online's; the plan's own text is not held
+    sd = [r for r in p31 if r['government'] == 'Shandong']
+    assert len(sd) == 1 and sd[0]['result'] == 'share' and all(w in sd[0]['rests_on'] for w in ('the provincial daily', 'Xinhua', "People's Daily Online", 'text, number and date not reached')), sd
     who_set = f'{C.WORDS[len(share_set)]} of China’s 31 provincial-level governments'
     n_home = sum(r['term'] == 'home-made' for r in with_target); n_ctrl = sum(r['term'] == 'controllable' for r in with_target)
     assert n_home + n_ctrl == len(with_target) and n_ctrl == 1
@@ -185,7 +189,7 @@ def main():
     <p class="tagline">On paper</p>
     <h2>Targets that provincial-level governments set</h2>
     <p class="sub">Goals of {who_set}, the ones found to set a share. They do not all count the same thing: each track says what its plan counts. The hatched zone is the share asked for, from the line up; where a target is worded as over a share, the line itself falls short of it.</p>
-{target('shandong', P['shandong'], 'by 2025', 'Home-made computing in the province. Known from the provincial daily’s account of the plan; the plan’s own text is not held.')}
+{target('shandong', P['shandong'], 'by 2025', 'Home-made computing in the province. Known only from press accounts of the plan, the provincial daily’s among them; the plan’s own text is not held.')}
 {target('jiangsu', P['jiangsu'], f'by {by["jiangsu"]["year"]} ({j["mid"]}% by {by["jiangsu"]["midyear"]})', f'Home-made chips in use in newly built computing centres. The plan’s own table gives {j["mid"]} for {by["jiangsu"]["midyear"]} and {j["target"]} for {by["jiangsu"]["year"]}, and marks the line “预期性” (expected), not “约束性” (binding).')}
 {target('guangdong', P['guangdong'], 'by the end of 2025', 'Home-made computing in what is newly added, not chips alone. The wording is “力争” (strive for).')}
 {target('tianjin', P['tianjin'], 'by 2026', 'Home-made chips in use in all the city’s computing centres, not only new ones.')}
@@ -224,10 +228,10 @@ def main():
     practice = f"""
    <section class="card practice">
     <p class="tagline">In practice</p>
-    <h2>What was in use, and what was shipped</h2>
+    <h2>What was in use or bought, and what was shipped</h2>
     <p class="sub">A city government’s own description, and a research firm’s counts for the whole country.</p>
     <div class="pr">
-     <h3>In use in Shanghai, in a government body’s words {pinlink(sr)}</h3>
+     <h3>Used and bought in Shanghai, in a government body’s words {pinlink(sr)}</h3>
      <p class="lede">Shanghai’s Commission of Economy and Informatization, written reply dated Apr 30, 2025 (published Nov 10, 2025). It gives no percentage.</p>
      <div class="use">
       <div class="toward"><div class="who"><i class="sw toward"></i>Internet companies’ own clusters</div><div class="what">mainly Nvidia</div>
@@ -250,7 +254,7 @@ def main():
     </div>
     <div class="pr both">
      <h3>Shanghai is on both sides of this figure {pinlink(by['shanghai-target'])} {pinlink(sr)}</h3>
-     <p class="lede">Its plan set the goal of over {s["target"]}% home-made chips in new centres by 2025. Its commission’s reply of Apr 30, 2025 describes the clusters that internet companies run. A goal for new centres and a description of clusters in use are still two different things.</p>
+     <p class="lede">Its plan set the goal of over {s["target"]}% home-made chips in newly built intelligent-computing centres by 2025. Its commission’s reply of Apr 30, 2025 describes the clusters that internet companies run. A goal for newly built centres and a description of clusters in use are still two different things.</p>
     </div>
    </section>"""
 
@@ -263,7 +267,7 @@ def main():
    <table class="msr">
     <thead><tr><th></th><th>Who says it</th><th>What it measures</th><th>Where and when</th></tr></thead>
     <tbody>
-     <tr><td>The targets</td><td data-h="Who says it">a provincial-level government, in a plan</td><td data-h="What it measures">a goal: a share of the chips, equipment or computing in that place. Three count home-made chips (Jiangsu and Shanghai in new centres, Tianjin in all); Guangdong, Inner Mongolia and Shandong home-made computing (Guangdong in what is newly added); Zhejiang home-made computing in one sector, its information and communications industry; Sichuan home-made equipment; Hebei software and hardware called independently controllable. Jiangsu’s plan marks its own target as expected, not binding; Shandong’s is known from a newspaper’s account</td><td data-h="Where and when">one government each; goals for 2025, 2026 and 2030, and a plan that runs to 2027</td></tr>
+     <tr><td>The targets</td><td data-h="Who says it">a provincial-level government, in a plan</td><td data-h="What it measures">a goal: a share of the chips, equipment or computing in that place. Three count home-made chips (Jiangsu in newly built computing centres, Shanghai in newly built intelligent-computing centres, Tianjin in all the city’s centres); Guangdong, Inner Mongolia and Shandong home-made computing (Guangdong in what is newly added); Zhejiang home-made computing in one sector, its information and communications industry; Sichuan home-made equipment; Hebei software and hardware called independently controllable. Jiangsu’s plan marks its own target as expected, not binding; Shandong’s is known only from press accounts</td><td data-h="Where and when">one government each; goals for 2025, 2026 and 2030, and a plan that runs to 2027</td></tr>
      <tr><td>The Shanghai reply</td><td data-h="Who says it">a city government body</td><td data-h="What it measures">no number: what internet companies’ own clusters mainly run on, and what the three big telecom operators mainly buy</td><td data-h="Where and when">Shanghai; dated Apr 30, 2025 (published Nov 10, 2025)</td></tr>
      <tr><td>The research firm’s counts</td><td data-h="Who says it">IDC, as reported by Reuters</td><td data-h="What it measures">cards shipped in a period, by maker. Reuters words the first as AI accelerator cards and the second as the market for data-centre AI chips, so the two bars are not shown as one series</td><td data-h="Where and when">all of China; 2025, and January to June 2026</td></tr>
     </tbody>

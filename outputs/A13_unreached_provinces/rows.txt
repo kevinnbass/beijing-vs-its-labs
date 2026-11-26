@@ -67,7 +67,7 @@ basis: official
 doc: Two pages the first note read, on the region's own sites, and the decision that repealed what they describe. The industry department's reply to a people's-congress suggestion (the page gives May 12, 2025 as its date) describes the region's opinions on policies for building its computing hub; the AI measures of the regional government's general office, Aug 13, 2023 (number 宁政办规发〔2023〕8号), are marked repealed on the government's page. The regional government's decision 宁政规发〔2025〕5号, signed Nov 27, 2025, in the regional gazette, repealed both.
 share:
 words: The reply says: "对基础软硬件实现国产化率90%以上的数据中心，给予企业最高不超过1000万元奖励" The AI measures say: "鼓励超算、智算中心采用国产自主可控的软硬件" The decision's list of repealed documents includes "自治区人民政府办公厅关于促进全国一体化算力网络国家枢纽节点宁夏枢纽建设若干政策的意见" and the AI measures.
-english: (by the reply's account of the hub policy, a data centre whose basic software and hardware are 90% or more home-made earned its company a reward of up to 10 million yuan; the AI measures encouraged supercomputing and intelligent computing centres to use home-made, independently controllable software and hardware; the decision repealed the general office's opinions on policies for building the Ningxia hub of the national integrated computing network). A reward and an encouragement, not a target, and both now repealed. The AI measures' page says so too: "根据宁政规发〔2025〕5号文件要求，此文件已废止" (by the requirement of document 宁政规发〔2025〕5号, this document is repealed).
+english: (by the reply's account of the hub policy, it offered the company of a data centre whose basic software and hardware are 90% or more home-made a reward of up to 10 million yuan; the AI measures encouraged supercomputing and intelligent computing centres to use home-made, independently controllable software and hardware; the decision repealed the general office's opinions on policies for building the Ningxia hub of the national integrated computing network). A reward and an encouragement, not a target, and both now repealed. The AI measures' page says so too: "根据宁政规发〔2025〕5号文件要求，此文件已废止" (by the requirement of document 宁政规发〔2025〕5号, this document is repealed).
 limits: The region's hub plan for 2025 to 2027, by the general offices of the regional Party committee and government, is known only from Ningxia Daily's account on the Yinchuan city government's site, Dec 18, 2024. The account gives "智算占比达到80%以上" [cn-o39b-ningxia-hub-plan-2024-yinchuan-news] (intelligent computing 80% or more) and has none of the home-made words. The plan's text was not found.
 official: https://gxt.nx.gov.cn/zwgk/fdzdgknr/jyta_61025/rdjy/202309/t20230913_4262845.html
 ids: cn-o39-ningxia-reply-2023 cn-o39-ningxia-ai-measures-2023 cn-ga31-ningxiarepeal-2 cn-o39b-ningxia-hub-plan-2024-yinchuan-news
@@ -244,14 +244,20 @@ absent: cn-ga31-unsaved-shaanxi-aiplus-yanqitong | 16.加强多元融合算力�
 gov: Hainan
 result: other
 basis: copy
-doc: AI Plus action plan, 2026 to 2028 (number 琼府办〔2026〕6号). General Office of the Hainan Provincial People's Government. A copy, with the notice, on the policy site smartcity.team. An AI plan, not a computing plan.
+doc: AI Plus action plan, 2026 to 2028 (number 琼府办〔2026〕6号). General Office of the Hainan Provincial People's Government, signed Feb 18, 2026. Two copies, each with the notice: one on the site of the Haikou Jiangdong New Area, which gives the Hainan provincial government's site as its source (saved Nov 25, 2026), and one on the policy site smartcity.team. An AI plan, not a computing plan.
 share:
-words: The page says: "以基础要素突破为支撑点， 构建自主可控算力底座，建设高质量行业数据集"
-english: (with breakthroughs in the basic elements as the point of support, build an independently controllable computing base and build high-quality industry data sets). No number and no share; the word 国产 is not in the page. The copy marks the published text as abridged, "（此件公开发布，此文有删减）" (published openly; this text has cuts), so a clause left out of it cannot be excluded.
+words: The page says: "以基础要素突破为支撑点，构建自主可控算力底座，建设高质量行业数据集"
+english: (with breakthroughs in the basic elements as the point of support, build an independently controllable computing base and build high-quality industry data sets). No number and no share; the word 国产 is in neither copy. Both copies mark the published text as abridged, "（此件公开发布，此文有删减）" (published openly; this text has cuts), so a clause left out of it cannot be excluded.
 limits: The official page did not open when tried on Nov 23, 2026. No provincial computing plan was found in {{ALL_Hainan}} searches.
 official: https://db.hainan.gov.cn/xxgk/xzgfxwj/swszfygwj/202602/t20260225_4032261.html (did not open when tried on Nov 23, 2026)
-ids: cn-le16-hainan-ai-plus-2026-smartcity
+ids: cn-ga31-provtexts-21 cn-le16-hainan-ai-plus-2026-smartcity
+check: cn-ga31-provtexts-21 | 琼府办〔2026〕6号
+check: cn-ga31-provtexts-21 | 2026年2月18日
+check: cn-ga31-provtexts-21 | 来源: 海南省人民政府网
+check: cn-ga31-provtexts-21 | （此件公开发布，此文有删减）
 check: cn-le16-hainan-ai-plus-2026-smartcity | 琼府办〔2026〕6号
+check: cn-le16-hainan-ai-plus-2026-smartcity | （此件公开发布，此文有删减）
+absent: cn-ga31-provtexts-21 | 自主可控 | 国产, 信创, 自主化
 absent: cn-le16-hainan-ai-plus-2026-smartcity | 自主可控 | 国产, 信创, 自主化
 
 gov: Heilongjiang

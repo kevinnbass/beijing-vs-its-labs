@@ -82,11 +82,11 @@
   "y": 144
  },
  "made_from": {
-  "../../../figure/figure_data.txt": "acc8509faaa469a42c1476a740f9468ac012c71930c6e52305711bb50668e44e",
-  "../../../figure/figure_events.tsv": "7b230a83b8304247b6cbf2aff7624d79b248947dddb8869716fe750824d7179c",
-  "../../../figure/beijing_vs_labs.html": "8fe8beb6411725cae6f8c1a9800fe606e63454d415f4f428b0b4799355100643",
-  "../../../figure/template.html": "b1909a3d683f8ef5436e273316a80e6e3e4c7521dfff2533bf5fb9b733e0ca0d",
-  "../a7lib.py": "3747aa7e7059fc1a6ab67650abf70aa81210a042ddd0817961e5afbb4eeaac0a",
+  "../../../figure/figure_data.txt": "553ef6ad720abc48001b5d2c79536e49fca2ee3f2e0d0620d81746a1711cd38f",
+  "../../../figure/figure_events.tsv": "384909018e3fba650f124d65a789090a5fe2bc183ac20e4887a6c9fef003a631",
+  "../../../figure/beijing_vs_labs.html": "89c7cab5d41de2ac6940e0a269d52f9f1191308ecb976ad0e80421268f5cdf88",
+  "../../../figure/template.html": "311362a6a8ee296637956bcaad7680bfaad25b9c138ef3ede4e3d4f9e542d043",
+  "../a7lib.py": "7475eb3b5973f279fd891f5f249b053ca04b9d76dd26a0667732fd07f05dec79",
   "build.py": "380b7ed8bfaa797ae21cec48731c3dedde559877266065b7d21ff417abc49a34",
   "quotes.tsv": "1b1c85389511c2fdec6c17416d6eef16ad61dae33a0b73ac6dc5b1e062b262d4",
   "strip_animation.html": "eea5d324080b004d70ec4ee262dd2c4124e10172843de710c3fe7c668a73b3aa"

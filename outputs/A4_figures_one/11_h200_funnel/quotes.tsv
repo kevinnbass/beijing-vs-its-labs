@@ -159,3 +159,6 @@ cn-usdocs-hfac-summary-20261119	not fully reflected in the May 11, 2026, summary
 cn-usdocs-hfac-summary-20261119	For example, NVIDIA applied on December 19, 2025, to export 445,000 H200s to Tencent
 #@ table.rwa
 cn-le04-bis-ear-748	Returned without action (RWA)
+# round 13 (Nov 26, 2026): the summary's own definition of "PRC companies" (its footnote ii), quoted beside its approved count; the argument's table gives it too
+#@ table.prc
+cn-usdocs-hfac-summary-20261119	entities that are located or headquartered in, or the ultimate parent company of which is headquartered in, the People's Republic of China

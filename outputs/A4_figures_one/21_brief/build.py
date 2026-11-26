@@ -18,6 +18,8 @@ To look at a PDF: scripts/render_and_look.py on its PNG. Before the page is call
 Round 12 (Nov 26, 2026, outputs/ROUND12.md): the Hong Kong sentence says "Reuters reported that ..." in itself; limit (2) gives the
 months the state-media items were found in ({sm:found}, from a4lib.warnings()). Built after the main figure's final export of
 round 14 (atlas/core_edit/hand_out/R14_MAINFIG_FINAL.txt); the build line prints the image's sha256.
+Round 13 (Nov 26, 2026, outputs/ROUND13.md; core batch 15): limit (4) says Washington returned without action the applications for
+the share of the chips (brief.txt); built after atlas/core_edit/hand_out/R15_MAINFIG_FINAL.txt.
 """
 import hashlib, re, subprocess, sys
 from pathlib import Path
@@ -212,7 +214,9 @@ def main():
                    # round 10c (the session's ruling): the sheets are PDFs no release script rewrites; they carry the credit only
                    'not published', 'Local;',
                    # round 12: the Hong Kong sentence names its report; limit (2) gives its period
-                   '. In November 2026, about', 'items found that only warn'):
+                   '. In November 2026, about', 'items found that only warn',
+                   # round 13 (core batch 15, rows B15-056 to -058): applications were returned, not chips
+                   'returned without action 55% of the chips', 'of the chips in the applications its summary'):
         if banned in page: sys.exit(f'the page still says "{banned}"')
     words = re.sub(r'<a class="c[^>]*>\d+</a>', ' ', cols)
     words = sum(1 for w in re.sub(r'<[^>]+>', ' ', f'{title} {answer} {words}').split() if re.search(r'\w', w))   # a stray full stop is not a word

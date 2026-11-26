@@ -18,6 +18,10 @@ Round 12 (Nov 26, 2026, readers of the seventh version): the eyebrow says "share
 figures count chips shipped, and TrendForce's include chips firms develop for their own use); the chart's note names each IDC
 column's own measure (AI accelerator cards shipped in 2025; the market for data-centre AI chips in January to June 2026).
 The page's top line is the credit alone (a4lib.NOTE).
+Round 13 (Nov 26, 2026, both readers of the eighth version): the headline no longer says Nvidia's share "fell from 55% to 34%"
+(a fall from one reading to the other that neither report states, across two measures); it gives each IDC reading with its own
+measure, as the chart's note does: 55% of AI accelerator cards shipped in 2025, 34% of the market for data-centre AI chips in
+January to June 2026, and Huawei's 28% in that half year.
 Before the page or image is called done or shown: scripts/render_and_look.py on share.html and share.png.
 """
 import re, sys
@@ -241,7 +245,7 @@ def main():
  <div id="fig">
   <header>
    <p class="eyebrow">China · AI chips · shares of the market</p>
-   <h1>By IDC’s counts of AI chips shipped in China, Nvidia’s share fell from {nv25}% to {nv26}%.<br> Huawei reached {hw}%.</h1>
+   <h1>By IDC’s counts, Nvidia had {nv25}% of AI accelerator cards shipped in China in 2025, and {nv26}% of the market for data-centre AI chips in January to June 2026.<br> In that half year Huawei had {hw}%.</h1>
    <p class="deck">Counts of AI chips shipped in China in 2025 and in January to June 2026, by the research firm IDC, as reported by Reuters. The {b95}% at left is Reuters’s own description of an earlier time. It is not from the same series, so it stands apart. A second research firm, TrendForce, counts differently; its figures have a panel of their own. These are different measures, not one series.</p>
    <ul class="key">
     <li><i class="sw toward"></i><span><b>Nvidia</b></span></li>
@@ -316,7 +320,9 @@ def main():
     # round 12 (readers of the seventh version): the shares are not all of chips sold; each IDC column's own measure is named
     assert 'AI accelerator cards' in Q['y2025.total'] and 'market for data-centre AI chips' in Q['h2026.nvidia'], 'control: the two reports name their measures so'
     for banned in ('is a description, with no date', 'is the least the Chinese makers held', 'The 2025 share has two sources', 'has put it lower. Reuters',
-                   'who sold them', 'at one reading', 'not published'):
+                   'who sold them', 'at one reading', 'not published',
+                   # round 13 (both readers of the eighth): no fall from one IDC measure to the other in the headline
+                   'share fell from', 'Huawei reached'):
         assert banned not in page, f'the page still says "{banned}"'
     assert 'Nothing here is on the record' not in page and 'one series' in page
     out = HERE / 'share.html'

@@ -164,7 +164,8 @@ def main():
         ('committee', 'allowed'): (f'{n(st["Approved, not shipped"][0])} approved', 'chips in licence applications · Nvidia’s H200 and AMD’s MI325X together',
                                    f'In {st["Approved, not shipped"][1]} applications: Nvidia {n(ex["Nvidia"][0])} in {ex["Nvidia"][1]}, AMD {n(ex["AMD"][0])} in {ex["AMD"][1]}. '
                                    f'The table holds {len(lt)} applications for {n(total)} chips; each status is in the table below.'),
-        ('committee', 'out'): ('Not shipped, as of May 11, 2026', 'licence applications · their status', 'Every approved application is marked “Approved, not shipped”.'),
+        # round 13 (work list C 42): the big words say whose status it is: the approved applications of Washington's table
+        ('committee', 'out'): (f'{st["Approved, not shipped"][1]} approved applications: not shipped, as of May 11, 2026', 'licence applications · their status', 'Every approved application is marked “Approved, not shipped”.'),
     }
     for (k, lane) in show: assert lane in by[k]['lanes'], (k, lane)
     assert all(show[(r['key'], ln)][0].startswith('Reported: ') == (r['kind'] == 'press') for r in recs for ln in r['lanes']), 'a press step without "Reported", or an on-record step with it'
@@ -195,7 +196,7 @@ def main():
     <table><thead><tr><th>Status</th><th>Chips</th><th>Applications</th></tr></thead><tbody>{trs}</tbody></table>
     <p>Our sums of the table’s {len(lt)} rows; they match the committee’s own totals. Nvidia’s and AMD’s chips are added together, as in the table; a third exporter, Semsotai USA, has {n(sum(cnt(r) for r in third))} chips in {len(third)} applications, all still submitted.
     Applications returned without action hold {rwa_pct:.0f}% of the chips in the applications the summary records; they include every application above 75,000 chips ({C.WORDS[n_big]}) and every one whose ultimate location is Malaysia, Indonesia or Thailand ({n(n_abroad)} chips). The table gives no reasons.
-    The committee says the summary does not show every application in full; for example, Nvidia applied on Dec 19, 2025 “to export 445,000 H200s to Tencent”. The table’s only Tencent row of that date is for {n(cnt(t_row[0]))}, approved, and neither document says whether it is that application. If it is, counted at 445,000, the share returned would be {full_pct:.1f}%; if the 445,000 is a further application and was not returned without action, {more_pct:.1f}% (our arithmetic).</p>
+    The committee says the summary does not show every application in full; for example, Nvidia applied on Dec 19, 2025 “to export 445,000 H200s to Tencent”. The table’s only Tencent row of that date is for {n(cnt(t_row[0]))}, approved, and neither document says whether it is that application. If it is, counted at 445,000, the share in applications returned without action would be {full_pct:.1f}%; if the 445,000 is a further application and was not returned without action, {more_pct:.1f}% (our arithmetic).</p>
    </div>""")
 
     figure = f"""
@@ -235,7 +236,7 @@ def main():
     below = C.records_block(recs, 'One line for each numbered step: its date, our summary, the page\'s own words, and the source. Point at a step\'s number to read the words there.')
     page = C.page(
         title='US Licences And Shipments',
-        eyebrow='United States · licensed Nvidia chip sales to China · December 2025 to November 2026',
+        eyebrow='United States · licences for Nvidia’s and AMD’s chips, and Nvidia’s sales to China · December 2025 to November 2026',      # round 13 (work list C 40): the licence table covers AMD's chips too
         h1='Washington said in December 2025 that it would allow H200 sales, and licensed some from February 2026. By July an official said shipments had begun. In November Nvidia said they had stopped.',
         deck=f'{len(recs)} dated steps on the American side: what Washington allowed, and what officials, Nvidia and the press say went out. '
              'In April 2026 the Commerce Secretary said, as his understanding, that none had been sold; in May Reuters reported, from unnamed people, that no delivery had been made. By July an official called exports minimal. In November Nvidia gave its sales to China of licensed Hopper products for the quarter and said it was no longer shipping them. It gave no reason. '

@@ -100,8 +100,21 @@ def table_numbers():
     sea = [r for r in rows if r['location'] in ('Malaysia', 'Indonesia', 'Thailand')]
     if not sea or any(r['status'] != 'RWA' for r in sea): sys.exit('STOPPED: an application for Malaysia, Indonesia or Thailand is not marked RWA')
     if any(r['exporter'] != 'Nvidia' for r in sea): sys.exit('STOPPED: an application for Malaysia, Indonesia or Thailand is not Nvidia\'s')
+    # round 13 (both readers of the eighth version, lead 1): the summary's count is of three exporters' applications, not
+    # the two companies' alone; each exporter's sum must stand in the argument's own row "| All | 3,444,160 |"
+    by = {}
+    for r in rows: by.setdefault(r['exporter'], []).append(r)
+    third = [e for e in by if e not in ('Nvidia', 'AMD')]
+    if set(by) - set(third) != {'Nvidia', 'AMD'} or len(third) != 1: sys.exit(f'STOPPED: the table no longer names Nvidia, AMD and one third exporter: {sorted(by)}')
+    word = lambda k: NUM[k] if k < len(NUM) else str(k)
+    ex = {'NV_ALL': f"{sum(n(r) for r in by['Nvidia']):,}", 'NV_ALL_APPS': str(len(by['Nvidia'])),
+          'AMD_ALL': f"{sum(n(r) for r in by['AMD']):,}", 'AMD_APPS': word(len(by['AMD'])),
+          'THIRD_EXP': third[0], 'THIRD_CHIPS': f"{sum(n(r) for r in by[third[0]]):,}", 'THIRD_APPS': word(len(by[third[0]]))}
+    row = [l for l in (ROOT / 'research' / 'cn_chip_policy_20261120' / 'argument' / 'argument_base.txt').read_text(encoding='utf-8').splitlines() if l.startswith('| All | 3,444,160 |')]
+    want = f"Nvidia {ex['NV_ALL']} in {len(by['Nvidia'])}; AMD {ex['AMD_ALL']} in {len(by['AMD'])}; {third[0]}, a third exporter in the table, {ex['THIRD_CHIPS']} in {len(by[third[0]])}"
+    if len(row) != 1 or want not in row[0]: sys.exit(f'STOPPED: the argument\'s row of all applications does not say: {want}')
     return {'NV_APPROVED': f'{sum(n(r) for r in nv):,}', 'NV_APPS': str(len(nv)), 'RWA_CHIPS': f'{rwa:,}', 'RWA_PCT': str(round(100 * rwa / tot)),
-            'SEA_CHIPS': f'{sum(n(r) for r in sea):,}', 'SEA_APPS': NUM[len(sea)]}
+            'SEA_CHIPS': f'{sum(n(r) for r in sea):,}', 'SEA_APPS': NUM[len(sea)], **ex}
 
 
 def main():
@@ -130,7 +143,8 @@ def main():
     W2_AT = 'cnpol-x-overton-2123392702821580811 | Like there are Chinese companies that want to buy Nvidia GPUs.'
     today = datetime.now(timezone.utc)
     o = ['# The two clips, sentence by sentence',
-         f"@deck Every sentence of Palmer Luckey's {length_words(L['duration'])} and of Matt Pottinger's {length_words(P['duration'])} with Christiane Amanpour, each with a verdict and its sources.",
+         f"@deck Every sentence of Palmer Luckey's {length_words(L['duration'])} and of Matt Pottinger's {length_words(P['duration'])} with Christiane Amanpour, each part with a verdict and its sources" + (f", but for {NUM[n_left]} whose words this project leaves out." if n_left else '.'),
+         # round 13 (a reader of the eighth version, lead 3): the deck no longer promises a verdict for the parts left out
          '',
          # round 10: "Built" read as a working word to two readers of the public page; the byline stays the project's own
          # round 11 (the session's ruling, outputs/ROUND11.md): the credit keeps only "Draft by Claude, Anthropic's model." and the version's date
@@ -196,8 +210,10 @@ def main():
           '## How the two clips fit together',
           '',
           # round 10 (two readers of the public page): the two claims need not clash, and the record bears out only a narrower part of each
+          # round 13 (readers of the eighth version, leads 7, 8, 12): no claim that the two are about different chips and years; the
+          # table's approved applications at their status on May 11, 2026; Hopper glossed in the words the argument cites (Reuters)
           # round 12 (a reader of the public page): Luckey's claim in his own words (sentence L3), not the wider "kept Nvidia's chips out"
-          "Pottinger blames Jensen Huang for China's AI models. Luckey says that \"China doesn't want NVIDIA to sell GPUs to Chinese companies\" (sentence L3) [clip-luckey]. The two need not clash, for they are about different chips and years, and the record bears out only a narrower part of each: that Chinese companies used Nvidia chips, not who is to blame for their models; and that from 2024 Beijing pressed its companies to move away from Nvidia chips, not that it kept them all out. Chinese companies trained models on Nvidia chips: DeepSeek by its own technical report (sentence P4), Alibaba and ByteDance abroad by one press report (sentence P12). By Washington's own table, none of the Nvidia chips it had approved by May 11, 2026 had shipped (sentence P12). On the H200 chips at issue in 2026, Nvidia's report for the quarter to Jul 26, 2026 says shipments under the H200 licences \"account for less than 1% of Data Center revenue in our most recent quarter\" [man-ms-sec-10q-2026-07]. On its results call for the quarter ended Oct 25, 2026 it said: \"Q3 sales of licensed Hopper Data Center products to China was $2.4 billion\", and then \"we are no longer shipping licensed Hopper Data Center products to China\" [cn-o38-nvda-q3fy27-call-transcript-pdf]. It gave no reason, and it did not say how many of those chips crossed into mainland China.",
+          "Pottinger blames Jensen Huang for China's AI models. Luckey says that \"China doesn't want NVIDIA to sell GPUs to Chinese companies\" (sentence L3) [clip-luckey]. The two need not clash, and the record bears out only a narrower part of each: that Chinese companies used Nvidia chips, not who is to blame for their models; and that from 2024 Beijing pressed its companies to move away from Nvidia chips, not that it kept them all out. Chinese companies trained models on Nvidia chips: DeepSeek by its own technical report (sentence P4), Alibaba and ByteDance abroad by one press report (sentence P12). By Washington's own table, none of the Nvidia chips in the approved applications it lists, at their status on May 11, 2026, had shipped (sentence P12). On the H200 chips at issue in 2026, Nvidia's report for the quarter to Jul 26, 2026 says shipments under the H200 licences \"account for less than 1% of Data Center revenue in our most recent quarter\" [man-ms-sec-10q-2026-07]. On its results call for the quarter ended Oct 25, 2026 it said: \"Q3 sales of licensed Hopper Data Center products to China was $2.4 billion\" (Reuters, reporting the call: \"The Hopper family includes the H200\" [cn-acts-reuters-halt-20261118-relay2]), and then \"we are no longer shipping licensed Hopper Data Center products to China\" [cn-o38-nvda-q3fy27-call-transcript-pdf]. It gave no reason, and it did not say how many of those chips crossed into mainland China.",
           '!! man-ms-sec-10q-2026-07 | For the quarterly period ended July 26, 2026',
           '!! cn-o38-nvda-q3fy27-call-transcript-pdf | Q3 2027 Earnings Call',
           '',

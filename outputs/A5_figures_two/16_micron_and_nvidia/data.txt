@@ -42,7 +42,7 @@ S State Administration for Market Regulation
 Q 市场监管总局依法决定对其实施进一步调查
 E the regulator has decided to investigate it further under the law
 Q 经初步调查,英伟达公司违反《中华人民共和国反垄断法》
-E after a preliminary investigation, Nvidia violated the Anti-Monopoly Law
+E a preliminary investigation found that Nvidia violated the Anti-Monopoly Law
 D 发布时间:2025-09-15
 N 市场监管总局关于附加限制性条件批准英伟达公司收购迈络思科技有限公司股权案反垄断审查决定的公告
 N cn-policy-samr-open-original | 市场监管总局公告〔2020〕第16号
@@ -77,7 +77,7 @@ N Some Chinese tech companies have held off H20 orders because they want to see 
 
 @ nv-alibaba rec 2025-09-10 Sept_2025 cn-clips-alibaba-20f case=nvidia row=unpublished dir=away
 T Alibaba's annual report: regulator asked firms to halt purchases of "certain chips"
-L Alibaba's annual report to the US securities regulator: the cyberspace regulator "requested Chinese technology companies to halt purchases of certain chips". The sentence does not name Nvidia.
+L Alibaba's annual report to the US securities regulator: the cyberspace regulator "requested Chinese technology companies to halt purchases of certain chips". The sentence names no chip maker.
 S Alibaba, annual report on Form 20-F for the year to Mar 31, 2026
 Q In September 2025, the Cyberspace Administration of China requested Chinese technology companies to halt purchases of certain chips.
 D In September 2025, the Cyberspace Administration of China requested

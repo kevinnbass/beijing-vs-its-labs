@@ -1,9 +1,9 @@
 # Nvidia's report for the quarter to Oct 25, 2026: not filed yet
 
-@deck The quarterly report had not been filed when last looked for: the SEC's record of the company's filings, fetched at 22:16 UTC on Nov 25, 2026, lists none, nor did Nvidia's own list of its filings, fetched at 22:16 UTC on Nov 25, 2026. Nvidia's commentary and call transcript give $2.4 billion of licensed Hopper Data Center sales to China in the quarter and say the shipments have stopped, with no reason given. Its earlier reports name the Chinese government; the four call transcripts quoted here do not.
+@deck The quarterly report had not been filed when last looked for: the SEC's record of the company's filings, fetched at 22:16 UTC on Nov 25, 2026, lists none, nor did Nvidia's own list of its filings, fetched at 22:16 UTC on Nov 25, 2026. Nvidia's commentary gives $2.4 billion of Data Center Hopper shipments to China in the quarter, and its call the same sum for licensed Hopper sales; on the call it said such shipments have stopped, with no reason given. Its earlier reports name the Chinese government; the four call transcripts quoted here do not.
 
 @note Draft by Claude, Anthropic's model.
-@note Written Nov 23, 2026 (UTC); revised from Nov 23 to Nov 26, 2026. The SEC's record and Nvidia's own two lists are as read at 22:16 UTC on Nov 25, 2026. Nvidia's staff are named by office, not by name.
+@note Written Nov 23, 2026 (UTC); revised from Nov 23 to Nov 26, 2026. The SEC's record and Nvidia's own two lists are as read at 22:16 UTC on Nov 25, 2026.
 
 ## What was looked for
 
@@ -60,7 +60,7 @@ The outlook sentence in point 3 is about the next quarter, not the one reported.
 The reports Nvidia files with the SEC have said more about Beijing than its calls. The table quotes a sentence or two from the reports filed in November 2024, August and November 2025, and February, May and August 2026. The project's fuller table, tables/nvidia_wording_by_filing.tsv (109 rows, one for each sentence), holds the other reports too.
 
 | Filed | Nvidia's words on the Chinese government | Beside them, in the same report |
-| Nov 20, 2024, Form 10-Q [man-ms-nvda-2024q3-10q-58a58e] | it "may also encourage customers to purchase from our China-based competitors, or impose restrictions on the sale to certain customers of our products" | the word foreclosed is not in this report; the next report uses it of what may happen, and each report from November 2025 says Nvidia has been foreclosed (a script finds the word in each) |
+| Nov 20, 2024, Form 10-Q [man-ms-nvda-2024q3-10q-58a58e] | it "may also encourage customers to purchase from our China-based competitors, or impose restrictions on the sale to certain customers of our products" | the word foreclosed is not in this report; the next report uses it of what may happen; each report from November 2025 says "we are already effectively foreclosed from the China market by U.S. export controls" [man-ms-sec-10q-2025-10] (a script finds those words in each) |
 | Aug 27, 2025, Form 10-Q [man-ms-sec-10q-2025-07] | it "has and may continue to encourage customers to purchase from our China-based competitors, or impose restrictions on the sale to certain customers of our products"; "China's government publicly questioned whether our H20 products have built-in vulnerabilities", "discouraging customers from purchasing our products" | Nvidia "may be unable to create a competitive product for China's data center market that receives approval from the USG"; if so, it would in effect be "foreclosed from competing in China's data center computing/compute market" |
 | Nov 19, 2025, Form 10-Q [man-ms-sec-10q-2025-10] | it "has encouraged customers to purchase from our China-based competitors and restricted customers from purchasing, importing, or using our data center products, including any China-specific product designed to comply with U.S. export controls" | "we are already effectively foreclosed from the China market by U.S. export controls"; Nvidia is "unable to create and deliver a competitive product for China's data center market that receives approval from both the USG and the Chinese government" |
 | Feb 25 and May 20, 2026, Form 10-K and Form 10-Q [man-ms-sec-10k-fy2026] [man-ms-sec-10q-2026-04] | the same sentence, now with "discouraged customers from purchasing, importing, or using our data center products" where the report before had restricted; of the H200 licences, it does "not yet know whether any imports will be allowed into China" | both sentences kept |
@@ -71,6 +71,9 @@ The reports Nvidia files with the SEC have said more about Beijing than its call
 !! man-ms-sec-10k-fy2026 | government has encouraged customers to purchase from our China-based competitors and discouraged customers
 !! man-ms-sec-10q-2025-07 | In that event, we would
 !! man-ms-sec-10q-2025-10 | been foreclosed from competing in China's data center
+!! man-ms-sec-10k-fy2026 | already effectively foreclosed from the China market by U.S. export controls
+!! man-ms-sec-10q-2026-04 | already effectively foreclosed from the China market by U.S. export controls
+!! man-ms-sec-10q-2026-07 | already effectively foreclosed from the China market by U.S. export controls
 
 - **The two early rows are warnings, and both run on.** In November 2024 and August 2025 the sentence on encouraging customers to buy from China-based competitors ends with the words "or impose restrictions on the sale to certain customers of our products" [man-ms-nvda-2024q3-10q-58a58e] [man-ms-sec-10q-2025-07]. Only from November 2025 do the reports say that Beijing has restricted customers; the two reports of 2026 before August say discouraged.
 - **The same reports also say US export controls have in effect shut Nvidia out of China's data-centre market.** From November 2025: "We have effectively been foreclosed from competing in China's data center computing/compute market", and "we are already effectively foreclosed from the China market by U.S. export controls" [man-ms-sec-10q-2025-10].
@@ -78,7 +81,7 @@ The reports Nvidia files with the SEC have said more about Beijing than its call
 
 ## The stop: Nvidia gave no reason
 
-- **No reason is given.** In the transcript of the call the word China comes twice, both times in the passage quoted above; the word H200 comes not at all (a script's count). Reuters noted the same: "She did not explain why Nvidia had stopped shipping the processors or whether the halt would be permanent." [cn-acts-reuters-halt-20261118-relay2] The argument's point 19 says it too: Nvidia gave no reason. No saved document gives one, and this note gives none.
+- **No reason is given.** In the transcript of the call the word China comes twice, both times in the passage quoted above; the word H200 comes not at all (a script's count). Reuters noted the same: "She did not explain why Nvidia had stopped shipping the processors or whether the halt would be permanent." [cn-acts-reuters-halt-20261118-relay2] The argument's point 19 says it too: Nvidia gave no reason. This note gives none either.
 
 ## What the same call said about export controls
 

@@ -25,8 +25,9 @@ Nothing is written unless every check passes:
     (a planted false quotation) is rejected; quotes.tsv is written first because it is what the checker reads;
   - the reference numbers equal those printed in ARGUMENT_referenced.md;
   - each file, read back, has the rows and columns it should; no TSV field holds a tab or a line break;
-  - every copied table's sha256 equals the project's table's; rows citing a saved id that outputs/ROUND4.md section 2
-    retires are counted and named in README.txt with their replacement, not changed.
+  - every copied table's sha256 equals the project's table's; rows citing a saved id the project no longer cites (the
+    ids of tables/replaced_copies.tsv, and those of RETIRED_MORE below) are counted and named in README.txt with their
+    replacement, not changed.
 All files are UTF-8 without a byte-order mark; CSV fields are quoted where they hold a comma or a quote mark.
 """
 import csv, hashlib, io, re, subprocess, sys
@@ -43,7 +44,9 @@ LANE = {'BH': ('Beijing holds Nvidia back', 'Beijing', 'away from Nvidia'),
         'BL': ('Beijing lets Nvidia in', 'Beijing', 'toward Nvidia'),
         'CN': ('The companies reach for Nvidia', 'the companies', 'toward Nvidia'),
         'CH': ('The companies turn to home-made chips', 'the companies', 'away from Nvidia')}
-KIND = {'doc': 'a government document or an official on the record',
+# round 13 (core batch 15, row B15-043): kind doc in the words of figure_data.txt's own header, without its pointer to the
+# figure's legend; kind_doc_check() stops the build if that header no longer begins with these words
+KIND = {'doc': 'a government document, an official on the record, or published state media',
         'rec': 'a company, or a named person outside government, on the record (a filing, results, a named executive or analyst)',
         'press': 'a press report citing unnamed people'}
 # One plain line on each of the project's tables (ours, written from the table's own notes). The build stops if the
@@ -58,11 +61,11 @@ ABOUT = {
     # Round 9 (Nov 25, 2026, after voucher rounds 3 to 6): five classes now; the counts and the verbs are computed (v_only_verb, v_two_verb)
     'local_vouchers_classes.tsv': "The class of every local voucher rule of the two voucher tables by the published counting rule: {v_counted} counted, of the rules found by searches that went province by province and city by city, saved and read (not a census of every local government): {v_more} pay more for home-made computing and still pay for other computing, {v_only} {v_only_verb} for home-made computing only, {v_one} pay one rate whatever the chip and {v_two} {v_two_verb} two rates by a type of computing facility that the rule does not name; {v_not} read and not counted, each with its reason. The class looks at the counted payment only: other provisions of a counted rule that give home-made computing something more are in local_vouchers_other_provisions.tsv",
     'market_numbers.tsv': "Published market numbers (shares, shipments, market sizes), one row per number. The column family names the measure; rows of different families are different measures",
-    'nvidia_china_revenue.tsv': "Nvidia's revenue from customers in China, Hong Kong included, period by period, from its own filings: by the customer's billing location until its quarterly report for the quarter that ended Oct 26, 2025, and by the direct customer's headquarters from that report on, with earlier periods recast (column basis); not a count of chips that entered China",   # round 10b: the readers' lead L455; round 12 (C185): the quarter's end date, checked against the table in copy_tables()
+    'nvidia_china_revenue.tsv': "Nvidia's revenue from customers in China, Hong Kong included, period by period, in millions of US dollars (column value_musd), from its own filings: by the customer's billing location until its quarterly report for the quarter that ended Oct 26, 2025, and by the direct customer's headquarters from that report on, with earlier periods recast (column basis); not a count of chips that entered China",   # round 10b: the readers' lead L455; round 12 (C185): the quarter's end date, checked against the table in copy_tables()
     'nvidia_wording_by_filing.tsv': "Nvidia's own words on China, from its filings and results calls, and its executives' words and its statements as others carried them",
     'press_originals.tsv': "For each press report that an earlier version of the argument cited: whether the copy held is the publisher's own page or another outlet's",   # round 12 (C193)
     'procurement_records.tsv': "Purchase records: the telecom carriers' central purchases, awards that name Nvidia cards, and tenders that require home-made chips",
-    'provinces_31.tsv': "The 31 provincial-level governments: whether a published plan sets a share for home-made computing, each by its plan's own measure (chips, equipment, hardware and software, or computing capacity), with the document's own words where its text was read. Some rows rest on accounts of a plan rather than its text, and for one government, Xinjiang, no computing plan's text was found, though its development and reform commission, in a reply posted Jul 24, 2026, says two were issued: column result gives the finding, column rests_on what it rests on, and column l16_change, whose name is only the project's working label, what a later reading changed",   # round 10b: L452, L466; round 12 (C186)
+    'provinces_31.tsv': "The 31 provincial-level governments: whether a published plan sets a share for home-made computing, each by its plan's own measure (chips, equipment, hardware and software, or computing capacity), with the document's own words where its text was read. Some rows rest on accounts of a plan rather than its text, and for one government, Xinjiang, no computing plan's text was found, though its development and reform commission, in a reply posted Jul 24, 2026, says two were issued: column result gives the finding, column rests_on what it rests on, and column later_reading what a later reading changed",   # round 10b: L452, L466; round 12 (C186); round 13 (C37): the core renamed the column (B15-064)
     'replaced_copies.tsv': "The {all} saved pages that are no longer cited, and the copy that replaces each where one is needed: {hk} taken from the Hong Kong exchange's site and, since Nov 25, 2026, {terms} taken from idc.com and trendforce.com, whose terms bar copies made by script, so the project stopped citing them",   # round 10b: L468
     'rtx5500_notices.tsv': "Notices on the exchanges' disclosure site, Sept 14 to Nov 24, 2026, whose titles name a contract, a purchase or computing: {rtx_all} notices, {rtx_card} of which name a card PRO 5500, two of them as Nvidia's RTX PRO 5500",   # round 12 (C189): counted in copy_tables(); Youzu's notice names no maker (the argument, point 7)
     'state_media_items.tsv': "State and Party media items on Nvidia and its chips, July 2025 to November 2026, each with its stance",
@@ -76,13 +79,13 @@ ABOUT = {
     'procurement_notices_sweep.tsv': "Sixty-one more purchase notices and filings on AI servers and cards, 2024 to November 2026, found by later searches and kept apart from the purchase records: how each names Nvidia, what it says on imports, and whether it requires or refuses Nvidia hardware by name",
     'other_listed_buyers.tsv': "Other listed companies that in 2026 disclosed, or put out a tender for, a purchase or lease of servers with Nvidia chips, or a purchase of computing servers that was not completed",
     'purchase_notices_2024_2025.tsv': "Purchase notices of January 2024 to June 2025, the window a search of Nov 25, 2026 covered, that name the H20, H800, A800, L20 or Nvidia; one row is a company's filing and one a scanned page read by eye",
-    'computing_centre_plans.tsv': "Plans, filings, bond disclosures and tenders for computing centres in mainland China that name Nvidia chips or, for comparison, home-made ones, each marked as an official page or a press account",
+    'computing_centre_plans.tsv': "Plans, filings, bond disclosures and tenders for computing centres in mainland China that name Nvidia chips or, for comparison, home-made ones, each marked as an official page or a press account. Column chip_words gives the page's own words on the chips (each cell checked against its saved copy by script); number, the size the page states, in the page's own unit (cards, servers or nodes, or computing power in P or PFLOPS), or that it gives none; state_linked_or_private, only what the page itself shows, and \"not stated\" otherwise",   # round 13 (C219): the table's first line, and number_check() on the column's cells
     'import_lists_read.tsv': "China's published lists of goods whose import needs a licence or is banned, 2024 to 2026, each searched whole for computers, computer parts and chips, with the control that shows the search could find them",
     'customs_and_tariff_texts_read.tsv': "The pages a search read for a rule on importing a graphics processor, an AI accelerator or a server (114 of them whole when it ran, 17 saved and read afterwards): China's customs and tariff announcements of January 2024 to November 2026 and what was read beside them, each with counts of chip words, customs numbers and words for licences, inspections and holds",
     'provincial_ict_plans.tsv': "The provincial communications administrations' five-year plans for their sector, searched as a class for a home-made share of computing, chips or equipment: 30 units other than Zhejiang, with what could be read for each and the control that shows the search could find a share",
-    'wuhan_university_result_notices.tsv': "Result notices of purchases by filed bidding that Wuhan University's procurement centre published on its own site, June 2025 to November 2026, picked by titles on graphics cards, GPUs, servers and AI computing: 81 notices, each with its date, its price, and the Nvidia words and home-made words found on the page",
+    'wuhan_university_result_notices.tsv': "Result notices (成交结果公告) of purchases by filed bidding (备案竞价) that Wuhan University's procurement centre published on its own site, June 2025 to November 2026, picked by titles on graphics cards, GPUs, servers and AI computing: 81 notices, each with its date, the price of the award, and the Nvidia words and home-made words found on the page",   # round 13 (C223): the two terms as the table's first line gives them
     'xi_items_database_check.tsv': "A test of how complete People's Daily Online's database of Xi Jinping's speeches and activities is: 156 items of 2023 to November 2026 taken from Xinhua's lists and Qiushi's contents for their words on chips, computing power, AI, American firms or curbs, each looked for in the database, with the verdict and how it was reached",
-    'largest_records_naming_no_chip.tsv': "The ten largest award or candidate records of the procurement table that name no chip, with the rule that picked them, the routes tried for the chip and what the saved pages say, as it stood on Nov 24, 2026",
+    'largest_records_naming_no_chip.tsv': "The ten largest award or candidate records of the purchase records table (procurement_records.tsv) that name no chip, with the rule that picked them, the routes tried to find the chip (saved pages read again, and web searches) and what the saved pages say, as it stood on Nov 24, 2026",   # round 13 (C217, C220): the table's own first line
     'results_calls_word_census.tsv': "How many of 61 results-call transcripts of eight Chinese companies, February 2025 to November 2026, hold each of 20 words or word patterns (Nvidia, Huawei, H20, domestic chips, the Cyberspace Administration, customs and others), with the control word",
     'spokespeople_answers_census.tsv': "Every answer found in which a Chinese government spokesperson was asked about Nvidia chips, about American chips or about the sale of chips to China, December 2024 to September 2026, counted by one written rule: for the foreign ministry every regular press conference searched and the matching pages read twice, for the commerce ministry its regular briefings read and a search for its written answers, which is not a census",
     'state_media_baseline_2024_2025h1.tsv': "A baseline for the state-media table: state and Party media items on Nvidia chips, January 2024 to June 2025, by the same rule; gathered by other routes, not a census, and not counted in that table. {bl_group} of its rows are from papers of the People's Daily group that the state-media table never holds (their notes begin GROUP-PAPER), so a comparison with that table counts the other {bl_other}",   # round 10b: L456; counted in copy_tables()
@@ -159,8 +162,11 @@ def data_lines(text):
     return com, body[0], body[1:]
 
 
-# Saved ids that outputs/ROUND4.md section 2 says must no longer be cited, beyond the 20 of
-# loose_ends/hkexnews_saved_ids.tsv (whose replacements are read from tables/replaced_copies.tsv): old id -> new id.
+# Saved ids the project stopped citing on Nov 23, 2026, beyond those of loose_ends/hkexnews_saved_ids.tsv and
+# loose_ends/terms_saved_ids.tsv (whose replacements are read from tables/replaced_copies.tsv): a copy that held an
+# anti-bot page instead of the prospectus; a copy that held the Chinese annual report under the English report's id; and
+# five sources of the figure that it now cites in another copy (FIGURE_RESOURCED: the evaluation centre's own page in
+# place of a trade site's copy, Tencent's call itself in place of a relay of it, among them). Old id -> new id.
 RETIRED_MORE = {
     'cn-le08-moore-final-prospectus': 'cn-le08-moore-final-prospectus-cninfo',
     'cn-le29-sensetime-2025-annual-en': 'cn-le29-sensetime-2025-annual-en-tcurl',
@@ -178,8 +184,9 @@ def copy_tables(num):
     """Copy the project's plain tables into tables/ here, byte for byte (round 4: the copies must equal the project's
     tables, checked by sha256 after writing). Nothing in a copy is changed. What a reader needs to know about a table's
     rows is reported in README.txt instead, computed here:
-      - rows (not the makers' "#" note lines) that cite a saved id outputs/ROUND4.md section 2 retires, with the id
-        that replaces it (replaced_copies.tsv itself is the list of old and new ids and is not counted);
+      - rows (not the makers' "#" note lines) that cite a saved id the project no longer cites (replaced_copies.tsv
+        and RETIRED_MORE), with the id that replaces it (replaced_copies.tsv itself is the list of old and new ids and
+        is not counted);
       - press_originals.tsv, column "ref", and us_officials_statements.tsv, column "argument_cites": both describe an
         earlier build of the argument; how many rows differ from the present reference numbers is counted.
     Returns a list of dicts for the README."""
@@ -235,6 +242,12 @@ def copy_tables(num):
     _q = [r for r in nrows if r[nh_.index('period_end')] == '2025-10-26' and r[nh_.index('basis')] == 'headquarters' and r[0].startswith('Q3')]
     if not _bill or max(_bill) >= '2025-10-26' or not _q:
         stop('nvidia_china_revenue.tsv: the change of basis is not at the quarter that ended Oct 26, 2025, as its line in ABOUT says')
+    # round 13 (Nov 26, 2026; the readers' lead C219): the line on computing_centre_plans.tsv says each cell of column number
+    # gives the page's own unit or says that it gives none; stop if a cell does neither (the line would then be wrong)
+    _, ch_, crows = data_lines((src / 'computing_centre_plans.tsv').read_text(encoding='utf-8'))
+    _nb = [r[ch_.index('number')] for r in crows
+           if not re.search(r'card|server|node|set|\dP\b|PFLOPS|no count|not stated', r[ch_.index('number')])]
+    if _nb: stop(f'computing_centre_plans.tsv: {len(_nb)} cell(s) of column number name no unit and do not say there is none: {_nb[:3]}; reword its line in ABOUT')
     for o, n in RETIRED_MORE.items(): retired.setdefault(o, n)
     if len(retired) != len(listed | set(RETIRED_MORE)): stop('the ids no longer cited do not add up')
     for n in set(retired.values()) - {''}:
@@ -292,7 +305,16 @@ def copy_tables(num):
     return out
 
 
+def kind_doc_check():
+    """Round 13 (core batch 15, row B15-043): figure_data.txt's own header says what kind doc covers; README.txt and the
+    column kind_meaning print KIND['doc'], so stop if that header no longer begins with those words."""
+    head = [ln for ln in (PROJ / 'figure' / 'figure_data.txt').read_text(encoding='utf-8').splitlines() if ln.startswith('# KIND: doc')]
+    if len(head) != 1 or not re.sub(r'^# KIND: doc\s+', '', head[0]).startswith(KIND['doc']):
+        stop(f'figure_data.txt\'s header for kind doc ({head[:1]}) does not begin with KIND["doc"] here ({KIND["doc"]!r}): take its words')
+
+
 def main():
+    kind_doc_check()
     blocks = read_blocks()
     with open(PROJ / 'figure' / 'figure_events.tsv', encoding='utf-8', newline='') as fh:
         events = list(csv.DictReader(fh, delimiter='\t'))
@@ -400,6 +422,9 @@ def main():
     c_ref = Counter(r['kind'] for r in ref_rows)
     n_cn = sum(1 for r in rows if r['our_english']); n_approx = sum(1 for r in rows if r['date_exact'] == 'no')
     n_noaddr = sum(1 for r in ref_rows if not r['address'])
+    # round 13 (C216): say the count in words ("(0 source)" read as a code)
+    noaddr_words = ('; every source has one' if n_noaddr == 0 else
+                    f'; empty for the {n_noaddr} source{"s" if n_noaddr > 1 else ""} that give{"s" if n_noaddr == 1 else ""} none, for the reason in the label')
     n_extra = sum(1 for ln in (PROJ / 'figure' / 'figure_data.txt').read_text(encoding='utf-8').splitlines() if ln.startswith('! '))
     fixed.sort()
     if not fixed: n_note = ''
@@ -447,7 +472,7 @@ COLUMNS OF records.csv AND records.tsv
   our_english    our English for Chinese source words. Ours, not an official translation. Empty where the
                  source words are English ({n_cn} records have it)
   address        where the page is, or was, on the web
-  saved_id       the name of the saved copy (research/primary/<saved_id>)
+  saved_id       the id of the saved copy{B.SAVED_ID_WHERE}
 
 COLUMNS OF references.csv
   number         the reference number in ARGUMENT_referenced.md, 1 to {len(ref_rows)}
@@ -457,8 +482,8 @@ COLUMNS OF references.csv
   on_the_record  yes for {", ".join(solid_used)}; no for {", ".join(open_used)}
   label          what the source is, as the argument's reference list words it
   page_title     the saved page's own title, where the record holds one
-  address        the address; empty where none is given, for the reason in the label ({n_noaddr} source)
-  saved_id       the name of the saved copy. An id that begins "clip-" is not a folder ({", ".join(clip_ids) or "none here"}): it
+  address        the address{noaddr_words}
+  saved_id       the id of the saved copy{B.SAVED_ID_WHERE}. An id that begins "clip-" is not a saved page ({", ".join(clip_ids) or "none here"}): it
                  stands for a machine transcript in transcripts_two_clips.md, which nobody has checked by ear
 
 COUNTS (taken from the files by build.py, not typed)
@@ -487,7 +512,8 @@ READ WITH CARE
   {n_cn} records quote Chinese texts ({cn_note}); the English beside them is ours.
   Not in these files: the {n_extra} further checked lines of the figure's data file, most of them the quotations
   behind the numbers in the figure's panels (they are in
-  figure/figure_data.txt, on the lines that begin with "!"), and the reference lists of the two tier files.
+  figure/figure_data.txt, on the lines that begin with "!"), and the reference lists of the two tier files,
+  OFFICIAL_RECORD.md and TIER2_REPORTING.md.
 
 PLAIN TABLES (tables/)
   These {len(tabs)} tables were made from Nov 23 to Nov 25, 2026 by the AI agents that did the project's research, each from

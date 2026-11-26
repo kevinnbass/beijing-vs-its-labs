@@ -1,5 +1,5 @@
 # Data for the map page "Places the sources name for Nvidia chips" (build.py in this folder reads this file).
-# One block per record (one thing a saved page says about one named place):
+# One block per record (what one saved page says about the place or places it names; each anchor in its G line is one mark):
 #   @ NUMBER GROUP KIND STATUS DIRECTION DATE SAVED-ID
 #   P  the place as shown (its name in the list and in the tooltip)
 #   W  the date as shown (the date of the act where the page states it, otherwise of the report)
@@ -24,7 +24,7 @@
 #       rec   a named company on the record, as the outlet cited reports it
 #       press a press report citing unnamed people
 # STATUS: there (drawn as a circle) | plan (drawn as a diamond)
-# DIRECTION: away (orange: a source's report that chips are stored in Hong Kong awaiting shipment to China) | toward (blue: companies reaching for Nvidia chips) | us (grey: the United States government's own count)
+# DIRECTION: away (orange: Reuters's report, by two people it did not name, that chips "are stored in Hong Kong awaiting shipment to China") | toward (blue: companies reaching for Nvidia chips) | us (grey: the United States government's own count)
 #   F  optional, "F anchors": the map's frame takes in only this record's marks, not the whole of the areas it names
 # Some saved pages hold invisible characters between words. build.py checks each line with those characters removed and
 # writes quotes.tsv in the pieces that scripts/cn_has.py can find.

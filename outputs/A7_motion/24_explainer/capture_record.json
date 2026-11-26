@@ -1,7 +1,7 @@
 {
- "captured_utc": "2026-11-26T05:39:12Z",
+ "captured_utc": "2026-11-26T09:56:24Z",
  "page": "explainer.html",
- "page_sha256": "b52a3e19230e8b8070c1a1e7182e88570adbe826b42b4d0bf273a3cd7c541472",
+ "page_sha256": "2f417406d0f4fdc4cd8829f2639f3319cb98b07c8e91ba06e9ad9da6e44037f4",
  "mp4": "explainer.mp4",
  "mp4_sha256": "b3b599bc6a4b8872ae4e61a0845744d59feb24ff116ed2f912d8e0c42dbfae86",
  "frames": 7218,
@@ -24,20 +24,20 @@
   ]
  },
  "made_from": {
-  "../../../figure/figure_data.txt": "acc8509faaa469a42c1476a740f9468ac012c71930c6e52305711bb50668e44e",
-  "../../../figure/figure_events.tsv": "7b230a83b8304247b6cbf2aff7624d79b248947dddb8869716fe750824d7179c",
-  "../../../figure/beijing_vs_labs.html": "8fe8beb6411725cae6f8c1a9800fe606e63454d415f4f428b0b4799355100643",
-  "../../../figure/template.html": "b1909a3d683f8ef5436e273316a80e6e3e4c7521dfff2533bf5fb9b733e0ca0d",
-  "../../../ARGUMENT_referenced.md": "c9eeda20f7c463bfe9ebe3db5576e1c622ab9989918b7d9310b09968a9e7fc18",
+  "../../../figure/figure_data.txt": "553ef6ad720abc48001b5d2c79536e49fca2ee3f2e0d0620d81746a1711cd38f",
+  "../../../figure/figure_events.tsv": "384909018e3fba650f124d65a789090a5fe2bc183ac20e4887a6c9fef003a631",
+  "../../../figure/beijing_vs_labs.html": "89c7cab5d41de2ac6940e0a269d52f9f1191308ecb976ad0e80421268f5cdf88",
+  "../../../figure/template.html": "311362a6a8ee296637956bcaad7680bfaad25b9c138ef3ede4e3d4f9e542d043",
+  "../../../ARGUMENT_referenced.md": "9f1bd4974415fb21259955f6d61f80f3491bb4437fe62156d1facc0f53599d00",
   "../../../tables/house_licence_table.tsv": "bd06920e873e9cf93a82190ee40374c699ced2cde9a2cf6c927ac0c59813f78b",
   "../../../tables/state_media_items.tsv": "38a52f5854e001b3ab075c51a3d2091c88aaf25c00f6116b47091ec8a5b75a3e",
-  "../a7lib.py": "3747aa7e7059fc1a6ab67650abf70aa81210a042ddd0817961e5afbb4eeaac0a",
+  "../a7lib.py": "7475eb3b5973f279fd891f5f249b053ca04b9d76dd26a0667732fd07f05dec79",
   "build.py": "cb706ed057b49c883347e3f085cf3befd1957aa3af3e4e74434aee6eefd89566",
   "captions_base.txt": "9156025d5e0e72ade943c360fc02f1aa3198c5c559051f418b2bd669e6b927fb",
-  "extra_refs.tsv": "e18e34821716c7412a2cea37a7e078aa947332630f697403f45065dce9634ac2",
-  "captions.md": "d3b2bd9e9287036a685d80b68f29012e025fed72816a0dea82e5099761eb3c22",
+  "extra_refs.tsv": "b164c58b3b7a9db144b27cae555547ebd2f7910d8c243080ce455f9f50f96d80",
+  "captions.md": "b6246b8afad3c97ed2c45bf662379985c616de0cdbde74cf9b476dec040667d6",
   "chapters.tsv": "d09acb28dd085fe6d3218147b8eb1e95d863df09dd39e150c5aff2c5024677b5",
   "quotes.tsv": "a8a0f38023e575ab62168e91a23837bae6c436c1c9365a0b86215ec9e772a70d",
-  "explainer.html": "b52a3e19230e8b8070c1a1e7182e88570adbe826b42b4d0bf273a3cd7c541472"
+  "explainer.html": "2f417406d0f4fdc4cd8829f2639f3319cb98b07c8e91ba06e9ad9da6e44037f4"
  }
 }

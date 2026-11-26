@@ -348,7 +348,8 @@ def main():
     n_read = len(by['reward']) + len(by['other']) + len(by['earlier'])
     for k, v in ictg.items(): fill[f'ICT_{k}'] = num(len(v)); fill[f'ICT_{k}_U'] = ', '.join(v)
     fill.update({'N_GOVFORM': num(len(gov_form)), 'GOVFORM_REQS': ', '.join(gov_form), 'N_READ': num(n_read), 'N_other': num(len(by['other'])),
-                 'N_ARCH_WD_cap': num(st.count('withdrawn'), True), 'N_LEFT_cap': num(len(left), True), 'N_NOTHELD_cap': num(len(notheld), True)})
+                 'N_ARCH_WD_cap': num(st.count('withdrawn'), True), 'N_LEFT_cap': num(len(left), True), 'N_NOTHELD_cap': num(len(notheld), True),
+                 'N_HELD_cap': num(len(left) - len(notheld), True)})      # round 13 (Nov 26, 2026): the held pages are counted, not "most"
     fill.update({'N31_share': num(c31['share']), 'N31_share_cap': num(c31['share'], True), 'N31_plan': c31['plan_no_share'], 'N31_account': num(c31['account_only']),
                  'N31_notfound': num(c31['not_reached']), 'N_other_cap': num(len(by['other']), True), 'U_other': ', '.join(by['other']),
                  'N_REQ': len(logl), 'N_SEARCH': n_search, 'N_SAVE': n_save, 'N_ARCH': n_arch, 'N_ARCH_ASK': num(n_ask), 'N_ARCH_GET': num(n_get), 'N_ARCH_NONE': num(st.count('none')), 'N_ARCH_CAP': num(st.count('capture')),
@@ -381,17 +382,19 @@ def main():
         if re.search(r'https?://', line): stop(f"{r['gov']}: an address inside a table cell; it cannot wrap there")
         tgt = trow2 if r.get('table') == '2' else trow
         tgt.append(line); tgt.extend(f'!! {c[0]} | {c[1]}' for c in r['check'])
-        tsv.append('\t'.join([r.get('table', '1'), r['gov'], r['result'], r['doc'], r.get('share') or {'account': 'no target share for home-made hardware in either account', 'notfound': 'no computing plan found; no target share for home-made hardware in the pages cited'}.get(r['result'], 'no target share for home-made hardware in the page read'), ' '.join(x for x in (r['words'], r['plain']) if x),
+        tsv.append('\t'.join([r.get('table', '1'), r['gov'], r['result'], r['doc'], r.get('share') or {'account': 'no target share for home-made hardware in either account', 'notfound': "no computing plan's text found; no target share for home-made hardware in the pages cited"}.get(r['result'], 'no target share for home-made hardware in the page read'), ' '.join(x for x in (r['words'], r['plain']) if x),
                               ' '.join(x for x in (r['english'], r['limits']) if x), BASIS[r['basis']], r['official'], ' '.join(ids)]))
     jx = next(r for r in rows if r['gov'] == 'Jiangxi')      # round 11: Jiangxi's measures rest on the Jingdezhen city copy's capture, so its label is not the one-page label
     if jx['basis'] != 'wayback_city' or 'cn-ga31-unsaved-jiangxi-measures-2025-jdz-wayback' not in jx['ids'] or 'Jingdezhen' not in jx['doc']: stop('Jiangxi: the row must name the city copy and carry the two-capture label')
     if any(r['basis'] == 'wayback_city' for r in rows if r['gov'] != 'Jiangxi'): stop('control: the two-capture label stands on a row it does not describe')
     (HERE / 'table.tsv').write_text('\n'.join(tsv) + '\n', encoding='utf-8')
     fill['TABLE'] = '\n'.join(trow); fill['TABLE2'] = '\n'.join(trow2)
-    fill['CHECK_LINE'] = (f'Saved pages: {len(quotes)} strings checked, {len(quotes)} found, 0 not found ({n_dam} of them against our typed reading of page images); two planted false strings were rejected. '
-                          f'Words not in a page: {n_ab} checks, each with a control word found. Second copy of Jiangxi\'s capture: {len(cap_q)} strings checked, all found; a planted false string was rejected. '
+    # round 13 (Nov 26, 2026): the tests are worded as the shared builders' closing line now words its own ("a made-up quotation, put in as a test, was not found"),
+    # and Xinjiang's class as the argument gives it (no computing plan's text found; the planner says two were issued)
+    fill['CHECK_LINE'] = (f'Saved pages: {len(quotes)} strings checked, {len(quotes)} found, 0 not found ({n_dam} of them against our typed reading of page images); two made-up strings, put in as a test, were not found. '
+                          f'Words not in a page: {n_ab} checks, each with a control word found. Second copy of Jiangxi\'s capture: {len(cap_q)} strings checked, all found; a made-up string, put in as a test, was not found. '
                           f'Home-made words near a percent sign: {sum(got.values())} places in {len(got)} of {len(scan)} pages scanned, each read. All 31, from the project\'s table: '
-                          f'{c31["share"]} share, {c31["plan_no_share"]} plan read without a share, {c31["account_only"]} account only, {c31["not_reached"]} no plan found.')
+                          f'{c31["share"]} share, {c31["plan_no_share"]} plan read without a share, {c31["account_only"]} account only, {c31["not_reached"]} no plan text found.')
     cited = list(dict.fromkeys(i for r in rows for i in r.get('ids', '').split()))
     (HERE / 'extra_refs.tsv').write_text('# id <TAB> kind <TAB> label <TAB> address (empty = the address in the saved copy\'s record). Written by build.py. Ids the argument\'s references file holds keep its label and are not here.\n' +
                                          ''.join(f'{i}\t{REFS[i][0]}\t{REFS[i][1]}\t{json.loads((PRIMARY / i / "meta.json").read_text()).get("url", "") if i.startswith("man-") else ""}\n'

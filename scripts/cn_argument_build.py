@@ -39,14 +39,15 @@ CITE = re.compile(r'\[((?:cn|ms|man|cnpol|clip)-[A-Za-z0-9-]+)\]')
 QUOTE = re.compile(r'"([^"]+)"')
 KIND = {'DOC': 'Chinese state document', 'OFF': 'Official document, or an official on the record', 'FIL': 'Company filing or statement',
         'REC': 'Press report of words spoken on the record', 'PRESS': 'Press report citing unnamed people',
-        'COUNT': "Research firm's or broker's count", 'CLIP': 'Caption track or machine transcript, not checked by ear',
-        'PUB': 'Published commentary or statement (state media, industry body)',
+        'COUNT': "Research firm's, broker's or research group's count", 'CLIP': 'Caption track or machine transcript, not checked by ear',
+        'PUB': 'Published commentary, report or statement (state media, industry body, research institute)',
         'NAMED': 'Named person on the record',      # added Nov 23, 2026 for a named analyst's written testimony
         'ACCT': "A named outlet's account of a document, filing or official act",
         'NOTICE': "An institution's own published notice"}      # a university's purchase notice (no saved page calls the two universities state bodies)
 SOLID = {'DOC', 'OFF', 'FIL', 'REC', 'PUB', 'NAMED', 'ACCT', 'NOTICE'}
 
 
+SAVED_NOTE = True      # (b15, item 1d) the argument's reference list says where a reader finds a saved copy by its id; cn_doc_build.py turns it off (its notes cite ids the public sources.csv does not list)
 LINK_FILES = True      # cn_doc_build.py turns this off: its outputs sit in other folders, where these relative links would not open
 
 
@@ -208,7 +209,7 @@ def to_md(bl, num, refs, tail):
             o.extend('| ' + ' | '.join(md_inline(c, num) for c in r) + ' |' for r in v[1:]); o.append('')
     if refs is not None:
         o.append('## References\n')
-        o.append('Each entry: its kind; what it is; the saved page\'s own title where the record holds one; the address; the id of the saved copy.\n')
+        o.append('Each entry: its kind; what it is; the saved page\'s own title where the record holds one; the address; the id of the saved copy' + (SAVED_ID_WHERE if SAVED_NOTE else '') + '.\n')
         for sid, n in sorted(num.items(), key=lambda x: x[1]):
             r = refs[sid]; t = title_of(sid) if not sid.startswith('clip-') else ''; a = address(sid, r)
             line = f'[{n}] {KIND[r["kind"]]}. {r["label"]}.'
@@ -218,6 +219,9 @@ def to_md(bl, num, refs, tail):
             o.append(line + '\n')
         o.append(tail + '\n')
     return '\n'.join(o)
+
+
+SAVED_ID_WHERE = ' (the public repository\'s sources.csv lists every id, with the page\'s address, the time it was saved and the sha256 of the saved file)'
 
 
 def h_inline(s, num, refs):
@@ -316,8 +320,8 @@ def to_html(bl, num, refs, tail, title, eyebrow, figure):
         if head_done: return
         head_done = True
         if refs is not None:
-            o.append('<ul class="key"><li><a class="c solid">1</a> a filled number: a document, a filing, a named person on the record, or a published commentary of state media or an industry body</li>'
-                     '<li><a class="c open">2</a> an open number: a press report citing unnamed people, a research firm\'s count, or captions and machine transcripts nobody has checked by ear</li></ul>')
+            o.append('<ul class="key"><li><a class="c solid">1</a> a filled number: a document, a filing, a named person on the record, a published commentary, report or statement of state media, an industry body or a research institute, an institution\'s own notice, or a named outlet\'s account of a document</li>'
+                     '<li><a class="c open">2</a> an open number: a press report citing unnamed people, a research firm\'s or research group\'s count, or captions and machine transcripts nobody has checked by ear</li></ul>')
         o.append('</div>')
         if figure: o.append(figure)
         o.append('<div class="col' + ('' if refs is not None else ' grp') + '">')
@@ -343,7 +347,7 @@ def to_html(bl, num, refs, tail, title, eyebrow, figure):
                 o.append('</tbody></table></div>')
     close_head()
     if refs is not None:
-        o.append('<h2 id="references">References</h2><ol class="refs">')
+        o.append('<h2 id="references">References</h2>' + (f'<p class="note">Each entry ends with the id of the saved copy{html.escape(SAVED_ID_WHERE)}.</p>' if SAVED_NOTE else '') + '<ol class="refs">')
         for sid, n in sorted(num.items(), key=lambda x: x[1]):
             r = refs[sid]; t = title_of(sid) if not sid.startswith('clip-') else ''; a = address(sid, r)
             cls = 'solid' if r['kind'] in SOLID else 'open'
@@ -373,8 +377,8 @@ def main():
     kinds = {}
     for sid in order: kinds[refs[sid]['kind']] = kinds.get(refs[sid]['kind'], 0) + 1
     solid = sum(v for k, v in kinds.items() if k in SOLID)
-    tail = (f'Build check: {nq} quotations and {nh} further statements were looked for in the saved copies of {len(order)} sources and all were found; '
-            f'a planted false quotation was rejected. {solid} sources are documents, filings or named people on the record; {len(order) - solid} are press reports citing unnamed people, counts, or captions and machine transcripts. '
+    tail = (f'Build check: {nq} quotations, and {nh} passages that back statements made without quoting, were looked for in the saved copies of {len(order)} sources and all were found; '
+            f"a made-up quotation, put in as a test, was not found. {solid} sources are documents, filings or named people on the record, or published commentaries, reports or statements of state media, industry bodies or research institutes, institutions' own notices and named outlets' accounts of documents; {len(order) - solid} are press reports citing unnamed people, counts, or captions and machine transcripts. "
             'A quotation that is found shows what the source says, not that it is true.')
     bl = blocks(lines)
     n_events = sum(1 for ln in FIGDATA.read_text(encoding='utf-8').splitlines() if ln.startswith('@ '))
@@ -394,7 +398,7 @@ def main():
         if sbad:
             print('\n'.join('short version: ' + b for b in sbad)); print('short version NOT WRITTEN'); sys.exit(1)
         snum = {sid: n for n, sid in enumerate(sorder, 1)}
-        stail = f'Build check: {snq} quotations and {snh} further statements were looked for in the saved copies of {len(sorder)} sources and all were found.'
+        stail = f'Build check: {snq} quotations, and {snh} passages that back statements made without quoting, were looked for in the saved copies of {len(sorder)} sources and all were found.'
         short_md = to_md(blocks(sl), snum, refs, stail)
         (PROJ / 'ARGUMENT_short.md').write_text(short_md, encoding='utf-8')
         (PROJ / 'ARGUMENT_short.txt').write_text(short_md, encoding='utf-8')      # the same text under a name a browser shows

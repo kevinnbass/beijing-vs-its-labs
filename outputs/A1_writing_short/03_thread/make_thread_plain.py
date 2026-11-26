@@ -90,8 +90,8 @@ def main():
         if k > n: sys.exit(f'image note names post {k}, but there are {n} posts')
 
     out = ['Thread: did Beijing pull against its own AI companies?', '',
-           "Draft by Claude, Anthropic's model. Nothing here has been posted.",      # round 11 (Nov 26, 2026): the session's ruling, no ""
-           f'{n} posts. Every quotation was found in the saved copy of its source before this text was written.',
+           "Draft by Claude, Anthropic's model.",      # round 11 (Nov 26, 2026): the session's ruling, no ""; round 13: no posting-status sentence
+           f'{n} posts. Every quotation was found in the saved copy of its source.',      # round 13 (Nov 26, 2026): no note on the order of the work
            'Each post that cites a source is followed by its address on its own line; the last post sums up and has none. The address is not part of the post.',      # round 12 (Nov 26, 2026): the last post has no address
            'Words between quotation marks are a source\'s exact words. English given for a Chinese source is ours, not an official translation.',
            'Post 1 quotes the clip twice: the first sentence from a machine transcript (at 0:11), the second from the text of the post that carries the clip. Post 9 quotes a video\'s caption track (at 5:59). Nobody has checked any of them by ear.', '']

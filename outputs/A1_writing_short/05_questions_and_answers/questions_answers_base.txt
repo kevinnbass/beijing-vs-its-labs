@@ -3,8 +3,8 @@
 
 @note Draft by Claude, Anthropic's model. Written Nov 23, 2026; revised Nov 26, 2026 (UTC).
 @note Words between quotation marks were found in the saved copy by a script. English given for Chinese sources is ours, not an official translation.
-@note Two kinds of source are kept apart; the key under this header says what a filled and an open reference number mean. No published instruction from Beijing to the companies was found. What is known of such instructions comes from company filings and from press reports, and each answer says which.
-@note The short answer: yes, Beijing's policy pulled against what its own AI companies wanted, with five limits. Questions 1, 7, 8, 9 and 10 give four of the limits; question 5 gives the fifth.
+@note Two kinds of source are kept apart; the key under this header says what a filled and an open reference number mean. No published Chinese order against buying Nvidia chips was found in the 82 policy pages read. What is known of Beijing's instructions to the companies comes from company filings and from press reports, and each answer says which.
+@note The short answer: no published ban was found, but Beijing's policy pulled against what its own AI companies wanted, with five limits. Questions 1, 7, 8, 9 and 10 give four of the limits; question 5 gives the fifth.
 
 ## The ten questions
 
@@ -70,7 +70,7 @@
 !! cn-policy-wang-nvidia | 希望包括英伟达在内的跨国公司为中国客户提供优质可靠的产品和服务
 !! man-e2596eab15f4 | NOV 13 2026
 
-10. **Was Beijing the only thing in the way?** No: American curbs and conditions stood in the way too, and the companies had reasons of their own. Nvidia's reports since November 2025 say "we are already effectively foreclosed from the China market by U.S. export controls" [man-ms-sec-10q-2025-10], and in Washington's own table of licence applications, as it stood on May 11, 2026, every approval is marked "Approved, not shipped", while 55% of the chips in the applications the summary records were in applications returned without action, with no reason given [cn-usdocs-hfac-decisions-20261119] [cn-usdocs-hfac-summary-20261119]. The companies were also turning to home-made chips: Alibaba says its "chip design subsidiary T-Head has brought proprietary GPUs into scaled production" [cn-policy-alibaba-own-gpu].
+10. **Was Beijing the only thing in the way?** No: American curbs and conditions stood in the way too, and the companies had reasons of their own. Nvidia's reports since November 2025 say "we are already effectively foreclosed from the China market by U.S. export controls" [man-ms-sec-10q-2025-10], and in Washington's own table of licence applications, as it stood on May 11, 2026, every approval is marked "Approved, not shipped", while Washington returned without action the applications for 55% of the chips its summary records, with no reason given [cn-usdocs-hfac-decisions-20261119] [cn-usdocs-hfac-summary-20261119]. The companies were also turning to home-made chips: Alibaba says its "chip design subsidiary T-Head has brought proprietary GPUs into scaled production" [cn-policy-alibaba-own-gpu].
 !! man-ms-sec-10k-fy2026 | we are already effectively foreclosed from the China market by U.S. export controls
 !! man-ms-sec-10q-2026-04 | we are already effectively foreclosed from the China market by U.S. export controls
 !! cn-usdocs-hfac-decisions-20261119 | H200 License and Equivalent Application Status as of May 11, 2026
@@ -82,7 +82,7 @@ From 2024 the planning side of the Chinese state and the industry ministry, and 
 
 ## What these answers leave out
 
-- Each answer gives one to six sources. The full argument has 21 points and 460 sources; it is the project's argument page, ARGUMENT_referenced.html.
+- Each answer gives one to six sources. The full argument has 21 points and 461 sources; it is the project's argument page, ARGUMENT_referenced.html.
 - Where the chips that Nvidia sold are now is not known.
 - The numbers in questions 4, 6 and 8 are press reports citing unnamed people. Nvidia's own words in question 8 give no number.
 - Question 2, the antitrust case. No saved page says the case has ended. By Nvidia's own account the finding is about what it held back from Chinese customers: "our compliance with applicable U.S. export controls, which required us to offer degraded products to the Chinese market, discriminated unfairly against customers in the China market" [man-ms-sec-10q-2026-07]. The answer does not say what the case shows about Beijing's wishes; that is read more than one way (question 5).

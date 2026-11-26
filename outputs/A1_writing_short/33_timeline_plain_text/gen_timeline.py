@@ -46,7 +46,8 @@ LANE = {'BH': 'Beijing holds Nvidia back', 'BL': 'Beijing lets Nvidia in', 'CN':
 FULL_DAY = re.compile(r'[A-Z][a-z]{2,4} \d{1,2}, \d{4}')
 BUILD = ROOT / 'scripts' / 'cn_doc_build.py'
 
-TIER = {'doc': 'on the record: a published document or an official',           # the figure's kind "doc"; no word here says who a body belongs to
+TIER = {'doc': 'on the record: a government document, an official, or published state media',   # the figure's kind "doc" in the words of figure_data.txt's
+                                                                                              # header since core batch 15 (row B15-043); no word here says who a body belongs to
         'rec': 'on the record: a company or a named person outside government',
         'press': 'press report citing unnamed people'}
 COLS = ['n', 'date', 'shown_as', 'lane', 'kind', 'source', 'address', 'saved_id', 'text']
@@ -100,6 +101,10 @@ def main():
             cur = {'lane': LANE[c[1]], 'code': c[1], 'kind': c[2], 'date': c[3], 'label': c[4].replace('_', ' '), 'saved_id': c[5], 'text': None, 'N': ''}; fig.append(cur)
         elif ln.startswith('T ') and cur is not None and cur['text'] is None: cur['text'] = ln[2:].strip()
         elif ln.startswith('N ') and cur is not None: cur['N'] = ln[2:].strip()      # round 8: the record's fixed number (core edit 7)
+    # round 13 (Nov 26, 2026): the tier's words follow the data file's own header for the kind "doc" (row B15-043); stop if that header changes
+    DOC_HEAD = '# KIND: doc  a government document, an official on the record, or published state media'
+    if not any(ln.startswith(DOC_HEAD) for ln in FIGDATA.read_text(encoding='utf-8').splitlines()[:20]):
+        sys.exit('figure_data.txt no longer describes the kind doc as the tier words here assume: read its header and reword TIER')
     n_fig = len(fig)
     if n_fig != len(rows): sys.exit(f'{len(rows)} rows in the table but {n_fig} records in figure_data.txt')
     key = lambda d: (d['saved_id'], d['date'], d['lane'], L.norm(d['text']))
@@ -176,7 +181,7 @@ def main():
         'A row\'s name gives that direction only: a row holds statements, filings, notices and press reports alike, and not every record in it is itself an act of holding back or letting in. '
         'It does not name the speaker; the source field does.',      # round 12 (Nov 26, 2026): what a row name says, and what it does not
         'For a press report the date is the report\'s day; what it reports can be earlier (the record of Nov 7, 2023 reports an order of August 2023).',      # round 12: checked below
-        f'Two tiers, marked at the end of each source: {on_record} records are on the record ({count["doc"]} published documents or officials, {count["rec"]} companies or named people outside government); {count["press"]} are press reports citing unnamed people.',
+        f'Two tiers, marked at the end of each source: {on_record} records are on the record ({count["doc"]} government documents, officials or published state media, {count["rec"]} companies or named people outside government); {count["press"]} are press reports citing unnamed people.',
         'By row: ' + '; '.join(f'{v}, {n}' for v, n in lanes.items()) + '.',
         f'Words between quotation marks are the source\'s own: all {n_kept} such phrases were found in the saved copy of the record\'s source.'
         + (f' In {len(off_n)} records the figure\'s line put marks round words that are not in the saved copy (our English for a Chinese word, or a summary); the marks are taken off here.' if off else ''),
@@ -207,7 +212,7 @@ def main():
     (HERE / 'timeline.txt').write_text('\n'.join(txt) + '\n', encoding='utf-8')
 
     print(f'timeline: {len(rows)} records from {EVENTS.name} (figure_data.txt holds {n_fig}); {first} to {last}')
-    print(f'tiers: {count["doc"]} published documents or officials, {count["rec"]} companies or named people on the record, {count["press"]} press reports citing unnamed people')
+    print(f'tiers: {count["doc"]} government documents, officials or published state media, {count["rec"]} companies or named people on the record, {count["press"]} press reports citing unnamed people')
     print('rows: ' + '; '.join(f'{v} {n}' for v, n in lanes.items()))
     print(f'compared with figure_data.txt: id, date, date label, row and wording equal in {len(rows)} of {len(rows)} records; ids on the do-not-cite list: 0 of {len(retired)} listed')
     print(f'record numbers: equal to the numbering of figure_data.txt in {len(rows)} of {len(rows)} (by date, Beijing\'s rows first; kept by an N line: '

@@ -4,7 +4,7 @@
 
 Draft by Claude, Anthropic's model. Written Nov 23, 2026 (UTC); revised Nov 26, 2026.
 
-How to read it. Words between quotation marks are a source's exact words, found in the saved copy by a script. A filled reference number is a document, a filing, a named person on the record, or a published commentary of state media or an industry body. An open number is a press report citing unnamed people, a research firm's count, or captions and machine transcripts nobody has checked by ear. Where a statement rests on a Chinese text, the English is our rendering, not an official translation.
+How to read it. Words between quotation marks are a source's exact words, found in the saved copy by a script. A filled reference number is a document, a filing, a named person on the record, a published commentary, report or statement of state media, an industry body or a research institute, an institution's own notice, or a named outlet's account of a document. An open number is a press report citing unnamed people, a research firm's or research group's count, or captions and machine transcripts nobody has checked by ear. Where a statement rests on a Chinese text, the English is our rendering, not an official translation.
 
 The author's interest. Anthropic has argued in public for controls on chip exports to China (that is from the model's general knowledge; no saved page is cited for it), so judge this piece by its sources.
 
@@ -36,8 +36,8 @@ For the H200, which Reuters called Nvidia's second most powerful AI chip in May 
 
 - Reported: ordered by Chinese companies for 2026 (Reuters, Dec 31, 2025): "more than 2 million H200 chips" [14].
 - Applied for in Washington by May 11, 2026: 3,444,160 chips, Nvidia's H200 and AMD's MI325X together, in the table of licence applications from the Commerce Department's Bureau of Industry and Security (BIS) that the House Foreign Affairs Committee made public on Nov 19, 2026. An application is not an order [15] [16] [17] [18].
-- Of those, licensed by Washington and not yet shipped: 879,868 (Nvidia's: 579,868). Returned without action: 1,888,950, or 55% of the chips in the applications BIS's summary records; no reason is given. The sums are ours [15] [16].
-- Reported: approved by Beijing, with conditions (Reuters, Jan 28, 2026): "more than 400,000 H200 chips in total" [19].
+- Of those, licensed by Washington and not yet shipped: 879,868 (Nvidia's: 579,868). In applications returned without action: 1,888,950, or 55% of the chips BIS's summary records; no reason is given. The sums are ours [15] [16].
+- Reported: approved by Beijing, with conditions (Reuters, Jan 28, 2026): "more than 400,000 H200 chips in total" for ByteDance, Alibaba and Tencent [19].
 - Reported: under discussion in July 2026 (The Information, through Reuters, Jul 8, 2026): "Beijing is still determining the exact number of Nvidia chips to approve, and it could amount to fewer than 200,000 in total" [20].
 - Reported: delivered by August 2026 (Financial Times, through Reuters, Aug 18, 2026): "about 10,000 H200 processors" each for ByteDance and Tencent [21].
 - Reported: stored in Hong Kong, November 2026 (Reuters, Nov 5, 2026): about 600,000 [22].
@@ -63,13 +63,13 @@ From 2024 the planning side of the Chinese state and the industry ministry, and 
 
 Each entry: its kind; what it is; the saved page's own title where the record holds one; the address; the id of the saved copy.
 
-[1] Caption track or machine transcript, not checked by ear. Palmer Luckey, in a clip of 56 seconds posted on X by @overton_news, Nov 19, 2026. Words from a machine transcript of the clip (the transcript file is held back: see HELD_BACK.md); nobody has checked them by ear. https://x.com/overton_news/status/2123392702821580811
+[1] Caption track or machine transcript, not checked by ear. Palmer Luckey, in a clip of 56 seconds posted on X by @overton_news, Nov 19, 2026. Words from a machine transcript of the clip; nobody has checked them by ear. https://x.com/overton_news/status/2123392702821580811
 
 [2] Press report of words spoken on the record. Post on X by @overton_news, Nov 19, 2026, which carries the clip of Palmer Luckey and gives his words as text. The post does not name the programme. https://x.com/overton_news/status/2123392702821580811 Saved copy: cnpol-x-overton-2123392702821580811
 
-[3] Chinese state document. Xi Jinping, speech at the forum on cybersecurity and informatization, Apr 19, 2016. Full text on the Party members' site (12371.cn). Page title: 习近平：在网络安全和信息化工作座谈会上的讲话_共产党员网. https://news.12371.cn/2016/04/25/ARTI1461578898308388.shtml Saved copy: cn-xi-20160419
+[3] Chinese state document. Xi Jinping, speech at the forum on cybersecurity and informatization, Apr 19, 2016, full text on the Party members' site (12371.cn). Page title: 习近平：在网络安全和信息化工作座谈会上的讲话_共产党员网. https://news.12371.cn/2016/04/25/ARTI1461578898308388.shtml Saved copy: cn-xi-20160419
 
-[4] Chinese state document. Jiangsu province, plan for computing infrastructure issued by four provincial bodies, with targets for 2025 and 2030. PDF on the provincial communications administration's site; the PDF carries no date of issue. https://jsca.miit.gov.cn/cms_files/filemanager/1190535345/attach/20243/814819077f4f4b898e5f57dd8f4972e9.pdf Saved copy: cn-factions-jiangsu-plan
+[4] Chinese state document. Jiangsu province, plan for computing infrastructure issued by four provincial bodies, with targets for 2025 and 2030. PDF on the provincial communications administration's site; the PDF itself carries no date; the four bodies issued it by their notice signed Apr 22, 2024 (苏通联〔2024〕7号). https://jsca.miit.gov.cn/cms_files/filemanager/1190535345/attach/20243/814819077f4f4b898e5f57dd8f4972e9.pdf Saved copy: cn-factions-jiangsu-plan
 
 [5] Official document, or an official on the record. Li Chao, of the policy research office (政研室) of the National Development and Reform Commission (the state planner), at the commission's press conference of May 22, 2026. The commission's own record; the page does not call him spokesperson. Page title: 【李超】-国家发展和改革委员会. https://www.ndrc.gov.cn/xwdt/wszb/202605xwfbh/wzsl/202605/t20260522_1405394_ext.html Saved copy: cn-policy-ndrc-chip-adaptation-2026
 
@@ -83,7 +83,7 @@ Each entry: its kind; what it is; the saved page's own title where the record ho
 
 [10] Company filing or statement. Alibaba Group, annual report on Form 20-F for the year to Mar 31, 2026, filed with the US Securities and Exchange Commission. Copy on Alibaba's investor site. https://data.alibabagroup.com/ir_filings/SEC/BABA/000119312526231755/baba-20260331.htm Saved copy: cn-clips-alibaba-20f
 
-[11] Press report citing unnamed people. Financial Times, "China turns against Nvidia’s AI chip after ‘insulting’ Howard Lutnick remarks", Aug 20, 2025 by the date on the copy (saved in a browser some hours behind London; another site's summary of it is dated Aug 21). Hand-saved from the paper's site. https://www.ft.com/content/b8e30c54-b71c-4113-8b3e-8f54bc36587d Saved copy: man-cn-ft-20250821-regulators
+[11] Press report citing unnamed people. Financial Times, "China turns against Nvidia’s AI chip after ‘insulting’ Howard Lutnick remarks", Aug 20, 2025 by the date printed on the copy (another site's summary of it is dated Aug 21). The paper's own page. https://www.ft.com/content/b8e30c54-b71c-4113-8b3e-8f54bc36587d Saved copy: man-cn-ft-20250821-regulators
 
 [12] Press report citing unnamed people. Reuters, Jan 14, 2026, as carried by Yahoo Finance. https://finance.yahoo.com/news/chinas-customs-agents-told-nvidias-065002091.html/ Saved copy: cn-acts-reuters-customs-20260114
 
@@ -99,13 +99,13 @@ Each entry: its kind; what it is; the saved page's own title where the record ho
 
 [18] Official document, or an official on the record. US Commerce Department, Bureau of Industry and Security, Export Administration Regulations part 748 (applications), on the bureau's site. Page title: EAR 748 | Bureau of Industry and Security. https://www.bis.gov/regulations/ear/748 Saved copy: cn-le04-bis-ear-748
 
-[19] Press report citing unnamed people. Reuters, Jan 28, 2026, as carried by The Standard (Hong Kong). Page title: China gives nod to ByteDance, Alibaba and Tencent to buy Nvidia's H200 chips, says sources. https://www.thestandard.com.hk/innovation/article/322910/China-gives-nod-to-ByteDance-Alibaba-and-Tencent-to-buy-Nvidias-H200-chips-says-sources Saved copy: ms-bj-20260128-h200-nod-standard
+[19] Press report citing unnamed people. Reuters, Jan 28, 2026, as carried by The Standard (Hong Kong): report, from four people it does not name, that Beijing had approved ByteDance, Alibaba and Tencent to buy Nvidia's H200 chips. Page title: China gives nod to ByteDance, Alibaba and Tencent to buy Nvidia's H200 chips, says sources. https://www.thestandard.com.hk/innovation/article/322910/China-gives-nod-to-ByteDance-Alibaba-and-Tencent-to-buy-Nvidias-H200-chips-says-sources Saved copy: ms-bj-20260128-h200-nod-standard
 
 [20] Press report citing unnamed people. Reuters, relaying The Information, as carried by AOL, Jul 8, 2026. Page title: China plans to let top AI firms buy limited Nvidia H200 chips, the Information reports - AOL. https://www.aol.ca/articles/china-plans-let-top-ai-150506000.html Saved copy: cn-acts-reuters-ti-cap-20260708-relay1
 
-[21] Press report citing unnamed people. Reuters, relaying the Financial Times, Aug 18, 2026, as carried by Investing.com. Internet Archive capture of Sept 8, 2026. https://web.archive.org/web/20260908131431/https://www.investing.com/news/stock-market-news/nvidia-h200-chips-reach-china-in-small-shipments-ft-reports-4866385 Saved copy: cn-tolerate-reutersaug26-relay1-wayback
+[21] Press report citing unnamed people. Reuters, relaying the Financial Times, Aug 18, 2026, as carried by Investing.com: report, from two people the paper does not name, that some H200 chips had been allowed into mainland China and that ByteDance and Tencent had each received about 10,000. Internet Archive capture of Sept 8, 2026. https://web.archive.org/web/20260908131431/https://www.investing.com/news/stock-market-news/nvidia-h200-chips-reach-china-in-small-shipments-ft-reports-4866385 Saved copy: cn-tolerate-reutersaug26-relay1-wayback
 
-[22] Press report citing unnamed people. Reuters, datelined Nov 5, 2026, as carried by CNA (Singapore) on Nov 6, 2026: a report, from unnamed people, on Beijing's approvals for imports of Nvidia's H200 chips. The CNA page shows only its own date; the Nov 5 dateline stands on the copy carried by Yahoo, which is also saved. https://www.channelnewsasia.com/east-asia/nvidia-chips-pile-up-hong-kong-china-withhold-import-approval-6527371 Saved copy: cn-clips-evidence-1
+[22] Press report citing unnamed people. Reuters, datelined Nov 5, 2026, as carried by CNA (Singapore) on Nov 6, 2026: a report, from unnamed people, that about 600,000 of Nvidia's H200 chips were stored in Hong Kong. The CNA page shows only its own date; the Nov 5 dateline stands on the copy carried by Yahoo, which is also saved. https://www.channelnewsasia.com/east-asia/nvidia-chips-pile-up-hong-kong-china-withhold-import-approval-6527371 Saved copy: cn-clips-evidence-1
 
 [23] Company filing or statement. Nvidia, results call for the third quarter of its fiscal year 2027 (the quarter ended Oct 25, 2026): the transcript on Nvidia's investor file host (s201.q4cdn.com). https://s201.q4cdn.com/141608511/files/content_files/NVDA-3Q27-Earnings-Transcript.pdf Saved copy: cn-o38-nvda-q3fy27-call-transcript-pdf
 
@@ -113,13 +113,13 @@ Each entry: its kind; what it is; the saved page's own title where the record ho
 
 [25] Official document, or an official on the record. Xinhua's account of Vice Premier He Lifeng's meeting with Nvidia's chief executive on Apr 17, 2025, in People's Daily of Apr 18, 2025. Page title: 何立峰会见美国英伟达公司总裁兼首席执行官黄仁勋时指出 中国始终是外资企业投资和贸易的沃土 欢迎美资企业深化互利合作 --国际--人民网. https://world.people.com.cn/n1/2025/0418/c1002-40462541.html Saved copy: cn-policy-he-welcomes
 
-[26] Press report citing unnamed people. Financial Times, "Jensen Huang’s years-long effort to get close to China", Nov 13, 2026. Hand-saved from the publisher's site; the address printed on the copy is cut short (it begins https://www.ft.com/content/3efa9733-fbb4-47c2-83ba-b01e); the full address is the one The Next Web links for this article. https://www.ft.com/content/3efa9733-fbb4-47c2-83ba-b01e548ef277 Saved copy: man-e2596eab15f4
+[26] Press report citing unnamed people. Financial Times, "Jensen Huang’s years-long effort to get close to China", Nov 13, 2026. The publisher's own page; the address printed on the copy is cut short (it begins https://www.ft.com/content/3efa9733-fbb4-47c2-83ba-b01e); the full address is the one The Next Web links for this article. https://www.ft.com/content/3efa9733-fbb4-47c2-83ba-b01e548ef277 Saved copy: man-e2596eab15f4
 
-[27] Published commentary or statement (state media, industry body). Global Times, Jul 31, 2025 (Ma Tong), news report of the summons quoting the telecom industry expert Xiang Ligang. Page title: China's cyberspace regulator summons Nvidia over potential security risks in H20 chips. https://www.globaltimes.cn/page/202507/1339752.shtml Saved copy: cn-ga02-gt-cac-summons-news-202507
+[27] Published commentary, report or statement (state media, industry body, research institute). Global Times, Jul 31, 2025 (Ma Tong), news report of the summons quoting the telecom industry expert Xiang Ligang. Page title: China's cyberspace regulator summons Nvidia over potential security risks in H20 chips. https://www.globaltimes.cn/page/202507/1339752.shtml Saved copy: cn-ga02-gt-cac-summons-news-202507
 
-[28] Published commentary or statement (state media, industry body). People's Daily's commentary account (人民日报评论), a signed piece of Aug 1, 2025, as carried by Beijing Daily's site. Page title: 人民日报评论：英伟达，让我怎么相信你？. https://xinwen.bjd.com.cn/content/s688c9a7ae4b0aabe0a046f83.html Saved copy: cn-acts-peoplesdaily-bjd-20250801
+[28] Published commentary, report or statement (state media, industry body, research institute). People's Daily's commentary account (人民日报评论), a signed piece of Aug 1, 2025, as carried by Beijing Daily's site. Page title: 人民日报评论：英伟达，让我怎么相信你？. https://xinwen.bjd.com.cn/content/s688c9a7ae4b0aabe0a046f83.html Saved copy: cn-acts-peoplesdaily-bjd-20250801
 
-[29] Published commentary or statement (state media, industry body). Science and Technology Daily, report of a forum on information security, Sept 24, 2025. The sentence relied on is the reporter's summary of what academician Shen Changxiang stressed. Page title: 第九届国家信息安全与自主可控战略高层论坛在京举行. https://www.stdaily.com/web/gdxw/2025-09/24/content_406839.html Saved copy: cn-media-stdaily-security-forum
+[29] Published commentary, report or statement (state media, industry body, research institute). Science and Technology Daily, report of a forum on information security, Sept 24, 2025. The sentence relied on is the reporter's summary of what academician Shen Changxiang stressed. Page title: 第九届国家信息安全与自主可控战略高层论坛在京举行. https://www.stdaily.com/web/gdxw/2025-09/24/content_406839.html Saved copy: cn-media-stdaily-security-forum
 
 [30] Company filing or statement. Alibaba Group, results release, Mar 19, 2026. Page title: Alibaba Reports Solid Progress in AI + Cloud on the Strength of Its Full-Stack Capabilities-Alibaba Group. https://www.alibabagroup.com/en-US/document-1971445322303406080 Saved copy: cn-policy-alibaba-own-gpu
 
@@ -127,4 +127,4 @@ Each entry: its kind; what it is; the saved page's own title where the record ho
 
 [32] Caption track or machine transcript, not checked by ear. US Trade Representative Jamieson Greer, interview on Bloomberg Television posted May 15, 2026 ("Greer: US, China Willing to Continue Trade Truce"): the video's English caption track (its maker is not stated; it is not YouTube's automatic track), not checked by ear; the words quoted are at 5:59. https://www.youtube.com/watch?v=ckzJQyMyCoE Saved copy: cn-le01-greer-bbg-20260515-subs-ttml
 
-Build check: 19 quotations and 57 further statements were looked for in the saved copies of 32 sources and all were found; a planted false quotation was rejected. 20 sources are documents, filings or named people on the record; 12 are press reports citing unnamed people, counts or machine transcripts. A quotation that is found shows what the source says, not that it is true.
+Build check: 19 quotations, and 58 passages that back statements made without quoting, were looked for in the saved copies of 32 sources and all were found; a made-up quotation, put in as a test, was not found. 20 sources are documents, filings or named people on the record, or published commentaries, reports or statements of state media, industry bodies or research institutes, institutions' own notices and named outlets' accounts of documents; 12 are press reports citing unnamed people, counts or machine transcripts. A quotation that is found shows what the source says, not that it is true.
