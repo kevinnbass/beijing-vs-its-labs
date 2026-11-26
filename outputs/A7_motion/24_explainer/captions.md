@@ -29,10 +29,10 @@ The video is explainer.mp4 in this folder. Each caption stays on screen while th
 
 **5.** **The numbers.** Nvidia's H200 chip in numbers: four separate counts at four dates, not one tally. Washington's is from a government table; the other three are press reports citing unnamed people.
 
-- Ordered by Chinese companies for 2026: "more than 2 million H200 chips". Reuters, Dec 31, 2025 [4]
+- Reported as ordered by Chinese companies for 2026: "more than 2 million H200 chips". Reuters, Dec 31, 2025 [4]
 - Licensed by Washington for Nvidia: 579,868 chips, each application "Approved, not shipped". Licence table released by a House committee, status at May 11, 2026; our sum [9]
-- Approved by Beijing, with conditions: "more than 400,000 H200 chips in total". Reuters, Jan 28, 2026 [10]
-- Waiting in Hong Kong: "About 600,000". Reuters, Nov 5, 2026 [11]
+- Reported as approved by Beijing, with conditions: "more than 400,000 H200 chips in total". Reuters, Jan 28, 2026 [10]
+- Reported as stored in Hong Kong: "About 600,000". Reuters, Nov 5, 2026 [11]
 
 **6.** **Limit 1 of 5.** Beijing was not one actor. The commerce minister told Nvidia's chief executive he hoped multinationals, Nvidia among them, would give Chinese customers high-quality, reliable products and services [12]. Reported: the commerce ministry "favoured imports" [13].
 
@@ -92,7 +92,7 @@ Each entry: its kind; what it is; the saved page's own title where the record ho
 
 [10] Press report citing unnamed people. Reuters, Jan 28, 2026, as carried by The Standard (Hong Kong). Page title: China gives nod to ByteDance, Alibaba and Tencent to buy Nvidia's H200 chips, says sources. https://www.thestandard.com.hk/innovation/article/322910/China-gives-nod-to-ByteDance-Alibaba-and-Tencent-to-buy-Nvidias-H200-chips-says-sources Saved copy: ms-bj-20260128-h200-nod-standard
 
-[11] Press report citing unnamed people. Reuters, datelined Nov 5, 2026, as carried by CNA (Singapore) on Nov 6, 2026. The CNA page shows only its own date; the Nov 5 dateline stands on the copy carried by Yahoo, which is also saved. Page title: Nvidia chips pile up in Hong Kong as China withholds import approval. https://www.channelnewsasia.com/east-asia/nvidia-chips-pile-up-hong-kong-china-withhold-import-approval-6527371 Saved copy: cn-clips-evidence-1
+[11] Press report citing unnamed people. Reuters, datelined Nov 5, 2026, as carried by CNA (Singapore) on Nov 6, 2026: a report, from unnamed people, on Beijing's approvals for imports of Nvidia's H200 chips. The CNA page shows only its own date; the Nov 5 dateline stands on the copy carried by Yahoo, which is also saved. https://www.channelnewsasia.com/east-asia/nvidia-chips-pile-up-hong-kong-china-withhold-import-approval-6527371 Saved copy: cn-clips-evidence-1
 
 [12] Official document, or an official on the record. Ministry of Commerce, account of Minister Wang Wentao's meeting with Nvidia's chief executive on Jul 17, 2025. Page title: 王文涛部长会见美国英伟达公司总裁兼首席执行官黄仁勋. https://www.mofcom.gov.cn/syxwfb/art/2025/art_a2f759e1140f459e9694f85164c4197c.html Saved copy: cn-policy-wang-nvidia
 

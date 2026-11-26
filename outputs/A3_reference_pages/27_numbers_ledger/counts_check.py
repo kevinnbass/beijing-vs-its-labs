@@ -59,6 +59,9 @@ def expected():
         f'among them **{share}%**; **{alt}%** or **{alt2}%** with the application of Dec 19, 2025 counted at 445,000 (as the table\'s row of that date, or as a further application not returned without action); and **{fmt(sum(map(num, sea)))}**',
     ]
     if len(rej) != 1: sys.exit('not one rejected application')
+    # round 11 (Nov 26, 2026): the 3.4 million row says every application for a location outside China is among those returned
+    if any(r['location'] != 'China' and r['status'] != 'RWA' for r in H): sys.exit('an application for a location outside China is not RWA: reword the 3.4 million row')
+    want.append('in it every application whose ultimate location is outside China (Malaysia, Indonesia or Thailand) is among those returned without action')
     if sorted({r['location'] for r in sea}) != ['Indonesia', 'Malaysia', 'Thailand']: sys.exit(f'the returned applications outside China are not for Malaysia, Indonesia and Thailand: {sorted({r["location"] for r in sea})}')
     print(f'licence table: {len(H)} applications, {fmt(total)} chips; RWA {fmt(rwa[1])} in {rwa[0]} ({100*rwa[1]/total:.1f}%); '
           f'approved {fmt(st["Approved, not shipped"][1])}; submitted {fmt(st["Submitted"][1])}; rejected {fmt(st["Rejected"][1])}; '
@@ -82,7 +85,8 @@ def expected():
     P = Counter(r['result'] for r in rows('provinces_31.tsv'))
     if sum(P.values()) != 31: sys.exit('not 31 provinces')
     want.append(f'{P["share"]} set a share; {P["plan_no_share"]} have a plan that was read and sets none')
-    want.append(f'**{P["share"]} of 31** provincial-level governments were found to set a share')
+    # round 11 (Nov 26, 2026): the core's words since batch 13b, ruling 3b (four of the nine measure computing capacity, not hardware)
+    want.append(f'**{P["share"]} of 31** provincial-level governments were found to set a share for home-made computing, each by its plan\'s own measure: chips, equipment, hardware and software, or computing capacity |')
     if [r['result'] for r in rows('provinces_31.tsv') if r['government'] == 'Shandong'] != ['share']: sys.exit('Shandong is not one of those that set a share')
     if P['account_only'] != 1 or P['not_reached'] != 1: sys.exit('Tibet and Xinjiang are not one each')
     print(f'provinces: {dict(P)}')

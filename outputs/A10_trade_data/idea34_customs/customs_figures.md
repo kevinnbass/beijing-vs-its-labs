@@ -1,23 +1,23 @@
-# Can customs figures count the H200 chips that entered China?
+# Can customs figures count the H200 chips Reuters reported entering China?
 
-*No. Each customs line holds every maker's goods, and no saved page says under which line an importer in China declares these chips. Two official lines rose steeply in 2026: China's imports of computer parts, and Singapore's re-exports of one kind of computer unit to the mainland. Neither can be read as a count of Nvidia chips.*
+*No. Each customs line read here holds every maker's goods, and no saved page says under which line an importer in China declares these chips. Two official lines rose steeply in 2026: China's imports of computer parts, and Singapore's re-exports of one kind of computer unit to the mainland. Neither can be read as a count of Nvidia chips.*
 
-Draft by Claude, Anthropic's model. Written Nov 23, 2026; brought into line with the argument on Nov 25, 2026 (UTC).
+Draft by Claude, Anthropic's model. Written Nov 23, 2026; brought into line with the argument on Nov 26, 2026 (UTC).
 
 A finding: this note says what public trade figures can and cannot show. It counts no chips.
 
 Anthropic has argued in public for controls on chip exports to China (that is from my general knowledge; no saved page is cited for it), so judge this note by its sources.
 
-A filled number is a government document, an official figure, a filing or a named person on the record. An open number is a press report citing unnamed people, or a count that is not official. Words between quotation marks were checked against the saved copy of the source cited. Below, a heading is a six-digit code such as 8471.80 (the tariff's own word for it is subheading), and heading 8471 means every code that begins 8471. English in round brackets after Chinese is my rendering, not an official translation.
+Words between quotation marks were checked against the saved copy of the source cited. Below, a heading is a six-digit code such as 8471.80 (the tariff's own word for it is subheading), and heading 8471 means every code that begins 8471. English in round brackets after Chinese is my rendering, not an official translation.
 
 ## The question
 
-Reuters reported on Nov 5, 2026: "About 600,000 of Nvidia's advanced artificial intelligence chips are stored in Hong Kong awaiting shipment to China", on the word of "two people familiar with the matter" [1]. The same report says: "Several major Chinese internet companies have each obtained about 10,000 H200 chips in the past few months" [1]. Both numbers rest on unnamed people. This note asks whether any public, official trade figure bears on how many such chips entered mainland China in 2025 and 2026. (Nov 5 is Reuters's dateline, which stands on the copy Yahoo carries; the copy quoted here is CNA's page, which shows only its own date, Nov 6, 2026.)
+Reuters reported on Nov 5, 2026: "About 600,000 of Nvidia's advanced artificial intelligence chips are stored in Hong Kong awaiting shipment to China", on the word of "two people familiar with the matter" [1]. The same report says, from three people it does not name, that "China has allowed some of the chips to enter the country in recent months", and, from one of them: "Several major Chinese internet companies have each obtained about 10,000 H200 chips in the past few months" [1]. Both numbers rest on unnamed people. This note asks whether any public, official trade figure bears on whether, and how many, such chips entered mainland China in 2025 and 2026. (Nov 5 is Reuters's dateline, which stands on the copy Yahoo carries; the copy quoted here is CNA's page, which shows only its own date, Nov 6, 2026.)
 
 ## The answer in short
 
 - China's customs publishes monthly import values for integrated circuits, for computer processing units and for computer parts. No table of its monthly bulletin goes below those broad lines; a university monitor drawn from customs data gives one finer heading, for all processor chips (point 7).
-- No customs line can count Nvidia chips. Each line holds every maker's goods, imports are recorded by country of origin, and no saved page says under which line an importer in China or Hong Kong declares these chips. Nvidia's own list gives the headings it applies itself to its H200 products: 8471.80, 8473.30 and 8471.50 (point 2).
+- No customs line read here can count Nvidia chips. Each line holds every maker's goods, imports are recorded by country of origin, and no saved page says under which line an importer in China or Hong Kong declares these chips. Nvidia's own list gives the headings it applies itself to its H200 products: 8471.80, 8473.30 and 8471.50 (point 2).
 - China's imports of computer parts (line 8473.30) were 82.2 billion US dollars in January to September 2026, against 18.9 billion in the same months of 2025, while their weight fell. The line can show that the declared value of these imports was far higher, in all and for each tonne. It cannot show what the parts were, who made them or what was paid for them.
 - Singapore's re-exports to mainland China under one line for computer units (line 84718010, control and adaptor units) were about 18 million Singapore dollars in January to June 2026 and about 3.0 billion in July to October 2026. These figures are a reading from Singapore's statistics service, kept on file with their hashes; they are not a saved source. The line can show that goods so declared left Singapore for the mainland. It cannot show what they were, who made them or who bought them.
 - One mirror is tied to these chips by rule: licensed H200s must be inspected in the United States before they are shipped. US exports to mainland China, Hong Kong and Macau under the three headings an American proclamation names for such chips never passed 293 million dollars in a month to August 2026.
@@ -111,7 +111,7 @@ These figures are a reading, not a saved source. They come from the table servic
 
 ## What a reader may conclude
 
-- No public customs table found here can confirm or refute that about 10,000 H200s reached each of several buyers, or any other count of these chips. Each line holds every maker's goods, and no saved page says under which line an importer in China or Hong Kong declares the chips; Nvidia's own list gives only the codes Nvidia applies itself.
+- No public customs table found here can confirm or refute Reuters's report that several Chinese internet companies each obtained about 10,000 H200s, or any other count of these chips. Each line holds every maker's goods, and no saved page says under which line an importer in China or Hong Kong declares the chips; Nvidia's own list gives only the codes Nvidia applies itself.
 - To the end of August 2026 the United States' own export figures leave room for a few tens of thousands of licensed H200s at most (about 62,500), but only if a chip is valued at the press price of about 27,000 dollars, was declared under the three named headings, and was recorded as leaving for mainland China, Hong Kong or Macau. Nvidia's own report gives a bound of the same order for its quarter to Jul 26, 2026, at the same price, and an official called exports "minimal" on Jul 14, 2026 [33].
 - Nvidia's 2.4 billion dollars of licensed sales to China belongs to the quarter to Oct 25, 2026, mostly after the months the trade figures cover. The two cannot be set against each other.
 - In January to September 2026 China imported 4.35 times as much computer parts by value as in the same months of 2025, and less by weight. That is a fact about a broad class of goods of every maker.
@@ -122,9 +122,9 @@ These figures are a reading, not a saved source. They come from the table servic
 - That the rise in computer parts is Nvidia chips, or H200s. The table does not say what it is.
 - That Singapore's line is Nvidia's 2.4 billion dollars, or any number of H200s. The two figures are of different kinds, and Singapore's tables name no goods and no maker.
 - That any two of these series can be added or chained. They are different countries' records, under different lines, in different currencies and months.
-- That the 600,000 is wrong. That report is from November 2026 and is about Hong Kong; the US figures end in August 2026, and they would not show goods that reached Hong Kong some other way.
+- That Reuters's 600,000 is wrong. That report is from November 2026 and is about Hong Kong; the US figures end in August 2026, and they would not show goods that reached Hong Kong some other way.
 - That the ceiling is a count of chips. It is a sum of dollars divided by a press price, and it moves with that price.
-- How many H200s entered mainland China. No figure found here states it.
+- A count of H200s entering mainland China. No figure found here gives one.
 
 ## What would settle more
 
@@ -148,7 +148,7 @@ These figures are a reading, not a saved source. They come from the table servic
 
 Each entry: its kind; what it is; the saved page's own title where the record holds one; the address; the id of the saved copy.
 
-[1] Press report citing unnamed people. Reuters, datelined Nov 5, 2026, as carried by CNA (Singapore) on Nov 6, 2026. The CNA page shows only its own date; the Nov 5 dateline stands on the copy carried by Yahoo, which is also saved. Page title: Nvidia chips pile up in Hong Kong as China withholds import approval. https://www.channelnewsasia.com/east-asia/nvidia-chips-pile-up-hong-kong-china-withhold-import-approval-6527371 Saved copy: cn-clips-evidence-1
+[1] Press report citing unnamed people. Reuters, datelined Nov 5, 2026, as carried by CNA (Singapore) on Nov 6, 2026: a report, from unnamed people, on Beijing's approvals for imports of Nvidia's H200 chips. The CNA page shows only its own date; the Nov 5 dateline stands on the copy carried by Yahoo, which is also saved. https://www.channelnewsasia.com/east-asia/nvidia-chips-pile-up-hong-kong-china-withhold-import-approval-6527371 Saved copy: cn-clips-evidence-1
 
 [2] Company filing or statement. Nvidia, quarterly report on Form 10-Q for the quarter to Jul 26, 2026, filed with the US Securities and Exchange Commission on Aug 26, 2026. https://www.sec.gov/Archives/edgar/data/1045810/000104581026000075/nvda-20260726.htm Saved copy: man-ms-sec-10q-2026-07
 
@@ -192,7 +192,7 @@ Each entry: its kind; what it is; the saved page's own title where the record ho
 
 [22] Official document, or an official on the record. United Nations Comtrade, public preview answer for July 2026: the United States and Hong Kong as reporters, four tariff headings. https://comtradeapi.un.org/public/v1/preview/C/M/HS?reporterCode=842,156,344&period=202607&partnerCode=0,156,344,446,490,842,410,702,458&cmdCode=847150,847180,847330,854231&flowCode=M,X,RX,DX&partner2Code=0&customsCode=C00&motCode=0 Saved copy: cn-o34-comtrade-m-202607
 
-[23] Press report citing unnamed people. Reuters, Jan 14, 2026, as carried by Yahoo Finance. Page title: Exclusive-China's customs agents told Nvidia's H200 chips are not permitted, sources say. https://finance.yahoo.com/news/chinas-customs-agents-told-nvidias-065002091.html/ Saved copy: cn-acts-reuters-customs-20260114
+[23] Press report citing unnamed people. Reuters, Jan 14, 2026, as carried by Yahoo Finance: a report, from three unnamed people, on what customs agents were told about the H200. https://finance.yahoo.com/news/chinas-customs-agents-told-nvidias-065002091.html/ Saved copy: cn-acts-reuters-customs-20260114
 
 [24] Press report citing unnamed people. Reuters, as carried by The Business Times (Singapore), Dec 13, 2025. The sentence quoted here is Reuters's own description of the chip. Page title: Nvidia considers increasing H200 chip output due to robust China demand: sources. https://www.businesstimes.com.sg/companies-markets/telcos-media-tech/nvidia-considers-increasing-h200-chip-output-due-robust-china-demand-sources/ Saved copy: cn-labs-h200-lobby
 
@@ -236,4 +236,4 @@ Each entry: its kind; what it is; the saved page's own title where the record ho
 
 [44] Official document, or an official on the record. US Securities and Exchange Commission, its record of Nvidia's filings (the company's submissions file), fetched Nov 25, 2026 at 22:16 UTC. https://data.sec.gov/submissions/CIK0001045810.json Saved copy: cn-ga31-official-sec-submissions-20261125-c
 
-Build check: 57 quotations and 65 further statements were looked for in the saved copies of 44 sources and all were found; a planted false quotation was rejected. 39 sources are documents, filings or named people on the record; 5 are press reports citing unnamed people, counts or machine transcripts. A quotation that is found shows what the source says, not that it is true.
+Build check: 58 quotations and 65 further statements were looked for in the saved copies of 44 sources and all were found; a planted false quotation was rejected. 39 sources are documents, filings or named people on the record; 5 are press reports citing unnamed people, counts or machine transcripts. A quotation that is found shows what the source says, not that it is true.

@@ -106,7 +106,7 @@ D July 23, 2026
 
 @ ex-600k press 2026-11-05 reported_Nov_5,_2026 cn-clips-evidence-1 rung=5 dir=neutral
 T Reuters, from two unnamed people
-L Reuters, from two unnamed people, on chips waiting in Hong Kong.
+L Reuters, from two unnamed people, on chips it reports stored in Hong Kong.
 S Reuters, as carried by CNA (Singapore)
 Q About 600,000 of Nvidia's advanced artificial intelligence chips are stored in Hong Kong awaiting shipment to China
 D cn-clips-reuters-hongkong-yahoo | Nov 5 (Reuters) - About 600,000 of Nvidia's

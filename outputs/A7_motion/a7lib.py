@@ -202,7 +202,7 @@ def geom_json():
 
 # ---------- quotations behind what the strip shows ----------
 EXTRA = (  # words on the strip that a record's own "Q" line does not carry: (saved id, the page's words, what they back)
-    ('cn-ga31-sv1-reuters-deepseek-yahoo', "These conditions are being decided by China's state planner", 'the label "conditional approval" (Reuters, Jan 30, 2026, on Yahoo Finance; the core cites this open copy since CORE BATCH 12)'),
+    ('cn-ga31-sv1-reuters-deepseek-yahoo', "These conditions are being decided by China's state planner", 'the label "conditional yes, reported" (the core\'s words since rt1, Nov 26, 2026; Reuters, Jan 30, 2026, on Yahoo Finance; the core cites this open copy since CORE BATCH 12)'),
     ('cn-policy-tencent-us-curbs-relay1', 'following new moves by the United States to restrict chip supplies to China', 'the label "after US curbs"'),
     ('man-cn-factions-wsj-ding', 'Last summer, top Chinese chip developer Huawei Technologies held a closed-door', 'the "traitor" mark stands after a briefing of summer 2025; the report gives no date for the warning'),
     ('man-cn-factions-wsj-ding', 'according to people familiar with the message', 'the same mark: an open mark'),

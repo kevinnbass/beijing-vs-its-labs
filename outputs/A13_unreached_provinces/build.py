@@ -38,7 +38,8 @@ EXPECT = {'share': ['Guangdong', 'Zhejiang'], 'reward': ['Shanxi', 'Ningxia'],  
           'earlier': ['Heilongjiang', 'Yunnan'], 'account': ['Tibet'], 'notfound': ['Xinjiang'], 'extra': ['Gansu', 'Hunan']}   # what the template's prose names
 BASIS = {'official': 'Saved official page', 'wayback': 'Saved Archive capture of the official page', 'copy': 'Saved copy on another site',
          'account': 'A press account saved from another site', 'capture': 'Archive capture kept in this folder: read, not saved',
-         'hand': 'Saved official PDF'}      # round 10: the label no longer says who saved it or how (a public page's working words)
+         'hand': 'Saved official PDF',      # round 10: the label no longer says who saved it or how (a public page's working words)
+         'wayback_city': "Saved Archive captures: one of the official page, one of a copy on a city government's site"}      # round 11 (Nov 26, 2026): Jiangxi's row, whose measures rest on the Jingdezhen city copy (both readers: the one label said the official page for both)
 DAMAGED = {'man-cn-o39-qinghai-green-compute-2024', 'man-cn-o39-qinghai-compute-15fyp-2026', 'man-cn-o39-hunan-green-compute-plan-2025'}   # PDF text layer damaged: never quoted
 NEAR_EXPECT = {'cn-ga31-cndocs-52': 1,      # round 9: Zhejiang's share sentence, the one place in its sector plan
                'cn-o39b-guangdong-yuesuan-2024': 2, 'cn-o39b-shanxi-measures-2024-jincheng': 1, 'cn-o39-guangxi-digital-plan-2024-wayback': 1,
@@ -365,7 +366,7 @@ def main():
         if r['result'] != 'share':
             said += ('. ' if r['plain'] and not r['words'] else ' ') + {'account': 'No target share for home-made hardware in either account.', 'notfound': 'No target share for home-made hardware in the pages cited.'}.get(r['result'], 'No target share for home-made hardware in the page read.')      # round 10: says which share
         m = re.match(r'(https?://\S+)\s*(.*)', r['official'])
-        if m and r['basis'] == 'wayback': off = 'Official address: given in table.tsv.'
+        if m and r['basis'] in ('wayback', 'wayback_city'): off = 'Official address: given in table.tsv.'
         elif m and r['basis'] in ('official', 'hand'): off = 'Official address: in the references, with the saved copy.'
         elif m: off = ('Official address: given in table.tsv ' + ('' if 'http' in m.group(2) else m.group(2))).strip() + '.'
         else: off = f'Official address: {r["official"][0].lower() + r["official"][1:]}'
@@ -377,6 +378,9 @@ def main():
         tgt.append(line); tgt.extend(f'!! {c[0]} | {c[1]}' for c in r['check'])
         tsv.append('\t'.join([r.get('table', '1'), r['gov'], r['result'], r['doc'], r.get('share') or {'account': 'no target share for home-made hardware in either account', 'notfound': 'no computing plan found; no target share for home-made hardware in the pages cited'}.get(r['result'], 'no target share for home-made hardware in the page read'), ' '.join(x for x in (r['words'], r['plain']) if x),
                               ' '.join(x for x in (r['english'], r['limits']) if x), BASIS[r['basis']], r['official'], ' '.join(ids)]))
+    jx = next(r for r in rows if r['gov'] == 'Jiangxi')      # round 11: Jiangxi's measures rest on the Jingdezhen city copy's capture, so its label is not the one-page label
+    if jx['basis'] != 'wayback_city' or 'cn-ga31-unsaved-jiangxi-measures-2025-jdz-wayback' not in jx['ids'] or 'Jingdezhen' not in jx['doc']: stop('Jiangxi: the row must name the city copy and carry the two-capture label')
+    if any(r['basis'] == 'wayback_city' for r in rows if r['gov'] != 'Jiangxi'): stop('control: the two-capture label stands on a row it does not describe')
     (HERE / 'table.tsv').write_text('\n'.join(tsv) + '\n', encoding='utf-8')
     fill['TABLE'] = '\n'.join(trow); fill['TABLE2'] = '\n'.join(trow2)
     fill['CHECK_LINE'] = (f'Saved pages: {len(quotes)} strings checked, {len(quotes)} found, 0 not found ({n_dam} of them against our typed reading of page images); two planted false strings were rejected. '

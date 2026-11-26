@@ -94,16 +94,21 @@ def main():
 <p class="draft" id="draft">Draft by Claude, Anthropic’s model.</p>"""
     # round 10 (the session's ruling, Nov 25, 2026): the frame carries the credit only; words saying the copy is local or
     # unpublished are untrue of a public copy, and a release cannot reach pixels. They must never be drawn into the frame.
+    # round 11 (the session's ruling, Nov 26, 2026): that note stands nowhere, pixels included: not in the frame and not in
+    # the page below it. OLD_NOTE is spelled in two parts so that no public copy of this file holds it.
+    OLD_NOTE = 'Local; not ' + 'published.'
     def frame_says_local(st):                     # the credit line names no local or unpublished state; nothing in the frame says "not published" or "Local;"
         draft = re.search(r'<p class="draft" id="draft">(.*?)</p>', st, re.S).group(1).lower()
-        return [w for w in ('local', 'publish') if w in draft] + [w for w in ('local; not published', 'not published.', 'local;') if w in st.lower()]   # caption 4 says "not published policy": that stays
+        return [w for w in ('local', 'publish') if w in draft] + [w for w in ('not published.', 'local;') if w in st.lower()]
     if frame_says_local(stage): sys.exit(f'the frame says {frame_says_local(stage)}: it carries the credit only')
-    assert frame_says_local(stage.replace('model.</p>', 'model.</p>')), 'control: the old credit line must be refused'
+    assert frame_says_local(stage.replace('model.</p>', f'model. {OLD_NOTE}</p>')), 'control: the old credit line must be refused'
     below = f"""  <p>The dated strip as a short silent animation: the {total} marks appear in date order while the date runs at the top right. This page draws any moment of it; the video files beside it were captured from this page frame by frame. No one has yet watched them play through: they were checked by script and as still frames.</p>
   <p>The video file, <code>strip_animation.mp4</code> (1280 by 720, no sound):</p>
   <video data-src="strip_animation.mp4" controls muted playsinline preload="metadata" width="1280" height="720"></video>
   <p>For a post: <code>strip_animation.gif</code> or <code>strip_animation.webp</code> (both 1280 by 720).</p>
   <p class="small">Draft by Claude, Anthropic’s model.</p>"""
+    if 'local; not' in (stage + below).lower(): sys.exit('the page says the copy is local or not published: the credit only (round 11)')
+    assert 'local; not' in (below + OLD_NOTE).lower(), 'control: the old note must be seen'
     (HERE / 'strip_animation.html').write_text(L.page('Dated Strip Animation', stage, below, scene, css), encoding='utf-8')
 
     dur = frames / FPS

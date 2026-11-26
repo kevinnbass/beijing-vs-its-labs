@@ -36,12 +36,13 @@ BANDS = [  # band title, [(row key, name, what it is)]; ordered so that the bodi
 APART = ('samr', 'Market regulator', 'State Administration for Market Regulation')       # the antitrust case: against Nvidia the company, drawn apart
 COLS = [  # key, direction, title, what it covers
     ('acted', 'away', 'Summoned Nvidia, or warned in public', 'acts and texts it published itself'),
-    ('told', 'away', 'Told companies not to buy', 'or to use home-made chips; or held chips at the border'),
+    ('told', 'away', 'Reported: told companies not to buy', 'or to use home-made chips; or held chips at the border'),
     ('rules', 'away', 'Rules or guidance favouring home-made chips', 'purchase rules, a list, guidance'),
     ('welcomed', 'toward', 'Welcomed Nvidia, or spoke for access', 'in public: welcomes, protests at US curbs, help for computing abroad'),
-    ('approved', 'toward', 'Approved purchases', 'with conditions; or let chips in'),
+    ('approved', 'toward', 'Reported: approved purchases', 'with conditions; or let chips in'),
 ]
-PHONE_LABEL = {'told': 'Told companies not to buy, or held chips at the border', 'approved': 'Approved purchases, or let chips in'}     # on a phone the column's second line is not shown
+# Round 11 (ROUND11.md, thing 2): the two columns hold press reports (and, in 'told', one company's filing): their heads carry the report.
+PHONE_LABEL = {'told': 'Reported: told companies not to buy, or held chips at the border', 'approved': 'Reported: approved purchases, or let chips in'}     # on a phone the column's second line is not shown
 ROWKEYS = [k for _, rows in BANDS for k, _, _ in rows]
 ROWNAME = {k: n for _, rows in BANDS for k, n, _ in rows}
 ROWNAME[APART[0]] = APART[1]
@@ -106,13 +107,18 @@ def main():
     # one of its own sources; the province note is this page's alone.
     extra += [('cn-ga31-cndocs-52', '到2030年，浙江信息通信行业算力规模达150EFLOPS，国产化算力占比超60%'),
               ('cn-ga31-cndocs-52', '重点工程4:算力网络一体化提升工程'),
-              ('cn-ga31-cndocs-52', '省通信管理局省发展改革委关于印发《浙江省信息通信业发展“十五五”规划》的通知')]
+              ('cn-ga31-cndocs-52', '省通信管理局省发展改革委关于印发《浙江省信息通信业发展“十五五”规划》的通知'),
+              # Round 11: the question of Nov 9, 2026 names the report ("the 600,000 chips Reuters reported in Hong Kong", the core's short form)
+              ('cn-acts-mfa-20261109', '路透社报道，约60万枚英伟达先进人工智能芯片存放在香港')]
     for r in recs:
         r['rows'] = r['row'].split(',')
         if r['col'] == 'case':
             assert r['rows'] == [APART[0]] and r['dir'] == 'away', r['key']; continue
         assert all(k in ROWKEYS for k in r['rows']) and r['col'] in COLKEYS and r['dir'] in ('away', 'toward'), r['key']
         assert r['dir'] == dict((c[0], c[1]) for c in COLS)[r['col']], f"{r['key']}: direction does not match its column"
+    # Round 11 (ROUND11.md, thing 2): every press record's label carries the report ("reported", or the outlet named in it)
+    bare = [r['key'] for r in recs if r['kind'] == 'press' and not re.search(r'\breported\b|\breports\b|^Reuters|Financial Times|Wall Street Journal', r['T'])]
+    assert not bare, f'press labels without the report: {bare}'
     lines = C.checked_lines(recs, extra)
     summary = C.write_and_check_quotes(HERE, lines, 'Quotations and number-bearing phrases behind the figure "Who inside Beijing".')
     order = ROWKEYS[:-1] + [APART[0], ROWKEYS[-1]]                 # the case apart sits above the row of reports that name no body
@@ -197,7 +203,7 @@ def main():
   <section class="care">
    <h2>Read with care</h2>
    <ul>
-    <li><b>Open marks rest on unnamed people.</b> In the answers found, Beijing’s spokespeople confirmed none of them: “我不了解你提到的情况” (I am not aware of what you mention), said the foreign ministry on Aug 13, 2025; asked on Nov 9, 2026 about the chips stored in Hong Kong, it said “具体情况建议向中方主管部门询问” (for the details, ask the competent Chinese departments).</li>
+    <li><b>Open marks rest on unnamed people.</b> In the answers found, Beijing’s spokespeople confirmed none of them: “我不了解你提到的情况” (I am not aware of what you mention), said the foreign ministry on Aug 13, 2025; asked on Nov 9, 2026 about the 600,000 chips Reuters reported in Hong Kong, it said “具体情况建议向中方主管部门询问” (for the details, ask the competent Chinese departments).</li>
     <li><b>The marks are a selection, not a count.</b> An act by several bodies is drawn once in each body’s row, with the same number. The grouping of the rows is ours. {C.WORDS[len(away_rows)].capitalize()} of the named rows (each a body, a group of bodies or a person) have a mark on the side that points away from Nvidia and {C.WORDS[len(toward_rows)]} on the side that points toward it; the industry ministry is on both.</li>
     <li><b>The state-media marks are warnings, not orders.</b> Of {len(sm)} state and Party media items on Nvidia chips found from {C.MON[iso[0].month - 1]} {iso[0].year} to {C.MON[iso[-1].month - 1]} {iso[-1].year}, {len(win)} of the {len(warns)} that only warn about them date from {C.fmt(win[0])} to {C.fmt(win[-1])}, and the {C.WORDS[len(late)]} found later are in Global Times in 2026; {C.WORDS[st['mixed']]} of the {len(sm)} mix a warning with a welcome. The items after September 2025 are what two rounds of searches found, a sample and not a full count. The security ministry’s article names no maker.</li>
     <li><b>No published order against buying Nvidia chips was found</b> in the 82 policy pages read. The 2023 purchase rules bind Party and government bodies from township level up, the public institutions directly under Party committees and governments at those levels, and the departments’ public institutions that provide support to those bodies; other units may leave their requirement out. No published national plan found sets a home-made share for computing centres: every such share found is a province’s or a city’s ({pr['share']} of 31 provincial-level governments were found to set one for home-made computing; one of them, Zhejiang’s, is for the computing of one sector, the province’s information and communications industry, by 2030, as a project’s target), and the national computing-network opinions of December 2023 set none. These shares are not drawn.</li>
@@ -207,7 +213,7 @@ def main():
 
     key = f"""   <ul class="key">
     <li><i class="sw away"></i><span><b>Away from Nvidia:</b> acting against it, or for home-made chips</span></li>
-    <li><i class="sw toward"></i><span><b>Toward Nvidia:</b> welcoming it, speaking for access, approving purchases</span></li>
+    <li><i class="sw toward"></i><span><b>Toward Nvidia:</b> welcoming it, speaking for access, or, by press reports, approving purchases</span></li>
     <li><i class="p solid away" aria-hidden="true">1</i><span><b>Filled:</b> on the record (a government document, a filing, a named official, a state-media commentary). {n_solid} records</span></li>
     <li><i class="p hollow away" aria-hidden="true">1</i><span><b>Open:</b> a press report citing unnamed people. {n_open} records</span></li>
    </ul>"""

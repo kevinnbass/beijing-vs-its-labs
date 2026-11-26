@@ -4,7 +4,7 @@
 
 Draft by Claude, Anthropic's model.
 
-Written Nov 23, 2026; revised Nov 25, 2026 (UTC). Nothing here has been posted. The same posts as plain text, each with its source's address, the character counts and a note on images, are in thread_plain.txt beside this file.
+Written Nov 23, 2026; revised Nov 26, 2026 (UTC). Nothing here has been posted. The same posts as plain text, each with its source's address, the character counts and a note on images, are in thread_plain.txt beside this file.
 
 Words between quotation marks are a source's exact words, found in its saved copy by a script. Where a post gives a Chinese source in English without quotation marks, the English is ours, not an official translation. The key under this header says what a filled and an open reference number mean.
 
@@ -40,7 +40,7 @@ Order: the claim, the declared line, what the companies used, what Beijing did, 
 - With five limits and ten posts, the numbers have no post of their own: they stand in limit 3 (post 7). That post carries four reported numbers: three from Reuters reports of Dec 31, 2025, Jan 28, 2026 and Nov 5, 2026, and one from the Financial Times as Reuters relayed it on Aug 18, 2026. The copy the post cites for the report of Nov 5 is CNA's page, which shows only its own date, Nov 6, 2026; Reuters's dateline of Nov 5 stands on Yahoo's copy of the same report, also saved.
 - Washington's side is left out for length: the conditions it set, and its own table of licence applications, which shows chips approved and not shipped and others returned without action. The argument sets them out under its fourth limit.
 - Post 6 names one press report. The public warnings in state media, and the dates they fall between, are in the argument's points 4 and 18.
-- Post 10 is a shorter form of the argument's last sentence; its last words are limit 5's. It drops the public warnings, the parts of the state that welcomed Nvidia and approved some purchases, and the companies' own turn to home-made chips; posts 5 to 8 carry them.
+- Post 10 is a shorter form of the argument's last sentence; its last words are limit 5's. It drops the public warnings, the parts of the state that welcomed Nvidia and, by the reports, approved some purchases, and the companies' own turn to home-made chips; posts 5 to 8 carry them.
 - No recording has been checked by ear: not the clip in post 1, and not the interview in post 9.
 
 ## References
@@ -65,7 +65,7 @@ Each entry: its kind; what it is; the saved page's own title where the record ho
 
 [9] Press report citing unnamed people. Reuters, Jan 28, 2026, as carried by The Standard (Hong Kong). Page title: China gives nod to ByteDance, Alibaba and Tencent to buy Nvidia's H200 chips, says sources. https://www.thestandard.com.hk/innovation/article/322910/China-gives-nod-to-ByteDance-Alibaba-and-Tencent-to-buy-Nvidias-H200-chips-says-sources Saved copy: ms-bj-20260128-h200-nod-standard
 
-[10] Press report citing unnamed people. Reuters, datelined Nov 5, 2026, as carried by CNA (Singapore) on Nov 6, 2026. The CNA page shows only its own date; the Nov 5 dateline stands on the copy carried by Yahoo, which is also saved. Page title: Nvidia chips pile up in Hong Kong as China withholds import approval. https://www.channelnewsasia.com/east-asia/nvidia-chips-pile-up-hong-kong-china-withhold-import-approval-6527371 Saved copy: cn-clips-evidence-1
+[10] Press report citing unnamed people. Reuters, datelined Nov 5, 2026, as carried by CNA (Singapore) on Nov 6, 2026: a report, from unnamed people, on Beijing's approvals for imports of Nvidia's H200 chips. The CNA page shows only its own date; the Nov 5 dateline stands on the copy carried by Yahoo, which is also saved. https://www.channelnewsasia.com/east-asia/nvidia-chips-pile-up-hong-kong-china-withhold-import-approval-6527371 Saved copy: cn-clips-evidence-1
 
 [11] Press report citing unnamed people. Reuters, relaying the Financial Times, Aug 18, 2026, as carried by Investing.com. Internet Archive capture of Sept 8, 2026. https://web.archive.org/web/20260908131431/https://www.investing.com/news/stock-market-news/nvidia-h200-chips-reach-china-in-small-shipments-ft-reports-4866385 Saved copy: cn-tolerate-reutersaug26-relay1-wayback
 

@@ -2,7 +2,7 @@
 
 *How Beijing pressed China's AI companies away from Nvidia's chips, though no published order was found, shown on this one case.*
 
-Draft by Claude, Anthropic's model. Written Nov 23, 2026 (UTC); revised Nov 25, 2026.
+Draft by Claude, Anthropic's model. Written Nov 23, 2026 (UTC); revised Nov 26, 2026.
 
 How to read it. Words between quotation marks are a source's exact words, found in the saved copy by a script. A filled reference number is a document, a filing, a named person on the record, or a published commentary of state media or an industry body. An open number is a press report citing unnamed people, a research firm's count, or captions and machine transcripts nobody has checked by ear. English in round brackets after Chinese is our rendering, not an official translation.
 
@@ -22,9 +22,9 @@ Of 75 state-media items on Nvidia chips found from July 2025 to November 2026, 1
 
 **3. Two published texts tell buyers to stop; neither is about Nvidia** (on the record)
 
-On May 21, 2023 the cyberspace regulator's review office published its conclusion on Micron: operators of critical information infrastructure should stop buying its products [10] [11]. On Jun 22, 2026 the finance ministry barred government buyers from products made by 46 named American firms, leaving out American-funded firms in China; Nvidia is not on the list [12] [13]. For Nvidia the cyberspace regulator published a summons, on Jul 31, 2025, and no such conclusion that we found [14].
+On May 21, 2023 the cyberspace regulator's review office published its conclusion on Micron: operators of critical information infrastructure shall stop buying its products [10] [11]. On Jun 22, 2026 the finance ministry barred government buyers from products made by 46 named American firms, leaving out American-funded firms in China; Nvidia is not on the list [12] [13]. For Nvidia the cyberspace regulator published a summons, on Jul 31, 2025, and no such conclusion that we found [14].
 
-**4. The national rules found cover only the state's own buying** (on the record)
+**4. The national purchase rules found bind only the state's own buying** (on the record)
 
 Notices published on Dec 26, 2023 require Party and government bodies at township level and above, and two kinds of public institution tied to them, to write into their purchases of desktop computers and general-purpose servers that the processor and operating system meet a security evaluation. The same sentence adds: "其他单位可不在采购需求中提出此项要求" (other units may leave this requirement out) [15] [16]. No published national plan found sets a home-made share for computing centres: every such share found is a province's or a city's, and the national computing-network opinions of December 2023 set none [17]. Two national texts hold a home-made percentage of other kinds: the 20% price preference given to home-made products where they compete with others in a government purchase [18], and an advisory committee's roadmap of October 2015, which expected home-made high-performance computers and servers to exceed 80% of the home market by 2025 [19].
 
@@ -34,7 +34,7 @@ Asked what Beijing was doing about Nvidia's chips, the foreign ministry's spokes
 
 ## What guidance did here
 
-No published rule for it was found, and what the reports said of it changed within two weeks. An unnamed person told Reuters on Jan 14, 2026 that officials' wording "is basically a ban for now, though this might change in the future should things evolve" [24]. On Jan 28 Reuters reported approvals "with conditions" for three companies [25]. Nvidia's chief executive told reporters the next day that his company had not received such information, and that he believed China was still finalising the licence [26]. So the record does not support the word ban: no published ban was found, and what the reports describe was told to companies, not published. Nor does it support the word nothing: Nvidia told the US securities regulator on Nov 19, 2025 that the Chinese government "restricted customers from purchasing, importing, or using our data center products" [27].
+No published rule for it was found, and what the reports said of it changed within two weeks. An unnamed person told Reuters on Jan 14, 2026 that officials' wording "is basically a ban for now, though this might change in the future should things evolve" [24]. On Jan 28 Reuters reported approvals "with conditions" for three companies [25]. Nvidia's chief executive said on Jan 29, at Taipei's airport, as Voice of America's Chinese service renders him: "我认为中国政府仍在决策中，我们尚未收到采购订单，我们也没有收到新闻报道所说的相关信息" (I think the Chinese government is still deciding; we have not yet received purchase orders, and we have not received the information the news reports speak of) [26]. So the record does not support the word ban: no published ban was found, and what the reports describe was told to companies, not published. Nor does it support the word nothing: Nvidia told the US securities regulator on Nov 19, 2025 that the Chinese government "restricted customers from purchasing, importing, or using our data center products" [27].
 
 ## References
 
@@ -44,9 +44,9 @@ Each entry: its kind; what it is; the saved page's own title where the record ho
 
 [2] Press report citing unnamed people. Financial Times, "China turns against Nvidia’s AI chip after ‘insulting’ Howard Lutnick remarks", Aug 20, 2025 by the date on the copy (saved in a browser some hours behind London; another site's summary of it is dated Aug 21). Hand-saved from the paper's site; read whole. https://www.ft.com/content/b8e30c54-b71c-4113-8b3e-8f54bc36587d Saved copy: man-cn-ft-20250821-regulators
 
-[3] Press report citing unnamed people. Financial Times, "China bans tech companies from buying Nvidia’s AI chips", Sept 17, 2025. Hand-saved from the paper's site; read whole. https://www.ft.com/content/12adf92d-3e34-428a-8d61-c9169511915c Saved copy: man-cn-ft-20250917-6000d
+[3] Press report citing unnamed people. Financial Times, Sept 17, 2025: report, from three people it does not name, that the cyberspace regulator told companies, ByteDance and Alibaba among them, to end their testing and orders of the RTX Pro 6000D. Hand-saved from the paper's site; read whole. https://www.ft.com/content/12adf92d-3e34-428a-8d61-c9169511915c Saved copy: man-cn-ft-20250917-6000d
 
-[4] Press report citing unnamed people. Reuters, Nov 5, 2025, as carried by The Standard (Hong Kong). Page title: China bans foreign AI chips from state-funded data centres, sources say. https://www.thestandard.com.hk/china/article/316018/China-bans-foreign-AI-chips-from-state-funded-data-centres-sources-say Saved copy: ms-bj-20251105-statefunded-standard
+[4] Press report citing unnamed people. Reuters, Nov 5, 2025, as carried by The Standard (Hong Kong): a report, from two unnamed people, on guidance about foreign AI chips in state-funded data centres. https://www.thestandard.com.hk/china/article/316018/China-bans-foreign-AI-chips-from-state-funded-data-centres-sources-say Saved copy: ms-bj-20251105-statefunded-standard
 
 [5] Published commentary or statement (state media, industry body). Global Times, Jul 31, 2025 (Ma Tong), news report of the summons quoting the telecom industry expert Xiang Ligang. Page title: China's cyberspace regulator summons Nvidia over potential security risks in H20 chips. https://www.globaltimes.cn/page/202507/1339752.shtml Saved copy: cn-ga02-gt-cac-summons-news-202507
 
@@ -86,12 +86,12 @@ Each entry: its kind; what it is; the saved page's own title where the record ho
 
 [23] Official document, or an official on the record. Ministry of Foreign Affairs, regular press conference of Nov 9, 2026 (spokesperson Guo Jiakun). Page title: 2026年11月9日外交部发言人郭嘉昆主持例行记者会_中华人民共和国外交部. https://www.fmprc.gov.cn/fyrbt_673021/202611/t20261109_12056081.shtml Saved copy: cn-acts-mfa-20261109
 
-[24] Press report citing unnamed people. Reuters, Jan 14, 2026, as carried by Yahoo Finance. Page title: Exclusive-China's customs agents told Nvidia's H200 chips are not permitted, sources say. https://finance.yahoo.com/news/chinas-customs-agents-told-nvidias-065002091.html/ Saved copy: cn-acts-reuters-customs-20260114
+[24] Press report citing unnamed people. Reuters, Jan 14, 2026, as carried by Yahoo Finance. https://finance.yahoo.com/news/chinas-customs-agents-told-nvidias-065002091.html/ Saved copy: cn-acts-reuters-customs-20260114
 
 [25] Press report citing unnamed people. Reuters, Jan 28, 2026, as carried by The Standard (Hong Kong). Page title: China gives nod to ByteDance, Alibaba and Tencent to buy Nvidia's H200 chips, says sources. https://www.thestandard.com.hk/innovation/article/322910/China-gives-nod-to-ByteDance-Alibaba-and-Tencent-to-buy-Nvidias-H200-chips-says-sources Saved copy: ms-bj-20260128-h200-nod-standard
 
-[26] Press report citing unnamed people. Reuters, Jan 30, 2026, as carried by Yahoo Finance. Page title: Exclusive-China conditionally approves DeepSeek to buy Nvidia's H200 chips - sources. https://finance.yahoo.com/news/exclusive-china-conditionally-approves-deepseek-065114115.html Saved copy: cn-ga31-sv1-reuters-deepseek-yahoo
+[26] Press report of words spoken on the record. Voice of America's Chinese service, Jan 29, 2026 (17:35 UTC by its page data; the page shows 2026年1月30日 01:35): report of what Nvidia's chief executive told reporters at Taipei's airport on Jan 29, in Chinese. Page title: 黄仁勋：英伟达正在“耐心等待”中国政府有关进口H200芯片的最终决定. https://www.voachinese.com/a/nvidia-ceo-says-china-has-not-approved-h200-imports-20260129/8108022.html Saved copy: cn-ga31-counter-40
 
 [27] Company filing or statement. Nvidia, quarterly report on Form 10-Q for the quarter ended Oct 26, 2025, filed with the US Securities and Exchange Commission; signed Nov 19, 2025. https://www.sec.gov/Archives/edgar/data/1045810/000104581025000230/nvda-20251026.htm Saved copy: man-ms-sec-10q-2025-10
 
-Build check: 11 quotations and 55 further statements were looked for in the saved copies of 27 sources and all were found; a planted false quotation was rejected. 20 sources are documents, filings or named people on the record; 7 are press reports citing unnamed people, counts or machine transcripts. A quotation that is found shows what the source says, not that it is true.
+Build check: 12 quotations and 53 further statements were looked for in the saved copies of 27 sources and all were found; a planted false quotation was rejected. 21 sources are documents, filings or named people on the record; 6 are press reports citing unnamed people, counts or machine transcripts. A quotation that is found shows what the source says, not that it is true.

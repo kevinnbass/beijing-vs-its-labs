@@ -4,7 +4,7 @@
 
 Draft by Claude, Anthropic's model.
 
-Written Nov 23, 2026 (UTC); revised from Nov 23 to Nov 25, 2026, the last time with the SEC's record and Nvidia's own two lists as read at 22:16 UTC on Nov 25, 2026. Nvidia's staff are named by office, not by name.
+Written Nov 23, 2026 (UTC); revised from Nov 23 to Nov 26, 2026. The SEC's record and Nvidia's own two lists are as read at 22:16 UTC on Nov 25, 2026. Nvidia's staff are named by office, not by name.
 
 ## What was looked for
 
@@ -61,7 +61,7 @@ The reports Nvidia files with the SEC have said more about Beijing than its call
 
 ## One more figure, to be read with care
 
-This figure comes from Nvidia's supplemental document for the quarter, not from a filed report, and it needs its own caution. The document gives revenue by where the customer's head office is. For China (including Hong Kong) the three months to Oct 25, 2026 show $11,050 million, against $2,973 million a year before [8]. This is not a count of chips sent to China. Nvidia's own caution: "Revenue by geographic region is designated based on the location of the headquarters of direct customers. The end customer and shipping location may be different from our direct customers’ headquarters location." [8]
+This figure comes from Nvidia's supplemental document for the quarter, which Nvidia furnished to the SEC as an exhibit to its Form 8-K of Nov 17, 2026 [16]; it is not from a 10-Q, and it needs its own caution. The document gives revenue by where the customer's head office is. For China (including Hong Kong) the three months to Oct 25, 2026 show $11,050 million, against $2,973 million a year before [8]. This is not a count of chips sent to China. Nvidia's own caution: "Revenue by geographic region is designated based on the location of the headquarters of direct customers. The end customer and shipping location may be different from our direct customers’ headquarters location." [8]
 
 The project's table of this line, made from Nvidia's reports (tables/nvidia_china_revenue.tsv), has nine quarters counted this way, from the quarter ended Oct 27, 2024 to the one ended Oct 25, 2026. In $ million, in order: 8,142, 7,818, 9,659, 3,985, 2,973, 3,060, 4,550, 7,880, 11,050. Two of the nine are the table's own subtractions of nine-month figures from annual ones. The latest quarter is the highest of the nine. The line covers every product Nvidia sells, not only data-centre chips.
 
@@ -69,7 +69,7 @@ The project's table of this line, made from Nvidia's reports (tables/nvidia_chin
 
 - **Nvidia's reports and calls, side by side.** The argument's point 11 gives Nvidia's reports report by report, as the table above does, and the call lines beside them, among them the line of May 20, 2026: "we are uncertain whether any imports will be allowed into the country" [11]. That line speaks of imports into China and names no authority.
 - **The $2.4 billion and the stop.** The argument's point 19 cites Nvidia's own transcript for the $2.4 billion and for the words "we are no longer shipping licensed Hopper Data Center products to China" [15], beside Reuters, and says that Nvidia gave no reason.
-- **The last three quarters.** Under 1% of Data Center revenue in the quarter to Jul 26, 2026, then $2.4 billion in the quarter to Oct 25, 2026; in the quarter before those, no Data Center Hopper products were shipped to China. The rise came in the quarter from late July to late October 2026. Nvidia's words are "Shipments of Data Center Hopper products to China" [7]; they do not say how many chips reached the mainland or stayed in Hong Kong. The argument's table of numbers (its section 4) gives Nvidia's account of the last two.
+- **The last three quarters.** Under 1% of Data Center revenue in the quarter to Jul 26, 2026, then $2.4 billion in the quarter to Oct 25, 2026; in the quarter before those, no Data Center Hopper products were shipped to China. The rise came in the quarter from late July to late October 2026. Nvidia's words are "Shipments of Data Center Hopper products to China" [7]; they do not say how many of those chips crossed into the mainland. The argument's table of numbers (its section 4) gives Nvidia's account of the last two.
 - **The report not yet filed.** The argument's list of open points cites the SEC's record, as read at 22:16 UTC on Nov 25, 2026, for the report not being filed.
 - **Still open: what the 10-Q will say.** The passage on the H200 in the risk factors, where the sentence "but such sales were restricted by the PRC government" stood last time [14]: whether the next report keeps it, changes it or drops it.
 
@@ -130,4 +130,4 @@ Each entry: its kind; what it is; the saved page's own title where the record ho
 
 [23] Official document, or an official on the record. US Department of Commerce, Bureau of Industry and Security, "Addressing Remote Access to Advanced Semiconductors", interim final rule, Federal Register vol. 91, no. 222, Nov 19, 2026, pages 74970 to 74999. Text from the Government Publishing Office. Page title: Federal Register, Volume 91 Issue 222 (Thursday, November 19, 2026). https://www.govinfo.gov/content/pkg/FR-2026-11-19/html/2026-23529.htm Saved copy: cn-o38-us-rule-fr-20261119-text
 
-Build check: 49 quotations and 32 further statements were looked for in the saved copies of 23 sources and all were found; a planted false quotation was rejected. 23 sources are documents, filings or named people on the record; 0 are press reports citing unnamed people, counts or machine transcripts. A quotation that is found shows what the source says, not that it is true.
+Build check: 49 quotations and 35 further statements were looked for in the saved copies of 23 sources and all were found; a planted false quotation was rejected. 23 sources are documents, filings or named people on the record; 0 are press reports citing unnamed people, counts or machine transcripts. A quotation that is found shows what the source says, not that it is true.

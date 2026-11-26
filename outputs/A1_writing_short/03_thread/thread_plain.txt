@@ -43,7 +43,7 @@ https://www.youtube.com/watch?v=ckzJQyMyCoE
 Which image goes with which post
 
 Two images go with this thread.
-Post 1/10: figure/beijing_vs_labs_top.png in the project's files (2896 by 4178 pixels). Why: the whole picture at a glance: the headline, the dated strip of 62 records in four rows, the H200 in reported numbers, Nvidia's share, and Nvidia's own revenue from customers based in China.
+Post 1/10: figure/beijing_vs_labs_top.png in the project's files (2896 by 4240 pixels). Why: the whole picture at a glance: the headline, the dated strip of 62 records in four rows, the H200 in reported numbers, Nvidia's share, and Nvidia's own revenue from customers based in China.
 Post 5/10: figure/beijing_vs_labs_strip.png in the project's files (2896 by 1152 pixels). Why: the dated strip alone: its two top rows show Beijing holding Nvidia back and Beijing letting Nvidia in, which is the point of this post.
 Posts 2, 3, 4, 6, 7, 8, 9, 10: no image.
 The first image is taller than it is wide, so a preview may show only part of it until it is opened. The mark numbers in both images are the figure's own, not the post numbers.

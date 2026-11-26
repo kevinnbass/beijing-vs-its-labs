@@ -3,7 +3,7 @@
 # Fields (one per line, "name: text"):
 #   gov       the government
 #   table     2 for a document outside the sixteen that the owner saved by hand (result: extra); left out for the sixteen
-#   result    share      a share of home-made hardware is set in a computing plan that was read
+#   result    share      a share for home-made computing is set, by the plan's own measure, in a plan that was read (round 11: ruling 3b of core batch 13b)
 #             reward     a number tied to a reward in a document that was read; no target
 #             other      a document was read in its own text and sets no share
 #             earlier    no computing plan found; the document the first note read stands, and sets no share
@@ -15,6 +15,7 @@
 #             account    a press account saved from another site: the plan's own text is not held
 #             capture    Archive capture kept in this folder (archive/<key>.body and .txt): read, not saved. Its words stand WITHOUT quotation marks (field plain)
 #             hand       saved official page, saved by hand by the owner in his browser as a PDF
+#             wayback_city  two saved Archive captures, one of the official page and one of a city government's copy (Jiangxi, round 11)
 #   doc       the document, issuing bodies and date as the page gives it, in English (no straight double quotes)
 #   share     the share in the page's own Chinese words, exactly (empty when there is none)
 #   words     other words of the page shown in the table, each between straight double quotes
@@ -117,7 +118,7 @@ basis: wayback
 doc: Three-year plan to promote the digital economy, 2024 to 2026 (number 桂数发〔2024〕17号). Guangxi Big Data Development Bureau, Jul 9, 2024. Saved Internet Archive capture of the bureau's page. A digital-economy plan with a task on computing, not a computing plan.
 share:
 words: The page says: "算力规模达到5EFLOPS，存力规模达到20EB，智能算力占比达35%"; "适配调试国产办公软件、国产办公管理系统、国产安全管理软件"
-english: (computing of 5 EFLOPS, storage of 20 EB, intelligent computing 35%; adapt and test home-made office software, home-made office management systems and home-made security management software). The 35% is the share of intelligent computing. Its home-made words are about office software, not computing hardware.
+english: (computing of 5 EFLOPS, storage of 20 EB, intelligent computing 35%; adapt and test home-made office software, home-made office management systems and home-made security management software). The 35% is the share of intelligent computing. Its home-made words are about office software, not about computing.
 limits: The region's AI Plus plan for 2026 to 2028 (number 桂政办发〔2025〕61号), in a copy on a state investment-approval site, has neither 国产 nor 自主可控 [cn-o39b-guangxi-ai-plus-2026-tzxm]. No regional computing plan was found in {{T_Guangxi}} searches.
 official: http://dsjfzj.gxzf.gov.cn/zfxxgkzl/fdzdgknr_zfxxgkzl/zcwj_zfxxgkzl/gsf_zfxxgkzl/t21165362.shtml
 ids: cn-o39-guangxi-digital-plan-2024-wayback cn-o39b-guangxi-ai-plus-2026-tzxm
@@ -129,7 +130,7 @@ absent: cn-o39b-guangxi-ai-plus-2026-tzxm | 智能算力 | 国产, 自主可控
 
 gov: Jiangxi
 result: other
-basis: wayback
+basis: wayback_city
 doc: Two documents. One: measures on joining the national computing network (关于融入全国一体化算力网推进全省算力高质量发展的若干措施), Jiangxi Development and Reform Commission (the provincial data bureau) and seven other bodies, Dec 30, 2025, in a saved Internet Archive capture of {{CAPDATE_o39b-jiangxi-measures-2025-jdz}} of the Jingdezhen city government's copy, posted there on Jan 8, 2026. Two: three-year plan for computing services and data in industry, 2026 to 2028, provincial industry department, Apr 30, 2026, in a saved Archive capture of the department's page.
 share:
 words: The measures say: "鼓励算力基础设施采用安全可信的基础软硬件进行建设，逐步提升算力基础设施使用自主可控设备比例"

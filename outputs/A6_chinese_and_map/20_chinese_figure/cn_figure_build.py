@@ -266,8 +266,10 @@ def bars(evs):
     f = lambda v: f'{v:,}'
     zh = {'Indonesia': '印度尼西亚', 'Malaysia': '马来西亚', 'Thailand': '泰国'}
     places = '、'.join(zh[p] for p in h['abroad_places'][:-1]) + '和' + zh[h['abroad_places'][-1]]
+    # Round 14 of this folder (Nov 26, 2026), as the core's builder: a bar whose count rests on unnamed people carries the report
+    # in its own label (据报道，...); the two sums of Washington's table stay.
     rows = [  # label, value text, chips (for the width), class, note, events
-        ('中国企业为2026年订购', '超过200万枚', 2_000_000, 'toward', '路透社，2025年12月31日', [by(evs, 'cn-labs-h200-two-million-202512-relay1-wayback')]),
+        ('据报道，中国企业为2026年订购', '超过200万枚', 2_000_000, 'toward', '路透社，2025年12月31日', [by(evs, 'cn-labs-h200-two-million-202512-relay1-wayback')]),
         ('华盛顿已批准：以英伟达为出口商的申请', f(h['appr_nv'][0]) + '枚', h['appr_nv'][0], 'us',
          f'共{h["appr_nv"][1]}份申请，截至2026年5月11日均标为“Approved, not shipped”（已批准、未发货）。加上AMD的同类芯片'
          f'（{f(h["appr_amd"][0])}枚，{h["appr_amd"][1]}份申请），合计{f(h["appr"][0])}枚。表格“H200 License and Equivalent Application Status as of May 11, 2026”（截至2026年5月11日的H200许可及同类申请状态），'
@@ -275,10 +277,10 @@ def bars(evs):
         ('华盛顿未予处理即退回：以英伟达为出口商的申请', f(h['rwa_nv'][0]) + '枚', h['rwa_nv'][0], 'us',
          f'共{h["rwa_nv"][1]}份申请，其中包括表中芯片所在地为{places}的全部{h["abroad"][1]}份（{f(h["abroad"][0])}枚），所列名称带有ByteDance、BytePlus、TikTok和Alibaba字样。'
          f'加上AMD的{h["rwa_amd"][1]}份，在表内{f(h["all"][0])}枚芯片中占{f(h["rwa"][0])}枚。表格没有说明原因。同一表格', []),
-        ('北京方面有条件批准', '超过40万枚', 400_000, 'toward', '对象是字节跳动、阿里巴巴和腾讯。路透社，2026年1月28日', [by(evs, 'ms-bj-20260128-h200-nod-standard')]),
-        ('到7月，北京方面考虑放行的总量', '不到20万枚', 200_000, 'toward', 'The Information，经路透社转述，2026年7月8日', [by(evs, 'cn-acts-reuters-ti-cap-20260708-relay1')]),
-        ('已到报道点名的两家买方手中', '各约1万枚', 20_000, 'toward', '字节跳动和腾讯（英国《金融时报》，经路透社转述，2026年8月18日）；到11月已是数家企业（路透社，2026年11月5日）', [by(evs, 'cn-tolerate-reutersaug26-relay1-wayback')]),
-        ('存放在香港，等待运往中国', '约60万枚', 600_000, 'away', '北京方面迟迟未批准大规模进口（原文：“withholds approval for large-scale imports”）。路透社，2026年11月5日', [by(evs, 'cn-clips-evidence-1')]),
+        ('据报道，北京方面有条件批准', '超过40万枚', 400_000, 'toward', '对象是字节跳动、阿里巴巴和腾讯。路透社，2026年1月28日', [by(evs, 'ms-bj-20260128-h200-nod-standard')]),
+        ('据报道，到7月，北京方面考虑放行的总量', '不到20万枚', 200_000, 'toward', 'The Information，经路透社转述，2026年7月8日', [by(evs, 'cn-acts-reuters-ti-cap-20260708-relay1')]),
+        ('据报道，已到报道点名的两家买方手中', '各约1万枚', 20_000, 'toward', '字节跳动和腾讯（英国《金融时报》，经路透社转述，2026年8月18日）；到11月已是数家企业（路透社，2026年11月5日）', [by(evs, 'cn-tolerate-reutersaug26-relay1-wayback')]),
+        ('据报道，存放在香港，等待运往中国', '约60万枚', 600_000, 'away', '北京方面迟迟未批准大规模进口（原文：“withholds approval for large-scale imports”）。路透社，2026年11月5日', [by(evs, 'cn-clips-evidence-1')]),
     ]
     out = ['<div class="bars">']
     for lab, val, n, cls, note, es in rows:
@@ -434,13 +436,13 @@ def vouchers():
     import cn_voucher_classes as VC
     R = VC.compute(); C = R['counted']
     SHOWN = {  # row of the voucher tables: place, rule (year and month on its page), the saved copy the row links (a saved id of the row), note
-        'A3': ('杭州市', (2025, 6), 'cn-ga31-voucherrulesmissing-40', '一般为30%；使用算力设施开展模型训练、推理和应用的，“按照算力设施的不同类型给予30%或20%的分档补贴”，方案没有写明哪一类设施适用哪一档；中小企业最高50%；自2025年7月15日起施行，同时废止2024年7月的规定（国产算力设施30%、其他算力设施20%）；文本见杭州市档案馆网站'),
+        'A3': ('杭州市', (2025, 6), 'cn-ga31-voucherrulesmissing-40', '一般为30%；使用算力设施开展模型训练、推理和应用的，“按照算力设施的不同类型给予30%或20%的分档补贴”，方案没有写明哪一类设施适用哪一档；年申报智算合同累计金额50万元（含）以下的中小企业最高50%；自2025年7月15日起施行，同时废止2024年7月的规定（国产算力设施30%、其他算力设施20%）；文本见杭州市档案馆网站'),
         'A6': ('杭州市滨江区', (2026, 8), 'cn-ga31-twelve-18', '文本见该区政协网站'),
         'A7': ('温州市', (2025, 8), 'cn-le15-zj-oss-web1825-e66330', ''),
-        'A12': ('上海市', (2025, 7), 'cn-le15-sheitc-8cea38', '建设支持最高10%，只给国产（自主）算力'),
+        'A12': ('上海市', (2025, 7), 'cn-le15-sheitc-8cea38', '对自主智能算力设施部署项目，给予最高10%建设支持'),
         'A14': ('成都市', (2026, 4), 'cn-ga31-vouchernamedrules-5', '补贴自主可控算力；中小企业两档抵扣比例分别增加10%；自2026年5月13日起生效；文本见一家咨询公司的网页，已与市经信局签发文件的扫描件人工核对'),
         'A18': ('四川省', (2026, 8), 'cn-ga31-unsaved-sc-338hao-fgw-wayback', '成立3年内的初创企业30%，人工智能一人公司40%；省发展改革委的措施（川发改数据〔2026〕338号），2026年8月11日成文、8月13日发布'),
-        'B1': ('北京经济技术开发区（是开发区，不是北京市）', (2024, 11), 'cn-le28-etown-29hao-20241126', '取代了2024年3月最高按40%和最高按30%支付的规定；云服务企业采购装国产芯片的服务器，另有最高10%的支持'),
+        'B1': ('北京经济技术开发区', (2024, 11), 'cn-le28-etown-29hao-20241126', '取代了2024年3月最高按40%和最高按30%支付的规定；云服务企业采购装国产芯片的服务器，另有最高10%的支持'),
         'B5': ('深圳市', (2024, 12), 'cn-le28-sz-gxj-2024-13hao', '把模型迁移到国产芯片另有支持'),
         'B8': ('深圳市龙华区', (2024, 11), 'cn-le28-sz-longhua-2024-20hao', ''),
         'B10': ('广州开发区和黄埔区', (2025, 6), 'cn-le28-gz-huangpu-2025-7hao', ''),
@@ -562,7 +564,7 @@ def vouchers():
             dots = (f'<i class="vl" style="--a:{ot / mx:.4f};--b:{hm / mx:.4f}"></i><i class="vd toward" style="--x:{ot / mx:.4f}"></i>'
                     f'<i class="vd away" style="--x:{hm / mx:.4f}"></i><b class="vn" style="--x:{ot / mx:.4f}">{ot}%</b><b class="vn" style="--x:{hm / mx:.4f}">{hm}%</b>')
             lab = f'国产{hm}%，其他{ot}%'
-        tag = '' if C[k]['voucher'] else ' <span class="vtag">规定未以券命名</span>'
+        tag = '' if C[k]['voucher'] else ' <span class="vtag">规定未称之为券</span>'
         return (f'<div class="vr"><div class="vlab">{esc(place)} <a class="srcn" href="{url(sid)}">{when[0]}年{when[1]}月</a>{tag}</div>'
                 f'<div class="vt" role="img" aria-label="{esc(place, quote=True)}：{lab}">{dots}</div>{("<div class=vnote>" + esc(note) + "</div>") if note else ""}</div>')
     axis = '<div class="vr axis"><div></div><div class="vt">' + ''.join(f'<span style="--x:{v / mx:.4f}">{v}%</span>' for v in (0, 20, 40, 60)) + '</div></div>'
@@ -584,7 +586,7 @@ def vouchers():
     assert len(letters) <= 26
     def mini(k):
         place_, when, hm, ot, sid, note = rows[k]
-        dag = '' if C[k]['voucher'] else '<span class="vdag" title="规定未以券命名">†</span>'
+        dag = '' if C[k]['voucher'] else '<span class="vdag" title="规定未称之为券">†</span>'
         fn = f'<sup class="vfl">{letters[k]}</sup>' if k in letters else ''
         return (f'<div class="vm"><span class="vml">{esc(place_)} <a class="srcn" href="{url(sid)}">{when[0]}年{when[1]}月</a>{dag}{fn}</span>'
                 f'<span class="vmt" role="img" aria-label="{esc(place_, quote=True)}：各类算力一律{hm}%"><i style="--x:{hm / mx:.4f}"></i></span><b class="vmp">{hm}%</b></div>')
@@ -605,12 +607,12 @@ def vouchers():
            f'<div class="vgrp va"><h3>对国产算力补贴更多：{len(ti)}个</h3>' + ''.join(row(k) for k in ti) + f'<h3>只补贴国产算力：{len(only)}个</h3>' + ''.join(row(k) for k in only) + axis + '</div>',
            f'<p class="fine vf">图中{len(rows)}个地方政府里，{len(ti)}个对国产算力补贴更多，同时仍补贴其他算力；{len(only)}个，即{listed([place(k) for k in only])}，只补贴国产算力；'
            f'其余{len(third)}个没有对国产算力规定更高的比例：其中{len(one)}个各类算力适用同一比例，{place(hz)}的方案“{words}”，没有写明类型'
-           f'（该市{old_year}年的规定已废止，原按国产算力设施{old_h}%、其他算力设施{old_o}%补贴）。图中所示是普通申请者适用的比例。'
+           f'（该市{old_year}年的规定已废止，原按国产算力设施{old_h}%、其他算力设施{old_o}%补贴）。图中所示是普通申请者适用的比例；多数规定写的是上限。'
            f'这里统计的是按比例补贴企业租用或购买算力费用的规定：多数称为算力券或类似名称；{len(R["other_name"])}个用的是别的名称（补贴、奖励或支持），图中以标签或†标出。'
            '每个政府（省、市、区或开发区）一行：取所找到的、现行有效并写明账单补贴比例的最新一项普遍适用的规定。'
            '这些是逐省、逐市检索找到、保存并读过的规定，不是对所有地方政府的普查：'
            '检索覆盖31个省级政府、24个点名的城市和新区，以及四次逐市检索名单上的城市、区和开发区；其他区县只收录检索中碰到的。'
-           f'{len(rows)}个里，{len(R["own"])}个读的是发文政府或机构的官方页面或文件，{len(R["elsewhere"])}个读的是其他文本（其他机构的网站、新闻或商业网站，或互联网档案馆的存档）。'
+           f'{len(rows)}个里，{len(R["own"])}个读的是发文政府或机构的官方页面或文件，{len(R["elsewhere"])}个读的是其他来源的文本（其他机构的网站、新闻或商业网站，或互联网档案馆的存档）。'
            '没有列入的有：只见于媒体报道或摘要的规定（其中有杭州市余杭区、绍兴市柯桥区和济南市）、申报指南（北京市经济和信息化局；南京市）、没有写明施行日期的方案（南京江北新区）、'
            '已废止、已到期或没有写明账单补贴比例的规定（其中有深圳市龙岗区，以及南昌市对省级奖励的配套）、未能读到文本或只有扫描件的规定（重庆市；杭州市西湖区）、以及征求意见稿。'
            f'换一种算法（规定数／补贴更多／只补贴国产／没有更高比例）：把{place(hz)}的两档读作国产和其他（已废止的规定就是这样分的），是{alt["hangzhou_more"]}；不计{place(hz)}，是{alt["hangzhou_out"]}。'
@@ -650,9 +652,9 @@ def bodies(evs):
             '商务部倾向于进口（原文：“favoured imports”），据该报未具名的知情人士，2025年的限制行动由国家发展改革委牵头（原文：“was led by the National Development and Reform Commission”）。'
             f'美国贸易代表2026年11月20日说（<a href="{url("cn-le01-greer-bbg-20261120-youtube")}">彭博电视</a>；机器字幕，未经人耳核对，01:06至01:35）：'
             '情况并不像人们让你以为的那样铁板一块（原文：“not as monolithic as people would have you believe”）；'
-            '按他自己的分析（原文：“my own analysis”），有人认为希望能买到（原文：“we’d like to have access”），也有人认为反正不要美国芯片（原文：“others who think, well, we don’t want American chips anyway”）。'
+            '按他自己的分析（原文：“my own analysis”），有人认为希望能获得美国芯片（原文：“we’d like to have access”），也有人认为反正不要美国芯片（原文：“others who think, well, we don’t want American chips anyway”）。'
             '两条字幕轨的断句不同，因此他是否把这一分歧放在政府内部，并无定论。</p>'
-            '<p class="fine">市场监管总局党组把英伟达案与高通公司、杜邦中国集团的案件一并列在“坚决落实党中央重大决策部署”和“敢于斗争”之下'
+            '<p class="fine">一篇介绍市场监管总局党组工作的未署名文章把英伟达案与高通公司、杜邦中国集团的案件一并列在“坚决落实党中央重大决策部署”和“敢于斗争”之下'
             f'（<a href="{url("cn-media-party-samr-september")}">共产党员手机报，2026年9月24日</a>）。英伟达的报告说，初步调查结论涉及美国出口管制要求它向中国市场提供的降规产品（原文：“degraded products”）。'
             '有一项规定（如未解除）方向正相反：市场监管总局2020年附条件批准英伟达收购迈络思，条件之一是英伟达须“向中国市场继续供应英伟达GPU加速器”；'
             '交易双方可在条件生效6年后申请解除'

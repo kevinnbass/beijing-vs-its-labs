@@ -54,7 +54,7 @@ RUNGS = {  # name, what sits on it, what it shows about this claim, what it does
         'And the companies’ own turn to home-made chips, in their executives’ words.',
         'A first-hand record. Each of these passes through a reporter, a post or a transcript site; the speaker labels of the Tencent transcripts are the site’s and are unchecked.'),
     5: ('Unnamed sources, research firms’ counts, unchecked transcripts', 'press reports citing unnamed people; research firms’ counts, as the press reports them; caption tracks or machine transcripts that nobody has checked by ear',
-        'Who told whom, and when: the guidance not to buy, the warning about traitors, the customs checks, the split inside Beijing. Every count of the chips ordered across China’s companies, approved by Beijing, delivered and waiting; '
+        'Who told whom, and when: the guidance not to buy, the warning about traitors, the customs checks, the split inside Beijing. Every count of the chips reported ordered across China’s companies, approved by Beijing, delivered or waiting; '
         'the counts single buyers give of their own purchases are on rung 2. The research firms’ counts of Nvidia’s market share, and of the foreign suppliers’ share. The clip that raised the question, and the Trade Representative’s words on Bloomberg Television and a Bloomberg podcast and the Treasury Secretary’s on two Bloomberg programmes, in caption tracks or transcripts.',
         'Confirmation. In the answers found, Beijing’s spokespeople confirmed none of these reports.'),
 }
@@ -183,8 +183,9 @@ def main():
     assert kinds['NAMED'] == 1 and kinds['ACCT'] >= 2
     sm = C.table('state_media_items.tsv'); warns = sorted(C.date.fromisoformat(r['date']) for r in sm if r['stance'] == 'warns')
     win = [d for d in warns if d <= C.date(2025, 9, 24)]
+    sm_d = sorted(C.date.fromisoformat(r['date']) for r in sm)          # round 11 (work list B 51): the span of the items found, as items 12 and 16 print it
     assert (len(sm), len(warns), len(win)) == (75, 19, 16), (len(sm), len(warns), len(win))      # the table since core edit 6 (atlas/core_edit/p6_work_5/count_census.py)
-    RUNGS[1] = RUNGS[1][:2] + (RUNGS[1][2].replace('{SM}', f'of {len(sm)} state and Party media items found, {len(warns)} only warn about them, {len(win)} of those dated {C.fmt(win[0])} to {C.fmt(win[-1])} and {len(warns) - len(win)} later, in Global Times in 2026; the items after September 2025 are what two rounds of searches found, a sample and not a full count'),) + RUNGS[1][3:]
+    RUNGS[1] = RUNGS[1][:2] + (RUNGS[1][2].replace('{SM}', f'of {len(sm)} state and Party media items on Nvidia chips found from {C.MON[sm_d[0].month - 1]} {sm_d[0].year} to {C.MON[sm_d[-1].month - 1]} {sm_d[-1].year}, {len(warns)} only warn about them, {len(win)} of those dated {C.fmt(win[0])} to {C.fmt(win[-1])} and {len(warns) - len(win)} later, in Global Times in 2026; the items after September 2025 are what two rounds of searches found, a sample and not a full count'),) + RUNGS[1][3:]
     assert '{' not in RUNGS[1][2]
     # round 9 (core edit 8b): the kinds' words of rungs 4 and 5 rest on these
     # round 10 (the core's batch 12): a fifth COUNT is the Associated Press's report of an estimate by "the research firm Bernstein"; every COUNT label
@@ -208,7 +209,12 @@ def main():
     # round 10 (the argument's point 7 now counts the 32 pages without the Jiangsu notice, as "notices, one filing and one news page"): the classes
     cls = Counter(next(o for o in OWN if r['who_states'].startswith(o)) for r in {r['saved_id']: r for r in own if r['saved_id'] not in named}.values())
     assert (cls["carrier's own filing"], cls["carrier's own page"]) == (1, 1), cls
-    RUNGS[2] = RUNGS[2][:2] + (RUNGS[2][2].replace('{CARRIERS}', f'The carriers’ own notices ask for home-made chips by maker or by origin, or label their lots by software ecosystem; none of the {len(pages) - len(named)} such pages read (notices, one filing and one news page) names Nvidia or an Nvidia model. One other notice held does, a small one of 2024: a Jiangsu company that bears China Unicom’s name and publishes its tender on China Unicom’s procurement site (the notice names no owner) asks for cards it writes as NV RTX 3090, NV RTX 4090 and NV Tesla A100.'),) + RUNGS[2][3:]
+    # round 11 (work list B 52): the argument's point 7 counts, by script over the saved pages, the pages that ask for nothing of the kind;
+    # the number is read from the argument's own sentence, which must name the same 32
+    m_least = re.findall(r'At least (\d+) of the (\d+) ask for nothing of the kind', B.BASE.read_text(encoding='utf-8'))
+    assert len(m_least) == 1 and int(m_least[0][1]) == len(pages) - len(named), (m_least, len(pages) - len(named))
+    least = int(m_least[0][0])
+    RUNGS[2] = RUNGS[2][:2] + (RUNGS[2][2].replace('{CARRIERS}', f'None of the {len(pages) - len(named)} pages of the carriers’ own read (notices, one filing and one news page) names Nvidia or an Nvidia model. Some ask for home-made chips by maker or by origin, or label their lots by software ecosystem; at least {least} of the {len(pages) - len(named)} ask for nothing of the kind. One other notice held names Nvidia cards, a small one of 2024: a Jiangsu company that bears China Unicom’s name and publishes its tender on China Unicom’s procurement site (the notice names no owner) asks for cards it writes as NV RTX 3090, NV RTX 4090 and NV Tesla A100.'),) + RUNGS[2][3:]
     assert '{' not in RUNGS[2][2]
     cols = [p for _, ps in GROUPS for p in ps]
     cellc = {(p, k): sum(rung[i] == k for i in pts[p]) for p in cols for k in range(1, 6)}

@@ -2,7 +2,7 @@
 
 *American export controls also pushed China's AI companies toward home-made chips. What the saved sources say about that, and what they do not say.*
 
-Draft by Claude, Anthropic's model. Written Nov 23, 2026 (UTC); revised Nov 25, 2026.
+Draft by Claude, Anthropic's model. Written Nov 23, 2026 (UTC); revised Nov 26, 2026.
 
 How to read it. Words between quotation marks are a source's exact words, found in the saved copy by a script. A filled reference number is a document, a filing, a named person on the record, or a published commentary of state media or an industry body. An open number is a press report citing unnamed people, a research firm's count, or captions and machine transcripts nobody has checked by ear. English in round brackets after Chinese is our rendering, not an official translation.
 

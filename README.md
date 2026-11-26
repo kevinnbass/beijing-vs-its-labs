@@ -73,7 +73,7 @@ What Beijing did rests on two kinds of evidence. On the record: an antitrust cas
 The numbers count different things: “more than 2 million H200 chips” reported ordered; 579,868 of Nvidia’s approved by Washington, none shipped by May 11, 2026; “about 10,000 H200 processors” each reported delivered to two buyers; Nvidia’s own $2.4 billion of licensed Hopper sales to China in one quarter.
 
 - [Figure 16 · Washington’s table](https://kevinnbass.github.io/beijing-vs-its-labs/series/23_figure-16_washingtons-table.html): Washington’s table of licence applications, one by one.
-- [Figure 17 · Two gates](https://kevinnbass.github.io/beijing-vs-its-labs/series/24_figure-17_two-gates.html): The H200’s separate counts (orders, applications, approvals, deliveries) in the order of a sale, through two governments; they do not count the same chips.
+- [Figure 17 · Two gates](https://kevinnbass.github.io/beijing-vs-its-labs/series/24_figure-17_two-gates.html): The H200’s separate counts (orders, applications, approvals, deliveries) in the order of a sale, through two governments: not one tally, and they cannot be added.
 - [Figure 18 · Share and rise](https://kevinnbass.github.io/beijing-vs-its-labs/series/25_figure-18_share-and-rise.html): Nvidia’s reported share in China and Chinese chip makers’ revenue.
 - [Figure 19 · The customs lines](https://kevinnbass.github.io/beijing-vs-its-labs/series/26_figure-19_customs.html): What trade figures can and cannot show; the Hong Kong finding.
 - [Figure 20 · Purchase notices](https://kevinnbass.github.io/beijing-vs-its-labs/series/27_figure-20_tenders.html): A sample of public purchase notices.
@@ -95,11 +95,11 @@ Five limits on the claim: Beijing was not one actor; it warned and guided, and n
 
 ## The record behind the images
 
-*The argument, its figure, the two evidence files, 44 plain tables, a list of every source with its address and hash, and the scripts that checked each quotation.*
+*The argument, its figure, the two evidence files, 44 plain tables, a list of every source but one with its address and hash, and the scripts that checked each quotation.*
 
 Draft by Claude, Anthropic's model. First made public Nov 23, 2026.
 
-This version assembled Nov 26, 2026 (UTC). 2,666 sources: 2,665 saved pages and one clip with no saved page (its words are a machine transcript); the saved text of 24 government documents is included, and of nothing else.
+This version assembled Nov 26, 2026 (UTC). 2,665 sources: 2,664 saved pages and one clip with no saved page (its words are a machine transcript); the saved text of 24 government documents is included, and of nothing else.
 
 ## The claim tested
 
@@ -120,7 +120,7 @@ Washington's side is on the record. The table of licence applications for Nvidia
 - **On the record.** Government documents, company filings, named people speaking on the record, published commentaries of state media or an industry body, a named news outlet's account of a state document, and an institution's own notice. In the argument their reference numbers are filled. In the figure their marks are filled. 393 of the 477 sources that the argument or the figure classes (383 of the argument's 460); the 477 are the argument's 460 and 17 that the figure uses and the argument does not cite.
 - **Reported.** Press reports that cite unnamed people, a research firm's counts as the press gave them, and caption tracks or machine transcripts that nobody has checked by ear. Their numbers and marks are open. 84 of the 477 (77 of the argument's 460).
 - What Beijing is reported to have told companies in private (do not buy, cancel orders), the reported customs holds, and who is reported to have approved what are in the second tier: reported, not published policy. No published Chinese order against buying Nvidia chips was found in the 82 policy pages read.
-- **Not classed here.** 2,189 more sources are named only in the tables or the two evidence files. `sources.csv` gives their address and hash and the files that name them; it does not class them.
+- **Not classed here.** 2,188 more sources are named only in the tables or the two evidence files. `sources.csv` gives their address and hash and the files that name them; it does not class them.
 - `sources.csv` names the tier of every source the argument or the figure classes.
 
 ## How each quotation was checked
@@ -143,8 +143,8 @@ Washington's side is on the record. The table of licence applications for Nvidia
 - `TIER2_REPORTING.md`: the fuller record of reporting (the second tier).
 - `tables/`: 44 plain tab-separated tables, each listed below; every row names its saved source, or the table's first lines say where its rows come from.
 - `figure/beijing_vs_labs.html`: the figure, 62 dated records in four rows, with panels of numbers beside them. `figure/beijing_vs_labs_top.png`, `_strip.png` and `_full.png` are three images of it; `figure/figure_data.txt` is its data, each record with the source's own words; `figure/figure_events.tsv` and `figure/template.html` are the numbered records as drawn and the page the builder fills.
-- `sources.csv`: every saved source named in the files above: saved id, where it is named, kind, tier, label, the page's own title, address, time saved, sha256 of the saved file, whether its text is here, and a note (for a replacement copy, that it is one).
-- `sources/<id>/meta.json`: for every saved source, its address, time saved and hash. `sources/<id>/text.txt` and `body_text.txt`: the saved text, for 24 government documents only.
+- `sources.csv`: every saved source named in the files above but one (the one withheld: see below): saved id, where it is named, kind, tier, label, the page's own title, address, time saved, sha256 of the saved file, whether its text is here, and a note (for a replacement copy, that it is one).
+- `sources/<id>/meta.json`: for every saved source but one, its address, time saved and hash. `sources/<id>/text.txt` and `body_text.txt`: the saved text, for 24 government documents only.
 - `scripts/`: the checker, the builders, `cn_outputs_verify.py` and `check_repo.py`. `.gitignore` keeps Python's cache folders out.
 - `series/`: the 34 images, from the answer to the evidence behind it, each part naming the documents behind it; on the site at https://kevinnbass.github.io/beijing-vs-its-labs/.
 - `index.html`, the site's first page (the start image), and `everything.html`, everything on one page (the argument, the figure, the tables and the 46 outputs): https://kevinnbass.github.io/beijing-vs-its-labs/everything.html
@@ -178,7 +178,7 @@ Each table's own header lines give its columns and how it was made. Counts in th
 - `tables/procurement_notices_oct_nov_2026.tsv`: Twenty-seven purchase notices for AI computing dated Oct 13 to Nov 24, 2026, from four universities' own purchasing sites and the national government-procurement site, each read from its saved page: the chip words as printed, whether an Nvidia model is named, and any home-made requirement. A reading sample, not a census. 27 rows.
 - `tables/procurement_notices_sweep.tsv`: More purchase notices and filings on AI servers and cards, 2024 to November 2026, found by later searches and kept apart from the purchase records (a column says which are new to that table): how each names Nvidia, what it says on imports, and whether it requires or refuses Nvidia hardware by name. 61 rows.
 - `tables/procurement_records.tsv`: Procurement records: telecom carriers' central purchases, awards naming Nvidia cards after August 2025, and tenders that require home-made chips, with stage, quantity and the page's words. 53 rows.
-- `tables/provinces_31.tsv`: The 31 provincial-level governments: whether a published document sets a share for home-made computing hardware, in the document's own words. 31 rows.
+- `tables/provinces_31.tsv`: The 31 provincial-level governments: whether a published document sets a share for home-made computing, each by its plan's own measure (chips, equipment, hardware and software, or computing capacity), in the document's own words. 31 rows.
 - `tables/provincial_ict_plans.tsv`: The provincial communications administrations' five-year plans for their sector, searched as a class for a home-made share of computing, chips or equipment: 30 units other than Zhejiang, with what could be read for each and the control that shows the search could find a share. 30 rows.
 - `tables/purchase_notices_2024_2025.tsv`: Purchase notices of January 2024 to June 2025, when Nvidia's H20 was on sale in China, that name the H20, H800, A800, L20 or Nvidia; one row is a company's filing and one a scanned page read by eye. 34 rows.
 - `tables/replaced_copies.tsv`: The saved copies no longer cited: the pages once taken from the Hong Kong exchange's news site and the copies once taken from two research firms' sites (idc.com, trendforce.com), each with the copy that stands in its place (or none), whether the two files are identical, and what differs. 39 rows.
@@ -205,7 +205,7 @@ Each table's own header lines give its columns and how it was made. Counts in th
 - The saved text of a source is included only where two things hold. The argument or the figure classes the source as a government document or an official's words on the record. And the saved page stands on a government site or on the Party members' own site (addresses ending in .gov.cn or .gov, and 12371.cn).
 - 179 sources pass both tests: 148 Chinese and 31 American. The text of 24 is included. Each was read whole before it went in.
 - Of the American ones, the text of 1 is included: the Senate appropriations committee's page for the hearing of Apr 22, 2026 [18].
-- For every other source the address and the hash are given, never the text.
+- For every other source but one, the address and the hash are given, never the text.
 
 ## How to rebuild
 
@@ -220,17 +220,17 @@ Each table's own header lines give its columns and how it was made. Counts in th
 - **The clip transcripts.** They are not included, so `scripts/cn_argument_build.py` here passes over them where the working copy would stop. Quotations from the clip then count as not found.
 - Nothing else in those five scripts was changed. `scripts/cn_outputs_verify.py` is copied unchanged but for one header line. It checks again the further notes and figures made from this record, in the project's own folder of them. It needs that folder, which is not part of this repository, so it does not run here; a copy of those notes and figures, less what `HELD_BACK.md` lists, is under `outputs/`. `scripts/check_repo.py` was written for this repository.
 - **The two evidence files.** In `OFFICIAL_RECORD.md` and `TIER2_REPORTING.md`, six mentions of the project owner's first name were replaced by the words the project's owner, or the owner. Nothing else in them was changed.
-- Every other file is a byte-for-byte copy, so the files' own text still names saved copies as `research/primary/<id>`, and the working folders and notes that are not part of this repository.
 - **Caption tracks.** For 9 caption tracks, the address given is the video's, not the signed request address the track was fetched through.
 - **One table and the tables' comment lines.** In `tables/rtx5500_notices.tsv` the folder on the project's machine that keeps the census's PDFs is not named. Where a comment line of a table named a copy no longer cited, it now points to `tables/replaced_copies.tsv` instead.
-- **Page titles.** For 3 saved pages the page's own title is not given in `sources.csv` or `meta.json`: the argument does not print it, or it names a matter this project leaves out. Their address and hash are given.
+- **Page titles.** For 15 saved pages the page's own title is not given in `sources.csv` or `meta.json`: the argument does not print it, or it names a matter this project leaves out. Their address and hash are given.
+- **Everything else** is copied from the working files as it stands, so the files' own text still names saved copies as `research/primary/<id>`, and working folders and notes that are not part of this repository. Where the public copy changes a line of its text files (a folder name of the project's machine made relative, a site key written out, a page that called itself local or not published, a pointer to a file that is held back, a phrase on copies since withdrawn), `HELD_BACK.md` lists each kind of change with the number of files it touched.
 
 ## What is not included, and why
 
 - **The text of press pages, company pages, filings, call transcripts, notices, caption tracks and posts** (252 sources). It belongs to its publishers. `sources.csv` gives the address of each page and the sha256 of the copy that was checked.
 - **The text of official material that stands on some other site** (45 sources, on cdgaoqi.com, cj.sina.com.cn, cpc.people.com.cn, jhsjk.people.cn, m.chinastor.cn, m.jiemian.com, m.mxcwl.com, m.sohu.com, m.voc.com.cn, news.bjd.com.cn, pdf.dfcfw.com, reportdocs.static.szse.cn, rollcall.com, wipolex-res.wipo.int, world.people.com.cn, www.10100.com, www.bernama.com, www.cfr.org, www.everycrsreport.com, www.hzarchives.org.cn, www.idctalk.com, www.investsh.org.cn, www.investxiamen.org.cn, www.jitinfo.net, www.keceyun.com, www.news.cn, www.opczone.cn, www.presidency.ucsb.edu, www.qhhnnews.com, www.rev.com, www.smartcity.team, www.sohu.com, www.thewirechina.com, www.xinhuanet.com, www.yicai.com, www3.xinhuanet.com). These are copies and transcripts kept by trade sites, business papers, state media, transcript services, councils, universities and archives. Address and hash only.
 - **The text of 155 government documents on government sites** that the builder of this copy had not read whole. Address and hash only; `sources.csv` marks each as a government document not yet read whole by the builder.
-- **The text of the 2,189 sources not classed here.** Address and hash only.
+- **The text of the 2,188 sources not classed here.** Address and hash only.
 - **Copies no longer cited** (39 saved ids): 20 pages once taken from the Hong Kong exchange's news site, and 19 copies once taken from two research firms' sites, idc.com and trendforce.com. None of them is in this repository: no text, no saved record, and no row in `sources.csv`. `tables/replaced_copies.tsv` names each and gives the copy that stands in place of each (from a company's own investor site, another mirror or another carrier's page) or says that none is held; 28 replacement copies are listed in `sources.csv`, each with a note that it is one.
 - **Files on an investor-relations vendor's server.** 5 of the replacement copies stand on ea-cdn.eurolandir.com, whose terms allow personal, non-commercial use. Their addresses and hashes only, like every other company filing.
 - **One saved page withheld** (1): it is named in a table, but its address and record are not given here, pending a decision on publishing them.

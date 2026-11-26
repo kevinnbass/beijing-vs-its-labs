@@ -170,7 +170,7 @@ def main():
     loose = [r for r in rows if not FULL_DAY.fullmatch(r['shown_as'])]
     loose_txt = '; '.join(f'{r["shown_as"]} ({r["source"]})' for r in loose)
     notes = [
-        "Draft by Claude, Anthropic's model.",
+        "Draft by Claude, Anthropic's model.",      # round 11 (Nov 26, 2026): the session's ruling, no ""
         f'Drawn word for word from the table of records of the project\'s main figure (figure/figure_events.tsv): {len(rows)} records, in date order, from {first} to {last}.',   # round 10b: no script name
         'Each line: date | row | what | source | address. The second field is the row of the main figure the record sits in: which side it is about and which way it points. It does not name the speaker; the source field does.',
         f'Two tiers, marked at the end of each source: {on_record} records are on the record ({count["doc"]} published documents or officials, {count["rec"]} companies or named people outside government); {count["press"]} are press reports citing unnamed people.',
@@ -182,7 +182,7 @@ def main():
     # the notes hold no straight double quotes: the builder would read them as quotations
     if any('"' in n for n in notes): sys.exit('a note holds a straight double quote')
     base_notes = notes
-    base = ['# The record as a dated list', f'@deck {len(rows)} dated records of what Chinese authorities did about Nvidia chips and what China\'s AI companies did, as plain lines for pasting.', '']
+    base = ['# The record as a dated list', f'@deck {len(rows)} dated records of what Chinese authorities did about Nvidia chips and what China\'s AI companies did, on the record or as the press reported it, as plain lines for pasting.', '']
     base += [f'@note {n}' for n in base_notes] + ['', '| date | row | what | source | address |']
     for r in rows:
         base += [f'!! {r["saved_id"]} | {q}' for q in hidden[r['n']]]      # a record's check lines stand above its own row, never beside the next record's date

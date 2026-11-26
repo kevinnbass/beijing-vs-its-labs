@@ -208,8 +208,10 @@ def bars(evs):
     h = hfac()
     f = lambda v: f'{v:,}'
     places = ', '.join(h['abroad_places'][:-1]) + ' and ' + h['abroad_places'][-1]
+    # Round 13 (Nov 26, 2026, the session's message to builder r13e): a bar whose count rests on unnamed people carries the report
+    # in its own label ("Reported: ..."), as the records' titles and output A4's funnel do; the two sums of Washington's table stay.
     rows = [  # label, value text, chips (for the width), class, note, events
-        ('Ordered by Chinese companies for 2026', 'more than 2,000,000', 2_000_000, 'toward', 'Reuters, Dec 31, 2025', [by(evs, 'cn-labs-h200-two-million-202512-relay1-wayback')]),
+        ('Reported: ordered by Chinese companies for 2026', 'more than 2,000,000', 2_000_000, 'toward', 'Reuters, Dec 31, 2025', [by(evs, 'cn-labs-h200-two-million-202512-relay1-wayback')]),
         ('Approved by Washington: Nvidia as exporter', f(h['appr_nv'][0]), h['appr_nv'][0], 'us',
          f'in {h["appr_nv"][1]} applications, each marked “Approved, not shipped” at May 11, 2026. With AMD’s comparable chip '
          f'({f(h["appr_amd"][0])} in {h["appr_amd"][1]} applications) the count is {f(h["appr"][0])}. The table “H200 License and Equivalent Application Status as of May 11, 2026”, '
@@ -217,10 +219,10 @@ def bars(evs):
         ('Returned by Washington without action: Nvidia as exporter', f(h['rwa_nv'][0]), h['rwa_nv'][0], 'us',
          f'in {h["rwa_nv"][1]} applications, among them all {h["abroad"][1]} that give {places} as the chips’ location ({f(h["abroad"][0])} chips), named for ByteDance, BytePlus, TikTok and Alibaba. '
          f'With AMD’s {h["rwa_amd"][1]}, {f(h["rwa"][0])} of the table’s {f(h["all"][0])} chips. The table gives no reasons. Same table', []),
-        ('Approved by Beijing, with conditions', 'more than 400,000', 400_000, 'toward', 'for ByteDance, Alibaba and Tencent. Reuters, Jan 28, 2026', [by(evs, 'ms-bj-20260128-h200-nod-standard')]),
-        ('Total Beijing was weighing by July', 'fewer than 200,000', 200_000, 'toward', 'The Information, through Reuters, Jul 8, 2026', [by(evs, 'cn-acts-reuters-ti-cap-20260708-relay1')]),
-        ('Reached the two buyers named', 'about 10,000 each', 20_000, 'toward', 'ByteDance and Tencent (Financial Times, through Reuters, Aug 18, 2026); several firms by November (Reuters, Nov 5, 2026)', [by(evs, 'cn-tolerate-reutersaug26-relay1-wayback')]),
-        ('Stored in Hong Kong, awaiting shipment to China', 'about 600,000', 600_000, 'away', 'as Beijing “withholds approval for large-scale imports”. Reuters, Nov 5, 2026', [by(evs, 'cn-clips-evidence-1')]),
+        ('Reported: approved by Beijing, with conditions', 'more than 400,000', 400_000, 'toward', 'for ByteDance, Alibaba and Tencent. Reuters, Jan 28, 2026', [by(evs, 'ms-bj-20260128-h200-nod-standard')]),
+        ('Reported: total Beijing was weighing by July', 'fewer than 200,000', 200_000, 'toward', 'The Information, through Reuters, Jul 8, 2026', [by(evs, 'cn-acts-reuters-ti-cap-20260708-relay1')]),
+        ('Reported: reached the two buyers named', 'about 10,000 each', 20_000, 'toward', 'ByteDance and Tencent (Financial Times, through Reuters, Aug 18, 2026); several firms by November (Reuters, Nov 5, 2026)', [by(evs, 'cn-tolerate-reutersaug26-relay1-wayback')]),
+        ('Reported: stored in Hong Kong, awaiting shipment to China', 'about 600,000', 600_000, 'away', 'as Beijing “withholds approval for large-scale imports”. Reuters, Nov 5, 2026', [by(evs, 'cn-clips-evidence-1')]),
     ]
     out = ['<div class="bars">']
     for lab, val, n, cls, note, es in rows:
@@ -378,12 +380,12 @@ def vouchers():
     import cn_voucher_classes as VC
     R = VC.compute(); C = R['counted']
     SHOWN = {  # row of the voucher tables: place, rule (month on its page), the saved copy the row links (a saved id of the row), note
-        'A3': ('Hangzhou city', 'Jun 2025', 'cn-ga31-voucherrulesmissing-40', '30% in general; for training and inference on computing facilities, 30% or 20% “by the type of computing facility” (按照算力设施的不同类型), and the plan does not say which type gets which; up to 50% for small firms; in force from Jul 15, 2025, when it repealed the rule of Jul 2024 that paid 30% for home-made and 20% for other facilities; the text on the city archives’ site'),
+        'A3': ('Hangzhou city', 'Jun 2025', 'cn-ga31-voucherrulesmissing-40', '30% in general; for training, inference and applications on computing facilities, 30% or 20% “by the type of computing facility” (按照算力设施的不同类型), and the plan does not say which type gets which; up to 50% for small and medium firms whose intelligent-computing contracts come to 500,000 yuan a year or less; in force from Jul 15, 2025, when it repealed the rule of Jul 2024 that paid 30% for home-made and 20% for other facilities; the text on the city archives’ site'),
         'A6': ('Binjiang district, Hangzhou', 'Aug 2026', 'cn-ga31-twelve-18', 'the text on the district consultative conference’s site'),
         'A7': ('Wenzhou city', 'Aug 2025', 'cn-le15-zj-oss-web1825-e66330', ''),
         'A12': ('Shanghai city', 'Jul 2025', 'cn-le15-sheitc-8cea38', 'building support, up to 10%, for home-made computing only'),
         'A14': ('Chengdu city', 'Apr 2026', 'cn-ga31-vouchernamedrules-5', 'for 自主可控 (independently controllable) computing; small and medium firms’ rates each raised by 10%; in force from May 13, 2026; the rules on a consultancy’s page, compared by eye with the bureau’s signed file, a scan'),
-        'A18': ('Sichuan province', 'Aug 2026', 'cn-ga31-unsaved-sc-338hao-fgw-wayback', '30% for start-ups, 40% for one-person AI firms; the provincial development and reform commission’s measures (川发改数据〔2026〕338号), written Aug 11 and published Aug 13, 2026'),
+        'A18': ('Sichuan province', 'Aug 2026', 'cn-ga31-unsaved-sc-338hao-fgw-wayback', '30% for start-ups under three years old, 40% for one-person AI firms; the provincial development and reform commission’s measures (川发改数据〔2026〕338号), written Aug 11 and published Aug 13, 2026'),
         'B1': ('Beijing E-Town, a development zone', 'Nov 2024', 'cn-le28-etown-29hao-20241126', 'replaced a rule of Mar 2024 that paid up to 40% and up to 30%; cloud firms buying servers with home-made chips get a separate subsidy of up to 10%'),
         'B5': ('Shenzhen city', 'Dec 2024', 'cn-le28-sz-gxj-2024-13hao', 'separate support for moving models to home-made chips'),
         'B8': ('Longhua district, Shenzhen', 'Nov 2024', 'cn-le28-sz-longhua-2024-20hao', ''),
@@ -547,7 +549,7 @@ def vouchers():
            f'<div class="vgrp va"><h3>Pay more for home-made computing: {len(ti)}</h3>' + ''.join(row(k) for k in ti) + f'<h3>Pay for home-made computing only: {len(only)}</h3>' + ''.join(row(k) for k in only) + axis + '</div>',
            f'<p class="fine vf">{len(ti)} of the {len(rows)} local governments shown pay more for home-made computing and still pay for other computing; {len(only)}, {listed([place(k) for k in only])}, pay for home-made computing only; '
            f'the other {len(third)} state no higher rate for home-made computing: {len(one)} pay one rate for all, and {place(hz)} pays {hi}% or {lo}% “by the type of computing facility” (按照算力设施的不同类型), a type its plan does not name '
-           f'(its rule of {old_year}, since repealed, paid {old_h}% for home-made and {old_o}% for other facilities). The rate shown is the one for an ordinary applicant. '
+           f'(its rule of {old_year}, since repealed, paid {old_h}% for home-made and {old_o}% for other facilities). The rate shown is the one for an ordinary applicant; most rules state it as a ceiling (up to). '
            f'What is counted is a rule that pays a share of a firm’s bill for rented or bought computing: most call the payment a computing voucher (算力券) or a like name; {len(R["other_name"])} give it another name, a subsidy, a reward or support, and are tagged or marked †. '
            'One row per government (a province, a city, a district or a zone): its latest general rule found that is in force and states a share of the bill. '
            'These are the rules found by searches that went province by province and city by city, saved and read, not a census of every local government: '
@@ -593,7 +595,7 @@ def bodies(evs):
             f'The US Trade Representative, Nov 20, 2026 (<a href="{url("cn-le01-greer-bbg-20261120-youtube")}">Bloomberg Television</a>; machine captions, not checked by ear, 01:06 to 01:35): it is “not as monolithic as people would have you believe”; '
             'in his “own analysis” there are some who think “we’d like to have access” and “others who think, well, we don’t want American chips anyway”. '
             'The two caption tracks break the sentence differently, so whether he puts the split inside the government is not settled.</p>'
-            '<p class="fine">The market regulator’s Party group lists the Nvidia case, with its cases on Qualcomm and DuPont China, under “坚决落实党中央重大决策部署” (carrying out the Party centre’s major decisions) and “敢于斗争” (daring to struggle) '
+            '<p class="fine">An unsigned article on the work of the market regulator’s Party group lists the Nvidia case, with its cases on Qualcomm and DuPont China, under “坚决落实党中央重大决策部署” (carrying out the Party centre’s major decisions) and “敢于斗争” (daring to struggle) '
             f'(<a href="{url("cn-media-party-samr-september")}">Party members’ paper, Sept 24, 2026</a>). Nvidia’s reports say the preliminary finding concerns the “degraded products” US export controls required it to offer the Chinese market. '
             'A standing rule cuts the other way: the regulator’s 2020 approval of Nvidia’s Mellanox purchase obliges Nvidia to keep supplying its accelerators '
             'to the Chinese market, unless lifted since (the parties may apply to lift the conditions six years after they took effect) '

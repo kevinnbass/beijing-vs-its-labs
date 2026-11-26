@@ -105,9 +105,15 @@ EN_FIX = {
     '50': [('the strategic value of Xinchuang as a core support', 'the strategic value of Xinchuang (信创: replacing foreign information technology with home-made products) as a core support')],
     '73': [('where a concentration is carried out unlawfully', 'where a concentration (a merger, or one business taking control of another) is carried out unlawfully')],
     '101': [('carry out home-made Xinchuang substitution fully', 'carry out home-made Xinchuang (信创: replacing foreign information technology with home-made products) substitution fully')],
+    # Round 11 (Nov 26, 2026; work list round11_work/A3b.tsv lines 2 and 3): line 9, the Micron conclusion's 应停止采购 in the official record's words
+    # ("shall stop buying", the session's ruling); line 65, 60%以上 is "60% or more"
+    '9': [("operators of critical information infrastructure in China should stop buying Micron's products",
+           "operators of critical information infrastructure in China shall stop buying Micron's products")],
+    '65': [("is over 60% of the country's new capacity", "is 60% or more of the country's new capacity")],
 }
 EN_SRC = {'74': 'argument', '58': 'argument', '11': 'argument', '90': 'argument', '85': 'record', '91': 'record',   # round 9: whose corrected wording each line takes
-          '8': 'argument', '63': 'argument', '66': 'argument', '25': 'argument', '16': 'page', '47': 'page', '49': 'page', '50': 'page', '73': 'page', '101': 'page'}
+          '8': 'argument', '63': 'argument', '66': 'argument', '25': 'argument', '16': 'page', '47': 'page', '49': 'page', '50': 'page', '73': 'page', '101': 'page',
+          '9': 'record', '65': 'page'}      # round 11
 # round 10: words the argument must still hold for the lines that take its wording in this round (the build stops if it no longer does)
 EN_CHECK = {'8': "the public institutions directly under Party committees and governments at those levels, and the departments' public institutions that provide support to those bodies",
             '63': "the public institutions directly under Party committees and governments at those levels, and the departments' public institutions that provide support to those bodies",
@@ -118,13 +124,11 @@ EN_CHECK = {'8': "the public institutions directly under Party committees and go
 # one is not met exactly once.
 BODY_FIX = [('State planner (NDRC), Li Chao of its policy research office (政研室; this page does not call him spokesperson), press conference transcript.',   # the owner corrected the note itself on Nov 23, 2026; the page's line is unchanged
              'State planner (NDRC), Li Chao of its policy research office, press conference transcript.'),
-            ('国家发展改革委 (NDRC), spokesman Li Chao, as reported by Xinhua on gov.cn',
-             '国家发展改革委 (NDRC), Li Chao of its policy research office, as reported by Xinhua on gov.cn'),
             ("as reproduced by ChinaStor, a trade site; the centres' own page is not saved.",
              "on the first centre's own site."),      # round 10: no history of copies on the page (readers' leads)
-            ('Shanghai Municipal Commission of Economy and Informatization (a 2017 city policy).',      # round 10: the page's signature line is the city government's (上海市人民政府 2017年4月17日)
-             "Shanghai Municipal People's Government (a 2017 city policy, on the site of the Shanghai Municipal Commission of Economy and Informatization)."),
-            ('Shanghai Communications Administration and ten other city bodies', 'Shanghai Communications Administration and ten other bodies in Shanghai')]   # round 10: the core's names table (SF1-003)
+            ]   # round 11 (core batch 13b, Nov 26, 2026): entries 2, 4 and 5 taken out. 4 and 5 (Shanghai's 2017 issuer; "ten other bodies in Shanghai") stand in
+                # NOTE_policies_checked.md itself (rows B13B-162, -163); 2 ("spokesman Li Chao" -> his office) is not borne out: the row's page, Xinhua on gov.cn,
+                # calls him 新闻发言人, so the table's words stand (the session's ruling)
 # Round 4 (outputs/ROUND4.md, section 2): a note line whose saved copy the project no longer cites is shown as read in
 # the replacement copy, after the cross-check with the note's table (which stays as the note wrote it). Every passage and
 # date word of the line must stand in the replacement, or the build stops. List line -> (new id, address, words shown).
@@ -146,7 +150,8 @@ REMARK_FIX = {'55': [('on the new copy (loose_ends/GA21_replacements/quotes.tsv,
 # if one is not met exactly once, and stops if a line from the tables still shows such a word (WORKING below; control in local_lines()).
 COPY_FIX = {}      # Nov 25, 2026 (the session): the ten cells this map reworded now hold those plain words in the tables themselves, so the page and the tables say the same; a new working word in a printed cell still stops the build
 WORKING = re.compile(r"loose_ends|\bL\d\d\b|\bGA\d\d\b|this folder|WebFetch|cn_has|check_extracted|\bthe session\b|\.py\b|page saver|pdftotext|\bLEAD\b|words cell|\bthe checker\b|\bfetcher\b|by the search|the search's|owner's|\brow [AB]\d+\b|by script")   # round 10: more working words the readers found
-RESULT = {'share': 'sets a share for home-made computing hardware', 'plan_no_share': 'a plan that was read sets no such share',
+RESULT = {'share': 'sets a share for home-made computing',      # round 11: ruling 3b (each by its plan's own measure, given on the line)
+          'plan_no_share': 'a plan that was read sets no such share',
           'account_only': "known only from accounts of it, its issuer's own among them", 'not_reached': 'no computing plan was found'}
 
 # Round 10 (Nov 25-26, 2026; builder o10-A3b of the session): two readers read this page against the argument, and a helper looked at every
@@ -155,101 +160,20 @@ RESULT = {'share': 'sets a share for home-made computing hardware', 'plan_no_sha
 # for the session to apply to the table or the note (exact old words, exact new words), after which the entry stops the build and is taken out,
 # as COPY_FIX was in core edit 8. Every entry must be met exactly once, or the build stops.
 # (table, row) -> [(column, the cell's words, the page's words)]
-CELL_FIX = {
-    ('provinces_31.tsv', 28): [('binding_or_expected', 'a green-power share only', 'shares only for green power and for the uptake of new smart terminals and agents')],   # the argument, point 3
-    ('provinces_31.tsv', 29): [('binding_or_expected', 'not a share: the targets named are', 'by the accounts of it, no share for home-made hardware: the targets they name are')],
-    ('provinces_31.tsv', 2): [('rests_on', 'saved official page (70% of 自主可控 computing)',
-                               'saved official page (the opinions of Mar 24, 2025 on the intelligent-computing cloud: by 2027 the city strives for 200 EFLOPS of intelligent computing, over 70% of it 自主可控, independently controllable)')],
-    ('provinces_31.tsv', 31): [('documents_issuers_dates', 'with 国产 and 自主可控 0 times', 'with 国产 (home-made) and 自主可控 (independently controllable) 0 times')],
-    ('local_vouchers.tsv', 5): [('rate_home', '60% (国产人工智能算力)', 'up to 60% (国产人工智能算力)'), ('rate_other', '30% (非国产人工智能算力)', 'up to 30% (非国产人工智能算力)')],   # the rule's 按不超过 (ceilings)
-    ('local_vouchers.tsv', 6): [('rate_home', '60% (自主人工智能算力)', 'up to 60% (自主人工智能算力)'), ('rate_other', '30% (非自主人工智能算力)', 'up to 30% (非自主人工智能算力)')],   # the argument's table: up to 60% / up to 30%
-    ('local_vouchers.tsv', 9): [('body', '北京经济技术开发区 application guides (经开区信息技术产业局)',
-                                 '北京经济技术开发区 (Beijing E-Town, an economic and technological development zone) application guides (经开区信息技术产业局, its IT industry bureau)')],
-    ('local_vouchers.tsv', 10): [('copy', 'whose text the checker reads (first words); the two notes are official Word files (their text taken out and kept beside the saved files)',
-                                  'whose text was searched (the first passage above); the two notes are official Word files, whose text was taken out and searched (the other passages)')],
-    ('local_vouchers.tsv', 13): [('body', '上海市经济和信息化委员会', '上海市经济和信息化委员会 (Shanghai Commission of Economy and Informatization)')],
-    ('local_vouchers.tsv', 14): [('document', 'the copies read by script carry no number', 'the other copies carry no number')],
-    ('local_vouchers.tsv', 17): [('body', '宁夏回族自治区工业和信息化厅 reply, describing the 宁夏枢纽 policy opinions',
-                                  '宁夏回族自治区工业和信息化厅 (Ningxia industry and IT department) reply, describing the 宁夏枢纽 (Ningxia computing hub) policy opinions')],
-    ('local_vouchers.tsv', 19): [('copy', 'the words are found in the text taken out of the Word file and kept beside it', 'the words are found in the text of the official Word file')],
-    # round 10 (look fault 8): saved ids inside a cell's prose ("unsaved" in an id reads as "not saved"); the ids stay in the Saved copy line
-    ('local_vouchers.tsv', 18): [('date', "(the issuer's own page, cn-ga31-unsaved-sc-338hao-fgw-wayback)", "(the issuer's own page, in an Internet Archive capture)"),
-                                 ('document', "on the issuer's own page in an Archive capture, cn-ga31-unsaved-sc-338hao-fgw-wayback;", "on the issuer's own page in an Internet Archive capture, which is saved;"),
-                                 ('copy', '(cn-ga31-unsaved-sc-338hao-fgw-wayback: the number', '(the number'),
-                                 ('copy', 'for projects on home-made chips (cn-le14-huabenlihe-policy-list) is this', 'for projects on home-made chips is this')],
-    ('local_vouchers_more.tsv', 30): [('copy', '(tj.gov.cn; the copy saved as cn-le28-tj-compute-plan-2024-18hao is byte for byte the same)', '(tj.gov.cn; a second saved copy is byte for byte the same)')],
-    ('provinces_31.tsv', 24): [('rests_on', 'of the Jingdezhen city copy (cn-ga31-unsaved-jiangxi-measures-2025-jdz-wayback)', 'of the Jingdezhen city copy')],
-    ('local_vouchers.tsv', 20): [('rate_other', 'same', 'not stated'),
-                                 ('copy', "a company's policy list (LEAD; official text not found", "a company's policy list (a lead only: the official text was not found")],
-    ('local_vouchers_more.tsv', 2): [('body', '北京经济技术开发区信息技术产业局,', '北京经济技术开发区信息技术产业局 (Beijing E-Town IT industry bureau),')],
-    ('local_vouchers_more.tsv', 3): [('body', '北京经济技术开发区信息技术产业局,', '北京经济技术开发区信息技术产业局 (Beijing E-Town IT industry bureau),'),
-                                     ('document', '(citing 29号)', '(citing 京技管发〔2024〕29号)')],
-    ('local_vouchers_more.tsv', 4): [('body', '北京经济技术开发区信息技术产业局,', '北京经济技术开发区信息技术产业局 (Beijing E-Town IT industry bureau),'),
-                                     ('document', '(citing 29号, article 2)', '(citing 京技管发〔2024〕29号, article 2)')],
-    ('local_vouchers_more.tsv', 6): [('body', '深圳市工业和信息化局, operating rules', '深圳市工业和信息化局 (Shenzhen industry and IT bureau), operating rules')],
-    ('local_vouchers_more.tsv', 7): [('body', '深圳市发展和改革委员会, national AI voucher', '深圳市发展和改革委员会 (Shenzhen development and reform commission), national AI voucher')],
-    ('local_vouchers_more.tsv', 11): [('copy', '(its extracted text is empty; the words were checked against the page body)', "(the words were found in the page's markup; its plain text came out empty)")],
-    ('local_vouchers_more.tsv', 13): [('body', '武汉市人民政府, OPC measures', '武汉市人民政府 (Wuhan city government), OPC (one-person company) measures')],
-    ('local_vouchers_more.tsv', 14): [('rate_home', 'up to 50% of the computing service fee, up to 200,000 yuan, on top of the city', '50% of the computing service fee, at most 200,000 yuan, on top of the city'),
-                                      ('rate_other', 'up to 50%', '50%')],      # 按算力服务费的50%最高给予20万元
-    ('local_vouchers_more.tsv', 17): [('body', '青岛市工业和信息化局, revised voucher rules', '青岛市工业和信息化局 (Qingdao industry and IT bureau), revised voucher rules')],
-    ('local_vouchers_more.tsv', 19): [('body', '杭州市人民政府办公厅, 新势力 measures', '杭州市人民政府办公厅 (Hangzhou city government general office), 新势力 (new forces) measures')],
-    ('local_vouchers_more.tsv', 20): [('body', '杭州市人民政府办公厅, AI+OPC measures', '杭州市人民政府办公厅 (Hangzhou city government general office), AI+OPC (one-person company) measures')],
-    ('local_vouchers_more.tsv', 25): [('copy', 'the first quotation of the words cell is from', 'the first quotation above is from')],
-    ('local_vouchers_more.tsv', 32): [('body', '深圳市工业和信息化局, payout of the home-made migration subsidy',
-                                       '深圳市工业和信息化局 (Shenzhen industry and IT bureau): a centre recognised, and a planned payout of the home-made migration subsidy'),
-                                      ('copy', '(its cells were read by hand, not by the checker)', '(its cells were read by eye)')],
-    ('local_vouchers_more.tsv', 33): [('rate_home', '(100 million to 1 billion, cap 5 million)', '(from 100 million to under 1 billion, cap 5 million)'),   # 1亿元（含）—10亿元
-                                      ('copy', 'with its text taken out by pdftotext (xm.gov.cn gives no answer); the text layer passes the 算力 control', 'whose text could be searched (xm.gov.cn gives no answer)')],
-    ('local_vouchers_more.tsv', 35): [('body', '北京市经济和信息化局 北京市财政局', '北京市经济和信息化局 北京市财政局 (Beijing economy and IT bureau; finance bureau)'),
-                                      ('kind', 'exclusion of flagged devices', 'no support for computing equipment that national departments have declared a security hazard or advised against using (the Word note: 国家有关部门明确声明存在安全隐患或不建议使用的算力设备)')],
-    ('local_vouchers_more.tsv', 40): [('copy', '(the PDF answered 403 to the fetcher)', "(the PDF refused the project's request, error 403)")],
-    ('local_vouchers_more.tsv', 45): [('rate_other', 'same (the condition is location, not chip)', "same, by the press article (its condition is location, not chip; the plan's text is not held)")],
-    ('local_vouchers_more.tsv', 47): [('kind', 'separate incentives for home-made adaptation services, model services, data products and corpora',
-                                       'separate incentives for adapting on home-made computing (30% of the contract), and for model services, data products and corpora')],   # the argument, point 17
-    ('local_vouchers_more.tsv', 48): [('rate_other', '20% (computing services that are not 自主可控, and home-made large AI model token services)',
-                                       '20% (computing services that are not 自主可控); home-made large AI model token services are paid 20% too')],
-    ('local_vouchers_more.tsv', 51): [('document', "the two cities' voucher policies (算力券政策), not named in the reply; neither text is saved",
-                                       "Shenyang's and Dalian's voucher policies (算力券政策), which the replies do not name; Shenyang's policy text has been saved since Nov 25, 2026 (row 103 of tables/local_vouchers_more.tsv), and Dalian's measures of 2025 are row 82 of that table"),
-                                      ('copy', "says the two cities' vouchers support", 'says the vouchers of Shenyang and Dalian support'),
-                                      ('copy', "(row 103 of this table); Dalian's measures of 2025 are row 82", "(row 103 of tables/local_vouchers_more.tsv); Dalian's measures of 2025 are row 82 of that table")],
-    ('local_vouchers_more.tsv', 52): [('rate_other', 'same', 'not stated (the notice does not say whether the chip sets the tier)')],
-    ('local_vouchers_more.tsv', 63): [('rate_other', 'same', 'not stated (the notice does not say whether the chip sets the tier)')],
-    ('local_vouchers_more.tsv', 66): [('rate_home', 'paid from 10,000 yuan up', "paid only once a user's total for the year reaches 10,000 yuan (起付标准)")],
-    ('local_vouchers_more.tsv', 69): [('rate_home', 'AI computing centres of 100 PFLOPS or more', 'AI computing centres of 100 PFLOPS (a measure of computing power) or more')],
-    ('local_vouchers_more.tsv', 82): [('rate_other', "describe the two cities' vouchers in words that do not agree (row 103)",
-                                       'describe the vouchers of Shenyang and Dalian in words that do not agree (row 103 of tables/local_vouchers_more.tsv)'),
-                                      ('copy', "which speaks of the two cities' vouchers", 'which speaks of the vouchers of Shenyang and Dalian')],
-    ('local_vouchers_more.tsv', 101): [('rate_home', "not read (by the search's account of the PDF: ", 'not read: the measures themselves were not reached (a search result described the PDF as paying '),
-                                       ('rate_home', '2025-09-01 to 2028-08-31)', '2025-09-01 to 2028-08-31; no saved page shows it)'),
-                                       ('rate_other', 'not read (the same account names one rate)', 'not read (that search result names one rate)')],
-    ('local_vouchers_more.tsv', 103): [('rate_other', "Liaoning's data bureau describes the two cities' vouchers", "Liaoning's data bureau describes the vouchers of Shenyang and Dalian")],
-    ('local_vouchers_more.tsv', 106): [('rate_home', "the city's 1028 industry system", "the city's “1028” industry system (the city's own name for a set of industries)")],
-    ('local_vouchers_more.tsv', 113): [('rate_home', "the district adds 15% to the city's 30%",
-                                        "the district adds a further 15% on top of the city's 30% subsidy (the summary does not say whether the 15% is of the bill or of the city's subsidy)")],
-    ('local_vouchers_more.tsv', 114): [('date', 'in force on issue to 2027-06-30', 'in force from publication (自发布之日起) to 2027-06-30')],
-    ('local_vouchers_more.tsv', 117): [('date', 'a trial in force on issue to 2026-12-20', 'a trial in force from publication (自发布之日起试行) to 2026-12-20')],
-    ('local_vouchers_more.tsv', 126): [('document', '(by the search, 绍柯政办发〔2026〕4号; the measures are not saved)', '(绍柯政办发〔2026〕4号, the number a search result gave; the measures are not saved)')],
-    ('local_vouchers_more.tsv', 128): [('date', 'signed 2024-07-17 (by the search)', "signed 2024-07-17 (the bureau's date on the file)")],   # 金华市数据局 2024年7月17日 in cn-ga31-vcityeast-25
-    ('local_vouchers_more.tsv', 161): [('rate_home', 'up to 5 million yuan (by the search)', 'up to 5 million yuan a firm'),                  # 每家企业最高500万元 in cn-ga31-vcitysouth-74
-                                       ('document', '(under 深福科工规〔2024〕7号, whose page gave no answer)', "(a guide to the district's measures of 2024, whose number no saved page shows)")],
-    ('local_vouchers_more.tsv', 163): [('date', "in force to 2025-12-31; replaced on 2025-07-01 (the district's account)", "set to run to 2025-12-31, and replaced on 2025-07-01 by the district's account")],
-    ('local_vouchers_more.tsv', 173): [('date', "(the search's reading of that rule)", '(that rule says so: row 10 of tables/local_vouchers_more.tsv)')],
-    ('local_vouchers_more.tsv', 178): [('rate_other', 'same (no word for home-made computing in the clause) (a named centre)',
-                                        "none: only computing bought from the named centre is paid, and the clause names no chip (Tianjin Daily, on the city government's site, says the centre runs 300P of purely home-made computing on Huawei's Ascend architecture)")],
-    ('local_vouchers_more.tsv', 203): [('body', '贵阳市大数据发展管理局 and three other', '贵阳市大数据发展管理局 (Guiyang big data development administration) and three other')],
-    ('local_vouchers_more.tsv', 207): [('rate_other', 'same (no word for home-made computing in the clause) (a named centre)', "none: only the named centre's services are paid, and the clause names no chip")],
-    ('local_vouchers_more.tsv', 216): [('document', '(深福科工规〔2024〕7号 by the search; the page shows no number)', '(the page shows no document number; a search result gave 深福科工规〔2024〕7号, which no saved page shows)')],
-}
+CELL_FIX = {}      # round 11 (core batch 13b, Nov 26, 2026): every entry of round 10 now stands in the tables themselves (rows B13B-055 to -153; Chongqing's
+                   # cell by B13F-04), so the map is empty; a table cell that still reads as a working word stops the build (WORKING)
 # (table, row) -> [(words of the cell, the words shown)]: a passage cut before its verb is shown to the end of its clause (found by the checker in the copy)
-WORDS_FIX = {('local_vouchers_more.tsv', 180): [('本措施自2025年9月18日', '本措施自2025年9月18日起施行，有效期3年')]}
+WORDS_FIX = {}     # round 11: the table's cell now carries the clause to its verb (row B13B-145)
 # Words of the tables that recur on many lines: (pattern, the page's words). Each must be met at least once.
-TERM_FIX = [(r"the owner's hand-saved PDFs", 'PDFs saved by hand'), (r"the owner's hand-saved PDF", 'a PDF saved by hand'), (r"owner's hand-saved PDF", 'a PDF saved by hand'),
-            (r'gave no answer to the page saver', 'did not answer when the project tried to save it'),
-            (r'\bDRC\b', 'development and reform commission'),
-            (r'\brow B(\d+)\b', r'row \1 of tables/local_vouchers_more.tsv'),
-            (r'PUE binding', "PUE (power usage effectiveness: a data centre's total power use over its computing equipment's) binding"),
-            (r'; in the plan: no label\b', '; in the plan: not marked binding (约束性) or indicative (预期性)')]   # round 10: readers' leads L302, L304, L305
+TERM_FIX = []      # round 11: the tables now use these words themselves (core batch 13b, 24 occurrences); the map is empty
+# Round 11 (Nov 26, 2026; outputs/ROUND11.md, point 3, and list d of atlas/CONFIRM9_BRIEF.txt): no press headline that says China bans the chips,
+# that they are not permitted, or that an approval is withheld stands as a document's name on this page. A line's title slot shows the saved page's
+# own title; for these saved ids it shows instead what the report is, by outlet's words checked in the saved copy (each string must be found).
+# The build stops if any printed title still says such a thing (BAN_NAME; control in main()). The address stays, as the core keeps it.
+TITLE_SAID = {'cn-policy-statefunded-private-project': (
+    "Reuters' report, from two sources it does not name, of guidance requiring new data-centre projects that have received any state funds to use only home-made AI chips",
+    ['two sources familiar with the matter told Reuters', 'guidance requiring new data centre projects that have received any state funds to only use domestically-made artificial intelligence chips'])}
+BAN_NAME = re.compile(r'\bChina bans?\b|\bban(s|ned)?\b[^.]{0,40}\bchips?\b|not permitted|withh(old|olds|eld)\b', re.I)      # press headlines in English; an authority's own document title (禁止进口货物目录) is its name and stays
 # A province line's heading and reading gain these words (the line's own document cell says why)
 PROV_NOTE = {'Hainan': ('in its published text, which is marked abridged', True), 'Xinjiang': ('the date is that of a reply naming two plans whose texts were not found', False)}
 # Words of the checked note's descriptions and check notes. The note calls the list of leads "the lane"; the page calls it the list.
@@ -810,12 +734,20 @@ def main():
     rows.sort(key=lambda r: (0, r['iso']) if r['iso'] else (1, ''))        # by date; the two without a date last (the sort keeps the note's order within a date)
 
     keep = []           # (saved id, words): quoted strings kept in quotation marks in the body and check lines
+    title_met = set()   # round 11: the TITLE_SAID entries met
+    if not BAN_NAME.search('Exclusive - China bans foreign AI chips from state-funded data centres, sources say') or not BAN_NAME.search("China's customs agents told Nvidia's H200 chips are not permitted, sources say") \
+            or not BAN_NAME.search('Nvidia chips pile up in Hong Kong as China withholds import approval') or any(BAN_NAME.search(v_[0]) for v_ in TITLE_SAID.values()):
+        stop('BAN_NAME: the control of the headline screen fails')
     lines_q = []        # (saved id, words): everything for quotes.tsv
     cards = []
     met = set()         # the LANE_WORDS entries met in the note
     for r in rows:
         sid = r['read_sid']
-        title = re.sub(r'\s*<br\s*/?>\s*', ' ', B.title_of(sid))
+        title = TITLE_SAID[sid][0] if sid in TITLE_SAID else re.sub(r'\s*<br\s*/?>\s*', ' ', B.title_of(sid))
+        if sid in TITLE_SAID:
+            title_met.add(sid)
+            if not all(L.has(w_, sid) for w_ in TITLE_SAID[sid][1]): stop(f'TITLE_SAID: a check string is not found in {sid}')
+        if BAN_NAME.search(title): stop(f'line {r["row"]}: its title says a ban as the document\'s name: {title[:120]}')
         body_h = mark_quoted(r['body'], sid, keep, r['row'], met)
         remark_h = mark_quoted(r['remark'], sid, keep, r['row'], met) if r['remark'] else ''
         for q in r['quotes']: lines_q.append((sid, q['words']))
@@ -868,6 +800,7 @@ def main():
         cards.append(f'<details class="r" open data-kind="{GROUP[r["kind"]]}" data-g="note" data-part="{1 if r["verdict"] == "CONFIRMED IN PART" else 0}" data-s="{esc(r["search"])}">{inner}</details>')
 
     if met != LANE_WORDS: stop(f'LANE_WORDS entries not met in the note: {sorted(LANE_WORDS - met)}')
+    if title_met != set(TITLE_SAID): stop(f'TITLE_SAID: saved ids not met: {sorted(set(TITLE_SAID) - title_met)}')
 
     n_note_q = len(lines_q)        # round 10: lines_q holds the note lines' strings up to here; the tables' lines' strings follow, then the check notes' quoted strings
     local, left_out = local_lines()
@@ -897,6 +830,7 @@ def main():
         for q in r['quotes']: lines_q.append((q['sid'], q['words']))
         sid0 = r['quotes'][0]['sid'] if r['quotes'] else (r['sids'][0] if r['sids'] and (L.P / r['sids'][0]).is_dir() else '')
         title = re.sub(r'\s*<br\s*/?>\s*', ' ', B.title_of(sid0)) if sid0 else ''
+        if BAN_NAME.search(title): stop(f'tables/{r["table"]} row {r["trow"]}: its title says a ban as the document\'s name: {title[:120]}')
         d_html = f'<span class="d">{esc(show_date(r["iso"]))}</span>' if r['iso'] else '<span class="d no">no date given</span>'
         x = []
         for j, q in enumerate(r['quotes']):
@@ -1031,7 +965,7 @@ def main():
 <header>
 <p class="eyebrow">China chip policy · the policy documents</p>
 <h1>The policy documents: {n103} policy lines and {n_local} local rules and provincial plans</h1>
-<p class="deck">Most are texts the Chinese state published. No published order against buying Nvidia chips was found among them. The review office's 2023 conclusion on Micron, which says operators of critical information infrastructure should stop buying its products, is in the list. So such a text could have been found.</p>
+<p class="deck">Most are texts the Chinese state published. No published order against buying Nvidia chips was found among them. The review office's 2023 conclusion on Micron, which says operators of critical information infrastructure in China shall stop buying its products, is in the list. So such a text could have been found.</p>
 <p class="note">Draft by Claude, Anthropic's model.</p>
 <p class="note">Made from the project's checked note of policy documents (NOTE_policies_checked.md) with its table of quotations, and from the project's tables of provincial plans and local voucher rules (tables/provinces_31.tsv, local_vouchers.tsv, local_vouchers_more.tsv, with local_vouchers_classes.tsv and local_vouchers_other_provisions.tsv). {n103} lines of a list of policy leads; {n_copies} saved pages; {n_pass} passages in the pages' own words, {n_cn} of them Chinese.</p>
 </header>
@@ -1044,7 +978,7 @@ def main():
 <li><b>The date</b> is that of the document or act as the list gives it; where the list gave none, the date the page gives (each such line says so). A script looked for it in the saved copy: it found date words for {n_dfound} of the {n_dated} dated lines, and each line shows them.</li>
 </ul></details>
 <section class="card"><h2>Read with care</h2><ul>
-<li><b>Two sources.</b> {n103} lines come from the checked note of policy leads. {n_local} more come from the project's tables of local rules and provincial plans, marked <i>From the project's tables</i>: all 31 provincial-level governments ({c_res['share']} were found to set a share for home-made computing hardware, one of them, Zhejiang's, for the computing of one sector, its information and communications industry; {c_res['plan_no_share']} have a plan that was read and sets none; {c_res['account_only']}, Tibet, is known only from accounts of it, its issuer's own among them; for {c_res['not_reached']}, Xinjiang, no computing plan was found), and {n_vouch} rows of the project's tables of local voucher and subsidy rules whose words a script finds in a saved copy: {v_shown_yes} of them are in the project's count and {v_shown_no} are not ({esc(v_shown_why)}), and each line says which, as the project's table of classes gives it. {left_s} On the lines from the tables the English is the table's reading of the rule, not a translation. Counting one rule in force for each local government whose text is saved in a form that could be checked by script and which states a share of the bill, the argument finds {VC['n']} among the rules found by searches that went province by province and city by city, saved and read (not a census of every local government): {VC['tiered']} pay more for home-made computing and still pay for other computing ({VC['tiered_names']}), {VC['home']}, those of {VC['home_arg']}, pay for home-made computing only, and {VC['third']} state no higher rate for home-made computing: {VC['one']} pay one rate whatever the chip, and one, {VC['two_name']}'s, pays {VC['two_a']}% or {VC['two_b']}% by a type of computing facility that it does not name. Beijing E-Town's tier was repealed on Nov 26, 2024.</li>
+<li><b>Two sources.</b> {n103} lines come from the checked note of policy leads. {n_local} more come from the project's tables of local rules and provincial plans, marked <i>From the project's tables</i>: all 31 provincial-level governments ({c_res['share']} were found to set a share for home-made computing, each by its plan's own measure: chips, equipment, hardware and software, or computing capacity; one of them, Zhejiang's, for the computing of one sector, its information and communications industry; {c_res['plan_no_share']} have a plan that was read and sets none; {c_res['account_only']}, Tibet, is known only from accounts of it, its issuer's own among them; for {c_res['not_reached']}, Xinjiang, no computing plan was found), and {n_vouch} rows of the project's tables of local voucher and subsidy rules whose words a script finds in a saved copy: {v_shown_yes} of them are in the project's count and {v_shown_no} are not ({esc(v_shown_why)}), and each line says which, as the project's table of classes gives it. {left_s} On the lines from the tables the English is the table's reading of the rule, not a translation. Counting one rule in force for each local government whose text is saved in a form that could be checked by script and which states a share of the bill, the argument finds {VC['n']} among the rules found by searches that went province by province and city by city, saved and read (not a census of every local government): {VC['tiered']} pay more for home-made computing and still pay for other computing ({VC['tiered_names']}), {VC['home']}, those of {VC['home_arg']}, pay for home-made computing only, and {VC['third']} state no higher rate for home-made computing: {VC['one']} pay one rate whatever the chip, and one, {VC['two_name']}'s, pays {VC['two_a']}% or {VC['two_b']}% by a type of computing facility that it does not name. Beijing E-Town's tier was repealed on Nov 26, 2024.</li>
 <li><b>Not every line is a government text.</b> Of the {n103} lines of the checked note, {c_kind['official']} are official texts, {c_kind['company']} are company filings or statements, {c_kind['press']} are press reports, and {c_kind['other']} are of other kinds ({esc(other_bits)}). Each line carries its kind.</li>
 <li><b>A press report is not published policy.</b> Beijing's instructions to companies are reported by the press from unnamed people; no line here is a published order of that kind.</li>
 <li><b>Found means said, not true.</b> A passage that is found shows what the page says.</li>

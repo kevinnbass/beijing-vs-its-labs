@@ -18,6 +18,10 @@ Round 10 (Nov 25, 2026, core batch 12 and two readers of the public page): the b
 not as stages of a sale (title, deck, heading); a press row's date is its report's day of publication; the report of
 Aug 18, 2026 names two buyers and the Hong Kong report speaks of several; the argument's two later accounts that say
 otherwise of the orders (Voice of America's Chinese service, Jan 29, 2026; TechWeb as Sina carries it, Jul 17, 2026).
+Round 11 (Nov 26, 2026, outputs/ROUND11.md thing 2): every drawn label of a press report carries the report: the bars'
+labels begin "Reported:" (../h200_funnel.tsv), and each press mark of the dated strip reads "reported <date>" under a noun
+for what was reported (the strip's labels were "ordered", "Beijing approved", "delivered", "stored": flat statements);
+Nvidia's figures are said to be a share of revenue and a sum of sales (a reader: the 10-Q's is a share, not a sum).
 Round 5 (Nov 24, 2026, core edits 5 and 6): the licence table is named by its own title and its release, not as the
 Commerce Department's; the committee's example of 445,000 chips for Tencent is not said to be the table's row of 75,000,
 and the share is given both ways (a4lib.house()).
@@ -32,11 +36,12 @@ sys.path.insert(0, str(HERE.parent))
 import a4lib as A   # noqa: E402
 
 esc, qm, fmt = A.esc, A.qm, A.fmt
-STRIP = {'ordered': 'ordered', 'wapproved': 'Washington’s table', 'wreturned': 'Washington’s table', 'approved': 'Beijing approved',
-         'discussed': 'discussed', 'delivered': 'delivered', 'waiting': 'stored'}
+# round 11: what each mark of the strip counts, as a noun; a press mark's second line says "reported" before its date
+STRIP = {'ordered': 'orders', 'wapproved': 'Washington’s table', 'wreturned': 'Washington’s table', 'approved': 'Beijing’s approval',
+         'discussed': 'possible total', 'delivered': 'deliveries', 'waiting': 'chips in Hong Kong'}
 # round 10: a press row's date is the day its report was published, not the day of what it reports (the readers' leads 7 to 9)
 LIST = {'ordered': 'orders reported', 'wapproved': 'approved by Washington (status date)', 'wreturned': 'returned by Washington (status date)',
-        'approved': 'Beijing’s approval reported', 'discussed': 'discussion reported', 'delivered': 'deliveries reported', 'waiting': 'stock in Hong Kong reported'}
+        'approved': 'Beijing’s approval reported', 'discussed': 'discussion reported', 'delivered': 'deliveries reported', 'waiting': 'chips in Hong Kong reported'}
 NUM = {2: 'two', 3: 'three', 4: 'four', 5: 'five', 6: 'six', 7: 'seven'}
 
 CSS = '''
@@ -106,10 +111,20 @@ def strip(rows):
             out.append(f'<line class="tk" x1="{x:.1f}" y1="{AY}" x2="{x:.1f}" y2="{AY + 6}"/>')
         d = date(d.year + (d.month == 12), d.month % 12 + 1, 1)
     days = sorted({r['date'] for r in rows})
+    labs = []
     for dd in days:
-        grp = [r for r in rows if r['date'] == dd]; x = X(dd)
-        assert len({STRIP[r['key']] for r in grp}) == 1, 'bars that share a date share a label'
-        out.append(f'<text class="pw" x="{x:.1f}" y="16">{esc(STRIP[grp[0]["key"]])}</text><text class="pd" x="{x:.1f}" y="32">{A.MON[dd.month - 1]} {dd.day}</text>')
+        grp = [r for r in rows if r['date'] == dd]
+        assert len({STRIP[r['key']] for r in grp}) == 1 and len({r['tier'] for r in grp}) == 1, 'bars that share a date share a label and a tier'
+        second = ('reported ' if grp[0]['tier'] == 'open' else '') + f'{A.MON[dd.month - 1]} {dd.day}'     # round 11: a press mark says "reported"
+        labs.append([dd, X(dd), STRIP[grp[0]['key']], second, 'middle', grp])
+    wide = lambda s, px: len(s) * px * 0.6               # a rough width of a label, used only to keep two labels apart
+    for a, b in zip(labs, labs[1:]):
+        if a[1] + max(wide(a[2], 12.5), wide(a[3], 12)) / 2 + 8 > b[1] - max(wide(b[2], 12.5), wide(b[3], 12)) / 2:
+            assert a[4] != 'start', 'three labels too close to set apart'
+            a[4], b[4] = 'end', 'start'                  # the left one ends at its mark, the right one starts at its own
+    for dd, x, word, second, anc, grp in labs:
+        tx = x + {'middle': 0, 'end': 10, 'start': -10}[anc]; st = '' if anc == 'middle' else f' style="text-anchor:{anc}"'
+        out.append(f'<text class="pw" x="{tx:.1f}" y="16"{st}>{esc(word)}</text><text class="pd" x="{tx:.1f}" y="32"{st}>{esc(second)}</text>')
         for i, r in enumerate(grp):
             cx = x + (i - (len(grp) - 1) / 2) * 24
             solid = r['tier'] == 'solid'
@@ -169,7 +184,7 @@ def main():
         note = ''
         if r['key'] == 'wapproved': note = f'<span class="ours">our sum of the table’s {r["apps"]} rows with Nvidia as exporter</span>'
         if r['key'] == 'wreturned': note = f'<span class="ours">our sum of the table’s {r["apps"]} rows with Nvidia as exporter</span>'
-        if r['key'] == 'delivered': note = f'<span class="ours">the bar is drawn for both buyers: 2 × {per:,}</span>'
+        if r['key'] == 'delivered': note = f'<span class="ours">the bar is drawn for both buyers the report names: 2 × {per:,}</span>'
         qual = f'<small>{esc(r["shown"][0])}</small>' if r['shown'][0] else ''
         link = srclink[r['key']](r) if r['key'] in srclink else A.link(r['sid'], f'{r["by"]}, {fmt(r["date"])}')
         rr.append(f'''<div class="row"><span class="pin {r["dir"]}{" solid" if r["tier"] == "solid" else ""}" aria-hidden="true">{r["n"]}</span>
@@ -228,9 +243,9 @@ def main():
    <li>The approval Reuters reported on {fmt(R["approved"]["date"])} was not yet a purchase: a source said {qm(Q["approved.notconverting"])}.</li>
    <li>The possible total of July ({esc(R["discussed"]["shown"][0])} {esc(R["discussed"]["shown"][1])}) was, in the report’s words, {qm(Q["discussed.half"])}.</li>
    <li>The report of {fmt(delivered["date"])} names two buyers. A later report speaks of several: {qm(Q["later.several"])} ({A.link(Q["later.several"].sid, f"Reuters, {fmt(R['waiting']['date'])}")}).</li>
-   <li>Two later accounts say otherwise of the orders in bar {R["ordered"]["n"]}. Nvidia’s chief executive, the day after the report of Beijing’s approvals, said <span lang="zh-Hans">{qm(Q["orders.ceo"])}</span> (I think the Chinese government is still deciding; we have not yet received purchase orders), as {A.link(Q["orders.ceo"].sid, f"Voice of America’s Chinese service, {fmt(d_ceo)}")}, renders him.
+   <li>Two later accounts say otherwise of the orders reported in bar {R["ordered"]["n"]}. Nvidia’s chief executive, the day after the report of Beijing’s approvals, said <span lang="zh-Hans">{qm(Q["orders.ceo"])}</span> (I think the Chinese government is still deciding; we have not yet received purchase orders), as {A.link(Q["orders.ceo"].sid, f"Voice of America’s Chinese service, {fmt(d_ceo)}")}, renders him.
     TechWeb, as {A.link(Q["orders.techweb"].sid, "Sina carries it")}, reported on {fmt(d_tw)}, from industry insiders it did not name, that <span lang="zh-Hans">{qm(Q["orders.techweb"])}</span> (China’s AI firms had placed almost no bulk purchase orders for Nvidia’s H200). English in round brackets is ours, not an official translation.</li>
-   <li>Nvidia’s figures are sums of money, not counts of chips. Neither its call of {fmt(d_q3)} nor Reuters’s report of it says how many of those chips crossed into the mainland.</li>
+   <li>Nvidia’s figures are in money, not in chips: a share of its revenue in the quarterly report, a sum of its sales on the call. Neither its call of {fmt(d_q3)} nor Reuters’s report of it says how many of those chips crossed into the mainland.</li>
    <li>No report here says how many H200 chips have entered the mainland. The Hong Kong report says small quantities were shipped by other routes, in its words, {qm(Q["waiting.howmany"].split("routes ")[1])}.</li>
   </ul>
  </section>
@@ -247,6 +262,11 @@ def main():
     A.guard(page, Q, ours=ours, dates=dates)
     # withdrawn by core edit 6 (atlas/core_edit/APPLIED_6.txt, part 05): the table is not called the Commerce Department's,
     # and the Tencent row of 75,000 is not called the application of 445,000
+    # round 11 (outputs/ROUND11.md thing 2): every press row's label carries the report; control: the two table rows do not
+    assert all(r['label'].startswith('Reported: ') == (r['tier'] == 'open') for r in rows), 'a press row\'s label does not begin "Reported: "'
+    for banned in ('>Delivered<', '>Stored in Hong Kong', '>Ordered by', '>Approved by Beijing', '>Under discussion', 'a stockpile of H200', '>stored<', '>delivered<',
+                   '>ordered<', '>Beijing approved<', '>discussed<', 'sums of money, not counts'):
+        assert banned not in page, f'round 11: the page still says "{banned}"'
     for banned in ('750,000', 'cleared by Washington', 'Democrats', 'more than half', 'subsidiar', 'Commerce Department’s table', 'Commerce Department table',
                    'Commerce Department’s, with', 'shows that application', 'an application the table shows', 'counted in full',
                    # withdrawn by core edit 8b (Nov 25, 2026): the table's column names a data-centre operator or ultimate consignee and an ultimate

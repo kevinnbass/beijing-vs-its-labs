@@ -129,6 +129,10 @@ def main():
     assert len(p31) == 31 and {r['place'] for r in with_target} == share_set, ({r['place'] for r in with_target} ^ share_set)
     # round 5 (core edit 6): the one government known only from accounts (Tibet) now rests first on its issuer's own account
     acc = [r for r in p31 if r['result'] == 'account_only']
+    # round 11 (work list B 45): the one government not reached is Xinjiang, whose commission's reply names two plans whose texts were not found
+    nr = [r for r in p31 if r['result'] == 'not_reached']
+    assert len(nr) == 1 and nr[0]['government'] == 'Xinjiang' and 'texts not found' in nr[0]['documents_issuers_dates'] and 'cn-ga31-cndocs-15' in nr[0]['saved_ids'].split(), nr
+    assert ('cn-ga31-cndocs-15', '印发《绿色低碳的算力网建设实施方案（2025—2027年）》《自治区绿色算力中心布局方案》') in extra
     assert len(acc) == 1 and "the issuer's own account" in acc[0]['rests_on'] and 'press account' in acc[0]['rests_on'], acc
     who_set = f'{C.WORDS[len(share_set)]} of China’s 31 provincial-level governments'
     n_home = sum(r['term'] == 'home-made' for r in with_target); n_ctrl = sum(r['term'] == 'controllable' for r in with_target)
@@ -191,7 +195,7 @@ def main():
 {target('shanghai-target', P['shanghai-target'], 'by 2025', 'Home-made chips in use in the city’s newly built intelligent computing centres.')}
 {target('sichuan', P['sichuan'], 'plan for 2024 to 2027', 'Home-made computing equipment, not chips alone. The wording is “力争” (strive for).')}
 {target('national', 'no percentage', 'national opinions, Dec 25, 2023', 'No published national plan found in the 82 policy pages read sets a home-made share for computing centres. Two national texts among them hold a home-made percentage of other kinds: a 20% price preference for home-made goods where they compete with others in a government purchase, and an advisory committee’s roadmap of October 2015 that expected home-made products in several fields to reach stated shares of the home market by 2025, among them high-performance computers and servers at over 80% and mobile-terminal chips at 40% (guidance, not an instruction, in the words of the industry ministry’s vice minister at its launch). Bloomberg reported in June 2026, from unnamed people, a draft national plan with “at least 80 per cent of the core technology, AI chips included” from local suppliers; no such plan was found published.')}
-    <p class="axisnote">Scale of the {C.WORDS[len(order) - 1]} tracks of governments that set a share: a share in that place, as its plan defines it. A goal, not a count. The national track has none. Of the other {31 - len(share_set)} provincial-level governments, {res['plan_no_share']} have a plan that was read and sets no share, {C.WORDS[res['account_only']]} is known only from accounts of its plan (its issuer’s own among them), and for {C.WORDS[res['not_reached']]} no computing plan was found (tables/provinces_31.tsv).</p>
+    <p class="axisnote">Scale of the {C.WORDS[len(order) - 1]} tracks of governments that set a share: a share in that place, as its plan defines it. A goal, not a count. The national track has none. Of the other {31 - len(share_set)} provincial-level governments, {res['plan_no_share']} have a plan that was read and sets no share, {C.WORDS[res['account_only']]} is known only from accounts of its plan (its issuer’s own among them), and for {C.WORDS[res['not_reached']]}, {nr[0]['government']}, no computing plan’s text was found, though its development and reform commission says in a reply that two were issued (tables/provinces_31.tsv).</p>
    </section>"""
 
     # ---- in practice ----

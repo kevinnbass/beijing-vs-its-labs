@@ -141,15 +141,15 @@ PLAIN TABLES (tables/)
   tables/local_vouchers.tsv   20 rows, 11 columns
       What it is: Local rules that pay part of the bill for computing: who issued each, when, and the rate for home-made and for other computing.
       Columns: body, level, date, document, rate_home, rate_other, kind, words, saved_id, copy, cuts
-      Copy: byte for byte the project's table (sha256 85242e36793171863ea31081f15cd5eb813f91c0d24b06eabe33fa5dee23d2dd).
+      Copy: byte for byte the project's table (sha256 a5d9262946d7b852353e4040252f02c83de713b2f1ccb6af94288b90912ee489).
   tables/local_vouchers_classes.tsv   237 rows, 6 columns
       What it is: The class of every local voucher rule of the two voucher tables by the published counting rule: 91 counted, of the rules found by searches that went province by province and city by city, saved and read (not a census of every local government): 7 pay more for home-made computing and still pay for other computing, 4 pay for home-made computing only, 79 pay one rate whatever the chip and 1 pays two rates by a type of computing facility that the rule does not name; 146 read and not counted, each with its reason. The class looks at the counted payment only: other provisions of a counted rule that give home-made computing something more are in local_vouchers_other_provisions.tsv.
       Columns: row_id, government, class, reason, deciding_words, saved_id
-      Copy: byte for byte the project's table (sha256 922922accfc7baf285740fd4dbbd31b83e680abedb95e6a87e2859cf6129603e).
+      Copy: byte for byte the project's table (sha256 fad09a7d19d1aef81d10a583f019dee5c0615884907b579a0fdbcdbae36db308).
   tables/local_vouchers_more.tsv   217 rows, 11 columns
       What it is: More such local rules, and other documents read about them (drafts, application notices and accounts of a rule among them), found in later searches.
       Columns: body, level, date, document, rate_home, rate_other, kind, words, saved_id, copy, cuts
-      Copy: byte for byte the project's table (sha256 426cc2c1294d76e85f15f4865e78751d1a153d5aa53e9909eb2382719b209276).
+      Copy: byte for byte the project's table (sha256 0bf1b6c6aa7f64828ff193ce36887ede4471d0144a5f1c03ab1b8c132a4ac838).
   tables/local_vouchers_other_provisions.tsv   10 rows, 8 columns
       What it is: Provisions of the counted local voucher rules, other than the counted payment, that give home-made computing something other computing does not get: money to build, buy or run home-made computing facilities or equipment, an award or subsidy for adapting models or software to home-made chips or computing or for research built on them, a higher rate, cap or quota for using home-made computing in another provision, or a priority, purchasing preference, required share or condition in words that bind; one row per provision, each read and ruled on the rule's saved copy. A rule's class does not change by these rows: it is decided by the counted payment alone (local_vouchers_classes.tsv).
       Columns: row_id, government, class, kind, article, words, what_it_gives, saved_id
@@ -165,7 +165,7 @@ PLAIN TABLES (tables/)
   tables/numbers_first_reports.tsv   19 rows, 6 columns
       What it is: The numbers in the story: who first reported each among the saved pages, and how later reports changed it. In a column's name, the ledger is the project's ledger of numbers (the numbers ledger among the project's outputs).
       Columns: number, what it counts, first report found (outlet, date, on whose word, saved id), later reports and how they changed it, saved pages that contradict a first reporter or date in the argument or the ledger, note
-      Copy: byte for byte the project's table (sha256 4048d479e37a40b76251345a50a822554a08fc91ea44a72707209d14a590ebc2).
+      Copy: byte for byte the project's table (sha256 a3d375411373acdeedb41b2a824f795c167876ce64a635779ce4e222b84a391c).
   tables/nvidia_china_revenue.tsv   28 rows, 7 columns
       What it is: Nvidia's revenue from customers in China, Hong Kong included, period by period, from its own filings: by the customer's billing location until its quarterly report of October 2025, and by the direct customer's headquarters from that report on, with earlier periods recast (column basis); not a count of chips that entered China.
       Columns: period, period_end, basis, value_musd, source, how, check
@@ -181,7 +181,7 @@ PLAIN TABLES (tables/)
   tables/press_originals.tsv   54 rows, 10 columns
       What it is: For each press report the argument cited at an earlier build: whether the copy held is the publisher's own page or another outlet's.
       Columns: ref, saved_id_cited, report, date_of_report, through_a_relay, copy_held, original_held, other_copies_held, best_copy_held, best_copy_available_and_note
-      Copy: byte for byte the project's table (sha256 e69c8eee3001048da4ccc777620c4c05fb0e6e1e4d8968746f128eb80c3a2969).
+      Copy: byte for byte the project's table (sha256 86566d11050ab9bb32a2c518dca66ca3e6b70301adfca964f6954a07147c7cf3).
       Read with care: 1 row(s) cite ms-bj-20260114-customs-h200-standard, a source the figure no longer cites; the figure cites cn-acts-reuters-customs-20260114 in its place; the argument itself still cites ms-bj-20260114-customs-h200-standard as reference 287.
       Read with care: its column "ref" gives the present reference numbers of the argument; 2 of the 54 rows keep a report the argument no longer cites (marked "not cited now"); press references added to the argument later are named in the table's own comment line.
   tables/procurement_notices_oct_nov_2026.tsv   27 rows, 11 columns
@@ -197,9 +197,9 @@ PLAIN TABLES (tables/)
       Columns: part, date, buyer, project, stage, quantity, value, chip_family_stated, nvidia, home_made, source_kind, saved_id, exact_words, cuts
       Copy: byte for byte the project's table (sha256 595555e09a65923b8accfd0e3731aa43ab364edfc284cdd4e1ae5319a02e246d).
   tables/provinces_31.tsv   31 rows, 10 columns
-      What it is: The 31 provincial-level governments: whether a published plan sets a share for home-made computing hardware, with the document's own words where its text was read. Some rows rest on accounts of a plan rather than its text, and for one government no computing plan was found: column result gives the finding, column rests_on what it rests on, and column l16_change what a later reading changed.
+      What it is: The 31 provincial-level governments: whether a published plan sets a share for home-made computing, each by its plan's own measure (chips, equipment, hardware and software, or computing capacity), with the document's own words where its text was read. Some rows rest on accounts of a plan rather than its text, and for one government, Xinjiang, no computing plan's text was found, though its development and reform commission, in a reply posted Jul 24, 2026, says two were issued: column result gives the finding, column rests_on what it rests on, and column l16_change what a later reading changed.
       Columns: government, result, kind_of_document, binding_or_expected, documents_issuers_dates, exact_words, rests_on, saved_ids, l16_change, words_found_by_checker
-      Copy: byte for byte the project's table (sha256 d44f198a1d12d64ffab53de4afe80a3f173931ccb3691d89cf6ca77ce7d97afc).
+      Copy: byte for byte the project's table (sha256 32beb975a3bd05b6686c31e72564d521e06793a4f4501062b54b454c485167a8).
   tables/provincial_ict_plans.tsv   30 rows, 11 columns
       What it is: The provincial communications administrations' five-year plans for their sector, searched as a class for a home-made share of computing, chips or equipment: 30 units other than Zhejiang, with what could be read for each and the control that shows the search could find a share.
       Columns: unit, plan_found, group, issuer_and_number_as_the_page_gives_them, date, saved_id, home_made_share_number_in_its_own_words_or_none, how_the_number_is_labelled, words_on_home_made_chips_without_a_number, read_whole_in_the_saved_copy, note
@@ -215,7 +215,7 @@ PLAIN TABLES (tables/)
   tables/reported_claims_outlets.tsv   9 rows, 9 columns
       What it is: For nine claims the argument gives as reported by unnamed people: the first report, second reports with their own sources, relays, and any denial.
       Columns: claim, what is claimed, first report: outlet, date, its sourcing in its own words, saved id, independent second reports (own sourcing), each read, relays (count; ids), denial or contradiction, verdict, not saved (leads only: pages a search named that could not be saved), note
-      Copy: byte for byte the project's table (sha256 6fb7992c52f1793ea3c8282fcb3c0c5b4e518b32a1e9f6811bffe2c99b963f69).
+      Copy: byte for byte the project's table (sha256 69a9f51dd8812feb958d54bf5e0e202b0376b84f7fda0c82181970e52d1ebed7).
       Read with care: 1 row(s) cite ms-bj-20260114-customs-h200-standard, a source the figure no longer cites; the figure cites cn-acts-reuters-customs-20260114 in its place; the argument itself still cites ms-bj-20260114-customs-h200-standard as reference 287.
   tables/results_calls_authority_counts.tsv   48 rows, 7 columns
       What it is: Counts from a search of 118 company texts (76 results-call transcripts and 42 records of four smaller companies) for the names of Chinese authorities beside a chip word: by group and word, the hits and the hits beside a chip word, with what each of those is.
@@ -244,20 +244,20 @@ PLAIN TABLES (tables/)
   tables/state_media_baseline_2024_2025h1.tsv   49 rows, 12 columns
       What it is: A baseline for the state-media table: state and Party media items on Nvidia chips, January 2024 to June 2025, by the same rule; gathered by other routes, not a census, and not counted in that table. 13 of its rows are from papers of the People's Daily group that the state-media table never holds (their notes begin GROUP-PAPER), so a comparison with that table counts the other 36.
       Columns: date, outlet, kind, stance, speaker, key_sentence, saved_id, held, original, other_carriers, search_list_row, note
-      Copy: byte for byte the project's table (sha256 a1f8d3746124958c4e7a05612a325e633ca4763d7da588ab37179a36e2117fdd).
+      Copy: byte for byte the project's table (sha256 dc4a809a1d73ec3b71a0c15f3575cb659cbf7f913165cb005d4ad333f7c13ee0).
   tables/state_media_baseline_outside_scope.tsv   45 rows, 7 columns
       What it is: Items that the searches for that baseline found and left out of it, each with the reason.
       Columns: date, who_published, what, saved_id_or_address, held_or_found, search_list_row, why_outside
-      Copy: byte for byte the project's table (sha256 e5ba825d5efccab7b3932a5f498effa3b615350b6b9a45947ce5635ec377ea0e).
+      Copy: byte for byte the project's table (sha256 2cf21c33c3f85ddeec493f62dd10857a755b9cdeb69a568f75cc85102375adb6).
   tables/state_media_items.tsv   75 rows, 12 columns
       What it is: State and Party media items on Nvidia and its chips, July 2025 to November 2026, each with its stance.
       Columns: date, outlet, kind, stance, speaker, key_sentence, saved_id, held, original, other_carriers, search_list_row, note
-      Copy: byte for byte the project's table (sha256 80dc2ca3bf67cff89c88f96f8072e36a70b0845d12b0c69ebc67f90879fd5072).
+      Copy: byte for byte the project's table (sha256 b20530d8be9f07cc01be7bc496a707888815b7a610cb7c8838e4d90f467e159e).
       Read with care: 1 row(s) cite cn-media-yuyuan-thepaper, a source the figure no longer cites; the figure cites cn-le13-yuyuan-qq-20250810b in its place.
   tables/talks_and_acts.tsv   50 rows, 11 columns
       What it is: US-China trade meetings, May 2025 to November 2026, with what each side's readout says on chips, or that no written readout of that side was found, beside Beijing's dated acts and words on Nvidia chips.
       Columns: date_start, date_end, kind, event, cn_readout_on_chips, us_readout_on_chips, tier, saved_ids, checked_words, counted, note
-      Copy: byte for byte the project's table (sha256 8a00c222666dc673955b0c35c4159ff544c60f9e15c536af63232ac3f337ec92).
+      Copy: byte for byte the project's table (sha256 b3498245c231a125f8e457708556cfa04dc3cdaf1357d9559b692456a4fa62ce).
       Read with care: 1 row(s) cite ms-bj-20260114-customs-h200-standard, a source the figure no longer cites; the figure cites cn-acts-reuters-customs-20260114 in its place; the argument itself still cites ms-bj-20260114-customs-h200-standard as reference 287.
   tables/trade_annual_summary.tsv   528 rows, 7 columns
       What it is: Yearly sums of monthly customs figures, series by series. No customs line counts Nvidia chips.
@@ -277,9 +277,9 @@ PLAIN TABLES (tables/)
       Columns: saved_id, page_date, project_name, amount_yuan, nvidia_words, home_made_or_import_words, text_around_first_nvidia_word
       Copy: byte for byte the project's table (sha256 6d93926bf6a2cbc4c1b723a22a891be909184316aa2c476d444647fc707584cd).
   tables/xi_items_database_check.tsv   156 rows, 9 columns
-      What it is: A test of how complete the People's Daily database of Xi Jinping's speeches and activities is: 156 items of 2023 to November 2026 taken from Xinhua's lists and Qiushi's contents for their words on chips, computing power, AI, American firms or curbs, each looked for in the database, with the verdict and how it was reached.
+      What it is: A test of how complete People's Daily Online's database of Xi Jinping's speeches and activities is: 156 items of 2023 to November 2026 taken from Xinhua's lists and Qiushi's contents for their words on chips, computing power, AI, American firms or curbs, each looked for in the database, with the verdict and how it was reached.
       Columns: key, date, title, strong_words, database, database_ids, how_decided, xi_statements_list_within_3_days, outside_url
-      Copy: byte for byte the project's table (sha256 fad0a1318559affe0dd50f2725670d762f8c1e178acdfe152a6b4c4c0ac34a30).
+      Copy: byte for byte the project's table (sha256 7e3b0400ad2e1b893b59d8eae74ffbe024179d8837d685e1970186de373c1ee6).
   tables/xi_searches.tsv   92 rows, 8 columns
       What it is: The searches made of Xi Jinping's published speeches and activities, with the number of results each returned and the controls.
       Columns: site, words, period, mode, results, role, utc, log

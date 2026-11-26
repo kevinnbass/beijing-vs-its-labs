@@ -32,6 +32,9 @@ line is read (as scripts/cn_figure_build.py reads it) and checked only to be a w
 a record added here with add_record.py takes no "N" line.
 Round 10 (Nov 25, 2026): the label of a "doc" record and the key's filled mark name published state media, as the figure's
 key does; "Who is who" says what the four rows hold and what the records call home-made chips (readers' leads, round10_work).
+Round 11 (Nov 26, 2026): the line under the headline gives the exceptions in the argument's own words (point 19: "by these
+reports and records, taken together, some purchases were approved and some chips came in"); the credit line keeps "Draft by
+Claude, Anthropic's model." and no longer says the page is local (the session's ruling for the seventh public version).
 """
 import html, re, subprocess, sys
 from datetime import date
@@ -411,7 +414,7 @@ PAGE = """<!doctype html>
 <header>
  <p class="eyebrow">China · Nvidia chips · the dated record, kept up to date</p>
  <h1>Beijing mostly pulled one way on Nvidia chips. Its AI companies pulled the other.</h1>
- <p class="deck">%%N%% dated records of what Chinese authorities did about Nvidia’s chips and what China’s big AI companies did, newest first, under the state of play and a dated log. The exceptions on each side are listed too: Beijing sometimes let chips in, and the companies also turned to home-made ones.</p>
+ <p class="deck">%%N%% dated records of what Chinese authorities did about Nvidia’s chips and what China’s big AI companies did, newest first, under the state of play and a dated log. The exceptions on each side are listed too: by the reports and records, taken together, some purchases were approved and some chips came in, and the companies also turned to home-made ones.</p>
  <p class="note">Draft by Claude, Anthropic’s model. Last entry in the log: %%LAST%%.</p>
  <ul class="key">
   <li><i class="m away solid"></i><span><b>Orange, away from Nvidia:</b> holding it back, or choosing home-made chips. %%N_AWAY%% records</span></li>

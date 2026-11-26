@@ -1,4 +1,4 @@
-"""Build the map "Where the chips are" (China chip-policy project, output idea 18).
+"""Build the map page "Places Reports Name" (China chip-policy project, output idea 18).
 
 Run: python3 -I build.py                                      checks every quotation, writes the page
      python3 -I build.py --png    the same, then exports PNG images of it
@@ -52,7 +52,7 @@ def load():
             _, num, group, kind, status, direction, d, sid = ln.split()
             assert group in GROUPS and kind in ('paper', 'doc', 'rec', 'press') and status in ('there', 'plan') and direction in ('away', 'toward', 'us'), (n, ln)
             cur = dict(n=int(num), group=group, kind=kind, status=status, dir=direction, date=date.fromisoformat(d), sid=sid,
-                       P='', W='', T='', S='', Q='', U='', G='', F='', rawT='', plus=[], M=[], L=[])
+                       P='', W='', T='', S='', K='', Q='', U='', G='', F='', rawT='', plus=[], M=[], L=[])
             recs.append(cur)
         elif ln.startswith('! '):
             sid, q = ln[2:].split(' | ', 1); extra.append((sid.strip(), q.strip()))
@@ -64,9 +64,10 @@ def load():
                 sid, q = body[1:].split(' | ', 1); cur['plus'].append((sid.strip(), q.strip()))
             else: cur['plus'].append((cur['sid'], body))
         elif ln[:2] in ('M ', 'L '): cur[ln[0]].append(ln[2:].strip())
-        elif ln[:2] in ('P ', 'W ', 'T ', 'S ', 'Q ', 'U ', 'G ', 'F '):
+        elif ln[:2] in ('P ', 'W ', 'T ', 'S ', 'K ', 'Q ', 'U ', 'G ', 'F '):
             if ln[0] == 'T': cur['rawT'] = ln[2:].strip()
-            cur[ln[0]] = smart(ln[2:].strip()) if ln[0] in 'PWTS' else ln[2:].strip()
+            if ln[0] == 'K': assert '"' not in ln and '“' not in ln, f'line {n}: no quote marks in a K line'
+            cur[ln[0]] = smart(ln[2:].strip()) if ln[0] in 'PWTSK' else ln[2:].strip()
         else: sys.exit(f'line {n} not understood: {ln[:60]}')
     assert [r['n'] for r in recs] == list(range(1, len(recs) + 1)), 'records must be numbered 1, 2, 3 ... in order'
     return recs, extra, dates
@@ -107,10 +108,24 @@ def within(seg, verified):
     return bool(s) and any(s in v for v in verified)
 
 
+def shown_date(d):
+    return f'{MON[d.month - 1]} {d.day}, {d.year}'
+
+
+def k_ok(r):
+    """Round 11 (Nov 26, 2026): the list under the map gives each place as a named source's dated report. The K line must
+    begin "in", name the outlet or document that the S line names first, give the record's own date, and, for a press
+    report, say that the outlet did not name its people."""
+    k = r['K']
+    return (k.startswith('in ') and shown_date(r['date']) in k and r['S'].split(',')[0].split(' ')[0].lower() in k.lower()
+            and (r['kind'] != 'press' or 'did not name' in k))
+
+
 def verify(recs, extra, dates):
     bad = []
     for r in recs:
-        if not (r['P'] and r['W'] and r['T'] and r['S'] and r['Q'] and r['G']): bad.append(f"incomplete block {r['n']} {r['sid']}")
+        if not (r['P'] and r['W'] and r['T'] and r['S'] and r['K'] and r['Q'] and r['G']): bad.append(f"incomplete block {r['n']} {r['sid']}")
+        if not k_ok(r): bad.append(f"record {r['n']}: the K line does not name the source and its date as the S and @ lines give them: {r['K']}")
         for sid, q in [(r['sid'], r['Q'])] + r['plus']:
             if not has(q, sid): bad.append(f"NOT FOUND in {sid}: {q[:80]}")
         own = [L.squash(no_cf(q)) for sid, q in [(r['sid'], r['Q'])] + r['plus']]          # the record's own checked lines, whichever saved page each stands in
@@ -122,6 +137,7 @@ def verify(recs, extra, dates):
         if not has(q, sid): bad.append(f'NOT FOUND in {sid}: {q[:80]}')
     assert not has('this sentence was never written by anyone at all', recs[0]['sid']), 'the control quotation was found: the check cannot fail'
     assert not within('a place nobody ever named', [L.squash(r['Q']) for r in recs]), 'the control for quoted words passed: the check cannot fail'
+    assert not k_ok(dict(recs[0], K='in a report of no date, by two people it did not name')) and not k_ok(dict(recs[0], K=recs[0]['K'].replace('Reuters', 'a news agency'))), 'the control for the K check passed: the check cannot fail'
     return bad
 
 
@@ -344,6 +360,7 @@ def build_map(recs):
     out = [f'<svg viewBox="0 0 {W} {H}" role="img" aria-labelledby="map-t map-d"><title id="map-t">Map of East and Southeast Asia with the places that saved reports name</title>'
            f'<desc id="map-d">Mainland China is drawn darker than its neighbours. Provinces and countries that a source names are shaded blue. Each numbered mark is one record, listed below the map: '
            'circles where chips are reported or said to be, diamonds for plans, tenders and contracts; filled marks are on the record, open marks rest on unnamed people. '
+           'Under the map, each number is given with its place, its source and the date. '
            'The map shows places that reports name, not where chips are.</desc>']
     out.append(f'<defs><clipPath id="frame"><rect x="0" y="0" width="{W}" height="{H}" rx="8"/></clipPath>')
     out.append('<g id="g-land">' + ''.join(f'<path id="{f["id"]}" d="{f["d"]}"/>' for f in land) + '</g>')
@@ -470,7 +487,7 @@ def main():
     th = next(r for r in recs if r['group'] == 'there')
     assert th['sid'] == 'cn-tolerate-projects-relay1' and th['date'].isoformat() == '2026-11-13' and 'municipal government said in March 2025' in th['Q'], 'the deck names this report, its date and the city government'
     aw = [r for r in recs if r['dir'] == 'away']
-    assert [(r['sid'], r['S'].split(',')[0]) for r in aw] == [('cn-clips-evidence-1', 'Reuters')] and 'two people' in aw[0]['Q'], 'the orange key names Reuters and two unnamed people'
+    assert [(r['sid'], r['S'].split(',')[0], r['date'].isoformat()) for r in aw] == [('cn-clips-evidence-1', 'Reuters', '2026-11-05')] and 'two people' in aw[0]['Q'], 'the orange key names Reuters, its date and two unnamed people'
     nums = [str(r['n']) for r in paper]
     c.update(out_or_plan=c['out'] + c['plan'], solid_rep=c['solid'] - c['paper'])
     assert max(c.values()) < len(WORDS)
@@ -486,6 +503,7 @@ def main():
              'N_PLAN': WORDS[c['plan']].capitalize(), 'N_THERE': WORDS[c['there']].capitalize(), 'N_US': str(c['us']), 'N_PAPER': WORDS[c['paper']], 'N_PAPER_CAP': WORDS[c['paper']].capitalize(),
              'N_AWAY': str(c['away']), 'N_TOWARD': str(c['toward']), 'N_CIRCLE': str(c['circle']), 'N_DIAMOND': str(c['diamond']),
              'N_SOLID': str(c['solid']), 'N_HOLLOW': str(c['hollow']),
+             'MAPSRC': '\n'.join(f'    <li>{pin(r)}<span><b>{esc(r["P"])}</b>, {esc(r["K"])}</span></li>' for r in recs),
              'N_OUT_OR_PLAN': WORDS[c['out_or_plan']], 'N_SOLID_REP': WORDS[c['solid_rep']], 'REC_DS': str(ds[0]['n']),
              'PAPER_NUMS': ', '.join(nums[:-1]) + ' and ' + nums[-1]}
     for k, v in sorted(parts.items(), key=lambda kv: -len(kv[0])):          # longer names first: N_PAPER_CAP before N_PAPER

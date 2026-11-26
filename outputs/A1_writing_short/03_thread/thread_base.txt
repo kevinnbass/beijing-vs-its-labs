@@ -2,7 +2,7 @@
 @deck Ten posts for X. Each is one claim with its source named in words, and each fits in 280 characters.
 
 @note Draft by Claude, Anthropic's model.
-@note Written Nov 23, 2026; revised Nov 25, 2026 (UTC). Nothing here has been posted. The same posts as plain text, each with its source's address, the character counts and a note on images, are in thread_plain.txt beside this file.
+@note Written Nov 23, 2026; revised Nov 26, 2026 (UTC). Nothing here has been posted. The same posts as plain text, each with its source's address, the character counts and a note on images, are in thread_plain.txt beside this file.
 @note Words between quotation marks are a source's exact words, found in its saved copy by a script. Where a post gives a Chinese source in English without quotation marks, the English is ours, not an official translation. The key under this header says what a filled and an open reference number mean.
 @note Post 1 quotes Palmer Luckey from two places. The first sentence is from a machine transcript of the clip, at 0:11. The second is from the text of the post that carries the clip; that text begins the sentence with the word Like, and so does a second machine transcript. Nobody has checked either by ear. Post 9 quotes the US Trade Representative from a video's caption track, at 5:59; nobody has checked that by ear either.
 @note Order: the claim, the declared line, what the companies used, what Beijing did, the five limits, the sentence that survives. The numbers stand in limit 3 (post 7), which is a limit about numbers.
@@ -64,6 +64,6 @@
 - With five limits and ten posts, the numbers have no post of their own: they stand in limit 3 (post 7). That post carries four reported numbers: three from Reuters reports of Dec 31, 2025, Jan 28, 2026 and Nov 5, 2026, and one from the Financial Times as Reuters relayed it on Aug 18, 2026. The copy the post cites for the report of Nov 5 is CNA's page, which shows only its own date, Nov 6, 2026; Reuters's dateline of Nov 5 stands on Yahoo's copy of the same report, also saved.
 - Washington's side is left out for length: the conditions it set, and its own table of licence applications, which shows chips approved and not shipped and others returned without action. The argument sets them out under its fourth limit.
 - Post 6 names one press report. The public warnings in state media, and the dates they fall between, are in the argument's points 4 and 18.
-- Post 10 is a shorter form of the argument's last sentence; its last words are limit 5's. It drops the public warnings, the parts of the state that welcomed Nvidia and approved some purchases, and the companies' own turn to home-made chips; posts 5 to 8 carry them.
+- Post 10 is a shorter form of the argument's last sentence; its last words are limit 5's. It drops the public warnings, the parts of the state that welcomed Nvidia and, by the reports, approved some purchases, and the companies' own turn to home-made chips; posts 5 to 8 carry them.
 - No recording has been checked by ear: not the clip in post 1, and not the interview in post 9.
 !! cn-clips-evidence-1 | 06 Nov 2026 11:47AM

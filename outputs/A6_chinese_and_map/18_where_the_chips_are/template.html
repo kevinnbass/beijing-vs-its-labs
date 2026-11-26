@@ -79,6 +79,10 @@ a.pin.us .m { stroke: var(--us); } a.pin.solid.us .m { fill: var(--us); } a.pin.
 a.pin text { font-size: 11px; font-weight: 700; text-anchor: middle; fill: var(--ink); pointer-events: none; font-variant-numeric: tabular-nums; }
 a.pin.solid text { fill: var(--pin-on); }
 a.pin:hover .m, a.pin.hl .m, a.pin:focus-visible .m { stroke: var(--ink); stroke-width: 3; }
+.msrc-h { margin: 12px 0 2px; font-size: 13px; font-weight: 600; color: var(--ink2); }
+.msrc { list-style: none; margin: 0; padding: 0; font-size: 13px; line-height: 1.4; color: var(--ink2); columns: 2 320px; column-gap: 26px; }
+.msrc li { display: grid; grid-template-columns: 28px 1fr; gap: 6px; align-items: start; padding: 4px 0; break-inside: avoid; }
+.msrc b { color: var(--ink); font-weight: 600; }
 .mapsrc { margin: 10px 0 0; font-size: 12px; color: var(--muted); max-width: 100ch; }
 
 /* the key */
@@ -124,17 +128,21 @@ li.ev.hl, li.ev:target { background: var(--wash); }
  <div class="row top">
   <section class="card" id="mapcard">
    <h2>Places the sources name</h2>
-   <p class="sub"><b>This map shows places that reports and records name. It does not show where chips are.</b> Each number is one record, listed below. A mark sits on the area its source names, not on a site. Point at a mark to read the source’s own words.</p>
+   <p class="sub"><b>This map shows places that reports and records name. It does not show where chips are.</b> Each number is one record; the list under the map gives its place, its source and the date. A mark sits on the area its source names, not on a site. Point at a mark to read the source’s own words.</p>
    <p class="hint">Swipe the map sideways to see all of it.</p>
    <div class="scroll" tabindex="0" role="group" aria-label="Map; scroll sideways on a narrow screen">
 %%MAP%%
    </div>
+   <p class="msrc-h">Each number: a place, as one dated report or document names it</p>
+   <ol class="msrc">
+%%MAPSRC%%
+   </ol>
    <p class="mapsrc">Outlines: Natural Earth, 1:10m states and provinces, version 5.1.2 (naturalearthdata.com), public domain; drawn here in a Lambert azimuthal equal-area projection. Boundaries are as Natural Earth draws them and take no position on any dispute.</p>
   </section>
   <section class="card" id="keycard">
    <h2>How to read the marks</h2>
    <ul class="key">
-    <li><i class="sw away"></i><span><b>Away from Nvidia (orange):</b> Reuters’s report, by two people it did not name, that chips were waiting for Beijing’s approval. %%N_AWAY%% record</span></li>
+    <li><i class="sw away"></i><span><b>Away from Nvidia (orange):</b> Reuters’s report of Nov 5, 2026, by two people it did not name, that chips were waiting for Beijing’s approval. %%N_AWAY%% record</span></li>
     <li><i class="sw toward"></i><span><b>Toward Nvidia (blue):</b> a source’s account of Nvidia chips used, rented or planned for, by Chinese companies or in projects in China, or, in record %%REC_DS%% (a Japanese firm’s own notice), for a customer the notice does not name. %%N_TOWARD%% records</span></li>
     <li><i class="sw us"></i><span><b>Grey:</b> the United States government’s own table of licence applications, returned without action. %%N_US%% record</span></li>
     <li><a class="p hollow toward" aria-hidden="true" tabindex="-1"><span>1</span></a><span><b>Circle:</b> chips reported or said to be at the place. %%N_CIRCLE%% records</span></li>

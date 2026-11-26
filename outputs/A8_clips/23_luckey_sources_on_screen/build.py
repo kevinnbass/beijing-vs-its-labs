@@ -295,7 +295,7 @@ def main():
     def at(layer, style, x, y, text, an=7): add(layer, ts(0), end, style, '{\\an%d\\pos(%d,%d)\\q2}%s' % (an, x, y, text))
     # header
     at(1, 'Head', 40, 14, f'Palmer Luckey, {int(duration)} seconds, with the sources on screen')
-    at(3, 'Small', W - 40, 20, "Draft by Claude, Anthropic's model.", an=9)
+    at(3, 'Small', W - 40, 20, "Draft by Claude, Anthropic's model.", an=9)   # round 11 (the session's ruling, outputs/ROUND11.md): the credit is only this, in text and in pixels
     # left of the picture: the key
     at(4, 'Tag', 40, 88, 'KEY')
     key = [(132, 'solid', INK, 'On the record: a document,\\Na filing or a named person'), (212, 'open', INK, 'A press report citing\\Nunnamed people'),

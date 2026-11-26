@@ -101,7 +101,7 @@ def address(sid, r):
     return L.url_of(sid) or ''
 
 
-NO_TITLE = {'cn-ga01-bnn-turnaround-20261123'}      # (touch-up 6b, Nov 24, 2026) saved pages whose own headline the reference list does not print: this one's is about a person and a matter the note leaves out; its label says what the report is, and its address stays
+NO_TITLE = {'cn-ga01-bnn-turnaround-20261123', 'ms-bj-202611-h200-hongkong-tnw', 'ms-bj-20251105-statefunded-standard', 'ms-bj-20260114-customs-h200-standard', 'cn-clips-evidence-1', 'cn-clips-reuters-hongkong-yahoo', 'cn-acts-reuters-customs-20260114', 'ms-bj-20250917-cac-6000d-engadget'}      # (touch-up 6b, Nov 24, 2026) saved pages whose own headline the reference list does not print: this one's is about a person and a matter the note leaves out; its label says what the report is, and its address stays. (rt1, Nov 26, 2026) the other six: their own headlines say China bans the chips, that they are not permitted, or that an import approval is withheld, which no document's name in the series may say (atlas/CONFIRM9_BRIEF.txt, rule d)
 
 
 def title_of(sid):

@@ -1,7 +1,7 @@
 # Data for the tracker page (build.py in the folder above reads this file; add_record.py appends to it).
-# A copy of the data file of the figure "Beijing vs. its labs", taken again on Nov 25, 2026 after the core's batch of 22:33 UTC
-# (the copy as taken: data/archive/figure_data.as_copied_20261125_r10.txt; no script reads data/archive/). The copy
-# before this one is data/figure_data.before-r10-20261125.txt. Every change is a line of tracker_log.tsv.
+# A copy of the data file of the figure "Beijing vs. its labs", taken again on Nov 26, 2026 after the core's batch of 01:58 UTC
+# (the copy as taken: data/archive/figure_data.as_copied_20261126_r11.txt; no script reads data/archive/). The copy
+# before this one is data/figure_data.before-r11-20261126.txt. Every change is a line of tracker_log.tsv.
 # One block per dated event:
 #   @ LANE KIND DATE DATELABEL SAVED-ID
 #   T  the line shown in the figure (my words)
@@ -32,7 +32,7 @@ Q 应当将CPU、操作系统符合安全可靠测评要求纳入采购需求
 E shall include in the purchase requirement that the CPU and operating system meet the security-and-reliability evaluation
 
 @ BH press 2024-09-27 - cn-factions-bloomberg-flexibility-202409-relay1
-T Regulators discourage buying Nvidia's H20: "guidance rather than an outright ban"
+T Reported: regulators discourage buying Nvidia's H20: "guidance rather than an outright ban"
 S Bloomberg, on The Business Times (whose page is dated Sept 28, Singapore time)
 Q The policy has taken the form of guidance rather than an outright ban
 
@@ -64,10 +64,10 @@ E summoned Nvidia and required it to explain the backdoor security risks of the 
 T After a Huawei briefing in summer 2025, Vice Premier Ding Xuexiang warns the biggest AI users, by people familiar with the message: anyone resisting home-made chips is "a traitor". The report, of Jul 23, 2026, gives no date for the warning
 S Wall Street Journal
 Q Anyone who resisted employing domestic chips was a traitor
-C end -42 -42 "traitor" warning
+C end -42 -42 WSJ: "traitor" warning
 
 @ BH press 2025-08-20 - man-cn-ft-20250821-regulators
-T Three regulators move to dissuade companies from buying the H20, starting about a week after Jul 15 (the report is of Aug 20)
+T Reported: three regulators move to dissuade companies from buying the H20, starting about a week after Jul 15 (the report is of Aug 20)
 S Financial Times
 Q A group of Chinese regulators have mobilised in an effort to dissuade domestic tech companies from acquiring the H20
 
@@ -83,12 +83,12 @@ Q 市场监管总局依法决定对其实施进一步调查
 E the regulator has decided to investigate it further under the law
 
 @ BH press 2025-09-17 - man-cn-ft-20250917-6000d
-T Cyberspace regulator tells ByteDance and Alibaba to end testing and orders of the RTX Pro 6000D
+T Reported: cyberspace regulator tells ByteDance and Alibaba to end testing and orders of the RTX Pro 6000D
 S Financial Times
 Q told companies, including ByteDance and Alibaba, this week to end their testing and orders of the RTX Pro 6000D
 
 @ BH press 2025-10-09 - man-cn-ft-20251009-customs
-T Customs teams sent to major ports to check chip shipments, at first so that companies stop ordering Nvidia's H20 and RTX Pro 6000D after regulators' guidance discouraging their purchase
+T Reported: customs teams sent to major ports to check chip shipments, at first so that companies stop ordering Nvidia's H20 and RTX Pro 6000D after regulators' guidance discouraging their purchase
 S Financial Times
 Q Teams of customs officers have been mobilised at major ports across the country in the past few weeks to carry out stringent checks on semiconductor shipments
 
@@ -98,10 +98,10 @@ S Reuters, on The Standard (Hong Kong)
 Q requiring new data centre projects that have received any state funds to only use domestically-made artificial intelligence chips
 
 @ BH press 2026-01-14 - cn-acts-reuters-customs-20260114
-T Customs agents told the H200 is "not permitted"; companies told not to buy it "unless necessary". Reuters: it is unclear whether Beijing wants a ban, is still weighing restrictions, or could use the measures as "a bargaining tactic in talks with Washington"
+T Reported: customs agents told the H200 is "not permitted"; companies told not to buy it "unless necessary". Reuters: it is unclear whether Beijing wants a ban, is still weighing restrictions, or could use the measures as "a bargaining tactic in talks with Washington"
 S Reuters, on Yahoo Finance
 Q are not permitted to enter China, according to three people briefed on the matter
-C start 13 -19 H200 "not permitted"
+C start -5 -42 H200 said "not permitted"
 
 @ BH doc 2026-04-22 - cn-us-lutnick-0422-rev-transcript-b
 T US Commerce Secretary to the Senate, as his "understanding": the Chinese central government "has not let them as of yet buy the chips"
@@ -109,7 +109,7 @@ S Howard Lutnick, Senate hearing (Rev transcript)
 Q Chinese central government has not let them as of yet buy the chips because they're trying to keep their investment focused on their own domestic industry
 
 @ BH press 2026-05-14 - cn-acts-reuters-us-approvals-20260514-wayback
-T About ten firms cleared by Washington, "not a single delivery"; by one person, firms "pulled back after guidance from Beijing", a shift "partly triggered by changes on the U.S. side"
+T Reported: about ten firms cleared by Washington, "not a single delivery"; by one person, firms "pulled back after guidance from Beijing", a shift "partly triggered by changes on the U.S. side"
 S Reuters, on MarketScreener
 Q not a single delivery has been made so far
 
@@ -131,11 +131,11 @@ S Nvidia, Form 10-Q filed with the SEC
 Q such sales were restricted by the PRC government
 
 @ BH press 2026-11-05 - cn-clips-evidence-1
-T About 600,000 Nvidia chips wait in Hong Kong "as Beijing withholds approval"
+T By two people Reuters does not name, about 600,000 Nvidia chips are stored in Hong Kong "as Beijing withholds approval"
 S Reuters, on CNA, whose page is dated Nov 6; Reuters's dateline of Nov 5 stands on Yahoo's copy
 ! cn-clips-reuters-hongkong-yahoo | Nov 5 (Reuters) - About 600,000 of Nvidia's
 Q as Beijing withholds approval for large-scale imports despite demand from technology firms
-C end -3 -42 600,000 wait in Hong Kong
+C end -3 -42 600,000 reported in Hong Kong
 
 @ BL doc 2025-04-17 - cn-policy-he-welcomes
 T Vice Premier He Lifeng to Jensen Huang: more American firms, Nvidia included, are welcome to put down deep roots in the Chinese market
@@ -156,18 +156,18 @@ Q 继续取消一系列不合理的对华经贸限制措施
 E go on removing a series of unreasonable economic and trade restrictions on China
 
 @ BL press 2026-01-28 - ms-bj-20260128-h200-nod-standard
-T Conditional approval for ByteDance, Alibaba and Tencent to buy more than 400,000 H200s
+T Reported: conditional approval for ByteDance, Alibaba and Tencent to buy more than 400,000 H200s
 S Reuters, on The Standard (Hong Kong)
 Q have been approved to purchase more than 400,000 H200 chips in total
 
 @ BL press 2026-01-30 - cn-ga31-sv1-reuters-deepseek-yahoo
-T Industry and commerce ministries have approved DeepSeek, ByteDance, Alibaba and Tencent; the conditions "are being decided" by the state planner
+T Reported: industry and commerce ministries have approved DeepSeek, ByteDance, Alibaba and Tencent; the conditions "are being decided" by the state planner
 S Reuters, on Yahoo Finance
 Q China's industry and commerce ministries have granted approvals for all four companies
-C start 14 4 conditional approval
+C start 14 4 conditional yes, reported
 
 @ BL press 2026-03-17 - man-70f4668d5f56
-T "Nvidia has won Beijing's approval" to sell the H200; a Chinese buyer is unsure the approval is final
+T Reported: "Nvidia has won Beijing's approval" to sell the H200; a Chinese buyer is unsure the approval is final
 S Reuters, on Investing.com
 Q approval to sell its second-most powerful artificial intelligence chips to China
 U https://www.investing.com/news/stock-market-news/chinese-authorities-approve-nvidias-h200-ai-chip-sales-source-says-4567348
@@ -186,10 +186,10 @@ Q There have been minimal exports of any H200s to China so far
 U https://www.investing.com/news/stock-market-news/us-official-says-shipments-of-h200-chips-to-china-have-begun-4791235
 
 @ BL press 2026-08-18 - cn-tolerate-reutersaug26-relay1-wayback
-T ByteDance and Tencent each receive about 10,000 H200s; Beijing wants them to keep the hardware outside mainland China, and regulators told companies they may ship it to Hong Kong and use it there
+T Reported: ByteDance and Tencent each receive about 10,000 H200s; Beijing wants them to keep the hardware outside mainland China, and regulators told companies they may ship it to Hong Kong and use it there
 S Financial Times, through Reuters on Investing.com
 Q ByteDance and Tencent have each received about 10,000 H200 processors in recent weeks
-C end 118 -19 10,000 each arrive
+C end 118 -19 10,000 each reported
 
 @ BL press 2026-09-27 - cn-acts-reuters-rtx5500-20260927
 N 62
@@ -209,7 +209,7 @@ Q 中国企业在境外自建自营算力中心
 E computing centres that Chinese companies build and run abroad
 
 @ CN press 2025-04-03 - cn-labs-h20-orders-20250402-relay1
-T Chinese companies, ByteDance, Alibaba and Tencent among them, order at least $16 billion of H20 chips in three months
+T Reported: Chinese companies, ByteDance, Alibaba and Tencent among them, order at least $16 billion of H20 chips in three months
 S The Information, through Reuters on The Indian Express
 Q have placed at least $16 billion in orders for
 
@@ -220,17 +220,17 @@ Q 主要以英伟达高性能卡为主
 E mainly on Nvidia high-performance cards
 
 @ CN press 2025-08-20 - man-cn-ft-20250821-regulators
-T Alibaba, ByteDance and others had argued that their AI development would be impaired without Nvidia's chips; by people close to them, they have since become more accepting of a switch
+T Reported: Alibaba, ByteDance and others had argued that their AI development would be impaired without Nvidia's chips; by people close to them, they have since become more accepting of a switch
 S Financial Times
 Q tech giants from Alibaba to ByteDance argued that their AI development would be impaired without Nvidia's chips
 
 @ CN press 2025-11-27 - cn-tolerate-ft-offshore
-T Alibaba and ByteDance train their newest models in data centres in Southeast Asia, "to access Nvidia's chips"
+T Reported: Alibaba and ByteDance train their newest models in data centres in Southeast Asia, "to access Nvidia's chips"
 S Financial Times, on The Irish Times
 Q are among the tech groups training their latest large language models (LLMs) in data centres across Southeast Asia
 
 @ CN press 2025-12-10 - cn-labs-h200-demand-20251210-relay1
-T ByteDance and Alibaba keen on large H200 orders "should Beijing give them the green light"
+T Reported: ByteDance and Alibaba keen on large H200 orders "should Beijing give them the green light"
 S Reuters, on WHTC
 Q should Beijing give them the green light
 
@@ -240,10 +240,10 @@ S Nori Chiou, White Oak Capital Partners, quoted by Reuters, on The Business Tim
 Q aggressively placing large orders and lobbying the government to relax restrictions on a conditional basis
 
 @ CN press 2025-12-31 - cn-labs-h200-two-million-202512-relay1-wayback
-T Chinese companies have ordered more than 2 million H200s for 2026
+T Reported: Chinese companies have ordered more than 2 million H200s for 2026
 S Reuters, on Investing.com
 Q have placed orders for more than 2 million H200 chips for 2026
-C start 13 -19 2 million H200s ordered
+C start 13 -19 orders of 2 million, reported
 
 
 @ CN doc 2026-05-03 - cn-policy-qiushi-cuda-gap
@@ -260,7 +260,7 @@ Q 我司计划合规进口H200数据中心GPU
 E our company plans to import H200 data-centre GPUs in compliance
 
 @ CN press 2026-10-20 - cn-factions-rtx-orders-oct-wayback
-T ByteDance, Alibaba and Tencent order over 3 million of the weaker RTX PRO 5500, worth over $35 billion
+T Reported: ByteDance, Alibaba and Tencent order over 3 million of the weaker RTX PRO 5500, worth over $35 billion
 S Reuters, on Investing.com
 Q have ordered more than 3 million of
 
@@ -282,7 +282,7 @@ S Robin Li at Baidu's developer conference, reported by Reuters on StreetInsider
 Q comprising 30,000 of its self-developed, third generation P800 Kunlun chips
 
 @ CN press 2025-09-16 - cn-labs-rtx6000d-demand-20250916-relay1
-T Some major firms pass over Nvidia's RTX6000D as "expensive for what it does" and look to other Nvidia chips; Reuters adds that Beijing has become increasingly keen for firms to switch to home-made chips "even if Nvidia's products are preferred by many companies"
+T Reported: some major firms pass over Nvidia's RTX6000D as "expensive for what it does" and look to other Nvidia chips; Reuters adds that Beijing has become increasingly keen for firms to switch to home-made chips "even if Nvidia's products are preferred by many companies"
 S Reuters, on TradingView
 Q is seen as expensive for what it does
 
@@ -292,7 +292,7 @@ S Alibaba results release
 Q chip design subsidiary T-Head has brought proprietary GPUs into scaled production
 
 @ CH press 2026-03-27 - man-f45c9fd5177c
-T ByteDance and Alibaba plan to order Huawei's new 950PR chip after tests go well
+T Reported: ByteDance and Alibaba plan to order Huawei's new 950PR chip after tests go well
 S Reuters, on Investing.com
 Q big tech giants including ByteDance and Alibaba plan to place orders
 U https://www.investing.com/news/stock-market-news/exclusivehuaweis-new-ai-chip-find-favour-with-bytedance-alibaba-which-plan-to-place-orders-sources-say-4584136
@@ -373,7 +373,7 @@ Q The Chinese government has encouraged customers to purchase from our China-bas
 
 
 @ CN press 2025-08-13 - man-cn-ft-202508-deepseek
-T DeepSeek, encouraged by authorities to use Huawei chips, fails to train its next model on them and uses "Nvidia chips for training and Huawei's for inference"
+T Reported: DeepSeek, encouraged by authorities to use Huawei chips, fails to train its next model on them and uses "Nvidia chips for training and Huawei's for inference"
 S Financial Times
 Q prompting it to use Nvidia chips for training and Huawei's for inference
 
@@ -414,7 +414,7 @@ E the chips bought recently are all Huawei products
 
 # Records added in the fourth edit (Nov 23, 2026, draft D4)
 @ BH press 2025-08-12 - cn-le11-ft-h20justify-aggregoctt
-T Regulators such as the industry ministry ask Alibaba, ByteDance and others to explain why they need the H20 instead of home-made chips; a data-centre operator: "It's not banned but has kind of become a politically incorrect thing to do"
+T Reported: regulators such as the industry ministry ask Alibaba, ByteDance and others to explain why they need the H20 instead of home-made chips; a data-centre operator: "It's not banned but has kind of become a politically incorrect thing to do"
 S Financial Times (full text in a syndicated copy)
 Q explain why they need to order Nvidia’s H20 chips instead of using domestic alternatives
 U https://www.ft.com/content/a29bab5e-7c2f-4487-b0a5-d594d577c73a

@@ -4,7 +4,7 @@
 
 Draft by Claude, Anthropic's model.
 
-Written Nov 23, 2026 (UTC); revised the same day and on Nov 25, 2026. Times in the video come from a speech program and from the video's captions; nobody has checked them by ear.
+Written Nov 23, 2026 (UTC); revised the same day and on Nov 25 and 26, 2026. Times in the video come from a speech program and from the video's captions; nobody has checked them by ear.
 
 ## What was looked for
 

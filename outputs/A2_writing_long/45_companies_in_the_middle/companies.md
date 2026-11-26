@@ -2,7 +2,7 @@
 
 *2025 and 2026 from the buyers' side. China's AI companies used Nvidia chips and were reported to order more, said why, pushed back, were reported to train abroad, and built chips of their own.*
 
-Draft by Claude, Anthropic's model. Written Nov 23, 2026 (UTC); revised Nov 25, 2026.
+Draft by Claude, Anthropic's model. Written Nov 23, 2026 (UTC); revised Nov 26, 2026.
 
 How to read it. Words between quotation marks are a source's exact words, found in the saved copy by a script. A filled reference number is a document, a filing, a named person on the record, or a published commentary of state media or an industry body. An open number is a press report citing unnamed people, a research firm's count, or captions and machine transcripts nobody has checked by ear. English in round brackets after Chinese is our rendering, not an official translation.
 
@@ -12,9 +12,9 @@ The author's interest. Anthropic has argued in public for controls on chip expor
 
 ByteDance, Alibaba, Tencent, Baidu and DeepSeek stood between two governments. Since 2022 Washington has restricted which Nvidia chips may be exported to China [1]. From 2024 the planning side of their own state and the industry ministry, and from 2025 its security side, pressed China's AI companies, through unpublished guidance that the press reported, to use home-made chips instead. Here is what the companies did, in five steps, in their own words where they spoke. Tencent's and Baidu's words come from a stock-data site's transcripts, whose speaker labels are unchecked.
 
-### 1. They ordered
+### 1. They used Nvidia chips, and were reported to order more
 
-A Shanghai government body wrote, in a reply dated Apr 30, 2025, that in the city internet companies' own computing clusters run mainly on Nvidia cards [2]. The orders are reported from unnamed people. In the first three months of 2025 Chinese companies including ByteDance, Alibaba and Tencent "have placed at least $16 billion in orders for" Nvidia's H20 chip [3]. By Dec 31, 2025 Chinese companies "have placed orders for more than 2 million H200 chips for 2026" [4].
+A Shanghai government body wrote, in a reply dated Apr 30, 2025, that in the city internet companies' own computing clusters run mainly on Nvidia cards [2]. The orders are reported from unnamed people. In the first three months of 2025 Chinese companies including ByteDance, Alibaba and Tencent "have placed at least $16 billion in orders for" Nvidia's H20 chip [3]. Reuters reported on Dec 31, 2025 that Chinese companies "have placed orders for more than 2 million H200 chips for 2026" [4].
 
 ### 2. They said why
 
@@ -30,7 +30,7 @@ The Financial Times, November 2025, by two people it cites: Alibaba and ByteDanc
 
 ### 5. They built chips of their own and turned to other home-made chips
 
-Baidu's chief executive, April 2025: a cluster "comprising 30,000 of its self-developed, third generation P800 Kunlun chips" [16]. Alibaba's chief executive, May 13, 2026, gave a commercial reason for its own chips: "gross margins on mainstream foreign AI chips are very high, basically in the 60% to 80% range" [17]. Tencent's chief strategy officer, Nov 18, 2026: "that inference can be run very effectively on a surprisingly limited number of domestic chips" [18]. Of DeepSeek's later model, V4, Reuters wrote in April 2026: "Huawei said its chips were used in some of the V4's training process" [19]. Huawei Cloud's page of that day speaks of adapting and serving the model, and a post of that day signed Ascend CANN on the AtomGit open-source site, of a training reference implementation offered so that users can fine-tune quickly [20] [21]; neither says that Huawei's chips trained V4. DeepSeek's own report on V4 names no chip for its training, and says one of its schemes was validated "on both NVIDIA GPUs and HUAWEI Ascend NPUs platforms" [22]. A rival, iFlytek, told investors days later that V4's training was still done on Nvidia cards, a competitor's claim that nobody has checked [23].
+Baidu's chief executive said in April 2025, in Reuters' words, that it had switched on a cluster "comprising 30,000 of its self-developed, third generation P800 Kunlun chips" [16]. Alibaba's chief executive, May 13, 2026, gave a commercial reason for its own chips: "gross margins on mainstream foreign AI chips are very high, basically in the 60% to 80% range" [17]. Tencent's chief strategy officer, Nov 18, 2026: "that inference can be run very effectively on a surprisingly limited number of domestic chips" [18]. Of DeepSeek's later model, V4, Reuters wrote in April 2026: "Huawei said its chips were used in some of the V4's training process" [19]. Huawei Cloud's page of that day speaks of adapting and serving the model, and a post of that day signed Ascend CANN on the AtomGit open-source site, of a training reference implementation offered so that users can fine-tune quickly [20] [21]; neither says that Huawei's chips trained V4. DeepSeek's own report on V4 names no chip for its training, and says one of its schemes was validated "on both NVIDIA GPUs and HUAWEI Ascend NPUs platforms" [22]. A rival, iFlytek, told investors days later that V4's training was still done on Nvidia cards, a competitor's claim that nobody has checked [23].
 
 ## What the five steps add up to
 
@@ -86,4 +86,4 @@ Each entry: its kind; what it is; the saved page's own title where the record ho
 
 [23] Company filing or statement. iFlytek, record of investor-relations activity of Apr 29, 2026, on the disclosure site cninfo.com.cn. A competitor's statement about DeepSeek; not checked. https://static.cninfo.com.cn/finalpage/2026-04-29/1225268679.PDF Saved copy: cn-le26-iflytek-ir-20260429
 
-Build check: 23 quotations and 36 further statements were looked for in the saved copies of 23 sources and all were found; a planted false quotation was rejected. 17 sources are documents, filings or named people on the record; 6 are press reports citing unnamed people, counts or machine transcripts. A quotation that is found shows what the source says, not that it is true.
+Build check: 23 quotations and 37 further statements were looked for in the saved copies of 23 sources and all were found; a planted false quotation was rejected. 17 sources are documents, filings or named people on the record; 6 are press reports citing unnamed people, counts or machine transcripts. A quotation that is found shows what the source says, not that it is true.

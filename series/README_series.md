@@ -59,7 +59,7 @@ What Beijing did rests on two kinds of evidence. On the record: an antitrust cas
 The numbers count different things: “more than 2 million H200 chips” reported ordered; 579,868 of Nvidia’s approved by Washington, none shipped by May 11, 2026; “about 10,000 H200 processors” each reported delivered to two buyers; Nvidia’s own $2.4 billion of licensed Hopper sales to China in one quarter.
 
 - [Figure 16 · Washington’s table](https://kevinnbass.github.io/beijing-vs-its-labs/series/23_figure-16_washingtons-table.html): Washington’s table of licence applications, one by one.
-- [Figure 17 · Two gates](https://kevinnbass.github.io/beijing-vs-its-labs/series/24_figure-17_two-gates.html): The H200’s separate counts (orders, applications, approvals, deliveries) in the order of a sale, through two governments; they do not count the same chips.
+- [Figure 17 · Two gates](https://kevinnbass.github.io/beijing-vs-its-labs/series/24_figure-17_two-gates.html): The H200’s separate counts (orders, applications, approvals, deliveries) in the order of a sale, through two governments: not one tally, and they cannot be added.
 - [Figure 18 · Share and rise](https://kevinnbass.github.io/beijing-vs-its-labs/series/25_figure-18_share-and-rise.html): Nvidia’s reported share in China and Chinese chip makers’ revenue.
 - [Figure 19 · The customs lines](https://kevinnbass.github.io/beijing-vs-its-labs/series/26_figure-19_customs.html): What trade figures can and cannot show; the Hong Kong finding.
 - [Figure 20 · Purchase notices](https://kevinnbass.github.io/beijing-vs-its-labs/series/27_figure-20_tenders.html): A sample of public purchase notices.

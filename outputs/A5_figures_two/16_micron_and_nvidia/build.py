@@ -55,6 +55,9 @@ def main():
     for r in recs:
         r['rows'] = r['row'].split(',')
         assert r['case'] in ('micron', 'nvidia') and all(x in ROWS for x in r['rows']) and r['dir'] == 'away', r['key']
+    # Round 11 (ROUND11.md, thing 2): every press record's label carries the report; (the session's ruling) 应停止采购 is never "should"
+    assert all(r['T'].startswith('Reported: ') for r in recs if r['kind'] == 'press'), [r['key'] for r in recs if r['kind'] == 'press' and not r['T'].startswith('Reported: ')]
+    assert not any('should stop' in (r['L'] + ' '.join(e for _, e in r['Q'])) for r in recs)
     lines = C.checked_lines(recs, extra)
     summary = C.write_and_check_quotes(HERE, lines, 'Quotations and number-bearing phrases behind the figure "Micron and Nvidia side by side".')
     recs = C.number(recs, order=lambda r: (r['case'] != 'micron', min(ROWS.index(x) for x in r['rows']), r['date']))
@@ -92,11 +95,11 @@ def main():
     <div class="cmp-h"><span>2023</span><b>Micron</b></div>
     <div class="cmp-h"><span>2024 to 2026</span><b>Nvidia</b></div>
 
-    <div class="q"><b>Did Beijing publish a text saying buyers should stop?</b><span>a conclusion, a decision or a notice that names the company’s products</span></div>
+    <div class="q"><b>Did Beijing publish a text telling buyers to stop?</b><span>a conclusion, a decision or a notice that names the company’s products</span></div>
     <div class="cell has"><div class="cl">Micron · 2023</div>
      <div class="verdict">Yes, published</div>
      {C.mark(m, 'the review office’s conclusion')}
-     <p class="zh">“应停止采购美光公司产品” <span>(should stop buying Micron’s products)</span></p>
+     <p class="zh">“应停止采购美光公司产品” <span>(shall stop buying Micron’s products)</span></p>
      <p><b>Addressed to buyers:</b> “关键信息基础设施的运营者” (operators of critical information infrastructure).</p>
      <p><b>Issued by</b> the cyberspace regulator’s review office (the Cybersecurity Review Office), and published on the regulator’s site.</p>
     </div>
@@ -113,11 +116,11 @@ def main():
     </div>
     <div class="cell has"><div class="cl">Nvidia · 2024 to 2026</div>
      <div class="marks">{''.join(C.mark(r) for r in pub)}</div>
-     <p><b>Addressed to Nvidia itself:</b> the antitrust case investigates it, and the summons over the H20 requires it to explain and hand in proof. None of the {words[len(pub)]} tells a buyer to stop.</p>
+     <p><b>Addressed to Nvidia itself:</b> the antitrust case investigates it, and the summons over the H20 requires it to explain the security risks and hand in supporting material. None of the {words[len(pub)]} tells a buyer to stop.</p>
      <p><b>State media warned in public.</b> Of {len(sm)} state and Party media items on Nvidia chips found ({C.fmt(sm_d[0])} to {C.fmt(sm_d[-1])}), {len(warns)} only warn about them: {len(win)} dated {C.fmt(win[0])} to {C.fmt(win[-1])}, and {words[len(late)]} later ones in Global Times in 2026 (the items after September 2025 are what two rounds of searches found, a sample and not a full count). They warn and urge; none forbids buying. They are not drawn here.</p>
     </div>
 
-    <div class="q"><b>Where does an instruction not to buy appear without being published?</b><span>press reports citing unnamed people, and what companies told the US securities regulator</span></div>
+    <div class="q"><b>Where is an instruction not to buy reported, without being published?</b><span>press reports citing unnamed people, and what companies told the US securities regulator</span></div>
     <div class="cell"><div class="cl">Micron · 2023</div>
      <p class="quiet">Not searched for in this project. The words were in the published conclusion.</p>
     </div>
@@ -142,7 +145,7 @@ def main():
     key = f"""   <ul class="key">
     <li><i class="p solid away" aria-hidden="true">1</i><span><b>Filled:</b> on the record (a government document or a company filing). {n_solid} records</span></li>
     <li><i class="p hollow away" aria-hidden="true">1</i><span><b>Open:</b> a press report citing unnamed people. {n_open} records</span></li>
-    <li><span>All marks are orange: each is an act against Nvidia or against buying its chips. The antitrust case is against the company; by Nvidia’s own account it faults the degraded products it offered, not its selling in China.</span></li>
+    <li><span>All marks are orange: each is an act, published or reported, against the company of its column or against buying its products (Alibaba’s filing speaks of “certain chips” and names no maker). The antitrust case is against the company; by Nvidia’s own account it faults the degraded products it offered, not its selling in China.</span></li>
    </ul>"""
 
     below = C.records_block(recs, 'One line for each numbered mark: the date of the act where the page gives it, otherwise the date of the report; our summary; '
@@ -150,8 +153,8 @@ def main():
     page = C.page(
         title='Micron And Nvidia',
         eyebrow='China · two foreign chip makers · what Beijing published · 2023 to 2026',
-        h1='For Micron, Beijing published a conclusion: operators of critical infrastructure should stop buying. For Nvidia, a case and a summons.',
-        deck=f'What Beijing put in writing in two cases. In 2023 the cyberspace regulator’s review office published its conclusion that Micron’s products failed a security review, and that operators of critical infrastructure should stop buying them. '
+        h1='For Micron, Beijing published a conclusion: operators of critical information infrastructure shall stop buying. For Nvidia, a case and a summons.',
+        deck=f'What Beijing put in writing in two cases. In 2023 the cyberspace regulator’s review office published its conclusion that Micron’s products failed a security review, and that operators of critical information infrastructure shall stop buying them. '
              f'From 2024 to 2026 the published acts found against Nvidia were an antitrust case and a summons, and state media warned about its chips in public. Instructions not to buy Nvidia chips were found only in press reports citing unnamed people; what companies told the US securities regulator speaks of a request to halt purchases of “certain chips”, naming no maker (Alibaba), and of restrictions on buying Nvidia’s products (Nvidia).',
         key=key, figure=figure, below=below, css=CSS,
         tipjson=C.tips(recs, lambda r: 'Micron, 2023' if r['case'] == 'micron' else 'Nvidia, 2024 to 2026'))

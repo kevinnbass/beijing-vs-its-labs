@@ -7,10 +7,10 @@
 # ---- Micron, 2023 ----
 @ micron-decision doc 2023-05-21 - cn-policy-micron-decision case=micron row=order,published dir=away
 T the review office's conclusion: Micron's products fail the cybersecurity review
-L The Cybersecurity Review Office, which sits in the cyberspace regulator, concludes that Micron's products did not pass its cybersecurity review, and says that operators of critical information infrastructure in China should stop buying them. The text was published on the regulator's site. The same text welcomes companies of all countries that obey Chinese law.
+L The Cybersecurity Review Office, which sits in the cyberspace regulator, concludes that Micron's products did not pass its cybersecurity review, and says that operators of critical information infrastructure in China shall stop buying them. The text was published on the regulator's site. The same text welcomes companies of all countries that obey Chinese law.
 S Cybersecurity Review Office, published on the Cyberspace Administration's site
 Q 我国内关键信息基础设施的运营者应停止采购美光公司产品
-E operators of critical information infrastructure in China should stop buying Micron's products
+E operators of critical information infrastructure in China shall stop buying Micron's products
 Q 网络安全审查办公室依法作出不予通过网络安全审查的结论
 E the Cybersecurity Review Office has, under the law, concluded that they do not pass the cybersecurity review
 Q 按照《网络安全法》等法律法规
@@ -29,7 +29,7 @@ D 发布时间:2024-12-09
 
 @ nv-summons doc 2025-07-31 - cn-policy-cac-h20-original case=nvidia row=published dir=away
 T cyberspace regulator summons Nvidia over the H20
-L The cyberspace regulator summons Nvidia and requires it to explain the risk of backdoors in the H20 chips it sells to China, and to hand in proof. The notice is addressed to Nvidia, not to buyers.
+L The cyberspace regulator summons Nvidia and requires it to explain the security risks of vulnerabilities and backdoors in the H20 chips it sells to China, and to hand in supporting material. The notice is addressed to Nvidia, not to buyers.
 S Cyberspace Administration of China
 Q 约谈了英伟达公司,要求英伟达公司就对华销售的H20算力芯片漏洞后门安全风险问题进行说明并提交相关证明材料
 E summoned Nvidia and required it to explain the backdoor security risks of the H20 chips sold to China and to submit supporting material
@@ -52,7 +52,7 @@ N cn-le25-samr-2025-merger-review-20260410 | 发布时间：2026-04-10
 
 # ---- Nvidia, 2024 to 2026: not published ----
 @ nv-guidance press 2024-09-27 - cn-factions-bloomberg-flexibility-202409-relay1 case=nvidia row=unpublished dir=away
-T regulators discourage buying the H20: "guidance rather than an outright ban"
+T Reported: regulators discourage buying the H20, "guidance rather than an outright ban"
 L Regulators discourage companies from buying Nvidia's H20, Bloomberg reports: "The policy has taken the form of guidance rather than an outright ban". It calls this "window guidance", which it explains as "instructions without the force of law". Bloomberg's report is of Sept 27; the copy used was carried on Sept 28, Singapore time.
 S Bloomberg, Sept 27, 2024, as carried by The Business Times (Singapore)
 Q The policy has taken the form of guidance rather than an outright ban
@@ -63,7 +63,7 @@ D on Friday (Sep 27)
 D Published Sat, Sep 28, 2024
 
 @ nv-dissuade press 2025-08-20 - man-cn-ft-20250821-regulators case=nvidia row=unpublished dir=away
-T three bodies move to dissuade firms from buying the H20
+T Reported: three bodies move to dissuade firms from buying the H20
 L The cyberspace regulator, the state planner and the industry ministry move to dissuade companies from buying the H20, the Financial Times reports, by people it does not name. By its account the cyberspace regulator gave an informal notice, "window guidance", "instructing them to halt new orders for Nvidia's H20 chips". The same article says some firms held off H20 orders to see whether a better Nvidia chip for China would come.
 S Financial Times, Aug 20, 2025
 Q A group of Chinese regulators have mobilised in an effort to dissuade domestic tech companies from acquiring the H20
@@ -83,7 +83,7 @@ Q In September 2025, the Cyberspace Administration of China requested Chinese te
 D In September 2025, the Cyberspace Administration of China requested
 
 @ nv-6000d press 2025-09-17 - man-cn-ft-20250917-6000d case=nvidia row=unpublished dir=away
-T firms told to end testing and orders of the RTX Pro 6000D
+T Reported: firms told to end testing and orders of the RTX Pro 6000D
 L The cyberspace regulator tells companies, ByteDance and Alibaba among them, to end their testing and orders of Nvidia's RTX Pro 6000D, the Financial Times reports, by three unnamed people. The paper calls it a ban: "The ban goes beyond earlier guidance from regulators". It reports an order told to companies, not a published rule.
 S Financial Times, Sept 17, 2025
 Q told companies, including ByteDance and Alibaba, this week to end their testing and orders of the RTX Pro 6000D
@@ -92,7 +92,7 @@ D Published SEP 17 2025
 N according to three people with knowledge of the matter
 
 @ nv-statefunded press 2025-11-05 - ms-bj-20251105-statefunded-standard case=nvidia row=unpublished dir=away
-T new state-funded data centres told to use only home-made AI chips
+T Reported: new state-funded data centres told to use only home-made AI chips
 L Guidance requires new data centre projects that took state money to use only home-made AI chips, Reuters reports. It adds: "It is unclear whether the guidance applies nationwide or only to certain provinces".
 S Reuters, Nov 5, 2025, on The Standard (Hong Kong)
 Q The Chinese government has issued guidance requiring new data centre projects that have received any state funds to only use domestically-made artificial intelligence chips
@@ -100,7 +100,7 @@ Q It is unclear whether the guidance applies nationwide or only to certain provi
 D PUBLISHED: 2025-11-05
 
 @ nv-unless press 2026-01-13 - cn-acts-reuters-customs-20260114 case=nvidia row=unpublished dir=away
-T firms told not to buy the H200 "unless necessary"
+T Reported: firms told not to buy the H200 "unless necessary"
 L At meetings on Tuesday, Jan 13, officials tell technology companies not to buy the H200 "unless necessary", Reuters reports on Jan 14, by three people; customs agents, it says, were told that week that the chips "are not permitted to enter China". Reuters wrote that it was unclear whether Beijing wanted a ban, was still weighing restrictions, or could use the measures as "a bargaining tactic in talks with Washington".
 S Reuters, Jan 14, 2026, on Yahoo Finance
 Q explicitly instructed not to purchase the chips unless necessary

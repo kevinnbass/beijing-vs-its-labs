@@ -1,10 +1,10 @@
 {
- "captured_utc": "2026-11-25T23:54:37Z",
+ "captured_utc": "2026-11-26T02:41:22Z",
  "page": "explainer.html",
- "page_sha256": "56a4a796f3bfd2126cac52d5023f88559d12fe064b92649359869edbbc91fc7d",
+ "page_sha256": "70a1d7731c8c0cb464938bd1bc4bd3e7852aa0085841deb07d1537b3fecc50ca",
  "mp4": "explainer.mp4",
- "mp4_sha256": "44400594f103cab2a4004b3229b0ab8ac3c2c450df00bd51ebc278d013102bf8",
- "frames": 7168,
+ "mp4_sha256": "7fad1b123830dd56c4176b4762dfa7690fb3ccb8da5e4fca7337571a24528b7b",
+ "frames": 7228,
  "fps": 25,
  "fonts": [
   "Inter 400",
@@ -24,20 +24,20 @@
   ]
  },
  "made_from": {
-  "../../../figure/figure_data.txt": "d0bed12054d76831883caeaf97d4fbe39c8757a84af7de45978e17e2d2705689",
-  "../../../figure/figure_events.tsv": "84021bfd25800402956b765ab9dc5681474ca31b1146a66bf5334bfa5bda11c9",
-  "../../../figure/beijing_vs_labs.html": "c898bd5a120ac2eb1f1ec83d2faf2a87cba96267487986fc3747e0554c0757ce",
-  "../../../figure/template.html": "152762ddeecced614ac4d4a23cb55980806b01769bf85d94452ef942bf6697d2",
-  "../../../ARGUMENT_referenced.md": "3705efbb7193725c03fe43ca1304927f5d4803c00a62d7023063af6b6778921e",
+  "../../../figure/figure_data.txt": "4ca8f93f3c6b57d51df2d752d5c2e5811b18eed7be0088ceb0e49b7ec2e1c553",
+  "../../../figure/figure_events.tsv": "0b25c9fa9aa67e3617c2a76537c7854fc5cb3495c8895533506d1376d92ddf62",
+  "../../../figure/beijing_vs_labs.html": "3dc6ba0bfe7057d870422cd36532ae77c601217476ee584e893f2281c56a837e",
+  "../../../figure/template.html": "0abf4d62c88027f080f9d29229cd6afb1727a4e95149558fc68d39e04ce070b6",
+  "../../../ARGUMENT_referenced.md": "e037491bab89fc40b6e9e6e821bd4a87b30d72796dc7c38942b4ef8b6a90eb1f",
   "../../../tables/house_licence_table.tsv": "bd06920e873e9cf93a82190ee40374c699ced2cde9a2cf6c927ac0c59813f78b",
-  "../../../tables/state_media_items.tsv": "80dc2ca3bf67cff89c88f96f8072e36a70b0845d12b0c69ebc67f90879fd5072",
-  "../a7lib.py": "40edc488e7b1b41a93466593d87c8932d308046f7b03dea0dab3f4b9674c59f4",
-  "build.py": "94b4f94e7cfe21b841e5a02cf28175c952b8b9d96f30d0f1fea6892473e3e244",
-  "captions_base.txt": "1362c49b0aae65c94d896c3cd059dad3c80a9e46b28b906c6e6990e12d2ba03e",
-  "extra_refs.tsv": "8a42a63f52e471948087fb5585c151e1ce10e662155ccceb77efd8fe58bb4321",
-  "captions.md": "dbcff01ae9d55f83393d813b21e371466a74c178581145cfff88ed9ce04c56bc",
-  "chapters.tsv": "fd93dc6ab4bf2cf764656de7c9dde37f3f9407b324a73b55c6e5d4a94dd57e52",
+  "../../../tables/state_media_items.tsv": "b20530d8be9f07cc01be7bc496a707888815b7a610cb7c8838e4d90f467e159e",
+  "../a7lib.py": "3747aa7e7059fc1a6ab67650abf70aa81210a042ddd0817961e5afbb4eeaac0a",
+  "build.py": "46dbfdcf0047df8f568c0e418f8191b9eb20efae758f06179eb12ced1cadc60b",
+  "captions_base.txt": "f71e4c37ceba1b55c7833b9379b67cf3ce0686319a3d352bec9304ad34827e98",
+  "extra_refs.tsv": "e18e34821716c7412a2cea37a7e078aa947332630f697403f45065dce9634ac2",
+  "captions.md": "b232c0b8dba485749ead4427cb2dfd75e269afaa0a45c6f9828253736f9db752",
+  "chapters.tsv": "f65c782f94f882ab2f58a99249b5b915acce5108b4cbdd35b50a1ee50d88d0ab",
   "quotes.tsv": "a8a0f38023e575ab62168e91a23837bae6c436c1c9365a0b86215ec9e772a70d",
-  "explainer.html": "56a4a796f3bfd2126cac52d5023f88559d12fe064b92649359869edbbc91fc7d"
+  "explainer.html": "70a1d7731c8c0cb464938bd1bc4bd3e7852aa0085841deb07d1537b3fecc50ca"
  }
 }

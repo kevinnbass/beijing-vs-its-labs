@@ -1,13 +1,13 @@
 # China's chip policy pulled against its own AI companies
-@deck From 2024 to 2026 the Chinese state pressed its AI companies to move off Nvidia's chips, and the companies kept ordering them. That holds on direction, with five limits.
+@deck From 2024 to 2026 the Chinese state pressed its AI companies to move off Nvidia's chips, and, by the press reports, the companies kept ordering them. That holds on direction, with five limits.
 
-@note Draft by Claude, Anthropic's model. Written Nov 23, 2026 (UTC); revised Nov 25, 2026.
+@note Draft by Claude, Anthropic's model. Written Nov 23, 2026 (UTC); revised Nov 26, 2026.
 @note How to read it. Words between quotation marks are a source's exact words, found in the saved copy by a script. A filled reference number is a document, a filing, a named person on the record, or a published commentary of state media or an industry body. An open number is a press report citing unnamed people, a research firm's count, or captions and machine transcripts nobody has checked by ear. Where a statement rests on a Chinese text, the English is our rendering, not an official translation.
 @note The author's interest. Anthropic has argued in public for controls on chip exports to China (that is from the model's general knowledge; no saved page is cited for it), so judge this piece by its sources.
 
 ## The finding
 
-For two years the Chinese state pressed China's AI companies to move away from Nvidia's chips, and the companies kept reaching for them.
+From 2024 to 2026 the Chinese state pressed China's AI companies to move away from Nvidia's chips, and the companies kept reaching for them.
 That answers a question raised by a clip posted on Nov 19, 2026, in which Palmer Luckey said: "China doesn't want NVIDIA to sell GPUs to Chinese companies." [clip-luckey]
 And next: "there are Chinese companies that want to buy Nvidia GPUs" [cnpol-x-overton-2123392702821580811].
 The first sentence is from a machine transcript of the clip (0:11 to 0:16), the second from the text of the post that carries it. Nobody has checked either by ear.
@@ -18,7 +18,7 @@ He is right on direction. Five limits follow at the end.
 Xi Jinping said in 2016 that having core technology controlled by others is China's greatest hidden danger [cn-xi-20160419].
 !! cn-xi-20160419 | 核心技术受制于人是我们最大的隐患
 !! cn-xi-20160419 | (2016年4月19日)
-Nine of China's 31 provincial-level governments were found to set a share for home-made computing hardware, one of them, Zhejiang's, for the computing of one sector; Jiangsu marks its own, 70% or more of chips in new computing centres by 2030, as indicative, not binding [cn-factions-jiangsu-plan].
+Nine of China's 31 provincial-level governments were found to set a share for home-made computing, each by its plan's own measure: chips, equipment, hardware and software, or computing capacity; one of the nine, Zhejiang's, is for the computing of one sector. Jiangsu marks its own, 70% or more of chips in new computing centres by 2030, as indicative, not binding [cn-factions-jiangsu-plan].
 !! cn-factions-jiangsu-plan | 新建算力中心国产算力芯片使用占比达 70%以上
 !! cn-factions-jiangsu-plan | 新建算力中心国产算力芯片使用占比(%) 50 70 预期性
 !! cn-factions-jiangsu-plan | 2025 年 2030 年 属性
@@ -26,7 +26,7 @@ In May 2026 the state planner (NDRC) said it was guiding home-made large models 
 !! cn-policy-ndrc-chip-adaptation-2026 | 指导国产大模型加大力度适配国产算力芯片
 !! cn-policy-ndrc-chip-adaptation-2026 | 李超 2026/05/22
 
-## What the companies used and ordered
+## What the companies used, and the orders reported
 
 A Shanghai government body wrote, in a reply dated Apr 30, 2025 (published Nov 10, 2025), that in the city the internet companies' own computing clusters run mainly on Nvidia cards [cn-counter-b11-5].
 !! cn-counter-b11-5 | 发布日期:2025-11-10
@@ -67,7 +67,7 @@ For the H200, which Reuters called Nvidia's second most powerful AI chip in May 
 !! cn-acts-reuters-us-approvals-20260514-wayback | Published on 05/14/2026
 Washington's and Nvidia's are on the record; the rest come from unnamed people.
 
-- Ordered for 2026: "more than 2 million H200 chips" (Reuters, Dec 31, 2025) [cn-labs-h200-two-million-202512-relay1-wayback].
+- Reported as ordered for 2026 (Reuters, Dec 31, 2025): "more than 2 million H200 chips" [cn-labs-h200-two-million-202512-relay1-wayback].
 !! cn-labs-h200-two-million-202512-relay1-wayback | Dec 31 (Reuters)
 - Applied for in Washington by May 11, 2026: 3,444,160 chips, Nvidia's H200 and AMD's MI325X together, in the table of licence applications from the Commerce Department's Bureau of Industry and Security (BIS) that the House Foreign Affairs Committee made public on Nov 19, 2026. An application is not an order [cn-usdocs-hfac-summary-20261119] [cn-usdocs-hfac-decisions-20261119] [cn-labs-us-chip-licences-20261119] [cn-le04-bis-ear-748].
 !! cn-usdocs-hfac-summary-20261119 | BIS received applications to sell 3,444,160 covered integrated circuits
@@ -82,11 +82,11 @@ Washington's and Nvidia's are on the record; the rest come from unnamed people.
 !! cn-usdocs-hfac-summary-20261119 | not fully reflected in the May 11, 2026, summary document
 !! cn-usdocs-hfac-decisions-20261119 | Approved, not shipped
 !! cn-usdocs-hfac-decisions-20261119 | Bytedance System SDN 508,000 RWA Malaysia
-- Approved by Beijing, with conditions: "more than 400,000 H200 chips in total" (Reuters, Jan 28, 2026) [ms-bj-20260128-h200-nod-standard].
+- Reported as approved by Beijing, with conditions (Reuters, Jan 28, 2026): "more than 400,000 H200 chips in total" [ms-bj-20260128-h200-nod-standard].
 !! ms-bj-20260128-h200-nod-standard | The Chinese government is only granting approvals with conditions
-- Delivered by August 2026: "about 10,000 H200 processors" each for ByteDance and Tencent (Financial Times, through Reuters, Aug 18, 2026) [cn-tolerate-reutersaug26-relay1-wayback].
+- Reported as delivered by August 2026 (Financial Times, through Reuters, Aug 18, 2026): "about 10,000 H200 processors" each for ByteDance and Tencent [cn-tolerate-reutersaug26-relay1-wayback].
 !! cn-tolerate-reutersaug26-relay1-wayback | Aug 18 (Reuters)
-- Waiting in Hong Kong: about 600,000 (Reuters, Nov 5, 2026) [cn-clips-evidence-1].
+- Reported by Reuters, Nov 5, 2026, as "stored in Hong Kong awaiting shipment to China": about 600,000 [cn-clips-evidence-1].
 !! cn-clips-evidence-1 | About 600,000 of Nvidia's advanced artificial intelligence chips are stored in Hong Kong awaiting shipment to China
 - Nvidia, Nov 17, 2026, on the quarter to Oct 25: "Q3 sales of licensed Hopper Data Center products to China was $2.4 billion" (the Hopper family includes the H200). It said it had stopped shipping them and gave no reason [cn-o38-nvda-q3fy27-call-transcript-pdf] [cn-acts-reuters-halt-20261118-relay2].
 !! cn-o38-nvda-q3fy27-call-transcript-pdf | we are no longer shipping licensed Hopper Data Center products to China
@@ -105,7 +105,7 @@ Washington's and Nvidia's are on the record; the rest come from unnamed people.
 !! cn-acts-peoplesdaily-bjd-20250801 | 2025-08-01
 !! cn-acts-peoplesdaily-bjd-20250801 | 绝不能让“带病”的芯片上岗
 !! cn-media-stdaily-security-forum | 2025-09-24
-3. **Some purchases were approved, and some chips came in.** The approvals are listed above, and so are the reported deliveries and Nvidia's licensed sales to China; none of these says how many chips crossed into the mainland.
+3. **Some purchases were approved, and some chips came in.** Washington's approvals and Beijing's, as reported, are listed above, and so are the reported deliveries and Nvidia's licensed sales to China; none of these says how many chips crossed into the mainland.
 4. **The companies had reasons of their own, and American curbs and conditions pushed too.** Alibaba says its chip unit "has brought proprietary GPUs into scaled production" [cn-policy-alibaba-own-gpu]. Nvidia's reports since November 2025 say: "we are already effectively foreclosed from the China market by U.S. export controls" [man-ms-sec-10q-2025-10].
 !! man-ms-sec-10k-fy2026 | we are already effectively foreclosed from the China market by U.S. export controls
 !! man-ms-sec-10q-2026-07 | already effectively foreclosed from the China market by U.S. export controls

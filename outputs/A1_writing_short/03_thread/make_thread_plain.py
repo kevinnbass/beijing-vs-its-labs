@@ -90,7 +90,7 @@ def main():
         if k > n: sys.exit(f'image note names post {k}, but there are {n} posts')
 
     out = ['Thread: did Beijing pull against its own AI companies?', '',
-           "Draft by Claude, Anthropic's model. Nothing here has been posted.",
+           "Draft by Claude, Anthropic's model. Nothing here has been posted.",      # round 11 (Nov 26, 2026): the session's ruling, no ""
            f'{n} posts. Every quotation was found in the saved copy of its source before this text was written.',
            'Each post is followed by its source\'s address on its own line. The address is not part of the post.',
            'Words between quotation marks are a source\'s exact words. English given for a Chinese source is ours, not an official translation.',

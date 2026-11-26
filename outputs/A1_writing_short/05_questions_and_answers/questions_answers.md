@@ -2,7 +2,7 @@
 
 *Ten questions a newcomer asks. Each answer is at most three sentences and names its source.*
 
-Draft by Claude, Anthropic's model. Written Nov 23, 2026; revised Nov 25, 2026 (UTC).
+Draft by Claude, Anthropic's model. Written Nov 23, 2026; revised Nov 26, 2026 (UTC).
 
 Words between quotation marks were found in the saved copy by a script. English given for Chinese sources is ours, not an official translation.
 
@@ -22,7 +22,7 @@ The short answer: yes, Beijing's policy pulled against what its own AI companies
 
 **5.** **Why would Beijing hold back chips its own companies want?** Its declared policy is to end dependence on foreign core technology and to raise the share of home-made chips: in May 2026 Li Chao, of the state planner's policy research office, said it was guiding home-made large models to do more to adapt to home-made computing chips [13]. But what Beijing meant by its acts against Nvidia is not settled, and no Chinese document found states a motive for the unpublished guidance to companies or ties an act against Nvidia to the trade talks, though Beijing's own texts give purposes for its public acts (security, national interests, fair competition). The US-China Economic and Security Review Commission, in its report to Congress, saw in the move against Nvidia of China's market regulator, the State Administration for Market Regulation, "China's willingness to both exert leverage and ease pressure as a negotiating tactic" [14], while the US Trade Representative, Jamieson Greer, asked whether China would let its companies buy the H200, said it was "gonna be a sovereign decision for China" (captions, not checked by ear, at 5:59) [15].
 
-**6.** **What are the 600,000 chips in Hong Kong?** A number from one press report, not from a record. Reuters, Nov 5, 2026, citing two unnamed people: "About 600,000 of Nvidia's advanced artificial intelligence chips are stored in Hong Kong awaiting shipment to China" [16]. Asked about that report on Nov 9, 2026, the foreign ministry's spokesman said to ask the departments in charge [17].
+**6.** **What did Reuters report about 600,000 chips in Hong Kong?** A number from one press report, not from a record. Reuters, Nov 5, 2026, citing two unnamed people: "About 600,000 of Nvidia's advanced artificial intelligence chips are stored in Hong Kong awaiting shipment to China" [16]. Asked about that report on Nov 9, 2026, the foreign ministry's spokesman said to ask the departments in charge [17].
 
 **7.** **Was an import permit refused?** That says more than the record shows. No permit rule for these chips was found in the policy pages read, nor in China's lists of goods that need an import licence for 2024, 2025 and 2026 (the 2026 list: [18]); Reuters's words are that Beijing "withholds approval for large-scale imports" [16]. On Jul 30, 2026 a company asked the commerce ministry, on its public message board, whether importing H200 chips needs a special import licence; the ministry's reply of Aug 19, 2026 speaks only of exporters and export controls [19].
 
@@ -82,7 +82,7 @@ Each entry: its kind; what it is; the saved page's own title where the record ho
 
 [15] Caption track or machine transcript, not checked by ear. US Trade Representative Jamieson Greer, interview on Bloomberg Television posted May 15, 2026 ("Greer: US, China Willing to Continue Trade Truce"): the video's English caption track (its maker is not stated; it is not YouTube's automatic track), not checked by ear; the words quoted are at 5:59. https://www.youtube.com/watch?v=ckzJQyMyCoE Saved copy: cn-le01-greer-bbg-20260515-subs-ttml
 
-[16] Press report citing unnamed people. Reuters, datelined Nov 5, 2026, as carried by CNA (Singapore) on Nov 6, 2026. The CNA page shows only its own date; the Nov 5 dateline stands on the copy carried by Yahoo, which is also saved. Page title: Nvidia chips pile up in Hong Kong as China withholds import approval. https://www.channelnewsasia.com/east-asia/nvidia-chips-pile-up-hong-kong-china-withhold-import-approval-6527371 Saved copy: cn-clips-evidence-1
+[16] Press report citing unnamed people. Reuters, datelined Nov 5, 2026, as carried by CNA (Singapore) on Nov 6, 2026: a report, from unnamed people, on Beijing's approvals for imports of Nvidia's H200 chips. The CNA page shows only its own date; the Nov 5 dateline stands on the copy carried by Yahoo, which is also saved. https://www.channelnewsasia.com/east-asia/nvidia-chips-pile-up-hong-kong-china-withhold-import-approval-6527371 Saved copy: cn-clips-evidence-1
 
 [17] Official document, or an official on the record. Ministry of Foreign Affairs, regular press conference of Nov 9, 2026 (spokesperson Guo Jiakun). Page title: 2026年11月9日外交部发言人郭嘉昆主持例行记者会_中华人民共和国外交部. https://www.fmprc.gov.cn/fyrbt_673021/202611/t20261109_12056081.shtml Saved copy: cn-acts-mfa-20261109
 

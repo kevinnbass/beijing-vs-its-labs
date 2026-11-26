@@ -1,7 +1,7 @@
 # The companies in the middle
 @deck 2025 and 2026 from the buyers' side. China's AI companies used Nvidia chips and were reported to order more, said why, pushed back, were reported to train abroad, and built chips of their own.
 
-@note Draft by Claude, Anthropic's model. Written Nov 23, 2026 (UTC); revised Nov 25, 2026.
+@note Draft by Claude, Anthropic's model. Written Nov 23, 2026 (UTC); revised Nov 26, 2026.
 @note How to read it. Words between quotation marks are a source's exact words, found in the saved copy by a script. A filled reference number is a document, a filing, a named person on the record, or a published commentary of state media or an industry body. An open number is a press report citing unnamed people, a research firm's count, or captions and machine transcripts nobody has checked by ear. English in round brackets after Chinese is our rendering, not an official translation.
 @note The author's interest. Anthropic has argued in public for controls on chip exports to China (that is from the model's general knowledge; no saved page is cited for it), so judge this piece by its sources.
 
@@ -13,7 +13,7 @@ Since 2022 Washington has restricted which Nvidia chips may be exported to China
 From 2024 the planning side of their own state and the industry ministry, and from 2025 its security side, pressed China's AI companies, through unpublished guidance that the press reported, to use home-made chips instead.
 Here is what the companies did, in five steps, in their own words where they spoke. Tencent's and Baidu's words come from a stock-data site's transcripts, whose speaker labels are unchecked.
 
-**1. They ordered**
+**1. They used Nvidia chips, and were reported to order more**
 
 A Shanghai government body wrote, in a reply dated Apr 30, 2025, that in the city internet companies' own computing clusters run mainly on Nvidia cards [cn-counter-b11-5].
 !! cn-counter-b11-5 | 主要以英伟达高性能卡为主
@@ -21,7 +21,7 @@ A Shanghai government body wrote, in a reply dated Apr 30, 2025, that in the cit
 The orders are reported from unnamed people. In the first three months of 2025 Chinese companies including ByteDance, Alibaba and Tencent "have placed at least $16 billion in orders for" Nvidia's H20 chip [cn-labs-h20-orders-20250402-relay1].
 !! cn-labs-h20-orders-20250402-relay1 | in the first three months of the year
 !! cn-labs-h20-orders-20250402-relay1 | Chinese companies including ByteDance, Alibaba Group and Tencent Holdings have placed at least
-By Dec 31, 2025 Chinese companies "have placed orders for more than 2 million H200 chips for 2026" [cn-labs-h200-two-million-202512-relay1-wayback].
+Reuters reported on Dec 31, 2025 that Chinese companies "have placed orders for more than 2 million H200 chips for 2026" [cn-labs-h200-two-million-202512-relay1-wayback].
 !! cn-labs-h200-two-million-202512-relay1-wayback | Dec 31 (Reuters)
 
 **2. They said why**
@@ -66,7 +66,8 @@ The same paper, Aug 13, 2025, by three unnamed people: DeepSeek "was encouraged 
 
 **5. They built chips of their own and turned to other home-made chips**
 
-Baidu's chief executive, April 2025: a cluster "comprising 30,000 of its self-developed, third generation P800 Kunlun chips" [man-cn-labs-baidu-30k-reuters-alt1].
+Baidu's chief executive said in April 2025, in Reuters' words, that it had switched on a cluster "comprising 30,000 of its self-developed, third generation P800 Kunlun chips" [man-cn-labs-baidu-30k-reuters-alt1].
+!! man-cn-labs-baidu-30k-reuters-alt1 | means switching the cluster on
 Alibaba's chief executive, May 13, 2026, gave a commercial reason for its own chips: "gross margins on mainstream foreign AI chips are very high, basically in the 60% to 80% range" [cn-o36-alibaba-call-20260513-own].
 !! cn-o36-alibaba-call-20260513-own | Wednesday, 13 May 2026
 Tencent's chief strategy officer, Nov 18, 2026: "that inference can be run very effectively on a surprisingly limited number of domestic chips" [cn-o36-tencent-call-20261118-sa].

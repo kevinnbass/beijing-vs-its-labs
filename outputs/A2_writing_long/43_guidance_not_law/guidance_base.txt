@@ -1,7 +1,7 @@
 # Guidance, not law
 @deck How Beijing pressed China's AI companies away from Nvidia's chips, though no published order was found, shown on this one case.
 
-@note Draft by Claude, Anthropic's model. Written Nov 23, 2026 (UTC); revised Nov 25, 2026.
+@note Draft by Claude, Anthropic's model. Written Nov 23, 2026 (UTC); revised Nov 26, 2026.
 @note How to read it. Words between quotation marks are a source's exact words, found in the saved copy by a script. A filled reference number is a document, a filing, a named person on the record, or a published commentary of state media or an industry body. An open number is a press report citing unnamed people, a research firm's count, or captions and machine transcripts nobody has checked by ear. English in round brackets after Chinese is our rendering, not an official translation.
 @note The author's interest. Anthropic has argued in public for controls on chip exports to China (that is from the model's general knowledge; no saved page is cited for it), so judge this piece by its sources.
 
@@ -41,7 +41,7 @@ They warn and urge. None forbids.
 
 **3. Two published texts tell buyers to stop; neither is about Nvidia** (on the record)
 
-On May 21, 2023 the cyberspace regulator's review office published its conclusion on Micron: operators of critical information infrastructure should stop buying its products [cn-policy-micron-decision] [cn-policy-review-measures].
+On May 21, 2023 the cyberspace regulator's review office published its conclusion on Micron: operators of critical information infrastructure shall stop buying its products [cn-policy-micron-decision] [cn-policy-review-measures].
 !! cn-policy-micron-decision | 2023年05月21日
 !! cn-policy-micron-decision | 网络安全审查办公室依法作出不予通过网络安全审查的结论
 !! cn-policy-micron-decision | 关键信息基础设施的运营者应停止采购美光公司产品
@@ -53,7 +53,7 @@ On Jun 22, 2026 the finance ministry barred government buyers from products made
 For Nvidia the cyberspace regulator published a summons, on Jul 31, 2025, and no such conclusion that we found [cn-policy-cac-h20-original].
 !! cn-policy-cac-h20-original | 于2025年7月31日约谈了英伟达公司
 
-**4. The national rules found cover only the state's own buying** (on the record)
+**4. The national purchase rules found bind only the state's own buying** (on the record)
 
 Notices published on Dec 26, 2023 require Party and government bodies at township level and above, and two kinds of public institution tied to them, to write into their purchases of desktop computers and general-purpose servers that the processor and operating system meet a security evaluation. The same sentence adds: "其他单位可不在采购需求中提出此项要求" (other units may leave this requirement out) [cn-policy-desktop-2023] [cn-policy-server-procurement-2023].
 !! cn-policy-desktop-2023 | 发布日期:2023年12月26日
@@ -87,11 +87,9 @@ On Nov 9, 2026: "具体情况建议向中方主管部门询问" (for specifics, 
 
 ## What guidance did here
 
-No published rule for it was found, and what the reports said of it changed within two weeks. An unnamed person told Reuters on Jan 14, 2026 that officials' wording "is basically a ban for now, though this might change in the future should things evolve" [cn-acts-reuters-customs-20260114]. On Jan 28 Reuters reported approvals "with conditions" for three companies [ms-bj-20260128-h200-nod-standard]. Nvidia's chief executive told reporters the next day that his company had not received such information, and that he believed China was still finalising the licence [cn-ga31-sv1-reuters-deepseek-yahoo].
-!! cn-ga31-sv1-reuters-deepseek-yahoo | He added that he believed that China was still finalising the licence
-!! cn-ga31-sv1-reuters-deepseek-yahoo | Reuters reported on Wednesday, citing sources, that ByteDance, Alibaba and Tencent
-!! cn-ga31-sv1-reuters-deepseek-yahoo | told reporters in Taipei on Thursday that his company had not received such information
-!! cn-ga31-sv1-reuters-deepseek-yahoo | PUBLISHED: 2026-01-30
+No published rule for it was found, and what the reports said of it changed within two weeks. An unnamed person told Reuters on Jan 14, 2026 that officials' wording "is basically a ban for now, though this might change in the future should things evolve" [cn-acts-reuters-customs-20260114]. On Jan 28 Reuters reported approvals "with conditions" for three companies [ms-bj-20260128-h200-nod-standard]. Nvidia's chief executive said on Jan 29, at Taipei's airport, as Voice of America's Chinese service renders him: "我认为中国政府仍在决策中，我们尚未收到采购订单，我们也没有收到新闻报道所说的相关信息" (I think the Chinese government is still deciding; we have not yet received purchase orders, and we have not received the information the news reports speak of) [cn-ga31-counter-40].
+!! cn-ga31-counter-40 | 星期四(1月29日)
+!! cn-ga31-counter-40 | 在机场接受媒体访问时作出上述表述的
 !! cn-acts-reuters-customs-20260114 | PUBLISHED: 2026-01-14
 !! cn-acts-reuters-customs-20260114 | The wording from the officials is so severe that it
 !! ms-bj-20260128-h200-nod-standard | PUBLISHED: 2026-01-28

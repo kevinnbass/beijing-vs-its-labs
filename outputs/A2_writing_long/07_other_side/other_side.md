@@ -2,7 +2,7 @@
 
 *The best honest case that Beijing and China's AI companies were not in real conflict over Nvidia's chips, put as strongly as the sources allow. Then what that case cannot explain.*
 
-Draft by Claude, Anthropic's model. Written Nov 23, 2026 (UTC); revised Nov 25, 2026.
+Draft by Claude, Anthropic's model. Written Nov 23, 2026 (UTC); revised Nov 26, 2026.
 
 How to read it. Words between quotation marks are a source's exact words, found in the saved copy by a script. A filled reference number is a document, a filing, a named person on the record, or a published commentary of state media or an industry body. An open number is a press report citing unnamed people, a research firm's count, or captions and machine transcripts nobody has checked by ear. Where a statement rests on a Chinese text, the English is our rendering, not an official translation.
 
@@ -32,7 +32,7 @@ The claim under test: Beijing's chip policy pulled against China's own AI compan
 - **Orders of which only a small part arrived** (reported, from unnamed people). Reuters reported in December 2025 that Chinese companies "have placed orders for more than 2 million H200 chips for 2026" [18]; in August 2026, relaying the Financial Times, that ByteDance and Tencent had each received "about 10,000 H200 processors" [19]; and in November 2026 that about 600,000 chips were stored in Hong Kong "as Beijing withholds approval for large-scale imports despite demand from technology firms" [20]. All three reports cite unnamed people.
 - **Licences, and sales that stopped.** Nvidia, on its call of May 20, 2026, of chips Washington had licensed: "we have yet to generate any revenue, and we are uncertain whether any imports will be allowed into the country" [21]. On its call of Nov 17, 2026 it reported that "Q3 sales of licensed Hopper Data Center products to China was $2.4 billion", and said: "we are no longer shipping licensed Hopper Data Center products to China" [22]; Hopper is the family of chips that includes the H200 [23].
 
-Each part of that case is in the record, some as a reading or a company's own claim. Together they limit the claim: Beijing was not one actor; it warned in public and, by the press reports, gave unpublished guidance, and no published ban was found; some chips came in; the companies had reasons of their own and American curbs pushed too; and what Beijing meant is not settled. They do not show that nothing stood between the companies and the chips they ordered.
+Each part of that case is in the record, some as a reading or a company's own claim. Together they limit the claim: Beijing was not one actor; it warned in public and, by the press reports, gave unpublished guidance, and no published ban was found; some chips came in; the companies had reasons of their own and American curbs pushed too; and what Beijing meant is not settled. They do not show that nothing stood between the companies and the chips they were reported to order.
 
 ## References
 
@@ -76,7 +76,7 @@ Each entry: its kind; what it is; the saved page's own title where the record ho
 
 [19] Press report citing unnamed people. Reuters, relaying the Financial Times, Aug 18, 2026, as carried by Investing.com. Internet Archive capture of Sept 8, 2026. https://web.archive.org/web/20260908131431/https://www.investing.com/news/stock-market-news/nvidia-h200-chips-reach-china-in-small-shipments-ft-reports-4866385 Saved copy: cn-tolerate-reutersaug26-relay1-wayback
 
-[20] Press report citing unnamed people. Reuters, datelined Nov 5, 2026, as carried by CNA (Singapore) on Nov 6, 2026. The CNA page shows only its own date; the Nov 5 dateline stands on the copy carried by Yahoo, which is also saved. Page title: Nvidia chips pile up in Hong Kong as China withholds import approval. https://www.channelnewsasia.com/east-asia/nvidia-chips-pile-up-hong-kong-china-withhold-import-approval-6527371 Saved copy: cn-clips-evidence-1
+[20] Press report citing unnamed people. Reuters, datelined Nov 5, 2026, as carried by CNA (Singapore) on Nov 6, 2026: a report, from unnamed people, on Beijing's approvals for imports of Nvidia's H200 chips. The CNA page shows only its own date; the Nov 5 dateline stands on the copy carried by Yahoo, which is also saved. https://www.channelnewsasia.com/east-asia/nvidia-chips-pile-up-hong-kong-china-withhold-import-approval-6527371 Saved copy: cn-clips-evidence-1
 
 [21] Company filing or statement. Nvidia, results call of May 20, 2026 (first quarter of its fiscal year 2027): the transcript on Nvidia's investor file host (s201.q4cdn.com). https://s201.q4cdn.com/141608511/files/doc_financials/2027/q1/NVDA-Q1-2027-Earnings-Call-20-May-2026-5_00-PM-ET.pdf Saved copy: cn-o38-nvda-q1fy27-call-transcript-pdf
 

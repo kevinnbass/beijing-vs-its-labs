@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build idea 39 (provincial targets for home-made computing hardware, and local vouchers): check, count, write the
+"""Build idea 39 (provincial targets for home-made computing, each by its plan's own measure, and local vouchers): check, count, write the
 table files and the note. Round 4 (Nov 23, 2026): all 31 governments, six groups, the local vouchers.
 
 Run: python3 -I build.py          (from anywhere; everything is written beside this file)

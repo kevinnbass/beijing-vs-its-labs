@@ -1,7 +1,7 @@
 # The other side at full strength
 @deck The best honest case that Beijing and China's AI companies were not in real conflict over Nvidia's chips, put as strongly as the sources allow. Then what that case cannot explain.
 
-@note Draft by Claude, Anthropic's model. Written Nov 23, 2026 (UTC); revised Nov 25, 2026.
+@note Draft by Claude, Anthropic's model. Written Nov 23, 2026 (UTC); revised Nov 26, 2026.
 @note How to read it. Words between quotation marks are a source's exact words, found in the saved copy by a script. A filled reference number is a document, a filing, a named person on the record, or a published commentary of state media or an industry body. An open number is a press report citing unnamed people, a research firm's count, or captions and machine transcripts nobody has checked by ear. Where a statement rests on a Chinese text, the English is our rendering, not an official translation.
 @note The author's interest. Anthropic has argued in public for controls on chip exports to China (that is from the model's general knowledge; no saved page is cited for it), so judge this piece by its sources.
 
@@ -59,4 +59,4 @@ The claim under test: Beijing's chip policy pulled against China's own AI compan
 !! cn-o38-nvda-q1fy27-call-transcript-pdf | Corrected Transcript 20-May-2026
 !! cn-o38-nvda-q1fy27-call-transcript-pdf | While the US government has approved licenses for H200 to be shipped to China-based customers
 
-Each part of that case is in the record, some as a reading or a company's own claim. Together they limit the claim: Beijing was not one actor; it warned in public and, by the press reports, gave unpublished guidance, and no published ban was found; some chips came in; the companies had reasons of their own and American curbs pushed too; and what Beijing meant is not settled. They do not show that nothing stood between the companies and the chips they ordered.
+Each part of that case is in the record, some as a reading or a company's own claim. Together they limit the claim: Beijing was not one actor; it warned in public and, by the press reports, gave unpublished guidance, and no published ban was found; some chips came in; the companies had reasons of their own and American curbs pushed too; and what Beijing meant is not settled. They do not show that nothing stood between the companies and the chips they were reported to order.

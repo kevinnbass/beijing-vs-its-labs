@@ -1,7 +1,7 @@
 # Did China ban Nvidia? Questions and answers
 @deck Ten questions a newcomer asks. Each answer is at most three sentences and names its source.
 
-@note Draft by Claude, Anthropic's model. Written Nov 23, 2026; revised Nov 25, 2026 (UTC).
+@note Draft by Claude, Anthropic's model. Written Nov 23, 2026; revised Nov 26, 2026 (UTC).
 @note Words between quotation marks were found in the saved copy by a script. English given for Chinese sources is ours, not an official translation.
 @note Two kinds of source are kept apart; the key under this header says what a filled and an open reference number mean. No published instruction from Beijing to the companies was found. What is known of such instructions comes from company filings and from press reports, and each answer says which.
 @note The short answer: yes, Beijing's policy pulled against what its own AI companies wanted, with five limits. Questions 1, 7, 8, 9 and 10 give four of the limits; question 5 gives the fifth.
@@ -46,7 +46,7 @@
 !! cn-counter-b22-2 | Jamieson Greer
 !! cn-le01-greer-bbg-20260515-subs-ttml | Will China allow their companies to buy them?
 
-6. **What are the 600,000 chips in Hong Kong?** A number from one press report, not from a record. Reuters, Nov 5, 2026, citing two unnamed people: "About 600,000 of Nvidia's advanced artificial intelligence chips are stored in Hong Kong awaiting shipment to China" [cn-clips-evidence-1]. Asked about that report on Nov 9, 2026, the foreign ministry's spokesman said to ask the departments in charge [cn-acts-mfa-20261109].
+6. **What did Reuters report about 600,000 chips in Hong Kong?** A number from one press report, not from a record. Reuters, Nov 5, 2026, citing two unnamed people: "About 600,000 of Nvidia's advanced artificial intelligence chips are stored in Hong Kong awaiting shipment to China" [cn-clips-evidence-1]. Asked about that report on Nov 9, 2026, the foreign ministry's spokesman said to ask the departments in charge [cn-acts-mfa-20261109].
 !! cn-clips-evidence-1 | two people familiar with the matter said
 !! cn-acts-mfa-20261109 | 2026年11月9日
 !! cn-acts-mfa-20261109 | 约60万枚英伟达先进人工智能芯片存放在香港

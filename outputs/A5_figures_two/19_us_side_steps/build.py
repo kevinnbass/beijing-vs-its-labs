@@ -148,13 +148,14 @@ def main():
         ('post', 'allowed'): ('H200 sales to be allowed', 'an announcement · no number of chips', 'to “approved customers in China”, in the President’s words. The licences came later (step 2).'),
         ('licences', 'allowed'): ('Licences granted', 'licences · H200 · no number given', 'for what Nvidia’s filing calls “small amounts of H200 products” to “specific China-based customers”, whom it does not name.'),
         ('lutnick', 'out'): ('None sold yet', 'H200 chips sold', '“So we have not sold them chips as of yet.” He calls it his understanding.'),
-        ('cleared', 'allowed'): (f'about {v["cleared"]["firms"]} firms, up to {n(v["cleared"]["each"])} each', 'firms, and a ceiling per firm · H200',
+        # Round 11 (ROUND11.md, thing 2): the big words of a press report's step carry the report ("Reported: ..."), not only the step's source line
+        ('cleared', 'allowed'): (f'Reported: about {v["cleared"]["firms"]} firms, up to {n(v["cleared"]["each"])} each', 'firms, and a ceiling per firm · H200',
                                  f'By this report of May 14, 2026, from unnamed people. In Washington’s own table (step {by["committee"]["n"]}) no approved application is above {n(v["cleared"]["each"])}.'),
-        ('cleared', 'out'): ('No delivery', 'H200 deliveries', '“not a single delivery has been made so far”'),
+        ('cleared', 'out'): ('Reported: no delivery', 'H200 deliveries', '“not a single delivery has been made so far”'),
         ('call1', 'out'): ('No revenue yet', 'US dollars · licensed H200 sales', '“we have yet to generate any revenue, and we are uncertain whether any imports will be allowed into the country”'),
         ('kessler', 'out'): ('Shipments have begun', 'H200 shipments · no number given', '“minimal exports of any H200s to China so far”; the number was “very few”.'),
-        ('ft', 'allowed'): (f'up to {n(v["ft"]["each"])} each, for ByteDance and Tencent', 'a ceiling per firm · H200', f'A higher ceiling than the {n(v["cleared"]["each"])} reported in May. The two come from different reports.'),
-        ('ft', 'out'): (f'about {n(v["ft"]["got"])} each, to two buyers', 'chips received · H200 · ByteDance and Tencent', 'received “in recent weeks”, the report says.'),
+        ('ft', 'allowed'): (f'Reported: up to {n(v["ft"]["each"])} each, for ByteDance and Tencent', 'a ceiling per firm · H200', f'A higher ceiling than the {n(v["cleared"]["each"])} reported in May. The two come from different reports.'),
+        ('ft', 'out'): (f'Reported: about {n(v["ft"]["got"])} each, to two buyers', 'chips reported received · H200 · ByteDance and Tencent', 'received “in recent weeks”, the report says.'),
         ('tenq', 'out'): (f'less than {v["tenq"]["pct"]}% of Data Center revenue', 'a share of Nvidia’s revenue · H200 shipments under the licences',
                           f'Data Center revenue that quarter was ${v["tenq"]["dc"]} billion, so less than ${under:.2f} billion (our multiplication). Nvidia: “a fraction of the allowed shipments”.'),
         ('call', 'out'): (f'${v["call"]["sold"]} billion sold', 'US dollars · licensed Hopper products, the H200 among them',
@@ -166,6 +167,7 @@ def main():
         ('committee', 'out'): ('Not shipped, as of May 11, 2026', 'licence applications · their status', 'Every approved application is marked “Approved, not shipped”.'),
     }
     for (k, lane) in show: assert lane in by[k]['lanes'], (k, lane)
+    assert all(show[(r['key'], ln)][0].startswith('Reported: ') == (r['kind'] == 'press') for r in recs for ln in r['lanes']), 'a press step without "Reported", or an on-record step with it'
     assert sum(len(r['lanes']) for r in recs) == len(show)
 
     g = ['<div class="st" role="table" aria-label="Dated steps on the US side">',
@@ -203,7 +205,7 @@ def main():
    <div class="ys">
     <div><b>Chips in licence applications</b>Nvidia’s H200 and AMD’s MI325X together. Washington’s licence table, status of May 11, 2026, made public by the House Foreign Affairs Committee.</div>
     <div><b>Firms, and a ceiling per firm</b>The H200 only. Press reports citing unnamed people.</div>
-    <div><b>Chips received</b>The H200, by two named buyers. A press report citing unnamed people.</div>
+    <div><b>Chips reported received</b>The H200, by two named buyers, in a press report citing unnamed people.</div>
     <div><b>A share of revenue</b>Nvidia’s Data Center revenue in one quarter. Its filing.</div>
     <div><b>US dollars</b>Licensed Hopper products sold in one quarter. Nvidia’s results calls.</div>
    </div>

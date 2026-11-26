@@ -3,7 +3,7 @@
 @deck The quarterly report had not been filed when last looked for: the SEC's record of the company's filings, fetched at {SEC_FETCHED}, lists none, nor did Nvidia's own list of its filings, fetched at {FILINGS_FETCHED}. Nvidia's commentary and call transcript give $2.4 billion of licensed Hopper Data Center sales to China in the quarter and say the shipments have stopped, with no reason given. Its earlier reports name the Chinese government; the four call transcripts quoted here do not.
 
 @note Draft by Claude, Anthropic's model.
-@note Written Nov 23, 2026 (UTC); revised from Nov 23 to Nov 25, 2026, the last time with the SEC's record and Nvidia's own two lists as read at {SEC_FETCHED}. Nvidia's staff are named by office, not by name.
+@note Written Nov 23, 2026 (UTC); revised from Nov 23 to Nov 26, 2026. The SEC's record and Nvidia's own two lists are as read at {SEC_FETCHED}. Nvidia's staff are named by office, not by name.
 
 ## What was looked for
 
@@ -77,8 +77,11 @@ The reports Nvidia files with the SEC have said more about Beijing than its call
 
 ## One more figure, to be read with care
 
-This figure comes from Nvidia's supplemental document for the quarter, not from a filed report, and it needs its own caution. The document gives revenue by where the customer's head office is. For China (including Hong Kong) the three months to Oct 25, 2026 show $11,050 million, against $2,973 million a year before [cn-o38-nvda-q3fy27-supplemental-pdf]. This is not a count of chips sent to China. Nvidia's own caution: "Revenue by geographic region is designated based on the location of the headquarters of direct customers. The end customer and shipping location may be different from our direct customers’ headquarters location." [cn-o38-nvda-q3fy27-supplemental-pdf]
+This figure comes from Nvidia's supplemental document for the quarter, which Nvidia furnished to the SEC as an exhibit to its Form 8-K of Nov 17, 2026 [ms-p3-nvda-8k-20261117-pdf]; it is not from a 10-Q, and it needs its own caution. The document gives revenue by where the customer's head office is. For China (including Hong Kong) the three months to Oct 25, 2026 show $11,050 million, against $2,973 million a year before [cn-o38-nvda-q3fy27-supplemental-pdf]. This is not a count of chips sent to China. Nvidia's own caution: "Revenue by geographic region is designated based on the location of the headquarters of direct customers. The end customer and shipping location may be different from our direct customers’ headquarters location." [cn-o38-nvda-q3fy27-supplemental-pdf]
 !! cn-o38-nvda-q3fy27-supplemental-pdf | China (including Hong Kong) 11,050 2,973
+!! ms-p3-nvda-8k-20261117-pdf | Exhibit 99.3 and incorporated by reference herein is supplemental financial information
+!! ms-p3-nvda-8k-20261117-pdf | Supplemental Financial Information are furnished and shall not be deemed
+!! ms-p3-nvda-8k-20261117-pdf | China (including Hong Kong) 11,050 2,973
 
 The project's table of this line, made from Nvidia's reports (tables/nvidia_china_revenue.tsv), has {REV_N} quarters counted this way, from the quarter ended {REV_FIRST} to the one ended Oct 25, 2026. In $ million, in order: {REV_SEQ}. {REV_DERIVED} of the {REV_N} are the table's own subtractions of nine-month figures from annual ones. The latest quarter is the highest of the {REV_N}. The line covers every product Nvidia sells, not only data-centre chips.
 
@@ -86,7 +89,7 @@ The project's table of this line, made from Nvidia's reports (tables/nvidia_chin
 
 - **Nvidia's reports and calls, side by side.** The argument's point {P11} gives Nvidia's reports report by report, as the table above does, and the call lines beside them, among them the line of May 20, 2026: "we are uncertain whether any imports will be allowed into the country" [cn-o38-nvda-q1fy27-call-transcript-pdf]. That line speaks of imports into China and names no authority.
 - **The $2.4 billion and the stop.** The argument's point {P19} cites Nvidia's own transcript for the $2.4 billion and for the words "we are no longer shipping licensed Hopper Data Center products to China" [cn-o38-nvda-q3fy27-call-transcript-pdf], beside Reuters, and says that Nvidia gave no reason.
-- **The last three quarters.** Under 1% of Data Center revenue in the quarter to Jul 26, 2026, then $2.4 billion in the quarter to Oct 25, 2026; in the quarter before those, no Data Center Hopper products were shipped to China. The rise came in the quarter from late July to late October 2026. Nvidia's words are "Shipments of Data Center Hopper products to China" [cn-counter-b17-1]; they do not say how many chips reached the mainland or stayed in Hong Kong. The argument's table of numbers (its section 4) gives Nvidia's account of the last two.
+- **The last three quarters.** Under 1% of Data Center revenue in the quarter to Jul 26, 2026, then $2.4 billion in the quarter to Oct 25, 2026; in the quarter before those, no Data Center Hopper products were shipped to China. The rise came in the quarter from late July to late October 2026. Nvidia's words are "Shipments of Data Center Hopper products to China" [cn-counter-b17-1]; they do not say how many of those chips crossed into the mainland. The argument's table of numbers (its section 4) gives Nvidia's account of the last two.
 - **The report not yet filed.** The argument's list of open points cites the SEC's record, as read at {SEC_FETCHED}, for the report not being filed.
 - **Still open: what the 10-Q will say.** The passage on the H200 in the risk factors, where the sentence "but such sales were restricted by the PRC government" stood last time [man-ms-sec-10q-2026-07]: whether the next report keeps it, changes it or drops it.
 

@@ -1,4 +1,4 @@
-# The tracker's state of play (build.py reads this file). Written Nov 23, 2026; dated Nov 24, 2026 in round 5 and Nov 25, 2026 in round 8; brought to core edits 8 and 8b in round 9, Nov 25, 2026, and to the core's batch of 22:33 UTC in round 10 (the 10-Q's last look, 22:16 UTC) (see the log). Markup, one thing per line:
+# The tracker's state of play (build.py reads this file). Written Nov 23, 2026; dated Nov 24, 2026 in round 5 and Nov 25, 2026 in round 8; brought to core edits 8 and 8b in round 9, Nov 25, 2026, and to the core's batch of 22:33 UTC in round 10 (the 10-Q's last look, 22:16 UTC); dated Nov 26, 2026 in round 11, when a log line of that day was added (the argument's text that the items use did not change) (see the log). Markup, one thing per line:
 #   @title words                  the section's heading
 #   @sub words                    the line under it
 #   @src id | label | address     the link text for a saved id cited in [square brackets]; the address is optional
@@ -15,7 +15,7 @@
 # Every number in an item must stand in one of its quotations or hidden checks, come from {{...}}, or be listed with !OURS.
 # Dates (Nov 23, 2026) and times in a recording (1:06) are exempt from that rule; hidden checks back the ones that matter.
 
-@title State of play, Nov 25, 2026
+@title State of play, Nov 26, 2026
 @sub Where the record stands on the day of the last log entry, from saved sources only. Each link opens the page whose saved copy holds the words quoted.
 
 @src cn-le05-sec-submissions-20261123 | the commission's record of Nvidia's filings
@@ -44,7 +44,7 @@
 @src cn-le04-dailycaller-20261120 | The Daily Caller
 
 ## The answer so far
-- Yes on direction, with five limits. From 2024 to 2026 the Chinese state's declared policy, and what its regulators did, pressed China's AI companies to move away from Nvidia chips; the companies went on using those chips, ordering them and asking for them. The limits: Beijing was not one actor; the pressure came as public warnings and unpublished guidance, not as a published ban; some purchases were approved and some chips came in; the companies had reasons of their own, and American curbs and conditions pushed too; and what Beijing meant by it is not settled. That is the project's argument as revised on Nov 25, 2026, in short; the records below are its dated evidence.
+- Yes on direction, with five limits. From 2024 to 2026 the Chinese state's declared policy, and what its regulators did, pressed China's AI companies to move away from Nvidia chips; the companies went on using those chips, ordering them and asking for them. The limits: Beijing was not one actor; the pressure came as public warnings and unpublished guidance, not as a published ban; some purchases were approved and some chips came in; the companies had reasons of their own, and American curbs and conditions pushed too; and what Beijing meant by it is not settled. That is the project's argument as revised on Nov 26, 2026, in short; the records below are its dated evidence.
 
 ## The newest facts
 - Nvidia's report to the Securities and Exchange Commission for the quarter ended Oct 25, 2026 (its 10-Q) was not yet filed when looked for on Nov 23, 2026: the commission's record of the company's filings, fetched that day, lists none for that quarter; the latest quarterly report it lists is for the quarter ended Jul 26, 2026 [cn-le05-sec-submissions-20261123]. The same record, fetched again on Nov 24, 2026, lists filings up to Nov 23 and still none for that quarter [cn-ga06-sec-submissions-20261124], nor does it when fetched on Nov 25, 2026 at 22:16 UTC, when its newest entries are of Nov 23 [cn-ga31-official-sec-submissions-20261125-c]. Nvidia's chief financial officer's commentary on the quarter says: "We plan to file our 10-Q in the coming weeks." [cn-counter-b17-1]

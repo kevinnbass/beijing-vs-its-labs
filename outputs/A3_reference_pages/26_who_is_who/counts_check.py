@@ -30,7 +30,8 @@ def expected():
     if sum(c.values()) != 31: sys.exit('not 31 provincial-level governments')
     shandong = [r for r in P if r['government'] == 'Shandong']
     if len(shandong) != 1 or shandong[0]['result'] != 'share': sys.exit('Shandong is not one of those that set a share')
-    want.append(f'On the record: {c["share"]} of the 31 were found to set a share for home-made computing hardware')
+    # round 11 (Nov 26, 2026): the core's words since batch 13b, ruling 3b (four of the nine measure computing capacity, not hardware)
+    want.append(f'On the record: {c["share"]} of the 31 were found to set a share for home-made computing, each by its plan\'s own measure: chips, equipment, hardware and software, or computing capacity')
     want.append(f'{c["plan_no_share"]} have a plan that was read and sets none')
     print(f'provinces: {dict(c)}')
     # the classes, from the classifier itself and from the core's table (which must agree)

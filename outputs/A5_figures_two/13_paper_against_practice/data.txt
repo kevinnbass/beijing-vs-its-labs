@@ -170,3 +170,7 @@ V kunlunxin=4 | Kunlunxin with 4%
 V hygon=3 | Hygon with 3%
 N Total AI-accelerator shipments reached 2.008 million units in the first half.
 N from January through June
+
+# ---- checked phrase outside the records ----
+# Xinjiang (the note under the targets): its development and reform commission says two computing plans were issued; their texts were not found
+! cn-ga31-cndocs-15 | 印发《绿色低碳的算力网建设实施方案（2025—2027年）》《自治区绿色算力中心布局方案》

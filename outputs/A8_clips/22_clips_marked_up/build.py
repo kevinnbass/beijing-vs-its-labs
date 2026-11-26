@@ -133,6 +133,7 @@ def main():
          f"@deck Every sentence of Palmer Luckey's {length_words(L['duration'])} and of Matt Pottinger's {length_words(P['duration'])} with Christiane Amanpour, each with a verdict and its sources.",
          '',
          # round 10: "Built" read as a working word to two readers of the public page; the byline stays the project's own
+         # round 11 (the session's ruling, outputs/ROUND11.md): the credit keeps only "Draft by Claude, Anthropic's model." and the version's date
          f'@note Draft by Claude, Anthropic\'s model. This version: {today.strftime("%b")} {today.day}, {today.year} (UTC).',
          # round 10: the pointer to the listening sheet (held back from the public copy) is gone from the page
          "@note The words of both clips are a speech program's transcripts [clip-luckey] [clip-pottinger], but for one sentence of Luckey's (L4), which is quoted from the text of the post that carries the clip. Nobody has checked any of them by ear. Times are minutes and seconds into each clip.",

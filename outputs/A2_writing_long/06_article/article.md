@@ -1,8 +1,8 @@
 # China's chip policy pulled against its own AI companies
 
-*From 2024 to 2026 the Chinese state pressed its AI companies to move off Nvidia's chips, and the companies kept ordering them. That holds on direction, with five limits.*
+*From 2024 to 2026 the Chinese state pressed its AI companies to move off Nvidia's chips, and, by the press reports, the companies kept ordering them. That holds on direction, with five limits.*
 
-Draft by Claude, Anthropic's model. Written Nov 23, 2026 (UTC); revised Nov 25, 2026.
+Draft by Claude, Anthropic's model. Written Nov 23, 2026 (UTC); revised Nov 26, 2026.
 
 How to read it. Words between quotation marks are a source's exact words, found in the saved copy by a script. A filled reference number is a document, a filing, a named person on the record, or a published commentary of state media or an industry body. An open number is a press report citing unnamed people, a research firm's count, or captions and machine transcripts nobody has checked by ear. Where a statement rests on a Chinese text, the English is our rendering, not an official translation.
 
@@ -10,13 +10,13 @@ The author's interest. Anthropic has argued in public for controls on chip expor
 
 ## The finding
 
-For two years the Chinese state pressed China's AI companies to move away from Nvidia's chips, and the companies kept reaching for them. That answers a question raised by a clip posted on Nov 19, 2026, in which Palmer Luckey said: "China doesn't want NVIDIA to sell GPUs to Chinese companies." [1] And next: "there are Chinese companies that want to buy Nvidia GPUs" [2]. The first sentence is from a machine transcript of the clip (0:11 to 0:16), the second from the text of the post that carries it. Nobody has checked either by ear. He is right on direction. Five limits follow at the end.
+From 2024 to 2026 the Chinese state pressed China's AI companies to move away from Nvidia's chips, and the companies kept reaching for them. That answers a question raised by a clip posted on Nov 19, 2026, in which Palmer Luckey said: "China doesn't want NVIDIA to sell GPUs to Chinese companies." [1] And next: "there are Chinese companies that want to buy Nvidia GPUs" [2]. The first sentence is from a machine transcript of the clip (0:11 to 0:16), the second from the text of the post that carries it. Nobody has checked either by ear. He is right on direction. Five limits follow at the end.
 
 ## The declared line: use home-made chips
 
-Xi Jinping said in 2016 that having core technology controlled by others is China's greatest hidden danger [3]. Nine of China's 31 provincial-level governments were found to set a share for home-made computing hardware, one of them, Zhejiang's, for the computing of one sector; Jiangsu marks its own, 70% or more of chips in new computing centres by 2030, as indicative, not binding [4]. In May 2026 the state planner (NDRC) said it was guiding home-made large models to do more to adapt to home-made chips [5].
+Xi Jinping said in 2016 that having core technology controlled by others is China's greatest hidden danger [3]. Nine of China's 31 provincial-level governments were found to set a share for home-made computing, each by its plan's own measure: chips, equipment, hardware and software, or computing capacity; one of the nine, Zhejiang's, is for the computing of one sector. Jiangsu marks its own, 70% or more of chips in new computing centres by 2030, as indicative, not binding [4]. In May 2026 the state planner (NDRC) said it was guiding home-made large models to do more to adapt to home-made chips [5].
 
-## What the companies used and ordered
+## What the companies used, and the orders reported
 
 A Shanghai government body wrote, in a reply dated Apr 30, 2025 (published Nov 10, 2025), that in the city the internet companies' own computing clusters run mainly on Nvidia cards [6]. The big companies' orders are reported from unnamed people: in the first three months of 2025 Chinese companies including ByteDance, Alibaba and Tencent "have placed at least $16 billion in orders for" Nvidia's H20 chip (The Information, through Reuters) [7].
 
@@ -34,12 +34,12 @@ The Financial Times, Aug 20, 2025: in July the cyberspace regulator sent compani
 
 For the H200, which Reuters called Nvidia's second most powerful AI chip in May 2026, the counts are not one series [13]. Washington's and Nvidia's are on the record; the rest come from unnamed people.
 
-- Ordered for 2026: "more than 2 million H200 chips" (Reuters, Dec 31, 2025) [14].
+- Reported as ordered for 2026 (Reuters, Dec 31, 2025): "more than 2 million H200 chips" [14].
 - Applied for in Washington by May 11, 2026: 3,444,160 chips, Nvidia's H200 and AMD's MI325X together, in the table of licence applications from the Commerce Department's Bureau of Industry and Security (BIS) that the House Foreign Affairs Committee made public on Nov 19, 2026. An application is not an order [15] [16] [17] [18].
 - Of those, licensed by Washington and not yet shipped: 879,868 (Nvidia's: 579,868). Returned without action: 1,888,950, or 55% of the chips in the applications BIS's summary records; no reason is given. The sums are ours [15] [16].
-- Approved by Beijing, with conditions: "more than 400,000 H200 chips in total" (Reuters, Jan 28, 2026) [19].
-- Delivered by August 2026: "about 10,000 H200 processors" each for ByteDance and Tencent (Financial Times, through Reuters, Aug 18, 2026) [20].
-- Waiting in Hong Kong: about 600,000 (Reuters, Nov 5, 2026) [21].
+- Reported as approved by Beijing, with conditions (Reuters, Jan 28, 2026): "more than 400,000 H200 chips in total" [19].
+- Reported as delivered by August 2026 (Financial Times, through Reuters, Aug 18, 2026): "about 10,000 H200 processors" each for ByteDance and Tencent [20].
+- Reported by Reuters, Nov 5, 2026, as "stored in Hong Kong awaiting shipment to China": about 600,000 [21].
 - Nvidia, Nov 17, 2026, on the quarter to Oct 25: "Q3 sales of licensed Hopper Data Center products to China was $2.4 billion" (the Hopper family includes the H200). It said it had stopped shipping them and gave no reason [22] [23].
 
 ## Five limits
@@ -48,7 +48,7 @@ For the H200, which Reuters called Nvidia's second most powerful AI chip in May 
 
 **2.** **Public warnings and unpublished guidance, not a published ban.** No published order against buying Nvidia chips was found in the 82 policy pages read. Of 75 state-media items on Nvidia chips found from July 2025 to November 2026, 16 of the 19 that only warn about them date from Jul 31 to Sept 24, 2025 [26] [27] [28]; the three found later are in Global Times in 2026, and the items after September 2025 are what two rounds of searches found, a sample and not a full count.
 
-**3.** **Some purchases were approved, and some chips came in.** The approvals are listed above, and so are the reported deliveries and Nvidia's licensed sales to China; none of these says how many chips crossed into the mainland.
+**3.** **Some purchases were approved, and some chips came in.** Washington's approvals and Beijing's, as reported, are listed above, and so are the reported deliveries and Nvidia's licensed sales to China; none of these says how many chips crossed into the mainland.
 
 **4.** **The companies had reasons of their own, and American curbs and conditions pushed too.** Alibaba says its chip unit "has brought proprietary GPUs into scaled production" [29]. Nvidia's reports since November 2025 say: "we are already effectively foreclosed from the China market by U.S. export controls" [9].
 
@@ -84,7 +84,7 @@ Each entry: its kind; what it is; the saved page's own title where the record ho
 
 [11] Press report citing unnamed people. Financial Times, "China turns against Nvidia’s AI chip after ‘insulting’ Howard Lutnick remarks", Aug 20, 2025 by the date on the copy (saved in a browser some hours behind London; another site's summary of it is dated Aug 21). Hand-saved from the paper's site; read whole. https://www.ft.com/content/b8e30c54-b71c-4113-8b3e-8f54bc36587d Saved copy: man-cn-ft-20250821-regulators
 
-[12] Press report citing unnamed people. Reuters, Jan 14, 2026, as carried by Yahoo Finance. Page title: Exclusive-China's customs agents told Nvidia's H200 chips are not permitted, sources say. https://finance.yahoo.com/news/chinas-customs-agents-told-nvidias-065002091.html/ Saved copy: cn-acts-reuters-customs-20260114
+[12] Press report citing unnamed people. Reuters, Jan 14, 2026, as carried by Yahoo Finance. https://finance.yahoo.com/news/chinas-customs-agents-told-nvidias-065002091.html/ Saved copy: cn-acts-reuters-customs-20260114
 
 [13] Press report citing unnamed people. Reuters, May 14, 2026, as carried by MarketScreener. Internet Archive capture of Jun 16, 2026. https://web.archive.org/web/20260616124310/https://www.marketscreener.com/news/us-clears-h200-chip-sales-to-10-china-firms-as-nvidia-ceo-looks-for-breakthrough-ce7f5bddd98df020 Saved copy: cn-acts-reuters-us-approvals-20260514-wayback
 
@@ -102,7 +102,7 @@ Each entry: its kind; what it is; the saved page's own title where the record ho
 
 [20] Press report citing unnamed people. Reuters, relaying the Financial Times, Aug 18, 2026, as carried by Investing.com. Internet Archive capture of Sept 8, 2026. https://web.archive.org/web/20260908131431/https://www.investing.com/news/stock-market-news/nvidia-h200-chips-reach-china-in-small-shipments-ft-reports-4866385 Saved copy: cn-tolerate-reutersaug26-relay1-wayback
 
-[21] Press report citing unnamed people. Reuters, datelined Nov 5, 2026, as carried by CNA (Singapore) on Nov 6, 2026. The CNA page shows only its own date; the Nov 5 dateline stands on the copy carried by Yahoo, which is also saved. Page title: Nvidia chips pile up in Hong Kong as China withholds import approval. https://www.channelnewsasia.com/east-asia/nvidia-chips-pile-up-hong-kong-china-withhold-import-approval-6527371 Saved copy: cn-clips-evidence-1
+[21] Press report citing unnamed people. Reuters, datelined Nov 5, 2026, as carried by CNA (Singapore) on Nov 6, 2026: a report, from unnamed people, on Beijing's approvals for imports of Nvidia's H200 chips. The CNA page shows only its own date; the Nov 5 dateline stands on the copy carried by Yahoo, which is also saved. https://www.channelnewsasia.com/east-asia/nvidia-chips-pile-up-hong-kong-china-withhold-import-approval-6527371 Saved copy: cn-clips-evidence-1
 
 [22] Company filing or statement. Nvidia, results call for the third quarter of its fiscal year 2027 (the quarter ended Oct 25, 2026): the transcript on Nvidia's investor file host (s201.q4cdn.com). https://s201.q4cdn.com/141608511/files/content_files/NVDA-3Q27-Earnings-Transcript.pdf Saved copy: cn-o38-nvda-q3fy27-call-transcript-pdf
 
@@ -124,4 +124,4 @@ Each entry: its kind; what it is; the saved page's own title where the record ho
 
 [31] Caption track or machine transcript, not checked by ear. US Trade Representative Jamieson Greer, interview on Bloomberg Television posted May 15, 2026 ("Greer: US, China Willing to Continue Trade Truce"): the video's English caption track (its maker is not stated; it is not YouTube's automatic track), not checked by ear; the words quoted are at 5:59. https://www.youtube.com/watch?v=ckzJQyMyCoE Saved copy: cn-le01-greer-bbg-20260515-subs-ttml
 
-Build check: 18 quotations and 55 further statements were looked for in the saved copies of 31 sources and all were found; a planted false quotation was rejected. 20 sources are documents, filings or named people on the record; 11 are press reports citing unnamed people, counts or machine transcripts. A quotation that is found shows what the source says, not that it is true.
+Build check: 19 quotations and 55 further statements were looked for in the saved copies of 31 sources and all were found; a planted false quotation was rejected. 20 sources are documents, filings or named people on the record; 11 are press reports citing unnamed people, counts or machine transcripts. A quotation that is found shows what the source says, not that it is true.

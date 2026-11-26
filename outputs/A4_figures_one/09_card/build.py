@@ -17,6 +17,8 @@ Round 10 (Nov 25, 2026, core batch 12): the deck sentence is the core's (row SF1
 from 2024, the security side from 2025); the page quotes Bloomberg's naming of the industry ministry, and gives the
 argument's two later accounts that say otherwise of the orders.
 Round 10b (the session's ruling): the card's footer carries only the credit, not "" (untrue of a public copy).
+Round 11 (Nov 26, 2026, outputs/ROUND11.md thing 2): the press rows' labels begin "Reported:" (../h200_funnel.tsv), drawn in the
+image too; the page's notes speak of the chips reported delivered and of the reported orders.
 Before the card is called done or shown: scripts/render_and_look.py on card.html and on card.png.
 """
 import re, sys
@@ -60,7 +62,7 @@ CARD_CSS = px('''
 #card .rows { margin-top: 9px; display: grid; flex: 1; grid-auto-rows: 1fr; min-height: 0; }
 #card .r { border-top: 1PX solid var(--grid); display: flex; flex-direction: column; justify-content: center; min-height: 0; }
 #card .lab { display: flex; align-items: baseline; gap: 10px; white-space: nowrap; }
-#card .lab b { font-weight: 600; font-size: 18.5px; }
+#card .lab b { font-weight: 600; font-size: 17.5px; }     /* round 11: 17.5px (was 18.5): the labels now begin "Reported: " */
 #card .lab span { font-size: 12px; color: var(--muted); }
 #card .bar { display: flex; align-items: center; gap: 10px; margin-top: 1px; height: 31px; }
 #card .bar i { display: block; flex: none; height: 17px; border-radius: 0 4px 4px 0; }
@@ -202,8 +204,8 @@ def main():
      All {H["abroad"][1]} applications whose ultimate location is {places} ({f(H["abroad"][0])} chips) are among those returned. The committee says some applications are {qm(Q["table.notfull"])}: {qm(Q["table.tencent"])}. The table’s only Tencent row of that date is for {f(H["tencent_shown"])} chips, approved;
      neither document says whether it is that application. The share would be {H["share_full"]}% if it is, counted at {f(H["tencent_full"])}, and {H["share_further"]}% if the {f(H["tencent_full"])} is a further application and was not returned without action (our arithmetic).</li>
     <li>The card leaves out one reported number that the page of seven H200 counts carries: Beijing was still determining how many chips to approve, and the total could be {esc(lo["shown"][0])} {esc(lo["shown"][1])} ({esc(lo["by"])}, {fmt(lo["date"])}).</li>
-    <li>The bar for the chips delivered is drawn for both named buyers together ({both:,}); the report gives about {A.count(delivered["number"]):,} each.</li>
-    <li>Two later accounts say otherwise of the orders. Nvidia’s chief executive, the day after the report of Beijing’s approvals, said <span lang="zh-Hans">{qm(Q["orders.ceo"])}</span> (I think the Chinese government is still deciding; we have not yet received purchase orders), as {A.link(Q["orders.ceo"].sid, f"Voice of America’s Chinese service, {fmt(d_ceo)}")}, renders him.
+    <li>The bar for the chips reported delivered is drawn for both named buyers together ({both:,}); the report gives about {A.count(delivered["number"]):,} each.</li>
+    <li>Two later accounts say otherwise of the reported orders. Nvidia’s chief executive, the day after the report of Beijing’s approvals, said <span lang="zh-Hans">{qm(Q["orders.ceo"])}</span> (I think the Chinese government is still deciding; we have not yet received purchase orders), as {A.link(Q["orders.ceo"].sid, f"Voice of America’s Chinese service, {fmt(d_ceo)}")}, renders him.
      TechWeb, as {A.link(Q["orders.techweb"].sid, "Sina carries it")}, reported on {fmt(d_tw)}, from industry insiders it did not name, that <span lang="zh-Hans">{qm(Q["orders.techweb"])}</span> (China’s AI firms had placed almost no bulk purchase orders for Nvidia’s H200). English in round brackets is ours, not an official translation.</li>
     <li>On the record, in money and not in chips: on its results call of {fmt(d_call)}, for the quarter ended {fmt(d_q3)}, Nvidia said {qm(Q["nvq3"])}. The Hopper family includes the H200. Neither the call nor Reuters’s report of it says how many of those chips crossed into the mainland.</li>
     <li>The Reuters headline is from {fmt(d_toward)}, when the chip at issue was the H20. The United States allowed H200 sales to China only later.</li>
@@ -225,6 +227,10 @@ def main():
     A.guard(page, Q, ours=ours, dates=dates)
     # withdrawn by core edit 6 (atlas/core_edit/APPLIED_6.txt, part 05): the table is not called the Commerce Department's,
     # and the Tencent row of 75,000 is not called the application of 445,000
+    # round 11 (outputs/ROUND11.md thing 2): every press row's label carries the report; control: the two table rows do not
+    assert all(r['label'].startswith('Reported: ') == (r['tier'] == 'open') for r in rows), 'a press row\'s label does not begin "Reported: "'
+    for banned in ('>Delivered<', '>Stored in Hong Kong', '>Ordered by', '>Approved by Beijing', 'chips delivered is', 'say otherwise of the orders.'):
+        assert banned not in page, f'round 11: the page still says "{banned}"'
     for banned in ('750,000', 'four limits', 'Democrats', 'more than half', 'Commerce Department’s table', 'Commerce Department table',
                    'Commerce Department’s, with', 'shows that application', 'an application the table shows', 'counted in full',
                    # withdrawn by core edit 8b (Nov 25, 2026): the table's column names a data-centre operator or ultimate consignee and an ultimate
