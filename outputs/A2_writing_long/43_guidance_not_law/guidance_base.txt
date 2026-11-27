@@ -1,7 +1,7 @@
 # Guidance, not law
 @deck How Beijing pressed China's AI companies away from Nvidia's chips, though no published order was found, shown on this one case.
 
-@note Draft by Claude, Anthropic's model. Written Nov 23, 2026 (UTC); revised Nov 26, 2026.
+@note Draft by Claude, Anthropic's model. Written Nov 23, 2026 (UTC); revised Nov 27, 2026.
 @note How to read it. Words between quotation marks are a source's exact words, found in the saved copy by a script. A filled reference number is a document, a filing, a named person on the record, a published commentary, report or statement of state media, an industry body or a research institute, an institution's own notice, or a named outlet's account of a document. An open number is a press report citing unnamed people, a research firm's, broker's or research group's count, or captions and machine transcripts nobody has checked by ear. English in round brackets after Chinese is our rendering, not an official translation.
 @note The author's interest. Anthropic has argued in public for controls on chip exports to China (that is from the model's general knowledge; no saved page is cited for it), so judge this piece by its sources.
 
@@ -29,10 +29,11 @@ Headlines do say ban. The same paper's "China bans tech companies from buying Nv
 
 **2. In public, state media warned, mostly from Jul 31 to Sept 24, 2025** (on the record)
 
-Of 297 state and Party media items on Nvidia and its chips found from July 2025 to November 2026, 34 only warn about the chips, and 23 of those date from Jul 31 to Sept 24, 2025 [cn-ga02-gt-cac-summons-news-202507] [cn-acts-peoplesdaily-bjd-20250801] [cn-media-stdaily-security-forum]. Another 6 warnings date from Dec 9, 2025 to Jan 14, 2026, in coverage of the US easing for the H200 [cn-ga31-smcctvp3-2]. Searches and a scan of saved pages found the items after Sept 24, 2025. That later list is a sample of what these outlets printed.
+Of 297 state and Party media items on Nvidia and its chips found from July 2025 to November 2026, 34 only warn (33 of them about the chips for AI computing; one, a report of a forum, about home-made software and hardware at large), and 23 of the 34 date from Jul 31 to Sept 24, 2025 [cn-ga02-gt-cac-summons-news-202507] [cn-acts-peoplesdaily-bjd-20250801] [cn-media-stdaily-security-forum]. Another 6 warnings date from Dec 9, 2025 to Jan 14, 2026, in coverage of the US easing for the H200 [cn-ga31-smcctvp3-2]. Searches and a scan of saved pages found the items after Sept 24, 2025. That later list is a sample of what these outlets printed.
 !! cn-acts-peoplesdaily-bjd-20250801 | 2025-08-01
 !! cn-acts-peoplesdaily-bjd-20250801 | 绝不能让“带病”的芯片上岗
 !! cn-media-stdaily-security-forum | 2025-09-24
+!! cn-media-stdaily-security-forum | 政企用户应加快国产软硬件替代进程
 !! cn-ga31-smcctvp3-2 | 美国允许对华出口英伟达H200高端算力芯片
 One of the 2025 items, posted on Aug 10, 2025 by an account of the state broadcaster, said of the H20: "作为消费者，我们当然可以选择，不买" (as consumers we can of course choose not to buy) [cn-le13-yuyuan-qq-20250810b] [cn-le13-cja36-winners-xinhuanet-20261108].
 !! cn-le13-yuyuan-qq-20250810b | 2025-08-10T11:47:34+08:00

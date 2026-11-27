@@ -6,7 +6,7 @@
 #   cols: acted (summoned, or warned in public)      told (reported instructions on purchases, or customs checks)
 #         rules (set rules favouring home-made chips)  welcomed (welcomed Nvidia, or spoke for access)  approved (press reports on purchase approvals and imports)
 #         case (the antitrust case against Nvidia the company: drawn apart from the grid)
-# Main figure row: Beijing is more open to Nvidia. The argument’s third limit: some purchases were reported approved, by press reports citing people they did not name, and Nvidia's own filings report licensed sales to China.
+# Main figure row: Beijing is more open to Nvidia. Third, Nvidia's own filings report licensed sales to China, and Reuters reported, citing people it did not name, that some purchases were approved (point 19).
 # A record with two or three rows is one act by several bodies; it is drawn once in each body's row with the same number.
 # DATE orders the marks. Where the page gives no date for the act, DATELABEL says so and DATE is only a place in the order
 # (for the warning that has no date, the date of the report).

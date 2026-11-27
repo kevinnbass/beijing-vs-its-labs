@@ -42,7 +42,7 @@ EXTRA_CSS = """
 #foot p + p { margin-top:4px; }
 #draft { right:28px; bottom:9px; font-size:11.5px; }
 """
-OPENNESS = "Some purchases were reported approved, by press reports citing people they did not name, and Nvidia’s own filings report licensed sales to China."
+OPENNESS = "Nvidia's own filings report licensed sales to China, and Reuters reported, citing people it did not name, that some purchases were approved."
 COMPANIES = "The companies also bought and used home-made chips, by their own and their suppliers’ accounts."
 
 MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
@@ -64,12 +64,12 @@ def main():
                          'No published Chinese order against buying Nvidia chips was found in the policy pages and national document lists read.',
                          'are not about Nvidia.', 'are an antitrust case against Nvidia the company.',
                          'The records are a selection made to show both sides, not a census. The count of marks in a row is not a measure.',
-                         'Some purchases were reported approved by outlets citing people they did not name. Nvidia’s own filings report licensed sales to China.',
+                         'Nvidia’s own filings report licensed sales to China, and Reuters reported, citing people it did not name, that some purchases were approved (record %%REC:ms-bj-20260128-h200-nod-standard%%).',
                          'The companies also bought and used home-made chips.')
     print(f'template: {n_t} sentences of the headline, key and notes stand in figure/template.html')
     argument = L.PROJ / 'ARGUMENT_referenced.md'
     answer = next(line for line in argument.read_text(encoding='utf-8').splitlines() if line.startswith('**The answer.** '))
-    approved = 'Third, ' + OPENNESS[0].lower() + OPENNESS[1:-1].replace('’', "'") + ' (point 19).'
+    approved = 'Third, ' + OPENNESS.removesuffix('.') + ' (point 19).'
     companies = 'they also bought, used and trained on home-made chips, by their own and their suppliers\' accounts (points 9 and 20).'
     if approved not in answer or companies not in answer:
         sys.exit('the argument no longer gives the strip footnote’s approvals, licensed sales and company attribution')

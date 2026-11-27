@@ -82,14 +82,14 @@
   "y": 144
  },
  "made_from": {
-  "../../../figure/figure_data.txt": "13ba166ebe88a2245bdd51b9a9a0fd997ba888ff297d1a9dbeb76a5bb8e7f9bd",
-  "../../../figure/figure_events.tsv": "78ca6d23a6b1c592cc9799d112f7b4222acc5c9ef484911c2a375f8b3e45d91d",
-  "../../../figure/beijing_vs_labs.html": "bfe5fb1c5884f60892bab236c7b0e527f125d660b9149b0679ac5ee8601c7a25",
-  "../../../figure/template.html": "27b62169b17c0b0feef534f2ce23196a9b97fd4ce28b1adf2aaf256ab261ecd8",
-  "../../../ARGUMENT_referenced.md": "c03ee050d3aaa297b4fa4554939b594d8eaf79ac2b22ae292780f513d696d676",
-  "../a7lib.py": "b8bc0d7b7e95ad735ff556bbde08ba93ce01dfb8a4f25cc1d545fe6a1621218b",
-  "build.py": "02302daa9f824c7edca99ce866727603025687476fa8732003e3428d9f0a140c",
+  "../../../figure/figure_data.txt": "750a0fbef63721ea8b20a025ebfb5cb90fb7fd5d1eb7b2f0cc89ca45081b0e3b",
+  "../../../figure/figure_events.tsv": "bdce8edf6d6e9025e32a7d850fdcbac18aa5fd253807dd3b32a9d761b0e9e727",
+  "../../../figure/beijing_vs_labs.html": "effa0a1efe094a12745125027f6204914bfbfa3aa3a685ea5544364aa12d2a4c",
+  "../../../figure/template.html": "9ca14954afa50d3b17525af8075192f6482460d8f88a91a6ad736539a0865b05",
+  "../../../ARGUMENT_referenced.md": "4005cba895f74a17b6d2f6d751a3033ff4cfcb0487a6cf3e95289a646506725d",
+  "../a7lib.py": "becb0e52d08ccb662450582011d4656142851b77beb511f15c01b783391a86b1",
+  "build.py": "773d2ec390a6f1be1ca1037302ae6b7c551d76ec9678f782dd2ba617ccce5a9d",
   "quotes.tsv": "1b1c85389511c2fdec6c17416d6eef16ad61dae33a0b73ac6dc5b1e062b262d4",
-  "strip_animation.html": "4bfeb3d538d9a717cd61ca2c3baedf4e51ee496604ae6ea3fbe7a9e4ecbd2231"
+  "strip_animation.html": "b627b15564be0ec3a1a8f26afa60f9605749ab81db40a10eeb634ecf99d856ab"
  }
 }

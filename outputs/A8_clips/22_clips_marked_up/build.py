@@ -163,7 +163,7 @@ def main():
          '',
          "The verdicts follow the project's assessment of the two clips and its referenced argument. They do not go beyond them. Words between quotation marks were found in the saved copy by a script. Where Chinese words are quoted, the English beside them is ours, not an official translation.",
          '',
-         "The argument's answer to Luckey's claim is yes on direction, with five limits. Beijing was not one actor. The pressure came as public warnings, unpublished guidance and published texts that favour home-made computing. No published ban was found. Some purchases were reported approved, and Nvidia reported licensed sales to China. The companies had reasons of their own, and American curbs and conditions pushed too. What Beijing meant by it is not settled. Sentences L3 to L5 below give the sources.",
+         "The argument's answer to Luckey's claim is yes on direction, with five limits. Beijing was not one actor. The pressure came as public warnings, unpublished guidance and published texts that favour home-made computing. No published ban was found. Nvidia's own filings report licensed sales to China, and Reuters reported, citing people it did not name, that some purchases were approved (point 19) [man-ms-sec-10q-2026-07] [cn-ga31-sv1-reuters-deepseek-yahoo]. The companies had reasons of their own, and American curbs and conditions pushed too. What Beijing meant by it is not settled. Sentences L3 to L5 below give the sources.",
          '',
          f'The speech program punctuated the clips into {ns_l} and {ns_p} sentences. Long sentences are cut into parts so that each part gets one verdict: {nu_l} parts and {nu_p} parts.',
          '']

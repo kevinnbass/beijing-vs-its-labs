@@ -117,7 +117,7 @@ def main():
     A.check(qfile)                                   # stops here if a quotation is not found in its saved copy
     Q = A.quotes(qfile); A.guard_control(Q)
     title, answer, paras, refdef = load()
-    A.argument_limits()
+    _, _, policy_search, policy_count = A.argument_limits()
     Hs, Wm = A.house(Q), A.warnings()
     for key in ('approved', 'bloomberg', 'ordered'):
         assert A.ref(Q[key].sid)['tier'] == 'open' and Q[key].sid == Q[key + '.unnamed'].sid, key
@@ -126,8 +126,10 @@ def main():
     assert Q['greer'].sid == Q['greer.asked'].sid
     limits = paras[-1][1]
     assert 'Bloomberg, citing unnamed people, reported {q:bloomberg} [bloomberg].' in limits
-    assert '(3) Reuters, citing four unnamed people, reported approvals for some H200 purchases with conditions still being decided [approved].' in limits
-    assert 'Nvidia’s filing reports licensed H20 sales to China [nv].' in limits
+    assert ('(3) Nvidia’s filing reports licensed H20 sales to China [nv]. Reuters, citing four unnamed people, '
+            'reported approvals for some H200 purchases with conditions still being decided [approved].') in limits
+    assert ('The direction stands whether Beijing meant lasting policy, trade leverage [uscc] '
+            'or protection of China’s market [bessent].') in limits
     assert 'Reuters, citing unnamed people, reported that Chinese companies ordered {q:ordered} [ordered].' in limits
     assert 'Asked if China would let its companies buy H200s, the US Trade Representative called it {q:greer} (captions, not checked by ear, at {t:greer}) [greer].' in limits
     assert '{sm:before} earlier and {sm:later} later, including {sm:h200} on US easing for the H200' in limits
@@ -150,6 +152,7 @@ def main():
         def one(m):
             kind, k = m.group(1), m.group(2)
             if kind == 'q': return qm(Q[k])
+            if kind == 'arg' and k == 'policysearch': return esc(policy_search)
             if kind == 'h': ours.append(Hs[k]); return str(Hs[k])
             if kind == 'sm':
                 if k in ('span', 'found'): dates.append(Wm[k]); return Wm[k]          # round 12: found = the months the items were found in
@@ -169,7 +172,7 @@ def main():
                 if not mm: sys.exit(f'{k}: no number phrase at the start of its line')
                 return f'{mm.group(1).lower()} {mm.group(2)}'
             sys.exit(f'unknown mark {m.group(0)}')
-        t = re.sub(r'\{(q|d|my|y|n|h|sm|t):([a-z][a-z0-9]*)\}', one, esc(text, quote=False))
+        t = re.sub(r'\{(q|d|my|y|n|h|sm|t|arg):([a-z][a-z0-9]*)\}', one, esc(text, quote=False))
         if '{' in t: sys.exit(f'an unfilled mark in the text: {t[t.index("{"):][:30]}')
         t = re.sub(r'\(([1-5])\) ', r'(\1)&nbsp;', t)
         # the mark stays on the line of the word it follows
@@ -219,9 +222,8 @@ def main():
 </body>
 </html>
 '''
-    # ours: the reference numbers (1 to 5 also number the limits); 82 = the project's count of policy pages read
-    # (the argument, point 18); and what fill() made: the share of Washington's table, the caption's time
-    A.guard(page, Q, ours=[*range(1, REF_COUNT + 1), '82', *ours], dates=dates)
+    # Reference numbers, the policy-page count from point 18, and fill() values for the table and caption.
+    A.guard(page, Q, ours=[*range(1, REF_COUNT + 1), policy_count, *ours], dates=dates)
     # withdrawn by core edit 6 (atlas/core_edit/APPLIED_6.txt): the warnings are not all of Aug 1 to Sept 24, 2025; the table is not the Commerce Department's
     for banned in ('four limits', 'spokesperson', '750,000', 'Democrats', 'more than half', 'all date from', 'Aug 1 to', 'Commerce Department’s table', 'US Commerce Department, table',
                    # withdrawn by core edit 8b (Nov 25, 2026): the planner's 加大力度; the Shanghai clusters in the city; the readout's own date

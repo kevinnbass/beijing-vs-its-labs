@@ -22,6 +22,19 @@ CORE_PAGE = F.parents[2] / 'figure' / 'beijing_vs_labs.html'
 ZH_PAGE = F / 'beijing_vs_labs_zh.html'
 CJK = re.compile(r'[一-鿿]')
 rows = []
+review = {}
+RECORD_REVIEW = {
+    'man-cn-factions-wsj-ding': 'Record 11. The Journal cites unnamed people, dates the Huawei briefing to summer 2025 and gives no date for the warning. The strip preserves the English quote.',
+    'cn-acts-reuters-customs-20260114': 'Record 21. Reuters cites three unnamed people for the customs account, and two of them plus a third unnamed source for the instructions to companies. Compare the English quotes.',
+}
+NOTE_REVIEW = {
+    1: 'Argument point 18 and B17-P18. Later ministry census and AFP question in the reporter’s own words.',
+    2: 'Argument points 4 and 18. AI-chip warnings, the forum exception and the eight-week count.',
+    3: 'Argument point 4. The warning breakdown moved into the preceding note.',
+    4: 'Argument answer, third limit. Nvidia filings first, then Reuters and unnamed sourcing.',
+    6: 'Three readings of Beijing’s intent. The closing sentence describes the direction of the acts drawn here.',
+    7: 'Compare the Tencent licence-table value and the two attributed per-buyer ceilings. The August quotation is from Reuters’s relay of the Financial Times report.',
+}
 
 # ---------- records ----------
 core, cur = {}, None
@@ -46,7 +59,10 @@ for key, c in core.items():
     if 'A' in c: rows.append((tag + ' second source', c['A'].split(' | ', 1)[1], z['A']))
     if 'C' in c:
         assert z['EC'] == c['C'].split(' ', 3)[3], f'run make_inputs.py first: {key}'
-        rows.append((tag + ' C (label on the strip)', z['EC'], z['C']))
+        label_tag = tag + ' C (label on the strip)'
+        rows.append((label_tag, z['EC'], z['C']))
+        if key[1] in RECORD_REVIEW:
+            review[tag + ' T'] = review[label_tag] = RECORD_REVIEW[key[1]]
     if 'Z' in z: rows.append((tag + ' Q (source, English) and Z (my Chinese)', c['Q'], z['Z']))
     else: rows.append((tag + ' E (the core\'s English, not shown) and Q (source, Chinese, shown)', c.get('E', ''), c['Q']))
 n_rec = len(rows)
@@ -106,7 +122,11 @@ for (name, sel, what), a, b in zip(KINDS, *got):
     a, b = [x for x in a if x], [x for x in b if x]
     assert a and len(a) == len(b), f'{name} ({sel}): {len(a)} on the core page, {len(b)} on the Chinese page'
     for i, (x, y) in enumerate(zip(a, b), 1):
-        if x != y or CJK.search(y): rows.append((f'page: {name}' + (f' {i}' if len(a) > 1 else ''), x, y))
+        if x != y or CJK.search(y):
+            tag = f'page: {name}' + (f' {i}' if len(a) > 1 else '')
+            rows.append((tag, x, y))
+            if name == 'note' and i in NOTE_REVIEW:
+                review[tag] = NOTE_REVIEW[i]
 # round 9: the one-rate rules, paired by the address of the saved copy each links; the lettered notes, by the rules they are attached to
 (en_r, en_n), (zh_r, zh_n) = vm
 pair_ok = lambda er, zr: bool(er) and len({r['href'] for r in er}) == len(er) == len(zr) and {r['href'] for r in er} == {r['href'] for r in zr}
@@ -159,6 +179,9 @@ for u, v in (('On the record', '有公开记录'), ('Press report, unnamed sourc
     rows.append(('pop-up and marks: fixed words', u, v))
 
 with open(F / 'pairs_for_review.tsv', 'w', encoding='utf-8') as fh:
-    fh.write('where\tEnglish (the core figure)\tChinese\n')
-    for w, x, y in rows: fh.write('\t'.join(s.replace('\t', ' ').replace('\n', ' ') for s in (w, x, y)) + '\n')
+    fh.write('where\tEnglish (the core figure)\tChinese\tnative review (core batch 17)\n')
+    for where, english, chinese in rows:
+        fields = where, english, chinese, review.get(where, '')
+        fh.write('\t'.join(field.replace('\t', ' ').replace('\n', ' ') for field in fields) + '\n')
+print(f'{len(review)} changed pairs flagged for native review')
 print(f'{len(rows)} pairs written to {F / "pairs_for_review.tsv"}: {n_rec} from the records, {n_page} from the two pages ({len(KINDS)} kinds of element, equal counts on both), {len(rows) - n_rec - n_page} others; record marks set apart as [record mark N]: {n_marks} on the two pages')

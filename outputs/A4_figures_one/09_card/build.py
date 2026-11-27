@@ -117,7 +117,7 @@ def main():
     assert (d_ceo - approved['date']).days == 1, 'the chief executive\'s words are not of the day after the report of the approvals'
     f = lambda v: f'{v:,}'
     places = ', '.join(H['places'][:-1]) + ' or ' + H['places'][-1]      # "whose ultimate location is A, B or C" (the table's own column)
-    A.argument_limits()
+    third, fifth, policy_search, policy_count = A.argument_limits()
     headline = A.figure_headline()
 
     # ---- the card ----
@@ -162,7 +162,7 @@ def main():
  <div class="ft">
   <p><b>Sources.</b> Reuters ({reut_txt}); {"; ".join(relays)}; the table {qm(Q["wapproved.date"])}, made public by the House Foreign Affairs Committee on {fmt(H["released"])}.
    Lines: Nvidia, Form 10-Q for the quarter to {period}; Reuters, {fmt(d_toward)}. The guidance from {d_first.year}: Bloomberg, {fmt(d_first)}.</p>
-  <p><b>Read with care: five limits.</b> Chinese authorities differed. Reported guidance, warnings and published texts pushed toward home-made chips. No published ban was found. Some purchases were reported approved, and Nvidia reported licensed sales. Companies had their own reasons, and US curbs pushed too. Beijing’s aims are disputed: lasting policy, trade leverage or home-market protection. <b>Washington’s table:</b> with AMD’s, the applications returned without action are for {f(H["rwa"][0])} chips,
+  <p><b>Read with care: five limits.</b> Chinese authorities differed. Reported guidance, warnings and published texts pushed toward home-made chips. No published ban was found. {esc(third)}. Companies had their own reasons, and US curbs pushed too. Beijing’s aims are disputed: lasting policy, trade leverage or home-market protection. <b>Washington’s table:</b> with AMD’s, the applications returned without action are for {f(H["rwa"][0])} chips,
    {H["share"]}% of the chips its summary records; it gives no reasons, and “approved” there is Washington’s licence, not Beijing’s.</p>
   <p class="last"><span><i class="mk solid"></i> <b>Filled mark:</b> on the record (a filing, a document, a named person). <i class="mk open"></i> <b>Open mark:</b> a press report citing unnamed people.</span><span>{A.CREDIT}</span></p>
  </div>
@@ -218,7 +218,7 @@ def main():
     <li>On the record, in money and not in chips: on its results call of {fmt(d_call)}, for the quarter ended {fmt(d_q3)}, Nvidia said {qm(Q["nvq3"])}. The Hopper family includes the H200. Neither the call nor Reuters’s report of it says how many of those chips crossed into the mainland.</li>
     <li>The Reuters headline is from {fmt(d_toward)}, when the chip at issue was the H20. The United States allowed H200 sales to China only later.</li>
     <li>The sentence under the headline rests on the argument this card goes with. Bloomberg’s report of {fmt(d_first)} (carried by The Business Times on {fmt(d_carried)}), by people it did not name: {qm(Q["care.miit"])}, and {qm(Q["care.guidance"])}.</li>
-    <li>The five limits. Some local governments and units of the state-owned telecom carriers were more open to Nvidia, as was Beijing’s commerce side. Published texts pushed toward home-made chips alongside public warnings and unpublished guidance reported by the press. No published Chinese order against buying Nvidia chips was found in the 82 policy pages read. Reuters cited people it did not name when it reported approvals, and Nvidia’s filings report licensed sales to China. The companies had reasons of their own, and American curbs and conditions pushed too. On Beijing’s aims, {A.FIFTH_LIMIT}.</li>
+    <li>The five limits. Some local governments and units of the state-owned telecom carriers were more open to Nvidia, as was Beijing’s commerce side. Published texts pushed toward home-made chips alongside public warnings and unpublished guidance reported by the press. {esc(policy_search)} {esc(third)} ({A.link(Q["care.licensed"].sid, "Nvidia filing")} and {A.link(approved["sid"], "Reuters report")}). The companies had reasons of their own, and American curbs and conditions pushed too. On Beijing’s aims, {esc(fifth)}.</li>
    </ul>
   </section>
  </div>
@@ -227,14 +227,15 @@ def main():
 </html>
 """
     dates = [fmt(d) for d in alld] + [period, span, fmt(d_call), fmt(d_q3), fmt(d_carried), fmt(H['status']), fmt(H['released']), fmt(lo['date']), fmt(d_ceo), fmt(d_tw)]
-    # ours: sums of Washington's table and the shares made from them (a4lib.house); 2 x 10,000; 82 = the project's count of policy pages read
+    # ours: sums of Washington's table and the shares made from them (a4lib.house); the reported delivery count for both buyers and the policy-page count from point 18
     ours = [H[k][0] for k in ('all', 'appr', 'appr_nv', 'appr_amd', 'rwa', 'rwa_nv', 'rwa_amd', 'abroad')] + [H[k][1] for k in ('all', 'appr_nv', 'appr_amd', 'rwa_nv', 'rwa_amd', 'abroad')]
-    ours += [H['share'], H['share_full'], H['share_further'], H['tencent_shown'], both, '82', '10']          # 10: the filing's name, Form 10-Q
+    ours += [H['share'], H['share_full'], H['share_further'], H['tencent_shown'], both, policy_count, '10']          # 10: the filing's name, Form 10-Q
     pictured = A.visible(card)
-    assert A.THIRD_LIMIT.lower() in pictured.lower(), 'the pictured card must give the corrected third limit'
+    assert third in pictured, 'the pictured card must give the corrected third limit'
     assert 'Beijing’s aims are disputed: lasting policy, trade leverage or home-market protection.' in pictured, 'the pictured card must name all three readings of the fifth limit'
-    assert A.FIFTH_LIMIT in page, 'the page must give the argument’s full fifth limit'
-    assert 'some chips came in' not in page and 'some purchases were approved' not in page
+    assert esc(fifth) in page, 'the page must give the argument’s full fifth limit'
+    assert page.count(esc(third)) == 2, 'the approved-purchases wording needs its full attribution on the card and page'
+    assert 'some chips came in' not in page and 'some purchases were approved' not in page.replace(esc(third), '')
     assert H['tencent_status'] == 'Approved, not shipped'                  # the page says the Tencent row is approved
     A.guard(page, Q, ours=ours, dates=dates)
     # withdrawn by core edit 6 (atlas/core_edit/APPLIED_6.txt, part 05): the table is not called the Commerce Department's,

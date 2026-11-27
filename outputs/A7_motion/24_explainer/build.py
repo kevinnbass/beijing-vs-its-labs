@@ -73,8 +73,8 @@ EXTRA_CSS = """
 .cap.long .txt { font-size:20px; }
 .cap ul { list-style:none; padding:0; }
 .cap .src { margin-top:7px; font-size:13.5px; line-height:1.4; color:var(--ink2); }
-#cap7 .txt { font-size:18px; line-height:1.25; }
-#cap7 .src { line-height:1.25; }
+#cap7 .txt { font-size:18px; line-height:1.21; }
+#cap7 .src { margin-top:5px; line-height:1.18; }
 .cap .src li { display:flex; align-items:baseline; gap:7px; }
 .cap .src i.tier { display:inline-block; flex:none; width:10px; height:10px; border-radius:50%; border:2px solid var(--ink2); transform:translateY(1px); }
 .cap .src i.tier.solid { background:var(--ink2); } .cap .src i.tier.open { background:var(--surface); } .cap .src i.tier.plain { border-color:transparent; }
@@ -237,22 +237,40 @@ def check_substance(caps):
     if [c['title'] for c in caps if c['k'] in limits] != [f'Limit {i} of 5.' for i in range(1, 6)]: sys.exit('the captions do not hold "Limit 1 of 5" to "Limit 5 of 5", in order')
     if 'Five limits on the claim' not in arg: sys.exit('the argument no longer has five limits')
     out.append(f'five limits, captions {limits}')
-    third = "Some purchases were reported approved, and Nvidia reported licensed sales."
-    approval = 'Reuters cited four people it did not name [ms-bj-20260128-h200-nod-standard].'
-    sales = 'Nvidia’s own filings report licensed sales to China [man-ms-sec-10k-fy2026].'
+    third = "Third, Nvidia's own filings report licensed sales to China, and Reuters reported, citing people it did not name, that some purchases were approved (point 19)."
+    heading = 'Some purchases were reported approved, and Nvidia reported licensed sales.'
+    point19 = f'**19.** **{heading}**'
+    settled_heading = f'**{heading.replace("reported approved", "approved")}**'
+    third_in_argument = lambda text: third in text and point19 in text and settled_heading not in text
     exports = 'A US official told Congress: "There have been minimal exports of any H200s to China so far" [man-a7d2f1a9f963].'
-    expected_third = f'{third} {approval} {sales} {exports}'
+    approval_source = 'Reported, from unnamed people: Reuters, Jan 28, 2026, citing four people it did not name [ms-bj-20260128-h200-nod-standard]'
+    sales_source = 'On the record: Nvidia’s annual filing on H20 sales [man-ms-sec-10k-fy2026]'
     third_cap = next(c for c in caps if c['k'] == limits[2])
-    third_matches = lambda caption: caption == expected_third
-    if not third_matches(third_cap['text']) or f'**{third}**' not in arg:
+    third_matches = lambda caption: (
+        caption['text'] == f'{third} {exports}'
+        and approval_source in caption['items']
+        and any(item == sales_source or item.startswith(f'{sales_source} and ') for item in caption['items'])
+    )
+    if not third_matches(third_cap) or not third_in_argument(arg):
         sys.exit('the third limit must distinguish the Reuters report from the sales Nvidia reported')
-    assert f'**{third.replace("reported approved", "approved")}**' not in arg, 'control: a settled approval heading must not pass'
+    assert not third_in_argument(arg.replace(point19, f'**19.** {settled_heading}')), 'control: a settled approval heading must not pass'
+    assert third.replace('Reuters reported, citing people it did not name, that ', '') not in arg, 'control: a settled approval must not pass'
+    first_limit_source = next(c for c in caps if c['k'] == limits[0])['items'][0]
+    assert not third_matches({**third_cap, 'items': [first_limit_source]}), 'control: another limit’s source cannot support Limit 3'
     for settled in (' Beijing approved those purchases.', ' The chips arrived in China.'):
-        assert not third_matches(third_cap['text'] + settled), 'control: a correct prefix followed by a settled claim must fail'
-    # wording the core withdrew
+        assert not third_matches({**third_cap, 'text': third_cap['text'] + settled}), 'control: a correct prefix followed by a settled claim must fail'
+    direction = 'The direction of the policy stands under each of the three readings of what Beijing meant by it (point 21).'
+    readings = 'whether Beijing meant its acts as lasting policy, as leverage in trade talks or as protection of its home market'
+    fifth_cap = next(c for c in caps if c['k'] == limits[4])
+    if not fifth_cap['text'].startswith('What Beijing meant by it is not settled. '):
+        sys.exit('the fifth limit must open with what the argument says about Beijing’s intent')
+    if not fifth_cap['text'].endswith(f'The direction stands {readings} (point 21).') or direction not in arg or readings not in joined:
+        sys.exit('the fifth limit must name the three readings as the argument does')
+    # The exact, checked Reuters attribution may contain the approval words.
     for c in caps:
+        text = everything(c).replace(third, '', 1) if c is third_cap else everything(c)
         for g in GONE:
-            if g.lower() in everything(c).lower(): sys.exit(f'caption {c["k"]} holds wording the core withdrew: {g}')
+            if g.lower() in text.lower(): sys.exit(f'caption {c["k"]} holds wording the core withdrew: {g}')
     assert any('the 82 policy pages' in everything(c).lower() for c in caps), 'control: a phrase that is there must be seen'
     # policy pages
     pages = L.policy_rows()
@@ -285,8 +303,12 @@ def check_substance(caps):
     h_start, h_end = h200[0][0], h200[-1][0]
     day = lambda d: f'{L.MON[d.month - 1]} {d.day}'
     scope = f'{sm["n"]} state and Party media items on Nvidia and its chips found from July 2025 to November 2026'
-    line = (f'Of {scope}, {sm["warns"]} only warn about the chips: {len(burst)} date from {day(start)} to {L.fmt(end)}, '
-            f'and {len(h200)} from {L.fmt(h_start)} to {L.fmt(h_end)} in reports on the American easing for the H200.')
+    warning_totals = (f'{sm["warns"]} only warn ({sm["chips"]} of them about the chips for AI computing; '
+                      'one, a report of a forum, about home-made software and hardware at large)')
+    main_group = f'{len(burst)} of the {sm["warns"]} date from {day(start)} to {L.fmt(end)}'
+    first_group = f'Of {scope}, {warning_totals}, and {main_group}'
+    line = (f'{first_group}, and {len(h200)} from {L.fmt(h_start)} to {L.fmt(h_end)} '
+            'in reports on the American easing for the H200.')
     cap = next(c for c in caps if c['k'] == limits[1])
     if line not in cap['text']: sys.exit(f'caption {cap["k"]} must read: {line}')
     if sum(everything(c).count(line) for c in caps) != 1: sys.exit(f'exactly one occurrence must state the state-media census: {line}')
@@ -310,16 +332,18 @@ def check_substance(caps):
     caveat = 'a sample of what the outlets printed and not a full count'
     if last not in its or caveat not in its: sys.exit(f'the source lines must give the last group and the scope: {last}; {caveat}')
     want_arg = (
-        f'{day(start)} to {L.fmt(end)} ({len(burst)} of {sm["warns"]})',
+        first_group,
+        f'{len(burst)} of the {sm["warns"]} that only warn are dated {day(start)} to {L.fmt(end)}',
         f'{L.fmt(h_start)} to {L.fmt(h_end)}, in reports on the American easing for the H200 ({len(h200)} of {sm["warns"]};',
-        f'Of {sm["n"]} state and Party media items on Nvidia and its chips found from July 2025 to November 2026',
         'a sample of what these outlets printed and not a full count',
     )
     if not all(x in arg for x in want_arg):
         sys.exit(f'the argument no longer gives these counts of the state-media table: {[x for x in want_arg if x not in arg]}')
-    wrong = f'{len(burst) + 1} of {sm["warns"]}'
-    assert want_arg[0].replace(f'{len(burst)} of {sm["warns"]}', wrong) not in arg, 'control: a wrong count must not be found in the argument'
-    out.append(f'state media: {sm["warns"]} of {sm["n"]} only warn; {len(burst)} from {start} to {end}; '
+    wrong_group = main_group.replace(f'{len(burst)} of', f'{len(burst) + 1} of', 1)
+    assert first_group.replace(main_group, wrong_group) not in arg, 'control: a wrong count must not be found in the argument'
+    wrong_subject = warning_totals.replace(f'{sm["chips"]} of them', f'{sm["warns"]} of them')
+    assert first_group.replace(warning_totals, wrong_subject) not in arg, 'control: a wrong subject count must not be found in the argument'
+    out.append(f'state media: {sm["warns"]} of {sm["n"]} only warn ({sm["chips"]} about AI chips); {len(burst)} from {start} to {end}; '
                f'{len(h200)} from {h_start} to {h_end}; {len(sm["outside"])} outside the main group '
                f'(counted here, equal to caption {cap["k"]} and to the argument)')
     return out, pages

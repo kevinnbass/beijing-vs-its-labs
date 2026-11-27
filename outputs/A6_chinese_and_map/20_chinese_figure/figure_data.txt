@@ -65,11 +65,11 @@ Q 约谈了英伟达公司,要求英伟达公司就对华销售的H20算力芯�
 E summoned Nvidia and required it to explain the backdoor security risks of the H20 chips sold to China and to submit supporting material
 
 @ BH press 2025-08-10 2025年夏一次汇报之后 man-cn-factions-wsj-ding
-T 据知情人士说，在2025年夏华为的一次汇报之后，国务院副总理丁薛祥警告最大的几家AI用户：谁抵制使用国产芯片，谁就是叛徒（原文："a traitor"）。这篇2026年7月23日的报道没有给出警告的日期
+T 《华尔街日报》援引未具名人士报道，2025年夏华为举行一次汇报会后，国务院副总理丁薛祥警告中国最大的AI用户，凡是抵制使用国产芯片的都是叛徒（原文："a traitor"）。这篇2026年7月23日的报道没有给出警告的日期
 S 《华尔街日报》
 Q Anyone who resisted employing domestic chips was a traitor
 Z 凡是抵制使用国产芯片的，就是叛徒
-C end -42 -42 据报道叛徒警告
+C end -42 -42 《华尔街日报》报道叛徒（"traitor"）警告
 
 @ BH press 2025-08-20 - man-cn-ft-20250821-regulators
 T 据报道，三家监管部门着手劝阻企业购买H20，大约从7月15日之后一周开始（报道日期为8月20日）
@@ -108,11 +108,11 @@ Q requiring new data centre projects that have received any state funds to only 
 Z 要求凡是获得过任何国家资金的新建数据中心项目，只使用国产人工智能芯片
 
 @ BH press 2026-01-14 - cn-acts-reuters-customs-20260114
-T 据报道，海关告知报关代理：H200不准进入中国（原文："not permitted"）；企业被告知非必要不购买（原文："unless necessary"）。路透社称，尚不清楚北京方面是想禁止、仍在权衡限制措施，还是可能把这些措施用作与华盛顿谈判的筹码（原文："a bargaining tactic in talks with Washington"）
+T 路透社援引三名获悉此事的未具名人士报道，海关告知报关代理：H200不准进入中国（原文："not permitted"）。其中两人和另一名未具名人士说，有关官员要求企业非必要不购买H200（原文："unless necessary"）。路透社称，尚不清楚北京方面是想禁止H200、仍在权衡限制措施，还是可能把这些措施用作与华盛顿谈判的筹码（原文："a bargaining tactic in talks with Washington"）
 S 路透社，载于雅虎财经（Yahoo Finance）
 Q are not permitted to enter China, according to three people briefed on the matter
 Z 不被允许进入中国，据三名知情人士称
-C start -5 -42 据报道H200不准进入中国
+C start -5 -66 路透社报道：H200不准入境（"not permitted"）
 
 @ BH doc 2026-04-22 - cn-us-lutnick-0422-rev-transcript-b
 T 美国商务部长在参议院作证，称这是他的了解（原文："my understanding"）：中国的云计算企业想买这些芯片（原文："their cloud companies want to buy these chips"），中国中央政府至今没有让它们购买（原文："has not let them as of yet buy the chips"）
@@ -506,12 +506,20 @@ Z 不论你实际上何时开始在中国境外租用或建设算力
 ! cn-acts-reuters-customs-20260114 | purchase the chips unless necessary, two of the people and a third source said
 ! cn-acts-reuters-customs-20260114 | or whether these measures could be used as a bargaining tactic in talks with Washington
 ! cn-acts-reuters-customs-20260114 | Analysts say Beijing's move could be aimed at exerting leverage on Washington
+! cn-acts-reuters-customs-20260114 | Jan 14 (Reuters) - Chinese customs authorities told customs agents this week
+! cn-acts-reuters-customs-20260114 | The sources, who spoke on condition of anonymity
 ! cn-le14-itsec-scope-20230727 | 测评结果由企业和用户自主选择使用
 ! cn-xi-round-f-6 | 苹果公司、英伟达公司、Meta公司
 ! cn-le17-buaa-61901-6000d | 品牌 NVIDIA 规格型号 RTX PRO 6000D
 ! cn-le17-whu-131281 | Nvidia 6000D 84GB显存
 ! cn-ga31-sv1-reuters-deepseek-yahoo | These conditions are being decided by China's state planner
 ! cn-tolerate-reutersaug26-relay1-wayback | Chinese regulators have told companies they can ship the processors to Hong Kong
+! cn-tolerate-reutersaug26-relay1-wayback | cleared the companies to purchase up to 100,000 H200 chips each
+! cn-acts-reuters-us-approvals-20260514-wayback | each approved customer can purchase up to 75,000 chips under the U.S. licensing terms, two of them said
+! cn-acts-reuters-us-approvals-20260514-wayback | the sources, who spoke on condition of anonymity
+! cn-acts-reuters-us-approvals-20260514-wayback | Published on 05/14/2026
+! cn-tolerate-ftaug26 | PUBLISHED: 2026-08-19
+! cn-tolerate-reutersaug26-relay1-wayback | the Financial Times reported on Tuesday, citing two people with knowledge of the matter
 ! cn-tolerate-mof | 公开征求意见
 ! cn-tolerate-mof | 适用自动许可等便利措施
 ! cn-le20-mofcom-48-annex1 | 人工智能加速卡总数超过10,000张
@@ -579,9 +587,15 @@ Z 不论你实际上何时开始在中国境外租用或建设算力
 ! ms-bj-20251105-statefunded-standard | It is unclear whether the guidance applies nationwide or only to certain provinces, sources said
 ! cn-factions-bloomberg-flexibility-202409-relay1 | on Friday (Sep 27)
 ! cn-usdocs-hfac-summary-20261119 | not fully reflected in the May 11, 2026, summary document
+! cn-usdocs-hfac-summary-20261119 | NVIDIA applied on December 19, 2025, to export 445,000 H200s to Tencent
 ! ms-bj-20251105-statefunded-standard | has issued guidance requiring
 ! man-cn-factions-wsj-ding | Last summer
 ! man-cn-factions-wsj-ding | according to people familiar with the message
+! man-cn-factions-wsj-ding | July 23, 2026
+! man-cn-factions-wsj-ding | Last summer, top Chinese chip developer Huawei Technologies held a closed-door briefing
+! man-cn-factions-wsj-ding | Ding Xuexiang
+! man-cn-factions-wsj-ding | Vice Premier Ding
+! man-cn-factions-wsj-ding | He delivered a blunt warning to China’s largest AI users
 ! cn-acts-reuters-us-approvals-20260514-wayback | pulled back after guidance from Beijing, one source said
 ! cn-le25-zhejiang-ai-measures-2025-smartcity | 2025年4月17日
 ! cn-against2-isc-supply-risk-20241203 | 并积极使用内外资企业在华生产制造的芯片
@@ -629,6 +643,12 @@ Z 不论你实际上何时开始在中国境外租用或建设算力
 ! cn-le04-bis-ear-748 | Returned without action (RWA)
 ! cn-acts-mfa-20260129 | 具体问题建议向中方主管部门进行询问
 ! cn-acts-mfa-20261109 | 中方在美国输华芯片问题上的立场是一贯的
+! cn-acts-mfa-20261112-la | 2026年11月12日外交部发言人毛宁主持例行记者会
+! cn-acts-mfa-20261112-la | 法新社记者：位于西安的中国西北工业大学的采购记录显示，该校购买了英伟达H200芯片
+! cn-acts-mfa-20261112-la | 你提到的具体情况我不了解。
+! cn-acts-mfa-20261112-la | 我们坚决反对美方泛化国家安全概念，划设各种名目的歧视性清单，无理打压中国机构。
+! cn-media-stdaily-security-forum | 第九届国家信息安全与自主可控战略高层论坛在京举行
+! cn-media-stdaily-security-forum | 沈昌祥在论坛总结中强调，政企用户应加快国产软硬件替代进程
 ! cn-usside-017 | China will terminate its various investigations targeting U.S. companies in the semiconductor supply chain
 ! cn-le01-greer-bbg-20260515-subs-ttml | Will China allow their companies to buy them?
 ! cn-media-party-samr-september | 依法对英伟达、高通公司、杜邦中国集团立案调查

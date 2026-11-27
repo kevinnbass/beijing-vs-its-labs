@@ -28,7 +28,7 @@
 # broker's page (the session's ruling in ../../ROUND10.md). The text before is in tmp_work/r10_before/bands.txt.
 
 @ L1 | HIS CRITICS' WORDS · NOTHING TO CHECK YET
-The claim comes next. The answer: yes on direction, with five limits. Beijing was divided. Public warnings, press reports of unpublished guidance, and published texts favouring home-made computing. No published ban found. Some purchases were reported approved, and Nvidia reported licensed sales. Firms had their own reasons. US curbs pushed too. Beijing's motive is unsettled.
+The claim comes next. Yes on direction, with five limits. Beijing was divided. Public warnings, press reports of unpublished guidance and published texts favouring home-made computing. No published ban found. Nvidia filings report licensed sales. Reuters reported approvals, citing unnamed people. Firms had their own reasons. US curbs pushed too. Beijing's motive is unsettled.
 !! cn-ga31-sv1-reuters-deepseek-yahoo | two people familiar with the matter told Reuters
 !! cn-ga31-sv1-reuters-deepseek-yahoo | China's industry and commerce ministries have granted approvals for all four companies
 !! man-ms-sec-10q-2026-07 | we have made a fraction of the allowed shipments under the USG’s H200 licensing program

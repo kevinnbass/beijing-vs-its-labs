@@ -11,7 +11,8 @@ must be found in its saved copy (sources/<id>), or nothing is written. Writes, i
 The page is a build product: a rebuild replaces it. Numbers on the page come from the data file, the project's tables
 and this script only. Tables read (research/cn_chip_policy_20261120/tables/): house_licence_table.tsv (the House
 committee's licence table), provinces_31.tsv (the 31 provincial-level governments), chip_evaluations.tsv (the state
-evaluation lists), and the two state-media tables (the later sample and the earlier baseline). The local-voucher rows are the counted
+evaluation lists), the two state-media tables (the later sample and the earlier baseline), and the review note in the header of
+spokespeople_answers_census.tsv. The local-voucher rows are the counted
 rules of scripts/cn_voucher_classes.py (over tables/local_vouchers.tsv and tables/local_vouchers_more.tsv); vouchers() below holds
 only each row's label and note; every rate and date of a note is a "!" line. Other support is counted from
 local_vouchers_other_provisions.tsv.
@@ -191,7 +192,8 @@ def hfac():
     against the text layer by agent L04). The totals must equal the summary's own figures, which "!" lines check in the
     saved summary. The table does not say which chip each row is (the summary: Nvidia's H200 and AMD's MI325X); the
     bars say "Nvidia as exporter". RWA is "Returned without action" on the export bureau's own pages ("!" line)."""
-    rows = [dict(exp=r['exporter'], con=r['consignee'], chips=int(r['chip_count'].replace(',', '')), status=r['status'], loc=r['location'])
+    rows = [dict(exp=r['exporter'], con=r['consignee'], chips=int(r['chip_count'].replace(',', '')), status=r['status'],
+                 loc=r['location'], submitted=r['date_submitted'])
             for r in table('house_licence_table.tsv')]
 
     def s(**k):
@@ -209,6 +211,9 @@ def hfac():
     assert t['abroad'] == (1_118_500, 5) and all(r['status'] == 'RWA' and r['exp'] == 'Nvidia' for r in abroad), t
     assert all(re.search(r'bytedance|byteplus|tiktok|alibaba', r['con'], re.I) for r in abroad), [r['con'] for r in abroad]
     assert 2 * t['rwa'][0] > t['all'][0], 'the applications returned without action do not cover more than half of the chips listed'
+    tencent = [r for r in rows if r['submitted'] == '12/19/2025' and 'tencent' in r['con'].lower()]
+    assert [(r['exp'], r['status'], r['chips']) for r in tencent] == [('Nvidia', 'Approved, not shipped', 75_000)], tencent
+    t['tencent_chips'] = tencent[0]['chips']
     return t
 
 
@@ -649,6 +654,15 @@ def bodies(evs):
             f'(<a href="{url("cn-policy-mellanox-conditions")}">decision</a>).</p>')
 
 
+def ministry_review():
+    census = (TB / 'spokespeople_answers_census.tsv').read_text(encoding='utf-8').splitlines()[0]
+    match = re.search(r'The (\d+) regular press conferences of Sept 14 to Nov 25, 2026 were read whole by the same rule', census)
+    assert match and 'no answer in them confirms or denies a restriction, an instruction or an approval.' in census, census
+    n = int(match[1])
+    assert n == 47, n
+    return {'MFA_REVIEW_N': str(n), 'MFA_NOV12_URL': url('cn-acts-mfa-20261112-la')}
+
+
 def state_media():
     """Count the later state-media sample by stance and subject. Count warnings in the eight weeks from the July
     summons and in the December-to-January H200 group. The January 2024 to June 2025 baseline is a separate search;
@@ -657,7 +671,8 @@ def state_media():
     baseline = table('state_media_baseline_2024_2025h1.tsv')
     st = Counter(r['stance'] for r in rows)
     subjects = Counter(r['subject'] for r in rows)
-    warns = sorted((date.fromisoformat(r['date']), r['outlet']) for r in rows if r['stance'] == 'warns')
+    warning_rows = [r for r in rows if r['stance'] == 'warns']
+    warns = sorted((date.fromisoformat(r['date']), r['outlet']) for r in warning_rows)
     iso = sorted(date.fromisoformat(r['date']) for r in rows if re.fullmatch(r'\d{4}-\d\d-\d\d', r['date']))
     start, end = date(2025, 7, 31), date(2025, 9, 24)
     h200_start, h200_end = date(2025, 12, 9), date(2026, 1, 14)
@@ -667,12 +682,20 @@ def state_media():
     early_outside = [d for d, _ in warns if d < h200_start and not start <= d <= end]
     last = [(d, outlet) for d, outlet in warns if d > h200_end]
     mixed_later = sum(r['stance'] == 'mixed' and r['date'] > '2025-09-30' for r in rows)
-    ai_warns = sum(r['stance'] == 'warns' and r['subject'] == 'chips for AI computing' for r in rows)
+    ai_subject = 'chips for AI computing'
+    other_warnings = [r for r in warning_rows if r['subject'] != ai_subject]
+    forum_id = 'cn-media-stdaily-security-forum'
+    assert [(r['saved_id'], r['date'], r['subject'], r['outlet']) for r in other_warnings] == [
+        (forum_id, end.isoformat(), 'other', 'Science and Technology Daily'),
+    ], other_warnings
+    ai_warns = len(warning_rows) - len(other_warnings)
+    ai_in_window = sum(r['subject'] == ai_subject and start.isoformat() <= r['date'] <= end.isoformat() for r in warning_rows)
+    assert ai_in_window == len(win) - len(other_warnings) == 22, (ai_in_window, win, other_warnings)
     baseline_warns = [r for r in baseline if r['stance'] == 'warns']
     group = [r for r in baseline if r['note'].startswith('GROUP-PAPER')]
     comparable = len(baseline) - len(group)
     month = lambda d: f'{MON[d.month - 1]} {d.year}'
-    # Argument points 4 and 18 and the two tables as corrected on Nov 26, 2026.
+    # Argument points 4 and 18 and the two tables as of core batch 17.
     assert len(rows) == 297 and st == {'warns': 34, 'welcomes': 28, 'mixed': 14, 'neutral': 126, 'self-reliance': 74, 'other': 21}, st
     assert subjects == {'chips for AI computing': 219, 'a product with an Nvidia chip': 40, 'other': 30, 'Nvidia as a company': 8}, subjects
     months = month(iso[0]), month(iso[-1])
@@ -685,6 +708,7 @@ def state_media():
     assert [r['saved_id'] for r in baseline_warns] == ['cn-ga31-mediabase-4'] and baseline_warns[0] not in group
     assert len(warns) + len(baseline_warns) == 35
     return dict(SM_N=str(len(rows)), SM_W=str(len(warns)), SM_WIN=str(len(win)), SM_W0=fmt(win[0]), SM_W1=fmt(win[-1]),
+                SM_AI_WIN=str(ai_in_window), SM_FORUM_URL=url(forum_id),
                 SM_H200=str(len(h200)), SM_H0=fmt(h200[0]), SM_H1=fmt(h200[-1]), SM_OUTSIDE=str(outside),
                 SM_EARLY=fmt(early_outside[0]), SM_NOV=fmt(early_outside[1]), SM_LAST=str(len(last)),
                 SM_MIX=str(st['mixed']), SM_MIX_LATER=str(mixed_later), SM_FROM=months[0], SM_TO=months[1],
@@ -721,7 +745,8 @@ def main():
     parts = {'STRIP': strip(evs), 'BARS': bars_h, 'SHARE': share(), 'REVENUE': revenue(), 'PAPER': paper(evs), 'BODIES': bodies(evs), 'VOUCHERS': vouch_h,
              'LEDGER': ledger(b, 'Beijing') + ledger(c, 'The companies'), 'EVJSON': json.dumps(tip, ensure_ascii=False).replace('</', '<\\/'),
              'N_EVENTS': str(len(evs)), 'N_SOLID': str(sum(e['solid'] for e in evs)), 'N_HOLLOW': str(sum(not e['solid'] for e in evs)),
-             'HF_RWA': f'{h["rwa"][0]:,}', 'HF_ALL': f'{h["all"][0]:,}', **state_media()}
+             'HF_RWA': f'{h["rwa"][0]:,}', 'HF_ALL': f'{h["all"][0]:,}', 'HF_TENCENT': f'{h["tencent_chips"]:,}',
+             **state_media(), **ministry_review()}
     for k, v in parts.items():
         assert f'%%{k}%%' in page, k
         page = page.replace(f'%%{k}%%', v)

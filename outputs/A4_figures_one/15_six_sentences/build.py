@@ -96,7 +96,9 @@ def main():
     n_solid, n_open = sum(r['tier'] == 'solid' for r in rows), sum(r['tier'] == 'open' for r in rows)
     num = {1: 'One', 2: 'Two', 3: 'Three', 4: 'Four', 5: 'Five'}
     d_lim, d_car = A.day(Q, 'limit'), A.day(Q, 'limit.carried')
-    A.argument_limits()
+    third, fifth, policy_search, policy_count = A.argument_limits()
+    assert A.ref(Q['limit.approved'].sid)['tier'] == 'open'
+    assert A.ref(Q['limit.licensed'].sid)['tier'] == 'solid'
     W = A.warnings()
     # Reconcile the printed period against the table's dates, independently of warnings().
     sm = [line.split('\t') for line in (A.PROJ / 'tables' / 'state_media_items.tsv').read_text(encoding='utf-8').splitlines()
@@ -108,8 +110,7 @@ def main():
     found = f'{A.MONTH[first.month - 1]} {first.year} to {A.MONTH[last.month - 1]} {last.year}'
     assert found == W['found'], 'the months read here differ from a4lib.warnings()'
     headline = esc(A.figure_headline()).replace('home-made', '<span class="nw">home-made</span>')
-    third = A.THIRD_LIMIT[0].upper() + A.THIRD_LIMIT[1:]
-    fifth = A.FIFTH_LIMIT[0].upper() + A.FIFTH_LIMIT[1:]
+    fifth = fifth[0].upper() + fifth[1:]
     # round 12: the deck's claim that only the first sentence of the away side names Nvidia, tested on the words themselves
     away = [r for r in rows if r['side'] == 'away']
     assert ['nvidia' in str(r['words']).lower() or '英伟达' in str(r['words']) for r in away] == [True, False, False], 'the deck says only the first of the three names Nvidia'
@@ -138,8 +139,8 @@ def main():
    <h2>The limit</h2>
    <div><p class="q">{qm(Q["limit"])}</p>
     <p class="at"><i class="mk open" title="press report citing unnamed people"></i><span><b>Bloomberg</b>, {A.link(Q["limit"].sid, f"{fmt(d_lim)}, as carried by The Business Times on {fmt(d_car)}")}</span><span class="kind">A press report citing unnamed people.</span></p>
-    <p class="more">The press reported unpublished guidance. Published texts also pushed toward home-made chips. Of the {W["items"]} state and Party media items on Nvidia and its chips found from {W["found"]}, {W["warn"]} only warn about its chips. Of those, {W["burst"]} are dated {W["span"]}. Another {W["h200"]}, from {W["h200span"]}, report on the US easing for the H200. The items after {W["cutoff"]} are a sample found by searches and a scan of saved pages. No published Chinese order against buying Nvidia chips was found in the 82 policy pages read.</p>
-    <p class="more">This is one of five limits. Some local governments and units of state-owned telecom carriers were more open to Nvidia, as was Beijing’s commerce side. {third}. The companies had reasons of their own, and American curbs pushed too. {fifth}.</p></div>
+    <p class="more">The press reported unpublished guidance. Published texts also pushed toward home-made chips. Of the {W["items"]} state and Party media items on Nvidia and its chips found from {W["found"]}, {W["warn"]} only warn. Of those, {W["warn_ai"]} concern chips for AI computing. A forum report concerns home-made software and hardware more broadly. {W["burst"]} of the warnings are dated {W["span"]}. Another {W["h200"]}, from {W["h200span"]}, report on the US easing for the H200. The items after {W["cutoff"]} are a sample found by searches and a scan of saved pages. {esc(policy_search)}</p>
+    <p class="more">This is one of five limits. Some local governments and units of state-owned telecom carriers were more open to Nvidia, as was Beijing’s commerce side. {esc(third)} ({A.link(Q["limit.licensed"].sid, "Nvidia filing")} and {A.link(Q["limit.approved"].sid, "Reuters report")}). The companies had reasons of their own, and American curbs pushed too. {esc(fifth)}.</p></div>
   </section>
   <p class="foot">Words between quotation marks are the source’s own and were found in its saved copy by a script. English in round brackets is ours, not an official translation.</p>
   {A.IMGNOTE}
@@ -148,12 +149,12 @@ def main():
 </body>
 </html>
 '''
-    # ours: 82 = the project's count of policy pages read (the argument, point 18); the counts of state-media warnings are
+    # The policy-page count comes from point 18. The state-media counts are
     # made from the project's table by a4lib.warnings()
-    assert third in page and fifth in page, 'the page must give the corrected third and fifth limits'
-    assert 'some purchases were approved' not in page and 'some chips came in' not in page
+    assert esc(third) in page and esc(fifth) in page, 'the page must give the corrected third and fifth limits'
+    assert 'some purchases were approved' not in page.replace(esc(third), '') and 'some chips came in' not in page
     assert 'what Beijing meant by it is read both ways' not in page, 'the fifth limit must name the readings'
-    A.guard(page, Q, ours=['82', W['items'], W['warn'], W['burst'], W['h200']],
+    A.guard(page, Q, ours=[policy_count, W['items'], W['warn'], W['warn_ai'], W['burst'], W['h200']],
             dates=[fmt(r['date']) for r in rows] + [fmt(r['pub']) for r in rows if r['pub']] +
             [fmt(d_lim), fmt(d_car), W['span'], W['h200span'], W['cutoff'], W['found']])
     # withdrawn by core edit 6 (atlas/core_edit/APPLIED_6.txt, part 02 and B1): the warnings are not all of Aug 1 to Sept 24, 2025
@@ -164,7 +165,7 @@ def main():
     out = HERE / 'six_sentences.html'
     out.write_text(page, encoding='utf-8'); print('written', out, len(page), 'bytes')
     print(f'sentences: {len(rows)} ({n_solid} on the record, {n_open} press reports); by side: ' + ', '.join(f'{SIDE[s]} {sum(r["side"] == s for r in rows)}' for s in SIDE) + '; plus the limit line (a press report)')
-    print(f'state media: {W["items"]} items, {W["warn"]} warn only; {W["burst"]} from {W["span"]}, {W["h200"]} from {W["h200span"]}')
+    print(f'state media: {W["items"]} items, {W["warn"]} warn only ({W["warn_ai"]} on AI computing chips); {W["burst"]} from {W["span"]}, {W["h200"]} from {W["h200span"]}')
     if '--png' in sys.argv:
         A.png(out, [('#fig', HERE / 'six_sentences.png')], width=1256, height=1000, css=A.FIG_EXPORT, fits=[('.q', '.qc'), ('.en', '.qc'), ('.at', '.qc'), ('.qc', '#fig'), ('.limit', '#fig'), ('.foot', '#fig'), ('.imgnote', '#fig')])
 

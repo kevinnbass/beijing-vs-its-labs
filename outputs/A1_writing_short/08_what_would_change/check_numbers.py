@@ -4,6 +4,7 @@
 Run: python3 -I check_numbers.py     (reads only; exit 1 on any difference)
   tables/house_licence_table.tsv     chips in the table, chips returned without action and their share, chips approved
   tables/trade_derived_figures.tsv   China's imports of computer parts, Jan to Sep 2025 and 2026, as printed
+  tables/spokespeople_answers_census.tsv   foreign-ministry press conferences counted in point 18
   atlas/data/15_talks_and_acts_readouts.tsv   saved official pages counted in point 21, including meeting notices
   loose_ends/hkexnews_saved_ids.tsv  ids that may no longer be cited: none may stand in the page
   outputs/<folder>/<folder>/<file>   the five notes the page names must exist
@@ -63,6 +64,45 @@ else:
 
 # words the page copies from the argument (round 5): each must stand, as written, in argument/argument_base.txt and in the page
 ARG = (PROJ / 'argument' / 'argument_base.txt').read_text(encoding='utf-8')
+THIRD_LIMIT = ("Third, Nvidia's own filings report licensed sales to China, and Reuters reported, "
+               "citing people it did not name, that some purchases were approved (point 19).")
+
+
+def third_limit_in_opener(page):
+    _, _, after_heading = page.partition('\n## The answer these would test\n')
+    opener = next((ln.strip() for ln in after_heading.splitlines() if ln.strip()), '')
+    return (not opener.startswith('!!')
+            and THIRD_LIMIT in re.split(r'(?<=\.)\s+', opener)
+            and page.lower().count('some purchases were approved') == 1)
+
+
+displaced = text.replace(THIRD_LIMIT, '', 1) + f'\n!! control | {THIRD_LIMIT}\n'
+if displaced.count(THIRD_LIMIT) != 1 or third_limit_in_opener(displaced):
+    bad.append('control: the attributed third limit must be rejected when moved to a hidden line')
+else:
+    print('control: the attributed third limit is rejected when moved to a hidden line')
+
+with (PROJ / 'tables' / 'spokespeople_answers_census.tsv').open(encoding='utf-8') as table:
+    census = re.search(r'\bThe (?P<scope>(?P<count>[1-9]\d*) regular press conferences of [^.;]+? '
+                       r'were read whole by the same rule on [^.;]+?), by two readers[^;]+; '
+                       r'(?P<finding>no answer in them confirms or denies a restriction, an instruction or an approval)\.',
+                       table.readline())
+if not census:
+    bad.append('the census preamble no longer gives the foreign-ministry conference review and its finding')
+else:
+    point18 = next((ln for ln in ARG.splitlines() if ln.startswith('18. **')), '')
+    finding = f"foreign ministry's {census['scope']}, and {census['finding']}"
+    refs = ('[cn-ga31-mfa2026h2-7] [cn-acts-mfa-20261112-la] '
+            '[cn-acts-mfa-20261118] [cn-ga15-mfa-20261123]')
+    if f'the {finding}' not in point18 or not all(ref in point18 for ref in refs.split()):
+        bad.append('the conference review or its references disagree with point 18')
+    looked_for = [ln for ln in text.partition('\n**3. ')[2].partition('\n**4. ')[0].splitlines()
+                  if ln.startswith('- **Looked for.** ')]
+    expected = f"The {finding} (point 18 of the argument and the spokespersons' answers census) {refs}."
+    if len(looked_for) != 1 or expected not in looked_for[0]:
+        bad.append('item 3 does not give the conference review as recorded in the census and point 18')
+    print(f"spokespeople's answers census: {census['count']} foreign-ministry conferences read whole")
+
 readouts = (PROJ / 'atlas' / 'data' / '15_talks_and_acts_readouts.tsv').read_text(encoding='utf-8').splitlines()
 counted_readouts = [row for row in csv.DictReader(readouts[1:], delimiter='\t') if row['counted'] == 'yes']
 notices = sum(row['class'] == 'N' for row in counted_readouts)
@@ -114,13 +154,13 @@ COPIED = ['the latest annual reports of fifteen US-listed Chinese companies',
           'returned without action the applications for 1,888,950',
           "Tianjin's voucher rule is held as Sina carries it [cn-ga04-tj-voucher-rule-sina-20250514]",
           'We are not assuming any Data Center compute revenue from China in our outlook.',
-          # b16d: the opener follows point 19; the talks claim concerns Beijing's acts.
-          "Third, some purchases were reported approved, by press reports citing people they did not name, and Nvidia's own filings report licensed sales to China (point 19).",
+          # Batch 17: the opener follows the current answer. The talks claim concerns Beijing's acts.
+          THIRD_LIMIT,
           "or ties a Beijing act against Nvidia to the trade talks",
           talks_scope]
 low_arg = ARG.lower()
 miss_arg = [c for c in COPIED if c.lower() not in low_arg]
-miss_page = [c for c in COPIED if c.lower() not in text.lower()]
+miss_page = [c for c in COPIED if not (third_limit_in_opener(text) if c == THIRD_LIMIT else c.lower() in text.lower())]
 print(f'copied from the argument: {len(COPIED) - len(miss_arg)} of {len(COPIED)} stand in the argument, {len(COPIED) - len(miss_page)} of {len(COPIED)} in the page')
 if miss_arg: bad.append(f'no longer in the argument: {miss_arg}')
 if miss_page: bad.append(f'not in the page: {miss_page}')

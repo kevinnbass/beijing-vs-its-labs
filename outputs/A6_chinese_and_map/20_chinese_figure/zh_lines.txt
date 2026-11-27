@@ -64,13 +64,13 @@ ES Cyberspace Administration of China
 
 @ BH man-cn-factions-wsj-ding
 D 2025年夏一次汇报之后
-T 据知情人士说，在2025年夏华为的一次汇报之后，国务院副总理丁薛祥警告最大的几家AI用户：谁抵制使用国产芯片，谁就是叛徒（原文："a traitor"）。这篇2026年7月23日的报道没有给出警告的日期
+T 《华尔街日报》援引未具名人士报道，2025年夏华为举行一次汇报会后，国务院副总理丁薛祥警告中国最大的AI用户，凡是抵制使用国产芯片的都是叛徒（原文："a traitor"）。这篇2026年7月23日的报道没有给出警告的日期
 S 《华尔街日报》
 Z 凡是抵制使用国产芯片的，就是叛徒
-C 据报道叛徒警告
-ET After a Huawei briefing in summer 2025, Vice Premier Ding Xuexiang warns the biggest AI users, by people familiar with the message: anyone resisting home-made chips is "a traitor". The report, of Jul 23, 2026, gives no date for the warning
+C 《华尔街日报》报道叛徒（"traitor"）警告
+ET The Wall Street Journal reported, citing people it did not name, that after a Huawei briefing in summer 2025, Vice Premier Ding Xuexiang warned China's largest AI users that anyone resisting home-made chips was "a traitor". The Jul 23, 2026 report gives no date for the warning
 ES Wall Street Journal
-EC WSJ: "traitor" warning
+EC WSJ reports "traitor" warning
 
 @ BH man-cn-ft-20250821-regulators
 T 据报道，三家监管部门着手劝阻企业购买H20，大约从7月15日之后一周开始（报道日期为8月20日）
@@ -115,13 +115,13 @@ ET Reported: government guidance requires new data-centre projects that took any
 ES Reuters, on The Standard (Hong Kong)
 
 @ BH cn-acts-reuters-customs-20260114
-T 据报道，海关告知报关代理：H200不准进入中国（原文："not permitted"）；企业被告知非必要不购买（原文："unless necessary"）。路透社称，尚不清楚北京方面是想禁止、仍在权衡限制措施，还是可能把这些措施用作与华盛顿谈判的筹码（原文："a bargaining tactic in talks with Washington"）
+T 路透社援引三名获悉此事的未具名人士报道，海关告知报关代理：H200不准进入中国（原文："not permitted"）。其中两人和另一名未具名人士说，有关官员要求企业非必要不购买H200（原文："unless necessary"）。路透社称，尚不清楚北京方面是想禁止H200、仍在权衡限制措施，还是可能把这些措施用作与华盛顿谈判的筹码（原文："a bargaining tactic in talks with Washington"）
 S 路透社，载于雅虎财经（Yahoo Finance）
 Z 不被允许进入中国，据三名知情人士称
-C 据报道H200不准进入中国
-ET Reported: customs agents told the H200 is "not permitted"; companies told not to buy it "unless necessary". Reuters: it is unclear whether Beijing wants a ban, is still weighing restrictions, or could use the measures as "a bargaining tactic in talks with Washington"
+C 路透社报道：H200不准入境（"not permitted"）
+ET Reuters reported, citing three people it did not name who had been briefed on the matter, that customs agents were told the H200 was "not permitted" to enter China. Two of those people and a third unnamed source said officials told companies not to buy it "unless necessary". Reuters said it was unclear whether Beijing wanted a ban, was still weighing restrictions, or could use the measures as "a bargaining tactic in talks with Washington"
 ES Reuters, on Yahoo Finance
-EC H200 said "not permitted"
+EC Reuters: H200 "not permitted"
 
 @ BH cn-us-lutnick-0422-rev-transcript-b
 T 美国商务部长在参议院作证，称这是他的了解（原文："my understanding"）：中国的云计算企业想买这些芯片（原文："their cloud companies want to buy these chips"），中国中央政府至今没有让它们购买（原文："has not let them as of yet buy the chips"）

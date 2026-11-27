@@ -165,7 +165,8 @@ def main():
     f = lambda v: f'{v:,}'
     places, names = joined(H['places'], 'or'), joined(H['names'])     # "whose ultimate location is A, B or C" (the table's own column)
     cap = A.count(Q['cap'].split('up to ')[1].split(' chips')[0])           # the cap Reuters reported, read from its sentence
-    assert cap == H['cap'], 'the largest approved application in the table is not the cap Reuters reported'
+    assert cap == H['cap'], 'the largest approved application in the table is not the May cap Reuters reported'
+    assert Q['cap.later'].sid == delivered['sid'] and delivered['date'] > d_cap, 'the later cap must come from the August report'
     assert H['tencent_status'] == 'Approved, not shipped'
     status, released = fmt(H['status']), fmt(H['released'])
     # round 10: the two later accounts on the orders (the argument, section 4's opening); the chief executive spoke the day after Reuters's report of the approvals
@@ -176,7 +177,7 @@ def main():
     under = {
         'ordered': f'{qm(Q["ordered"])}; the report gives this on the word of {qm("two of the people")} it spoke to.',
         'wapproved': (f'The committee’s summary: {qm(Q["wapproved"])}. By its definition, “PRC companies” are {qm(Q["table.prc"])}. The table marks each of the {H["appr"][1]} {qm(Q["table.marked"])}. Nvidia is the exporter in {H["appr_nv"][1]} of them, '
-                      f'AMD in {H["appr_amd"][1]} ({f(H["appr_amd"][0])} chips, kept apart here). No approved application is for more than {f(H["cap"])} chips.'),
+                      f'AMD in {H["appr_amd"][1]} ({f(H["appr_amd"][0])} chips, kept apart here). No approved application in this table is for more than {f(H["cap"])} chips.'),
         'wreturned': (f'The table marks these RWA, the export bureau’s short form: {qm(Q["table.rwa"])}. Among Nvidia’s {H["rwa_nv"][1]} are all {H["abroad"][1]} applications whose ultimate location is {places} '
                       f'({f(H["abroad"][0])} chips), named for {names}. With AMD’s {H["rwa_amd"][1]}, the applications returned are for {f(H["rwa"][0])} of the table’s {f(H["all"][0])} chips, {H["share"]}% of the chips the summary records. '
                       f'The table gives no reasons, and the committee says some applications are {qm(Q["table.notfull"])}.'),
@@ -213,7 +214,7 @@ def main():
  <div id="fig">
   <header>
    <p class="eyebrow">China · Nvidia’s H200 chip · {A.MON[first.month - 1]} {first.year} to {A.MON[last.month - 1]} {last.year}</p>
-   <h1>Reported ordered: more than 2 million H200 chips.<br> Reported delivered: about {per:,} each, to a few buyers.</h1>
+   <h1>Reported ordered: {esc(' '.join(R['ordered']['shown']))} H200 chips.<br> Reported delivered: about {per:,} each, to a few buyers.</h1>
    <p class="deck">{NUM[len(press)].capitalize()} press reports citing unnamed people, and {NUM[len(docs)]} sums from one United States government table of licence applications. They are separate counts, not one tally: they do not add up, and they are not stages of one sale. They are set side by side by what they count, not in date order. An application names a data-centre operator or ultimate consignee; it is not an order. Bars are drawn to one scale.</p>
    <ul class="key">
     <li><i class="sw toward"></i><span><b>Toward Nvidia:</b> seeking, buying, using or welcoming it</span></li>
@@ -251,7 +252,7 @@ def main():
     It does not say which chip a row is; bars {docnums} count the rows with Nvidia as exporter. An application names a data-centre operator or ultimate consignee; it is not an order. “Approved” in bar {R["wapproved"]["n"]} is Washington’s licence; bar {R["approved"]["n"]} is Beijing’s approval, by a press report.</li>
    <li>The sums are ours, of the table’s rows as the project read them from its page images; the totals equal the figures the committee’s summary prints. Nvidia’s chips and AMD’s are not added in the bars. With AMD’s, the approved count is {f(H["appr"][0])} chips in {H["appr"][1]} applications, and the {H["rwa"][1]} applications returned without action are for {f(H["rwa"][0])} chips.</li>
    <li>The {H["share"]}% counts the chips in the returned applications as a share of the chips in the applications the summary records, not of everything applied for. The committee’s example: {qm(Q["table.tencent"])}. The table’s only Tencent row of that date is for {f(H["tencent_shown"])} chips, approved; neither document says whether it is that application. The share would be {H["share_full"]}% if it is, counted at {f(H["tencent_full"])}, and {H["share_further"]}% if the {f(H["tencent_full"])} is a further application and was not returned without action (our arithmetic).</li>
-   <li>No approved application in the table is above {f(H["cap"])} chips, and all {NUM[H["over"]]} above that number were returned. On {fmt(d_cap)} Reuters, by two people it did not name, reported a limit for each approved buyer: {qm(Q["cap"])}. It also wrote that {qm(Q["cap.nodelivery"])}, and that the {qm(Q["cap.tangle"])}.</li>
+   <li>No approved application in the table is above {f(H["cap"])} chips, and all {NUM[H["over"]]} above that number were returned. On {fmt(d_cap)} Reuters, by two people it did not name, reported a limit for each approved buyer: {qm(Q["cap"])}. It also wrote that {qm(Q["cap.nodelivery"])}, and that the {qm(Q["cap.tangle"])}. The Financial Times, through {A.link(Q["cap.later"].sid, f"Reuters on {fmt(delivered['date'])}")}, later reported, citing people it did not name, that Washington {qm(Q["cap.later"])}. It named {esc(" and ".join(delivered["buyers"]))}.</li>
    <li>The approval Reuters reported on {fmt(R["approved"]["date"])} was not yet a purchase: a source said {qm(Q["approved.notconverting"])}.</li>
    <li>The possible total of July ({esc(R["discussed"]["shown"][0])} {esc(R["discussed"]["shown"][1])}) was, in the report’s words, {qm(Q["discussed.half"])}.</li>
    <li>The report of {fmt(delivered["date"])} names two buyers. A later report speaks of several: {qm(Q["later.several"])} ({A.link(Q["later.several"].sid, f"Reuters, {fmt(R['waiting']['date'])}")}).</li>
@@ -303,7 +304,7 @@ def main():
     print(f'bars: {len(rows)} ({len(press)} press reports, {len(docs)} sums of Washington\'s table): ' + '; '.join(f'{r["n"]} {r["key"]} {r["chips"]:,}' for r in rows))
     print(f'table: all {f(H["all"][0])} in {H["all"][1]}; approved {f(H["appr"][0])} in {H["appr"][1]} (Nvidia {f(H["appr_nv"][0])} in {H["appr_nv"][1]}, AMD {f(H["appr_amd"][0])} in {H["appr_amd"][1]}); '
           f'returned {f(H["rwa"][0])} in {H["rwa"][1]} (Nvidia {f(H["rwa_nv"][0])} in {H["rwa_nv"][1]}, AMD {f(H["rwa_amd"][0])} in {H["rwa_amd"][1]}) = {H["share"]}% of the table; abroad {f(H["abroad"][0])} in {H["abroad"][1]}; '
-          f'above the cap of {f(H["cap"])}: {H["over"]}, all returned; the share {H["share_full"]}% if the Tencent row of {f(H["tencent_shown"])} is the application of {f(H["tencent_full"])}, '
+          f'above the table’s largest approval ({f(H["cap"])} chips): {H["over"]}, all returned; the share {H["share_full"]}% if the Tencent row of {f(H["tencent_shown"])} is the application of {f(H["tencent_full"])}, '
           f'{H["share_further"]}% if that is a further application')
     if '--png' in sys.argv:
         A.png(out, [('#fig', HERE / 'funnel.png')], width=1256, height=1000, css=A.FIG_EXPORT,

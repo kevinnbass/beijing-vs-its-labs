@@ -86,7 +86,19 @@ def main():
 
     # state media: all items, and those that only warn
     sm = table('state_media_items.tsv')
-    warn = sorted(r['date'] for r in sm if r['stance'] == 'warns')
+    warnings = [r for r in sm if r['stance'] == 'warns']
+    warn = sorted(r['date'] for r in warnings)
+    compute_warnings = sum(r['subject'] == 'chips for AI computing' for r in warnings)
+    other_warnings = [r for r in warnings if r['subject'] != 'chips for AI computing']
+    other_ids = [r['saved_id'] for r in other_warnings]
+    if other_ids != ['cn-media-stdaily-security-forum']:
+        bad.append(f'the warning subjects no longer support naming only the forum report separately: {other_ids}')
+    else:
+        forum = other_warnings[0]
+        said = (f"a {day(forum['date'])} {forum['outlet']} report that describes a call at a security forum "
+                f"to switch faster to home-made software and hardware [{forum['saved_id']}]")
+        if said not in text:
+            bad.append(f'the text does not say "{said}"')
     start, end = '2025-07-31', '2025-09-24'  # the window in argument point 4
     early = [d for d in warn if d < start]
     win = [d for d in warn if start <= d <= end]
@@ -95,7 +107,7 @@ def main():
     span = f'{day(win[0])} to {day(win[-1])}, {win[-1][:4]}'
     h200_span = f'{day(h200[0])}, {h200[0][:4]} to {day(h200[-1])}, {h200[-1][:4]}'
     print(f'state media, from tables/state_media_items.tsv: {len(sm)} items; {len(warn)} only warn '
-          f'({len(early)} before, {len(win)} from {span}, {len(late)} after); '
+          f'({compute_warnings} about chips for AI computing; {len(early)} before, {len(win)} from {span}, {len(late)} after); '
           f'{len(h200)} of the later warnings from {h200_span}')
     months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
     alld = sorted(r['date'] for r in sm); window = f'from {months[int(alld[0][5:7]) - 1]} {alld[0][:4]} to {months[int(alld[-1][5:7]) - 1]} {alld[-1][:4]}'
@@ -105,6 +117,7 @@ def main():
     for said in (
         f'the {len(sm)} state and Party media items on Nvidia and its chips found {window}',
         f'{len(win)} of the {len(warn)} that only warn',
+        f'Of the {len(warn)} items that only warn, {compute_warnings} are about the chips for AI computing.',
         span,
         'one is earlier' if len(early) == 1 else f'{len(early)} are earlier',
         f'{len(h200)} of the {len(late)} found later date from {h200_span}',

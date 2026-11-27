@@ -59,10 +59,10 @@ Q 约谈了英伟达公司,要求英伟达公司就对华销售的H20算力芯�
 E summoned Nvidia and required it to explain the backdoor security risks of the H20 chips sold to China and to submit supporting material
 
 @ BH press 2025-08-10 After_a_summer_2025_briefing man-cn-factions-wsj-ding
-T After a Huawei briefing in summer 2025, Vice Premier Ding Xuexiang warns the biggest AI users, by people familiar with the message: anyone resisting home-made chips is "a traitor". The report, of Jul 23, 2026, gives no date for the warning
+T The Wall Street Journal reported, citing people it did not name, that after a Huawei briefing in summer 2025, Vice Premier Ding Xuexiang warned China's largest AI users that anyone resisting home-made chips was "a traitor". The Jul 23, 2026 report gives no date for the warning
 S Wall Street Journal
 Q Anyone who resisted employing domestic chips was a traitor
-C end -42 -42 WSJ: "traitor" warning
+C end -42 -42 WSJ reports "traitor" warning
 
 @ BH press 2025-08-20 - man-cn-ft-20250821-regulators
 T Reported: three regulators move to dissuade companies from buying the H20, starting about a week after Jul 15 (the report is of Aug 20)
@@ -96,10 +96,10 @@ S Reuters, on The Standard (Hong Kong)
 Q requiring new data centre projects that have received any state funds to only use domestically-made artificial intelligence chips
 
 @ BH press 2026-01-14 - cn-acts-reuters-customs-20260114
-T Reported: customs agents told the H200 is "not permitted"; companies told not to buy it "unless necessary". Reuters: it is unclear whether Beijing wants a ban, is still weighing restrictions, or could use the measures as "a bargaining tactic in talks with Washington"
+T Reuters reported, citing three people it did not name who had been briefed on the matter, that customs agents were told the H200 was "not permitted" to enter China. Two of those people and a third unnamed source said officials told companies not to buy it "unless necessary". Reuters said it was unclear whether Beijing wanted a ban, was still weighing restrictions, or could use the measures as "a bargaining tactic in talks with Washington"
 S Reuters, on Yahoo Finance
 Q are not permitted to enter China, according to three people briefed on the matter
-C start -5 -42 H200 said "not permitted"
+C start -5 -66 Reuters: H200 "not permitted"
 
 @ BH doc 2026-04-22 - cn-us-lutnick-0422-rev-transcript-b
 T US Commerce Secretary to the Senate, as his "understanding": "their cloud companies want to buy these chips", and the Chinese central government "has not let them as of yet buy the chips"
@@ -462,12 +462,20 @@ Q no matter when you actually started leasing or building capacities outside of 
 ! cn-acts-reuters-customs-20260114 | purchase the chips unless necessary, two of the people and a third source said
 ! cn-acts-reuters-customs-20260114 | or whether these measures could be used as a bargaining tactic in talks with Washington
 ! cn-acts-reuters-customs-20260114 | Analysts say Beijing's move could be aimed at exerting leverage on Washington
+! cn-acts-reuters-customs-20260114 | Jan 14 (Reuters) - Chinese customs authorities told customs agents this week
+! cn-acts-reuters-customs-20260114 | The sources, who spoke on condition of anonymity
 ! cn-le14-itsec-scope-20230727 | 测评结果由企业和用户自主选择使用
 ! cn-xi-round-f-6 | 苹果公司、英伟达公司、Meta公司
 ! cn-le17-buaa-61901-6000d | 品牌 NVIDIA 规格型号 RTX PRO 6000D
 ! cn-le17-whu-131281 | Nvidia 6000D 84GB显存
 ! cn-ga31-sv1-reuters-deepseek-yahoo | These conditions are being decided by China's state planner
 ! cn-tolerate-reutersaug26-relay1-wayback | Chinese regulators have told companies they can ship the processors to Hong Kong
+! cn-tolerate-reutersaug26-relay1-wayback | cleared the companies to purchase up to 100,000 H200 chips each
+! cn-acts-reuters-us-approvals-20260514-wayback | each approved customer can purchase up to 75,000 chips under the U.S. licensing terms, two of them said
+! cn-acts-reuters-us-approvals-20260514-wayback | the sources, who spoke on condition of anonymity
+! cn-acts-reuters-us-approvals-20260514-wayback | Published on 05/14/2026
+! cn-tolerate-ftaug26 | PUBLISHED: 2026-08-19
+! cn-tolerate-reutersaug26-relay1-wayback | the Financial Times reported on Tuesday, citing two people with knowledge of the matter
 ! cn-tolerate-mof | 公开征求意见
 ! cn-tolerate-mof | 适用自动许可等便利措施
 ! cn-le20-mofcom-48-annex1 | 人工智能加速卡总数超过10,000张
@@ -535,9 +543,15 @@ Q no matter when you actually started leasing or building capacities outside of 
 ! ms-bj-20251105-statefunded-standard | It is unclear whether the guidance applies nationwide or only to certain provinces, sources said
 ! cn-factions-bloomberg-flexibility-202409-relay1 | on Friday (Sep 27)
 ! cn-usdocs-hfac-summary-20261119 | not fully reflected in the May 11, 2026, summary document
+! cn-usdocs-hfac-summary-20261119 | NVIDIA applied on December 19, 2025, to export 445,000 H200s to Tencent
 ! ms-bj-20251105-statefunded-standard | has issued guidance requiring
 ! man-cn-factions-wsj-ding | Last summer
 ! man-cn-factions-wsj-ding | according to people familiar with the message
+! man-cn-factions-wsj-ding | July 23, 2026
+! man-cn-factions-wsj-ding | Last summer, top Chinese chip developer Huawei Technologies held a closed-door briefing
+! man-cn-factions-wsj-ding | Ding Xuexiang
+! man-cn-factions-wsj-ding | Vice Premier Ding
+! man-cn-factions-wsj-ding | He delivered a blunt warning to China’s largest AI users
 ! cn-acts-reuters-us-approvals-20260514-wayback | pulled back after guidance from Beijing, one source said
 ! cn-le25-zhejiang-ai-measures-2025-smartcity | 2025年4月17日
 ! cn-against2-isc-supply-risk-20241203 | 并积极使用内外资企业在华生产制造的芯片
@@ -585,6 +599,12 @@ Q no matter when you actually started leasing or building capacities outside of 
 ! cn-le04-bis-ear-748 | Returned without action (RWA)
 ! cn-acts-mfa-20260129 | 具体问题建议向中方主管部门进行询问
 ! cn-acts-mfa-20261109 | 中方在美国输华芯片问题上的立场是一贯的
+! cn-acts-mfa-20261112-la | 2026年11月12日外交部发言人毛宁主持例行记者会
+! cn-acts-mfa-20261112-la | 法新社记者：位于西安的中国西北工业大学的采购记录显示，该校购买了英伟达H200芯片
+! cn-acts-mfa-20261112-la | 你提到的具体情况我不了解。
+! cn-acts-mfa-20261112-la | 我们坚决反对美方泛化国家安全概念，划设各种名目的歧视性清单，无理打压中国机构。
+! cn-media-stdaily-security-forum | 第九届国家信息安全与自主可控战略高层论坛在京举行
+! cn-media-stdaily-security-forum | 沈昌祥在论坛总结中强调，政企用户应加快国产软硬件替代进程
 ! cn-usside-017 | China will terminate its various investigations targeting U.S. companies in the semiconductor supply chain
 ! cn-le01-greer-bbg-20260515-subs-ttml | Will China allow their companies to buy them?
 ! cn-media-party-samr-september | 依法对英伟达、高通公司、杜邦中国集团立案调查

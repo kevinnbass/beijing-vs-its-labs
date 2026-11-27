@@ -178,7 +178,7 @@ def main():
                      f'<div class="apart" role="cell"><div class="am">{"".join(C.mark(r) for r in case)}</div>'
                      '<p><b>Not counted on either side.</b> By Nvidia’s own account the preliminary finding concerns the “degraded products” that American export controls required it to offer the Chinese market: '
                      'it faults Nvidia for what it held back, not for selling. No page read says the case has ended; the regulator’s review of Apr 10, 2026 still lists it. '
-                     'Whether it was meant as leverage in trade talks is read both ways.</p></div></div>')
+                     'Point 21 of the argument weighs three readings of Beijing’s wider policy: lasting policy, leverage in trade talks and protection of the home market.</p></div></div>')
     g.append('</div>')
     # Round 9 (Nov 25, 2026): where the page gives the act no date (DATELABEL No_date_given, set in data.txt for atlas figure 11), the grid says
     # "No date given"; the list of records and the pop-ups add the date of the report, which is DATE for these records (checked: it stands in the S line).

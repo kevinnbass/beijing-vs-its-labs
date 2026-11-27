@@ -68,8 +68,8 @@ COUNTS (taken from the files by build.py, not typed)
   Records: 62. About Beijing, away from Nvidia: 25. About Beijing, toward Nvidia: 13.
   About the companies, toward Nvidia: 14. About the companies, away from Nvidia: 10.
   By kind: doc 22, rec 14, press 26. So 36 records are on the record and 26 are press reports citing unnamed people.
-  References: 634. DOC 175, OFF 79, FIL 108, REC 66, PRESS 84, COUNT 8, CLIP 9, PUB 44, NAMED 2, ACCT 10, NOTICE 49.
-  On the record: 533. Press reports citing unnamed people, counts, captions or machine transcripts: 101.
+  References: 634. DOC 175, OFF 79, FIL 108, REC 67, PRESS 80, COUNT 8, CLIP 9, PUB 44, NAMED 2, ACCT 13, NOTICE 49.
+  On the record: 537. Press reports citing unnamed people, counts, captions or machine transcripts: 97.
 
 CHECKS THE SCRIPT MADE BEFORE WRITING
   The two figure files hold the same 62 records, one to one, with the same line of ours.
@@ -88,7 +88,7 @@ READ WITH CARE
   September 2025 to halt purchases of certain chips; it does not name Nvidia (the argument, point 11).
   A record in a Beijing row can be the words of someone else about Beijing (a company's filing, a US official).
   23 records quote Chinese texts (all of them documents or people on the record); the English beside them is ours.
-  Not in these files: the 450 further checked lines of the figure's data file, most of them the quotations
+  Not in these files: the 470 further checked lines of the figure's data file, most of them the quotations
   behind the numbers in the figure's panels (they are in
   figure/figure_data.txt, on the lines that begin with "!"), and the reference lists of the two tier files,
   OFFICIAL_RECORD.md and TIER2_REPORTING.md.
@@ -103,7 +103,7 @@ PLAIN TABLES (tables/)
   its figure, has since replaced with a better one (the argument's reference list is the later word). Under 5 of
   the tables a "Read with care" line, computed by build.py, says which rows cite such a copy (and whether the argument
   itself still cites it), and, for the 2 tables with a column of the argument's reference numbers,
-  that those numbers are the present ones. Rows of different tables count different things. Do not join them
+  whether those numbers are the present ones. Rows of different tables count different things. Do not join them
   into one series. Each table begins with its makers' own notes, on lines that start with "#"; a program reading a
   table should skip those lines.
 
@@ -134,7 +134,7 @@ PLAIN TABLES (tables/)
   tables/labs_said.tsv   74 rows, 10 columns
       What it is: What China's AI companies said about chip supply on results calls and in filings, January 2025 to November 2026.
       Columns: company, date, event, speaker, title, source_kind, exact_words, saved_id, cut, note
-      Copy: byte for byte the project's table (sha256 be97de82f9fa5b506d930f68cdd7bd7128f36b2067db986c04771e9862848cde).
+      Copy: byte for byte the project's table (sha256 4a53d950dd07c802cbb87f5a95a48730f2ae808ba5847beb191f59ebe49f9e0d).
   tables/labs_said_more.tsv   29 rows, 10 columns
       What it is: The same for two more companies, iFlytek and SenseTime.
       Columns: company, date, event, speaker, title, source_kind, exact_words, saved_id, cut, note
@@ -194,7 +194,7 @@ PLAIN TABLES (tables/)
       Columns: ref, saved_id_cited, report, date_of_report, through_a_relay, copy_held, original_held, other_copies_held, best_copy_held, best_copy_available_and_note
       Copy: byte for byte the project's table (sha256 e5c46c1c4a4a2842b1cbb8e22e40ee7247bf732881ac2f036a59537b9a2f9e7b).
       Read with care: 1 row(s) cite ms-bj-20260114-customs-h200-standard, a source the figure no longer cites; the figure cites cn-acts-reuters-customs-20260114 in its place; the argument itself still cites ms-bj-20260114-customs-h200-standard as reference 393.
-      Read with care: its column "ref" gives the present reference numbers of the argument; 2 of the 54 rows keep a report the argument no longer cites (marked "not cited now"); press references added to the argument later are named in the table's own comment line.
+      Read with care: its column "ref" gives reference numbers of an earlier build of the argument: 5 of the 54 differ from the present numbers, and 2 of the ids are no longer cited by the argument (references.csv has the present numbers).
   tables/procurement_notices_oct_nov_2026.tsv   27 rows, 11 columns
       What it is: Twenty-seven purchase notices for AI computing of Oct 13 to Nov 24, 2026, a reading sample: the chip words each prints, whether it names Nvidia, what it says on home-made products and imports, and whether it attaches a declaration on the home-made product standard.
       Columns: date, buyer, project, stage, quantity, value, chip_words, nvidia, home_made, saved_id, cuts
@@ -260,7 +260,7 @@ PLAIN TABLES (tables/)
   tables/spokespeople_answers_census.tsv   31 rows, 9 columns
       What it is: Every answer found in which a Chinese government spokesperson was asked about Nvidia chips, about American chips or about the sale of chips to China, December 2024 to September 2026, counted by one written rule: for the foreign ministry every regular press conference searched and the matching pages read twice, for the commerce ministry its regular briefings read and a search for its written answers, which is not a census.
       Columns: date, ministry, spokesperson, asked_by, question_words_zh_as_on_page_or_gist, answer_class, answer_words_zh, saved_id, already_in_record
-      Copy: byte for byte the project's table (sha256 7d8870348942068c0930a8293e964cdae20ec20a1a1520557665b0b42cc8cd1e).
+      Copy: byte for byte the project's table (sha256 5e4ff035d0c8397521c9b57b3aeb0bc571b0258cbef51e2540b32ccd1517ce81).
   tables/state_media_baseline_2024_2025h1.tsv   174 rows, 13 columns
       What it is: A baseline for the state-media table: state and Party media items on Nvidia chips, January 2024 to June 2025, by the same rule; gathered by other routes, not a census, and not counted in that table. 14 of its rows are from papers of the People's Daily group that the state-media table never holds (their notes begin GROUP-PAPER), so a comparison with that table counts the other 160.
       Columns: date, outlet, kind, stance, speaker, key_sentence, saved_id, held, original, other_carriers, search_list_row, note, subject
@@ -272,7 +272,7 @@ PLAIN TABLES (tables/)
   tables/state_media_items.tsv   297 rows, 13 columns
       What it is: State and Party media items on Nvidia and its chips, July 2025 to November 2026, each with its stance and subject. The subject column distinguishes chips for AI computing from products with an Nvidia chip, Nvidia as a company and other topics.
       Columns: date, outlet, kind, stance, speaker, key_sentence, saved_id, held, original, other_carriers, search_list_row, note, subject
-      Copy: byte for byte the project's table (sha256 edfbe37ef9d3846cc7846f6aac9b70740870ecb4a960d2780bc4b9482c9ba65e).
+      Copy: byte for byte the project's table (sha256 f8e910d2d043ab4822e5aabd0fab313e50bc2cec14d315255fbfc2fbbf47a757).
       Read with care: 1 row(s) cite cn-media-yuyuan-thepaper, a source the figure no longer cites; the figure cites cn-le13-yuyuan-qq-20250810b in its place.
   tables/talks_and_acts.tsv   50 rows, 11 columns
       What it is: US-China trade meetings, May 2025 to November 2026, with what each side's readout says on chips, or that no written readout of that side was found, beside Beijing's dated acts and words on Nvidia chips.

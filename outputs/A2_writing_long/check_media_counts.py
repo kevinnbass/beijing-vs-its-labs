@@ -26,13 +26,21 @@ def main(paths=BASES):
     dates = [date.fromisoformat(row["date"]) for row in rows]
     first, last = min(dates), max(dates)
     period = f"{month_name[first.month]} {first.year} to {month_name[last.month]} {last.year}"
-    warnings = [day for row, day in zip(rows, dates) if row["stance"] == "warns"]
-    summer = sum(date(2025, 7, 31) <= day <= date(2025, 9, 24) for day in warnings)
-    winter = sum(date(2025, 12, 9) <= day <= date(2026, 1, 14) for day in warnings)
+    warnings = [row for row in rows if row["stance"] == "warns"]
+    chip_warnings = [row for row in warnings if row["subject"] == "chips for AI computing"]
+    other_warnings = [row for row in warnings if row["subject"] != "chips for AI computing"]
+    if [(row["saved_id"], row["subject"]) for row in other_warnings] != [
+        ("cn-media-stdaily-security-forum", "other"),
+    ]:
+        sys.exit(f"{TABLE}: expected the forum report as the sole warning on another subject")
+    warning_dates = [date.fromisoformat(row["date"]) for row in warnings]
+    summer = sum(date(2025, 7, 31) <= day <= date(2025, 9, 24) for day in warning_dates)
+    winter = sum(date(2025, 12, 9) <= day <= date(2026, 1, 14) for day in warning_dates)
     expected = (
         f"Of {len(rows)} state and Party media items on Nvidia and its chips found from {period}, "
-        f"{len(warnings)} only warn about the chips, and {summer} of those date "
-        "from Jul 31 to Sept 24, 2025.",
+        f"{len(warnings)} only warn ({len(chip_warnings)} of them about the chips for AI computing; "
+        "one, a report of a forum, about home-made software and hardware at large), "
+        f"and {summer} of the {len(warnings)} date from Jul 31 to Sept 24, 2025.",
         f"Another {winter} warnings date from Dec 9, 2025 to Jan 14, 2026, "
         "in coverage of the US easing for the H200.",
     )
@@ -43,6 +51,7 @@ def main(paths=BASES):
             if visible.count(sentence) != 1:
                 sys.exit(f"{path}: expected one visible occurrence of {sentence!r}")
     print(f"Media count check: {len(rows)} items from {period}, {len(warnings)} warnings, "
+          f"{len(chip_warnings)} on chips for AI computing, "
           f"{summer} in the summer window, {winter} in the winter window; both bases agree")
 
 

@@ -70,7 +70,8 @@ def state_media_summary():
                         'other': 30, 'Nvidia as a company': 8}, subjects
 
     dates = sorted(date.fromisoformat(r['date']) for r in rows)
-    warns = sorted(date.fromisoformat(r['date']) for r in rows if r['stance'] == 'warns')
+    warning_rows = [r for r in rows if r['stance'] == 'warns']
+    warns = sorted(date.fromisoformat(r['date']) for r in warning_rows)
     burst = [d for d in warns if date(2025, 7, 31) <= d <= date(2025, 9, 24)]
     winter = [d for d in warns if date(2025, 12, 9) <= d <= date(2026, 1, 14)]
     other_warnings = Counter(warns) - Counter(burst) - Counter(winter)
@@ -80,17 +81,23 @@ def state_media_summary():
         '2025-07-24', '2025-11-01', '2026-03-03', '2026-03-18', '2026-11-06')), other_warnings
 
     mixed_later = sum(r['stance'] == 'mixed' and r['date'] > '2025-09-30' for r in rows)
-    ai_warnings = sum(r['stance'] == 'warns' and r['subject'] == 'chips for AI computing' for r in rows)
-    product_warnings = sum(r['stance'] == 'warns' and r['subject'] == 'a product with an Nvidia chip' for r in rows)
-    assert (mixed_later, ai_warnings, product_warnings) == (10, 33, 0)
+    ai_warnings = [r for r in warning_rows if r['subject'] == 'chips for AI computing']
+    other_topics = [r for r in warning_rows if r['subject'] != 'chips for AI computing']
+    burst_dates = {d.isoformat() for d in burst}
+    ai_burst = sum(r['date'] in burst_dates for r in ai_warnings)
+    assert (mixed_later, len(ai_warnings), ai_burst) == (10, 33, 22)
+    assert [(r['saved_id'], r['subject'], r['date']) for r in other_topics] == [
+        ('cn-media-stdaily-security-forum', 'other', '2025-09-24')
+    ], other_topics
     start, end = [f'{MON[d.month - 1]} {d.year}' for d in (dates[0], dates[-1])]
     summary = (
         f'The project’s state-media table lists {len(rows)} items found from {start} to {end}. '
         f'{subjects["chips for AI computing"]} cover chips for AI computing. A separate '
         f'{subjects["a product with an Nvidia chip"]} cover products with an Nvidia chip. '
-        f'Of the {len(warns)} items coded as warnings, {len(burst)} date from {fmt(burst[0])} to {fmt(burst[-1])}, '
-        f'and {len(winter)} from {fmt(winter[0])} to {fmt(winter[-1])}, during coverage of US easing for the H200. '
-        f'{ai_warnings} of the warnings concern chips for AI computing. '
+        f'{len(warns)} items only warn. {len(ai_warnings)} concern chips for AI computing. '
+        f'The other is a forum report about home-made software and hardware at large. '
+        f'{len(burst)} of these warnings date from {fmt(burst[0])} to {fmt(burst[-1])}, including {ai_burst} about the chips. '
+        f'{len(winter)} date from {fmt(winter[0])} to {fmt(winter[-1])}, during coverage of US easing for the H200. '
         f'{stances["mixed"]} other items mix a warning with a welcome, {mixed_later} after September 2025. '
         f'After {fmt(burst[-1])}, the items are a sample from searches and a scan of the saved pages.'
     )

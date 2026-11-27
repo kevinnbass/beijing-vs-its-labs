@@ -23,6 +23,10 @@ PROJ = HERE.parents[1]
 ARG = (PROJ / 'argument' / 'argument_base.txt').read_text(encoding='utf-8')
 ARGL = ARG.splitlines()
 WORDS = {4: 'four', 5: 'five', 6: 'six'}
+CHECKLIST = HERE / '08_what_would_change/what_would_change_base.txt'
+APPROVAL_WORDS = 'some purchases were approved'
+THIRD_LIMIT = ("Third, Nvidia's own filings report licensed sales to China, and Reuters reported, "
+               f"citing people it did not name, that {APPROVAL_WORDS} (point 19).")
 ok = True
 
 
@@ -41,6 +45,18 @@ def retired_matches(text, phrases):
     return [phrase for phrase in phrases if phrase in text]
 
 
+def opener_sentences(text):
+    _, _, after_heading = text.partition('\n## The answer these would test\n')
+    para = next((ln for ln in after_heading.splitlines() if ln.strip()), '')
+    if para.lstrip().startswith('!!'):
+        return []
+    return re.split(r'(?<=\.)\s+', para.strip()) if para.strip() else []
+
+
+def approval_in_opener(low, sentences):
+    return THIRD_LIMIT in sentences and low.count(APPROVAL_WORDS) == 1
+
+
 # 1. the surviving sentence
 survives = after(r'\*\*One sentence that survives all \w+ limits\.\*\* (.*)')
 for f in ('04_right_and_too_flat/right_too_flat_base.txt', '05_questions_and_answers/questions_answers_base.txt'):
@@ -53,14 +69,19 @@ else: print('control: a copy with one word changed is not found')
 
 # 2. the short statement of the answer in 08
 answer = after(r'\*\*The answer\.\*\* (.*)')
-t8 = (HERE / '08_what_would_change/what_would_change_base.txt').read_text(encoding='utf-8').splitlines()
-i = t8.index('## The answer these would test')
-para = next(ln for ln in t8[i + 1:] if ln.strip())
-sents = [s.strip() for s in re.split(r'(?<=\.)\s+', para) if s.strip()]
+t8 = CHECKLIST.read_text(encoding='utf-8')
+sents = opener_sentences(t8)
 miss = [s for s in sents if s.rstrip('.') not in answer]
 print(f'08, statement of the answer: {len(sents) - len(miss)} of {len(sents)} sentences stand in the argument\'s own paragraph')
 if miss: fail(f'08: not in the argument\'s answer paragraph: {miss}')
 if 'Sixth, nothing' in answer or len(sents) < 5: fail('control: the sentence check is not working')
+displaced = t8.replace(THIRD_LIMIT, '', 1) + f'\n!! control | {THIRD_LIMIT}\n'
+if (not approval_in_opener(t8.lower(), sents)
+        or displaced.lower().count(APPROVAL_WORDS) != 1
+        or approval_in_opener(displaced.lower(), opener_sentences(displaced))):
+    fail('control: the attributed third limit must occur once, in the opener, never on a hidden line')
+else:
+    print('control: the attributed third limit is accepted in the opener and rejected when moved to a hidden line')
 
 # 3. the number of limits
 sec = re.search(r'(?ms)^## 5\. (\w+) limits on the claim$(.*?)^## ', ARG)
@@ -109,7 +130,7 @@ RETIRED_WORDS = ['four limits', 'four cautions', '20 points', '750,000', 'more t
                  'no published instruction from beijing to the companies was found', 'the short answer: yes,', 'all three are press reports from unnamed people',
                  "nvidia chips, 0:00 to 0:51, set against", 'published documents or officials']
 # Round 14 (batch 16 and b16d): the old source count and the family's forms of the old third limit.
-R14 = ['461 sources', 'some purchases were approved', 'some chips came in', 'some were approved', 'some came in',
+R14 = ['461 sources', APPROVAL_WORDS, 'some chips came in', 'some were approved', 'some came in',
        'some chips got in', 'some chips also came in']
 RETIRED_WORDS += R14
 RETIRED_IDS = {ln.split('\t')[0] for ln in (PROJ / 'loose_ends' / 'hkexnews_saved_ids.tsv').read_text(encoding='utf-8').splitlines() if ln.strip()}
@@ -131,6 +152,10 @@ for p in files:
     own = p.name.endswith('_base.txt') or p.name in ('thread_plain.txt', 'timeline.txt')      # my own words; built pages also carry the core's reference labels
     if own:
         for w in retired_matches(low, RETIRED_WORDS):
+            # Batch 17 keeps these words only inside the exact, attributed third limit in 08.
+            if (w == APPROVAL_WORDS and p == CHECKLIST and not miss
+                    and THIRD_LIMIT in answer and approval_in_opener(low, sents)):
+                continue
             fail(f'{p.relative_to(HERE)} holds the retired wording "{w}"')
     ids = set(re.findall(r'(?:cn|ms|man|cnpol)-[a-z0-9-]+', low))
     for sid in sorted(ids & RETIRED_IDS): fail(f'{p.relative_to(HERE)} holds the id {sid}, which may no longer be cited')

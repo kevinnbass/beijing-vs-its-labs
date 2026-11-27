@@ -40,18 +40,18 @@ The video is explainer.mp4 in this folder. Each caption stays on screen while th
 - Reported, from unnamed people: Financial Times, Nov 13, 2026 [14]
 - From the project's referenced argument, points 5 and 17: the evidence on local governments and carriers.
 
-**7.** **Limit 2 of 5.** Warnings, unpublished guidance and published texts pressed for home-made computing. The 82 policy pages read yielded no published ban on buying Nvidia chips. Of 297 state and Party media items on Nvidia and its chips found from July 2025 to November 2026, 34 only warn about the chips: 23 date from Jul 31 to Sept 24, 2025, and 6 from Dec 9, 2025 to Jan 14, 2026 in reports on the American easing for the H200.
+**7.** **Limit 2 of 5.** Warnings, unpublished guidance and published texts pressed for home-made computing. The 82 policy pages read yielded no published ban on buying Nvidia chips. Of 297 state and Party media items on Nvidia and its chips found from July 2025 to November 2026, 34 only warn (33 of them about the chips for AI computing; one, a report of a forum, about home-made software and hardware at large), and 23 of the 34 date from Jul 31 to Sept 24, 2025, and 6 from Dec 9, 2025 to Jan 14, 2026 in reports on the American easing for the H200.
 
 - On the record: Beijing’s voucher pays one rate whatever the chip. Admitted providers must be able to offer computing on home-made chips with a home-made software stack [15]. Among the 82 pages read, the published 2023 review conclusion tells critical information infrastructure operators to stop buying Micron’s products [16].
 - Our own count, a sample of what the outlets printed and not a full count. The 23 run from Jul 31, 2025 (6 items that day, including Global Times on the summons [17]) to Sept 24 (Science and Technology Daily on a security forum [18]).
 - Our own count outside those weeks: Jul 24 [19] and Nov 1 [20]; 6 on US easing [21], [22], [23], [24], [25] and [26]; the last 3, Global Times items of 2026: an analyst quoted in news reports of Mar 3 [27] and Mar 18 [28], and an unsigned commentary of Nov 6 [29].
 - Reported, from unnamed people: Bloomberg, Sept 27, 2024: "guidance rather than an outright ban" [30]
 
-**8.** **Limit 3 of 5.** Some purchases were reported approved, and Nvidia reported licensed sales. Reuters cited four people it did not name [11]. Nvidia’s own filings report licensed sales to China [31]. A US official told Congress: "There have been minimal exports of any H200s to China so far" [32].
+**8.** **Limit 3 of 5.** Third, Nvidia's own filings report licensed sales to China, and Reuters reported, citing people it did not name, that some purchases were approved (point 19). A US official told Congress: "There have been minimal exports of any H200s to China so far" [31].
 
-- Reported, from unnamed people: Reuters, Jan 28, 2026 [11]
-- On the record: Nvidia’s annual filing on H20 sales [31] and November 2026 results call on licensed Hopper sales [33]
-- On the record: Jeffrey Kessler, under secretary of commerce, to a House committee on Jul 14, 2026, as Reuters reported [32]
+- Reported, from unnamed people: Reuters, Jan 28, 2026, citing four people it did not name [11]
+- On the record: Nvidia’s annual filing on H20 sales [32] and November 2026 results call on licensed Hopper sales [33]
+- On the record: Jeffrey Kessler, under secretary of commerce, to a House committee on Jul 14, 2026, as Reuters reported [31]
 
 **9.** **Limit 4 of 5.** The companies had reasons of their own. In the records the project holds, American curbs and conditions are named as causes far more often than Chinese acts. Alibaba says its chip unit "has brought proprietary GPUs into scaled production" [34]. Nvidia: "we are already effectively foreclosed from the China market by U.S. export controls" [35]. Washington returned without action the applications for 55% of the chips its summary of May 11, 2026 records; its table gives no reason [10].
 
@@ -59,7 +59,7 @@ The video is explainer.mp4 in this folder. Each caption stays on screen while th
 - On the record: Alibaba, results release, Mar 19, 2026 [34]; Nvidia, Form 10-Q signed Nov 19, 2025 [35]
 - On the record: the table of licence applications from the Commerce Department's Bureau of Industry and Security (BIS), made public by the House Foreign Affairs Committee on Nov 19, 2026; our sum; the committee says BIS's summary does not show every application in full [36]
 
-**10.** **Limit 5 of 5.** What Beijing meant by it is not settled. A US commission saw in the antitrust move against Nvidia "China's willingness to both exert leverage and ease pressure as a negotiating tactic" [37]. Asked whether China would let its companies buy the H200, the US Trade Representative called it "a sovereign decision for China" [38]. The direction stands under either reading of what Beijing meant by it.
+**10.** **Limit 5 of 5.** What Beijing meant by it is not settled. A US commission saw in the antitrust move against Nvidia "China's willingness to both exert leverage and ease pressure as a negotiating tactic" [37]. Asked whether China would let its companies buy the H200, the US Trade Representative called it "a sovereign decision for China" [38]. The direction stands whether Beijing meant its acts as lasting policy, as leverage in trade talks or as protection of its home market (point 21).
 
 - On the record: US-China Economic and Security Review Commission, 2025 annual report [37]
 - Captions, not checked by ear: the Trade Representative on Bloomberg Television, May 15, 2026, at 5:59 [38]
@@ -68,7 +68,7 @@ The video is explainer.mp4 in this folder. Each caption stays on screen while th
 
 - From the project's referenced argument, section 6: its one sentence, shown here in two parts. The guidance is reported, from unnamed people; the warnings were public.
 
-**12.** **The sentence that survives (2 of 2).** other parts of the state welcomed Nvidia and, by the reports, approved some purchases; the companies went on ordering Nvidia chips, in the millions by the press reports, and by those reports had received a small part of them by late 2026; they were also turning to home-made chips, for reasons of their own and under American curbs; and whether Beijing meant its acts as lasting policy, as leverage in trade talks or as protection of its home market is read all three ways.
+**12.** **The sentence that survives (2 of 2).** other parts of the state welcomed Nvidia and, by the reports, approved some purchases; the companies went on ordering Nvidia chips, in the millions by Reuters's reports, and the Financial Times reported in August 2026 that some H200s had been received, each outlet citing people it did not name; they were also turning to home-made chips, for reasons of their own and under American curbs; and whether Beijing meant its acts as lasting policy, as leverage in trade talks or as protection of its home market is read all three ways.
 
 - From the project's referenced argument, section 6. The welcomes are on the record. The approvals and the orders are Reuters reports citing unnamed people. The Financial Times reported receipts, citing people it did not name, as Reuters relayed it on Aug 18, 2026 [39].
 
@@ -136,9 +136,9 @@ Each entry: its kind; what it is; the saved page's own title where the record ho
 
 [30] Press report citing unnamed people. Bloomberg, as carried by The Business Times (Singapore), Sept 28, 2024: report, from people it does not name, that Chinese regulators were discouraging companies from buying Nvidia's H20 chips. Page title: China urges local companies to stay away from Nvidia’s chips. https://www.businesstimes.com.sg/companies-markets/china-urges-local-companies-stay-away-nvidias-chips Saved copy: cn-factions-bloomberg-flexibility-202409-relay1
 
-[31] Company filing or statement. Nvidia, annual report on Form 10-K for the fiscal year ended Jan 25, 2026, filed with the US Securities and Exchange Commission. https://www.sec.gov/Archives/edgar/data/1045810/000104581026000021/nvda-20260125.htm Saved copy: man-ms-sec-10k-fy2026
+[31] Press report of words spoken on the record. Reuters, Jul 14, 2026, as carried by Investing.com, reporting the testimony of Jeffrey Kessler, under secretary of commerce for industry and security, to the House Foreign Affairs Committee. https://www.investing.com/news/stock-market-news/us-official-says-shipments-of-h200-chips-to-china-have-begun-4791235 Saved copy: man-a7d2f1a9f963
 
-[32] Press report of words spoken on the record. Reuters, Jul 14, 2026, as carried by Investing.com, reporting the testimony of Jeffrey Kessler, under secretary of commerce for industry and security, to the House Foreign Affairs Committee. https://www.investing.com/news/stock-market-news/us-official-says-shipments-of-h200-chips-to-china-have-begun-4791235 Saved copy: man-a7d2f1a9f963
+[32] Company filing or statement. Nvidia, annual report on Form 10-K for the fiscal year ended Jan 25, 2026, filed with the US Securities and Exchange Commission. https://www.sec.gov/Archives/edgar/data/1045810/000104581026000021/nvda-20260125.htm Saved copy: man-ms-sec-10k-fy2026
 
 [33] Company filing or statement. Nvidia, results call for the third quarter of its fiscal year 2027 (the quarter ended Oct 25, 2026): the transcript on Nvidia's investor file host (s201.q4cdn.com). https://s201.q4cdn.com/141608511/files/content_files/NVDA-3Q27-Earnings-Transcript.pdf Saved copy: cn-o38-nvda-q3fy27-call-transcript-pdf
 

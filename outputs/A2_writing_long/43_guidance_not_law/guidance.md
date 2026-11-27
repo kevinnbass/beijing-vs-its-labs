@@ -2,7 +2,7 @@
 
 *How Beijing pressed China's AI companies away from Nvidia's chips, though no published order was found, shown on this one case.*
 
-Draft by Claude, Anthropic's model. Written Nov 23, 2026 (UTC); revised Nov 26, 2026.
+Draft by Claude, Anthropic's model. Written Nov 23, 2026 (UTC); revised Nov 27, 2026.
 
 How to read it. Words between quotation marks are a source's exact words, found in the saved copy by a script. A filled reference number is a document, a filing, a named person on the record, a published commentary, report or statement of state media, an industry body or a research institute, an institution's own notice, or a named outlet's account of a document. An open number is a press report citing unnamed people, a research firm's, broker's or research group's count, or captions and machine transcripts nobody has checked by ear. English in round brackets after Chinese is our rendering, not an official translation.
 
@@ -18,7 +18,7 @@ Bloomberg, Sept 27, 2024 (carried by The Business Times on Sept 28, Singapore ti
 
 **2. In public, state media warned, mostly from Jul 31 to Sept 24, 2025** (on the record)
 
-Of 297 state and Party media items on Nvidia and its chips found from July 2025 to November 2026, 34 only warn about the chips, and 23 of those date from Jul 31 to Sept 24, 2025 [5] [6] [7]. Another 6 warnings date from Dec 9, 2025 to Jan 14, 2026, in coverage of the US easing for the H200 [8]. Searches and a scan of saved pages found the items after Sept 24, 2025. That later list is a sample of what these outlets printed. One of the 2025 items, posted on Aug 10, 2025 by an account of the state broadcaster, said of the H20: "作为消费者，我们当然可以选择，不买" (as consumers we can of course choose not to buy) [9] [10]. The broadcaster's account urges buyers to choose. The published texts examined here give that warning without ordering buyers to stop.
+Of 297 state and Party media items on Nvidia and its chips found from July 2025 to November 2026, 34 only warn (33 of them about the chips for AI computing; one, a report of a forum, about home-made software and hardware at large), and 23 of the 34 date from Jul 31 to Sept 24, 2025 [5] [6] [7]. Another 6 warnings date from Dec 9, 2025 to Jan 14, 2026, in coverage of the US easing for the H200 [8]. Searches and a scan of saved pages found the items after Sept 24, 2025. That later list is a sample of what these outlets printed. One of the 2025 items, posted on Aug 10, 2025 by an account of the state broadcaster, said of the H20: "作为消费者，我们当然可以选择，不买" (as consumers we can of course choose not to buy) [9] [10]. The broadcaster's account urges buyers to choose. The published texts examined here give that warning without ordering buyers to stop.
 
 **3. Two published texts tell buyers to stop; neither is about Nvidia** (on the record)
 
@@ -82,11 +82,11 @@ Each entry: its kind; what it is; the saved page's own title where the record ho
 
 [19] Chinese state document. Anhui Suzhou High-tech Zone management committee, reply to proposal No. 064 of the third session of the city's sixth political consultative conference, Aug 1, 2024, on the city government's site. Page title: 关于宿州市政协六届三次会议第064号提案的答复_宿州市人民政府. https://gxq.ahsz.gov.cn/public/2655679/195073071.html Saved copy: cn-ga31-cnpress2ap3-23
 
-[20] Press report citing unnamed people. Zhongyuan Securities, Mar 6, 2024: industry report on artificial intelligence, on the science ministry's guide for public computing platforms. https://pdf.dfcfw.com/pdf/H3_AP202403071625925365_1.pdf Saved copy: cn-ga31-b16pguide-6
+[20] A named outlet's account of a document, filing or official act. Zhongyuan Securities, Mar 6, 2024: industry report on artificial intelligence, on the science ministry's guide for public computing platforms. https://pdf.dfcfw.com/pdf/H3_AP202403071625925365_1.pdf Saved copy: cn-ga31-b16pguide-6
 
-[21] Press report citing unnamed people. Orient Securities, Apr 8, 2023: report on the computing industry and intelligent computing. https://pdf.dfcfw.com/pdf/H3_AP202304101585247965_1.pdf Saved copy: cn-ga31-b16pguide-1
+[21] A named outlet's account of a document, filing or official act. Orient Securities, Apr 8, 2023: report on the computing industry and intelligent computing. https://pdf.dfcfw.com/pdf/H3_AP202304101585247965_1.pdf Saved copy: cn-ga31-b16pguide-1
 
-[22] Press report citing unnamed people. IT Times, Aug 18, 2023: on prices of Nvidia chips in China and home-made substitutes, as Sohu carries it. Page title: 英伟达芯片两天涨1万元 疯炒之下急需国产替代. https://www.sohu.com/a/712997256_110683 Saved copy: cn-ga31-b16pguide-48
+[22] A named outlet's account of a document, filing or official act. IT Times, Aug 18, 2023: on prices of Nvidia chips in China and home-made substitutes, as Sohu carries it. Page title: 英伟达芯片两天涨1万元 疯炒之下急需国产替代. https://www.sohu.com/a/712997256_110683 Saved copy: cn-ga31-b16pguide-48
 
 [23] Chinese state document. General Office of the State Council, notice on a home-made product standard in government purchasing, dated Sept 28, 2025. Text on the finance ministry's site. Page title: 国务院办公厅关于在政府采购中实施本国产品标准及相关政策的通知. https://www.mof.gov.cn/zhengwuxinxi/caizhengxinwen/202509/t20250930_3973725.htm Saved copy: cn-policy-domestic-product-standard-2025
 
@@ -108,4 +108,4 @@ Each entry: its kind; what it is; the saved page's own title where the record ho
 
 [32] Company filing or statement. Nvidia, quarterly report on Form 10-Q for the quarter ended Oct 26, 2025, filed with the US Securities and Exchange Commission; signed Nov 19, 2025. https://www.sec.gov/Archives/edgar/data/1045810/000104581025000230/nvda-20251026.htm Saved copy: man-ms-sec-10q-2025-10
 
-Build check: 14 quotations, and 59 passages that back statements made without quoting, were looked for in the saved copies of 32 sources and all were found; a made-up quotation, put in as a test, was not found. 23 sources are documents, filings or named people on the record, or published commentaries, reports or statements of state media, industry bodies or research institutes, institutions' own notices and named outlets' accounts of documents; 9 are press reports citing unnamed people, counts or machine transcripts. A quotation that is found shows what the source says, not that it is true.
+Build check: 14 quotations, and 60 passages that back statements made without quoting, were looked for in the saved copies of 32 sources and all were found; a made-up quotation, put in as a test, was not found. 26 sources are documents, filings or named people on the record, or published commentaries, reports or statements of state media, industry bodies or research institutes, institutions' own notices and named outlets' accounts of documents; 6 are press reports citing unnamed people, counts or machine transcripts. A quotation that is found shows what the source says, not that it is true.

@@ -258,15 +258,25 @@ def funnel(Q, card=False):
 
 
 # ---------- shared wording and the state-media count ----------
-THIRD_LIMIT = 'some purchases were reported approved, and Nvidia reported licensed sales'
-FIFTH_LIMIT = ('whether Beijing meant its acts as lasting policy, as leverage in trade talks or as protection of '
-               'its home market is read all three ways')
-
-
 def argument_limits():
     argument = (PROJ / 'argument' / 'argument_base.txt').read_text(encoding='utf-8')
-    assert f'19. **{THIRD_LIMIT[0].upper() + THIRD_LIMIT[1:]}.**' in argument, 'the third limit must match point 19'
-    assert FIFTH_LIMIT in argument, 'the fifth limit must match the argument’s closing words'
+    answer = re.search(r'^\*\*The answer\.\*\* (.+)$', argument, re.M)
+    assert answer, 'the argument’s answer is missing'
+    third = re.search(r'\bThird, (.+?) \(point 19\)\.', answer[1])
+    assert third and third[1] == (
+        "Nvidia's own filings report licensed sales to China, and Reuters reported, citing people it did not name, "
+        "that some purchases were approved"
+    ), 'the third limit must give Nvidia’s filing and attribute the approvals to Reuters and its unnamed sources'
+    assert '19. **Some purchases were reported approved, and Nvidia reported licensed sales.**' in argument, 'the third limit must match point 19'
+    assert 'The direction of the policy stands under each of the three readings of what Beijing meant by it (point 21).' in answer[1], 'the answer must name three readings'
+    fifth = re.search(r'^\*\*One sentence that survives all five limits\.\*\* .*; and (.+)\.$', argument, re.M)
+    assert fifth and fifth[1] == (
+        'whether Beijing meant its acts as lasting policy, as leverage in trade talks or as protection of '
+        'its home market is read all three ways'
+    ), 'the fifth limit must match the argument’s closing words'
+    policy_search = re.search(r'^18\. \*\*[^\n]+?\*\* (No published Chinese order against buying Nvidia chips was found in the (\d+) policy pages read\.)', argument, re.M)
+    assert policy_search, 'point 18 must give the scope of the published-policy search'
+    return curly(third[1]), fifth[1], policy_search[1], int(policy_search[2])
 
 
 def figure_headline():
@@ -300,6 +310,9 @@ def warnings():
     warns = sorted(day for day, row in dated if row['stance'] == 'warns')
     warning_subjects = Counter(row['subject'] for _, row in dated if row['stance'] == 'warns')
     assert warning_subjects == {'chips for AI computing': 33, 'other': 1}, warning_subjects
+    other_warnings = [(day, row['saved_id']) for day, row in dated
+                      if row['stance'] == 'warns' and row['subject'] == 'other']
+    assert other_warnings == [(date(2025, 9, 24), 'cn-media-stdaily-security-forum')], other_warnings
     burst_start, burst_end = date(2025, 7, 31), date(2025, 9, 24)
     h200_start, h200_end = date(2025, 12, 9), date(2026, 1, 14)
     burst = [day for day in warns if burst_start <= day <= burst_end]
@@ -321,7 +334,8 @@ def warnings():
     assert sum(day > date(2025, 9, 30) and row['stance'] == 'mixed' for day, row in dated) == 10
     first, last = min(day for day, _ in dated), max(day for day, _ in dated)
     assert first.strftime('%Y-%m') == '2025-07' and last.strftime('%Y-%m') == '2026-11', (first, last)
-    return {'items': len(rows), 'warn': len(warns), 'burst': len(burst), 'h200': len(h200),
+    return {'items': len(rows), 'warn': len(warns), 'warn_ai': warning_subjects['chips for AI computing'],
+            'burst': len(burst), 'h200': len(h200),
             'before': before, 'later': later,
             'span': f'{MON[burst_start.month - 1]} {burst_start.day} to {fmt(burst_end)}',
             'h200span': f'{fmt(h200_start)} to {fmt(h200_end)}', 'cutoff': fmt(burst_end),

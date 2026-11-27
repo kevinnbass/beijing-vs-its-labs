@@ -30,6 +30,7 @@ MIRRORS = {
 }
 CJK = re.compile(r'[぀-ヿ一-鿿]')
 FIELDS = ('D', 'T', 'S', 'Z', 'C', 'CP', 'A', 'ET', 'ES', 'EA', 'EC')
+LOCAL_BODY_MARKS = set()
 
 HEAD_CHANGES = [  # in the core template's head: (the core's text, the Chinese page's text); each must occur exactly once
     ('<html lang="en">', '<html lang="zh-Hans">'),
@@ -175,9 +176,12 @@ def main():
         assert h.count(a) == 1, f'the core template\'s head no longer has exactly one: {a[:70]}'
         h = h.replace(a, b)
     body = (F / 'template_body_zh.txt').read_text(encoding='utf-8')
-    marks = lambda s: sorted(set(re.findall(r'%%[A-Z_0-9]+(?::[a-z0-9-]+)?%%', s)))
-    if marks(t[cut:]) != marks(body):
-        sys.exit(f'the placeholders of the Chinese body are not the core template\'s: only core {sorted(set(marks(t[cut:])) - set(marks(body)))}, only Chinese {sorted(set(marks(body)) - set(marks(t[cut:])))}')
+    marks = lambda s: set(re.findall(r'%%[A-Z_0-9]+(?::[a-z0-9-]+)?%%', s))
+    expected_marks = marks(t[cut:]) | LOCAL_BODY_MARKS
+    body_marks = marks(body)
+    if expected_marks != body_marks:
+        sys.exit(f'Chinese body placeholders disagree with the core and local additions: '
+                 f'missing {sorted(expected_marks - body_marks)}, unexpected {sorted(body_marks - expected_marks)}')
     for name in stale:
         (EN / name).write_bytes(english[name])
         print(f'english_originals/{name}: refreshed from {MIRRORS[name]}')
@@ -187,7 +191,7 @@ def main():
     n = sum(1 for k, _ in core if k == 'block')
     print(f'figure_data.txt written: {n} records ({sum(1 for k in zh if "Z" in zh[k])} with a Z line), {sum(1 for k, b in core if k == "raw" and b.startswith("! "))} check lines of the core, {len(extra)} added')
     (F / 'template.html').write_text(h + body, encoding='utf-8')
-    print(f'template.html written: the core\'s head with {len(HEAD_CHANGES)} changes, the Chinese body with {len(marks(body))} kinds of placeholder (the same as the core\'s)')
+    print(f'template.html written: the core\'s head with {len(HEAD_CHANGES)} changes, the Chinese body with {len(body_marks)} kinds of placeholder (the same as the core\'s)')
 
 
 main()

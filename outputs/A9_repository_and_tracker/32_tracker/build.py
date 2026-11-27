@@ -506,7 +506,7 @@ PAGE = """<!doctype html>
 <header>
  <p class="eyebrow">China · Nvidia chips · the dated record, kept up to date</p>
  <h1>Beijing pushed for home-made chips. China’s AI companies still sought Nvidia.</h1>
- <p class="deck">%%N%% dated records of what Chinese authorities did about Nvidia’s chips and what China’s big AI companies did, newest first, under the state of play and a dated log. Some purchases were reported approved, by press reports citing people they did not name, and Nvidia’s own filings report licensed sales to China. The companies also bought and used home-made chips.</p>
+ <p class="deck">%%N%% dated records of what Chinese authorities did about Nvidia’s chips and what China’s big AI companies did, newest first, under the state of play and a dated log. Nvidia’s own filings report licensed sales to China, and Reuters reported, citing people it did not name, that some purchases were approved. The companies also bought and used home-made chips.</p>
  <p class="note">Draft by Claude, Anthropic’s model. Last entry in the log: %%LAST%%.</p>
  <ul class="key">
   <li><i class="m away solid"></i><span><b>Orange, away from Nvidia:</b> holding it back, or choosing home-made chips. %%N_AWAY%% records</span></li>

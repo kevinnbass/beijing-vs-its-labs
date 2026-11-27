@@ -373,7 +373,11 @@ def house_table():
 def state_media():
     """Count the warnings in the same date windows as argument points 4 and 18."""
     rows = tsv('state_media_items.tsv')
-    warns = sorted((date.fromisoformat(r['date']), r['saved_id'], r['outlet']) for r in rows if r['stance'] == 'warns')
+    warning_rows = [r for r in rows if r['stance'] == 'warns']
+    forum, = (r for r in warning_rows if r['subject'] != 'chips for AI computing')
+    assert forum['saved_id'] == 'cn-media-stdaily-security-forum' and forum['subject'] == 'other', forum
+    chips = sum(r['subject'] == 'chips for AI computing' for r in warning_rows)
+    warns = sorted((date.fromisoformat(r['date']), r['saved_id'], r['outlet']) for r in warning_rows)
     start, end = date(2025, 7, 31), date(2025, 9, 24)
     h200_start, h200_end = date(2025, 12, 9), date(2026, 1, 14)
     burst = [w for w in warns if start <= w[0] <= end]
@@ -384,7 +388,7 @@ def state_media():
     assert burst and (burst[0][0], burst[-1][0]) == (start, end), burst
     assert h200 and (h200[0][0], h200[-1][0]) == (h200_start, h200_end), h200
     assert last and all(d.year == 2026 and outlet.startswith('Global Times') for d, _, outlet in last), last
-    return dict(n=len(rows), warns=len(warns), burst=burst, h200=h200, outside=outside, last=last)
+    return dict(n=len(rows), warns=len(warns), chips=chips, burst=burst, h200=h200, outside=outside, last=last)
 
 
 CSS = """
