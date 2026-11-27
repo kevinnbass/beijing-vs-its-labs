@@ -1,5 +1,5 @@
 {
- "made_utc": "2026-11-27T15:49:33Z",
+ "made_utc": "2026-11-27T18:51:42Z",
  "note": "sha256 of each image's inputs (the figure page, its tagged page, PNG and JPG) and of the page image; a later build lends what has not changed",
  "images": [
   {
@@ -94,12 +94,12 @@
    "stem": "bvl-04-who-is-bound",
    "position": 9,
    "page": "09_figure-04_who-is-bound.html",
-   "html": "4b0de1730c4c37a39e117d594185535b9cecf438477064dd712988ca1d2e71a4",
-   "nav": "fad9b4ae0c31072e0cc509afd894d3a3bc505a4fb1195244ce359bcbbf78a969",
-   "png": "1000b6890a98321c6aa9d27fc049d53c55aa3c44feb365ef3086d561d46b0505",
-   "jpg": "6721d4ae619f2105e42131964de5a20a08b8c78845dbf1c35c2cf69684ff2b1c",
+   "html": "1fa50ab3e888076de83b3b01b11147a95179b40b9b72f6ecf30c1771d7b4c8a9",
+   "nav": "32ae9bb708ed589c9091252f07d42be33048b8cbdf850fb9fef5e63e03403e98",
+   "png": "e7262119082ace8167520ab8003eeb122379185ef514de5f78591dc033749931",
+   "jpg": "fb64c74b6b72874669ff856791099aa208a680dcf508379333a1a4adfd6bae96",
    "geom": "g1",
-   "display": "0c323f67285489f9715829f646c17f7ced6c633e9fa5d1ae0a8874ecd2f8f35d"
+   "display": "f9532a2760c11858c3c966edbb9ec264f3f09cddb61ae298c91cb31e80ec9179"
   },
   {
    "stem": "bvl-20-tenders",
