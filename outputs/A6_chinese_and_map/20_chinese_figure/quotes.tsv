@@ -61,6 +61,7 @@ cn-le17-whuf-134391	国行合规RTX PRO 6000D型号，非消费级游戏卡、�
 cn-acts-mofcom-20261117	对中国企业与其他国家企业正常贸易合作横加干涉
 cn-le26-iflytek-ir-20260821	其他模型厂商普遍使用性能领先两代的英伟达芯片
 cn-o36-tencent-call-20261118-sa	no matter when you actually started leasing or building capacities outside of China
+cn-us-lutnick-0422-rev-transcript-b	my understanding is their cloud companies want to buy these chips
 cn-clips-reuters-hongkong-yahoo	Nov 5 (Reuters) - About 600,000 of Nvidia's
 cn-acts-reuters-ti-cap-20260708-relay1	they may soon receive permission to buy some H200 chips
 cn-acts-reuters-ti-cap-20260708-relay1	it could amount to fewer than 200,000 in total
@@ -482,6 +483,34 @@ cn-ga31-voucher5-sip-2025-37hao	本措施自印发之日起施行，有效期三
 cn-ga31-voucher5-sip-2025-37hao	苏州工业园区管理委员会2025年11月12日
 cn-ga31-voucher5-zhongkai-plan-wayback	本方案自印发之日起实施，至2027年12月31日结束
 cn-ga31-voucher5-zhongkai-plan-wayback	仲恺高新区党工委管委会综合办公室 2026年4月1日
+cn-ga31-replies-11	算力类型涵盖国产化算力（华为昇腾、海光、寒武纪等）与主流算力（NVIDIA）
+cn-ga31-carrierownp3-23	NVIDIA GPU / 昇腾 NPU 异构算力
+cn-ga31-operatorsp2-41	PN8I型云主机采用NVIDIA L20 GPU
+cn-ga31-dcstateeast-8	支持企业采用国产化算力建设超大规模智算中心，在项目用地、绿电、能耗指标等方面给予保障
+cn-ga31-cnpress2ap3-23	基于自主研发芯片的算力标称值占全部系统算力标称值的比值应不低于60%
+cn-ga31-cnpress2ap3-23	发布机构： 安徽宿州高新技术产业开发区管委会
+cn-ga31-msspostsp2-38	不应提供远程关闭、定位和与未声明的通信实体交互数据等功能
+cn-ga31-msspostsp2-38	全国网络安全标准化技术委员会秘书处
+cn-le27-ndrc-presser-20260618-json	2026-06-18 10:03:03
+cn-ga31-mediabase-4	对H20芯片的过度依赖，会使中国人工智能产业在全球竞争中陷入被动局面
+cn-ga31-mediabase-4	2025-03-13 11:08:34 来源： 人民邮电报
+cn-ga31-smdailiesp3-49	Relying on deliberately constrained fourth-best chips is a dangerous trap.
+cn-ga31-smdailies-1	Tu noted that such security concerns about Nvidia chips were not unfounded.
+cn-ga31-smcctvp3-2	美国允许对华出口英伟达H200高端算力芯片
+cn-ga31-smdailiesp3-5	美国放宽H200芯片出口中国管制
+cn-tolerate-ftaug26	ByteDance and Tencent have each received about 10,000 H200 processors in recent weeks
+cn-tolerate-ftaug26	according to two people with knowledge of the matter.
+cn-tolerate-ftaug26	have told companies that they can ship such processors to Hong Kong, which operates as a territory outside its customs border, and use them there.
+cn-tolerate-ftaug26	2026-08-19T02:09:39
+cn-clips-evidence-1	Several major Chinese internet companies have each obtained about 10,000 H200 chips in the past few months, one of the people said.
+cn-clips-evidence-1	The size of the stockpile of H200 chips
+cn-tolerate-ft-offshore	according to two people with direct knowledge of the matter
+cn-ga31-voucherrulesmissingp3-7	以智能算力、超级算力服务合同额一定比例给予智算券补贴，其中，自主信创智算补贴比例 25%, 其他智算补贴比例 20%
+cn-ga31-voucherrulesmissingp3-7	本办法自发布之日起实施，有效期至2027年12月31日
+cn-ga31-voucherrulesmissingp3-7	/202403/t20240312_164480.html
+cn-ga31-vcitynorthp3-27	每年发放总额不超过1000万元的“算力券”，对符合条件的申领主体，经评审，按照不超过算力服务合同金额的20%，给予最高100万元奖励
+cn-ga31-vcitynorthp3-27	本措施自公布之日起施行，有效期至2027年12月31日
+cn-ga31-vcitynorthp3-27	2025-06-04T09:51:56
 cn-us-lutnick-0422-rev-transcript-b	So that's my understanding of what's happening
 cn-acts-reuters-us-approvals-20260514-wayback	The shift in China was partly triggered by changes on the U.S. side
 man-70f4668d5f56	Nvidia has won Beijing's approval

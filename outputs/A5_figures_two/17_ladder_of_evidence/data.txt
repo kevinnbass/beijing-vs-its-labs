@@ -134,6 +134,8 @@ D PUBLISHED: 2026-04-01
 ! cn-o38-nvda-q1fy27-call-transcript-pdf | we have yet to generate any revenue, and we are uncertain whether any imports will be allowed into the country
 ! cn-o38-nvda-q1fy27-call-transcript-pdf | All our statements are made as of today, May 20, 2026
 ! cn-o38-nvda-q3fy27-call-transcript-pdf | Q3 sales of licensed Hopper Data Center products to China was $2.4 billion
+! cn-us-lutnick-0422-rev-transcript-b | my understanding is their cloud companies want to buy these chips
+! cn-us-lutnick-0422-rev-transcript-b | Chinese central government has not let them as of yet buy the chips because they're trying to keep their investment focused on their own domestic industry
 # rung 4: a US official's testimony, as Reuters reports it
 ! man-a7d2f1a9f963 | There have been minimal exports of any H200s to China so far
 # rung 2: Alibaba's own chips
@@ -141,9 +143,19 @@ D PUBLISHED: 2026-04-01
 # rung 2 (round 9): the universities' notices, from the fewest cards to the most servers; the award of April 2025 and its tender
 ! cn-ga13-nwpu-som-88690-wayback | NVIDIA H200 141G PCIe显卡2片
 ! cn-ga31-unsaved3-noticecopies4-www | 6~8 台英伟达 H20 八卡 GPU 服务器
+! cn-ga31-unsaved3-noticecopies4-www | 本次公开的采购意向是本单位政府采购工作的初步安排
 ! cn-ga31-h20notices-7 | 1*NVIDIA HGX H20 8-GPU SXM 96GB 500W GPUs模组
 ! cn-ga31-h20notices-7 | 中央国家机关政府采购中心
 ! cn-ga31-h20notices-19 | 是否允许进口产品
 ! cn-ga31-carrierown-14 | 包括NV RTX 3090 GPU*1
 ! cn-ga31-carrierown-14 | 包括NV RTX 4090 GPU*1
 ! cn-ga31-carrierown-14 | 包括NV Tesla A100 GPU*1
+! cn-ga31-carrierown-14 | 本招标公告同时在中国联通采购与招标网
+! cn-ga31-carrierown-14 | 2024年9月23日
+! cn-ga31-carrierownp3-23 | 联通深圳公司福田区智能算力服务采购项目（软件服务）（第二次）
+
+# Exact words quoted in four reference labels (English glosses sit beside the Chinese).
+! cn-ga09-sina-tencent-q1call-hk-20260514 | 腾讯高管释放了更多信息
+! cn-ga10-reuters-idc-20260401-yahoo1 | Corrects to clarify attribution
+! cn-ga31-importcat-43 | 外其他国家和地区（以下简称境外）之间（即“一线”）执行的现行
+! cn-tolerate-ifp | Chinese regulators are reportedly reviewing whether this demand is necessary

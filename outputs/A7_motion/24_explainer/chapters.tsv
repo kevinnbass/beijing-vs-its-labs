@@ -2,7 +2,7 @@
 # Columns: chapter <TAB> role <TAB> row <TAB> saved id
 #   role "new":   the mark appears for the first time in this chapter. Every one of the records must be "new" exactly once.
 #   role "again": the mark was shown in an earlier chapter and is lit again here.
-#   row: BH Beijing holds Nvidia back | BL Beijing lets Nvidia in | CN companies reach for Nvidia | CH companies turn to home-made chips
+#   row: BH Beijing holds Nvidia back | BL Beijing is more open to Nvidia | CN companies reach for Nvidia | CH companies turn to home-made chips
 #   saved id: an id of figure/figure_data.txt, or, with "new", "*" = every mark of that row not named as new anywhere else,
 #             "*solid" = the same, filled marks only, "*press" = the same, open marks only; with "again", "*" = the whole row.
 # The last chapter (the second part of the sentence that survives) lights every mark again; it needs no lines here.
@@ -49,7 +49,7 @@
 
 # Round 10 (Nov 25, 2026): record 23 (Reuters, Jan 30, 2026) is cited from its open copy on Yahoo Finance, as the core now cites it.
 
-# 8. Limit 3, approvals and arrivals: the rest of the row "Beijing lets Nvidia in"
+# 8. Limit 3, reported approvals and Nvidia’s reported licensed sales: the rest of the row "Beijing is more open to Nvidia"
 #    Since core edit 7 (Nov 25, 2026) the "*" line below also brings on record 62 (the press report of Sept 27, 2026 on the RTX PRO 5500)
 8	again	BL	ms-bj-20260128-h200-nod-standard
 8	new	BL	*

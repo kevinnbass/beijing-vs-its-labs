@@ -1,15 +1,19 @@
 # Every source line and every transcript line the video shows (saved id <TAB> exact words), for scripts/cn_has.py.
 # Written by build.py from bands.txt, the first speech pass and (one line of the upper band) the text of the post; do not edit.
 # clip-luckey is the machine transcript.
+cn-ga31-sv1-reuters-deepseek-yahoo	two people familiar with the matter told Reuters
+cn-ga31-sv1-reuters-deepseek-yahoo	China's industry and commerce ministries have granted approvals for all four companies
+man-ms-sec-10q-2026-07	we have made a fraction of the allowed shipments under the USG’s H200 licensing program
 man-ms-sec-10q-2025-10	restricted customers from purchasing, importing, or using our data center products
 man-ms-sec-10q-2025-10	For the quarterly period ended October 26, 2025
 man-ms-sec-10q-2025-10	November 19, 2025
 cn-us-lutnick-0422-rev-transcript-b	my understanding is their cloud companies want to buy these chips
 cn-clips-evidence-1	About 600,000 of Nvidia's advanced artificial intelligence chips are stored in Hong Kong awaiting shipment to China
 cn-clips-evidence-1	two people familiar with the matter said
+cn-clips-evidence-1	The size of the stockpile of H200 chips
 cn-clips-evidence-1	withholds approval for large-scale imports
-cn-us-lutnick-0422-rev-transcript-b	because they're trying to keep their investment focused on their own domestic industry
-cn-us-lutnick-0422-rev-transcript-b	Chinese central government has not let them as of yet buy the chips
+cn-us-lutnick-0422-rev-transcript-b	my understanding is their cloud companies want to buy these chips
+cn-us-lutnick-0422-rev-transcript-b	Chinese central government has not let them as of yet buy the chips because they're trying to keep their investment focused on their own domestic industry
 cn-us-lutnick-0422-rev-transcript-b	So that's my understanding of what's happening
 cn-usdocs-hfac-decisions-20261119	Approved, not shipped
 cn-labs-us-chip-licences-20261119	November 19, 2026
@@ -18,6 +22,7 @@ cn-usdocs-hfac-summary-20261119	BIS approved the export, re-export, or transfer 
 cn-usdocs-hfac-summary-20261119	Covered integrated circuits are the following products: NVIDIA's H200 and AMD's MI325X.
 cn-ga31-sv1-reuters-deepseek-yahoo	China's industry and commerce ministries have granted approvals for all four companies
 cn-ga31-sv1-reuters-deepseek-yahoo	SINGAPORE, Jan 30 (Reuters)
+cn-ga31-sv1-reuters-deepseek-yahoo	two people familiar with the matter told Reuters
 clip-luckey	There's a lot of people who hear that and they say,
 clip-luckey	it's like the mid-wit take, they say,
 clip-luckey	but Palmer, NVIDIA is the one that was helping China.

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Build Luckey's 56 seconds with the sources on screen (idea 23): a local video file with burned-in captions.
 
-Run: python3 -I build.py            (everything)      python3 -I build.py --no-video   (checks and captions.ass only)
+Run: python3 -I build.py   (everything)      python3 -I build.py --no-video   (checks and captions.ass only)
 Reads   ../40_checked_by_ear/compared.json   the first speech pass's words and times, cut into parts (L1 ... L8)
         bands.txt                             the lower band: verdict and source line for each part (hand-written)
         lines.tsv                             where each line of the upper band starts (the words come from the speech pass)
@@ -349,8 +349,11 @@ def main():
     for b in bands: print(f'  band {clock(b["start"])} to {clock(b["end"])} ({b["end"] - b["start"]:.1f} s, {len(MARK.sub("", b["text"]).split())} words, size {b["size"]}, {b["lines"]} lines, {b["gap"]:.0f} px beside the verdict line) {b["part"]}: {b["tag"]}')
     if '--no-video' in sys.argv: return
 
-    load = json.loads(Path('HOME/.local/state/cluster/load_keeper.status.json').read_text()).get('main_run_mean')
-    if load is not None and load >= 32: sys.exit(f'STOPPED before the video: the machine is busy (main_run_mean {load}); run again later')
+    # ROUND14.md waives the shared-host load check only for isolated lane copies.
+    # ROOT comes from the resolved script path, so a flag cannot waive the check on the shared host.
+    if not (ROOT.name == 'work' and ROOT.parent.parent.name == 'lanes'):      # the script's own place: <a lanes folder>/<lane>/work (no machine path is named here)
+        load = json.loads(Path('HOME/.local/state/cluster/load_keeper.status.json').read_text()).get('main_run_mean')
+        if load is not None and load >= 32: sys.exit(f'STOPPED before the video: the machine is busy (main_run_mean {load}); run again later')
     CC.check_edges('luckey', json.loads(DATA.read_text(encoding='utf-8')))   # round 7: the left-out line inside the stretch
     CC.silenced_wav(SRC, *CAPTION_COVER, SOUND_WAV)                        # the clip's sound, the stretch set to zero
     cover = f"drawbox=x={bx}:y={by_}:w={bw}:h={bh}:color={SURFACE_HEX}:t=fill:enable='between(t,{CAPTION_COVER[0]:.2f},{CAPTION_COVER[1]:.2f})',"

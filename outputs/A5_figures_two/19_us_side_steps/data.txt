@@ -23,17 +23,19 @@ D Date: August 26, 2026
 
 @ lutnick doc 2026-04-22 - cn-us-lutnick-0422-rev-transcript-b lane=out dir=neutral
 T the Commerce Secretary, to a Senate subcommittee
-L The Commerce Secretary, asked in the Senate how many H200 chips had been licensed, answers that none has been sold yet. He calls it his understanding. The words are from a commercial transcript. The committee's own page for the hearing offers the video and his prepared remarks, and no transcript.
+L The Commerce Secretary, asked in the Senate how many H200 chips had been licensed, answers that none has been sold yet. He gives both points as his understanding: "my understanding is their cloud companies want to buy these chips" and "Chinese central government has not let them as of yet buy the chips because they're trying to keep their investment focused on their own domestic industry". The words are from a commercial transcript. The committee's own page for the hearing offers the video and his prepared remarks, and no transcript.
 S Commerce Secretary Howard Lutnick, Senate hearing (Rev's transcript)
 Q So we have not sold them chips as of yet.
 Q That's my understanding as I sit here with you today.
+Q my understanding is their cloud companies want to buy these chips
+Q Chinese central government has not let them as of yet buy the chips because they're trying to keep their investment focused on their own domestic industry
 D cn-o37-senate-hearing-page-b | Date: Wednesday, April 22, 2026
 D cn-us-lutnick-0422-coons-letter | on April 22, 2026
 N cn-o37-senate-hearing-page-b | The Honorable Howard Lutnick Secretary, Department of Commerce Download Testimony
 
 @ cleared press 2026-05-14 - cn-acts-reuters-us-approvals-20260514-wayback lane=allowed,out dir=neutral
 T Reuters, from unnamed people
-L Reuters, from unnamed people: the Commerce Department has approved about 10 Chinese companies to buy the H200, each "up to 75,000 chips", and "not a single delivery has been made so far".
+L Reuters, citing three people it did not name, reported that the Commerce Department had approved about 10 Chinese companies to buy the H200 and that "not a single delivery has been made so far". Reuters, citing two of those people, reported a ceiling of "up to 75,000 chips" per approved buyer.
 S Reuters, May 14, 2026, as carried by MarketScreener
 Q The U.S. Commerce Department has approved around 10 Chinese companies including Alibaba, Tencent, ByteDance and JD.com to purchase Nvidia's H200 chips
 Q each approved customer can purchase up to 75,000 chips under the U.S. licensing terms
@@ -41,7 +43,8 @@ Q not a single delivery has been made so far
 D May 14 (Reuters)
 D Published on 05/14/2026
 V firms=10 | has approved around 10 Chinese companies
-V each=75,000 | each approved customer can purchase up to 75,000 chips
+V each=75,000 | each approved customer can purchase up to 75,000 chips under the U.S. licensing terms, two of them said
+N not a single delivery has been made so far, three people familiar with the matter said
 
 @ call1 rec 2026-05-20 - cn-o38-nvda-q1fy27-call-transcript-pdf lane=out dir=neutral
 T Nvidia, on its results call
@@ -60,13 +63,15 @@ D Published Jul 14, 2026
 
 @ ft press 2026-08-18 - cn-tolerate-reutersaug26-relay1-wayback lane=allowed,out dir=neutral
 T the Financial Times, from unnamed people
-L The Financial Times, from unnamed people, as relayed by Reuters: ByteDance and Tencent have each received about 10,000 H200 chips, and the United States "has cleared the companies to purchase up to 100,000 H200 chips each".
-S Reuters, relaying the Financial Times, Aug 18, 2026, as carried by Investing.com
+L The Financial Times, citing two people it did not name, reported that "ByteDance and Tencent have each received about 10,000 H200 processors in recent weeks". The paper also reported, in its account based on the two people it did not name, that the United States had cleared the companies to buy up to 100,000 H200 chips each. Reuters relayed the report.
+S Reuters, relaying the Financial Times report from two people the paper did not name, Aug 18, 2026, as carried by Investing.com
 Q ByteDance and Tencent have each received about 10,000 H200 processors in recent weeks
 Q the U.S. has cleared the companies to purchase up to 100,000 H200 chips each
 D Published Aug 18, 2026
 V got=10,000 | have each received about 10,000 H200 processors
 V each=100,000 | up to 100,000 H200 chips each
+N cn-tolerate-ftaug26 | according to two people with knowledge of the matter
+N cn-tolerate-ftaug26 | While the Chinese groups have been cleared by the US to buy up to 100,000 H200s apiece
 
 @ tenq rec 2026-08-26 Quarter_to_Jul_26,_2026 man-ms-sec-10q-2026-07 lane=out dir=neutral
 T Nvidia's quarterly report, filed Aug 26, 2026
@@ -81,7 +86,7 @@ V dc=89.0 | Data Center revenue was $89.0 billion
 
 @ call rec 2026-11-17 Quarter_to_Oct_25,_2026 cn-o38-nvda-q3fy27-call-transcript-pdf lane=out dir=neutral
 T Nvidia, on its results call of Nov 17, 2026
-L Nvidia says on its results call that its sales of licensed Hopper Data Center products to China in the quarter were $2.4 billion. Its commentary on the quarter gives the same sum, and Data Center revenue of $107.6 billion. Reuters, reporting the call, says the quarter ended Oct 25 and that the Hopper family includes the H200. Nvidia's quarterly report (Form 10-Q) for this quarter was not yet filed when looked for on Nov 23, 2026.
+L Nvidia says on its results call that its sales of licensed Hopper Data Center products to China in the quarter were $2.4 billion. Its commentary on the quarter gives the same sum, and Data Center revenue of $107.6 billion. Reuters, reporting the call, says the quarter ended Oct 25. Nvidia's own board documentation lists the H20 and H200 under Hopper. Nvidia's quarterly report (Form 10-Q) for this quarter did not appear in the SEC's filing index saved on Nov 25, 2026.
 S Nvidia, results call for the quarter ended Oct 25, 2026 (the transcript on its investor site)
 Q Q3 sales of licensed Hopper Data Center products to China was $2.4 billion.
 D All our statements are made as of today, November 17, 2026
@@ -91,6 +96,9 @@ N cn-counter-b17-1 | Shipments of Data Center Hopper products to China during th
 N cn-counter-b17-1 | Data Center revenue for the third quarter was a record $107.6 billion
 N cn-counter-b17-1 | We plan to file our 10-Q in the coming weeks.
 N cn-acts-reuters-halt-20261118-relay2 | The Hopper family includes the H200
+N cn-ga31-flowchipkey-10 | Browse Hopper vGPU types by SKU family
+N cn-ga31-flowchipkey-10 | H200 NVL, H200 SXM5 141 GB
+N cn-ga31-flowchipkey-10 | H20 SXM5 141 GB, H20 SXM5 96 GB
 
 @ stop rec 2026-11-17 Nov_17,_2026 cn-o38-nvda-q3fy27-call-transcript-pdf lane=out dir=neutral
 T the same results call
@@ -126,9 +134,10 @@ N cn-le04-bis-ear-748 | If your original application was returned without action
 ! cn-tolerate-reutersaug26-relay1-wayback | have been allowed to enter mainland China
 # the question the Commerce Secretary was asked
 ! cn-us-lutnick-0422-rev-transcript-b | Can you tell us how many H200s have been licensed for export
-# why so little went out (note under the figure; the Chinese side is the subject of the other figures)
+# The filing and the Commerce Secretary’s words, quoted in the note and the April step.
+! cn-us-lutnick-0422-rev-transcript-b | my understanding is their cloud companies want to buy these chips
 ! man-ms-sec-10q-2026-07 | such sales were restricted by the PRC government
-! cn-us-lutnick-0422-rev-transcript-b | Chinese central government has not let them as of yet buy the chips
+! cn-us-lutnick-0422-rev-transcript-b | Chinese central government has not let them as of yet buy the chips because they're trying to keep their investment focused on their own domestic industry
 # what BIS is (the note under the figure)
 ! cn-clips-corroboration-1 | the U.S. Commerce Department's Bureau of Industry and Security (BIS)
 # what the H200 is (note under the figure)

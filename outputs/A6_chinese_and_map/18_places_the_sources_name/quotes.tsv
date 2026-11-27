@@ -7,6 +7,7 @@ cn-clips-evidence-1	The size of the stockpile of H200 chips
 cn-clips-reuters-hongkong-yahoo	Nov 5 (Reuters) - About 600,000 of Nvidia's
 # record 2: Southeast Asia
 cn-tolerate-ft-offshore	Alibaba and ByteDance are among the tech groups training their latest large language models (LLMs) in data centres across Southeast Asia, according to two people with direct knowledge of the matter
+cn-tolerate-ft-offshore	to access Nvidia's chips
 cn-tolerate-ft-offshore	Data centre clusters have boomed in Singapore and Malaysia, fuelled by Chinese demand
 cn-tolerate-ft-offshore	Many of these data centres are equipped with high-end Nvidia products
 cn-tolerate-ft-offshore	Chinese companies typically sign a lease agreement to use overseas data centres owned and operated by non-Chinese entities
@@ -59,7 +60,6 @@ cn-usdocs-hfac-summary-20261119	According to a BIS summary provided to the House
 cn-usdocs-hfac-summary-20261119	House Foreign Affairs Committee ECRA Disclosure | 11.19.2026
 # record 6: Jiangsu
 cn-tolerate-projects-relay1	In eastern Jiangsu province, the Wuxi municipal government said in March 2025 that a computing cluster using Nvidia H800 processors had entered operation.
-cn-tolerate-projects-relay1	Other Chinese facilities are already using restricted Nvidia hardware.
 # record 7: Xinjiang and Qinghai
 cn-acts-bloomberg-projects-th-20250711	China plans 39 AI data centers with 115,000 restricted Nvidia Hopper GPUs
 cn-acts-bloomberg-projects-th-20250711	mostly in Xinjiang and Qinghai
@@ -84,10 +84,10 @@ cn-clips-corroboration-1	remote computing arrangements involving data centers in
 cn-clips-corroboration-1	FOR IMMEDIATE RELEASE | November 16, 2026
 cn-clips-evidence-1	Several major Chinese internet companies have each obtained about 10,000 H200 chips in the past few months, one of the people said
 cn-clips-evidence-1	China has allowed some of the chips to enter the country in recent months, three people familiar with the matter said
-cn-tolerate-projects-relay1	Other Chinese facilities are already using restricted Nvidia hardware.
-cn-tolerate-projects-relay1	In Fujian, Shanghai-listed Damingcheng disclosed in June that a computing venture had built an H800 cluster.
-cn-tolerate-projects-relay1	It had signed a computing-services agreement originally worth 759 million yuan, although the contract ended early.
-cn-tolerate-projects-relay1	Shenzhen University awarded a contract for three H100 processors in September, while US-blacklisted Northwestern Polytechnical University bought two H200 chips the following month
+cn-le08-damingcheng-auditor-reply-20260627	该项投资采用H800 GPU训练服务器作为核心计算节点
+cn-le08-damingcheng-auditor-reply-20260627	《先进计算技术服务项目合同》实际于 2026 年 1 月 31 日终止
+cn-ga13-nwpu-som-88690-wayback	发布时间：2026-10-21
+cn-ga13-nwpu-som-88690-wayback	NVIDIA H200 141G PCIe显卡2片
 cn-usdocs-hfac-summary-20261119	NVIDIA’s H200 and AMD’s MI325X
 cn-tolerate-reutersaug26-relay1-wayback	Hong Kong, which operates outside mainland China's customs border
 # where each date shown was read

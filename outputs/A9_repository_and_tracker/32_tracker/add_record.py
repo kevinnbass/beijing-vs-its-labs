@@ -11,10 +11,15 @@ Optional:
   --date-not-in-page '<reason>'                 needed when the date is not written in the saved page, or with --label
   --dir DIR                                     work on another copy of the tracker (DIR/data/...), for a trial
 
-  --row   BH Beijing holds Nvidia back | BL Beijing lets Nvidia in | CN the companies reach for Nvidia |
+  --row   BH Beijing holds Nvidia back | BL Beijing is more open to Nvidia | CN the companies reach for Nvidia |
           CH the companies turn to home-made chips
-  --kind  doc a government document or an official on the record | rec a company on the record |
-          press a press report citing unnamed people
+  --kind  doc a document or one of the published sources or notices in the filled key below |
+          rec a company or a named person outside government on the record |
+          press a press report citing unnamed people (open mark)
+
+A filled mark is a document, a filing, a named person on the record, a published commentary, report or
+statement of state media, an industry body or a research institute, an institution's own notice, or a
+named outlet's account of a document.
   --id    the folder name of the saved page under research/primary
 
 The record is REFUSED, and nothing is changed, when:
@@ -24,10 +29,11 @@ The record is REFUSED, and nothing is changed, when:
   - the same words from the same page already stand in the same row;
   - the planted false quotation is found (the check itself is broken).
 When it is accepted the command appends the record to data/figure_data.txt, appends a dated line to
-data/tracker_log.tsv (today's date in UTC, read from the clock) and runs build.py. If the build fails, both files
-are put back as they were.
+data/tracker_log.tsv (today's date in UTC, read from the clock) and runs build.py. If an update fails after
+writing starts, the data, log, page and quotation table are restored to their previous state.
 """
 import argparse, sys
+from contextlib import ExitStack
 from datetime import date, datetime, timezone
 from pathlib import Path
 
@@ -42,6 +48,13 @@ def refuse(why):
     print('REFUSED: ' + why)
     print('Nothing was changed.')
     sys.exit(1)
+
+
+def restore(path, before):
+    if before is None:
+        path.unlink(missing_ok=True)
+    elif not path.exists() or path.read_bytes() != before:
+        path.write_bytes(before)
 
 
 def main():
@@ -85,18 +98,32 @@ def main():
              f"@ {a.row} {a.kind} {d.isoformat()} {a.label.replace(' ', '_') if a.label else '-'} {a.id}", f'T {a.line}', f'S {a.source}', f'Q {a.words}']
     if a.english: block.append(f'E {a.english}')
     if a.address: block.append(f'U {a.address}')
-    who, what, _ = B.LANES[a.row]
-    text = f'Added: {a.label or B.fmt(d)}, {who} {what}. {a.line.rstrip(".")}. Source: {a.source.rstrip(".")}.'
+    row_name = B.lane_labels()[a.row]
+    text = f'Added: {a.label or B.fmt(d)}, {row_name}. {a.line.rstrip(".")}. Source: {a.source.rstrip(".")}.'
     if a.reason: text += f' The date is not written in the saved page: {a.reason.rstrip(".")}.'
     n = len(evs) + 1
-    data.write_bytes(old_data.rstrip(b'\n') + b'\n' + '\n'.join(block).encode('utf-8') + b'\n')
-    logf.write_bytes(old_log.rstrip(b'\n') + b'\n' + f'{today.isoformat()}\taddition\t{a.id}\t{n}\t{text}\t'.encode('utf-8') + b'\n')
-    ok, lines = B.build(folder)
+    originals = {data: old_data, logf: old_log}
+    for name in ('quotes.tsv', 'tracker.html'):
+        output = folder / name
+        try:
+            originals[output] = output.read_bytes()
+        except FileNotFoundError:
+            originals[output] = None
+    with ExitStack() as rollback:
+        for path, before in originals.items():
+            rollback.callback(restore, path, before)
+        try:
+            data.write_bytes(old_data.rstrip(b'\n') + b'\n' + '\n'.join(block).encode('utf-8') + b'\n')
+            logf.write_bytes(old_log.rstrip(b'\n') + b'\n' + f'{today.isoformat()}\taddition\t{a.id}\t{n}\t{text}\t'.encode('utf-8') + b'\n')
+            ok, lines = B.build(folder)
+        except (OSError, ValueError, SystemExit) as exc:
+            ok, lines = False, [str(exc)]
+        if ok:
+            rollback.pop_all()
     if not ok:
-        data.write_bytes(old_data); logf.write_bytes(old_log)
         print('\n'.join(x for x in lines if x))
-        refuse('the rebuild failed with the new record; the data file and the log were put back as they were')
-    print(f'ADDED: {a.label or B.fmt(d)} | {who} {what} | {a.id}')
+        refuse('the update failed; the data, log, page and quotation table were restored')
+    print(f'ADDED: {a.label or B.fmt(d)} | {row_name} | {a.id}')
     print(f'date in the page: {found or "not looked for (reason given)"}; records now {n}; log line written for {today.isoformat()}')
     print('\n'.join(x for x in lines if x))
     print('Now look at the page before calling it done (HOW_TO_UPDATE.md, step 3).')

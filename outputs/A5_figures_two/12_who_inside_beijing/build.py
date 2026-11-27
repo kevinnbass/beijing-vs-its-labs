@@ -4,7 +4,7 @@ Run: python3 -I build.py                                   checks every quotatio
      python3 -I build.py --png   the same, then exports who_inside_beijing.png
 Reads data.txt (the records; ../common.py explains the format). Writes quotes.tsv from it and runs scripts/cn_has.py on
 that file; if the checker does not pass, nothing else is written. Counts on the page are counted here from data.txt and
-from the project's tables (tables/state_media_items.tsv, provinces_31.tsv, chip_evaluations.tsv).
+from the project's tables (tables/state_media_items.tsv, state_media_baseline_2024_2025h1.tsv, provinces_31.tsv, chip_evaluations.tsv).
 Round 4 (Nov 23, 2026): follows the core figure's panel "Inside Beijing: not one actor": the same bodies on each side,
 the antitrust case against Nvidia the company drawn apart from the grid.
 The page is a build product: a rebuild replaces it. Before it is called done: scripts/render_and_look.py.
@@ -36,14 +36,14 @@ BANDS = [  # band title, [(row key, name, what it is)]; ordered so that the bodi
 APART = ('samr', 'Market regulator', 'State Administration for Market Regulation')       # the antitrust case: against Nvidia the company, drawn apart
 COLS = [  # key, direction, title, what it covers
     ('acted', 'away', 'Summoned Nvidia, or warned in public', 'acts and texts it published itself'),
-    ('told', 'away', 'Reported: told companies not to buy', 'or to use home-made chips; or held chips at the border; one mark is a company’s filing'),
+    ('told', 'away', 'Reported: told companies not to buy', 'or to use home-made chips; or reports of customs checks; one mark is a company’s filing'),
     ('rules', 'away', 'Rules or guidance favouring home-made chips', 'purchase rules, a list, guidance'),
     ('welcomed', 'toward', 'Welcomed Nvidia, or spoke for access', 'in public: welcomes, protests at US curbs, help for computing abroad'),
-    ('approved', 'toward', 'Reported: approved purchases', 'with conditions; or let chips in'),
+    ('approved', 'toward', 'Reported: approved purchases', 'with conditions; or reports about imports'),
 ]
 # Round 11 (ROUND11.md, thing 2): the two columns hold press reports (and, in 'told', one company's filing): their heads carry the report.
 # Round 13 (work list C 9): the head of 'told' also says that one of its marks is a company's filing (Alibaba's), not a report.
-PHONE_LABEL = {'told': 'Reported, or in a company’s filing: told companies not to buy, or held chips at the border', 'approved': 'Reported: approved purchases, or let chips in'}     # on a phone the column's second line is not shown
+PHONE_LABEL = {'told': 'Reported, or in a company’s filing: instructions on purchases, or customs checks', 'approved': 'Reported: purchase approvals and imports'}     # on a phone the column's second line is not shown
 ROWKEYS = [k for _, rows in BANDS for k, _, _ in rows]
 ROWNAME = {k: n for _, rows in BANDS for k, n, _ in rows}
 ROWNAME[APART[0]] = APART[1]
@@ -138,17 +138,14 @@ def main():
     both = [rk for rk in named if rk in away_rows and rk in toward_rows]
     assert (len(away_rows), len(toward_rows), both) == (8, 4, ['miit']) and len(case) == 2, (away_rows, toward_rows, both)      # as the core figure's panel has it
 
-    # counts taken from the project's tables
-    sm = C.table('state_media_items.tsv'); st = Counter(r['stance'] for r in sm)
-    warns = sorted(date.fromisoformat(r['date']) for r in sm if r['stance'] == 'warns')
-    # round 5 (core edit 6): rows 43 to 75 were added (found by searches and links; after Sept 24, 2025 a sample, not a census).
-    # The warnings up to Sept 24, 2025 (the burst after the summons) and the later ones, as the core figure's state_media() counts them.
-    win = [d for d in warns if d <= date(2025, 9, 24)]; late = [r for r in sm if r['stance'] == 'warns' and date.fromisoformat(r['date']) > date(2025, 9, 24)]
-    iso = sorted(date.fromisoformat(r['date']) for r in sm if re.fullmatch(r'\d{4}-\d\d-\d\d', r['date']))
-    # core edit 8 (Nov 25, 2026): the recount of the table by its written rule (second coders and a third reader): 19 items only warn, 16 of them up to
-    # Sept 24, 2025, 3 later, 7 mixed; (75, 14, 11, 3, 8) before it.
-    assert (len(sm), len(warns), len(win), len(late), st['mixed']) == (75, 19, 16, 3, 7), (len(sm), st)
-    assert all(r['outlet'].startswith('Global Times') and r['date'].startswith('2026') for r in late), late
+    # The baseline includes three People's Daily group papers outside the later table's scope.
+    sm, media_summary = C.state_media_summary()
+    baseline = C.table('state_media_baseline_2024_2025h1.tsv')
+    comparable = [r for r in baseline if not r['note'].startswith('GROUP-PAPER')]
+    baseline_warnings = [r for r in baseline if r['stance'] == 'warns']
+    all_warnings = len(baseline_warnings) + sum(r['stance'] == 'warns' for r in sm)
+    assert (len(baseline), len(comparable), len(baseline_warnings), all_warnings) == (174, 160, 1, 35)
+    assert baseline_warnings[0]['date'] == '2025-03-13' and baseline_warnings[0] in comparable
     media_ids = {r['saved_id'] for r in sm if r['stance'] == 'warns'}
     assert all(r['sid'] in media_ids for r in recs if 'media' in r['rows']), 'a state-media mark is not one of the census\'s warning items'
     pr = Counter(r['result'] for r in C.table('provinces_31.tsv')); assert sum(pr.values()) == 31, pr
@@ -206,7 +203,7 @@ def main():
    <ul>
     <li><b>Open marks rest on unnamed people.</b> In the answers found, Beijing’s spokespeople confirmed none of them: “我不了解你提到的情况” (I am not aware of what you mention), said the foreign ministry on Aug 13, 2025; asked on Nov 9, 2026 about the 600,000 chips Reuters reported in Hong Kong, it said “具体情况建议向中方主管部门询问” (for the details, ask the competent Chinese departments).</li>
     <li><b>The marks are a selection, not a count.</b> An act by several bodies is drawn once in each body’s row, with the same number. The grouping of the rows is ours. {C.WORDS[len(away_rows)].capitalize()} of the named rows (each a body, a group of bodies or a person) have a mark on the side that points away from Nvidia and {C.WORDS[len(toward_rows)]} on the side that points toward it; the industry ministry is on both.</li>
-    <li><b>The state-media marks are warnings, not orders.</b> Of {len(sm)} state and Party media items on Nvidia chips found from {C.MON[iso[0].month - 1]} {iso[0].year} to {C.MON[iso[-1].month - 1]} {iso[-1].year}, {len(win)} of the {len(warns)} that only warn about them date from {C.fmt(win[0])} to {C.fmt(win[-1])}, and the {C.WORDS[len(late)]} found later are in Global Times in 2026; {C.WORDS[st['mixed']]} of the {len(sm)} mix a warning with a welcome. The items after September 2025 are what two rounds of searches found, a sample and not a full count. The security ministry’s article names no maker.</li>
+    <li><b>The state-media marks show public warnings.</b> These are published commentaries or reports. {media_summary} Searches and scans of saved pages and outlet lists found {len(baseline)} items from January 2024 to June 2025, including {len(comparable)} in outlets covered by the later table. The earlier table is a sample, not a census. None of those {len(comparable)} was found to tell buyers not to buy Nvidia chips. The two tables hold {all_warnings} warnings in all. The security ministry’s article names no maker.</li>
     <li><b>No published order against buying Nvidia chips was found</b> in the 82 policy pages read. The 2023 purchase rules bind Party and government bodies from township level up, the public institutions directly under Party committees and governments at those levels, and the departments’ public institutions that provide support to those bodies; other units may leave their requirement out. No published national plan found sets a home-made share for computing centres: every such share found is a province’s or a city’s ({pr['share']} of 31 provincial-level governments were found to set one for home-made computing; one of them, Zhejiang’s, is for the computing of one sector, the province’s information and communications industry, by 2030, as a project’s target), and the national computing-network opinions of December 2023 set none. These shares are not drawn.</li>
     <li>The chip at issue in these marks changed: the H20 (2024 to 2025), the RTX PRO 6000D (2025), the H200 (from December 2025). English renderings of Chinese are ours, not official translations.</li>
    </ul>
@@ -214,8 +211,8 @@ def main():
 
     key = f"""   <ul class="key">
     <li><i class="sw away"></i><span><b>Away from Nvidia:</b> acting against it, or for home-made chips</span></li>
-    <li><i class="sw toward"></i><span><b>Toward Nvidia:</b> welcoming it, speaking for access, or, by press reports, approving purchases</span></li>
-    <li><i class="p solid away" aria-hidden="true">1</i><span><b>Filled:</b> on the record (a government document, a filing, a named official, a state-media commentary). {n_solid} records</span></li>
+    <li><i class="sw toward"></i><span><b>Toward Nvidia:</b> welcoming it, speaking for access, or approvals reported by outlets citing unnamed people</span></li>
+    <li><i class="p solid away" aria-hidden="true">1</i><span><b>Filled:</b> on the record (a government document, a filing, a named official or a published state-media piece). {n_solid} records</span></li>
     <li><i class="p hollow away" aria-hidden="true">1</i><span><b>Open:</b> a press report citing unnamed people. {n_open} records</span></li>
    </ul>"""
 
@@ -259,7 +256,7 @@ def main():
         eyebrow='China · Nvidia chips · who inside Beijing did what · 2023 to November 2026',
         h1='Inside Beijing, security and planning bodies held Nvidia back. The commerce side welcomed it.',
         deck=f'{len(recs)} acts, each from a saved source, sorted by who acted and by the kind of act. The cyberspace regulator, the security ministry and the state planner '
-             'appear only on the side that points away from Nvidia. The commerce ministry appears only on the side that points toward it: it welcomed Nvidia in public, spoke up for access and, by press reports, approved purchases. '
+             'appear only on the side that points away from Nvidia. The commerce ministry appears only on the side that points toward it: it welcomed Nvidia in public and spoke up for access. Reuters, citing two people it did not name, reported that it and the industry ministry approved some purchases. '
              'The antitrust case against Nvidia the company is set apart.',
         key=key, figure=figure, below=below, css=CSS,
         tipjson=C.tips(recs, lambda r: ' · '.join(ROWNAME[k].replace('“', '').replace('”', '') for k in r['rows']) + ' · ' + COLNAME[r['col']]))
@@ -267,7 +264,7 @@ def main():
     C.records_tsv(HERE / 'records.tsv', recs, [('body', lambda r: '; '.join(ROWNAME[k].replace('“', '').replace('”', '') for k in r['rows'])), ('kind_of_act', lambda r: COLNAME[r['col']]), ('direction', lambda r: r['dir'])])
     per = {ck: sum(r['col'] == ck for r in recs) for ck in COLKEYS + ['case']}
     print(f'records {len(recs)} ({per}); on the record {n_solid}, press reports {n_open}; bodies and people with a mark away {len(away_rows)}, toward {len(toward_rows)}, on both {both}; '
-          f'state media {len(sm)} items, {len(warns)} warn ({len(win)} from {C.fmt(win[0])} to {C.fmt(win[-1])}, {len(late)} later), {st["mixed"]} mixed; provinces with a share {pr["share"]} of 31; {summary}')
+          f'state media {len(sm)} later items, {len(baseline)} baseline items ({len(comparable)} comparable), {all_warnings} warnings across both tables; provinces with a share {pr["share"]} of 31; {summary}')
     if '--png' in sys.argv:
         C.export_png(out, [('#figure', HERE / f'{NAME}.png')])
 

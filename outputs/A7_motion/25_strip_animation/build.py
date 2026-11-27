@@ -42,12 +42,16 @@ EXTRA_CSS = """
 #foot p + p { margin-top:4px; }
 #draft { right:28px; bottom:9px; font-size:11.5px; }
 """
+OPENNESS = "Some purchases were reported approved, by press reports citing people they did not name, and Nvidia’s own filings report licensed sales to China."
+COMPANIES = "The companies also bought and used home-made chips, by their own and their suppliers’ accounts."
+
 MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
 
 
 def main():
-    evs, checks, G = L.load_events()
-    print('figure check:', L.check_against_figure(evs))
+    evs, checks, G, lane_names = L.load_events()
+    lane_names, figure_check = L.check_against_figure(evs, lane_names)
+    print('figure check:', figure_check)
     n_q = L.write_quotes(HERE / 'quotes.tsv', L.strip_quotes(evs, checks), 'Idea 25, the strip as a short animation: the source words behind every mark, label and dashed line.')
     print('cn_has.py:', L.run_has(HERE / 'quotes.tsv'), f'({n_q} lines in quotes.tsv)')
 
@@ -60,8 +64,15 @@ def main():
                          'No published Chinese order against buying Nvidia chips was found in the policy pages and national document lists read.',
                          'are not about Nvidia.', 'are an antitrust case against Nvidia the company.',
                          'The records are a selection made to show both sides, not a census. The count of marks in a row is not a measure.',
-                         'The exceptions on each side are drawn too: Beijing sometimes let chips in, and the companies also turned to home-made ones.')
+                         'Some purchases were reported approved by outlets citing people they did not name. Nvidia’s own filings report licensed sales to China.',
+                         'The companies also bought and used home-made chips.')
     print(f'template: {n_t} sentences of the headline, key and notes stand in figure/template.html')
+    argument = L.PROJ / 'ARGUMENT_referenced.md'
+    answer = next(line for line in argument.read_text(encoding='utf-8').splitlines() if line.startswith('**The answer.** '))
+    approved = 'Third, ' + OPENNESS[0].lower() + OPENNESS[1:-1].replace('’', "'") + ' (point 19).'
+    companies = 'they also bought, used and trained on home-made chips, by their own and their suppliers\' accounts (points 9 and 20).'
+    if approved not in answer or companies not in answer:
+        sys.exit('the argument no longer gives the strip footnote’s approvals, licensed sales and company attribution')
 
     x0, x1 = L.GL, max(e['x'] for e in evs)
     when = lambda x: round(INTRO + (x - x0) / (x1 - x0) * SWEEP, 4)
@@ -86,11 +97,11 @@ def main():
 <h1 id="h1">{L.esc(L.HEADLINE[0])}<br>{L.esc(L.HEADLINE[1])}</h1>
 <div class="clock" id="clockbox"><div id="date"></div><div id="count"></div><div id="tally">{solid} filled, on the record · {total - solid} open, press reports</div></div>
 <div class="card" id="card">
-{L.strip_svg(evs, G)}
+{L.strip_svg(evs, G, lane_names)}
 {L.KEY}
 </div>
-<div class="foot" id="foot"><p><b>Read with care.</b> Open marks rest on unnamed people; in the answers found, no Chinese authority confirmed any of them. No published Chinese order against buying Nvidia chips was found in the policy pages and national document lists read. Marks {not_nv[0]} and {not_nv[1]} are not about Nvidia; marks {case[0]} and {case[1]} are an antitrust case against Nvidia the company. The records are a selection made to show both sides, not a census: the count of marks in a row is not a measure. The exceptions on each side are drawn too: Beijing sometimes let chips in, and the companies also turned to home-made ones.</p>
-<p><b>Source.</b> One mark for each of {total} dated records, 2023 to November 2026. A script found each record’s own words in a saved copy of its source. The numbers on the marks are those of the figure “Beijing vs. its labs”, which lists every record.</p></div>
+<div class="foot" id="foot"><p><b>Read with care.</b> Open marks rest on unnamed people; in the answers found, no Chinese authority confirmed any of them. No published Chinese order against buying Nvidia chips was found in the policy pages and national document lists read. Marks {not_nv[0]} and {not_nv[1]} are not about Nvidia; marks {case[0]} and {case[1]} are an antitrust case against Nvidia the company. The records are a selection made to show both sides, not a census: the count of marks in a row is not a measure. {OPENNESS} {COMPANIES}</p>
+<p><b>Source.</b> One mark for each of {total} dated records, 2023 to November 2026. A script found each record’s own words in a saved copy of its source. The numbers on the marks are those of the figure “{L.esc(" ".join(L.HEADLINE))}”, which lists every record.</p></div>
 <p class="draft" id="draft">Draft by Claude, Anthropic’s model.</p>"""
     # round 10 (the session's ruling, Nov 25, 2026): the frame carries the credit only; words saying the copy is local or
     # unpublished are untrue of a public copy, and a release cannot reach pixels. They must never be drawn into the frame.
@@ -104,7 +115,7 @@ def main():
     assert frame_says_local(stage.replace('model.</p>', f'model. {OLD_NOTE}</p>')), 'control: the old credit line must be refused'
     below = f"""  <p>The dated strip as a short silent animation: the {total} marks appear in date order while the date runs at the top right. This page draws any moment of it; the video files beside it were captured from this page frame by frame. No one has yet watched them play through: they were checked by script and as still frames.</p>
   <p>The video file, <code>strip_animation.mp4</code> (1280 by 720, no sound):</p>
-  <video data-src="strip_animation.mp4" controls muted playsinline preload="metadata" width="1280" height="720"></video>
+  <video data-src="strip_animation.mp4" data-poster="stills/strip_animation_00s.png" controls muted playsinline preload="none" width="1280" height="720"></video>
   <p>For a post: <code>strip_animation.gif</code> or <code>strip_animation.webp</code> (both 1280 by 720).</p>
   <p class="small">Draft by Claude, Anthropic’s model.</p>"""
     if 'local; not' in (stage + below).lower(): sys.exit('the page says the copy is local or not published: the credit only (round 11)')
@@ -118,7 +129,7 @@ def main():
                 stills=stills, expect=[])
     hk = next(e for e in evs if e['sid'] == 'cn-clips-evidence-1' and e['C'])
     plan['label_control'] = dict(id=f'c{hk["n"]}', x=round(evs[0]['x'], 1), y=round(evs[0]['cy'] + 4, 1))     # the control: this label, set down on mark 1, must be reported
-    plan['made_from'] = L.made_from(HERE, [L.FIG / 'figure_data.txt', L.FIG / 'figure_events.tsv', L.FIG / 'beijing_vs_labs.html', L.FIG / 'template.html', HERE.parent / 'a7lib.py', HERE / 'build.py', HERE / 'quotes.tsv', HERE / 'strip_animation.html'])
+    plan['made_from'] = L.made_from(HERE, [L.FIG / 'figure_data.txt', L.FIG / 'figure_events.tsv', L.FIG / 'beijing_vs_labs.html', L.FIG / 'template.html', argument, HERE.parent / 'a7lib.py', HERE / 'build.py', HERE / 'quotes.tsv', HERE / 'strip_animation.html'])
     (HERE / 'capture.json').write_text(json.dumps(plan, indent=1), encoding='utf-8')
     per = {k: sum(e['lane'] == k for e in evs) for k in L.ORDER}
     print(f'records {total} ({per}); filled (on the record) {solid}, open (press reports) {total - solid}; marks not about Nvidia {not_nv}, the antitrust case {case}')

@@ -7,8 +7,11 @@ Run, in this folder, after build.py:
 
 Reads capture.json (written by build.py): the page, the frame rate, the number of frames, the file names, the still
 frames to export and, for a page with captions, the checked text each chapter must show.
+With --lane, use the isolated work copy’s offline browser environment and its local Inter fonts.
+The lane launch handles placement. The original host load check still applies in a regular project checkout.
+
 Steps:
-  1. reads main_run_mean in the load keeper's status file and stops at 32 or more (README_FOR_BUILDERS section 6), and
+  1. outside a lane, reads main_run_mean in the load keeper's status file and stops at 32 or more (README_FOR_BUILDERS section 6), and
      stops if a file the page was built from has changed since build.py ran (capture.json holds their sha256);
   2. opens the page in headless Chromium at 1280 x 720 with ?capture, waits for its fonts, and stops if the web fonts
      did not load (the look would differ);
@@ -23,7 +26,7 @@ Steps:
   6. makes the GIF and the WebP from the lossless master, exports the still frames from the MP4 itself, and writes
      probe.txt (ffprobe: codec, size, frame rate, frames, duration, audio streams).
 """
-import hashlib, json, re, subprocess, sys, time
+import argparse, hashlib, json, re, subprocess, sys, time
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -65,7 +68,7 @@ def inputs_gate(P):
     print(f'inputs: {len(P["made_from"])} files unchanged since build.py ran (sha256); a wrong sha256 was noticed (control)')
 
 
-def capture(P):
+def capture(P, lane):
     from playwright.sync_api import sync_playwright
     fps, n = P['fps'], P['frames']
     with sync_playwright() as p:
@@ -79,8 +82,12 @@ def capture(P):
         fonts = pg.evaluate('[...document.fonts].filter(f => f.status === "loaded").map(f => f.family.replace(/"/g, "") + " " + f.weight)')
         fams = sorted(set(fonts))
         print('web fonts loaded:', ', '.join(fams) or 'none')
-        if not any(f.startswith('Space Grotesk') for f in fams) or not any(f.startswith('Inter') for f in fams):
-            sys.exit('the web fonts (Inter, Space Grotesk) did not load: the frames would not match the look on record. Not captured.')
+        required_fonts = {'Inter'} if lane else {'Inter', 'Space Grotesk'}
+        missing = {family for family in required_fonts if not any(f.startswith(family + ' ') for f in fams)}
+        if missing:
+            sys.exit(f'fonts missing from capture: {", ".join(sorted(missing))}')
+        if lane:
+            print('offline lane: local Inter; Space Grotesk falls back to Inter if unavailable')
         if errs: sys.exit('the page reported errors: ' + '; '.join(errs))
         size = pg.evaluate('(() => { const r = document.getElementById("stage").getBoundingClientRect(); return [r.left, r.top, r.width, r.height]; })()')
         if size != [0, 0, 1280, 720]: sys.exit(f'the stage is not the 1280 x 720 frame: {size}')
@@ -226,9 +233,23 @@ def probe(P, rec):
 
 
 def main():
+    parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
+    parser.add_argument('--no-capture', action='store_true')
+    parser.add_argument('--lane', action='store_true', help='use the isolated, offline build lane')
+    args = parser.parse_args()
     P = json.loads((HERE / 'capture.json').read_text(encoding='utf-8'))
-    load_gate(); inputs_gate(P)
-    if '--no-capture' not in sys.argv: capture(P)
+    if args.lane:
+        work = HERE.parents[4]
+        if work.name != 'work' or work.parent.parent.name != 'lanes':
+            sys.exit('--lane requires the script to be in a lanes/<lane>/work checkout')
+        import sitecustomize
+        if not getattr(sitecustomize, 'A7_OFFLINE', False):
+            sys.exit('--lane requires the offline browser environment')
+    else:
+        load_gate()
+    inputs_gate(P)
+    if not args.no_capture:
+        capture(P, args.lane)
     rec = record_gate(P)
     derive(P); stills(P); probe(P, rec)
 

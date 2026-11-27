@@ -15,12 +15,12 @@
 !! cn-policy-ndrc-chip-adaptation-2026 | 2026/05/22
 - On the record: Xinhua's account of the Politburo session of Apr 25, 2025 [cn-xi-round-j-6]; the state planner's press conference of May 22, 2026 [cn-policy-ndrc-chip-adaptation-2026]
 
-2. **What the companies used and ordered.** The companies went on using and ordering Nvidia chips. A Shanghai government body wrote that in the city the clusters internet companies build themselves run mainly on Nvidia cards [cn-counter-b11-5]. Reported: orders "for more than 2 million H200 chips for 2026" [cn-labs-h200-two-million-202512-relay1-wayback].
+2. **What the companies used and ordered.** The companies kept using Nvidia chips and also trained on home-made chips. Baidu’s Qianfan-VL paper says "All models are trained entirely on Baidu’s Kunlun P800 chips" [cn-ga31-papersbigp3-39]. A Shanghai government body wrote that in the city the clusters internet companies build themselves run mainly on Nvidia cards [cn-counter-b11-5]. Reported: orders "for more than 2 million H200 chips for 2026" [cn-labs-h200-two-million-202512-relay1-wayback].
 !! cn-counter-b11-5 | 互联网企业自建算力集群,满足市场化企业需求,主要以英伟达高性能卡为主
 !! cn-counter-b11-5 | 发布日期:2025-11-10
 !! cn-counter-b11-5 | 上海市经济和信息化委员会2025年4月30日
 !! cn-labs-h200-two-million-202512-relay1-wayback | Dec 31 (Reuters)
-- On the record: Shanghai Commission of Economy and Informatization, written reply dated Apr 30, 2025 (published Nov 10, 2025) [cn-counter-b11-5]
+- On the record: Shanghai economy commission, reply of Apr 30, 2025 (published Nov 10) [cn-counter-b11-5]; Qianfan-VL paper, September 2025 [cn-ga31-papersbigp3-39]
 - Reported, from unnamed people: Reuters, Dec 31, 2025 [cn-labs-h200-two-million-202512-relay1-wayback]
 
 3. **What Beijing did, on the record.** Regulators acted against Nvidia by name: an antitrust case [cn-policy-samr-open-original] and a summons [cn-policy-cac-h20-original]. Nvidia's own filing says licensed H200 sales "were restricted by the PRC government" [man-ms-sec-10q-2026-07].
@@ -56,21 +56,22 @@
 - Reported: approved by Beijing, with conditions: "more than 400,000 H200 chips in total". Reuters, Jan 28, 2026 [ms-bj-20260128-h200-nod-standard]
 - Reported: stored in Hong Kong, November 2026: "About 600,000". Reuters, Nov 5, 2026 [cn-clips-evidence-1]
 
-6. **Limit 1 of 5.** Beijing was not one actor. The commerce minister told Nvidia's chief executive he hoped multinationals, Nvidia among them, would give Chinese customers high-quality, reliable products and services [cn-policy-wang-nvidia]. Reported: the commerce ministry "favoured imports" [man-e2596eab15f4].
+6. **Limit 1 of 5.** Beijing was not one actor. Some local governments and units of the telecom carriers were also more open to Nvidia. The commerce minister told Nvidia's chief executive he hoped multinationals, Nvidia among them, would give Chinese customers high-quality, reliable products and services [cn-policy-wang-nvidia]. Reported: the commerce ministry "favoured imports" [man-e2596eab15f4].
 !! cn-policy-wang-nvidia | 希望包括英伟达在内的跨国公司为中国客户提供优质可靠的产品和服务
 !! cn-policy-wang-nvidia | 7月17日,商务部部长王文涛会见美国英伟达公司总裁兼首席执行官黄仁勋
 !! cn-policy-wang-nvidia | 2025-07-18
 !! man-e2596eab15f4 | NOV 13 2026
 - On the record: Ministry of Commerce, account of the meeting of Jul 17, 2025 [cn-policy-wang-nvidia]
 - Reported, from unnamed people: Financial Times, Nov 13, 2026 [man-e2596eab15f4]
+- From the project's referenced argument, points 5 and 17: the evidence on local governments and carriers.
 
-7. **Limit 2 of 5.** Public warnings and unpublished guidance, not a published ban. No published order against buying Nvidia chips was found in the 82 policy pages read. Of the 19 state-media items found that only warn about Nvidia's chips, 16 date from Jul 31 to Sept 24, 2025; the three found later are Global Times items of 2026.
-!! cn-policy-micron-decision | 应停止采购美光公司产品
+7. **Limit 2 of 5.** Warnings, unpublished guidance and published texts pressed for home-made computing. The 82 policy pages read yielded no published ban on buying Nvidia chips. Of 297 state and Party media items on Nvidia and its chips found from July 2025 to November 2026, 34 only warn about the chips: 23 date from Jul 31 to Sept 24, 2025, and 6 from Dec 9, 2025 to Jan 14, 2026 in reports on the American easing for the H200.
+!! cn-policy-micron-decision | 我国内关键信息基础设施的运营者应停止采购美光公司产品
 !! cn-policy-micron-decision | 网络安全审查办公室依法作出不予通过网络安全审查的结论
-!! cn-policy-review-measures | 网络安全审查办公室设在国家互联网信息办公室
 !! cn-ga02-gt-cac-summons-news-202507 | Published: Jul 31, 2025 02:05 PM
-!! cn-ga02-gt-cac-summons-news-202507 | Deploying these chips in networked computing centers risks covertly transferring algorithms and methods abroad
+!! cn-ga02-gt-cac-summons-news-202507 | China's cyberspace watchdog summons Nvidia over H20 chip security risks
 !! cn-media-stdaily-security-forum | 2025-09-24
+!! cn-media-stdaily-security-forum | 国家信息安全与自主可控战略高层论坛
 !! cn-ga02-gt-cap-h200-sales-202603 | Published: Mar 03, 2026 05:23 PM
 !! cn-ga02-gt-cap-h200-sales-202603 | Ma Jihua, a veteran tech industry analyst
 !! cn-ga02-gt-restart-h200-optional-202603 | Published: Mar 18, 2026
@@ -78,18 +79,25 @@
 !! cn-ga02-gt-isnt-buying-opinion-202611 | Published: Nov 06, 2026 07:50 PM
 !! cn-ga02-gt-isnt-buying-opinion-202611 | OPINION / VIEWPOINT
 !! cn-factions-bloomberg-flexibility-202409-relay1 | on Friday (Sep 27)
-- Our own reading. A published one could have been found: the 2023 conclusion of the cyberspace regulator's review office on Micron's products is among the pages [cn-policy-micron-decision]
-- Our own count, of 75 state and Party media items (those after September 2025 are what two rounds of searches found, a sample and not a full count): the 16 run from Jul 31, 2025 (three items that day, Global Times's [cn-ga02-gt-cac-summons-news-202507] among them) to Science and Technology Daily's of Sept 24, 2025 [cn-media-stdaily-security-forum]; the later three: an analyst quoted in news reports of Mar 3 [cn-ga02-gt-cap-h200-sales-202603] and Mar 18 [cn-ga02-gt-restart-h200-optional-202603], and an unsigned commentary of Nov 6, 2026 [cn-ga02-gt-isnt-buying-opinion-202611]
+!! cn-ga31-voucherrulesmissing-4 | 可基于国产芯片并使用国产软件栈提供算力服务
+!! cn-ga31-voucherrulesmissing-4 | 算力创新券支付金额最高不超过同一服务合同实际发生额的25%
+- On the record: Beijing’s voucher pays one rate whatever the chip. Admitted providers must be able to offer computing on home-made chips with a home-made software stack [cn-ga31-voucherrulesmissing-4]. Among the 82 pages read, the published 2023 review conclusion tells critical information infrastructure operators to stop buying Micron’s products [cn-policy-micron-decision].
+- Our own count, a sample of what the outlets printed and not a full count. The 23 run from Jul 31, 2025 (6 items that day, including Global Times on the summons [cn-ga02-gt-cac-summons-news-202507]) to Sept 24 (Science and Technology Daily on a security forum [cn-media-stdaily-security-forum]).
+- Our own count outside those weeks: Jul 24 [cn-ga31-smdailiesp3-49] and Nov 1 [cn-ga31-smdailies-1]; 6 on US easing [cn-ga31-smcctvp3-2], [cn-ga31-smglobaltimes-76], [cn-ga31-smglobaltimes-37], [cn-ga31-smglobaltimes-31], [cn-ga31-smdailiesp3-5] and [cn-ga31-smglobaltimes-50]; the last 3, Global Times items of 2026: an analyst quoted in news reports of Mar 3 [cn-ga02-gt-cap-h200-sales-202603] and Mar 18 [cn-ga02-gt-restart-h200-optional-202603], and an unsigned commentary of Nov 6 [cn-ga02-gt-isnt-buying-opinion-202611].
 - Reported, from unnamed people: Bloomberg, Sept 27, 2024: "guidance rather than an outright ban" [cn-factions-bloomberg-flexibility-202409-relay1]
 
-8. **Limit 3 of 5.** Some purchases were approved and some chips came in. Reported: ByteDance and Tencent "have each received about 10,000 H200 processors in recent weeks" [cn-tolerate-reutersaug26-relay1-wayback]. A US official told Congress: "There have been minimal exports of any H200s to China so far" [man-a7d2f1a9f963].
-!! cn-tolerate-reutersaug26-relay1-wayback | Aug 18, 2026
+8. **Limit 3 of 5.** Some purchases were reported approved, and Nvidia reported licensed sales. Reuters cited four people it did not name [ms-bj-20260128-h200-nod-standard]. Nvidia’s own filings report licensed sales to China [man-ms-sec-10k-fy2026]. A US official told Congress: "There have been minimal exports of any H200s to China so far" [man-a7d2f1a9f963].
+!! ms-bj-20260128-h200-nod-standard | four people familiar with the matter told Reuters
+!! ms-bj-20260128-h200-nod-standard | speaking on condition of anonymity
+!! man-ms-sec-10k-fy2026 | We generated approximately $60 million in H20 revenue under those licenses.
+!! cn-o38-nvda-q3fy27-call-transcript-pdf | sales of licensed Hopper Data Center products to China was $2.4 billion.
 !! man-a7d2f1a9f963 | July 14
 !! man-a7d2f1a9f963 | Kessler
-- Reported, from unnamed people: Financial Times, through Reuters, Aug 18, 2026 [cn-tolerate-reutersaug26-relay1-wayback]
+- Reported, from unnamed people: Reuters, Jan 28, 2026 [ms-bj-20260128-h200-nod-standard]
+- On the record: Nvidia’s annual filing on H20 sales [man-ms-sec-10k-fy2026] and November 2026 results call on licensed Hopper sales [cn-o38-nvda-q3fy27-call-transcript-pdf]
 - On the record: Jeffrey Kessler, under secretary of commerce, to a House committee on Jul 14, 2026, as Reuters reported [man-a7d2f1a9f963]
 
-9. **Limit 4 of 5.** The companies had reasons of their own, and American curbs and conditions pushed too. Alibaba says its chip unit "has brought proprietary GPUs into scaled production" [cn-policy-alibaba-own-gpu]. Nvidia: "we are already effectively foreclosed from the China market by U.S. export controls" [man-ms-sec-10q-2025-10]. Washington returned without action the applications for 55% of the chips its summary of May 11, 2026 records; its table gives no reason [cn-usdocs-hfac-decisions-20261119].
+9. **Limit 4 of 5.** The companies had reasons of their own. In the records the project holds, American curbs and conditions are named as causes far more often than Chinese acts. Alibaba says its chip unit "has brought proprietary GPUs into scaled production" [cn-policy-alibaba-own-gpu]. Nvidia: "we are already effectively foreclosed from the China market by U.S. export controls" [man-ms-sec-10q-2025-10]. Washington returned without action the applications for 55% of the chips its summary of May 11, 2026 records; its table gives no reason [cn-usdocs-hfac-decisions-20261119].
 !! cn-policy-alibaba-own-gpu | March 19, 2026
 !! man-ms-sec-10q-2025-10 | November 19, 2025
 !! cn-usdocs-hfac-decisions-20261119 | H200 License and Equivalent Application Status as of May 11, 2026
@@ -99,6 +107,7 @@
 !! cn-le04-bis-ear-748 | Returned without action (RWA)
 !! cn-le04-bis-ear-748 | Bureau of Industry and Security, U.S. Department of Commerce
 !! cn-usdocs-hfac-summary-20261119 | According to a BIS summary provided to the House Foreign Affairs Committee dated May 11, 2026
+- From the project's referenced argument, points 11 and 20: the comparison of the causes named in the records.
 - On the record: Alibaba, results release, Mar 19, 2026 [cn-policy-alibaba-own-gpu]; Nvidia, Form 10-Q signed Nov 19, 2025 [man-ms-sec-10q-2025-10]
 - On the record: the table of licence applications from the Commerce Department's Bureau of Industry and Security (BIS), made public by the House Foreign Affairs Committee on Nov 19, 2026; our sum; the committee says BIS's summary does not show every application in full [cn-usdocs-hfac-summary-20261119]
 
@@ -108,8 +117,9 @@
 - On the record: US-China Economic and Security Review Commission, 2025 annual report [cn-usdocs-uscc-2025-ch1]
 - Captions, not checked by ear: the Trade Representative on Bloomberg Television, May 15, 2026, at 5:59 [cn-le01-greer-bbg-20260515-subs-ttml]
 
-11. **The sentence that survives (1 of 2).** From 2024 the planning side of the Chinese state and the industry ministry, and from 2025 its security side, pressed China's AI companies, through unpublished guidance that the press reported, to buy home-made chips rather than Nvidia's, and from the summer of 2025 to stop ordering them, while the security ministry warned in public of backdoors in chips made abroad and state media warned about Nvidia's chips, most of all in August and September 2025;
+11. **The sentence that survives (1 of 2).** From 2024 the planning side of the Chinese state and the industry ministry, and from 2025 its security side, pressed China's AI companies, through unpublished guidance that the press reported, to buy home-made chips rather than Nvidia's, and from the summer of 2025 to stop ordering them, while the security ministry warned in public of backdoors in chips made abroad and state media warned about Nvidia's chips, most of all from the end of July to September 2025; published texts of provinces, cities and a region, and, by a city's reply, a science-ministry guide, set shares, quotas or conditions that favour home-made computing, none of them a ban;
 - From the project's referenced argument, section 6: its one sentence, shown here in two parts. The guidance is reported, from unnamed people; the warnings were public.
 
-12. **The sentence that survives (2 of 2).** other parts of the state welcomed Nvidia and, by the reports, approved some purchases; the companies went on ordering Nvidia chips, in the millions by the press reports, and by those reports had received a small part of them by late 2026; they were also turning to home-made chips, for reasons of their own and under American curbs; and whether Beijing meant its acts as lasting policy or as leverage in trade talks is read both ways.
-- From the project's referenced argument, section 6. The welcomes are on the record; the approvals, the orders and the deliveries are reported, from unnamed people.
+12. **The sentence that survives (2 of 2).** other parts of the state welcomed Nvidia and, by the reports, approved some purchases; the companies went on ordering Nvidia chips, in the millions by the press reports, and by those reports had received a small part of them by late 2026; they were also turning to home-made chips, for reasons of their own and under American curbs; and whether Beijing meant its acts as lasting policy, as leverage in trade talks or as protection of its home market is read all three ways.
+!! cn-tolerate-reutersaug26-relay1-wayback | have each received about 10,000 H200 processors in recent weeks
+- From the project's referenced argument, section 6. The welcomes are on the record. The approvals and the orders are Reuters reports citing unnamed people. The Financial Times reported receipts, citing people it did not name, as Reuters relayed it on Aug 18, 2026 [cn-tolerate-reutersaug26-relay1-wayback].

@@ -2,7 +2,7 @@
 @deck 2025 and 2026 from the buyers' side. China's AI companies used Nvidia chips and were reported to order more, spoke of the most advanced chips and of home-made ones, were reported to push back, were reported to train abroad, and some built chips of their own.
 
 @note Draft by Claude, Anthropic's model. Written Nov 23, 2026 (UTC); revised Nov 26, 2026.
-@note How to read it. Words between quotation marks are a source's exact words, found in the saved copy by a script. A filled reference number is a document, a filing, a named person on the record, a published commentary, report or statement of state media, an industry body or a research institute, an institution's own notice, or a named outlet's account of a document. An open number is a press report citing unnamed people, a research firm's or research group's count, or captions and machine transcripts nobody has checked by ear. English in round brackets after Chinese is our rendering, not an official translation.
+@note How to read it. Words between quotation marks are a source's exact words, found in the saved copy by a script. A filled reference number is a document, a filing, a named person on the record, a published commentary, report or statement of state media, an industry body or a research institute, an institution's own notice, or a named outlet's account of a document. An open number is a press report citing unnamed people, a research firm's, broker's or research group's count, or captions and machine transcripts nobody has checked by ear. English in round brackets after Chinese is our rendering, not an official translation.
 @note The author's interest. Anthropic has argued in public for controls on chip exports to China (that is from the model's general knowledge; no saved page is cited for it), so judge this piece by its sources.
 
 ## Between two governments
@@ -18,7 +18,7 @@ Here is what the companies did, in five steps, in their own words where they spo
 A Shanghai government body wrote, in a reply dated Apr 30, 2025, that in the city internet companies' own computing clusters run mainly on Nvidia cards [cn-counter-b11-5].
 !! cn-counter-b11-5 | 主要以英伟达高性能卡为主
 !! cn-counter-b11-5 | 上海市经济和信息化委员会2025年4月30日
-The orders are reported from unnamed people. In the first three months of 2025 Chinese companies including ByteDance, Alibaba and Tencent "have placed at least $16 billion in orders for" Nvidia's H20 chip [cn-labs-h20-orders-20250402-relay1].
+The Information, through Reuters, reported from people it did not name that in the first three months of 2025 Chinese companies including ByteDance, Alibaba and Tencent "have placed at least $16 billion in orders for" Nvidia's H20 chip [cn-labs-h20-orders-20250402-relay1].
 !! cn-labs-h20-orders-20250402-relay1 | in the first three months of the year
 !! cn-labs-h20-orders-20250402-relay1 | Chinese companies including ByteDance, Alibaba Group and Tencent Holdings have placed at least
 Reuters reported on Dec 31, 2025 that Chinese companies "have placed orders for more than 2 million H200 chips for 2026" [cn-labs-h200-two-million-202512-relay1-wayback].
@@ -68,7 +68,9 @@ The same paper, Aug 13, 2025, by three unnamed people: DeepSeek "was encouraged 
 
 **5. Baidu and Alibaba built chips of their own; Tencent and DeepSeek spoke of home-made ones**
 
-Baidu's chief executive said in April 2025, in Reuters' words, that it had switched on a cluster "comprising 30,000 of its self-developed, third generation P800 Kunlun chips" [man-cn-labs-baidu-30k-reuters-alt1].
+Baidu's chief executive said in April 2025, in Reuters' words, that it had switched on a cluster "comprising 30,000 of its self-developed, third generation P800 Kunlun chips" [man-cn-labs-baidu-30k-reuters-alt1]. Baidu's developer site says its cloud business switched on a 10,000-card Kunlun P800 cluster in February 2025 and expanded it to 32,000 cards in April [cn-ga31-papersbigp2-56].
+!! cn-ga31-papersbigp2-56 | 2025 年 2 月，百度智能云成功点亮昆仑芯 P800 万卡集群
+!! cn-ga31-papersbigp2-56 | 同年 4 月，该集群规模进一步扩展至 3.2 万卡
 !! man-cn-labs-baidu-30k-reuters-alt1 | means switching the cluster on
 Alibaba's chief executive, May 13, 2026, gave a commercial reason for its own chips: "gross margins on mainstream foreign AI chips are very high, basically in the 60% to 80% range", and "the high margins on advanced foreign chips leave domestic chips with enormous headroom for cost-performance gains" [cn-o36-alibaba-call-20260513-own].
 !! cn-o36-alibaba-call-20260513-own | Wednesday, 13 May 2026

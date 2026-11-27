@@ -35,15 +35,14 @@
 
 6. Limit 2: warnings and guidance, not a published ban. Bloomberg, Sept 27, 2024, citing unnamed people: "The policy has taken the form of guidance rather than an outright ban". In 82 Chinese policy pages read, no published order against buying Nvidia chips was found. [cn-factions-bloomberg-flexibility-202409-relay1]
 
-7. Limit 3: some were approved, some came in. Press reports from unnamed people: over 2 million H200s ordered for 2026, over 400,000 approved by Beijing with conditions, about 600,000 stored in Hong Kong (Reuters); small batches let into the mainland (FT, via Reuters). [cn-labs-h200-two-million-202512-relay1-wayback] [ms-bj-20260128-h200-nod-standard] [cn-clips-evidence-1] [cn-tolerate-reutersaug26-relay1-wayback]
+7. Limit 3: Reuters, citing people it did not name, reported orders for over 2 million H200s for 2026 and, separately, conditional approvals for over 400,000 H200s. Nvidia's filings report licensed sales to China, including about $60 million in H20 revenue. [cn-labs-h200-two-million-202512-relay1-wayback] [ms-bj-20260128-h200-nod-standard] [man-ms-sec-10k-fy2026]
 !! cn-labs-h200-two-million-202512-relay1-wayback | have placed orders for more than 2 million H200 chips for 2026
+!! cn-labs-h200-two-million-202512-relay1-wayback | two of the people said
+!! cn-labs-h200-two-million-202512-relay1-wayback | Dec 31 (Reuters)
 !! ms-bj-20260128-h200-nod-standard | have been approved to purchase more than 400,000 H200 chips in total
 !! ms-bj-20260128-h200-nod-standard | The Chinese government is only granting approvals with conditions
-!! cn-clips-evidence-1 | About 600,000 of Nvidia's advanced artificial intelligence chips are stored in Hong Kong awaiting shipment to China
-!! cn-clips-evidence-1 | two people familiar with the matter said
-!! cn-tolerate-reutersaug26-relay1-wayback | have been allowed to enter mainland China
-!! cn-tolerate-reutersaug26-relay1-wayback | ByteDance and Tencent have each received about 10,000 H200 processors in recent weeks
-!! cn-tolerate-reutersaug26-relay1-wayback | the Financial Times reported on Tuesday, citing two people with knowledge of the matter
+!! ms-bj-20260128-h200-nod-standard | four people familiar with the matter
+!! man-ms-sec-10k-fy2026 | We generated approximately $60 million in H20 revenue under those licenses.
 
 8. Limit 4: the companies had reasons of their own, and US export curbs pushed too. Tencent's president, on a results call in November 2023, after new US curbs: "we will also try to look for domestic source for these training chips" (as Reuters reported the call). [cn-policy-tencent-us-curbs-relay1]
 !! cn-policy-tencent-us-curbs-relay1 | Tencent president Martin Lau said on a call with analysts
@@ -57,15 +56,13 @@
 !! cn-le01-greer-bbg-20260515-subs-ttml | Will China allow their companies to buy them?
 !! cn-le01-greer-bbg-20260515-subs-ttml | gonna be a sovereign decision for China
 
-10. What survives: from 2024 China's planning side and industry ministry, and from 2025 its security side, pressed its AI firms off Nvidia chips, by guidance the press reported. The firms kept ordering and, by the reports, got a small part. What Beijing meant is not settled.
+10. From 2024 China's planners and industry ministry, and from 2025 its security side, pushed firms toward home-made chips in guidance the press reported. Published local targets also favored them. Firms kept seeking Nvidia and buying home-made chips. Beijing's intent is open.
 
 ## What the thread leaves out
 
-- It gives one source for each claim; posts 7 and 9 need more than one. The full argument has 21 points and 461 sources; it is the project's argument page, ARGUMENT_referenced.html.
-- With five limits and ten posts, the numbers have no post of their own: they stand in limit 3 (post 7). That post carries three reported numbers, from Reuters reports of Dec 31, 2025, Jan 28, 2026 and Nov 5, 2026, and the Financial Times's report, as Reuters relayed it on Aug 18, 2026, that small batches were let into the mainland. The same report has ByteDance and Tencent each receiving about 10,000 H200s; the post leaves that number out because the paper's own text says Beijing wants the companies to keep most of these chips outside the mainland [cn-tolerate-ftaug26], so it is not a count of chips that came in. The copy the post cites for the report of Nov 5 is CNA's page, which shows only its own date, Nov 6, 2026; Reuters's dateline of Nov 5 stands on Yahoo's copy of the same report, also saved.
+- Posts 7 and 9 give two kinds of evidence. The full argument has 21 points and 634 sources. It is the project's argument page, ARGUMENT_referenced.html.
+- Post 7's order figure is from Reuters's Dec 31, 2025 report, citing two people it did not name [cn-labs-h200-two-million-202512-relay1-wayback]. The conditional purchase approvals are from its Jan 28, 2026 report, citing four people it did not name [ms-bj-20260128-h200-nod-standard]. The H20 revenue under licences is from Nvidia's annual report [man-ms-sec-10k-fy2026].
 - Washington's side is left out for length: the conditions it set, and its own table of licence applications, which shows some applications approved, their chips not shipped, and others returned without action. The argument sets them out under its fourth limit.
 - Post 6 names one press report. The public warnings in state media, and the dates they fall between, are in the argument's points 4 and 18.
-- Post 10 is a shorter form of the argument's last sentence; its last words are limit 5's. It drops the public warnings, the parts of the state that welcomed Nvidia and, by the reports, approved some purchases, and the companies' own turn to home-made chips; posts 5 to 8 carry them.
+- Post 10 sums up the direction and the fifth limit. It leaves out the public warnings and the parts of the state that welcomed Nvidia; the full argument sets out both.
 - No recording has been checked by ear: not the clip in post 1, and not the interview in post 9.
-!! cn-clips-evidence-1 | 06 Nov 2026 11:47AM
-!! cn-tolerate-ftaug26 | Beijing wants them to keep most of these chips outside the mainland

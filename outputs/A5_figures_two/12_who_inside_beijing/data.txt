@@ -1,11 +1,12 @@
 # Data for the figure "Who inside Beijing" (build.py in this folder reads it; ../common.py explains the format).
 # Round 4 (Nov 23, 2026): brought into line with the core figure's panel "Inside Beijing: not one actor" (8 bodies
-# and people held Nvidia back or steered buyers to home-made chips, 4 let it in or welcomed it, the antitrust case apart).
+# and people held Nvidia back or steered buyers to home-made chips, 4 have a mark on the side that points toward Nvidia, the antitrust case apart).
 # Extra fields on a record line: row=<body or bodies, comma-separated>  col=<kind of act>  dir=away|toward
 #   rows: cac mss ndrc | customs rules media | ding li he | miit | mofcom | samr (set apart) | nobody
-#   cols: acted (summoned, or warned in public)      told (told companies not to buy, or held chips at the border)
-#         rules (set rules favouring home-made chips)  welcomed (welcomed Nvidia, or spoke for access)  approved (approved purchases)
+#   cols: acted (summoned, or warned in public)      told (reported instructions on purchases, or customs checks)
+#         rules (set rules favouring home-made chips)  welcomed (welcomed Nvidia, or spoke for access)  approved (press reports on purchase approvals and imports)
 #         case (the antitrust case against Nvidia the company: drawn apart from the grid)
+# Main figure row: Beijing is more open to Nvidia. The argument’s third limit: some purchases were reported approved, by press reports citing people they did not name, and Nvidia's own filings report licensed sales to China.
 # A record with two or three rows is one act by several bodies; it is drawn once in each body's row with the same number.
 # DATE orders the marks. Where the page gives no date for the act, DATELABEL says so and DATE is only a place in the order
 # (for the warning that has no date, the date of the report).
@@ -93,7 +94,7 @@ N are not permitted to enter China, according to three people briefed on the mat
 N or whether these measures could be used as a bargaining tactic in talks with Washington
 
 @ mof-rule doc 2023-12-16 - cn-policy-desktop-2023 row=rules,miit col=rules dir=away
-T finance and industry ministries: purchase rule for state bodies
+T finance and industry ministries: desktop purchase rule for certain Party and government bodies and related institutions
 L The finance ministry and the industry ministry require Party and government bodies from township level up, the public institutions directly under Party committees and governments at those levels, and the departments' public institutions that provide support to those bodies, to write into their purchases of desktop computers that the processor and the operating system meet the security-and-reliability evaluation. The same sentence says other units may leave the requirement out.
 S Ministry of Finance and Ministry of Industry and Information Technology, notice signed Dec 16, 2023
 Q 应当将CPU、操作系统符合安全可靠测评要求纳入采购需求
@@ -202,7 +203,7 @@ N said three people familiar with the situation
 
 @ two-approve press 2026-01-30 No_date_given cn-ga31-sv1-reuters-deepseek-yahoo row=miit,mofcom col=approved dir=toward
 T reported to approve four firms' H200 purchases, with the other ministry
-L The industry and commerce ministries approve H200 purchases by four companies (DeepSeek, ByteDance, Alibaba and Tencent), Reuters reports, by two people; the conditions are being decided by the state planner.
+L Reuters, citing two people it did not name, reports that the industry and commerce ministries approved H200 purchases by DeepSeek, ByteDance, Alibaba and Tencent. By one of the people, the state planner was deciding the conditions.
 S Reuters, Jan 30, 2026, on Yahoo Finance
 Q China's industry and commerce ministries have granted approvals for all four companies
 Q These conditions are being decided by China's state planner
@@ -313,7 +314,7 @@ N purchase the chips unless necessary, two of the people and a third source said
 
 @ nb-pulled press 2026-05-14 No_date_given cn-acts-reuters-us-approvals-20260514-wayback row=nobody col=told dir=away
 T Reuters, by one person: firms "pulled back after guidance from Beijing"
-L Washington has cleared about ten firms, but "not a single delivery has been made so far", Reuters reports; by one person, "Chinese firms pulled back after guidance from Beijing". The same person said the shift "was partly triggered by changes on the U.S. side".
+L Reuters reports, citing three people it did not name, that Washington had cleared about ten firms and that "not a single delivery has been made so far". By one unnamed person, "Chinese firms pulled back after guidance from Beijing". The same person said the shift "was partly triggered by changes on the U.S. side".
 S Reuters, May 14, 2026, as carried by MarketScreener
 Q Chinese firms pulled back after guidance from Beijing
 Q not a single delivery has been made so far
@@ -324,9 +325,9 @@ N The U.S. has cleared around 10 Chinese firms
 N pulled back after guidance from Beijing, one source said
 
 @ nb-withholds press 2026-11-05 No_date_given cn-clips-evidence-1 row=nobody col=told dir=away
-T Reuters: Beijing "withholds approval" for large imports
-L By two people Reuters does not name, about 600,000 Nvidia chips are stored in Hong Kong "as Beijing withholds approval for large-scale imports despite demand from technology firms". Reuters's dateline is Nov 5; the copy used, CNA's, is dated Nov 6.
-S Reuters (dateline Nov 5, 2026), as carried by CNA (Singapore)
+T Reuters report from two unnamed people on H200 chips bound for China
+L Reuters, citing two people it did not name, reported: "About 600,000 of Nvidia's advanced artificial intelligence chips are stored in Hong Kong awaiting shipment to China". The report describes demand from technology firms and uncertainty about large-scale imports. Reuters's dateline is Nov 5; the copy used, CNA's, is dated Nov 6.
+S Reuters (dateline Nov 5, 2026), as carried by CNA (Singapore) on Nov 6, a report from two people Reuters did not name
 Q as Beijing withholds approval for large-scale imports despite demand from technology firms
 Q About 600,000 of Nvidia's advanced artificial intelligence chips are stored in Hong Kong awaiting shipment to China
 D cn-clips-reuters-hongkong-yahoo | Nov 5 (Reuters) - About 600,000 of Nvidia's
@@ -335,7 +336,7 @@ N two people familiar with the matter said
 
 @ nb-nod press 2026-01-28 No_date_given ms-bj-20260128-h200-nod-standard row=nobody col=approved dir=toward
 T reported to give three firms the "green light"
-L "China has given the green light" to ByteDance, Alibaba and Tencent to buy more than 400,000 H200 chips in total, Reuters reports, with conditions still being decided.
+L "China has given the green light" to ByteDance, Alibaba and Tencent to buy more than 400,000 H200 chips in total, Reuters reports, citing four people it did not name. By the report, the conditions were still being decided.
 S Reuters, Jan 28, 2026, on The Standard (Hong Kong)
 Q China has given the green light to three of its largest tech companies to buy Nvidia's H200 artificial intelligence chips
 Q have been approved to purchase more than 400,000 H200 chips in total
@@ -344,25 +345,26 @@ D PUBLISHED: 2026-01-28
 
 @ nb-mar17 press 2026-03-17 No_date_given man-70f4668d5f56 row=nobody col=approved dir=toward
 T Reuters: Nvidia "has won Beijing's approval" for the H200
-L "Nvidia has won Beijing's approval to sell its second-most powerful artificial intelligence chips to China", Reuters reports. A Chinese company source "did not know if the Chinese government had given final approval".
+L "Nvidia has won Beijing's approval to sell its second-most powerful artificial intelligence chips to China", Reuters reports, citing people it did not name. A Chinese company source it did not name "did not know if the Chinese government had given final approval".
 S Reuters, Mar 17, 2026, as carried by Investing.com
 Q Nvidia has won Beijing's approval to sell its second-most powerful artificial intelligence chips to China
 Q did not know if the Chinese government had given final approval
 D Published Mar 17, 2026
 
 @ nb-jul8 press 2026-07-08 No_date_given cn-acts-reuters-ti-cap-20260708-relay1 row=nobody col=told dir=away
-T reported to have "withheld approval so far" and to tell three firms they may soon buy some H200s
-L "Chinese officials" have told Alibaba, ByteDance and DeepSeek in recent weeks that they may soon be allowed to buy some H200 chips, perhaps fewer than 200,000 in total, The Information reports; Reuters, relaying it, adds that Chinese officials "have withheld approval so far".
-S The Information, as relayed by Reuters on AOL, Jul 8, 2026
+T The Information reports on possible H200 purchases, citing two people it did not name
+L "Chinese officials" have told Alibaba, ByteDance and DeepSeek in recent weeks that they may soon be allowed to buy some H200 chips, perhaps fewer than 200,000 in total, The Information reports, citing two people it did not name. Reuters, relaying it, adds that Chinese officials "have withheld approval so far".
+S The Information, a report from two people it did not name, as relayed by Reuters on AOL, Jul 8, 2026
 Q Chinese officials have told Alibaba, ByteDance and DeepSeek in recent weeks that they may soon receive permission to buy some H200 chips
 Q it could amount to fewer than 200,000 in total
 Q Chinese officials, keen to nurture domestic suppliers, have withheld approval so far
 D PUBLISHED: 2026-07-08
+N citing two people with direct knowledge of the matter
 
 @ nb-aug18 press 2026-08-18 No_date_given cn-tolerate-reutersaug26-relay1-wayback row=nobody col=approved dir=toward also=cn-tolerate-ftaug26
-T reported to let small batches into the mainland
-L Small batches of H200 chips "have been allowed to enter mainland China", the Financial Times reports. Separately, it reports that ByteDance and Tencent "have each received about 10,000 H200 processors in recent weeks", and, by one of the people, that "Beijing wants them to keep most of these chips outside the mainland". By the same report, regulators told companies they could ship the chips to Hong Kong and use them there.
-S Financial Times, as relayed by Reuters on Investing.com, Aug 18, 2026, and the paper's own text on Yahoo Finance
+T Financial Times report from two unnamed people on H200 imports into mainland China
+L The Financial Times, citing two people it did not name, reports that small batches of H200 chips "have been allowed to enter mainland China" and that ByteDance and Tencent "have each received about 10,000 H200 processors in recent weeks". By one of the people, "Beijing wants them to keep most of these chips outside the mainland". By the same report, regulators told companies they could ship the chips to Hong Kong and use them there.
+S Financial Times, a report from two people the paper did not name, as relayed by Reuters on Investing.com, Aug 18, 2026, and the paper's own text on Yahoo Finance
 Q have been allowed to enter mainland China
 Q ByteDance and Tencent have each received about 10,000 H200 processors in recent weeks
 D Published Aug 18, 2026

@@ -11,7 +11,7 @@ Reads   ../../../figure/figure_data.txt      the dated records: our line, the so
         ../../../loose_ends/hkexnews_saved_ids.tsv, ../../../loose_ends/terms_saved_ids.tsv (since core edit 7b),
         ../../../tables/replaced_copies.tsv  the saved ids no longer cited (Hong Kong exchange pages; copies from idc.com
                                              and trendforce.com) and their replacements
-Writes  records.csv, records.tsv   one line per dated record, 16 columns
+Writes  records.csv, records.tsv   one line per dated record, with the figure's optional second source
         references.csv             one line per source of the argument, 8 columns
         quotes.tsv                 saved id <TAB> the source's own words, for scripts/cn_has.py
         tables/*.tsv               byte-for-byte copies of the project's plain tables (sha256 checked after writing)
@@ -40,10 +40,10 @@ SCRIPTS = Path('scripts')
 sys.path.insert(0, str(SCRIPTS))
 import cn_argument_build as B
 
-LANE = {'BH': ('Beijing holds Nvidia back', 'Beijing', 'away from Nvidia'),
-        'BL': ('Beijing lets Nvidia in', 'Beijing', 'toward Nvidia'),
-        'CN': ('The companies reach for Nvidia', 'the companies', 'toward Nvidia'),
-        'CH': ('The companies turn to home-made chips', 'the companies', 'away from Nvidia')}
+LANE = {'BH': ('Beijing', 'away from Nvidia'),
+        'BL': ('Beijing', 'toward Nvidia'),
+        'CN': ('the companies', 'toward Nvidia'),
+        'CH': ('the companies', 'away from Nvidia')}
 # round 13 (core batch 15, row B15-043): kind doc in the words of figure_data.txt's own header, without its pointer to the
 # figure's legend; kind_doc_check() stops the build if that header no longer begins with these words
 KIND = {'doc': 'a government document, an official on the record, or published state media',
@@ -64,11 +64,11 @@ ABOUT = {
     'nvidia_china_revenue.tsv': "Nvidia's revenue from customers in China, Hong Kong included, period by period, in millions of US dollars (column value_musd), from its own filings: by the customer's billing location until its quarterly report for the quarter that ended Oct 26, 2025, and by the direct customer's headquarters from that report on, with earlier periods recast (column basis); not a count of chips that entered China",   # round 10b: the readers' lead L455; round 12 (C185): the quarter's end date, checked against the table in copy_tables()
     'nvidia_wording_by_filing.tsv': "Nvidia's own words on China, from its filings and results calls, and its executives' words and its statements as others carried them",
     'press_originals.tsv': "For each press report that an earlier version of the argument cited: whether the copy held is the publisher's own page or another outlet's",   # round 12 (C193)
-    'procurement_records.tsv': "Purchase records: the telecom carriers' central purchases, awards that name Nvidia cards, and tenders that require home-made chips",
+    'procurement_records.tsv': "Purchase records found by searches: the telecom carriers' central purchases, awards that name Nvidia cards, tenders that require home-made chips or refuse imports, and other notices for context. These records give no measure of how often buyers ask for home-made chips or Nvidia cards",
     'provinces_31.tsv': "The 31 provincial-level governments: whether a published plan sets a share for home-made computing, each by its plan's own measure (chips, equipment, hardware and software, or computing capacity), with the document's own words where its text was read. Some rows rest on accounts of a plan rather than its text, and for one government, Xinjiang, no computing plan's text was found, though its development and reform commission, in a reply posted Jul 24, 2026, says two were issued: column result gives the finding, column rests_on what it rests on, and column later_reading what a later reading changed",   # round 10b: L452, L466; round 12 (C186); round 13 (C37): the core renamed the column (B15-064)
     'replaced_copies.tsv': "The {all} saved pages that are no longer cited, and the copy that replaces each where one is needed: {hk} taken from the Hong Kong exchange's site and, since Nov 25, 2026, {terms} taken from idc.com and trendforce.com, whose terms bar copies made by script, so the project stopped citing them",   # round 10b: L468
     'rtx5500_notices.tsv': "Notices on the exchanges' disclosure site, Sept 14 to Nov 24, 2026, whose titles name a contract, a purchase or computing: {rtx_all} notices, {rtx_card} of which name a card PRO 5500, two of them as Nvidia's RTX PRO 5500",   # round 12 (C189): counted in copy_tables(); Youzu's notice names no maker (the argument, point 7)
-    'state_media_items.tsv': "State and Party media items on Nvidia and its chips, July 2025 to November 2026, each with its stance",
+    'state_media_items.tsv': "State and Party media items on Nvidia and its chips, July 2025 to November 2026, each with its stance and subject. The subject column distinguishes chips for AI computing from products with an Nvidia chip, Nvidia as a company and other topics",
     'talks_and_acts.tsv': "US-China trade meetings, May 2025 to November 2026, with what each side's readout says on chips, or that no written readout of that side was found, beside Beijing's dated acts and words on Nvidia chips",   # round 10b: L454
     'trade_annual_summary.tsv': "Yearly sums of monthly customs figures, series by series; column months_held gives how many months of the year each sum covers ({part_years}). No customs line counts Nvidia chips",   # round 12 (C194): part years counted in copy_tables()
     'trade_derived_figures.tsv': "The sums and ratios worked out from the trade tables",
@@ -79,7 +79,7 @@ ABOUT = {
     'procurement_notices_sweep.tsv': "Sixty-one more purchase notices and filings on AI servers and cards, 2024 to November 2026, found by later searches and kept apart from the purchase records: how each names Nvidia, what it says on imports, and whether it requires or refuses Nvidia hardware by name",
     'other_listed_buyers.tsv': "Other listed companies that in 2026 disclosed, or put out a tender for, a purchase or lease of servers with Nvidia chips, or a purchase of computing servers that was not completed",
     'purchase_notices_2024_2025.tsv': "Purchase notices of January 2024 to June 2025, the window a search of Nov 25, 2026 covered, that name the H20, H800, A800, L20 or Nvidia; one row is a company's filing and one a scanned page read by eye",
-    'computing_centre_plans.tsv': "Plans, filings, bond disclosures and tenders for computing centres in mainland China that name Nvidia chips or, for comparison, home-made ones, each marked as an official page or a press account. Column chip_words gives the page's own words on the chips (each cell checked against its saved copy by script); number, the size the page states, in the page's own unit (cards, servers or nodes, or computing power in P or PFLOPS), or that it gives none; state_linked_or_private, only what the page itself shows, and \"not stated\" otherwise",   # round 13 (C219): the table's first line, and number_check() on the column's cells
+    'computing_centre_plans.tsv': "Plans, filings, bond disclosures and tenders for computing centres in mainland China that name Nvidia chips or, for comparison, home-made ones, with the tier marked by the site that carries each page: 1 for government pages, company filings and institutions' own notices, 2 for trade or press accounts, including sites that reprint filings and tenders. Some official sites carry credited press reports. Rows with a page of each tier show both. Column chip_words gives the page's own words on the chips (each cell checked against its saved copy by script); number gives counts of chips, cards, servers, nodes, supernodes, sets, units, cabinets, racks or projects, computing power in P or PFLOPS, rack ratings in kW and percentage shares where stated, or says when a count is missing; state_linked_or_private, only what the page itself shows, and \"not stated\" otherwise",   # round 13 (C219): the table's first line and the check on the number column
     'import_lists_read.tsv': "China's published lists of goods whose import needs a licence or is banned, 2024 to 2026, each searched whole for computers, computer parts and chips, with the control that shows the search could find them",
     'customs_and_tariff_texts_read.tsv': "The pages a search read for a rule on importing a graphics processor, an AI accelerator or a server (114 of them whole when it ran, 17 saved and read afterwards): China's customs and tariff announcements of January 2024 to November 2026 and what was read beside them, each with counts of chip words, customs numbers and words for licences, inspections and holds",
     'provincial_ict_plans.tsv': "The provincial communications administrations' five-year plans for their sector, searched as a class for a home-made share of computing, chips or equipment: 30 units other than Zhejiang, with what could be read for each and the control that shows the search could find a share",
@@ -101,8 +101,13 @@ ABOUT = {
     'local_vouchers_other_provisions.tsv': "Provisions of the counted local voucher rules, other than the counted payment, that give home-made computing something other computing does not get: money to build, buy or run home-made computing facilities or equipment, an award or subsidy for adapting models or software to home-made chips or computing or for research built on them, a higher rate, cap or quota for using home-made computing in another provision, or a priority, purchasing preference, required share or condition in words that bind; one row per provision, each read and ruled on the rule's saved copy. A rule's class does not change by these rows: it is decided by the counted payment alone (local_vouchers_classes.tsv)",
     'results_calls_authority_counts.tsv': "Counts from a search of 118 company texts (76 results-call transcripts and 42 records of four smaller companies) for the names of Chinese authorities beside a chip word: by group and word, the hits and the hits beside a chip word, with what each of those is",
 }
+# The data header shortens the two company labels used in figure_events.tsv.
+FIGURE_ROW_NAMES = {
+    'companies reach for Nvidia': 'The companies reach for Nvidia',
+    'companies turn to home-made chips': 'The companies turn to home-made chips',
+}
 REC_COLS = ['n', 'date', 'date_shown', 'date_exact', 'who', 'direction', 'figure_row', 'kind', 'kind_meaning', 'on_the_record',
-            'our_line', 'source', 'source_words', 'our_english', 'address', 'saved_id']
+            'our_line', 'source', 'source_words', 'our_english', 'address', 'saved_id', 'also_source', 'also_address']
 REF_COLS = ['number', 'kind', 'kind_meaning', 'on_the_record', 'label', 'page_title', 'address', 'saved_id']
 
 
@@ -117,24 +122,35 @@ def plain(s):
 
 
 def read_blocks():
-    out, cur = [], None
+    out, cur, names = [], None, {}
     for ln in (PROJ / 'figure' / 'figure_data.txt').read_text(encoding='utf-8').splitlines():
-        if ln.startswith('@ '):
+        if ln.startswith('# LANE: '):
+            if names: stop('figure_data.txt: two lane keys')
+            for entry in ln.removeprefix('# LANE: ').split(' | '):
+                code, _, label = entry.partition(' ')
+                if code in names or not label: stop(f'figure_data.txt: invalid lane key: {entry}')
+                names[code] = label
+            if names.keys() != LANE.keys(): stop('figure_data.txt: lane key and lane codes disagree')
+        elif ln.startswith('@ '):
             p = ln.split()
             if len(p) != 6 or p[1] not in LANE or p[2] not in KIND: stop(f'figure_data.txt: bad record line: {ln}')
-            cur = {'lane': p[1], 'kind': p[2], 'date': p[3], 'label': p[4], 'sid': p[5], 'T': '', 'S': '', 'Q': '', 'E': '', 'U': '', 'N': ''}
+            cur = {'lane': p[1], 'kind': p[2], 'date': p[3], 'label': p[4], 'sid': p[5], 'T': '', 'S': '', 'Q': '', 'E': '', 'U': '', 'N': '', 'A': ''}
             out.append(cur)
-        elif cur is not None and re.match(r'[TSQEUCN] ', ln):
+        elif cur is not None and re.match(r'[TSQEUACN] ', ln):
             # N (core edit 7, Nov 25, 2026): the record's fixed number, read as scripts/cn_figure_build.py reads it
             if ln[0] == 'N' and not re.fullmatch(r'[1-9]\d*', ln[2:].strip()): stop(f'figure_data.txt: an N line that is not a number: {ln[:60]}')
             if ln[0] != 'C':
                 if cur[ln[0]]: stop(f'figure_data.txt: two {ln[0]} lines in the record of {cur["date"]} {cur["sid"]}')
-                cur[ln[0]] = ln[2:].strip()
+                value = ln[2:].strip()
+                if ln[0] == 'A' and not value:
+                    stop(f'figure_data.txt: empty A line in the record of {cur["date"]} {cur["sid"]}')
+                cur[ln[0]] = value
         elif ln.startswith(('#', '!')) or not ln.strip():
             if ln.startswith('#') and cur is not None and 'Quotations behind the numbers' in ln: cur = None
         else:
             stop(f'figure_data.txt: a line this script does not know: {ln[:60]}')
-    return out
+    if not names: stop('figure_data.txt: no lane key')
+    return out, names
 
 
 def numbers_as_the_figure_gives_them(blocks):
@@ -246,7 +262,7 @@ def copy_tables(num):
     # gives the page's own unit or says that it gives none; stop if a cell does neither (the line would then be wrong)
     _, ch_, crows = data_lines((src / 'computing_centre_plans.tsv').read_text(encoding='utf-8'))
     _nb = [r[ch_.index('number')] for r in crows
-           if not re.search(r'card|server|node|set|\dP\b|PFLOPS|no count|not stated', r[ch_.index('number')])]
+           if not re.search(r'\bchips?\b|card|server|node|set|\dP\b|PFLOPS|no count|not stated', r[ch_.index('number')])]
     if _nb: stop(f'computing_centre_plans.tsv: {len(_nb)} cell(s) of column number name no unit and do not say there is none: {_nb[:3]}; reword its line in ABOUT')
     for o, n in RETIRED_MORE.items(): retired.setdefault(o, n)
     if len(retired) != len(listed | set(RETIRED_MORE)): stop('the ids no longer cited do not add up')
@@ -315,9 +331,13 @@ def kind_doc_check():
 
 def main():
     kind_doc_check()
-    blocks = read_blocks()
+    blocks, lane_names = read_blocks()
     with open(PROJ / 'figure' / 'figure_events.tsv', encoding='utf-8', newline='') as fh:
-        events = list(csv.DictReader(fh, delimiter='\t'))
+        reader = csv.DictReader(fh, delimiter='\t')
+        columns = 'n date shown_as lane kind source address saved_id text also_source also_address'.split()
+        if reader.fieldnames != columns: stop('figure_events.tsv: unexpected columns')
+        events = list(reader)
+        if any(None in e or None in e.values() for e in events): stop('figure_events.tsv: a row has the wrong width')
     if len(blocks) != len(events): stop(f'{len(blocks)} records in figure_data.txt but {len(events)} in figure_events.tsv')
     by = {}
     for e in events:
@@ -327,7 +347,8 @@ def main():
     rows, fixed = [], []
     want_n = numbers_as_the_figure_gives_them(blocks)
     for b in blocks:
-        k = (b['date'], b['sid'], LANE[b['lane']][0])
+        header_name = lane_names[b['lane']]
+        k = (b['date'], b['sid'], FIGURE_ROW_NAMES.get(header_name, header_name))
         e = by.pop(k, None)
         if e is None: stop(f'no line in figure_events.tsv for {k}')
         if int(e['n']) != want_n[(b['date'], b['sid'], b['lane'])]:
@@ -338,12 +359,26 @@ def main():
         if e['kind'] != b['kind']: stop(f'the two files give different kinds for {k}')
         if not b['Q'] or not b['T'] or not b['S']: stop(f'a record without its line, source or words: {k}')
         if not e['address'].startswith('http'): stop(f'no address for {k}')
-        if b['U'] and b['U'] != e['address']: stop(f'the address given in figure_data.txt is not the one in figure_events.tsv for {k}')
+        primary_address = b['U'] or B.L.url_of(b['sid'])
+        if primary_address != e['address']:
+            stop(f'figure_events.tsv: primary address for {k} differs from the figure data or saved copy')
+        if b['A']:
+            other_id, separator, other_source = (part.strip() for part in b['A'].partition('|'))
+            if not separator or not other_id or not other_source or '|' in other_source:
+                stop(f'figure_data.txt: invalid second source for {k}')
+            if plain(e['also_source']) != plain(other_source):
+                stop(f'the two files give different second sources for {k}')
+            address = B.L.url_of(other_id)
+            if not address or address != e['also_address']:
+                stop(f'figure_events.tsv: second-source address for {k} differs from saved copy {other_id}')
+        elif e['also_source'] or e['also_address']:
+            stop(f'figure_events.tsv: second source without an A line for {k}')
+        who, direction = LANE[b['lane']]
         rows.append({'n': int(e['n']), 'date': b['date'], 'date_shown': e['shown_as'], 'date_exact': 'yes' if b['label'] == '-' else 'no',
-                     'who': LANE[b['lane']][1], 'direction': LANE[b['lane']][2], 'figure_row': LANE[b['lane']][0],
+                     'who': who, 'direction': direction, 'figure_row': e['lane'],
                      'kind': b['kind'], 'kind_meaning': KIND[b['kind']], 'on_the_record': 'no' if b['kind'] == 'press' else 'yes',
                      'our_line': b['T'], 'source': b['S'], 'source_words': b['Q'], 'our_english': b['E'],
-                     'address': e['address'], 'saved_id': b['sid']})
+                     'address': e['address'], 'saved_id': b['sid'], 'also_source': e['also_source'], 'also_address': e['also_address']})
     if by: stop(f'lines of figure_events.tsv without a record: {sorted(by)}')
     rows.sort(key=lambda r: r['n'])
     if [r['n'] for r in rows] != list(range(1, len(rows) + 1)): stop('the mark numbers are not 1 to N without gaps')
@@ -473,6 +508,8 @@ COLUMNS OF records.csv AND records.tsv
                  source words are English ({n_cn} records have it)
   address        where the page is, or was, on the web
   saved_id       the id of the saved copy{B.SAVED_ID_WHERE}
+  also_source    the second source as the figure names it, where it gives one
+  also_address   the address of that second source
 
 COLUMNS OF references.csv
   number         the reference number in ARGUMENT_referenced.md, 1 to {len(ref_rows)}
@@ -481,7 +518,7 @@ COLUMNS OF references.csv
 {kind_lines}
   on_the_record  yes for {", ".join(solid_used)}; no for {", ".join(open_used)}
   label          what the source is, as the argument's reference list words it
-  page_title     the saved page's own title, where the record holds one
+  page_title     the saved page's own title, where the argument prints one
   address        the address{noaddr_words}
   saved_id       the id of the saved copy{B.SAVED_ID_WHERE}. An id that begins "clip-" is not a saved page ({", ".join(clip_ids) or "none here"}): it
                  stands for a machine transcript in transcripts_two_clips.md, which nobody has checked by ear
@@ -516,7 +553,7 @@ READ WITH CARE
   OFFICIAL_RECORD.md and TIER2_REPORTING.md.
 
 PLAIN TABLES (tables/)
-  These {len(tabs)} tables were made from Nov 23 to Nov 25, 2026 by the AI agents that did the project's research, each from
+  These {len(tabs)} tables were made from Nov 23 to Nov 26, 2026 by the AI agents that did the project's research, each from
   saved pages, and are the project's own (the folder tables/ beside the argument). They are copied here so that the
   record can be read in a spreadsheet. All {len(tabs)} are byte for byte the project's tables (build.py compares each copy's
   sha256 with the project's after writing; each is given below). Nothing in them is changed here. Their quotations were

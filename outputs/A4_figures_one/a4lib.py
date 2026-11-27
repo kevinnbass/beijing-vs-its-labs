@@ -257,40 +257,75 @@ def funnel(Q, card=False):
     return rows, H
 
 
-# ---------- two readings of the project's own records ----------
+# ---------- shared wording and the state-media count ----------
+THIRD_LIMIT = 'some purchases were reported approved, and Nvidia reported licensed sales'
+FIFTH_LIMIT = ('whether Beijing meant its acts as lasting policy, as leverage in trade talks or as protection of '
+               'its home market is read all three ways')
+
+
+def argument_limits():
+    argument = (PROJ / 'argument' / 'argument_base.txt').read_text(encoding='utf-8')
+    assert f'19. **{THIRD_LIMIT[0].upper() + THIRD_LIMIT[1:]}.**' in argument, 'the third limit must match point 19'
+    assert FIFTH_LIMIT in argument, 'the fifth limit must match the argument’s closing words'
+
+
+def figure_headline():
+    template = (PROJ / 'figure' / 'template.html').read_text(encoding='utf-8')
+    headings = re.findall(r'<h1>(.*?)</h1>', template)
+    assert len(headings) == 1, 'the main figure must have one headline'
+    headline = html.unescape(re.sub(r'<[^>]+>', '', headings[0]))
+    assert headline == 'Beijing pushed for home-made chips. China’s AI companies still sought Nvidia.', 'the main figure headline has changed'
+    return headline
+
 MONTH = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
 
 
 def warnings():
-    """The state and Party media items that only warn about Nvidia's chips, counted from the project's
-    tables/state_media_items.tsv (stance = warns). Since core edit 6 (Nov 24, 2026) the table holds 75 items (rows 43 on
-    were found by searches and links; after Sept 24, 2025 they are a sample, not a census) and the warnings run into 2026.
-    Returned: the items in all, the warnings in all; those of the first year with a warning (the burst: count and span of
-    dates); the later ones (count, their outlet, which must be one outlet, and their months)."""
-    lines = [l for l in (PROJ / 'tables' / 'state_media_items.tsv').read_text(encoding='utf-8').splitlines() if l.strip() and not l.startswith('#')]
-    hdr = lines[0].split('\t'); rows = [dict(zip(hdr, l.split('\t'))) for l in lines[1:]]
-    assert len(rows) > 30 and any(r['stance'] == 'mixed' for r in rows), 'control: the table should hold items of other stances too'
-    assert all(len(l.split('\t')) == len(hdr) for l in lines[1:]), 'a row of the state-media table does not have its header\'s cells'
-    warns = sorted((date.fromisoformat(r['date']), r['outlet']) for r in rows if r['stance'] == 'warns')
-    assert warns, 'no warning in the table'
-    y0 = warns[0][0].year
-    burst = [d for d, _ in warns if d.year == y0]; later = [(d, o) for d, o in warns if d.year != y0]
-    span = (f'{MON[burst[0].month - 1]} {burst[0].day} to {fmt(burst[-1])}' if burst[0].year == burst[-1].year else f'{fmt(burst[0])} to {fmt(burst[-1])}')
-    outlets = {re.sub(r'\s*\(.*$', '', o).strip() for _, o in later}
-    assert len(outlets) <= 1, f'the later warnings come from more than one outlet: {sorted(outlets)}; the sentences that say one outlet must change'
-    mo = []
-    for d, _ in later:
-        if (d.year, d.month) not in [(a, b) for a, b in mo]: mo.append((d.year, d.month))
-    yrs = sorted({a for a, _ in mo})
-    if len(yrs) == 1: months = ' and '.join(MONTH[b - 1] for _, b in mo) + f' {yrs[0]}' if len(mo) <= 2 else None
-    else: months = None
-    assert later == [] or months, 'the later warnings span more than two months or more than one year: the wording that names their months must change'
-    # round 12: the months the table's items were found in, from its own date cells ("July 2025 to November 2026"), as the
-    # argument's point 18 gives the period; the six sentences (round 11) and the brief print it
-    ds = sorted(date.fromisoformat(r['date']) for r in rows)
-    found = f'{MONTH[ds[0].month - 1]} {ds[0].year} to {MONTH[ds[-1].month - 1]} {ds[-1].year}'
-    return {'items': len(rows), 'warn': len(warns), 'burst': len(burst), 'span': span, 'later': len(later),
-            'later_outlet': next(iter(outlets)) if outlets else '', 'later_months': months or '', 'found': found}
+    """Count warnings in the July 2025 to November 2026 list, excluding items coded mixed."""
+    from collections import Counter
+
+    lines = [l for l in (PROJ / 'tables' / 'state_media_items.tsv').read_text(encoding='utf-8').splitlines()
+             if l.strip() and not l.startswith('#')]
+    hdr = lines[0].split('\t')
+    cells = [line.split('\t') for line in lines[1:]]
+    assert all(len(row) == len(hdr) for row in cells), 'a state-media row does not have its header’s cells'
+    rows = [dict(zip(hdr, row)) for row in cells]
+    stances = Counter(row['stance'] for row in rows)
+    subjects = Counter(row['subject'] for row in rows)
+    assert len(rows) == 297 and stances == {'warns': 34, 'welcomes': 28, 'mixed': 14, 'neutral': 126,
+                                           'self-reliance': 74, 'other': 21}, (len(rows), stances)
+    assert subjects == {'chips for AI computing': 219, 'a product with an Nvidia chip': 40,
+                        'other': 30, 'Nvidia as a company': 8}, subjects
+    dated = [(date.fromisoformat(row['date']), row) for row in rows]
+    warns = sorted(day for day, row in dated if row['stance'] == 'warns')
+    warning_subjects = Counter(row['subject'] for _, row in dated if row['stance'] == 'warns')
+    assert warning_subjects == {'chips for AI computing': 33, 'other': 1}, warning_subjects
+    burst_start, burst_end = date(2025, 7, 31), date(2025, 9, 24)
+    h200_start, h200_end = date(2025, 12, 9), date(2026, 1, 14)
+    burst = [day for day in warns if burst_start <= day <= burst_end]
+    h200 = sorted((day, row['saved_id']) for day, row in dated
+                  if h200_start <= day <= h200_end and row['stance'] == 'warns')
+    assert len(burst) == 23 and (burst[0], burst[-1]) == (burst_start, burst_end), burst
+    # Point 4 cites these saved pages; the Official Record gives their dates and outlets.
+    assert h200 == [
+        (h200_start, 'cn-ga31-smcctvp3-2'),                 # China National Radio
+        (date(2025, 12, 11), 'cn-ga31-smglobaltimes-76'),
+        (date(2025, 12, 16), 'cn-ga31-smglobaltimes-37'),
+        (date(2026, 1, 6), 'cn-ga31-smglobaltimes-31'),
+        (h200_end, 'cn-ga31-smdailiesp3-5'),                # Beijing Daily client, from CCTV
+        (h200_end, 'cn-ga31-smglobaltimes-50'),
+    ], f'the H200 warning dates or saved IDs differ from point 4 and the Official Record: {h200}'
+    before = sum(day < burst_start for day in warns)
+    later = sum(day > burst_end for day in warns)
+    assert (before, later) == (1, 10), (before, later)
+    assert sum(day > date(2025, 9, 30) and row['stance'] == 'mixed' for day, row in dated) == 10
+    first, last = min(day for day, _ in dated), max(day for day, _ in dated)
+    assert first.strftime('%Y-%m') == '2025-07' and last.strftime('%Y-%m') == '2026-11', (first, last)
+    return {'items': len(rows), 'warn': len(warns), 'burst': len(burst), 'h200': len(h200),
+            'before': before, 'later': later,
+            'span': f'{MON[burst_start.month - 1]} {burst_start.day} to {fmt(burst_end)}',
+            'h200span': f'{fmt(h200_start)} to {fmt(h200_end)}', 'cutoff': fmt(burst_end),
+            'found': f'{MONTH[first.month - 1]} {first.year} to {MONTH[last.month - 1]} {last.year}'}
 
 
 def caption_time(sid, words):

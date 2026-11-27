@@ -182,8 +182,10 @@ def main():
                       f'The table gives no reasons, and the committee says some applications are {qm(Q["table.notfull"])}.'),
         'approved': f'{qm(Q["approved"])}. {qm(Q["approved.conditions"])}.',
         'discussed': f'{qm(Q["discussed.what"])}; {qm(Q["discussed"])}.',
-        'delivered': f'{qm(Q["delivered"])}; {qm(Q["delivered.outside"])}.',
-        'waiting': f'{qm(Q["waiting"])}, {qm(Q["waiting.withholds"])}. The report calls them {qm(Q["waiting.h200"].split("size of ")[1])}.',
+        'delivered': (f'The Financial Times, citing two unnamed people, reported: {qm(Q["delivered"])}. '
+                      f'By one of them, {qm(Q["delivered.outside"])} ({A.link(Q["delivered.outside"].sid, "Financial Times, on Yahoo Finance")}).'),
+        'waiting': (f'Reuters, citing two unnamed people, reported: {qm(Q["waiting"])}, {qm(Q["waiting.withholds"])}. '
+                    f'The report calls them {qm(Q["waiting.h200"].split("size of ")[1])}.'),
     }
     srclink = {
         'wapproved': lambda r: A.link(r['sid'], f'House Foreign Affairs Committee, summary made public {released}'),
@@ -214,7 +216,7 @@ def main():
    <h1>Reported ordered: more than 2 million H200 chips.<br> Reported delivered: about {per:,} each, to a few buyers.</h1>
    <p class="deck">{NUM[len(press)].capitalize()} press reports citing unnamed people, and {NUM[len(docs)]} sums from one United States government table of licence applications. They are separate counts, not one tally: they do not add up, and they are not stages of one sale. They are set side by side by what they count, not in date order. An application names a data-centre operator or ultimate consignee; it is not an order. Bars are drawn to one scale.</p>
    <ul class="key">
-    <li><i class="sw toward"></i><span><b>Toward Nvidia:</b> ordering it, letting it in</span></li>
+    <li><i class="sw toward"></i><span><b>Toward Nvidia:</b> seeking, buying, using or welcoming it</span></li>
     <li><i class="sw away"></i><span><b>Away from Nvidia:</b> holding it back</span></li>
     <li><i class="sw us"></i><span><b>Washington’s table</b> of licence applications</span></li>
     <li><span class="pin toward" aria-hidden="true">1</span><span><b>Open mark:</b> a press report citing unnamed people. {NUM[len(press)].capitalize()} bars</span></li>
@@ -256,7 +258,7 @@ def main():
    <li>Two later accounts say otherwise of the orders reported in bar {R["ordered"]["n"]}. Nvidia’s chief executive, the day after Reuters reported that Beijing had approved purchases, said <span lang="zh-Hans">{qm(Q["orders.ceo"])}</span> (I think the Chinese government is still deciding; we have not yet received purchase orders), as {A.link(Q["orders.ceo"].sid, f"Voice of America’s Chinese service, {fmt(d_ceo)}")}, renders him.
     TechWeb, as {A.link(Q["orders.techweb"].sid, "Sina carries it")}, reported on {fmt(d_tw)}, from industry insiders it did not name, that <span lang="zh-Hans">{qm(Q["orders.techweb"])}</span> (China’s AI firms had placed almost no bulk purchase orders for Nvidia’s H200). English in round brackets is ours, not an official translation.</li>
    <li>Nvidia’s figures are in money, not in chips: a share of its revenue in the quarterly report, a sum of its sales on the call. Neither its call of {fmt(d_q3)} nor Reuters’s report of it says how many of those chips crossed into the mainland.</li>
-   <li>No report here says how many H200 chips have entered the mainland. The Hong Kong report says small quantities were shipped by other routes, in its words, {qm(Q["waiting.howmany"].split("routes ")[1])}.</li>
+   <li>No report here says how many H200 chips have entered the mainland.</li>
   </ul>
  </section>
 </div>

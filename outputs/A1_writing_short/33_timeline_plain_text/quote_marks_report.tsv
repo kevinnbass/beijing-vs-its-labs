@@ -9,6 +9,7 @@ record	saved_id	result	phrase
 46	cn-labs-rtx6000d-demand-20250916-relay1	kept	even if Nvidia’s products are preferred by many companies
 20	man-ms-sec-10q-2025-10	kept	restricted customers from purchasing, importing, or using our data center products
 20	man-ms-sec-10q-2025-10	kept	we are already effectively foreclosed from the China market by U.S. export controls
+47	cn-tolerate-ft-offshore	kept	are among the tech groups training their latest large language models (LLMs) in data centres across Southeast Asia
 47	cn-tolerate-ft-offshore	kept	to access Nvidia’s chips
 48	cn-labs-h200-demand-20251210-relay1	kept	should Beijing give them the green light
 49	cn-labs-h200-lobby	kept	aggressively placing large orders and lobbying the government to relax restrictions on a conditional basis
@@ -20,14 +21,20 @@ record	saved_id	result	phrase
 51	cn-policy-alibaba-own-gpu	kept	has brought proprietary GPUs into scaled production
 53	cn-le29-zhipu-results-20260331-en	kept	computing power shortage
 25	cn-us-lutnick-0422-rev-transcript-b	kept	understanding
+25	cn-us-lutnick-0422-rev-transcript-b	kept	their cloud companies want to buy these chips
 25	cn-us-lutnick-0422-rev-transcript-b	kept	has not let them as of yet buy the chips
 26	cn-acts-reuters-us-approvals-20260514-wayback	kept	not a single delivery
 26	cn-acts-reuters-us-approvals-20260514-wayback	kept	pulled back after guidance from Beijing
 26	cn-acts-reuters-us-approvals-20260514-wayback	kept	partly triggered by changes on the U.S. side
 31	cn-acts-reuters-ti-cap-20260708-relay1	kept	have withheld approval so far
-32	man-a7d2f1a9f963	kept	very few
+32	man-a7d2f1a9f963	kept	There have been minimal exports of any H200s to China so far
+33	cn-tolerate-reutersaug26-relay1-wayback	kept	ByteDance and Tencent have each received about 10,000 H200 processors in recent weeks
+33	cn-tolerate-ftaug26	kept	Beijing wants them to keep most of these chips outside the mainland
+33	cn-tolerate-ftaug26	kept	ship such processors to Hong Kong
+33	cn-tolerate-reutersaug26-relay1-wayback	kept	use them there
 34	man-ms-sec-10q-2026-07	kept	were restricted by the PRC government
-36	cn-clips-evidence-1	kept	as Beijing withholds approval for large-scale imports despite demand from technology firms
+36	cn-clips-evidence-1	kept	About 600,000 of Nvidia’s advanced artificial intelligence chips are stored in Hong Kong awaiting shipment to China
+36	cn-clips-evidence-1	kept	withholds approval for large-scale imports despite demand from technology firms
 59	cn-o36-tencent-call-20261118-sa	kept	can be run very effectively on a surprisingly limited number of domestic chips
 59	cn-o36-tencent-call-20261118-sa	kept	able to drive a far higher volume of tokens, specifically on domestic chips, than we would have imagined a year ago
 60	cn-o36-tencent-call-20261118-sa	kept	It sets everyone back in China

@@ -159,26 +159,33 @@ def main():
     pr = [l.rstrip('\n').split('\t') for l in (ROOT / 'research/cn_chip_policy_20261120/tables/procurement_records.tsv').read_text(encoding='utf-8').splitlines() if l.strip() and not l.startswith('#')]
     if any(len(x) != len(pr[0]) for x in pr[1:]): sys.exit('procurement_records.tsv: a row without the header\'s number of cells')
     fill['N_PROC'] = len(pr) - 1
-    if fill['N_PROC'] != 53: sys.exit(f'procurement_records.tsv now has {fill["N_PROC"]} rows, not 53: read the new rows and change the later records')      # 52 since core edit 8 (Nov 25, 2026): row 52 is the award of Apr 24, 2025 that names the H20, described under "What was not found"; 53 since core edit 8b (round 9 of the outputs): row 53 is Beihang's School of AI result of Jul 10, 2026 (four cards the page calls RTX 6000D), described under the later records
-    if not any(x[pr[0].index('saved_id')] == 'cn-ga31-counter-8' for x in pr[1:]): sys.exit('procurement_records.tsv: row 53 (cn-ga31-counter-8) is gone: read the table and change the later records')
+    if fill['N_PROC'] != 161: sys.exit(f'procurement_records.tsv now has {fill["N_PROC"]} rows, not 161: read the new rows and change the later records')
+    procurement = {record['saved_id']: record for record in (dict(zip(pr[0], row)) for row in pr[1:])}
+    if 'cn-ga31-counter-8' not in procurement:
+        sys.exit('procurement_records.tsv: the Beihang result (cn-ga31-counter-8) is gone: read the table and change the later records')
+    tsinghua_result = procurement.get('cn-ga31-nvawardsouth-18', {})
+    if (tsinghua_result.get('quantity'), tsinghua_result.get('value')) != ('2 servers', '1,506,457 yuan (award)'):
+        sys.exit('procurement_records.tsv: the Tsinghua Pearl River Delta Research Institute result changed: read the notice and change the later records')
     print(f'core table of purchase records: {fill["N_PROC"]} rows')
     # round 9: the core's table of the carriers' own notices and others' accounts (tables/carriers_own_notices.tsv), counted here:
     # rows of the carriers' own notices; pages of the carriers' own notices, filing and news page and of the sites' records of their
-    # notices, and how many hold no Nvidia name or model by the table's own count. The one page that does must be the Jiangsu company's
-    # tender the note names; control: a page of another class (a relay) holds such words, so the count can see a hit.
+    # notices, and how many hold no Nvidia name or model by the table's own count. The two pages that do must be the
+    # Jiangsu and Shenzhen notices the note names. A relay also serves as a positive control.
     cr = [l.rstrip('\n').split('\t') for l in (ROOT / 'research/cn_chip_policy_20261120/tables/carriers_own_notices.tsv').read_text(encoding='utf-8').splitlines() if l.strip() and not l.startswith('#')]
-    ch = cr[0]; cr = [dict(zip(ch, x)) for x in cr[1:]]
-    if any(len(x) != len(ch) for x in cr): sys.exit('carriers_own_notices.tsv: a row without the header\'s number of cells')
+    ch = cr[0]
+    if any(len(x) != len(ch) for x in cr[1:]): sys.exit('carriers_own_notices.tsv: a row without the header\'s number of cells')
+    cr = [dict(zip(ch, x)) for x in cr[1:]]
     own_cls = lambda w: w.startswith("carrier's own") or w.startswith("a tender site's account")      # noqa: E731
     fill['N_CARR_OWN'] = sum(1 for x in cr if x['who_states'].startswith("carrier's own notice"))
     pages = {}
     for x in cr:
         if own_cls(x['who_states']): pages.setdefault(x['saved_id'].split(';')[0].strip(), set()).add(x['nvidia_words_on_page'].strip())
     with_nv = sorted(s for s, v in pages.items() if v != {'none'})
-    if with_nv != ['cn-ga31-carrierown-14']: sys.exit(f'carriers_own_notices.tsv: pages with Nvidia words are {with_nv}, not the one the note names: read them and change the note')
+    if with_nv != ['cn-ga31-carrierown-14', 'cn-ga31-carrierownp3-23']:
+        sys.exit(f'carriers_own_notices.tsv: pages with Nvidia words are {with_nv}, not the two the note names: read them and change the note')
     if not any(not own_cls(x['who_states']) and x['nvidia_words_on_page'].strip() not in ('none', '') for x in cr): sys.exit('carriers_own_notices.tsv: control: no relay page holds Nvidia words')
     fill['N_CARR_PAGES'] = len(pages); fill['N_CARR_PAGES_NONE'] = len(pages) - len(with_nv)
-    # round 10: the pages the rows of own notices rest on (several rows share a page), so the note can say how 34 rows relate to 33 pages
+    # Count saved pages separately from rows: several rows can cite the same page.
     fill['N_CARR_OWN_PAGES'] = len({x['saved_id'].split(';')[0].strip() for x in cr if x['who_states'].startswith("carrier's own notice")})
     print(f'carriers\' own notices: {fill["N_CARR_OWN"]} rows on {fill["N_CARR_OWN_PAGES"]} pages')
     # round 10: negatives the note states, each with a control that the same search can find a hit
@@ -188,7 +195,7 @@ def main():
         print(f'{sid}: none of {", ".join(words)}; control {ctl_word} found in {ctl_sid}')
     _none('cn-le17-c114-w118-1321457', ['昇腾', '英伟达', 'NVIDIA', 'CANN', 'CUDA', '鲲鹏', '芯片', '寒武纪', '海光', '昆仑'], 'cn-le17-c114-w3542-1307004', 'CANN')
     _none('cn-policy-server-procurement-2023', ['加速', 'GPU', '显卡', 'NPU', '人工智能'], 'cn-o35-ccgp-lnust-202511', 'GPU')
-    print(f'carriers\' own notices (core table): {fill["N_CARR_OWN"]} rows; {fill["N_CARR_PAGES_NONE"]} of {fill["N_CARR_PAGES"]} pages of own notices, filing, news page and sites\' records with no Nvidia word; the other {with_nv[0]}; control: a relay page holds them')
+    print(f'carriers\' own notices (core table): {fill["N_CARR_OWN"]} rows; {fill["N_CARR_PAGES_NONE"]} of {fill["N_CARR_PAGES"]} pages of own notices, filing, news page and sites\' records with no Nvidia word; the other pages {", ".join(with_nv)}; control: a relay page holds them')
     for y in years:
         for k in CLASSES: fill[f'C_{y}_{k}'] = c[(y, k)]
         fill[f'C_{y}_ALL'] = sum(c[(y, k)] for k in CLASSES)

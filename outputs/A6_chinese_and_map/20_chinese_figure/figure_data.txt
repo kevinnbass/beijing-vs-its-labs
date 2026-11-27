@@ -11,10 +11,11 @@
 #   Q  the page's own words (checked by the builder against the saved copy; spacing and quote style ignored)
 #   E  my English rendering, where Q is Chinese
 #   U  the address to link (only where the saved copy's own address is cut short or is a relay to avoid)
+#   A  a second linked source, as SAVED-ID | source as shown
 #   C  a short label drawn beside the mark on the strip: start|end dx dy words
 #   N  the record's fixed number (core edit 7, Nov 25, 2026): a record added after the figure was made public takes the next
 #      free number, so that no earlier record changes its number; records without N are numbered by date as before
-# LANE: BH Beijing holds Nvidia back | BL Beijing lets Nvidia in | CN companies reach for Nvidia | CH companies turn to home-made chips
+# LANE: BH Beijing holds Nvidia back | BL Beijing is more open to Nvidia | CN companies reach for Nvidia | CH companies turn to home-made chips
 # KIND: doc  a government document, an official on the record, or published state media (the legend's "on the record")
 #       rec  a company, or a named person outside government, on the record (filing, results, a named executive or analyst)
 #       press a press report citing unnamed people
@@ -114,10 +115,11 @@ Z 不被允许进入中国，据三名知情人士称
 C start -5 -42 据报道H200不准进入中国
 
 @ BH doc 2026-04-22 - cn-us-lutnick-0422-rev-transcript-b
-T 美国商务部长在参议院作证，称这是他的了解（原文："my understanding"）：中国中央政府至今没有让这些企业购买芯片（原文："has not let them as of yet buy the chips"）
+T 美国商务部长在参议院作证，称这是他的了解（原文："my understanding"）：中国的云计算企业想买这些芯片（原文："their cloud companies want to buy these chips"），中国中央政府至今没有让它们购买（原文："has not let them as of yet buy the chips"）
 S 霍华德·卢特尼克（Howard Lutnick），参议院听证会（Rev网站文字记录）
 Q Chinese central government has not let them as of yet buy the chips because they're trying to keep their investment focused on their own domestic industry
 Z 中国中央政府至今没有让它们购买这些芯片，因为他们想让投资集中在本国的产业上
+! cn-us-lutnick-0422-rev-transcript-b | my understanding is their cloud companies want to buy these chips
 
 @ BH press 2026-05-14 - cn-acts-reuters-us-approvals-20260514-wayback
 T 据报道，华盛顿已批准约十家企业购买，却一次交付都没有（原文："not a single delivery"）；据一名人士说，企业在北京方面给出指导后退缩（原文："pulled back after guidance from Beijing"），这一转变部分由美方的变化引发（原文："partly triggered by changes on the U.S. side"）
@@ -144,11 +146,11 @@ Q such sales were restricted by the PRC government
 Z 这类销售受到中国政府的限制
 
 @ BH press 2026-11-05 - cn-clips-evidence-1
-T 据路透社援引两名未具名的知情人士报道，约60万枚英伟达芯片存放在香港，尽管科技企业有需求，北京方面仍迟迟未批准大规模进口（原文："as Beijing withholds approval for large-scale imports despite demand from technology firms"）
+T 路透社援引两名未具名人士报道H200库存，称约60万枚英伟达先进AI芯片存放在香港，等待运往中国（原文："About 600,000 of Nvidia's advanced artificial intelligence chips are stored in Hong Kong awaiting shipment to China"）。路透社称，尽管科技企业有需求，北京方面仍未批准大规模进口（原文："withholds approval for large-scale imports despite demand from technology firms"）
 S 路透社，载于亚洲新闻台（CNA），其网页日期为11月6日；路透社11月5日的电头见雅虎转载的文本
 Q as Beijing withholds approval for large-scale imports despite demand from technology firms
 Z 尽管科技企业有需求，北京方面仍迟迟未批准大规模进口
-C end -3 -42 报道称60万枚在香港
+C end -3 -42 路透社报道约60万枚
 ! cn-clips-reuters-hongkong-yahoo | Nov 5 (Reuters) - About 600,000 of Nvidia's
 
 @ BL doc 2025-04-17 - cn-policy-he-welcomes
@@ -198,18 +200,19 @@ Z 中国官员有意扶持本土供应商，迄今未予批准
 ! cn-acts-reuters-ti-cap-20260708-relay1 | it could amount to fewer than 200,000 in total
 
 @ BL doc 2026-07-14 - man-a7d2f1a9f963
-T 美国出口管制主管官员在国会作证：H200已开始对华发货，数量极少（原文："very few"）
+T 美国出口管制主管官员凯斯勒在国会作证时称，迄今对华出口的H200数量极少（原文："There have been minimal exports of any H200s to China so far"）
 S 杰弗里·凯斯勒（Jeffrey Kessler），众议院听证会，据路透社报道
 Q There have been minimal exports of any H200s to China so far
 Z 迄今为止，H200对华出口数量极少
 U https://www.investing.com/news/stock-market-news/us-official-says-shipments-of-h200-chips-to-china-have-begun-4791235
 
 @ BL press 2026-08-18 - cn-tolerate-reutersaug26-relay1-wayback
-T 据报道，字节跳动和腾讯各收到约1万枚H200；北京方面希望两家企业把大部分芯片留在中国内地以外，监管机构告知企业可运往香港并在那里使用
-S 英国《金融时报》，经路透社转述，载于Investing.com；该报原文见雅虎财经
+T 英国《金融时报》援引两名未具名人士称，字节跳动和腾讯最近几周各收到约1万枚H200处理器（原文："ByteDance and Tencent have each received about 10,000 H200 processors in recent weeks"）。其中一人称，北京方面希望两家企业把这些芯片的大部分留在中国内地以外（原文："Beijing wants them to keep most of these chips outside the mainland"）。据该报报道，监管机构告知企业，可以把这类处理器运往香港并在那里使用（原文："ship such processors to Hong Kong"、"use them there"）
+S 路透社转述英国《金融时报》援引两名未具名人士的报道，载于Investing.com
 Q ByteDance and Tencent have each received about 10,000 H200 processors in recent weeks
+A cn-tolerate-ftaug26 | 英国《金融时报》原文，载于雅虎财经（8月19日）
 Z 字节跳动和腾讯最近几周各收到约1万枚H200处理器
-C end 118 -19 据报道各到货约1万枚
+C end 164 -19 据报各约1万枚
 
 @ BL press 2026-09-27 - cn-acts-reuters-rtx5500-20260927
 N 62
@@ -248,7 +251,7 @@ Q tech giants from Alibaba to ByteDance argued that their AI development would b
 Z 从阿里巴巴到字节跳动的科技巨头主张，没有英伟达的芯片，它们的AI研发将受到损害
 
 @ CN press 2025-11-27 - cn-tolerate-ft-offshore
-T 据报道，阿里巴巴和字节跳动在东南亚的数据中心训练最新模型，以便使用英伟达的芯片（原文："to access Nvidia's chips"）
+T 英国《金融时报》援引两名未具名人士报道，阿里巴巴和字节跳动是在东南亚各地数据中心训练最新大语言模型的科技集团中的两家（原文："are among the tech groups training their latest large language models (LLMs) in data centres across Southeast Asia"），目的是使用英伟达的芯片（原文："to access Nvidia's chips"）
 S 英国《金融时报》，载于《爱尔兰时报》
 Q are among the tech groups training their latest large language models (LLMs) in data centres across Southeast Asia
 Z 属于在东南亚各地数据中心训练其最新大语言模型（LLM）的科技集团之列
@@ -307,7 +310,7 @@ Z 寻求国产AI芯片
 C start 14 4 在美国管制之后
 
 @ CH rec 2025-04-25 - man-cn-labs-baidu-30k-reuters-alt1
-T 百度点亮由3万枚自研昆仑芯P800组成的集群
+T 百度首席执行官称，百度已点亮由3万枚自研昆仑芯P800组成的集群
 S 李彦宏在百度开发者大会上宣布，据路透社报道，载于StreetInsider
 Q comprising 30,000 of its self-developed, third generation P800 Kunlun chips
 Z 由3万枚自研的第三代昆仑芯P800芯片组成
@@ -852,6 +855,35 @@ Z 不论你实际上何时开始在中国境外租用或建设算力
 ! cn-ga31-voucher5-sip-2025-37hao | 苏州工业园区管理委员会2025年11月12日
 ! cn-ga31-voucher5-zhongkai-plan-wayback | 本方案自印发之日起实施，至2027年12月31日结束
 ! cn-ga31-voucher5-zhongkai-plan-wayback | 仲恺高新区党工委管委会综合办公室 2026年4月1日
+# Round 16: wording in the notes, H200 bars, and extra source for record 33.
+! cn-ga31-replies-11 | 算力类型涵盖国产化算力（华为昇腾、海光、寒武纪等）与主流算力（NVIDIA）
+! cn-ga31-carrierownp3-23 | NVIDIA GPU / 昇腾 NPU 异构算力
+! cn-ga31-operatorsp2-41 | PN8I型云主机采用NVIDIA L20 GPU
+! cn-ga31-dcstateeast-8 | 支持企业采用国产化算力建设超大规模智算中心，在项目用地、绿电、能耗指标等方面给予保障
+! cn-ga31-cnpress2ap3-23 | 基于自主研发芯片的算力标称值占全部系统算力标称值的比值应不低于60%
+! cn-ga31-cnpress2ap3-23 | 发布机构： 安徽宿州高新技术产业开发区管委会
+! cn-ga31-msspostsp2-38 | 不应提供远程关闭、定位和与未声明的通信实体交互数据等功能
+! cn-ga31-msspostsp2-38 | 全国网络安全标准化技术委员会秘书处
+! cn-le27-ndrc-presser-20260618-json | 2026-06-18 10:03:03
+! cn-ga31-mediabase-4 | 对H20芯片的过度依赖，会使中国人工智能产业在全球竞争中陷入被动局面
+! cn-ga31-mediabase-4 | 2025-03-13 11:08:34 来源： 人民邮电报
+! cn-ga31-smdailiesp3-49 | Relying on deliberately constrained fourth-best chips is a dangerous trap.
+! cn-ga31-smdailies-1 | Tu noted that such security concerns about Nvidia chips were not unfounded.
+! cn-ga31-smcctvp3-2 | 美国允许对华出口英伟达H200高端算力芯片
+! cn-ga31-smdailiesp3-5 | 美国放宽H200芯片出口中国管制
+! cn-tolerate-ftaug26 | ByteDance and Tencent have each received about 10,000 H200 processors in recent weeks
+! cn-tolerate-ftaug26 | according to two people with knowledge of the matter.
+! cn-tolerate-ftaug26 | have told companies that they can ship such processors to Hong Kong, which operates as a territory outside its customs border, and use them there.
+! cn-tolerate-ftaug26 | 2026-08-19T02:09:39
+! cn-clips-evidence-1 | Several major Chinese internet companies have each obtained about 10,000 H200 chips in the past few months, one of the people said.
+! cn-clips-evidence-1 | The size of the stockpile of H200 chips
+! cn-tolerate-ft-offshore | according to two people with direct knowledge of the matter
+! cn-ga31-voucherrulesmissingp3-7 | 以智能算力、超级算力服务合同额一定比例给予智算券补贴，其中，自主信创智算补贴比例 25%, 其他智算补贴比例 20%
+! cn-ga31-voucherrulesmissingp3-7 | 本办法自发布之日起实施，有效期至2027年12月31日
+! cn-ga31-voucherrulesmissingp3-7 | /202403/t20240312_164480.html
+! cn-ga31-vcitynorthp3-27 | 每年发放总额不超过1000万元的“算力券”，对符合条件的申领主体，经评审，按照不超过算力服务合同金额的20%，给予最高100万元奖励
+! cn-ga31-vcitynorthp3-27 | 本措施自公布之日起施行，有效期至2027年12月31日
+! cn-ga31-vcitynorthp3-27 | 2025-06-04T09:51:56
 
 # Added for the Chinese version: exact words the Chinese page puts between quote marks (from zh_lines.txt)
 ! cn-us-lutnick-0422-rev-transcript-b | So that's my understanding of what's happening

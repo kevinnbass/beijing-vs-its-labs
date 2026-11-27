@@ -1,7 +1,5 @@
 # Data for the tracker page (build.py in the folder above reads this file; add_record.py appends to it).
-# A copy of the data file of the figure "Beijing vs. its labs", taken again on Nov 26, 2026 after the core's batch of 08:57 UTC
-# (the copy as taken: data/archive/figure_data.as_copied_20261126_r13.txt; no script reads data/archive/). The copy
-# before this one is data/figure_data.before-r13-20261126.txt. Every change is a line of tracker_log.tsv.
+# Copied from the main figure. The tracker keeps its own checks at the end. See tracker_log.tsv for changes.
 # One block per dated event:
 #   @ LANE KIND DATE DATELABEL SAVED-ID
 #   T  the line shown in the figure (my words)
@@ -9,13 +7,17 @@
 #   Q  the page's own words (checked by the builder against the saved copy; spacing and quote style ignored)
 #   E  my English rendering, where Q is Chinese
 #   U  the address to link (only where the saved copy's own address is cut short or is a relay to avoid)
+#   A  a second linked source, as SAVED-ID | source as shown
 #   C  a short label drawn beside the mark on the strip: start|end dx dy words
 #   N  the record's fixed number (core edit 7, Nov 25, 2026): a record added after the figure was made public takes the next
 #      free number, so that no earlier record changes its number; records without N are numbered by date as before
-# LANE: BH Beijing holds Nvidia back | BL Beijing lets Nvidia in | CN companies reach for Nvidia | CH companies turn to home-made chips
-# KIND: doc  a government document, an official on the record, or published state media (the legend's "on the record")
+# LANE: BH Beijing holds Nvidia back | BL Beijing is more open to Nvidia | CN companies reach for Nvidia | CH companies turn to home-made chips
+# KIND: doc  a document or one of the published sources or notices in the filled key below
 #       rec  a company, or a named person outside government, on the record (filing, results, a named executive or analyst)
-#       press a press report citing unnamed people
+#       press a press report citing unnamed people (open mark)
+# A filled mark is a document, a filing, a named person on the record, a published commentary, report or
+# statement of state media, an industry body or a research institute, an institution's own notice, or a
+# named outlet's account of a document.
 # DATELABEL: "-" prints the date; otherwise the words given (use _ for a space).
 # Lines starting "!" are extra quotations the builder must find (they back numbers in the panels): ! SAVED-ID | words
 
@@ -104,9 +106,10 @@ Q are not permitted to enter China, according to three people briefed on the mat
 C start -5 -42 H200 said "not permitted"
 
 @ BH doc 2026-04-22 - cn-us-lutnick-0422-rev-transcript-b
-T US Commerce Secretary to the Senate, as his "understanding": the Chinese central government "has not let them as of yet buy the chips"
+T US Commerce Secretary to the Senate, as his "understanding": "their cloud companies want to buy these chips", and the Chinese central government "has not let them as of yet buy the chips"
 S Howard Lutnick, Senate hearing (Rev transcript)
 Q Chinese central government has not let them as of yet buy the chips because they're trying to keep their investment focused on their own domestic industry
+! cn-us-lutnick-0422-rev-transcript-b | my understanding is their cloud companies want to buy these chips
 
 @ BH press 2026-05-14 - cn-acts-reuters-us-approvals-20260514-wayback
 T Reported: about ten firms cleared by Washington, "not a single delivery"; by one person, firms "pulled back after guidance from Beijing", a shift "partly triggered by changes on the U.S. side"
@@ -131,11 +134,11 @@ S Nvidia, Form 10-Q filed with the SEC
 Q such sales were restricted by the PRC government
 
 @ BH press 2026-11-05 - cn-clips-evidence-1
-T By two people Reuters does not name, about 600,000 Nvidia chips are stored in Hong Kong "as Beijing withholds approval for large-scale imports despite demand from technology firms"
+T Reuters, citing two people it does not name, reports on an H200 stockpile: "About 600,000 of Nvidia's advanced artificial intelligence chips are stored in Hong Kong awaiting shipment to China". Reuters says Beijing "withholds approval for large-scale imports despite demand from technology firms"
 S Reuters, on CNA, whose page is dated Nov 6; Reuters's dateline of Nov 5 stands on Yahoo's copy
 ! cn-clips-reuters-hongkong-yahoo | Nov 5 (Reuters) - About 600,000 of Nvidia's
 Q as Beijing withholds approval for large-scale imports despite demand from technology firms
-C end -3 -42 600,000 reported in Hong Kong
+C end -3 -42 Reuters reported ≈600,000
 
 @ BL doc 2025-04-17 - cn-policy-he-welcomes
 T Vice Premier He Lifeng to Jensen Huang: more American firms, Nvidia included, are welcome to put down deep roots in the Chinese market
@@ -180,16 +183,17 @@ Q Chinese officials, keen to nurture domestic suppliers, have withheld approval 
 ! cn-acts-reuters-ti-cap-20260708-relay1 | it could amount to fewer than 200,000 in total
 
 @ BL doc 2026-07-14 - man-a7d2f1a9f963
-T US export chief to Congress: H200 shipments to China have begun, "very few"
+T US export chief to Congress: "There have been minimal exports of any H200s to China so far"
 S Jeffrey Kessler, House hearing, as reported by Reuters
 Q There have been minimal exports of any H200s to China so far
 U https://www.investing.com/news/stock-market-news/us-official-says-shipments-of-h200-chips-to-china-have-begun-4791235
 
 @ BL press 2026-08-18 - cn-tolerate-reutersaug26-relay1-wayback
-T Reported: ByteDance and Tencent each receive about 10,000 H200s; Beijing wants them to keep most of the chips outside mainland China, and regulators told companies they may ship the processors to Hong Kong and use them there
-S Financial Times, through Reuters on Investing.com, and the paper's own text on Yahoo Finance
+T The Financial Times, citing two people it does not name: "ByteDance and Tencent have each received about 10,000 H200 processors in recent weeks". By one of them: "Beijing wants them to keep most of these chips outside the mainland". The paper says regulators told companies they could "ship such processors to Hong Kong" and "use them there"
+S Reuters relaying the Financial Times, which cited two people it did not name, on Investing.com
+A cn-tolerate-ftaug26 | Financial Times, on Yahoo Finance (Aug 19)
 Q ByteDance and Tencent have each received about 10,000 H200 processors in recent weeks
-C end 118 -19 10,000 each reported
+C end 164 -19 about 10,000 each, reported
 
 @ BL press 2026-09-27 - cn-acts-reuters-rtx5500-20260927
 N 62
@@ -225,7 +229,7 @@ S Financial Times
 Q tech giants from Alibaba to ByteDance argued that their AI development would be impaired without Nvidia's chips
 
 @ CN press 2025-11-27 - cn-tolerate-ft-offshore
-T Reported: Alibaba and ByteDance train their newest models in data centres in Southeast Asia, "to access Nvidia's chips"
+T The Financial Times, citing two people it does not name: Alibaba and ByteDance "are among the tech groups training their latest large language models (LLMs) in data centres across Southeast Asia", "to access Nvidia's chips"
 S Financial Times, on The Irish Times
 Q are among the tech groups training their latest large language models (LLMs) in data centres across Southeast Asia
 
@@ -243,7 +247,7 @@ Q aggressively placing large orders and lobbying the government to relax restric
 T Reported: Chinese companies have ordered more than 2 million H200s for 2026
 S Reuters, on Investing.com
 Q have placed orders for more than 2 million H200 chips for 2026
-C start 13 -19 orders of 2 million, reported
+C start 13 -19 more than 2 million ordered, reported
 
 
 @ CN doc 2026-05-03 - cn-policy-qiushi-cuda-gap
@@ -277,7 +281,7 @@ Q seek domestically produced AI chips
 C start 14 4 after US curbs
 
 @ CH rec 2025-04-25 - man-cn-labs-baidu-30k-reuters-alt1
-T Baidu switches on a cluster of 30,000 of its own Kunlun chips
+T Baidu's chief executive says it has switched on a cluster of 30,000 of its own Kunlun chips
 S Robin Li at Baidu's developer conference, reported by Reuters on StreetInsider
 Q comprising 30,000 of its self-developed, third generation P800 Kunlun chips
 
@@ -438,7 +442,7 @@ Q 对中国企业与其他国家企业正常贸易合作横加干涉
 E interferes in the normal trade cooperation between Chinese firms and other countries' firms
 
 @ CN rec 2026-08-21 - cn-le26-iflytek-ir-20260821
-T iFlytek's filed investor record: rival model makers commonly use Nvidia chips two generations ahead; it expects tighter US export controls to push the whole industry to home-made computing
+T iFlytek's filed investor record: rival model makers commonly use Nvidia chips two generations ahead in performance; it expects tighter US export controls to push the whole industry to home-made computing
 S iFlytek, record of its results meeting, filed on the Shenzhen exchange's site (cninfo)
 Q 其他模型厂商普遍使用性能领先两代的英伟达芯片
 E other model makers commonly use Nvidia chips that are two generations ahead in performance
@@ -811,6 +815,35 @@ Q no matter when you actually started leasing or building capacities outside of 
 ! cn-ga31-voucher5-sip-2025-37hao | 苏州工业园区管理委员会2025年11月12日
 ! cn-ga31-voucher5-zhongkai-plan-wayback | 本方案自印发之日起实施，至2027年12月31日结束
 ! cn-ga31-voucher5-zhongkai-plan-wayback | 仲恺高新区党工委管委会综合办公室 2026年4月1日
+# Round 16: wording in the notes, H200 bars, and extra source for record 33.
+! cn-ga31-replies-11 | 算力类型涵盖国产化算力（华为昇腾、海光、寒武纪等）与主流算力（NVIDIA）
+! cn-ga31-carrierownp3-23 | NVIDIA GPU / 昇腾 NPU 异构算力
+! cn-ga31-operatorsp2-41 | PN8I型云主机采用NVIDIA L20 GPU
+! cn-ga31-dcstateeast-8 | 支持企业采用国产化算力建设超大规模智算中心，在项目用地、绿电、能耗指标等方面给予保障
+! cn-ga31-cnpress2ap3-23 | 基于自主研发芯片的算力标称值占全部系统算力标称值的比值应不低于60%
+! cn-ga31-cnpress2ap3-23 | 发布机构： 安徽宿州高新技术产业开发区管委会
+! cn-ga31-msspostsp2-38 | 不应提供远程关闭、定位和与未声明的通信实体交互数据等功能
+! cn-ga31-msspostsp2-38 | 全国网络安全标准化技术委员会秘书处
+! cn-le27-ndrc-presser-20260618-json | 2026-06-18 10:03:03
+! cn-ga31-mediabase-4 | 对H20芯片的过度依赖，会使中国人工智能产业在全球竞争中陷入被动局面
+! cn-ga31-mediabase-4 | 2025-03-13 11:08:34 来源： 人民邮电报
+! cn-ga31-smdailiesp3-49 | Relying on deliberately constrained fourth-best chips is a dangerous trap.
+! cn-ga31-smdailies-1 | Tu noted that such security concerns about Nvidia chips were not unfounded.
+! cn-ga31-smcctvp3-2 | 美国允许对华出口英伟达H200高端算力芯片
+! cn-ga31-smdailiesp3-5 | 美国放宽H200芯片出口中国管制
+! cn-tolerate-ftaug26 | ByteDance and Tencent have each received about 10,000 H200 processors in recent weeks
+! cn-tolerate-ftaug26 | according to two people with knowledge of the matter.
+! cn-tolerate-ftaug26 | have told companies that they can ship such processors to Hong Kong, which operates as a territory outside its customs border, and use them there.
+! cn-tolerate-ftaug26 | 2026-08-19T02:09:39
+! cn-clips-evidence-1 | Several major Chinese internet companies have each obtained about 10,000 H200 chips in the past few months, one of the people said.
+! cn-clips-evidence-1 | The size of the stockpile of H200 chips
+! cn-tolerate-ft-offshore | according to two people with direct knowledge of the matter
+! cn-ga31-voucherrulesmissingp3-7 | 以智能算力、超级算力服务合同额一定比例给予智算券补贴，其中，自主信创智算补贴比例 25%, 其他智算补贴比例 20%
+! cn-ga31-voucherrulesmissingp3-7 | 本办法自发布之日起实施，有效期至2027年12月31日
+! cn-ga31-voucherrulesmissingp3-7 | /202403/t20240312_164480.html
+! cn-ga31-vcitynorthp3-27 | 每年发放总额不超过1000万元的“算力券”，对符合条件的申领主体，经评审，按照不超过算力服务合同金额的20%，给予最高100万元奖励
+! cn-ga31-vcitynorthp3-27 | 本措施自公布之日起施行，有效期至2027年12月31日
+! cn-ga31-vcitynorthp3-27 | 2025-06-04T09:51:56
 
 # Check added for the tracker (a number in one of our lines that is too short for the checker by itself)
 ! cn-labs-baidu-ascend-2023-relay1 | Baidu ordered 1,600 of Huawei

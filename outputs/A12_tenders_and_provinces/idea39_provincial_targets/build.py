@@ -59,6 +59,7 @@ VSHORT = {'Hangzhou city': 'Hangzhou', 'Zhejiang province': 'Zhejiang', 'Wenzhou
           'Xiamen city': 'Xiamen', 'Xinjiang Uygur Autonomous Region': 'Xinjiang',   # core edit 8: names in tables/local_vouchers_classes.tsv
           'Chengdu city': 'Chengdu', 'Hubei province': 'Hubei', 'Longwan district and Wenzhou Bay New Area (Wenzhou)': 'Longwan and Wenzhou Bay New Area',
           'Ningbo city': 'Ningbo', 'Huangyan district (Taizhou)': 'Huangyan',
+          'Binhai New Area (Tianjin)': 'Binhai New Area (Tianjin)',
           'Changsha Economic and Technological Development Zone': 'Changsha Economic and Technological Development Zone'}   # round 9: the 7 and the 4
 VHOME = re.compile(r'国产|自主|信创')      # round 9: the classifier's home-made words (cn_voucher_classes.py), for a voucher row that pays for home-made computing only
 HOME = re.compile(r'国产|自主可控|安全可控|安全可靠|自主化')
@@ -181,6 +182,20 @@ def load_vouchers():
     return out
 
 
+def higher_rate_kind(rate_words, higher_rate):
+    """Read the computing term attached to the higher percentage in these rules."""
+    kinds = []
+    for sentence in rate_words:
+        start = 0
+        for rate in re.finditer(r'(\d+)\s*[%％](?:\s*[（(]([^）)]*)[）)])?', sentence):
+            if int(rate[1]) == higher_rate:
+                # Binjiang names the kind in parentheses after each percentage.
+                clause = rate[2] if rate[2] is not None else sentence[start:rate.start()]
+                kinds.append(re.findall(r'(非?自主(?:可控|信创)?|国产|其他)(?:人工智能|智能)?(?:算力|智算)', clause))
+            start = rate.end()
+    return kinds[0][0] if len(kinds) == 1 and len(kinds[0]) == 1 else None
+
+
 def main():
     rows = load()
     docs = [r for r in rows if not r['arch']]
@@ -298,7 +313,7 @@ def main():
 
     # 7. vouchers (round 9): the count and the classes are the core's, computed by scripts/cn_voucher_classes.py (imported, so it runs
     # once), whose result must equal the published table tables/local_vouchers_classes.tsv row by row. vouchers.txt holds the rules that
-    # favour home-made computing (the 7 that pay more and the 4 that pay for home-made only), which must equal the core's counted rows of
+    # favour home-made computing (higher-rate and home-made-only rules), which must equal the core's counted rows of
     # those two classes with their rates; the other counted rules (no higher rate for home-made computing) are listed from the core's table.
     import cn_voucher_classes as VC
     R = VC.compute()
@@ -327,6 +342,20 @@ def main():
     if vdiff(core_rows, mine): sys.exit(f'vouchers.txt differs from the core\'s counted rules that favour home-made computing: {vdiff(core_rows, mine)}')
     bad = dict(mine); k0 = next(iter(bad)); bad[k0] = (bad[k0][0], bad[k0][1] + 1, bad[k0][2])          # control: one rate changed must be seen
     if not vdiff(core_rows, bad): sys.exit('vouchers control: a changed rate was not seen')
+    core_kinds = {c['government']: higher_rate_kind(c['deciding_words'].split(' / '), core_rows[c['government']][1])
+                  for c in vcnt if c['class'] == VC.MORE}
+    tiered_kinds = {VSHORT[v['place']]: higher_rate_kind(v['words'], v['home']) for v in tiered}
+    if vdiff(core_kinds, tiered_kinds):
+        sys.exit(f'higher-rate wording differs from the core: {vdiff(core_kinds, tiered_kinds)}')
+    xinchuang = [place for place, kind in tiered_kinds.items() if kind == '自主信创']
+    independent = [place for place, kind in tiered_kinds.items() if kind in ('自主', '自主可控')]
+    if len(tiered) != 8 or len(independent) != 7 or xinchuang != ['Binhai New Area (Tianjin)']:
+        sys.exit('higher-rate wording changed: reread the tiered rates and change the note')
+    for control in ('国产算力服务补贴30%；非自主算力服务补贴20%',
+                    '非自主可控算力服务补贴20%；国产算力服务补贴30%'):
+        if higher_rate_kind([control], 30) != '国产':
+            sys.exit('higher-rate wording control: a lower-rate 非自主 or 非自主可控 was misread')
+    print('higher-rate wording: 7 use 自主 or 自主可控 and Binhai uses 自主信创; lower-rate controls passed')
     third = [c for c in vcnt if c['class'] in (VC.ONE, VC.TWO)]
     one = sorted((c for c in vcnt if c['class'] == VC.ONE), key=lambda c: c['government'])
     two = [c for c in vcnt if c['class'] == VC.TWO]
@@ -394,7 +423,7 @@ def main():
     def table(groups, with_label=False):
         # with_label: a second column that says whether the page marks the share as binding or indicative.
         # Each label cell is worded to be read alone: the phone view hides the header row and stacks the cells.
-        head = ('| Government | Binding or indicative? | Document, issuing bodies and date; the page\'s own words | What the row rests on; our English; limits; source |' if with_label
+        head = ('| Government | Binding or indicative | Document, issuing bodies and date; the page\'s own words | What the row rests on; our English; limits; source |' if with_label
                 else '| Government | Document, issuing bodies and date; the page\'s own words | What the row rests on; our English; limits; source |')
         o = [head]
         for r in rows:
@@ -453,7 +482,7 @@ def main():
             'N_NEAR_DOCS': len(near_docs), 'NEAR_BY_DOC': ', '.join(f'{u} {n}' for u, n in near_docs),
             'N_VO_PROV': _vprov, 'U_VO_TWICE': ' and '.join(_vtwice),
             'N_LABEL_PAGES': len(cnt), 'N_LABEL_OTHERS': len(cnt) - 2, 'N_JS_EXPECTED': js[1], 'N_ZJ_EXPECTED': zj[1],
-            'N_V': len(vcnt), 'N_V_TIER': len(tiered), 'N_V_ONE': len(one), 'U_V_TIER': ', '.join(v['place'] for v in tiered),
+            'N_V': len(vcnt), 'N_V_TIER': len(tiered), 'N_V_TIER_INDEPENDENT': len(independent), 'N_V_ONE': len(one), 'U_V_TIER': ', '.join(v['place'] for v in tiered),
             'N_V_ONLY': len(only), 'U_V_ONLY': ', '.join(v['place'] for v in only),
             **{f'N8_{k.upper()}': len(v) for k, v in by_basis.items()}, **{f'W8_{k.upper()}': WORDS[len(v)] for k, v in by_basis.items()},
             **{f'U8_{k.upper()}': ', '.join(v) for k, v in by_basis.items()}, **{f'ND_{k.upper()}': v for k, v in doc_basis.items()},
@@ -476,14 +505,26 @@ def main():
         if r['basis'] == 'hand': x += '. A PDF of the official page'      # round 13: how the copy was come by is not said in a label (the session's ruling on label words, B15_BRIEF item 2)
         lab.setdefault(r['src'], (kind, x))
     for v in vouchers:
-        lab.setdefault(v['src'], ('DOC', f'{v["place"]}. Local computing-voucher rule, {v["date"]}' + ({'official': '', 'copy': '; a copy on another site', 'capture': '; an Internet Archive capture of the official file'}[v['basis']])))
+        if v['src'] == 'cn-ga31-voucherrulesmissingp3-7':
+            label = (f'{v["place"]}. Innovation-voucher measures of the district science and technology and finance bureaus. '
+                     f'Reprinted by 科服网 (i.tten.cn), dated {v["date"].split(";")[0]}')
+        else:
+            label = f'{v["place"]}. Local computing-voucher rule, {v["date"]}' + {'official': '', 'copy': '; a copy on another site', 'capture': '; an Internet Archive capture of the official file'}[v['basis']]
+        lab.setdefault(v['src'], ('DOC', label))
     # round 9: the counted rules listed from the core table, labelled from the core's cells (document and issuing body)
     for c in one:
         r = _vr[c['row_id']]
         # round 10: a copy that is an Internet Archive capture says so (readers took "another copy" for a third party's)
         _m = json.loads((PRIMARY / c['saved_id'] / 'meta.json').read_text()); _cap = 'web.archive.org' in str(_m.get('route', '')) + str(_m.get('url', '')) or c['saved_id'].endswith('-wayback')
         # round 12: a copy on another site says which (the core's cell "copy"), for readers who asked whose copy it is
-        lab.setdefault(c['saved_id'], ('DOC', f'{c["government"]}. {r["document"]}; {r["body"]}' + ('' if c['row_id'] in R['own'] else ('; read in an Internet Archive capture' if _cap else '; read in another copy than the issuer\'s own page: ' + r['copy'].rstrip('.')))))
+        copy = r['copy'].rstrip('.')
+        if c['row_id'] == 'B219':
+            posting = re.match(r'posted (\d{4}-\d{2}-\d{2})\b', r['date'])
+            if not posting or ' on Sohu;' not in copy:
+                sys.exit('Shanxi B219: the date or outlet of the relay changed')
+            posted = cap_date(posting[1].replace('-', ''))
+            copy = copy.replace(' on Sohu;', f' on Sohu (relay posted {posted});')
+        lab.setdefault(c['saved_id'], ('DOC', f'{c["government"]}. {r["document"]}; {r["body"]}' + ('' if c['row_id'] in R['own'] else ('; read in an Internet Archive capture' if _cap else '; read in another copy than the issuer\'s own page: ' + copy))))
     lab.update({k: v for k, v in MORE_LABELS.items() if k not in lab})
     refs = ['# id <TAB> kind <TAB> label <TAB> address (empty = the address in the saved copy\'s record). Written by build.py.']
     missing = []

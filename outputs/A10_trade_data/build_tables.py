@@ -609,6 +609,8 @@ NOTE34 = [f'the line was {gacc_b("202609", PARTS)} dollars, against {gacc_b("202
           f'{270e6 / (q3_parts * 1e3) * 100:.1f}% of the parts line in the third quarter of 2026 ({q3_parts / 1e6:.1f} billion dollars), or {270e6 / (ics("202609")["mv"] * 1e3) * 100:.2f}% of China\'s imports of integrated circuits in September 2026 alone ({ics("202609")["mv"] / 1e6:.1f} billion dollars)',
           f'the sum of the {NUMW[len(TW_CODES)]} codes that begin 8471, in thousands of US dollars, in every month (our comparison)']
 NOTE34 += [f'its highest month of the {len(MONTHS)} was {MONTH_NAMES[int(CHIP_MAX[4:]) - 1]} {CHIP_MAX[:4]}, at {RAW[("us", CHIP_MAX)][4] / 1e6:,.1f} million dollars']      # round 12
+NOTE34 += [f"The US customs export figures used for the estimate above end in {DATA_LAST:%B %Y} and cover only "
+           f"{(DATA_LAST - Q3_FIRST).days + 1} of the quarter's {(Q3_LAST - Q3_FIRST).days + 1} days."]
 dvs = lambda flow, ms: [f'{dv(flow, 75, m, []):,}' for m in ms]
 JJAS = ('202606', '202607', '202608', '202609')
 im, ex = dvs('imports', JJAS), dvs('total exports', JJAS)
@@ -634,7 +636,8 @@ NOTE42 += [f'{hkx["847330"][0] / 1e9:.2f} billion dollars in January to July 202
            f'{f(hk[k26][4]) / 1e3:.1f} billion dollars in January to July 2026, {hk_to_cn_26 / 1e9:.1f} billion went to the mainland',
            f'came to {f(y26[3]):,.1f} million dollars over the eight months January to August 2026']      # round 9 of the outputs
 A0, A1, A2, A3, A4 = (AVG[k] for k in ('all origins', 'mainland China origin', 'South Korea origin', 'United States origin', 'origin Other Asia, nes (code 490)'))
-NOTE42 += [f'The average month was {A0[0]:.1f} billion dollars in 2025 and {A0[1]:.1f} billion in January to July 2026. By origin, the average month went from {A1[0]:.1f} to {A1[1]:.1f} billion '
+assert all(before < after for before, after in (A1, A2, A3)) and A4[0] > A4[1], 'Hong Kong imports: the direction of change by origin in point 7'
+NOTE42 += [f'The average month was {A0[0]:.1f} billion dollars in 2025 and {A0[1]:.1f} billion in January to July 2026. By origin, average monthly imports rose from {A1[0]:.1f} to {A1[1]:.1f} billion '
            f'for mainland China, from {A2[0]:.2f} to {A2[1]:.1f} billion for South Korea and from {A3[0]:.2f} to {A3[1]:.2f} billion for the United States, and fell from {A4[0]:.2f} to {A4[1]:.2f} billion under Other Asia, nes']      # round 12: point 7, rounded once
 hk25 = hk['2025 January to December (ours: sum)']
 NOTE42 += [f'| {lab} | {f(hk25[i]):,.1f} million dollars | {f(hk[k26][i]):,.1f} million dollars |' for i, lab in

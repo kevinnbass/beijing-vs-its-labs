@@ -1,3 +1,3 @@
 # Extra references for idea 4 (same columns as argument/argument_refs.tsv: saved id | kind | label | address). Ids the argument's own lists hold are not repeated here.
 # No address is typed here: the builder takes it from the saved copy's own record.
-cn-acts-reuters-customs-20260114	PRESS	Reuters, Jan 14, 2026, as carried by Yahoo Finance: a report, from three unnamed people, on what customs agents were told about the H200
+cn-acts-reuters-customs-20260114	PRESS	Reuters, Jan 14, 2026: report, from three people it did not name, on what customs agents were told about the H200, as Yahoo Finance carries it

@@ -9,7 +9,7 @@ data.txt, one block per record:
   @ KEY KIND DATE DATELABEL SAVED-ID [name=value ...]
       KIND   doc   a government document, or an official on the record            (filled mark)
              rec   a company on the record: a filing, a results call, a named person (filled mark)
-             pub   a published commentary of state media or an industry body       (filled mark)
+             pub   a published commentary, report or statement of state media, an industry body or a research institute (filled mark)
              acct  a named newspaper's account of a state document                 (filled mark)
              press a press report citing unnamed people                           (open mark)
              count a research firm's count, as reported by the press              (open mark)
@@ -27,6 +27,7 @@ data.txt, one block per record:
 Lines starting "#" are comments. Lines starting "! " are further checked phrases outside any record: ! SAVED-ID | words
 """
 import html, json, re, subprocess, sys
+from collections import Counter
 from datetime import date
 from pathlib import Path
 
@@ -40,7 +41,7 @@ import cn_argument_build as B                          # noqa: E402  (address(),
 MON = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec']
 SOLID = ('doc', 'rec', 'pub', 'acct')
 KIND_WORDS = {'doc': 'On the record: a government document or an official', 'rec': 'On the record: a filing or a named person',
-              'pub': 'On the record: a published commentary of state media or an industry body',
+              'pub': 'On the record: ' + B.KIND['PUB'],
               'acct': 'On the record: a named newspaper’s account of a state document',
               'press': 'Press report citing unnamed people', 'count': "A research firm's count, through the press",
               'caps': 'Captions, not checked by ear'}
@@ -56,6 +57,44 @@ def table(name):
     lines = [l for l in (TB / name).read_text(encoding='utf-8').splitlines() if l.strip() and not l.startswith('#')]
     head = lines[0].split('\t')
     return [dict(zip(head, l.split('\t'))) for l in lines[1:]]
+
+
+def state_media_summary():
+    """Count the later state-media series by stance, subject and warning window."""
+    rows = table('state_media_items.tsv')
+    stances = Counter(r['stance'] for r in rows)
+    subjects = Counter(r['subject'] for r in rows)
+    assert stances == {'neutral': 126, 'self-reliance': 74, 'warns': 34,
+                       'welcomes': 28, 'other': 21, 'mixed': 14}, stances
+    assert subjects == {'chips for AI computing': 219, 'a product with an Nvidia chip': 40,
+                        'other': 30, 'Nvidia as a company': 8}, subjects
+
+    dates = sorted(date.fromisoformat(r['date']) for r in rows)
+    warns = sorted(date.fromisoformat(r['date']) for r in rows if r['stance'] == 'warns')
+    burst = [d for d in warns if date(2025, 7, 31) <= d <= date(2025, 9, 24)]
+    winter = [d for d in warns if date(2025, 12, 9) <= d <= date(2026, 1, 14)]
+    other_warnings = Counter(warns) - Counter(burst) - Counter(winter)
+    assert dates[0] == date(2025, 7, 1) and dates[-1] == date(2026, 11, 25), (dates[0], dates[-1])
+    assert (len(rows), len(burst), len(winter), sum(other_warnings.values())) == (297, 23, 6, 5)
+    assert other_warnings == Counter(date.fromisoformat(s) for s in (
+        '2025-07-24', '2025-11-01', '2026-03-03', '2026-03-18', '2026-11-06')), other_warnings
+
+    mixed_later = sum(r['stance'] == 'mixed' and r['date'] > '2025-09-30' for r in rows)
+    ai_warnings = sum(r['stance'] == 'warns' and r['subject'] == 'chips for AI computing' for r in rows)
+    product_warnings = sum(r['stance'] == 'warns' and r['subject'] == 'a product with an Nvidia chip' for r in rows)
+    assert (mixed_later, ai_warnings, product_warnings) == (10, 33, 0)
+    start, end = [f'{MON[d.month - 1]} {d.year}' for d in (dates[0], dates[-1])]
+    summary = (
+        f'The project’s state-media table lists {len(rows)} items found from {start} to {end}. '
+        f'{subjects["chips for AI computing"]} cover chips for AI computing. A separate '
+        f'{subjects["a product with an Nvidia chip"]} cover products with an Nvidia chip. '
+        f'Of the {len(warns)} items coded as warnings, {len(burst)} date from {fmt(burst[0])} to {fmt(burst[-1])}, '
+        f'and {len(winter)} from {fmt(winter[0])} to {fmt(winter[-1])}, during coverage of US easing for the H200. '
+        f'{ai_warnings} of the warnings concern chips for AI computing. '
+        f'{stances["mixed"]} other items mix a warning with a welcome, {mixed_later} after September 2025. '
+        f'After {fmt(burst[-1])}, the items are a sample from searches and a scan of the saved pages.'
+    )
+    return rows, summary
 
 
 def upload_date(sid):

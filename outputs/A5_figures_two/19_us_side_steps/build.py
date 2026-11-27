@@ -8,7 +8,7 @@ The numbers do not count the same things (licence applications for two companies
 chips received by two buyers; a share of revenue; a sum in dollars). So nothing is drawn to scale and no step is drawn as
 a part of another: each step states its number with the yardstick it is counted in.
 """
-import re, sys
+import json, re, sys
 from datetime import date
 from pathlib import Path
 
@@ -98,6 +98,17 @@ def main():
     call_text = C.L.page(by['call']['sid'])
     assert call_text.count('china') == 2 and all(C.L.squash(q) in call_text for q in (by['call']['Q'][0][0], by['stop']['Q'][0][0]))
 
+    sec_id = 'cn-ga31-official-sec-submissions-20261125-c'
+    sec = C.L.P / sec_id
+    captured = date.fromisoformat(json.loads((sec / 'meta.json').read_text())['fetched_utc'][:10])
+    recent = json.loads((sec / 'body.json').read_text())['filings']['recent']
+    quarterly = {(form, period) for form, period in zip(recent['form'], recent['reportDate'], strict=True)
+                 if form in ('10-Q', 'NT 10-Q')}
+    assert captured == date(2026, 11, 25) and ('10-Q', '2026-07-26') in quarterly
+    assert not any(period == '2026-10-25' for _, period in quarterly), quarterly
+    sec_url = C.L.url_of(sec_id)
+    hopper_url = C.L.url_of('cn-ga31-flowchipkey-10')
+
     v = {k: by[k]['V'] for k in by}
     under = v['tenq']['pct'] / 100 * v['tenq']['dc']                                # our multiplication: 1% of $89.0 billion
     assert abs(under - 0.89) < 1e-9
@@ -147,15 +158,15 @@ def main():
     show = {
         ('post', 'allowed'): ('H200 sales to be allowed', 'an announcement · no number of chips', 'to “approved customers in China”, in the President’s words. The licences came later (step 2).'),
         ('licences', 'allowed'): ('Licences granted', 'licences · H200 · no number given', 'for what Nvidia’s filing calls “small amounts of H200 products” to “specific China-based customers”, whom it does not name.'),
-        ('lutnick', 'out'): ('None sold yet', 'H200 chips sold', '“So we have not sold them chips as of yet.” He calls it his understanding.'),
+        ('lutnick', 'out'): ('None sold yet', 'H200 chips sold', '“So we have not sold them chips as of yet.” He gave both points as his understanding: “my understanding is their cloud companies want to buy these chips” and “Chinese central government has not let them as of yet buy the chips because they’re trying to keep their investment focused on their own domestic industry”.'),
         # Round 11 (ROUND11.md, thing 2): the big words of a press report's step carry the report ("Reported: ..."), not only the step's source line
         ('cleared', 'allowed'): (f'Reported: about {v["cleared"]["firms"]} firms, up to {n(v["cleared"]["each"])} each', 'firms, and a ceiling per firm · H200',
-                                 f'By this report of May 14, 2026, from unnamed people. In Washington’s own table (step {by["committee"]["n"]}) no approved application is above {n(v["cleared"]["each"])}.'),
-        ('cleared', 'out'): ('Reported: no delivery', 'H200 deliveries', '“not a single delivery has been made so far”'),
+                                 f'On May 14, 2026, Reuters cited three people it did not name for the number of firms and the lack of deliveries, and two of those people for the ceiling. In Washington’s own table (step {by["committee"]["n"]}) no approved application is above {n(v["cleared"]["each"])}.'),
+        ('cleared', 'out'): ('Reported: no delivery', 'H200 deliveries', 'Reuters, citing three people it did not name, reported “not a single delivery has been made so far”.'),
         ('call1', 'out'): ('No revenue yet', 'US dollars · licensed H200 sales', '“we have yet to generate any revenue, and we are uncertain whether any imports will be allowed into the country”'),
         ('kessler', 'out'): ('Shipments have begun', 'H200 shipments · no number given', '“minimal exports of any H200s to China so far”; the number was “very few”.'),
-        ('ft', 'allowed'): (f'Reported: up to {n(v["ft"]["each"])} each, for ByteDance and Tencent', 'a ceiling per firm · H200', f'A higher ceiling than the {n(v["cleared"]["each"])} reported in May. The two come from different reports.'),
-        ('ft', 'out'): (f'Reported: about {n(v["ft"]["got"])} each, to two buyers', 'chips reported received · H200 · ByteDance and Tencent', 'received “in recent weeks”, the report says.'),
+        ('ft', 'allowed'): (f'Reported: up to {n(v["ft"]["each"])} each, for ByteDance and Tencent', 'a ceiling per firm · H200', 'The Financial Times, in a report citing two people it did not name, gave this ceiling. Reuters relayed the report.'),
+        ('ft', 'out'): (f'Reported: about {n(v["ft"]["got"])} each, to two buyers', 'chips reported received · H200 · ByteDance and Tencent', 'The Financial Times, citing two people it did not name, reported this for “recent weeks”.'),
         ('tenq', 'out'): (f'less than {v["tenq"]["pct"]}% of Data Center revenue', 'a share of Nvidia’s revenue · H200 shipments under the licences',
                           f'Data Center revenue that quarter was ${v["tenq"]["dc"]} billion, so less than ${under:.2f} billion (our multiplication). Nvidia: “a fraction of the allowed shipments”.'),
         ('call', 'out'): (f'${v["call"]["sold"]} billion sold', 'US dollars · licensed Hopper products, the H200 among them',
@@ -218,12 +229,12 @@ def main():
   <section class="care">
    <h2>Read with care</h2>
    <ul>
-    <li><b>Sold or shipped “to China” is not the same as arrived in the mainland.</b> The Financial Times reported in August that small batches “have been allowed to enter mainland China” and, by one of the people, that “Beijing wants them to keep most of these chips outside the mainland” (the paper’s own text, on Yahoo Finance). Where the chips sold later are now is not known.</li>
+    <li><b>Sold or shipped “to China” is not the same as arrived in the mainland.</b> The Financial Times, citing people it did not name, reported in August that small batches “have been allowed to enter mainland China” and, by one of the people, that “Beijing wants them to keep most of these chips outside the mainland” (the paper’s own text, on Yahoo Finance). Where the chips sold later are now is not known.</li>
     <li><b>The licence table is Washington’s own record, looking back.</b> It gives each application’s status on May 11, 2026, and was made public on Nov 19, 2026 by the House Foreign Affairs Committee, by unanimous consent. An application names a data-centre operator or ultimate consignee; it is not an order, and an approval there is Washington’s licence, not Beijing’s.</li>
-    <li><b>This is the American side only.</b> Why so little went out is a separate question: Nvidia’s filing says such sales “were restricted by the PRC government”, and the Commerce Secretary said, as his understanding, that the Chinese central government had not let the companies buy.</li>
-    <li><b>The last quarter’s filing is not out.</b> Nvidia’s quarterly report (Form 10-Q) for the quarter ended Oct 25, 2026 was not yet filed when looked for on Nov 23, 2026. Its commentary on the quarter says: “We plan to file our 10-Q in the coming weeks.” The $2.4 billion is from its results call and that commentary.</li>
+    <li><b>This is the American side only.</b> Why so little went out is a separate question: Nvidia’s filing says such sales “were restricted by the PRC government”, and the Commerce Secretary gave his understanding in these words: “Chinese central government has not let them as of yet buy the chips because they’re trying to keep their investment focused on their own domestic industry”.</li>
+    <li><b>The last quarter’s filing was absent from the SEC index.</b> The <a href="{C.esc(sec_url, quote=True)}">SEC’s filing index</a>, saved {C.fmt(captured)}, did not list a Form 10-Q for the quarter ended Oct 25, 2026. Its commentary on the quarter says: “We plan to file our 10-Q in the coming weeks.” The $2.4 billion is from its results call and that commentary.</li>
     <li>Open marks rest on unnamed people. The two ceilings ({n(v["cleared"]["each"])} and {n(v["ft"]["each"])} a firm) come from two different reports. Washington’s table states no ceiling; no approved application in it is above {n(v["cleared"]["each"])}.</li>
-    <li>The H200 is, in Reuters’s words, “Nvidia’s second-most powerful AI chip”. Hopper is the chip family it belongs to. BIS is the Commerce Department’s Bureau of Industry and Security; by the committee’s summary the approvals were BIS’s.</li>
+    <li>The H200 is, in Reuters’s words, “Nvidia’s second-most powerful AI chip”. <a href="{C.esc(hopper_url, quote=True)}">Nvidia’s board documentation</a> lists the H20 and H200 under Hopper. BIS is the Commerce Department’s Bureau of Industry and Security; by the committee’s summary the approvals were BIS’s.</li>
    </ul>
   </section>"""
 

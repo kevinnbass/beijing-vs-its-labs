@@ -20,9 +20,9 @@ Order of work, and what stops it:
   3. The last two captions, joined, must be the sentence of ../../../ARGUMENT_referenced.md, section 6, word for word.
      There must be five captions titled "Limit N of 5". The count of policy pages must equal the rows of
      ../../../NOTE_policies_checked.md. The 579,868 chips and the 55% must equal sums over the licence table the House
-     committee released. The state-media items (how many, how many only warn, how many of those in the burst of the
-     first year with its first and last dates, and the later ones, their outlet and year) must equal the sums over
-     tables/state_media_items.tsv, and the argument must give the same counts (round 5, after core edit 6). Phrases
+     committee released. The warning counts in the July–September and December–January groups must agree with
+     tables/state_media_items.tsv and the argument. The caption must cite the ends of the first group and each
+     warning outside it. The third limit must distinguish reported approvals and Nvidia’s licensed sales. Phrases
      the core withdrew ("750,000", "four limits", "more than half of the chips applied for", "Democrats", "the
      Commerce Department's table") must not appear.
   4. quotes.tsv (the source words behind every mark, label and dashed line of the strip) must pass scripts/cn_has.py.
@@ -50,8 +50,8 @@ ROWS = r'((?:Reported: )?.+?:) (.+?\.) (.+)'      # a line of the numbers chapte
 DOC_TITLE, DOC_EYEBROW = 'Twelve Checked Captions', 'China chip policy · captions of the explainer video'
 KINDS = ('On the record', 'Reported', 'Captions, not checked by ear', 'Our own reading', 'Our own count', "From the project's")   # how a source line may begin
 GONE = ('750,000', 'four limits', 'more than half of the chips applied for', 'Democrats', 'more exact', 'at a lower rate',
-        "Commerce Department's table", 'Commerce Department table', "Commerce Department's summary", 'Aug 1 to Sept 24')    # wording the core withdrew (the last four: core edit 6)
-NUMWORD = {2: 'two', 3: 'three', 4: 'four', 5: 'five', 6: 'six', 7: 'seven', 8: 'eight', 9: 'nine'}
+        "Commerce Department's table", 'Commerce Department table', "Commerce Department's summary", 'Aug 1 to Sept 24',
+        'some purchases were approved', 'some chips came in')    # wording the core withdrew
 CARD_TOP, PAD = 48, 4
 esc = L.esc
 
@@ -73,6 +73,8 @@ EXTRA_CSS = """
 .cap.long .txt { font-size:20px; }
 .cap ul { list-style:none; padding:0; }
 .cap .src { margin-top:7px; font-size:13.5px; line-height:1.4; color:var(--ink2); }
+#cap7 .txt { font-size:18px; line-height:1.25; }
+#cap7 .src { line-height:1.25; }
 .cap .src li { display:flex; align-items:baseline; gap:7px; }
 .cap .src i.tier { display:inline-block; flex:none; width:10px; height:10px; border-radius:50%; border:2px solid var(--ink2); transform:translateY(1px); }
 .cap .src i.tier.solid { background:var(--ink2); } .cap .src i.tier.open { background:var(--surface); } .cap .src i.tier.plain { border-color:transparent; }
@@ -235,17 +237,29 @@ def check_substance(caps):
     if [c['title'] for c in caps if c['k'] in limits] != [f'Limit {i} of 5.' for i in range(1, 6)]: sys.exit('the captions do not hold "Limit 1 of 5" to "Limit 5 of 5", in order')
     if 'Five limits on the claim' not in arg: sys.exit('the argument no longer has five limits')
     out.append(f'five limits, captions {limits}')
+    third = "Some purchases were reported approved, and Nvidia reported licensed sales."
+    approval = 'Reuters cited four people it did not name [ms-bj-20260128-h200-nod-standard].'
+    sales = 'Nvidia’s own filings report licensed sales to China [man-ms-sec-10k-fy2026].'
+    exports = 'A US official told Congress: "There have been minimal exports of any H200s to China so far" [man-a7d2f1a9f963].'
+    expected_third = f'{third} {approval} {sales} {exports}'
+    third_cap = next(c for c in caps if c['k'] == limits[2])
+    third_matches = lambda caption: caption == expected_third
+    if not third_matches(third_cap['text']) or f'**{third}**' not in arg:
+        sys.exit('the third limit must distinguish the Reuters report from the sales Nvidia reported')
+    assert f'**{third.replace("reported approved", "approved")}**' not in arg, 'control: a settled approval heading must not pass'
+    for settled in (' Beijing approved those purchases.', ' The chips arrived in China.'):
+        assert not third_matches(third_cap['text'] + settled), 'control: a correct prefix followed by a settled claim must fail'
     # wording the core withdrew
     for c in caps:
         for g in GONE:
             if g.lower() in everything(c).lower(): sys.exit(f'caption {c["k"]} holds wording the core withdrew: {g}')
-    assert any('the 82 policy pages' in everything(c) for c in caps), 'control: a phrase that is there must be seen'
+    assert any('the 82 policy pages' in everything(c).lower() for c in caps), 'control: a phrase that is there must be seen'
     # policy pages
     pages = L.policy_rows()
     note = (L.PROJ / 'NOTE_policies_checked.md').read_text(encoding='utf-8')
     if '[cn-policy-micron-decision]' not in note: sys.exit('a caption says the 2023 conclusion on Micron is among the policy pages read; the note does not list it')
     assert '[cn-policy-no-such-page]' not in note, 'control: an id that is not in the note must not be found'
-    seen = [int(m.group(1)) for c in caps for m in re.finditer(r'(\d+) policy pages', everything(c))]
+    seen = [int(m.group(1)) for c in caps for m in re.finditer(r'(\d+) (?:policy pages|pages read)', everything(c))]
     if not seen or any(n != pages for n in seen): sys.exit(f'a caption gives {seen} policy pages; the note has {pages} pages read')
     # the House committee's table
     t = L.house_table()
@@ -264,36 +278,50 @@ def check_substance(caps):
     assert answer.replace(f'{t["rwa"]:,}', f'{t["rwa"] + 1:,}') not in arg, 'control: a wrong sum must not be found in the argument'
     assert f'{t["appr"]:,} chips, each application' not in cell[0], 'control: the sum of both makers must not pass for Nvidia\'s'
     out.append(f'House table: Nvidia approved and not shipped {t["appr_nv"]:,} in {t["n_appr_nv"]} applications; returned without action {t["rwa"]:,} of {t["all"]:,} = {t["rwa_pct"]}% (summed here, equal to the captions and to the argument)')
-    # the state-media items (since core edit 6: a census of 42 and further items found by searches and links)
+    # State-media warnings: the argument's two dated groups and the warnings outside the first.
     sm = L.state_media()
-    mon = lambda d: f'{L.MON[d.month - 1]} {d.day}'
-    assert sm['first'].year == sm['last'].year
-    later = sm['later']
-    if not later: sys.exit('no warning found after the first year: caption 7 must be reworded')
-    yrs = sorted({d.year for d, _, _ in later})
-    if len(yrs) != 1 or not all(o.startswith('Global Times') for _, _, o in later): sys.exit(f'the later warnings are not all Global Times items of one year: {later}')
-    line = (f'Of the {sm["warns"]} state-media items found that only warn about Nvidia\'s chips, {sm["n_burst"]} date from {mon(sm["first"])} to {mon(sm["last"])}, {sm["last"].year}; '
-            f'the {NUMWORD[len(later)]} found later are Global Times items of {yrs[0]}.')
-    hit = [c for c in caps if line in c['text']]
-    if len(hit) != 1: sys.exit(f'one caption must read: {line}')
-    its = ' '.join(hit[0]['items'])
-    if f'{sm["n"]} state and Party media items' not in its or f'[{sm["first_id"]}]' not in its or f'[{sm["last_id"]}]' not in its: sys.exit('the source line of the state-media count must give the count of items and cite the first and the last of the warnings')
-    if not all(f'[{sid}]' in its for _, sid, _ in later): sys.exit('the source lines of the state-media count must cite each later warning')
-    # fork OUTB, Nov 25, 2026 (after core edit 8): the source line itself states the count of the burst and how many of its items bear the first date;
-    # both are taken from the table here (the recount of that day moved 11 to 16 and left 'the 11 run from' standing in the line, on screen)
-    n_first = sum(1 for r in L.tsv('state_media_items.tsv') if r['stance'] == 'warns' and r['date'] == sm['first'].isoformat())
-    want_run = f'the {sm["n_burst"]} run from {mon(sm["first"])}, {sm["first"].year}' + (f' ({NUMWORD[n_first]} items that day' if n_first > 1 else '')
-    if want_run not in its: sys.exit(f'the source line of the state-media count must read: {want_run} ...')
-    if f'the {sm["n_burst"] + 1} run from' in its: sys.exit('control failed: a wrong count of the burst was found in the source line')
-    if 'a sample and not a full count' not in its: sys.exit('the source line of the state-media count must say that the later items are a sample and not a full count')     # touch-up 6b (Nov 24, 2026), item 21
-    # the argument must give the same counts (its answer and point 4)
-    # touch-up 6b (Nov 24, 2026): the answer no longer carries the counts; point 18 does, in these words, and the caveat reads as below
-    want_arg = (f'{sm["n_burst"]} of the {sm["warns"]} that only warn about Nvidia\'s chips are dated {mon(sm["first"])} to {mon(sm["last"])}, {sm["last"].year}',
-                f'Of {sm["n"]} state and Party media items on Nvidia chips found', f'The {NUMWORD[len(later)]} found later are Global Times items of {yrs[0]}', 'a sample of what these outlets printed and not a full count')
-    if not all(x in arg for x in want_arg): sys.exit(f'the argument no longer gives these counts of the state-media table: {[x for x in want_arg if x not in arg]}')
-    assert f'{sm["n_burst"] + 1} of the {sm["warns"]} that only warn' not in arg, 'control: a wrong count must not be found in the argument'
-    out.append(f'state media: {sm["warns"]} of {sm["n"]} items only warn; {sm["n_burst"]} of them {sm["first"]} to {sm["last"]}, {len(later)} later ({", ".join(str(d) for d, _, _ in later)}, all Global Times) '
-               f'(counted here, equal to caption {hit[0]["k"]} and to the argument)')
+    burst, h200 = sm['burst'], sm['h200']
+    start, end = burst[0][0], burst[-1][0]
+    h_start, h_end = h200[0][0], h200[-1][0]
+    day = lambda d: f'{L.MON[d.month - 1]} {d.day}'
+    scope = f'{sm["n"]} state and Party media items on Nvidia and its chips found from July 2025 to November 2026'
+    line = (f'Of {scope}, {sm["warns"]} only warn about the chips: {len(burst)} date from {day(start)} to {L.fmt(end)}, '
+            f'and {len(h200)} from {L.fmt(h_start)} to {L.fmt(h_end)} in reports on the American easing for the H200.')
+    cap = next(c for c in caps if c['k'] == limits[1])
+    if line not in cap['text']: sys.exit(f'caption {cap["k"]} must read: {line}')
+    if sum(everything(c).count(line) for c in caps) != 1: sys.exit(f'exactly one occurrence must state the state-media census: {line}')
+    its = ' '.join(cap['items'])
+    # The table has several warnings on the first day. The caption names the Global Times example.
+    n_first = sum(d == start for d, _, _ in burst)
+    want_run = f'The {len(burst)} run from {L.fmt(start)} ({n_first} items that day'
+    first_example = 'cn-ga02-gt-cac-summons-news-202507'
+    if want_run not in its or f'[{burst[-1][1]}]' not in its or f'[{first_example}]' not in its:
+        sys.exit(f'the source line must give the first day’s count and cite the first and last dates: {want_run} ...')
+    run = re.compile(rf'\b(\d+)\s+run\s+from\s+{re.escape(day(start))}\b', re.IGNORECASE)
+    run_counts = lambda text: {int(n) for n in run.findall(text)}
+    if run_counts(' '.join(everything(c) for c in caps)) != {len(burst)}:
+        sys.exit('the captions give a conflicting count of the state-media burst')
+    planted_run = f'the {len(burst) + 1} run from {L.fmt(start)}'
+    assert run_counts(f'{its} {planted_run}') != {len(burst)}, 'control: a conflicting count alongside the right one must fail'
+    assert any(d == start and sid == first_example for d, sid, _ in burst)
+    missing = [sid for _, sid, _ in sm['outside'] if f'[{sid}]' not in its]
+    if missing: sys.exit(f'the source lines must cite each warning outside the main group: {missing}')
+    last = f'the last {len(sm["last"])}, Global Times items of 2026'
+    caveat = 'a sample of what the outlets printed and not a full count'
+    if last not in its or caveat not in its: sys.exit(f'the source lines must give the last group and the scope: {last}; {caveat}')
+    want_arg = (
+        f'{day(start)} to {L.fmt(end)} ({len(burst)} of {sm["warns"]})',
+        f'{L.fmt(h_start)} to {L.fmt(h_end)}, in reports on the American easing for the H200 ({len(h200)} of {sm["warns"]};',
+        f'Of {sm["n"]} state and Party media items on Nvidia and its chips found from July 2025 to November 2026',
+        'a sample of what these outlets printed and not a full count',
+    )
+    if not all(x in arg for x in want_arg):
+        sys.exit(f'the argument no longer gives these counts of the state-media table: {[x for x in want_arg if x not in arg]}')
+    wrong = f'{len(burst) + 1} of {sm["warns"]}'
+    assert want_arg[0].replace(f'{len(burst)} of {sm["warns"]}', wrong) not in arg, 'control: a wrong count must not be found in the argument'
+    out.append(f'state media: {sm["warns"]} of {sm["n"]} only warn; {len(burst)} from {start} to {end}; '
+               f'{len(h200)} from {h_start} to {h_end}; {len(sm["outside"])} outside the main group '
+               f'(counted here, equal to caption {cap["k"]} and to the argument)')
     return out, pages
 
 
@@ -319,8 +347,9 @@ def main():
     # 3. substance
     notes, pages = check_substance(caps)
     # 4. the strip
-    evs, checks, G = L.load_events()
-    print('figure check:', L.check_against_figure(evs))
+    evs, checks, G, lane_names = L.load_events()
+    lane_names, figure_check = L.check_against_figure(evs, lane_names)
+    print('figure check:', figure_check)
     n_q = L.write_quotes(HERE / 'quotes.tsv', L.strip_quotes(evs, checks), 'Idea 24, the explainer: the source words behind every mark, label and dashed line of the strip. (The captions are checked through captions_base.txt.)')
     print('cn_has.py:', L.run_has(HERE / 'quotes.tsv'), f'({n_q} lines in quotes.tsv)')
     n_t = L.template_has(' '.join(L.HEADLINE), *L.KEY_SENTENCES)
@@ -376,7 +405,7 @@ def main():
     stage = f"""<h1 id="h1">{esc(' '.join(L.HEADLINE))}</h1>
 <div class="clock" id="clockbox"><div id="date"></div></div>
 <div class="card" id="card">
-{L.strip_svg(evs, G)}
+{L.strip_svg(evs, G, lane_names)}
 {L.KEY}
 <div id="count"></div>
 </div>
@@ -397,7 +426,7 @@ def main():
     assert frame_says_local(stage.replace('model.</p>', f'model. {OLD_NOTE}</p>')), 'control: the old credit line must be refused'
     below = f"""  <p>A silent explainer of {int(TOTAL // 60)} minutes {round(TOTAL % 60)} seconds: the dated strip in {len(caps)} chapters. Each caption stays on screen while the marks it speaks of appear in date order. This page draws any moment of it; the video beside it was captured from this page frame by frame. No one has yet watched the video play through: it was checked by script and as still frames.</p>
   <p>The video file, <code>explainer.mp4</code> (1280 by 720, no sound, no voice):</p>
-  <video data-src="explainer.mp4" controls muted playsinline preload="metadata" width="1280" height="720"></video>
+  <video data-src="explainer.mp4" data-poster="stills/explainer_00_first.png" controls muted playsinline preload="none" width="1280" height="720"></video>
   <p>The captions as a checked text, with the list of sources: <a href="captions.html">captions.html</a>.</p>
   <p class="small">Draft by Claude, Anthropic’s model.</p>"""
     says = [n for n, x in (('the page', stage + below), ('captions.md', (HERE / 'captions.md').read_text(encoding='utf-8')), ('captions.html', (HERE / 'captions.html').read_text(encoding='utf-8'))) if 'local; not' in x.lower()]

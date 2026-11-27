@@ -6,9 +6,8 @@
 #        {d:key}    the date the page states ("Jul 31, 2025"); {my:key} its month and year; {y:key} its year
 #        {n:key}    the number phrase at the start of that line of quotes.tsv ("about 600,000")
 #        {h:share}  the share of the chips, in the applications Washington's table records, that are in applications it returned without action (a4lib.house())
-#        {sm:warn}, {sm:burst}, {sm:span}, {sm:later}   the state-media items that only warn, made by a4lib.warnings() from the project's
-#                   table: all of them; those of the first year with one, and the span of their dates; the later ones;
-#                   {sm:found} the months the table's items were found in (round 12)
+#        {sm:warn}, {sm:burst}, {sm:span}, {sm:found}, {sm:before}, {sm:later}, {sm:h200}
+#                   counts and dates from a4lib.warnings() for the later state-media list
 #        {t:key}    the time of a caption line in its recording, read from the saved caption file
 #   = key | label     a reference: the saved id is that of quotes.tsv's line of the same key; {date} is read from <key>.date,
 #                     {pub} from <key>.pub.date, {month} from <key>.month (a month and a year, where the page gives no day),
@@ -28,13 +27,13 @@
 @title Did Beijing’s chip policy pull against China’s own AI companies?
 @answer Yes on direction, with five limits.
 @p On the record. | China’s state planner says it is guiding home-made AI models to do more to adapt to home-made chips [ndrc]. Nvidia told US securities regulators in {my:nv} that China’s government {q:nv} [nv]. Yet a Shanghai government body wrote that in the city the clusters internet companies build themselves run mainly on Nvidia cards [shanghai].
-@p Reported, from unnamed people. | Chinese companies ordered {q:ordered} [ordered]. Reuters reported that in {my:waiting} {n:waiting} were stored in Hong Kong while Beijing withheld approval for large-scale imports [waiting].
-@p Five limits. | (1) Beijing was not one actor: its commerce minister said he hoped Nvidia would supply Chinese customers [mofcom]. (2) No published ban was found in the 82 policy pages read: state media warned in public (of the {sm:warn} items found from {sm:found} that only warn, {sm:burst} date from {sm:span}, and {sm:later} are later), and the press reported {q:bloomberg} [bloomberg]. (3) Some chips were reported let in [waiting]. (4) American curbs pushed too: Nvidia calls itself {q:foreclosed} [nv]; Washington returned without action the applications for {h:share}% of the chips its summary of {d:table} records [table]. (5) Beijing’s aim is read both ways: a US commission saw it willing to {q:uscc} [uscc]; the Trade Representative called letting its companies buy {q:greer} (captions, not checked by ear, at {t:greer}) [greer].
+@p Five limits. | (1) Authorities differed. Beijing’s commerce minister hoped Nvidia would supply Chinese customers [mofcom]. Some local governments and telecom units were also more open to Nvidia. (2) No published ban was found in the 82 policy pages read. Published texts pushed toward home-made chips. Of {sm:warn} state-media items found from {sm:found} that only warn, {sm:burst} date from {sm:span}, {sm:before} earlier and {sm:later} later, including {sm:h200} on US easing for the H200. Bloomberg, citing unnamed people, reported {q:bloomberg} [bloomberg]. (3) Reuters, citing four unnamed people, reported approvals for some H200 purchases with conditions still being decided [approved]. Nvidia’s filing reports licensed H20 sales to China [nv]. Reuters, citing unnamed people, reported that Chinese companies ordered {q:ordered} [ordered]. (4) The companies had their own reasons and US curbs pushed too. Nvidia said it was {q:foreclosed} [nv]. Washington returned without action the applications for {h:share}% of the chips its summary of {d:table} records [table]. (5) The record leaves room for lasting policy, trade leverage [uscc] or protection of China’s market [bessent]. Asked if China would let its companies buy H200s, the US Trade Representative called it {q:greer} (captions, not checked by ear, at {t:greer}) [greer].
 = ndrc | State planner (NDRC), Li Chao of its policy research office, press conference of {date}.
 = nv | Nvidia, quarterly report (Form 10-Q) signed {date}.
 = shanghai | Shanghai Commission of Economy and Informatization, written reply dated {date} (published {pub}).
-= ordered | Reuters, {date}, on Investing.com; Internet Archive capture.
-= waiting | Reuters, datelined {date}; carried by CNA (Singapore) on {pub}.
+= approved | Reuters, {date}, report citing four unnamed people, as carried by The Standard (Hong Kong).
+= ordered | Reuters, {date}, on Investing.com, report citing unnamed people.
+= bessent | US Treasury Secretary Scott Bessent on Bloomberg Surveillance, automatic captions.
 = mofcom | China’s Ministry of Commerce, readout, posted {pub}, of the minister’s meeting of {date} with Nvidia’s chief executive.
 = bloomberg | Bloomberg, {date}; carried by The Business Times (Singapore) on {pub}.
 = table | Licence table {q:table}, made public by the House Foreign Affairs Committee, {pub}.

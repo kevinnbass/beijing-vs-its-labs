@@ -3,11 +3,11 @@
  <div id="top">
   <header>
    <p class="eyebrow">中国 · 英伟达芯片 · 2023年至2026年11月</p>
-   <h1><span>英伟达芯片：</span><span>北京方面大体往一边拉，</span><span>中国AI企业往另一边拉</span></h1>
-   <p class="deck">%%N_EVENTS%%条有日期的记录：中国有关部门对英伟达芯片做了什么，中国的大型AI企业又做了什么。橙色表示远离英伟达，蓝色表示靠向英伟达。双方的例外也一并画出：北京方面有时放行芯片，企业也在转向国产芯片。</p>
+   <h1>北京推动采用国产芯片。中国AI企业仍在争取英伟达芯片。</h1>
+   <p class="deck">%%N_EVENTS%%条有日期的记录，展示中国有关部门如何对待英伟达芯片，以及中国企业如何争取、购买或使用这些芯片。企业也购买并使用国产芯片。中央有关部门中的一部分、一些地方政府和国有电信运营商的部分单位对英伟达较为开放。</p>
    <ul class="key">
-    <li><i class="sw away"></i><span><b>远离英伟达：</b>加以限制，或选用国产芯片</span></li>
-    <li><i class="sw toward"></i><span><b>靠向英伟达：</b>购买、使用、放行</span></li>
+    <li><i class="sw away"></i><span><b>橙色 · 远离英伟达：</b>加以限制，或选用国产芯片</span></li>
+    <li><i class="sw toward"></i><span><b>蓝色 · 靠向英伟达：</b>争取、购买、使用或欢迎</span></li>
     <li><a class="p solid toward" aria-hidden="true" tabindex="-1">1</a><span><b>实心：</b>有公开记录可查（政府文件、公开发表的官方媒体内容、公司披露文件、具名人士）。共%%N_SOLID%%条</span></li>
     <li><a class="p hollow toward" aria-hidden="true" tabindex="-1">1</a><span><b>空心：</b>援引未具名人士的媒体报道。共%%N_HOLLOW%%条</span></li>
    </ul>
@@ -37,7 +37,7 @@
    <div>
     <h2>英伟达自己的数字：来自总部在中国的客户的收入</h2>
     <p class="sub">按季度列出，单位十亿美元，出自英伟达向美国证券交易委员会提交的报告；含香港。按直接客户总部所在地统计，涵盖所有产品。这不是进入中国的芯片数量。英伟达注明：最终客户和发货地点可能与直接客户的总部所在地不同（原文：“The end customer and shipping location may be different from our direct customers’ headquarters location.”）</p>
-    <p class="big">这条线在截至2025年4月和截至2025年10月的两个季度之间下降了约三分之二。最近一个季度是这九个季度中最高的。</p>
+    <p class="big">收入从截至2025年4月的季度到截至同年10月的季度下降了约三分之二。最新一季的收入是这九个季度中最高的。</p>
    </div>
 %%REVENUE%%
   </section>
@@ -72,13 +72,15 @@
    <!-- Round 4: the nine notes of the core figure, in its order. Counts in note 2 come from tables/state_media_items.tsv (state_media() in the builder); the sums in note 5 from tables/house_licence_table.tsv (hfac()); record numbers from the REC markers. Every string between curly quote marks is a checked line of figure_data.txt. -->
    <!-- Round 5 (Nov 24, 2026): note 5's last sentence follows the argument's point 16 (the table's only Tencent row of Dec 19, 2025 is 75,000, approved; neither document says it is the application of 445,000), not the core figure's "which the table shows at 75,000", a wording core edit 6 withdrew; the licence table is called BIS's (the argument's wording), not the Commerce Department's. Reported to the owner, core not touched. Since then (Nov 24, 2026, the session's changes and touch-up 6b) the English figure says the same on both points, so the two figures agree again; the bars note now names the table by its title, as the English does. -->
    <li>空心圆点依据的是未具名人士的说法。在找到的答复中，没有中国主管部门证实其中任何一条：被问到这类报道时，外交部发言人先后表示“我不了解你提到的情况”（2025年8月13日）、“具体问题建议向中方主管部门进行询问”（2026年1月29日）、“中方在美国输华芯片问题上的立场是一贯的”（2026年11月9日）。</li>
-   <li>在所阅读的政策网页和全国性文件目录中，没有找到公开发布的、不准购买英伟达芯片的中国政府命令。找到的针对英伟达的公开举措，是一次约谈和一起反垄断案件。找到的公开警示大多集中在一段时间：在%%SM_FROM%%至%%SM_TO%%间找到的%%SM_N%%篇涉及英伟达芯片的官方媒体和党媒内容中，只对英伟达芯片提出警示的有%%SM_W%%篇，其中%%SM_WIN%%篇出自%%SM_W0%%至%%SM_W1%%，此后找到的%%SM_WLATE%%篇都是《环球时报》英文版2026年的内容（全部%%SM_N%%篇中，另有%%SM_MIX%%篇既有警示也有欢迎；2025年9月以后的内容是两轮搜索所找到的，是样本，不是完整统计），其中没有一篇是命令。更早的2024年12月3日，行业组织中国互联网协会曾以美国出口管制为由，呼吁企业“审慎选择采购美国芯片”，并在同一句话里呼吁“积极使用内外资企业在华生产制造的芯片”。</li>
+   <li>在所阅读的政策网页和全国性文件目录中，没有找到公开发布的、不准购买英伟达芯片的中国政府命令。在所查资料中，找到的针对英伟达的公开举措有两项：一次约谈和一起反垄断案件。%%SM_FROM%%至%%SM_TO%%间找到%%SM_N%%篇涉及英伟达及其芯片的官方媒体和党媒内容，其中%%SM_W%%篇只提出警示，%%SM_WIN%%篇出自%%SM_W0%%至%%SM_W1%%。这八周之外还有%%SM_OUTSIDE%%篇：%%SM_EARLY%%和%%SM_NOV%%各一篇，%%SM_H0%%至%%SM_H1%%期间有%%SM_H200%%篇涉及美国放宽H200出口，最后%%SM_LAST%%篇见于2026年《环球时报》英文版。另有%%SM_MIX%%篇既有警示也有欢迎，其中%%SM_MIX_LATER%%篇在2025年9月以后发表。这些警示都不是命令。检索和查阅存档网页得到的是样本。</li>
+   <li>按主题看，后期样本中%%SM_AI%%篇涉及AI算力芯片，其中%%SM_AI_W%%篇只提出警示。另有%%SM_PRODUCT%%篇涉及使用英伟达芯片的产品，%%SM_COMPANY%%篇涉及英伟达公司，%%SM_OTHER%%篇涉及其他主题。2024年1月至2025年6月的另一组样本有%%SM_BASE%%篇，其中%%SM_COMP%%篇出自后期也覆盖的媒体，%%SM_GROUP%%篇出自不在后期样本中的三份人民日报社旗下报纸。前期有一篇<a href="%%SM_BASE_URL%%">警示不要过度依赖H20</a>。在%%SM_COMP%%篇可比文章中，没有找到要求买方不买英伟达芯片的内容。两期共找到%%SM_ALL_W%%篇警示，其中%%SM_WIN%%篇出自这八周。2024年12月3日，中国互联网协会以美国出口管制为由，呼吁企业“审慎选择采购美国芯片”，同时呼吁“积极使用内外资企业在华生产制造的芯片”。</li>
+   <li>一些媒体援引未具名人士报道，部分采购获得批准。英伟达自己的披露文件报告了获许可的对华销售。披露文件和其他记录把美国限制列为原因的次数，远多于把中国举措列为原因的次数。</li>
    <li>第%%REC:cn-policy-samr-open-original%%条和第%%REC:cn-policy-samr-further-original%%条记录是针对英伟达公司本身的反垄断案件。按英伟达自己的报告，初步调查结论涉及美国出口管制要求其向中国市场提供的降规产品。这两条画成橙色，表示对英伟达的压力，并不表示希望英伟达芯片减少。白宫2025年11月1日说，中国将终止对芯片供应链上美国企业的各项调查，但没有点名；市场监管总局自己的新闻列表（读至2026年11月23日）和英伟达的报告都没有说英伟达案已经结束，总局2026年4月10日发布的2025年工作回顾仍列有“对英伟达公司实施进一步调查”。</li>
    <li>北京方面的用意并无定论。美国的一些机构把它的反垄断举措看作筹码或施压：美中经济与安全审查委员会（2025年）认为，这显示中国愿意把施加影响和缓解压力都用作谈判手段（原文：“exert leverage and ease pressure as a negotiating tactic”）；国会研究服务处（2025年9月）认为，这是为了向英伟达施压，要它向中国提供先进芯片（原文：“to pressure Nvidia to provide its advanced chips to China”）。不过，被问到中国是否会让本国企业购买H200时，美国贸易代表说，那将是中国的主权决定（原文：“that’s gonna be a sovereign decision for China”；2026年5月15日，彭博电视；字幕，未经人耳核对，05:59处）。无论取哪一种解读，这里所画各项举措的方向都不变。</li>
    <li>H200还须满足美方的条件：在美国境内检测、发往中国和澳门的数量不超过同一产品在美国供最终使用的发货量的一半、缴纳25%的关税（美国商务部2026年1月15日的规则；英伟达截至2026年7月26日季度的报告）。截至2026年5月11日，在表内所列申请涉及的%%HF_ALL%%枚芯片中，华盛顿未予处理即退回的申请涉及%%HF_RWA%%枚，超过该表所列的一半（见上方条形图）。公布这份表格的委员会说，这份汇总没有完整反映每一份申请；它举的例子是英伟达2025年12月19日为腾讯申请44.5万枚的一份申请；表中这一日期英伟达为腾讯所列的只有一行，为7.5万枚、已批准，两份文件都没有说这一行是否就是那份44.5万枚的申请。</li>
    <li>所涉芯片前后有变化：H20（2024年至2025年）、RTX PRO 6000D（2025年）、H200（2025年12月起）、RTX PRO 5500（2026年）。</li>
    <li>这些记录是为呈现双方情况而作的选取，不是全面统计。某一行圆点的多少不代表分量。</li>
-   <li>第%%REC:cn-policy-micron-decision%%条和第%%REC:cn-policy-desktop-2023%%条记录与英伟达无关。第%%REC:cn-policy-micron-decision%%条是2023年认定美光产品未通过审查的结论，是一项公开发布的、要求关键信息基础设施运营者停止采购一家外国芯片厂商产品的指示；第%%REC:cn-policy-desktop-2023%%条是针对党政机关台式计算机的采购规定。这两条画成橙色，表示远离外国芯片的举措。第%%REC:cn-le17-whuf-134391%%条是两所高校自己的采购，其公告要求供应商符合政府采购法规定的条件；这不是中央政府的举措。第%%REC:cn-tolerate-mof%%条和第%%REC:cn-acts-mofcom-20261117%%条没有提到英伟达；画成蓝色，是因为它们支持中国企业在境外使用算力，而据英国《金融时报》2025年11月27日援引两名未具名知情人士的报道（第%%REC:cn-tolerate-ft-offshore%%条记录），那里用的是英伟达芯片。第%%REC:cn-counter-b11-5%%条和第%%REC:cn-policy-qiushi-cuda-gap%%条是一个市级部门和一份党刊关于企业用什么芯片的文件；它们画在企业一栏。</li>
+   <li>第%%REC:cn-policy-micron-decision%%条和第%%REC:cn-policy-desktop-2023%%条记录与英伟达无关。第%%REC:cn-policy-micron-decision%%条是2023年认定美光产品未通过审查的结论，是一项公开发布的、要求关键信息基础设施运营者停止采购一家外国芯片厂商产品的指示；第%%REC:cn-policy-desktop-2023%%条是针对党政机关及其直属或为其提供支持的事业单位台式计算机的采购规定。这两条画成橙色，表示远离外国芯片的举措。第%%REC:cn-le17-whuf-134391%%条是两所高校自行发布的采购公告，要求供应商符合政府采购法规定的条件。这不是中央政府的举措。第%%REC:cn-tolerate-mof%%条和第%%REC:cn-acts-mofcom-20261117%%条没有提到英伟达。它们画成蓝色，因为有关部门支持中国企业使用境外算力。英国《金融时报》2025年11月27日援引两名未具名人士报道，有企业在境外训练模型以使用英伟达芯片（原文：“to access Nvidia’s chips”，第%%REC:cn-tolerate-ft-offshore%%条）。第%%REC:cn-counter-b11-5%%条和第%%REC:cn-policy-qiushi-cuda-gap%%条是一个市级部门和一份党刊关于企业用什么芯片的文件；它们画在企业一栏。</li>
    <li>引号之内只放来源的原话：来源为中文的，照录中文原文；来源为英文的，保留英文原文，其中文译文为本页所译，不是官方译文，也不放在引号之内。本页中文由Claude（Anthropic的模型）译自英文版，尚未经中文母语读者审校。</li>
   </ul>
  </section>

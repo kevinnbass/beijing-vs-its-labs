@@ -4,6 +4,8 @@
 #   P  the place as shown (its name in the list and in the tooltip)
 #   W  the date as shown (the date of the act where the page states it, otherwise of the report)
 #   T  the line shown (my words; straight double quotes hold ONLY the page's exact words)
+#      In the BIS record, %%BIS_APPS%% and %%BIS_CHIPS%% are filled from the licence table.
+#   A  in the BIS record only: expected applications and chips, checked against the table
 #   S  the source as shown
 #   K  the source as the list under the map gives it, after the place: "in" + the source + its date (my words; no quote marks)
 #   Q  the page's own words shown in the tooltip (checked against the saved copy)
@@ -45,10 +47,11 @@ L 1 start 15 5 Hong Kong
 @ 2 out press there toward 2025-11-27 cn-tolerate-ft-offshore
 P Southeast Asia
 W Reported Nov 27, 2025
-T The Financial Times reported, by two people it did not name, that Alibaba and ByteDance were training their latest AI models in data centres "across Southeast Asia". The report names no site. It says Chinese companies "typically sign a lease agreement" for data centres abroad, that clusters "have boomed in Singapore and Malaysia", and that many are "equipped with high-end Nvidia products".
+T The Financial Times, citing two people it did not name, reported that Alibaba and ByteDance "are among the tech groups training their latest large language models (LLMs) in data centres across Southeast Asia", "to access Nvidia's chips". The report names no site. It says Chinese companies "typically sign a lease agreement" for data centres abroad, that clusters "have boomed in Singapore and Malaysia", and that many are "equipped with high-end Nvidia products".
 S Financial Times, Nov 27, 2025, as carried by The Irish Times
 K in the Financial Times’s report of Nov 27, 2025, by two people it did not name
 Q Alibaba and ByteDance are among the tech groups training their latest large language models (LLMs) in data centres across Southeast Asia, according to two people with direct knowledge of the matter
++ to access Nvidia's chips
 + Data centre clusters have boomed in Singapore and Malaysia, fuelled by Chinese demand
 + Many of these data centres are equipped with high-end Nvidia products
 + Chinese companies typically sign a lease agreement to use overseas data centres owned and operated by non-Chinese entities
@@ -109,7 +112,8 @@ L 1 end -15 5 Inzai, Chiba
 @ 5 out paper plan us 2026-05-11 cn-usdocs-hfac-decisions-20261119
 P Malaysia, Indonesia and Thailand
 W Table as of May 11, 2026
-T The licence table of May 11, 2026 from the US Commerce Department's Bureau of Industry and Security (BIS) lists five applications, with Nvidia as exporter, for 1,118,500 chips whose ultimate location the table gives as one of these three countries; the data-centre operators or ultimate consignees the five name carry the names ByteDance, BytePlus, TikTok and Alibaba. All five are marked "RWA" (returned without action): none was approved, and the table gives no reasons. An application names a data-centre operator or ultimate consignee; it is not an order. The sum is mine.
+T The licence table of May 11, 2026 from the US Commerce Department's Bureau of Industry and Security (BIS) lists %%BIS_APPS%% applications, with Nvidia as exporter, covering %%BIS_CHIPS%% chips, with these three countries listed as the intended destinations. The entries name data-centre operators or ultimate consignees associated with ByteDance, BytePlus, TikTok and Alibaba. All %%BIS_APPS%% applications are marked "RWA" (returned without action). The table gives no reasons. An application names a data-centre operator or ultimate consignee; it is not an order. The sum is mine.
+A 5 1118500
 S Licence table of BIS (H200 licence and application status as of May 11, 2026), released by the House Foreign Affairs Committee, Nov 19, 2026
 K in the US licence table as of May 11, 2026: applications, returned without action
 Q Bytedance System SDN 508,000 RWA Malaysia
@@ -132,11 +136,10 @@ L 3 start 15 5 Thailand
 @ 6 there doc there toward 2026-11-13 cn-tolerate-projects-relay1
 P Jiangsu
 W March 2025 (reported Nov 13, 2026)
-T Reuters lists this among facilities "already using restricted Nvidia hardware": the Wuxi municipal government "said in March 2025 that a computing cluster using Nvidia H800 processors had entered operation". The report names the province and the city government; it names no site.
+T According to Reuters, the Wuxi municipal government "said in March 2025 that a computing cluster using Nvidia H800 processors had entered operation". The report names the province and the city government; it names no site.
 S Reuters, Nov 13, 2026, on WSAU
 K in Reuters’s report of Nov 13, 2026, of a city government’s statement of March 2025
 Q In eastern Jiangsu province, the Wuxi municipal government said in March 2025 that a computing cluster using Nvidia H800 processors had entered operation.
-+ Other Chinese facilities are already using restricted Nvidia hardware.
 G iso:CN-JS | iso:CN-JS
 L 1 start 15 5 Jiangsu
 
@@ -213,10 +216,10 @@ L 1 end -16 5 Gansu
 ! cn-clips-corroboration-1 | FOR IMMEDIATE RELEASE | November 16, 2026
 ! cn-clips-evidence-1 | Several major Chinese internet companies have each obtained about 10,000 H200 chips in the past few months, one of the people said
 ! cn-clips-evidence-1 | China has allowed some of the chips to enter the country in recent months, three people familiar with the matter said
-! cn-tolerate-projects-relay1 | Other Chinese facilities are already using restricted Nvidia hardware.
-! cn-tolerate-projects-relay1 | In Fujian, Shanghai-listed Damingcheng disclosed in June that a computing venture had built an H800 cluster.
-! cn-tolerate-projects-relay1 | It had signed a computing-services agreement originally worth 759 million yuan, although the contract ended early.
-! cn-tolerate-projects-relay1 | Shenzhen University awarded a contract for three H100 processors in September, while US-blacklisted Northwestern Polytechnical University bought two H200 chips the following month
+! cn-le08-damingcheng-auditor-reply-20260627 | 该项投资采用H800 GPU训练服务器作为核心计算节点
+! cn-le08-damingcheng-auditor-reply-20260627 | 《先进计算技术服务项目合同》实际于 2026 年 1 月 31 日终止
+! cn-ga13-nwpu-som-88690-wayback | 发布时间：2026-10-21
+! cn-ga13-nwpu-som-88690-wayback | NVIDIA H200 141G PCIe显卡2片
 ! cn-usdocs-hfac-summary-20261119 | NVIDIA’s H200 and AMD’s MI325X
 ! cn-tolerate-reutersaug26-relay1-wayback | Hong Kong, which operates outside mainland China's customs border
 

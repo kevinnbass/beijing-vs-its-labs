@@ -5,7 +5,7 @@ Draft by Claude, Anthropic's model.
 The page is `tracker.html` in this folder. It is built from four files in `data/`: `figure_data.txt` (the records),
 `tracker_log.tsv` (the dated log), `state_of_play.txt` (the state of play at the top, added Nov 23, 2026) and
 `house_licence_table.tsv` (a copy of the project's `tables/house_licence_table.tsv`, which the state of play counts).
-Never edit `tracker.html` by hand: a rebuild replaces it.
+The row labels come from the main figure’s `figure_events.tsv`. Never edit `tracker.html` by hand: a rebuild replaces it.
 
 ## 0. Bring the state of play up to date
 
@@ -35,10 +35,13 @@ python3 -I add_record.py --date 2026-12-01 --row BH --kind press --id <saved id>
   --line '<our line, one sentence>' --source '<the source as shown>' --words '<exact words of the saved page>'
 ```
 
-- `--row`: `BH` Beijing holds Nvidia back, `BL` Beijing lets Nvidia in, `CN` the companies reach for Nvidia,
+- `--row`: `BH` Beijing holds Nvidia back, `BL` Beijing is more open to Nvidia, `CN` the companies reach for Nvidia,
   `CH` the companies turn to home-made chips.
-- `--kind`: `doc` a government document, an official or published state media, on the record (filled mark), `rec` a company, or a named person outside
-  government, on the record (filled mark), `press` a press report citing unnamed people (open mark).
+- `--kind`: `doc` a document or one of the published sources or notices in the filled key below, `rec` a company or
+  a named person outside government on the record, `press` a press report citing unnamed people (open mark).
+  A filled mark is a document, a filing, a named person on the record, a published commentary, report or
+  statement of state media, an industry body or a research institute, an institution's own notice, or a
+  named outlet's account of a document.
 - `--date`: the day of the act where the page states that day, otherwise the day of the report. Read it in the page.
 - Optional: `--english '<our English for Chinese words>'` (no quote marks in it), `--address '<address>'` where the
   saved copy's own address is missing or cut short, `--label 'Summer 2025'` to show words instead of the day.
@@ -47,7 +50,8 @@ The command refuses the record, and changes nothing, when the words are not in t
 quote marks or a number in our line are not in it, when the date is not written in the page's readable text (give
 `--date-not-in-page '<reason>'` if that is right, as for a label), or when the same words already stand in that row.
 When it takes the record it appends it to `data/figure_data.txt`, writes a line dated today (UTC) into
-`data/tracker_log.tsv`, and rebuilds the page.
+`data/tracker_log.tsv`, and rebuilds the page. If the update fails after writing starts, the data, log, page
+and quotation table are restored to their previous state.
 
 To try a record without touching the real files: `python3 -I test_add_record.py` shows the pattern (it works on a
 copy under `scratch_test/`), or pass `--dir <a copy of this folder's data>`.
@@ -57,15 +61,17 @@ copy under `scratch_test/`), or pass `--dir <a copy of this folder's data>`.
 ```
 python3 scripts/render_and_look.py tracker.html \
   --with data/figure_data.txt data/tracker_log.tsv data/state_of_play.txt data/house_licence_table.tsv build.py \
+    ../../../figure/figure_events.tsv \
   --widths 1280,390 --max-tiles 40
 ```
 
 Open every screenshot it lists, then run the same command with `--looked ... --saw N --note "what you saw"`, and
-finish with `--check tracker.html --with` and the same five files (exit 0).
+finish with `--check tracker.html --with` and the same six files (exit 0).
 
 ## 4. Correct a record
 
-Edit its block in `data/figure_data.txt` (the file's header explains the lines). Then add one line at the END of
+Edit its block in `data/figure_data.txt` (the file's header explains the lines). An optional `A saved-id | source label`
+line links a second saved copy and lets the checker verify quotations in the heading against that copy. Then add one line at the END of
 `data/tracker_log.tsv`: today's date, `correction` (or `wording`, or `note` for a remark that changes no record), the
 saved id, the number of records, what changed and why, and hidden checks for any date or number the line states (the
 file's header explains the columns and the three kinds of check). Then run

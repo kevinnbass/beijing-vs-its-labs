@@ -8,6 +8,7 @@ The map shows places that saved reports name. It does not show where chips are; 
 Reads, in this folder:
   places.txt      the records (its header explains the format): each is what one saved page says about the place or places it names
   template.html   the page around the map
+  ../../../tables/house_licence_table.tsv   application counts and chip totals for the BIS record
   mapdata/ne_10m_admin_1_states_provinces.geojson   Natural Earth 1:10m states and provinces, version 5.1.2, public domain
                   (https://raw.githubusercontent.com/nvkelso/natural-earth-vector/v5.1.2/geojson/ne_10m_admin_1_states_provinces.geojson);
                   its sha256 is checked below. It is only parsed as data.
@@ -60,6 +61,10 @@ def load():
             sid, q = ln[2:].split(' | ', 1); extra.append((sid.strip(), q.strip()))
         elif ln.startswith('D '):
             sid, q = ln[2:].split(' | ', 1); dates.append((sid.strip(), q.strip()))
+        elif ln.startswith('A '):
+            assert 'A' not in cur, f'line {n}: duplicate licence subtotal'
+            applications, chips = ln[2:].split()
+            cur['A'] = (int(applications), int(chips))
         elif ln.startswith('+ '):
             body = ln[2:].strip()
             if body.startswith('@'):
@@ -475,6 +480,10 @@ def main():
     assert len(lic) == 54 and all(x['status'] == 'RWA' and x['exporter'] == 'Nvidia' for x in abroad) and {x['location'] for x in abroad} == {'Malaysia', 'Indonesia', 'Thailand'}, 'the table no longer says what record 5 says'
     assert all(re.search(r'bytedance|byteplus|tiktok|alibaba', x['consignee'], re.I) for x in abroad)
     r5 = next(r for r in recs if r['dir'] == 'us')
+    assert [r['n'] for r in recs if 'A' in r] == [r5['n']], 'the BIS record alone must give an expected licence subtotal'
+    assert (n_ab, sum_ab) == r5['A'], f'BIS record expects {r5["A"]}, but the table gives {(n_ab, sum_ab)}'
+    assert r5['T'].count('%%BIS_APPS%%') == 2 and r5['T'].count('%%BIS_CHIPS%%') == 1, 'the BIS record must print its computed counts'
+    r5['T'] = r5['T'].replace('%%BIS_APPS%%', WORDS[n_ab]).replace('%%BIS_CHIPS%%', f'{sum_ab:,}')
     assert f'{sum_ab:,}' in r5['T'] and f' {WORDS[n_ab]} applications' in r5['T'] and f'All {WORDS[n_ab]} ' in r5['T'] and r5['P'] == 'Malaysia, Indonesia and Thailand', (n_ab, sum_ab)
     assert all(r['group'] == 'out' and not r['solid'] for r in recs if r['dir'] == 'away'), "the key describes the orange record as Reuters's report, by unnamed people, of chips stored in Hong Kong"
     # round 10 (Nov 25, 2026): the headline, deck and key name outlets, dates and record numbers; each is checked here against the records

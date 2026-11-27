@@ -50,7 +50,7 @@ cn-acts-reuters-ti-cap-20260708-relay1	citing two people with direct knowledge o
 #@ delivered
 cn-tolerate-reutersaug26-relay1-wayback	ByteDance and Tencent have each received about 10,000 H200 processors in recent weeks
 #@ delivered.outside
-cn-tolerate-reutersaug26-relay1-wayback	Beijing wants them to keep the hardware outside mainland China
+cn-tolerate-ftaug26	Beijing wants them to keep most of these chips outside the mainland
 #@ delivered.date
 cn-tolerate-reutersaug26-relay1-wayback	Published Aug 18, 2026
 #@ delivered.unnamed
@@ -83,8 +83,6 @@ man-ms-sec-10q-2026-07	Date: August 26, 2026
 # --- a later report that qualifies the bar of deliveries (shown under "Read with care") ---
 #@ later.several
 cn-clips-evidence-1	Several major Chinese internet companies have each obtained about 10,000 H200 chips in the past few months
-#@ waiting.howmany
-cn-clips-evidence-1	small quantities of chips had been shipped via intermediaries and indirect routes without specifying how many
 #@ h200.allowed
 cn-clips-evidence-1	gave Nvidia permission last year to sell the chips to approved Chinese customers
 

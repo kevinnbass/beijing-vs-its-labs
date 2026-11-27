@@ -32,27 +32,27 @@ cn-counter-b11-5	上海市经济和信息化委员会2025年4月30日
 #@ shanghai.pub.date
 cn-counter-b11-5	发布日期：2025-11-10
 
+#@ approved
+ms-bj-20260128-h200-nod-standard	ByteDance, Alibaba, and Tencent have been approved to purchase more than 400,000 H200 chips in total
+#@ approved.unnamed
+ms-bj-20260128-h200-nod-standard	four people familiar with the matter told Reuters
+#@ approved.conditions
+ms-bj-20260128-h200-nod-standard	The Chinese government is only granting approvals with conditions, and the sources said they were still being decided upon.
+#@ approved.date
+ms-bj-20260128-h200-nod-standard	PUBLISHED: 2026-01-28
+
 #@ ordered
 cn-labs-h200-two-million-202512-relay1-wayback	more than 2 million H200 chips for 2026
-#@ ordered.who
-cn-labs-h200-two-million-202512-relay1-wayback	Chinese technology companies have placed orders for more than 2 million H200 chips
 #@ ordered.date
 cn-labs-h200-two-million-202512-relay1-wayback	Published 12/31/2025
+#@ ordered.unnamed
+cn-labs-h200-two-million-202512-relay1-wayback	two of the people said
 
-#@ waiting
-cn-clips-evidence-1	About 600,000 of Nvidia's advanced artificial intelligence chips are stored in Hong Kong awaiting shipment to China
-#@ waiting.withholds
-cn-clips-evidence-1	as Beijing withholds approval for large-scale imports despite demand from technology firms
-#@ waiting.camein
-cn-clips-evidence-1	China has allowed some of the chips to enter the country in recent months
-# the date of the Reuters report is read in another saved copy of it (Yahoo), which keeps the Reuters dateline; CNA's own stamp is a day later, Singapore time
-#@ waiting.date
-cn-clips-reuters-hongkong-yahoo	Nov 5 (Reuters) - About 600,000 of Nvidia's
-#@ waiting.year
-cn-clips-reuters-hongkong-yahoo	PUBLISHED: 2026-11-06
-# the day the cited copy (CNA) carries: the CNA page is not a Nov 5 page
-#@ waiting.pub.date
-cn-clips-evidence-1	PUBLISHED: 2026-11-06
+#@ nv.licensed
+man-ms-sec-10q-2025-10	we have generated approximately $50 million in H20 revenue under those licenses
+
+#@ bessent
+cn-le01-bessent-bbg-20250813-autocaps-ttml	worried about the Nvidia chips becoming the standard in China
 
 #@ mofcom
 cn-policy-wang-nvidia	希望包括英伟达在内的跨国公司为中国客户提供优质可靠的产品和服务
@@ -100,7 +100,7 @@ cn-le04-bis-ear-748	Returned without action (RWA)
 #@ table.rwarow
 cn-usdocs-hfac-decisions-20261119	Bytedance System SDN 508,000 RWA Malaysia
 
-# --- what Beijing meant: two readings ---
+# --- what Beijing meant: sources for the readings of policy and trade leverage ---
 #@ uscc
 cn-le03-uscc-2025-full	exert leverage and ease pressure as a negotiating tactic
 #@ uscc.whole

@@ -2,9 +2,10 @@
 1. timing.py works out the times from the caption files and the speech pass kept in this folder (exchange_timing.tsv)
 2. the times and counts in hearing_record_base_src.txt are filled from that file and from small counts made here
 3. scripts/cn_doc_build.py checks every quotation and hidden statement against the saved copies, then writes the note."""
-import re, subprocess, sys
+import json, re, subprocess, sys
 from pathlib import Path
 HERE = Path(__file__).resolve().parent
+PRIMARY = HERE.parents[3] / 'primary'
 r = subprocess.run([sys.executable, '-I', str(HERE / 'timing.py')], capture_output=True, text=True)
 if r.returncode: sys.exit('timing.py failed: ' + r.stdout[-300:] + r.stderr[-300:])
 f = dict(l.split('\t', 1) for l in (HERE / 'exchange_timing.tsv').read_text(encoding='utf-8').splitlines()[1:])
@@ -45,6 +46,27 @@ if P12 not in AP.points('cn-us-lutnick-0422-rev-transcript-b'): sys.exit(f'the a
 mc = re.findall(r"committee video's own captions \((\d:\d\d:\d\d) to (\d:\d\d:\d\d); a reading, with no saved copy\)", AP.open_list())
 if len(mc) != 1: sys.exit(f'the argument\'s open list gives the caption times {mc}: rewrite the bullet on the captions')
 if mc[0][0] != f['captions_answer_begins']: sys.exit('the open list and the caption files kept here no longer agree on the start of the answer: rewrite')
+prints_id = 'cn-ga07-govinfo-chrg-senate-since-20260422'
+open_list = AP.open_list()
+if any(sid not in open_list for sid in (prints_id, 'cn-ga07-senate-approps-hearing-page-20261124')):
+    sys.exit("the argument's open list no longer cites both Nov 24 hearing records: rewrite the note")
+listing = json.loads((PRIMARY / prints_id / 'body.json').read_text(encoding='utf-8'))
+titles = [r['title'] for r in listing['packages']]
+if not titles or len(titles) != listing['count'] or not any('Nomination of Howard Lutnick' in title for title in titles):
+    sys.exit('govinfo list count or nomination hearing control failed')
+
+def is_commerce_print(title, year):
+    return bool(re.search(r'\b(?:commerce|cjs)\b', title, re.I)
+                and re.search(rf'\b(?:fy[\s.-]*)?{year}\b', title, re.I))
+
+prior_volume = (PRIMARY / 'cn-o37-govinfo-cjs-fy2025-volume' / 'text.txt').read_text(encoding='utf-8')
+prior_title = re.search(r'^TITLE: (.+)$', prior_volume, re.M)
+if not prior_title or not is_commerce_print(prior_title[1], 2025):
+    sys.exit('govinfo title search did not find the fiscal 2025 volume control')
+for title in titles:
+    if is_commerce_print(title, 2027):
+        sys.exit(f'govinfo has a possible fiscal 2027 Commerce hearing print: {title}. Recheck the note.')
+v['SENATE_PRINTS'] = len(titles)
 v.update({'P12': P12, 'ARG_CAP_FROM': mc[0][0], 'ARG_CAP_TO': mc[0][1]})
 t = (HERE / 'hearing_record_base_src.txt').read_text(encoding='utf-8')
 for k, x in v.items(): t = t.replace('{' + k + '}', str(x))

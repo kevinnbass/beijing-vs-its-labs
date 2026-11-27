@@ -10,6 +10,7 @@ Round 4: the pairs come from the files and the two built pages themselves, so th
   pop-up   the labels of the pop-up, listed by hand and checked to stand in the two templates.
 Lines that exist only on the Chinese page are listed with an empty English cell.
 Round 14 (Nov 26, 2026): a record mark inside an element is written " [record mark N] ", apart from the words (GRAB).
+Round 4 mirror: include the displayed one-rate value and the three saved-source lines added by the core.
 """
 import re, sys
 from pathlib import Path
@@ -24,10 +25,11 @@ rows = []
 
 # ---------- records ----------
 core, cur = {}, None
-for ln in (EN / 'figure_data.txt').read_text(encoding='utf-8').splitlines():
+core_lines = (EN / 'figure_data.txt').read_text(encoding='utf-8').splitlines()
+for ln in core_lines:
     if ln.startswith('@ '):
         _, lane, kind, d, dl, sid = ln.split(); cur = core[(lane, sid)] = dict(dl=dl, n=len(core) + 1)
-    elif cur is not None and ln[:2] in ('T ', 'S ', 'Q ', 'E ', 'C '): cur[ln[0]] = ln[2:].strip()
+    elif cur is not None and ln[:2] in ('T ', 'S ', 'Q ', 'E ', 'C ', 'A '): cur[ln[0]] = ln[2:].strip()
 zh, cur = {}, None
 for ln in (F / 'zh_lines.txt').read_text(encoding='utf-8').splitlines():
     if ln.startswith('@ '):
@@ -40,7 +42,11 @@ for key, c in core.items():
     assert z['ET'] == c['T'] and z['ES'] == c['S'], f'run make_inputs.py first: {key}'
     if c['dl'] != '-': rows.append((tag + ' date label', c['dl'].replace('_', ' '), z['D']))
     rows.append((tag + ' T', c['T'], z['T'])); rows.append((tag + ' S', c['S'], z['S']))
-    if 'C' in c: rows.append((tag + ' C (label on the strip)', c['C'].split(' ', 3)[-1], z['C']))
+    assert z.get('EA') == c.get('A') and ('A' in c) == ('A' in z), f'run make_inputs.py first: {key}'
+    if 'A' in c: rows.append((tag + ' second source', c['A'].split(' | ', 1)[1], z['A']))
+    if 'C' in c:
+        assert z['EC'] == c['C'].split(' ', 3)[3], f'run make_inputs.py first: {key}'
+        rows.append((tag + ' C (label on the strip)', z['EC'], z['C']))
     if 'Z' in z: rows.append((tag + ' Q (source, English) and Z (my Chinese)', c['Q'], z['Z']))
     else: rows.append((tag + ' E (the core\'s English, not shown) and Q (source, Chinese, shown)', c.get('E', ''), c['Q']))
 n_rec = len(rows)
@@ -55,7 +61,7 @@ KINDS = [  # name, CSS selector, what to take ('text' or an attribute)
     ('share: label', '.sh-lab', 'text'), ('share: key', '.sh-keys span', 'text'), ('share: caption', '.sh-cap', 'text'),
     ('revenue: sentence', '.revcard .big', 'text'), ('revenue: chart read aloud', '.rev', 'aria-label'), ('revenue: bar', '.rv', 'title'), ('revenue: month', '.rv span', 'text'), ('revenue: note', '.revwrap .fine', 'text'),
     ('31 governments: bar read aloud', '.pv-bar', 'aria-label'), ('31 governments: key', '.pv-keys span', 'text'), ('31 governments: row', 'table.pv tr', 'text'),
-    ('line on paper: row', '.pp', 'text'),
+    ('line on paper: row', '.pp', 'text'), ('line on paper: other policies', '.paper > .fine', 'text'),
     ('vouchers: key', '.vkey span', 'text'), ('vouchers: group', '.vgrp h3', 'text'), ('vouchers: sub-group', '.vgrp h4', 'text'), ('vouchers: row', '.vr:not(.axis) .vlab', 'text'), ('vouchers: row note', '.vr:not(.axis) .vnote', 'text'), ('vouchers: row read aloud', '.vr:not(.axis) .vt', 'aria-label'),
     ('vouchers: one-rate label', '.vn.side', 'text'), ('vouchers: note', '.vf', 'text'),
     # round 9 (Nov 25, 2026): the compact list of one-rate rules and its lettered notes, drawn since voucher round 5, were not in this
@@ -75,8 +81,9 @@ GRAB = """(kinds) => kinds.map(([name, sel, what]) => [...document.querySelector
 GRAB_PLAIN = """(sel) => [...document.querySelectorAll(sel)].map(el => (el.textContent || '').replace(/\\s+/g, ' ').trim())"""
 GRAB_VM = """() => [[...document.querySelectorAll('.vm')].map(vm => {
     const a = vm.querySelector('.vml .srcn'), f = vm.querySelector('.vml .vfl'), t = vm.querySelector('.vmt'), l = vm.querySelector('.vml');
+    const rate = vm.querySelector('.vmp').textContent.trim();
     return {href: a ? a.getAttribute('href') : '', letter: f ? f.textContent.trim() : '', aria: t ? (t.getAttribute('aria-label') || '') : '',
-            lab: l ? l.textContent.replace(/\\s+/g, ' ').trim() : '', place: l && l.firstChild ? l.firstChild.textContent.trim() : ''}; }),
+            lab: l ? l.textContent.replace(/\\s+/g, ' ').trim() + ' | ' + rate : '', place: l && l.firstChild ? l.firstChild.textContent.trim() : ''}; }),
   [...document.querySelectorAll('.vfoot p')].map(p => { const b = p.querySelector('b');
     return {letter: b ? b.textContent.trim() : '', text: p.textContent.replace(/\\s+/g, ' ').trim()}; })]"""
 vm, plain = [], []
@@ -126,6 +133,18 @@ for le in sorted(ne):
 _le = sorted(ne)[:2]
 assert len(_le) == 2 and not starts(ne[_le[0]], _le[0], {ke[h]['place'] for h in ke if ke[h]['letter'] == _le[1]}), 'control failed: a note paired with another rule\'s place passed'
 n_page = len(rows) - n_rec
+
+# Saved wording added for the current source attributions. Chinese originals are presented verbatim.
+checks = (
+    ('cn-ga31-cnpress2ap3-23', '发布机构： 安徽宿州高新技术产业开发区管委会', '发布机构： 安徽宿州高新技术产业开发区管委会'),
+    ('cn-ga31-msspostsp2-38', '全国网络安全标准化技术委员会秘书处', '全国网络安全标准化技术委员会秘书处'),
+    ('cn-tolerate-ftaug26', 'according to two people with knowledge of the matter.', '据两名知情人士透露。'),
+)
+zh_checks = set((F / 'figure_data.txt').read_text(encoding='utf-8').splitlines())
+for sid, exact, rendered in checks:
+    line = f'! {sid} | {exact}'
+    assert line in core_lines and line in zh_checks, f'source check is missing: {sid}'
+    rows.append((f'checked source passage [{sid}]', exact, rendered))
 
 # ---------- Chinese page only, and the pop-up ----------
 zt, et = (F / 'template.html').read_text(encoding='utf-8'), (EN / 'template.html.copy').read_text(encoding='utf-8')

@@ -4,6 +4,7 @@
 Run: python3 -I check_numbers.py     (reads only; exit 1 on any difference)
   tables/house_licence_table.tsv     chips in the table, chips returned without action and their share, chips approved
   tables/trade_derived_figures.tsv   China's imports of computer parts, Jan to Sep 2025 and 2026, as printed
+  atlas/data/15_talks_and_acts_readouts.tsv   saved official pages counted in point 21, including meeting notices
   loose_ends/hkexnews_saved_ids.tsv  ids that may no longer be cited: none may stand in the page
   outputs/<folder>/<folder>/<file>   the five notes the page names must exist
 Round 5 (Nov 24, 2026) adds: the share with the application of 445,000 both ways; words the page copies from the argument
@@ -62,6 +63,15 @@ else:
 
 # words the page copies from the argument (round 5): each must stand, as written, in argument/argument_base.txt and in the page
 ARG = (PROJ / 'argument' / 'argument_base.txt').read_text(encoding='utf-8')
+readouts = (PROJ / 'atlas' / 'data' / '15_talks_and_acts_readouts.tsv').read_text(encoding='utf-8').splitlines()
+counted_readouts = [row for row in csv.DictReader(readouts[1:], delimiter='\t') if row['counted'] == 'yes']
+notices = sum(row['class'] == 'N' for row in counted_readouts)
+names_found = sum(row['names_found'] != '-' for row in counted_readouts)
+print(f'talks readout manifest: {len(counted_readouts)} official pages counted, including {notices} notices; Nvidia or its chips named: {names_found}')
+if not counted_readouts or notices != 6 or names_found:
+    bad.append('the talks readout manifest no longer supports the finding about the saved official pages and six notices')
+talks_scope = (f"None of the {len(counted_readouts)} saved official pages on the talks (the two sides' readouts, "
+               'joint statements and fact sheets, and six notices of a round to come) names Nvidia, the H20 or the H200')
 COPIED = ['the latest annual reports of fifteen US-listed Chinese companies',
           "only Alibaba's says a Chinese authority asked Chinese technology companies to stop buying certain chips",     # round 9 (core edit 8b, Frt1-026)
           'the 76 results-call transcripts of eight Chinese companies, November 2023 to November 2026, and 42 records of four smaller model makers',   # round 8: 43 -> 42, as the argument now has it (changed after edit 7, Nov 25, 2026)
@@ -103,7 +113,11 @@ COPIED = ['the latest annual reports of fifteen US-listed Chinese companies',
           'returned without action the applications for 55% of the chips its summary of May 11, 2026 records',
           'returned without action the applications for 1,888,950',
           "Tianjin's voucher rule is held as Sina carries it [cn-ga04-tj-voucher-rule-sina-20250514]",
-          'We are not assuming any Data Center compute revenue from China in our outlook.']
+          'We are not assuming any Data Center compute revenue from China in our outlook.',
+          # b16d: the opener follows point 19; the talks claim concerns Beijing's acts.
+          "Third, some purchases were reported approved, by press reports citing people they did not name, and Nvidia's own filings report licensed sales to China (point 19).",
+          "or ties a Beijing act against Nvidia to the trade talks",
+          talks_scope]
 low_arg = ARG.lower()
 miss_arg = [c for c in COPIED if c.lower() not in low_arg]
 miss_page = [c for c in COPIED if c.lower() not in text.lower()]

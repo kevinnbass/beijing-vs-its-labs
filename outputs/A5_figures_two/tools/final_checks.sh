@@ -16,11 +16,11 @@ for pair in "12_who_inside_beijing who_inside_beijing" "13_paper_against_practic
   out=$(python3 -I $NV/scripts/cn_has.py $d/quotes.tsv); rc=$?; echo "cn_has.py quotes.tsv: $out | exit $rc"; [ $rc -ne 0 ] && fail=1
   # round 4: each look also depends on the project tables (and, for 17, the argument files) its build reads
   case "$n" in
-    who_inside_beijing) extra="$TB/state_media_items.tsv $TB/provinces_31.tsv $TB/chip_evaluations.tsv" ;;
+    who_inside_beijing) extra="$TB/state_media_items.tsv $TB/provinces_31.tsv $TB/chip_evaluations.tsv $TB/state_media_baseline_2024_2025h1.tsv" ;;
     paper_against_practice) extra="$TB/provinces_31.tsv" ;;
     micron_and_nvidia) extra="$TB/state_media_items.tsv" ;;
-    ladder_of_evidence) extra="$ARG/argument_refs.tsv $ARG/argument_base.txt $TB/state_media_items.tsv $TB/carriers_own_notices.tsv" ;;   # round 12: its build reads the carriers' table too
-    us_side_steps) extra="$TB/house_licence_table.tsv" ;;
+    ladder_of_evidence) extra="$ARG/argument_refs.tsv $ARG/argument_refs_more.tsv $ARG/argument_base.txt $TB/state_media_items.tsv $TB/carriers_own_notices.tsv $ARG/../ARGUMENT_referenced.md" ;;   # round 12: its build reads the carriers' table too
+    us_side_steps) extra="$TB/house_licence_table.tsv $NV/research/primary/cn-ga31-official-sec-submissions-20261125-c/body.json $NV/research/primary/cn-ga31-official-sec-submissions-20261125-c/meta.json $NV/research/primary/cn-ga31-flowchipkey-10/text.txt" ;;
   esac
   out=$($PY $R --check $d/$n.html --with $d/data.txt $d/build.py $A5/common.py $d/quotes.tsv $extra); rc=$?; echo "look --check $n.html: ${out%% |*} | exit $rc"; [ $rc -ne 0 ] && fail=1
   out=$($PY $R --check $d/$n.png --with $d/$n.html $d/data.txt $d/build.py $A5/common.py $d/quotes.tsv $extra); rc=$?; echo "look --check $n.png: ${out%% |*} | exit $rc"; [ $rc -ne 0 ] && fail=1

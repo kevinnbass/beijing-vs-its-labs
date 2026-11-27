@@ -7,6 +7,8 @@ man-ms-sec-10q-2026-07	Beginning in February 2026, the USG granted licenses
 man-ms-sec-10q-2026-07	Date: August 26, 2026
 cn-us-lutnick-0422-rev-transcript-b	So we have not sold them chips as of yet.
 cn-us-lutnick-0422-rev-transcript-b	That's my understanding as I sit here with you today.
+cn-us-lutnick-0422-rev-transcript-b	my understanding is their cloud companies want to buy these chips
+cn-us-lutnick-0422-rev-transcript-b	Chinese central government has not let them as of yet buy the chips because they're trying to keep their investment focused on their own domestic industry
 cn-o37-senate-hearing-page-b	Date: Wednesday, April 22, 2026
 cn-us-lutnick-0422-coons-letter	on April 22, 2026
 cn-o37-senate-hearing-page-b	The Honorable Howard Lutnick Secretary, Department of Commerce Download Testimony
@@ -16,7 +18,8 @@ cn-acts-reuters-us-approvals-20260514-wayback	not a single delivery has been mad
 cn-acts-reuters-us-approvals-20260514-wayback	May 14 (Reuters)
 cn-acts-reuters-us-approvals-20260514-wayback	Published on 05/14/2026
 cn-acts-reuters-us-approvals-20260514-wayback	has approved around 10 Chinese companies
-cn-acts-reuters-us-approvals-20260514-wayback	each approved customer can purchase up to 75,000 chips
+cn-acts-reuters-us-approvals-20260514-wayback	each approved customer can purchase up to 75,000 chips under the U.S. licensing terms, two of them said
+cn-acts-reuters-us-approvals-20260514-wayback	not a single delivery has been made so far, three people familiar with the matter said
 cn-o38-nvda-q1fy27-call-transcript-pdf	While the US government has approved licenses for H200 to be shipped to China-based customers, we have yet to generate any revenue, and we are uncertain whether any imports will be allowed into the country.
 cn-o38-nvda-q1fy27-call-transcript-pdf	All our statements are made as of today, May 20, 2026
 man-a7d2f1a9f963	There have been minimal exports of any H200s to China so far
@@ -27,6 +30,8 @@ cn-tolerate-reutersaug26-relay1-wayback	the U.S. has cleared the companies to pu
 cn-tolerate-reutersaug26-relay1-wayback	Published Aug 18, 2026
 cn-tolerate-reutersaug26-relay1-wayback	have each received about 10,000 H200 processors
 cn-tolerate-reutersaug26-relay1-wayback	up to 100,000 H200 chips each
+cn-tolerate-ftaug26	according to two people with knowledge of the matter
+cn-tolerate-ftaug26	While the Chinese groups have been cleared by the US to buy up to 100,000 H200s apiece
 man-ms-sec-10q-2026-07	Those shipments account for less than 1% of Data Center revenue in our most recent quarter.
 man-ms-sec-10q-2026-07	we have made a fraction of the allowed shipments under the USG's H200 licensing program
 man-ms-sec-10q-2026-07	For the quarterly period ended July 26, 2026
@@ -40,6 +45,9 @@ cn-counter-b17-1	Shipments of Data Center Hopper products to China during the qu
 cn-counter-b17-1	Data Center revenue for the third quarter was a record $107.6 billion
 cn-counter-b17-1	We plan to file our 10-Q in the coming weeks.
 cn-acts-reuters-halt-20261118-relay2	The Hopper family includes the H200
+cn-ga31-flowchipkey-10	Browse Hopper vGPU types by SKU family
+cn-ga31-flowchipkey-10	H200 NVL, H200 SXM5 141 GB
+cn-ga31-flowchipkey-10	H20 SXM5 141 GB, H20 SXM5 96 GB
 cn-o38-nvda-q3fy27-call-transcript-pdf	we are no longer shipping licensed Hopper Data Center products to China
 cn-o38-nvda-q3fy27-call-transcript-pdf	Our guidance does not have any licensed Hopper Data Center products included
 cn-acts-reuters-halt-20261118-relay2	She did not explain why Nvidia had stopped shipping the processors or whether the halt would be permanent.
@@ -59,6 +67,5 @@ cn-tolerate-ftaug26	one of the people said
 cn-tolerate-reutersaug26-relay1-wayback	have been allowed to enter mainland China
 cn-us-lutnick-0422-rev-transcript-b	Can you tell us how many H200s have been licensed for export
 man-ms-sec-10q-2026-07	such sales were restricted by the PRC government
-cn-us-lutnick-0422-rev-transcript-b	Chinese central government has not let them as of yet buy the chips
 cn-clips-corroboration-1	the U.S. Commerce Department's Bureau of Industry and Security (BIS)
 cn-acts-reuters-us-approvals-20260514-wayback	Nvidia's second-most powerful AI chip, the H200

@@ -47,14 +47,14 @@ def px(css):
 
 CARD_CSS = px('''
 .cardwrap { width: min(100%, 1200PX); container-type: inline-size; box-shadow: 0 0 0 1PX var(--border), 0 10PX 34PX rgba(11,11,11,0.07); }
-#card { width: 1200px; height: 675px; background: var(--page); color: var(--ink); padding: 32px 44px 18px; display: grid; grid-template-columns: 452px minmax(0, 1fr);
-  grid-template-rows: minmax(0, 1fr) auto; column-gap: 36px; row-gap: 12px; overflow: hidden; font-size: 16px; line-height: 1.4; }
+#card { width: 1200px; height: 675px; background: var(--page); color: var(--ink); padding: 28px 44px 18px; display: grid; grid-template-columns: 452px minmax(0, 1fr);
+  grid-template-rows: minmax(0, 1fr) auto; column-gap: 36px; row-gap: 8px; overflow: hidden; font-size: 16px; line-height: 1.4; }
 #card p, #card h1, #card h2 { margin: 0; max-width: none; }
 #card .l { display: flex; flex-direction: column; min-height: 0; }
 #card .eb { font: 700 12.5px/1.2 var(--font-text); letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
-#card .hl { font: 700 38px/1.08 var(--font-head); letter-spacing: -0.015em; margin-top: 12px; text-wrap: nowrap; }
-#card .dk { font-size: 15.5px; line-height: 1.4; color: var(--ink2); margin-top: 10px; text-wrap: pretty; }     /* round 10: 10px (was 12): the core's deck runs a line longer */
-#card .says { margin-top: auto; padding-top: 12px; display: grid; gap: 12px; }     /* round 10: 12px and 12px (were 18 and 14), for the same line */
+#card .hl { font: 700 38px/1.08 var(--font-head); letter-spacing: -0.015em; margin-top: 6px; text-wrap: balance; }
+#card .dk { font-size: 15.5px; line-height: 1.34; color: var(--ink2); margin-top: 7px; text-wrap: pretty; }
+#card .says { margin-top: auto; padding-top: 3px; display: grid; gap: 5px; }
 #card .say { border-left: 3px solid; padding: 1px 0 2px 16px; }
 #card .say.away { border-color: var(--away); } #card .say.toward { border-color: var(--toward); }
 #card .who { font: 700 12px/1.3 var(--font-text); letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink2); display: flex; align-items: center; gap: 8px; }
@@ -117,7 +117,8 @@ def main():
     assert (d_ceo - approved['date']).days == 1, 'the chief executive\'s words are not of the day after the report of the approvals'
     f = lambda v: f'{v:,}'
     places = ', '.join(H['places'][:-1]) + ' or ' + H['places'][-1]      # "whose ultimate location is A, B or C" (the table's own column)
-    HEAD = 'Beijing mostly pulled one way on Nvidia chips. Its AI companies pulled the other.'     # the core figure's headline
+    A.argument_limits()
+    headline = A.figure_headline()
 
     # ---- the card ----
     rr = []
@@ -136,11 +137,11 @@ def main():
                   f'<div class="bar"><i class="{r["dir"]}" style="width:{w / 12:.4f}cqw"></i><em>{qual}{esc(r["shown"][1])}</em>{note}</div></div>')
     reut_txt = '; '.join(fmt(d) for d in sorted(r['date'] for r in press if r['by'] == 'Reuters'))
     relays = [f'{"the " if r["by"].startswith("Financial") else ""}{r["by"]} ({fmt(r["date"])})' for r in press if r['by'] != 'Reuters']
-    card = f"""<div class="cardwrap"><div id="card" role="img" aria-label="Card: {HEAD} The numbers are in the table below.">
+    card = f"""<div class="cardwrap"><div id="card" role="img" aria-label="Card: {esc(headline)} The numbers are in the table below.">
  <div class="l">
   <p class="eb">China · Nvidia chips · {span}</p>
-  <h1 class="hl">Beijing mostly pulled<br>one way on Nvidia chips.<br>Its AI companies<br>pulled the other.</h1>
-  <p class="dk">From {d_first.year} Beijing’s planner and industry ministry, and from 2025 its security side, pressed AI companies, through unpublished guidance the press reported, to buy home-made chips. They kept ordering Nvidia’s.</p>
+  <h1 class="hl">{esc(headline)}</h1>
+  <p class="dk">Press reports citing unnamed people describe unpublished guidance for home-made chips by Beijing’s planner and industry ministry from {d_first.year} and its security side from 2025. AI companies also bought and used home-made chips while seeking Nvidia’s.</p>
   <div class="says">
    <div class="say away"><p class="who"><i class="mk solid away"></i>Beijing holds Nvidia back</p>
     <p class="q">{qm(Q["away"])}</p>
@@ -153,7 +154,7 @@ def main():
  <section class="fn">
   <h2>The H200 chip, in {num[len(rows)]} numbers</h2>
   <p class="fs">{num[len(press)].capitalize()} press reports citing unnamed people, and {num[len(docs)]} sums from one United States government table of licence applications. Separate counts, not one tally. An application names a data-centre operator or ultimate consignee; it is not an order.</p>
-  <p class="fk"><span><i class="sw toward"></i>toward Nvidia: ordering it, letting it in</span><span><i class="sw away"></i>away: held back</span><span><i class="sw us"></i>Washington’s table</span></p>
+  <p class="fk"><span><i class="sw toward"></i>toward Nvidia: seeking or welcoming it</span><span><i class="sw away"></i>away: held back</span><span><i class="sw us"></i>Washington’s table</span></p>
   <div class="rows">
 {chr(10).join(rr)}
   </div>
@@ -161,8 +162,7 @@ def main():
  <div class="ft">
   <p><b>Sources.</b> Reuters ({reut_txt}); {"; ".join(relays)}; the table {qm(Q["wapproved.date"])}, made public by the House Foreign Affairs Committee on {fmt(H["released"])}.
    Lines: Nvidia, Form 10-Q for the quarter to {period}; Reuters, {fmt(d_toward)}. The guidance from {d_first.year}: Bloomberg, {fmt(d_first)}.</p>
-  <p><b>Read with care: five limits.</b> Beijing was not one actor; the pressure came as reported guidance and public warnings, not a published ban; some purchases were approved and some chips came in;
-   the companies had reasons of their own, and American curbs pushed too; what Beijing meant by it is read both ways. <b>Washington’s table:</b> with AMD’s, the applications returned without action are for {f(H["rwa"][0])} chips,
+  <p><b>Read with care: five limits.</b> Chinese authorities differed. Reported guidance, warnings and published texts pushed toward home-made chips. No published ban was found. Some purchases were reported approved, and Nvidia reported licensed sales. Companies had their own reasons, and US curbs pushed too. Beijing’s aims are disputed: lasting policy, trade leverage or home-market protection. <b>Washington’s table:</b> with AMD’s, the applications returned without action are for {f(H["rwa"][0])} chips,
    {H["share"]}% of the chips its summary records; it gives no reasons, and “approved” there is Washington’s licence, not Beijing’s.</p>
   <p class="last"><span><i class="mk solid"></i> <b>Filled mark:</b> on the record (a filing, a document, a named person). <i class="mk open"></i> <b>Open mark:</b> a press report citing unnamed people.</span><span>{A.CREDIT}</span></p>
  </div>
@@ -218,8 +218,7 @@ def main():
     <li>On the record, in money and not in chips: on its results call of {fmt(d_call)}, for the quarter ended {fmt(d_q3)}, Nvidia said {qm(Q["nvq3"])}. The Hopper family includes the H200. Neither the call nor Reuters’s report of it says how many of those chips crossed into the mainland.</li>
     <li>The Reuters headline is from {fmt(d_toward)}, when the chip at issue was the H20. The United States allowed H200 sales to China only later.</li>
     <li>The sentence under the headline rests on the argument this card goes with. Bloomberg’s report of {fmt(d_first)} (carried by The Business Times on {fmt(d_carried)}), by people it did not name: {qm(Q["care.miit"])}, and {qm(Q["care.guidance"])}.</li>
-    <li>The five limits, in the argument’s words: Beijing was not one actor; the pressure came as public warnings and unpublished guidance, not as a published ban (no published Chinese order against buying Nvidia chips was found in the 82 policy pages read);
-     some purchases were approved and some chips came in; the companies had reasons of their own, and American curbs and conditions pushed too; and what Beijing meant by it is not settled.</li>
+    <li>The five limits. Some local governments and units of the state-owned telecom carriers were more open to Nvidia, as was Beijing’s commerce side. Published texts pushed toward home-made chips alongside public warnings and unpublished guidance reported by the press. No published Chinese order against buying Nvidia chips was found in the 82 policy pages read. Reuters cited people it did not name when it reported approvals, and Nvidia’s filings report licensed sales to China. The companies had reasons of their own, and American curbs and conditions pushed too. On Beijing’s aims, {A.FIFTH_LIMIT}.</li>
    </ul>
   </section>
  </div>
@@ -231,6 +230,11 @@ def main():
     # ours: sums of Washington's table and the shares made from them (a4lib.house); 2 x 10,000; 82 = the project's count of policy pages read
     ours = [H[k][0] for k in ('all', 'appr', 'appr_nv', 'appr_amd', 'rwa', 'rwa_nv', 'rwa_amd', 'abroad')] + [H[k][1] for k in ('all', 'appr_nv', 'appr_amd', 'rwa_nv', 'rwa_amd', 'abroad')]
     ours += [H['share'], H['share_full'], H['share_further'], H['tencent_shown'], both, '82', '10']          # 10: the filing's name, Form 10-Q
+    pictured = A.visible(card)
+    assert A.THIRD_LIMIT.lower() in pictured.lower(), 'the pictured card must give the corrected third limit'
+    assert 'Beijing’s aims are disputed: lasting policy, trade leverage or home-market protection.' in pictured, 'the pictured card must name all three readings of the fifth limit'
+    assert A.FIFTH_LIMIT in page, 'the page must give the argument’s full fifth limit'
+    assert 'some chips came in' not in page and 'some purchases were approved' not in page
     assert H['tencent_status'] == 'Approved, not shipped'                  # the page says the Tencent row is approved
     A.guard(page, Q, ours=ours, dates=dates)
     # withdrawn by core edit 6 (atlas/core_edit/APPLIED_6.txt, part 05): the table is not called the Commerce Department's,

@@ -48,6 +48,13 @@ GROUP_SEARCHES = {'11', '12', '13'}
 WORDS = ['no', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten', 'eleven', 'twelve', 'thirteen']
 HOME = re.compile(r'国产|自主可控|安全可控|安全可靠|自主化|信创')
 QUOTE = re.compile(r'"([^"]+)"')
+TABLE_STYLE = """<style>
+@media (min-width: 641px) {
+  .tw td:first-child { width: 7.5rem; }
+  .tw td:last-child { width: 44%; }
+}
+</style>
+"""
 HANDNOTE = "A PDF of the same page; its text layer is damaged and is not quoted: the words cited from it were read from the page images and typed, with page numbers, beside the saved copy"
 REFS = {   # id: (kind, label). Ids that the argument's own references file already holds keep the core's label and are not written to extra_refs.tsv.
     'cn-o39b-broker-table-202410': ('PUB', 'A report on AI computing by a server maker (Inspur) and a state research institute (the China Academy of Information and Communications Technology), with a table of national and provincial computing plans. No date was read in the saved copy'),
@@ -411,6 +418,12 @@ def main():
                         '--title', 'Sixteen Provincial-Level Governments: Shares for Home-Made Computing', '--eyebrow', 'China chip policy: provincial computing plans'], capture_output=True, text=True)      # round 10: no idea number or pass label on the public page
     print(p.stdout.strip()[-2500:]); print(p.stderr.strip()[-1200:])
     if p.returncode != 0: stop('cn_doc_build.py did not write the note')
+
+    # Keep the long notes readable alongside the document column on desktop.
+    html_path = HERE / 'unreached_note.html'
+    head, closing_tag, body = html_path.read_text(encoding='utf-8').partition('</head>')
+    if not closing_tag: stop('unreached_note.html has no closing head tag')
+    html_path.write_text(head + TABLE_STYLE + closing_tag + body, encoding='utf-8')
 
 
 main()

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Idea 21: a one-page brief to print. One sheet: the top of the existing figure, about 200 words, ten references with addresses.
+"""Idea 21: a one-page brief to print. One sheet with the dated strip of the main figure and eleven references with addresses.
 
 Run: python3 -I build.py                                   checks quotes.tsv with scripts/cn_has.py, writes brief.html
      python3 build.py --pdf     the same, then writes brief_A4.pdf and brief_Letter.pdf (Playwright's
@@ -30,37 +30,37 @@ import a4lib as A   # noqa: E402
 
 esc, qm, fmt = A.esc, A.qm, A.fmt
 FIG = '../../../figure/beijing_vs_labs_top.png'
-HEADLINE = 'Beijing mostly pulled one way on Nvidia chips. Its AI companies pulled the other.'     # the core figure's, checked in its template
 MONTH = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
 NUMW = {1: 'one', 2: 'two', 3: 'three', 4: 'four', 5: 'five', 6: 'six', 7: 'seven', 8: 'eight', 9: 'nine'}
 PAPER = {'A4': ('210mm', '297mm', 'a4', 210.0), 'Letter': ('215.9mm', '279.4mm', 'letter', 215.9)}
 MIN_FIG_MM = {'A4': 170, 'Letter': 160}             # under these widths the build stops: the strip's own type gets too small to read
+REF_COUNT = 11
 
 CSS = '''
 :root { --pw: 210mm; --ph: 297mm; }
 :root[data-paper="letter"] { --pw: 215.9mm; --ph: 279.4mm; }
 @page { margin: 0; }
-.sheet { width: var(--pw); height: var(--ph); margin: 18px auto; padding: 8mm 10mm 7mm; background: var(--page); color: var(--ink);
-  box-shadow: 0 0 0 1px var(--border), 0 10px 34px rgba(11,11,11,0.08); display: flex; flex-direction: column; overflow: hidden; font-size: 8.5pt; line-height: 1.38; }
-.top { display: flex; justify-content: space-between; gap: 6mm; margin: 0 0 2.2mm; font-size: 6.2pt; line-height: 1.3; color: var(--muted); }
+.sheet { width: var(--pw); height: var(--ph); margin: 18px auto; padding: 7mm 8mm; background: var(--page); color: var(--ink);
+  box-shadow: 0 0 0 1px var(--border), 0 10px 34px rgba(11,11,11,0.08); display: flex; flex-direction: column; overflow: hidden; font-size: 8.5pt; line-height: 1.32; }
+.top { display: flex; justify-content: space-between; gap: 6mm; margin: 0 0 1mm; font-size: 6.2pt; line-height: 1.3; color: var(--muted); }
 /* the figure: the top image, shown down to the foot of its first card. The box takes the room the text leaves. */
 .figbox { flex: 1 1 0; min-height: 0; container-type: size; display: flex; justify-content: center; align-items: flex-start; }
 .figbox img { display: block; flex: none; width: min(100cqw, calc(100cqh * var(--ar))); height: auto; object-fit: cover; object-position: top center; }
-.words { margin-top: 3.2mm; }
-.words h1 { font: 700 11.6pt/1.16 var(--font-head); letter-spacing: -0.01em; margin: 0 0 2mm; max-width: none; text-wrap: wrap; }
+.words { margin-top: 2mm; }
+.words h1 { font: 700 11.6pt/1.16 var(--font-head); letter-spacing: -0.01em; margin: 0 0 1.3mm; max-width: none; text-wrap: wrap; }
 .words h1 span { color: var(--ink2); font-weight: 600; }
-.cols { column-count: 3; column-gap: 5mm; }
-.cols p { margin: 0 0 1.4mm; }
+.cols { column-count: 3; column-gap: 4mm; }
+.cols p { margin: 0 0 1mm; }
 .cols p:last-child { margin-bottom: 0; }
 .lab { font: 700 6.7pt/1.2 var(--font-text); letter-spacing: 0.07em; text-transform: uppercase; color: var(--ink); margin-right: 0.5mm; }
 a.c, span.c { display: inline-grid; place-items: center; width: 9.4pt; height: 9.4pt; border-radius: 50%; font: 700 6pt/1 var(--font-text); text-decoration: none;
   vertical-align: 0.5pt; border: 0.9pt solid var(--ink2); color: var(--ink); margin-left: 0.5pt; font-variant-numeric: tabular-nums; }
 .nw { white-space: nowrap; }
 .c.solid { background: var(--ink2); color: #ffffff; } .c.open { background: var(--surface); }
-.refs { margin-top: 2.8mm; border-top: 0.25mm solid var(--axis); padding-top: 2mm; }
-.refs h2 { font: 700 6.7pt/1.2 var(--font-text); letter-spacing: 0.07em; text-transform: uppercase; color: var(--ink); margin: 0 0 1.4mm; }
-.refs ol { list-style: none; margin: 0; padding: 0; column-count: 2; column-gap: 6mm; font-size: 6.9pt; line-height: 1.34; color: var(--ink2); }
-.refs li { display: grid; grid-template-columns: 9.4pt minmax(0, 1fr); gap: 1.5mm; break-inside: avoid; padding-bottom: 1.05mm; }
+.refs { margin-top: 2mm; border-top: 0.25mm solid var(--axis); padding-top: 1.2mm; }
+.refs h2 { font: 700 6.7pt/1.2 var(--font-text); letter-spacing: 0.07em; text-transform: uppercase; color: var(--ink); margin: 0 0 0.9mm; }
+.refs ol { list-style: none; margin: 0; padding: 0; column-count: 2; column-gap: 6mm; font-size: 6.9pt; line-height: 1.27; color: var(--ink2); }
+.refs li { display: grid; grid-template-columns: 9.4pt minmax(0, 1fr); gap: 1.5mm; break-inside: avoid; padding-bottom: 0.6mm; }
 .refs li span.c { margin: 0.2pt 0 0; }
 .refs .u { overflow-wrap: anywhere; color: var(--link); text-decoration: none; }
 .keyline { margin: 0.7mm 0 0; font-size: 6.7pt; line-height: 1.34; color: var(--muted); }
@@ -117,7 +117,21 @@ def main():
     A.check(qfile)                                   # stops here if a quotation is not found in its saved copy
     Q = A.quotes(qfile); A.guard_control(Q)
     title, answer, paras, refdef = load()
-    Hs, Wm = A.house(Q), A.warnings()                # Washington's table, summed; the state-media items that only warn, counted
+    A.argument_limits()
+    Hs, Wm = A.house(Q), A.warnings()
+    for key in ('approved', 'bloomberg', 'ordered'):
+        assert A.ref(Q[key].sid)['tier'] == 'open' and Q[key].sid == Q[key + '.unnamed'].sid, key
+    assert Q['approved'].sid == Q['approved.conditions'].sid
+    assert A.ref(Q['nv'].sid)['tier'] == 'solid' and Q['nv'].sid == Q['nv.licensed'].sid
+    assert Q['greer'].sid == Q['greer.asked'].sid
+    limits = paras[-1][1]
+    assert 'Bloomberg, citing unnamed people, reported {q:bloomberg} [bloomberg].' in limits
+    assert '(3) Reuters, citing four unnamed people, reported approvals for some H200 purchases with conditions still being decided [approved].' in limits
+    assert 'Nvidia’s filing reports licensed H20 sales to China [nv].' in limits
+    assert 'Reuters, citing unnamed people, reported that Chinese companies ordered {q:ordered} [ordered].' in limits
+    assert 'Asked if China would let its companies buy H200s, the US Trade Representative called it {q:greer} (captions, not checked by ear, at {t:greer}) [greer].' in limits
+    assert '{sm:before} earlier and {sm:later} later, including {sm:h200} on US easing for the H200' in limits
+    assert 'some chips came in' not in limits and 'Some chips were reported let in' not in limits
     order, dates, ours = [], [], []
     for _, text in paras:
         cited = re.findall(r'\[([a-z]+)\]', text)
@@ -127,7 +141,7 @@ def main():
         for k in re.findall(r'\{q:([a-z]+)\}', text):
             if Q[k].sid not in {Q[c].sid for c in cited}: sys.exit(f'the quotation {k} is not cited in its own paragraph')
     if set(order) != set(refdef): sys.exit(f'references never cited: {sorted(set(refdef) - set(order))}')
-    if len(order) != 10: sys.exit(f'the brief has ten references; brief.txt cites {len(order)}')
+    if len(order) != REF_COUNT: sys.exit(f'the brief needs {REF_COUNT} references; brief.txt cites {len(order)}')
     if 'five limits' not in answer or sum(f'({i})' in paras[-1][1] for i in range(1, 6)) != 5: sys.exit('the brief gives five limits, numbered 1 to 5')
     num = {k: i for i, k in enumerate(order, 1)}
     tier = {k: A.ref(Q[k].sid)['tier'] for k in order}
@@ -155,8 +169,9 @@ def main():
                 if not mm: sys.exit(f'{k}: no number phrase at the start of its line')
                 return f'{mm.group(1).lower()} {mm.group(2)}'
             sys.exit(f'unknown mark {m.group(0)}')
-        t = re.sub(r'\{(q|d|my|y|n|h|sm|t):([a-z]+)\}', one, esc(text, quote=False))
+        t = re.sub(r'\{(q|d|my|y|n|h|sm|t):([a-z][a-z0-9]*)\}', one, esc(text, quote=False))
         if '{' in t: sys.exit(f'an unfilled mark in the text: {t[t.index("{"):][:30]}')
+        t = re.sub(r'\(([1-5])\) ', r'(\1)&nbsp;', t)
         # the mark stays on the line of the word it follows
         return re.sub(r'(\S+)\s*\[([a-z]+)\]', lambda m: f'<span class="nw">{m.group(1)}<a class="c {tier[m.group(2)]}" href="#r{num[m.group(2)]}" aria-label="reference {num[m.group(2)]}">{num[m.group(2)]}</a></span>', t)
 
@@ -180,12 +195,12 @@ def main():
                    f'<a class="u" href="{esc(r["addr"], quote=True)}">{esc(r["addr"])}</a></span></li>')
     n_solid = sum(t == 'solid' for t in tier.values())
     figfile = (HERE / FIG).resolve()
-    if HEADLINE not in (A.PROJ / 'figure' / 'template.html').read_text(encoding='utf-8'): sys.exit('the core figure no longer carries the headline this brief expects')
+    headline = A.figure_headline()
     W, H, C = crop_line(figfile)
     page = A.head('One-Page Brief', CSS, theme='light') + f'''<body>
 <main class="sheet">
- <p class="top"><span>{A.CREDIT}</span><span>A brief to print. Figure: the head and dated strip of beijing_vs_labs.html. Full argument: ARGUMENT_referenced.html.</span></p>
- <div class="figbox"><img src="{FIG}" style="--ar:{W / C:.5f}; aspect-ratio:{W} / {C}" alt="The top of the figure. Its headline: {HEADLINE} Under it, the key and the dated record in four rows."></div>
+ <p class="top"><span>{A.CREDIT}</span><span>A brief to print · Timeline of Nvidia chip policy and company demand · Full argument: <a href="../../../ARGUMENT_referenced.html">ARGUMENT_referenced.html</a>.</span></p>
+ <div class="figbox"><img src="{FIG}" style="--ar:{W / C:.5f}; aspect-ratio:{W} / {C}" alt="The top of the figure. Its headline: {esc(headline)} Under it, the key and the dated record in four rows."></div>
  <section class="words">
   <h1><span>{esc(title)}</span> {esc(answer)}</h1>
   <div class="cols">
@@ -204,9 +219,9 @@ def main():
 </body>
 </html>
 '''
-    # ours: the reference numbers 1 to 10 (1 to 5 also number the limits); 82 = the project's count of policy pages read
+    # ours: the reference numbers (1 to 5 also number the limits); 82 = the project's count of policy pages read
     # (the argument, point 18); and what fill() made: the share of Washington's table, the caption's time
-    A.guard(page, Q, ours=[*range(1, 11), '82', *ours], dates=dates)
+    A.guard(page, Q, ours=[*range(1, REF_COUNT + 1), '82', *ours], dates=dates)
     # withdrawn by core edit 6 (atlas/core_edit/APPLIED_6.txt): the warnings are not all of Aug 1 to Sept 24, 2025; the table is not the Commerce Department's
     for banned in ('four limits', 'spokesperson', '750,000', 'Democrats', 'more than half', 'all date from', 'Aug 1 to', 'Commerce Department’s table', 'US Commerce Department, table',
                    # withdrawn by core edit 8b (Nov 25, 2026): the planner's 加大力度; the Shanghai clusters in the city; the readout's own date
@@ -235,6 +250,18 @@ def pdfs(out, ar):
             pg = br.new_context().new_page()
             pg.goto(out.as_uri()); pg.evaluate('p => { document.documentElement.dataset.paper = p; }', key)
             pg.emulate_media(media='print', color_scheme='light'); A._fonts_ok(pg)
+            # (Nov 27, 2026, the tenth version's pre-flight, checks 1 and 4) A link to another file of the project is relative on the page; printed into a
+            # PDF it would become an address of this machine, with the owner's home folder in it. On the sheet to print such a link (the brief stands three
+            # folders under the top of the repository) keeps its words and loses its address, as the ninth version's sheet had no such link; no other
+            # relative link may stand on the sheet (reference marks, "#r3", aside). The public site's address is not written either: it carries the
+            # owner's handle, which the private scan refuses in a PDF.
+            left = pg.evaluate('''() => { const out = [];
+                  for (const a of document.querySelectorAll('a[href]')) { const h = a.getAttribute('href');
+                    if (h.startsWith('#') || /^[a-z][a-z0-9+.-]*:/i.test(h)) continue;
+                    if (/^(?:\\.\\.\\/){3}[A-Za-z0-9_][^?#]*$/.test(h)) a.removeAttribute('href'); else out.push(h); }
+                  for (const a of document.querySelectorAll('a[href]')) if (a.protocol === 'file:' && !a.getAttribute('href').startsWith('#')) out.push(a.href);
+                  return out; }''')
+            if left: sys.exit(f'{name}: links that would be printed as addresses of this machine: {left[:3]}: no PDF written')
             m = pg.evaluate('''() => { const s = document.querySelector('.sheet'), i = document.querySelector('.figbox img'), r = i.getBoundingClientRect(), b = document.querySelector('.figbox').getBoundingClientRect(),
                   k = document.querySelector('.keyline').getBoundingClientRect(), sr = s.getBoundingClientRect();
                 return {sh: s.scrollHeight, ch: s.clientHeight, sw: s.scrollWidth, cw: s.clientWidth, iw: r.width, ih: r.height, bh: b.height, bw: b.width, nw: i.naturalWidth, w: sr.width, room: sr.bottom - k.bottom}; }''')
@@ -247,6 +274,7 @@ def pdfs(out, ar):
             pg.pdf(path=str(f), width=w, height=h, print_background=True, margin={'top': '0', 'right': '0', 'bottom': '0', 'left': '0'})
             info = subprocess.run(['pdfinfo', str(f)], capture_output=True, text=True, check=True).stdout
             pages = int(re.search(r'^Pages:\s+(\d+)', info, re.M).group(1)); size = re.search(r'^Page size:\s+(.*)$', info, re.M).group(1)
+            if b'file:' b'//' in f.read_bytes(): sys.exit(f'{name}: the PDF holds an address of this machine: not to be published')
             if pages != 1: sys.exit(f'{name}: the PDF has {pages} pages, not one')
             subprocess.run(['pdftoppm', '-png', '-r', '150', '-singlefile', str(f), str(HERE / f'brief_{name}')], check=True)
             print(f'pdf {f}: 1 page, {size}; figure drawn {drawn:.0f} mm wide; blank left under the figure {(m["bh"] - m["ih"]) * k:.1f} mm; room left under the last line {m["room"] * k:.1f} mm; picture brief_{name}.png')

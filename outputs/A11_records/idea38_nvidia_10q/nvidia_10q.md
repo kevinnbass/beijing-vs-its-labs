@@ -27,15 +27,15 @@ Each quarter below gives Nvidia's own words, from its commentary, its call trans
 
 **3.** **Quarter to Oct 25, 2026, reported Nov 17, 2026: $2.4 billion, then a stop.** Commentary: "Shipments of Data Center Hopper products to China during the quarter were $2.4 billion."; and for the quarter ahead: "We are not assuming any Data Center compute revenue from China in our outlook." [7] On the call, the then interim chief executive, who is also the chief financial officer: "Q3 sales of licensed Hopper Data Center products to China was $2.4 billion. Our guidance does not have any licensed Hopper Data Center products included, and we are no longer shipping licensed Hopper Data Center products to China." [15]
 
-The outlook sentence in point 3 is about the next quarter, not the one reported. It stands under the heading "Outlook for the fourth quarter of fiscal 2027, which includes an additional week, is as follows:" [7], and the Form 8-K that carries the results has the same sentence: "We are not assuming any Data Center compute revenue from China in our outlook." [16] It does not say that no such revenue came in the quarter reported, which had $2.4 billion of licensed Hopper Data Center sales to China.
+The outlook sentence in point 3 is about the next quarter, not the one reported. It stands under the heading "Outlook for the fourth quarter of fiscal 2027, which includes an additional week, is as follows:" [7], and the Form 8-K that carries the results has the same sentence: "We are not assuming any Data Center compute revenue from China in our outlook." [16] On the results call, Nvidia reported $2.4 billion of licensed Hopper Data Center sales to China for the quarter just ended [15].
 
 **The size of it.** The same commentary gives Data Center revenue for the quarter as "a record $107.6 billion" [7]. $2.4 billion is about 2.2% of that (the division is mine). The quarter before, the share was "less than 1%" [12].
 
-**Reuters's report holds.** Reuters wrote that Nvidia "sold $2.4 billion worth of licensed Hopper-generation data centre products to China in the quarter ended October 25" [9]. Nvidia's transcript and commentary say the same, and the argument's point 19 cites Nvidia's own transcript for it.
+**The sales figure Reuters reported.** Reuters wrote that Nvidia "sold $2.4 billion worth of licensed Hopper-generation data centre products to China in the quarter ended October 25" [9]. The argument's point 19 cites Nvidia's own call transcript for those sales. The commentary gives the same amount for shipments.
 
 ## Nvidia's words on the Chinese government, report by report
 
-The reports Nvidia files with the SEC have said more about Beijing than its calls. The table quotes a sentence or two from the reports filed in November 2024, August and November 2025, and February, May and August 2026. The project's fuller table, tables/nvidia_wording_by_filing.tsv (109 rows, one for each sentence), holds the other reports too.
+The reports Nvidia files with the SEC have said more about Beijing than its calls. The table quotes a sentence or two from the reports filed in November 2024, August and November 2025, and February, May and August 2026. The project's fuller table, tables/nvidia_wording_by_filing.tsv (113 rows, one for each sentence) also includes other company records and statements from Nvidia spokespeople quoted by news outlets.
 
 | Filed | Nvidia's words on the Chinese government | Beside them, in the same report |
 |---|---|---|

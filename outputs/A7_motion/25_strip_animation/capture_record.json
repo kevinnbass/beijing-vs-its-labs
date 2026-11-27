@@ -1,9 +1,9 @@
 {
- "captured_utc": "2026-11-26T02:43:16Z",
+ "captured_utc": "2026-11-27T03:41:47Z",
  "page": "strip_animation.html",
- "page_sha256": "eea5d324080b004d70ec4ee262dd2c4124e10172843de710c3fe7c668a73b3aa",
+ "page_sha256": "4bfeb3d538d9a717cd61ca2c3baedf4e51ee496604ae6ea3fbe7a9e4ecbd2231",
  "mp4": "strip_animation.mp4",
- "mp4_sha256": "a9c9cb854830213ad093fc28d17ec09da0fef06a4a71711456ee2bf455ceccfd",
+ "mp4_sha256": "9b4a121c11646405a91e3ed7acf62a62504f522f2a5d65e4be81e84b334ce4b9",
  "frames": 765,
  "fps": 30,
  "fonts": [
@@ -24,13 +24,14 @@
   ]
  },
  "made_from": {
-  "../../../figure/figure_data.txt": "4ca8f93f3c6b57d51df2d752d5c2e5811b18eed7be0088ceb0e49b7ec2e1c553",
-  "../../../figure/figure_events.tsv": "0b25c9fa9aa67e3617c2a76537c7854fc5cb3495c8895533506d1376d92ddf62",
-  "../../../figure/beijing_vs_labs.html": "3dc6ba0bfe7057d870422cd36532ae77c601217476ee584e893f2281c56a837e",
-  "../../../figure/template.html": "0abf4d62c88027f080f9d29229cd6afb1727a4e95149558fc68d39e04ce070b6",
-  "../a7lib.py": "3747aa7e7059fc1a6ab67650abf70aa81210a042ddd0817961e5afbb4eeaac0a",
-  "build.py": "380b7ed8bfaa797ae21cec48731c3dedde559877266065b7d21ff417abc49a34",
+  "../../../figure/figure_data.txt": "13ba166ebe88a2245bdd51b9a9a0fd997ba888ff297d1a9dbeb76a5bb8e7f9bd",
+  "../../../figure/figure_events.tsv": "78ca6d23a6b1c592cc9799d112f7b4222acc5c9ef484911c2a375f8b3e45d91d",
+  "../../../figure/beijing_vs_labs.html": "bfe5fb1c5884f60892bab236c7b0e527f125d660b9149b0679ac5ee8601c7a25",
+  "../../../figure/template.html": "27b62169b17c0b0feef534f2ce23196a9b97fd4ce28b1adf2aaf256ab261ecd8",
+  "../../../ARGUMENT_referenced.md": "c03ee050d3aaa297b4fa4554939b594d8eaf79ac2b22ae292780f513d696d676",
+  "../a7lib.py": "b8bc0d7b7e95ad735ff556bbde08ba93ce01dfb8a4f25cc1d545fe6a1621218b",
+  "build.py": "02302daa9f824c7edca99ce866727603025687476fa8732003e3428d9f0a140c",
   "quotes.tsv": "1b1c85389511c2fdec6c17416d6eef16ad61dae33a0b73ac6dc5b1e062b262d4",
-  "strip_animation.html": "eea5d324080b004d70ec4ee262dd2c4124e10172843de710c3fe7c668a73b3aa"
+  "strip_animation.html": "4bfeb3d538d9a717cd61ca2c3baedf4e51ee496604ae6ea3fbe7a9e4ecbd2231"
  }
 }

@@ -7,14 +7,16 @@ Reads   data/figure_data.txt   the records, in the format of the figure's data f
         data/tracker_log.tsv   the dated log (its header explains the columns)
         data/state_of_play.txt the state of play shown at the top (its header explains the markup; added Nov 23, 2026)
         data/house_licence_table.tsv  a copy of the project's tables/house_licence_table.tsv, which the state of play counts
+        ../../../figure/figure_events.tsv  the main figure's printed row names
 Writes  quotes.tsv             every quotation, number and hidden check the page rests on: saved id <TAB> words
         tracker.html           the page
 tracker.html is written only if every check passes:
   - every record is complete and its saved copy exists (research/primary/<id>);
   - every Q line (the source's exact words) stands in the saved copy of its id;
-  - every string between straight double quotes in a T line or in a log line stands in that saved copy;
-  - every number in a T line stands in that saved copy (years and chip names apart); a number too short for the
-    checker (under 6 characters) needs a "!" line of the same id that holds it;
+  - every string between straight double quotes in a T line stands in the record's own saved copy or its
+    linked second source (an A line); quotations in a log line stand in the saved copy named in the log;
+  - every number in a T line stands in that saved copy (years and chip names apart), or in a checked passage
+    from a further page the record draws on; a number too short for the checker (under 6 characters) needs a "!" line;
   - every "!" line of the data file and every hidden check of the log holds ("NOT id | words" must not be found);
   - a planted false quotation is rejected, so the check can fail;
   - the last log line's count of records equals the number of records in the data file;
@@ -32,9 +34,8 @@ line is read (as scripts/cn_figure_build.py reads it) and checked only to be a w
 a record added here with add_record.py takes no "N" line.
 Round 10 (Nov 25, 2026): the label of a "doc" record and the key's filled mark name published state media, as the figure's
 key does; "Who is who" says what the four rows hold and what the records call home-made chips (readers' leads, round10_work).
-Round 11 (Nov 26, 2026): the line under the headline gives the exceptions in the argument's own words (point 19: "by these
-reports and records, taken together, some purchases were approved and some chips came in"); the credit line keeps "Draft by
-Claude, Anthropic's model." and no longer says the page is local (the session's ruling for the seventh public version).
+The headline follows the project's main figure. The summary follows the argument's point 19 on reported approvals and
+Nvidia's own account of licensed sales. The figure events table supplies the row labels.
 Round 12 (Nov 26, 2026): the state of play's counts name the licence table's third exporter, Semsotai USA ({{SEMS}}, {{SEMS_N}};
 house() checks that its applications are all still submitted, for Sharetronic Data Technology); the date note says where the dates
 it does not find stand (WHERE_DATE, each backed by a check of that page); Who is who gives Jeffrey Kessler's title and spells the
@@ -43,7 +44,7 @@ Round 13 (Nov 26, 2026): the date note no longer repeats the Hong Kong record's 
 dateline stands (WHERE_DATE's fourth field: the words that line must hold for the note to leave the place to it). Two lines of
 the core's now draw on a further saved page (ALSO): a number of such a line may stand in a "!" line of that page instead of its own.
 """
-import html, re, subprocess, sys
+import csv, html, re, subprocess, sys
 from datetime import date
 from pathlib import Path
 
@@ -55,10 +56,17 @@ import cn_srclib as L   # noqa: E402
 
 MON = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec']
 MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
-LANES = {'BH': ('Beijing', 'holds Nvidia back', 'away'), 'BL': ('Beijing', 'lets Nvidia in', 'toward'),
-         'CN': ('The companies', 'reach for Nvidia', 'toward'), 'CH': ('The companies', 'turn to home-made chips', 'away')}
-KINDS = {'doc': 'On the record: a government document, an official or published state media', 'rec': 'On the record: a company or a named person outside government',
-         'press': 'Press report citing unnamed people'}
+FIGURE_EVENTS = HERE.parents[2] / 'figure' / 'figure_events.tsv'
+LANES = {'BH': 'away', 'BL': 'toward', 'CN': 'toward', 'CH': 'away'}
+FIGURE_LANE_EXAMPLES = {'BH': 'cn-policy-micron-decision', 'BL': 'cn-policy-he-welcomes',
+                        'CN': 'cn-tolerate-ft-offshore', 'CH': 'man-cn-labs-baidu-30k-reuters-alt1'}
+PUBLISHED_KINDS = (
+    "a published commentary, report or statement of state media, an industry body or a research institute, "
+    "an institution's own notice, or a named outlet's account of a document"
+)
+ON_RECORD = f'a document, a filing, a named person on the record, {PUBLISHED_KINDS}'
+KINDS = {'doc': f'On the record: a document, {PUBLISHED_KINDS}',
+         'rec': 'On the record: a company or a named person outside government', 'press': 'Press report citing unnamed people'}
 CITE = re.compile(r'\[((?:cn|ms|man|cnpol)-[A-Za-z0-9-]+)\]')
 CITES = re.compile(r'\[(?:cn|ms|man|cnpol)-[A-Za-z0-9-]+\](?:\s*\[(?:cn|ms|man|cnpol)-[A-Za-z0-9-]+\])*')
 DATE_RX = re.compile(r'\b(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sept?|Oct|Nov|Dec)[a-z]*\.? \d{1,2}(?!\d)(?:, \d{4})?|\b\d{1,2}:\d\d\b')
@@ -82,6 +90,23 @@ WHERE_DATE = {'cn-clips-evidence-1': ('', 'cn-clips-reuters-hongkong-yahoo', "No
 # record's saved id: ((further saved id, why the line draws on it), ...)
 ALSO = {'cn-tolerate-mof': (('cn-le20-mofcom-48-annex1', "the draft list's annex, which gives the scope of its items on computing clusters"),),
         'cn-le17-whuf-134391': (('cn-le17-buaa-61901-6000d', "Beihang's own notice, whose date the line gives"),)}
+# Current core names of the three Reuters reports. The customs card uses the Yahoo Finance copy.
+REPORT_LABELS = {
+    'ms-bj-20251105-statefunded-standard': (
+        'Reuters, Nov 5, 2025, as carried by The Standard (Hong Kong): a report, from two unnamed '
+        'people, on guidance about foreign AI chips in state-funded data centres'
+    ),
+    'cn-acts-reuters-customs-20260114': (
+        'Reuters, Jan 14, 2026, as carried by Yahoo Finance: a report, from three unnamed people, on'
+        ' what customs agents were told about the H200'
+    ),
+    'cn-clips-evidence-1': (
+        'Reuters, datelined Nov 5, 2026, as carried by CNA (Singapore) on Nov 6, 2026: a report, '
+        'from two people it did not name, on Nvidia H200 chips bound for China. The CNA page shows '
+        'only its own date; the Nov 5 dateline stands on the copy carried by Yahoo, which is also '
+        'saved'
+    ),
+}
 esc = html.escape
 
 
@@ -91,19 +116,39 @@ def fmt(d): return f'{MON[d.month - 1]} {d.day}, {d.year}'
 def smart(s): return re.sub(r'"([^"]*)"', '“\\1”', s).replace("'", '’')
 
 
+def lane_labels():
+    """Map our row codes to the figure's printed row names using one record from each row."""
+    codes = {sid: code for code, sid in FIGURE_LANE_EXAMPLES.items()}
+    names = {}
+    with FIGURE_EVENTS.open(encoding='utf-8', newline='') as f:
+        for row in csv.DictReader(f, delimiter='\t'):
+            code = codes.get(row['saved_id'])
+            if code:
+                if code in names or not row['lane']:
+                    raise ValueError(f'{FIGURE_EVENTS}: ambiguous or empty row name for {code}')
+                names[code] = row['lane']
+    if names.keys() != LANES.keys() or len(set(names.values())) != len(LANES):
+        raise ValueError(f'{FIGURE_EVENTS}: expected one distinct name for each row, got {names}')
+    return names
+
+
 def load_data(f):
-    """Return (records, extra checks). A record: lane, kind, date, dl (date label or None), sid, T, S, Q, E, U, C, N (the
-    figure's fixed number, or '')."""
+    """Return (records, extra checks). A is the optional second source (saved id, label)."""
     evs, checks, cur = [], [], None
     for n, ln in enumerate(f.read_text(encoding='utf-8').splitlines(), 1):
         if not ln.strip() or ln.startswith('#'): continue
         if ln.startswith('@ '):
             p = ln.split()
             if len(p) != 6 or p[1] not in LANES or p[2] not in KINDS: sys.exit(f'{f.name} line {n}: bad record line: {ln[:70]}')
-            cur = dict(lane=p[1], kind=p[2], date=date.fromisoformat(p[3]), dl=None if p[4] == '-' else p[4].replace('_', ' '), sid=p[5], T='', S='', Q='', E='', U='', C='', N='', line=n)
+            cur = dict(lane=p[1], kind=p[2], date=date.fromisoformat(p[3]), dl=None if p[4] == '-' else p[4].replace('_', ' '), sid=p[5], T='', S='', Q='', E='', U='', C='', N='', A=None, line=n)
             evs.append(cur)
         elif ln.startswith('! '):
             sid, q = ln[2:].split(' | ', 1); checks.append((sid.strip(), q.strip()))
+        elif ln.startswith('A ') and cur is not None:
+            sid, sep, label = ln[2:].strip().partition(' | ')
+            if not sep or not sid or not label or cur['A'] is not None:
+                sys.exit(f'{f.name} line {n}: expected one A line of the form saved id | source label')
+            cur['A'] = (sid, label)
         elif ln[:2] in ('T ', 'S ', 'Q ', 'E ', 'U ', 'C ', 'N ') and cur is not None: cur[ln[0]] = ln[2:].strip()
         else: sys.exit(f'{f.name} line {n} not understood: {ln[:70]}')
     fixed = [e['N'] for e in evs if e['N']]
@@ -198,11 +243,28 @@ def check_record(e, extra_ids=()):
     if not (L.P / e['sid']).is_dir(): return [f"{where}: no saved copy named {e['sid']}"], pairs
     if not L.has(e['Q'], e['sid']): bad.append(f"{where}: the source's words were NOT FOUND in the saved copy: {e['Q'][:80]}")
     pairs.append((e['sid'], e['Q']))
+    title_sources = [e['sid']]
+    labels = [e['S'], e['E']]
+    if e.get('A'):
+        sid, label = e['A']
+        labels.append(label)
+        if not (L.P / sid).is_dir():
+            bad.append(f'{where}: no saved copy named {sid} for the second source')
+        else:
+            address = L.url_of(sid)
+            if not address or address == (e['U'] or L.url_of(e['sid'])):
+                bad.append(f'{where}: the second source must have its own address ({sid})')
+            else:
+                title_sources.append(sid)
     for q in QUOTE.findall(e['T']):
-        if not L.has(q, e['sid']): bad.append(f'{where}: words between quote marks in our line were NOT FOUND in the saved copy: {q[:80]}')
-        pairs.append((e['sid'], q))
-    for q in QUOTE.findall(e['S'] + ' ' + e['E']): bad.append(f'{where}: quote marks in the source line or the English rendering (only a source\'s exact words go between them): {q[:60]}')
-    also = {a for a, _ in ALSO.get(e['sid'], ())}
+        sid = next((sid for sid in title_sources if L.has(q, sid)), None)
+        if sid:
+            pairs.append((sid, q))
+        else:
+            bad.append(f'{where}: words between quote marks in our line were NOT FOUND in the linked saved copies: {q[:80]}')
+    for q in QUOTE.findall(' '.join(labels)):
+        bad.append(f'{where}: quote marks in a source line or the English rendering (only a source\'s exact words go between them): {q[:60]}')
+    also = set(title_sources[1:]) | {a for a, _ in ALSO.get(e['sid'], ())}
     by_check = lambda v, ids: any(sid in ids and L.squash(v) in L.squash(w) for sid, w in extra_ids)      # noqa: E731
     for v in numbers(e['T']):
         if not in_page(v, e['sid']):
@@ -360,6 +422,7 @@ def state_html(st):
         links = []
         for i in CITE.findall(m.group(0)):
             label, addr = st['src'][i]
+            label = REPORT_LABELS.get(i, label)
             u = addr or L.url_of(i)
             links.append(f'<a class="cite" href="{esc(u, quote=True)}" rel="noopener">{esc(label)}</a>' if u else esc(label))
         return '\0(' + '; '.join(links) + ')\0'
@@ -442,13 +505,13 @@ PAGE = """<!doctype html>
 <div class="wrap">
 <header>
  <p class="eyebrow">China · Nvidia chips · the dated record, kept up to date</p>
- <h1>Beijing mostly pulled one way on Nvidia chips. Its AI companies pulled the other.</h1>
- <p class="deck">%%N%% dated records of what Chinese authorities did about Nvidia’s chips and what China’s big AI companies did, newest first, under the state of play and a dated log. The exceptions on each side are listed too: by the reports and records, taken together, some purchases were approved and some chips came in, and the companies also turned to home-made ones.</p>
+ <h1>Beijing pushed for home-made chips. China’s AI companies still sought Nvidia.</h1>
+ <p class="deck">%%N%% dated records of what Chinese authorities did about Nvidia’s chips and what China’s big AI companies did, newest first, under the state of play and a dated log. Some purchases were reported approved, by press reports citing people they did not name, and Nvidia’s own filings report licensed sales to China. The companies also bought and used home-made chips.</p>
  <p class="note">Draft by Claude, Anthropic’s model. Last entry in the log: %%LAST%%.</p>
  <ul class="key">
   <li><i class="m away solid"></i><span><b>Orange, away from Nvidia:</b> holding it back, or choosing home-made chips. %%N_AWAY%% records</span></li>
-  <li><i class="m toward solid"></i><span><b>Blue, toward Nvidia:</b> buying it, using it, letting it in. %%N_TOWARD%% records</span></li>
-  <li><i class="m toward solid"></i><i class="m away solid"></i><span><b>Filled:</b> on the record (a government document, published state media, a filing, a named person). %%N_SOLID%% records</span></li>
+  <li><i class="m toward solid"></i><span><b>Blue, toward Nvidia:</b> seeking, buying or using Nvidia chips, or showing openness to them. %%N_TOWARD%% records</span></li>
+  <li><i class="m toward solid"></i><i class="m away solid"></i><span><b>Filled:</b> on the record (%%ON_RECORD%%). %%N_SOLID%% records</span></li>
   <li><i class="m toward open"></i><i class="m away open"></i><span><b>Open:</b> a press report citing unnamed people. %%N_OPEN%% records</span></li>
  </ul>
 </header>
@@ -465,16 +528,16 @@ PAGE = """<!doctype html>
 <section class="card" id="who">
  <h2>Who is who</h2>
  <ul class="who">
-  <li><b>Beijing</b> stands for the leaders and bodies of the Chinese state named in the records: Xi Jinping, Premier Li Qiang, Vice Premiers He Lifeng and Ding Xuexiang; the cyberspace regulator (Cyberspace Administration of China) and its review office; the state planner (National Development and Reform Commission, NDRC); the market regulator (State Administration for Market Regulation); the commerce, finance, industry and security ministries; customs; and the state’s evaluation centre for information security. State media and the journal Qiushi speak in some records too. Two universities’ notices to buy Nvidia cards stand in the row of Beijing letting Nvidia in: they are the universities’ own buying, in notices that hold suppliers to the government procurement law’s conditions, not an act of the central government.</li>
+  <li><b>Beijing</b> stands for the leaders and bodies of the Chinese state named in the records: Xi Jinping, Premier Li Qiang, Vice Premiers He Lifeng and Ding Xuexiang; the cyberspace regulator (Cyberspace Administration of China) and its review office; the state planner (National Development and Reform Commission, NDRC); the market regulator (State Administration for Market Regulation); the commerce, finance, industry and security ministries; customs; and the state’s evaluation centre for information security. State media and the journal Qiushi speak in some records too. Two universities’ notices to buy Nvidia cards stand in the row “%%BL%%”. They are the universities’ own notices, not an act of the central government. They hold suppliers to the government procurement law’s conditions.</li>
   <li><b>The companies</b> are the Chinese AI companies named in the records: Alibaba, Baidu, ByteDance, Tencent, DeepSeek, Zhipu, iFlytek and 360. A Shanghai government body’s account of what the city’s internet companies use stands in their row.</li>
   <li><b>American officials</b> appear where they speak of Beijing: the Commerce Secretary, Howard Lutnick, at a Senate hearing, and Jeffrey Kessler, under secretary of commerce for industry and security, at a House hearing.</li>
   <li><b>The chips</b> are Nvidia’s. The models named in the records include the H20, the RTX PRO 6000D and the H200. Home-made chips, in the records, are chips of Chinese makers, among them Huawei, Alibaba’s T-Head unit and Baidu; China’s rules for government purchases judge a product by where it is made, not by who owns its maker.</li>
-  <li><b>The four rows</b> are the figure’s: Beijing holds Nvidia back, Beijing lets Nvidia in, the companies reach for Nvidia, the companies turn to home-made chips. A row says which way a record points, not that a chip was kept out or let in; the line in larger type says what the record is. In the row of Beijing letting Nvidia in stand welcomes from leaders and ministers, the commerce ministry’s statements on American curbs, a draft rule on technology exports, approvals, an intention to approve and deliveries that the press reported, an American official’s account that shipments had begun, and two universities’ notices to buy Nvidia cards. In the row of Beijing holding Nvidia back stand acts that name no Nvidia chip too, among them the rules for what government bodies buy, Xi Jinping’s call to conquer high-end chips, the security ministry’s warning about chips made abroad and Alibaba’s filing on a halt to purchases of chips it does not name. The 2023 conclusion on Micron’s products is not about Nvidia at all: it shows what a published order to stop buying looks like, and no such order against Nvidia’s chips was found in the policy pages read.</li>
+  <li><b>The four rows</b> come from the figure: %%ROW_LIST%%. Each row groups records by the direction they point. The heading of each record spells out what the source says. “%%BL%%” includes welcomes from leaders and ministers, commerce ministry statements on American curbs, a draft rule on technology exports, press reports citing unnamed people on approvals and deliveries, a US official’s account of minimal H200 exports to China so far, and two universities’ buying notices. “%%BH%%” also includes acts and statements that name no Nvidia chip, among them the rules for what government bodies buy, Xi Jinping’s call to conquer high-end chips, the security ministry’s warning about chips made abroad and Alibaba’s filing on a halt to purchases of chips it does not name. The 2023 conclusion on Micron’s products shows what a published order to stop buying looks like. The search of the policy pages found no such order against Nvidia’s chips.</li>
  </ul>
 </section>
 <section class="card" id="records">
  <h2>The record, newest first</h2>
- <p class="sub">The date is the day of the act where the saved page states that day, otherwise the day of the report. Each line in larger type is our summary. Under it stand the source’s own words, found in the saved copy by a script, and a link to the page.</p>
+ <p class="sub">The date is the day of the act where the saved page states that day, otherwise the day of the report. Each line in larger type is our summary. Under it stand the source’s own words, checked against the saved copy, and links to the source pages.</p>
 %%RECORDS%%
 </section>
 <section class="card notes">
@@ -496,14 +559,19 @@ PAGE = """<!doctype html>
 """
 
 
-def rec_html(e):
-    who, what, dr = LANES[e['lane']]
+def rec_html(e, labels):
+    dr = LANES[e['lane']]
     solid = e['kind'] != 'press'
     url = e['U'] or L.url_of(e['sid'])
-    src = f'<a href="{esc(url, quote=True)}" rel="noopener">{esc(smart(e["S"]))}</a>' if url else esc(smart(e['S']))
+    label = esc(smart(REPORT_LABELS.get(e['sid'], e['S'])))
+    src = f'<a href="{esc(url, quote=True)}" rel="noopener">{label}</a>' if url else label
+    if e['A']:
+        sid, label = e['A']
+        src += f' · <a href="{esc(L.url_of(sid), quote=True)}" rel="noopener">{esc(smart(label))}</a>'
     q = f'“{esc(e["Q"])}”' + (f' ({esc(e["E"])})' if e['E'] else '')
-    return (f'<li class="rec" id="{esc(key_of(e), quote=True)}"><i class="m {dr} {"solid" if solid else "open"}" title="{esc(KINDS[e["kind"]], quote=True)}"></i><div>'
-            f'<p class="top"><span class="when">{esc(e["dl"] or fmt(e["date"]))}</span><span>{esc(who)} · {esc(what)}</span><span>{esc(KINDS[e["kind"]])}</span></p>'
+    kind_label = esc(smart(KINDS[e['kind']]))
+    return (f'<li class="rec" id="{esc(key_of(e), quote=True)}"><i class="m {dr} {"solid" if solid else "open"}" title="{kind_label}"></i><div>'
+            f'<p class="top"><span class="when">{esc(e["dl"] or fmt(e["date"]))}</span><span>{esc(labels[e["lane"]])}</span><span>{kind_label}</span></p>'
             f'<p class="what">{esc(smart(e["T"]))}</p>'
             f'<p class="q"><span class="ql">The source’s words</span>{q}</p>'
             f'<p class="src">{src}</p></div></li>')
@@ -533,6 +601,7 @@ def build(folder, quiet=False):
             bad.append(f'date note: the source line of {k} does not say "{in_src}", and the note leaves the place of its date to that line')
     out = []
     if bad: return False, bad + [f'NOT WRITTEN: {len(bad)} problem(s)']
+    labels = lane_labels()
     seen, lines = set(), ['# Every quotation, number and hidden check the tracker page rests on. Written by build.py; do not edit.',
                           '# saved id <TAB> words that stand in the saved copy (research/primary/<id>)']
     for sid, w in pairs:
@@ -552,7 +621,7 @@ def build(folder, quiet=False):
             if year is not None: recs.append(' </ol>')
             year = e['date'].year
             recs.append(f' <h3 class="yr">{year} <span>· {per_year[year]} record{"s" if per_year[year] != 1 else ""}</span></h3>\n <ol class="recs">')
-        recs.append('  ' + rec_html(e))
+        recs.append('  ' + rec_html(e, labels))
     recs.append(' </ol>')
     anchors = {}
     for e in evs: anchors.setdefault(e['sid'], key_of(e))
@@ -574,9 +643,12 @@ def build(folder, quiet=False):
         missing.append(s)
     datenote += ('It did not find ' + '; '.join(missing) + '.' + (' Check such a date against the page before quoting it.' if unplaced else '')) if missing else 'None was missing.'
     n_solid = sum(e['kind'] != 'press' for e in evs)
-    n_away = sum(LANES[e['lane']][2] == 'away' for e in evs)
+    n_away = sum(LANES[e['lane']] == 'away' for e in evs)
     parts = {'CSS': CSS, 'N': str(len(evs)), 'LAST': fmt(log[-1]['date']), 'N_SOLID': str(n_solid), 'N_OPEN': str(len(evs) - n_solid),
+             'ON_RECORD': esc(smart(ON_RECORD)),
              'N_AWAY': str(n_away), 'N_TOWARD': str(len(evs) - n_away), 'DATENOTE': datenote, 'STATE': state_html(st),
+             'ROW_LIST': ', '.join(esc(labels[code]) for code in LANES),
+             'BH': esc(labels['BH']), 'BL': esc(labels['BL']),
              'LOG': '\n'.join(log_html(g, anchors) for g in reversed(log)), 'RECORDS': '\n'.join(recs)}
     page = PAGE
     for k, v in parts.items():

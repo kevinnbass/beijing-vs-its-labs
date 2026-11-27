@@ -32,6 +32,9 @@ N_REC = sum(1 for ln in (PROJ / 'figure' / 'figure_events.tsv').read_text(encodi
 _fin = [ln for ln in (PROJ / 'atlas' / 'core_edit' / 'hand_out' / 'ARGUMENT_FINAL.txt').read_text(encoding='utf-8').splitlines() if ln.startswith('argument: ')]
 if not _fin: sys.exit('ARGUMENT_FINAL.txt holds no line beginning "argument: "')
 N_SRC = int(re.match(r'argument: (\d+) sources', _fin[-1]).group(1))
+footer = (PROJ / 'ARGUMENT_referenced.md').read_text(encoding='utf-8').rstrip().splitlines()[-1]
+match = re.search(r'^Build check: .*saved copies of (\d+) sources', footer)
+if not match or int(match[1]) != N_SRC: sys.exit("the argument's Markdown footer and build log disagree on the source count")
 N_LISTED = len(re.findall(r'<li id="ref-\d+"', (PROJ / 'ARGUMENT_referenced.html').read_text(encoding='utf-8')))
 if N_LISTED != N_SRC: sys.exit(f'the argument\'s last build line says {N_SRC} sources but ARGUMENT_referenced.html lists {N_LISTED}')
 N_REFS_TSV = sum(1 for ln in (PROJ / 'argument' / 'argument_refs.tsv').read_text(encoding='utf-8').splitlines() if ln.strip() and not ln.startswith('#'))
@@ -42,7 +45,7 @@ if not _m: sys.exit('the argument has no section "## 5. ... limits on the claim"
 LIMIT_WORD = _m.group(1).lower()                                                   # "five"
 N_LIM = len(re.findall(r'(?m)^\d+\. ', _m.group(2)))                               # its numbered points, counted
 WHY = {1: f'the whole picture at a glance: the headline, the dated strip of {N_REC} records in four rows, the H200 in reported numbers, Nvidia\'s share, and Nvidia\'s own revenue from customers based in China',
-       5: 'the dated strip alone: its two top rows show Beijing holding Nvidia back and Beijing letting Nvidia in, which is the point of this post'}
+       5: 'the dated strip alone: its two top rows show the parts of Beijing that held Nvidia back and the parts that were more open to it, which is the point of this post'}
 
 
 def weighted(s):
@@ -79,7 +82,7 @@ def main():
     word = {8: 'Eight', 9: 'Nine', 10: 'Ten'}[n]              # the count written in the deck must be the count of posts
     if f'@deck {word} posts' not in BASE.read_text(encoding='utf-8'): sys.exit(f'the deck does not say "{word} posts", but there are {n}')
     said = f'The full argument has {N_PTS} points and {N_SRC} sources'      # the counts written in the text must be the counts of the argument's files
-    if said not in BASE.read_text(encoding='utf-8'): sys.exit(f'thread_base.txt does not say "{said}" (counted from argument_base.txt and argument_refs.tsv)')
+    if said not in BASE.read_text(encoding='utf-8'): sys.exit(f'thread_base.txt does not say "{said}" (points in argument_base.txt and sources in the built argument)')
     if {'four': 4, 'five': 5, 'six': 6}.get(LIMIT_WORD) != N_LIM: sys.exit(f'the argument\'s heading says {LIMIT_WORD} limits but its section holds {N_LIM} points')
     if f'with {LIMIT_WORD} limits' not in posts[0][1]: sys.exit(f'post 1 does not say "with {LIMIT_WORD} limits" (the argument has {N_LIM})')
     labelled = [k for k in range(1, N_LIM + 1) if sum(1 for _, t, _ in posts if t.startswith(f'Limit {k}')) == 1]

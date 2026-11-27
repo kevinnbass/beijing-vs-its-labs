@@ -102,7 +102,11 @@ def address(sid, r):
     return L.url_of(sid) or ''
 
 
-NO_TITLE = {'cn-ga01-bnn-turnaround-20261123', 'ms-bj-202611-h200-hongkong-tnw', 'ms-bj-20251105-statefunded-standard', 'ms-bj-20260114-customs-h200-standard', 'cn-clips-evidence-1', 'cn-clips-reuters-hongkong-yahoo', 'cn-acts-reuters-customs-20260114', 'ms-bj-20250917-cac-6000d-engadget'}      # (touch-up 6b, Nov 24, 2026) saved pages whose own headline the reference list does not print: this one's is about a person and a matter the note leaves out; its label says what the report is, and its address stays. (rt1, Nov 26, 2026) the other six: their own headlines say China bans the chips, that they are not permitted, or that an import approval is withheld, which no document's name in the series may say (atlas/CONFIRM9_BRIEF.txt, rule d)
+NO_TITLE = {'cn-ga01-bnn-turnaround-20261123', 'ms-bj-202611-h200-hongkong-tnw', 'ms-bj-20251105-statefunded-standard', 'ms-bj-20260114-customs-h200-standard', 'cn-clips-evidence-1', 'cn-clips-reuters-hongkong-yahoo', 'cn-acts-reuters-customs-20260114', 'ms-bj-20250917-cac-6000d-engadget',
+            'cn-ga31-twelve-2', 'cn-against2-ft-all-correction-20250917', 'cn-ga31-carriers2-37', 'man-cn-ft-202512-japan',
+            'cn-counter-b13-3', 'cn-ga31-usoffwhitehousep3-12', 'cn-ga31-carriers2-15', 'cn-ga31-carriers-26',
+            'cn-cnpress-hkej-h200-ndrc-20260819', 'cn-ga31-rtxlater-26', 'cn-ga31-rtxlater-81',
+            'cn-le14-tnw-295b-plan-20260609', 'cn-cnpress-nbd-isoftstone-6000d-20261013', 'cn-counter-b8-5'}      # saved pages whose own headline the reference list does not print: the label says what the report is, and its address stays. The list was begun by touch-up 6b (Nov 24, 2026: a headline about a person and a matter the note leaves out) and extended on Nov 26 and 27, 2026 (rt1, b16e, b16f) by reading every printed page title: headlines that state a prohibition, a withheld approval or an instruction to companies as settled, that say where chips are or which named firm received or uses them, or that name a plan against one company as fact. The headlines themselves are not repeated here.
 
 
 def title_of(sid):
@@ -321,7 +325,7 @@ def to_html(bl, num, refs, tail, title, eyebrow, figure):
         head_done = True
         if refs is not None:
             o.append('<ul class="key"><li><a class="c solid">1</a> a filled number: a document, a filing, a named person on the record, a published commentary, report or statement of state media, an industry body or a research institute, an institution\'s own notice, or a named outlet\'s account of a document</li>'
-                     '<li><a class="c open">2</a> an open number: a press report citing unnamed people, a research firm\'s or research group\'s count, or captions and machine transcripts nobody has checked by ear</li></ul>')
+                     '<li><a class="c open">2</a> an open number: a press report citing unnamed people, a research firm\'s, broker\'s or research group\'s count, or captions and machine transcripts nobody has checked by ear</li></ul>')
         o.append('</div>')
         if figure: o.append(figure)
         o.append('<div class="col' + ('' if refs is not None else ' grp') + '">')

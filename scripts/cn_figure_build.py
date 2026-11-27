@@ -6,14 +6,15 @@ Run: python3 -I scripts/cn_figure_build.py                         checks every 
 Reads figure/figure_data.txt (its header explains the format). Every "Q" and "!" line
 must be found in its saved copy (sources/<id>), or nothing is written. Writes, in that figure folder:
   beijing_vs_labs.html       the page (self-contained apart from two web fonts)
-  figure_events.tsv          the numbered events as drawn (number, date, lane, kind, source, address, saved id)
-  beijing_vs_labs_*.png      with --png: the whole figure, and the dated strip alone
+  figure_events.tsv          the numbered events as drawn, with addresses for the main and any second source
+  beijing_vs_labs_*.png      with --png: the whole figure, the top panels, and the dated strip alone
 The page is a build product: a rebuild replaces it. Numbers on the page come from the data file, the project's tables
 and this script only. Tables read (research/cn_chip_policy_20261120/tables/): house_licence_table.tsv (the House
 committee's licence table), provinces_31.tsv (the 31 provincial-level governments), chip_evaluations.tsv (the state
-evaluation lists), state_media_items.tsv (the census of state and Party media items). The local-voucher rows are the counted
+evaluation lists), and the two state-media tables (the later sample and the earlier baseline). The local-voucher rows are the counted
 rules of scripts/cn_voucher_classes.py (over tables/local_vouchers.tsv and tables/local_vouchers_more.tsv); vouchers() below holds
-only each row's label and note; every rate and date of a note is a "!" line.
+only each row's label and note; every rate and date of a note is a "!" line. Other support is counted from
+local_vouchers_other_provisions.tsv.
 Notes in the template name records as %%REC:<saved id>%%; the build puts in the record's number.
 Records are numbered by date, Beijing's rows first, then the companies'; a block with an "N" line keeps the number given
 there (core edit 7, Nov 25, 2026: record 62, added after the figure was made public, so that no record changed its number).
@@ -34,7 +35,7 @@ import cn_srclib as L   # noqa: E402
 F = ROOT / 'figure'
 TB = ROOT / 'tables'
 MON = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec']
-LANES = {'BH': ('Beijing', 'holds Nvidia back', 'away'), 'BL': ('Beijing', 'lets Nvidia in', 'toward'),
+LANES = {'BH': ('Beijing', 'holds Nvidia back', 'away'), 'BL': ('Beijing', 'is more open to Nvidia', 'toward'),
          'CN': ('The companies', 'reach for Nvidia', 'toward'), 'CH': ('The companies', 'turn to home-made chips', 'away')}
 ORDER = ['BH', 'BL', 'CN', 'CH']
 esc = html.escape
@@ -67,11 +68,11 @@ def load():
         if ln.startswith('@ '):
             _, lane, kind, d, dl, sid = ln.split()
             assert lane in LANES and kind in ('doc', 'rec', 'press'), (n, ln)
-            cur = dict(lane=lane, kind=kind, date=date.fromisoformat(d), dl=None if dl == '-' else dl.replace('_', ' '), sid=sid, T='', S='', Q='', E='', U='', C='', N='')
+            cur = dict(lane=lane, kind=kind, date=date.fromisoformat(d), dl=None if dl == '-' else dl.replace('_', ' '), sid=sid, T='', S='', Q='', E='', U='', C='', N='', A='')
             evs.append(cur)
         elif ln.startswith('! '):
             sid, q = ln[2:].split(' | ', 1); checks.append((sid.strip(), q.strip()))
-        elif ln[:2] in ('T ', 'S ', 'Q ', 'E ', 'U ', 'C ', 'N '):
+        elif ln[:2] in ('T ', 'S ', 'Q ', 'E ', 'U ', 'C ', 'N ', 'A '):
             cur[ln[0]] = smart(ln[2:].strip()) if ln[0] in 'TSC' else ln[2:].strip()
         else: sys.exit(f'line {n} not understood: {ln[:60]}')
     return evs, checks
@@ -103,6 +104,11 @@ def number(evs):
     assert all(e['n'] > len(free) for e in evs if e['N']), 'a fixed number falls among the numbers given by date'
     for e in evs:
         e['when'] = e['dl'] or fmt(e['date']); e['url'] = e['U'] or L.url_of(e['sid'])
+        e['also_url'], e['also_source'] = '', ''
+        if e['A']:
+            sid, label = e['A'].split(' | ', 1)
+            e['also_url'], e['also_source'] = L.url_of(sid), smart(label)
+            assert e['also_url'] and e['also_url'] != e['url'] and e['also_source'], (e['n'], e['A'])
         e['dir'] = LANES[e['lane']][2]; e['solid'] = e['kind'] != 'press'
     b = sorted([e for e in evs if e['lane'][0] == 'B'], key=lambda e: e['date'])
     c = sorted([e for e in evs if e['lane'][0] == 'C'], key=lambda e: e['date'])
@@ -135,7 +141,8 @@ def strip(evs):
     H = bottom + 40
     xb = X(BK)
     out.append(f'<svg viewBox="0 0 {W} {H}" role="img" aria-labelledby="strip-t strip-d"><title id="strip-t">Dated record, 2023 to November 2026</title>'
-               f'<desc id="strip-d">Each numbered mark is one dated record, listed below the chart. Four rows: Beijing holds Nvidia back, Beijing lets Nvidia in, the companies reach for Nvidia, the companies turn to home-made chips.</desc>')
+               f'<desc id="strip-d">Each numbered mark is one dated record, listed below the chart. Four rows: '
+               f'{esc(", ".join(" ".join(LANES[k][:2]) for k in ORDER))}.</desc>')
     out.append(f'<rect class="era" x="{GL}" y="{top}" width="{xb - GL:.1f}" height="{bottom - top}"/>')
     ticks = [(date(2023, 1, 1), '2023'), (date(2024, 1, 1), '2024')] + [(date(y_, m, 1), (f'{MON[m - 1]} {y_}' if m == 1 else MON[m - 1])) for y_ in (2025, 2026) for m in (1, 4, 7, 10)]
     for d, lab in ticks:
@@ -146,7 +153,7 @@ def strip(evs):
     # Reuters: "The Hopper family includes the H200" (both "!" lines). Why it stopped is not said here.
     # The second flag says what the post of Dec 8, 2025 says: the United States "will allow" the H200 ("!" line on
     # cn-clips-followup-3-relay1); round 12, by the session's ruling for every figure (atlas/ROUND10_BRIEF.txt).
-    for d, lab, anchor in ((date(2025, 7, 15), 'Jul 2025 · US clears H20 sales again', 'end'), (date(2025, 12, 8), 'Dec 8, 2025 · US says it will allow H200', 'start'), (date(2026, 11, 17), 'Nov 17, 2026 · H200 shipments stop', 'end')):
+    for d, lab, anchor in ((date(2025, 7, 15), 'Jul 2025 · US clears H20 sales again', 'end'), (date(2025, 12, 8), 'Dec 8, 2025 · US says it will allow H200', 'start'), (date(2026, 11, 17), 'Nov 17, 2026 · Nvidia reports H200 halt', 'end')):
         x = X(d); dx = -7 if anchor == 'end' else 7
         out.append(f'<line class="flag" x1="{x:.1f}" y1="14" x2="{x:.1f}" y2="{bottom}"/><text class="flagt" x="{x + dx:.1f}" y="26" text-anchor="{anchor}">{esc(lab)}</text>')
     for k in ORDER:
@@ -198,9 +205,10 @@ def hfac():
     t['abroad_places'] = sorted({r['loc'] for r in abroad})
     assert t['all'] == (3_444_160, 54) and t['appr'] == (879_868, 21), t          # the summary's own figures ("!" lines)
     assert t['appr_nv'][0] + t['appr_amd'][0] == t['appr'][0] and t['rwa_nv'][0] + t['rwa_amd'][0] == t['rwa'][0], t
-    assert abroad and all(r['status'] == 'RWA' and r['exp'] == 'Nvidia' for r in abroad), 'an application abroad is not an Nvidia RWA'
+    assert t['rwa'] == (1_888_950, 9) and t['rwa_nv'] == (1_738_950, 7) and t['rwa_amd'] == (150_000, 2), t
+    assert t['abroad'] == (1_118_500, 5) and all(r['status'] == 'RWA' and r['exp'] == 'Nvidia' for r in abroad), t
     assert all(re.search(r'bytedance|byteplus|tiktok|alibaba', r['con'], re.I) for r in abroad), [r['con'] for r in abroad]
-    assert 2 * t['rwa'][0] > t['all'][0], 'RWA is not more than half of the chips'
+    assert 2 * t['rwa'][0] > t['all'][0], 'the applications returned without action do not cover more than half of the chips listed'
     return t
 
 
@@ -211,22 +219,29 @@ def bars(evs):
     # Round 13 (Nov 26, 2026, the session's message to builder r13e): a bar whose count rests on unnamed people carries the report
     # in its own label ("Reported: ..."), as the records' titles and output A4's funnel do; the two sums of Washington's table stay.
     rows = [  # label, value text, chips (for the width), class, note, events
-        ('Reported: ordered by Chinese companies for 2026', 'more than 2,000,000', 2_000_000, 'toward', 'Reuters, Dec 31, 2025', [by(evs, 'cn-labs-h200-two-million-202512-relay1-wayback')]),
-        ('Approved by Washington: Nvidia as exporter', f(h['appr_nv'][0]), h['appr_nv'][0], 'us',
+        ('Reported: ordered by Chinese companies for 2026', 'more than 2,000,000', 2_000_000, 'toward', 'Reuters, Dec 31, 2025, citing people it did not name', [by(evs, 'cn-labs-h200-two-million-202512-relay1-wayback')]),
+        ('Chips in Nvidia applications Washington approved', f(h['appr_nv'][0]), h['appr_nv'][0], 'us',
          f'in {h["appr_nv"][1]} applications, each marked “Approved, not shipped” at May 11, 2026. With AMD’s comparable chip '
          f'({f(h["appr_amd"][0])} in {h["appr_amd"][1]} applications) the count is {f(h["appr"][0])}. The table “H200 License and Equivalent Application Status as of May 11, 2026”, '
          'released by the House Foreign Affairs Committee, Nov 19, 2026; the sums are mine', []),
-        ('Returned by Washington without action: Nvidia as exporter', f(h['rwa_nv'][0]), h['rwa_nv'][0], 'us',
-         f'in {h["rwa_nv"][1]} applications, among them all {h["abroad"][1]} that give {places} as the chips’ ultimate location ({f(h["abroad"][0])} chips), named for ByteDance, BytePlus, TikTok and Alibaba. '
-         f'With AMD’s {h["rwa_amd"][1]}, {f(h["rwa"][0])} of the table’s {f(h["all"][0])} chips. The table gives no reasons. Same table', []),
-        ('Reported: approved by Beijing, with conditions', 'more than 400,000', 400_000, 'toward', 'for ByteDance, Alibaba and Tencent. Reuters, Jan 28, 2026', [by(evs, 'ms-bj-20260128-h200-nod-standard')]),
-        ('Reported: total Beijing might approve, as of July', 'fewer than 200,000', 200_000, 'toward', 'The Information, through Reuters, Jul 8, 2026', [by(evs, 'cn-acts-reuters-ti-cap-20260708-relay1')]),
-        ('Reported: reached the two buyers named', 'about 10,000 each', 20_000, 'toward', 'ByteDance and Tencent (Financial Times, through Reuters, Aug 18, 2026); several firms by November (Reuters, Nov 5, 2026)', [by(evs, 'cn-tolerate-reutersaug26-relay1-wayback')]),
-        ('Reported: stored in Hong Kong', 'about 600,000', 600_000, 'away', 'as Beijing “withholds approval for large-scale imports”. Reuters, Nov 5, 2026', [by(evs, 'cn-clips-evidence-1')]),
+        ('Chips in Nvidia applications Washington returned without action', f(h['rwa_nv'][0]), h['rwa_nv'][0], 'us',
+         f'{h["rwa_nv"][1]} applications with Nvidia as exporter, including all {h["abroad"][1]} that list {places} as the intended destinations ({f(h["abroad"][0])} chips). '
+         f'Those applications name operators or consignees associated with ByteDance, BytePlus, TikTok and Alibaba. With AMD’s {h["rwa_amd"][1]} applications, '
+         f'the returned applications cover {f(h["rwa"][0])} of the table’s {f(h["all"][0])} chips. The table gives no reasons.', []),
+        ('Reported: approved by Beijing, with conditions', 'more than 400,000', 400_000, 'toward',
+         'For ByteDance, Alibaba and Tencent. Reuters, Jan 28, 2026, citing people it did not name', [by(evs, 'ms-bj-20260128-h200-nod-standard')]),
+        ('Reported: total Beijing might approve, as of July', 'fewer than 200,000', 200_000, 'toward',
+         'The Information, citing people it did not name, through Reuters, Jul 8, 2026', [by(evs, 'cn-acts-reuters-ti-cap-20260708-relay1')]),
+        ('Reported H200 receipts by two companies (Financial Times, citing two people it did not name)', 'about 10,000 each', 20_000, 'toward',
+         '“ByteDance and Tencent have each received about 10,000 H200 processors” (Financial Times, through Reuters, Aug 18, 2026, citing two unnamed people). '
+         '“Several major Chinese internet companies have each obtained about 10,000 H200 chips” (Reuters, Nov 5, 2026, citing one unnamed person).',
+         [by(evs, 'cn-tolerate-reutersaug26-relay1-wayback')]),
+        ('Report on H200 stock', 'about 600,000', 600_000, 'away',
+         '“About 600,000 of Nvidia’s advanced artificial intelligence chips are stored in Hong Kong awaiting shipment to China,” Reuters reported on Nov 5, 2026, citing two unnamed people. '
+         'Its report said Beijing “withholds approval for large-scale imports”.', [by(evs, 'cn-clips-evidence-1')]),
     ]
     out = ['<div class="bars">']
     for lab, val, n, cls, note, es in rows:
-        lab = lab.replace('Hong Kong', 'Hong\u00a0Kong')   # round 15 (r15e): a place name never splits at a line end (bar 7 read "Hong / Kong" at 1280)
         head, _, last = lab.rpartition(' ')        # the last word and the marks stay on one line (LOOK_REPORT_3 fault 17)
         lab_h = f'{esc(head)} <span class="nw">{esc(last)}{chr(160)}{"".join(pin(e) for e in es)}</span>' if es else esc(lab)
         out.append(f'<div class="bar-row"><div class="bar-lab">{lab_h}</div>'
@@ -248,7 +263,7 @@ def share():
                    ''.join(f'<i class="{c}" style="flex:{w}"></i>' for c, w, _ in segs) + '</div>'
                    '<div class="sh-keys">' + ''.join(f'<span style="flex:{w}">{esc(t)}</span>' for _, w, t in segs) + '</div>'
                    f'<div class="sh-cap">{esc(cap)} <span class="srcn">{esc(src)}</span></div></div>')
-    out.append('<div class="sh-cap">Grey is AMD (4% in 2025). Hatched is the part the report does not break down.</div>')
+    out.append('<div class="sh-cap">Grey is AMD (4% in 2025). Hatching groups the shares outside the named bar labels.</div>')
     out.append('</div>')
     return '\n'.join(out)
 
@@ -345,9 +360,16 @@ def paper(evs):
         out.append(f'<div class="pp"><b>{esc(big)}</b><span>{esc(txt)} <a class="srcn" href="{url(sid)}">{esc(when)}</a></span></div>')
     out.append('<div class="pp none"><b>None found</b><span>a published national share for home-made AI chips, or a published order not to buy Nvidia’s, in the policy pages and the national document lists read. '
                f'A draft national plan with at least 80% of its core technology home-made, AI chips included, was reported (Bloomberg, Jun 2026, through <a class="srcn" href="{url("cn-le14-tnw-295b-plan-20260609")}">relays</a>; unnamed people, who said details could change); '
-               'asked about the report, the state planner gave no share and said “在具体建设过程中，市场力量将起决定性作用” (in the actual building, market forces will play the decisive role), and that it would strengthen coordination and policy guidance '
+               'asked about foreign reports that the government was studying a large investment in a computing network, the state planner gave no share and said “在具体建设过程中，市场力量将起决定性作用” (in the actual building, market forces will play the decisive role), and that it would strengthen coordination and policy guidance '
                f'(<a class="srcn" href="{url("cn-le27-ndrc-presser-20260618-json")}">press conference, Jun 18, 2026: the site’s text file</a>). '
-               'Every binding purchase rule found is addressed to Party and state bodies, public institutions or public money, or, in the Micron case of 2023 (the earliest record here), to operators of critical information infrastructure.</span></div>')
+               'The binding purchase rules found address Party and state bodies, public institutions or public money, or, in the Micron case of 2023 (the earliest record here), operators of critical information infrastructure.</span></div>'
+               '<p class="fine">Other published texts favour home-made computing. Inner Mongolia offers land, green power and energy-use quotas to firms building very large centres on home-made computing '
+               f'(<a class="srcn" href="{url("cn-ga31-dcstateeast-8")}">regional measures</a>). The Suzhou High-tech Zone management committee in Anhui says in a reply on the city’s site that the science ministry’s trial guide requires at least 60% of nominal computing power '
+               f'to come from independently developed chips for designation as a national AI computing platform (<a class="srcn" href="{url("cn-ga31-cnpress2ap3-23")}">the committee’s reply</a>). '
+               'The ministry’s own copy was not found.</p>'
+               f'<p class="fine">In its <a class="srcn" href="{url("cn-ga31-msspostsp2-38")}">practice guide</a> for AI accelerator chips, the secretariat of the national cybersecurity standards committee '
+               'advises against functions for remote shutdown, location or data exchange with undeclared communications entities. '
+               'The provision names no maker. The guide is guidance, not a binding standard.</p>')
     out.append('</div>')
     return '\n'.join(out)
 
@@ -377,7 +399,9 @@ def vouchers():
     Voucher round 8 (Nov 25, 2026): 91 rules. Shantou's implementing rules are counted (its month is the page's posting
     date: the page gives no date of signature); Langfang is read on the city's disclosure platform and the Zhengzhou
     Airport Zone in a capture of the zone's own page, whose signature is of Aug 2025 (the month shown until then was a
-    commercial copy's)."""
+    commercial copy's).
+    Voucher round 16 (Nov 26, 2026): 93 rules. Binhai New Area pays 25% for independent Xinchuang computing and 20%
+    for other computing. The Shanxi Transformation and Comprehensive Reform Demonstration Zone pays one rate, up to 20%."""
     import cn_voucher_classes as VC
     R = VC.compute(); C = R['counted']
     SHOWN = {  # row of the voucher tables: place, rule (month on its page), the saved copy the row links (a saved id of the row), note
@@ -472,6 +496,8 @@ def vouchers():
         'B209': ('Suzhou Industrial Park', 'Nov 2025', 'cn-ga31-voucher5-sip-2025-37hao', 'the park’s measures of Nov 12, 2025, which repeal its measures of 2023, read on the signed file as a commercial policy platform’s file store holds it'),
         'B214': ('Zhongkai High-tech Zone, Huizhou', 'Apr 2026', 'cn-ga31-voucher5-zhongkai-plan-wayback', 'an action plan with a rate in force, from Apr 1, 2026 to Dec 31, 2027; read in an Internet Archive capture of the zone’s page'),
         'B216': ('Futian district, Shenzhen', 'Nov 2024', 'cn-ga31-voucher5-futian-2024-wayback', ''),
+        'B218': ('Binhai New Area, Tianjin', 'Mar 2024', 'cn-ga31-voucherrulesmissingp3-7', 'for 自主信创 (independent Xinchuang) computing; in force through Dec 31, 2027; the month comes from the reprint’s address'),
+        'B219': ('Shanxi Transformation and Comprehensive Reform Demonstration Zone', 'Jun 2025', 'cn-ga31-vcitynorthp3-27', 'up to 20% of the computing service contract and up to 1 million yuan per applicant after review; up to 10 million yuan in vouchers a year; the zone’s measures as Yellow River News carries them, in force through Dec 31, 2027'),
     }
     assert set(SHOWN) == set(C), ('the panel’s rows are not the counted rules', sorted(set(SHOWN) ^ set(C)))
     rows = {}
@@ -487,6 +513,7 @@ def vouchers():
     third = two + one
     # the panel's counts are the classifier's, and the table it writes says the same
     assert f'{len(rows)} / {len(ti)} / {len(only)} / {len(third)}' == R['line']
+    assert (len(rows), len(ti), len(only), len(one), len(two)) == (93, 8, 4, 80, 1)
     cls = [l.split('\t') for l in (TB / 'local_vouchers_classes.tsv').read_text(encoding='utf-8').split('\n') if l and not l.startswith('#')][1:]
     assert {c[0]: c[2] for c in cls if c[2] != VC.NOT} == {k: C[k]['cls'] for k in C}, 'tables/local_vouchers_classes.tsv is not the classifier’s result: run scripts/cn_voucher_classes.py --write'
     assert all(rows[k][2] > rows[k][3] > 0 for k in ti) and all(rows[k][3] == 0 for k in only) and all(rows[k][2] == rows[k][3] for k in third)
@@ -510,8 +537,9 @@ def vouchers():
                     f'<i class="vd away" style="--x:{hm / mx:.4f}"></i><b class="vn" style="--x:{ot / mx:.4f}">{ot}%</b><b class="vn" style="--x:{hm / mx:.4f}">{hm}%</b>')
             lab = f'home-made {hm}%, other {ot}%'
         tag = '' if C[k]['voucher'] else ' <span class="vtag">not called a voucher</span>'
+        close = ' close' if ot > 0 and 0 < hm - ot <= 5 else ''
         return (f'<div class="vr"><div class="vlab">{esc(place)} <a class="srcn" href="{url(sid)}">{esc(when)}</a>{tag}</div>'
-                f'<div class="vt" role="img" aria-label="{esc(place, quote=True)}: {lab}">{dots}</div>{("<div class=vnote>" + esc(note) + "</div>") if note else ""}</div>')
+                f'<div class="vt{close}" role="img" aria-label="{esc(place, quote=True)}: {lab}">{dots}</div>{("<div class=vnote>" + esc(note) + "</div>") if note else ""}</div>')
     axis = '<div class="vr axis"><div></div><div class="vt">' + ''.join(f'<span style="--x:{v / mx:.4f}">{v}%</span>' for v in (0, 20, 40, 60)) + '</div></div>'
     place = lambda k: rows[k][0]
     listed = lambda names: names[0] if len(names) == 1 else (('; ' if any(',' in n for n in names) else ', ').join(names[:-1]) + ('; and ' if any(',' in n for n in names) else ' and ') + names[-1])      # a place with a comma in it: the list takes semicolons
@@ -533,8 +561,14 @@ def vouchers():
         place_, when, hm, ot, sid, note = rows[k]
         dag = '' if C[k]['voucher'] else '<span class="vdag" title="not called a voucher">†</span>'
         fn = f'<sup class="vfl">{letters[k]}</sup>' if k in letters else ''
+        rate = f'{hm}%'
+        label = f'{rate} for all computing'
+        if k == 'B219':
+            assert '不超过算力服务合同金额的' + rate in L.squash(C[k]['sent']), C[k]['sent']
+            rate = f'up to {rate}'
+            label = rate
         return (f'<div class="vm"><span class="vml">{esc(place_)} <a class="srcn" href="{url(sid)}">{esc(when)}</a>{dag}{fn}</span>'
-                f'<span class="vmt" role="img" aria-label="{esc(place_, quote=True)}: {hm}% for all computing"><i style="--x:{hm / mx:.4f}"></i></span><b class="vmp">{hm}%</b></div>')
+                f'<span class="vmt" role="img" aria-label="{esc(place_, quote=True)}: {label}"><i style="--x:{hm / mx:.4f}"></i></span><b class="vmp">{rate}</b></div>')
     minis = ''.join(f'<div class="vmh">{KINDS[i]}: {len(g)}</div>' + ''.join(mini(k) for k in g) for i, g in enumerate(by_kind))
     notes = ''.join(f'<p><b>{l}</b> {esc(place(k))}: {esc(rows[k][5])}</p>' for l, k in foot)
     (hz,) = two; lo, hi = tiers[hz]; (old,) = R['earlier'][hz]
@@ -544,6 +578,16 @@ def vouchers():
     assert len(adapt) == 2 and all(k in letters for k in adapt), 'the two rules counted under the second named exception, each with its note'
     nv = sum(not C[k]['voucher'] for k in one)
     alt = R['alt']
+    # Argument point 3 gives the higher-rate kinds. Wuhan’s 国产 describes model tokens at the lower rate.
+    favoured_kind = re.compile(r'(?<!非)(自主信创|自主可控|自主|国产)(?:人工智能算力|智能算力|算力服务|智算)')
+    tier_words = {k: favoured_kind.findall(L.squash(C[k]['words'].split(' / ', 1)[0])) for k in ti}
+    independent = sum(words in (['自主'], ['自主可控']) for words in tier_words.values())
+    assert (len(ti), independent) == (8, 7) and tier_words['B218'] == ['自主信创'], tier_words
+
+    # One row per provision. Count each rule once, as in argument point 3.
+    other_support = {r['row_id'] for r in table('local_vouchers_other_provisions.tsv')}
+    assert other_support <= set(third), other_support - set(third)
+    assert (len(other_support), len(third)) == (9, 81), 'argument point 3 counts 9 of the 81 rules'
     out = ['<div class="vkey"><span><i class="sw away"></i>home-made computing</span><span><i class="sw toward"></i>other computing</span><span><i class="sw both"></i>one rate for all</span>'
            '<span><i class="sw unk"></i>a rate by a type of facility the rule does not name</span></div>',
            '<div class="vgrid">',
@@ -560,13 +604,15 @@ def vouchers():
            'rules repealed, expired or with no share of the bill (Longgang district of Shenzhen, and Nanchang city’s top-up of a provincial award, among them), rules whose text was not reached or only as a scan (Chongqing; Xihu district of Hangzhou), and drafts. '
            f'Counted other ways (rules / paying more / home-made only / no higher rate): with {place(hz)}’s two tiers read as home-made and other, as its repealed rule had them, {alt["hangzhou_more"]}; with {place(hz)} left out, {alt["hangzhou_out"]}. '
            'Support for building or buying with home-made chips only is separate: Beijing city’s plan for 2024 to 2027 supports, by a share of the investment, “采购自主可控GPU芯片开展智能算力服务的企业” (firms that buy independently controllable GPU chips to provide computing services). '
-           'The tiers are the rules’ own words: 国产 or 自主 (home-made, independent) against 非国产, 非自主 or 其他 (other).</p>',
+           f'Of the {len(ti)} rules that pay more, {independent} word the favoured kind 自主 or 自主可控 (independent or independently controllable), '
+           'and Binhai New Area’s rule says 自主信创 (independent Xinchuang).</p>',
            f'<div class="vgrp vb"><div class="vbtop"><div><h3>State no higher rate for home-made computing: {len(third)}</h3>'
            f'<h4>Two rates by a type of computing facility that the rule does not name: {len(two)}</h4>' + ''.join(row(k) for k in two) + axis + '</div>'
            f'<div><h4>One rate for all computing: {len(one)}</h4><p class="vexpl">Each rule: its place, the month of the rule (a link to its saved copy), and its one rate, a dot on the same scale from 0 to 60%. '
            f'† the rule calls the payment a subsidy, a reward or support, not a voucher ({nv} of the {len(one)}). A letter marks a note under the list. '
            f'Two of these rules name home-made computing in the sentence that sets their rate, but only at that one rate: {listed([place(k) for k in sorted(adapt, key=place)])} (notes {", ".join(letters[k] for k in sorted(adapt, key=place))}). '
-           'Some of these rules give home-made chips other support, apart from the rate: the notes give most of it, and Songjiang district, Shanghai, Fuzhou city and Hebei district, Tianjin give some too.</p></div></div>'
+           f'{len(other_support)} of the {len(third)} rules that state no higher rate give home-made computing support by another provision. The notes give most of it, '
+           'and Songjiang district, Shanghai, Fuzhou city and Hebei district, Tianjin give some too.</p></div></div>'
            f'<div class="vmini">{minis}</div><div class="vfoot">{notes}</div></div>', '</div>']
     return '\n'.join(out), len(ti), len(rows)
 
@@ -589,7 +635,7 @@ def bodies(evs):
            ('Industry ministry, as The Information reported its intention', P('cn-acts-reuters-rtx5500-20260927'))]      # record 62 (core edit 7, Nov 25, 2026)
     firm = [('Market regulator: an antitrust case against Nvidia the company', P('cn-policy-samr-open-original', 'cn-policy-samr-further-original'))]
     col = lambda title, cls, rows: (f'<div class="bcol"><h4><i class="sw {cls}"></i>{title}</h4><ul>' + ''.join(f'<li><span>{esc(n)}</span><span class="pins">{p}</span></li>' for n, p in rows) + '</ul></div>')
-    return ('<div class="bodies">' + col('Held Nvidia back, or steered buyers to home-made chips', 'away', held) + col('Let it in, or welcomed it', 'toward', let) + '</div>'
+    return ('<div class="bodies">' + col('Held Nvidia back, or steered buyers to home-made chips', 'away', held) + col('Welcomed Nvidia, or reportedly eased access', 'toward', let) + '</div>'
             '<div class="bodies one">' + col('Acted against Nvidia the company', 'away', firm) + '</div>'
             '<p class="fine">The Financial Times (Nov 13, 2026): security-focused officials within the cyberspace regulator and the security ministry “viewed dependence on Nvidia as a strategic vulnerability”, '
             'the commerce ministry “favoured imports”, and, by people the paper does not name, the push later in 2025 to restrict the import and use of less advanced Nvidia chips “was led by the National Development and Reform Commission”. '
@@ -604,24 +650,56 @@ def bodies(evs):
 
 
 def state_media():
-    """The state and Party media items on Nvidia chips (tables/state_media_items.tsv: agent L13's census, rows 1 to 42, and
-    agent GA02's rows 43 to 75, found by searches and links): how many, how many only warn, how many of those are dated up to
-    Sept 24, 2025 (the burst after the summons) with their first and last dates, and how many are later."""
+    """Count the later state-media sample by stance and subject. Count warnings in the eight weeks from the July
+    summons and in the December-to-January H200 group. The January 2024 to June 2025 baseline is a separate search;
+    use it for the longer warning count and its own comparison of outlets."""
     rows = table('state_media_items.tsv')
+    baseline = table('state_media_baseline_2024_2025h1.tsv')
     st = Counter(r['stance'] for r in rows)
-    warns = sorted(date.fromisoformat(r['date']) for r in rows if r['stance'] == 'warns')
+    subjects = Counter(r['subject'] for r in rows)
+    warns = sorted((date.fromisoformat(r['date']), r['outlet']) for r in rows if r['stance'] == 'warns')
     iso = sorted(date.fromisoformat(r['date']) for r in rows if re.fullmatch(r'\d{4}-\d\d-\d\d', r['date']))
-    win = [d for d in warns if d <= date(2025, 9, 24)]; late = [r for r in rows if r['stance'] == 'warns' and date.fromisoformat(r['date']) > date(2025, 9, 24)]
-    # the counts of atlas/core_edit/p6_work_5/count_census.py over the table (Nov 24, 2026), and what the template says of the later warnings
-    assert (len(rows), st['warns'], len(win), len(late)) == (75, 19, 16, 3) and all(r['outlet'].startswith('Global Times') and r['date'].startswith('2026') for r in late), (len(rows), st)
-    return dict(SM_N=str(len(rows)), SM_W=str(len(warns)), SM_WIN=str(len(win)), SM_WLATE={3: 'three'}[len(late)], SM_W0=fmt(warns[0]), SM_W1=fmt(win[-1]), SM_MIX=str(st['mixed']),
-                SM_FROM=f'{MON[iso[0].month - 1]} {iso[0].year}', SM_TO=f'{MON[iso[-1].month - 1]} {iso[-1].year}')
+    start, end = date(2025, 7, 31), date(2025, 9, 24)
+    h200_start, h200_end = date(2025, 12, 9), date(2026, 1, 14)
+    win = [d for d, _ in warns if start <= d <= end]
+    h200 = [d for d, _ in warns if h200_start <= d <= h200_end]
+    outside = len(warns) - len(win)
+    early_outside = [d for d, _ in warns if d < h200_start and not start <= d <= end]
+    last = [(d, outlet) for d, outlet in warns if d > h200_end]
+    mixed_later = sum(r['stance'] == 'mixed' and r['date'] > '2025-09-30' for r in rows)
+    ai_warns = sum(r['stance'] == 'warns' and r['subject'] == 'chips for AI computing' for r in rows)
+    baseline_warns = [r for r in baseline if r['stance'] == 'warns']
+    group = [r for r in baseline if r['note'].startswith('GROUP-PAPER')]
+    comparable = len(baseline) - len(group)
+    month = lambda d: f'{MON[d.month - 1]} {d.year}'
+    # Argument points 4 and 18 and the two tables as corrected on Nov 26, 2026.
+    assert len(rows) == 297 and st == {'warns': 34, 'welcomes': 28, 'mixed': 14, 'neutral': 126, 'self-reliance': 74, 'other': 21}, st
+    assert subjects == {'chips for AI computing': 219, 'a product with an Nvidia chip': 40, 'other': 30, 'Nvidia as a company': 8}, subjects
+    months = month(iso[0]), month(iso[-1])
+    assert months == ('Jul 2025', 'Nov 2026'), months
+    assert len(win) == 23 and win[0] == start and win[-1] == end, win
+    assert len(h200) == 6 and h200[0] == h200_start and h200[-1] == h200_end, h200
+    assert outside == 11 and early_outside == [date(2025, 7, 24), date(2025, 11, 1)], early_outside
+    assert len(last) == 3 and all(d.year == 2026 and outlet.startswith('Global Times') for d, outlet in last), last
+    assert len(baseline) == 174 and comparable == 160 and len(group) == 14 and mixed_later == 10 and ai_warns == 33
+    assert [r['saved_id'] for r in baseline_warns] == ['cn-ga31-mediabase-4'] and baseline_warns[0] not in group
+    assert len(warns) + len(baseline_warns) == 35
+    return dict(SM_N=str(len(rows)), SM_W=str(len(warns)), SM_WIN=str(len(win)), SM_W0=fmt(win[0]), SM_W1=fmt(win[-1]),
+                SM_H200=str(len(h200)), SM_H0=fmt(h200[0]), SM_H1=fmt(h200[-1]), SM_OUTSIDE=str(outside),
+                SM_EARLY=fmt(early_outside[0]), SM_NOV=fmt(early_outside[1]), SM_LAST=str(len(last)),
+                SM_MIX=str(st['mixed']), SM_MIX_LATER=str(mixed_later), SM_FROM=months[0], SM_TO=months[1],
+                SM_AI=str(subjects['chips for AI computing']), SM_AI_W=str(ai_warns), SM_PRODUCT=str(subjects['a product with an Nvidia chip']),
+                SM_COMPANY=str(subjects['Nvidia as a company']), SM_OTHER=str(subjects['other']),
+                SM_BASE=str(len(baseline)), SM_COMP=str(comparable), SM_GROUP=str(len(group)), SM_ALL_W=str(len(warns) + len(baseline_warns)),
+                SM_BASE_URL=url(baseline_warns[0]['saved_id']))
 
 
 def ledger(group, title):
     out = [f'<section class="lcol"><h3>{title}</h3><ol>']
     for e in group:
         src = f'<a href="{esc(e["url"], quote=True)}">{esc(e["S"])}</a>' if e['url'] else esc(e['S'])
+        if e['also_url']:
+            src += f' · <a href="{esc(e["also_url"], quote=True)}">{esc(e["also_source"])}</a>'
         out.append(f'<li id="e{e["n"]}" class="ev {e["dir"]}" data-n="{e["n"]}">{pin(e, tip=False)}<div><span class="when">{esc(e["when"])}</span> '
                    f'<span class="what">{esc(e["T"])}</span> <span class="src">{src}</span></div></li>')
     out.append('</ol></section>')
@@ -635,7 +713,8 @@ def main():
         print('\n'.join(bad)); sys.exit(f'{len(bad)} quotations or blocks failed; nothing written')
     b, c = number(evs)
     nolink = [e['sid'] for e in evs if not e['url']]
-    tip = {e['n']: dict(w=e['when'], l=' '.join(LANES[e['lane']][:2]), t=e['T'], q=e['E'] or e['Q'], tr=bool(e['E']), s=e['S'], k=('On the record' if e['solid'] else 'Press report, unnamed sources')) for e in evs}
+    tip = {e['n']: dict(w=e['when'], l=' '.join(LANES[e['lane']][:2]), t=e['T'], q=e['E'] or e['Q'], tr=bool(e['E']),
+                         s=' · '.join(filter(None, (e['S'], e['also_source']))), k=('On the record' if e['solid'] else 'Press report, unnamed sources')) for e in evs}
     page = (F / 'template.html').read_text(encoding='utf-8')
     bars_h, h = bars(evs)
     vouch_h, n_tiered, n_vouch = vouchers()
@@ -651,13 +730,14 @@ def main():
     assert 'href=""' not in page, 'an empty link'
     (F / 'beijing_vs_labs.html').write_text(page, encoding='utf-8')
     with open(F / 'figure_events.tsv', 'w', encoding='utf-8') as fh:
-        fh.write('n\tdate\tshown_as\tlane\tkind\tsource\taddress\tsaved_id\ttext\n')
+        fh.write('n\tdate\tshown_as\tlane\tkind\tsource\taddress\tsaved_id\ttext\talso_source\talso_address\n')
         for e in sorted(evs, key=lambda e: e['n']):
-            fh.write(f"{e['n']}\t{e['date']}\t{e['when']}\t{' '.join(LANES[e['lane']][:2])}\t{e['kind']}\t{e['S']}\t{e['url'] or ''}\t{e['sid']}\t{e['T']}\n")
+            fh.write(f"{e['n']}\t{e['date']}\t{e['when']}\t{' '.join(LANES[e['lane']][:2])}\t{e['kind']}\t{e['S']}\t{e['url'] or ''}\t{e['sid']}\t{e['T']}\t{e['also_source']}\t{e['also_url']}\n")
     per = {k: sum(e['lane'] == k for e in evs) for k in ORDER}
     print(f'events {len(evs)} ({per}); on the record {parts["N_SOLID"]}, press reports {parts["N_HOLLOW"]}; quotations checked {len(evs) + len(checks)}, all found; control not found (as it must be)')
     print(f'tables: House table {h["all"][1]} rows ({h["all"][0]:,} chips; approved {h["appr"][0]:,}, Nvidia {h["appr_nv"][0]:,}; RWA {h["rwa"][0]:,}, Nvidia {h["rwa_nv"][0]:,}); '
-          f'31 governments; evaluations {evaluations()[0]} AI chips; vouchers {n_tiered} of {n_vouch} tiered; state media {parts["SM_N"]} items, {parts["SM_W"]} warn ({parts["SM_W0"]} to {parts["SM_W1"]})')
+          f'31 governments; evaluations {evaluations()[0]} AI chips; vouchers {n_tiered} of {n_vouch} tiered; state media {parts["SM_N"]} items, {parts["SM_W"]} warn, '
+          f'{parts["SM_WIN"]} from {parts["SM_W0"]} to {parts["SM_W1"]}, {parts["SM_ALL_W"]} warnings with baseline')
     print('no address to link:', nolink or 'none')
     print('written', F / 'beijing_vs_labs.html', len(page), 'bytes')
     if '--png' in sys.argv:

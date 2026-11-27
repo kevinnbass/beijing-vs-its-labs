@@ -23,6 +23,7 @@ cn-acts-reuters-customs-20260114	unless necessary
 cn-acts-reuters-customs-20260114	a bargaining tactic in talks with Washington
 cn-us-lutnick-0422-rev-transcript-b	Chinese central government has not let them as of yet buy the chips because they're trying to keep their investment focused on their own domestic industry
 cn-us-lutnick-0422-rev-transcript-b	understanding
+cn-us-lutnick-0422-rev-transcript-b	their cloud companies want to buy these chips
 cn-us-lutnick-0422-rev-transcript-b	has not let them as of yet buy the chips
 cn-acts-reuters-us-approvals-20260514-wayback	not a single delivery has been made so far
 cn-acts-reuters-us-approvals-20260514-wayback	not a single delivery
@@ -33,6 +34,8 @@ cn-le14-itsec-2026-2	人工智能训练推理芯片
 man-ms-sec-10q-2026-07	such sales were restricted by the PRC government
 man-ms-sec-10q-2026-07	were restricted by the PRC government
 cn-clips-evidence-1	as Beijing withholds approval for large-scale imports despite demand from technology firms
+cn-clips-evidence-1	About 600,000 of Nvidia's advanced artificial intelligence chips are stored in Hong Kong awaiting shipment to China
+cn-clips-evidence-1	withholds approval for large-scale imports despite demand from technology firms
 cn-clips-evidence-1	600,000
 cn-policy-he-welcomes	欢迎包括英伟达公司在内的更多美资企业深耕中国市场
 cn-policy-wang-nvidia	希望包括英伟达在内的跨国公司为中国客户提供优质可靠的产品和服务
@@ -47,8 +50,10 @@ cn-acts-reuters-ti-cap-20260708-relay1	Chinese officials, keen to nurture domest
 cn-acts-reuters-ti-cap-20260708-relay1	have withheld approval so far
 cn-acts-reuters-ti-cap-20260708-relay1	200,000
 man-a7d2f1a9f963	There have been minimal exports of any H200s to China so far
-man-a7d2f1a9f963	very few
 cn-tolerate-reutersaug26-relay1-wayback	ByteDance and Tencent have each received about 10,000 H200 processors in recent weeks
+cn-tolerate-ftaug26	Beijing wants them to keep most of these chips outside the mainland
+cn-tolerate-ftaug26	ship such processors to Hong Kong
+cn-tolerate-reutersaug26-relay1-wayback	use them there
 cn-tolerate-reutersaug26-relay1-wayback	10,000
 cn-acts-reuters-rtx5500-20260927	The ministry told some Chinese companies the government intends to approve the purchases
 cn-tolerate-mof	中国企业在境外自建自营算力中心
@@ -101,6 +106,7 @@ cn-le26-iflytek-ir-20260821	其他模型厂商普遍使用性能领先两代的�
 cn-o36-tencent-call-20261118-sa	no matter when you actually started leasing or building capacities outside of China
 cn-o36-tencent-call-20261118-sa	It sets everyone back in China
 cn-o36-tencent-call-20261118-sa	it's going to be impacted
+cn-us-lutnick-0422-rev-transcript-b	my understanding is their cloud companies want to buy these chips
 cn-clips-reuters-hongkong-yahoo	Nov 5 (Reuters) - About 600,000 of Nvidia's
 cn-acts-reuters-ti-cap-20260708-relay1	they may soon receive permission to buy some H200 chips
 cn-acts-reuters-ti-cap-20260708-relay1	it could amount to fewer than 200,000 in total
@@ -110,7 +116,6 @@ cn-acts-reuters-rtx5500-20260927	Reuters could not immediately verify the report
 cn-acts-reuters-rtx5500-20260927	Sept 27 (Reuters)
 cn-labs-baidu-ascend-2023-relay1	two people familiar with the matter said
 cn-acts-reuters-us-approvals-20260514-wayback	Nvidia commanded about 95% of China's advanced chip market
-cn-clips-evidence-1	About 600,000 of Nvidia's advanced artificial intelligence chips are stored in Hong Kong awaiting shipment to China
 cn-clips-evidence-1	Several major Chinese internet companies have each obtained about 10,000 H200 chips in the past few months
 man-cn-usside-012	holding a 55% share
 man-cn-usside-012	accounting for 41% of the total market
@@ -129,7 +134,6 @@ man-e2596eab15f4	was led by the National Development and Reform Commission
 cn-policy-mellanox-conditions	向中国市场继续供应英伟达GPU加速器
 cn-acts-reuters-us-approvals-20260514-wayback	Chinese firms pulled back after guidance from Beijing
 man-70f4668d5f56	did not know if the Chinese government had given final approval
-cn-tolerate-ftaug26	Beijing wants them to keep most of these chips outside the mainland
 cn-clips-trump-may15-wayback	No, because they chose not to. They want to try and develop their own.
 cn-clips-followup-3-relay1	the United States will allow NVIDIA to ship its H200 products to approved customers in China
 cn-acts-reuters-halt-20261118-relay2	we are no longer shipping licenced Hopper data centre products to China
@@ -515,6 +519,34 @@ cn-ga31-voucher5-sip-2025-37hao	本措施自印发之日起施行，有效期三
 cn-ga31-voucher5-sip-2025-37hao	苏州工业园区管理委员会2025年11月12日
 cn-ga31-voucher5-zhongkai-plan-wayback	本方案自印发之日起实施，至2027年12月31日结束
 cn-ga31-voucher5-zhongkai-plan-wayback	仲恺高新区党工委管委会综合办公室 2026年4月1日
+cn-ga31-replies-11	算力类型涵盖国产化算力（华为昇腾、海光、寒武纪等）与主流算力（NVIDIA）
+cn-ga31-carrierownp3-23	NVIDIA GPU / 昇腾 NPU 异构算力
+cn-ga31-operatorsp2-41	PN8I型云主机采用NVIDIA L20 GPU
+cn-ga31-dcstateeast-8	支持企业采用国产化算力建设超大规模智算中心，在项目用地、绿电、能耗指标等方面给予保障
+cn-ga31-cnpress2ap3-23	基于自主研发芯片的算力标称值占全部系统算力标称值的比值应不低于60%
+cn-ga31-cnpress2ap3-23	发布机构： 安徽宿州高新技术产业开发区管委会
+cn-ga31-msspostsp2-38	不应提供远程关闭、定位和与未声明的通信实体交互数据等功能
+cn-ga31-msspostsp2-38	全国网络安全标准化技术委员会秘书处
+cn-le27-ndrc-presser-20260618-json	2026-06-18 10:03:03
+cn-ga31-mediabase-4	对H20芯片的过度依赖，会使中国人工智能产业在全球竞争中陷入被动局面
+cn-ga31-mediabase-4	2025-03-13 11:08:34 来源： 人民邮电报
+cn-ga31-smdailiesp3-49	Relying on deliberately constrained fourth-best chips is a dangerous trap.
+cn-ga31-smdailies-1	Tu noted that such security concerns about Nvidia chips were not unfounded.
+cn-ga31-smcctvp3-2	美国允许对华出口英伟达H200高端算力芯片
+cn-ga31-smdailiesp3-5	美国放宽H200芯片出口中国管制
+cn-tolerate-ftaug26	ByteDance and Tencent have each received about 10,000 H200 processors in recent weeks
+cn-tolerate-ftaug26	according to two people with knowledge of the matter.
+cn-tolerate-ftaug26	have told companies that they can ship such processors to Hong Kong, which operates as a territory outside its customs border, and use them there.
+cn-tolerate-ftaug26	2026-08-19T02:09:39
+cn-clips-evidence-1	Several major Chinese internet companies have each obtained about 10,000 H200 chips in the past few months, one of the people said.
+cn-clips-evidence-1	The size of the stockpile of H200 chips
+cn-tolerate-ft-offshore	according to two people with direct knowledge of the matter
+cn-ga31-voucherrulesmissingp3-7	以智能算力、超级算力服务合同额一定比例给予智算券补贴，其中，自主信创智算补贴比例 25%, 其他智算补贴比例 20%
+cn-ga31-voucherrulesmissingp3-7	本办法自发布之日起实施，有效期至2027年12月31日
+cn-ga31-voucherrulesmissingp3-7	/202403/t20240312_164480.html
+cn-ga31-vcitynorthp3-27	每年发放总额不超过1000万元的“算力券”，对符合条件的申领主体，经评审，按照不超过算力服务合同金额的20%，给予最高100万元奖励
+cn-ga31-vcitynorthp3-27	本措施自公布之日起施行，有效期至2027年12月31日
+cn-ga31-vcitynorthp3-27	2025-06-04T09:51:56
 cn-labs-baidu-ascend-2023-relay1	Baidu ordered 1,600 of Huawei
 man-cn-factions-wsj-ding	July 23, 2026
 man-cn-ft-20250821-regulators	July 15
@@ -565,7 +597,6 @@ cn-le04-standard-900000-20261120	PUBLISHED: 2026-11-20T04:57:40.000+0800
 cn-le04-dailycaller-20261120	PUBLISHED: 2026-11-20T20:29:43.000Z
 cn-acts-reuters-ti-cap-20260708-relay1	receive permission to buy some H200 chips
 cn-acts-reuters-ti-cap-20260708-relay1	July 8 (Reuters)
-cn-tolerate-ft-offshore	according to two people with direct knowledge of the matter
 cn-tolerate-ft-offshore	Copyright The Financial Times Limited 2025
 cn-tolerate-ft-offshore	PUBLISHED: 2025-11-27
 cn-le04-dailycaller-20261120	©2026 The Daily Caller, Inc.
@@ -590,6 +621,16 @@ cn-o36-tencent-call-20261118-sa	than we would have imagined a year ago
 cn-acts-mfa-20261118	郭嘉昆：中方此前已经多次阐明在美国输华芯片问题上的原则立场
 cn-usdocs-hfac-decisions-20261119	Semsotai USA
 man-a7d2f1a9f963	under secretary of commerce for industry and security
+man-cn-labs-baidu-30k-reuters-alt1	Robin Li made the announcement at the company's annual developer conference
+cn-tolerate-ftaug26	according to two people with knowledge of the matter
+ms-bj-20260128-h200-nod-standard	four people familiar with the matter told Reuters
+man-ms-sec-10k-fy2026	We generated approximately $60 million in H20 revenue under those licenses.
+ms-bj-20251105-statefunded-standard	The Chinese government has issued guidance requiring new data centre projects that have received any state funds to only use domestically-made artificial intelligence chips, two sources familiar with the matter told Reuters.
+ms-bj-20251105-statefunded-standard	They declined to be named due to the sensitivity of the matter.
+man-cn-ft-20250917-6000d	told companies, including ByteDance and Alibaba, this week to end their testing and orders of the RTX Pro 6000D, Nvidia’s tailormade product for the country, according to three people with knowledge of the matter.
+ms-bj-20260128-h200-nod-standard	China has given the green light to three of its largest tech companies to buy Nvidia's H200 artificial intelligence chips, four people familiar with the matter told Reuters
+man-ms-sec-10q-2026-07	granted licenses that would allow us to ship small amounts of H200 products to specific China-based customers
+man-ms-sec-10q-2026-07	we have made a fraction of the allowed shipments under the USG's H200 licensing program. Those shipments account for less than 1% of Data Center revenue in our most recent quarter.
 cn-le05-sec-submissions-20261123	2026-07-26
 cn-le05-sec-submissions-20261123	FETCHED: 2026-11-23
 cn-ga06-sec-submissions-20261124	2026-07-26
@@ -633,7 +674,7 @@ cn-ga01-bnn-turnaround-20261123	industry regulator did not respond to comment re
 cn-acts-mfa-20261112	你提到的具体情况我不了解。中方在美国输华芯片问题上的立场是一贯的。
 cn-acts-mfa-20261118	中方此前已经多次阐明在美国输华芯片问题上的原则立场。
 cn-acts-mfa-20261112	2026年11月12日外交部发言人毛宁主持例行记者会
-cn-acts-mfa-20261112	法新社记者：位于西安的中国西北工业大学的采购记录显示，该校购买了英伟达H200芯片，而该芯片受到美国的出口管制
+cn-acts-mfa-20261112	英伟达H200芯片，而该芯片受到美国的出口管制
 cn-acts-mfa-20261112	毛宁：你提到的具体情况我不了解
 cn-acts-mfa-20261112	我们坚决反对美方泛化国家安全概念
 cn-acts-mfa-20261118	2026年11月18日外交部发言人郭嘉昆主持例行记者会

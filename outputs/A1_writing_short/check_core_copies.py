@@ -37,6 +37,10 @@ def after(pattern):
     return hits[0]
 
 
+def retired_matches(text, phrases):
+    return [phrase for phrase in phrases if phrase in text]
+
+
 # 1. the surviving sentence
 survives = after(r'\*\*One sentence that survives all \w+ limits\.\*\* (.*)')
 for f in ('04_right_and_too_flat/right_too_flat_base.txt', '05_questions_and_answers/questions_answers_base.txt'):
@@ -104,6 +108,10 @@ RETIRED_WORDS = ['four limits', 'four cautions', '20 points', '750,000', 'more t
                  'held as a page on sina', 'nothing here has been posted', 'before this text was written', 'annual report to the sec:',
                  'no published instruction from beijing to the companies was found', 'the short answer: yes,', 'all three are press reports from unnamed people',
                  "nvidia chips, 0:00 to 0:51, set against", 'published documents or officials']
+# Round 14 (batch 16 and b16d): the old source count and the family's forms of the old third limit.
+R14 = ['461 sources', 'some purchases were approved', 'some chips came in', 'some were approved', 'some came in',
+       'some chips got in', 'some chips also came in']
+RETIRED_WORDS += R14
 RETIRED_IDS = {ln.split('\t')[0] for ln in (PROJ / 'loose_ends' / 'hkexnews_saved_ids.tsv').read_text(encoding='utf-8').splitlines() if ln.strip()}
 if len(RETIRED_IDS) < 10: fail('control: the do-not-cite list is shorter than expected')
 RETIRED_IDS |= {'cn-le08-moore-final-prospectus', 'cn-le29-sensetime-2025-annual-en', 'cn-media-yuyuan-thepaper', 'cn-factions-tencent-reuters-20261120-relay1',
@@ -121,8 +129,9 @@ for p in files:
     low = p.read_text(encoding='utf-8').lower()
     if 'five limits' in low: found_control = True
     own = p.name.endswith('_base.txt') or p.name in ('thread_plain.txt', 'timeline.txt')      # my own words; built pages also carry the core's reference labels
-    for w in RETIRED_WORDS:
-        if own and w in low: fail(f'{p.relative_to(HERE)} holds the retired wording "{w}"')
+    if own:
+        for w in retired_matches(low, RETIRED_WORDS):
+            fail(f'{p.relative_to(HERE)} holds the retired wording "{w}"')
     ids = set(re.findall(r'(?:cn|ms|man|cnpol)-[a-z0-9-]+', low))
     for sid in sorted(ids & RETIRED_IDS): fail(f'{p.relative_to(HERE)} holds the id {sid}, which may no longer be cited')
 print(f'old wording: {len(files)} delivered files searched for {len(RETIRED_WORDS)} retired phrases and {len(RETIRED_IDS)} ids; control phrase "five limits" found: {found_control}')
@@ -152,12 +161,21 @@ seen12 = [w for w in R12 if w in old12]
 print(f'control: {len(seen12)} of the {len(R12)} phrases retired in round 12 are found in the before-copies of round 12')
 if len(seen12) != len(R12): fail(f'control: round 12 phrases not found in the before-copies: {[w for w in R12 if w not in seen12]}')
 # round 13 control: the before-copies of round 13 (scratch_round13/before: base texts, the plain thread and the plain timeline as round 12 built them)
-R13 = RETIRED_WORDS[RETIRED_WORDS.index('460 sources'):]
-R12 = RETIRED_WORDS[RETIRED_WORDS.index("fair competition for the market regulator's case ["):RETIRED_WORDS.index('460 sources')]
+R13 = RETIRED_WORDS[RETIRED_WORDS.index('460 sources'):RETIRED_WORDS.index('461 sources')]
 old13 = ' '.join(p.read_text(encoding='utf-8').lower() for p in list((HERE / 'scratch_round13' / 'before').glob('*/*_base.txt'))
                  + [HERE / 'scratch_round13' / 'before' / '03_thread' / 'thread_plain.txt', HERE / 'scratch_round13' / 'before' / '33_timeline_plain_text' / 'timeline.txt'] if p.is_file())
 seen13 = [w for w in R13 if w in old13]
 print(f'control: {len(seen13)} of the {len(R13)} phrases retired in round 13 are found in the before-copies of round 13')
 if len(seen13) != len(R13): fail(f'control: round 13 phrases not found in the before-copies: {[w for w in R13 if w not in seen13]}')
+# Excerpts from the round 14 before-copies.
+old14 = ('The full argument has 21 points and 461 sources',
+         'Third, some purchases were approved and some chips came in.',
+         '7. Limit 3: some were approved, some came in.',
+         'And, by the reports, some chips got in.',
+         'Some chips also came in (question 8).')
+seen14 = {w for line in old14 for w in retired_matches(line.lower(), RETIRED_WORDS)}
+miss14 = [w for w in R14 if w not in seen14]
+print(f'control: {len(R14) - len(miss14)} of the {len(R14)} phrases retired in round 14 are found in the old wording')
+if miss14: fail(f'control: round 14 phrases not found in the old wording: {miss14}')
 print('result: the folder agrees with the core in what it copies, and the retired wording is gone' if ok else 'result: FAILED')
 sys.exit(0 if ok else 1)

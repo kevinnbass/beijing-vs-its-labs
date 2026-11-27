@@ -12,11 +12,11 @@ Flip through all 34 images at https://kevinnbass.github.io/beijing-vs-its-labs/s
 
 <a href="https://kevinnbass.github.io/beijing-vs-its-labs/series/02_chapter-I_the-whole-story.html"><img src="series/thumbs/02_chapter-I_the-whole-story.jpg" width="320" alt="The map of chapter I"></a>
 
-China’s declared policy pressed its AI companies away from Nvidia chips; they went on using them.
+China’s declared policy pressed AI firms away from Nvidia chips; they used Nvidia and home-made chips.
 
 - [Figure 00 · The board](https://kevinnbass.github.io/beijing-vs-its-labs/series/03_figure-00_the-board.html): Who acts on whom: two governments, Nvidia, China’s AI companies and China’s chip makers, with the strongest record on every link.
 - [Figure 01 · The pull](https://kevinnbass.github.io/beijing-vs-its-labs/series/04_figure-01_the-pull.html): Every dated record by which way each act pulled, round what Washington allowed and what Nvidia sold.
-- [Figure 02 · Four chips](https://kevinnbass.github.io/beijing-vs-its-labs/series/05_figure-02_four-chips.html): The H20, the RTX PRO 6000D, the H200 and the RTX PRO 5500: what was allowed, what was ordered, what Beijing did about each, and what was delivered.
+- [Figure 02 · Four chips](https://kevinnbass.github.io/beijing-vs-its-labs/series/05_figure-02_four-chips.html): The H20, the RTX PRO 6000D, the H200 and the RTX PRO 5500: licences, orders, what Beijing did or was reported to do, and what is known of the result.
 - [Figure 17 · Two gates](https://kevinnbass.github.io/beijing-vs-its-labs/series/06_figure-17_two-gates.html): The H200’s separate counts (orders, applications, approvals, deliveries) in the order of a sale, through two governments: not one tally, and they cannot be added.
 
 ### II. The state’s declared line
@@ -36,7 +36,7 @@ In public: use home-made chips, with room for secure imports; no published order
 
 <a href="https://kevinnbass.github.io/beijing-vs-its-labs/series/14_chapter-III_the-companies.html"><img src="series/thumbs/14_chapter-III_the-companies.jpg" width="320" alt="The map of chapter III"></a>
 
-The companies ran on Nvidia’s chips and kept reaching for them; Chinese sources say why.
+The companies used Nvidia and home-made chips; Chinese sources explain why they kept reaching for Nvidia.
 
 - [Figure 08 · In their own words](https://kevinnbass.github.io/beijing-vs-its-labs/series/15_figure-08_in-their-own-words.html): What the companies said about chips on results calls and in investor records.
 - [Figure 09 · Who trained on what](https://kevinnbass.github.io/beijing-vs-its-labs/series/16_figure-09_who-trained-on-what.html): Training claims model by model, who makes each, and why the companies stayed with Nvidia.
@@ -48,7 +48,7 @@ The companies ran on Nvidia’s chips and kept reaching for them; Chinese source
 
 What Beijing did rests on the record and on press reports citing unnamed people.
 
-- [Figure 11 · Who inside Beijing](https://kevinnbass.github.io/beijing-vs-its-labs/series/19_figure-11_who-inside-beijing.html): A lane per state body: who held Nvidia back, who let it in.
+- [Figure 11 · Who inside Beijing](https://kevinnbass.github.io/beijing-vs-its-labs/series/19_figure-11_who-inside-beijing.html): A lane per state body: who held Nvidia back, who was more open to it.
 - [Figure 12 · How strong](https://kevinnbass.github.io/beijing-vs-its-labs/series/20_figure-12_how-strong.html): The reported instructions on a ladder of six rungs, from urging to approval withheld; no published order found.
 - [Figure 13 · Nvidia in its own words](https://kevinnbass.github.io/beijing-vs-its-labs/series/21_figure-13_nvidia-in-its-own-words.html): Nvidia’s sentence on the Chinese government, filing by filing, beside what it says of Washington.
 
@@ -77,4 +77,4 @@ Each limit takes something off the claim; none reverses its direction; one sente
 - [Figure 26 · The case against](https://kevinnbass.github.io/beijing-vs-its-labs/series/33_figure-26_the-case-against.html): The best honest case that there was no real conflict, in seven parts, and the three things it cannot explain.
 - [Figure 25 · The sentence](https://kevinnbass.github.io/beijing-vs-its-labs/series/34_figure-25_the-sentence.html): The one sentence that survives the five limits, clause by clause.
 
-The images were drawn by Claude, Anthropic’s model, from the project’s saved sources; every quotation on an image was found in its saved copy by the build script. Each part of an image names its documents with their public addresses; the saved copies of press pages are not in this repository.
+The images are built from the project’s saved sources; every quotation on an image was found in its saved copy by the build script. Each part of an image names its documents with their public addresses; the saved copies of press pages are not in this repository.

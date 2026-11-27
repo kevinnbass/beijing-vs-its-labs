@@ -188,7 +188,7 @@ cn-policy-xi-ai-2025	中共中央政治局4月25日下午
 cn-policy-xi-ai-2025	2025-04-27
 cn-policy-xi-ai-2025	要广泛开展人工智能国际合作,帮助全球南方国家加强技术能力建设,为弥合全球智能鸿沟作出中国贡献。推动各方加强发展战略、治理规则、技术标准的对接协调,早日形成具有广泛共识的全球治理框架和标准规范。
 cn-policy-baidu-shen	Domestically developed chips and increasingly efficient homegrown software will form a strong foundation for long-term innovation in China’s AI ecosystem,” Baidu Vice President Shen Dou told analysts on a conference call.
-cn-policy-baidu-shen	U.S. export controls on semiconductors would not significantly impact its AI
+cn-policy-baidu-shen	U.S. export controls on semiconductors would not significantly impact its AI development
 cn-policy-baidu-shen	2025-05-21
 cn-policy-xinchuang-event	金融、能源、通信、交通等关键领域加速国产化替代的规模化落地,印证了信创作为科技自立自强核心支撑的战略价值
 cn-policy-xinchuang-event	构建起从芯片到应用的全栈适配验证体系
@@ -240,7 +240,7 @@ cn-policy-cyber-law-amended	第三十七条 关键信息基础设施的运营者
 cn-policy-cyber-law-amended	根据2025年10月28日第十四届全国人民代表大会常务委员会第十八次会议《关于修改〈中华人民共和国网络安全法〉的决定》修正)
 cn-policy-cyber-law-amended	2025年10月28日
 cn-policy-statefunded-private-project	a facility in a northwestern province that had planned to deploy Nvidia chips, one of the sources said.
-cn-policy-statefunded-private-project	being developed by a private technology company that received state funding, has been put on hold, the source said.
+cn-policy-statefunded-private-project	The project, being developed by a private technology company that received state funding, has been put on hold, the source said.
 cn-policy-statefunded-private-project	2025-11-05
 cn-policy-us-minerals-suspension	经批准,自即日起至2026年11月27日,商务部公告2024年第46号(《关于加强相关两用物项对美国出口管制的公告》)第二款暂停实施。
 cn-policy-us-minerals-suspension	【发文日期】2025年11月09日
@@ -345,6 +345,8 @@ cn-ga31-vcitynorth-6	鼓励基于国产算力开展研发，支持区内企业�
 cn-ga31-vcitysouth-55	按实际购买或租用区内算力投入金额的30%进行补助
 cn-ga31-vcitysouth-38	实际支付金额的30%发放补助，每年每家主体最高不超过50万元补助
 cn-ga31-vcityeast-43	给予一次性补贴，单个单位年度支持最高不超过500万元
+cn-ga31-voucherrulesmissingp3-7	以智能算力、超级算力服务合同额一定比例给予智算券补贴，其中，自主信创智算补贴比例 25%, 其他智算补贴比例 20%
+cn-ga31-voucherrulesmissingp3-7	本办法自发布之日起实施，有效期至2027年12月31日
 cn-ga31-vcitynorth-4	按照不超过当年实际发生金额30％比例，给予大模型研发主体最高1000万元资金支持
 cn-ga31-vcitynorth-4	本办法由中关村科技园区石景山园管理委员会负责解释，自印发之日起施行
 cn-ga31-vcitysouth-41	按照当年实际服务费第一年50%、第二年40%、第三年30%予以补助
@@ -385,6 +387,8 @@ cn-ga31-voucherrulesmissing-59	对同一主体每年购买算力服务费用100�
 cn-ga31-voucherrulesmissing-59	按照其在平台结算额的10%给予每年最高200万元奖励
 cn-ga31-vcityeast-68	试点以“算力券”为核心的智能算力市场普惠供应机制。
 cn-ga31-vcitysouth-29	上年度实际发生购买并已完成支付的算力服务费用的30%
+cn-ga31-vcitynorth-22	设备及软件国产化率达到30%（含）以上
+cn-ga31-vcitynorth-22	算力中心按照投资额 10%给予不超过 2000 万元补贴
 cn-ga31-vcityeast-23	按照实际使用金额的50%给予算力补贴
 cn-ga31-vcityeast-23	本实施方案自公布之日起施行，有效期至2027年12月31日
 cn-ga31-voucher5-futian-2024-wayback	按不超过企业实际发生的智能算力服务合同额的30%给予支持，每家企业最高500万元
@@ -434,6 +438,8 @@ cn-ga31-vcityeast-70	鼓励算力应用，对使用智算、超算算力且符�
 cn-le28-sz-gxj-2025-3hao	给予不超过30%、单家企业最高150万元资助
 cn-le28-sz-gxj-2025-3hao	申报单位具有人工智能芯片、开发框架、算子库等全栈国产技术
 cn-ga31-voucher2-sz-caozuo-2026	《深圳市工业和信息化局打造人工智能先锋城市项目扶持计划操作规程》（深工信规〔2025〕3号，以下简称3号文）同时废止
+cn-ga31-vcitysouthp3-37	采用自主芯片的算力标称值占比不低于80%
+cn-ga31-vcitysouthp3-37	给予建设投资额5%的一次性补助，补助总额最高不超过250万元
 cn-ga31-voucherrulesmissing-28	对应费用的50%分批发放
 cn-ga31-voucherrulesmissing-28	宁波大市范围内具有国产算力使用需求的企业、科研机构、高等院校等，统称算力需求方
 cn-ga31-voucherrulesmissing-28	每个算力需求方年度最高申请算力券额度累计不超过150万元
@@ -475,6 +481,8 @@ cn-ga31-voucherrulesmissing-60	核心技术自主可控，并在功能、性能�
 cn-ga04-lg-ai-shixi-2025-20250529	按申报指南发布前一周期年度内实际发生的算力服务费用的30%予以支持，每家企业每年最高不超过600万元
 cn-le28-sz-fgw-aivoucher-2025	按照国家发展改革委人工智能券（算力券）工作有关要求和我市人工智能券（算力券）相关规定
 cn-le28-sz-fgw-aivoucher-2025	拟上报核算后算力服务总额11.68亿元，算力服务申请补助总额1.29亿元
+cn-ga31-vcitynorthp3-27	每年发放总额不超过1000万元的“算力券”，对符合条件的申领主体，经评审，按照不超过算力服务合同金额的20%，给予最高100万元奖励
+cn-ga31-vcitynorthp3-27	本措施自公布之日起施行，有效期至2027年12月31日
 cn-ga31-vcitywest-18	对年度购买总额达30万元及以上的合同可用“算力券”抵扣，每家单位每年最高50万元
 cn-ga31-voucherrulesmissing-40	对采购智能算力服务和模型服务的用户企业，一般按不超过合同实际发生金额的30%给予补贴
 cn-ga31-voucherrulesmissing-40	使用算力设施开展模型训练、推理和应用的，按照算力设施的不同类型给予30%或20%的分档补贴
@@ -542,6 +550,7 @@ cn-ga31-voucher5-sip-2025-37hao	《苏州工业园区关于培优育强的实施
 cn-ga31-vcityeast-39	按不超过合同额的30%、最高500万元给予用户单位补贴
 cn-ga31-vcityeast-39	本措施自2026年1月1日起施行，有效期至2027年12月31日
 cn-ga31-vcityeast-39	鼓励自主智能算力设施部署，对获得市级资金支持的自主智能算力设施部署项目，按不超过实际到账资助经费的30%、最高1000万元给予配套
+cn-ga31-voucherearlierrules-17	算力券按照 用算主体智算、超算 算力资源 实际 使用费用的10％予以补贴，单个主体每年最高补贴100万元
 cn-ga31-vcityeast-52	按照实际支付算力费用的20%给予每年最高200万元支持
 cn-ga31-vcityeast-33	经评审，按照不超过智算服务金额的50%给予分档补贴
 cn-ga31-vcityeast-33	本政策实行预算管理和总额控制，自2025年12月31日起施行
@@ -553,6 +562,8 @@ cn-ga31-vcitysouth-33	本措施自2026年2月1日起施行，有效期至2026年
 cn-le28-hefei-agent-measures-smartcity	将Token调用及智能体服务纳入算力券使用范围
 cn-le28-chongqing-ai155-smartcity	加大市级算力券支持力度，积极争取国家人工智能券（算力券）支持
 cn-ga31-vcitysouth-60	使用国产算力设施开展细分场景模型训练和推理的企业，按算力合同费用的40%给予补贴
+cn-le15-36kr-3719347815560582	重庆：2026年第一批算力券兑现工作已启动，按实际算力服务金额20%予以补贴，每个单位每年最多补贴100万元。
+cn-ga31-voucherearlierrules-64	按实际花费补贴30%，每年上限50万元 。买算力、调API、买数据，统统有补贴――非自主算力也能补10%。
 cn-ga31-vcitysouth-14	补贴比例最高不超过50%，具体比例由市工业和信息化局或市政务服务和数据管理局根据年度预算、申报情况、产业导向等要素在申报通知中明确
 cn-ga31-vcitysouth-14	第十八条 本细则自发布之日起施行，有效期至2027年12月31日
 cn-ga31-vouchernamedrules-4	对单一合同实际购买算力服务金额超过25万元的企业，按照实际购买金额的20%发放补贴，同一企业每年累计补贴金额上限100万元
@@ -596,6 +607,8 @@ cn-ga31-voucherrulesmissing-76	符合2026年宁波市算力券政策支持范围
 cn-ga31-voucherrulesmissing-76	为加快国产算力推广应用，提高国产算力使用率
 cn-ga31-vcitywest-6	对租用国产智能算力，基于国家网信办备案生成式人工智能模型、国产开源大模型，开发OpenClaw等具备跨领域适配、多任务协同、自主规划能力的智能体应用，并在规划决策、工具调用、长期记忆、任务执行等领域实现应用范式创新的企业，发放算力券，按年度实际发生金额的10%，给予最高100万元补助
 cn-ga31-vcitywest-6	长沙经济技术开发区管理委员会2026年3月23日
+cn-ga31-vcitysouth-36	对于经认定的OPC专业载体新入驻企业租用人工智能算力资源开展开发应用的，按算力合同结算额的30%给予企业最高50万元补贴。
+cn-ga31-vcitysouth-36	现将征求意见稿面向社会各界征求意见
 cn-ga31-vcityeast-38	设立算力券、数据券、工具券，支持创新型企业优惠使用相关资源。
 cn-ga31-vcitysouth-70	按实际支出费用不超过50%的比例予以“算力券”资助
 cn-ga31-vcitysouth-70	本措施自印发之日起实施，有效期至2027年12月31日
@@ -612,6 +625,7 @@ cn-ga31-voucherrulesmissing-38	出台省级“算力券”政策，支持有条�
 cn-ga31-vouchernamedrules-5	算力券用于抵扣算力服务费用的比例为：自主可控智能算力不超过服务费用的50%、非自主可控智能算力不超过服务费用的30%，其中，中小企业抵扣比例分别增加10%
 cn-ga31-vouchernamedrules-5	本办法自2026年5月13日生效
 cn-ga31-vouchernamedrules-5	已于2026年2月9日失效
+cn-ga31-voucherearlierrules-56	对意向使用国产算力资源的企业开展针对性引导。去年，余姚相关部门为江丰生物、舜宇光学核发算力券共计77.53万元，有效降低了企业使用国产算力的成本。
 cn-ga31-vcitysouth-15	对AI大模型，前2年按照算力消费额的30%给予最高300万元的奖励
 cn-ga31-vcitysouth-15	本措施自印发之日起施行
 cn-ga31-voucherrulesmissing-9	对一般申领对象，发放“算力券”可抵扣算力服务合同实际执行金额的30%，每个单位每年最高抵扣400万元
@@ -686,6 +700,7 @@ cn-ga31-vcitywest-12	按照智能算力结算费用的50%，给予单家主体�
 cn-ga31-vcitywest-12	本措施自2026年10月8日起施行，有效期三年
 cn-ga31-vcityeast-73	在市级30%补贴基础上区级再配套15%
 cn-ga31-vcityeast-59	给予用户单位最高500万元的补贴。
+cn-ga31-voucherearlierrules-57	采购搭载国产算力芯片的服务器补贴30%，采购搭载非国产算力芯片的服务器补贴10%。每家申报单位每年最高可获50万元补贴。
 cn-ga31-voucher2-shanxi-rules-yuncheng	对符合要求的算力使用方，按照不超过实际执行的算力服务合同金额的20%，给予年度总额不超过100万元的算力券奖补
 cn-ga31-voucher2-shanxi-rules-yuncheng	对牵头参与国家级重大项目或开展大模型研发的算力使用方，按照不超过实际执行的算力服务合同金额的30%，给予年度总额不超过200万元的算力券奖补
 cn-ga31-voucher2-shanxi-rules-yuncheng	本细则由山西省数据局负责解释，自印发之日起施行，有效期两年

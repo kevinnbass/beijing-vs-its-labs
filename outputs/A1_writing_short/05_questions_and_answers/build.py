@@ -9,7 +9,7 @@ Run: python3 -I build.py
 3. Counts the text shows, each taken from a file and compared with the words in the text (the run stops if they differ):
      the argument's points, sources and limits     argument/argument_base.txt; the sources from the argument's last build line
                                                    (atlas/core_edit/hand_out/ARGUMENT_FINAL.txt), checked against ARGUMENT_referenced.html
-     state-media items, and those that only warn    tables/state_media_items.tsv (75; 19 only warn, 16 of them from Jul 31 to Sept 24, 2025 and 3 later)
+     state-media items, and those that only warn    tables/state_media_items.tsv (subjects and warnings before, during and after the burst)
      the applications returned without action        tables/house_licence_table.tsv (those for 55% of the table's chips)
    and no id on the do-not-cite list (loose_ends/hkexnews_saved_ids.tsv) may be cited.
 Exit 1 if the build or any check fails.
@@ -69,6 +69,10 @@ def main():
     # control: the built argument page lists the same number of references
     fin = [ln for ln in (PROJ / 'atlas' / 'core_edit' / 'hand_out' / 'ARGUMENT_FINAL.txt').read_text(encoding='utf-8').splitlines() if ln.startswith('argument: ')]
     n_src = int(re.match(r'argument: (\d+) sources', fin[-1]).group(1)) if fin else -1
+    footer = (PROJ / 'ARGUMENT_referenced.md').read_text(encoding='utf-8').rstrip().splitlines()[-1]
+    match = re.search(r'^Build check: .*saved copies of (\d+) sources', footer)
+    if not match or int(match[1]) != n_src:
+        bad.append("the argument's Markdown footer and build log disagree on the source count")
     n_listed = len(re.findall(r'<li id="ref-\d+"', (PROJ / 'ARGUMENT_referenced.html').read_text(encoding='utf-8')))
     if n_listed != n_src: bad.append(f'the argument\'s last build line says {n_src} sources, its page lists {n_listed}')
     n_pts = sum(1 for ln in arg.splitlines() if re.match(r'\d+\. ', ln))
@@ -83,15 +87,31 @@ def main():
     # state media: all items, and those that only warn
     sm = table('state_media_items.tsv')
     warn = sorted(r['date'] for r in sm if r['stance'] == 'warns')
-    win = [d for d in warn if d <= '2025-09-24']; late = [d for d in warn if d > '2025-09-24']      # the burst after the summons, and the warnings found later (core edit 6)
+    start, end = '2025-07-31', '2025-09-24'  # the window in argument point 4
+    early = [d for d in warn if d < start]
+    win = [d for d in warn if start <= d <= end]
+    late = [d for d in warn if d > end]
+    h200 = [d for d in late if '2025-12-09' <= d <= '2026-01-14']
     span = f'{day(win[0])} to {day(win[-1])}, {win[-1][:4]}'
-    print(f'state media, from tables/state_media_items.tsv: {len(sm)} items; {len(warn)} only warn, dated {warn[0]} to {warn[-1]} ("{span}")')
+    h200_span = f'{day(h200[0])}, {h200[0][:4]} to {day(h200[-1])}, {h200[-1][:4]}'
+    print(f'state media, from tables/state_media_items.tsv: {len(sm)} items; {len(warn)} only warn '
+          f'({len(early)} before, {len(win)} from {span}, {len(late)} after); '
+          f'{len(h200)} of the later warnings from {h200_span}')
     months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
-    alld = sorted(r['date'] for r in sm); window = f'from {months[int(alld[0][5:7]) - 1]} {alld[0][:4]} to {months[int(alld[-1][5:7]) - 1]} {alld[-1][:4]}'   # round 10b: the table's own span
-    print(f'state media: the table\'s items are dated {alld[0]} to {alld[-1]} ("{window}")')
-    for said in (f'the {len(sm)} state and Party media items on Nvidia chips found {window}', f'{len(win)} of the {len(warn)} that only warn', span, f'the {dict([(3, "three")]).get(len(late), len(late))} found later'):
+    alld = sorted(r['date'] for r in sm); window = f'from {months[int(alld[0][5:7]) - 1]} {alld[0][:4]} to {months[int(alld[-1][5:7]) - 1]} {alld[-1][:4]}'
+    print(f"state media: the table's items are dated {alld[0]} to {alld[-1]} ({window})")
+    compute = sum(r['subject'] == 'chips for AI computing' for r in sm)
+    products = sum(r['subject'] == 'a product with an Nvidia chip' for r in sm)
+    for said in (
+        f'the {len(sm)} state and Party media items on Nvidia and its chips found {window}',
+        f'{len(win)} of the {len(warn)} that only warn',
+        span,
+        'one is earlier' if len(early) == 1 else f'{len(early)} are earlier',
+        f'{len(h200)} of the {len(late)} found later date from {h200_span}',
+        f'{compute} items on chips for AI computing separately from the {products} on products with an Nvidia chip',
+    ):
         if said not in text: bad.append(f'the text does not say "{said}"')
-    if 'warn against' in text: bad.append('the text says "warn against": two of the seven items do not speak of buying')
+    if 'warn against' in text: bad.append('the text says "warn against": the table counts warnings that do not speak of buying')
 
     # Washington's table of licence applications
     hl = table('house_licence_table.tsv')

@@ -79,14 +79,7 @@ def main():
     makers = [w for _, ws in MAKERS for w in ws]
     assert 'lockheedmartin' in lst and not [m for m in makers if m in lst], [m for m in makers if m in lst]
     maker_names = ', '.join(n for n, _ in MAKERS[:-1]) + ' and ' + MAKERS[-1][0]
-    # state and Party media (tables/state_media_items.tsv): the items that only warn about Nvidia's chips, and their dates
-    sm = C.table('state_media_items.tsv')
-    warns = sorted(C.date.fromisoformat(r['date']) for r in sm if r['stance'] == 'warns')
-    # round 5 (core edit 6): rows 43 to 75 were added (found by searches and links; after Sept 24, 2025 a sample, not a census)
-    sm_d = sorted(C.date.fromisoformat(r['date']) for r in sm)   # round 10: the span of all items, printed beside the count (a reader asked)
-    win = [d for d in warns if d <= C.date(2025, 9, 24)]; late = [r for r in sm if r['stance'] == 'warns' and C.date.fromisoformat(r['date']) > C.date(2025, 9, 24)]
-    assert (len(sm), len(warns), len(win), len(late)) == (75, 19, 16, 3), (len(sm), len(warns), len(win))
-    assert all(r['outlet'].startswith('Global Times') and r['date'].startswith('2026') for r in late), late
+    _, media_summary = C.state_media_summary()
 
     figure = f"""
   <section class="card" id="cmp">
@@ -117,7 +110,7 @@ def main():
     <div class="cell has"><div class="cl">Nvidia · 2024 to 2026</div>
      <div class="marks">{''.join(C.mark(r) for r in pub)}</div>
      <p><b>Addressed to Nvidia itself:</b> the antitrust case investigates it, and the summons over the H20 requires it to explain the security risks and hand in supporting material. None of the {words[len(pub)]} tells a buyer to stop.</p>
-     <p><b>State media warned in public.</b> Of {len(sm)} state and Party media items on Nvidia chips found ({C.fmt(sm_d[0])} to {C.fmt(sm_d[-1])}), {len(warns)} only warn about them: {len(win)} dated {C.fmt(win[0])} to {C.fmt(win[-1])}, and {words[len(late)]} later ones in Global Times in 2026 (the items after September 2025 are what two rounds of searches found, a sample and not a full count). They warn and urge; none forbids buying. They are not drawn here.</p>
+     <p><b>State media warned in public.</b> The warnings appear in published commentaries or reports. {media_summary} The marks above show the regulator’s announcements.</p>
     </div>
 
     <div class="q"><b>Where are instructions not to buy, or restrictions, reported without being published?</b><span>press reports citing unnamed people, and what companies told the US securities regulator</span></div>

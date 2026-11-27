@@ -8,7 +8,7 @@ Run: python3 -I make_inputs.py                                           first: 
      python3 -I cn_figure_build.py --png     the same, then exports PNG images of it
 Reads figure_data.txt and template.html (this folder) and, like the core's builder, the project's tables
 (research/cn_chip_policy_20261120/tables/: house_licence_table.tsv, provinces_31.tsv, chip_evaluations.tsv,
-state_media_items.tsv). Nothing is written unless:
+state_media_items.tsv, state_media_baseline_2024_2025h1.tsv, local_vouchers_other_provisions.tsv). Nothing is written unless:
   1. every "Q" and "!" line is found in its saved copy (research/primary/<id>), as in the core's builder;
   2. every pair of quote marks in a T or C line, and in the finished page, holds words that are part of a checked
      Q or ! line (so quote marks hold only a source's exact words, never my Chinese rendering of English);
@@ -36,7 +36,8 @@ sys.path.insert(0, str(ROOT / 'scripts'))
 import cn_srclib as L   # noqa: E402
 
 TB = ROOT / 'research/cn_chip_policy_20261120/tables'
-LANES = {'BH': ('北京', '限制英伟达', 'away'), 'BL': ('北京', '放行英伟达', 'toward'),
+MON = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec']
+LANES = {'BH': ('北京', '限制英伟达', 'away'), 'BL': ('北京', '对英伟达较为开放', 'toward'),
          'CN': ('企业', '争取英伟达芯片', 'toward'), 'CH': ('企业', '转向国产芯片', 'away')}
 ORDER = ['BH', 'BL', 'CN', 'CH']
 OUT = 'beijing_vs_labs_zh'
@@ -71,11 +72,11 @@ def load():
         if ln.startswith('@ '):
             _, lane, kind, d, dl, sid = ln.split()
             assert lane in LANES and kind in ('doc', 'rec', 'press'), (n, ln)
-            cur = dict(lane=lane, kind=kind, date=date.fromisoformat(d), dl=None if dl == '-' else dl.replace('_', ' '), sid=sid, T='', S='', Q='', E='', U='', C='', Z='', rawT='', rawC='', N='')
+            cur = dict(lane=lane, kind=kind, date=date.fromisoformat(d), dl=None if dl == '-' else dl.replace('_', ' '), sid=sid, T='', S='', Q='', E='', U='', C='', Z='', rawT='', rawC='', N='', A='')
             evs.append(cur)
         elif ln.startswith('! '):
             sid, q = ln[2:].split(' | ', 1); checks.append((sid.strip(), q.strip()))
-        elif ln[:2] in ('T ', 'S ', 'Q ', 'E ', 'U ', 'C ', 'Z ', 'N '):
+        elif ln[:2] in ('T ', 'S ', 'Q ', 'E ', 'U ', 'C ', 'Z ', 'N ', 'A '):
             if ln[0] in 'TC': cur['raw' + ln[0]] = ln[2:].strip()
             cur[ln[0]] = smart(ln[2:].strip()) if ln[0] in 'TSC' else ln[2:].strip()
         else: sys.exit(f'line {n} not understood: {ln[:60]}')
@@ -102,7 +103,10 @@ def verify(evs, checks):
     assert not L.has('this sentence was never written by anyone at all', evs[0]['sid']), 'the control quotation was found: the check cannot fail'
     # quote marks in a T or C line hold only words that are part of a checked quotation of the same saved id
     for e in evs:
-        own = [L.squash(x['Q']) for x in evs if x['sid'] == e['sid']] + [L.squash(q) for sid, q in checks if sid == e['sid']]
+        ids = {e['sid']}
+        if e['A']:
+            ids.add(e['A'].split(' | ', 1)[0])
+        own = [L.squash(x['Q']) for x in evs if x['sid'] in ids] + [L.squash(q) for sid, q in checks if sid in ids]
         for raw in (e['rawT'], e['rawC']):
             assert raw.count('"') % 2 == 0, f"odd number of quote marks: {raw}"
             for seg in re.findall(r'"([^"]*)"', raw):
@@ -164,6 +168,11 @@ def number(evs):
     assert all(e['n'] > len(free) for e in evs if e['N']), 'a fixed number falls among the numbers given by date'
     for e in evs:
         e['when'] = e['dl'] or fmt(e['date']); e['url'] = e['U'] or L.url_of(e['sid'])
+        e['also_url'], e['also_source'] = '', ''
+        if e['A']:
+            sid, label = e['A'].split(' | ', 1)
+            e['also_url'], e['also_source'] = L.url_of(sid), smart(label)
+            assert e['also_url'] and e['also_url'] != e['url'] and e['also_source'], (e['n'], e['A'])
         e['dir'] = LANES[e['lane']][2]; e['solid'] = e['kind'] != 'press'
     b = sorted([e for e in evs if e['lane'][0] == 'B'], key=lambda e: e['date'])
     c = sorted([e for e in evs if e['lane'][0] == 'C'], key=lambda e: e['date'])
@@ -196,7 +205,8 @@ def strip(evs):
     H = bottom + 40
     xb = X(BK)
     out.append(f'<svg viewBox="0 0 {W} {H}" role="img" aria-labelledby="strip-t strip-d"><title id="strip-t">按日期排列的记录，2023年至2026年11月</title>'
-               f'<desc id="strip-d">每个带编号的圆点是一条有日期的记录，逐条列在图的下方。共四行：北京限制英伟达，北京放行英伟达，企业争取英伟达芯片，企业转向国产芯片。</desc>')
+               f'<desc id="strip-d">每个带编号的圆点是一条有日期的记录，逐条列在图的下方。共四行：'
+               f'{esc("、".join("".join(LANES[k][:2]) for k in ORDER))}。</desc>')
     out.append(f'<rect class="era" x="{GL}" y="{top}" width="{xb - GL:.1f}" height="{bottom - top}"/>')
     ticks = [(date(2023, 1, 1), '2023年'), (date(2024, 1, 1), '2024年')] + [(date(y_, m, 1), (f'{y_}年{m}月' if m == 1 else f'{m}月')) for y_ in (2025, 2026) for m in (1, 4, 7, 10)]
     for d, lab in ticks:
@@ -205,7 +215,7 @@ def strip(evs):
     out.append(f'<text class="eranote" x="{GL + 6}" y="{bottom + 37}">2023年和2024年画得较窄</text>')
     # The third flag: Nvidia, Nov 17, 2026: "we are no longer shipping licensed Hopper Data Center products to China";
     # Reuters: "The Hopper family includes the H200" (both "!" lines). Why it stopped is not said here.
-    for d, lab, anchor in ((date(2025, 7, 15), '2025年7月 · 美国重新批准H20对华销售', 'end'), (date(2025, 12, 8), '2025年12月8日 · 美国表示将允许H200', 'start'), (date(2026, 11, 17), '2026年11月17日 · 英伟达停止H200发货', 'end')):
+    for d, lab, anchor in ((date(2025, 7, 15), '2025年7月 · 美国重新批准H20对华销售', 'end'), (date(2025, 12, 8), '2025年12月8日 · 美国表示将允许H200', 'start'), (date(2026, 11, 17), '2026年11月17日 · 英伟达称H200停发', 'end')):
         x = X(d); dx = -7 if anchor == 'end' else 7
         out.append(f'<line class="flag" x1="{x:.1f}" y1="14" x2="{x:.1f}" y2="{bottom}"/><text class="flagt" x="{x + dx:.1f}" y="26" text-anchor="{anchor}">{esc(lab)}</text>')
     for k in ORDER:
@@ -239,8 +249,10 @@ def by(evs, sid, lane=None):
 
 def hfac():
     """The House committee's table (by its summary, a BIS summary; status as of May 11, 2026): sums by exporter, status and
-    location, made here from tables/house_licence_table.tsv, exactly as the core's builder makes them. The totals must
-    equal the summary's own figures, which "!" lines check in the saved summary."""
+    location, made here from tables/house_licence_table.tsv (54 rows, read twice from the page images and checked
+    against the text layer by agent L04). The totals must equal the summary's own figures, which "!" lines check in the
+    saved summary. The table does not say which chip each row is (the summary: Nvidia's H200 and AMD's MI325X); the
+    bars say "Nvidia as exporter". RWA is "Returned without action" on the export bureau's own pages ("!" line)."""
     rows = [dict(exp=r['exporter'], con=r['consignee'], chips=int(r['chip_count'].replace(',', '')), status=r['status'], loc=r['location'])
             for r in table('house_licence_table.tsv')]
 
@@ -255,9 +267,10 @@ def hfac():
     t['abroad_places'] = sorted({r['loc'] for r in abroad})
     assert t['all'] == (3_444_160, 54) and t['appr'] == (879_868, 21), t          # the summary's own figures ("!" lines)
     assert t['appr_nv'][0] + t['appr_amd'][0] == t['appr'][0] and t['rwa_nv'][0] + t['rwa_amd'][0] == t['rwa'][0], t
-    assert abroad and all(r['status'] == 'RWA' and r['exp'] == 'Nvidia' for r in abroad), 'an application abroad is not an Nvidia RWA'
+    assert t['rwa'] == (1_888_950, 9) and t['rwa_nv'] == (1_738_950, 7) and t['rwa_amd'] == (150_000, 2), t
+    assert t['abroad'] == (1_118_500, 5) and all(r['status'] == 'RWA' and r['exp'] == 'Nvidia' for r in abroad), t
     assert all(re.search(r'bytedance|byteplus|tiktok|alibaba', r['con'], re.I) for r in abroad), [r['con'] for r in abroad]
-    assert 2 * t['rwa'][0] > t['all'][0], 'RWA is not more than half of the chips'
+    assert 2 * t['rwa'][0] > t['all'][0], 'the applications returned without action do not cover more than half of the chips listed'
     return t
 
 
@@ -269,18 +282,26 @@ def bars(evs):
     # Round 14 of this folder (Nov 26, 2026), as the core's builder: a bar whose count rests on unnamed people carries the report
     # in its own label (据报道，...); the two sums of Washington's table stay.
     rows = [  # label, value text, chips (for the width), class, note, events
-        ('据报道，中国企业为2026年订购', '超过200万枚', 2_000_000, 'toward', '路透社，2025年12月31日', [by(evs, 'cn-labs-h200-two-million-202512-relay1-wayback')]),
-        ('华盛顿已批准：以英伟达为出口商的申请', f(h['appr_nv'][0]) + '枚', h['appr_nv'][0], 'us',
+        ('据报道，中国企业为2026年订购', '超过200万枚', 2_000_000, 'toward',
+         '路透社，2025年12月31日，援引未具名人士', [by(evs, 'cn-labs-h200-two-million-202512-relay1-wayback')]),
+        ('华盛顿批准的英伟达申请所涉芯片', f(h['appr_nv'][0]) + '枚', h['appr_nv'][0], 'us',
          f'共{h["appr_nv"][1]}份申请，截至2026年5月11日均标为“Approved, not shipped”（已批准、未发货）。加上AMD的同类芯片'
          f'（{f(h["appr_amd"][0])}枚，{h["appr_amd"][1]}份申请），合计{f(h["appr"][0])}枚。表格“H200 License and Equivalent Application Status as of May 11, 2026”（截至2026年5月11日的H200许可及同类申请状态），'
-         '由众议院外交事务委员会于2026年11月19日公布；各项合计为本页所算', []),   # touch-up 6b sync (Nov 24, 2026): the table by its title, as the English builder now names it
-        ('华盛顿未予处理即退回：以英伟达为出口商的申请', f(h['rwa_nv'][0]) + '枚', h['rwa_nv'][0], 'us',
-         f'共{h["rwa_nv"][1]}份申请，其中包括表中所列最终所在地为{places}的全部{h["abroad"][1]}份（{f(h["abroad"][0])}枚），所列名称带有ByteDance、BytePlus、TikTok和Alibaba字样。'
-         f'加上AMD的{h["rwa_amd"][1]}份，在表内{f(h["all"][0])}枚芯片中占{f(h["rwa"][0])}枚。表格没有说明原因。同一表格', []),
-        ('据报道，北京方面有条件批准', '超过40万枚', 400_000, 'toward', '对象是字节跳动、阿里巴巴和腾讯。路透社，2026年1月28日', [by(evs, 'ms-bj-20260128-h200-nod-standard')]),
-        ('据报道，截至7月，北京方面考虑放行的总量', '不到20万枚', 200_000, 'toward', 'The Information，经路透社转述，2026年7月8日', [by(evs, 'cn-acts-reuters-ti-cap-20260708-relay1')]),
-        ('据报道，已到两家具名买方手中', '各约1万枚', 20_000, 'toward', '字节跳动和腾讯（英国《金融时报》，经路透社转述，2026年8月18日）；到11月已是数家企业（路透社，2026年11月5日）', [by(evs, 'cn-tolerate-reutersaug26-relay1-wayback')]),
-        ('据报道，存放在香港', '约60万枚', 600_000, 'away', '北京方面迟迟未批准大规模进口（原文：“withholds approval for large-scale imports”）。路透社，2026年11月5日', [by(evs, 'cn-clips-evidence-1')]),
+         '由众议院外交事务委员会于2026年11月19日公布；各项合计为本页所算。', []),
+        ('华盛顿未予处理即退回的英伟达申请所涉芯片', f(h['rwa_nv'][0]) + '枚', h['rwa_nv'][0], 'us',
+         f'以英伟达为出口商的申请共{h["rwa_nv"][1]}份，其中{h["abroad"][1]}份将{places}列为拟定目的地（涉及{f(h["abroad"][0])}枚芯片）。'
+         f'这几份申请所列运营方或收货方与ByteDance、BytePlus、TikTok或Alibaba有关。加上AMD的{h["rwa_amd"][1]}份，退回的申请共涉及表内{f(h["all"][0])}枚芯片中的{f(h["rwa"][0])}枚。表格没有说明原因。', []),
+        ('据报道，北京方面有条件批准', '超过40万枚', 400_000, 'toward',
+         '对象是字节跳动、阿里巴巴和腾讯。路透社，2026年1月28日，援引未具名人士', [by(evs, 'ms-bj-20260128-h200-nod-standard')]),
+        ('据报道，截至7月北京方面可能批准的总量', '不到20万枚', 200_000, 'toward',
+         'The Information援引未具名人士，经路透社转述，2026年7月8日', [by(evs, 'cn-acts-reuters-ti-cap-20260708-relay1')]),
+        ('两家企业收到H200的报道（英国《金融时报》援引两名未具名人士）', '各约1万枚', 20_000, 'toward',
+         '英国《金融时报》援引两名未具名人士，称字节跳动和腾讯各收到约1万枚H200处理器（原文：“ByteDance and Tencent have each received about 10,000 H200 processors”，路透社转述，2026年8月18日）。'
+         '路透社11月5日援引一名未具名人士称，数家中国大型互联网企业各获得约1万枚H200（原文：“Several major Chinese internet companies have each obtained about 10,000 H200 chips”）。',
+         [by(evs, 'cn-tolerate-reutersaug26-relay1-wayback')]),
+        ('关于H200库存的报道', '约60万枚', 600_000, 'away',
+         '路透社2026年11月5日援引两名未具名人士称，约60万枚英伟达先进AI芯片存放在香港，等待运往中国（原文：“About 600,000 of Nvidia’s advanced artificial intelligence chips are stored in Hong Kong awaiting shipment to China”）。'
+         '该报道称北京方面仍未批准大规模进口（原文：“withholds approval for large-scale imports”）。', [by(evs, 'cn-clips-evidence-1')]),
     ]
     out = ['<div class="bars">']
     for lab, val, n, cls, note, es in rows:
@@ -305,7 +326,7 @@ def share():
                    ''.join(f'<i class="{c}" style="flex:{w}"></i>' for c, w, _ in segs) + '</div>'
                    '<div class="sh-keys">' + ''.join(f'<span style="flex:{w}">{esc(t)}</span>' for _, w, t in segs) + '</div>'
                    f'<div class="sh-cap">{esc(cap)} <span class="srcn">{esc(src)}</span></div></div>')
-    out.append('<div class="sh-cap">灰色是AMD（2025年为4%）。斜线部分是报道没有细分的部分。</div>')
+    out.append('<div class="sh-cap">灰色是AMD（2025年为4%）。斜线合计图中未单独标出的份额。</div>')
     out.append('</div>')
     return '\n'.join(out)
 
@@ -405,9 +426,15 @@ def paper(evs):
         out.append(f'<div class="pp"><b>{esc(big)}</b><span>{esc(txt)} <a class="srcn" href="{url(sid)}">{esc(when)}</a></span></div>')
     out.append('<div class="pp none"><b>没有找到</b><span>在所阅读的政策网页和全国性文件目录中，没有找到公开发布的全国性国产AI芯片占比，也没有找到公开发布的不准购买英伟达芯片的命令。'
                f'有报道称，一份全国性规划草案要求至少80%的核心技术（包括AI芯片）为国产（彭博社，2026年6月，经<a class="srcn" href="{url("cn-le14-tnw-295b-plan-20260609")}">其他媒体转述</a>；消息来自未具名人士，他们说细节可能变化）；'
-               '被问到这篇报道时，国家发展改革委没有给出占比，只说“在具体建设过程中，市场力量将起决定性作用”，并表示将“加强统筹协调和政策引导”'
+               '被问到外媒有关中国政府正研究大规模投资算力网络的报道时，国家发展改革委没有给出占比，只说“在具体建设过程中，市场力量将起决定性作用”，并表示将“加强统筹协调和政策引导”'
                f'（<a class="srcn" href="{url("cn-le27-ndrc-presser-20260618-json")}">新闻发布会，2026年6月18日：网站的文本文件</a>）。'
-               '找到的每一条有约束力的采购规定，针对的都是党政机关、事业单位或财政资金；2023年的美光案（这里最早的一条记录）则针对关键信息基础设施的运营者。</span></div>')
+               '找到的有约束力的采购规定针对党政机关、事业单位或财政资金；2023年的美光案（这里最早的一条记录）针对关键信息基础设施的运营者。</span></div>'
+               '<p class="fine">其他公开文件也支持国产算力。内蒙古为采用国产化算力建设超大规模智算中心的企业提供用地、绿电和能耗指标等保障'
+               f'（<a class="srcn" href="{url("cn-ga31-dcstateeast-8")}">自治区措施</a>）。安徽宿州高新技术产业开发区管委会在市政府网站发布的答复中说，按科技部试行指南，'
+               f'要获认定为国家人工智能算力平台，自主研发芯片所提供的算力标称值须占系统总算力标称值的至少60%（<a class="srcn" href="{url("cn-ga31-cnpress2ap3-23")}">管委会答复</a>）。'
+               '没有找到科技部的原件。</p>'
+               f'<p class="fine">全国网络安全标准化技术委员会秘书处在AI加速芯片<a class="srcn" href="{url("cn-ga31-msspostsp2-38")}">实践指南</a>中建议，'
+               '芯片不应提供远程关闭、定位或与未声明的通信实体交互数据的功能。这条建议未点名任何厂商。该指南提供实践建议，不是强制性标准。</p>')
     out.append('</div>')
     return '\n'.join(out)
 
@@ -527,6 +554,8 @@ def vouchers():
         'B209': ('苏州工业园区', (2025, 11), 'cn-ga31-voucher5-sip-2025-37hao', '园区2025年11月12日的措施，同时废止2023年的措施；读的是一家商业政策服务平台文件库所存的签发文件'),
         'B214': ('惠州仲恺高新区', (2026, 4), 'cn-ga31-voucher5-zhongkai-plan-wayback', '有现行补贴比例的行动方案，自2026年4月1日起实施，至2027年12月31日结束；读的是互联网档案馆对该区页面的存档'),
         'B216': ('深圳市福田区', (2024, 11), 'cn-ga31-voucher5-futian-2024-wayback', ''),
+        'B218': ('天津市滨海新区', (2024, 3), 'cn-ga31-voucherrulesmissingp3-7', '较高一档适用于自主信创智算。有效期至2027年12月31日。月份据转载地址。'),
+        'B219': ('山西转型综合改革示范区', (2025, 6), 'cn-ga31-vcitynorthp3-27', '经评审，补贴最高为算力服务合同金额的20%，每个申领主体最高100万元，算力券每年发放总额不超过1000万元。据黄河新闻网转载，有效期至2027年12月31日。'),
     }
     assert set(SHOWN) == set(C), ('the panel’s rows are not the counted rules', sorted(set(SHOWN) ^ set(C)))
     rows = {}
@@ -542,6 +571,7 @@ def vouchers():
     third = two + one
     # the panel's counts are the classifier's, and the table it writes says the same
     assert f'{len(rows)} / {len(ti)} / {len(only)} / {len(third)}' == R['line']
+    assert (len(rows), len(ti), len(only), len(one), len(two)) == (93, 8, 4, 80, 1)
     cls = [l.split('\t') for l in (TB / 'local_vouchers_classes.tsv').read_text(encoding='utf-8').split('\n') if l and not l.startswith('#')][1:]
     assert {c[0]: c[2] for c in cls if c[2] != VC.NOT} == {k: C[k]['cls'] for k in C}, 'tables/local_vouchers_classes.tsv is not the classifier’s result: run scripts/cn_voucher_classes.py --write'
     assert all(rows[k][2] > rows[k][3] > 0 for k in ti) and all(rows[k][3] == 0 for k in only) and all(rows[k][2] == rows[k][3] for k in third)
@@ -565,8 +595,9 @@ def vouchers():
                     f'<i class="vd away" style="--x:{hm / mx:.4f}"></i><b class="vn" style="--x:{ot / mx:.4f}">{ot}%</b><b class="vn" style="--x:{hm / mx:.4f}">{hm}%</b>')
             lab = f'国产{hm}%，其他{ot}%'
         tag = '' if C[k]['voucher'] else ' <span class="vtag">规定未称之为券</span>'
+        close = ' close' if ot > 0 and 0 < hm - ot <= 5 else ''
         return (f'<div class="vr"><div class="vlab">{esc(place)} <a class="srcn" href="{url(sid)}">{when[0]}年{when[1]}月</a>{tag}</div>'
-                f'<div class="vt" role="img" aria-label="{esc(place, quote=True)}：{lab}">{dots}</div>{("<div class=vnote>" + esc(note) + "</div>") if note else ""}</div>')
+                f'<div class="vt{close}" role="img" aria-label="{esc(place, quote=True)}：{lab}">{dots}</div>{("<div class=vnote>" + esc(note) + "</div>") if note else ""}</div>')
     axis = '<div class="vr axis"><div></div><div class="vt">' + ''.join(f'<span style="--x:{v / mx:.4f}">{v}%</span>' for v in (0, 20, 40, 60)) + '</div></div>'
     place = lambda k: rows[k][0]
     listed = lambda names: names[0] if len(names) == 1 else '、'.join(names[:-1]) + '和' + names[-1]
@@ -588,8 +619,14 @@ def vouchers():
         place_, when, hm, ot, sid, note = rows[k]
         dag = '' if C[k]['voucher'] else '<span class="vdag" title="规定未称之为券">†</span>'
         fn = f'<sup class="vfl">{letters[k]}</sup>' if k in letters else ''
+        rate = f'{hm}%'
+        label = f'各类算力一律{rate}'
+        if k == 'B219':
+            assert '不超过算力服务合同金额的' + rate in L.squash(C[k]['sent']), C[k]['sent']
+            rate = f'最高{rate}'
+            label = rate
         return (f'<div class="vm"><span class="vml">{esc(place_)} <a class="srcn" href="{url(sid)}">{when[0]}年{when[1]}月</a>{dag}{fn}</span>'
-                f'<span class="vmt" role="img" aria-label="{esc(place_, quote=True)}：各类算力一律{hm}%"><i style="--x:{hm / mx:.4f}"></i></span><b class="vmp">{hm}%</b></div>')
+                f'<span class="vmt" role="img" aria-label="{esc(place_, quote=True)}：{label}"><i style="--x:{hm / mx:.4f}"></i></span><b class="vmp">{rate}</b></div>')
     minis = ''.join(f'<div class="vmh">{KINDS[i]}：{len(g)}个</div>' + ''.join(mini(k) for k in g) for i, g in enumerate(by_kind))
     notes = ''.join(f'<p><b>{l}</b> {esc(place(k))}：{esc(rows[k][5])}</p>' for l, k in foot)
     (hz,) = two; lo, hi = tiers[hz]; (old,) = R['earlier'][hz]
@@ -601,6 +638,16 @@ def vouchers():
     assert len(adapt) == 2 and all(k in letters for k in adapt), 'the two rules counted under the second named exception, each with its note'
     nv = sum(not C[k]['voucher'] for k in one)
     alt = R['alt']
+    # Count the wording of the higher rate. Wuhan's use of 国产 describes model tokens at its lower rate.
+    favoured_kind = re.compile(r'(?<!非)(自主信创|自主可控|自主|国产)(?:人工智能算力|智能算力|算力服务|智算)')
+    tier_words = {k: favoured_kind.findall(L.squash(C[k]['words'].split(' / ', 1)[0])) for k in ti}
+    independent = sum(words in (['自主'], ['自主可控']) for words in tier_words.values())
+    assert (len(ti), independent) == (8, 7) and tier_words['B218'] == ['自主信创'], tier_words
+
+    # The provisions table has one row per provision. Count each rule once.
+    other_support = {r['row_id'] for r in table('local_vouchers_other_provisions.tsv')}
+    assert other_support <= set(third), other_support - set(third)
+    assert (len(other_support), len(third)) == (9, 81), 'argument point 3 counts 9 of the 81 rules'
     out = ['<div class="vkey"><span><i class="sw away"></i>国产算力</span><span><i class="sw toward"></i>其他算力</span><span><i class="sw both"></i>各类算力适用同一比例</span>'
            '<span><i class="sw unk"></i>按算力设施的类型分档，规定没有写明类型</span></div>',
            '<div class="vgrid">',
@@ -617,13 +664,13 @@ def vouchers():
            '已废止、已到期或没有写明账单补贴比例的规定（其中有深圳市龙岗区，以及南昌市对省级奖励的配套）、未能读到文本或只有扫描件的规定（重庆市；杭州市西湖区）、以及征求意见稿。'
            f'换一种算法（规定数／补贴更多／只补贴国产／没有更高比例）：把{place(hz)}的两档读作国产和其他（已废止的规定就是这样分的），是{alt["hangzhou_more"]}；不计{place(hz)}，是{alt["hangzhou_out"]}。'
            '只对用国产芯片建设或购置的支持另算：北京市2024年至2027年的方案，按投资额的一定比例支持“采购自主可控GPU芯片开展智能算力服务的企业”。'
-           '分档用的是各规定自己的用词：“国产”或“自主”，对“非国产”“非自主”或“其他”。</p>',
+           f'对国产算力补贴更多的{len(ti)}项规定中，有{independent}项把适用较高比例的算力称为自主或自主可控，滨海新区的规定用的是自主信创。</p>',
            f'<div class="vgrp vb"><div class="vbtop"><div><h3>没有对国产算力规定更高的比例：{len(third)}个</h3>'
            f'<h4>按算力设施的类型分两档，规定没有写明类型：{len(two)}个</h4>' + ''.join(row(k) for k in two) + axis + '</div>'
            f'<div><h4>各类算力适用同一比例：{len(one)}个</h4><p class="vexpl">每条规定：地点、规定的年月（链接到所存文本），以及它唯一的补贴比例，以同一条0至60%刻度上的圆点表示。'
            f'†表示规定把这笔钱称为补贴、奖励或支持，而不称为券（{len(one)}个中有{nv}个）。字母表示列表下方的附注。'
            f'其中两项规定在写明比例的句子里提到国产，但只有一个比例：{listed([place(k) for k in sorted(adapt)])}（附注{"、".join(letters[k] for k in sorted(adapt))}）。'
-           '有些规定在比例之外还对国产芯片给予其他支持：附注列出了其中大部分，上海市松江区、福州市和天津市河北区也有一些。</p></div></div>'
+           f'这{len(third)}项没有规定更高比例的规则中，有{len(other_support)}项通过其他条款支持国产算力。附注列出了其中大部分，上海市松江区、福州市和天津市河北区也有这类条款。</p></div></div>'
            f'<div class="vmini">{minis}</div><div class="vfoot">{notes}</div></div>', '</div>']
     return '\n'.join(out), len(ti), len(rows)
 
@@ -638,7 +685,7 @@ def bodies(evs):
             ('国家安全部', P('cn-acts-mss-xinhua-20250721')),
             ('官方媒体（玉渊谭天账号）', P('cn-le13-yuyuan-qq-20250810b')),
             ('海关', P('man-cn-ft-20251009-customs', 'cn-acts-reuters-customs-20260114')),
-            ('财政部、工业和信息化部（党政机关及相关事业单位台式计算机的采购规定）', P('cn-policy-desktop-2023'))]
+            ('财政部、工业和信息化部（党政机关及其直属或为其提供支持的事业单位台式计算机的采购规定）', P('cn-policy-desktop-2023'))]
     let = [('商务部', P('cn-policy-wang-nvidia', 'cn-policy-h20-mofcom', 'cn-tolerate-mof', 'cn-acts-mofcom-20261117')),
            ('国务院总理李强', P('cn-xi-round-f-6')),
            ('国务院副总理何立峰', P('cn-policy-he-welcomes')),
@@ -646,7 +693,7 @@ def bodies(evs):
            ('工业和信息化部（The Information所报道的意向）', P('cn-acts-reuters-rtx5500-20260927'))]      # record 62 (core edit 7; the core's row of 03:00 UTC, Nov 25, 2026)
     firm = [('市场监管总局：针对英伟达公司本身的反垄断案件', P('cn-policy-samr-open-original', 'cn-policy-samr-further-original'))]
     col = lambda title, cls, rows: (f'<div class="bcol"><h4><i class="sw {cls}"></i>{title}</h4><ul>' + ''.join(f'<li><span>{esc(n)}</span><span class="pins">{p}</span></li>' for n, p in rows) + '</ul></div>')
-    return ('<div class="bodies">' + col('限制英伟达，或引导买方转向国产芯片', 'away', held) + col('放行，或表示欢迎', 'toward', let) + '</div>'
+    return ('<div class="bodies">' + col('限制英伟达，或引导买方转向国产芯片', 'away', held) + col('欢迎英伟达，或据报道放宽采购限制', 'toward', let) + '</div>'
             '<div class="bodies one">' + col('对英伟达公司本身采取行动', 'away', firm) + '</div>'
             '<p class="fine">英国《金融时报》（2026年11月13日）报道：国家网信办和国家安全部内部侧重安全的官员把对英伟达的依赖看作战略弱点（原文：“viewed dependence on Nvidia as a strategic vulnerability”），'
             '商务部倾向于进口（原文：“favoured imports”），据该报援引的未具名知情人士称，2025年晚些时候限制进口和使用性能较低的英伟达芯片的行动由国家发展改革委牵头（原文：“was led by the National Development and Reform Commission”）。'
@@ -662,26 +709,58 @@ def bodies(evs):
 
 
 def state_media():
-    """The state and Party media items on Nvidia chips (tables/state_media_items.tsv: agent L13's census, rows 1 to 42, and
-    agent GA02's rows 43 to 75, found by searches and links): how many, how many only warn, how many of those are dated up
-    to Sept 24, 2025 with their first and last dates, and how many are later, counted as the core's builder counts them."""
+    """Count the later state-media sample by stance and subject. Count warnings in the eight weeks from the July
+    summons and in the December-to-January H200 group. The January 2024 to June 2025 baseline is a separate search;
+    use it for the longer warning count and its own comparison of outlets."""
     rows = table('state_media_items.tsv')
+    baseline = table('state_media_baseline_2024_2025h1.tsv')
     st = Counter(r['stance'] for r in rows)
-    warns = sorted(date.fromisoformat(r['date']) for r in rows if r['stance'] == 'warns')
+    subjects = Counter(r['subject'] for r in rows)
+    warns = sorted((date.fromisoformat(r['date']), r['outlet']) for r in rows if r['stance'] == 'warns')
     iso = sorted(date.fromisoformat(r['date']) for r in rows if re.fullmatch(r'\d{4}-\d\d-\d\d', r['date']))
-    win = [d for d in warns if d <= date(2025, 9, 24)]; late = [r for r in rows if r['stance'] == 'warns' and date.fromisoformat(r['date']) > date(2025, 9, 24)]
-    # the counts of atlas/core_edit/p6_work_5/count_census.py over the table (Nov 24, 2026), and what the template says of the later warnings
-    assert (len(rows), st['warns'], len(win), len(late)) == (75, 19, 16, 3) and all(r['outlet'].startswith('Global Times') and r['date'].startswith('2026') for r in late), (len(rows), st)
-    if not all(r['outlet'].startswith('Global Times (English)') for r in late):   # the Chinese note says 英文版 (not an assert: mirror_check compares the asserts with the core's)
-        sys.exit(f"a later warning is not in Global Times's English edition: {[r['outlet'] for r in late]}")
-    return dict(SM_N=str(len(rows)), SM_W=str(len(warns)), SM_WIN=str(len(win)), SM_WLATE={3: '3'}[len(late)], SM_W0=fmt(warns[0]), SM_W1=fmt(win[-1]), SM_MIX=str(st['mixed']),
-                SM_FROM=f'{iso[0].year}年{iso[0].month}月', SM_TO=f'{iso[-1].year}年{iso[-1].month}月')
+    start, end = date(2025, 7, 31), date(2025, 9, 24)
+    h200_start, h200_end = date(2025, 12, 9), date(2026, 1, 14)
+    win = [d for d, _ in warns if start <= d <= end]
+    h200 = [d for d, _ in warns if h200_start <= d <= h200_end]
+    outside = len(warns) - len(win)
+    early_outside = [d for d, _ in warns if d < h200_start and not start <= d <= end]
+    last = [(d, outlet) for d, outlet in warns if d > h200_end]
+    mixed_later = sum(r['stance'] == 'mixed' and r['date'] > '2025-09-30' for r in rows)
+    ai_warns = sum(r['stance'] == 'warns' and r['subject'] == 'chips for AI computing' for r in rows)
+    baseline_warns = [r for r in baseline if r['stance'] == 'warns']
+    group = [r for r in baseline if r['note'].startswith('GROUP-PAPER')]
+    comparable = len(baseline) - len(group)
+    month = lambda d: f'{MON[d.month - 1]} {d.year}'
+    # Argument points 4 and 18 and the two tables as corrected on Nov 26, 2026.
+    assert len(rows) == 297 and st == {'warns': 34, 'welcomes': 28, 'mixed': 14, 'neutral': 126, 'self-reliance': 74, 'other': 21}, st
+    assert subjects == {'chips for AI computing': 219, 'a product with an Nvidia chip': 40, 'other': 30, 'Nvidia as a company': 8}, subjects
+    months = month(iso[0]), month(iso[-1])
+    assert months == ('Jul 2025', 'Nov 2026'), months
+    assert len(win) == 23 and win[0] == start and win[-1] == end, win
+    assert len(h200) == 6 and h200[0] == h200_start and h200[-1] == h200_end, h200
+    assert outside == 11 and early_outside == [date(2025, 7, 24), date(2025, 11, 1)], early_outside
+    assert len(last) == 3 and all(d.year == 2026 and outlet.startswith('Global Times') for d, outlet in last), last
+    assert len(baseline) == 174 and comparable == 160 and len(group) == 14 and mixed_later == 10 and ai_warns == 33
+    assert [r['saved_id'] for r in baseline_warns] == ['cn-ga31-mediabase-4'] and baseline_warns[0] not in group
+    assert len(warns) + len(baseline_warns) == 35
+    if not all(outlet.startswith('Global Times (English)') for _, outlet in last):
+        sys.exit(f'An item from the last warning group is not from the English edition: {last}')
+    return dict(SM_N=str(len(rows)), SM_W=str(len(warns)), SM_WIN=str(len(win)), SM_W0=fmt(win[0]), SM_W1=fmt(win[-1]),
+                SM_H200=str(len(h200)), SM_H0=fmt(h200[0]), SM_H1=fmt(h200[-1]), SM_OUTSIDE=str(outside),
+                SM_EARLY=fmt(early_outside[0]), SM_NOV=fmt(early_outside[1]), SM_LAST=str(len(last)),
+                SM_MIX=str(st['mixed']), SM_MIX_LATER=str(mixed_later), SM_FROM=f'{iso[0].year}年{iso[0].month}月', SM_TO=f'{iso[-1].year}年{iso[-1].month}月',
+                SM_AI=str(subjects['chips for AI computing']), SM_AI_W=str(ai_warns), SM_PRODUCT=str(subjects['a product with an Nvidia chip']),
+                SM_COMPANY=str(subjects['Nvidia as a company']), SM_OTHER=str(subjects['other']),
+                SM_BASE=str(len(baseline)), SM_COMP=str(comparable), SM_GROUP=str(len(group)), SM_ALL_W=str(len(warns) + len(baseline_warns)),
+                SM_BASE_URL=url(baseline_warns[0]['saved_id']))
 
 
 def ledger(group, title):
     out = [f'<section class="lcol"><h3>{title}</h3><ol>']
     for e in group:
         src = f'<a href="{esc(e["url"], quote=True)}">{esc(e["S"])}</a>' if e['url'] else esc(e['S'])
+        if e['also_url']:
+            src += f' · <a href="{esc(e["also_url"], quote=True)}">{esc(e["also_source"])}</a>'
         out.append(f'<li id="e{e["n"]}" class="ev {e["dir"]}" data-n="{e["n"]}">{pin(e, tip=False)}<div><span class="when">{esc(e["when"])}</span> '
                    f'<span class="what">{esc(e["T"])}</span> <span class="src">{src}</span></div></li>')
     out.append('</ol></section>')
@@ -705,7 +784,7 @@ def main():
         print(r.stdout, r.stderr); sys.exit('cn_has.py failed on quotes.tsv; nothing written')
     b, c = number(evs)
     nolink = [e['sid'] for e in evs if not e['url']]
-    tip = {e['n']: dict(w=e['when'], l=''.join(LANES[e['lane']][:2]), t=e['T'], q=e['Q'], z=e['Z'], s=e['S'], k=('有公开记录' if e['solid'] else '媒体报道，未具名消息人士')) for e in evs}
+    tip = {e['n']: dict(w=e['when'], l=''.join(LANES[e['lane']][:2]), t=e['T'], q=e['Q'], z=e['Z'], s=' · '.join(filter(None, (e['S'], e['also_source']))), k=('有公开记录' if e['solid'] else '媒体报道，未具名消息人士')) for e in evs}
     page = (F / 'template.html').read_text(encoding='utf-8')
     bars_h, h = bars(evs)
     vouch_h, n_tiered, n_vouch = vouchers()
@@ -727,14 +806,15 @@ def main():
         print('\n'.join(loose)); sys.exit(f'{len(loose)} quoted passages on the page are not part of a checked quotation; nothing written')
     (F / f'{OUT}.html').write_text(page, encoding='utf-8')
     with open(F / 'figure_events_zh.tsv', 'w', encoding='utf-8') as fh:
-        fh.write('n\tdate\tshown_as\tlane\tkind\tsource\taddress\tsaved_id\ttext\n')
+        fh.write('n\tdate\tshown_as\tlane\tkind\tsource\taddress\tsaved_id\ttext\talso_source\talso_address\n')
         for e in sorted(evs, key=lambda e: e['n']):
-            fh.write(f"{e['n']}\t{e['date']}\t{e['when']}\t{''.join(LANES[e['lane']][:2])}\t{e['kind']}\t{e['S']}\t{e['url'] or ''}\t{e['sid']}\t{e['T']}\n")
+            fh.write(f"{e['n']}\t{e['date']}\t{e['when']}\t{''.join(LANES[e['lane']][:2])}\t{e['kind']}\t{e['S']}\t{e['url'] or ''}\t{e['sid']}\t{e['T']}\t{e['also_source']}\t{e['also_url']}\n")
     per = {k: sum(e['lane'] == k for e in evs) for k in ORDER}
     nz = sum(bool(e['Z']) for e in evs)
     print(f'events {len(evs)} ({per}); on the record {parts["N_SOLID"]}, press reports {parts["N_HOLLOW"]}; quotations checked {len(evs) + len(checks)}, all found; control not found (as it must be)')
     print(f'tables: House table {h["all"][1]} rows ({h["all"][0]:,} chips; approved {h["appr"][0]:,}, Nvidia {h["appr_nv"][0]:,}; RWA {h["rwa"][0]:,}, Nvidia {h["rwa_nv"][0]:,}); '
-          f'31 governments; evaluations {evaluations()[0]} AI chips; vouchers {n_tiered} of {n_vouch} tiered; state media {parts["SM_N"]} items, {parts["SM_W"]} warn ({parts["SM_W0"]} to {parts["SM_W1"]})')
+          f'31 governments; evaluations {evaluations()[0]} AI chips; vouchers {n_tiered} of {n_vouch} tiered; state media {parts["SM_N"]} items, {parts["SM_W"]} warn, '
+          f'{parts["SM_WIN"]} from {parts["SM_W0"]} to {parts["SM_W1"]}, {parts["SM_ALL_W"]} warnings with baseline')
     print(f'records with a Chinese source (original shown) {len(evs) - nz}; with an English source (my Chinese rendering beside the original) {nz}')
     print(f'quoted passages in the page text {len(segs)}, all part of a checked quotation; control fails (as it must); panels name the core\'s saved ids in the core\'s order')
     print('no address to link:', nolink or 'none')

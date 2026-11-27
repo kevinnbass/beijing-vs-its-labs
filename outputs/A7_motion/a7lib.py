@@ -2,16 +2,18 @@
 
 Used by 24_explainer/build.py and 25_strip_animation/build.py. Nothing in this file writes a file.
 
-  load_events()              the dated records of ../../figure/figure_data.txt, numbered and placed exactly as
+  load_events()              returns records, quotation checks, geometry and row names from ../../figure/figure_data.txt,
+                             with the dated records numbered and placed exactly as
                              scripts/cn_figure_build.py does. Its load(), number(), X() and the placing loop of strip()
                              are copied here, because importing that script would rebuild the figure. Since core edit 7
                              (Nov 25, 2026) a block with an "N" line keeps that number (record 62 stands at its date,
                              Sept 27, 2026, between records 34 and 35), as the core's builder now reads it.
-  check_against_figure(evs)  stops unless numbers, dates and saved ids equal figure/figure_events.tsv, every mark
+  check_against_figure(evs, lane_names)  returns the row names for drawing and a check result. Stops unless record
+                             numbers, dates, titles, source labels and second addresses agree with figure_events.tsv, every mark
                              stands where figure/beijing_vs_labs.html draws its circle, and the three dashed lines and
                              the labels beside marks carry the figure page's own words at its own places (x, y and
                              anchor; so the copy cannot drift)
-  strip_svg(evs, G)          the strip as SVG for a 1280 px video frame: the same geometry and callouts, the left
+  strip_svg(evs, G, lane_names)  the strip as SVG for a 1280 px video frame: the same geometry and callouts, the left
                              gutter cropped away, each row's name set inside the row as a small tag, and the note
                              "2023 and 2024 are drawn narrower" moved from under the dates to above its band
   KEY, card_layout(G, pad)   the key, set as a column at the right of the strip inside its card, and the sizes that
@@ -35,10 +37,12 @@ PROJ = HERE.parents[1]                            # .../research/cn_chip_policy_
 ROOT = PROJ.parents[1]                            # the project root (scripts/, research/)
 FIG = PROJ / 'figure'
 SCRIPTS = ROOT / 'scripts'
+sys.path.insert(0, str(SCRIPTS))
+from cn_srclib import url_of   # noqa: E402
 
 MON = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec']
-LANES = {'BH': ('Beijing', 'holds Nvidia back', 'away'), 'BL': ('Beijing', 'lets Nvidia in', 'toward'),
-         'CN': ('The companies', 'reach for Nvidia', 'toward'), 'CH': ('The companies', 'turn to home-made chips', 'away')}
+LANES = {'BH': ('Beijing', 'away'), 'BL': ('Beijing', 'toward'),
+         'CN': ('The companies', 'toward'), 'CH': ('The companies', 'away')}
 ORDER = ['BH', 'BL', 'CN', 'CH']
 esc = html.escape
 
@@ -52,20 +56,23 @@ def fmt(d): return f'{MON[d.month - 1]} {d.day}, {d.year}'
 
 # ---------- the data: copied from scripts/cn_figure_build.py (load, number) ----------
 def load():
-    evs, checks, cur = [], [], None
+    evs, checks, lane_names, cur = [], [], {}, None
     for n, ln in enumerate((FIG / 'figure_data.txt').read_text(encoding='utf-8').splitlines(), 1):
+        if ln.startswith('# LANE: '):
+            lane_names = dict(lane.split(' ', 1) for lane in ln.removeprefix('# LANE: ').split(' | '))
         if not ln.strip() or ln.startswith('#'): continue
         if ln.startswith('@ '):
             _, lane, kind, d, dl, sid = ln.split()
             assert lane in LANES and kind in ('doc', 'rec', 'press'), (n, ln)
-            cur = dict(lane=lane, kind=kind, date=date.fromisoformat(d), dl=None if dl == '-' else dl.replace('_', ' '), sid=sid, T='', S='', Q='', E='', U='', C='', N='')
+            cur = dict(lane=lane, kind=kind, date=date.fromisoformat(d), dl=None if dl == '-' else dl.replace('_', ' '), sid=sid, T='', S='', Q='', E='', U='', C='', N='', A='')
             evs.append(cur)
         elif ln.startswith('! '):
             sid, q = ln[2:].split(' | ', 1); checks.append((sid.strip(), q.strip()))
-        elif ln[:2] in ('T ', 'S ', 'Q ', 'E ', 'U ', 'C ', 'N '):
+        elif ln[:2] in ('T ', 'S ', 'Q ', 'E ', 'U ', 'C ', 'N ', 'A '):
             cur[ln[0]] = smart(ln[2:].strip()) if ln[0] in 'TSC' else ln[2:].strip()
         else: sys.exit(f'figure_data.txt line {n} not understood: {ln[:60]}')
-    return evs, checks
+    assert set(lane_names) == set(LANES), lane_names
+    return evs, checks, lane_names
 
 
 def number(evs):
@@ -83,7 +90,7 @@ def number(evs):
     assert all(e['n'] > len(free) for e in evs if e['N']), 'a fixed number falls among the numbers given by date'
     for e in evs:
         e['when'] = e['dl'] or fmt(e['date'])
-        e['dir'] = LANES[e['lane']][2]; e['solid'] = e['kind'] != 'press'
+        e['dir'] = LANES[e['lane']][1]; e['solid'] = e['kind'] != 'press'
 
 
 # ---------- the strip's geometry: copied from scripts/cn_figure_build.py (X, and the placing loop of strip) ----------
@@ -91,7 +98,7 @@ W, GL, GR = 1400, 216, 26
 A, BK, C = date(2023, 1, 1), date(2025, 1, 1), date(2026, 12, 1)
 FRAC, R, PITCH = 0.15, 10, 23
 FLAGS = ((date(2025, 7, 15), 'Jul 2025 · US clears H20 sales again', 'end'), (date(2025, 12, 8), 'Dec 8, 2025 · US says it will allow H200', 'start'),   # round 10: the core's label since 22:44 UTC, Nov 25, 2026 (r12e)
-         (date(2026, 11, 17), 'Nov 17, 2026 · H200 shipments stop', 'end'))
+         (date(2026, 11, 17), 'Nov 17, 2026 · Nvidia reports H200 halt', 'end'))
 VX, VY = GL - 12, 8                                # the video crops the figure's left gutter and a little of its top margin: the view starts here
 
 
@@ -123,23 +130,40 @@ def place(evs):
 
 
 def load_events():
-    evs, checks = load()
+    evs, checks, lane_names = load()
     for e in evs:
         if not (e['T'] and e['S'] and e['Q']): sys.exit(f"incomplete block {e['sid']}")
     number(evs)
     G = place(evs)
     evs.sort(key=lambda e: e['n'])
-    return evs, checks, G
+    return evs, checks, G, lane_names
 
 
-def check_against_figure(evs):
-    """The copy above must give what the figure itself shows. Returns a line for the build log."""
+def check_against_figure(evs, lane_names):
+    """Check what the figure shows, then return its row names and a build log line."""
     rows = [ln.split('\t') for ln in (FIG / 'figure_events.tsv').read_text(encoding='utf-8').splitlines()[1:] if ln.strip()]
     if len(rows) != len(evs): sys.exit(f'figure_events.tsv has {len(rows)} records, figure_data.txt gives {len(evs)}')
+    drawn_names = {}
     for r, e in zip(rows, evs):
-        want = (str(e['n']), str(e['date']), e['when'], ' '.join(LANES[e['lane']][:2]), e['kind'], e['sid'])
+        if len(r) != 11: sys.exit(f'record {e["n"]} does not have eleven columns in figure_events.tsv')
+        lane = e['lane']
+        who, _ = LANES[lane]
+        name = lane_names[lane]
+        if lane.startswith('C'):
+            name = 'The ' + name
+        want = (str(e['n']), str(e['date']), e['when'], name, e['kind'], e['sid'])
         got = (r[0], r[1], r[2], r[3], r[4], r[7])
         if want != got: sys.exit(f'record {e["n"]} differs from figure_events.tsv: {want} / {got}')
+        also_source, also_address = '', ''
+        if e['A']:
+            sid, label = e['A'].split(' | ', 1)
+            also_source, also_address = smart(label), url_of(sid)
+            if not also_address: sys.exit(f'record {e["n"]} has no address in the saved metadata for {sid}')
+        if (r[5], r[8], r[9]) != (e['S'], e['T'], also_source):
+            sys.exit(f'record {e["n"]} source or title differs from figure_events.tsv')
+        if r[10] != also_address:
+            sys.exit(f'record {e["n"]} second address differs from figure_events.tsv')
+        drawn_names[lane] = r[3].removeprefix(who + ' ')
     page_ = (FIG / 'beijing_vs_labs.html').read_text(encoding='utf-8')
     drawn = {int(m.group(1)): (float(m.group(2)), float(m.group(3))) for m in
              re.finditer(r'data-n="(\d+)" data-tip="1"[^>]*><circle cx="([\d.]+)" cy="([\d.]+)" r="10"/>', page_)}
@@ -174,12 +198,12 @@ def check_against_figure(evs):
     k0 = sorted(here)[0]
     assert not same((here[k0][0], here[k0][1] + 1, here[k0][2]), there[k0]), 'control: a label moved by one unit must be noticed'
     assert not same((here[k0][0], here[k0][1], 'middle'), there[k0]), 'control: a label with another anchor must be noticed'
-    return (f'{len(evs)} records equal figure_events.tsv (number, date, row, kind, saved id); {len(drawn)} mark positions, {len(flags)} dashed lines '
-            f'and {len(calls)} labels (words, x, y and anchor) equal the figure page')
+    return drawn_names, (f'{len(evs)} records equal figure_events.tsv (number, date, row, kind, saved id, source, title and second address); {len(drawn)} mark positions, {len(flags)} dashed lines '
+                         f'and {len(calls)} labels (words, x, y and anchor) equal the figure page')
 
 
 # ---------- the strip as SVG for the video ----------
-def strip_svg(evs, G):
+def strip_svg(evs, G, lane_names):
     top, bottom, H, lanes = G['top'], G['bottom'], G['H'], G['lanes']
     xb = X(BK)
     o = [f'<svg id="strip" viewBox="{VX} {VY} {W - VX} {view_h(G)}" role="img" aria-label="Dated strip, 2023 to November 2026: four rows of numbered marks, one mark for each dated record">']
@@ -196,7 +220,7 @@ def strip_svg(evs, G):
         x = X(d); dx = -7 if anchor == 'end' else 7
         o.append(f'<g id="flag{i}"><line class="flag" x1="{x:.1f}" y1="14" x2="{x:.1f}" y2="{bottom}"/><text class="flagt" x="{x + dx:.1f}" y="26" text-anchor="{anchor}">{esc(lab)}</text></g>')
     for k in ORDER:
-        y0, h = lanes[k]; who, what, dr = LANES[k]
+        y0, h = lanes[k]; who, dr = LANES[k]; what = lane_names[k]
         o.append(f'<line class="lane" x1="0" y1="{y0 + h}" x2="{W}" y2="{y0 + h}"/>')
         o.append(f'<g class="rowtag"><rect x="{GL + 5}" y="{y0 + 4}" width="200" height="21" rx="10.5"/><circle class="sw {dr}" cx="{GL + 17}" cy="{y0 + 14.5}" r="5"/>'
                  f'<text x="{GL + 28}" y="{y0 + 19.3}"><tspan class="who">{esc(who)}</tspan> <tspan class="what">{esc(what)}</tspan></text></g>')
@@ -226,7 +250,7 @@ EXTRA = (  # words on the strip that a record's own "Q" line does not carry: (sa
     ('man-cn-factions-wsj-ding', 'Last summer, top Chinese chip developer Huawei Technologies held a closed-door', 'the "traitor" mark stands after a briefing of summer 2025; the report gives no date for the warning'),
     ('man-cn-factions-wsj-ding', 'according to people familiar with the message', 'the same mark: an open mark'),
     ('cn-clips-followup-3-relay1', 'December 8, 2025', 'the dashed line "Dec 8, 2025 · US says it will allow H200": its date'),
-    ('cn-acts-reuters-halt-20261118-relay2', 'Nov 18 (Reuters)', 'the dashed line "Nov 17, 2026 · H200 shipments stop": the report is of Wednesday Nov 18'),
+    ('cn-acts-reuters-halt-20261118-relay2', 'Nov 18 (Reuters)', 'the dashed line "Nov 17, 2026 · Nvidia reports H200 halt": the report is of Wednesday Nov 18'),
     ('cn-acts-reuters-halt-20261118-relay2', 'said during an earnings call on Tuesday', 'the same line: the call was the day before, Nov 17'),
     ('cn-o38-nvda-q3fy27-call-transcript-pdf', 'we are no longer shipping licensed Hopper Data Center products to China', "the same line, in Nvidia's own transcript of the call (no reason is given there: none is shown)"),
     ('cn-o38-nvda-q3fy27-call-transcript-pdf', 'All our statements are made as of today, November 17, 2026', "the same line: the call's date, in Nvidia's own transcript"),
@@ -294,13 +318,13 @@ def policy_rows():
 # ---------- the page ----------
 KEY = ('<ul class="key" id="key">'
        '<li><b><i class="sw away"></i>Away from Nvidia</b><span>holding it back, or choosing home-made chips</span></li>'
-       '<li><b><i class="sw toward"></i>Toward Nvidia</b><span>buying it, using it, letting it in</span></li>'
+       '<li><b><i class="sw toward"></i>Toward Nvidia</b><span>seeking, buying, using or welcoming it</span></li>'
        '<li><b><i class="pr"><i class="mk solid away"></i><i class="mk solid toward"></i></i>Filled</b><span>on the record (a government document, published state media, a filing, a named person)</span></li>'
        '<li><b><i class="pr"><i class="mk hollow away"></i><i class="mk hollow toward"></i></i>Open</b><span>a press report citing unnamed people</span></li>'
        '</ul>')
-KEY_SENTENCES = ('Away from Nvidia:', 'holding it back, or choosing home-made chips', 'Toward Nvidia:', 'buying it, using it, letting it in', 'Filled:',
+KEY_SENTENCES = ('Away from Nvidia:', 'holding it back, or choosing home-made chips', 'Toward Nvidia:', 'seeking, buying, using or welcoming it', 'Filled:',
                  'on the record (a government document, published state media, a filing, a named person)', 'Open:', 'a press report citing unnamed people')
-HEADLINE = ('Beijing mostly pulled one way on Nvidia chips.', 'Its AI companies pulled the other.')
+HEADLINE = ('Beijing pushed for home-made chips.', 'China’s AI companies still sought Nvidia.')
 KEY_W = 150                                        # the key's column, inside the strip's card, in frame pixels
 
 
@@ -347,17 +371,20 @@ def house_table():
 
 
 def state_media():
-    """The state and Party media items on Nvidia chips (tables/state_media_items.tsv; rows 43 to 75 were added in core
-    edit 6 of Nov 24, 2026, and in the core's words "the items after September 2025 are what two rounds of searches
-    found, a sample and not a full count"): how many, how many only warn, and how those split: the warnings of the first year (the burst: how many, the
-    first and last, their saved ids) and the later ones (date, saved id, outlet of each)."""
+    """Count the warnings in the same date windows as argument points 4 and 18."""
     rows = tsv('state_media_items.tsv')
     warns = sorted((date.fromisoformat(r['date']), r['saved_id'], r['outlet']) for r in rows if r['stance'] == 'warns')
-    assert rows and warns and any(r['stance'] != 'warns' for r in rows)
-    burst = [w for w in warns if w[0].year == warns[0][0].year]
-    later = [w for w in warns if w[0].year != warns[0][0].year]
-    assert len(burst) + len(later) == len(warns) and all(b[0] < l[0] for b in burst for l in later)
-    return dict(n=len(rows), warns=len(warns), n_burst=len(burst), first=burst[0][0], last=burst[-1][0], first_id=burst[0][1], last_id=burst[-1][1], later=later)
+    start, end = date(2025, 7, 31), date(2025, 9, 24)
+    h200_start, h200_end = date(2025, 12, 9), date(2026, 1, 14)
+    burst = [w for w in warns if start <= w[0] <= end]
+    h200 = [w for w in warns if h200_start <= w[0] <= h200_end]
+    outside = [w for w in warns if not start <= w[0] <= end]
+    last = [w for w in warns if w[0] > h200_end]
+    assert 0 < len(warns) < len(rows) and len(burst) + len(outside) == len(warns)
+    assert burst and (burst[0][0], burst[-1][0]) == (start, end), burst
+    assert h200 and (h200[0][0], h200[-1][0]) == (h200_start, h200_end), h200
+    assert last and all(d.year == 2026 and outlet.startswith('Global Times') for d, _, outlet in last), last
+    return dict(n=len(rows), warns=len(warns), burst=burst, h200=h200, outside=outside, last=last)
 
 
 CSS = """
@@ -586,7 +613,11 @@ play.addEventListener('click', () => {
 });
 seek.addEventListener('input', () => { playing = false; play.textContent = 'Play'; show(+seek.value); });
 window.addEventListener('resize', fit);
-if (!CAP) document.querySelectorAll('video[data-src]').forEach(v => { v.src = v.dataset.src; });   // the capture does not load the video it is about to make
+// Capture works before the video and its opening still exist.
+if (!CAP) document.querySelectorAll('video[data-src]').forEach(v => {
+  if (v.dataset.poster) v.poster = v.dataset.poster;
+  v.src = v.dataset.src;
+});
 const ready = () => { init(); fit(); const m = /t=([\d.]+)/.exec(location.hash); show(m ? parseFloat(m[1]) * S.fps : S.frames - 1); window.READY = true; };
 const faces = ['700 33px "Space Grotesk"', '400 16px "Inter"', '500 16px "Inter"', '600 16px "Inter"', '700 16px "Inter"'];
 Promise.all(faces.map(f => document.fonts.load(f).catch(() => null))).then(() => document.fonts.ready).then(ready, ready);

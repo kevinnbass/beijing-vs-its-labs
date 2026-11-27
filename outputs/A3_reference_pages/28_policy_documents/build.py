@@ -73,8 +73,9 @@ FOUND_HERE = {'71': ('2017-04-17', ['上海市人民政府 2017年4月17日'])}
 KIND_LABEL = OrderedDict([('official', 'Official text'), ('company', 'Company filing or statement'), ('press', 'Press report'),
                           ('carried', 'Official text or figure, carried by a news outlet'),
                           ('roadmap', "Advisory committee's roadmap, on a third party's site"),
-                          ('translation', "Think tank's translation of a government text")])
-GROUP = {'official': 'official', 'company': 'company', 'press': 'press', 'carried': 'other', 'roadmap': 'other', 'translation': 'other', 'local': 'local'}
+                          ('translation', "Think tank's translation of a government text"),
+                          ('group_standard', 'Record of an industry group standard')])
+GROUP = {'official': 'official', 'company': 'company', 'press': 'press', 'carried': 'other', 'roadmap': 'other', 'translation': 'other', 'group_standard': 'other', 'local': 'local'}
 GROUP_LABEL = OrderedDict([('all', 'All'), ('official', 'Official texts'), ('company', 'Company filings and statements'), ('press', 'Press reports'), ('other', 'Other'),
                            ('local', 'Local rules and provincial plans')])
 TABLES = PROJ / 'tables'
@@ -225,17 +226,6 @@ NOTE_FIX = {
     '8': [('remark', 'not in the text I read.', 'not in the text that was read.')],
     '46': [('remark', 'I read the whole processor table: 18 entries (counted by script, 18 "I级" marks', 'The whole processor table was read: 18 entries (counted by script: 18 "I级" (grade I) marks')],
     '64': [('remark', 'the CSET translation (line 45 of this list)', 'the CSET translation of the notice of that title (line 45 of this list)')],
-    # Round 13 (Nov 26, 2026): the three check notes that still spoke of the project's text copies say where the words stand in the page, as rows
-    # B15-N2 and N3 of core batch 15 made two others say (atlas/ROUND15_LISTS.txt, page 28, "same kind left"); line 60, what the levels mean, which
-    # the announcement does not say (its only word on them: 同一等级按产品名称首字笔画为序排列; lead C50); line 45, what the passages shown are
-    # (they stand before the translation's title, in the translator's introduction and its note on the source; lead C43). Rows for the note:
-    # loose_ends/GA31_gap_sweep/round13_work/A3b_28_rows_for_session.tsv.
-    '2': [('remark', "are in the page body's record block, not in the text copy.", "are in the page's record block.")],
-    '27': [('remark', 'is in the page body; the text copy lost it.', 'is in the page.')],
-    '28': [('remark', 'are in the page body; the text copy gives the adoption on Nov 16, 2021', 'are in the page, which also gives the adoption on Nov 16, 2021')],
-    '60': [('remark', 'all level I; valid three years.', 'all level I (the announcement does not say what its levels mean); valid three years.')],
-    '48': [('remark', 'the relay says the ministry has not confirmed it.', 'the relay says the ministry, which it names as the Ministry of Industry and Information Technology, has not confirmed it.')],      # lead C39
-    '45': [('remark', 'Translation dated April 8, 2024 in the PDF.', "Translation dated April 8, 2024 in the PDF. The passages shown are from the translator's introduction and its note on the source, not from the notice's own text.")],
 }
 
 
@@ -564,6 +554,10 @@ def parse_note():
             if k not in r: stop(f'row {r["row"]}: no {k}')
         if not r['addr'].startswith('http'): stop(f'row {r["row"]}: the address is not a web address')
         r['kind'] = kinds.pop(r['row'], 'official')
+        if r['sid'] == 'cn-policy-ceca-server-scope' and r['kind'] == 'official':
+            if 'record of group standard T/CECA-G 0284-2024' not in r['body']:
+                stop('line 72 no longer describes a record of the group standard')
+            r['kind'] = 'group_standard'
         rows.append(r)
     if kinds: stop(f'kinds of source names rows that are not in the note: {sorted(kinds)}')
     got = Counter(r['verdict'] for r in rows)
@@ -1024,6 +1018,12 @@ def main():
         x.append(f'<p class="m"><span class="lab">Saved copy</span>{", ".join("<code>" + esc(s_) + "</code>" for s_ in r["sids"])}. Row {r["trow"]} of tables/{esc(r["table"])}.</p>')
         t_html = (f'<p class="t"{" lang=\"zh-Hans\"" if has_cjk(title) else ""}>{esc(title)}</p>' if title else
                   f'<p class="t dn"{" lang=\"zh-Hans\"" if has_cjk(r["docname"]) else ""}>{esc(r["docname"])}</p>' if r['docname'] else '')      # round 13: no page title held: the document's name as the table gives it
+        draft_notice = 'cn-le28-sz-gxj-2026rev-draft-20260916'
+        if draft_notice in r['sids']:
+            draft_title = '深圳市打造人工智能先锋城市的若干措施（2026年修订版）（征求意见稿）'
+            if draft_title not in r['docname'] or not L.has(draft_title, draft_notice):
+                stop('the Shenzhen draft title differs from the saved consultation notice')
+            t_html += '<p class="t" lang="en">Measures to Make Shenzhen a Leading City in Artificial Intelligence (2026 revision, draft for comment)</p>'
         tag2 = 'Province' if r['prov'] else ('National statement' if r.get('level') == 'national' else ('Local rule, repealed' if r.get('repealed') else 'Local rule'))   # round 5: a national body's words get their own badge
         if not r['prov'] and tag2 == 'Local rule':      # round 9: a row the table of classes calls a draft, an application guide or a notice of a list is not badged a rule
             tag2 = {'No: a draft': 'Local draft', 'No: an application guide, not the rule': 'Application guide',
@@ -1117,7 +1117,8 @@ def main():
     n_cn = sum(1 for r in rows for q in r['quotes'] if has_cjk(q['words']))
     words = {'carried': ('official text or figure carried by a news outlet', 'official texts or figures carried by news outlets'),
              'roadmap': ("line from an advisory committee's roadmap", "lines from an advisory committee's roadmap"),
-             'translation': ("think tank's translation of a government text", "think tanks' translations of government texts")}
+             'translation': ("think tank's translation of a government text", "think tanks' translations of government texts"),
+             'group_standard': ('record of an industry group standard', 'records of industry group standards')}
     other_bits = '; '.join(f'{c_exact[k]} {words[k][0 if c_exact[k] == 1 else 1]}' for k in words if c_exact[k])
 
     def expect(qs, kind='all'):
@@ -1196,7 +1197,7 @@ def main():
 {short_note}
 <p>Our English is the checked note's, shown without the quotation marks that note puts round a few terms: only a page's own words stand between quotation marks here. {en_src_words}</p>
 <p>The {n_local} lines marked <i>From the project's tables</i> come from tables/provinces_31.tsv, local_vouchers.tsv and local_vouchers_more.tsv: each passage shown was found by the same script in a saved copy the row names; the English beside them is the table's reading, not a translation (on the nine province lines that set a share, the share is given in the argument's words, as each of those lines says); the address is the one held with the saved copy.</p>
-<p>The descriptions of the issuing body and the check notes are the checked note's own words, carried over by the script, except in a few places where this page puts them plainly: where the note names its list of leads, this page says the list; the note's row numbers are given as lines of this list; the note's first person is left out; where a check note said that words stood in the page but not in the project's text copy of it, this page says only where they stand in the page; three check notes gain a clause (what the passages from the think tank's translation are; that the evaluation announcement does not say what its levels mean; the ministry a press relay names); and the line on the evaluation centres' lists is shown as read in the centres' own page, which the project now cites. Li Chao is named as each page names him: the commission's own transcript gives his name and his office, the policy research office (李超; 政研室), and Xinhua's report on the government's site, gov.cn, calls him the commission's spokesman (新闻发言人). Page titles are those held with the saved copies (a site's separator left at a title's end is not shown). Addresses are those the note gives.</p>
+<p>The descriptions of the issuing body and the check notes are the checked note's own words, carried over by the script, except in a few places where this page puts them plainly: where the note names its list of leads, this page says the list; the note's row numbers are given as lines of this list; the note's first-person descriptions are put in plain words; and the line on the evaluation centres' lists is shown as read in the centres' own page, which the project now cites. Li Chao is named as each page names him: the commission's own transcript gives his name and his office, the policy research office (李超; 政研室), and Xinhua's report on the government's site, gov.cn, calls him the commission's spokesman (新闻发言人). Page titles come from the saved copies, with trailing site separators removed. Where no page title is held, the heading names the document. The English heading of the Shenzhen draft is our rendering. Addresses are those the note gives.</p>
 </footer>
 </div>
 <script>{JS}</script>

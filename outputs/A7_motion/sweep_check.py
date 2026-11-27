@@ -34,7 +34,7 @@ def main():
     sys.dont_write_bytecode = True
     sys.path.insert(0, str(HERE))
     import a7lib as L
-    evs, _, _ = L.load_events()
+    evs, _, _, _ = L.load_events()
     num = {(e['sid'], e['lane']): e['n'] for e in evs}
     one = lambda sid: next(e['n'] for e in evs if e['sid'] == sid and e['C'])
     from playwright.sync_api import sync_playwright

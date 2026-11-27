@@ -28,7 +28,10 @@
 # broker's page (the session's ruling in ../../ROUND10.md). The text before is in tmp_work/r10_before/bands.txt.
 
 @ L1 | HIS CRITICS' WORDS · NOTHING TO CHECK YET
-The claim comes next. The project's answer to it: yes on direction, with five limits. Beijing was not one actor. Guidance and public warnings, not a published ban. Some purchases were approved and some chips came in. The companies had reasons of their own, and US curbs pushed too. What Beijing meant by it is not settled.
+The claim comes next. The answer: yes on direction, with five limits. Beijing was divided. Public warnings, press reports of unpublished guidance, and published texts favouring home-made computing. No published ban found. Some purchases were reported approved, and Nvidia reported licensed sales. Firms had their own reasons. US curbs pushed too. Beijing's motive is unsettled.
+!! cn-ga31-sv1-reuters-deepseek-yahoo | two people familiar with the matter told Reuters
+!! cn-ga31-sv1-reuters-deepseek-yahoo | China's industry and commerce ministries have granted approvals for all four companies
+!! man-ms-sec-10q-2026-07 | we have made a fraction of the allowed shipments under the USG’s H200 licensing program
 
 @ L3 | BORNE OUT ON DIRECTION, WITH FIVE LIMITS · TOO FLAT AS WORDED
 [solid away] Nvidia, report signed Nov 19, 2025: the Chinese government "restricted customers from purchasing, importing, or using our data center products"
@@ -40,19 +43,20 @@ The claim comes next. The project's answer to it: yes on direction, with five li
 [solid toward] US Commerce Secretary, Apr 22, 2026: "my understanding is their cloud companies want to buy these chips"
 !! cn-us-lutnick-0422-rev-transcript-b | my understanding is their cloud companies want to buy these chips
 
-@ L5a | HIS 600,000 MATCHES ONE PRESS REPORT, BY TWO UNNAMED PEOPLE · IT SAYS HONG KONG, NOT A PORT
+@ L5a | HIS NUMBER MATCHES ONE REUTERS REPORT (TWO UNNAMED SOURCES) · PORT AND TIMING ARE HIS
 [open away] Reuters, Nov 5, 2026: "About 600,000 of Nvidia's advanced artificial intelligence chips are stored in Hong Kong awaiting shipment to China"
 !! cn-clips-evidence-1 | About 600,000 of Nvidia's advanced artificial intelligence chips are stored in Hong Kong awaiting shipment to China
 !! cn-clips-evidence-1 | two people familiar with the matter said
+!! cn-clips-evidence-1 | The size of the stockpile of H200 chips
 
 @ L5b | SAYS MORE THAN THE RECORD SHOWS: NO PERMIT RULE WAS FOUND
 No permit rule for these chips was found in the {POLICY_PAGES} policy pages read. [open away] Reuters, Nov 5, 2026: Beijing "withholds approval for large-scale imports"
 !! cn-clips-evidence-1 | withholds approval for large-scale imports
 
 @ L5c +1.8 | SUPPORTED ON DIRECTION · WHAT BEIJING MEANT BY IT IS NOT SETTLED
-[solid away] US Commerce Secretary, Apr 22, 2026: the Chinese central government has not let them buy, "because they're trying to keep their investment focused on their own domestic industry". He called that his understanding.
-!! cn-us-lutnick-0422-rev-transcript-b | because they're trying to keep their investment focused on their own domestic industry
-!! cn-us-lutnick-0422-rev-transcript-b | Chinese central government has not let them as of yet buy the chips
+[solid away] US Commerce Secretary, Apr 22, 2026, giving his understanding: "their cloud companies want to buy these chips", but the "Chinese central government has not let them as of yet buy the chips because they're trying to keep their investment focused on their own domestic industry".
+!! cn-us-lutnick-0422-rev-transcript-b | my understanding is their cloud companies want to buy these chips
+!! cn-us-lutnick-0422-rev-transcript-b | Chinese central government has not let them as of yet buy the chips because they're trying to keep their investment focused on their own domestic industry
 !! cn-us-lutnick-0422-rev-transcript-b | So that's my understanding of what's happening
 
 @ L6a | HE BREAKS OFF: NO VERDICT · THE RECORD ON SELLING INTO CHINA
@@ -66,6 +70,7 @@ No permit rule for these chips was found in the {POLICY_PAGES} policy pages read
 @ L6b |
 
 @ L8 | BORNE OUT ON DIRECTION · TOO FLAT AS WORDED
-Fair on the import question. Too flat on the government, which was not one actor. [open toward] Reuters, Jan 30, 2026, on Yahoo Finance: "China's industry and commerce ministries have granted approvals for all four companies"
+Fair on the import question. Too flat on the government, which was not one actor. [open toward] Reuters, Jan 30, 2026, on Yahoo Finance, citing two people it did not name: "China's industry and commerce ministries have granted approvals for all four companies"
 !! cn-ga31-sv1-reuters-deepseek-yahoo | China's industry and commerce ministries have granted approvals for all four companies
 !! cn-ga31-sv1-reuters-deepseek-yahoo | SINGAPORE, Jan 30 (Reuters)
+!! cn-ga31-sv1-reuters-deepseek-yahoo | two people familiar with the matter told Reuters

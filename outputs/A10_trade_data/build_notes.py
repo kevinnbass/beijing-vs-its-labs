@@ -21,8 +21,8 @@ HERE = Path(__file__).resolve().parent
 SCRIPTS = HERE.parents[3] / 'scripts'
 HOLD = {'ms-bj-202611-h200-hongkong-tnw'}
 NOTES = [(HERE / 'idea34_customs' / 'customs_figures_base.txt', 'Customs Figures Test', 'China chip policy · customs figures'),
-         (HERE / 'idea42_hongkong' / 'reuters_hongkong_report_base.txt', "A Check of Reuters's Report of Chips Stored in Hong Kong",
-          "China chip policy · Reuters's report of chips stored in Hong Kong")]
+         (HERE / 'idea42_hongkong' / 'reuters_hongkong_report_base.txt', "Reuters’s Hong Kong Report",
+          "China chip policy · Reuters’s Hong Kong report")]
 BAD = re.compile(r'(?i)\bbans?\b|\bbanned\b|not\s+permitted|withh[eo]ld|holds? back|held back|refus|\bden(y|ies|ied)\b')
 TITLE = re.compile(r'Page title: (.*?)\.(?: https?://| \(No address| Saved copy|$)', re.M)
 
