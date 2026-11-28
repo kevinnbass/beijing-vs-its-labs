@@ -157,6 +157,9 @@ COPIED = ['the latest annual reports of fifteen US-listed Chinese companies',
           # Batch 17: the opener follows the current answer. The talks claim concerns Beijing's acts.
           THIRD_LIMIT,
           "or ties a Beijing act against Nvidia to the trade talks",
+          # round 20 (core batch 18, row B18-W3-P14): the sentence the argument added after the Foreign Trade Law passage
+          "The State Council's regulations on the import and export of goods, made under that law, say of temporary measures",
+          'shall announce them before they take effect) [cn-w18-w3p2-102-1]',
           talks_scope]
 low_arg = ARG.lower()
 miss_arg = [c for c in COPIED if c.lower() not in low_arg]

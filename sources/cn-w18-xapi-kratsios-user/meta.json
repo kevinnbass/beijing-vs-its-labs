@@ -1,0 +1,7 @@
+{
+ "id": "cn-w18-xapi-kratsios-user",
+ "url": "https://api.twitter.com/2/users",
+ "route": "X's own API, v2, app token",
+ "fetched_utc": "2026-11-27T21:15:57Z",
+ "sha256": "661a0dba24b6c859125e248c4491ac563c07394d0e8dbe98b43a1467e29a1b7a"
+}

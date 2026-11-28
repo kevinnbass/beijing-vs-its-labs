@@ -60,7 +60,7 @@
 
 ## What the thread leaves out
 
-- Posts 7 and 9 give two kinds of evidence. The full argument has 21 points and 634 sources. It is the project's argument page, ARGUMENT_referenced.html.
+- Posts 7 and 9 give two kinds of evidence. The full argument has 21 points and 639 sources. It is the project's argument page, ARGUMENT_referenced.html.
 - Post 7's order figure is from Reuters's Dec 31, 2025 report, citing two people it did not name [cn-labs-h200-two-million-202512-relay1-wayback]. The conditional purchase approvals are from its Jan 28, 2026 report, citing four people it did not name [ms-bj-20260128-h200-nod-standard]. The H20 revenue under licences is from Nvidia's annual report [man-ms-sec-10k-fy2026].
 - Washington's side is left out for length: the conditions it set, and its own table of licence applications, which shows some applications approved, their chips not shipped, and others returned without action. The argument sets them out under its fourth limit.
 - Post 6 names one press report. The public warnings in state media, and the dates they fall between, are in the argument's points 4 and 18.

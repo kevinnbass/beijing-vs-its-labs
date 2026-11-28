@@ -23,7 +23,7 @@ China’s declared policy pressed AI firms away from Nvidia chips; they used Nvi
 
 <a href="https://kevinnbass.github.io/beijing-vs-its-labs/series/07_chapter-II_the-declared-line.html"><img src="series/thumbs/07_chapter-II_the-declared-line.jpg" width="320" alt="The map of chapter II"></a>
 
-In public: use home-made chips, with room for secure imports; no published order against buying found.
+In public, the state says: use home-made chips, with room for secure imports.
 
 - [Figure 03 · The leader’s line](https://kevinnbass.github.io/beijing-vs-its-labs/series/08_figure-03_xi-line.html): Xi Jinping’s dated statements on core technology and chips, and the search that never finds Nvidia.
 - [Figure 04 · Who is bound](https://kevinnbass.github.io/beijing-vs-its-labs/series/09_figure-04_who-is-bound.html): Whom the written purchase rules bind, ring by ring, and the evaluation lists.
@@ -46,7 +46,7 @@ The companies used Nvidia and home-made chips; Chinese sources explain why they 
 
 <a href="https://kevinnbass.github.io/beijing-vs-its-labs/series/18_chapter-IV_what-beijing-did.html"><img src="series/thumbs/18_chapter-IV_what-beijing-did.jpg" width="320" alt="The map of chapter IV"></a>
 
-What Beijing did rests on the record and on press reports citing unnamed people.
+Beijing’s regulators opened a case and summoned Nvidia; press reports describe instructions to stop buying.
 
 - [Figure 11 · Who inside Beijing](https://kevinnbass.github.io/beijing-vs-its-labs/series/19_figure-11_who-inside-beijing.html): A lane per state body: who held Nvidia back, who was more open to it.
 - [Figure 12 · How strong](https://kevinnbass.github.io/beijing-vs-its-labs/series/20_figure-12_how-strong.html): The reported instructions on a ladder of six rungs, from urging to approval withheld; no published order found.

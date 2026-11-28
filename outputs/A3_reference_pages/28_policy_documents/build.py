@@ -198,6 +198,19 @@ ONE_RATE_SAID = {
 # (table, row) -> [(column, the cell's words, the page's words)]
 CELL_FIX = {}      # round 11 (core batch 13b, Nov 26, 2026): every entry of round 10 now stands in the tables themselves (rows B13B-055 to -153; Chongqing's
                    # cell by B13F-04), so the map is empty; a table cell that still reads as a working word stops the build (WORKING)
+# Round 20 (core batch 18, Nov 27, 2026; helper O1 of session 7c8801b4): the batch put a saved id in brackets in twelve places (eleven
+# after a quotation) of six rows of tables/local_vouchers_more.tsv (rows B18-W1-P03, -P06, -P09, -P10, -P13, -P17, -P22, -P23). This page prints no
+# saved id in a cell's prose (the round-10 stop below), so each is shown without its id; the row's saved ids stay on the line, and each of the
+# eleven quotations was found in its saved copy by cn_has.py (11 of 11) before this was written. For the session: the same removal in the table
+# (or a ruling that the table keeps them), after which these entries stop the build and come out.
+CELL_FIX.update({
+    ('local_vouchers_more.tsv', 73): [('copy', ' [cn-w18-w1-90-1]', '')],
+    ('local_vouchers_more.tsv', 108): [('copy', ' [cn-ga31-vcityeastp2-2]', ''), ('date', ' [cn-ga31-vcityeastp2-2]', '')],
+    ('local_vouchers_more.tsv', 159): [('copy', ' [cn-w18-w1-83-1]', '')],
+    ('local_vouchers_more.tsv', 165): [('date', ' [cn-w18-w1-125-1]', ''), ('date', ' [cn-w18-w1p2-125-2]', ''), ('date', ' [cn-w18-w1p2-125-1]', '')],
+    ('local_vouchers_more.tsv', 195): [('copy', ' [cn-w18-w1-66-1]', ''), ('copy', ' [cn-w18-w1p2-66-1]', '')],
+    ('local_vouchers_more.tsv', 220): [('copy', ' [cn-w18-w1p2-87-2]', ''), ('copy', ' [cn-w18-w1p2-87-1]', ''), ('date', ' [cn-w18-w1p2-87-2]', '')],
+})
 # (table, row) -> [(words of the cell, the words shown)]: a passage cut before its verb is shown to the end of its clause (found by the checker in the copy)
 WORDS_FIX = {}     # round 11: the table's cell now carries the clause to its verb (row B13B-145)
 # Words of the tables that recur on many lines: (pattern, the page's words). Each must be met at least once.

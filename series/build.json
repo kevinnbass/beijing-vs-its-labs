@@ -1,28 +1,28 @@
 {
- "made_utc": "2026-11-27T18:51:42Z",
+ "made_utc": "2026-11-28T10:18:16Z",
  "note": "sha256 of each image's inputs (the figure page, its tagged page, PNG and JPG) and of the page image; a later build lends what has not changed",
  "images": [
   {
    "stem": "bvl-s0-start-here",
    "position": 1,
    "page": "index.html",
-   "html": "95a52aacc69c77b23ad86c1aa3af5b5099efa8dd316767baf2ce080efad94e64",
-   "nav": "aab74574a79d11561bbefc9240e8f53227aab0141955dce9d0db518fd1a0622f",
-   "png": "44368d35043826bd3509f37783790fb56e6a7ddfdaaf243771a029cbba536d02",
-   "jpg": "d2eb4e361c683f53373759eb85382e9a0a7e7992e9191e488c9d4c59991fefb4",
+   "html": "d35b198281dd0581e5503f9d813b06db1e6f7a4f265ec9463ea0107acb7deea7",
+   "nav": "500dbc05eb8cf625d5dab01ee167e23534c39fffa23c219f3f8bd21e4ff72603",
+   "png": "452d38c0dccf2d76426a7947cba3300c72d5837e3b42b3991b526d87e72e5628",
+   "jpg": "5925424f40d9e0180e46e2c30c6d48869fa89c29e75229d61a523f43f86ee95d",
    "geom": "g1",
-   "display": "796515141c446f4a832711e430e0a4f23d8691006520a69b72365ba43aed7cec"
+   "display": "bdc053b74b66cb1ce52fe8f3cae5def3c7b141fe6efd7d5c8ed5bf256572dda7"
   },
   {
    "stem": "bvl-s1-the-whole-story",
    "position": 2,
    "page": "02_chapter-I_the-whole-story.html",
-   "html": "e024c09c1cd3fe6ae642126295b8461544e31c754717627eccdb3d74994ae767",
-   "nav": "3c838cbcb1285fa6052b299241b39dc33c32d9245a34b77dfff912f1c7e119c6",
-   "png": "355ecf51efb0a212c32e589d7883c9c7d5ffc0d6d9dc9afeff7beeefa6dfa28d",
-   "jpg": "c0a211adf271a0f93d3c0b59fcead2b1277ae4d0ff354fc6896bd34e3a3c5d57",
+   "html": "9bd1a9f1d387433905935031d27448aed8efdc0c775fb9c55ce94acdda3c6668",
+   "nav": "c430c1f819936469c83bf8bd2b7aba3e6a2167398aa8e0fdf92a3373307da137",
+   "png": "f58c8263c5069e8b63575bd87db094867bda6297b8f20555635ce1c90bcd5403",
+   "jpg": "fdd0adcd29905fdf14506e6b682b91bbf9929556417f28dc3fe582502703eaa2",
    "geom": "g1",
-   "display": "c7e3216b77f016ad232332cd518678db94271c283acaaf376f3048acc37c8721"
+   "display": "3f23db59b229a89f6ca4d929a1e75a998857c3eadb54f8ff685e8a41fd4f1675"
   },
   {
    "stem": "bvl-00-the-board",
@@ -61,23 +61,23 @@
    "stem": "bvl-17-two-gates",
    "position": 6,
    "page": "06_figure-17_two-gates.html",
-   "html": "6ad0e853baa4b4340e61af91c90551c2d22889c128198e89042c383a17ba0898",
-   "nav": "3a62ba2f6e30e888a34981c03c7cd7a28ec5c6474d0af9bc7125531e9f4bf79a",
-   "png": "555247aa6080e4743d03684b2e4d66daa6670bfeeb04e03bfa2e6ca2271fb8c0",
-   "jpg": "bdd39347f6d1849278eea3e0390bc78fe5d50e4c1a1c7983862c028a10acf0fb",
+   "html": "15b530f0e33dd0ac58294c7c6ad43a20a22c0eaf2b4a504af918a9037f23f187",
+   "nav": "10c29682443050c6210342b99de4942bc0274b728c528b94a66a02b7db3370b5",
+   "png": "db542278bb34cfb7d3d58faf0a41c2870e1912f399da7d83d749e5e68a7561c7",
+   "jpg": "07417abc0d237718fd0566151415664c9c0486de6f2d5e58e3b627cad8e5dfe8",
    "geom": "g1",
-   "display": "2297ba9fb04006ba0e39e80dbbd1a9ae41367d88a01e87383e83a255d9138e7b"
+   "display": "21fbc5c4b42d7d7c50f1f957efe604e9650f1821a5744fe4ee555224841b203d"
   },
   {
    "stem": "bvl-s2-the-declared-line",
    "position": 7,
    "page": "07_chapter-II_the-declared-line.html",
-   "html": "2f29f23ef60ce1fe1bea6e312cc65f50bd99414fe7a16f87c641ee8945c964e7",
-   "nav": "e78c724655a0605c30bd9135b4065783a7f55358dba8c07fb92f5d55f485574d",
-   "png": "538f6b449675b693c0be1df4e14efd541c1a7a3537582516f4fd6ea8a8e60478",
-   "jpg": "f99cdca64c91eb706bbc0e07623bea84598ba49f9b65ca4c0f0c44338e08fc60",
+   "html": "8e7e3e810be6a127f5c42b4fee2795af13962b75a3922c8d57c0286b46d2b22a",
+   "nav": "e1aaa51bd8b8ad335f962fbad30ee0673937ec141f00e88faa6eb884f5e83f6a",
+   "png": "494c0be89390def33ea7c096c3096e81d87585c34c572c882f538a59f8f0dbb8",
+   "jpg": "e54c91cb8b4484ebabe4534df95f3544bd06adcd7e28c8525b4cc4150a957973",
    "geom": "g1",
-   "display": "e77bc77f18d6eac83f7c9992dd759eee1866439be2deba2471eb21cd6f57d049"
+   "display": "8678a934c288e571153183ca7ef3c6067f22fb1aaad9419cb7b490c09d1a99a8"
   },
   {
    "stem": "bvl-03-xi-line",
@@ -105,12 +105,12 @@
    "stem": "bvl-20-tenders",
    "position": 10,
    "page": "10_figure-20_tenders.html",
-   "html": "213e488c8af9c41237b6c019538d60970515aace11eefe0cdfbc187c206e2a9f",
-   "nav": "8cf804d620ca202d9536637b31518c07425a62788728cfe71d6c5244c22ed396",
-   "png": "7233db5bc78d5d0cddb0191e7518fa9be664b835540be1fae1847af12ee08f69",
-   "jpg": "e84261a1000878bff03c33a1585c6587d6d8779e358cc62d74b737431ef5786d",
+   "html": "4e92b73957aa5a2fed558f9a9a1a978b3bfb64ca8294ab6e7b4b0029183d706d",
+   "nav": "4fde6bffc724a48800444976bc33cb3113e8dcb68afe59516765cb1a18afe07e",
+   "png": "af88349db802a909ab3e49eae14c98c8d7a4f2202ef40ffb8275f897df0db6f9",
+   "jpg": "ed8bcbdca54739bfe3045b2bfd569b24c62b5c829b567fa57e7016943fc895cf",
    "geom": "g1",
-   "display": "16daabb09fa7795ff5be2ef7fb77c9b1b84e8b2e40686f5f699a26d9f5a771da"
+   "display": "4c882132d8ac351d9635a05b6323ed2939ea478036d56c3b1fd1facddc1763bf"
   },
   {
    "stem": "bvl-05-thirty-one-provinces",
@@ -127,34 +127,34 @@
    "stem": "bvl-06-vouchers",
    "position": 12,
    "page": "12_figure-06_vouchers.html",
-   "html": "931598bfd458090ab872e89356346aa419eff7967204a39882709568ccb1b63e",
-   "nav": "fbb4f257fd386165eb52bf0e7cd697bca2939aca84ac21318ec2760a1bfa8fc7",
-   "png": "a53680f2c9ff5a0f529b4fca6ed2fa00e1ab6286437a9e6c0df7e46272be8ad0",
-   "jpg": "a09e424f86dd3f1b184515adaca68f39cbdf7cdeb09e6de5b275a700b17bf7a4",
+   "html": "b64ce46120903ed104294a470866ab433a6cb8fd3e7074d06ca3c9e321fe43a0",
+   "nav": "b4c97f3f318adab3a1921b2e5231628c7d463a7de20b368306902e63f0e1a4f9",
+   "png": "161263b316077be6211ee08eb3b7726d25e0381ad967c7ef1ca500b469b19c93",
+   "jpg": "3d07bf39378b16488ee760e1284985bcaf3fea87e19d1934d2e7a7720982a8d5",
    "geom": "g1",
-   "display": "1d64d8b4e4480579685686007fe561f7fdc67c829848e129c5981fd4f39e2b28"
+   "display": "11bd65844d95b2bfb074f12bd77fa78376c912eced5f73d7c1840e67ecf3cdc2"
   },
   {
    "stem": "bvl-07-state-media-burst",
    "position": 13,
    "page": "13_figure-07_state-media-burst.html",
-   "html": "21fd16607101780dd45b7652920f4826325ae60a11bba5efa1b076662bedf13c",
-   "nav": "6b5228ae778c723cb92872f006be87dbc9251677771ecec03b7b57d18e0c9773",
-   "png": "021abf607752026e82a24e5fbaaffcbd1098c63e78a0e44f86267da5a94fc120",
-   "jpg": "7d4b34aba987345380b724e8e130357ca0099100eca8c3d3b6c1fc26664d2454",
+   "html": "265555a8f86cc2c5c9d9de9c18994b4eaae9ddcf65e1ef0b0f09e0e6855c2670",
+   "nav": "adba0f35b4bbefac475be4efdef28bc1bdc2c9383f58122ad95242a156c65968",
+   "png": "24cca6f2c1b8e626d3a75ffe9d0e2fe3fde621616ed81f23b59cc637c60f03bd",
+   "jpg": "00e80c832029f69f6c74df3a47f7de85f77dfcfe2d0ff62f7fae0e591ddf7050",
    "geom": "g1",
-   "display": "9a9743af335fbd55e7de8ce70475ca03981d6e6eee8485b66635ce966f1b626c"
+   "display": "eb058e95ff0bc1aeecb51285a8dd16de50520611a941cba3fc4caa4ab3ca0263"
   },
   {
    "stem": "bvl-s3-the-companies",
    "position": 14,
    "page": "14_chapter-III_the-companies.html",
-   "html": "7b8b6227ac64cd2530543d36acf060daac8cb5e2d5db74508f5bcce3adefbc8a",
-   "nav": "44a1c49099ca8e7e08588f91d632631f784550cd4066134553c6bd027c9a71b4",
-   "png": "d7c27c6ee65a9a1755dfb5fd714adb9e0fc054de2186ea89a56de1d4cbce4c95",
-   "jpg": "7fe1c0718186516156ef116c3d8de785fd796248825f36c4ede1b2798389a73d",
+   "html": "6c598c7b16697e9c0ba113064d4ff451ee01c92efcb995248b5b91489cb3cafe",
+   "nav": "4b61dbb41d1b5c0746097f7291885a18014ab44ada19f347a004ac8f65079cdd",
+   "png": "d721618d99ab5746e21a9d3311095ff0abe48c15ac7dc0703e1b5993fa2b6dd7",
+   "jpg": "8cd9685b72c7b41d4bd30ccbc594a53b755f1153436dc9a1948192be355d6e97",
    "geom": "g1",
-   "display": "2a82f23e217cbea943b4f3210ac04983b7a514dc39af1ddf49536abfc0c1590a"
+   "display": "e2130b222c70d741ed49f10e6f8887ea6f439f6684ad0a6d416292c569e8869d"
   },
   {
    "stem": "bvl-08-in-their-own-words",
@@ -193,12 +193,12 @@
    "stem": "bvl-s4-what-beijing-did",
    "position": 18,
    "page": "18_chapter-IV_what-beijing-did.html",
-   "html": "4c89501d66dcd753d403da18cc45ad9f3d81de2d1d4854040f3b153e4867a1dc",
-   "nav": "39e1a7ed667a36e3cc8bd6722403d9e3664672bc846188ef2002607530961caa",
-   "png": "dd234bcb6839d03d906f57f8c41ea7f673e8825fdc62345b18b906d345970702",
-   "jpg": "2737742ae60a9312223f56945994a47b4292768bc6a9230e93a52d32936dd081",
+   "html": "3c301135180b54b306031645a9daa692f1fe48d5c15fc37be425210d156bb748",
+   "nav": "be2798e8a7d9d5447e0bda7ad99ac1289d8440f92e580933acabe4c716c9df01",
+   "png": "ec26296a8c5d1a52ea28d4b6b5cd6fe2340347dbee0c6c7ce3bd15ec63b62424",
+   "jpg": "a3b212a4037b65e3be470eacc3ffc7154bc3a4b276fd91769921ff52006d6c9c",
    "geom": "g1",
-   "display": "659043dfa88b8dc023274f9218e180b1d99e4746504a18b50f21ded8f96f76b5"
+   "display": "f10b51964f8bc3c8f3a83ba2c8e636bd4863c438d9718d6a26ef60758eaa3f05"
   },
   {
    "stem": "bvl-11-who-inside-beijing",
@@ -215,12 +215,12 @@
    "stem": "bvl-12-how-strong",
    "position": 20,
    "page": "20_figure-12_how-strong.html",
-   "html": "29afb383a27803d88a00a1fd24c17e2a198abd53e13be0ccc13d3f36dba23daf",
-   "nav": "7e9e97bb23ffc2bb02b3448078fb3ce59a0371621a34a3de228dc6dd9c62f8d6",
-   "png": "840366aa0174782c9c98da8fe552d54c985d7e9506fc60ed0cc541614d414257",
-   "jpg": "c32510201b87380f7e14cf6da6662a580fd2136d184aef0e6a150b1151c74c7e",
+   "html": "6d3259ed6e005403ff01bedee396e63df18b038f72755c24b476b7e59ed3a78e",
+   "nav": "7813de7bfd5b2633f748ad92be3af7142d8500ab2105d86825b604e9df35f223",
+   "png": "9c3564814352fafe5bfb942762c038b0ee331c3a0950df633c9f578bacda36b7",
+   "jpg": "a7ee172e626b0d54bc3dc2e57e7a6aaef11e111d745ab9c122db8e408d25b6f3",
    "geom": "g1",
-   "display": "e8357e66898cb85ea780e5b81463116a62d26cb82d11c1f07bc2f0fc5b86276d"
+   "display": "cd9ad1df633fab462ddc26753e1236277c4bede509d22719574643c190d1cab6"
   },
   {
    "stem": "bvl-13-nvidia-in-its-own-words",
@@ -237,12 +237,12 @@
    "stem": "bvl-s5-the-numbers",
    "position": 22,
    "page": "22_chapter-V_the-numbers.html",
-   "html": "14afcfe5038cb488cc30d19a90772380da174e78917560340d229a0d14507492",
-   "nav": "72895f584e70162d6a784f4da451c1f751b4ecfc8e790c78cdd6ba1e0c8b647f",
-   "png": "2ec1249554c99793875662cd0bddb96ef2175a10f7a2bd313f66bc3acdf6190d",
-   "jpg": "702dc8b4401eb0f52af81b58836c459e284930d0f2518b6d4117e974afbfe218",
+   "html": "29da2cdf7381db637caa7fb6adf26cbbf0b5ad595ced0d0bfe5a0f896550d045",
+   "nav": "bf0cad0e235d7d51b41e8c720e8a4ef85de8c39c25eb56721f96c8c32a53b1bd",
+   "png": "0251d37f131147152038cc7ece1469ca58ff283cb3eaf64472ea7cc9f1f051ee",
+   "jpg": "40995411c86e002f5c21122ec122f51c7201ac17fdaaabeb9a3ad0de7809b377",
    "geom": "g1",
-   "display": "d52b6e3e59e2b67e9e3e2dda0fabbe04beaa7297a251d4eaa119a964ca4ff56a"
+   "display": "81459422a481b5eb7b715b5e2da1dd631513973c1134829a29467e8f25aefad1"
   },
   {
    "stem": "bvl-14-china-revenue",
@@ -270,12 +270,12 @@
    "stem": "bvl-18-share-and-rise",
    "position": 25,
    "page": "25_figure-18_share-and-rise.html",
-   "html": "b1476a52b4fe3e06025fe869bdeb9b84c438d7feaa3e935c001f073c7361c5e8",
-   "nav": "96c2aa40d8b3371aebb2c491eafb75c96e1b46461f9eead4e7f066a76ea3b852",
-   "png": "cd965248b4d2e4b741626034c0291e7ef6d8c866f688df221ad871d4634fb3bf",
-   "jpg": "2118ae3989645302636b5fcfc0d9c308510c07f0b3d957ed9a87bb6dea4e588f",
+   "html": "0d1f212318ff4edfcd766fead8c90b25f0476e34123e748fa866beda2792350a",
+   "nav": "eb0f66aa8e687a99b66a28e0a504af037c135ae775ba8c387f949c46deac1e71",
+   "png": "d62361272f109cfe7e61b6aceddfa18e9e1bd6623cd624c3b5a4a3b6964aa309",
+   "jpg": "d1dc6e77cd751aac75e1430da3bffe14dde3694a1c88ee9d46f19c79f9cb037b",
    "geom": "g1",
-   "display": "808539b06b771bd9f2367ad221fa84db575adc26a7e7d5b00af6eb90d5dcf454"
+   "display": "1476cbdf749261c19b703aaa78ef513c1c7528146506f440d8cc848af69fa27d"
   },
   {
    "stem": "bvl-19-customs",
@@ -292,12 +292,12 @@
    "stem": "bvl-s6-how-it-is-read",
    "position": 27,
    "page": "27_chapter-VI_how-it-is-read.html",
-   "html": "21d242e6b159d65d331dea2ac31d5a9525142b33a41b93ca0fd067da491eaf1c",
-   "nav": "04fd37c590cc59f2da032aad65c1922daa51fe65096d17e7196c0fb6bfb1dc89",
-   "png": "e5f0c389200324b881f22087b6fe4149d863f1e9f9b298f2bd60071481b8bf59",
-   "jpg": "ddd7148375b6399317b546ff470ca7a2bcb90ad76eaf8885ae5ecbe3d8316f7c",
+   "html": "44589de3ddaca889707db95341f5dd1c11109ca1a786ba35314a6c0af87fa94b",
+   "nav": "90dd3f0f0bbb0ed5e671c5c26a0d8fc26c30b0c53ddd7bc2bf3d393c59cf7550",
+   "png": "851dea2faa9940c975d3fcfae1c348dd4b33be22d5775106234e60d7d8faa012",
+   "jpg": "f4792ac57cede0b084137dbaa0ce0f7a7fc496e63723457bb54c7b4432616f8f",
    "geom": "g1",
-   "display": "c8a48c044b8f6713491d962e00e982b064ab6119e7f13658919d35e12349ad9a"
+   "display": "2b9ccbf861c9cd16a1f6ce3c38183ace7c020598d4f1f08018785174fdd69fd6"
   },
   {
    "stem": "bvl-15-talks-and-acts",
@@ -314,12 +314,12 @@
    "stem": "bvl-21-washington-reads-beijing",
    "position": 29,
    "page": "29_figure-21_washington-reads-beijing.html",
-   "html": "ef33332b27a1c7f71c8ee76904b3748059179d8430eef3c8c04c9281c49e15b0",
-   "nav": "3b019c2681a55f9f68b7ed9768c2dee48ab37a9e02b464d85642cdb466d6c14f",
-   "png": "8ff15f4c59d48e9a0c0927ec61c665a5252acbf593f03e7e1432215eb52bf131",
-   "jpg": "68770410528179a6c0fc40f0a3beda15869a7dea0f54263960b06916b7b67bba",
+   "html": "b552fd5c29429505370d7a5848f3223a2d2548f678096e8bb611a2a16e5cd587",
+   "nav": "081403bd0ce4a2090a0a14b7083e9b7f48215016422feb7a753bffc674b137c3",
+   "png": "a51e551c8c615eef62549bd71d7bc5990147b5c20baeba3b6365b49120b3a1a8",
+   "jpg": "e0dbf8fc239d0ab7c0a9ef0eb8f75f2b37839d97e7f200f91950c579eb13d7ef",
    "geom": "g1",
-   "display": "130d7f7f947b1704756d8c75c747c8ed9a4d14fc6beb9ccb25073a75bc61b821"
+   "display": "b8105a5689403eb1bc98c2066a616800e4c371e7dba76ab7affb53828cf7316b"
   },
   {
    "stem": "bvl-22-two-pushes",
@@ -336,12 +336,12 @@
    "stem": "bvl-23-evidence-map",
    "position": 31,
    "page": "31_figure-23_evidence-map.html",
-   "html": "388d232fd874b55f040629c8b4bc4c26bada882c95b605363068cb40176f1581",
-   "nav": "83d55ff5d84b84055e01ef929b6c8adb2664c05a4c72e52d14c1e2a69dae50c1",
-   "png": "72aea33ccef063f1d4b77d6bf99b22ab2242729023e45ce959d81d683463601b",
-   "jpg": "3ddd4a30e236ae351400a885cb0ee65ae5ab48d80674a1d31389ad744732cd78",
+   "html": "1c1365fc06825ee75eb94bca4d04025c5ed627454e2562064067a6cfd47146bd",
+   "nav": "4d1afbec34076471549bdedd897523c60ee89ed04c8258083934a5a681e8d125",
+   "png": "510926188ea0cfb6d34b3bd6291484b2e1393a08fdca39c30126fd76d50738ac",
+   "jpg": "1e92fbb52923a638834b7900b79a5f8ef247de52b5ee23bd56908a9751fea7d2",
    "geom": "g1",
-   "display": "6c7054d3a9d54714f4a70f2752b09a3b4f6ddc3dc59886a98103c60b4cac04be"
+   "display": "4848bae59519103d43e1278ef07224a1b175f768f4ab41f11798e43c92dc25da"
   },
   {
    "stem": "bvl-24-luckeys-56-seconds",
@@ -369,12 +369,12 @@
    "stem": "bvl-25-the-sentence",
    "position": 34,
    "page": "34_figure-25_the-sentence.html",
-   "html": "a1620cab73b2595905433f05724a79bf69507ace9b95ddc46b71d7bc6bec9829",
-   "nav": "c848ea1241c83baf8d426c70457dc8dc42b1f576b667a4c7167c53da0b2b4f9d",
-   "png": "5ea4351d5c5e14b124c5b0b3ee790c0a5a9f9cc268e861fb2a6ea2acb4f3bad1",
-   "jpg": "60bce99304927ecd70f7f1999118df4e689b8c275306404cbb9ececf6a0488a7",
+   "html": "850374204b682f9a5fb4a0604ab4534254df49c88fef1b3c834f5d969b6736fd",
+   "nav": "e5cc213ea6c55036335129af43e6326813b00bd9d3dcf6e111b5db31f4a89abb",
+   "png": "d9e494a15f2ea61da7a91a4e7a8c2ab6e77a7988f6856c8ca9b93cbb6257935d",
+   "jpg": "94efde04478e2d85af5f119539d3e4349ee77cc7b5e9de98fceb4d8921c4f75e",
    "geom": "g1",
-   "display": "390b3cdcc71dce16d952205d361c88b056d56cabccf77703408975f6503b751b"
+   "display": "2a2524e044c98af2ff4971217040fa54039f329b65e1550d05c204ee2a6fa361"
   }
  ]
 }

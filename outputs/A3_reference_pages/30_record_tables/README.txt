@@ -10,7 +10,7 @@ choose UTF-8, or the Chinese will not show correctly.
 FILES
   records.csv      62 dated records, 18 columns, comma-separated
   records.tsv      the same 62 records, tab-separated (no field holds a tab or a line break)
-  references.csv   the 634 sources of the argument (ARGUMENT_referenced.md), 8 columns
+  references.csv   the 639 sources of the argument (ARGUMENT_referenced.md), 8 columns
   quotes.tsv       saved id and the source's own words for each record: the input of the quotation check
   tables/          44 plain tables copied from the project's tables folder (listed at the end)
   build.py         the script
@@ -43,7 +43,7 @@ COLUMNS OF records.csv AND records.tsv
   also_address   the address of that second source
 
 COLUMNS OF references.csv
-  number         the reference number in ARGUMENT_referenced.md, 1 to 634
+  number         the reference number in ARGUMENT_referenced.md, 1 to 639
   kind           one of: DOC, OFF, FIL, REC, PRESS, COUNT, CLIP, PUB, NAMED, ACCT, NOTICE
   kind_meaning   what each kind means, in the words that begin each reference of the argument's reference list:
                  DOC: Chinese state document
@@ -68,8 +68,8 @@ COUNTS (taken from the files by build.py, not typed)
   Records: 62. About Beijing, away from Nvidia: 25. About Beijing, toward Nvidia: 13.
   About the companies, toward Nvidia: 14. About the companies, away from Nvidia: 10.
   By kind: doc 22, rec 14, press 26. So 36 records are on the record and 26 are press reports citing unnamed people.
-  References: 634. DOC 175, OFF 79, FIL 108, REC 67, PRESS 80, COUNT 8, CLIP 9, PUB 44, NAMED 2, ACCT 13, NOTICE 49.
-  On the record: 537. Press reports citing unnamed people, counts, captions or machine transcripts: 97.
+  References: 639. DOC 176, OFF 80, FIL 108, REC 68, PRESS 81, COUNT 8, CLIP 9, PUB 44, NAMED 2, ACCT 14, NOTICE 49.
+  On the record: 541. Press reports citing unnamed people, counts, captions or machine transcripts: 98.
 
 CHECKS THE SCRIPT MADE BEFORE WRITING
   The two figure files hold the same 62 records, one to one, with the same line of ours.
@@ -103,7 +103,7 @@ PLAIN TABLES (tables/)
   its figure, has since replaced with a better one (the argument's reference list is the later word). Under 5 of
   the tables a "Read with care" line, computed by build.py, says which rows cite such a copy (and whether the argument
   itself still cites it), and, for the 2 tables with a column of the argument's reference numbers,
-  whether those numbers are the present ones. Rows of different tables count different things. Do not join them
+  that those numbers are the present ones. Rows of different tables count different things. Do not join them
   into one series. Each table begins with its makers' own notes, on lines that start with "#"; a program reading a
   table should skip those lines.
 
@@ -134,7 +134,7 @@ PLAIN TABLES (tables/)
   tables/labs_said.tsv   74 rows, 10 columns
       What it is: What China's AI companies said about chip supply on results calls and in filings, January 2025 to November 2026.
       Columns: company, date, event, speaker, title, source_kind, exact_words, saved_id, cut, note
-      Copy: byte for byte the project's table (sha256 4a53d950dd07c802cbb87f5a95a48730f2ae808ba5847beb191f59ebe49f9e0d).
+      Copy: byte for byte the project's table (sha256 59094554474f2242d32a0782d253936d7cfdb622fdfc27b245cbb579d628dc2e).
   tables/labs_said_more.tsv   29 rows, 10 columns
       What it is: The same for two more companies, iFlytek and SenseTime.
       Columns: company, date, event, speaker, title, source_kind, exact_words, saved_id, cut, note
@@ -154,7 +154,7 @@ PLAIN TABLES (tables/)
   tables/local_vouchers_more.tsv   227 rows, 11 columns
       What it is: More such local rules, and other documents read about them (drafts, application notices and accounts of a rule among them), found in later searches.
       Columns: body, level, date, document, rate_home, rate_other, kind, words, saved_id, copy, cuts
-      Copy: byte for byte the project's table (sha256 2e59e2ddc32a279fe1527a4e3190f1236a2b51b5f438cdd20b33acee48bdfcef).
+      Copy: byte for byte the project's table (sha256 3fbf8f2de49494ccee99b961bbf185e75d75d5c0fa160f370487204d02019508).
   tables/local_vouchers_other_provisions.tsv   10 rows, 8 columns
       What it is: Provisions of the counted local voucher rules, other than the counted payment, that give home-made computing something other computing does not get: money to build, buy or run home-made computing facilities or equipment, an award or subsidy for adapting models or software to home-made chips or computing or for research built on them, a higher rate, cap or quota for using home-made computing in another provision, or a priority, purchasing preference, required share or condition in words that bind; one row per provision, each read and ruled on the rule's saved copy. A rule's class does not change by these rows: it is decided by the counted payment alone (local_vouchers_classes.tsv).
       Columns: row_id, government, class, kind, article, words, what_it_gives, saved_id
@@ -192,9 +192,9 @@ PLAIN TABLES (tables/)
   tables/press_originals.tsv   54 rows, 10 columns
       What it is: For each press report that an earlier version of the argument cited: whether the copy held is the publisher's own page or another outlet's.
       Columns: ref, saved_id_cited, report, date_of_report, through_a_relay, copy_held, original_held, other_copies_held, best_copy_held, best_copy_available_and_note
-      Copy: byte for byte the project's table (sha256 e5c46c1c4a4a2842b1cbb8e22e40ee7247bf732881ac2f036a59537b9a2f9e7b).
-      Read with care: 1 row(s) cite ms-bj-20260114-customs-h200-standard, a source the figure no longer cites; the figure cites cn-acts-reuters-customs-20260114 in its place; the argument itself still cites ms-bj-20260114-customs-h200-standard as reference 393.
-      Read with care: its column "ref" gives reference numbers of an earlier build of the argument: 5 of the 54 differ from the present numbers, and 2 of the ids are no longer cited by the argument (references.csv has the present numbers).
+      Copy: byte for byte the project's table (sha256 97be6919c69f58663393be8343df210265e61c885b842aca03f4fc4125963e85).
+      Read with care: 1 row(s) cite ms-bj-20260114-customs-h200-standard, a source the figure no longer cites; the figure cites cn-acts-reuters-customs-20260114 in its place; the argument itself still cites ms-bj-20260114-customs-h200-standard as reference 394.
+      Read with care: its column "ref" gives the present reference numbers of the argument; 2 of the 54 rows keep a report the argument no longer cites (marked "not cited now"); press references added to the argument later are named in the table's own comment line.
   tables/procurement_notices_oct_nov_2026.tsv   27 rows, 11 columns
       What it is: Twenty-seven purchase notices for AI computing of Oct 13 to Nov 24, 2026, a reading sample: the chip words each prints, whether it names Nvidia, what it says on home-made products and imports, and whether it attaches a declaration on the home-made product standard.
       Columns: date, buyer, project, stage, quantity, value, chip_words, nvidia, home_made, saved_id, cuts
@@ -206,7 +206,7 @@ PLAIN TABLES (tables/)
   tables/procurement_records.tsv   161 rows, 14 columns
       What it is: Purchase records found by searches: the telecom carriers' central purchases, awards that name Nvidia cards, tenders that require home-made chips or refuse imports, and other notices for context. These records give no measure of how often buyers ask for home-made chips or Nvidia cards.
       Columns: part, date, buyer, project, stage, quantity, value, chip_family_stated, nvidia, home_made, source_kind, saved_id, exact_words, cuts
-      Copy: byte for byte the project's table (sha256 ee1065876b3fe81008d5c908084aa736badcb22f40d3845d19770c5aa36b66ce).
+      Copy: byte for byte the project's table (sha256 0ee7d7b0d30de62eccd4dfa48d474e54e97a6dd58ca6271843e03d4cfad37994).
   tables/provinces_31.tsv   31 rows, 10 columns
       What it is: The 31 provincial-level governments: whether a published plan sets a share for home-made computing, each by its plan's own measure (chips, equipment, hardware and software, or computing capacity), with the document's own words where its text was read. Some rows rest on accounts of a plan rather than its text, and for one government, Xinjiang, no computing plan's text was found, though its development and reform commission, in a reply posted Jul 24, 2026, says two were issued: column result gives the finding, column rests_on what it rests on, and column later_reading what a later reading changed.
       Columns: government, result, kind_of_document, binding_or_expected, documents_issuers_dates, exact_words, rests_on, saved_ids, later_reading, words_found_by_checker
@@ -236,7 +236,7 @@ PLAIN TABLES (tables/)
         - not saved (leads only: pages a search named that could not be saved)
         - note
       Copy: byte for byte the project's table (sha256 16d3c98274716ef27285796503a1e83499ab4ecdce2cf21e27d56cecb5ad0240).
-      Read with care: 1 row(s) cite ms-bj-20260114-customs-h200-standard, a source the figure no longer cites; the figure cites cn-acts-reuters-customs-20260114 in its place; the argument itself still cites ms-bj-20260114-customs-h200-standard as reference 393.
+      Read with care: 1 row(s) cite ms-bj-20260114-customs-h200-standard, a source the figure no longer cites; the figure cites cn-acts-reuters-customs-20260114 in its place; the argument itself still cites ms-bj-20260114-customs-h200-standard as reference 394.
   tables/results_calls_authority_counts.tsv   48 rows, 7 columns
       What it is: Counts from a search of 118 company texts (76 results-call transcripts and 42 records of four smaller companies) for the names of Chinese authorities beside a chip word: by group and word, the hits and the hits beside a chip word, with what each of those is.
       Columns: check, group, word, hits, hits_beside_a_chip_word, saved_ids_of_those, what_those_are
@@ -278,7 +278,7 @@ PLAIN TABLES (tables/)
       What it is: US-China trade meetings, May 2025 to November 2026, with what each side's readout says on chips, or that no written readout of that side was found, beside Beijing's dated acts and words on Nvidia chips.
       Columns: date_start, date_end, kind, event, cn_readout_on_chips, us_readout_on_chips, tier, saved_ids, checked_words, counted, note
       Copy: byte for byte the project's table (sha256 b8af63bdf8d6c1330d6e3f71425eaaad3c2f1c7b9fe661495d5eaa0cf8b90515).
-      Read with care: 1 row(s) cite ms-bj-20260114-customs-h200-standard, a source the figure no longer cites; the figure cites cn-acts-reuters-customs-20260114 in its place; the argument itself still cites ms-bj-20260114-customs-h200-standard as reference 393.
+      Read with care: 1 row(s) cite ms-bj-20260114-customs-h200-standard, a source the figure no longer cites; the figure cites cn-acts-reuters-customs-20260114 in its place; the argument itself still cites ms-bj-20260114-customs-h200-standard as reference 394.
   tables/trade_annual_summary.tsv   528 rows, 7 columns
       What it is: Yearly sums of monthly customs figures, series by series; column months_held gives how many months of the year each sum covers (127 of its 528 rows cover fewer than 12 months, every row of 2026 among them). No customs line counts Nvidia chips.
       Columns: series, measure, unit, year, months_held, sum, table
@@ -290,7 +290,7 @@ PLAIN TABLES (tables/)
   tables/us_officials_statements.tsv   35 rows, 11 columns
       What it is: Named American officials' words on China buying, blocking or bargaining over Nvidia chips. Words from caption tracks are machine-made and not checked by ear.
       Columns: date, official, role, venue, saved_ids, where, words, cuts, tier, argument_cites, note
-      Copy: byte for byte the project's table (sha256 77434ba4e93f892f8d2bd45af77ed5761eb3a4b5070656e99a87f07fa7ef7ad9).
+      Copy: byte for byte the project's table (sha256 6f0828c6d97d3b789b605655d9178c7d8799907381a0f35b9ba2470fa4d191fb).
       Read with care: its column "argument_cites" was recomputed against the present argument (the table's own comment line says how): 26 of the 35 rows name a source it cites, with the reference number.
   tables/wuhan_university_result_notices.tsv   81 rows, 7 columns
       What it is: Result notices (成交结果公告) of purchases by filed bidding (备案竞价) that Wuhan University's procurement centre published on its own site, June 2025 to November 2026, picked by titles on graphics cards, GPUs, servers and AI computing: 81 notices, each with its date, the price of the award, and the Nvidia words and home-made words found on the page.

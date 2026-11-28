@@ -162,6 +162,9 @@ LABEL_TITLES = {
     'cn-usside-048': "Trump officials torpedoed Nvidia's push to export AI chips to China",
     'cn-ga07-kaine-crec-html-s8884-2': 'Nvidia',
     'cn-o34-nvidia-export-page': 'NVIDIA Parts Classification',
+    # round 20 (core batch 18, Nov 27, 2026): the titles of two new references of the argument
+    'cn-ga31-uswordsp3-23': 'Nvidia’s CEO Sees China Opening Market to AI Chips From US',
+    'cn-w18-w4p2-10-1': 'Nvidia Aims to Begin H200 Chip Shipments to China by Mid-February, Sources Say',
 }
 
 

@@ -40,7 +40,7 @@ From 2024 the planning side of the Chinese state and the industry ministry, and 
 
 ## What these answers leave out
 
-- Each answer gives one to six sources. The full argument has 21 points and 634 sources; it is the project's argument page, ARGUMENT_referenced.html.
+- Each answer gives one to six sources. The full argument has 21 points and 639 sources; it is the project's argument page, ARGUMENT_referenced.html.
 - The numbers in questions 4, 6 and 8 are press reports citing unnamed people. Nvidia's own words in question 8 give no number.
 - Question 2, state and Party media. Of the 34 items that only warn, 33 are about the chips for AI computing. The list counts the 219 items on chips for AI computing separately from the 40 on products with an Nvidia chip. The items after Sept 24, 2025 are what the searches and the scan of the saved pages found, a sample of what these outlets printed.
 
